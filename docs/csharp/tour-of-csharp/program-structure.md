@@ -1,5 +1,5 @@
 ---
-title: C# Program Structure | A Tour of the C# Language
+title: C# Program Structure - A Tour of the C# Language
 description: Learn the basic building blocks of a C# program
 keywords: .NET .NET Core
 author: BillWagner

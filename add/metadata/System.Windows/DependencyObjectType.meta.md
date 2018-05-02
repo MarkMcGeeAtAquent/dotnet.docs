@@ -1,58 +1,76 @@
 ---
 uid: System.Windows.DependencyObjectType
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.Name
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.GetHashCode
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.BaseType
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.IsInstanceOfType(System.Windows.DependencyObject)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.FromSystemType(System.Type)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.IsSubclassOf(System.Windows.DependencyObjectType)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.Id
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.DependencyObjectType.SystemType
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

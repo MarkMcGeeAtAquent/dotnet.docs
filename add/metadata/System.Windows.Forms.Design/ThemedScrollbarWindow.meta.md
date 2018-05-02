@@ -1,18 +1,24 @@
 ---
 uid: System.Windows.Forms.Design.ThemedScrollbarWindow
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ThemedScrollbarWindow.Handle
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ThemedScrollbarWindow.Mode
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

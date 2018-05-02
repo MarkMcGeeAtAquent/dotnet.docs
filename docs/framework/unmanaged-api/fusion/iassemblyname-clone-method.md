@@ -1,5 +1,5 @@
 ---
-title: "IAssemblyName::Clone Method | Microsoft Docs"
+title: "IAssemblyName::Clone Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAssemblyName.Clone"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAssemblyName::Clone"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Clone method, IAssemblyName interface [.NET Framework fusion]"
   - "IAssemblyName::Clone method [.NET Framework fusion]"
 ms.assetid: 7b345e08-5e16-4e3d-a044-4e19d0892943
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAssemblyName::Clone Method
 Creates a shallow copy of this [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object.  

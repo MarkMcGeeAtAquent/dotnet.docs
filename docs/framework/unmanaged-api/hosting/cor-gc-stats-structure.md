@@ -1,5 +1,5 @@
 ---
-title: "COR_GC_STATS Structure | Microsoft Docs"
+title: "COR_GC_STATS Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_GC_STATS"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_GC_STATS"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_GC_STATS structure [.NET Framework hosting]"
 ms.assetid: 8d4ff73e-739b-40f6-9349-359fbc99c2f9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_GC_STATS Structure
 Provides statistics about the garbage collection mechanism of the common language runtime (CLR).  
@@ -90,6 +93,6 @@ pCLRGCManager->GetStats(&GCStats);
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)   
- [Automatic Memory Management](../../../../docs/standard/automatic-memory-management.md)   
+ [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
+ [Automatic Memory Management](../../../../docs/standard/automatic-memory-management.md)  
  [Garbage Collection](../../../../docs/standard/garbage-collection/index.md)

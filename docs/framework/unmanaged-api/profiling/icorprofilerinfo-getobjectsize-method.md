@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetObjectSize Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetObjectSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetObjectSize"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetObjectSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetObjectSize method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetObjectSize method [.NET Framework profiling]"
 ms.assetid: 9f02e763-73f7-42cb-a41c-f78499d9482c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetObjectSize Method
 Gets the size of a specified object.  

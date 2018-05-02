@@ -1,49 +1,62 @@
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IClientChannelSinkProvider)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor(System.String,System.Runtime.Remoting.Channels.IClientChannelSinkProvider)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.Parse(System.String,System.String@)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.ChannelPriority
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.ChannelName
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.CreateMessageSink(System.String,System.Object,System.String@)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpClientChannel.IsSecured
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

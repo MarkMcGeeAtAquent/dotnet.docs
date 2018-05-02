@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.Messaging.IMessageCtrl
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.IMessageCtrl.Cancel(System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumCustomAttributes Method | Microsoft Docs"
+title: "IMetaDataImport::EnumCustomAttributes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumCustomAttributes"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumCustomAttributes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumCustomAttributes method [.NET Framework metadata]"
   - "IMetaDataImport::EnumCustomAttributes method [.NET Framework metadata]"
 ms.assetid: 798513a0-68b1-4d04-bc5b-782a4445ea68
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumCustomAttributes Method
 Enumerates custom attribute-definition tokens associated with the specified type or member.  
@@ -79,5 +82,5 @@ HRESULT EnumCustomAttributes (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

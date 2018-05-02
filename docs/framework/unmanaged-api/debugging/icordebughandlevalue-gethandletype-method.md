@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHandleValue::GetHandleType Method | Microsoft Docs"
+title: "ICorDebugHandleValue::GetHandleType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHandleValue.GetHandleType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHandleValue::GetHandleType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetHandleType method [.NET Framework debugging]"
   - "ICorDebugHandleValue::GetHandleType method [.NET Framework debugging]"
 ms.assetid: d5e7b12d-835a-4e86-ae2f-d658d4f1c67c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHandleValue::GetHandleType Method
 Gets a value that indicates the kind of handle referenced by this ICorDebugHandleValue object.  

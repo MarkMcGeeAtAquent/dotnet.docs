@@ -1,27 +1,35 @@
 ---
 uid: System.Windows.Navigation.CustomContentState
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Navigation.CustomContentState.JournalEntryName
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Navigation.CustomContentState.Replay(System.Windows.Navigation.NavigationService,System.Windows.Navigation.NavigationMode)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Navigation.CustomContentState.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

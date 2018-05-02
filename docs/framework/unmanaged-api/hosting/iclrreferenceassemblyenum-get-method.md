@@ -1,5 +1,5 @@
 ---
-title: "ICLRReferenceAssemblyEnum::Get Method | Microsoft Docs"
+title: "ICLRReferenceAssemblyEnum::Get Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRReferenceAssemblyEnum.Get"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRReferenceAssemblyEnum::Get"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRReferenceAssemblyEnum::Get method [.NET Framework hosting]"
   - "Get method, ICLRReferenceAssemblyEnum interface [.NET Framework hosting]"
 ms.assetid: f21c1612-9c5d-4abc-a337-577086d29c17
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRReferenceAssemblyEnum::Get Method
 Gets the assembly identity at the supplied index.  
@@ -76,5 +79,5 @@ HRESULT Get (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)   
+ [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
  [ICLRReferenceAssemblyEnum Interface](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)

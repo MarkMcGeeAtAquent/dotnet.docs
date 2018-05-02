@@ -1,6 +1,6 @@
 ---
 title: Interpreting Expressions
-description: Interpreting Expressions
+description: Learn how to write code to examine the structure of an expression tree.
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -215,6 +215,23 @@ public class ParameterVisitor : Visitor
     {
         Console.WriteLine($"{prefix}This is an {NodeType} expression type");
         Console.WriteLine($"{prefix}Type: {node.Type.ToString()}, Name: {node.Name}, ByRef: {node.IsByRef}");
+    }
+}
+
+// Constant visitor:
+public class ConstantVisitor : Visitor
+{
+    private readonly ConstantExpression node;
+    public ConstantVisitor(ConstantExpression node) : base(node)
+    {
+        this.node = node;
+    }
+
+    public override void Visit(string prefix)
+    {
+        Console.WriteLine($"{prefix}This is an {NodeType} expression type");
+        Console.WriteLine($"{prefix}The type of the constant value is {node.Type}");
+        Console.WriteLine($"{prefix}The value of the constant value is {node.Value}");
     }
 }
 ```
@@ -497,7 +514,6 @@ public class MethodCallVisitor : Visitor
         }
     }
 }
-
 ```
 
 And the output for the expression tree would be:
@@ -571,8 +587,8 @@ capabilities.
 
 Even the last example recognizes a subset of the possible node types.
 You can still feed it many expressions that will cause it to fail.
-A full implementation is included in the .NET Standard Library
-under the name [ExpressionVisitor](https://docs.microsoft.com/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor)
+A full implementation is included in the .NET Standard 
+under the name [ExpressionVisitor](/dotnet/core/api/System.Linq.Expressions.ExpressionVisitor)
 and can handle all the possible node types.
 
 Finally, the library I used in this article was built for demonstration

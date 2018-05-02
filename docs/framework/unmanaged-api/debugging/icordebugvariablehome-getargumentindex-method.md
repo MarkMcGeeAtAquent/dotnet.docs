@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugVariableHome::GetArgumentIndex Method | Microsoft Docs"
+title: "ICorDebugVariableHome::GetArgumentIndex Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "ICorDebugVariableHome.GetArgumentIndex"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugVariableHome::GetArgumentIndex"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugVariableHome::GetArgumentiIndex method [.NET Framework debugging]"
   - "GetArgumentIndex method, ICorDebugVariableHome interface [.NET Framework debugging]"
 ms.assetid: e86fcc72-388d-4009-ab21-8f9c3323e9a3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugVariableHome::GetArgumentIndex Method
 Gets the index of a function argument.  
@@ -33,11 +36,9 @@ Gets the index of a function argument.
 ## Syntax  
   
 ```  
-  
 HRESULT GetArgumentIndex(  
     [out] ULONG32* pArgumentIndex  
 );  
-  
 ```  
   
 #### Parameters  

@@ -1,8 +1,8 @@
 ---
-title: "3556 - CreateWorkflowServiceHostStop | Microsoft Docs"
+title: "3556 - CreateWorkflowServiceHostStop"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bac6387b-1096-4e17-9907-8e464ee780db
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3556 - CreateWorkflowServiceHostStop
 ## Properties  

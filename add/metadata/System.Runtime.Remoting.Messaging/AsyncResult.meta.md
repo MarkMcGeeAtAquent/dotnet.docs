@@ -1,59 +1,83 @@
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.AsyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.GetReplyMessage
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.IsCompleted
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.AsyncWaitHandle
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.CompletedSynchronously
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.EndInvokeCalled
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.SetMessageCtrl(System.Runtime.Remoting.Messaging.IMessageCtrl)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.AsyncState
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.NextSink
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Messaging.AsyncResult.AsyncDelegate
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

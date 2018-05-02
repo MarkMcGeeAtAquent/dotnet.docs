@@ -1,40 +1,52 @@
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty.Value
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty.op_Implicit
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty.#ctor(System.String)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty.#ctor
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.IndexedProperties.PrintThreadPriorityProperty.#ctor(System.String,System.Object)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

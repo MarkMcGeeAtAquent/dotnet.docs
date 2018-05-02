@@ -1,5 +1,5 @@
 ---
-title: "&lt;Property&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;Property&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;Property&gt; Element (.NET Native)
 Applies runtime reflection policy to a property.  
@@ -21,12 +23,10 @@ Applies runtime reflection policy to a property.
 ## Syntax  
   
 ```xml  
-  
 <Property Name="property_name"  
           Browse="policy_type"  
           Dynamic="policy_type"  
           Serialize="policy_type" />  
-  
 ```  
   
 ## Attributes and Elements  
@@ -70,7 +70,6 @@ Applies runtime reflection policy to a property.
  The following example uses reflection to instantiate a `Book` object and display its property values. The original default.rd.xml file for the project appears as follows:  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Namespace Name="LibraryApplications"  Browse="Required Public" >  
@@ -78,7 +77,6 @@ Applies runtime reflection policy to a property.
       </Namespace>  
    </Application>  
 </Directives>  
-  
 ```  
   
  The file applies the `All` value to the `Activate` policy for the `Book` class, which allows access to class constructors through reflection. The `Browse` policy for the `Book` class is inherited from its parent namespace. This is set to `Required Public`, which makes metadata available at runtime.  
@@ -93,8 +91,7 @@ Applies runtime reflection policy to a property.
   
 -   By adding a nested [\<Property>](../../../docs/framework/net-native/property-element-net-native.md) element for each property whose getter we'd like to invoke, as the following default.rd.xml file does.  
   
-    ```  
-  
+    ```xml  
     <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
        <Application>  
           <Namespace Name="LibraryApplications"  Browse="Required Public" >  
@@ -106,10 +103,9 @@ Applies runtime reflection policy to a property.
           </Namespace>  
        </Application>  
     </Directives>  
-  
     ```  
   
 ## See Also  
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)   
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

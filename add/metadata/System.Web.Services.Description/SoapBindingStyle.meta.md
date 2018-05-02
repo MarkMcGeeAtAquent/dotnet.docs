@@ -1,6 +1,8 @@
 ---
 uid: System.Web.Services.Description.SoapBindingStyle
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

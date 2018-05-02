@@ -1,27 +1,35 @@
 ---
 uid: System.Data.Objects.DataClasses.EdmScalarPropertyAttribute
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.#ctor
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.IsNullable
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Objects.DataClasses.EdmScalarPropertyAttribute.EntityKeyProperty
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

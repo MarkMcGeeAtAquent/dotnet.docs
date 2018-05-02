@@ -1,7 +1,9 @@
-<Type Name="GenericWebPart" FullName="System.Web.UI.WebControls.WebParts.GenericWebPart">
+﻿<Type Name="GenericWebPart" FullName="System.Web.UI.WebControls.WebParts.GenericWebPart">
   <TypeSignature Language="C#" Value="public class GenericWebPart : System.Web.UI.WebControls.WebParts.WebPart" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GenericWebPart extends System.Web.UI.WebControls.WebParts.WebPart" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.GenericWebPart" />
+  <TypeSignature Language="VB.NET" Value="Public Class GenericWebPart&#xA;Inherits WebPart" />
+  <TypeSignature Language="C++ CLI" Value="public ref class GenericWebPart : System::Web::UI::WebControls::WebParts::WebPart" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -60,8 +62,8 @@
   
  The first part of the code example contains a Web Parts page with two <xref:System.Web.UI.WebControls.WebParts.WebPartZone> controls. Within each zone is a standard ASP.NET server control. Because the controls are in a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> zone, they will be automatically wrapped with a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control when the page is compiled. So, you can declare <xref:System.Web.UI.WebControls.WebParts.WebPart> class properties on these controls. After you load the page in a browser, if you click the **Display All Property Values** button, the details for each control are displayed in a label. To show how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control works, the <xref:System.Web.UI.WebControls.Calendar> control in the first zone has some of the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> properties set in the declarative markup of the .aspx page, whereas the <xref:System.Web.UI.WebControls.BulletedList> control does not. After you load the page, note the differences in the property values for the two controls, and that both have a parent <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#1)]  
   
  The second part of the code example shows a partial class that accesses some properties of the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control programmatically. Notice that in the `Page_Load` method, the <xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetGenericWebPart%2A> method is used to retrieve the run-time instance of the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control that wraps a server control. This approach of getting a reference to the parent <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control enables you to work programmatically with an ordinary server or user control as if it were a <xref:System.Web.UI.WebControls.WebParts.WebPart> control at run time.  
   
@@ -76,9 +78,10 @@
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected GenericWebPart (System.Web.UI.Control control);" />
+      <MemberSignature Language="C#" Value="protected internal GenericWebPart (System.Web.UI.Control control);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control control) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.#ctor(System.Web.UI.Control)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; GenericWebPart(System::Web::UI::Control ^ control);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -116,6 +119,8 @@
       <MemberSignature Language="C#" Value="public override string CatalogIconImageUrl { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CatalogIconImageUrl" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property CatalogIconImageUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ CatalogIconImageUrl { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -142,8 +147,8 @@
   
  The first part of the code example shows how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.CatalogIconImageUrl%2A> property is set declaratively on a server control within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
   
  The second part of the code example demonstrates the method that programmatically accesses the value of the property when a user clicks the **Display All Property Values** button.  
   
@@ -158,6 +163,8 @@
       <MemberSignature Language="C#" Value="public System.Web.UI.Control ChildControl { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control ChildControl" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.ChildControl" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ChildControl As Control" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UI::Control ^ ChildControl { System::Web::UI::Control ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -188,9 +195,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateChildControls">
-      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="C#" Value="protected internal override void CreateChildControls ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateChildControls" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub CreateChildControls ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void CreateChildControls();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -209,6 +218,8 @@
       <MemberSignature Language="C#" Value="protected override System.Web.UI.ControlCollection CreateControlCollection ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.ControlCollection CreateControlCollection() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateControlCollection" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateControlCollection () As ControlCollection" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Web::UI::ControlCollection ^ CreateControlCollection();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -231,12 +242,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.Control.CreateControlCollection" />
       </Docs>
     </Member>
     <Member MemberName="CreateEditorParts">
       <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.WebControls.WebParts.EditorPartCollection CreateEditorParts() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.CreateEditorParts" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CreateEditorParts () As EditorPartCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Web::UI::WebControls::WebParts::EditorPartCollection ^ CreateEditorParts();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -265,6 +279,8 @@
       <MemberSignature Language="C#" Value="public override string Description { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Description" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Description" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Description As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Description { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -293,8 +309,8 @@
   
  The first part of the code example shows how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Description%2A> property is set declaratively on a server control within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
   
  The second part of the code example demonstrates how to access the property programmatically to display its value in a label.  
   
@@ -309,6 +325,8 @@
       <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Height { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Height" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Height" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Height As Unit" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::Unit Height { System::Web::UI::WebControls::Unit get(); void set(System::Web::UI::WebControls::Unit value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -328,12 +346,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebControl.Height" />
       </Docs>
     </Member>
     <Member MemberName="ID">
       <MemberSignature Language="C#" Value="public override sealed string ID { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ID" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.ID" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Property ID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ID { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -346,12 +367,15 @@
         <summary>Gets or sets the ID of a control. This value is not inheritable.</summary>
         <value>A string that contains the ID of the control.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.Control.ID" />
       </Docs>
     </Member>
     <Member MemberName="Render">
-      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="C#" Value="protected internal override void Render (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.GenericWebPart.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub Render (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void Render(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -373,6 +397,8 @@
       <MemberSignature Language="C#" Value="public override string Subtitle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Subtitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Subtitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Subtitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Subtitle { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -396,12 +422,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.IWebPart.Subtitle" />
       </Docs>
     </Member>
     <Member MemberName="Title">
       <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Title As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Title { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -432,8 +461,8 @@
   
  The first part of the code example shows how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Title%2A> property is set declaratively on a server control within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
   
  The second part of the code example demonstrates how to access the property programmatically to display its value in a label.  
   
@@ -442,12 +471,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.Part.Title" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.IWebPart.Title" />
       </Docs>
     </Member>
     <Member MemberName="TitleIconImageUrl">
       <MemberSignature Language="C#" Value="public override string TitleIconImageUrl { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TitleIconImageUrl" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property TitleIconImageUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ TitleIconImageUrl { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -478,8 +511,8 @@
   
  The first part of the code example shows how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleIconImageUrl%2A> property is set declaratively on a server control within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
   
  The second part of the code example demonstrates how to access the property programmatically to display its value in a label.  
   
@@ -494,6 +527,8 @@
       <MemberSignature Language="C#" Value="public override string TitleUrl { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TitleUrl" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property TitleUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ TitleUrl { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -522,8 +557,8 @@
   
  The first part of the code example shows how the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.TitleUrl%2A> property is set declaratively on a server control within a <xref:System.Web.UI.WebControls.WebParts.WebPartZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_GenericWebPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/CS/genericwebpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_GenericWebPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_GenericWebPart_Overview/VB/genericwebpartvb.aspx#2)]  
   
  The second part of the code example demonstrates how to access the property programmatically to display its value in a label.  
   
@@ -538,6 +573,8 @@
       <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Verbs As WebPartVerbCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerbCollection ^ Verbs { System::Web::UI::WebControls::WebParts::WebPartVerbCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -555,18 +592,22 @@
 ## Remarks  
  Verbs derive from the <xref:System.Web.UI.WebControls.WebParts.WebPartVerb> class, and provide user interface (UI) actions that users can perform on a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control. Usually, verbs are represented in the UI as buttons, links, or menu items. There are standard verbs for opening, closing, editing, and minimizing a control, and other verbs for exporting a definition for the control or loading a Help file. These verbs are not included in the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A> collection, because the collection contains only custom verbs.  
   
- This property overrides the base property so that you can access the property on the child control as if it were a true <xref:System.Web.UI.WebControls.WebParts.WebPart> control. If you child control implements the <xref:System.Web.UI.WebControls.WebParts.IWebActionable> interface and thus overrides its <xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A?displayProperty=fullName> property, the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control uses the child control's implementation when the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A?displayProperty=fullName> property is invoked on the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control.  
+ This property overrides the base property so that you can access the property on the child control as if it were a true <xref:System.Web.UI.WebControls.WebParts.WebPart> control. If you child control implements the <xref:System.Web.UI.WebControls.WebParts.IWebActionable> interface and thus overrides its <xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A?displayProperty=nameWithType> property, the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control uses the child control's implementation when the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A?displayProperty=nameWithType> property is invoked on the <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> control.  
   
  When you create custom verbs and add them to the <xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A> collection, you can then access the verbs programmatically from a <xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A> control.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebPart.Verbs" />
       </Docs>
     </Member>
     <Member MemberName="WebBrowsableObject">
       <MemberSignature Language="C#" Value="public override object WebBrowsableObject { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object WebBrowsableObject" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.WebBrowsableObject" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property WebBrowsableObject As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ WebBrowsableObject { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -586,12 +627,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.IWebEditable.WebBrowsableObject" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebPart.WebBrowsableObject" />
       </Docs>
     </Member>
     <Member MemberName="Width">
       <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.Unit Width { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit Width" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.GenericWebPart.Width" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Width As Unit" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::Unit Width { System::Web::UI::WebControls::Unit get(); void set(System::Web::UI::WebControls::Unit value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -611,6 +656,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebControl.Width" />
       </Docs>
     </Member>
   </Members>

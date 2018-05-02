@@ -1,8 +1,8 @@
 ---
-title: "Getting Started Sample | Microsoft Docs"
+title: "Getting Started Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,15 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "basic samples [WCF], getting started"
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
 caps.latest.revision: 60
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Getting Started Sample
 The Getting Started sample demonstrates how to implement a typical service and a typical client using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. This sample is the basis for all other basic technology samples.  
@@ -63,7 +65,6 @@ The Getting Started sample demonstrates how to implement a typical service and a
         <OperationContract()>  
         Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
     End Interface  
-  
 ```  
   
 ```csharp  
@@ -80,7 +81,6 @@ public interface ICalculator
     [OperationContract]  
     double Divide(double n1, double n2);  
 }  
-  
 ```  
   
  The service implementation calculates and returns the appropriate result, as shown in the following example code.  
@@ -105,7 +105,6 @@ Public Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double Impleme
 Return n1 / n2  
 End Function  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -129,7 +128,6 @@ public class CalculatorService : ICalculator
         return n1 / n2;  
     }  
 }  
-  
 ```  
   
  The service exposes an endpoint for communicating with the service, defined using a configuration file (Web.config), as shown in the following sample configuration.  
@@ -147,7 +145,6 @@ public class CalculatorService : ICalculator
        ...  
     </service>  
 </services>  
-  
 ```  
   
  The service exposes the endpoint at the base address provided by the IIS or WAS host. The binding is configured with a standard <xref:System.ServiceModel.WSHttpBinding>, which provides HTTP communication and standard Web service protocols for addressing and security. The contract is the `ICalculator` implemented by the service.  
@@ -205,7 +202,6 @@ svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
          binding="wsHttpBinding"   
          contract=" Microsoft.ServiceModel.Samples.ICalculator" />  
 </client>  
-  
 ```  
   
  The client implementation instantiates the client and uses the typed interface to begin communicating with the service, as shown in the following example code.  
@@ -239,7 +235,6 @@ result = client.Divide(value1, value2)
 Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result)  
   
 'Closing the client gracefully closes the connection and cleans up resources  
-  
 ```  
   
 ```csharp  
@@ -272,7 +267,6 @@ Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
   
 //Closing the client releases all communication resources.  
 client.Close();  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
@@ -284,7 +278,6 @@ Multiply(9,81.25) = 731.25
 Divide(22,7) = 3.14285714285714  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
  The Getting Started sample shows the standard way to create a service and client. The other [Basic](../../../../docs/framework/wcf/samples/basic-sample.md) build on this sample to demonstrate specific product features.  
@@ -298,5 +291,5 @@ Press <ENTER> to terminate client.
 3.  To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## See Also  
- [How to: Host a WCF Service in a Managed Application](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)   
+ [How to: Host a WCF Service in a Managed Application](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  
  [How to: Host a WCF Service in IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

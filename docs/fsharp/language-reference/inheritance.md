@@ -1,6 +1,6 @@
 ---
 title: Inheritance (F#)
-description: Inheritance (F#)
+description: Learn how to specify F# inheritance relationships using the 'inherit' keyword.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart

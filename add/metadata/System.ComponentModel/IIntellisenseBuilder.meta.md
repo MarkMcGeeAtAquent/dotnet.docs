@@ -1,20 +1,26 @@
 ---
 uid: System.ComponentModel.IIntellisenseBuilder
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.ComponentModel.IIntellisenseBuilder.Show(System.String,System.String,System.String@)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.ComponentModel.IIntellisenseBuilder.Name
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

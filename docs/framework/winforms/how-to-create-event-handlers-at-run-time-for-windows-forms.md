@@ -1,5 +1,5 @@
 ---
-title: "How to: Create Event Handlers at Run Time for Windows Forms | Microsoft Docs"
+title: "How to: Create Event Handlers at Run Time for Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,11 +10,13 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "Windows Forms, event handling"
-  - "event handlers, creating"
-  - "run time, creating event handlers at"
+  - "event handlers [Windows Forms], creating"
+  - "run time [Windows Forms], creating event handlers at"
   - "examples [Windows Forms], event handling"
   - "Button control [Windows Forms], event handlers"
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
@@ -22,6 +24,8 @@ caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Create Event Handlers at Run Time for Windows Forms
 In addition to creating events using the Windows Forms Designer, you can also create an event handler at run time. This action allows you to connect event handlers based on conditions in code at run time as opposed to having them connected when the program initially starts.  
@@ -38,7 +42,6 @@ In addition to creating events using the Windows Forms Designer, you can also cr
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs)  
        ' Add event handler code here.  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -46,7 +49,6 @@ In addition to creating events using the Windows Forms Designer, you can also cr
     {  
     // Add event handler code here.  
     }  
-  
     ```  
   
     ```cpp  
@@ -66,12 +68,10 @@ In addition to creating events using the Windows Forms Designer, you can also cr
   
     ```vb  
     AddHandler Button1.Click, AddressOf Button1_Click  
-  
     ```  
   
     ```csharp  
     button1.Click += new EventHandler(button1_Click);  
-  
     ```  
   
     ```cpp  
@@ -81,6 +81,6 @@ In addition to creating events using the Windows Forms Designer, you can also cr
      The <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> method demonstrated in the Visual Basic code above establishes a click event handler for the button.  
   
 ## See Also  
- [Creating Event Handlers in Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)   
- [Event Handlers Overview](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)   
+ [Creating Event Handlers in Windows Forms](../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
+ [Event Handlers Overview](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)  
  [Troubleshooting Inherited Event Handlers in Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)

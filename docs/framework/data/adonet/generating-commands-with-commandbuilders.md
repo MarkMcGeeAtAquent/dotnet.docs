@@ -1,5 +1,5 @@
 ---
-title: "Generating Commands with CommandBuilders | Microsoft Docs"
+title: "Generating Commands with CommandBuilders"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,16 @@ ms.technology:
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
 caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Generating Commands with CommandBuilders
 When the `SelectCommand` property is dynamically specified at run time, such as through a query tool that takes a textual command from the user, you may not be able to specify the appropriate `InsertCommand`, `UpdateCommand`, or `DeleteCommand` at design time. If your <xref:System.Data.DataTable> maps to or is generated from a single database table, you can take advantage of the <xref:System.Data.Common.DbCommandBuilder> object to automatically generate the `DeleteCommand`, `InsertCommand`, and `UpdateCommand` of the <xref:System.Data.Common.DbDataAdapter>.  
@@ -35,9 +40,9 @@ When the `SelectCommand` property is dynamically specified at run time, such as 
   
 |Command|Rule|  
 |-------------|----------|  
-|`InsertCommand`|Inserts a row at the data source for all rows in the table with a <xref:System.Data.DataRow.RowState%2A> of <xref:System.Data.DataRowState>. Inserts values for all columns that are updateable (but not columns such as identities, expressions, or timestamps).|  
-|`UpdateCommand`|Updates rows at the data source for all rows in the table with a `RowState` of <xref:System.Data.DataRowState>. Updates the values of all columns except for columns that are not updateable, such as identities or expressions. Updates all rows where the column values at the data source match the primary key column values of the row, and where the remaining columns at the data source match the original values of the row. For more information, see "Optimistic Concurrency Model for Updates and Deletes," later in this topic.|  
-|`DeleteCommand`|Deletes rows at the data source for all rows in the table with a `RowState` of <xref:System.Data.DataRowState>. Deletes all rows where the column values match the primary key column values of the row, and where the remaining columns at the data source match the original values of the row. For more information, see "Optimistic Concurrency Model for Updates and Deletes," later in this topic.|  
+|`InsertCommand`|Inserts a row at the data source for all rows in the table with a <xref:System.Data.DataRow.RowState%2A> of <xref:System.Data.DataRowState.Added>. Inserts values for all columns that are updateable (but not columns such as identities, expressions, or timestamps).|  
+|`UpdateCommand`|Updates rows at the data source for all rows in the table with a `RowState` of <xref:System.Data.DataRowState.Modified>. Updates the values of all columns except for columns that are not updateable, such as identities or expressions. Updates all rows where the column values at the data source match the primary key column values of the row, and where the remaining columns at the data source match the original values of the row. For more information, see "Optimistic Concurrency Model for Updates and Deletes," later in this topic.|  
+|`DeleteCommand`|Deletes rows at the data source for all rows in the table with a `RowState` of <xref:System.Data.DataRowState.Deleted>. Deletes all rows where the column values match the primary key column values of the row, and where the remaining columns at the data source match the original values of the row. For more information, see "Optimistic Concurrency Model for Updates and Deletes," later in this topic.|  
   
 ## Optimistic Concurrency Model for Updates and Deletes  
  The logic for generating commands automatically for UPDATE and DELETE statements is based on *optimistic concurrency*--that is, records are not locked for editing and can be modified by other users or processes at any time. Because a record could have been modified after it was returned from the SELECT statement, but before the UPDATE or DELETE statement is issued, the automatically generated UPDATE or DELETE statement contains a WHERE clause, specifying that a row is only updated if it contains all original values and has not been deleted from the data source. This is done to avoid overwriting new data. Where an automatically generated update attempts to update a row that has been deleted or that does not contain the original values found in the <xref:System.Data.DataSet>, the command does not affect any records, and a <xref:System.Data.DBConcurrencyException> is thrown.  
@@ -112,7 +117,7 @@ adapter.Fill(custDS, "Customers");
 ```  
   
 ## See Also  
- [Commands and Parameters](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [Executing a Command](../../../../docs/framework/data/adonet/executing-a-command.md)   
- [DbConnection, DbCommand and DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)   
+ [Commands and Parameters](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [Executing a Command](../../../../docs/framework/data/adonet/executing-a-command.md)  
+ [DbConnection, DbCommand and DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

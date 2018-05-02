@@ -1,5 +1,5 @@
 ---
-title: "How to: Configure a Custom WS-Metadata Exchange Binding | Microsoft Docs"
+title: "How to: Configure a Custom WS-Metadata Exchange Binding"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,9 +14,11 @@ helpviewer_keywords:
   - "WS-Metadata Exchange [WCF], configuring a custom binding"
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Configure a Custom WS-Metadata Exchange Binding
 This topic will explain how to configure a custom WS-Metadata exchange binding. [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] includes four system-defined metadata bindings, but you can publish metadata using any binding you want. This topic will show you how to publish metadata using the `wsHttpBinding`. This binding gives you the option of exposing metadata in a secure way. The code in this article is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -25,7 +27,7 @@ This topic will explain how to configure a custom WS-Metadata exchange binding. 
   
 1.  In the service's configuration file, add a service behavior that contains the `serviceMetadata` tag:  
   
-    ```  
+    ```xml  
     <behaviors>  
        <serviceBehaviors>  
          <behavior name="CalculatorServiceBehavior">  
@@ -37,14 +39,14 @@ This topic will explain how to configure a custom WS-Metadata exchange binding. 
   
 2.  Add a `behaviorConfiguration` attribute to the service tag that references this new behavior:  
   
-    ```  
+    ```xml  
     <service        name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">   
     ```  
   
 3.  Add a metadata endpoint specifying mex as the address, `wsHttpBinding` as the binding, and <xref:System.ServiceModel.Description.IMetadataExchange> as the contract:  
   
-    ```  
+    ```xml  
     <endpoint address="mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange" />  
@@ -52,7 +54,7 @@ This topic will explain how to configure a custom WS-Metadata exchange binding. 
   
 4.  To verify the metadata exchange endpoint is working correctly add an endpoint tag in the client configuration file:  
   
-    ```  
+    ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange"/>  
@@ -101,7 +103,7 @@ This topic will explain how to configure a custom WS-Metadata exchange binding. 
   
 5.  To verify that the metadata exchange endpoint is working correctly, add an endpoint tag in the client configuration file:  
   
-    ```  
+    ```xml  
     <endpoint name="MyMexEndpoint"               address="http://localhost:8000/servicemodelsamples/service/mex"  
               binding="wsHttpBinding"  
               contract="IMetadataExchange"/>  
@@ -117,12 +119,11 @@ This topic will explain how to configure a custom WS-Metadata exchange binding. 
     MetadataSet mdSet = mexClient.GetMetadata(new EndpointAddress(mexAddress));  
     foreach (MetadataSection section in mdSet.MetadataSections)  
     Console.WriteLine("Metadata section: " + section.Dialect.ToString());  
-  
     ```  
   
 ## See Also  
- [Metadata Publishing Behavior](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)   
- [Retrieve Metadata](../../../../docs/framework/wcf/samples/retrieve-metadata.md)   
- [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)   
- [Publishing Metadata](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)   
+ [Metadata Publishing Behavior](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)  
+ [Retrieve Metadata](../../../../docs/framework/wcf/samples/retrieve-metadata.md)  
+ [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)  
+ [Publishing Metadata](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)  
  [Publishing Metadata Endpoints](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)

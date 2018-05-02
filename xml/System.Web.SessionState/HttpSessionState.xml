@@ -1,7 +1,9 @@
-<Type Name="HttpSessionState" FullName="System.Web.SessionState.HttpSessionState">
+﻿<Type Name="HttpSessionState" FullName="System.Web.SessionState.HttpSessionState">
   <TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpSessionState extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.SessionState.HttpSessionState" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpSessionState&#xA;Implements ICollection" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpSessionState sealed : System::Collections::ICollection" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,9 +24,9 @@
 ## Remarks  
  ASP.NET provides session-state management to enable you to store information associated with a unique browser session across multiple requests. You can store a collection of values referenced by a key name or by numerical index. Access to session values and functionality is available using the <xref:System.Web.SessionState.HttpSessionState> class, which is accessible through the <xref:System.Web.HttpContext.Session%2A> property of the current <xref:System.Web.HttpContext>, or the <xref:System.Web.UI.Page.Session%2A> property of the <xref:System.Web.UI.Page>.  
   
- Session data is associated with a specific browser session using a unique identifier. By default, this identifier is stored in a non-expiring session cookie in the browser, but you can also configure your application to store the session identifier in the URL by setting the `cookieless` attribute to `true` or <xref:System.Web.HttpCookieMode> in the  element of your application configuration. You can have ASP.NET determine whether cookies are supported by the browser by specifying a value of <xref:System.Web.HttpCookieMode> for the `cookieless` attribute. You can also have ASP.NET determine whether cookies are enabled for the browser by specifying a value of <xref:System.Web.HttpCookieMode> for the `cookieless` attribute. If cookies are supported when <xref:System.Web.HttpCookieMode> is specified, or enabled when <xref:System.Web.HttpCookieMode> is specified, then the session identifier will be stored in a cookie; otherwise the session identifier will be stored in the URL.  
+ Session data is associated with a specific browser session using a unique identifier. By default, this identifier is stored in a non-expiring session cookie in the browser, but you can also configure your application to store the session identifier in the URL by setting the `cookieless` attribute to `true` or <xref:System.Web.HttpCookieMode.UseUri> in the  element of your application configuration. You can have ASP.NET determine whether cookies are supported by the browser by specifying a value of <xref:System.Web.HttpCookieMode.UseDeviceProfile> for the `cookieless` attribute. You can also have ASP.NET determine whether cookies are enabled for the browser by specifying a value of <xref:System.Web.HttpCookieMode.AutoDetect> for the `cookieless` attribute. If cookies are supported when <xref:System.Web.HttpCookieMode.UseDeviceProfile> is specified, or enabled when <xref:System.Web.HttpCookieMode.AutoDetect> is specified, then the session identifier will be stored in a cookie; otherwise the session identifier will be stored in the URL.  
   
- Sessions are started during the first request and session values will persist as long as a new request is made by the browser before the number of minutes specified in the <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> property pass. When a new session begins, the session <xref:System.Web.SessionState.SessionStateModule.Start> event is raised. You can use this event to perform any additional work at the start of a session, such as setting default session values. When a session times out, the <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> method is called, or the ASP.NET application is shut down, the session <xref:System.Web.SessionState.SessionStateModule.End> event is raised. You can use this event to perform any necessary cleanup. The <xref:System.Web.SessionState.SessionStateModule.End> event is raised only when the session state `mode` is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ Sessions are started during the first request and session values will persist as long as a new request is made by the browser before the number of minutes specified in the <xref:System.Web.SessionState.HttpSessionState.Timeout%2A> property pass. When a new session begins, the session <xref:System.Web.SessionState.SessionStateModule.Start> event is raised. You can use this event to perform any additional work at the start of a session, such as setting default session values. When a session times out, the <xref:System.Web.SessionState.HttpSessionState.Abandon%2A> method is called, or the ASP.NET application is shut down, the session <xref:System.Web.SessionState.SessionStateModule.End> event is raised. You can use this event to perform any necessary cleanup. The <xref:System.Web.SessionState.SessionStateModule.End> event is raised only when the session state `mode` is set to <xref:System.Web.SessionState.SessionStateMode.InProc>.  
   
  To improve performance, sessions that use cookies do not allocate session storage until data is actually stored in the <xref:System.Web.UI.Page.Session%2A> object. For more information, see the <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> property.  
   
@@ -32,7 +34,7 @@
   
  Session values are stored in memory on the Web server, by default. You can also store session values in a SQL Server database, an ASP.NET state server, or a custom server. This enables you to preserve session values in cases where the ASP.NET or IIS process or the ASP.NET application restarts and to make session values available across all the servers in a Web farm. This behavior is configured by setting the `mode` attribute to a valid <xref:System.Web.SessionState.SessionStateMode> value in the  element of your application configuration. For more information, see [Session-State Modes](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4).  
   
- Alternatives to session state include application state (see the <xref:System.Web.HttpApplication.Application%2A> property) and the ASP.NET cache (see the <xref:System.Web.Caching> namespace), which store variables that can be accessed by all users of an ASP.NET application; the ASP.NET profile (see the <xref:System.Web.Profile> namespace), which persists user values in a data store without expiring them using a time-out; ASP.NET <xref:System.Web.UI.WebControls?displayProperty=fullName>, which persist control values in the <xref:System.Web.UI.Control.ViewState%2A>; <xref:System.Web.HttpResponse.Cookies%2A>; the <xref:System.Web.HttpRequest.QueryString%2A> property; and fields on an HTML form that are available from an HTTP `POST` using the <xref:System.Web.HttpRequest.Form%2A> collection. For more details on the differences between session state and other state-management alternatives, see [ASP.NET State Management Recommendations](http://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732).  
+ Alternatives to session state include application state (see the <xref:System.Web.HttpApplication.Application%2A> property) and the ASP.NET cache (see the <xref:System.Web.Caching> namespace), which store variables that can be accessed by all users of an ASP.NET application; the ASP.NET profile (see the <xref:System.Web.Profile> namespace), which persists user values in a data store without expiring them using a time-out; ASP.NET <xref:System.Web.UI.WebControls?displayProperty=nameWithType>, which persist control values in the <xref:System.Web.UI.Control.ViewState%2A>; <xref:System.Web.HttpResponse.Cookies%2A>; the <xref:System.Web.HttpRequest.QueryString%2A> property; and fields on an HTML form that are available from an HTTP `POST` using the <xref:System.Web.HttpRequest.Form%2A> collection. For more details on the differences between session state and other state-management alternatives, see [ASP.NET State Management Recommendations](http://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732).  
   
    
   
@@ -42,17 +44,21 @@
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[HttpSessionState#30](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/session2cs.aspx#30)]  -->
- <!-- TODO: review snippet reference [!code-vb[HttpSessionState#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/session2vb.aspx#30)]  -->  
+ [!code-aspx-csharp[HttpSessionState#30](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/session2cs.aspx#30)]
+ [!code-aspx-vb[HttpSessionState#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/session2vb.aspx#30)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="N:System.Web.Profile" />
+    <altmember cref="N:System.Web.Caching" />
   </Docs>
   <Members>
     <Member MemberName="Abandon">
       <MemberSignature Language="C#" Value="public void Abandon ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abandon() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Abandon" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Abandon ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Abandon();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -72,7 +78,7 @@
   
  Session identifiers for abandoned or expired sessions are recycled by default. That is, if a request is made that includes the session identifier for an expired or abandoned session, a new session is started using the same session identifier. You can disable this by setting `regenerateExpiredSessionId` attribute of the  configuration element to `true`. For more information, see [Session Identifiers](http://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb).  
   
- The <xref:System.Web.SessionState.SessionStateModule.End> event is supported only when the <xref:System.Web.SessionState.HttpSessionState.Mode%2A> property is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ The <xref:System.Web.SessionState.SessionStateModule.End> event is supported only when the <xref:System.Web.SessionState.HttpSessionState.Mode%2A> property is set to <xref:System.Web.SessionState.SessionStateMode.InProc>.  
   
  ]]></format>
         </remarks>
@@ -82,6 +88,8 @@
       <MemberSignature Language="C#" Value="public void Add (string name, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Add(System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (name As String, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::String ^ name, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -112,8 +120,8 @@
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]  -->
- <!-- TODO: review snippet reference [!code-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  -->  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
   
  ]]></format>
         </remarks>
@@ -123,6 +131,8 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -141,6 +151,8 @@
       <MemberSignature Language="C#" Value="public int CodePage { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CodePage" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.CodePage" />
+      <MemberSignature Language="VB.NET" Value="Public Property CodePage As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int CodePage { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -168,6 +180,8 @@
       <MemberSignature Language="C#" Value="public System.Web.SessionState.HttpSessionState Contents { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.HttpSessionState Contents" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Contents" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Contents As HttpSessionState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::SessionState::HttpSessionState ^ Contents { System::Web::SessionState::HttpSessionState ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -201,6 +215,8 @@
       <MemberSignature Language="C#" Value="public System.Web.HttpCookieMode CookieMode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.HttpCookieMode CookieMode" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.CookieMode" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CookieMode As HttpCookieMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpCookieMode CookieMode { System::Web::HttpCookieMode get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -216,12 +232,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> is `true`, the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property returns <xref:System.Web.HttpCookieMode>; otherwise the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property returns <xref:System.Web.HttpCookieMode>.  
+ When <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> is `true`, the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property returns <xref:System.Web.HttpCookieMode.UseUri>; otherwise the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property returns <xref:System.Web.HttpCookieMode.UseCookies>.  
   
    
   
 ## Examples  
- The following code example sets the `cookieless` session attribute to `true` in the Web.config file. For this sample application configuration, the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property would return <xref:System.Web.HttpCookieMode>.  
+ The following code example sets the `cookieless` session attribute to `true` in the Web.config file. For this sample application configuration, the <xref:System.Web.SessionState.HttpSessionState.CookieMode%2A> property would return <xref:System.Web.HttpCookieMode.UseUri>.  
   
 ```  
 <configuration>  
@@ -242,7 +258,11 @@
       <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.CopyTo(System.Array,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CopyTo(Array ^ array, int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -265,7 +285,12 @@
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -283,7 +308,12 @@
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -301,8 +331,8 @@
 ## Examples  
  The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add%2A> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove%2A> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]  -->
- <!-- TODO: review snippet reference [!code-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  -->  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
   
  ]]></format>
         </remarks>
@@ -312,6 +342,8 @@
       <MemberSignature Language="C#" Value="public bool IsCookieless { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCookieless" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsCookieless" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsCookieless As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsCookieless { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -373,6 +405,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public bool IsNewSession { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsNewSession" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsNewSession" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsNewSession As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsNewSession { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -392,6 +426,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -411,7 +447,12 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsSynchronized" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSynchronized As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSynchronized { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.IsSynchronized</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -426,10 +467,21 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets or sets individual session values.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(index As Integer) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[int] { System::Object ^ get(int index); void set(int index, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -452,6 +504,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(name As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::String ^] { System::Object ^ get(System::String ^ name); void set(System::String ^ name, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -474,6 +528,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameObjectCollectionBase.KeysCollection Keys { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameObjectCollectionBase/KeysCollection Keys" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Keys" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Keys As NameObjectCollectionBase.KeysCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameObjectCollectionBase::KeysCollection ^ Keys { System::Collections::Specialized::NameObjectCollectionBase::KeysCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -492,6 +548,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public int LCID { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 LCID" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.LCID" />
+      <MemberSignature Language="VB.NET" Value="Public Property LCID As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int LCID { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -519,6 +577,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public System.Web.SessionState.SessionStateMode Mode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.SessionState.SessionStateMode Mode" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Mode" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Mode As SessionStateMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::SessionState::SessionStateMode Mode { System::Web::SessionState::SessionStateMode get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -534,12 +594,12 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For information about how to configure your server for <xref:System.Web.SessionState.SessionStateMode> or <xref:System.Web.SessionState.SessionStateMode> session-state storage, see [ASP.NET Session State Overview](http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc).  
+ For information about how to configure your server for <xref:System.Web.SessionState.SessionStateMode.StateServer> or <xref:System.Web.SessionState.SessionStateMode.SQLServer> session-state storage, see [ASP.NET Session State Overview](http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc).  
   
    
   
 ## Examples  
- The following code example sets the `mode` session attribute to <xref:System.Web.SessionState.SessionStateMode> in the Web.config file. For SQL Server session mode, the `sqlConnectionString` attribute is also required.  
+ The following code example sets the `mode` session attribute to <xref:System.Web.SessionState.SessionStateMode.SQLServer> in the Web.config file. For SQL Server session mode, the `sqlConnectionString` attribute is also required.  
   
 ```  
 <configuration>  
@@ -561,6 +621,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public void Remove (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -586,8 +648,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
 ## Examples  
  The following example shows how to store values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Add%2A> method. It also shows how to remove values in session state by using the <xref:System.Web.SessionState.HttpSessionState.Remove%2A> method. A <xref:System.Web.UI.WebControls.Repeater> control is used to display the contents of session state on the Web page. The <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A> method is used to iterate through the session-state collection and populate the <xref:System.Web.UI.WebControls.Repeater> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]  -->
- <!-- TODO: review snippet reference [!code-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  -->  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
   
  ]]></format>
         </remarks>
@@ -597,6 +659,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public void RemoveAll ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAll() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.RemoveAll" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAll ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAll();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -622,6 +686,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -649,6 +715,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public string SessionID { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SessionID" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.SessionID" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SessionID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ SessionID { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -666,7 +734,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
 ## Remarks  
  The <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> property is used to uniquely identify a browser with session data on the server. The <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> value is randomly generated by ASP.NET and stored in a non-expiring session cookie in the browser. The <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> value is then sent in a cookie with each request to the ASP.NET application.  
   
- If you want to disable the use of cookies in your ASP.NET application and still make use of session state, you can configure your application to store the session identifier in the URL instead of a cookie by setting the `cookieless` attribute of the  configuration element to `true`, or to <xref:System.Web.HttpCookieMode>, in the Web.config file for your application. You can have ASP.NET determine whether cookies are supported by the browser by specifying a value of <xref:System.Web.HttpCookieMode> for the `cookieless` attribute. You can also have ASP.NET determine whether cookies are enabled for the browser by specifying a value of <xref:System.Web.HttpCookieMode> for the `cookieless` attribute. If cookies are supported when <xref:System.Web.HttpCookieMode> is specified, or enabled when <xref:System.Web.HttpCookieMode> is specified, then the session identifier will be stored in a cookie; otherwise the session identifier will be stored in the URL. For more information, see the <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> property.  
+ If you want to disable the use of cookies in your ASP.NET application and still make use of session state, you can configure your application to store the session identifier in the URL instead of a cookie by setting the `cookieless` attribute of the  configuration element to `true`, or to <xref:System.Web.HttpCookieMode.UseUri>, in the Web.config file for your application. You can have ASP.NET determine whether cookies are supported by the browser by specifying a value of <xref:System.Web.HttpCookieMode.UseDeviceProfile> for the `cookieless` attribute. You can also have ASP.NET determine whether cookies are enabled for the browser by specifying a value of <xref:System.Web.HttpCookieMode.AutoDetect> for the `cookieless` attribute. If cookies are supported when <xref:System.Web.HttpCookieMode.UseDeviceProfile> is specified, or enabled when <xref:System.Web.HttpCookieMode.AutoDetect> is specified, then the session identifier will be stored in a cookie; otherwise the session identifier will be stored in the URL. For more information, see the <xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> property.  
   
  The <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> is sent between the server and the browser in clear text, either in a cookie or in the URL. As a result, an unwanted source could gain access to the session of another user by obtaining the <xref:System.Web.SessionState.HttpSessionState.SessionID%2A> value and including it in requests to the server. If you are storing private or sensitive information in session state, it is recommended that you use SSL to encrypt any communication between the browser and server that includes the <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>.  
   
@@ -698,6 +766,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public System.Web.HttpStaticObjectsCollection StaticObjects { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpStaticObjectsCollection StaticObjects" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.StaticObjects" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StaticObjects As HttpStaticObjectsCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpStaticObjectsCollection ^ StaticObjects { System::Web::HttpStaticObjectsCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -713,7 +783,7 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If an object on a page does not support serialization and <xref:System.Web.SessionState.HttpSessionState.Mode%2A> is out-of-process (<xref:System.Web.SessionState.SessionStateMode> or <xref:System.Web.SessionState.SessionStateMode>), the object will not be created and will not be added to this collection.  
+ If an object on a page does not support serialization and <xref:System.Web.SessionState.HttpSessionState.Mode%2A> is out-of-process (<xref:System.Web.SessionState.SessionStateMode.SQLServer> or <xref:System.Web.SessionState.SessionStateMode.StateServer>), the object will not be created and will not be added to this collection.  
   
  The <xref:System.Web.SessionState.HttpSessionState.StaticObjects%2A> property is provided for compatibility with earlier versions of ASP.  
   
@@ -733,7 +803,12 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.SyncRoot" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SyncRoot As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ SyncRoot { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.SyncRoot</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -751,6 +826,8 @@ http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx
       <MemberSignature Language="C#" Value="public int Timeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
       <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Timeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property Timeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Timeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

@@ -1,7 +1,9 @@
-<Type Name="IDbDataAdapter" FullName="System.Data.IDbDataAdapter">
+﻿<Type Name="IDbDataAdapter" FullName="System.Data.IDbDataAdapter">
   <TypeSignature Language="C#" Value="public interface IDbDataAdapter : System.Data.IDataAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDbDataAdapter implements class System.Data.IDataAdapter" />
   <TypeSignature Language="DocId" Value="T:System.Data.IDbDataAdapter" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IDbDataAdapter&#xA;Implements IDataAdapter" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IDbDataAdapter : System::Data::IDataAdapter" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -22,7 +28,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Data.IDbDataAdapter> interface inherits from the <xref:System.Data.IDataAdapter> interface and allows an object to create a DataAdapter designed for use with a relational database. The <xref:System.Data.IDbDataAdapter> interface and, optionally, the utility class, <xref:System.Data.Common.DbDataAdapter>, allow an inheriting class to implement a DataAdapter class, which represents the bridge between a data source and a <xref:System.Data.DataSet>. For more information about DataAdapter classes, see [Populating a DataSet from a DataAdapter](~/docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md). For more information about implementing .NET Framework data providers, see [&#91;\<topic://cpconimplementingnetdataprovider>&#93;](http://msdn.microsoft.com/en-us/a9fa1926-071b-4c6f-997d-a16bac633852).  
+ The <xref:System.Data.IDbDataAdapter> interface inherits from the <xref:System.Data.IDataAdapter> interface and allows an object to create a DataAdapter designed for use with a relational database. The <xref:System.Data.IDbDataAdapter> interface and, optionally, the utility class, <xref:System.Data.Common.DbDataAdapter>, allow an inheriting class to implement a DataAdapter class, which represents the bridge between a data source and a <xref:System.Data.DataSet>. For more information about DataAdapter classes, see [Populating a DataSet from a DataAdapter](~/docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md). For more information about implementing .NET Framework data providers, see [&#91;\<topic://cpconimplementingnetdataprovider>&#93;](http://msdn.microsoft.com/library/a9fa1926-071b-4c6f-997d-a16bac633852).  
   
  An application does not create an instance of the <xref:System.Data.IDbDataAdapter> interface directly, but creates an instance of a class that inherits <xref:System.Data.IDbDataAdapter> and <xref:System.Data.Common.DbDataAdapter>.  
   
@@ -43,48 +49,27 @@
   
  When you inherit from the <see cref="T:System.Data.IDbDataAdapter" /> interface, you should implement the following constructors:  
   
- <list type="table">  
-<listheader>  
-<term> Item  
+ <list type="table"><listheader><term> Item  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> PrvDataAdapter()  
+ </description></listheader><item><term> PrvDataAdapter()  
   
- </term>  
-<description> Initializes a new instance of the PrvDataAdapter class.  
+ </term><description> Initializes a new instance of the PrvDataAdapter class.  
   
- </description>  
-</item>  
-<item>  
-<term> PrvDataAdapter(PrvCommand selectCommand)  
+ </description></item><item><term> PrvDataAdapter(PrvCommand selectCommand)  
   
- </term>  
-<description> Initializes a new instance of the PrvDataAdapter class with the specified SQL SELECT statement.  
+ </term><description> Initializes a new instance of the PrvDataAdapter class with the specified SQL SELECT statement.  
   
- </description>  
-</item>  
-<item>  
-<term> PrvDataAdapter(string selectCommandText, string selectConnectionString)  
+ </description></item><item><term> PrvDataAdapter(string selectCommandText, string selectConnectionString)  
   
- </term>  
-<description> Initializes a new instance of the PrvDataAdapter class with an SQL SELECT statement and a connection string.  
+ </term><description> Initializes a new instance of the PrvDataAdapter class with an SQL SELECT statement and a connection string.  
   
- </description>  
-</item>  
-<item>  
-<term> PrvDataAdapter(string selectCommandText, PrvConnection selectConnection)  
+ </description></item><item><term> PrvDataAdapter(string selectCommandText, PrvConnection selectConnection)  
   
- </term>  
-<description> Initializes a new instance of the PrvDataAdapter class with an SQL SELECT statement and a PrvConnection object.  
+ </term><description> Initializes a new instance of the PrvDataAdapter class with an SQL SELECT statement and a PrvConnection object.  
   
- </description>  
-</item>  
-</list></para>
+ </description></item></list></para>
     </block>
   </Docs>
   <Members>
@@ -92,6 +77,8 @@
       <MemberSignature Language="C#" Value="public System.Data.IDbCommand DeleteCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand DeleteCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.IDbDataAdapter.DeleteCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property DeleteCommand As IDbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::IDbCommand ^ DeleteCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -101,6 +88,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -132,6 +123,8 @@
       <MemberSignature Language="C#" Value="public System.Data.IDbCommand InsertCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand InsertCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.IDbDataAdapter.InsertCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsertCommand As IDbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::IDbCommand ^ InsertCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -141,6 +134,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -175,6 +172,8 @@
       <MemberSignature Language="C#" Value="public System.Data.IDbCommand SelectCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand SelectCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.IDbDataAdapter.SelectCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property SelectCommand As IDbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::IDbCommand ^ SelectCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -184,6 +183,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -215,6 +218,8 @@
       <MemberSignature Language="C#" Value="public System.Data.IDbCommand UpdateCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand UpdateCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.IDbDataAdapter.UpdateCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property UpdateCommand As IDbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::IDbCommand ^ UpdateCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -224,6 +229,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>

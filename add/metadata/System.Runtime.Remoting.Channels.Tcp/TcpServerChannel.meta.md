@@ -1,79 +1,111 @@
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.ChannelName
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor(System.String,System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.GetUrlsForUri(System.String)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StartListening(System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.GetChannelUri
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IServerChannelSinkProvider,System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.StopListening(System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor(System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor(System.String,System.Int32,System.Runtime.Remoting.Channels.IServerChannelSinkProvider)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.ChannelPriority
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.ChannelData
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.Parse(System.String,System.String@)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IServerChannelSinkProvider)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Tcp.TcpServerChannel.IsSecured
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

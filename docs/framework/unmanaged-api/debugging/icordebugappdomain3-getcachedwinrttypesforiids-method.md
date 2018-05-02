@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs Method | Microsoft Docs"
+title: "ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain3.GetCachedWinRTTypesForIIDs"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs method, [.NET Framework debugging]"
   - "GetCachedWinRTTypesForIIDs method, ICorDebugAppDomain3 interface [.NET Framework debugging]"
 ms.assetid: 23682ca0-1bcf-48e6-996e-69f7ba337682
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs Method
 Gets an enumerator for cached [!INCLUDE[wrt](../../../../includes/wrt-md.md)] types in an application domain based on their interface identifiers.  

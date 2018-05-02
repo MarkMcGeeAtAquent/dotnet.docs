@@ -1,8 +1,8 @@
 ---
-title: "TreeView | Microsoft Docs"
+title: "TreeView"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -20,6 +20,8 @@ caps.latest.revision: 64
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # TreeView
 The <xref:System.Windows.Controls.TreeView> control displays information in a hierarchical structure by using collapsible nodes.  

@@ -1,13 +1,16 @@
-<Type Name="TypeAccessException" FullName="System.TypeAccessException">
+﻿<Type Name="TypeAccessException" FullName="System.TypeAccessException">
   <TypeSignature Language="C#" Value="public class TypeAccessException : TypeLoadException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TypeAccessException extends System.TypeLoadException" />
   <TypeSignature Language="DocId" Value="T:System.TypeAccessException" />
+  <TypeSignature Language="VB.NET" Value="Public Class TypeAccessException&#xA;Inherits TypeLoadException" />
+  <TypeSignature Language="C++ CLI" Value="public ref class TypeAccessException : TypeLoadException" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -28,7 +31,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.TypeAccessException> is thrown when a method attempts to cast an object to a type that is not accessible from the method. For example, an anonymously hosted dynamic method cannot access a security-critical type because the method is [transparent](~/docs/framework/misc/security-transparent-code.md). If the method contains a <xref:System.Reflection.Emit.OpCodes.Castclass?displayProperty=fullName> instruction that casts an object to a security-critical type, or to a generic type that has a security-critical type as one of its type parameters, <xref:System.TypeAccessException> is thrown by the JIT compiler.  
+ <xref:System.TypeAccessException> is thrown when a method attempts to cast an object to a type that is not accessible from the method. For example, an anonymously hosted dynamic method cannot access a security-critical type because the method is [transparent](~/docs/framework/misc/security-transparent-code.md). If the method contains a <xref:System.Reflection.Emit.OpCodes.Castclass?displayProperty=nameWithType> instruction that casts an object to a security-critical type, or to a generic type that has a security-critical type as one of its type parameters, <xref:System.TypeAccessException> is thrown by the JIT compiler.  
   
  Similarly, <xref:System.TypeAccessException> is thrown for a dynamic method that uses an internal type from another assembly. A method might not have access to its containing type, its return type, or one of its parameter types.  
   
@@ -38,10 +41,25 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.TypeAccessException" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TypeAccessException ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.TypeAccessException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TypeAccessException();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -49,6 +67,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -83,6 +102,8 @@
       <MemberSignature Language="C#" Value="public TypeAccessException (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.TypeAccessException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TypeAccessException(System::String ^ message);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -90,6 +111,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -125,6 +147,8 @@
       <MemberSignature Language="C#" Value="protected TypeAccessException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.TypeAccessException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; TypeAccessException(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -134,6 +158,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -147,7 +175,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor is called during deserialization to reconstitute the exception object that was transmitted over a stream. For more information, see [XML and SOAP Serialization](~/docs/framework/serialization/xml-and-soap-serialization.md).  
+ This constructor is called during deserialization to reconstitute the exception object that was transmitted over a stream. For more information, see [XML and SOAP Serialization](~/docs/standard/serialization/xml-and-soap-serialization.md).  
   
  ]]></format>
         </remarks>
@@ -157,6 +185,8 @@
       <MemberSignature Language="C#" Value="public TypeAccessException (string message, Exception inner);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.TypeAccessException.#ctor(System.String,System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String, inner As Exception)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TypeAccessException(System::String ^ message, Exception ^ inner);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -164,6 +194,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataDispenserEx::FindAssembly Method | Microsoft Docs"
+title: "IMetaDataDispenserEx::FindAssembly Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataDispenserEx.FindAssembly"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataDispenserEx::FindAssembly"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FindAssembly method [.NET Framework metadata]"
   - "IMetaDataDispenserEx::FindAssembly method [.NET Framework metadata]"
 ms.assetid: 3afe7252-5f28-48d9-a74d-1927566c404c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataDispenserEx::FindAssembly Method
 This method is not implemented. If called, it returns E_NOTIMPL.  
@@ -76,5 +79,5 @@ HRESULT FindAssembly(
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataDispenserEx Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)   
+ [IMetaDataDispenserEx Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
  [IMetaDataDispenser Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

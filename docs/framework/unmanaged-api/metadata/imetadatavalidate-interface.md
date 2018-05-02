@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataValidate Interface | Microsoft Docs"
+title: "IMetaDataValidate Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataValidate"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataValidate"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataValidate interface [.NET Framework metadata]"
 ms.assetid: db98608a-e85c-4f50-9d7b-5f57a426ddb6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataValidate Interface
 Provides methods to validate metadata signatures.  

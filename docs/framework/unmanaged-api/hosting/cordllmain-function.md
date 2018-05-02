@@ -1,5 +1,5 @@
 ---
-title: "_CorDllMain Function | Microsoft Docs"
+title: "_CorDllMain Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "_CorDllMain"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "_CorDllMain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "_CorDllMain function [.NET Framework hosting]"
 ms.assetid: bc7b51cf-39d3-48ec-a5cb-2f179fbefff8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 23
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # _CorDllMain Function
 Initializes the common language runtime (CLR), locates the managed entry point in the DLL assembly's CLR header, and begins execution.  

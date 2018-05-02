@@ -1,47 +1,61 @@
 ---
 uid: System.Printing.PrintJobInfoCollection
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.#ctor(System.Printing.PrintQueue,System.String[])
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.Dispose
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.GetNonGenericEnumerator
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.Dispose(System.Boolean)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.GetEnumerator
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintJobInfoCollection.Add(System.Printing.PrintSystemJobInfo)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

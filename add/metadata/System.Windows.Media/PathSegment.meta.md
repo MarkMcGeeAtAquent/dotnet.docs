@@ -1,46 +1,60 @@
 ---
 uid: System.Windows.Media.PathSegment
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.Clone
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.CloneCurrentValue
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.IsStrokedProperty
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.IsStroked
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.IsSmoothJoinProperty
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.PathSegment.IsSmoothJoin
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

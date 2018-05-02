@@ -1,5 +1,5 @@
 ---
-title: "CorDebugDebugEventKind Enumeration | Microsoft Docs"
+title: "CorDebugDebugEventKind Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugDebugEventKind"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: 6075a6cd-97e6-4472-a090-0dd14860d1f3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugDebugEventKind Enumeration
 Indicates the type of event whose information is decoded by the [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) method.  
@@ -28,7 +31,6 @@ Indicates the type of event whose information is decoded by the [DecodeEvent](..
 ## Syntax  
   
 ```  
-  
 typedef enum CorDebugDebugEventKind {  
     DEBUG_EVENT_KIND_MODULE_LOADED                          = 1,  
     DEBUG_EVENT_KIND_MODULE_UNLOADED                        = 2,  
@@ -37,7 +39,6 @@ typedef enum CorDebugDebugEventKind {
     DEBUG_EVENT_KIND_MANAGED_EXCEPTION_CATCH_HANDLER_FOUND  = 5,  
     DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED            = 6  
 } CorDebugRecordFormat;  
-  
 ```  
   
 ## Members  

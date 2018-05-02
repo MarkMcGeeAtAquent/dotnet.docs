@@ -1,19 +1,27 @@
 ---
 uid: System.Runtime.Serialization.ObjectIDGenerator
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.ObjectIDGenerator.HasId(System.Object,System.Boolean@)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.ObjectIDGenerator.GetId(System.Object,System.Boolean@)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.ObjectIDGenerator.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

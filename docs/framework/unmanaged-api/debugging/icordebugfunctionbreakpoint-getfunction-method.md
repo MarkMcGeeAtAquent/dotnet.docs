@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunctionBreakpoint::GetFunction Method | Microsoft Docs"
+title: "ICorDebugFunctionBreakpoint::GetFunction Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunctionBreakpoint.GetFunction"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunctionBreakpoint::GetFunction"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFunctionBreakpoint::GetFunction method [.NET Framework debugging]"
   - "GetFunction method, ICorDebugFunctionBreakpoint interface [.NET Framework debugging]"
 ms.assetid: 2a62dae5-dd8a-4696-b817-0e1e586c24a0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunctionBreakpoint::GetFunction Method
 Gets an interface pointer to an ICorDebugFunction that references the function in which the breakpoint is set.  

@@ -1,5 +1,5 @@
 ---
-title: "How to: Customize Data Binding Behaviors (WCF Data Services) | Microsoft Docs"
+title: "How to: Customize Data Binding Behaviors (WCF Data Services)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework-oob"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF Data Services, customizing"
   - "WCF Data Services, data binding"
 ms.assetid: 40476b89-8941-4771-8d21-2fe430c85a9d
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Customize Data Binding Behaviors (WCF Data Services)
 With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can supply custom logic that is called by the <xref:System.Data.Services.Client.DataServiceCollection%601> when an object is added or removed from the binding collection or when a property change is detected. This custom logic is provided as methods, referenced as <xref:System.Func%602> delegates, that return a value of `false` when the default behavior should still be performed when the custom method completes and `true` when subsequent processing of the event should be stopped.  
@@ -33,7 +38,7 @@ With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can supply
 ## Example  
  The following XAML defines the window for the previous example.  
   
- [!code-xml[Astoria Northwind Client#WpfDataBindingCustomXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml#wpfdatabindingcustomxaml)]  
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingCustomXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderscustom.xaml#wpfdatabindingcustomxaml)]  
   
 ## See Also  
  [WCF Data Services Client Library](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

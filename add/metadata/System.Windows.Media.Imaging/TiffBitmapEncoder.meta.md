@@ -1,20 +1,26 @@
 ---
 uid: System.Windows.Media.Imaging.TiffBitmapEncoder
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.Imaging.TiffBitmapEncoder.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Media.Imaging.TiffBitmapEncoder.Compression
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

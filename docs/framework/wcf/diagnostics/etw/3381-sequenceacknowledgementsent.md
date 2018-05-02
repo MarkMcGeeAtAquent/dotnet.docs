@@ -1,8 +1,8 @@
 ---
-title: "3381 - SequenceAcknowledgementSent | Microsoft Docs"
+title: "3381 - SequenceAcknowledgementSent"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 42630d32-c24d-41b9-9106-9ca1a3e2f7d8
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3381 - SequenceAcknowledgementSent
 ## Properties  

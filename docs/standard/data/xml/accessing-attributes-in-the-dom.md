@@ -1,5 +1,5 @@
 ---
-title: "Accessing Attributes in the DOM | Microsoft Docs"
+title: "Accessing Attributes in the DOM"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Accessing Attributes in the DOM
 Attributes are properties of the element, not children of the element. This distinction is important because of the methods used to navigate sibling, parent, and child nodes of the XML Document Object Model (DOM). For example, the **PreviousSibling** and **NextSibling** methods are not used to navigate from an element to an attribute or between attributes. Instead, an attribute is a property of an element and is owned by an element, has an **OwnerElement** property and not a **parentNode** property, and has distinct methods of navigation.  
@@ -39,7 +40,7 @@ Public Class Sample
     Public Shared Sub Main()  
   
         Dim doc As XmlDocument = New XmlDocument()  
-        doc.LoadXml("\<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" & _  
+        doc.LoadXml("<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" & _  
                "<title>The Handmaid's Tale</title>" & _  
                "<price>14.95</price>" & _  
                "</book>")  
@@ -84,7 +85,7 @@ public class Sample
     public static void Main()  
     {  
         XmlDocument doc = new XmlDocument();  
-        doc.LoadXml("\<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" +  
+        doc.LoadXml("<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" +  
                       "<title>The Handmaid's Tale</title>" +  
                       "<price>14.95</price>" +  
                       "</book>");  
@@ -138,8 +139,8 @@ sale item
   
 ### Input  
   
-```  
-\<!-- XML fragment -->  
+```xml  
+<!-- XML fragment -->  
 <book genre="novel">  
   <title>Pride And Prejudice</title>  
 </book>  
@@ -195,7 +196,7 @@ public class Sample
 ```  
   
 ## Retrieving an Individual Attribute Node  
- To retrieve a single attribute node from an element, the <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=fullName> method is used. It returns an object of type **XmlAttribute**. Once you have an **XmlAttribute**, all the methods and properties available in the <xref:System.Xml.XmlAttribute?displayProperty=fullName> class are available on that object, such as finding the **OwnerElement**.  
+ To retrieve a single attribute node from an element, the <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> method is used. It returns an object of type **XmlAttribute**. Once you have an **XmlAttribute**, all the methods and properties available in the <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> class are available on that object, such as finding the **OwnerElement**.  
   
 ```vb  
 Imports System  
@@ -207,7 +208,7 @@ Public Class Sample
     Public Shared Sub Main()  
   
         Dim doc As XmlDocument = New XmlDocument()  
-        doc.LoadXml("\<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" & _  
+        doc.LoadXml("<book genre='novel' ISBN='1-861001-57-5' misc='sale item'>" & _  
                "<title>The Handmaid's Tale</title>" & _  
                "<price>14.95</price>" & _  
                "</book>")  
@@ -239,7 +240,7 @@ using System.Xml;
       public static void Main()  
       {  
     XmlDocument doc = new XmlDocument();  
-     doc.LoadXml("\<book genre='novel' ISBN='1-861003-78' misc='sale item'>" +  
+     doc.LoadXml("<book genre='novel' ISBN='1-861003-78' misc='sale item'>" +  
                    "<title>The Handmaid's Tale</title>" +  
                    "<price>14.95</price>" +  
                    "</book>");   

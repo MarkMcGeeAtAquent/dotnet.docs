@@ -1,27 +1,35 @@
 ---
 uid: System.Activities.WorkflowApplicationCompletedEventArgs
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Activities.WorkflowApplicationCompletedEventArgs.Outputs
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Activities.WorkflowApplicationCompletedEventArgs.CompletionState
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Activities.WorkflowApplicationCompletedEventArgs.TerminationException
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

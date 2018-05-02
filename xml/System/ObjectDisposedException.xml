@@ -1,13 +1,16 @@
-<Type Name="ObjectDisposedException" FullName="System.ObjectDisposedException">
+﻿<Type Name="ObjectDisposedException" FullName="System.ObjectDisposedException">
   <TypeSignature Language="C#" Value="public class ObjectDisposedException : InvalidOperationException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ObjectDisposedException extends System.InvalidOperationException" />
   <TypeSignature Language="DocId" Value="T:System.ObjectDisposedException" />
+  <TypeSignature Language="VB.NET" Value="Public Class ObjectDisposedException&#xA;Inherits InvalidOperationException" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ObjectDisposedException : InvalidOperationException" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -35,14 +38,14 @@
 ## Remarks  
  An <xref:System.ObjectDisposedException> is thrown when you try to access a member of an object that implements the <xref:System.IDisposable> interface, and that object has been disposed. Typically, this exception is caused by one of the following conditions:  
   
--   You've called an object's `Dispose` method, and you’re trying to access an instance member that gets or sets the object's state. The following example illustrates the <xref:System.ObjectDisposedException> that is thrown when you try to reset the frequency of timer notifications after you call the <xref:System.Threading.Timer.Dispose%2A?displayProperty=fullName> method.  
+-   You've called an object's `Dispose` method, and you’re trying to access an instance member that gets or sets the object's state. The following example illustrates the <xref:System.ObjectDisposedException> that is thrown when you try to reset the frequency of timer notifications after you call the <xref:System.Threading.Timer.Dispose%2A?displayProperty=nameWithType> method.  
   
      [!code-csharp[System.ObjectDisposedException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.objectdisposedexception/cs/dispose1.cs#1)]
      [!code-vb[System.ObjectDisposedException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.objectdisposedexception/vb/dispose1.vb#1)]  
   
--   You've called an object's `Close` method, and you’re trying to access an instance member that gets or sets the object's state. Often, the `Close` method provides a type's public implementation of the <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> method.  
+-   You've called an object's `Close` method, and you’re trying to access an instance member that gets or sets the object's state. Often, the `Close` method provides a type's public implementation of the <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> method.  
   
--   You've called an object's `Dispose` method multiple times. Typically, this doesn’t throw an exception. However, depending on how a type implements <xref:System.IDisposable.Dispose%2A?displayProperty=fullName>, it may not allow multiple calls to `Dispose`.  
+-   You've called an object's `Dispose` method multiple times. Typically, this doesn’t throw an exception. However, depending on how a type implements <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, it may not allow multiple calls to `Dispose`.  
   
  In most cases, this exception results from developer error. Instead of handling the error in a `try`/`catch` block, you should correct the error, typically by reinstantiating the object.  
   
@@ -64,12 +67,28 @@ Caught:
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.IDisposable" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.ObjectDisposedException" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ObjectDisposedException (string objectName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string objectName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ObjectDisposedException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (objectName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ObjectDisposedException(System::String ^ objectName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -77,6 +96,7 @@ Caught:
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -111,6 +131,8 @@ Caught:
       <MemberSignature Language="C#" Value="protected ObjectDisposedException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ObjectDisposedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ObjectDisposedException(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -120,6 +142,10 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -136,6 +162,8 @@ Caught:
       <MemberSignature Language="C#" Value="public ObjectDisposedException (string message, Exception innerException);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ObjectDisposedException.#ctor(System.String,System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String, innerException As Exception)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ObjectDisposedException(System::String ^ message, Exception ^ innerException);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -143,6 +171,7 @@ Caught:
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -175,6 +204,8 @@ Caught:
       <MemberSignature Language="C#" Value="public ObjectDisposedException (string objectName, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string objectName, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ObjectDisposedException.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (objectName As String, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ObjectDisposedException(System::String ^ objectName, System::String ^ message);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -182,6 +213,7 @@ Caught:
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -216,6 +248,8 @@ Caught:
       <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ObjectDisposedException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -225,6 +259,10 @@ Caught:
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -251,6 +289,8 @@ Caught:
       <MemberSignature Language="C#" Value="public override string Message { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Message" />
       <MemberSignature Language="DocId" Value="P:System.ObjectDisposedException.Message" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Message As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Message { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -258,6 +298,7 @@ Caught:
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -280,7 +321,7 @@ Caught:
 ## Remarks  
  If the <xref:System.ObjectDisposedException.ObjectName%2A> property is not `null`, the message includes the name of the object.  
   
- This property overrides <xref:System.Exception.Message%2A?displayProperty=fullName>.  
+ This property overrides <xref:System.Exception.Message%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -290,6 +331,8 @@ Caught:
       <MemberSignature Language="C#" Value="public string ObjectName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ObjectName" />
       <MemberSignature Language="DocId" Value="P:System.ObjectDisposedException.ObjectName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ObjectName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ObjectName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -297,6 +340,7 @@ Caught:
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -317,7 +361,7 @@ Caught:
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the current property is not `null` or <xref:System.String?displayProperty=fullName>, the value of this property is included in the string returned by the <xref:System.ObjectDisposedException.Message%2A> property.  
+ If the current property is not `null` or <xref:System.String.Empty?displayProperty=nameWithType>, the value of this property is included in the string returned by the <xref:System.ObjectDisposedException.Message%2A> property.  
   
  ]]></format>
         </remarks>

@@ -1,13 +1,17 @@
 ---
 uid: System.Drawing.Design.IToolboxItemProvider
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Drawing.Design.IToolboxItemProvider.Items
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

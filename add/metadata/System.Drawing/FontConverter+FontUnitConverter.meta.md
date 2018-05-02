@@ -1,25 +1,33 @@
 ---
 uid: System.Drawing.FontConverter.FontUnitConverter
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Drawing.FontConverter.FontUnitConverter.GetStandardValues
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Drawing.FontConverter.FontUnitConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Drawing.FontConverter.FontUnitConverter.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

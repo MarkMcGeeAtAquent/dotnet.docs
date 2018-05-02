@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILCode2::GetLocalVarSigToken Method | Microsoft Docs"
+title: "ICorDebugILCode2::GetLocalVarSigToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "ICorDebugILCode2.GetLocalVarSigToken"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "ICorDebugILCode2.GetLocalVarSigToken"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 17665b77-1342-4115-94fd-9f45b0ecfb0f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILCode2::GetLocalVarSigToken Method
 [Supported in the .NET Framework 4.5.2 and later versions]  
@@ -29,8 +34,7 @@ manager: "wpickett"
   
 ## Syntax  
   
-```vb  
-  
+```cpp
 HRESULT GetLocalVarSigToken(  
    [out] mdSignature *pmdSig  
 );  
@@ -52,5 +56,5 @@ HRESULT GetLocalVarSigToken(
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## See Also  
- [ICorDebugILCode2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)   
+ [ICorDebugILCode2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

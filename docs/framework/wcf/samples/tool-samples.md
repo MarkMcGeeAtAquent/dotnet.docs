@@ -1,8 +1,8 @@
 ---
-title: "Tool Samples | Microsoft Docs"
+title: "Tool Samples"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ccf90c64-31de-4a18-9208-28887735ce80
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Tool Samples
 This section contains [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] tools.  

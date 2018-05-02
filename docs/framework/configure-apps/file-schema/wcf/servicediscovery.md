@@ -1,8 +1,8 @@
 ---
-title: "&lt;serviceDiscovery&gt; | Microsoft Docs"
+title: "&lt;serviceDiscovery&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a3c68a4a-fc95-43c5-aacb-785936c0cf39
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;serviceDiscovery&gt;
 Specifies the discoverability of service endpoints.  
@@ -26,8 +28,23 @@ Specifies the discoverability of service endpoints.
   
 ## Syntax  
   
-```  
-<behaviors>  <serviceBehaviors>    <behavior name=String">      <serviceDiscovery>        <announcementEndpoints>              <endpoint name="String”                        kind="Type" />        </announcementEndpoints>        <discoveryEndpoints>              <endpoint name="String”                        kind="Type" />        </discoveryEndpoints>      </serviceDiscovery>    </behavior>  </serviceBehaviors></behaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <serviceDiscovery>
+        <announcementEndpoints>
+          <endpoint name="String" 
+                    kind="Type" />
+        </announcementEndpoints>
+        <discoveryEndpoints>
+          <endpoint name="String" 
+                    kind="Type" />
+        </discoveryEndpoints>
+      </serviceDiscovery>
+    </behavior>
+  </serviceBehaviors>
+</behaviors>  
 ```  
   
 ## Attributes and Elements  
@@ -55,8 +72,7 @@ Specifies the discoverability of service endpoints.
 ## Example  
  The following configuration example specifies that the CalculatorService to be discoverable, and optionally specifies the announcement endpoint to be used.  
   
-```  
-  
+```xml  
 <services>  
   <service name="CalculatorService"  
            behaviorConfiguration="CalculatorServiceBehavior">  
@@ -76,7 +92,6 @@ Specifies the discoverability of service endpoints.
     </behavior>  
   </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
 ## See Also  

@@ -1,31 +1,34 @@
 ---
-title: "ITypeName::GetAssemblyName Method | Microsoft Docs"
+title: "ITypeName::GetAssemblyName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeName.GetAssemblyName"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetAssemblyName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ITypeName::GetAssemblyName method [.NET Framework hosting]"
   - "GetAssemblyName method [.NET Framework hosting]"
 ms.assetid: 97801d99-f5f1-4a30-882f-959827093fac
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeName::GetAssemblyName Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

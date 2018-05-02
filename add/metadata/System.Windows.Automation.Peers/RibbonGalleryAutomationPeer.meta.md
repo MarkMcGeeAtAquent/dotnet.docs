@@ -1,7 +1,9 @@
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -13,35 +15,45 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.#ctor(System.Windows.Controls.Ribbon.RibbonGallery)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.GetHelpTextCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.GetAutomationControlTypeCore
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.CreateItemAutomationPeer(System.Object)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -53,21 +65,27 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.GetClassNameCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.GetChildrenCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.RibbonGalleryAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#GetSelection
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

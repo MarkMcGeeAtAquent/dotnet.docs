@@ -1,5 +1,5 @@
 ---
-title: "What&#39;s New in WPF Version 4.5 | Microsoft Docs"
+title: "What&#39;s New in WPF Version 4.5"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,16 +10,18 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "Windows Presentation Foundation, what's new"
-  - "WPF, what's new"
+  - "Windows Presentation Foundation [WPF], what's new"
+  - "WPF [WPF], what's new"
 ms.assetid: db086ae4-70bb-4862-95db-2eaca5216bc3
 caps.latest.revision: 55
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # What&#39;s New in WPF Version 4.5
-<a name="introduction"></a> Thistopic contains information about new and enhanced features in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] version 4.5.  
+<a name="introduction"></a> This topic contains information about new and enhanced features in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] version 4.5.  
   
  This topic contains the following sections:  
   
@@ -53,7 +55,7 @@ manager: "wpickett"
   
 <a name="ribbon_control"></a>   
 ## Ribbon control  
- WPF 4.5 ships with a <xref:System.Windows.Controls.Ribbon.Ribbon> control that hosts a Quick Access Toolbar, Application Menu, and tabs.  For more information, see the [Ribbon Overview](http://msdn.microsoft.com/library/2bdef092-190d-47e3-9440-e862b95dacaa).  
+ WPF 4.5 ships with a <xref:System.Windows.Controls.Ribbon.Ribbon> control that hosts a Quick Access Toolbar, Application Menu, and tabs.  For more information, see the [Ribbon Overview](/visualstudio/vsto/ribbon-overview).  
   
 <a name="grouped_virtualization"></a>   
 ## Improved performance when displaying large sets of grouped data  
@@ -62,9 +64,9 @@ manager: "wpickett"
 <a name="VirtualizingPanel"></a>   
 ## New features for the VirtualizingPanel  
   
-1.  You can specify whether a <xref:System.Windows.Controls.VirtualizingPanel>, such as the <xref:System.Windows.Controls.VirtualizingStackPanel>, displays partial items by using the <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> attached property. If <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> is set to <xref:System.Windows.Controls.ScrollUnit>, the <xref:System.Windows.Controls.VirtualizingPanel> will only display items that are completely visible. If <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> is set to <xref:System.Windows.Controls.ScrollUnit>, the <xref:System.Windows.Controls.VirtualizingPanel> can display partially visible items.  
+1.  You can specify whether a <xref:System.Windows.Controls.VirtualizingPanel>, such as the <xref:System.Windows.Controls.VirtualizingStackPanel>, displays partial items by using the <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> attached property. If <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> is set to <xref:System.Windows.Controls.ScrollUnit.Item>, the <xref:System.Windows.Controls.VirtualizingPanel> will only display items that are completely visible. If <xref:System.Windows.Controls.VirtualizingPanel.ScrollUnit%2A> is set to <xref:System.Windows.Controls.ScrollUnit.Pixel>, the <xref:System.Windows.Controls.VirtualizingPanel> can display partially visible items.  
   
-2.  You can specify the  size of the cache before and after the viewport when the <xref:System.Windows.Controls.VirtualizingPanel> is virtualizing by using the <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> attached property.  The cache is the amount of space above or below the viewport in which items are not virtualized.  Using a cache to avoid generating UI elements as they’re scrolled into view can improve performance. The cache is populated at a lower priority so that the application does not become unresponsive during the operation. The <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=fullName> property determines the unit of measurement that is used by <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=fullName>.  
+2.  You can specify the  size of the cache before and after the viewport when the <xref:System.Windows.Controls.VirtualizingPanel> is virtualizing by using the <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A> attached property.  The cache is the amount of space above or below the viewport in which items are not virtualized.  Using a cache to avoid generating UI elements as they’re scrolled into view can improve performance. The cache is populated at a lower priority so that the application does not become unresponsive during the operation. The <xref:System.Windows.Controls.VirtualizingPanel.CacheLengthUnit%2A?displayProperty=nameWithType> property determines the unit of measurement that is used by <xref:System.Windows.Controls.VirtualizingPanel.CacheLength%2A?displayProperty=nameWithType>.  
   
 <a name="static_properties"></a>   
 ## Binding to static properties  
@@ -86,7 +88,7 @@ manager: "wpickett"
   
 <a name="delay"></a>   
 ## Automatically updating the source of a data binding  
- If you use a data binding to update a data source, you can use the <xref:System.Windows.Data.BindingBase.Delay%2A> property to specify an amount of time to pass after the property changes on the target before the source updates.  For example, suppose that you have a <xref:System.Windows.Controls.Slider> that has its <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property data two-way bound to a property of a data object and the <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> property is set to <xref:System.Windows.Data.UpdateSourceTrigger>.  In this example, when the user moves the <xref:System.Windows.Controls.Slider>, the source updates for each pixel that the <xref:System.Windows.Controls.Slider> moves.  The source object typically needs the value of the slider only when the slider's <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> stops changing.  To prevent updating the source too often, use <xref:System.Windows.Data.BindingBase.Delay%2A> to specify that the source should not be updated until a certain amount of time elapses after the thumb stops moving.  
+ If you use a data binding to update a data source, you can use the <xref:System.Windows.Data.BindingBase.Delay%2A> property to specify an amount of time to pass after the property changes on the target before the source updates.  For example, suppose that you have a <xref:System.Windows.Controls.Slider> that has its <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property data two-way bound to a property of a data object and the <xref:System.Windows.Data.Binding.UpdateSourceTrigger%2A> property is set to <xref:System.Windows.Data.UpdateSourceTrigger.PropertyChanged>.  In this example, when the user moves the <xref:System.Windows.Controls.Slider>, the source updates for each pixel that the <xref:System.Windows.Controls.Slider> moves.  The source object typically needs the value of the slider only when the slider's <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> stops changing.  To prevent updating the source too often, use <xref:System.Windows.Data.BindingBase.Delay%2A> to specify that the source should not be updated until a certain amount of time elapses after the thumb stops moving.  
   
 <a name="ICustomTypeProvider"></a>   
 ## Binding to types that Implement ICustomTypeProvider  
@@ -104,16 +106,16 @@ manager: "wpickett"
   
 |To find this value of the binding|Use this API|  
 |---------------------------------------|------------------|  
-|The target object|<xref:System.Windows.Data.BindingExpressionBase.Target%2A?displayProperty=fullName>|  
-|The target property|<xref:System.Windows.Data.BindingExpressionBase.TargetProperty%2A?displayProperty=fullName>|  
-|The source object|<xref:System.Windows.Data.BindingExpression.ResolvedSource%2A?displayProperty=fullName>|  
-|The source property|<xref:System.Windows.Data.BindingExpression.ResolvedSourcePropertyName%2A?displayProperty=fullName>|  
-|Whether the <xref:System.Windows.Data.BindingExpression> belongs to a <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingExpressionBase.BindingGroup%2A?displayProperty=fullName>|  
+|The target object|<xref:System.Windows.Data.BindingExpressionBase.Target%2A?displayProperty=nameWithType>|  
+|The target property|<xref:System.Windows.Data.BindingExpressionBase.TargetProperty%2A?displayProperty=nameWithType>|  
+|The source object|<xref:System.Windows.Data.BindingExpression.ResolvedSource%2A?displayProperty=nameWithType>|  
+|The source property|<xref:System.Windows.Data.BindingExpression.ResolvedSourcePropertyName%2A?displayProperty=nameWithType>|  
+|Whether the <xref:System.Windows.Data.BindingExpression> belongs to a <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingExpressionBase.BindingGroup%2A?displayProperty=nameWithType>|  
 |The owner of a <xref:System.Windows.Data.BindingGroup>|<xref:System.Windows.Data.BindingGroup.Owner%2A>|  
   
 <a name="DisconnectedSource"></a>   
 ## Checking for a valid DataContext object  
- There are cases where the <xref:System.Windows.FrameworkElement.DataContext%2A> of an item container in an <xref:System.Windows.Controls.ItemsControl> becomes disconnected.  An item container is the UI element that displays an item in an <xref:System.Windows.Controls.ItemsControl>.  When an <xref:System.Windows.Controls.ItemsControl> is data bound to a collection, an item container is generated for each item. In some cases, item containers are removed from the visual tree. Two typical cases where an item container is removed are when an item is removed from the underlying collection and when virtualization is enabled on the <xref:System.Windows.Controls.ItemsControl>. In these cases, the <xref:System.Windows.FrameworkElement.DataContext%2A> property of the item container will be set to the sentinel object that is returned by the <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A?displayProperty=fullName> static property.  You should check whether the <xref:System.Windows.FrameworkElement.DataContext%2A> is equal to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A> object before accessing the <xref:System.Windows.FrameworkElement.DataContext%2A> of an item container.  
+ There are cases where the <xref:System.Windows.FrameworkElement.DataContext%2A> of an item container in an <xref:System.Windows.Controls.ItemsControl> becomes disconnected.  An item container is the UI element that displays an item in an <xref:System.Windows.Controls.ItemsControl>.  When an <xref:System.Windows.Controls.ItemsControl> is data bound to a collection, an item container is generated for each item. In some cases, item containers are removed from the visual tree. Two typical cases where an item container is removed are when an item is removed from the underlying collection and when virtualization is enabled on the <xref:System.Windows.Controls.ItemsControl>. In these cases, the <xref:System.Windows.FrameworkElement.DataContext%2A> property of the item container will be set to the sentinel object that is returned by the <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A?displayProperty=nameWithType> static property.  You should check whether the <xref:System.Windows.FrameworkElement.DataContext%2A> is equal to the <xref:System.Windows.Data.BindingOperations.DisconnectedSource%2A> object before accessing the <xref:System.Windows.FrameworkElement.DataContext%2A> of an item container.  
   
 <a name="live_shaping"></a>   
 ## Repositioning data as the data's values change (Live shaping)  
@@ -125,7 +127,7 @@ manager: "wpickett"
   
 <a name="async"></a>   
 ## New methods for the Dispatcher class  
- The Dispatcher class defines new methods for synchronous and asynchronous operations.  The synchronous <xref:System.Windows.Threading.Dispatcher.Invoke%2A> method defines overloads that take an <xref:System.Action> or <xref:System.Func%601> parameter. The new asynchronous method, <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, also takes an <xref:System.Action> or <xref:System.Func%601> as the callback parameter and returns a <xref:System.Windows.Threading.DispatcherOperation> or <xref:System.Windows.Threading.DispatcherOperation%601>.   The <xref:System.Windows.Threading.DispatcherOperation> and <xref:System.Windows.Threading.DispatcherOperation%601> classes define a <xref:System.Threading.Tasks.Task> property.  When you call <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, you can use the `await` keyword with either the <xref:System.Windows.Threading.DispatcherOperation> or the associated <xref:System.Threading.Tasks.Task>. If you need to wait synchronously for the <xref:System.Threading.Tasks.Task> that is returned by a <xref:System.Windows.Threading.DispatcherOperation> or <xref:System.Windows.Threading.DispatcherOperation%601>, call the <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> extension method. Calling <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=fullName> will result in a deadlock if the operation is queued on a calling thread. For more information about using a <xref:System.Threading.Tasks.Task> to perform asynchronous operations, see [Task Parallelism (Task Parallel Library)](../../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md).  
+ The Dispatcher class defines new methods for synchronous and asynchronous operations.  The synchronous <xref:System.Windows.Threading.Dispatcher.Invoke%2A> method defines overloads that take an <xref:System.Action> or <xref:System.Func%601> parameter. The new asynchronous method, <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, also takes an <xref:System.Action> or <xref:System.Func%601> as the callback parameter and returns a <xref:System.Windows.Threading.DispatcherOperation> or <xref:System.Windows.Threading.DispatcherOperation%601>.   The <xref:System.Windows.Threading.DispatcherOperation> and <xref:System.Windows.Threading.DispatcherOperation%601> classes define a <xref:System.Threading.Tasks.Task> property.  When you call <xref:System.Windows.Threading.Dispatcher.InvokeAsync%2A>, you can use the `await` keyword with either the <xref:System.Windows.Threading.DispatcherOperation> or the associated <xref:System.Threading.Tasks.Task>. If you need to wait synchronously for the <xref:System.Threading.Tasks.Task> that is returned by a <xref:System.Windows.Threading.DispatcherOperation> or <xref:System.Windows.Threading.DispatcherOperation%601>, call the <xref:System.Windows.Threading.TaskExtensions.DispatcherOperationWait%2A> extension method. Calling <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> will result in a deadlock if the operation is queued on a calling thread. For more information about using a <xref:System.Threading.Tasks.Task> to perform asynchronous operations, see [Task Parallelism (Task Parallel Library)](../../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md).  
   
 <a name="events_markup_extenions"></a>   
 ## Markup Extensions for Events  

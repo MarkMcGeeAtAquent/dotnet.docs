@@ -1,7 +1,9 @@
-<Type Name="Window" FullName="System.Windows.Window">
+﻿<Type Name="Window" FullName="System.Windows.Window">
   <TypeSignature Language="C#" Value="public class Window : System.Windows.Controls.ContentControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Window extends System.Windows.Controls.ContentControl" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Window" />
+  <TypeSignature Language="VB.NET" Value="Public Class Window&#xA;Inherits ContentControl" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Window : System::Windows::Controls::ContentControl" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -80,7 +82,7 @@
 ## Examples  
  The following example shows how a standard window is defined using only markup:  
   
- [!code-xml[WindowSnippets#WindowMARKUPONLY](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MarkupOnlyWindow.xaml#windowmarkuponly)]  
+ [!code-xaml[WindowSnippets#WindowMARKUPONLY](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MarkupOnlyWindow.xaml#windowmarkuponly)]  
   
  The following example shows how a standard window is defined using only code:  
   
@@ -89,19 +91,25 @@
   
  The following example shows how a standard window is defined using a combination of markup and code-behind.  
   
- [!code-xml[WindowSnippets#WindowXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MainWindow.xaml#windowxaml)]  
+ [!code-xaml[WindowSnippets#WindowXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MainWindow.xaml#windowxaml)]  
   
  [!code-csharp[WindowSnippets#WindowCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowSnippets/CSharp/MainWindow.xaml.cs#windowcodebehind)]
  [!code-vb[WindowSnippets#WindowCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowSnippets/visualbasic/mainwindow.xaml.vb#windowcodebehind)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="M:System.Windows.Window.Show" />
+    <altmember cref="M:System.Windows.Window.ShowDialog" />
+    <altmember cref="P:System.Windows.Window.DialogResult" />
+    <altmember cref="T:System.Windows.Application" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Window ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Window();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -132,6 +140,8 @@
       <MemberSignature Language="C#" Value="public bool Activate ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Activate() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.Activate" />
+      <MemberSignature Language="VB.NET" Value="Public Function Activate () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Activate();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -164,12 +174,17 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for permission to activate a window. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <altmember cref="E:System.Windows.Window.Activated" />
+        <altmember cref="E:System.Windows.Window.Deactivated" />
+        <altmember cref="P:System.Windows.Window.IsActive" />
       </Docs>
     </Member>
     <Member MemberName="Activated">
       <MemberSignature Language="C#" Value="public event EventHandler Activated;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Activated" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.Activated" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Activated As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Activated;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -200,12 +215,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Window.Deactivated" />
+        <altmember cref="M:System.Windows.Window.Activate" />
+        <altmember cref="P:System.Windows.Window.IsActive" />
       </Docs>
     </Member>
     <Member MemberName="AllowsTransparency">
       <MemberSignature Language="C#" Value="public bool AllowsTransparency { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowsTransparency" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.AllowsTransparency" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowsTransparency As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowsTransparency { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -224,7 +244,7 @@
 ## Remarks  
  When the <xref:System.Windows.Controls.Control.Background%2A> property of a window is set to a transparent color, using <xref:System.Windows.Media.Brushes.Transparent%2A> for example, the window remains opaque. This means that the desktop and any running applications "beneath" the window cannot be seen. To enable this type of transparency, <xref:System.Windows.Window.AllowsTransparency%2A> must be set to `true`.  
   
- <xref:System.Windows.Window.AllowsTransparency%2A> exists to facilitate the creation of non-rectangular windows, and, consequently, when <xref:System.Windows.Window.AllowsTransparency%2A> is set to `true`, a window's <xref:System.Windows.Window.WindowStyle%2A> property must be set to <xref:System.Windows.WindowStyle>.  
+ <xref:System.Windows.Window.AllowsTransparency%2A> exists to facilitate the creation of non-rectangular windows, and, consequently, when <xref:System.Windows.Window.AllowsTransparency%2A> is set to `true`, a window's <xref:System.Windows.Window.WindowStyle%2A> property must be set to <xref:System.Windows.WindowStyle.None>.  
   
 <a name="dependencyPropertyInfo_WindowAllowsTransparency"></a>   
 ## Dependency Property Information  
@@ -243,6 +263,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AllowsTransparencyProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AllowsTransparencyProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.AllowsTransparencyProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly AllowsTransparencyProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ AllowsTransparencyProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -260,6 +282,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeBounds);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeBounds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.ArrangeOverride(System.Windows.Size)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ArrangeOverride (arrangeBounds As Size) As Size" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Size ArrangeOverride(System::Windows::Size arrangeBounds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -279,19 +303,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Window.ArrangeOverride%2A> is not called when the <xref:System.Windows.UIElement.Visibility%2A> property has a value of <xref:System.Windows.Visibility>. If the value of the <xref:System.Windows.UIElement.Visibility%2A> property is either <xref:System.Windows.Visibility> or <xref:System.Windows.Visibility>, <xref:System.Windows.Window.ArrangeOverride%2A> is called.  
+ <xref:System.Windows.Window.ArrangeOverride%2A> is not called when the <xref:System.Windows.UIElement.Visibility%2A> property has a value of <xref:System.Windows.Visibility.Collapsed>. If the value of the <xref:System.Windows.UIElement.Visibility%2A> property is either <xref:System.Windows.Visibility.Hidden> or <xref:System.Windows.Visibility.Visible>, <xref:System.Windows.Window.ArrangeOverride%2A> is called.  
   
 > [!NOTE]
->  When either <xref:System.Windows.Window.Show%2A> or <xref:System.Windows.Window.ShowDialog%2A> are called, the <xref:System.Windows.UIElement.Visibility%2A> property of a <xref:System.Windows.Window> is set to <xref:System.Windows.Visibility>.  
+>  When either <xref:System.Windows.Window.Show%2A> or <xref:System.Windows.Window.ShowDialog%2A> are called, the <xref:System.Windows.UIElement.Visibility%2A> property of a <xref:System.Windows.Window> is set to <xref:System.Windows.Visibility.Visible>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.FrameworkElement.ArrangeOverride(System.Windows.Size)" />
+        <altmember cref="M:System.Windows.Window.MeasureOverride(System.Windows.Size)" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -336,7 +364,7 @@
   
  Closing a window causes the <xref:System.Windows.Window.Closing> event to be raised. If the <xref:System.Windows.Window.Closing> event isn't canceled, the following occurs:  
   
--   The <xref:System.Windows.Window> is removed from <xref:System.Windows.Application.Windows%2A?displayProperty=fullName> (if an <xref:System.Windows.Application> object exists).  
+-   The <xref:System.Windows.Window> is removed from <xref:System.Windows.Application.Windows%2A?displayProperty=nameWithType> (if an <xref:System.Windows.Application> object exists).  
   
 -   The <xref:System.Windows.Window> is removed from the owner <xref:System.Windows.Window> if the owner/owned relationship was established before the owned <xref:System.Windows.Window> was shown and after the owner <xref:System.Windows.Window> was opened.  
   
@@ -346,7 +374,7 @@
   
 -   If <xref:System.Windows.Window.ShowDialog%2A> was called to show the <xref:System.Windows.Window>, <xref:System.Windows.Window.ShowDialog%2A> returns.  
   
- Closing a <xref:System.Windows.Window> causes any windows that it owns to be closed. Furthermore, closing a <xref:System.Windows.Window> may cause an application to stop running depending on how the <xref:System.Windows.Application.ShutdownMode%2A?displayProperty=fullName> property is set.  
+ Closing a <xref:System.Windows.Window> causes any windows that it owns to be closed. Furthermore, closing a <xref:System.Windows.Window> may cause an application to stop running depending on how the <xref:System.Windows.Application.ShutdownMode%2A?displayProperty=nameWithType> property is set.  
   
 > [!NOTE]
 >  This method cannot be called when a window is hosted in a browser.  
@@ -356,7 +384,7 @@
 ## Examples  
  The following example shows a **File** &#124; **Exit** menu being handled to explicitly call <xref:System.Windows.Window.Close%2A>.  
   
- [!code-xml[WindowCloseSnippets#WindowCloseXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowCloseSnippets/CSharp/MainWindow.xaml#windowclosexaml)]  
+ [!code-xaml[WindowCloseSnippets#WindowCloseXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowCloseSnippets/CSharp/MainWindow.xaml#windowclosexaml)]  
   
  [!code-csharp[WindowCloseSnippets#WindowCloseCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowCloseSnippets/CSharp/MainWindow.xaml.cs#windowclosecodebehind)]
  [!code-vb[WindowCloseSnippets#WindowCloseCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowCloseSnippets/visualbasic/mainwindow.xaml.vb#windowclosecodebehind)]  
@@ -364,12 +392,19 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for permission to use all windows and user input events without restriction. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <altmember cref="M:System.Windows.Window.Show" />
+        <altmember cref="M:System.Windows.Window.ShowDialog" />
+        <altmember cref="P:System.Windows.Window.DialogResult" />
+        <altmember cref="P:System.Windows.Window.Owner" />
+        <altmember cref="P:System.Windows.Window.OwnedWindows" />
       </Docs>
     </Member>
     <Member MemberName="Closed">
       <MemberSignature Language="C#" Value="public event EventHandler Closed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Closed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.Closed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Closed As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Closed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -390,12 +425,19 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.Windows.UIElement.Visibility" /> is set, or <see cref="M:System.Windows.Window.Show" />, <see cref="M:System.Windows.Window.ShowDialog" />, or <see cref="M:System.Windows.Window.Hide" /> is called while a window is closing.</exception>
+        <altmember cref="M:System.Windows.Window.Close" />
+        <altmember cref="E:System.Windows.Window.Closing" />
+        <altmember cref="M:System.Windows.Application.Shutdown" />
+        <altmember cref="P:System.Windows.Application.ShutdownMode" />
+        <altmember cref="E:System.Windows.Application.SessionEnding" />
       </Docs>
     </Member>
     <Member MemberName="Closing">
       <MemberSignature Language="C#" Value="public event System.ComponentModel.CancelEventHandler Closing;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CancelEventHandler Closing" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.Closing" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Closing As CancelEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::CancelEventHandler ^ Closing;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -427,24 +469,26 @@
 ## Examples  
  The following example demonstrates a <xref:System.Windows.Window> that determines whether it needs user intervention to close.  
   
- [!code-xml[WindowClosingSnippets#WindowClosingXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml#windowclosingxaml1)]  
-[!code-xml[WindowClosingSnippets#WindowClosingXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml#windowclosingxaml2)]  
+ [!code-xaml[WindowClosingSnippets#WindowClosingXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml#windowclosingxaml1)]  
   
- [!code-csharp[WindowClosingSnippets#WindowClosingCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs#windowclosingcodebehind1)]
- [!code-vb[WindowClosingSnippets#WindowClosingCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb#windowclosingcodebehind1)]  
-[!code-csharp[WindowClosingSnippets#WindowClosingCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs#windowclosingcodebehind2)]
-[!code-vb[WindowClosingSnippets#WindowClosingCODEBEHIND2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb#windowclosingcodebehind2)]  
+ [!code-csharp[WindowClosingSnippets](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowClosingSnippets/CSharp/DataWindow.xaml.cs)]
+ [!code-vb[WindowClosingSnippets](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowClosingSnippets/visualbasic/datawindow.xaml.vb)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.Windows.UIElement.Visibility" /> is set, or <see cref="M:System.Windows.Window.Show" />, <see cref="M:System.Windows.Window.ShowDialog" />, or <see cref="M:System.Windows.Window.Close" /> is called while a window is closing.</exception>
+        <altmember cref="P:System.Windows.Application.ShutdownMode" />
+        <altmember cref="M:System.Windows.Window.Close" />
+        <altmember cref="E:System.Windows.Window.Closed" />
       </Docs>
     </Member>
     <Member MemberName="ContentRendered">
       <MemberSignature Language="C#" Value="public event EventHandler ContentRendered;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ContentRendered" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.ContentRendered" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event ContentRendered As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ ContentRendered;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -463,12 +507,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ContentControl.Content" />
+        <altmember cref="E:System.Windows.FrameworkElement.Loaded" />
       </Docs>
     </Member>
     <Member MemberName="Deactivated">
       <MemberSignature Language="C#" Value="public event EventHandler Deactivated;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Deactivated" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.Deactivated" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Deactivated As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Deactivated;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -499,12 +547,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Window.Activated" />
+        <altmember cref="M:System.Windows.Window.Activate" />
+        <altmember cref="P:System.Windows.Window.IsActive" />
       </Docs>
     </Member>
     <Member MemberName="DialogResult">
       <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; DialogResult { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; DialogResult" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.DialogResult" />
+      <MemberSignature Language="VB.NET" Value="Public Property DialogResult As Nullable(Of Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Nullable&lt;bool&gt; DialogResult { Nullable&lt;bool&gt; get(); void set(Nullable&lt;bool&gt; value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -512,7 +565,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DialogResultConverter))</AttributeName>
@@ -558,7 +611,7 @@
 ## Examples  
  The following example shows how to configure an OK button and a Cancel button to return the appropriate <xref:System.Windows.Window.DialogResult%2A>.  
   
- [!code-xml[WindowDialogResultSnippets#WindowDialogResultXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDialogResultSnippets/CSharp/DialogBox.xaml#windowdialogresultxaml)]  
+ [!code-xaml[WindowDialogResultSnippets#WindowDialogResultXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDialogResultSnippets/CSharp/DialogBox.xaml#windowdialogresultxaml)]  
   
  [!code-csharp[WindowDialogResultSnippets#WindowDialogResultCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowDialogResultSnippets/CSharp/DialogBox.xaml.cs#windowdialogresultcodebehind)]
  [!code-vb[WindowDialogResultSnippets#WindowDialogResultCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowDialogResultSnippets/visualbasic/dialogbox.xaml.vb#windowdialogresultcodebehind)]  
@@ -577,6 +630,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.DpiChangedEventHandler DpiChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.DpiChangedEventHandler DpiChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.DpiChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event DpiChanged As DpiChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::DpiChangedEventHandler ^ DpiChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -594,6 +649,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DpiChangedEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DpiChangedEvent" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.DpiChangedEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly DpiChangedEvent As RoutedEvent " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::RoutedEvent ^ DpiChangedEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -611,6 +668,8 @@
       <MemberSignature Language="C#" Value="public void DragMove ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DragMove() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.DragMove" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DragMove ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DragMove();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -650,12 +709,14 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The left mouse button is not down.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">for permission to drag a window. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <altmember cref="E:System.Windows.Window.LocationChanged" />
       </Docs>
     </Member>
     <Member MemberName="GetWindow">
       <MemberSignature Language="C#" Value="public static System.Windows.Window GetWindow (System.Windows.DependencyObject dependencyObject);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Window GetWindow(class System.Windows.DependencyObject dependencyObject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.GetWindow(System.Windows.DependencyObject)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::Window ^ GetWindow(System::Windows::DependencyObject ^ dependencyObject);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -680,6 +741,8 @@
       <MemberSignature Language="C#" Value="public void Hide ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Hide() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.Hide" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Hide ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Hide();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -695,9 +758,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A window is not closed when it is hidden, and neither the <xref:System.Windows.Window.Closing> nor <xref:System.Windows.Window.Closed> event is raised. Instead, the window's <xref:System.Windows.UIElement.Visibility%2A> property is set to <xref:System.Windows.Visibility?displayProperty=fullName>.  
+ A window is not closed when it is hidden, and neither the <xref:System.Windows.Window.Closing> nor <xref:System.Windows.Window.Closed> event is raised. Instead, the window's <xref:System.Windows.UIElement.Visibility%2A> property is set to <xref:System.Windows.Visibility.Hidden?displayProperty=nameWithType>.  
   
- If a window is the application's <xref:System.Windows.Application.MainWindow%2A> and the application's <xref:System.Windows.Application.ShutdownMode%2A> is <xref:System.Windows.ShutdownMode>, the application does not shut down. Likewise, the application does not shut down if a window is the only window and the application's shutdown mode is <xref:System.Windows.ShutdownMode>.  
+ If a window is the application's <xref:System.Windows.Application.MainWindow%2A> and the application's <xref:System.Windows.Application.ShutdownMode%2A> is <xref:System.Windows.ShutdownMode.OnMainWindowClose>, the application does not shut down. Likewise, the application does not shut down if a window is the only window and the application's shutdown mode is <xref:System.Windows.ShutdownMode.OnLastWindowClose>.  
   
  If you want to show and hide a window multiple times during the lifetime of an application, and you don't want to re-instantiate the window each time you show it, you can handle the <xref:System.Windows.Window.Closing> event, cancel it, and call the <xref:System.Windows.Window.Hide%2A> method. Then, you can call <xref:System.Windows.Window.Show%2A> on the same instance to re-open it.  
   
@@ -705,12 +768,17 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Window.Hide" /> is called on a window that is closing (<see cref="E:System.Windows.Window.Closing" />) or has been closed (<see cref="E:System.Windows.Window.Closed" />).</exception>
+        <altmember cref="M:System.Windows.Window.Show" />
+        <altmember cref="M:System.Windows.Window.ShowDialog" />
+        <altmember cref="M:System.Windows.Window.Close" />
       </Docs>
     </Member>
     <Member MemberName="Icon">
       <MemberSignature Language="C#" Value="public System.Windows.Media.ImageSource Icon { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.ImageSource Icon" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Icon" />
+      <MemberSignature Language="VB.NET" Value="Public Property Icon As ImageSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Media::ImageSource ^ Icon { System::Windows::Media::ImageSource ^ get(); void set(System::Windows::Media::ImageSource ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -772,7 +840,7 @@
 ## Examples  
  The following example shows how to set a window icon.  
   
- [!code-xml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]  
+ [!code-xaml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]  
   
  [!code-csharp[WindowIconSnippets#SetWindowIconInCode](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowIconSnippets/CSharp/MainWindow.xaml.cs#setwindowiconincode)]
  [!code-vb[WindowIconSnippets#SetWindowIconInCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowIconSnippets/visualbasic/mainwindow.xaml.vb#setwindowiconincode)]  
@@ -786,6 +854,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IconProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IconProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.IconProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly IconProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ IconProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -803,6 +873,8 @@
       <MemberSignature Language="C#" Value="public bool IsActive { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsActive" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.IsActive" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsActive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsActive { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -831,12 +903,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.Activate" />
+        <altmember cref="E:System.Windows.Window.Activated" />
+        <altmember cref="E:System.Windows.Window.Deactivated" />
       </Docs>
     </Member>
     <Member MemberName="IsActiveProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsActiveProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsActiveProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.IsActiveProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly IsActiveProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ IsActiveProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -854,6 +931,8 @@
       <MemberSignature Language="C#" Value="public double Left { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 Left" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Left" />
+      <MemberSignature Language="VB.NET" Value="Public Property Left As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double Left { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -893,12 +972,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Window.Top" />
       </Docs>
     </Member>
     <Member MemberName="LeftProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LeftProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LeftProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.LeftProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly LeftProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ LeftProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -916,6 +998,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler LocationChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LocationChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.LocationChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event LocationChanged As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ LocationChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -944,12 +1028,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Window.Left" />
+        <altmember cref="P:System.Windows.Window.Top" />
+        <altmember cref="P:System.Windows.Window.RestoreBounds" />
       </Docs>
     </Member>
     <Member MemberName="LogicalChildren">
-      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="C#" Value="protected internal override System.Collections.IEnumerator LogicalChildren { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.LogicalChildren" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides ReadOnly Property LogicalChildren As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual property System::Collections::IEnumerator ^ LogicalChildren { System::Collections::IEnumerator ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -962,12 +1051,15 @@
         <summary>Gets an enumerator for a window's logical child elements.</summary>
         <value>An <see cref="T:System.Collections.IEnumerator" /> a window's logical child elements.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Windows.FrameworkElement.LogicalChildren" />
       </Docs>
     </Member>
     <Member MemberName="MeasureOverride">
       <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size availableSize);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size availableSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.MeasureOverride(System.Windows.Size)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function MeasureOverride (availableSize As Size) As Size" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Size MeasureOverride(System::Windows::Size availableSize);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -987,19 +1079,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Window.MeasureOverride%2A> is not called when the <xref:System.Windows.UIElement.Visibility%2A> property has a value of <xref:System.Windows.Visibility>. If the value of the <xref:System.Windows.UIElement.Visibility%2A> property is either <xref:System.Windows.Visibility> or <xref:System.Windows.Visibility>, <xref:System.Windows.Window.MeasureOverride%2A> is called.  
+ <xref:System.Windows.Window.MeasureOverride%2A> is not called when the <xref:System.Windows.UIElement.Visibility%2A> property has a value of <xref:System.Windows.Visibility.Collapsed>. If the value of the <xref:System.Windows.UIElement.Visibility%2A> property is either <xref:System.Windows.Visibility.Hidden> or <xref:System.Windows.Visibility.Visible>, <xref:System.Windows.Window.MeasureOverride%2A> is called.  
   
 > [!NOTE]
->  When either <xref:System.Windows.Window.Show%2A> or <xref:System.Windows.Window.ShowDialog%2A> are called, the <xref:System.Windows.UIElement.Visibility%2A> property of a <xref:System.Windows.Window> is set to <xref:System.Windows.Visibility>.  
+>  When either <xref:System.Windows.Window.Show%2A> or <xref:System.Windows.Window.ShowDialog%2A> are called, the <xref:System.Windows.UIElement.Visibility%2A> property of a <xref:System.Windows.Window> is set to <xref:System.Windows.Visibility.Visible>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.FrameworkElement.MeasureOverride(System.Windows.Size)" />
+        <altmember cref="M:System.Windows.Window.ArrangeOverride(System.Windows.Size)" />
       </Docs>
     </Member>
     <Member MemberName="OnActivated">
       <MemberSignature Language="C#" Value="protected virtual void OnActivated (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActivated(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnActivated(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnActivated (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnActivated(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1024,12 +1120,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.OnDeactivated(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnClosed">
       <MemberSignature Language="C#" Value="protected virtual void OnClosed (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnClosed(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnClosed (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnClosed(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1054,12 +1153,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.OnClosing(System.ComponentModel.CancelEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnClosing">
       <MemberSignature Language="C#" Value="protected virtual void OnClosing (System.ComponentModel.CancelEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosing(class System.ComponentModel.CancelEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnClosing(System.ComponentModel.CancelEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnClosing (e As CancelEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnClosing(System::ComponentModel::CancelEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1084,12 +1186,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.OnClosed(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnContentChanged">
       <MemberSignature Language="C#" Value="protected override void OnContentChanged (object oldContent, object newContent);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentChanged(object oldContent, object newContent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnContentChanged(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnContentChanged (oldContent As Object, newContent As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnContentChanged(System::Object ^ oldContent, System::Object ^ newContent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1113,6 +1218,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnContentRendered (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnContentRendered(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnContentRendered(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnContentRendered (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnContentRendered(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1143,6 +1250,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnCreateAutomationPeer" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnCreateAutomationPeer () As AutomationPeer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Automation::Peers::AutomationPeer ^ OnCreateAutomationPeer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1169,6 +1278,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnDeactivated (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDeactivated(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnDeactivated(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnDeactivated (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnDeactivated(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1193,12 +1304,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.OnActivated(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnDpiChanged">
       <MemberSignature Language="C#" Value="protected override void OnDpiChanged (System.Windows.DpiScale oldDpi, System.Windows.DpiScale newDpi);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDpiChanged(valuetype System.Windows.DpiScale oldDpi, valuetype System.Windows.DpiScale newDpi) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnDpiChanged(System.Windows.DpiScale,System.Windows.DpiScale)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnDpiChanged (oldDpi As DpiScale, newDpi As DpiScale)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnDpiChanged(System::Windows::DpiScale oldDpi, System::Windows::DpiScale newDpi);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1222,6 +1336,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnLocationChanged (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnLocationChanged(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnLocationChanged(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnLocationChanged (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnLocationChanged(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1246,12 +1362,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Window.Left" />
+        <altmember cref="P:System.Windows.Window.Top" />
       </Docs>
     </Member>
     <Member MemberName="OnManipulationBoundaryFeedback">
       <MemberSignature Language="C#" Value="protected override void OnManipulationBoundaryFeedback (System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnManipulationBoundaryFeedback(class System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnManipulationBoundaryFeedback (e As ManipulationBoundaryFeedbackEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnManipulationBoundaryFeedback(System::Windows::Input::ManipulationBoundaryFeedbackEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1283,6 +1403,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnSourceInitialized (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSourceInitialized(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnSourceInitialized(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnSourceInitialized (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnSourceInitialized(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1313,6 +1435,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnStateChanged (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnStateChanged(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnStateChanged(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnStateChanged (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnStateChanged(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1340,9 +1464,11 @@
       </Docs>
     </Member>
     <Member MemberName="OnVisualParentChanged">
-      <MemberSignature Language="C#" Value="protected override sealed void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
+      <MemberSignature Language="C#" Value="protected internal override sealed void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualParentChanged(class System.Windows.DependencyObject oldParent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.OnVisualParentChanged(System.Windows.DependencyObject)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides NotOverridable Sub OnVisualParentChanged (oldParent As DependencyObject)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void OnVisualParentChanged(System::Windows::DependencyObject ^ oldParent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1358,12 +1484,15 @@
         <param name="oldParent">The previous parent. Set to null if the <see cref="T:System.Windows.DependencyObject" /> did not have a previous parent.</param>
         <summary>Called when the parent of the window is changed.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.UIElement.OnVisualParentChanged(System.Windows.DependencyObject)" />
       </Docs>
     </Member>
     <Member MemberName="OwnedWindows">
       <MemberSignature Language="C#" Value="public System.Windows.WindowCollection OwnedWindows { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.WindowCollection OwnedWindows" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.OwnedWindows" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OwnedWindows As WindowCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::WindowCollection ^ OwnedWindows { System::Windows::WindowCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1397,6 +1526,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Window Owner { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Window Owner" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Owner" />
+      <MemberSignature Language="VB.NET" Value="Public Property Owner As Window" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Window ^ Owner { System::Windows::Window ^ get(); void set(System::Windows::Window ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1478,12 +1609,15 @@
   
  The <see cref="P:System.Windows.Window.Owner" /> property is set with a window that has not been previously shown.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">for permission to use all windows and user input events without restriction. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <altmember cref="P:System.Windows.Window.OwnedWindows" />
       </Docs>
     </Member>
     <Member MemberName="ResizeMode">
       <MemberSignature Language="C#" Value="public System.Windows.ResizeMode ResizeMode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.ResizeMode ResizeMode" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.ResizeMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResizeMode As ResizeMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::ResizeMode ResizeMode { System::Windows::ResizeMode get(); void set(System::Windows::ResizeMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1507,7 +1641,7 @@
   
 -   **CanResize**. The user has the full ability to resize the window, using the Minimize and Maximize boxes, and a draggable outline around the window. The Minimize and Maximize boxes are shown and enabled. (Default).  
   
--   **CanResizeWithGrip**. This option has the same functionality as <xref:System.Windows.ResizeMode>, but adds a "resize grip" to the lower right corner of the window.  
+-   **CanResizeWithGrip**. This option has the same functionality as <xref:System.Windows.ResizeMode.CanResize>, but adds a "resize grip" to the lower right corner of the window.  
   
 > [!NOTE]
 >  You cannot set or get this property when a window is hosted in a browser.  
@@ -1522,12 +1656,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Controls.Primitives.ResizeGrip" />
       </Docs>
     </Member>
     <Member MemberName="ResizeModeProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ResizeModeProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ResizeModeProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.ResizeModeProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ResizeModeProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ResizeModeProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1545,6 +1682,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Rect RestoreBounds { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect RestoreBounds" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.RestoreBounds" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RestoreBounds As Rect" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Rect RestoreBounds { System::Windows::Rect get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1577,8 +1716,8 @@
 ## Examples  
  The following example uses <xref:System.Windows.Window.RestoreBounds%2A> and isolated storage to ensure the size and location of a window are the same as they were the previous time the window was shown.  
   
- [!code-xml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml1)]  
-[!code-xml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml2)]  
+ [!code-xaml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml1)]  
+[!code-xaml[WindowRestoreBoundsSnippets#WindowRestoreBoundsXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml#windowrestoreboundsxaml2)]  
   
  [!code-csharp[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/CSharp/MainWindow.xaml.cs#windowrestoreboundscodebehind1)]
  [!code-vb[WindowRestoreBoundsSnippets#WindowRestoreBoundsCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowRestoreBoundsSnippets/visualbasic/mainwindow.xaml.vb#windowrestoreboundscodebehind1)]  
@@ -1594,6 +1733,8 @@
       <MemberSignature Language="C#" Value="public void Show ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Show() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.Show" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Show ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Show();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1613,7 +1754,7 @@
   
  A window that is opened by calling <xref:System.Windows.Window.Show%2A> does not automatically have a relationship with the window that opened it; specifically, the opened window does not know which window opened it. This relationship can be established using the <xref:System.Windows.Window.Owner%2A> property and managed using the <xref:System.Windows.Window.OwnedWindows%2A> property.  
   
- Calling <xref:System.Windows.Window.Show%2A> achieves the same end result as setting <xref:System.Windows.UIElement.Visibility%2A> property of the <xref:System.Windows.Window> object to <xref:System.Windows.Visibility>. However, there is a difference between the two from a timing perspective.  
+ Calling <xref:System.Windows.Window.Show%2A> achieves the same end result as setting <xref:System.Windows.UIElement.Visibility%2A> property of the <xref:System.Windows.Window> object to <xref:System.Windows.Visibility.Visible>. However, there is a difference between the two from a timing perspective.  
   
  Calling <xref:System.Windows.Window.Show%2A> is a synchronous operation that returns only after the <xref:System.Windows.FrameworkElement.Loaded> event on the child window has been raised:  
   
@@ -1639,12 +1780,17 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Window.Show" /> is called on a window that is closing (<see cref="E:System.Windows.Window.Closing" />) or has been closed (<see cref="E:System.Windows.Window.Closed" />).</exception>
+        <altmember cref="M:System.Windows.Window.Close" />
+        <altmember cref="M:System.Windows.Window.Hide" />
+        <altmember cref="P:System.Windows.Window.WindowState" />
       </Docs>
     </Member>
     <Member MemberName="ShowActivated">
       <MemberSignature Language="C#" Value="public bool ShowActivated { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ShowActivated" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.ShowActivated" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowActivated As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ShowActivated { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1680,7 +1826,7 @@
 ## Examples  
  The following example shows how to use markup to configure a window to be opened without being activated.  
   
- [!code-xml[WindowShowActivatedSnippets#ShowUnactivatedMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/AWindow.xaml#showunactivatedmarkup1)]  
+ [!code-xaml[WindowShowActivatedSnippets#ShowUnactivatedMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/AWindow.xaml#showunactivatedmarkup1)]  
   
   
  [!code-csharp[WindowShowActivatedSnippets#ShowUnactivatedCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowShowActivatedSnippets/CSharp/AWindow.xaml.cs#showunactivatedcodebehind)]
@@ -1699,6 +1845,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowActivatedProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowActivatedProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.ShowActivatedProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ShowActivatedProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ShowActivatedProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1716,6 +1864,8 @@
       <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; ShowDialog ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Nullable`1&lt;bool&gt; ShowDialog() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Window.ShowDialog" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShowDialog () As Nullable(Of Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Nullable&lt;bool&gt; ShowDialog();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1761,12 +1911,16 @@
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Window.ShowDialog" /> is called on a window that is closing (<see cref="E:System.Windows.Window.Closing" />) or has been closed (<see cref="E:System.Windows.Window.Closed" />).</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">for permission to activate a window. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+        <altmember cref="M:System.Windows.Window.Close" />
+        <altmember cref="P:System.Windows.Window.WindowState" />
       </Docs>
     </Member>
     <Member MemberName="ShowInTaskbar">
       <MemberSignature Language="C#" Value="public bool ShowInTaskbar { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ShowInTaskbar" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.ShowInTaskbar" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowInTaskbar As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ShowInTaskbar { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1806,6 +1960,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowInTaskbarProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowInTaskbarProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.ShowInTaskbarProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ShowInTaskbarProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ShowInTaskbarProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1823,6 +1979,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.SizeToContent SizeToContent { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.SizeToContent SizeToContent" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.SizeToContent" />
+      <MemberSignature Language="VB.NET" Value="Public Property SizeToContent As SizeToContent" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::SizeToContent SizeToContent { System::Windows::SizeToContent get(); void set(System::Windows::SizeToContent value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1838,19 +1996,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent>, setting either <xref:System.Windows.FrameworkElement.Height%2A> or <xref:System.Windows.FrameworkElement.Width%2A> has no effect; both properties can be set, but the values they are set with are not applied to the window.  
+ When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent.WidthAndHeight>, setting either <xref:System.Windows.FrameworkElement.Height%2A> or <xref:System.Windows.FrameworkElement.Width%2A> has no effect; both properties can be set, but the values they are set with are not applied to the window.  
   
- When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent>, setting <xref:System.Windows.FrameworkElement.Height%2A> does not change the height of the window.  
+ When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent.Height>, setting <xref:System.Windows.FrameworkElement.Height%2A> does not change the height of the window.  
   
- When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent>, setting <xref:System.Windows.FrameworkElement.Width%2A> does not change the width of the window.  
+ When <xref:System.Windows.Window.SizeToContent%2A> is set to <xref:System.Windows.SizeToContent.Width>, setting <xref:System.Windows.FrameworkElement.Width%2A> does not change the width of the window.  
   
- If <xref:System.Windows.Window.SizeToContent%2A> has a value other than <xref:System.Windows.SizeToContent>:  
+ If <xref:System.Windows.Window.SizeToContent%2A> has a value other than <xref:System.Windows.SizeToContent.Manual>:  
   
--   <xref:System.Windows.Window.SizeToContent%2A> is automatically set to <xref:System.Windows.SizeToContent> if a user resizes the window by using the resize grip or dragging the border.  
+-   <xref:System.Windows.Window.SizeToContent%2A> is automatically set to <xref:System.Windows.SizeToContent.Manual> if a user resizes the window by using the resize grip or dragging the border.  
   
 -   If the size of the content changes in a way that causes the window to resize itself, <xref:System.Windows.FrameworkElement.SizeChanged> is raised.  
   
- If a window is transparent (see <xref:System.Windows.Window.AllowsTransparency%2A>), you should consider setting <xref:System.Windows.Window.SizeToContent%2A> to <xref:System.Windows.SizeToContent> to ensure the window is no larger than its visible content.  
+ If a window is transparent (see <xref:System.Windows.Window.AllowsTransparency%2A>), you should consider setting <xref:System.Windows.Window.SizeToContent%2A> to <xref:System.Windows.SizeToContent.WidthAndHeight> to ensure the window is no larger than its visible content.  
   
 > [!NOTE]
 >  You cannot set or get this property when a window is hosted in a browser.  
@@ -1873,12 +2031,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Window.MeasureOverride(System.Windows.Size)" />
+        <altmember cref="M:System.Windows.Window.ArrangeOverride(System.Windows.Size)" />
+        <altmember cref="P:System.Windows.Window.ResizeMode" />
       </Docs>
     </Member>
     <Member MemberName="SizeToContentProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SizeToContentProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SizeToContentProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.SizeToContentProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly SizeToContentProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ SizeToContentProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1896,6 +2059,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler SourceInitialized;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SourceInitialized" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.SourceInitialized" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event SourceInitialized As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ SourceInitialized;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1913,6 +2078,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler StateChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler StateChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Window.StateChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event StateChanged As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ StateChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1924,12 +2091,15 @@
       <Docs>
         <summary>Occurs when the window's <see cref="P:System.Windows.Window.WindowState" /> property changes.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Windows.Window.WindowState" />
       </Docs>
     </Member>
     <Member MemberName="TaskbarItemInfo">
       <MemberSignature Language="C#" Value="public System.Windows.Shell.TaskbarItemInfo TaskbarItemInfo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Shell.TaskbarItemInfo TaskbarItemInfo" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.TaskbarItemInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Property TaskbarItemInfo As TaskbarItemInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Shell::TaskbarItemInfo ^ TaskbarItemInfo { System::Windows::Shell::TaskbarItemInfo ^ get(); void set(System::Windows::Shell::TaskbarItemInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1949,12 +2119,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="N:System.Windows.Shell" />
       </Docs>
     </Member>
     <Member MemberName="TaskbarItemInfoProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TaskbarItemInfoProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TaskbarItemInfoProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.TaskbarItemInfoProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly TaskbarItemInfoProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ TaskbarItemInfoProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1972,7 +2145,12 @@
       <MemberSignature Language="C#" Value="public string Title { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Property Title As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Title { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.IWindowService.Title</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1992,7 +2170,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The title of a <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, or [!INCLUDE[TLA#tla_iegeneric](~/includes/tlasharptla-iegeneric-md.md)], can also be set by using <xref:System.Windows.Controls.Page.WindowTitle%2A?displayProperty=fullName>.  
+ The title of a <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, or [!INCLUDE[TLA#tla_iegeneric](~/includes/tlasharptla-iegeneric-md.md)], can also be set by using <xref:System.Windows.Controls.Page.WindowTitle%2A?displayProperty=nameWithType>.  
   
 <a name="dependencyPropertyInfo_WindowTitle"></a>   
 ## Dependency Property Information  
@@ -2010,6 +2188,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TitleProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TitleProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.TitleProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly TitleProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ TitleProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2027,6 +2207,8 @@
       <MemberSignature Language="C#" Value="public double Top { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 Top" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Top" />
+      <MemberSignature Language="VB.NET" Value="Public Property Top As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double Top { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2066,12 +2248,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Window.Left" />
       </Docs>
     </Member>
     <Member MemberName="Topmost">
       <MemberSignature Language="C#" Value="public bool Topmost { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Topmost" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.Topmost" />
+      <MemberSignature Language="VB.NET" Value="Public Property Topmost As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Topmost { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2105,12 +2290,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Window.Activated" />
+        <altmember cref="E:System.Windows.Window.Deactivated" />
       </Docs>
     </Member>
     <Member MemberName="TopmostProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TopmostProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TopmostProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.TopmostProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly TopmostProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ TopmostProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2128,6 +2317,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TopProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TopProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.TopProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly TopProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ TopProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2145,6 +2336,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.WindowStartupLocation WindowStartupLocation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowStartupLocation WindowStartupLocation" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowStartupLocation" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowStartupLocation As WindowStartupLocation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::WindowStartupLocation WindowStartupLocation { System::Windows::WindowStartupLocation get(); void set(System::Windows::WindowStartupLocation value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2165,16 +2358,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Setting <xref:System.Windows.WindowStartupLocation> to <xref:System.Windows.WindowStartupLocation> causes a window to be positioned according to its <xref:System.Windows.Window.Left%2A> and <xref:System.Windows.Window.Top%2A> property values. If either the <xref:System.Windows.Window.Left%2A> or <xref:System.Windows.Window.Top%2A> properties aren't specified, their values are determined by [!INCLUDE[TLA2#tla_mswin](~/includes/tla2sharptla-mswin-md.md)].  
+ Setting <xref:System.Windows.WindowStartupLocation> to <xref:System.Windows.WindowStartupLocation.Manual> causes a window to be positioned according to its <xref:System.Windows.Window.Left%2A> and <xref:System.Windows.Window.Top%2A> property values. If either the <xref:System.Windows.Window.Left%2A> or <xref:System.Windows.Window.Top%2A> properties aren't specified, their values are determined by [!INCLUDE[TLA2#tla_mswin](~/includes/tla2sharptla-mswin-md.md)].  
   
- Setting <xref:System.Windows.WindowStartupLocation> causes a window to be positioned in the center of the screen that contains the mouse cursor.  
+ Setting <xref:System.Windows.WindowStartupLocation.CenterScreen> causes a window to be positioned in the center of the screen that contains the mouse cursor.  
   
- Setting <xref:System.Windows.WindowStartupLocation> to <xref:System.Windows.WindowStartupLocation> causes a window to be positioned in the center of its owner window (see <xref:System.Windows.Window.Owner%2A>), if specified. The owner window can be either another WPF window or a non-WPF window.  
+ Setting <xref:System.Windows.WindowStartupLocation> to <xref:System.Windows.WindowStartupLocation.CenterOwner> causes a window to be positioned in the center of its owner window (see <xref:System.Windows.Window.Owner%2A>), if specified. The owner window can be either another WPF window or a non-WPF window.  
   
 > [!NOTE]
 >  For more information about WPF windows with non-WPF windows, see [WPF and Win32 Interoperation](~/docs/framework/wpf/advanced/wpf-and-win32-interoperation.md) and <xref:System.Windows.Interop.WindowInteropHelper>.  
   
- If an owner window is not specified, the position of the window is determined in the same way as if <xref:System.Windows.WindowStartupLocation> is set to <xref:System.Windows.WindowStartupLocation>.  
+ If an owner window is not specified, the position of the window is determined in the same way as if <xref:System.Windows.WindowStartupLocation> is set to <xref:System.Windows.WindowStartupLocation.Manual>.  
   
 > [!NOTE]
 >  You cannot set or get the value of this property when a window is hosted in a browser.  
@@ -2187,6 +2380,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.WindowState WindowState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowState WindowState" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowState" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowState As WindowState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::WindowState WindowState { System::Windows::WindowState get(); void set(System::Windows::WindowState value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2219,12 +2414,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Window.RestoreBounds" />
       </Docs>
     </Member>
     <Member MemberName="WindowStateProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WindowStateProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WindowStateProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.WindowStateProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly WindowStateProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ WindowStateProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2242,6 +2440,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.WindowStyle WindowStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WindowStyle WindowStyle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Window.WindowStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowStyle As WindowStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::WindowStyle WindowStyle { System::Windows::WindowStyle get(); void set(System::Windows::WindowStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -2257,7 +2457,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Window.WindowStyle%2A> can be one of the <xref:System.Windows.WindowStyle> enumeration values, including <xref:System.Windows.WindowStyle>, <xref:System.Windows.WindowStyle>, <xref:System.Windows.WindowStyle> (default), and <xref:System.Windows.WindowStyle>.  
+ <xref:System.Windows.Window.WindowStyle%2A> can be one of the <xref:System.Windows.WindowStyle> enumeration values, including <xref:System.Windows.WindowStyle.None>, <xref:System.Windows.WindowStyle.ToolWindow>, <xref:System.Windows.WindowStyle.SingleBorderWindow> (default), and <xref:System.Windows.WindowStyle.ThreeDBorderWindow>.  
   
  The following figure shows the window styles on [!INCLUDE[TLA#tla_longhorn](~/includes/tlasharptla-longhorn-md.md)] (Windows Vista Aero theme, with transparent glass enabled):  
   
@@ -2282,6 +2482,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WindowStyleProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WindowStyleProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Window.WindowStyleProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly WindowStyleProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ WindowStyleProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>

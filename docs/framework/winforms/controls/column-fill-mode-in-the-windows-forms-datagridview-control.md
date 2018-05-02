@@ -1,8 +1,8 @@
 ---
-title: "Column Fill Mode in the Windows Forms DataGridView Control | Microsoft Docs"
+title: "Column Fill Mode in the Windows Forms DataGridView Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,23 +10,26 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "data grids, automatically resizing columns"
+  - "data grids [Windows Forms], automatically resizing columns"
   - "DataGridView control [Windows Forms], column fill mode"
-  - "data grids, column fill mode"
+  - "data grids [Windows Forms], column fill mode"
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Column Fill Mode in the Windows Forms DataGridView Control
 In column fill mode, the <xref:System.Windows.Forms.DataGridView> control resizes its columns automatically so that they fill the width of the available display area. The control does not display the horizontal scroll bar except when it is necessary to keep the width of every column equal to or greater than its <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> property value.  
   
- The sizing behavior of each column depends on its <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> property. The value of this property is inherited from the column's <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> property or the control's <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A> property if the column value is <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode> (the default value).  
+ The sizing behavior of each column depends on its <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> property. The value of this property is inherited from the column's <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> property or the control's <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A> property if the column value is <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet> (the default value).  
   
- Each column can have a different size mode, but any columns with a size mode of <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode> will share the display-area width that is not used by the other columns. This width is divided among the fill-mode columns in proportions relative to their <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> property values. For example, if two columns have <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> values of 100 and 200, the first column will be half as wide as the second column.  
+ Each column can have a different size mode, but any columns with a size mode of <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill> will share the display-area width that is not used by the other columns. This width is divided among the fill-mode columns in proportions relative to their <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> property values. For example, if two columns have <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> values of 100 and 200, the first column will be half as wide as the second column.  
   
 ## User Resizing in Fill Mode  
  Unlike sizing modes that resize based on cell contents, fill mode does not prevent users from resizing columns that have <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> property values of `true`. When a user resizes a fill-mode column, any fill-mode columns after the resized column (to the right if <xref:System.Windows.Forms.Control.RightToLeft%2A> is `false`; otherwise, to the left) are also resized to compensate for the change in the available width. If there are no fill-mode columns after the resized column, then all other fill-mode columns in the control are resized to compensate. If there are no other fill-mode columns in the control, the resize is ignored. If a column that is not in fill mode is resized, all fill-mode columns in the control change sizes to compensate.  
@@ -68,17 +71,17 @@ In column fill mode, the <xref:System.Windows.Forms.DataGridView> control resize
  For information about building this example from the command line for [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## See Also  
- <xref:System.Windows.Forms.DataGridView>   
- <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode>   
- <xref:System.Windows.Forms.DataGridViewColumn>   
- <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode>   
- <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A?displayProperty=fullName>   
- <xref:System.Windows.Forms.Control.RightToLeft%2A?displayProperty=fullName>   
+ <xref:System.Windows.Forms.DataGridView>  
+ <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewAutoSizeColumnsMode>  
+ <xref:System.Windows.Forms.DataGridViewColumn>  
+ <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode>  
+ <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.Width%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A?displayProperty=nameWithType>  
+ <xref:System.Windows.Forms.Control.RightToLeft%2A?displayProperty=nameWithType>  
  [Resizing Columns and Rows in the Windows Forms DataGridView Control](../../../../docs/framework/winforms/controls/resizing-columns-and-rows-in-the-windows-forms-datagridview-control.md)

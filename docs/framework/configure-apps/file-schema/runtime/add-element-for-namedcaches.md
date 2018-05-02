@@ -1,19 +1,14 @@
 ---
-title: "&lt;add&gt; Element for &lt;namedCaches&gt; | Microsoft Docs"
+title: "&lt;add&gt; Element for &lt;namedCaches&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "add element for <namedCaches>"
   - "<add> element for <namedCaches>"
@@ -22,6 +17,8 @@ caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; Element for &lt;namedCaches&gt;
 Adds a `namedCache` entry to the `namedCaches` collection for a memory cache.  
@@ -33,7 +30,7 @@ Adds a `namedCache` entry to the `namedCaches` collection for a memory cache.
   
 ## Syntax  
   
-```  
+```xml  
 <namedCaches>  
     <add name="default" />  
       <!-- child elements -->  
@@ -70,7 +67,7 @@ Adds a `namedCache` entry to the `namedCaches` collection for a memory cache.
 ## Example  
  The following example shows how to define settings for the default `namedCache` entry to the `namedCaches` collection for a memory cache.  
   
-```  
+```xml  
 <configuration>  
   
   <system.runtime.caching>  

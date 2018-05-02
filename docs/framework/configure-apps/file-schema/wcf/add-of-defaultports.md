@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;defaultPorts&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;defaultPorts&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f162ce42-963b-4779-96a7-d6d8b4ea0d2f
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;defaultPorts&gt;
 A default communications endpoint that the client application listens to.  
@@ -28,8 +30,7 @@ A default communications endpoint that the client application listens to.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <useRequestHeadersForMetadataAddress>   <defaultPorts>      <add port="Integer" scheme="String" />   </defaultPorts></useRequestHeadersForMetadataAddress>  
 ```  
   

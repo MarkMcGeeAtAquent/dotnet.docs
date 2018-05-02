@@ -1,19 +1,27 @@
 ---
 uid: System.Runtime.Serialization.Formatters.InternalRM
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.Formatters.InternalRM.SoapCheckEnabled
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.Formatters.InternalRM.InfoSoap(System.Object[])
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.Formatters.InternalRM.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

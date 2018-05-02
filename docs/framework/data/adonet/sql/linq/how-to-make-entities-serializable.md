@@ -1,8 +1,8 @@
 ---
-title: "How to: Make Entities Serializable | Microsoft Docs"
+title: "How to: Make Entities Serializable"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a6c5bf6e-064a-4f77-b74c-76b3a5dec309
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Make Entities Serializable
 You can make entities serializable when you generate your code. Entity classes are decorated with the <xref:System.Runtime.Serialization.DataContractAttribute> attribute, and columns with the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute.  
@@ -34,5 +36,5 @@ sqlmetal /code:nwserializable.cs /language:csharp "c:\northwnd.mdf" /sprocs /fun
 ```  
   
 ## See Also  
- [Serialization](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)   
+ [Serialization](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
  [Creating the Object Model](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)

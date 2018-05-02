@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::GetHostOverlappedSize Method | Microsoft Docs"
+title: "IHostIoCompletionManager::GetHostOverlappedSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.GetHostOverlappedSize"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::GetHostOverlappedSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager::GetHostOverlappedSize method [.NET Framework hosting]"
   - "GetHostOverlappedSize method [.NET Framework hosting]"
 ms.assetid: 2902578b-d5e2-4f8d-a103-0c7b6dceda9e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::GetHostOverlappedSize Method
 Gets the size of any custom data the host intends to append to I/O requests.  
@@ -76,6 +79,6 @@ HRESULT GetHostOverlappedSize (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Threading.NativeOverlapped>   
- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)   
+ <xref:System.Threading.NativeOverlapped>  
+ [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

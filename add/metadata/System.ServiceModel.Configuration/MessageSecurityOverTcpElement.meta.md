@@ -1,27 +1,35 @@
 ---
 uid: System.ServiceModel.Configuration.MessageSecurityOverTcpElement
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.MessageSecurityOverTcpElement.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.MessageSecurityOverTcpElement.AlgorithmSuite
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.MessageSecurityOverTcpElement.ClientCredentialType
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

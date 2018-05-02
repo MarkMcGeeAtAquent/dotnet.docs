@@ -1,44 +1,24 @@
 ---
-title: "Shared (Visual Basic) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Shared (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Shared"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "Shared keyword"
-  - "members, shared"
+  - "Shared keyword [Visual Basic]"
+  - "members [Visual Basic], shared"
   - "shared members"
   - "nonshared"
-  - "shared elements"
-  - "elements, shared"
+  - "shared [elements VB]"
+  - "elements [Visual Basic], shared"
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Shared (Visual Basic)
 Specifies that one or more declared programming elements are associated with a class or structure at large, and not with a specific instance of the class or structure.  
@@ -48,7 +28,7 @@ Specifies that one or more declared programming elements are associated with a c
 ## When to Use Shared  
  Sharing a member of a class or structure makes it available to every instance, rather than *nonshared*, where each instance keeps its own copy. This is useful, for example, if the value of a variable applies to the entire application. If you declare that variable to be `Shared`, then all instances access the same storage location, and if one instance changes the variable's value, all instances access the updated value.  
   
- Sharing does not alter the access level of a member. For example, a class member can be shared and private (accessible only from within the class), or nonshared and public. For more information, see [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Sharing does not alter the access level of a member. For example, a class member can be shared and private (accessible only from within the class), or nonshared and public. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## Rules  
   
@@ -115,9 +95,9 @@ Specifies that one or more declared programming elements are associated with a c
  [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
 ## See Also  
- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)   
- [Static](../../../visual-basic/language-reference/modifiers/static.md)   
- [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)   
- [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)   
- [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)   
+ [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)  
+ [Static](../../../visual-basic/language-reference/modifiers/static.md)  
+ [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)  
+ [Procedures](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
+ [Structures](../../../visual-basic/programming-guide/language-features/data-types/structures.md)  
  [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

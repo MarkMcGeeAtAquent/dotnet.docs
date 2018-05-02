@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::GetHashFromFile Method | Microsoft Docs"
+title: "ICLRStrongName::GetHashFromFile Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.GetHashFromFile"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::GetHashFromFile"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::GetHashFromFile method [.NET Framework hosting]"
   - "GetHashFromFile method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: 9e50480a-8ada-4044-b2a5-97bb14ed3525
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::GetHashFromFile Method
 Generates a hash over the contents of the specified file.  
@@ -74,5 +77,5 @@ HRESULT GetHashFromFile (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [GetHashFromFileW Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md)   
+ [GetHashFromFileW Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfilew-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

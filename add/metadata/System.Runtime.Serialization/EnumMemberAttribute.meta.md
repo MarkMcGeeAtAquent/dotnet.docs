@@ -1,27 +1,35 @@
 ---
 uid: System.Runtime.Serialization.EnumMemberAttribute
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.EnumMemberAttribute.Value
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.EnumMemberAttribute.IsValueSetExplicitly
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.EnumMemberAttribute.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

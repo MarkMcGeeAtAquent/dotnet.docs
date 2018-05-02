@@ -1,20 +1,26 @@
 ---
 uid: System.ServiceModel.DataContractFormatAttribute
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.DataContractFormatAttribute.Style
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.DataContractFormatAttribute.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

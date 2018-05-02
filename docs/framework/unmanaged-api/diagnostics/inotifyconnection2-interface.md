@@ -1,5 +1,5 @@
 ---
-title: "INotifyConnection2 Interface | Microsoft Docs"
+title: "INotifyConnection2 Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "INotifyConnection2"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "INotifyConnection2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "INotifyConnection2 interface [.NET Framework debugging]"
 ms.assetid: 9868cfb3-dd51-4812-bca9-171d7829afe9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # INotifyConnection2 Interface
 Declares methods for registering and unregistering a connection notification source.  
@@ -40,6 +43,6 @@ Declares methods for registering and unregistering a connection notification sou
  **Header:** ProtocolNotify2.idl  
   
 ## See Also  
- [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)   
- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)   
+ [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
+ [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
  [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

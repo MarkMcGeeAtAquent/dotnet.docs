@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo3::GetThreadStaticAddress2 Method | Microsoft Docs"
+title: "ICorProfilerInfo3::GetThreadStaticAddress2 Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo3.GetThreadStaticAddress2 Method"
-apilocation: 
+api_location: 
   - "Mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo3::GetThreadStaticAddress2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo3::GetThreadStaticAddress2 method [.NET Framework profiling]"
   - "GetThreadStaticAddress2 method [.NET Framework profiling]"
 ms.assetid: a9608861-ae64-4467-8a73-be05ad34beac
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo3::GetThreadStaticAddress2 Method
 Gets the address of the specified thread-static field that is in the scope of the specified thread and application domain.  
@@ -78,6 +81,6 @@ HRESULT GetThreadStaticAddress2(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

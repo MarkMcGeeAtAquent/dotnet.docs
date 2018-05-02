@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::SetScopeRange Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::SetScopeRange Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.SetScopeRange"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::SetScopeRange"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetScopeRange method [.NET Framework debugging]"
   - "ISymUnmanagedWriter::SetScopeRange method [.NET Framework debugging]"
 ms.assetid: d4d98676-444b-46ca-bfe6-0d827385cd22
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::SetScopeRange Method
 Defines the offset range for the specified lexical scope. The scope becomes the new current scope and is pushed onto a stack of scopes. Scopes must form a hierarchy. Siblings are not allowed to overlap.  

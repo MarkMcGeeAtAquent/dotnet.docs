@@ -1,31 +1,34 @@
 ---
-title: "IManagedObject::GetSerializedBuffer Method | Microsoft Docs"
+title: "IManagedObject::GetSerializedBuffer Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IManagedObject.GetSerializedBuffer"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetSerializedBuffer"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IManagedObject::GetSerializedBuffer method [.NET Framework hosting]"
   - "GetSerializedBuffer method [.NET Framework hosting]"
 ms.assetid: c17105bb-b49f-434e-8f9b-77f8c85b9220
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IManagedObject::GetSerializedBuffer Method
 Gets the string representation of this managed object.  

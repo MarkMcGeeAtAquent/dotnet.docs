@@ -1,7 +1,8 @@
 ---
-title: "&lt;claimType&gt; | Microsoft Docs"
+title: "&lt;claimType&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;claimType&gt;
 Specifies a single optional or required claim for incoming security tokens.  
@@ -24,14 +27,14 @@ Specifies a single optional or required claim for incoming security tokens.
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <claimTypeRequired>  
-      <claimType type=URI optional=xs:boolean >  
-      </claimType>  
-    </claimTypeRequired>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <claimTypeRequired>  
+      <claimType type=URI optional=xs:boolean >  
+      </claimType>  
+    </claimTypeRequired>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   

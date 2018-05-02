@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyImport::CloseEnum Method | Microsoft Docs"
+title: "IMetaDataAssemblyImport::CloseEnum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyImport.CloseEnum"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyImport::CloseEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CloseEnum method, IMetaDataAssemblyImport interface [.NET Framework metadata]"
   - "IMetaDataAssemblyImport::CloseEnum method [.NET Framework metadata]"
 ms.assetid: c9df4087-12b3-46d9-b075-9067dd7805df
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyImport::CloseEnum Method
 Releases a reference to the specified enumeration instance.  

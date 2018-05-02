@@ -1,19 +1,14 @@
 ---
-title: "&lt;shadowCopyVerifyByTimestamp&gt; Element | Microsoft Docs"
+title: "&lt;shadowCopyVerifyByTimestamp&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<shadowCopyTimeStampVerification> element"
   - "shadowCopyTimeStampVerification element"
@@ -22,6 +17,8 @@ caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;shadowCopyVerifyByTimestamp&gt; Element
 Specifies whether shadow copying uses the default startup behavior introduced in the [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], or reverts to the startup behavior of earlier versions of the .NET Framework.  
@@ -32,7 +29,7 @@ Specifies whether shadow copying uses the default startup behavior introduced in
   
 ## Syntax  
   
-```  
+```xml  
 <shadowCopyVerifyByTimestamp enabled="true|false" />  
 ```  
   
@@ -68,7 +65,7 @@ Specifies whether shadow copying uses the default startup behavior introduced in
 ## Example  
  The following example shows how to disable the default startup behavior of shadow copying in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], and revert to the startup behavior of previous versions of the .NET Framework.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <shadowCopyVerifyByTimestamp enabled="false" />  
@@ -77,6 +74,6 @@ Specifies whether shadow copying uses the default startup behavior introduced in
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Shadow Copying Assemblies](../../../../../docs/framework/app-domains/shadow-copy-assemblies.md)

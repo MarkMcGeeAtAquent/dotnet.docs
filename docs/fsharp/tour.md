@@ -1,10 +1,10 @@
 ---
 title: Tour of F#
-description: Tour of F# 
+description: Examine some of the key features of the F# programming language in this tour with code samples.
 keywords: visual f#, f#, functional programming, .NET, tour
 author: cartermp
 ms.author: phcart
-ms.date: 01/24/2017
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: .net
 ms.technology: devlang-fsharp
@@ -17,13 +17,6 @@ ms.assetid: 49775139-082e-442f-b5a2-dd402399b5d2
 The best way to learn about F# is to read and write F# code.  This article will act as a tour through some of the key features of the F# language and give you some code snippets that you can execute on your machine.  To learn about setting up a development environment, check out [Getting Started](tutorials/getting-started/index.md).
 
 There are two primary concepts in F#: functions and types.  This tour will emphasize features of the language which fall into these two concepts.
-
-## How to Run the Code Samples
-
->[!NOTE]
-Eventually, this documentation site will have the ability to run these code samples directly in your browser.  If your browser supports Silverlight, you can use [TryFsharp](http://www.tryfsharp.org/Create) for the time being.
-
-The quickest way to run these code samples is to use [F# Interactive](tutorials/fsharp-interactive/index.md).  Just copy/paste the code samples and run them there.  Alternatively you can set up a project to compile and run the code as a Console Application in [Visual Studio](tutorials/getting-started/getting-started-visual-studio.md) or [Visual Studio Code and Ionide](tutorials/getting-started/getting-started-vscode.md).
 
 ## Functions and Modules
 
@@ -193,9 +186,9 @@ The presence of Classes, Records, Discriminated Unions, and Tuples leads to an i
 
 Tuples are great for returning multiple values from a function, and using an ad-hoc aggregate of values as a value itself.
 
-Records are a "step up" from Tuples, having named labels and support for optional members.  They are great for a low-ceremony representation of data in-transit through your program.  Because they have structural equality, they can be used in Pattern Matching.
+Records are a "step up" from Tuples, having named labels and support for optional members.  They are great for a low-ceremony representation of data in-transit through your program.  Because they have structural equality, they are easy to use with comparison.
 
-Discriminated Unions have many reasons, but the core benefit is to be able to utilize them in conjunction with Pattern Matching to account for all possible "shapes" that a data can have.  
+Discriminated Unions have many uses, but the core benefit is to be able to utilize them in conjunction with Pattern Matching to account for all possible "shapes" that a data can have.  
 
 Classes are great for a huge number of reasons, such as when you need to represent information and also tie that information to functionality.  As a rule of thumb, when you have functionality which is conceptually tied to some data, using Classes and the principles of Object-Oriented Programming is a big benefit.  Classes are also the preferred data type when interoperating with C# and Visual Basic, as these languages use classes for nearly everything.
 
@@ -203,6 +196,6 @@ Classes are great for a huge number of reasons, such as when you need to represe
 
 Now that you've seen some of the primary features of the language, you should be ready to write your first F# programs!  Check out [Getting Started](tutorials/getting-started/index.md) to learn how to set up your development environment and write some code.
 
-The next steps for learning more can be whatever you like, but we recommend an [Introduction to Functional Programming in F#](introduction-to-functional-programming/index.md) to get comfortable with core Functional Programming concepts.  These will be essential in building robust programs in F#.
+The next steps for learning more can be whatever you like, but we recommend [Functions as First-Class Values](introduction-to-functional-programming/functions-as-first-class-values.md)<!--[Introduction to Functional Programming in F#](introduction-to-functional-programming/index.md)--> to get comfortable with core Functional Programming concepts.  These will be essential in building robust programs in F#.
 
 Also, check out the [F# Language Reference](language-reference/index.md) to see a comprehensive collection of conceptual content on F#.

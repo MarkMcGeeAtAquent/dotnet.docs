@@ -1,5 +1,5 @@
 ---
-title: "CreateDebuggingInterfaceFromVersion Function | Microsoft Docs"
+title: "CreateDebuggingInterfaceFromVersion Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CreateDebuggingInterfaceFromVersion"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "mscoreei.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CreateDebuggingInterfaceFromVersion"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateDebuggingInterfaceFromVersion function [.NET Framework hosting]"
 ms.assetid: a746a849-463c-44f5-a2f0-9e812ed8bcc3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 20
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CreateDebuggingInterfaceFromVersion Function
 Creates an [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) object based on the specified version information.  

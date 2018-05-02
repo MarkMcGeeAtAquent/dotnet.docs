@@ -1,7 +1,9 @@
-<Type Name="RelativeSource" FullName="System.Windows.Data.RelativeSource">
+﻿<Type Name="RelativeSource" FullName="System.Windows.Data.RelativeSource">
   <TypeSignature Language="C#" Value="public class RelativeSource : System.Windows.Markup.MarkupExtension, System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RelativeSource extends System.Windows.Markup.MarkupExtension implements class System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.RelativeSource" />
+  <TypeSignature Language="VB.NET" Value="Public Class RelativeSource&#xA;Inherits MarkupExtension&#xA;Implements ISupportInitialize" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RelativeSource : System::Windows::Markup::MarkupExtension, System::ComponentModel::ISupportInitialize" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,22 +27,18 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- One of the ways to specify a binding source is to use the <xref:System.Windows.Data.Binding.RelativeSource%2A?displayProperty=fullName> property. This is the property type of that property. <xref:System.Windows.Data.RelativeSource> is simultaneously a markup extension implementation and a data object. When the extension returns itself (see <xref:System.Windows.Data.RelativeSource.ProvideValue%2A>), the relevant information is contained in the data. The main purpose of the markup extension is to allow a variable-argument constructor syntax in attribute form, so that the <xref:System.Windows.Data.RelativeSourceMode> mode can be defined inline with the two extra arguments for ancestor type and level that the other modes do not require.  
+ One of the ways to specify a binding source is to use the <xref:System.Windows.Data.Binding.RelativeSource%2A?displayProperty=nameWithType> property. This is the property type of that property. <xref:System.Windows.Data.RelativeSource> is simultaneously a markup extension implementation and a data object. When the extension returns itself (see <xref:System.Windows.Data.RelativeSource.ProvideValue%2A>), the relevant information is contained in the data. The main purpose of the markup extension is to allow a variable-argument constructor syntax in attribute form, so that the <xref:System.Windows.Data.RelativeSourceMode.FindAncestor> mode can be defined inline with the two extra arguments for ancestor type and level that the other modes do not require.  
   
  For [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] information, see [RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md).  
-  
-<a name="xamlTextUsage_RelativeSource"></a>   
-## XAML Text Usage  
-   
   
 ## Examples  
  The following example shows a style trigger that creates a <xref:System.Windows.Controls.ToolTip> that reports a validation error message. Using the <xref:System.Windows.Data.Binding.RelativeSource%2A> property, the value of the setter binds to the error content of the current <xref:System.Windows.Controls.TextBox> (the <xref:System.Windows.Controls.TextBox> using the style). For more information on this example, see [How to: Implement Binding Validation](~/docs/framework/wpf/data/how-to-implement-binding-validation.md).  
   
- [!code-xml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
+ [!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
   
  The following example shows the <xref:System.Windows.Style> definition of a custom control called `NumericUpDown`. The <xref:System.Windows.Controls.TextBlock.Text%2A> property of the <xref:System.Windows.Controls.TextBlock> is bound to the `Value` of the object that is the `TemplatedParent`, which is the `NumericUpDown` control that this <xref:System.Windows.Style> is applied to in this case.  
   
- [!code-xml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
+ [!code-xaml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
   
  For the complete sample, see [NumericUpDown Custom Control with Theme and UI Automation Support Sample](http://go.microsoft.com/fwlink/?LinkID=160025).  
   
@@ -51,12 +49,24 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Data.RelativeSource" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Data.RelativeSource" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public RelativeSource ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RelativeSource();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -72,6 +82,8 @@
       <MemberSignature Language="C#" Value="public RelativeSource (System.Windows.Data.RelativeSourceMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Data.RelativeSourceMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor(System.Windows.Data.RelativeSourceMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (mode As RelativeSourceMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RelativeSource(System::Windows::Data::RelativeSourceMode mode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -90,6 +102,8 @@
       <MemberSignature Language="C#" Value="public RelativeSource (System.Windows.Data.RelativeSourceMode mode, Type ancestorType, int ancestorLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Data.RelativeSourceMode mode, class System.Type ancestorType, int32 ancestorLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor(System.Windows.Data.RelativeSourceMode,System.Type,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (mode As RelativeSourceMode, ancestorType As Type, ancestorLevel As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RelativeSource(System::Windows::Data::RelativeSourceMode mode, Type ^ ancestorType, int ancestorLevel);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -109,7 +123,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- `ancestorType` and `ancestorLevel` have no relevance if given as parameters for a `mode` other than <xref:System.Windows.Data.RelativeSourceMode>. Do not use this signature for the other <xref:System.Windows.Data.RelativeSourceMode> values.  
+ `ancestorType` and `ancestorLevel` have no relevance if given as parameters for a `mode` other than <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>. Do not use this signature for the other <xref:System.Windows.Data.RelativeSourceMode> values.  
   
    
   
@@ -127,6 +141,8 @@
       <MemberSignature Language="C#" Value="public int AncestorLevel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 AncestorLevel" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.AncestorLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property AncestorLevel As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int AncestorLevel { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -142,7 +158,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Windows.Data.RelativeSource.Mode%2A> property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> property will implicitly lock the <xref:System.Windows.Data.RelativeSource.Mode%2A> property value to <xref:System.Windows.Data.RelativeSourceMode>.  
+ If the <xref:System.Windows.Data.RelativeSource.Mode%2A> property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> property will implicitly lock the <xref:System.Windows.Data.RelativeSource.Mode%2A> property value to <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.  
   
 <a name="xamlTextUsage_AncestorLevel"></a>   
 ## XAML Text Usage  
@@ -158,12 +174,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
     <Member MemberName="AncestorType">
       <MemberSignature Language="C#" Value="public Type AncestorType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type AncestorType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.AncestorType" />
+      <MemberSignature Language="VB.NET" Value="Public Property AncestorType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ AncestorType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -179,7 +199,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Windows.Data.RelativeSource.Mode%2A> property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> property will implicitly lock the <xref:System.Windows.Data.RelativeSource.Mode%2A> property value to <xref:System.Windows.Data.RelativeSourceMode>.  
+ If the <xref:System.Windows.Data.RelativeSource.Mode%2A> property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> property will implicitly lock the <xref:System.Windows.Data.RelativeSource.Mode%2A> property value to <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.  
   
 <a name="xamlTextUsage_AncestorType"></a>   
 ## XAML Text Usage  
@@ -196,12 +216,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Windows.Data.RelativeSource" /> is not in the <see cref="F:System.Windows.Data.RelativeSourceMode.FindAncestor" /> mode.</exception>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="P:System.Windows.Data.RelativeSource.AncestorLevel" />
+        <altmember cref="F:System.Windows.Data.RelativeSourceMode.FindAncestor" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
     <Member MemberName="Mode">
       <MemberSignature Language="C#" Value="public System.Windows.Data.RelativeSourceMode Mode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Data.RelativeSourceMode Mode" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.Mode" />
+      <MemberSignature Language="VB.NET" Value="Public Property Mode As RelativeSourceMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Data::RelativeSourceMode Mode { System::Windows::Data::RelativeSourceMode get(); void set(System::Windows::Data::RelativeSourceMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -222,7 +248,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property is read-only after initialization. If this property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> and the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> properties will implicitly lock this property value to <xref:System.Windows.Data.RelativeSourceMode>.  
+ This property is read-only after initialization. If this property is not set explicitly, setting the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> or the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> and the <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> properties will implicitly lock this property value to <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.  
   
 <a name="xamlTextUsage_Mode"></a>   
 ## XAML Text Usage  
@@ -231,12 +257,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">This property is immutable after initialization. Instead of changing the <see cref="P:System.Windows.Data.RelativeSource.Mode" /> on this instance, create a new <see cref="T:System.Windows.Data.RelativeSource" /> or use a different static instance.</exception>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
     <Member MemberName="PreviousData">
       <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource PreviousData { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource PreviousData" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.PreviousData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property PreviousData As RelativeSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Windows::Data::RelativeSource ^ PreviousData { System::Windows::Data::RelativeSource ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -252,7 +282,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode>, <xref:System.Windows.Data.RelativeSourceMode>, or <xref:System.Windows.Data.RelativeSourceMode>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
+ Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode.PreviousData>, <xref:System.Windows.Data.RelativeSourceMode.Self>, or <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
   
 <a name="xamlTextUsage_PreviousData"></a>   
 ## XAML Text Usage  
@@ -260,12 +290,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
     <Member MemberName="ProvideValue">
       <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ProvideValue(System.IServiceProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ProvideValue (serviceProvider As IServiceProvider) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ ProvideValue(IServiceProvider ^ serviceProvider);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -285,7 +319,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Windows.Data.RelativeSource> is simultaneously a markup extension implementation and a data object. When the extension returns itself, the relevant information is contained in the data. The main purpose of the markup extension is to allow a variable-argument constructor syntax in attribute form so that the <xref:System.Windows.Data.RelativeSourceMode> mode can be defined inline, with the two extra arguments for ancestor type and level that the other modes do not require.  
+ <xref:System.Windows.Data.RelativeSource> is simultaneously a markup extension implementation and a data object. When the extension returns itself, the relevant information is contained in the data. The main purpose of the markup extension is to allow a variable-argument constructor syntax in attribute form so that the <xref:System.Windows.Data.RelativeSourceMode.FindAncestor> mode can be defined inline, with the two extra arguments for ancestor type and level that the other modes do not require.  
   
  ]]></format>
         </remarks>
@@ -295,6 +329,8 @@
       <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource Self { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource Self" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.Self" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Self As RelativeSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Windows::Data::RelativeSource ^ Self { System::Windows::Data::RelativeSource ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -310,7 +346,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode>, <xref:System.Windows.Data.RelativeSourceMode>, or <xref:System.Windows.Data.RelativeSourceMode>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
+ Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode.PreviousData>, <xref:System.Windows.Data.RelativeSourceMode.Self>, or <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
   
 <a name="xamlTextUsage_Self"></a>   
 ## XAML Text Usage  
@@ -321,16 +357,20 @@
 ## Examples  
  The following example shows a style trigger that creates a <xref:System.Windows.Controls.ToolTip> that reports a validation error message. The value of the setter binds to the error content of the current <xref:System.Windows.Controls.TextBox> (the <xref:System.Windows.Controls.TextBox> using the style) using the <xref:System.Windows.Data.Binding.RelativeSource%2A> property. See [How to: Implement Binding Validation](~/docs/framework/wpf/data/how-to-implement-binding-validation.md) for more information on this example.  
   
- [!code-xml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
+ [!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
     <Member MemberName="ShouldSerializeAncestorLevel">
       <MemberSignature Language="C#" Value="public bool ShouldSerializeAncestorLevel ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeAncestorLevel() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ShouldSerializeAncestorLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeAncestorLevel () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeAncestorLevel();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -363,6 +403,8 @@
       <MemberSignature Language="C#" Value="public bool ShouldSerializeAncestorType ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeAncestorType() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ShouldSerializeAncestorType" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeAncestorType () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeAncestorType();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -397,6 +439,8 @@
       <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberSignature Language="VB.NET" Value="Sub BeginInit () Implements ISupportInitialize.BeginInit" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.ComponentModel.ISupportInitialize.BeginInit() = System::ComponentModel::ISupportInitialize::BeginInit;" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -415,6 +459,8 @@
       <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberSignature Language="VB.NET" Value="Sub EndInit () Implements ISupportInitialize.EndInit" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.ComponentModel.ISupportInitialize.EndInit() = System::ComponentModel::ISupportInitialize::EndInit;" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -433,6 +479,8 @@
       <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource TemplatedParent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource TemplatedParent" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.TemplatedParent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property TemplatedParent As RelativeSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Windows::Data::RelativeSource ^ TemplatedParent { System::Windows::Data::RelativeSource ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -448,7 +496,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode>, <xref:System.Windows.Data.RelativeSourceMode>, or <xref:System.Windows.Data.RelativeSourceMode>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
+ Three of the four <xref:System.Windows.Data.RelativeSourceMode> values, <xref:System.Windows.Data.RelativeSourceMode.PreviousData>, <xref:System.Windows.Data.RelativeSourceMode.Self>, or <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>, can produce a <xref:System.Windows.Data.RelativeSource> that is wholly static, containing no unique private values. All uses of the static property can share the same object, eliminating the need to allocate separate objects for each use. Therefore, using the static property reduces memory usage.  
   
 <a name="xamlTextUsage_TemplatedParent"></a>   
 ## XAML Text Usage  
@@ -459,12 +507,14 @@
 ## Examples  
  The following example shows the <xref:System.Windows.Style> definition of a custom control called `NumericUpDown`. The <xref:System.Windows.Controls.TextBlock.Text%2A> property of the <xref:System.Windows.Controls.TextBlock> is bound to the `Value` of the object that is the `TemplatedParent`, which is the `NumericUpDown` control that this <xref:System.Windows.Style> is applied to in this case.  
   
- [!code-xml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
+ [!code-xaml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
   
  For the complete sample, see [NumericUpDown Custom Control with Theme and UI Automation Support Sample](http://go.microsoft.com/fwlink/?LinkID=160025).  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Data.RelativeSourceMode" />
+        <altmember cref="T:System.Windows.Data.RelativeSource" />
       </Docs>
     </Member>
   </Members>

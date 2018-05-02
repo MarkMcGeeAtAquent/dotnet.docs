@@ -1,20 +1,26 @@
 ---
 uid: System.Data.Metadata.Edm.RelationshipSet
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Metadata.Edm.RelationshipSet.BuiltInTypeKind
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Metadata.Edm.RelationshipSet.ElementType
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

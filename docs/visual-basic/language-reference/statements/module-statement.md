@@ -1,46 +1,27 @@
 ---
-title: "Module Statement | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Module Statement"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "Module"
   - "vb.Module"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "modules, classes"
   - "modules"
-  - "Module statement"
+  - "Module statement [Visual Basic]"
   - "modules, declaring"
   - "standard modules"
   - "classes [Visual Basic], vs. modules"
-  - "declarations, modules"
+  - "declarations [Visual Basic], modules"
 ms.assetid: a1243afc-14a5-45df-95d5-51118aeac362
 caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Module Statement
 Declares the name of a module and introduces the definition of the variables, properties, events, and procedures that the module comprises.  
@@ -48,8 +29,8 @@ Declares the name of a module and introduces the definition of the variables, pr
 ## Syntax  
   
 ```  
-[ <attributelist> ] [ accessmodifier ]  Module name  
-    [ statements ]  
+[ <attributelist> ] [ accessmodifier ]  Module name  
+    [ statements ]  
 End Module  
 ```  
   
@@ -64,7 +45,7 @@ End Module
   
 -   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
- See [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `name`  
  Required. Name of this module. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
@@ -82,7 +63,7 @@ End Module
   
  A module has the same lifetime as your program. Because its members are all `Shared`, they also have lifetimes equal to that of the program.  
   
- Modules default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Modules default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  All members of a module are implicitly `Shared`.  
   
@@ -119,9 +100,9 @@ End Module
  [!code-vb[VbVbalrStatements#69](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/module-statement_1.vb)]  
   
 ## See Also  
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md)   
- [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
+ [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md)  
+ [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
  [Type Promotion](../../../visual-basic/programming-guide/language-features/declared-elements/type-promotion.md)

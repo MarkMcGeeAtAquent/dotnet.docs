@@ -1,22 +1,27 @@
 ---
-title: "How to: Create a WSFederationHttpBinding | Microsoft Docs"
+title: "How to: Create a WSFederationHttpBinding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, federation"
   - "federation"
 ms.assetid: e54897d7-aa6c-46ec-a278-b2430c8c2e10
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a WSFederationHttpBinding
 In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], the <xref:System.ServiceModel.WSFederationHttpBinding> class ([\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) in configuration) provides a mechanism for exposing a federated service. That is, a service that requires clients to authenticate using a security token issued by a security token service. This topic shows how to set up a <xref:System.ServiceModel.WSFederationHttpBinding> in both code and configuration. Once the binding is created, you can set up an endpoint to use that binding.  
@@ -49,7 +54,7 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], the <xref:System.Ser
   
 1.  Create an instance of the <xref:System.ServiceModel.WSFederationHttpBinding>.  
   
-2.  Set the <xref:System.ServiceModel.WSFederationHttpSecurity.Mode%2A> property to <xref:System.ServiceModel.WSFederationHttpSecurityMode> or <xref:System.ServiceModel.WSFederationHttpSecurityMode> as required. If an algorithm suite other than <xref:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256%2A> is required, set the <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.AlgorithmSuite%2A> property to a value taken from <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.  
+2.  Set the <xref:System.ServiceModel.WSFederationHttpSecurity.Mode%2A> property to <xref:System.ServiceModel.WSFederationHttpSecurityMode> or <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message> as required. If an algorithm suite other than <xref:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256%2A> is required, set the <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.AlgorithmSuite%2A> property to a value taken from <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.  
   
 3.  Set the <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> property as appropriate.  
   
@@ -104,10 +109,10 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], the <xref:System.Ser
 ## Example  
  The following code sample shows code for setting up a `WSFederationHttpBinding` imperatively.  
   
- [!code-csharp[c_FederationBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federationbinding/cs/source.cs#2)]
- <!-- TODO: review snippet reference [!code-vb[c_FederationBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]  -->  
+ [!code-csharp[c_FederationBinding#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_federationbinding/cs/source.cs#2)] 
+ [!code-vb[c_FederationBinding#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_federationbinding/vb/source.vb#2)]  
   
 ## See Also  
- [Federation](../../../../docs/framework/wcf/feature-details/federation.md)   
- [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md)   
+ [Federation](../../../../docs/framework/wcf/feature-details/federation.md)  
+ [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md)  
  [How to: Disable Secure Sessions on a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)

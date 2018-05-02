@@ -1,26 +1,34 @@
 ---
 uid: System.Windows.Forms.TreeViewHitTestInfo
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewHitTestInfo.Node
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewHitTestInfo.#ctor(System.Windows.Forms.TreeNode,System.Windows.Forms.TreeViewHitTestLocations)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewHitTestInfo.Location
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

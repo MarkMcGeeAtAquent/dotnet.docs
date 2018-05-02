@@ -1,8 +1,8 @@
 ---
-title: "&lt;webProxyScript&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;webProxyScript&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#webProxyScript"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/webProxyScript"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<webProxyScript> element"
   - "webProxyScript element"
@@ -25,6 +20,8 @@ caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;webProxyScript&gt; Element (Network Settings)
 Configures the characteristics of the script used to discover Web proxies.  
@@ -36,9 +33,8 @@ Configures the characteristics of the script used to discover Web proxies.
   
 ## Syntax  
   
-```  
-  
-      <webProxyScript  
+```xml  
+<webProxyScript  
   downloadTimeout="hh:mm:ss"  
 />  
 ```  

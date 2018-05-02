@@ -1,7 +1,9 @@
-<Type Name="VisualStateManager" FullName="System.Windows.VisualStateManager">
+﻿<Type Name="VisualStateManager" FullName="System.Windows.VisualStateManager">
   <TypeSignature Language="C#" Value="public class VisualStateManager : System.Windows.DependencyObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit VisualStateManager extends System.Windows.DependencyObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.VisualStateManager" />
+  <TypeSignature Language="VB.NET" Value="Public Class VisualStateManager&#xA;Inherits DependencyObject" />
+  <TypeSignature Language="C++ CLI" Value="public ref class VisualStateManager : System::Windows::DependencyObject" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,14 +24,14 @@
   
  Controls that are included with [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] use the <xref:System.Windows.VisualStateManager> to change visual states. When you create a <xref:System.Windows.Controls.ControlTemplate> for a control that is included with [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)], you can add <xref:System.Windows.VisualState> objects to the control's <xref:System.Windows.Controls.ControlTemplate> to specify the control's appearance in a certain state. To find the names of the visual states for the controls that are included with [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)], see [Control Styles and Templates](~/docs/framework/wpf/controls/control-styles-and-templates.md). The control's logic handles transitioning between states, so you do not need to do anything other than define the <xref:System.Windows.VisualState> objects in the new <xref:System.Windows.Controls.ControlTemplate>. For more information about how to create control templates for existing controls, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
   
- If you want to implement your own logic for transitioning between states, you must inherit from <xref:System.Windows.VisualStateManager>, override the <xref:System.Windows.VisualStateManager.GoToStateCore%2A> method, and set the <xref:System.Windows.VisualStateManager.CustomVisualStateManager%2A?displayProperty=fullName> attached property on the control that uses the custom logic.  
+ If you want to implement your own logic for transitioning between states, you must inherit from <xref:System.Windows.VisualStateManager>, override the <xref:System.Windows.VisualStateManager.GoToStateCore%2A> method, and set the <xref:System.Windows.VisualStateManager.CustomVisualStateManager%2A?displayProperty=nameWithType> attached property on the control that uses the custom logic.  
   
    
   
 ## Examples  
  The following example creates a <xref:System.Windows.Shapes.Rectangle> and adds a <xref:System.Windows.VisualStateGroup> named `CommonStates` to the `VisualStateManager.VisualStatesGroups` attached property. The example defines the `MouseOver` and `Normal`<xref:System.Windows.VisualState> objects in the `CommonStates`<xref:System.Windows.VisualStateGroup>. When the user moves the mouse pointer over the <xref:System.Windows.Shapes.Rectangle>, it changes from red to green over one half second. When the user moves the mouse away from the rectangle, the <xref:System.Windows.Controls.Grid> immediately changes back to red. Note that the `Normal` state does not define a <xref:System.Windows.Media.Animation.Storyboard>. A <xref:System.Windows.Media.Animation.Storyboard> is not required because when the <xref:System.Windows.Shapes.Rectangle> transitions from the `MouseOver` state to the `Normal` state, the <xref:System.Windows.Media.Animation.Storyboard> for `MouseOver` is stopped and the <xref:System.Windows.Media.SolidColorBrush.Color%2A> property for the <xref:System.Windows.Media.SolidColorBrush> returns to red.  
   
- [!code-xml[VSMCustomControl#VSMNoTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#vsmnotemplate)]  
+ [!code-xaml[VSMCustomControl#VSMNoTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmcustomcontrol/csharp/window1.xaml#vsmnotemplate)]  
   
  The following example shows the event handler that is defined in the previous example and calls the <xref:System.Windows.VisualStateManager.GoToElementState%2A> method to transition between states. If the rectangle in the previous example was part of a <xref:System.Windows.Controls.ControlTemplate>, the example would have to call the <xref:System.Windows.VisualStateManager.GoToState%2A> method.  
   
@@ -44,6 +46,8 @@
       <MemberSignature Language="C#" Value="public VisualStateManager ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; VisualStateManager();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -55,10 +59,27 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="CustomVisualStateManager">
+      <MemberSignature Language="C#" Value="see GetCustomVisualStateManager, and SetCustomVisualStateManager" />
+      <MemberSignature Language="ILAsm" Value="see GetCustomVisualStateManager, and SetCustomVisualStateManager" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.VisualStateManager.CustomVisualStateManager" />
+      <MemberSignature Language="VB.NET" Value="see GetCustomVisualStateManager, and SetCustomVisualStateManager" />
+      <MemberType>AttachedProperty</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="CustomVisualStateManagerProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomVisualStateManagerProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomVisualStateManagerProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.VisualStateManager.CustomVisualStateManagerProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CustomVisualStateManagerProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ CustomVisualStateManagerProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -76,6 +97,8 @@
       <MemberSignature Language="C#" Value="public static System.Windows.VisualStateManager GetCustomVisualStateManager (System.Windows.FrameworkElement obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.VisualStateManager GetCustomVisualStateManager(class System.Windows.FrameworkElement obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomVisualStateManager (obj As FrameworkElement) As VisualStateManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::VisualStateManager ^ GetCustomVisualStateManager(System::Windows::FrameworkElement ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -98,6 +121,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.IList GetVisualStateGroups (System.Windows.FrameworkElement obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IList GetVisualStateGroups(class System.Windows.FrameworkElement obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetVisualStateGroups (obj As FrameworkElement) As IList" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::IList ^ GetVisualStateGroups(System::Windows::FrameworkElement ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -105,7 +130,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -125,6 +150,8 @@
       <MemberSignature Language="C#" Value="public static bool GoToElementState (System.Windows.FrameworkElement stateGroupsRoot, string stateName, bool useTransitions);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GoToElementState(class System.Windows.FrameworkElement stateGroupsRoot, string stateName, bool useTransitions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GoToElementState (stateGroupsRoot As FrameworkElement, stateName As String, useTransitions As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool GoToElementState(System::Windows::FrameworkElement ^ stateGroupsRoot, System::String ^ stateName, bool useTransitions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -157,7 +184,7 @@
 ## Examples  
  The following example creates an application that prompts the user to guess a number between 1 and 100.  When the user enters a number, the application indicates whether the guess is too high, too low, or correct.  The following [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] creates the user interface for the application and defines 4 states: `TooLow`, `TooHigh`, `Correct`, and `Guessing`. When the application begins, it is in the `Guessing` state. .  
   
- [!code-xml[VSMGoToElementState#GoToElementStateXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmgotoelementstate/csharp/mainwindow.xaml#gotoelementstatexaml)]  
+ [!code-xaml[VSMGoToElementState#GoToElementStateXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/vsmgotoelementstate/csharp/mainwindow.xaml#gotoelementstatexaml)]  
   
  The following code shows the logic of the application.  When the user enters a number and clicks the button, the application calls <xref:System.Windows.VisualStateManager.GoToElementState%2A> to transition to `TooHigh`, `TooLow`, or `Correct` to provide feedback to the user about the guess.  To try this example, call the `GenerateNumber` method when the application begins.  
   
@@ -178,6 +205,8 @@
       <MemberSignature Language="C#" Value="public static bool GoToState (System.Windows.FrameworkElement control, string stateName, bool useTransitions);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GoToState(class System.Windows.FrameworkElement control, string stateName, bool useTransitions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GoToState (control As FrameworkElement, stateName As String, useTransitions As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool GoToState(System::Windows::FrameworkElement ^ control, System::String ^ stateName, bool useTransitions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -227,6 +256,8 @@
       <MemberSignature Language="C#" Value="protected virtual bool GoToStateCore (System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot, string stateName, System.Windows.VisualStateGroup group, System.Windows.VisualState state, bool useTransitions);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GoToStateCore(class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot, string stateName, class System.Windows.VisualStateGroup group, class System.Windows.VisualState state, bool useTransitions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GoToStateCore (control As FrameworkElement, stateGroupsRoot As FrameworkElement, stateName As String, group As VisualStateGroup, state As VisualState, useTransitions As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool GoToStateCore(System::Windows::FrameworkElement ^ control, System::Windows::FrameworkElement ^ stateGroupsRoot, System::String ^ stateName, System::Windows::VisualStateGroup ^ group, System::Windows::VisualState ^ state, bool useTransitions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -276,6 +307,8 @@
       <MemberSignature Language="C#" Value="protected void RaiseCurrentStateChanged (System.Windows.VisualStateGroup stateGroup, System.Windows.VisualState oldState, System.Windows.VisualState newState, System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseCurrentStateChanged(class System.Windows.VisualStateGroup stateGroup, class System.Windows.VisualState oldState, class System.Windows.VisualState newState, class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub RaiseCurrentStateChanged (stateGroup As VisualStateGroup, oldState As VisualState, newState As VisualState, control As FrameworkElement, stateGroupsRoot As FrameworkElement)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void RaiseCurrentStateChanged(System::Windows::VisualStateGroup ^ stateGroup, System::Windows::VisualState ^ oldState, System::Windows::VisualState ^ newState, System::Windows::FrameworkElement ^ control, System::Windows::FrameworkElement ^ stateGroupsRoot);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -321,6 +354,8 @@
       <MemberSignature Language="C#" Value="protected void RaiseCurrentStateChanging (System.Windows.VisualStateGroup stateGroup, System.Windows.VisualState oldState, System.Windows.VisualState newState, System.Windows.FrameworkElement control, System.Windows.FrameworkElement stateGroupsRoot);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseCurrentStateChanging(class System.Windows.VisualStateGroup stateGroup, class System.Windows.VisualState oldState, class System.Windows.VisualState newState, class System.Windows.FrameworkElement control, class System.Windows.FrameworkElement stateGroupsRoot) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub RaiseCurrentStateChanging (stateGroup As VisualStateGroup, oldState As VisualState, newState As VisualState, control As FrameworkElement, stateGroupsRoot As FrameworkElement)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void RaiseCurrentStateChanging(System::Windows::VisualStateGroup ^ stateGroup, System::Windows::VisualState ^ oldState, System::Windows::VisualState ^ newState, System::Windows::FrameworkElement ^ control, System::Windows::FrameworkElement ^ stateGroupsRoot);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -366,6 +401,8 @@
       <MemberSignature Language="C#" Value="public static void SetCustomVisualStateManager (System.Windows.FrameworkElement obj, System.Windows.VisualStateManager value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCustomVisualStateManager(class System.Windows.FrameworkElement obj, class System.Windows.VisualStateManager value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SetCustomVisualStateManager (obj As FrameworkElement, value As VisualStateManager)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SetCustomVisualStateManager(System::Windows::FrameworkElement ^ obj, System::Windows::VisualStateManager ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -389,6 +426,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VisualStateGroupsProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VisualStateGroupsProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.VisualStateManager.VisualStateGroupsProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly VisualStateGroupsProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ VisualStateGroupsProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>

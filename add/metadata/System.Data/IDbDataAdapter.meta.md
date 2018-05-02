@@ -1,34 +1,44 @@
 ---
 uid: System.Data.IDbDataAdapter
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.IDbDataAdapter.SelectCommand
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.IDbDataAdapter.UpdateCommand
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.IDbDataAdapter.DeleteCommand
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.IDbDataAdapter.InsertCommand
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

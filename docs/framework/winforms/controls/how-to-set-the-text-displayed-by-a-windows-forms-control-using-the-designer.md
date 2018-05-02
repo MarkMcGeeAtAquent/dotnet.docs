@@ -1,16 +1,14 @@
 ---
-title: "How to: Set the Text Displayed by a Windows Forms Control Using the Designer | Microsoft Docs"
+title: "How to: Set the Text Displayed by a Windows Forms Control Using the Designer"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "controls [Windows Forms], setting caption"
   - "Windows Forms, setting the text displayed"
@@ -19,6 +17,8 @@ caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Set the Text Displayed by a Windows Forms Control Using the Designer
 Windows Forms controls typically display some text that is related to the primary function of the control. For example, a <xref:System.Windows.Forms.Button> control typically displays a caption that indicates what action will be performed when the button is clicked. For all controls, you can set or return the text by using the <xref:System.Windows.Forms.Control.Text%2A> property. You can change the font by using the <xref:System.Windows.Forms.Control.Font%2A> property.  
@@ -34,6 +34,6 @@ Windows Forms controls typically display some text that is related to the primar
      In the standard font dialog box, select the font, font style, size, effects (such as strikeout or underline), and script that you want.  
   
 ## See Also  
- [How to: Set the Text Displayed by a Windows Forms Control](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)   
- [Using Fonts and Text](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)   
+ [How to: Set the Text Displayed by a Windows Forms Control](../../../../docs/framework/winforms/controls/how-to-set-the-text-displayed-by-a-windows-forms-control.md)  
+ [Using Fonts and Text](../../../../docs/framework/winforms/advanced/using-fonts-and-text.md)  
  [Labeling Individual Windows Forms Controls and Providing Shortcuts to Them](../../../../docs/framework/winforms/controls/labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)

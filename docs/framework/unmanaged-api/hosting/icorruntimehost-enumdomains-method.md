@@ -1,5 +1,5 @@
 ---
-title: "ICorRuntimeHost::EnumDomains Method | Microsoft Docs"
+title: "ICorRuntimeHost::EnumDomains Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorRuntimeHost.EnumDomains"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorRuntimeHost::EnumDomains"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorRuntimeHost::EnumDomains method [.NET Framework hosting]"
   - "EnumDomains method [.NET Framework hosting]"
 ms.assetid: 96b74995-0cde-4876-b6df-7fc164e6a5d1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorRuntimeHost::EnumDomains Method
 Gets an enumerator for the domains in the current process.  

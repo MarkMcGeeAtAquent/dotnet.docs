@@ -1,7 +1,7 @@
 ---
-title: "Variable Declaration in Visual Basic | Microsoft Docs"
+title: "Variable Declaration in Visual Basic"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,43 +9,25 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "variables [Visual Basic], declaring"
-  - "member variables, declarations"
-  - "Dim statement, variable declaration"
-  - "declaring variables"
+  - "member variables [Visual Basic], declarations"
+  - "Dim statement [Visual Basic], variable declaration"
+  - "declaring variables [Visual Basic]"
   - "variables [Visual Basic], scope"
   - "variables [Visual Basic], data types"
   - "data types [Visual Basic], variable declarations"
-  - "lifetime, variables"
+  - "lifetime [Visual Basic], variables"
   - "variables [Visual Basic], lifetime"
-  - "access levels, variables"
-  - "scope, declaration statements"
+  - "access levels [Visual Basic], variables"
+  - "scope [Visual Basic], declaration statements"
   - "variables [Visual Basic], access level"
-  - "local variables, declarations"
-  - "scope, variables"
+  - "local variables [Visual Basic], declarations"
+  - "scope [Visual Basic], variables"
 ms.assetid: d8f10226-92b1-480f-9f53-df377b2d7e15
 caps.latest.revision: 31
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Variable Declaration in Visual Basic
 You declare a variable to specify its name and characteristics. The declaration statement for variables is the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md). Its location and contents determine the variable's characteristics.  
@@ -55,7 +37,7 @@ You declare a variable to specify its name and characteristics. The declaration 
 ## Declaration Levels  
   
 ### Local and Member Variables  
- A *local variable* is one that is declared within a procedure. A *member variable* is a member of a [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] type; it is declared at module level, inside a class, structure, or module, but not within any procedure internal to that class, structure, or module.  
+ A *local variable* is one that is declared within a procedure. A *member variable* is a member of a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] type; it is declared at module level, inside a class, structure, or module, but not within any procedure internal to that class, structure, or module.  
   
 ### Shared and Instance Variables  
  In a class or structure, the category of a member variable depends on whether or not it is shared. If it is declared with the [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) keyword, it is a *shared variable*, and it exists in a single copy shared among all instances of the class or structure.  
@@ -71,7 +53,7 @@ You declare a variable to specify its name and characteristics. The declaration 
   
 -   An object type, or class, defined either in your application or in another application  
   
--   A [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] class, such as <xref:System.Windows.Forms.Label> or <xref:System.Windows.Forms.TextBox>  
+-   A [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] class, such as <xref:System.Windows.Forms.Label> or <xref:System.Windows.Forms.TextBox>  
   
 -   An interface type, such as <xref:System.IComparable> or <xref:System.IDisposable>  
   
@@ -98,15 +80,15 @@ Dim l, m As Long, x, y As Single
   
  The *scope* of a variable is the set of all code that can refer to it without qualifying its name. A variable's scope is determined by where it is declared. Code located in a given region can use the variables defined in that region without having to qualify their names. For more information, see [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
- A variable's *access level* is the extent of code that has permission to access it. This is determined by the access modifier (such as [Public](../../../../visual-basic/language-reference/modifiers/public.md) or [Private](../../../../visual-basic/language-reference/modifiers/private.md)) that you use in the `Dim` statement. For more information, see [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ A variable's *access level* is the extent of code that has permission to access it. This is determined by the access modifier (such as [Public](../../../../visual-basic/language-reference/modifiers/public.md) or [Private](../../../../visual-basic/language-reference/modifiers/private.md)) that you use in the `Dim` statement. For more information, see [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## See Also  
- [How to: Create a New Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)   
- [How to: Move Data Into and Out of a Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)   
- [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)   
- [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)   
- [Static](../../../../visual-basic/language-reference/modifiers/static.md)   
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
+ [How to: Create a New Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-create-a-new-variable.md)  
+ [How to: Move Data Into and Out of a Variable](../../../../visual-basic/programming-guide/language-features/variables/how-to-move-data-into-and-out-of-a-variable.md)  
+ [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Protected](../../../../visual-basic/language-reference/modifiers/protected.md)  
+ [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)  
+ [Static](../../../../visual-basic/language-reference/modifiers/static.md)  
+ [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
  [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md)

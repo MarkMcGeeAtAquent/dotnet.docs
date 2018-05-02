@@ -1,48 +1,62 @@
 ---
 uid: System.Data.Services.Client.DataServiceQuery
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.Execute
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.Expression
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.EndExecute(System.IAsyncResult)
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.BeginExecute(System.AsyncCallback,System.Object)
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.Provider
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Services.Client.DataServiceQuery.System#Collections#IEnumerable#GetEnumerator
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

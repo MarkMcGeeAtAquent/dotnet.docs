@@ -1,40 +1,52 @@
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject.#ctor(System.Windows.Forms.DateTimePicker)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject.KeyboardShortcut
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject.Value
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject.Role
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject.State
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

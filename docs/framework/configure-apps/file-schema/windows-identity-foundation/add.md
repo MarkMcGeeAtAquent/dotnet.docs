@@ -1,7 +1,8 @@
 ---
-title: "&lt;add&gt; | Microsoft Docs"
+title: "&lt;add&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 7
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt;
 Adds the specified security token handler to the token handler collection.  
@@ -24,16 +27,16 @@ Adds the specified security token handler to the token handler collection.
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add type=xs:string>  
-        <optionalConfigurationElement>  
-        </optionalConfigurationElement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add type=xs:string>  
+        <optionalConfigurationElement>  
+        </optionalConfigurationElement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
@@ -44,7 +47,7 @@ Adds the specified security token handler to the token handler collection.
   
 |Attribute|Description|  
 |---------------|-----------------|  
-|type|The CLR type name of the token handler to be added. For more information about how to specify the `type` attribute, see [Custom Type References](http://msdn.microsoft.com/en-us/7286d2e3-c63d-49fd-abdc-ce2705f22c24).|  
+|type|The CLR type name of the token handler to be added. For more information about how to specify the `type` attribute, see [Custom Type References](http://msdn.microsoft.com/library/7286d2e3-c63d-49fd-abdc-ce2705f22c24).|  
   
 ### Child Elements  
   
@@ -83,7 +86,7 @@ public class CustomTokenHandler : Microsoft.IdentityModel.Tokens.SecurityTokenHa
 ## Example  
  The following XML shows the use of the `<add>` and `<remove>` elements to replace the default session token handler with a custom session token handler. The XML is taken from the `ClaimsAwareWebFarm` sample.  
   
-```  
+```xml  
 <securityTokenHandlers>  
   <remove type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
   <add type="System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  

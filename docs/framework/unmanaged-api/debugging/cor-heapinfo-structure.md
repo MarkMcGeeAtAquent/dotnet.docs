@@ -1,5 +1,5 @@
 ---
-title: "COR_HEAPINFO Structure | Microsoft Docs"
+title: "COR_HEAPINFO Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_HEAPINFO"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_HEAPINFO"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_HEAPINFO structure [.NET Framework debugging]"
 ms.assetid: bfb2cd39-3e0b-4d51-ba0c-f009755c1456
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_HEAPINFO Structure
 Provides general information about the garbage collection heap, including whether it is enumerable.  
@@ -66,5 +69,5 @@ typedef struct _COR_HEAPINFO {
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -1,6 +1,6 @@
 ---
 title: Generics (F#)
-description: Generics (F#)
+description: Learn how to use F# generic functions and types, which enable you to write code that works with a variety of types without repeating code.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -98,7 +98,7 @@ There are two kinds of type parameters that can be used in F# programs. The firs
 
 [Statically Resolved Type Parameters](statically-resolved-type-parameters.md)
 
-[Generics in the .NET Framework](https://msdn.microsoft.com/library/ms172192.aspx)
+[Generics in the .NET Framework](~/docs/standard/generics/index.md)
 
 [Automatic Generalization](automatic-generalization.md)
 

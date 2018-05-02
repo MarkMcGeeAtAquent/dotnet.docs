@@ -1,5 +1,5 @@
 ---
-title: "Walkthrough: Creating a Cryptographic Application | Microsoft Docs"
+title: "Walkthrough: Creating a Cryptographic Application"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,10 +9,8 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "cryptography [NET Framework], example"
   - "cryptography [NET Framework], cryptographic application example"
@@ -22,6 +20,9 @@ caps.latest.revision: 17
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Walkthrough: Creating a Cryptographic Application
 This walkthrough demonstrates how to encrypt and decrypt content. The code examples are designed for a Windows Forms application. This application does not demonstrate real world scenarios, such as using smart cards. Instead, it demonstrates the fundamentals of encryption and decryption.  
@@ -86,7 +87,7 @@ This walkthrough demonstrates how to encrypt and decrypt content. The code examp
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## Encrypting a File  
- This task involves two methods: the event handler method for the `Encrypt File`button (`buttonEncryptFile_Click`) and the `EncryptFile` method. The first method displays a dialog box for selecting a file and passes the file name to the second method, which performs the encryption.  
+ This task involves two methods: the event handler method for the `Encrypt File` button (`buttonEncryptFile_Click`) and the `EncryptFile` method. The first method displays a dialog box for selecting a file and passes the file name to the second method, which performs the encryption.  
   
  The encrypted content, key, and IV are all saved to one <xref:System.IO.FileStream>, which is referred to as the encryption package.  
   
@@ -192,7 +193,7 @@ This walkthrough demonstrates how to encrypt and decrypt content. The code examp
   
 3.  Click the `Encrypt File` button and select a file.  
   
-4.  Click the `Decrypt File`button and select the file just encrypted.  
+4.  Click the `Decrypt File` button and select the file just encrypted.  
   
 5.  Examine the file just decrypted.  
   
@@ -204,7 +205,7 @@ This walkthrough demonstrates how to encrypt and decrypt content. The code examp
   
 2.  Click the `Encrypt File` button and select a file.  
   
-3.  Click the `Decrypt File`button and select the file just encrypted. This will fail because you must have the private key to decrypt.  
+3.  Click the `Decrypt File` button and select the file just encrypted. This will fail because you must have the private key to decrypt.  
   
  This scenario demonstrates having only the public key to encrypt a file for another person. Typically that person would give you only the public key and withhold the private key for decryption.  
   

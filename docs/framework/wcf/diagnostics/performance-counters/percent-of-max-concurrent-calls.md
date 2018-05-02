@@ -1,8 +1,8 @@
 ---
-title: "Percent of Max Concurrent Calls | Microsoft Docs"
+title: "Percent of Max Concurrent Calls"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 22f18a91-1188-4c4e-9ad1-93f0dc180858
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Percent of Max Concurrent Calls
 Counter name: Percent of Max Concurrent Calls  

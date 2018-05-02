@@ -1,5 +1,5 @@
 ---
-title: "ICLRValidator::Validate Method | Microsoft Docs"
+title: "ICLRValidator::Validate Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRValidator.Validate"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRValidator::Validate"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Validate method, ICLRValidator interface [.NET Framework hosting]"
   - "ICLRValidator::Validate method [.NET Framework hosting]"
 ms.assetid: 0b1b432a-d234-4002-839b-81366c3a8bdc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRValidator::Validate Method
 Validates the portable executable (PE) or Microsoft intermediate language (MSIL) in the specified file.  

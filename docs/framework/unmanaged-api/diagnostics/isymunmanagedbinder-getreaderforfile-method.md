@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedBinder::GetReaderForFile Method | Microsoft Docs"
+title: "ISymUnmanagedBinder::GetReaderForFile Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedBinder.GetReaderForFile"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedBinder::GetReaderForFile"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedBinder::GetReaderForFile method [.NET Framework debugging]"
   - "GetReaderForFile method [.NET Framework debugging]"
 ms.assetid: 46c06258-831e-47c8-a50a-8650af6b637e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedBinder::GetReaderForFile Method
 Given a metadata interface and a file name, returns the correct <<!--zz xref:ISymUnmanagedReader --> `ISymUnmanagedReader`> structure that will read the debugging symbols associated with the module.  
@@ -62,5 +65,5 @@ HRESULT GetReaderForFile(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedBinder Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)   
+ [ISymUnmanagedBinder Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)  
  [GetReaderForFile2 Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)

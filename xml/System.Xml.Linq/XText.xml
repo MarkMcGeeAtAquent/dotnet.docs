@@ -1,11 +1,14 @@
-<Type Name="XText" FullName="System.Xml.Linq.XText">
+﻿<Type Name="XText" FullName="System.Xml.Linq.XText">
   <TypeSignature Language="C#" Value="public class XText : System.Xml.Linq.XNode" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XText extends System.Xml.Linq.XNode" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XText" />
+  <TypeSignature Language="VB.NET" Value="Public Class XText&#xA;Inherits XNode" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XText : System::Xml::Linq::XNode" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XDocument</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -38,15 +41,29 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.Linq.XText" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XText (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XText.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (value As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XText(System::String ^ value);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -75,21 +92,18 @@
  The following example creates an element that contains a text node.  
   
 ```csharp  
-  
-                XElement root = new XElement("Root", "Some text");  
+XElement root = new XElement("Root", "Some text");  
 Console.WriteLine(root);  
 ```  
   
 ```vb  
-  
-                Dim root As XElement = <Root>Some text</Root>  
+Dim root As XElement = <Root>Some text</Root>  
 Console.WriteLine(root)  
 ```  
   
  This example produces the following output:  
   
 ```xml  
-  
 <Root>Some text</Root>  
 ```  
   
@@ -101,11 +115,14 @@ Console.WriteLine(root)
       <MemberSignature Language="C#" Value="public XText (System.Xml.Linq.XText other);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XText other) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XText.#ctor(System.Xml.Linq.XText)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (other As XText)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XText(System::Xml::Linq::XText ^ other);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -136,11 +153,14 @@ Console.WriteLine(root)
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XText.NodeType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NodeType As XmlNodeType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlNodeType NodeType { System::Xml::XmlNodeType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -171,8 +191,7 @@ Console.WriteLine(root)
  Note that `Child2` contains an <xref:System.Xml.Linq.XText> node, implicitly converted from the string content.  
   
 ```csharp  
-  
-                // Note that XNode uses XmlNodeType, which is in the System.Xml namespace.  
+// Note that XNode uses XmlNodeType, which is in the System.Xml namespace.  
 XDocument xmlTree = new XDocument(  
     new XComment("a comment"),  
     new XProcessingInstruction("xml-stylesheet", "type=\"text/xsl\" href=\"hello.xsl\""),  
@@ -197,8 +216,7 @@ foreach (XNode node in xmlTree.DescendantNodes())
 ```  
   
 ```vb  
-  
-                ' Note that XNode uses XmlNodeType, which is in the System.Xml namespace.  
+' Note that XNode uses XmlNodeType, which is in the System.Xml namespace.  
 Dim xmlTree As XDocument = _  
     <?xml version='1.0'?>  
     <!-- a comment -->  
@@ -218,7 +236,6 @@ For Each node As XNode In xmlTree.DescendantNodes
         Next  
     End If  
 Next  
-  
 ```  
   
  This example produces the following output:  
@@ -242,11 +259,14 @@ Text
       <MemberSignature Language="C#" Value="public string Value { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Value" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XText.Value" />
+      <MemberSignature Language="VB.NET" Value="Public Property Value As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Value { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -275,8 +295,7 @@ Text
  The following example shows getting and setting this property.  
   
 ```csharp  
-  
-                XElement root = new XElement("Root", "Some text");  
+XElement root = new XElement("Root", "Some text");  
 XText txtNode = root.Nodes().OfType<XText>().First();  
 Console.WriteLine(txtNode.Value);  
 txtNode.Value = "New text";  
@@ -288,8 +307,7 @@ Console.WriteLine(txtNode.Value);
 ```  
   
 ```vb  
-  
-                Dim root As XElement = <Root>Some text</Root>  
+Dim root As XElement = <Root>Some text</Root>  
 Dim txtNode As XText = root.Nodes().OfType(Of XText).First()  
 Console.WriteLine(txtNode.Value)  
 txtNode.Value = "New text"  
@@ -316,11 +334,14 @@ Newer text
       <MemberSignature Language="C#" Value="public override void WriteTo (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteTo(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XText.WriteTo(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteTo (writer As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteTo(System::Xml::XmlWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -348,6 +369,31 @@ Newer text
   
  ]]></format>
         </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteToAsync (System.Xml.XmlWriter writer, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteToAsync(class System.Xml.XmlWriter writer, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XText.WriteToAsync(System.Xml.XmlWriter,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteToAsync(System::Xml::XmlWriter ^ writer, System::Threading::CancellationToken cancellationToken);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="writer">To be added.</param>
+        <param name="cancellationToken">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
   </Members>

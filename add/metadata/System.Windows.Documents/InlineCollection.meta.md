@@ -1,39 +1,51 @@
 ---
 uid: System.Windows.Documents.InlineCollection
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Documents.InlineCollection.Add(System.Windows.UIElement)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Documents.InlineCollection.LastInline
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Documents.InlineCollection.Add
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Documents.InlineCollection.FirstInline
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Documents.InlineCollection.Add(System.String)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

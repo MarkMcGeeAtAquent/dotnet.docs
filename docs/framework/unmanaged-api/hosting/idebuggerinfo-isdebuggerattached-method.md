@@ -1,5 +1,5 @@
 ---
-title: "IDebuggerInfo::IsDebuggerAttached Method | Microsoft Docs"
+title: "IDebuggerInfo::IsDebuggerAttached Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IDebuggerInfo.IsDebuggerAttached"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IsDebuggerAttached"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IDebuggerInfo::IsDebuggerAttached method [.NET Framework hosting]"
   - "IsDebuggerAttached method, IDebuggerInfo interface [.NET Framework hosting]"
 ms.assetid: 6e21872f-602f-411a-a423-bff5cdf27000
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IDebuggerInfo::IsDebuggerAttached Method
 Gets a value that indicates whether a managed debugger is attached to this process.  

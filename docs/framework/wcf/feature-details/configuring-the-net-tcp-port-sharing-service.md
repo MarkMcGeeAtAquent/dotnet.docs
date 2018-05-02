@@ -1,5 +1,5 @@
 ---
-title: "Configuring the Net.TCP Port Sharing Service | Microsoft Docs"
+title: "Configuring the Net.TCP Port Sharing Service"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,16 +11,18 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
 caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring the Net.TCP Port Sharing Service
 Self-hosted services that use the Net.TCP transport can control several advanced settings, such as `ListenBacklog` and `MaxPendingAccepts`, which govern the behavior of the underlying TCP socket used for network communication. However, these settings for each socket only apply at the binding level if the transport binding has disabled port sharing, which is enabled by default.  
   
  When a net.tcp binding enables port sharing (by setting `portSharingEnabled =true` on the transport binding element), it implicitly allows an external process (namely the SMSvcHost.exe, which hosts the Net.TCP Port Sharing Service) to manage the TCP socket on its behalf. For example, when using TCP, specify:  
   
-```  
+```xml  
     <tcpTransport   
         portSharingEnabled="true"  
 />  
@@ -32,7 +34,7 @@ Self-hosted services that use the Net.TCP transport can control several advanced
   
  The following example illustrates a sample SMSvcHost.exe.config, with the default settings for all configurable values stated explicitly.  
   
-```  
+```xml  
 <configuration>  
    <system.serviceModel.activation>  
        <net.tcp listenBacklog="16" <!—16 * # of processors -->  

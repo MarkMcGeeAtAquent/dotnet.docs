@@ -1,8 +1,8 @@
 ---
-title: "RichTextBox | Microsoft Docs"
+title: "RichTextBox"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,6 +19,8 @@ caps.latest.revision: 68
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # RichTextBox
 The <xref:System.Windows.Controls.RichTextBox> element defines an editing control with built-in support for features such as cut and paste, rich document presentation, and content selection.  
@@ -28,6 +30,6 @@ The <xref:System.Windows.Controls.RichTextBox> element defines an editing contro
  [How-to Topics](../../../../docs/framework/wpf/controls/richtextbox-how-to-topics.md)  
   
 ## See Also  
- <xref:System.Windows.Controls.TextBox>   
- [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
+ <xref:System.Windows.Controls.TextBox>  
+ [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [Flow Document Overview](../../../../docs/framework/wpf/advanced/flow-document-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "Manipulations and Inertia Overview | Microsoft Docs"
+title: "Manipulations and Inertia Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 7
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Manipulations and Inertia Overview
 *Manipulations* enable users to move, rotate, and resize user interface (UI) elements by using *manipulators*. A manipulator represents a mouse or (in a touch-enabled scenario) a stylus or a finger.  

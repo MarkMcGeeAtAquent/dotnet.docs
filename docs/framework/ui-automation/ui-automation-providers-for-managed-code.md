@@ -1,5 +1,5 @@
 ---
-title: "UI Automation Providers for Managed Code | Microsoft Docs"
+title: "UI Automation Providers for Managed Code"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 58
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # UI Automation Providers for Managed Code
 > [!NOTE]

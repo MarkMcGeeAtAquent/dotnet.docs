@@ -1,5 +1,5 @@
 ---
-title: "RelativeSource MarkupExtension | Microsoft Docs"
+title: "RelativeSource MarkupExtension"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -12,35 +12,37 @@ ms.topic: "article"
 f1_keywords: 
   - "RelativeSource"
 helpviewer_keywords: 
-  - "RelativeSource markup extensions"
-  - "XAML, RelativeSource markup extension"
+  - "RelativeSource markup extensions [WPF]"
+  - "XAML [WPF], RelativeSource markup extension"
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # RelativeSource MarkupExtension
 Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding source, to be used within a [Binding Markup Extension](../../../../docs/framework/wpf/advanced/binding-markup-extension.md), or when setting the <xref:System.Windows.Data.Binding.RelativeSource%2A> property of a <xref:System.Windows.Data.Binding> element established in XAML.  
   
 ## XAML Attribute Usage  
   
-```  
-<Binding RelativeSource="{RelativeSource modeEnumValue}" .../>  
+```xml  
+<Binding RelativeSource="{RelativeSource modeEnumValue}" .../>  
 ```  
   
 ## XAML Attribute Usage (nested within Binding extension)  
   
-```  
-<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>  
+```xml  
+<object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>  
 ```  
   
 ## XAML Object Element Usage  
   
-```  
+```xml  
 <Binding>  
   <Binding.RelativeSource>  
-    <RelativeSource Mode="modeEnumValue"/>  
+    <RelativeSource Mode="modeEnumValue"/>  
   </Binding.RelativeSource>  
 </Binding>  
 - or   
@@ -48,7 +50,7 @@ Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding sour
   <Binding.RelativeSource>  
     <RelativeSource  
       Mode="FindAncestor"  
-      AncestorType="{x:Type typeName}"  
+      AncestorType="{x:Type typeName}"  
       AncestorLevel="intLevel"  
     />  
   </Binding.RelativeSource>  
@@ -59,8 +61,8 @@ Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding sour
   
 |||  
 |-|-|  
-|`modeEnumValue`|One of the following:<br /><br /> -   The string token `Self`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode>.<br />-   The string token `TemplatedParent`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode>.<br />-   The string token `PreviousData`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode>.<br />-   See below for information on `FindAncestor` mode.|  
-|`FindAncestor`|The string token `FindAncestor`. Using this token enters a mode whereby a `RelativeSource` specifies an ancestor type and optionally an ancestor level. This corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode>.|  
+|`modeEnumValue`|One of the following:<br /><br /> -   The string token `Self`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode.Self>.<br />-   The string token `TemplatedParent`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>.<br />-   The string token `PreviousData`; corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode.PreviousData>.<br />-   See below for information on `FindAncestor` mode.|  
+|`FindAncestor`|The string token `FindAncestor`. Using this token enters a mode whereby a `RelativeSource` specifies an ancestor type and optionally an ancestor level. This corresponds to a <xref:System.Windows.Data.RelativeSource> as created with its <xref:System.Windows.Data.RelativeSource.Mode%2A> property set to <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.|  
 |`typeName`|Required for `FindAncestor` mode. The name of a type, which fills the <xref:System.Windows.Data.RelativeSource.AncestorType%2A> property.|  
 |`intLevel`|Optional for `FindAncestor` mode. An ancestor level (evaluated towards the parent direction in the logical tree).|  
   
@@ -83,7 +85,7 @@ Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding sour
   
  In the following example, the first <xref:System.Windows.Controls.TextBlock> in the items template displays the current number. The second <xref:System.Windows.Controls.TextBlock> binding is a <xref:System.Windows.Data.MultiBinding> that nominally has two <xref:System.Windows.Data.Binding> consistuents: the current record, and a binding that deliberately uses the previous data record by using `{RelativeSource PreviousData}`. Then, a converter on the <xref:System.Windows.Data.MultiBinding> calculates the difference and returns it to the binding.  
   
-```  
+```xml  
 <ListBox Name="fibolist">  
     <ListBox.ItemTemplate>  
         <DataTemplate>  
@@ -99,7 +101,7 @@ Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding sour
                     </TextBlock.Text>  
                 </TextBlock>  
             </StackPanel>  
-            </DataTemplate>  
+        </DataTemplate>  
     </ListBox.ItemTemplate>  
 ```  
   
@@ -110,10 +112,10 @@ Specifies properties of a <xref:System.Windows.Data.RelativeSource> binding sour
  `RelativeSource` is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the `{` and `}` characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute. For more information, see [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
 ## See Also  
- <xref:System.Windows.Data.Binding>   
- [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
- [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [Binding Declarations Overview](../../../../docs/framework/wpf/data/binding-declarations-overview.md)   
+ <xref:System.Windows.Data.Binding>  
+ [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
+ [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [Binding Declarations Overview](../../../../docs/framework/wpf/data/binding-declarations-overview.md)  
  [x:Type Markup Extension](../../../../docs/framework/xaml-services/x-type-markup-extension.md)

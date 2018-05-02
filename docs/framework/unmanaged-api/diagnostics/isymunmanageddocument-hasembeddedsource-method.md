@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::HasEmbeddedSource Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::HasEmbeddedSource Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.HasEmbeddedSource"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::HasEmbeddedSource"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "HasEmbeddedSource method [.NET Framework debugging]"
   - "ISymUnmanagedDocument::HasEmbeddedSource method [.NET Framework debugging]"
 ms.assetid: 385fc4d3-365c-4645-b7b0-6c4c5344b79f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::HasEmbeddedSource Method
 Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.  

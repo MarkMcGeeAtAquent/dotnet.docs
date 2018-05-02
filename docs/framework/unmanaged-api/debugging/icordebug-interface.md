@@ -1,5 +1,5 @@
 ---
-title: "ICorDebug Interface | Microsoft Docs"
+title: "ICorDebug Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebug"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebug"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebug interface [.NET Framework debugging]"
 ms.assetid: 33f431d7-ab1a-494d-8af2-20ab15aba194
+topic_type: 
+  - "apiref"
 caps.latest.revision: 20
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebug Interface
 Provides methods that allow developers to debug applications in the common language runtime (CLR) environment.  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomainEnum::Next Method | Microsoft Docs"
+title: "ICorDebugAppDomainEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomainEnum.Next"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomainEnum::Next method"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAppDomainEnum::Next method [.NET Framework debugging]"
   - "Next method, ICorDebugAppDomainEnum interface [.NET Framework debugging]"
 ms.assetid: b8d1def7-0ebc-4314-a3a2-fd36a75973e7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomainEnum::Next Method
 Gets the specified number of application domains from the collection, starting at the current cursor position.  

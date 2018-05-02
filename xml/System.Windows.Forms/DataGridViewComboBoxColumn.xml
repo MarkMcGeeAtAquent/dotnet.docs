@@ -1,7 +1,9 @@
-<Type Name="DataGridViewComboBoxColumn" FullName="System.Windows.Forms.DataGridViewComboBoxColumn">
+﻿<Type Name="DataGridViewComboBoxColumn" FullName="System.Windows.Forms.DataGridViewComboBoxColumn">
   <TypeSignature Language="C#" Value="public class DataGridViewComboBoxColumn : System.Windows.Forms.DataGridViewColumn" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewComboBoxColumn extends System.Windows.Forms.DataGridViewColumn" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewComboBoxColumn" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataGridViewComboBoxColumn&#xA;Inherits DataGridViewColumn" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataGridViewComboBoxColumn : System::Windows::Forms::DataGridViewColumn" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -26,7 +28,7 @@
 ## Remarks  
  The <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class is a specialized type of <xref:System.Windows.Forms.DataGridViewColumn> used to logically host cells that enable users to select values from a list of choices. A <xref:System.Windows.Forms.DataGridViewComboBoxColumn> has an associated <xref:System.Windows.Forms.DataGridViewComboBoxCell> in every <xref:System.Windows.Forms.DataGridViewRow> that intersects it.  
   
- You can populate the cells manually by setting their <xref:System.Windows.Forms.DataGridViewCell.Value%2A> properties. Alternatively, you can bind the column to the data source indicated by the <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName> property. If the <xref:System.Windows.Forms.DataGridView> is bound to a database table, set the column <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property to the name of a column in the table. If the <xref:System.Windows.Forms.DataGridView> is bound to a collection of objects, set the <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property to the name of an object property.  
+ You can populate the cells manually by setting their <xref:System.Windows.Forms.DataGridViewCell.Value%2A> properties. Alternatively, you can bind the column to the data source indicated by the <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType> property. If the <xref:System.Windows.Forms.DataGridView> is bound to a database table, set the column <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property to the name of a column in the table. If the <xref:System.Windows.Forms.DataGridView> is bound to a collection of objects, set the <xref:System.Windows.Forms.DataGridViewColumn.DataPropertyName%2A> property to the name of an object property.  
   
  You can populate the column drop-down list manually by adding values to the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.Items%2A> collection. Alternatively, you can bind the drop-down list to its own data source by setting the column <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource%2A> property. If the values are objects in a collection or records in a database table, you must also set the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> and <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> properties. The <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> property indicates which object property or database column provides the values that are displayed in the drop-down list. The <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> property indicates which object property or database column is used to set the cell <xref:System.Windows.Forms.DataGridViewCell.Value%2A> property.  
   
@@ -38,7 +40,7 @@
   
  Unlike the <xref:System.Windows.Forms.ComboBox> control, the <xref:System.Windows.Forms.DataGridViewComboBoxCell> does not have <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> and <xref:System.Windows.Forms.ListControl.SelectedValue%2A> properties. Instead, selecting a value from a drop-down list sets the cell <xref:System.Windows.Forms.DataGridViewCell.Value%2A> property.  
   
- The default sort mode for this column type is <xref:System.Windows.Forms.DataGridViewColumnSortMode>.  
+ The default sort mode for this column type is <xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>.  
   
    
   
@@ -54,12 +56,26 @@
     <block subset="none" type="overrides">
       <para>When you derive from <see cref="T:System.Windows.Forms.DataGridViewComboBoxColumn" /> and add new properties to the derived class, be sure to override the <see cref="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" /> method to copy the new properties during cloning operations. You should also call the base class's <see cref="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" /> method so that the properties of the base class are copied to the new cell.</para>
     </block>
+    <altmember cref="T:System.Windows.Forms.DataGridView" />
+    <altmember cref="P:System.Windows.Forms.DataGridView.DataSource" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewColumn.DataPropertyName" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.Items" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewColumn" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewRow" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxEditingControl" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataGridViewComboBoxColumn ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataGridViewComboBoxColumn();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -76,12 +92,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
       </Docs>
     </Member>
     <Member MemberName="AutoComplete">
       <MemberSignature Language="C#" Value="public bool AutoComplete { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AutoComplete" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.AutoComplete" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoComplete As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AutoComplete { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -111,12 +132,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.AutoComplete" />
       </Docs>
     </Member>
     <Member MemberName="CellTemplate">
       <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property CellTemplate As DataGridViewCell" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Forms::DataGridViewCell ^ CellTemplate { System::Windows::Forms::DataGridViewCell ^ get(); void set(System::Windows::Forms::DataGridViewCell ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -127,7 +154,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -143,12 +170,12 @@
  The constructor for the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class initializes this property to a newly created <xref:System.Windows.Forms.DataGridViewComboBoxCell>.  
   
 > [!CAUTION]
->  Changing the properties of the cell template will not immediately affect the user interface (UI) of the column's existing cells. These changes are only apparent after the column is regenerated (for example, by sorting the column or through a call to the <xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=fullName> method).  
+>  Changing the properties of the cell template will not immediately affect the user interface (UI) of the column's existing cells. These changes are only apparent after the column is regenerated (for example, by sorting the column or through a call to the <xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType> method).  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the <xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A?displayProperty=fullName> property, which is similar to this property. This example is part of a larger example available in [How to: Manipulate Columns in the Windows Forms DataGridView Control](~/docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md).  
+ The following code example demonstrates the use of the <xref:System.Windows.Forms.DataGridViewColumn.CellTemplate%2A?displayProperty=nameWithType> property, which is similar to this property. This example is part of a larger example available in [How to: Manipulate Columns in the Windows Forms DataGridView Control](~/docs/framework/winforms/controls/how-to-manipulate-columns-in-the-windows-forms-datagridview-control.md).  
   
  [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
  [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
@@ -157,12 +184,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidCastException">When setting this property to a value that is not of type <see cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewComboBoxColumn.#ctor" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewCell" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="M:System.Windows.Forms.DataGridView.InvalidateColumn(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public override object Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Clone () As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -189,6 +223,8 @@
       <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSource As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ DataSource { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -202,7 +238,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -233,12 +269,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.DataSource" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.Items" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
       </Docs>
     </Member>
     <Member MemberName="DisplayMember">
       <MemberSignature Language="C#" Value="public string DisplayMember { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DisplayMember" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
+      <MemberSignature Language="VB.NET" Value="Public Property DisplayMember As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DisplayMember { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -265,7 +310,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The data for the values stored in a column of <xref:System.Windows.Forms.DataGridViewComboBoxCell> objects is obtained from the <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=fullName>. If this data comes from a nondefault property or column, then the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> property must be set to the necessary property name or column name.  
+ The data for the values stored in a column of <xref:System.Windows.Forms.DataGridViewComboBoxCell> objects is obtained from the <xref:System.Windows.Forms.DataGridView.DataSource%2A?displayProperty=nameWithType>. If this data comes from a nondefault property or column, then the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> property must be set to the necessary property name or column name.  
   
  If the cell values are internal values not visible to the user, then use <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember%2A> and <xref:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember%2A> to map the internal cell values to user-viewable values.  
   
@@ -285,12 +330,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridView.DataSource" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.DisplayMember" />
       </Docs>
     </Member>
     <Member MemberName="DisplayStyle">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewComboBoxDisplayStyle DisplayStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewComboBoxDisplayStyle DisplayStyle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property DisplayStyle As DataGridViewComboBoxDisplayStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::DataGridViewComboBoxDisplayStyle DisplayStyle { System::Windows::Forms::DataGridViewComboBoxDisplayStyle get(); void set(System::Windows::Forms::DataGridViewComboBoxDisplayStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -317,19 +371,27 @@
   
  The behavior and appearance of the drop-down arrow in the cells is indicated by the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A> property.  
   
- To enable cell highlighting when the mouse pointer is over a cell, you must set the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A> property to <xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle> and the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A> property to <xref:System.Windows.Forms.FlatStyle>.  
+ To enable cell highlighting when the mouse pointer is over a cell, you must set the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A> property to <xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox> and the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A> property to <xref:System.Windows.Forms.FlatStyle.Popup>.  
   
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyle%2A> property of the object returned by the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyle%2A> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxDisplayStyle" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyle" />
       </Docs>
     </Member>
     <Member MemberName="DisplayStyleForCurrentCellOnly">
       <MemberSignature Language="C#" Value="public bool DisplayStyleForCurrentCellOnly { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool DisplayStyleForCurrentCellOnly" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyleForCurrentCellOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Property DisplayStyleForCurrentCellOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool DisplayStyleForCurrentCellOnly { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -360,12 +422,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.DisplayStyleForCurrentCellOnly" />
       </Docs>
     </Member>
     <Member MemberName="DropDownWidth">
       <MemberSignature Language="C#" Value="public int DropDownWidth { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 DropDownWidth" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.DropDownWidth" />
+      <MemberSignature Language="VB.NET" Value="Public Property DropDownWidth As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int DropDownWidth { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -386,7 +454,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property corresponds to the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A?displayProperty=fullName> property of the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A> member.  
+ This property corresponds to the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A?displayProperty=nameWithType> property of the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A> member.  
   
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A> property of the object returned by the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth%2A> property of every cell in the column. To override the specified value for individual cells, set the cell values after you set the column value.  
   
@@ -402,12 +470,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.DropDownWidth" />
       </Docs>
     </Member>
     <Member MemberName="FlatStyle">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property FlatStyle As FlatStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::FlatStyle FlatStyle { System::Windows::Forms::FlatStyle get(); void set(System::Windows::Forms::FlatStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -438,7 +512,7 @@
 </appSettings>  
 ```  
   
- To enable cell highlighting when the mouse pointer is over a cell, you must set the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A> property to <xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle> and the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A> property to <xref:System.Windows.Forms.FlatStyle>.  
+ To enable cell highlighting when the mouse pointer is over a cell, you must set the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle%2A> property to <xref:System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox> and the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.FlatStyle%2A> property to <xref:System.Windows.Forms.FlatStyle.Popup>.  
   
  Getting or setting this property gets or sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.FlatStyle%2A> property of the object returned by the <xref:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate%2A> property. Setting this property also sets the <xref:System.Windows.Forms.DataGridViewComboBoxCell.FlatStyle%2A> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.  
   
@@ -454,12 +528,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayStyle" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.FlatStyle" />
       </Docs>
     </Member>
     <Member MemberName="Items">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewComboBoxCell.ObjectCollection Items { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewComboBoxCell/ObjectCollection Items" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.Items" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Items As DataGridViewComboBoxCell.ObjectCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::DataGridViewComboBoxCell::ObjectCollection ^ Items { System::Windows::Forms::DataGridViewComboBoxCell::ObjectCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -467,7 +548,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
@@ -506,12 +587,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridView.DataSource" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.Items" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
       </Docs>
     </Member>
     <Member MemberName="MaxDropDownItems">
       <MemberSignature Language="C#" Value="public int MaxDropDownItems { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDropDownItems" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.MaxDropDownItems" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxDropDownItems As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxDropDownItems { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -546,12 +637,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.MaxDropDownItems" />
       </Docs>
     </Member>
     <Member MemberName="Sorted">
       <MemberSignature Language="C#" Value="public bool Sorted { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.Sorted" />
+      <MemberSignature Language="VB.NET" Value="Public Property Sorted As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Sorted { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -587,12 +684,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.Sorted" />
       </Docs>
     </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewComboBoxColumn.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -606,12 +709,15 @@
         <summary>Gets a string that describes the column.</summary>
         <returns>A <see cref="T:System.String" /> that describes the column.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewColumn.ToString" />
       </Docs>
     </Member>
     <Member MemberName="ValueMember">
       <MemberSignature Language="C#" Value="public string ValueMember { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ValueMember" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewComboBoxColumn.ValueMember" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValueMember As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ValueMember { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -656,6 +762,12 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DisplayMember" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.DataSource" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewComboBoxCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewComboBoxCell.ValueMember" />
       </Docs>
     </Member>
   </Members>

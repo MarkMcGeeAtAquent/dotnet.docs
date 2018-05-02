@@ -1,19 +1,27 @@
 ---
 uid: System.Transactions.Configuration.DefaultSettingsSection
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.DefaultSettingsSection.DistributedTransactionManagerName
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.DefaultSettingsSection.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.DefaultSettingsSection.Timeout
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

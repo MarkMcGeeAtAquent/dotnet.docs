@@ -1,7 +1,9 @@
-<Type Name="RelatedEnd" FullName="System.Data.Objects.DataClasses.RelatedEnd">
+﻿<Type Name="RelatedEnd" FullName="System.Data.Objects.DataClasses.RelatedEnd">
   <TypeSignature Language="C#" Value="public abstract class RelatedEnd : System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit RelatedEnd extends System.Object implements class System.Data.Objects.DataClasses.IRelatedEnd" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.RelatedEnd" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class RelatedEnd&#xA;Implements IRelatedEnd" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RelatedEnd abstract : System::Data::Objects::DataClasses::IRelatedEnd" />
   <AssemblyInfo>
     <AssemblyName>System.Data.Entity</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -39,6 +41,8 @@
       <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler AssociationChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler AssociationChanged" />
       <MemberSignature Language="DocId" Value="E:System.Data.Objects.DataClasses.RelatedEnd.AssociationChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event AssociationChanged As CollectionChangeEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::CollectionChangeEventHandler ^ AssociationChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -55,17 +59,17 @@
 ## Remarks  
  The <xref:System.Data.Objects.DataClasses.RelatedEnd.AssociationChanged> event is raised by the following methods:  
   
--   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Add%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Remove%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityReference%601.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A?displayProperty=fullName>  
+-   <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A?displayProperty=nameWithType>  
   
  Events may be suppressed during bulk operations, such as `Load`, <xref:System.Data.Objects.DataClasses.EntityCollection%601.Attach%2A>, and <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A>.  
   
@@ -77,7 +81,12 @@
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -96,7 +105,12 @@
       <MemberSignature Language="C#" Value="public bool IsLoaded { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLoaded" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLoaded As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLoaded { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.Objects.DataClasses.IRelatedEnd.IsLoaded</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -124,7 +138,7 @@
   
  Calling the <xref:System.Data.Objects.DataClasses.EntityCollection%601.Clear%2A> method on an <xref:System.Data.Objects.DataClasses.EntityCollection%601> sets <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> to `false`.  
   
- An <xref:System.Data.Objects.DataClasses.EntityCollection%601> or <xref:System.Data.Objects.DataClasses.EntityReference%601> may also be loaded if the related end is included in the query path. For more information about span, see [Loading Related Objects](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1).  
+ An <xref:System.Data.Objects.DataClasses.EntityCollection%601> or <xref:System.Data.Objects.DataClasses.EntityReference%601> may also be loaded if the related end is included in the query path. For more information about span, see [Loading Related Objects](http://msdn.microsoft.com/library/452347d2-7b3b-44cd-9001-231299a28cb1).  
   
  The `Load` method on <xref:System.Data.Objects.DataClasses.EntityCollection%601> and <xref:System.Data.Objects.DataClasses.EntityReference%601> loads related objects from the data source whether or not <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> is `true`.  
   
@@ -136,11 +150,25 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>When overridden in a derived class, loads the related object or objects into the local collection or reference.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Load">
       <MemberSignature Language="C#" Value="public void Load ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.Load" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Load ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Load();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Load</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -155,7 +183,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default merge option is <xref:System.Data.Objects.MergeOption> for tracked objects or <xref:System.Data.Objects.MergeOption> when the object is not tracked in the <xref:System.Data.Objects.ObjectStateManager>. To specify a merge option other than <xref:System.Data.Objects.MergeOption>, call the `Load` method on the <xref:System.Data.Objects.DataClasses.EntityCollection%601> or the <xref:System.Data.Objects.DataClasses.EntityReference%601> that takes a specific <xref:System.Data.Objects.MergeOption> parameter.  
+ The default merge option is <xref:System.Data.Objects.MergeOption.AppendOnly> for tracked objects or <xref:System.Data.Objects.MergeOption.NoTracking> when the object is not tracked in the <xref:System.Data.Objects.ObjectStateManager>. To specify a merge option other than <xref:System.Data.Objects.MergeOption.AppendOnly>, call the `Load` method on the <xref:System.Data.Objects.DataClasses.EntityCollection%601> or the <xref:System.Data.Objects.DataClasses.EntityReference%601> that takes a specific <xref:System.Data.Objects.MergeOption> parameter.  
   
  Calling the <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> method sets the <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> flag to `true`.  
   
@@ -178,7 +206,11 @@
       <MemberSignature Language="C#" Value="public abstract void Load (System.Data.Objects.MergeOption mergeOption);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load(valuetype System.Data.Objects.MergeOption mergeOption) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.Load(System.Data.Objects.MergeOption)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void Load(System::Data::Objects::MergeOption mergeOption);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Load(System.Data.Objects.MergeOption)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -196,13 +228,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Both <xref:System.Data.Objects.DataClasses.EntityCollection%601> and <xref:System.Data.Objects.DataClasses.EntityReference%601> override this method to load related objects. `Load` is called to explicitly load related objects from a related end exposed by a navigation property. For more information, see [Loading Related Objects](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1).  
+ Both <xref:System.Data.Objects.DataClasses.EntityCollection%601> and <xref:System.Data.Objects.DataClasses.EntityReference%601> override this method to load related objects. `Load` is called to explicitly load related objects from a related end exposed by a navigation property. For more information, see [Loading Related Objects](http://msdn.microsoft.com/library/452347d2-7b3b-44cd-9001-231299a28cb1).  
   
  Calling the <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> method sets the <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> flag to `true`.  
   
  The <xref:System.Data.Objects.DataClasses.RelatedEnd.Load%2A> method loads related objects from the data source whether or not <xref:System.Data.Objects.DataClasses.RelatedEnd.IsLoaded%2A> is `true`.  
   
- The default merge option is <xref:System.Data.Objects.MergeOption> for tracked objects or <xref:System.Data.Objects.MergeOption> when the object is not tracked in the <xref:System.Data.Objects.ObjectStateManager>.  
+ The default merge option is <xref:System.Data.Objects.MergeOption.AppendOnly> for tracked objects or <xref:System.Data.Objects.MergeOption.NoTracking> when the object is not tracked in the <xref:System.Data.Objects.ObjectStateManager>.  
   
  ]]></format>
         </remarks>
@@ -221,6 +253,8 @@
       <MemberSignature Language="C#" Value="public void OnDeserialized (System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnDeserialized(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.OnDeserialized(System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub OnDeserialized (context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void OnDeserialized(System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -253,7 +287,12 @@
       <MemberSignature Language="C#" Value="public string RelationshipName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RelationshipName" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.RelatedEnd.RelationshipName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RelationshipName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RelationshipName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.Objects.DataClasses.IRelatedEnd.RelationshipName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -279,7 +318,12 @@
       <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.RelationshipSet RelationshipSet { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.RelationshipSet RelationshipSet" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.RelatedEnd.RelationshipSet" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RelationshipSet As RelationshipSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Metadata::Edm::RelationshipSet ^ RelationshipSet { System::Data::Metadata::Edm::RelationshipSet ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.Objects.DataClasses.IRelatedEnd.RelationshipSet</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -305,7 +349,12 @@
       <MemberSignature Language="C#" Value="public string SourceRoleName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SourceRoleName" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.RelatedEnd.SourceRoleName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SourceRoleName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ SourceRoleName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.Objects.DataClasses.IRelatedEnd.SourceRoleName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -328,12 +377,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The role name is specified by the `Role` attribute of the `End` element in the association that defines this relationship in the conceptual model. For more information, see [Association Element (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41).  
+ The role name is specified by the `Role` attribute of the `End` element in the association that defines this relationship in the conceptual model. For more information, see [Association Element (CSDL)](http://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
   
    
   
 ## Examples  
- The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832), which was generated by the [Entity Data Model Wizard](http://msdn.microsoft.com/en-us/423ec9a7-5464-43b7-a7ef-9f5f000848b5).  
+ The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832), which was generated by the [Entity Data Model Wizard](http://msdn.microsoft.com/library/423ec9a7-5464-43b7-a7ef-9f5f000848b5).  
   
  The following example adds new `SalesOrderHeader` entities to the `Contact` entity. Then it gets all related ends from the `Contact` entity and displays relationship name, source role name, and target role name for each related end.  
   
@@ -342,13 +391,28 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.Objects.DataClasses.IRelatedEnd.SourceRoleName" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds an object to the related end.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Add">
       <MemberSignature Language="C#" Value="void IRelatedEnd.Add (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Objects.DataClasses.IRelatedEnd.Add(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Add(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberSignature Language="VB.NET" Value="Sub Add (entity As IEntityWithRelationships) Implements IRelatedEnd.Add" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Data.Objects.DataClasses.IRelatedEnd.Add(System::Data::Objects::DataClasses::IEntityWithRelationships ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Add;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Add(System.Data.Objects.DataClasses.IEntityWithRelationships)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -378,7 +442,12 @@
       <MemberSignature Language="C#" Value="void IRelatedEnd.Add (object entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Objects.DataClasses.IRelatedEnd.Add(object entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Add (entity As Object) Implements IRelatedEnd.Add" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Data.Objects.DataClasses.IRelatedEnd.Add(System::Object ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Add;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Add(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -402,11 +471,25 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Attach">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Attaches an object at the related end.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Attach">
       <MemberSignature Language="C#" Value="void IRelatedEnd.Attach (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Objects.DataClasses.IRelatedEnd.Attach(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Attach(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberSignature Language="VB.NET" Value="Sub Attach (entity As IEntityWithRelationships) Implements IRelatedEnd.Attach" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Data.Objects.DataClasses.IRelatedEnd.Attach(System::Data::Objects::DataClasses::IEntityWithRelationships ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Attach;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Attach(System.Data.Objects.DataClasses.IEntityWithRelationships)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -436,7 +519,12 @@
       <MemberSignature Language="C#" Value="void IRelatedEnd.Attach (object entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Data.Objects.DataClasses.IRelatedEnd.Attach(object entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Attach(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Attach (entity As Object) Implements IRelatedEnd.Attach" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Data.Objects.DataClasses.IRelatedEnd.Attach(System::Object ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Attach;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Attach(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -456,7 +544,7 @@
 ## Remarks  
  If the related end already has some entities attached to it, the existing entities will be merged with the new entity. The new entity is not assumed to be the complete set of related entity objects.  
   
- The source entity object and all entity objects passed in must be in an <xref:System.Data.EntityState> or <xref:System.Data.EntityState> state. Deleted elements are allowed only when the state manager is already tracking the relationship instance.  
+ The source entity object and all entity objects passed in must be in an <xref:System.Data.EntityState.Unchanged> or <xref:System.Data.EntityState.Modified> state. Deleted elements are allowed only when the state manager is already tracking the relationship instance.  
   
  ]]></format>
         </remarks>
@@ -466,7 +554,12 @@
       <MemberSignature Language="C#" Value="System.Collections.IEnumerable IRelatedEnd.CreateSourceQuery ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerable System.Data.Objects.DataClasses.IRelatedEnd.CreateSourceQuery() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#CreateSourceQuery" />
+      <MemberSignature Language="VB.NET" Value="Function CreateSourceQuery () As IEnumerable Implements IRelatedEnd.CreateSourceQuery" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerable ^ System.Data.Objects.DataClasses.IRelatedEnd.CreateSourceQuery() = System::Data::Objects::DataClasses::IRelatedEnd::CreateSourceQuery;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.CreateSourceQuery</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -490,11 +583,25 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes an object from the related end.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="System.Data.Objects.DataClasses.IRelatedEnd.Remove">
       <MemberSignature Language="C#" Value="bool IRelatedEnd.Remove (System.Data.Objects.DataClasses.IEntityWithRelationships entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Data.Objects.DataClasses.IRelatedEnd.Remove(class System.Data.Objects.DataClasses.IEntityWithRelationships entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Remove(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberSignature Language="VB.NET" Value="Function Remove (entity As IEntityWithRelationships) As Boolean Implements IRelatedEnd.Remove" />
+      <MemberSignature Language="C++ CLI" Value=" virtual bool System.Data.Objects.DataClasses.IRelatedEnd.Remove(System::Data::Objects::DataClasses::IEntityWithRelationships ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Remove;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Remove(System.Data.Objects.DataClasses.IEntityWithRelationships)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -525,7 +632,12 @@
       <MemberSignature Language="C#" Value="bool IRelatedEnd.Remove (object entity);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Data.Objects.DataClasses.IRelatedEnd.Remove(object entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelatedEnd.System#Data#Objects#DataClasses#IRelatedEnd#Remove(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Remove (entity As Object) As Boolean Implements IRelatedEnd.Remove" />
+      <MemberSignature Language="C++ CLI" Value=" virtual bool System.Data.Objects.DataClasses.IRelatedEnd.Remove(System::Object ^ entity) = System::Data::Objects::DataClasses::IRelatedEnd::Remove;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.Objects.DataClasses.IRelatedEnd.Remove(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -555,7 +667,12 @@
       <MemberSignature Language="C#" Value="public string TargetRoleName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TargetRoleName" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.RelatedEnd.TargetRoleName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TargetRoleName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ TargetRoleName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.Objects.DataClasses.IRelatedEnd.TargetRoleName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -578,18 +695,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The role name is specified by the `Role` attribute of the `End` element in the association that defines this relationship in the conceptual model. For more information, see [Association Element (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41).  
+ The role name is specified by the `Role` attribute of the `End` element in the association that defines this relationship in the conceptual model. For more information, see [Association Element (CSDL)](http://msdn.microsoft.com/library/c305169a-8af7-432f-9ba7-800a163aed41).  
   
    
   
 ## Examples  
- The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832). The example adds new `SalesOrderHeader` entities to the `Contact` entity. Then it gets all related ends from the `Contact` entity and displays relationship name, source role name, and target role name for each related end.  
+ The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). The example adds new `SalesOrderHeader` entities to the `Contact` entity. Then it gets all related ends from the `Contact` entity and displays relationship name, source role name, and target role name for each related end.  
   
  [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
  [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.Objects.DataClasses.IRelatedEnd.SourceRoleName" />
       </Docs>
     </Member>
   </Members>

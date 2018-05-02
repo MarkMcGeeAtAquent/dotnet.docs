@@ -1,24 +1,23 @@
 ---
-title: "Default NetTcpBinding | Microsoft Docs"
+title: "Default NetTcpBinding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Net profile TCP"
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
 caps.latest.revision: 39
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Default NetTcpBinding
 This sample demonstrates the use of the <xref:System.ServiceModel.NetTcpBinding> binding. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service. In this sample, the service is self-hosted. Both the client and service are console applications.  
@@ -35,9 +34,9 @@ This sample demonstrates the use of the <xref:System.ServiceModel.NetTcpBinding>
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\Default`  
   
- The binding is specified in the configuration files for the client and service. The binding type is specified in the `binding` attribute of the [\<endpoint>](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element as shown in the following sample configuration.  
+ The binding is specified in the configuration files for the client and service. The binding type is specified in the `binding` attribute of the [\<endpoint>](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element as shown in the following sample configuration.  
   
-```  
+```xml  
 <endpoint address=""  
           binding="netTcpBinding"  
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
@@ -45,7 +44,7 @@ This sample demonstrates the use of the <xref:System.ServiceModel.NetTcpBinding>
   
  The previous sample shows how to configure an endpoint to use the `netTcpBinding` binding with the default settings. If you want to configure the `netTcpBinding` binding and change some of its settings, it is necessary to define a binding configuration. The endpoint must reference the binding configuration by name with a `bindingConfiguration` attribute. In this sample, the binding configuration is named `Binding1` and is defined as shown in the following sample configuration.  
   
-```  
+```xml  
 <services>  
   <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
            behaviorConfiguration="CalculatorServiceBehavior">  
@@ -107,7 +106,6 @@ Press ENTER to terminate client.
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
@@ -119,7 +117,7 @@ Press ENTER to terminate client.
     > [!NOTE]
     >  Because the server is self-hosted, you must specify an identity in the client's App.config file to run the sample in a cross-machine configuration.  
   
-    ```  
+    ```xml  
     <client>  
       <endpoint name=""  
           address="net.tcp://servername:9000/servicemodelsamples/service"   

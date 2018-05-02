@@ -1,5 +1,5 @@
 ---
-title: "CloseCLREnumeration Function | Microsoft Docs"
+title: "CloseCLREnumeration Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CloseCLREnumeration"
-apilocation: 
+api_location: 
   - "dbgshim.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CloseCLREnumeration"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "debugging API [Silverlight]"
   - "Silverlight, debugging"
   - "CloseCLR Enumeration function"
 ms.assetid: 5e3c3958-80bb-43b1-a96b-dd3e6dbd9cd7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CloseCLREnumeration Function
 Closes any valid common language runtime (CLR) continue-startup events located in an array of handles returned by the [EnumerateCLRs function](../../../../docs/framework/unmanaged-api/debugging/enumerateclrs-function.md), and frees the memory for the handle and string path arrays.  

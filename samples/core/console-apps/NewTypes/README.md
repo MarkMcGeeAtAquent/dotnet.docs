@@ -1,7 +1,7 @@
 NewTypes Pets Sample
 ================
 
-This sample is part of the [step-by-step tutorial](https://docs.microsoft.com/dotnet/articles/core/tutorials/using-with-xplat-cli)
+This sample is part of the [step-by-step tutorial](https://docs.microsoft.com/dotnet/core/tutorials/using-with-xplat-cli)
 for creating .NET Core Console Applications. Please see that topic for detailed steps on the code
 for this sample.
 
@@ -35,3 +35,6 @@ type the following three commands:
 Note that you must run `dotnet restore` in the `src/NewTypes` directory before you can run
 the tests. `dotnet build` will follow the dependency and build both the library and unit
 tests projects, but it will not restore NuGet packages.
+
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

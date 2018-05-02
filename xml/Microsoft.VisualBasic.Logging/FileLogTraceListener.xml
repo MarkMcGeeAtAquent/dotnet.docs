@@ -1,7 +1,9 @@
-<Type Name="FileLogTraceListener" FullName="Microsoft.VisualBasic.Logging.FileLogTraceListener">
+﻿<Type Name="FileLogTraceListener" FullName="Microsoft.VisualBasic.Logging.FileLogTraceListener">
   <TypeSignature Language="C#" Value="public class FileLogTraceListener : System.Diagnostics.TraceListener" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileLogTraceListener extends System.Diagnostics.TraceListener" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />
+  <TypeSignature Language="VB.NET" Value="Public Class FileLogTraceListener&#xA;Inherits TraceListener" />
+  <TypeSignature Language="C++ CLI" Value="public ref class FileLogTraceListener : System::Diagnostics::TraceListener" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.VisualBasic</AssemblyName>
     <AssemblyVersion>10.0.0.0</AssemblyVersion>
@@ -23,7 +25,7 @@
 ## Remarks  
  The <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> class provides automated maintenance capabilities to archive log files as needed, on a daily or per-application basis. This automatic archival functionality helps reduce the maintenance responsibilities of developers and administrators.  
   
- An instance of <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> can be added to the <xref:System.Diagnostics.Debug.Listeners%2A?displayProperty=fullName> or <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=fullName> collections to redirect output from logging to a text file. Instances of this class can also be added to `My.Application.Log` or `My.Log` (for Web applications) in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] applications. For more information, see [Walkthrough: Changing Where My.Application.Log Writes Information](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)`.`  
+ An instance of <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> can be added to the <xref:System.Diagnostics.Debug.Listeners%2A?displayProperty=nameWithType> or <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> collections to redirect output from logging to a text file. Instances of this class can also be added to `My.Application.Log` or `My.Log` (for Web applications) in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] applications. For more information, see [Walkthrough: Changing Where My.Application.Log Writes Information](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)`.`  
   
  The main features of this class are:  
   
@@ -33,7 +35,7 @@
   
     -   The `baseName` part is the fundamental log name, specified by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A> property.  
   
-    -   The `dateStamp` part has the format "YYYY-MM-DD", and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>.  
+    -   The `dateStamp` part has the format "YYYY-MM-DD", and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>.  
   
     -   If more than one log file is needed with the same `baseName` and `dateStamp`, the `version` part, a positive `Integer`, is added to the file name.  
   
@@ -59,7 +61,7 @@
   
  **Log Maintenance**  
   
--   The minimum frequency for creating new log files is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> property. When the value is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>, a new log file is created at least once every day or week, and a date stamp is incorporated into the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> name.  
+-   The minimum frequency for creating new log files is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> property. When the value is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>, a new log file is created at least once every day or week, and a date stamp is incorporated into the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> name.  
   
 -   The maximum size (in bytes) of the log file is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize%2A> property. If the log file size exceeds this size, additional messages written to the log are discarded and, depending on the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property, an exception is thrown.  
   
@@ -112,12 +114,28 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName" />
+    <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+    <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+    <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush" />
+    <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" /> class and sets the name.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileLogTraceListener ();" />
       <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileLogTraceListener();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -136,12 +154,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Logging.Log" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileLogTraceListener (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileLogTraceListener(System::String ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -164,12 +187,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Logging.Log" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />
       </Docs>
     </Member>
     <Member MemberName="Append">
       <MemberSignature Language="C#" Value="public bool Append { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Append" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Append" />
+      <MemberSignature Language="VB.NET" Value="Public Property Append As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Append { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -201,12 +229,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule" />
       </Docs>
     </Member>
     <Member MemberName="AutoFlush">
       <MemberSignature Language="C#" Value="public bool AutoFlush { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AutoFlush" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.AutoFlush" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutoFlush As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AutoFlush { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -232,12 +264,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close" />
       </Docs>
     </Member>
     <Member MemberName="BaseFileName">
       <MemberSignature Language="C#" Value="public string BaseFileName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string BaseFileName" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName" />
+      <MemberSignature Language="VB.NET" Value="Public Property BaseFileName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ BaseFileName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -260,22 +296,28 @@
   
  The explicit form of the full log file name is `path`\\`baseName`[-`dateStamp`][-`iteration`].log, where  
   
--   The `path` part is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property and, if that property value is set to <xref:Microsoft.VisualBasic.Logging.LogFileLocation>, the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property.  
+-   The `path` part is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property and, if that property value is set to <xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>, the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property.  
   
 -   The `baseName` part is the fundamental log name, specified by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A> property.  
   
--   The `dateStamp` part has the format "YYYY-MM-DD", and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is set to <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>.  
+-   The `dateStamp` part has the format "YYYY-MM-DD", and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is set to <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>.  
   
 -   If more than one log file is needed with the same `baseName` and `dateStamp`, the `iteration` part, a positive `Integer`, is added to the file name.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />
+        <altmember cref="F:Microsoft.VisualBasic.Logging.LogFileLocation.Custom" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -301,6 +343,8 @@
       <MemberSignature Language="C#" Value="public string CustomLocation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CustomLocation" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomLocation As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CustomLocation { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -322,18 +366,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property is set, it also sets the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property to <xref:Microsoft.VisualBasic.Logging.LogFileLocation>.  
+ When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property is set, it also sets the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property to <xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>.  
   
  The <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property will throw an exception if the directory cannot be resolved.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />
       </Docs>
     </Member>
     <Member MemberName="Delimiter">
       <MemberSignature Language="C#" Value="public string Delimiter { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Delimiter" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter" />
+      <MemberSignature Language="VB.NET" Value="Public Property Delimiter As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Delimiter { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -360,6 +407,8 @@
       <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption DiskSpaceExhaustedBehavior { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption DiskSpaceExhaustedBehavior" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior" />
+      <MemberSignature Language="VB.NET" Value="Public Property DiskSpaceExhaustedBehavior As DiskSpaceExhaustedOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Microsoft::VisualBasic::Logging::DiskSpaceExhaustedOption DiskSpaceExhaustedBehavior { Microsoft::VisualBasic::Logging::DiskSpaceExhaustedOption get(); void set(Microsoft::VisualBasic::Logging::DiskSpaceExhaustedOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -381,18 +430,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property is set to <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption>, the log messages are silently discarded if there is not enough reserved disk space. This is the default behavior, and it prevents simple applications from failing if the disk gets too full.  
+ When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property is set to <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.DiscardMessages>, the log messages are silently discarded if there is not enough reserved disk space. This is the default behavior, and it prevents simple applications from failing if the disk gets too full.  
   
- More robust applications can set the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property to <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption>, and add `Try...Catch` blocks around all code that writes to the log.  
+ More robust applications can set the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior%2A> property to <xref:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption.ThrowException>, and add `Try...Catch` blocks around all code that writes to the log.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Logging.DiskSpaceExhaustedOption" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize" />
       </Docs>
     </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -428,6 +482,8 @@
       <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Encoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property Encoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ Encoding { System::Text::Encoding ^ get(); void set(System::Text::Encoding ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -448,12 +504,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Text.Encoding" />
+        <altmember cref="T:System.Text.UTF8Encoding" />
       </Docs>
     </Member>
     <Member MemberName="Flush">
       <MemberSignature Language="C#" Value="public override void Flush ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Flush" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Flush ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Flush();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -479,6 +539,8 @@
       <MemberSignature Language="C#" Value="public string FullLogFileName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FullLogFileName" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FullLogFileName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FullLogFileName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -504,22 +566,28 @@
   
  The explicit form of the full log-file name is `path`\\`baseName`[-`dateStamp`][-`iteration`].log, where:  
   
--   The `path` part is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property and, if that property value is set to <xref:Microsoft.VisualBasic.Logging.LogFileLocation>, the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property.  
+-   The `path` part is determined by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> property and, if that property value is set to <xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>, the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> property.  
   
 -   The `baseName` part is the fundamental log name, specified by the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName%2A> property.  
   
--   The `dateStamp` part has the format YYYY-MM-DD, and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>.  
+-   The `dateStamp` part has the format YYYY-MM-DD, and it is shown when <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule%2A> is <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily> or <xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>.  
   
 -   If more than one log file is needed with the same `baseName` and `dateStamp`, the `iteration` part, a positive `Integer`, is added to the file name.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.BaseFileName" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />
+        <altmember cref="F:Microsoft.VisualBasic.Logging.LogFileLocation.Custom" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule" />
       </Docs>
     </Member>
     <Member MemberName="GetSupportedAttributes">
       <MemberSignature Language="C#" Value="protected override string[] GetSupportedAttributes ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string[] GetSupportedAttributes() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.GetSupportedAttributes" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetSupportedAttributes () As String()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override cli::array &lt;System::String ^&gt; ^ GetSupportedAttributes();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -541,12 +609,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.TraceSource.GetSupportedAttributes" />
       </Docs>
     </Member>
     <Member MemberName="IncludeHostName">
       <MemberSignature Language="C#" Value="public bool IncludeHostName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IncludeHostName" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeHostName As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IncludeHostName { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -572,12 +643,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Location">
       <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.LogFileLocation Location { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.LogFileLocation Location" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location" />
+      <MemberSignature Language="VB.NET" Value="Public Property Location As LogFileLocation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Microsoft::VisualBasic::Logging::LogFileLocation Location { Microsoft::VisualBasic::Logging::LogFileLocation get(); void set(Microsoft::VisualBasic::Logging::LogFileLocation value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -598,20 +673,23 @@
   
 |**Location value**|**Path**|  
 |------------------------|--------------|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileLocation>|The path for the application data that is shared among all users, with the format:<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> A typical value for `BasePath` is:<br /><br /> C:\Documents and Settings\All Users\Application Data<br /><br /> The values of `CompanyName`, `ProductName`, and `ProductVersion` come from the assembly.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileLocation>|The path for the executable file that started the application.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileLocation>|The path for the application data of a user, with the format:<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> A typical value for `BasePath` is:<br /><br /> C:\Documents and Settings\\`username`\Application Data<br /><br /> The values of `CompanyName`, `ProductName`, and `ProductVersion` come form the assembly.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileLocation>|The path of the current system's temporary folder.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileLocation>|If the string specified by <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> is not empty, then use it as the path; otherwise use the path for the application data of a user.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.CommonApplicationDirectory>|The path for the application data that is shared among all users, with the format:<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> A typical value for `BasePath` is:<br /><br /> C:\Documents and Settings\All Users\Application Data<br /><br /> The values of `CompanyName`, `ProductName`, and `ProductVersion` come from the assembly.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.ExecutableDirectory>|The path for the executable file that started the application.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.LocalUserApplicationDirectory>|The path for the application data of a user, with the format:<br /><br /> `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`<br /><br /> A typical value for `BasePath` is:<br /><br /> C:\Documents and Settings\\`username`\Application Data<br /><br /> The values of `CompanyName`, `ProductName`, and `ProductVersion` come form the assembly.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.TempDirectory>|The path of the current system's temporary folder.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileLocation.Custom>|If the string specified by <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> is not empty, then use it as the path; otherwise use the path for the application data of a user.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Logging.LogFileLocation" />
       </Docs>
     </Member>
     <Member MemberName="LogFileCreationSchedule">
       <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption LogFileCreationSchedule { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption LogFileCreationSchedule" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.LogFileCreationSchedule" />
+      <MemberSignature Language="VB.NET" Value="Public Property LogFileCreationSchedule As LogFileCreationScheduleOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Microsoft::VisualBasic::Logging::LogFileCreationScheduleOption LogFileCreationSchedule { Microsoft::VisualBasic::Logging::LogFileCreationScheduleOption get(); void set(Microsoft::VisualBasic::Logging::LogFileCreationScheduleOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -634,18 +712,22 @@
   
 |**LogFileCreationSchedule value**|**Date in the log file name**|  
 |---------------------------------------|-----------------------------------|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>|Include the current date in the log file name.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>|Do not include the date in the log file name.|  
-|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption>|Include the first day of the current week in the log file name.<br /><br /> The week starts on Saturday.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Daily>|Include the current date in the log file name.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.None>|Do not include the date in the log file name.|  
+|<xref:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption.Weekly>|Include the first day of the current week in the log file name.<br /><br /> The week starts on Saturday.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Logging.LogFileCreationScheduleOption" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
       </Docs>
     </Member>
     <Member MemberName="MaxFileSize">
       <MemberSignature Language="C#" Value="public long MaxFileSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 MaxFileSize" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.MaxFileSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxFileSize As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long MaxFileSize { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -674,12 +756,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">When this property is set to a value less than 1000.</exception>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
       </Docs>
     </Member>
     <Member MemberName="ReserveDiskSpace">
       <MemberSignature Language="C#" Value="public long ReserveDiskSpace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 ReserveDiskSpace" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.ReserveDiskSpace" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReserveDiskSpace As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long ReserveDiskSpace { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -708,12 +793,34 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">When this property is set to a value less than 0.</exception>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.DiskSpaceExhaustedBehavior" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceData">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes trace data to the output file.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A> methods are not intended to be called by application code. These methods are called by members of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data to output.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceData">
       <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceData (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, data As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceData(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::Object ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -758,22 +865,29 @@
 |`severity`|Always|The enumeration-value name of `eventType`.|  
 |`id`|Always|The string representation of `id`.|  
 |`message`|Always|The string representation of `data`.|  
-|`callStack`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
-|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`DateTime`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`callStack`|When the <xref:System.Diagnostics.TraceOptions.Callstack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
+|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions.LogicalOperationStack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`DateTime`|When the <xref:System.Diagnostics.TraceOptions.DateTime> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions.ProcessId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions.ThreadId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions.Timestamp> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
 |`HostName`|When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A> property is `True`.|The name of the computer.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="P:System.Diagnostics.TraceListener.TraceOutputOptions" />
+        <altmember cref="T:System.Diagnostics.TraceEventCache" />
+        <altmember cref="T:System.Diagnostics.TraceEventType" />
       </Docs>
     </Member>
     <Member MemberName="TraceData">
-      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object[] data);" />
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceData (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, ParamArray data As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceData(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, ... cli::array &lt;System::Object ^&gt; ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -824,22 +938,46 @@
 |`severity`|Always|The enumeration-value name of `eventType`.|  
 |`id`|Always|The string representation of `id`.|  
 |`message`|Always|The string consisting of the string representation of each element in `data`, each separated by <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Delimiter%2A>.|  
-|`callStack`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
-|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`DateTime`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`callStack`|When the <xref:System.Diagnostics.TraceOptions.Callstack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
+|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions.LogicalOperationStack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`DateTime`|When the <xref:System.Diagnostics.TraceOptions.DateTime> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions.ProcessId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions.ThreadId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions.Timestamp> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
 |`HostName`|When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A> property is `True`.|The name of the computer.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="P:System.Diagnostics.TraceListener.TraceOutputOptions" />
+        <altmember cref="T:System.Diagnostics.TraceEventCache" />
+        <altmember cref="T:System.Diagnostics.TraceEventType" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceEvent">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes trace and event information to the output file or stream.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent%2A> methods are not intended to be called by application code. These methods are called by members of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data to output.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceEvent">
       <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceEvent (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceEvent(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -884,22 +1022,29 @@
 |`severity`|Always.|The enumeration-value name of `eventType`.|  
 |`id`|Always.|The string representation of `id`.|  
 |`message`|Always.|The value of `message`.|  
-|`callStack`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
-|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`DateTime`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`callStack`|When the <xref:System.Diagnostics.TraceOptions.Callstack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
+|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions.LogicalOperationStack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`DateTime`|When the <xref:System.Diagnostics.TraceOptions.DateTime> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions.ProcessId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions.ThreadId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions.Timestamp> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
 |`HostName`|When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A> property is `True`.|The name of the computer.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="P:System.Diagnostics.TraceListener.TraceOutputOptions" />
+        <altmember cref="T:System.Diagnostics.TraceEventCache" />
+        <altmember cref="T:System.Diagnostics.TraceEventType" />
       </Docs>
     </Member>
     <Member MemberName="TraceEvent">
-      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, object[] args);" />
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceEvent (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, format As String, ParamArray args As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceEvent(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::String ^ format, ... cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -952,22 +1097,29 @@
 |`severity`|Always|The enumeration-value name of `eventType`.|  
 |`id`|Always|The string representation of `id`.|  
 |`message`|Always|The data in `args` formatted with the `format` string and using the invariant culture for string conversions.|  
-|`callStack`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
-|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`DateTime`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
-|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
-|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`callStack`|When the <xref:System.Diagnostics.TraceOptions.Callstack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.Callstack%2A> property of `eventCache`.|  
+|`CorrelationID`|When the <xref:System.Diagnostics.TraceOptions.LogicalOperationStack> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`DateTime`|When the <xref:System.Diagnostics.TraceOptions.DateTime> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ProcessID`|When the <xref:System.Diagnostics.TraceOptions.ProcessId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.ProcessId%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
+|`ThreadID`|When the <xref:System.Diagnostics.TraceOptions.ThreadId> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The <xref:System.Diagnostics.TraceEventCache.ThreadId%2A> property of `eventCache`.|  
+|`Timestamp`|When the <xref:System.Diagnostics.TraceOptions.Timestamp> flag is set in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The string representation of the <xref:System.Diagnostics.TraceEventCache.Timestamp%2A> property of `eventCache`. The invariant culture is used for the string conversion.|  
 |`HostName`|When the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.IncludeHostName%2A> property is `True`.|The name of the computer.|  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="P:System.Diagnostics.TraceListener.TraceOutputOptions" />
+        <altmember cref="T:System.Diagnostics.TraceEventCache" />
+        <altmember cref="T:System.Diagnostics.TraceEventType" />
       </Docs>
     </Member>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public override void Write (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.Write(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -993,12 +1145,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.WriteLine(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteLine (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteLine(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1024,41 +1181,10 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="TraceData">
-      <AssemblyInfo>
-        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
-        <AssemblyVersion>10.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Writes trace data to the output file.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceData%2A> methods are not intended to be called by application code. These methods are called by members of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data to output.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="TraceEvent">
-      <AssemblyInfo>
-        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
-        <AssemblyVersion>10.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Writes trace and event information to the output file or stream.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.TraceEvent%2A> methods are not intended to be called by application code. These methods are called by members of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data to output.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

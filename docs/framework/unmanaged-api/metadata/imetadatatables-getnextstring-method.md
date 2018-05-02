@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetNextString Method | Microsoft Docs"
+title: "IMetaDataTables::GetNextString Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetNextString"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetNextString"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataTables::GetNextString method [.NET Framework metadata]"
   - "GetNextString method [.NET Framework metadata]"
 ms.assetid: d9720428-c353-4f07-a7e8-899e106a1b37
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetNextString Method
 Gets the index of the next string in the current table column.  
@@ -56,5 +59,5 @@ HRESULT GetNextString (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

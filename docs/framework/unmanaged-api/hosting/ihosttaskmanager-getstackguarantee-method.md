@@ -1,31 +1,34 @@
 ---
-title: "IHostTaskManager::GetStackGuarantee Method | Microsoft Docs"
+title: "IHostTaskManager::GetStackGuarantee Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostTaskManager.GetStackGuarantee"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostTaskManager::GetStackGuarantee"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStackGuarantee method [.NET Framework hosting]"
   - "IHostTaskManager::GetStackGuarantee method [.NET Framework hosting]"
 ms.assetid: 8176d732-c25c-4520-811d-e3310f339947
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostTaskManager::GetStackGuarantee Method
 Gets the amount of stack space that is guaranteed to be available after a stack operation completes, but before the closing of a process.  

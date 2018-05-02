@@ -1,5 +1,5 @@
 ---
-title: "3501 - InferredContractDescription | Microsoft Docs"
+title: "3501 - InferredContractDescription"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 21a70849-4fc0-41d2-b9a4-db5aa2acdf1a
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3501 - InferredContractDescription
 ## Properties  

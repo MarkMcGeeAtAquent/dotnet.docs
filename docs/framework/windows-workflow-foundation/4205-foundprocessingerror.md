@@ -1,5 +1,5 @@
 ---
-title: "4205 - FoundProcessingError | Microsoft Docs"
+title: "4205 - FoundProcessingError"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f2235a15-dd87-439e-8cb9-8b1b89a3dacf
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4205 - FoundProcessingError
 ## Properties  

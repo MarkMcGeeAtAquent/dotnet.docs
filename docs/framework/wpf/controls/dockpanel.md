@@ -1,5 +1,5 @@
 ---
-title: "DockPanel | Microsoft Docs"
+title: "DockPanel"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -19,6 +19,8 @@ caps.latest.revision: 62
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # DockPanel
 The <xref:System.Windows.Controls.DockPanel> element is used to position child content along the edge of a layout container.  
@@ -44,6 +46,6 @@ The <xref:System.Windows.Controls.DockPanel> element is used to position child c
 ## Related Sections  
  [Layout](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Walkthrough: My First WPF Desktop Application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
  [ScrollViewer Overview](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

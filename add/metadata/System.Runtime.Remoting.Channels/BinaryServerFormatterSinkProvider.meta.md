@@ -1,39 +1,48 @@
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.#ctor(System.Collections.IDictionary,System.Collections.ICollection)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.TypeFilterLevel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.GetChannelData(System.Runtime.Remoting.Channels.IChannelDataStore)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.Next
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.CreateSink(System.Runtime.Remoting.Channels.IChannelReceiver)
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.Channels.BinaryServerFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

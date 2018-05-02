@@ -1,20 +1,26 @@
 ---
 uid: System.ComponentModel.Design.IComponentDesignerStateService
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.ComponentModel.Design.IComponentDesignerStateService.GetState(System.ComponentModel.IComponent,System.String)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.ComponentModel.Design.IComponentDesignerStateService.SetState(System.ComponentModel.IComponent,System.String,System.Object)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

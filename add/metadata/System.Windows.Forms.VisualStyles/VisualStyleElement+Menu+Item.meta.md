@@ -1,26 +1,34 @@
 ---
 uid: System.Windows.Forms.VisualStyles.VisualStyleElement.Menu.Item
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.VisualStyles.VisualStyleElement.Menu.Item.Selected
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.VisualStyles.VisualStyleElement.Menu.Item.Demoted
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.VisualStyles.VisualStyleElement.Menu.Item.Normal
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

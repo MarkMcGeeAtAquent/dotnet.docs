@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugArrayValue Interface1 | Microsoft Docs"
+title: "ICorDebugArrayValue Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugArrayValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugArrayValue interface"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugArrayValue interface [.NET Framework debugging]"
 ms.assetid: dc437751-7093-44e2-bfdc-191d9ce3c192
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugArrayValue Interface1
 A subclass of ICorDebugHeapValue that represents a single-dimensional or multi-dimensional array.  

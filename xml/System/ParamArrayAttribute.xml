@@ -1,13 +1,16 @@
-<Type Name="ParamArrayAttribute" FullName="System.ParamArrayAttribute">
+﻿<Type Name="ParamArrayAttribute" FullName="System.ParamArrayAttribute">
   <TypeSignature Language="C#" Value="public sealed class ParamArrayAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ParamArrayAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.ParamArrayAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ParamArrayAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ParamArrayAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -47,9 +50,9 @@
 > [!NOTE]
 >  Typically, the <xref:System.ParamArrayAttribute> is not used directly in code. Instead, individual language keywords, such as `ParamArray` in Visual Basic and `params` in C#, are used as wrappers for the <xref:System.ParamArrayAttribute> class. Some languages, such as C#, may even require the use of the language keyword and prohibit the use of <xref:System.ParamArrayAttribute>.  
   
- During overload resolution, when compilers that support parameter arrays encounter a method overload that does not exist but has one fewer parameter than an overload that includes a parameter array, they will replace the method with the overload that includes the parameter array. For example, a call to the `String.Split()` instance method (which does not exist in the <xref:System.String> class) is resolved as a call to the <xref:System.String.Split%28System.Char%5B%5D%29?displayProperty=fullName> method. The compiler will also pass an empty array of the required type to the method. This means that the method must always be prepared to handle an array whose length is zero when it processes the elements in the parameter array. The example provides an illustration.  
+ During overload resolution, when compilers that support parameter arrays encounter a method overload that does not exist but has one fewer parameter than an overload that includes a parameter array, they will replace the method with the overload that includes the parameter array. For example, a call to the `String.Split()` instance method (which does not exist in the <xref:System.String> class) is resolved as a call to the <xref:System.String.Split%28System.Char%5B%5D%29?displayProperty=nameWithType> method. The compiler will also pass an empty array of the required type to the method. This means that the method must always be prepared to handle an array whose length is zero when it processes the elements in the parameter array. The example provides an illustration.  
   
- For more information about using attributes, see [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87).  
+ For more information about using attributes, see [Attributes](~/docs/standard/attributes/index.md).  
   
    
   
@@ -66,12 +69,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Attribute" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ParamArrayAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ParamArrayAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ParamArrayAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -79,6 +85,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

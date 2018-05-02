@@ -1,8 +1,8 @@
 ---
-title: "&lt;listeners&gt; Element for &lt;trace&gt; | Microsoft Docs"
+title: "&lt;listeners&gt; Element for &lt;trace&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<listeners> element"
   - "listeners element"
@@ -24,6 +19,8 @@ caps.latest.revision: 17
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;listeners&gt; Element for &lt;trace&gt;
 Specifies a listener that collects, stores, and routes messages. Listeners direct the tracing output to an appropriate target.  
@@ -35,7 +32,7 @@ Specifies a listener that collects, stores, and routes messages. Listeners direc
   
 ## Syntax  
   
-```  
+```xml  
 <listeners>   
   <add>...</add>  
   <clear/>  
@@ -74,7 +71,7 @@ Specifies a listener that collects, stores, and routes messages. Listeners direc
 ## Example  
  The following example shows how to use the **\<listeners>** element to add the listeners `MyListener` and `MyEventListener` to the **Listeners** collection. `MyListener` creates a file called `MyListener.log` and writes the output to the file. `MyEventListener` creates an entry in the event log.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <trace autoflush="true" indentsize="0">  
@@ -96,5 +93,5 @@ Specifies a listener that collects, stores, and routes messages. Listeners direc
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.TraceListener>   
+ <xref:System.Diagnostics.TraceListener>  
  [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

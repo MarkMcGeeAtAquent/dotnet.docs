@@ -1,8 +1,8 @@
 ---
-title: "WCF Discovery | Microsoft Docs"
+title: "WCF Discovery"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ helpviewer_keywords:
   - "discovery [WCF]"
 ms.assetid: 462c4913-f388-45a9-9042-28ae96a4e735
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WCF Discovery
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides support to enable services to be discoverable at runtime in an interoperable way using the WS-Discovery protocol. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services can announce their availability to the network using a multicast message or to a discovery proxy server. Client applications can search the network or a discovery proxy server to find services that meet a set of criteria. The topics in this section provide an overview and describe the programming model for this feature in detail.  

@@ -1,31 +1,34 @@
 ---
-title: "ICorPublishAppDomain::GetID Method | Microsoft Docs"
+title: "ICorPublishAppDomain::GetID Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorPublishAppDomain.GetID"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorPublishAppDomain::GetID"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetID method, ICorPublishAppDomain interface [.NET Framework debugging]"
   - "ICorPublishAppDomain::GetID method [.NET Framework debugging]"
 ms.assetid: 229437e3-1465-4bd8-8846-9804b2488133
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorPublishAppDomain::GetID Method
 Gets the unique identifier for this [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md).  

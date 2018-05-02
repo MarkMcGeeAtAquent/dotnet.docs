@@ -1,7 +1,9 @@
-<Type Name="IReflect" FullName="System.Reflection.IReflect">
+﻿<Type Name="IReflect" FullName="System.Reflection.IReflect">
   <TypeSignature Language="C#" Value="public interface IReflect" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReflect" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.IReflect" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IReflect" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IReflect" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
@@ -21,21 +27,24 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Interoperates with the [IDispatch interface](http://msdn.microsoft.com/en-us/ebbff4bc-36b2-4861-9efa-ffa45e013eb5).</summary>
+    <summary>Interoperates with the [IDispatch interface](http://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5).</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Reflection.IReflect> interface is used to interoperate with the [IDispatch interface](http://msdn.microsoft.com/en-us/ebbff4bc-36b2-4861-9efa-ffa45e013eb5). <xref:System.Reflection.IReflect> defines a subset of the <xref:System.Type> reflection methods. Implementing this interface enables a type to customize its behavior when the object is being accessed from COM as an `IDispatch` object. The <xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler> class can be used to marshal an object that implements <xref:System.Reflection.IReflect> or <xref:System.Runtime.InteropServices.Expando.IExpando> as a COM `IDispatch` object, and vice versa.  
+ The <xref:System.Reflection.IReflect> interface is used to interoperate with the [IDispatch interface](http://msdn.microsoft.com/library/ebbff4bc-36b2-4861-9efa-ffa45e013eb5). <xref:System.Reflection.IReflect> defines a subset of the <xref:System.Type> reflection methods. Implementing this interface enables a type to customize its behavior when the object is being accessed from COM as an `IDispatch` object. The <xref:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler> class can be used to marshal an object that implements <xref:System.Reflection.IReflect> or <xref:System.Runtime.InteropServices.Expando.IExpando> as a COM `IDispatch` object, and vice versa.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Runtime.InteropServices.CustomMarshalers.ExpandoToDispatchExMarshaler" />
   </Docs>
   <Members>
     <Member MemberName="GetField">
       <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetField (string name, System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetField(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetField(System.String,System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetField (name As String, bindingAttr As BindingFlags) As FieldInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::FieldInfo ^ GetField(System::String ^ name, System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -45,6 +54,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.FieldInfo</ReturnType>
@@ -60,12 +73,15 @@
         <returns>A <see cref="T:System.Reflection.FieldInfo" /> object containing the field information for the named object that meets the search constraints specified in <paramref name="bindingAttr" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Reflection.AmbiguousMatchException">The object implements multiple fields with the same name.</exception>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetFields">
       <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo[] GetFields (System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo[] GetFields(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetFields(System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetFields (bindingAttr As BindingFlags) As FieldInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Reflection::FieldInfo ^&gt; ^ GetFields(System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -75,6 +91,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.FieldInfo[]</ReturnType>
@@ -90,16 +110,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The match is based upon a name. Each field must have a unique name. The <xref:System.Reflection.BindingFlags?displayProperty=fullName> flag specifies that non-public methods are included in the search. The <xref:System.Reflection.BindingFlags?displayProperty=fullName> flag specifies that public methods are included in the search.  
+ The match is based upon a name. Each field must have a unique name. The <xref:System.Reflection.BindingFlags.NonPublic?displayProperty=nameWithType> flag specifies that non-public methods are included in the search. The <xref:System.Reflection.BindingFlags.Public?displayProperty=nameWithType> flag specifies that public methods are included in the search.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetMember">
       <MemberSignature Language="C#" Value="public System.Reflection.MemberInfo[] GetMember (string name, System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMember(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMember(System.String,System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMember (name As String, bindingAttr As BindingFlags) As MemberInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Reflection::MemberInfo ^&gt; ^ GetMember(System::String ^ name, System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -109,6 +132,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
@@ -126,16 +153,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Reflection.IReflect.GetMember%2A> method retrieves an array of <xref:System.Reflection.MemberInfo> objects by using the name and binding attribute that correspond to all public members or to all members that match a specified name. The case of the specified name is observed or ignored, as specified by <xref:System.Reflection.BindingFlags?displayProperty=fullName>.  
+ The <xref:System.Reflection.IReflect.GetMember%2A> method retrieves an array of <xref:System.Reflection.MemberInfo> objects by using the name and binding attribute that correspond to all public members or to all members that match a specified name. The case of the specified name is observed or ignored, as specified by <xref:System.Reflection.BindingFlags.IgnoreCase?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetMembers">
       <MemberSignature Language="C#" Value="public System.Reflection.MemberInfo[] GetMembers (System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MemberInfo[] GetMembers(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMembers(System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMembers (bindingAttr As BindingFlags) As MemberInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Reflection::MemberInfo ^&gt; ^ GetMembers(System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -145,6 +175,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MemberInfo[]</ReturnType>
@@ -164,12 +198,25 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetMethod">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves a <see cref="T:System.Reflection.MethodInfo" /> object that corresponds to a specified method.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetMethod">
       <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethod(System.String,System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMethod (name As String, bindingAttr As BindingFlags) As MethodInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::MethodInfo ^ GetMethod(System::String ^ name, System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -179,6 +226,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
@@ -194,12 +245,14 @@
         <returns>A <see cref="T:System.Reflection.MethodInfo" /> object containing the method information, with the match being based on the method name and search constraints specified in <paramref name="bindingAttr" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Reflection.AmbiguousMatchException">The object implements multiple methods with the same name.</exception>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetMethod">
       <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo GetMethod (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetMethod(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethod(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::MethodInfo ^ GetMethod(System::String ^ name, System::Reflection::BindingFlags bindingAttr, System::Reflection::Binder ^ binder, cli::array &lt;Type ^&gt; ^ types, cli::array &lt;System::Reflection::ParameterModifier&gt; ^ modifiers);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -209,6 +262,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
@@ -237,12 +294,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Reflection.AmbiguousMatchException">The object implements multiple methods with the same name.</exception>
+        <altmember cref="T:System.Reflection.BindingFlags" />
+        <altmember cref="T:System.Reflection.Binder" />
+        <altmember cref="T:System.Type" />
+        <altmember cref="T:System.Reflection.ParameterModifier" />
       </Docs>
     </Member>
     <Member MemberName="GetMethods">
       <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo[] GetMethods (System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo[] GetMethods(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetMethods(System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMethods (bindingAttr As BindingFlags) As MethodInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Reflection::MethodInfo ^&gt; ^ GetMethods(System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -252,6 +315,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodInfo[]</ReturnType>
@@ -271,12 +338,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetProperties">
       <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo[] GetProperties (System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo[] GetProperties(valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperties(System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetProperties (bindingAttr As BindingFlags) As PropertyInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Reflection::PropertyInfo ^&gt; ^ GetProperties(System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -286,6 +356,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.PropertyInfo[]</ReturnType>
@@ -298,12 +372,25 @@
         <summary>Retrieves an array of <see cref="T:System.Reflection.PropertyInfo" /> objects corresponding to all public properties or to all properties of the current class.</summary>
         <returns>An array of <see cref="T:System.Reflection.PropertyInfo" /> objects for all the properties defined on the reflection object.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetProperty">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves a <see cref="T:System.Reflection.PropertyInfo" /> object corresponding to a specified property.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetProperty">
       <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperty(System.String,System.Reflection.BindingFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetProperty (name As String, bindingAttr As BindingFlags) As PropertyInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::PropertyInfo ^ GetProperty(System::String ^ name, System::Reflection::BindingFlags bindingAttr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -313,6 +400,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.PropertyInfo</ReturnType>
@@ -328,12 +419,14 @@
         <returns>A <see cref="T:System.Reflection.PropertyInfo" /> object for the located property that meets the search constraints specified in <paramref name="bindingAttr" />, or <see langword="null" /> if the property was not located.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Reflection.AmbiguousMatchException">The object implements multiple fields with the same name.</exception>
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="GetProperty">
       <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo GetProperty (string name, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder binder, Type returnType, Type[] types, System.Reflection.ParameterModifier[] modifiers);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.PropertyInfo GetProperty(string name, valuetype System.Reflection.BindingFlags bindingAttr, class System.Reflection.Binder binder, class System.Type returnType, class System.Type[] types, valuetype System.Reflection.ParameterModifier[] modifiers) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.GetProperty(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Type,System.Type[],System.Reflection.ParameterModifier[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Reflection::PropertyInfo ^ GetProperty(System::String ^ name, System::Reflection::BindingFlags bindingAttr, System::Reflection::Binder ^ binder, Type ^ returnType, cli::array &lt;Type ^&gt; ^ types, cli::array &lt;System::Reflection::ParameterModifier&gt; ^ modifiers);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -343,6 +436,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.PropertyInfo</ReturnType>
@@ -372,12 +469,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.ParameterModifier" />
+        <altmember cref="T:System.Type" />
+        <altmember cref="T:System.Reflection.Binder" />
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="InvokeMember">
       <MemberSignature Language="C#" Value="public object InvokeMember (string name, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object target, object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, string[] namedParameters);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object InvokeMember(string name, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object target, object[] args, valuetype System.Reflection.ParameterModifier[] modifiers, class System.Globalization.CultureInfo culture, string[] namedParameters) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.IReflect.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ InvokeMember(System::String ^ name, System::Reflection::BindingFlags invokeAttr, System::Reflection::Binder ^ binder, System::Object ^ target, cli::array &lt;System::Object ^&gt; ^ args, cli::array &lt;System::Reflection::ParameterModifier&gt; ^ modifiers, System::Globalization::CultureInfo ^ culture, cli::array &lt;System::String ^&gt; ^ namedParameters);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -387,6 +489,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -423,7 +529,7 @@
 > [!NOTE]
 >  The array of parameter modifiers passed to the <xref:System.Reflection.IReflect.InvokeMember%2A> method must contain a single parameter modifier. Only the first parameter modifier is considered when determining which argument needs to be passed by reference when exposed to COM.  
   
- The binder finds all matching methods, in accordance with the type of binding requested (<xref:System.Reflection.BindingFlags?displayProperty=fullName>, <xref:System.Reflection.IReflect.GetProperties%2A>, and so on). The set of methods is filtered by the name, number of arguments, and a set of search modifiers defined in the binder. After the method is selected, it is invoked, and accessibility is checked at that point. The search may control which set of methods is searched based upon the accessibility attribute associated with the method. <xref:System.Reflection.Binder.BindToMethod%2A> selects the method to be invoked. The default binder selects the most specific match.  
+ The binder finds all matching methods, in accordance with the type of binding requested (<xref:System.Reflection.BindingFlags.InvokeMethod?displayProperty=nameWithType>, <xref:System.Reflection.IReflect.GetProperties%2A>, and so on). The set of methods is filtered by the name, number of arguments, and a set of search modifiers defined in the binder. After the method is selected, it is invoked, and accessibility is checked at that point. The search may control which set of methods is searched based upon the accessibility attribute associated with the method. <xref:System.Reflection.Binder.BindToMethod%2A> selects the method to be invoked. The default binder selects the most specific match.  
   
  Access restrictions are ignored for fully trusted code. That is, private constructors, methods, fields, and properties can be accessed and invoked through reflection whenever the code is fully trusted.  
   
@@ -442,12 +548,17 @@
         <exception cref="T:System.MissingFieldException">The field or property cannot be found.</exception>
         <exception cref="T:System.MissingMethodException">The method cannot be found.</exception>
         <exception cref="T:System.Security.SecurityException">A private member is invoked without the necessary <see cref="T:System.Security.Permissions.ReflectionPermission" />.</exception>
+        <altmember cref="T:System.Object" />
+        <altmember cref="T:System.Reflection.Binder" />
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="UnderlyingSystemType">
       <MemberSignature Language="C#" Value="public Type UnderlyingSystemType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type UnderlyingSystemType" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.IReflect.UnderlyingSystemType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UnderlyingSystemType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ UnderlyingSystemType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -458,6 +569,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
       </ReturnValue>
@@ -465,6 +580,7 @@
         <summary>Gets the underlying type that represents the <see cref="T:System.Reflection.IReflect" /> object.</summary>
         <value>The underlying type that represents the <see cref="T:System.Reflection.IReflect" /> object.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Object" />
       </Docs>
     </Member>
   </Members>

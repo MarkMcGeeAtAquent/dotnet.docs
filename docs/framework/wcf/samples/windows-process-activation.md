@@ -1,8 +1,8 @@
 ---
-title: "Windows Process Activation | Microsoft Docs"
+title: "Windows Process Activation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 37b79642-1e6f-44b3-9777-98af57443bfa
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Process Activation
 This section contains samples that demonstrate service activation through network protocols.  

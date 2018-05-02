@@ -1,7 +1,7 @@
 ---
-title: "Introduction to XML Literals in Visual Basic2 | Microsoft Docs"
+title: "Introduction to XML Literals in Visual Basic2"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,25 +9,17 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Introduction to XML Literals in Visual Basic
-This section provides information about creating XML trees in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+This section provides information about creating XML trees in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
  For information about using the results of LINQ queries as the content for an XML tree, see [Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- For more information on XML literals in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)], see [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
+ For more information on XML literals in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)], see [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md).  
   
 ## Creating XML Trees  
  The following example shows how to create an <xref:System.Xml.Linq.XElement>, in this case `contacts`:  

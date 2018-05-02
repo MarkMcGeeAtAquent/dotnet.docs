@@ -1,5 +1,5 @@
 ---
-title: "JIT Tracing ETW Events | Microsoft Docs"
+title: "JIT Tracing ETW Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # JIT Tracing ETW Events
 <a name="top"></a> These events collect information relating to the success or failure of just-in-time (JIT) inlining and JIT tail calls.  

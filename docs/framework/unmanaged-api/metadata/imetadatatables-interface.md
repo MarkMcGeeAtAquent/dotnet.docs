@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables Interface | Microsoft Docs"
+title: "IMetaDataTables Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataTables interface [.NET Framework metadata]"
 ms.assetid: 31272cce-506a-4f18-bcbf-01ee45e36356
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables Interface
 Provides methods for the storage and retrieval of metadata information in tables.  
@@ -63,5 +66,5 @@ Provides methods for the storage and retrieval of metadata information in tables
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)   
+ [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

@@ -1,26 +1,17 @@
 ---
-title: "Cancel an Async Task or a List of Tasks (C#) | Microsoft Docs"
+title: "Cancel an Async Task or a List of Tasks (C#)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Cancel an Async Task or a List of Tasks (C#)
 You can set up a button that you can use to cancel an async application if you don't want to wait for it to finish. By following the examples in this topic, you can add a cancellation button to an application that downloads the contents of one website or a list of websites.  
@@ -34,7 +25,7 @@ You can set up a button that you can use to cancel an async application if you d
  The first example associates the **Cancel** button with a single download task. If you choose the button while the application is downloading content, the download is canceled.  
   
 ### Downloading the Example  
- You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046) and then follow these steps.  
+ You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.  
   
 1.  Decompress the file that you downloaded, and then start Visual Studio.  
   
@@ -66,7 +57,7 @@ You can set up a button that you can use to cancel an async application if you d
         CancellationTokenSource cts;  
     ```  
   
-2.  Add the following event handler for the **Cancel** button. The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=fullName> method to notify `cts` when the user requests cancellation.  
+2.  Add the following event handler for the **Cancel** button. The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.  
   
     ```csharp  
     // ***Add an event handler for the Cancel button.  
@@ -88,7 +79,7 @@ You can set up a button that you can use to cancel an async application if you d
         cts = new CancellationTokenSource();  
         ```  
   
-    -   In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=fullName> property of `cts` as an argument. The `Token` property propagates the message if cancellation is requested. Add a catch block that displays a message if the user chooses to cancel the download operation. The following code shows the changes.  
+    -   In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument. The `Token` property propagates the message if cancellation is requested. Add a catch block that displays a message if the user chooses to cancel the download operation. The following code shows the changes.  
   
         ```csharp  
         try  
@@ -109,7 +100,7 @@ You can set up a button that you can use to cancel an async application if you d
         }  
         ```  
   
-4.  In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website. Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument. The token carries the message if the user chooses the **Cancel** button.  
+4.  In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website. Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument. The token carries the message if the user chooses the **Cancel** button.  
   
      The following code shows the changes in `AccessTheWebAsync`.  
   
@@ -155,7 +146,7 @@ You can set up a button that you can use to cancel an async application if you d
  You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task. If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.  
   
 ### Downloading the Example  
- You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046) and then follow these steps.  
+ You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.  
   
 1.  Decompress the file that you downloaded, and then start Visual Studio.  
   
@@ -235,7 +226,6 @@ You can set up a button that you can use to cancel an async application if you d
 5.  If you don’t cancel the program, it produces the following output.  
   
     ```  
-  
     Length of the downloaded string: 35939.  
   
     Length of the downloaded string: 237682.  
@@ -251,7 +241,6 @@ You can set up a button that you can use to cancel an async application if you d
     Length of the downloaded string: 145790.  
   
     Downloads complete.  
-  
     ```  
   
      If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.  
@@ -264,13 +253,12 @@ You can set up a button that you can use to cancel an async application if you d
     Length of the downloaded string: 128607.  
   
     Downloads canceled.  
-  
     ```  
   
 ##  <a name="BKMK_CompleteExamples"></a> Complete Examples  
  The following sections contain the code for each of the previous examples. Notice that you must add a reference for <xref:System.Net.Http>.  
   
- You can download the projects from [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046).  
+ You can download the projects from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).  
   
 ### Cancel a Task Example  
  The following code is the complete MainWindow.xaml.cs file for the example that cancels a single task.  
@@ -529,8 +517,8 @@ namespace CancelAListOfTasks
 ```  
   
 ## See Also  
- <xref:System.Threading.CancellationTokenSource>   
- <xref:System.Threading.CancellationToken>   
- [Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)   
- [Fine-Tuning Your Async Application (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)   
- [Async Sample: Fine Tuning Your Application](http://go.microsoft.com/fwlink/?LinkId=255046)
+ <xref:System.Threading.CancellationTokenSource>  
+ <xref:System.Threading.CancellationToken>  
+ [Asynchronous Programming with async and await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
+ [Fine-Tuning Your Async Application (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
+ [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

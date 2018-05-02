@@ -1,5 +1,5 @@
 ---
-title: "Style Sheet Directives Embedded in a Document | Microsoft Docs"
+title: "Style Sheet Directives Embedded in a Document"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,21 +8,19 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 ms.assetid: d79fb295-ebc7-438d-ba1b-05be7d534834
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Style Sheet Directives Embedded in a Document
 Occasionally, existing XML contains the style sheet directive of `<?xml:stylesheet?>`. Microsoft Internet Explorer accepts this as an alternative to the `<?xml-stylesheet?>` syntax. When the XML data contains an `<?xml:stylesheet?>` directive, as shown in the following data, attempting to load this data into the XML Document Object Model (DOM) throws an exception.  
   
-```  
+```xml  
 <?xml version="1.0" ?>  
 <?xml:stylesheet type="text/xsl" href="test2.xsl"?>  
 <root>  

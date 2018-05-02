@@ -1,5 +1,5 @@
 ---
-title: "How to: Secure a Service with Windows Credentials | Microsoft Docs"
+title: "How to: Secure a Service with Windows Credentials"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, security"
 ms.assetid: d171b5ca-96ef-47ff-800c-c138023cf76e
@@ -16,9 +19,11 @@ caps.latest.revision: 26
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Secure a Service with Windows Credentials
-This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service that resides in a Windows domain and is called by clients in the same domain. [!INCLUDE[crabout](../../../includes/crabout-md.md)] this scenario, see [Transport Security with Windows Authentication](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). For a sample application, see the [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) sample.  
+This topic shows how to enable transport security on a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service that resides in a Windows domain and is called by clients in the same domain. [!INCLUDE[crabout](../../../includes/crabout-md.md)] this scenario, see [Transport Security with Windows Authentication](../../../docs/framework/wcf/feature-details/transport-security-with-windows-authentication.md). For a sample application, see the [WSHttpBinding](../../../docs/framework/wcf/samples/wshttpbinding.md) sample.  
   
  This topic assumes you have an existing contract interface and implementation already defined, and adds on to that. You can also modify an existing service and client.  
   
@@ -37,9 +42,9 @@ This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../.
   
 2.  Create an instance of the <xref:System.ServiceModel.WSHttpBinding> class.  
   
-3.  Set the <xref:System.ServiceModel.WsHttpSecurity.Mode%2A> property of the <xref:System.ServiceModel.WsHttpSecurity> class to <xref:System.ServiceModel.SecurityMode>.  
+3.  Set the <xref:System.ServiceModel.WSHttpSecurity.Mode%2A> property of the <xref:System.ServiceModel.WSHttpSecurity> class to <xref:System.ServiceModel.SecurityMode.Message>.  
   
-4.  Set the <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> property of the <xref:System.ServiceModel.MessageSecurityOverHttp> class to <xref:System.ServiceModel.MessageCredentialType>.  
+4.  Set the <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> property of the <xref:System.ServiceModel.MessageSecurityOverHttp> class to <xref:System.ServiceModel.MessageCredentialType.Windows>.  
   
 5.  The code for this procedure is as follows:  
   
@@ -77,7 +82,7 @@ This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../.
   
 ##### To use a binding in a client with code  
   
-1.  Use the SvcUtil.exe tool to generate the proxy code from the service's metadata. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). The generated proxy code inherits from the <xref:System.ServiceModel.ClientBase%601> class, which ensures that every client has the necessary constructors, methods, and properties to communicate with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service. In this example, the generated code includes the `CalculatorClient` class, which implements the `ICalculator` interface, enabling compatibility with the service code.  
+1.  Use the SvcUtil.exe tool to generate the proxy code from the service's metadata. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). The generated proxy code inherits from the <xref:System.ServiceModel.ClientBase%601> class, which ensures that every client has the necessary constructors, methods, and properties to communicate with a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service. In this example, the generated code includes the `CalculatorClient` class, which implements the `ICalculator` interface, enabling compatibility with the service code.  
   
 2.  This procedure's code is inserted at the beginning of the `Main` method of the client program.  
   
@@ -113,7 +118,7 @@ This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../.
   
 5.  In the service's configuration file, replace the `<bindings>` section with the following code. If you do not already have a service configuration file, see [Using Bindings to Configure Services and Clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
-    ```  
+    ```xml  
     <bindings>  
       <wsHttpBinding>  
        <binding name = "wsHttpBinding_Calculator">  
@@ -130,7 +135,7 @@ This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../.
   
 ##### To use a binding in a client with configuration  
   
-1.  Use the SvcUtil.exe tool to generate the proxy code and configuration file from the service's metadata. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+1.  Use the SvcUtil.exe tool to generate the proxy code and configuration file from the service's metadata. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 2.  Replace the [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) section of the generated configuration file with the configuration code from the preceding section.  
   
@@ -147,12 +152,12 @@ This topic shows how to enable transfer security on a [!INCLUDE[indigo1](../../.
 ## Example  
  [!code-csharp[c_SecureWindowsService#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsservice/cs/secureservice.cs#0)]  
   
- [!code-csharp[c_SecureWindowsClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#0)]
- <!-- TODO: review snippet reference [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]  -->  
+ [!code-csharp[c_SecureWindowsClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewindowsclient/cs/secureclient.cs#0)] 
+ [!code-vb[c_SecureWindowsClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewindowsclient/vb/secureclient.vb#0)]      
   
 ## See Also  
- <xref:System.ServiceModel.WSHttpBinding>   
- [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
- [How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)   
- [Securing Services](../../../docs/framework/wcf/securing-services.md)   
+ <xref:System.ServiceModel.WSHttpBinding>  
+ [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
+ [How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md)  
+ [Securing Services](../../../docs/framework/wcf/securing-services.md)  
  [Security Overview](../../../docs/framework/wcf/feature-details/security-overview.md)

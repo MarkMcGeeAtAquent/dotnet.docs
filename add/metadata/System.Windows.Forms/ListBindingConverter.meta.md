@@ -1,59 +1,79 @@
 ---
 uid: System.Windows.Forms.ListBindingConverter
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.CanConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.GetCreateInstanceSupported
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.CreateInstance
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.ConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ListBindingConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

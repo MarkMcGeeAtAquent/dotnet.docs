@@ -1,49 +1,26 @@
 ---
-title: "Visual Basic | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Visual Basic"
+ms.date: 07/20/2015
 ms.prod: .net
-
-
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "programming, Visual Basic"
   - "Visual Basic"
-ms.assetid: 5cc578fe-d9e5-4015-937d-b34b83207072
-caps.latest.revision: 37
-author: dotnet-bot
-ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
+author: rpetrusha
+ms.author: ronpet
 ---
-# Visual Basic
+# Visual Basic Guide
+
 Visual Basic is engineered for productively building type-safe and object-oriented applications. Visual Basic enables developers to target Windows, Web, and mobile devices. As with all languages targeting the Microsoft .NET Framework, programs written in Visual Basic benefit from security and language interoperability.  
   
  This generation of Visual Basic continues the tradition of giving you a fast and easy way to create .NET Framework-based applications.  
   
- If you don't already have Visual Basic, you can acquire a version of Visual Studio that includes Visual Basic for free from the [Visual Studio](https://www.visualstudio.com/products/free-developer-offers-vs) site.  
+ If you don't already have Visual Basic, you can acquire a version of Visual Studio that includes Visual Basic for free from the [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) site.  
   
 ## In This Section  
- [Getting Started](../visual-basic/getting-started/index.md)   
+ [Getting Started](../visual-basic/getting-started/index.md)  
  Helps you begin working by listing what is new and what is available in various editions of the product.  
    
  [Programming Concepts](../visual-basic/programming-guide/concepts/index.md) 
@@ -59,7 +36,7 @@ Visual Basic is engineered for productively building type-safe and object-orient
  Contains the Visual Basic language and compiler information.  
 
  [Developing Applications with Visual Basic](../visual-basic/developing-apps/index.md)  
- Discusses various aspects of development in Visual Basic, such as security, exception handling, and using the [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)] class library.
+ Discusses various aspects of development in Visual Basic, such as security, exception handling, and using the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] class library.
 
  [COM Interop](../visual-basic/programming-guide/com-interop/index.md)  
  Explains the interoperability issues associated with creating and using component object model (COM) objects with Visual Basic.  
@@ -71,8 +48,8 @@ Visual Basic is engineered for productively building type-safe and object-orient
  Provides links to step-by-step instructions for common scenarios.  
   
 ## Related Sections  
- [Get Started Developing with Visual Studio](https://docs.microsoft.com/visualstudio/ide/get-started-developing-with-visual-studio)  
+ [Get Started Developing with Visual Studio](/visualstudio/ide/get-started-developing-with-visual-studio)  
  Provides links to topics that help you learn about the basics of Visual Studio.  
   
  [.NET Framework Class Library](http://go.microsoft.com/fwlink/?LinkID=227195)  
- Provides entry to the library of classes, interfaces, and value types that are included in the Microsoft [!INCLUDE[dnprdnshort](../csharp/getting-started/includes/dnprdnshort_md.md)] SDK.
+ Provides entry to the library of classes, interfaces, and value types that are included in the Microsoft [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] SDK.

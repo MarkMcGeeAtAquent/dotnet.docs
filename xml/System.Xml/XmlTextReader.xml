@@ -1,7 +1,9 @@
-<Type Name="XmlTextReader" FullName="System.Xml.XmlTextReader">
+﻿<Type Name="XmlTextReader" FullName="System.Xml.XmlTextReader">
   <TypeSignature Language="C#" Value="public class XmlTextReader : System.Xml.XmlReader, System.Xml.IXmlLineInfo, System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTextReader extends System.Xml.XmlReader implements class System.Xml.IXmlLineInfo, class System.Xml.IXmlNamespaceResolver" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlTextReader" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlTextReader&#xA;Inherits XmlReader&#xA;Implements IXmlLineInfo, IXmlNamespaceResolver" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlTextReader : System::Xml::XmlReader, System::Xml::IXmlLineInfo, System::Xml::IXmlNamespaceResolver" />
   <AssemblyInfo>
     <AssemblyName>System.Xml</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Xml.XmlReader</BaseTypeName>
@@ -37,7 +43,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  <xref:System.Xml.XmlTextReader> provides forward-only, read-only access to a stream of XML data. The current node refers to the node on which the reader is positioned. The reader is advanced using any of the read methods and properties reflect the value of the current node.  
   
@@ -69,7 +75,7 @@
   
 -   Exceptions thrown the <xref:System.Xml.XmlTextReader> can disclose path information that you do not want bubbled up to the application. Your applications must catch exceptions and process them appropriately.  
   
--   DTD processing is enabled by default. Disable DTD processing if you are concerned about Denial of Service issues or if you are dealing with untrusted sources. Set the <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property to <xref:System.Xml.DtdProcessing> to disable DTD processing.  
+-   DTD processing is enabled by default. Disable DTD processing if you are concerned about Denial of Service issues or if you are dealing with untrusted sources. Set the <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property to <xref:System.Xml.DtdProcessing.Prohibit> to disable DTD processing.  
   
      If you have DTD processing enabled, you can use the <xref:System.Xml.XmlSecureResolver> to restrict the resources that the <xref:System.Xml.XmlTextReader> can access. You can also design your application so that the XML processing is memory and time constrained. For example, configure time-out limits in your ASP.NET application.  
   
@@ -92,10 +98,32 @@
     </block>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.XmlTextReader" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected XmlTextReader ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; XmlTextReader();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -106,16 +134,23 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see langword="XmlTextReader" />.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream input);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (input As Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::IO::Stream ^ input);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -125,6 +160,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="input" Type="System.IO.Stream" />
@@ -138,20 +177,23 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
- The <xref:System.Xml.XmlTextReader> decodes the stream using <xref:System.Text.Encoding?displayProperty=fullName>.  
+ The <xref:System.Xml.XmlTextReader> decodes the stream using <xref:System.Text.Encoding?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="input" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.TextReader input);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextReader input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.TextReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (input As TextReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::IO::TextReader ^ input);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -161,6 +203,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="input" Type="System.IO.TextReader" />
@@ -174,7 +220,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  It is assumed that the `TextReader` is already set to the correct encoding. This is used by clients that have already read some things from the stream in a multi-part MIME scenario.  
   
@@ -189,12 +235,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -204,6 +253,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -217,12 +270,12 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  If the file is located on a resource that requires access credentials, use the <xref:System.Xml.XmlTextReader.XmlResolver%2A> property to specify the necessary credentials.  
   
 > [!NOTE]
->  In version 1.1 of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], partially trusted code cannot set the `XmlResolver` property. The workaround is to create an <xref:System.Xml.XmlUrlResolver> with the necessary credentials, pass the URI to the <xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=fullName> method, and then construct the `XmlTextReader` using the resulting <xref:System.IO.Stream> object. The workaround is described in the following C# code.  
+>  In version 1.1 of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], partially trusted code cannot set the `XmlResolver` property. The workaround is to create an <xref:System.Xml.XmlUrlResolver> with the necessary credentials, pass the URI to the <xref:System.Xml.XmlUrlResolver.GetEntity%2A?displayProperty=nameWithType> method, and then construct the `XmlTextReader` using the resulting <xref:System.IO.Stream> object. The workaround is described in the following C# code.  
   
 ```  
 // Create a resolver with the necessary credentials.  
@@ -262,12 +315,16 @@ XmlTextReader reader = new XmlTextReader(s);
  An error occurred while processing the request.</exception>
         <exception cref="T:System.UriFormatException">
           <paramref name="url" /> is not a valid URI.</exception>
+        <altmember cref="P:System.Xml.XmlTextReader.XmlResolver" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected XmlTextReader (System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; XmlTextReader(System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -277,6 +334,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="nt" Type="System.Xml.XmlNameTable" />
@@ -290,16 +351,19 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream input, System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream input, class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream,System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (input As Stream, nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::IO::Stream ^ input, System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -309,6 +373,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="input" Type="System.IO.Stream" />
@@ -324,21 +392,24 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
- The <xref:System.Xml.XmlTextReader> decodes the stream using <xref:System.Text.Encoding?displayProperty=fullName>.  
+ The <xref:System.Xml.XmlTextReader> decodes the stream using <xref:System.Text.Encoding?displayProperty=nameWithType>.  
   
  If you specify a name table, this constructor uses the names defined already in that table.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NullReferenceException">The <paramref name="input" /> or <paramref name="nt" /> value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.TextReader input, System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.TextReader input, class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.TextReader,System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (input As TextReader, nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::IO::TextReader ^ input, System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -348,6 +419,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="input" Type="System.IO.TextReader" />
@@ -363,19 +438,22 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  It is assumed that the `TextReader` is already set to the correct encoding. This is used by clients that have already read some things from the stream in a multi-part MIME scenario.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NullReferenceException">The <paramref name="nt" /> value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.Stream input);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.Stream input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.Stream)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String, input As Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url, System::IO::Stream ^ input);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -385,6 +463,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -400,18 +482,21 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="input" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.TextReader input);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.TextReader input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.TextReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String, input As TextReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url, System::IO::TextReader ^ input);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -421,6 +506,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -436,18 +525,21 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  It is assumed that the `TextReader` is already set to the correct encoding. This is used by clients that have already read some things from the stream in a multi-part MIME scenario.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String, nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url, System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -457,6 +549,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -472,7 +568,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
@@ -488,12 +584,15 @@ XmlTextReader reader = new XmlTextReader(s);
  An error occurred while processing the request.</exception>
         <exception cref="T:System.UriFormatException">
           <paramref name="url" /> is not a valid URI.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (System.IO.Stream xmlFragment, System.Xml.XmlNodeType fragType, System.Xml.XmlParserContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream xmlFragment, valuetype System.Xml.XmlNodeType fragType, class System.Xml.XmlParserContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.IO.Stream,System.Xml.XmlNodeType,System.Xml.XmlParserContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (xmlFragment As Stream, fragType As XmlNodeType, context As XmlParserContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::IO::Stream ^ xmlFragment, System::Xml::XmlNodeType fragType, System::Xml::XmlParserContext ^ context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -503,6 +602,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="xmlFragment" Type="System.IO.Stream" />
@@ -520,7 +623,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This constructor parses the given string as a fragment of XML. If the XML fragment is an element or attribute, you can bypass the root level rules for well-formed XML documents.  
   
@@ -534,7 +637,7 @@ XmlTextReader reader = new XmlTextReader(s);
   
  The reader uses the following to determine the encoding of the stream.  
   
-1.  Checks the <xref:System.Xml.XmlParserContext.Encoding%2A?displayProperty=fullName> property to determine the encoding.  
+1.  Checks the <xref:System.Xml.XmlParserContext.Encoding%2A?displayProperty=nameWithType> property to determine the encoding.  
   
 2.  If the `Encoding` property is `null`, the reader checks for a byte-order mark at the beginning of the stream.  
   
@@ -546,12 +649,15 @@ XmlTextReader reader = new XmlTextReader(s);
           <paramref name="fragType" /> is not an Element, Attribute, or Document <see langword="XmlNodeType" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="xmlFragment" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.Stream input, System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.Stream input, class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.Stream,System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String, input As Stream, nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url, System::IO::Stream ^ input, System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -561,6 +667,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -578,17 +688,20 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NullReferenceException">The <paramref name="input" /> or <paramref name="nt" /> value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string url, System.IO.TextReader input, System.Xml.XmlNameTable nt);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string url, class System.IO.TextReader input, class System.Xml.XmlNameTable nt) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.IO.TextReader,System.Xml.XmlNameTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (url As String, input As TextReader, nt As XmlNameTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ url, System::IO::TextReader ^ input, System::Xml::XmlNameTable ^ nt);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -598,6 +711,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="url" Type="System.String" />
@@ -615,19 +732,22 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  It is assumed that the `TextReader` is already set to the correct encoding. This is used by clients that have already read some things from the stream in a multi-part MIME scenario.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="nt" /> value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTextReader (string xmlFragment, System.Xml.XmlNodeType fragType, System.Xml.XmlParserContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xmlFragment, valuetype System.Xml.XmlNodeType fragType, class System.Xml.XmlParserContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.#ctor(System.String,System.Xml.XmlNodeType,System.Xml.XmlParserContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (xmlFragment As String, fragType As XmlNodeType, context As XmlParserContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTextReader(System::String ^ xmlFragment, System::Xml::XmlNodeType fragType, System::Xml::XmlParserContext ^ context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -637,6 +757,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="xmlFragment" Type="System.String" />
@@ -654,7 +778,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This constructor parses the given string as a fragment of XML. If the XML fragment is an element or attribute, you can bypass the root level rules for well-formed XML documents. This constructor can handle strings returned from <xref:System.Xml.XmlReader.ReadInnerXml%2A>.  
   
@@ -681,12 +805,16 @@ XmlTextReader reader = new XmlTextReader(s);
           <paramref name="fragType" /> is not an <see langword="Element" />, <see langword="Attribute" />, or <see langword="Document" /><see langword="XmlNodeType" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="xmlFragment" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlParserContext" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="AttributeCount">
       <MemberSignature Language="C#" Value="public override int AttributeCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 AttributeCount" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.AttributeCount" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property AttributeCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int AttributeCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -696,6 +824,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -709,7 +841,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property is relevant to `Element`, `DocumentType` and `XmlDeclaration` nodes only. (Other node types do not have attributes.)  
   
@@ -724,12 +856,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="BaseURI">
       <MemberSignature Language="C#" Value="public override string BaseURI { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string BaseURI" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.BaseURI" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property BaseURI As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ BaseURI { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -739,6 +874,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -752,7 +891,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  A networked XML document is comprised of chunks of data aggregated using various W3C standard inclusion mechanisms and therefore contains nodes that come from different places. DTD entities are an example of this, but this is not limited to DTDs. The base URI tells you where these nodes came from. If there is no base URI for the nodes being returned (for example, they were parsed from an in-memory string), `String.Empty` is returned.  
   
@@ -771,12 +910,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="CanReadBinaryContent">
       <MemberSignature Language="C#" Value="public override bool CanReadBinaryContent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanReadBinaryContent" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanReadBinaryContent" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanReadBinaryContent As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanReadBinaryContent { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -786,6 +928,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -800,18 +946,21 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The binary content read methods include the <xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A>, <xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A>, <xref:System.Xml.XmlTextReader.ReadElementContentAsBase64%2A>, and <xref:System.Xml.XmlTextReader.ReadElementContentAsBinHex%2A> methods.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="CanReadValueChunk">
       <MemberSignature Language="C#" Value="public override bool CanReadValueChunk { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanReadValueChunk" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanReadValueChunk" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanReadValueChunk As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanReadValueChunk { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -821,6 +970,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -835,18 +988,21 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The <xref:System.Xml.XmlTextReader> throws a <xref:System.NotSupportedException> if the <xref:System.Xml.XmlReader.ReadValueChunk%2A> method is called.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="CanResolveEntity">
       <MemberSignature Language="C#" Value="public override bool CanResolveEntity { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanResolveEntity" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.CanResolveEntity" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanResolveEntity As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanResolveEntity { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -856,6 +1012,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -870,18 +1030,21 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This is a change in the [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)] release. In previous versions, the `XmlTextReader` class could not resolve entities and `CanResolveEntity` always returned `false`.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -891,6 +1054,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -904,7 +1071,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method also releases any resources held while reading. If this reader was constructed using a stream, this method also calls `Close` on the underlying stream.  
   
@@ -912,12 +1079,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Depth">
       <MemberSignature Language="C#" Value="public override int Depth { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Depth" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Depth As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int Depth { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -927,6 +1097,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -940,7 +1114,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -953,12 +1127,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="DtdProcessing">
       <MemberSignature Language="C#" Value="public System.Xml.DtdProcessing DtdProcessing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.DtdProcessing DtdProcessing" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.DtdProcessing" />
+      <MemberSignature Language="VB.NET" Value="Public Property DtdProcessing As DtdProcessing" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::DtdProcessing DtdProcessing { System::Xml::DtdProcessing get(); void set(System::Xml::DtdProcessing value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -968,6 +1145,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.DtdProcessing</ReturnType>
@@ -979,10 +1160,10 @@ XmlTextReader reader = new XmlTextReader(s);
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Xml.DtdProcessing> enumeration contains the <xref:System.Xml.DtdProcessing>, <xref:System.Xml.DtdProcessing>, and <xref:System.Xml.DtdProcessing> enumerators. <xref:System.Xml.DtdProcessing> is the default behavior. The <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property replaces the `ProhibitDTD` property and adds the ability to ignore the DOCTYPE element.  
+ The <xref:System.Xml.DtdProcessing> enumeration contains the <xref:System.Xml.DtdProcessing.Prohibit>, <xref:System.Xml.DtdProcessing.Ignore>, and <xref:System.Xml.DtdProcessing.Parse> enumerators. <xref:System.Xml.DtdProcessing.Parse> is the default behavior. The <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property replaces the `ProhibitDTD` property and adds the ability to ignore the DOCTYPE element.  
   
 > [!IMPORTANT]
->  If the <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property is set to <xref:System.Xml.DtdProcessing?displayProperty=fullName>, the <xref:System.Xml.XmlTextReader> will not report the DTDs. This means that the DTD/DOCTYPE will be lost on output.  
+>  If the <xref:System.Xml.XmlTextReader.DtdProcessing%2A> property is set to <xref:System.Xml.DtdProcessing.Ignore?displayProperty=nameWithType>, the <xref:System.Xml.XmlTextReader> will not report the DTDs. This means that the DTD/DOCTYPE will be lost on output.  
   
  ]]></format>
         </remarks>
@@ -992,6 +1173,8 @@ XmlTextReader reader = new XmlTextReader(s);
       <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Encoding" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Encoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ Encoding { System::Text::Encoding ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1001,6 +1184,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Text.Encoding</ReturnType>
@@ -1014,9 +1201,9 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
- Because <xref:System.Xml.XmlTextReader> uses the <xref:System.Text.Encoding?displayProperty=fullName> class, `XmlTextReader` also supports all encodings supported by that class. The exception to this is any encoding, such as UTF-7 or EBCDIC, that maps the `<?xml` sequence to different byte values than UTF-8.  
+ Because <xref:System.Xml.XmlTextReader> uses the <xref:System.Text.Encoding?displayProperty=nameWithType> class, `XmlTextReader` also supports all encodings supported by that class. The exception to this is any encoding, such as UTF-7 or EBCDIC, that maps the `<?xml` sequence to different byte values than UTF-8.  
   
  ]]></format>
         </remarks>
@@ -1026,6 +1213,8 @@ XmlTextReader reader = new XmlTextReader(s);
       <MemberSignature Language="C#" Value="public System.Xml.EntityHandling EntityHandling { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.EntityHandling EntityHandling" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.EntityHandling" />
+      <MemberSignature Language="VB.NET" Value="Public Property EntityHandling As EntityHandling" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::EntityHandling EntityHandling { System::Xml::EntityHandling get(); void set(System::Xml::EntityHandling value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1035,6 +1224,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.EntityHandling</ReturnType>
@@ -1048,7 +1241,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property can be changed on the fly and takes effect after the next <xref:System.Xml.XmlTextReader.Read%2A> call.  
   
@@ -1077,12 +1270,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="EOF">
       <MemberSignature Language="C#" Value="public override bool EOF { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EOF" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.EOF" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property EOF As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool EOF { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1092,6 +1288,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1106,16 +1306,39 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetAttribute">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the value of an attribute.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
       </Docs>
-    </Member>
+    </MemberGroup>
     <Member MemberName="GetAttribute">
       <MemberSignature Language="C#" Value="public override string GetAttribute (int i);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(int32 i) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetAttribute (i As Integer) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ GetAttribute(int i);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1125,6 +1348,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1142,19 +1369,22 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method does not move the reader.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="i" /> parameter is less than 0 or greater than or equal to <see cref="P:System.Xml.XmlTextReader.AttributeCount" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="GetAttribute">
       <MemberSignature Language="C#" Value="public override string GetAttribute (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetAttribute (name As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ GetAttribute(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1164,6 +1394,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1181,7 +1415,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method does not move the reader.  
   
@@ -1202,12 +1436,15 @@ XmlTextReader reader = new XmlTextReader(s);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="GetAttribute">
       <MemberSignature Language="C#" Value="public override string GetAttribute (string localName, string namespaceURI);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetAttribute(string localName, string namespaceURI) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetAttribute(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetAttribute (localName As String, namespaceURI As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ GetAttribute(System::String ^ localName, System::String ^ namespaceURI);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1217,6 +1454,10 @@ XmlTextReader reader = new XmlTextReader(s);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1236,7 +1477,7 @@ XmlTextReader reader = new XmlTextReader(s);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The following XML contains an attribute in a specific namespace:  
   
@@ -1262,13 +1503,19 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="GetNamespacesInScope">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetNamespacesInScope (scope As XmlNamespaceScope) As IDictionary(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ GetNamespacesInScope(System::Xml::XmlNamespaceScope scope);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1277,6 +1524,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
@@ -1294,7 +1545,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The dictionary consists of a collection of namespace names keyed by prefix. It can be used to enumerate the in-scope namespaces. The dictionary is a disconnected copy of the namespace list of the reader. It remains unchanged as the reader position, current in-scope namespace list, changes.  
   
@@ -1308,12 +1559,15 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="GetRemainder">
       <MemberSignature Language="C#" Value="public System.IO.TextReader GetRemainder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.TextReader GetRemainder() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.GetRemainder" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetRemainder () As TextReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::TextReader ^ GetRemainder();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1323,6 +1577,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.TextReader</ReturnType>
@@ -1337,7 +1595,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  Because <xref:System.Xml.XmlTextReader> does a buffered `Read`, it must be able to return the remainder of the unused buffer so that no data is lost. This allows protocols (such as multi-part MIME) to package XML in the same stream as other things.  
   
@@ -1358,13 +1616,19 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="HasLineInfo">
       <MemberSignature Language="C#" Value="public bool HasLineInfo ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasLineInfo() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.HasLineInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Function HasLineInfo () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool HasLineInfo();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlLineInfo.HasLineInfo</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1373,6 +1637,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1388,16 +1656,19 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="HasValue">
       <MemberSignature Language="C#" Value="public override bool HasValue { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasValue" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.HasValue" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property HasValue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool HasValue { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1407,6 +1678,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1421,7 +1696,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The following table lists node types that have a value to return.  
   
@@ -1452,12 +1727,15 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="IsDefault">
       <MemberSignature Language="C#" Value="public override bool IsDefault { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDefault" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.IsDefault" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property IsDefault As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsDefault { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1467,6 +1745,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1480,18 +1762,21 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property applies only to attribute nodes.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="IsEmptyElement">
       <MemberSignature Language="C#" Value="public override bool IsEmptyElement { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsEmptyElement" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.IsEmptyElement" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property IsEmptyElement As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsEmptyElement { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1501,6 +1786,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1515,7 +1804,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property enables you to determine the difference between the following:  
   
@@ -1542,13 +1831,19 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="LineNumber">
       <MemberSignature Language="C#" Value="public int LineNumber { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LineNumber" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LineNumber As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int LineNumber { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Xml.IXmlLineInfo.LineNumber</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1557,6 +1852,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1570,7 +1869,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property is most commonly used for error reporting, but can be called at any time. The starting value for this property is `1`.  
   
@@ -1587,13 +1886,19 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="LinePosition">
       <MemberSignature Language="C#" Value="public int LinePosition { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 LinePosition" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LinePosition" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LinePosition As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int LinePosition { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Xml.IXmlLineInfo.LinePosition</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1602,6 +1907,10 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1615,7 +1924,7 @@ String dt4 = reader.GetAttribute("dt",http://www.w3.org/2000/xmlns/);
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property is most commonly used for error reporting, but can be called at any time. The property's starting value is `1`.  
   
@@ -1642,12 +1951,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="LocalName">
       <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ LocalName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1657,6 +1969,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1672,7 +1988,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -1689,13 +2005,19 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="LookupNamespace">
       <MemberSignature Language="C#" Value="public override string LookupNamespace (string prefix);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string LookupNamespace(string prefix) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.LookupNamespace(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function LookupNamespace (prefix As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ LookupNamespace(System::String ^ prefix);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1704,6 +2026,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1721,7 +2047,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  In the following XML, if the reader is positioned on the `href` attribute, the prefix `a` is resolved by calling `reader.LookupNamespace("a")`. The returned string is `urn:456`.  
   
@@ -1736,12 +2062,35 @@ abc<tag/>
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Xml.XmlTextReader.Namespaces" /> property is set to <see langword="true" /> and the <paramref name="prefix" /> value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="MoveToAttribute">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Moves to the specified attribute.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="MoveToAttribute">
       <MemberSignature Language="C#" Value="public override void MoveToAttribute (int i);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MoveToAttribute(int32 i) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub MoveToAttribute (i As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void MoveToAttribute(int i);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1751,6 +2100,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1767,7 +2120,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -1781,12 +2134,15 @@ abc<tag/>
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="i" /> parameter is less than 0 or greater than or equal to <see cref="P:System.Xml.XmlReader.AttributeCount" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="MoveToAttribute">
       <MemberSignature Language="C#" Value="public override bool MoveToAttribute (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToAttribute(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function MoveToAttribute (name As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool MoveToAttribute(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1796,6 +2152,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1814,18 +2174,21 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  After calling `MoveToAttribute`, the <xref:System.Xml.XmlTextReader.Name%2A>, <xref:System.Xml.XmlTextReader.NamespaceURI%2A>, and <xref:System.Xml.XmlTextReader.Prefix%2A> properties reflects the properties of that attribute.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="MoveToAttribute">
       <MemberSignature Language="C#" Value="public override bool MoveToAttribute (string localName, string namespaceURI);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToAttribute(string localName, string namespaceURI) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToAttribute(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function MoveToAttribute (localName As String, namespaceURI As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool MoveToAttribute(System::String ^ localName, System::String ^ namespaceURI);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1835,6 +2198,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1855,18 +2222,21 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  After calling `MoveToAttribute`, the <xref:System.Xml.XmlTextReader.Name%2A>, <xref:System.Xml.XmlTextReader.NamespaceURI%2A>, and <xref:System.Xml.XmlTextReader.Prefix%2A> properties reflects the properties of that attribute.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="MoveToElement">
       <MemberSignature Language="C#" Value="public override bool MoveToElement ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToElement() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToElement" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function MoveToElement () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool MoveToElement();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1876,6 +2246,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1891,7 +2265,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  Use this method to return to an element after navigating through its attributes. This method moves the reader to one of the following node types: `Element`, `DocumentType`, or `XmlDeclaration`.  
   
@@ -1906,12 +2280,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="MoveToFirstAttribute">
       <MemberSignature Language="C#" Value="public override bool MoveToFirstAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToFirstAttribute() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToFirstAttribute" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function MoveToFirstAttribute () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool MoveToFirstAttribute();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1921,6 +2298,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1936,7 +2317,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -1953,12 +2334,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="MoveToNextAttribute">
       <MemberSignature Language="C#" Value="public override bool MoveToNextAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveToNextAttribute() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.MoveToNextAttribute" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function MoveToNextAttribute () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool MoveToNextAttribute();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -1968,6 +2352,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1983,7 +2371,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  If the current node is an element node, this method is equivalent to <xref:System.Xml.XmlTextReader.MoveToFirstAttribute%2A>. If `MoveToNextAttribute` returns `true`, the reader moves to the next attribute; otherwise, the position of the reader does not change.  
   
@@ -1998,12 +2386,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Name">
       <MemberSignature Language="C#" Value="public override string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2014,6 +2405,10 @@ abc<tag/>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -2023,71 +2418,30 @@ abc<tag/>
   
  The name returned is dependent on the <see cref="P:System.Xml.XmlTextReader.NodeType" /> of the node. The following node types return the listed values. All other node types return an empty string.  
   
- <list type="table">  
-<listheader>  
-<term> Node Type  
+ <list type="table"><listheader><term> Node Type  
   
- </term>  
-<description> Name  
+ </term><description> Name  
   
- </description>  
-</listheader>  
-<item>  
-<term> <see langword="Attribute" />  
+ </description></listheader><item><term><see langword="Attribute" /></term><description> The name of the attribute.  
   
- </term>  
-<description> The name of the attribute.  
+ </description></item><item><term><see langword="DocumentType" /></term><description> The document type name.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="DocumentType" />  
+ </description></item><item><term><see langword="Element" /></term><description> The tag name.  
   
- </term>  
-<description> The document type name.  
+ </description></item><item><term><see langword="EntityReference" /></term><description> The name of the entity referenced.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="Element" />  
+ </description></item><item><term><see langword="ProcessingInstruction" /></term><description> The target of the processing instruction.  
   
- </term>  
-<description> The tag name.  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description> The literal string <see langword="xml" />.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="EntityReference" />  
-  
- </term>  
-<description> The name of the entity referenced.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="ProcessingInstruction" />  
-  
- </term>  
-<description> The target of the processing instruction.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="XmlDeclaration" />  
-  
- </term>  
-<description> The literal string <see langword="xml" />.  
-  
- </description>  
-</item>  
-</list></value>
+ </description></item></list></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -2104,12 +2458,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Namespaces">
       <MemberSignature Language="C#" Value="public bool Namespaces { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Namespaces" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Namespaces" />
+      <MemberSignature Language="VB.NET" Value="Public Property Namespaces As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Namespaces { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2119,6 +2476,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2133,7 +2494,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property determines whether the reader supports the W3C Namespaces in XML recommendation located at www.w3.org/TR/REC-xml-names.  
   
@@ -2142,12 +2503,15 @@ abc<tag/>
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Setting this property after a read operation has occurred (<see cref="P:System.Xml.XmlTextReader.ReadState" /> is not <see langword="ReadState.Initial" />).</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="NamespaceURI">
       <MemberSignature Language="C#" Value="public override string NamespaceURI { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NamespaceURI" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NamespaceURI" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NamespaceURI As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ NamespaceURI { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2157,6 +2521,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2170,7 +2538,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property is relevant to `Element` and `Attribute` nodes only.  
   
@@ -2189,12 +2557,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="NameTable">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNameTable NameTable { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NameTable" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NameTable As XmlNameTable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlNameTable ^ NameTable { System::Xml::XmlNameTable ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2204,6 +2575,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNameTable</ReturnType>
@@ -2217,18 +2592,22 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  All node and attribute names returned from <xref:System.Xml.XmlTextReader> are atomized using the `NameTable`. When the same name is returned multiple times (for example, `Customer`), then the same `String` object is returned for that name. This makes it possible for you to write efficient code that does object comparisons on these strings instead of expensive string comparisons.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlNameTable" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="NodeType">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.NodeType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NodeType As XmlNodeType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlNodeType NodeType { System::Xml::XmlNodeType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2238,6 +2617,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -2251,7 +2634,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property never returns the following `XmlNodeType` types: `Document`, `DocumentFragment`, `Entity`, `EndEntity`, or `Notation`.  
   
@@ -2270,12 +2653,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Normalization">
       <MemberSignature Language="C#" Value="public bool Normalization { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Normalization" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Normalization" />
+      <MemberSignature Language="VB.NET" Value="Public Property Normalization As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Normalization { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2285,6 +2671,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2299,7 +2689,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property can be changed at any time and takes effect on the next read operation.  
   
@@ -2336,12 +2726,15 @@ abc<tag/>
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">Setting this property when the reader is closed (<see cref="P:System.Xml.XmlTextReader.ReadState" /> is <see langword="ReadState.Closed" />).</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Prefix">
       <MemberSignature Language="C#" Value="public override string Prefix { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Prefix" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Prefix As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Prefix { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2351,6 +2744,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2364,7 +2761,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -2381,12 +2778,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ProhibitDtd">
       <MemberSignature Language="C#" Value="public bool ProhibitDtd { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ProhibitDtd" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.ProhibitDtd" />
+      <MemberSignature Language="VB.NET" Value="Public Property ProhibitDtd As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ProhibitDtd { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2396,6 +2796,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2415,7 +2819,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  DTD processing is enabled by default for backwards compatibility. However, unless your application requires DTD processing, you should disable this setting. Disabling DTD processing can be useful in preventing certain denial of service attacks. If set to `true`, the reader throws an <xref:System.Xml.XmlException> when any DTD content is encountered.  
   
@@ -2423,12 +2827,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="QuoteChar">
       <MemberSignature Language="C#" Value="public override char QuoteChar { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance char QuoteChar" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.QuoteChar" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property QuoteChar As Char" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property char QuoteChar { char get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2438,6 +2845,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>
@@ -2451,18 +2862,21 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property applies only to an attribute node.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Read">
       <MemberSignature Language="C#" Value="public override bool Read ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Read" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Read();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2472,6 +2886,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2487,7 +2905,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  When a reader is first created and initialized, there is no information available. You must call `Read` to read the first node.  
   
@@ -2509,12 +2927,16 @@ abc<tag/>
  ]]></format>
         </remarks>
         <exception cref="T:System.Xml.XmlException">An error occurred while parsing the XML.</exception>
+        <altmember cref="T:System.Xml.EntityHandling" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ReadAttributeValue">
       <MemberSignature Language="C#" Value="public override bool ReadAttributeValue ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ReadAttributeValue() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadAttributeValue" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadAttributeValue () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool ReadAttributeValue();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2524,6 +2946,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2543,7 +2969,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  Use this method after calling `MoveToAttribute` to read through the text or entity reference nodes that make up the attribute value. The <xref:System.Xml.XmlReader.Depth%2A> of the attribute value nodes is one plus the depth of the attribute node; it increments and decrements by one when you step into and out of general entity references.  
   
@@ -2558,12 +2984,15 @@ abc<tag/>
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ReadBase64">
       <MemberSignature Language="C#" Value="public int ReadBase64 (byte[] array, int offset, int len);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadBase64(unsigned int8[] array, int32 offset, int32 len) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadBase64 (array As Byte(), offset As Integer, len As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int ReadBase64(cli::array &lt;System::Byte&gt; ^ array, int offset, int len);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2573,6 +3002,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2594,7 +3027,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  Like <xref:System.Xml.XmlTextReader.ReadChars%2A>, this method can be called successively to read large streams of embedded text. It decodes Base64 content and returns the decoded binary bytes (for example, an inline Base64 encoded GIF image) into the buffer. See RFC 1521. (You can obtain RFCs from the Request for Comments Web site at http://www.rfc-editor.org)  
   
@@ -2617,12 +3050,16 @@ abc<tag/>
         <exception cref="T:System.ArgumentNullException">The value of <paramref name="array" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="offset" /> &lt; 0, or <paramref name="len" /> &lt; 0, or <paramref name="len" /> &gt; <paramref name="array" />.Length- <paramref name="offset" />.</exception>
+        <altmember cref="M:System.Xml.XmlTextWriter.WriteBase64(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ReadBinHex">
       <MemberSignature Language="C#" Value="public int ReadBinHex (byte[] array, int offset, int len);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadBinHex(unsigned int8[] array, int32 offset, int32 len) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadBinHex (array As Byte(), offset As Integer, len As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int ReadBinHex(cli::array &lt;System::Byte&gt; ^ array, int offset, int len);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2632,6 +3069,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2653,7 +3094,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  Like <xref:System.Xml.XmlTextReader.ReadChars%2A>, this method can be called successively to read large streams of embedded text. It decodes `BinHex` content and returns the decoded binary bytes (for example, an inline `BinHex` encoded GIF image) into the buffer.  
   
@@ -2676,12 +3117,15 @@ abc<tag/>
         <exception cref="T:System.ArgumentNullException">The value of <paramref name="array" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="offset" /> &lt; 0, or <paramref name="len" /> &lt; 0, or <paramref name="len" /> &gt; <paramref name="array" />.Length- <paramref name="offset" />.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ReadChars">
       <MemberSignature Language="C#" Value="public int ReadChars (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ReadChars(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadChars(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadChars (buffer As Char(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int ReadChars(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2691,6 +3135,10 @@ abc<tag/>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2712,7 +3160,7 @@ abc<tag/>
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This is the most efficient way to process very large streams of text embedded in an XML document. Rather than allocating large string objects, `ReadChars` returns text content a buffer at a time. This method is designed to work only on element nodes. Other node types cause `ReadChars` to return `0`.  
   
@@ -2778,13 +3226,19 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
           <paramref name="count" /> is greater than the space specified in the <paramref name="buffer" /> (buffer size - <paramref name="index" />).</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="buffer" /> value is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="index" /> <see langword="&lt; 0" /> or <paramref name="count" /><see langword="&lt; 0" />.</exception>
+          <paramref name="index" />
+          <see langword="&lt; 0" /> or <paramref name="count" /><see langword="&lt; 0" />.</exception>
+        <altmember cref="M:System.Xml.XmlTextReader.ReadBase64(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Xml.XmlTextReader.ReadBinHex(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ReadContentAsBase64">
       <MemberSignature Language="C#" Value="public override int ReadContentAsBase64 (byte[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadContentAsBase64(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadContentAsBase64 (buffer As Byte(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int ReadContentAsBase64(cli::array &lt;System::Byte&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2794,6 +3248,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2815,7 +3273,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method streams the content, decodes the `Base64` content, and returns the decoded binary bytes (for example, an inline `Base64`-encoded GIF image) into the buffer. This method can be called successively to read large streams of embedded text. For more information, see RFC 1521, "MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies". You can obtain RFCs from the Request for Comments Web site at http://www.rfc-editor.org.  
   
@@ -2836,12 +3294,17 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Xml.XmlTextReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" /> is not supported in the current node.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The index into the buffer or index + count is larger than the allocated buffer size.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
+        <altmember cref="M:System.Xml.XmlTextReader.ReadContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
     </Member>
     <Member MemberName="ReadContentAsBinHex">
       <MemberSignature Language="C#" Value="public override int ReadContentAsBinHex (byte[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadContentAsBinHex(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadContentAsBinHex (buffer As Byte(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int ReadContentAsBinHex(cli::array &lt;System::Byte&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2851,6 +3314,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2872,7 +3339,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method streams the content, decodes the `BinHex` content, and returns the decoded binary bytes (for example, an inline `BinHex` encoded GIF image) into the buffer. This method can be called successively to read large streams of embedded text.  
   
@@ -2894,12 +3361,17 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
           <see cref="M:System.Xml.XmlTextReader.ReadContentAsBinHex(System.Byte[],System.Int32,System.Int32)" /> is not supported on the current node.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The index into the buffer or index + count is larger than the allocated buffer size.</exception>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Xml.XmlTextReader" /> implementation does not support this method.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
+        <altmember cref="M:System.Xml.XmlTextReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsBase64">
       <MemberSignature Language="C#" Value="public override int ReadElementContentAsBase64 (byte[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadElementContentAsBase64(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadElementContentAsBase64 (buffer As Byte(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int ReadElementContentAsBase64(cli::array &lt;System::Byte&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2909,6 +3381,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2930,7 +3406,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method reads the element content, decodes it using Base64 encoding, and returns the decoded binary bytes (for example, an inline Base64 encoded GIF image) into the buffer. For more information, see RFC 1521, "MIME (Multipurpose Internet Mail Extensions) Part One: Mechanisms for Specifying and Describing the Format of Internet Message Bodies". You can obtain RFCs from the Request for Comments Web site at http://www.rfc-editor.org.  
   
@@ -2938,14 +3414,14 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  This method is very similar to the <xref:System.Xml.XmlTextReader.ReadContentAsBase64%2A> method except that it can only be called on element node types.  
   
- If the `count` value is higher than the number of bytes in the document, or if it is equal to the number of bytes in the document, the <xref:System.Xml.XmlTextReader> reads all the remaining bytes in the document and returns the number of bytes read. The next <xref:System.Xml.XmlTextReader> method call returns a zero and moves the reader to the node following the <xref:System.Xml.XmlNodeType>.  
+ If the `count` value is higher than the number of bytes in the document, or if it is equal to the number of bytes in the document, the <xref:System.Xml.XmlTextReader> reads all the remaining bytes in the document and returns the number of bytes read. The next <xref:System.Xml.XmlTextReader> method call returns a zero and moves the reader to the node following the <xref:System.Xml.XmlNodeType.EndElement>.  
   
  If you call <xref:System.Xml.XmlTextReader.Read%2A> before all of the element content is consumed, the reader may behave as if the first content was consumed and then the <xref:System.Xml.XmlTextReader.Read%2A> method was called. This means that the reader reads all the text until the end element is encountered. It then reads the end tag node, reads the next node, and then positions itself on the next subsequent node.  
   
    
   
 ## Examples  
- See <xref:System.Xml.XmlReader.ReadElementContentAsBase64%2A?displayProperty=fullName> to see an example using this method.  
+ See <xref:System.Xml.XmlReader.ReadElementContentAsBase64%2A?displayProperty=nameWithType> to see an example using this method.  
   
  ]]></format>
         </remarks>
@@ -2955,12 +3431,16 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Xml.XmlTextReader" /> implementation does not support this method.</exception>
         <exception cref="T:System.Xml.XmlException">The element contains mixed-content.</exception>
         <exception cref="T:System.FormatException">The content cannot be converted to the requested type.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
+        <altmember cref="M:System.Xml.XmlTextReader.ReadElementContentAsBase64(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="ReadElementContentAsBinHex">
       <MemberSignature Language="C#" Value="public override int ReadElementContentAsBinHex (byte[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadElementContentAsBinHex(unsigned int8[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadElementContentAsBinHex (buffer As Byte(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int ReadElementContentAsBinHex(cli::array &lt;System::Byte&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -2970,6 +3450,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2991,7 +3475,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method reads the element content, decodes it using `BinHex` encoding, and returns the decoded binary bytes (for example, an inline `BinHex` encoded GIF image) into the buffer.  
   
@@ -2999,14 +3483,14 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  This method is very similar to the <xref:System.Xml.XmlTextReader.ReadContentAsBinHex%2A> method except that it can only be called on element node types.  
   
- If the `count` value is higher than the number of bytes in the document, or if it is equal to the number of bytes in the document, the <xref:System.Xml.XmlTextReader> reads all the remaining bytes in the document and returns the number of bytes read. The next <xref:System.Xml.XmlTextReader> method call returns a zero and moves the reader to the node following the <xref:System.Xml.XmlNodeType>.  
+ If the `count` value is higher than the number of bytes in the document, or if it is equal to the number of bytes in the document, the <xref:System.Xml.XmlTextReader> reads all the remaining bytes in the document and returns the number of bytes read. The next <xref:System.Xml.XmlTextReader> method call returns a zero and moves the reader to the node following the <xref:System.Xml.XmlNodeType.EndElement>.  
   
  If you call <xref:System.Xml.XmlTextReader.Read%2A> before all of the element content is consumed, the reader may behave as if the first content was consumed and then the <xref:System.Xml.XmlTextReader.Read%2A> method was called. This means that the reader reads all the text until the end element is encountered. It then reads the end tag node, reads the next node, and then positions itself on the next subsequent node.  
   
    
   
 ## Examples  
- See <xref:System.Xml.XmlReader.ReadElementContentAsBinHex%2A?displayProperty=fullName> to see an example using this method.  
+ See <xref:System.Xml.XmlReader.ReadElementContentAsBinHex%2A?displayProperty=nameWithType> to see an example using this method.  
   
  ]]></format>
         </remarks>
@@ -3016,12 +3500,16 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Xml.XmlReader" /> implementation does not support this method.</exception>
         <exception cref="T:System.Xml.XmlException">The element contains mixed-content.</exception>
         <exception cref="T:System.FormatException">The content cannot be converted to the requested type.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
+        <altmember cref="M:System.Xml.XmlTextReader.ReadElementContentAsBinHex(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="ReadState">
       <MemberSignature Language="C#" Value="public override System.Xml.ReadState ReadState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.ReadState ReadState" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.ReadState" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property ReadState As ReadState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::ReadState ReadState { System::Xml::ReadState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3031,6 +3519,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.ReadState</ReturnType>
@@ -3044,7 +3536,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  ]]></format>
         </remarks>
@@ -3054,6 +3546,8 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <MemberSignature Language="C#" Value="public override string ReadString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ReadString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ReadString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3063,6 +3557,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3079,7 +3577,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  If positioned on an element, `ReadString` concatenates all text, significant white space, white space, and `CData` section node types together and returns the concatenated data as the element content. It stops when any markup is encountered, including comments and processing instructions. This could occur in a mixed content model, or when an element end tag is read.  
   
@@ -3102,12 +3600,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         </remarks>
         <exception cref="T:System.Xml.XmlException">An error occurred while parsing the XML.</exception>
         <exception cref="T:System.InvalidOperationException">An invalid operation was attempted.</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="ResetState">
       <MemberSignature Language="C#" Value="public void ResetState ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ResetState" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ResetState ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ResetState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3117,6 +3618,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3130,7 +3635,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This method enables you to parse multiple XML documents in a single stream. When you reach the end of an XML document, you can call `ResetState` to reset the state of the reader in preparation for the next XML document.  
   
@@ -3160,12 +3665,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         </remarks>
         <exception cref="T:System.InvalidOperationException">Calling <see langword="ResetState" /> if the reader was constructed using an <see cref="T:System.Xml.XmlParserContext" />.</exception>
         <exception cref="T:System.Xml.XmlException">Documents in a single stream do not share the same encoding.</exception>
+        <altmember cref="T:System.Xml.ReadState" />
       </Docs>
     </Member>
     <Member MemberName="ResolveEntity">
       <MemberSignature Language="C#" Value="public override void ResolveEntity ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResolveEntity() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.ResolveEntity" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub ResolveEntity ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void ResolveEntity();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3175,6 +3683,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3188,7 +3700,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  If the reader is positioned on an `EntityReference` node (`XmlNodeType.EntityReference`), if <xref:System.Xml.XmlTextReader.Read%2A> is called after calling this method, the entity replacement text is parsed. When the entity replacement text is finished, an `EndEntity` node is returned to close the entity reference scope.  
   
@@ -3197,12 +3709,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Skip">
       <MemberSignature Language="C#" Value="public override void Skip ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Skip() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.Skip" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Skip ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Skip();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3212,6 +3727,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3225,7 +3744,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  In the following XML input if the reader is positioned on the `<a>` node or any of its attributes, calling `Skip` positions the reader to the `<b>` node.  
   
@@ -3244,13 +3763,19 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="System.Xml.IXmlNamespaceResolver.GetNamespacesInScope">
       <MemberSignature Language="C#" Value="System.Collections.Generic.IDictionary&lt;string,string&gt; IXmlNamespaceResolver.GetNamespacesInScope (System.Xml.XmlNamespaceScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(valuetype System.Xml.XmlNamespaceScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#GetNamespacesInScope(System.Xml.XmlNamespaceScope)" />
+      <MemberSignature Language="VB.NET" Value="Function GetNamespacesInScope (scope As XmlNamespaceScope) As IDictionary(Of String, String) Implements IXmlNamespaceResolver.GetNamespacesInScope" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System::Xml::XmlNamespaceScope scope) = System::Xml::IXmlNamespaceResolver::GetNamespacesInScope;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlNamespaceResolver.GetNamespacesInScope(System.Xml.XmlNamespaceScope)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3259,6 +3784,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
@@ -3278,13 +3807,19 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="System.Xml.IXmlNamespaceResolver.LookupNamespace">
       <MemberSignature Language="C#" Value="string IXmlNamespaceResolver.LookupNamespace (string prefix);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Xml.IXmlNamespaceResolver.LookupNamespace(string prefix) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#LookupNamespace(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Function LookupNamespace (prefix As String) As String Implements IXmlNamespaceResolver.LookupNamespace" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::String ^ System.Xml.IXmlNamespaceResolver.LookupNamespace(System::String ^ prefix) = System::Xml::IXmlNamespaceResolver::LookupNamespace;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlNamespaceResolver.LookupNamespace(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3293,6 +3828,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3312,13 +3851,19 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="System.Xml.IXmlNamespaceResolver.LookupPrefix">
       <MemberSignature Language="C#" Value="string IXmlNamespaceResolver.LookupPrefix (string namespaceName);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Xml.IXmlNamespaceResolver.LookupPrefix(string namespaceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlTextReader.System#Xml#IXmlNamespaceResolver#LookupPrefix(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Function LookupPrefix (namespaceName As String) As String Implements IXmlNamespaceResolver.LookupPrefix" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::String ^ System.Xml.IXmlNamespaceResolver.LookupPrefix(System::String ^ namespaceName) = System::Xml::IXmlNamespaceResolver::LookupPrefix;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3327,6 +3872,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3339,12 +3888,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <summary>For a description of this member, see <see cref="M:System.Xml.IXmlNamespaceResolver.LookupPrefix(System.String)" />.</summary>
         <returns>The prefix that is mapped to the namespace URI; <see langword="null" /> if the namespace URI is not mapped to a prefix.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="Value">
       <MemberSignature Language="C#" Value="public override string Value { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Value" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.Value" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Value As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Value { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3355,6 +3907,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -3362,95 +3918,36 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         <summary>Gets the text value of the current node.</summary>
         <value>The value returned depends on the <see cref="P:System.Xml.XmlTextReader.NodeType" /> of the node. The following table lists node types that have a value to return. All other node types return <see langword="String.Empty" />.  
   
- <list type="table">  
-<listheader>  
-<term> Node Type  
+ <list type="table"><listheader><term> Node Type  
   
- </term>  
-<description> Value  
+ </term><description> Value  
   
- </description>  
-</listheader>  
-<item>  
-<term> <see langword="Attribute" />  
+ </description></listheader><item><term><see langword="Attribute" /></term><description> The value of the attribute.  
   
- </term>  
-<description> The value of the attribute.  
+ </description></item><item><term><see langword="CDATA" /></term><description> The content of the CDATA section.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="CDATA" />  
+ </description></item><item><term><see langword="Comment" /></term><description> The content of the comment.  
   
- </term>  
-<description> The content of the CDATA section.  
+ </description></item><item><term><see langword="DocumentType" /></term><description> The internal subset.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="Comment" />  
+ </description></item><item><term><see langword="ProcessingInstruction" /></term><description> The entire content, excluding the target.  
   
- </term>  
-<description> The content of the comment.  
+ </description></item><item><term><see langword="SignificantWhitespace" /></term><description> The white space within an <see langword="xml:space" />= 'preserve' scope.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="DocumentType" />  
+ </description></item><item><term><see langword="Text" /></term><description> The content of the text node.  
   
- </term>  
-<description> The internal subset.  
+ </description></item><item><term><see langword="Whitespace" /></term><description> The white space between markup.  
   
- </description>  
-</item>  
-<item>  
-<term> <see langword="ProcessingInstruction" />  
+ </description></item><item><term><see langword="XmlDeclaration" /></term><description> The content of the declaration.  
   
- </term>  
-<description> The entire content, excluding the target.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="SignificantWhitespace" />  
-  
- </term>  
-<description> The white space within an <see langword="xml:space" />= 'preserve' scope.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="Text" />  
-  
- </term>  
-<description> The content of the text node.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="Whitespace" />  
-  
- </term>  
-<description> The white space between markup.  
-  
- </description>  
-</item>  
-<item>  
-<term> <see langword="XmlDeclaration" />  
-  
- </term>  
-<description> The content of the declaration.  
-  
- </description>  
-</item>  
-</list></value>
+ </description></item></list></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -3467,12 +3964,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="WhitespaceHandling">
       <MemberSignature Language="C#" Value="public System.Xml.WhitespaceHandling WhitespaceHandling { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.WhitespaceHandling WhitespaceHandling" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.WhitespaceHandling" />
+      <MemberSignature Language="VB.NET" Value="Public Property WhitespaceHandling As WhitespaceHandling" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::WhitespaceHandling WhitespaceHandling { System::Xml::WhitespaceHandling get(); void set(System::Xml::WhitespaceHandling value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3482,6 +3982,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.WhitespaceHandling</ReturnType>
@@ -3495,7 +3999,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property can be changed at any time and takes effect on the next read operation.  
   
@@ -3514,12 +4018,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">Invalid value specified.</exception>
         <exception cref="T:System.InvalidOperationException">Setting this property when the reader is closed (<see cref="P:System.Xml.XmlTextReader.ReadState" /> is <see langword="ReadState.Closed" />).</exception>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="XmlLang">
       <MemberSignature Language="C#" Value="public override string XmlLang { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string XmlLang" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlLang" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property XmlLang As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ XmlLang { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3529,6 +4036,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3542,7 +4053,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  This property represents the `xml:lang` scope within which the current node resides. For example, here is an XML fragment with `xml:lang` set to US English in the root element:  
   
@@ -3565,12 +4076,15 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="XmlResolver">
       <MemberSignature Language="C#" Value="public System.Xml.XmlResolver XmlResolver { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver XmlResolver" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlResolver" />
+      <MemberSignature Language="VB.NET" Value="Public Property XmlResolver As XmlResolver" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlResolver ^ XmlResolver {  void set(System::Xml::XmlResolver ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3580,6 +4094,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlResolver</ReturnType>
@@ -3595,7 +4113,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
  The reader uses `XmlResolver` to resolve the location of the file loaded into the reader and also to resolve DTD references. For example, if your XML included the DOCTYPE declaration, `<!DOCTYPE book SYSTEM book.dtd>` the reader resolves this external file and ensures that the DTD is well-formed. The reader does not use the DTD for validation.  
   
@@ -3618,12 +4136,19 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.XmlUrlResolver.Credentials" />
+        <altmember cref="T:System.Net.CredentialCache" />
+        <altmember cref="T:System.Net.NetworkCredential" />
+        <altmember cref="T:System.Xml.XmlSecureResolver" />
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
     <Member MemberName="XmlSpace">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlSpace XmlSpace { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlSpace XmlSpace" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlTextReader.XmlSpace" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property XmlSpace As XmlSpace" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlSpace XmlSpace { System::Xml::XmlSpace get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -3633,6 +4158,10 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlSpace</ReturnType>
@@ -3646,7 +4175,7 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
+>  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=nameWithType> method to take advantage of new functionality.  
   
    
   
@@ -3661,67 +4190,8 @@ if (XmlNodeType.Element == reader.NodeType && "thing" == reader.Name)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlReader" />
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Xml.XmlTextReader" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="GetAttribute">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Gets the value of an attribute.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="MoveToAttribute">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Moves to the specified attribute.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!NOTE]
->  Starting with the .NET Framework 2.0, we recommend that you create <xref:System.Xml.XmlReader> instances by using the <xref:System.Xml.XmlReader.Create%2A?displayProperty=fullName> method to take advantage of new functionality.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

@@ -1,20 +1,26 @@
 ---
 uid: System.Data.Common.DbDataSourceEnumerator
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Common.DbDataSourceEnumerator.#ctor
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---
 
 ---
 uid: System.Data.Common.DbDataSourceEnumerator.GetDataSources
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

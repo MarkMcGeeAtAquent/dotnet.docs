@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader Interface | Microsoft Docs"
+title: "ISymUnmanagedReader Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedReader interface [.NET Framework debugging]"
 ms.assetid: aa3cc15d-058e-4e6f-b03e-39569646ba47
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader Interface
 Represents a symbol reader that provides access to documents, methods, and variables within a symbol store.  
@@ -55,5 +58,5 @@ Represents a symbol reader that provides access to documents, methods, and varia
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)   
+ [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
  [ISymUnmanagedReader2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)

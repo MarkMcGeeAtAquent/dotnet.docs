@@ -1,5 +1,5 @@
 ---
-title: "Profiling Interfaces | Microsoft Docs"
+title: "Profiling Interfaces"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "unmanaged interfaces [.NET Framework], profiling"
   - "profiling interfaces [.NET Framework]"
@@ -20,6 +18,8 @@ caps.latest.revision: 31
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Profiling Interfaces
 This section describes the unmanaged interfaces that enable you to profile a program that is being executed by the common language runtime (CLR).  

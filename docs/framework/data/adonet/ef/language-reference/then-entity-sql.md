@@ -1,24 +1,21 @@
 ---
-title: "THEN (Entity SQL) | Microsoft Docs"
+title: "THEN (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "ESQL"
 ms.assetid: 54222642-23c6-4f61-9861-67caca53ac5f
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # THEN (Entity SQL)
 The result of a WHEN clause when it evaluates to `true`.  
@@ -26,7 +23,6 @@ The result of a WHEN clause when it evaluates to `true`.
 ## Syntax  
   
 ```  
-  
 WHEN when_expression THEN then_expression  
 ```  
   
@@ -52,5 +48,5 @@ WHEN when_expression THEN then_expression
  [!code-csharp[DP EntityServices Concepts 2#CASE_WHEN_THEN_ELSE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#case_when_then_else)]  
   
 ## See Also  
- [CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)   
+ [CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)  
  [Entity SQL Reference](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)

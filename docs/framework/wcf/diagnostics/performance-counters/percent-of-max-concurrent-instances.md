@@ -1,8 +1,8 @@
 ---
-title: "Percent of Max Concurrent Instances | Microsoft Docs"
+title: "Percent of Max Concurrent Instances"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8228c15c-51ee-483d-b28b-e1f5c0ac643b
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Percent of Max Concurrent Instances
 Counter Name: Percent of Max Concurrent Instances  

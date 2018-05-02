@@ -1,8 +1,8 @@
 ---
-title: "Using DataContractSerializer and DataContractResolver to Provide the Functionality of NetDataContractSerializer | Microsoft Docs"
+title: "Using DataContractSerializer and DataContractResolver to Provide the Functionality of NetDataContractSerializer"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1376658f-f695-45f7-a7e0-94664e9619ff
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using DataContractSerializer and DataContractResolver to Provide the Functionality of NetDataContractSerializer
 This sample demonstrates how the use of <xref:System.Runtime.Serialization.DataContractSerializer> with an appropriate <xref:System.Runtime.Serialization.DataContractResolver> provides the same functionality as <xref:System.Runtime.Serialization.NetDataContractSerializer>. This sample shows how to create the appropriate <xref:System.Runtime.Serialization.DataContractResolver> and how to add it to the <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -59,7 +61,6 @@ class MyDataContractResolver : DataContractResolver
         }  
     }  
 }  
-  
 ```  
   
 #### To use this sample  

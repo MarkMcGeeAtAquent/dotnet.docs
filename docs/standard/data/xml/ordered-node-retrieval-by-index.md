@@ -1,5 +1,5 @@
 ---
-title: "Ordered Node Retrieval by Index | Microsoft Docs"
+title: "Ordered Node Retrieval by Index"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Ordered Node Retrieval by Index
 The World Wide Web Consortium (W3C) XML Document Object Model (DOM) also describes a NodeList, which has the ability to handle an ordered list of nodes, as opposed to the unordered set handled by the **XmlNamedNodeMap**. The NodeList in the Microsoft .NET Framework is called **XmlNodeList**. Methods and properties that return an **XmlNodeList** are:  
@@ -44,7 +45,6 @@ Dim doc as XmlDocument = new XmlDocument()
         ' Display all book titles in the Node List.  
         Console.WriteLine(elemList.ItemOf(i).InnerXml)  
     next  
-  
 ```  
   
 ```csharp  

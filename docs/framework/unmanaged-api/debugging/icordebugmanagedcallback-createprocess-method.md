@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::CreateProcess Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::CreateProcess Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.CreateProcess"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::CreateProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugManagedCallback::CreateProcess method [.NET Framework debugging]"
   - "CreateProcess method, ICorDebugManagedCallback interface [.NET Framework debugging]"
 ms.assetid: 8e89d5ee-e4e3-4738-8302-0b7d1cf4846e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::CreateProcess Method
 Notifies the debugger when a process has been attached or started for the first time.  

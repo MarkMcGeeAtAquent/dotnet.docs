@@ -1,5 +1,5 @@
 ---
-title: "Character Classes in Regular Expressions | Microsoft Docs"
+title: "Character Classes in Regular Expressions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "character classes"
   - "regular expressions, character classes"
@@ -18,6 +21,9 @@ caps.latest.revision: 58
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Character Classes in Regular Expressions
 <a name="Top"></a> A character class defines a set of characters, any one of which can occur in an input string for a match to succeed. The regular expression language in .NET supports the following character classes:  
@@ -73,7 +79,7 @@ manager: "wpickett"
 |-------------|-----------------|  
 |`[aeiou]`|Match all vowels.|  
 |`[\p{P}\d]`|Match all punctuation and decimal digit characters.|  
-|`[\s\p{P}]`|Match all white-space and punctuation.|  
+|`[\s\p{P}]`|Match all white space and punctuation.|  
   
  The following example defines a positive character group that contains the characters "a" and "e" so that the input string must contain the words "grey" or "gray" followed by another word for a match to occur.  
   
@@ -157,9 +163,9 @@ manager: "wpickett"
 ## Any Character: .  
  The period character (.) matches any character except `\n` (the newline character, \u000A), with the following two qualifications:  
   
--   If a regular expression pattern is modified by the <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> option, or if the portion of the pattern that contains the `.` character class is modified by the `s` option, `.` matches any character. For more information, see [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).  
+-   If a regular expression pattern is modified by the <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> option, or if the portion of the pattern that contains the `.` character class is modified by the `s` option, `.` matches any character. For more information, see [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md).  
   
-     The following example illustrates the different behavior of the `.` character class by default and with the <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> option. The regular expression `^.+` starts at the beginning of the string and matches every character. By default, the match ends at the end of the first line; the regular expression pattern matches the carriage return character, `\r` or \u000D, but it does not match `\n`. Because the <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> option interprets the entire input string as a single line, it matches every character in the input string, including `\n`.  
+     The following example illustrates the different behavior of the `.` character class by default and with the <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> option. The regular expression `^.+` starts at the beginning of the string and matches every character. By default, the match ends at the end of the first line; the regular expression pattern matches the carriage return character, `\r` or \u000D, but it does not match `\n`. Because the <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> option interprets the entire input string as a single line, it matches every character in the input string, including `\n`.  
   
      [!code-csharp[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/any2.cs#5)]
      [!code-vb[Conceptual.Regex.Language.CharacterClasses#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any2.vb#5)]  
@@ -296,7 +302,7 @@ manager: "wpickett"
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/nonwordchar1.cs#9)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/nonwordchar1.vb#9)]  
   
- Because the <xref:System.Text.RegularExpressions.Group> object for the second capturing group contains only a single captured non-word character, the example retrieves all captured non-word characters from the <xref:System.Text.RegularExpressions.CaptureCollection> object that is returned by the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=fullName> property.  
+ Because the <xref:System.Text.RegularExpressions.Group> object for the second capturing group contains only a single captured non-word character, the example retrieves all captured non-word characters from the <xref:System.Text.RegularExpressions.CaptureCollection> object that is returned by the <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> property.  
   
  [Back to Top](#Top)  
   
@@ -324,7 +330,7 @@ manager: "wpickett"
 |\w+|Match one or more word characters.|  
 |(e)?|Match an "e" either zero or one time.|  
 |s|Match an "s".|  
-|(\s&#124;$)|Match either a whitespace character or the end of the input string.|  
+|(\s&#124;$)|Match either a white-space character or the end of the input string.|  
   
  [!code-csharp[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.characterclasses/cs/whitespace1.cs#10)]
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/whitespace1.vb#10)]  
@@ -397,7 +403,7 @@ manager: "wpickett"
   
 <a name="SupportedUnicodeGeneralCategories"></a>   
 ## Supported Unicode General Categories  
- Unicode defines the general categories listed in the following table. For more information, see the "UCD File Format" and "General Category Values" subtopics at the [Unicode Character Database](http://go.microsoft.com/fwlink/?LinkId=57650).  
+ Unicode defines the general categories listed in the following table. For more information, see the "UCD File Format" and "General Category Values" subtopics at the [Unicode Character Database](http://www.unicode.org/reports/tr44/).  
   
 |Category|Description|  
 |--------------|-----------------|  
@@ -590,6 +596,6 @@ manager: "wpickett"
  [!code-vb[Conceptual.RegEx.Language.CharacterClasses#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/classsubtraction1.vb#15)]  
   
 ## See Also  
- <xref:System.Char.GetUnicodeCategory%2A>   
- [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)   
+ <xref:System.Char.GetUnicodeCategory%2A>  
+ [Regular Expression Language - Quick Reference](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
  [Regular Expression Options](../../../docs/standard/base-types/regular-expression-options.md)

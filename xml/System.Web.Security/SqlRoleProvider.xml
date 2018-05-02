@@ -1,7 +1,9 @@
-<Type Name="SqlRoleProvider" FullName="System.Web.Security.SqlRoleProvider">
+﻿<Type Name="SqlRoleProvider" FullName="System.Web.Security.SqlRoleProvider">
   <TypeSignature Language="C#" Value="public class SqlRoleProvider : System.Web.Security.RoleProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlRoleProvider extends System.Web.Security.RoleProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.Security.SqlRoleProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Class SqlRoleProvider&#xA;Inherits RoleProvider" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SqlRoleProvider : System::Web::Security::RoleProvider" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -88,6 +90,8 @@
       <MemberSignature Language="C#" Value="public SqlRoleProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SqlRoleProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -110,6 +114,8 @@
       <MemberSignature Language="C#" Value="public override void AddUsersToRoles (string[] usernames, string[] roleNames);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddUsersToRoles(string[] usernames, string[] roleNames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.AddUsersToRoles(System.String[],System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub AddUsersToRoles (usernames As String(), roleNames As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void AddUsersToRoles(cli::array &lt;System::String ^&gt; ^ usernames, cli::array &lt;System::String ^&gt; ^ roleNames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -143,8 +149,8 @@
 ## Examples  
  The following code example adds one or more users to a role or removes a user from a role. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
   
  ]]></format>
         </remarks>
@@ -193,6 +199,8 @@
       <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
       <MemberSignature Language="DocId" Value="P:System.Web.Security.SqlRoleProvider.ApplicationName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ApplicationName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ApplicationName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -210,7 +218,7 @@
 ## Remarks  
  The <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> is used by the <xref:System.Web.Security.SqlRoleProvider> to associate users and roles with different applications. This enables multiple applications to use the same database to store user and role information without running into conflicts between duplicate user names or role names. Multiple ASP.NET applications can use the same database by specifying the same value in the <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property. The <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property can be set programmatically, or it can be set declaratively in the configuration file for the Web application using the `applicationName` attribute.  
   
- If a value is not specified for the `applicationName` attribute in the configuration file for the Web application, then the <xref:System.Web.HttpRequest.ApplicationPath%2A?displayProperty=fullName> property value for the current <xref:System.Web.HttpContext.Request%2A?displayProperty=fullName> object is used.  
+ If a value is not specified for the `applicationName` attribute in the configuration file for the Web application, then the <xref:System.Web.HttpRequest.ApplicationPath%2A?displayProperty=nameWithType> property value for the current <xref:System.Web.HttpContext.Request%2A?displayProperty=nameWithType> object is used.  
   
 > [!CAUTION]
 >  Because a single default role provider instance is used for all of the requests served by an <xref:System.Web.HttpApplication> object, you can have multiple requests executing concurrently and attempting to set the <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property value. The <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property is not thread safe for multiple writes, and changing the <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property value can result in unexpected behavior for multiple users of an application. It is recommended that you avoid writing code that allows users to set the <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property unless you must. An example of an application where setting the <xref:System.Web.Security.SqlRoleProvider.ApplicationName%2A> property may be required is an administrative application that manages role data for multiple applications. Such an application should be a single-user application and not a Web application.  
@@ -250,6 +258,8 @@
       <MemberSignature Language="C#" Value="public override void CreateRole (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateRole(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.CreateRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub CreateRole (roleName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void CreateRole(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -280,8 +290,8 @@
 > [!IMPORTANT]
 >  This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -305,6 +315,8 @@
       <MemberSignature Language="C#" Value="public override bool DeleteRole (string roleName, bool throwOnPopulatedRole);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteRole(string roleName, bool throwOnPopulatedRole) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.DeleteRole(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DeleteRole (roleName As String, throwOnPopulatedRole As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool DeleteRole(System::String ^ roleName, bool throwOnPopulatedRole);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -336,8 +348,8 @@
 ## Examples  
  The following example deletes a role from the database. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/deleterolecs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/deleterolevb.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/deleterolecs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/deleterolevb.aspx#2)]  
   
  ]]></format>
         </remarks>
@@ -361,6 +373,8 @@
       <MemberSignature Language="C#" Value="public override string[] FindUsersInRole (string roleName, string usernameToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] FindUsersInRole(string roleName, string usernameToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.FindUsersInRole(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function FindUsersInRole (roleName As String, usernameToMatch As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ FindUsersInRole(System::String ^ roleName, System::String ^ usernameToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -392,8 +406,8 @@
 > [!IMPORTANT]
 >  This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.Roles#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Roles/CS/FindUsersInRolecs.aspx#11)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.Roles#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Roles/VB/FindUsersInRolevb.aspx#11)]  -->  
+ [!code-aspx-csharp[System.Web.Security.Roles#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.Roles/CS/FindUsersInRolecs.aspx#11)]
+ [!code-aspx-vb[System.Web.Security.Roles#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.Roles/VB/FindUsersInRolevb.aspx#11)]  
   
  ]]></format>
         </remarks>
@@ -429,6 +443,8 @@
       <MemberSignature Language="C#" Value="public override string[] GetAllRoles ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetAllRoles() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.GetAllRoles" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetAllRoles () As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetAllRoles();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -450,13 +466,13 @@
    
   
 ## Examples  
- The following code example uses the <xref:System.Web.Security.Roles.GetAllRoles%2A> method to get the list of roles for an application and bind the results to a <xref:System.Web.UI.WebControls.GridView?displayProperty=fullName> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
+ The following code example uses the <xref:System.Web.Security.Roles.GetAllRoles%2A> method to get the list of roles for an application and bind the results to a <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
 > [!IMPORTANT]
 >  This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -467,6 +483,8 @@
       <MemberSignature Language="C#" Value="public override string[] GetRolesForUser (string username);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetRolesForUser(string username) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.GetRolesForUser(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetRolesForUser (username As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetRolesForUser(System::String ^ username);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -491,10 +509,10 @@
    
   
 ## Examples  
- The following code example uses the <xref:System.Web.Security.Roles.GetRolesForUser%2A> method to retrieve a list of roles for a specified user and binds them to a <xref:System.Web.UI.WebControls.GridView?displayProperty=fullName> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
+ The following code example uses the <xref:System.Web.Security.Roles.GetRolesForUser%2A> method to retrieve a list of roles for a specified user and binds them to a <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  
   
  ]]></format>
         </remarks>
@@ -513,6 +531,8 @@
       <MemberSignature Language="C#" Value="public override string[] GetUsersInRole (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetUsersInRole(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.GetUsersInRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetUsersInRole (roleName As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetUsersInRole(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -537,10 +557,10 @@
    
   
 ## Examples  
- The following code example uses the <xref:System.Web.Security.Roles.GetUsersInRole%2A> method to get a list of the users in a particular role and bind the results to a <xref:System.Web.UI.WebControls.GridView?displayProperty=fullName> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
+ The following code example uses the <xref:System.Web.Security.Roles.GetUsersInRole%2A> method to get a list of the users in a particular role and bind the results to a <xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType> control. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
   
  ]]></format>
         </remarks>
@@ -564,6 +584,8 @@
       <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Initialize (name As String, config As NameValueCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Initialize(System::String ^ name, System::Collections::Specialized::NameValueCollection ^ config);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -606,6 +628,8 @@
       <MemberSignature Language="C#" Value="public override bool IsUserInRole (string username, string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsUserInRole(string username, string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.IsUserInRole(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsUserInRole (username As String, roleName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsUserInRole(System::String ^ username, System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -628,15 +652,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.Security.SqlRoleProvider.IsUserInRole%2A> method is called by the <xref:System.Web.Security.Roles> class and the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Web.UI.Page.User%2A?displayProperty=fullName> property to determine whether a user is associated with a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).  
+ The <xref:System.Web.Security.SqlRoleProvider.IsUserInRole%2A> method is called by the <xref:System.Web.Security.Roles> class and the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Web.UI.Page.User%2A?displayProperty=nameWithType> property to determine whether a user is associated with a role in the SQL Server database specified in the ASP.NET application's configuration file (Web.config).  
   
    
   
 ## Examples  
  The following code example programmatically checks to see whether the logged-on user is in the Administrators role before allowing the user to view user roles. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/ViewRolescs.aspx#4)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/ViewRolesvb.aspx#4)]  
   
  ]]></format>
         </remarks>
@@ -667,6 +691,8 @@
       <MemberSignature Language="C#" Value="public override void RemoveUsersFromRoles (string[] usernames, string[] roleNames);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveUsersFromRoles(string[] usernames, string[] roleNames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub RemoveUsersFromRoles (usernames As String(), roleNames As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void RemoveUsersFromRoles(cli::array &lt;System::String ^&gt; ^ usernames, cli::array &lt;System::String ^&gt; ^ roleNames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -698,8 +724,8 @@
 ## Examples  
  The following code example adds one or more users to a role or removes a user from a role. For an example of a Web.config file that enables role management, see <xref:System.Web.Security.SqlRoleProvider>.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/adduserstorolecs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/adduserstorolevb.aspx#3)]  
   
  ]]></format>
         </remarks>
@@ -748,6 +774,8 @@
       <MemberSignature Language="C#" Value="public override bool RoleExists (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool RoleExists(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Security.SqlRoleProvider.RoleExists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function RoleExists (roleName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool RoleExists(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -778,8 +806,8 @@
 > [!IMPORTANT]
 >  This example contains a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/CS/createrolecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlRoleProvider/VB/createrolevb.aspx#1)]  
   
  ]]></format>
         </remarks>

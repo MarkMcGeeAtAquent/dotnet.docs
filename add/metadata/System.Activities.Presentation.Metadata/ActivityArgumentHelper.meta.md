@@ -1,13 +1,17 @@
 ---
 uid: System.Activities.Presentation.Metadata.ActivityArgumentHelper
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Activities.Presentation.Metadata.ActivityArgumentHelper.RegisterAccessorsGenerator(System.Type,System.Func{System.Activities.Activity,System.Collections.Generic.IEnumerable{System.Activities.Presentation.ArgumentAccessor}})
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

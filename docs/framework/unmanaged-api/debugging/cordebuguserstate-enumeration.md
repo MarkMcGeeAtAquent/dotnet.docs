@@ -1,5 +1,5 @@
 ---
-title: "CorDebugUserState Enumeration | Microsoft Docs"
+title: "CorDebugUserState Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugUserState"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugUserState"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugUserState enumeration [.NET Framework debugging]"
 ms.assetid: 5f6c2bcd-8102-4e3b-abc5-86ab0bd62def
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugUserState Enumeration
 Indicates the user state of a thread.  

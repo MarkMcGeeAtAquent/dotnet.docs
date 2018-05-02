@@ -1,5 +1,5 @@
 ---
-title: "Walkthrough: Enabling Drag and Drop on a User Control | Microsoft Docs"
+title: "Walkthrough: Enabling Drag and Drop on a User Control"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "walkthrough [WPF], drag-and-drop"
   - "drag-and-drop [WPF], walkthrough"
@@ -17,6 +20,8 @@ caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Enabling Drag and Drop on a User Control
 This walkthrough demonstrates how to create a custom user control that can participate in drag-and-drop data transfer in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -43,7 +48,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
 ### To create the project  
   
-1.  Create a new WPF Application project in Visual Basic or Visual C# named `DragDropExample`. For more information, see [How to: Create a New WPF Application Project](http://msdn.microsoft.com/en-us/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
+1.  Create a new WPF Application project in Visual Basic or Visual C# named `DragDropExample`. For more information, see [How to: Create a New WPF Application Project](http://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82).  
   
 2.  Open MainWindow.xaml.  
   
@@ -51,7 +56,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
      This markup creates the user interface for the test application.  
   
-     [!code-xml[DragDropWalkthrough#PanelsStep1XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep1xaml)]  
+     [!code-xaml[DragDropWalkthrough#PanelsStep1XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep1xaml)]  
   
 ## Adding a New User Control to the Project  
  In this section, you will add a new user control to the project.  
@@ -70,7 +75,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
 4.  Add the following markup to the root <xref:System.Windows.Controls.Grid> to create a simple user control that has a blue circle as its UI.  
   
-     [!code-xml[DragDropWalkthrough#EllipseXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#ellipsexaml)]  
+     [!code-xaml[DragDropWalkthrough#EllipseXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#ellipsexaml)]  
   
 5.  Open Circle.xaml.cs or Circle.xaml.vb.  
   
@@ -93,11 +98,11 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
 3.  In the first <xref:System.Windows.Controls.StackPanel>, add the following XAML to create two instances of the Circle user control in the first panel.  
   
-     [!code-xml[DragDropWalkthrough#CirclesXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#circlesxaml)]  
+     [!code-xaml[DragDropWalkthrough#CirclesXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#circlesxaml)]  
   
      The full XAML for the panel looks like the following.  
   
-     [!code-xml[DragDropWalkthrough#PanelsStep2XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep2xaml)]  
+     [!code-xaml[DragDropWalkthrough#PanelsStep2XAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/SnippetWindow.xaml#panelsstep2xaml)]  
   
 ## Implementing Drag Source Events in the User Control  
  In this section, you will override the <xref:System.Windows.UIElement.OnMouseMove%2A> method and initiate the drag-and-drop operation.  
@@ -119,13 +124,13 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
     -   Packages the Circle data into a <xref:System.Windows.DataObject>. In this case, the Circle control packages three data items; a string representation of its Fill color, a double representation of its height, and a copy of itself.  
   
-    -   Calls the static <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=fullName> method to initiate the drag-and-drop operation. You pass the following three parameters to the <xref:System.Windows.DragDrop.DoDragDrop%2A> method:  
+    -   Calls the static <xref:System.Windows.DragDrop.DoDragDrop%2A?displayProperty=nameWithType> method to initiate the drag-and-drop operation. You pass the following three parameters to the <xref:System.Windows.DragDrop.DoDragDrop%2A> method:  
   
         -   `dragSource` – A reference to this control.  
   
         -   `data` – The <xref:System.Windows.DataObject> created in the previous code.  
   
-        -   `allowedEffects` – The allowed drag-and-drop operations, which are <xref:System.Windows.DragDropEffects> or <xref:System.Windows.DragDropEffects>.  
+        -   `allowedEffects` – The allowed drag-and-drop operations, which are <xref:System.Windows.DragDropEffects.Copy> or <xref:System.Windows.DragDropEffects.Move>.  
   
 3.  Press F5 to build and run the application.  
   
@@ -173,7 +178,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
 2.  In the opening <xref:System.Windows.Controls.UserControl> tag, add the <xref:System.Windows.UIElement.AllowDrop%2A> property and set it to `true`.  
   
-     [!code-xml[DragDropWalkthrough#UCTagXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#uctagxaml)]  
+     [!code-xaml[DragDropWalkthrough#UCTagXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/Circle.xaml#uctagxaml)]  
   
  The <xref:System.Windows.UIElement.OnDrop%2A> method is called when the <xref:System.Windows.UIElement.AllowDrop%2A> property is set to `true` and data from the drag source is dropped on the Circle user control. In this method, you will process the data that was dropped and apply the data to the Circle.  
   
@@ -229,11 +234,11 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
      This <xref:System.Windows.UIElement.OnDragOver%2A> override performs the following tasks:  
   
-    -   Sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects>.  
+    -   Sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects.None>.  
   
     -   Performs the same checks that are performed in the <xref:System.Windows.UIElement.OnDrop%2A> method to determine whether the Circle user control can process the dragged data.  
   
-    -   If the user control can process the data, sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects> or <xref:System.Windows.DragDropEffects>.  
+    -   If the user control can process the data, sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects.Copy> or <xref:System.Windows.DragDropEffects.Move>.  
   
 3.  Press F5 to build and run the application.  
   
@@ -293,7 +298,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
 2.  As shown in the following XAML, in each of the <xref:System.Windows.Controls.StackPanel> controls, add handlers for the <xref:System.Windows.UIElement.DragOver> and <xref:System.Windows.UIElement.Drop> events. Name the <xref:System.Windows.UIElement.DragOver> event handler, `panel_DragOver`, and name the <xref:System.Windows.UIElement.Drop> event handler, `panel_Drop`.  
   
-     [!code-xml[DragDropWalkthrough#PanelsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml#panelsxaml)]  
+     [!code-xaml[DragDropWalkthrough#PanelsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/DragDropWalkthrough/CS/MainWindow.xaml#panelsxaml)]  
   
 3.  Open MainWindows.xaml.cs or MainWindow.xaml.vb.  
   
@@ -308,7 +313,7 @@ This walkthrough demonstrates how to create a custom user control that can parti
   
     -   If the "Object" data is present, checks whether the CTRL key is pressed.  
   
-    -   If the CTRL key is pressed, sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects>. Otherwise, set the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects>.  
+    -   If the CTRL key is pressed, sets the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects.Copy>. Otherwise, set the <xref:System.Windows.DragEventArgs.Effects%2A> property to <xref:System.Windows.DragDropEffects.Move>.  
   
 5.  Add the following code for the <xref:System.Windows.UIElement.Drop> event handler.  
   

@@ -1,8 +1,8 @@
 ---
-title: "&lt;dependentAssembly&gt; Element | Microsoft Docs"
+title: "&lt;dependentAssembly&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#dependentAssembly"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "container tags, <dependentAssembly> element"
   - "dependentAssembly element"
@@ -26,6 +21,8 @@ caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;dependentAssembly&gt; Element
 Encapsulates binding policy and assembly location for each assembly. Use one `dependentAssembly` element for each assembly.  
@@ -37,7 +34,7 @@ Encapsulates binding policy and assembly location for each assembly. Use one `de
   
 ## Syntax  
   
-```  
+```xml  
 <dependentAssembly>   
 </dependentAssembly>  
 ```  
@@ -68,7 +65,7 @@ Encapsulates binding policy and assembly location for each assembly. Use one `de
 ## Example  
  The following example shows how to encapsulate assembly information for two assemblies.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -90,6 +87,6 @@ Encapsulates binding policy and assembly location for each assembly. Use one `de
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirecting Assembly Versions](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

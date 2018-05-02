@@ -1,8 +1,8 @@
 ---
-title: "How to: Manage Change Conflicts | Microsoft Docs"
+title: "How to: Manage Change Conflicts"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cd292c51-a3d1-4c6f-8d8e-04323c36054e
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Manage Change Conflicts
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides a collection of APIs to help you discover, evaluate, and resolve concurrency conflicts.  

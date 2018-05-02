@@ -1,8 +1,8 @@
 ---
-title: "Mapping Between JSON and XML | Microsoft Docs"
+title: "Mapping Between JSON and XML"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Mapping Between JSON and XML
 The readers and writers produced by the <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> provide an XML API over JavaScript Object Notation (JSON) content. JSON encodes data using a subset of the object literals of JavaScript. The readers and writers produced by this factory are also used when JSON content is being sent or received by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] applications using the <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> or the <xref:System.ServiceModel.WebHttpBinding>.  
@@ -28,13 +30,13 @@ The readers and writers produced by the <xref:System.Runtime.Serialization.Json.
   
  To clarify the concept of a mapping, the following example is of a JSON document.  
   
-```  
+```json  
 {"product":"pencil","price":12}  
 ```  
   
  To read this JSON document using one of the readers previously mentioned, use the same sequence of <xref:System.Xml.XmlDictionaryReader> calls as you would to read the following XML document.  
   
-```  
+```xml  
 <root type="object">  
     <product type="string">pencil</product>  
     <price type="number">12</price>  
@@ -237,6 +239,6 @@ ray`|0 or more EIIs|A begin-array (left square bracket) as in section 2.3 of the
  `["myValue1",2,[true,null]]`  
   
 ## See Also  
- <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory>   
- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>   
+ <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory>  
+ <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
  [Stand-Alone JSON Serialization](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)

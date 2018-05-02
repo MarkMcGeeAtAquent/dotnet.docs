@@ -1,8 +1,8 @@
 ---
-title: "WPF and Win32 Interoperation | Microsoft Docs"
+title: "WPF and Win32 Interoperation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,15 +10,17 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "hosting WPF content in Win32 window"
+  - "hosting WPF content in Win32 window [WPF]"
   - "HWND interop [WPF]"
-  - "Win32 code, WPF interoperation"
+  - "Win32 code [WPF], WPF interoperation"
   - "interoperability [WPF], Win32"
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
 caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # WPF and Win32 Interoperation
 This topic provides an overview of how to interoperate [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] code. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] provides a rich environment for creating applications. However, when you have a substantial investment in [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] code, it might be more effective to reuse some of that code.  
@@ -52,7 +54,7 @@ This topic provides an overview of how to interoperate [!INCLUDE[TLA2#tla_wincli
  Use whatever approach works best for you.  
   
 > [!NOTE]
->  If you have not used [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] before, you might notice some "new" keywords such as `gcnew` and `nullptr` in the interoperation code examples. These keywords supersede the older double-underscore syntax (`__gc`) and provide a more natural syntax for managed code in [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)].  To learn more about the [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] managed features, see [Component Extensions for Runtime Platforms](http://msdn.microsoft.com/library/1e400ee6-3ac9-4910-a608-9d3d5993e423) and [Hello, C++/CLI](http://go.microsoft.com/fwlink/?LinkId=98739).  
+>  If you have not used [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] before, you might notice some "new" keywords such as `gcnew` and `nullptr` in the interoperation code examples. These keywords supersede the older double-underscore syntax (`__gc`) and provide a more natural syntax for managed code in [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)].  To learn more about the [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)] managed features, see [Component Extensions for Runtime Platforms](/cpp/windows/component-extensions-for-runtime-platforms) and [Hello, C++/CLI](http://go.microsoft.com/fwlink/?LinkId=98739).  
   
 <a name="hwnds"></a>   
 ## How WPF Uses Hwnds  
@@ -128,7 +130,7 @@ This topic provides an overview of how to interoperate [!INCLUDE[TLA2#tla_wincli
   
 #### Notable Differences in Output Behavior  
   
--   <xref:System.Windows.FrameworkElement>, which is the <xref:System.Windows.Interop.HwndHost> base class, has quite a few properties that imply changes to the UI. These include properties such as <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=fullName>, which changes the layout of elements within that element as a parent. However, most of these properties are not mapped to possible [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] equivalents, even if such equivalents might exist. Too many of these properties and their meanings are too rendering-technology specific for mappings to be practical. Therefore, setting properties such as <xref:System.Windows.FrameworkElement.FlowDirection%2A> on <xref:System.Windows.Interop.HwndHost> has no effect.  
+-   <xref:System.Windows.FrameworkElement>, which is the <xref:System.Windows.Interop.HwndHost> base class, has quite a few properties that imply changes to the UI. These include properties such as <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>, which changes the layout of elements within that element as a parent. However, most of these properties are not mapped to possible [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] equivalents, even if such equivalents might exist. Too many of these properties and their meanings are too rendering-technology specific for mappings to be practical. Therefore, setting properties such as <xref:System.Windows.FrameworkElement.FlowDirection%2A> on <xref:System.Windows.Interop.HwndHost> has no effect.  
   
 -   <xref:System.Windows.Interop.HwndHost> cannot be rotated, scaled, skewed, or otherwise affected by a Transform.  
   
@@ -163,8 +165,8 @@ This topic provides an overview of how to interoperate [!INCLUDE[TLA2#tla_wincli
  The interfaces only provide support for what happens on the transition between the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] and [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] regions. Within the [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] region, tabbing behavior is entirely controlled by the [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] implemented logic for tabbing, if any.  
   
 ## See Also  
- <xref:System.Windows.Interop.HwndHost>   
- <xref:System.Windows.Interop.HwndSource>   
- <xref:System.Windows.Interop>   
- [Walkthrough: Hosting a Win32 Control in WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md)   
+ <xref:System.Windows.Interop.HwndHost>  
+ <xref:System.Windows.Interop.HwndSource>  
+ <xref:System.Windows.Interop>  
+ [Walkthrough: Hosting a Win32 Control in WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf.md)  
  [Walkthrough: Hosting WPF Content in Win32](../../../../docs/framework/wpf/advanced/walkthrough-hosting-wpf-content-in-win32.md)

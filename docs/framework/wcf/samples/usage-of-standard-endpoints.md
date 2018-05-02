@@ -1,8 +1,8 @@
 ---
-title: "Usage of Standard Endpoints | Microsoft Docs"
+title: "Usage of Standard Endpoints"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Usage of Standard Endpoints
 This sample demonstrates how to use standard endpoints in service configuration files. A standard endpoint allows the user to simplify endpoint definitions by using a single property to describe an address, binding and contract combination with additional properties associated to it. This sample demonstrates how to define and implement a custom standard endpoint and how to define specific properties in the endpoint.  
@@ -52,7 +54,6 @@ This sample demonstrates how to use standard endpoints in service configuration 
     </standardEndpoints>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  The first endpoint defined for the service is of kind `customEndpoint`, whose definition can be seen in the `<standardEndpoints>` section, in which the property `property` is given the value `true`. This is the case of an endpoint customized with a new property. The second endpoint corresponds to a metadata endpoint, in which the values for address, binding and contract are fixed.  
@@ -108,7 +109,6 @@ public class CustomEndpointElement : StandardEndpointElement
     {  
     }  
 }  
-  
 ```  
   
  In the `CreateServiceEndpoint` function, a `CustomEndpoint` object is created. Its definition is shown in the following example.  
@@ -139,7 +139,6 @@ public class CustomEndpoint : ServiceEndpoint
             set;  
         }  
     }  
-  
 ```  
   
  To perform the communication between service and client, a service reference is created in the client to the service. When the sample is built and executed, the service executes and the client communicates with it. Note that the service reference should be updated every time there is some change in the service.  

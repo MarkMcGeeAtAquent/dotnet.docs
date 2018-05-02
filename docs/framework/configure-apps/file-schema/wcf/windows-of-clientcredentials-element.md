@@ -1,8 +1,8 @@
 ---
-title: "&lt;windows&gt; of &lt;clientCredentials&gt; Element | Microsoft Docs"
+title: "&lt;windows&gt; of &lt;clientCredentials&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;windows&gt; of &lt;clientCredentials&gt; Element
 Specifies the settings for a Windows credential to be used to represent the client.  
@@ -27,8 +29,7 @@ Specifies the settings for a Windows credential to be used to represent the clie
   
 ## Syntax  
   
-```  
-  
+```xml  
 <windows   
     allowedImpersonationLevel="Identification/Impersonation/Delegation/Anonymous/None"  
         allowNtlm="Boolean"  
@@ -55,13 +56,13 @@ Specifies the settings for a Windows credential to be used to represent the clie
 |[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Specifies the credentials used to authenticate the client to the service.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.WindowsClientElement>   
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement>   
- <xref:System.ServiceModel.Description.ClientCredentials>   
- <xref:System.ServiceModel.Configuration.ClientCredentialsElement.Windows%2A>   
- <xref:System.ServiceModel.Description.ClientCredentials>   
- <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>   
- <xref:System.ServiceModel.Security.WindowsClientCredential>   
- [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)   
- [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
+ <xref:System.ServiceModel.Configuration.WindowsClientElement>  
+ <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  
+ <xref:System.ServiceModel.Description.ClientCredentials>  
+ <xref:System.ServiceModel.Configuration.ClientCredentialsElement.Windows%2A>  
+ <xref:System.ServiceModel.Description.ClientCredentials>  
+ <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>  
+ <xref:System.ServiceModel.Security.WindowsClientCredential>  
+ [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)  
+ [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

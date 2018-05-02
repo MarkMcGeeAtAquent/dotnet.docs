@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo3::GetAppDomainsContainingModule Method | Microsoft Docs"
+title: "ICorProfilerInfo3::GetAppDomainsContainingModule Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo3.GetAppDomainsContainingModule Method"
-apilocation: 
+api_location: 
   - "Mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo3::GetAppDomainsContainingModule"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAppDomainsContainingModule method [.NET Framework profiling]"
   - "ICorProfilerInfo3::GetAppDomainsContainingModule method [.NET Framework profiling]"
 ms.assetid: 603b3881-ea94-4dca-95cd-91eebac873a0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo3::GetAppDomainsContainingModule Method
 Gets the identifiers of the application domains in which the given module has been loaded.  
@@ -67,7 +70,7 @@ HRESULT GetAppDomainsContainingModule(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)   
- [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)  
+ [ICorProfilerInfo3 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

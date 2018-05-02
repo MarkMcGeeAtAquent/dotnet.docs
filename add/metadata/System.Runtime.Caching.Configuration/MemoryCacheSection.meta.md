@@ -1,20 +1,26 @@
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheSection
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheSection.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

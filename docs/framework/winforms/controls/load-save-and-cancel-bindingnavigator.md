@@ -1,8 +1,8 @@
 ---
-title: "How to: Add Load, Save, and Cancel Buttons to the Windows Forms BindingNavigator Control | Microsoft Docs"
+title: "How to: Add Load, Save, and Cancel Buttons to the Windows Forms BindingNavigator Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "controls [Windows Forms], manipulating"
   - "BindingNavigator control [Windows Forms], adding buttons"
@@ -19,6 +20,8 @@ caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add Load, Save, and Cancel Buttons to the Windows Forms BindingNavigator Control
 The <xref:System.Windows.Forms.BindingNavigator> control is a special-purpose <xref:System.Windows.Forms.ToolStrip> control that is intended for navigating and manipulating controls on your form that are bound to data.  
@@ -63,17 +66,13 @@ The <xref:System.Windows.Forms.BindingNavigator> control is a special-purpose <x
   
      Your code should now look similar to the following:  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click  
         TableAdapterName.Fill(DataSetName.TableName)  
     End Sub  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     private void LoadButton_Click(System.Object sender,   
         System.EventArgs e)  
     {  
@@ -83,17 +82,13 @@ The <xref:System.Windows.Forms.BindingNavigator> control is a special-purpose <x
   
 11. Create an event handler for the <xref:System.Windows.Forms.ToolStripItem.Click> event of the **Save**<xref:System.Windows.Forms.ToolStripButton> you created earlier and write code to update the data within the table the control is bound to.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click  
         TableAdapterName.Update(DataSetName.TableName)  
     End Sub  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     private void SaveButton_Click(System.Object sender,   
         System.EventArgs e)  
     {  
@@ -106,17 +101,13 @@ The <xref:System.Windows.Forms.BindingNavigator> control is a special-purpose <x
   
 12. Create an event handler for the <xref:System.Windows.Forms.ToolStripItem.Click> event of the**Cancel**<xref:System.Windows.Forms.ToolStripButton> you created earlier and write code to cancel any changes to the data record that is displayed.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelButton.Click  
         BindingSourceName.CancelEdit()  
     End Sub  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     private void CancelButton_Click(System.Object sender, System.EventArgs e)  
     {  
         BindingSourceName.CancelEdit();  
@@ -127,8 +118,8 @@ The <xref:System.Windows.Forms.BindingNavigator> control is a special-purpose <x
     >  The <xref:System.Windows.Forms.BindingSource.CancelEdit%2A> method is scoped to the row of data. Save any changes you make while viewing that individual record before navigating to the next record.  
   
 ## See Also  
- <xref:System.Windows.Forms.BindingNavigator>   
- <xref:System.Windows.Forms.BindingSource>   
- <xref:System.Windows.Forms.ToolStrip>   
- [BindingNavigator Control](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)   
+ <xref:System.Windows.Forms.BindingNavigator>  
+ <xref:System.Windows.Forms.BindingSource>  
+ <xref:System.Windows.Forms.ToolStrip>  
+ [BindingNavigator Control](../../../../docs/framework/winforms/controls/bindingnavigator-control-windows-forms.md)  
  [BindingSource Component Overview](../../../../docs/framework/winforms/controls/bindingsource-component-overview.md)

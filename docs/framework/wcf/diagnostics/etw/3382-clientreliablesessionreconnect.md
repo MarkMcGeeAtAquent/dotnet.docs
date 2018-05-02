@@ -1,8 +1,8 @@
 ---
-title: "3382 - ClientReliableSessionReconnect | Microsoft Docs"
+title: "3382 - ClientReliableSessionReconnect"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 029c0e75-8cf0-4860-8539-c2baa18eb7a7
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3382 - ClientReliableSessionReconnect
 ## Properties  

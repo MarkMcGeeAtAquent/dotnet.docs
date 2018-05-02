@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedVariable::GetAddressKind Method | Microsoft Docs"
+title: "ISymUnmanagedVariable::GetAddressKind Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedVariable.GetAddressKind"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedVariable::GetAddressKind"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAddressKind method [.NET Framework debugging]"
   - "ISymUnmanagedVariable::GetAddressKind method [.NET Framework debugging]"
 ms.assetid: a71563c0-62f2-4eb4-970c-825d61827613
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedVariable::GetAddressKind Method
 Gets the kind of address of this variable.  

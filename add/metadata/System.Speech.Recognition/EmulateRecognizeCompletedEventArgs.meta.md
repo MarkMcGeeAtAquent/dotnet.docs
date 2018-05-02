@@ -1,11 +1,15 @@
 ---
 uid: System.Speech.Recognition.EmulateRecognizeCompletedEventArgs
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "kbridge"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Speech.Recognition.EmulateRecognizeCompletedEventArgs.Result
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "kbridge"
-manager: "ghogen"
+manager: "wpickett"
 ---

@@ -1,4 +1,6 @@
 ---
 uid: System.Transactions.EnlistmentOptions
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

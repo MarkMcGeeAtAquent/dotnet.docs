@@ -1,8 +1,8 @@
 ---
-title: "&lt;disableCachingBindingFailures&gt; Element | Microsoft Docs"
+title: "&lt;disableCachingBindingFailures&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCachingBindingFailures"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCachingBindingFailures"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "assemblies [.NET Framework],caching binding failures"
   - "caching assembly binding failures"
@@ -27,6 +22,8 @@ caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;disableCachingBindingFailures&gt; Element
 Specifies whether to disable the caching of binding failures that occur because the assembly was not found by probing.  
@@ -37,7 +34,7 @@ Specifies whether to disable the caching of binding failures that occur because 
   
 ## Syntax  
   
-```  
+```xml  
 <disableCachingBindingFailures enabled="0|1"/>  
 ```  
   
@@ -79,9 +76,9 @@ Specifies whether to disable the caching of binding failures that occur because 
 -   If one or more versions of the assembly that you are attempting to load is in the probing path, but the specific version you are requesting is not among them, subsequent attempts to load that version will fail even if the correct version is moved into the probing path.  
   
 ## Example  
- The following code example shows how to disable the caching of assembly binding failures that occur because the assembly was not found by probing.  
+ The following example shows how to disable the caching of assembly binding failures that occur because the assembly was not found by probing.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableCachingBindingFailures enabled="1" />  
@@ -90,6 +87,6 @@ Specifies whether to disable the caching of binding failures that occur because 
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [How the Runtime Locates Assemblies](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

@@ -1,8 +1,8 @@
 ---
-title: "&lt;developmentMode&gt; Element | Microsoft Docs"
+title: "&lt;developmentMode&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/developmentMode"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#developmentMode"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "developmentMode element"
   - "container tags, <developmentMode> element"
@@ -26,6 +21,8 @@ caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;developmentMode&gt; Element
 Specifies whether the runtime searches for assemblies in directories specified by the DEVPATH environment variable.  
@@ -36,7 +33,7 @@ Specifies whether the runtime searches for assemblies in directories specified b
   
 ## Syntax  
   
-```  
+```xml  
 <developmentMode developerInstallation="true | false"/>  
 ```  
   
@@ -72,7 +69,7 @@ Specifies whether the runtime searches for assemblies in directories specified b
 ## Example  
  The following example shows how to cause the runtime to search for assemblies in directories specified by the DEVPATH environment variable.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <developmentMode developerInstallation="true"/>  
@@ -81,6 +78,6 @@ Specifies whether the runtime searches for assemblies in directories specified b
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [How to: Locate Assemblies by Using DEVPATH](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)

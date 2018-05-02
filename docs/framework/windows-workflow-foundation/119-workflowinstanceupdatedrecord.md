@@ -1,5 +1,5 @@
 ---
-title: "119 - WorkflowInstanceUpdatedRecord | Microsoft Docs"
+title: "119 - WorkflowInstanceUpdatedRecord"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 32485d0a-dcdb-45bc-b1e3-79fa9ad9439b
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 119 - WorkflowInstanceUpdatedRecord
 ## Properties  

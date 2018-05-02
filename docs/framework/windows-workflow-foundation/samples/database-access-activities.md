@@ -1,17 +1,19 @@
 ---
-title: "Database Access Activities | Microsoft Docs"
+title: "Database Access Activities"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Database Access Activities
 Database access activities allow you to access a database within a workflow. These activities allow accessing databases to retrieve or modify information and use [ADO.NET](http://go.microsoft.com/fwlink/?LinkId=166081) to access the database.  
@@ -266,7 +268,7 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
   
 -   `ConfigName`: Set the name of the configuration section that contains the connection information.  
   
-    ```  
+    ```xml  
     <connectionStrings>      
         <add name="DbActivitiesSample"  
              providerName="System.Data.SqlClient"  
@@ -307,7 +309,7 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
   
 2.  Go to the DbActivities sample folder.  
   
-3.  Type “setup.cmd” and press ENTER.  
+3.  Type "setup.cmd" and press ENTER.  
   
     > [!NOTE]
     >  Setup.cmd attempts to install the sample in your local machine SqlExpress instance. If you want to install it in other SQL server instance, edit Setup.cmd with the new instance name.  

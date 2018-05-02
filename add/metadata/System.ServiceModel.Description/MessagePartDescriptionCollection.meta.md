@@ -1,13 +1,17 @@
 ---
 uid: System.ServiceModel.Description.MessagePartDescriptionCollection
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Description.MessagePartDescriptionCollection.GetKeyForItem(System.ServiceModel.Description.MessagePartDescription)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

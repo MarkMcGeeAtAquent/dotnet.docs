@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerThreadEnum::Reset Method | Microsoft Docs"
+title: "ICorProfilerThreadEnum::Reset Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerThreadEnum.Reset"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerThreadEnum::Reset"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerThreadEnum::Reset method [.NET Framework profiling]"
   - "Reset method, ICorProfilerThreadEnum interface [.NET Framework profiling]"
 ms.assetid: 81d7c86f-d062-4eed-8df3-448091ce8c49
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerThreadEnum::Reset Method
 Moves the enumerator's cursor to the starting position of the sequence.  
@@ -46,5 +49,5 @@ HRESULT Reset();
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)   
+ [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

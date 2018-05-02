@@ -1,5 +1,5 @@
 ---
-title: "CreateApplicationContext Function | Microsoft Docs"
+title: "CreateApplicationContext Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CreateApplicationContext"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CreateApplicationContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateApplicationContext function [.NET Framework fusion]"
 ms.assetid: 7bf8a141-b2c0-4058-9885-1cef7dcaa811
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CreateApplicationContext Function
 This function supports the .NET Framework infrastructure and is not intended to be used directly from your code.  
@@ -55,6 +58,6 @@ HRESULT CreateApplicationContext (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IAssemblyCache Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)   
- [Fusion Global Static Functions](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)   
+ [IAssemblyCache Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblycache-interface.md)  
+ [Fusion Global Static Functions](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  [Global Assembly Cache](../../../../docs/framework/app-domains/gac.md)

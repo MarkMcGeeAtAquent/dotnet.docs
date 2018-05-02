@@ -1,25 +1,33 @@
-<Type Name="BasicHttpBinding" FullName="System.ServiceModel.BasicHttpBinding">
+﻿<Type Name="BasicHttpBinding" FullName="System.ServiceModel.BasicHttpBinding">
   <TypeSignature Language="C#" Value="public class BasicHttpBinding : System.ServiceModel.HttpBindingBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BasicHttpBinding extends System.ServiceModel.HttpBindingBase implements class System.ServiceModel.Channels.IBindingRuntimePreferences" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.BasicHttpBinding" />
+  <TypeSignature Language="VB.NET" Value="Public Class BasicHttpBinding&#xA;Inherits HttpBindingBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BasicHttpBinding : System::ServiceModel::HttpBindingBase" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Http</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ServiceModel.HttpBindingBase</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Represents a binding that a [!INCLUDE[indigo1](~/includes/indigo1-md.md)] service can use to configure and expose endpoints that are able to communicate with ASMX-based Web services and clients and other services that conform to the WS-I Basic Profile 1.1.</summary>
+    <summary>Represents a binding that a Windows Communication Foundation (WCF) service can use to configure and expose endpoints that are able to communicate with ASMX-based Web services and clients and other services that conform to the WS-I Basic Profile 1.1.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  The <xref:System.ServiceModel.BasicHttpBinding> uses HTTP as the transport for sending SOAP 1.1 messages. A service can use this binding to expose endpoints that conform to WS-I BP 1.1, such as those that ASMX clients access. Similarly, a client can use the <xref:System.ServiceModel.BasicHttpBinding> to communicate with services exposing endpoints that conform to WS-I BP 1.1, such as ASMX Web services or [!INCLUDE[indigo1](~/includes/indigo1-md.md)] services configured with the <xref:System.ServiceModel.BasicHttpBinding>.  
   
- Security is turned off by default, but can be added setting the <xref:System.ServiceModel.BasicHttpSecurityMode> to a value other than <xref:System.ServiceModel.BasicHttpSecurityMode> in the <xref:System.ServiceModel.BasicHttpBinding.%23ctor%28System.ServiceModel.BasicHttpSecurityMode%29> constructor. It uses a "Text" message encoding and UTF-8 text encoding by default.  
+ Security is turned off by default, but can be added setting the <xref:System.ServiceModel.BasicHttpSecurityMode> to a value other than <xref:System.ServiceModel.BasicHttpSecurityMode.None> in the <xref:System.ServiceModel.BasicHttpBinding.%23ctor%28System.ServiceModel.BasicHttpSecurityMode%29> constructor. It uses a "Text" message encoding and UTF-8 text encoding by default.  
   
    
   
@@ -37,15 +45,33 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.BasicHttpBinding" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public BasicHttpBinding ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BasicHttpBinding();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -54,7 +80,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default value of <xref:System.ServiceModel.BasicHttpSecurityMode> used is <xref:System.ServiceModel.BasicHttpSecurityMode>, which specifies that the SOAP message is not secured and the client is not authenticated.  
+ The default value of <xref:System.ServiceModel.BasicHttpSecurityMode> used is <xref:System.ServiceModel.BasicHttpSecurityMode.None>, which specifies that the SOAP message is not secured and the client is not authenticated.  
   
    
   
@@ -70,11 +96,19 @@
       <MemberSignature Language="C#" Value="public BasicHttpBinding (System.ServiceModel.BasicHttpSecurityMode securityMode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.BasicHttpSecurityMode securityMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor(System.ServiceModel.BasicHttpSecurityMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (securityMode As BasicHttpSecurityMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BasicHttpBinding(System::ServiceModel::BasicHttpSecurityMode securityMode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="securityMode" Type="System.ServiceModel.BasicHttpSecurityMode" />
@@ -86,7 +120,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default value of <xref:System.ServiceModel.BasicHttpSecurityMode> used is <xref:System.ServiceModel.BasicHttpSecurityMode>, which specifies that the SOAP message is not secured and the client is not authenticated.  
+ The default value of <xref:System.ServiceModel.BasicHttpSecurityMode> used is <xref:System.ServiceModel.BasicHttpSecurityMode.None>, which specifies that the SOAP message is not secured and the client is not authenticated.  
   
    
   
@@ -102,6 +136,8 @@
       <MemberSignature Language="C#" Value="public BasicHttpBinding (string configurationName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string configurationName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (configurationName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BasicHttpBinding(System::String ^ configurationName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -136,10 +172,18 @@
       <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingParameterCollection parameters);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.BuildChannelFactory``1(System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BuildChannelFactory(Of TChannel) (parameters As BindingParameterCollection) As IChannelFactory(Of TChannel)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TChannel&gt;&#xA; override System::ServiceModel::Channels::IChannelFactory&lt;TChannel&gt; ^ BuildChannelFactory(System::ServiceModel::Channels::BindingParameterCollection ^ parameters);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
@@ -162,11 +206,19 @@
       <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.CreateBindingElements" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CreateBindingElements () As BindingElementCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::ServiceModel::Channels::BindingElementCollection ^ CreateBindingElements();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
@@ -196,6 +248,8 @@
       <MemberSignature Language="C#" Value="public bool EnableHttpCookieContainer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableHttpCookieContainer" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.EnableHttpCookieContainer" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableHttpCookieContainer As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnableHttpCookieContainer { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -223,6 +277,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.WSMessageEncoding MessageEncoding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.WSMessageEncoding MessageEncoding" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.MessageEncoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property MessageEncoding As WSMessageEncoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::WSMessageEncoding MessageEncoding { System::ServiceModel::WSMessageEncoding get(); void set(System::ServiceModel::WSMessageEncoding value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -255,6 +311,8 @@
       <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.Scheme" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Scheme As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Scheme { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -274,11 +332,19 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.BasicHttpSecurity Security { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.BasicHttpSecurity Security" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.BasicHttpBinding.Security" />
+      <MemberSignature Language="VB.NET" Value="Public Property Security As BasicHttpSecurity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::BasicHttpSecurity ^ Security { System::ServiceModel::BasicHttpSecurity ^ get(); void set(System::ServiceModel::BasicHttpSecurity ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Http</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.BasicHttpSecurity</ReturnType>
@@ -307,6 +373,8 @@
       <MemberSignature Language="C#" Value="public bool ShouldSerializeEnableHttpCookieContainer ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeEnableHttpCookieContainer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.ShouldSerializeEnableHttpCookieContainer" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeEnableHttpCookieContainer () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeEnableHttpCookieContainer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -332,6 +400,8 @@
       <MemberSignature Language="C#" Value="public bool ShouldSerializeSecurity ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSecurity() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.BasicHttpBinding.ShouldSerializeSecurity" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeSecurity () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeSecurity();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>

@@ -1,5 +1,5 @@
 ---
-title: "CorDebugEHClause Structure | Microsoft Docs"
+title: "CorDebugEHClause Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "CorDebugEHClause"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "CorDebugEHClause"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 0e350a1b-6997-46d0-bfc5-962a5011ef43
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugEHClause Structure
 [Supported in the .NET Framework 4.5.2 and later versions]  
@@ -29,8 +34,7 @@ manager: "wpickett"
   
 ## Syntax  
   
-```vb  
-  
+```cpp
 typedef struct _CorDebugEHClause {  
    ULONG32 Flags;  
    ULONG32 TryOffset;  
@@ -40,7 +44,6 @@ typedef struct _CorDebugEHClause {
    ULONG32 ClassToken;  
    ULONG32 FilterOffset;  
 } CorDebugEHClause;  
-  
 ```  
   
 ## Members  
@@ -79,5 +82,5 @@ typedef struct _CorDebugEHClause {
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## See Also  
- [GetEHClauses Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)   
+ [GetEHClauses Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)  
  [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

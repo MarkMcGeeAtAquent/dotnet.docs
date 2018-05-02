@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager Interface | Microsoft Docs"
+title: "IHostIoCompletionManager Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager interface [.NET Framework hosting]"
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager Interface
 Provides methods that allow the common language runtime (CLR) to interact with I/O completion ports provided by the host.  

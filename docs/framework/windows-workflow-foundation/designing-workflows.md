@@ -1,5 +1,5 @@
 ---
-title: "Designing Workflows | Microsoft Docs"
+title: "Designing Workflows"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ helpviewer_keywords:
   - "programming [WF], designing workflows"
 ms.assetid: 41f727b5-b142-4c1b-b046-492b96135ae6
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Designing Workflows
 The topics in this section describe the flow-control paradigms used in workflow development.  

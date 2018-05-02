@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetTableIndex Method | Microsoft Docs"
+title: "IMetaDataTables::GetTableIndex Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetTableIndex"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetTableIndex"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTableIndex method [.NET Framework metadata]"
   - "IMetaDataTables::GetTableIndex method [.NET Framework metadata]"
 ms.assetid: c6ec3800-e0d9-4387-afb8-ddc0b818114c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetTableIndex Method
 Gets the index for the table referenced by the specified token.  
@@ -59,5 +62,5 @@ HRESULT GetTableIndex (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

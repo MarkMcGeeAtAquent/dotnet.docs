@@ -1,5 +1,5 @@
 ---
-title: "Mpgo.exe (Managed Profile Guided Optimization Tool) | Microsoft Docs"
+title: "Mpgo.exe (Managed Profile Guided Optimization Tool)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Mpgo.exe"
   - "training scenarios, generating profiles with"
@@ -25,6 +20,8 @@ caps.latest.revision: 31
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Mpgo.exe (Managed Profile Guided Optimization Tool)
 The Managed Profile Guided Optimization Tool (Mpgo.exe) is a command-line tool that uses common end-user scenarios to optimize the native image assemblies that are created by the [Native Image Generator (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). This tool enables you to run training scenarios that generate profile data. The [Native Image Generator (Ngen.exe)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) uses this data to optimize its generated native image application assemblies. A training scenario is a trial run of an expected use of your application. Mpgo.exe is available in Visual Studio Ultimate 2012 and later versions. Starting with [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], you can also use Mpgo.exe to optimize [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps.  
@@ -80,7 +77,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
   
  If an assembly in the list is in the global assembly cache, it will not be updated to contain the profile information.  Remove it from the global assembly cache to collect profile information.  
   
- The use of Ngen.exe and Mpgo.exe is recommended only for large managed applications, because the benefit of precompiled native images is typically seen only when it eliminates significant JIT compilation at run time. Running Mpgo.exe on “Hello World” style applications that aren’t working-set intensive will not provide any benefits, and Mpgo.exe may even fail to gather profile data.  
+ The use of Ngen.exe and Mpgo.exe is recommended only for large managed applications, because the benefit of precompiled native images is typically seen only when it eliminates significant JIT compilation at run time. Running Mpgo.exe on "Hello World" style applications that aren’t working-set intensive will not provide any benefits, and Mpgo.exe may even fail to gather profile data.  
   
 > [!NOTE]
 >  Ngen.exe and Mpgo.exe are not recommended for ASP.NET applications and Windows Communication Foundation (WCF) services.  
@@ -120,25 +117,22 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
   
 ```  
 mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15  
-  
 ```  
   
  The following Mpgo.exe command optimizes a sound application:  
   
 ```  
 mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15  
-  
 ```  
   
  The following Mpgo.exe command uses data from previously optimized assemblies to optimize newer versions of the assemblies:  
   
 ```  
 mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized  
-  
 ```  
   
 ## See Also  
- [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)   
- [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)   
- [Improving Launch Performance for your Desktop Applications](http://go.microsoft.com/fwlink/p/?LinkId=248943)   
+ [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
+ [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)  
+ [Improving Launch Performance for your Desktop Applications](http://go.microsoft.com/fwlink/p/?LinkId=248943)  
  [An Overview of Performance Improvements in .NET 4.5](http://go.microsoft.com/fwlink/p/?LinkId=249131)

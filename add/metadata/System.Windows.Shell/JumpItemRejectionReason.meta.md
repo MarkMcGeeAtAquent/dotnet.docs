@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Shell.JumpItemRejectionReason
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

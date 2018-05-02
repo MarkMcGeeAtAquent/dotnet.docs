@@ -1,5 +1,5 @@
 ---
-title: Get started with Azure Queue storage using F# 
+title: Get started with Azure Queue storage using F#
 description: Azure Queues provide reliable, asynchronous messaging between application components. Cloud messaging enables your application components to scale independently.
 keywords: visual f#, f#, functional programming, .NET, .NET Core, Azure
 author: sylvanc
@@ -20,11 +20,11 @@ Azure Queue storage provides cloud messaging between application components. In 
 
 This tutorial shows how to write F# code for some common tasks using Azure Queue storage. Tasks covered include creating and deleting queues and adding, reading, and deleting queue messages.
 
-For a conceptual overview of queue storage, please see [the .NET guide for queue storage](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-queues).
+For a conceptual overview of queue storage, please see [the .NET guide for queue storage](/azure/storage/storage-dotnet-how-to-use-queues).
 
 ## Prerequisites
 
-To use this guide, you must first [create an Azure storage account](https://docs.microsoft.com/azure/storage/storage-create-storage-account).
+To use this guide, you must first [create an Azure storage account](/azure/storage/storage-create-storage-account).
 You'll also need your storage access key for this account.
 
 ## Create an F# Script and Start F# Interactive
@@ -41,7 +41,7 @@ Add the following `open` statements to the top of the `queues.fsx` file:
 
 ### Get your connection string
 
-You'll need an Azure Storage connection string for this tutorial. For more information about connection strings, see [Configure Storage Connection Strings](https://docs.microsoft.com/azure/storage/storage-configure-connection-string).
+You'll need an Azure Storage connection string for this tutorial. For more information about connection strings, see [Configure Storage Connection Strings](/azure/storage/storage-configure-connection-string).
 
 For the tutorial, you'll enter your connection string in your script, like this:
 
@@ -171,8 +171,8 @@ To delete a queue and all the messages contained in it, call the
 Now that you've learned the basics of Queue storage, follow these links
 to learn about more complex storage tasks.
 
-- [Storage Client Library for .NET reference](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+- [Azure Storage APIs for .NET](/dotnet/api/overview/azure/storage)
 - [Azure Storage Type Provider](https://github.com/fsprojects/AzureStorageTypeProvider)
-- [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
-- [Configuring Connection Strings](http://msdn.microsoft.com/library/azure/ee758697.aspx)
-- [REST API reference](http://msdn.microsoft.com/library/azure/dd179355)
+- [Azure Storage Team Blog](https://blogs.msdn.microsoft.com/windowsazurestorage/)
+- [Configure Azure Storage connection strings](/azure/storage/common/storage-configure-connection-string)
+- [Azure Storage Services REST API Reference](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

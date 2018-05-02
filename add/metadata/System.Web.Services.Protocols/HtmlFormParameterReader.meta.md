@@ -1,24 +1,32 @@
 ---
 uid: System.Web.Services.Protocols.HtmlFormParameterReader
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Web.Services.Protocols.HtmlFormParameterReader.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Web.Services.Protocols.HtmlFormParameterReader.Read(System.Web.HttpRequest)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Web.Services.Protocols.HtmlFormParameterReader.Read
+ms.technology: 
+  - "dotnet-webforms"
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Design Patterns: List-Based Publish-Subscribe | Microsoft Docs"
+title: "Design Patterns: List-Based Publish-Subscribe"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Design Patterns: List-Based Publish-Subscribe
 This sample illustrates the List-based Publish-Subscribe pattern implemented as a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] program.  
@@ -112,7 +114,6 @@ public class PriceChangeEventArgs : EventArgs
         }  
   
     }  
-  
 ```  
   
  When you run the sample, launch several clients. The clients subscribe to the service. Then run the data source program, which sends information to the service. The service passes on the information to all subscribers. You can see activity on each client console confirming that the information has been received. Press ENTER in the client window to shut down the client.  
@@ -131,7 +132,7 @@ public class PriceChangeEventArgs : EventArgs
   
 3.  Run Datasource.exe from \datasource\bin\\, from under the language-specific folder. Data source activity is displayed on the console window. Once the data source sends information to the service, it should be passed on to each client.  
   
-4.  If the client, data source, and service programs are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client, data source, and service programs are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across machines  
   

@@ -1,8 +1,8 @@
 ---
-title: "WSAT_TraceEvent | Microsoft Docs"
+title: "WSAT_TraceEvent"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 142aa03f-781c-4ca4-bc21-0e64b1ff9b6a
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WSAT_TraceEvent
 WSAT_TraceEvent  

@@ -1,8 +1,8 @@
 ---
-title: "&lt;proxy&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;proxy&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#proxy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<proxy> element"
   - "proxy element"
@@ -25,6 +20,8 @@ caps.latest.revision: 20
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;proxy&gt; Element (Network Settings)
 Defines a proxy server.  
@@ -36,15 +33,14 @@ Defines a proxy server.
   
 ## Syntax  
   
-```  
-  
-      <proxy   
-  autoDetect="true|false|unspecified"    
-  bypassonlocal="true|false|unspecified"   
-proxyaddress="uriString"  
-  scriptLocation="uriString"   
-  usesystemdefault="true|false|unspecified "   
-/>  
+```xml  
+<proxy
+  autoDetect="true|false|unspecified" 
+  bypassonlocal="true|false|unspecified"
+  proxyaddress="uriString"
+  scriptLocation="uriString"
+  usesystemdefault="true|false|unspecified"
+/>
 ```  
   
 ## Attributes and Elements  
@@ -86,9 +82,9 @@ proxyaddress="uriString"
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example uses the defaults from the Internet Explorer proxy, specifies the proxy address, and bypasses the proxy for local access.  
+ The following example uses the defaults from the Internet Explorer proxy, specifies the proxy address, and bypasses the proxy for local access.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
@@ -103,5 +99,5 @@ proxyaddress="uriString"
 ```  
   
 ## See Also  
- <xref:System.Net.WebProxy?displayProperty=fullName>   
+ <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

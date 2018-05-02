@@ -1,8 +1,8 @@
 ---
-title: "Queued Rejected Messages | Microsoft Docs"
+title: "Queued Rejected Messages"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8eb75a76-4fb3-4d33-bd9f-6d91e09c5843
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Queued Rejected Messages
 Counter Name: Queued Messages Rejected.  

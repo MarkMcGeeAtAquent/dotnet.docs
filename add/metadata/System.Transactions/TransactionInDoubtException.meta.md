@@ -1,29 +1,34 @@
 ---
 uid: System.Transactions.TransactionInDoubtException
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInDoubtException.#ctor
-manager: "ghogen"
----
-
----
-uid: System.Transactions.TransactionInDoubtException.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInDoubtException.#ctor(System.String)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInDoubtException.#ctor(System.String,System.Exception)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInDoubtException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

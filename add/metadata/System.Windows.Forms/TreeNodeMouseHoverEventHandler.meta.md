@@ -1,5 +1,7 @@
 ---
 uid: System.Windows.Forms.TreeNodeMouseHoverEventHandler
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

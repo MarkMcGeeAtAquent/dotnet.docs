@@ -1,23 +1,24 @@
 ---
-title: "Select Nodes Using XPath Navigation | Microsoft Docs"
+title: "Select Nodes Using XPath Navigation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
 ms.reviewer: ""
 ms.suite: ""
-ms.technology:  dotnet-standard
+ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Select Nodes Using XPath Navigation
 The XML Document Object Model (DOM) contains methods that allow you to use XML Path Language (XPath) navigation to query information in the DOM. You can use XPath to find a single, specific node or to find all nodes that match some criteria.  
@@ -136,7 +137,7 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 #### Input File  
  The following is the bookstore.xml file that is used as the input file in the examples in this topic:  
   
-```  
+```xml  
 <?xml version='1.0'?>  
 <bookstore xmlns="urn:newbooks-schema">  
   <book genre="novel" style="hardcover">  

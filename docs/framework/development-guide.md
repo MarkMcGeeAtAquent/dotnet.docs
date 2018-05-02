@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework Development Guide | Microsoft Docs"
+title: ".NET Framework Development Guide"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -16,6 +16,8 @@ caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # .NET Framework Development Guide
 This section explains how to create, configure, debug, secure, and deploy your .NET Framework apps. The section also provides information about technology areas such as dynamic programming, interoperability, extensibility, memory management, and threading.  
@@ -37,7 +39,7 @@ This section explains how to create, configure, debug, secure, and deploy your .
  Describes how to use Windows Communication Foundation (WCF) to build service-oriented apps that are secure and reliable.  
   
  [Building workflows with Windows Workflow Foundation](windows-workflow-foundation/index.md)     
- Provides information about the programming model, samples, and tools for using Windows Workflow Foundation (WF).   
+ Provides information about the programming model, samples, and tools for using Windows Workflow Foundation (WF).  
 
  [Windows Service Applications](../../docs/framework/windows-services/index.md)  
  Explains how you can use Visual Studio and the .NET Framework to create an app that is installed as a service, and start, stop, and otherwise control its behavior.  
@@ -69,11 +71,11 @@ This section explains how to create, configure, debug, secure, and deploy your .
  [Performance](../../docs/framework/performance/index.md)  
  Provides information about caching, lazy initialization, reliability, and ETW events.  
   
- <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
+ <!--zz [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
  Provides information about advanced development tasks and techniques in the .NET Framework, including extensibility, interoperability, and reflection. Also includes the reference topics for unmanaged APIs that can be used by managed apps, such as runtime hosts, compilers, disassemblers, debuggers, and profilers.  --> 
   
 ## Reference  
- [.NET Framework Class Library](https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7)  
+ [.NET Framework Class Library](/dotnet/api/?view=netframework-4.7)  
  Supplies syntax, code examples, and usage information for each class that is contained in the [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] namespaces.  
   
 ## Related Sections  
@@ -86,5 +88,5 @@ This section explains how to create, configure, debug, secure, and deploy your .
  [Tools](../../docs/framework/tools/index.md)  
  Describes the tools that help you develop, configure, and deploy apps by using .NET Framework technologies.  
   
- [.NET Framework Samples](http://msdn.microsoft.com/en-us/177055f8-4a1f-43e7-aee6-995c196079b1)  
+ [.NET Framework Samples](http://msdn.microsoft.com/library/177055f8-4a1f-43e7-aee6-995c196079b1)  
  Provides links to the MSDN Code Samples Gallery for sample apps that demonstrate .NET Framework technologies.

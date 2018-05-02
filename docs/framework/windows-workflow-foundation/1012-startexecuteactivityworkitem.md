@@ -1,5 +1,5 @@
 ---
-title: "1012 - StartExecuteActivityWorkItem | Microsoft Docs"
+title: "1012 - StartExecuteActivityWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 29e9b1c6-c5d7-4b58-b59d-a06a923d3c80
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1012 - StartExecuteActivityWorkItem
 ## Properties  

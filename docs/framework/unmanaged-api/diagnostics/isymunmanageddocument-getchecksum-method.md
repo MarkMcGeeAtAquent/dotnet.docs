@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::GetCheckSum Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::GetCheckSum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.GetCheckSum"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::GetCheckSum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocument::GetCheckSum method [.NET Framework debugging]"
   - "GetCheckSum method [.NET Framework debugging]"
 ms.assetid: 9bc881b3-e2ce-48a7-ad69-17eaaa304120
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::GetCheckSum Method
 Gets the checksum.  

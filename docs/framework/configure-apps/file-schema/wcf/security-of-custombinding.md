@@ -1,22 +1,21 @@
 ---
-title: "&lt;security&gt; of &lt;customBinding&gt; | Microsoft Docs"
+title: "&lt;security&gt; of &lt;customBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: 243a5148-bbd1-447f-a8a5-6e7792c0a3f1
 caps.latest.revision: 24
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;security&gt; of &lt;customBinding&gt;
 Specifies the security options for a custom binding.  
@@ -29,8 +28,7 @@ Specifies the security options for a custom binding.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <security   
    allowSerializedSigningTokenOnReply="Boolean"  
    authenticationMode="AuthenticationMode"  
@@ -44,8 +42,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
    requireSecurityContextCancellation="Boolean"  
    requireSignatureConfirmation="Boolean"  
       securityHeaderLayout=  
-              "Strict/Lax/LaxTimestampFirst/LaxTimestampLast"  
-   includeTimestamp="Boolean">  
+              "Strict/Lax/LaxTimestampFirst/LaxTimestampLast">  
    <issuedTokenParameters />  
    <localClientSettings />  
    <localServiceSettings />  
@@ -60,7 +57,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
   
 |Attribute|Description|  
 |---------------|-----------------|  
-|allowSerializedSigningTokenOnReply|Optional. A Boolean value that specifies if a serialized token can be used on reply. The default value is `false`. When using a dual binding, the setting defaults to `true`and any setting made will be ignored.|  
+|allowSerializedSigningTokenOnReply|Optional. A Boolean value that specifies if a serialized token can be used on reply. The default value is `false`. When using a dual binding, the setting defaults to `true` and any setting made will be ignored.|  
 |authenticationMode|Optional. Specifies the authentication mode used between the initiator and the responder. See below for all values.<br /><br /> The default is `sspiNegotiated`.|  
 |defaultAlgorithmSuite|Optional. Sets the message encryption and key-wrap algorithms. The algorithms and the key sizes are determined by the <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> class. These algorithms map to those specified in the Security Policy Language (WS-SecurityPolicy) specification.<br /><br /> Possible values are shown below. The default value is `Basic256`.<br /><br /> This attribute is used when working with a different platform that opts for a set of algorithms different than the default. You should be aware of the strengths and weaknesses of the relevant algorithms when making modifications to this setting. This attribute is of type <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>.|  
 |includeTimestamp|A Boolean value that specifies whether time stamps are included in each message. The default is `true`.|  
@@ -70,7 +67,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |requireDerivedKeys|A Boolean value that specifies if keys can be derived from the original proof keys. The default is `true`.|  
 |requireSecurityContextCancellation|Optional. A Boolean value that specifies if security context should be cancelled and terminated when it is no longer needed. The default is `true`.|  
 |requireSignatureConfirmation|Optional. A Boolean value that specifies whether WS-Security signature confirmation is enabled. When set to `true`, message signatures are confirmed by the responder.  When the custom binding is configured for mutual certificates or it is configured to use issued tokens (WSS 1.1 bindings) this attribute defaults to `true`. Otherwise, the default is `false`.<br /><br /> Signature confirmation is used to confirm that the service is responding in full awareness of a request.|  
-|securityHeaderLayout|Optional. Specifies the ordering of the elements in security header. Valid values are<br /><br /> -   `Strict`: Items are added to the security header according to the general principle of “declare before use”.<br />-   `Lax`: Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   `LaxWithTimestampFirst`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   `LaxWithTimestampLast`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is `Strict`.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
+|securityHeaderLayout|Optional. Specifies the ordering of the elements in security header. Valid values are<br /><br /> -   `Strict`: Items are added to the security header according to the general principle of "declare before use".<br />-   `Lax`: Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   `LaxWithTimestampFirst`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   `LaxWithTimestampLast`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is `Strict`.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
   
 ## authenticationMode Attribute  
   
@@ -124,7 +121,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
   
  Additionally, the custom binding uses message security with Windows credential type - this is the default credential type. This is accomplished by the [security](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) binding element. Both client and service are authenticated using message-level security if Kerberos authentication mechanism is available. If the Kerberos authentication mechanism is not available, NTLM authentication is used. NTLM authenticates the client to the service but does not authenticate service to the client. The [security](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) binding element is configured to use `SecureConversation` authenticationType, which results in the creation of a security session on both the client and the service. This is required to enable the service's duplex contract to work. For more information on running this example, see [Custom Binding Security](../../../../../docs/framework/wcf/samples/custom-binding-security.md).  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <services>  
@@ -179,12 +176,12 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.SecurityElement>   
- <xref:System.ServiceModel.Channels.SecurityBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)   
+ <xref:System.ServiceModel.Configuration.SecurityElement>  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [Custom Binding Security](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

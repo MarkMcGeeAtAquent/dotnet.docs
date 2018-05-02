@@ -1,5 +1,5 @@
 ---
-title: "Thread Pool ETW Events | Microsoft Docs"
+title: "Thread Pool ETW Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Thread Pool ETW Events
 <a name="top"></a> These events collect information about worker and I/O threads.  

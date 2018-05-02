@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::GetHashFromHandle Method | Microsoft Docs"
+title: "ICLRStrongName::GetHashFromHandle Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.GetHashFromHandle"
   - "ICLRStrongName.StrongNameCompareAssemblies"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::GetHashFromHandle"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetHashFromHandle method, ICLRStrongName interface [.NET Framework hosting]"
   - "ICLRStrongName::GetHashFromHandle method [.NET Framework hosting]"
 ms.assetid: 3bedbb7d-3cdd-4175-b370-10ae734062db
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::GetHashFromHandle Method
 Generates a hash over the contents of the file that has the specified file handle, using the specified hash algorithm.  

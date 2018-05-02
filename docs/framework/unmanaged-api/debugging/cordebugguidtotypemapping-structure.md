@@ -1,5 +1,5 @@
 ---
-title: "CorDebugGuidToTypeMapping Structure | Microsoft Docs"
+title: "CorDebugGuidToTypeMapping Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,29 +9,34 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "CorDebugGuidToTypeMapping"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugGuidToTypeMapping"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugGuidToTypeMapping structure [.NET Framework debugging]"
 ms.assetid: 57dbccd9-b16d-4da3-ae25-7a2cf9adf679
+topic_type: 
+  - "apiref"
 caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugGuidToTypeMapping Structure
 Maps a [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID to its corresponding ICorDebugType object.  
   
 ## Syntax  
   
-```vb  
+```cpp
 typedef struct CorDebugGuidToTypeMapping {  
     GUID iid;  
     ICorDebugType *pType;  
@@ -55,5 +60,5 @@ typedef struct CorDebugGuidToTypeMapping {
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

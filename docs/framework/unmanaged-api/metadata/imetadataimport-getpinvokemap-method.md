@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetPinvokeMap Method | Microsoft Docs"
+title: "IMetaDataImport::GetPinvokeMap Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetPinvokeMap"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetPinvokeMap"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport::GetPinvokeMap method [.NET Framework metadata]"
   - "GetPinvokeMap method [.NET Framework metadata]"
 ms.assetid: b8685c1e-b80c-4198-8eb3-748d6f48a99e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetPinvokeMap Method
 Gets a ModuleRef token to represent the target assembly of a PInvoke call.  
@@ -72,5 +75,5 @@ HRESULT GetPinvokeMap (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

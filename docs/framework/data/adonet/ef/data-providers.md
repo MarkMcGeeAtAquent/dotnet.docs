@@ -1,8 +1,8 @@
 ---
-title: "Entity Framework Data Providers | Microsoft Docs"
+title: "Entity Framework Data Providers"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5252e639-ff11-4818-82e7-07221ed6ae23
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Entity Framework Data Providers
 This section provides information on data providers that support the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  

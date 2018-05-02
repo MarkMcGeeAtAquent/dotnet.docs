@@ -1,5 +1,5 @@
 ---
-title: "1132 - InvokeMethodDoesNotUseAsyncPattern | Microsoft Docs"
+title: "1132 - InvokeMethodDoesNotUseAsyncPattern"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 436b3767-4460-46b0-9ea3-fc2963260c11
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1132 - InvokeMethodDoesNotUseAsyncPattern
 ## Properties  

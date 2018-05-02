@@ -1,6 +1,6 @@
 ---
 title: Iterators
-description: Iterators
+description: Learn how to use built-in C# iterators and how to create your own custom iterator methods.
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -202,7 +202,7 @@ method uses the `yield return` statement to create the requested sequence.
 ## Deeper Dive into `foreach`
 
 The `foreach` statement expands into a standard idiom that uses the
-`IEnumable<T>` and `IEnumerator<T>` interfaces to iterate across all
+`IEnumerable<T>` and `IEnumerator<T>` interfaces to iterate across all
 elements of a collection. It also  minimizes errors developers make
 by not properly managing resources. 
 

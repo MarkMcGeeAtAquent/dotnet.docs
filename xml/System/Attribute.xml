@@ -1,13 +1,16 @@
-<Type Name="Attribute" FullName="System.Attribute">
+﻿<Type Name="Attribute" FullName="System.Attribute">
   <TypeSignature Language="C#" Value="public abstract class Attribute : System.Runtime.InteropServices._Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Attribute extends System.Object implements class System.Runtime.InteropServices._Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Attribute" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class Attribute&#xA;Implements _Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Attribute abstract : System::Runtime::InteropServices::_Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -52,7 +55,7 @@
   
  All attribute types derive directly or indirectly from the <xref:System.Attribute> class. Attributes can be applied to any target element; multiple attributes can be applied to the same target element; and attributes can be inherited by an element derived from a target element. Use the <xref:System.AttributeTargets> class to specify the target element to which the attribute is applied.  
   
- The <xref:System.Attribute> class provides convenient methods to retrieve and test custom attributes. For more information about using attributes, see [Applying Attributes](~/docs/standard/attributes/applying-attributes.md) and [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87).  
+ The <xref:System.Attribute> class provides convenient methods to retrieve and test custom attributes. For more information about using attributes, see [Applying Attributes](~/docs/standard/attributes/applying-attributes.md) and [Attributes](~/docs/standard/attributes/index.md).  
   
    
   
@@ -72,6 +75,8 @@
       <MemberSignature Language="C#" Value="protected Attribute ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; Attribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -79,6 +84,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -115,6 +121,8 @@
       <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -122,6 +130,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -147,25 +156,43 @@
         <param name="obj">An <see cref="T:System.Object" /> to compare with this instance or <see langword="null" />.</param>
         <summary>Returns a value that indicates whether this instance is equal to a specified object.</summary>
         <returns>
-          <see langword="true" /> if <paramref name="obj" /> equals the type and value of this instance; otherwise, <see langword="false" />.</returns>
+          <see langword="true" /> if <paramref name="obj" /> and this instance are of the same type and have identical field values; otherwise, <see langword="false" />. </returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
+## Remarks
+
+The <xref:System.Attribute.Equals%2A> method uses reflection to retrieve field information for the current instance and the `obj` argument. It then compares field values. 
+
+When implementing your own class derived from <xref:System.Attribute>, you can override the <xref:System.Attribute.Equals%2A> method. Because it uses reflection, we recommend that you do so. However, your override should perform a standard test for reference equality (the two arguments represent the same object instance) or value equality (the two arguments are of the same type and have identical field values). If you want to perform a custom comparison to determine whether two attributes objects are equal, you can override the <xref:System.Attribute.Match%2A> method.   
+
 ## Examples  
- The following code example defines two custom parameter <xref:System.Attribute> classes, then creates several objects of each class and shows the use of the <xref:System.Attribute.Equals%2A> method to compare them.  
+ The following example defines two custom parameter <xref:System.Attribute> classes, then creates several objects of each class and uses the <xref:System.Attribute.Equals%2A> method to compare them.  
   
- [!code-cpp[System.Attribute.Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Attribute.Equals/CPP/equals.cpp#1)]
- [!code-csharp[System.Attribute.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Attribute.Equals/CS/equals.cs#1)]
- [!code-vb[System.Attribute.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Attribute.Equals/VB/equals.vb#1)]  
+ [!code-cpp[System.Attribute.Equals](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Attribute.Equals/CPP/equals.cpp)]
+ [!code-csharp[System.Attribute.Equals](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Attribute.Equals/CS/equals.cs)]
+ [!code-vb[System.Attribute.Equals](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Attribute.Equals/VB/equals.vb)]  
   
  ]]></format>
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCustomAttribute">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves a custom attribute of a specified type applied to an assembly, module, type member, or method parameter.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCustomAttribute">
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.Assembly element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.Assembly element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As Assembly, attributeType As Type) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::Assembly ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -175,6 +202,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -195,7 +226,7 @@
  Use the <xref:System.Attribute.GetCustomAttributes%2A> method if you expect more than one value to be returned, or <xref:System.Reflection.AmbiguousMatchException> will be thrown.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -219,6 +250,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.MemberInfo element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.MemberInfo element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As MemberInfo, attributeType As Type) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::MemberInfo ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -228,6 +261,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -245,10 +282,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A match is determined in the same way described in the Return Value section of <xref:System.Type.IsAssignableFrom%2A?displayProperty=fullName>.  
+ A match is determined in the same way described in the Return Value section of <xref:System.Type.IsAssignableFrom%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on types, methods, and constructors if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on types, methods, and constructors if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -275,6 +312,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.Module element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.Module element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.Module,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As Module, attributeType As Type) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::Module ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -284,6 +323,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -320,6 +363,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.ParameterInfo element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.ParameterInfo element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As ParameterInfo, attributeType As Type) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::ParameterInfo ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -329,6 +374,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -371,6 +420,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.Assembly element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.Assembly element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.Assembly,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As Assembly, attributeType As Type, inherit As Boolean) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::Assembly ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -380,6 +431,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -401,7 +456,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -425,6 +480,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.MemberInfo element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.MemberInfo element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.MemberInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As MemberInfo, attributeType As Type, inherit As Boolean) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::MemberInfo ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -434,6 +491,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -455,7 +516,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on types, methods, and constructors if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on types, methods, and constructors if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -482,6 +543,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.Module element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.Module element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.Module,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As Module, attributeType As Type, inherit As Boolean) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::Module ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -491,6 +554,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -529,6 +596,8 @@
       <MemberSignature Language="C#" Value="public static Attribute GetCustomAttribute (System.Reflection.ParameterInfo element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute GetCustomAttribute(class System.Reflection.ParameterInfo element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttribute(System.Reflection.ParameterInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttribute (element As ParameterInfo, attributeType As Type, inherit As Boolean) As Attribute" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static Attribute ^ GetCustomAttribute(System::Reflection::ParameterInfo ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -538,6 +607,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute</ReturnType>
@@ -578,10 +651,22 @@
         <exception cref="T:System.TypeLoadException">A custom attribute type cannot be loaded.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCustomAttributes">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves an array of the custom attributes applied to an assembly, module, type member, or method parameter.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCustomAttributes">
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Assembly element);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Assembly element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Assembly)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Assembly) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Assembly ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -591,6 +676,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -608,7 +697,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -629,6 +718,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.MemberInfo element);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.MemberInfo element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As MemberInfo) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::MemberInfo ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -638,6 +729,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -656,7 +751,7 @@
  The return value contains the custom attributes for ancestors of `element`.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -680,6 +775,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Module element);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Module element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Module)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Module) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Module ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -689,6 +786,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -720,6 +821,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.ParameterInfo element);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.ParameterInfo element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As ParameterInfo) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::ParameterInfo ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -729,6 +832,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -766,6 +873,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Assembly element, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Assembly element, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Assembly,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Assembly, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Assembly ^ element, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -775,6 +884,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -794,7 +907,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -815,6 +928,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Assembly element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Assembly element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Assembly,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Assembly, attributeType As Type) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Assembly ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -824,6 +939,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -843,7 +962,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -866,6 +985,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.MemberInfo element, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.MemberInfo element, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As MemberInfo, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::MemberInfo ^ element, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -875,6 +996,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -895,7 +1020,7 @@
  The return value contains the custom attributes for ancestors of `element` if `inherit` is `true`.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -919,6 +1044,7 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.MemberInfo element, Type type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.MemberInfo element, class System.Type type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,System.Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::MemberInfo ^ element, Type ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -928,6 +1054,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -948,7 +1078,7 @@
  The return value contains the custom attributes for ancestors of `element`.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -974,6 +1104,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Module element, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Module element, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Module,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Module, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Module ^ element, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -983,6 +1115,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1021,6 +1157,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Module element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Module element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Module,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Module, attributeType As Type) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Module ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1030,6 +1168,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1065,6 +1207,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.ParameterInfo element, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.ParameterInfo element, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As ParameterInfo, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::ParameterInfo ^ element, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1074,6 +1218,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1114,6 +1262,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.ParameterInfo element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.ParameterInfo element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As ParameterInfo, attributeType As Type) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::ParameterInfo ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1123,6 +1273,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1164,6 +1318,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Assembly element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Assembly element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Assembly,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Assembly, attributeType As Type, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Assembly ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1173,6 +1329,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1194,7 +1354,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1217,6 +1377,7 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.MemberInfo element, Type type, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.MemberInfo element, class System.Type type, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.MemberInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::MemberInfo ^ element, Type ^ type, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1226,6 +1387,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1248,7 +1413,7 @@
  The return value contains the custom attributes for ancestors of `element` if `inherit` is `true`.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns security attributes on methods, constructors, and types if the attributes are stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1274,6 +1439,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.Module element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.Module element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.Module,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As Module, attributeType As Type, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::Module ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1283,6 +1450,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1325,6 +1496,8 @@
       <MemberSignature Language="C#" Value="public static Attribute[] GetCustomAttributes (System.Reflection.ParameterInfo element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Attribute[] GetCustomAttributes(class System.Reflection.ParameterInfo element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetCustomAttributes(System.Reflection.ParameterInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCustomAttributes (element As ParameterInfo, attributeType As Type, inherit As Boolean) As Attribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;Attribute ^&gt; ^ GetCustomAttributes(System::Reflection::ParameterInfo ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1334,6 +1507,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Attribute[]</ReturnType>
@@ -1377,6 +1554,8 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1384,6 +1563,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1423,6 +1603,8 @@
       <MemberSignature Language="C#" Value="public virtual bool IsDefaultAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDefaultAttribute() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefaultAttribute" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsDefaultAttribute () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsDefaultAttribute();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1432,6 +1614,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1462,10 +1648,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsDefined">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether any custom attributes of a specified type are applied to an assembly, module, type member, or method parameter.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsDefined">
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.Assembly element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.Assembly element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.Assembly,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As Assembly, attributeType As Type) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::Assembly ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1475,6 +1673,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1495,7 +1697,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns `true` if the assembly has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns `true` if the assembly has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1518,6 +1720,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.MemberInfo element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.MemberInfo element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.MemberInfo,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As MemberInfo, attributeType As Type) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::MemberInfo ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1527,6 +1731,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1548,7 +1756,7 @@
  The ancestors of `element` are searched for custom attributes.  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns `true` if a type, method, or constructor has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns `true` if a type, method, or constructor has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1573,6 +1781,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.Module element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.Module element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.Module,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As Module, attributeType As Type) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::Module ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1582,6 +1792,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1623,6 +1837,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.ParameterInfo element, Type attributeType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.ParameterInfo element, class System.Type attributeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.ParameterInfo,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As ParameterInfo, attributeType As Type) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::ParameterInfo ^ element, Type ^ attributeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1632,6 +1848,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1673,6 +1893,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.Assembly element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.Assembly element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.Assembly,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As Assembly, attributeType As Type, inherit As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::Assembly ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1682,6 +1904,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1704,7 +1930,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns `true` if the assembly has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns `true` if the assembly has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1727,6 +1953,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.MemberInfo element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.MemberInfo element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.MemberInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As MemberInfo, attributeType As Type, inherit As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::MemberInfo ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1736,6 +1964,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1758,7 +1990,7 @@
 ## Remarks  
   
 > [!NOTE]
->  Starting with the .NET Framework version 2.0, this method returns `true` if a type, method, or constructor has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/en-us/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
+>  Starting with the .NET Framework version 2.0, this method returns `true` if a type, method, or constructor has security attributes stored in the new metadata format. Assemblies compiled with version 2.0 or later use the new format. Dynamic assemblies and assemblies compiled with earlier versions of the .NET Framework use the old XML format. See [Emitting Declarative Security Attributes](http://msdn.microsoft.com/library/9eeddee8-ca89-4440-b84b-fd613f590cd5).  
   
    
   
@@ -1783,6 +2015,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.Module element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.Module element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.Module,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As Module, attributeType As Type, inherit As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::Module ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1792,6 +2026,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1835,6 +2073,8 @@
       <MemberSignature Language="C#" Value="public static bool IsDefined (System.Reflection.ParameterInfo element, Type attributeType, bool inherit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Reflection.ParameterInfo element, class System.Type attributeType, bool inherit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.IsDefined(System.Reflection.ParameterInfo,System.Type,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefined (element As ParameterInfo, attributeType As Type, inherit As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefined(System::Reflection::ParameterInfo ^ element, Type ^ attributeType, bool inherit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1844,6 +2084,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1884,6 +2128,8 @@
       <MemberSignature Language="C#" Value="public virtual bool Match (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Match(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.Match(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Match (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Match(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1893,6 +2139,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1909,17 +2159,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method determines if one <xref:System.Attribute> equals another. Its default implementation is the same as <xref:System.Attribute.Equals%2A>, which performs a value and reference comparison. Override this method to implement support for attribute values, such as flags or bit fields, that consist of components that are meaningful in themselves.  
+ This method determines if one <xref:System.Attribute> equals another. Its default implementation is the same as <xref:System.Attribute.Equals%2A>, which determines whether two attributes are of the same type and have the same field values.
+
+ In general, the <xref:System.Attribute.Equals%2A> method is intended to perform a standard test for reference or value equality. You can override the <xref:System.Attribute.Match%2A> method when you want to perform a custom comparison for equality that is based on some criteria other than that two attribute instances are of the same type and have identifical values. For example, you can override the <xref:System.Attribute.Match%2A> method to compare attributes in the following scenarios:
+
+ - An attribute includes a bit field, and you consider two attribute instances equal if a particular bit is set. For example, a `NumericDisplay` attribute might include a bit field that indicates what numeric formats (such as binary, octal, decimal, and hexadecimal) a client supports. The overridden <xref:System.Attribute.Match%2A> method might consider two instances equal if they support the same numeric format.
+
+ - An attribute includes multiple fields that contain the same kind of information, or it contains an array in which values can be in any order. For example, an `Author` attribute might include multiple fields for author names. The overridden <xref:System.Attribute.Match%2A> method might consider two instances equal if they have the same authors regardless of whether each field is equal to the corresponding field.    
+ 
+ 
+## Example  
+ The following example illustrates the use of <xref:System.Attribute.Match%2A> to create a custom comparison method for attribute values. If defines an `AuthorsAttribute` that internally contains a `List<String>` that stores authors' names. Because the names can occur in any order in the list, it overrides the <xref:System.Attribute.Match%2A> method to compare author names regardless of their position in the list. Note the <xref:System.Attribute.Equals%2A> method, which performs a test for value equality, returns different results from the <xref:System.Attribute.Match%2A> method.   
   
- For example, consider an attribute whose value is a binary field divided into a bit field of flags. Two instances of this attribute have one flag in set in common while all the other flags differ. The <xref:System.Attribute.Equals%2A> method cannot determine that the two instances have the same flag set, but the <xref:System.Attribute.Match%2A> method can.  
-  
-   
-  
-## Examples  
- The following code example illustrates the use of <xref:System.Attribute.Match%2A> in the context of <xref:System.Attribute>.  
-  
- [!code-csharp[Match#1](~/samples/snippets/csharp/VS_Snippets_CLR/Match/CS/match.cs#1)]
- [!code-vb[Match#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Match/VB/match.vb#1)]  
+ [!code-csharp[Match#1](~/samples/snippets/csharp/VS_Snippets_CLR/Match/CS/match.cs)]
+ [!code-vb[Match#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Match/VB/match.vb)]  
   
  ]]></format>
         </remarks>
@@ -1927,9 +2180,14 @@
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Attribute.GetIDsOfNames">
       <MemberSignature Language="C#" Value="void _Attribute.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.GetIDsOfNames(valuetype System.Guid riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.System#Runtime#InteropServices#_Attribute#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetIDsOfNames (ByRef riid As Guid, rgszNames As IntPtr, cNames As UInteger, lcid As UInteger, rgDispId As IntPtr) Implements _Attribute.GetIDsOfNames" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Attribute.GetIDsOfNames(Guid % riid, IntPtr rgszNames, System::UInt32 cNames, System::UInt32 lcid, IntPtr rgDispId) = System::Runtime::InteropServices::_Attribute::GetIDsOfNames;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Attribute.GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1966,7 +2224,12 @@
       <MemberSignature Language="C#" Value="void _Attribute.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.System#Runtime#InteropServices#_Attribute#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfo (iTInfo As UInteger, lcid As UInteger, ppTInfo As IntPtr) Implements _Attribute.GetTypeInfo" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Attribute.GetTypeInfo(System::UInt32 iTInfo, System::UInt32 lcid, IntPtr ppTInfo) = System::Runtime::InteropServices::_Attribute::GetTypeInfo;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Attribute.GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1997,9 +2260,14 @@
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Attribute.GetTypeInfoCount">
       <MemberSignature Language="C#" Value="void _Attribute.GetTypeInfoCount (out uint pcTInfo);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.GetTypeInfoCount(unsigned int32 pcTInfo) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.System#Runtime#InteropServices#_Attribute#GetTypeInfoCount(System.UInt32@)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfoCount (ByRef pcTInfo As UInteger) Implements _Attribute.GetTypeInfoCount" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Attribute.GetTypeInfoCount([Runtime::InteropServices::Out] System::UInt32 % pcTInfo) = System::Runtime::InteropServices::_Attribute::GetTypeInfoCount;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Attribute.GetTypeInfoCount(System.UInt32@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2026,9 +2294,14 @@
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Attribute.Invoke">
       <MemberSignature Language="C#" Value="void _Attribute.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.Invoke(unsigned int32 dispIdMember, valuetype System.Guid riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Attribute.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Attribute.System#Runtime#InteropServices#_Attribute#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub Invoke (dispIdMember As UInteger, ByRef riid As Guid, lcid As UInteger, wFlags As Short, pDispParams As IntPtr, pVarResult As IntPtr, pExcepInfo As IntPtr, puArgErr As IntPtr) Implements _Attribute.Invoke" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Attribute.Invoke(System::UInt32 dispIdMember, Guid % riid, System::UInt32 lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr) = System::Runtime::InteropServices::_Attribute::Invoke;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Attribute.Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2071,6 +2344,8 @@
       <MemberSignature Language="C#" Value="public virtual object TypeId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
       <MemberSignature Language="DocId" Value="P:System.Attribute.TypeId" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property TypeId As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ TypeId { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2080,6 +2355,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>

@@ -1,8 +1,8 @@
 ---
-title: "57401 - TraceCodeEventLogInfo | Microsoft Docs"
+title: "57401 - TraceCodeEventLogInfo"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 64f01506-0c11-4cdb-b9a2-552938da487b
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 57401 - TraceCodeEventLogInfo
 ## Properties  

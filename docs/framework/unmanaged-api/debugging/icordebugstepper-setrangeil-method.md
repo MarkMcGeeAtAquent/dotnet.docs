@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugStepper::SetRangeIL Method | Microsoft Docs"
+title: "ICorDebugStepper::SetRangeIL Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugStepper.SetRangeIL"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugStepper::SetRangeIL"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetRangeIL method [.NET Framework debugging]"
   - "ICorDebugStepper::SetRangeIL method [.NET Framework debugging]"
 ms.assetid: a20c95f0-6da7-4b41-b27f-584211cebb92
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugStepper::SetRangeIL Method
 Sets a value that specifies whether calls to [ICorDebugStepper::StepRange](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) pass argument values that are relative to the native code or relative to Microsoft intermediate language (MSIL) code of the method that is being stepped through.  

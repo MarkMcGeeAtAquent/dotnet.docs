@@ -1,5 +1,5 @@
 ---
-title: "Lc.exe (License Compiler) | Microsoft Docs"
+title: "Lc.exe (License Compiler)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Lc.exe"
   - ".licx file"
@@ -29,6 +24,8 @@ caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Lc.exe (License Compiler)
 The License Compiler reads text files that contain licensing information and produces a binary file that can be embedded in a common language runtime executable as a resource.  
@@ -44,7 +41,6 @@ The License Compiler reads text files that contain licensing information and pro
 ## Syntax  
   
 ```  
-  
       lc /target:  
       targetPE /complist:filename [/outdir:path]  
 /i:modules [/nologo] [/v]  
@@ -89,14 +85,13 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
 ```  
   
 ## Response File Example  
- The following listing shows an example of a response file, `response.rsp`. For more information on response files, see [Response Files](http://msdn.microsoft.com/library/9f53987b-20ee-470a-ab62-fce997bb5e15).  
+ The following listing shows an example of a response file, `response.rsp`. For more information on response files, see [Response Files](/visualstudio/msbuild/msbuild-response-files).  
   
 ```  
 /target:hostapp.exe  
 /complist:hostapplic.txt   
 /i:WFCPrj.dll   
 /outdir:"C:\My Folder"  
-  
 ```  
   
  The following command line uses the `response.rsp` file.  
@@ -106,6 +101,6 @@ lc @response.rsp
 ```  
   
 ## See Also  
- [Tools](../../../docs/framework/tools/index.md)   
- [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)   
+ [Tools](../../../docs/framework/tools/index.md)  
+ [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
  [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

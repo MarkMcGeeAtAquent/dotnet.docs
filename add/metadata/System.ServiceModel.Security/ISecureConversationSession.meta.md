@@ -1,14 +1,20 @@
 ---
 uid: System.ServiceModel.Security.ISecureConversationSession
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.ISecureConversationSession.TryReadSessionTokenIdentifier(System.Xml.XmlReader)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.ISecureConversationSession.WriteSessionTokenIdentifier(System.Xml.XmlDictionaryWriter)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

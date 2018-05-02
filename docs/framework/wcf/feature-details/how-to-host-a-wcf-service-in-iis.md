@@ -1,8 +1,8 @@
 ---
-title: "How to: Host a WCF Service in IIS | Microsoft Docs"
+title: "How to: Host a WCF Service in IIS"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,16 +10,18 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
+  - "csharp"
+  - "vb"
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Host a WCF Service in IIS
-This topic outlines the basic steps required to create a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service that is hosted in Internet Information Services (IIS). This topic assumes you are familiar with IIS and understand how to use the IIS management tool to create and manage IIS applications. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] IIS see [Internet Information Services](http://go.microsoft.com/fwlink/?LinkId=132449) A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that runs in the IIS environment takes full advantage of IIS features, such as process recycling, idle shutdown, process health monitoring, and message-based activation. This hosting option requires that IIS be properly configured, but it does not require that any hosting code be written as part of the application. You can use IIS hosting only with an HTTP transport.  
+This topic outlines the basic steps required to create a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service that is hosted in Internet Information Services (IIS). This topic assumes you are familiar with IIS and understand how to use the IIS management tool to create and manage IIS applications. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] IIS see [Internet Information Services](http://go.microsoft.com/fwlink/?LinkId=132449). A [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that runs in the IIS environment takes full advantage of IIS features, such as process recycling, idle shutdown, process health monitoring, and message-based activation. This hosting option requires that IIS be properly configured, but it does not require that any hosting code be written as part of the application. You can use IIS hosting only with an HTTP transport.  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] how [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] and [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] interact, see [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] configuring security, see [Security](../../../../docs/framework/wcf/feature-details/security.md).  
   
@@ -43,14 +45,14 @@ This topic outlines the basic steps required to create a [!INCLUDE[indigo1](../.
   
 6.  Add the following using statements to the top of the Service.cs file.  
   
-    ```  
+    ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
 7.  Add the following namespace declaration after the using statements.  
   
-    ```  
+    ```csharp  
     namespace Microsoft.ServiceModel.Samples  
     {  
     }  
@@ -68,31 +70,7 @@ This topic outlines the basic steps required to create a [!INCLUDE[indigo1](../.
   
 10. Create a file named "Web.config" in the application directory and add the following configuration code into the file. At runtime, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] infrastructure uses the information to construct an endpoint that client applications can communicate with.  
   
-    ```xml  
-    <?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-      <system.serviceModel>  
-        <services>  
-          <!-- This section is optional with the default configuration  
-            model introduced in .NET Framework 4 -->  
-          <service name="Microsoft.ServiceModel.Samples.CalculatorService">  
-  
-            <!-- This endpoint is exposed at the base address provided by host:                                        http://localhost/servicemodelsamples/service.svc  -->  
-            <endpoint address=""  
-                      binding="wsHttpBinding"  
-                      contract="Microsoft.ServiceModel.Samples.ICalculator" />  
-  
-            <!-- The mex endpoint is exposed at http://localhost/servicemodelsamples/service.svc/mex -->  
-            <endpoint address="mex"  
-                      binding="mexHttpBinding"  
-                      contract="IMetadataExchange" />  
-          </service>  
-        </services>  
-      </system.serviceModel>  
-  
-    </configuration>  
-  
-    ```  
+     [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]      
   
      This example explicitly specifies endpoints in the configuration file. If you do not add any endpoints to the service, the runtime adds default endpoints for you. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] default endpoints, bindings, and behaviors see [Simplified Configuration](../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
@@ -101,14 +79,13 @@ This topic outlines the basic steps required to create a [!INCLUDE[indigo1](../.
 ## Example  
  The following is a complete listing of the code for the IIS hosted calculator service.  
   
- [!code-csharp[C_HowTo_HostInIIS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#1)]
- [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)]  
-  
- <!-- TODO: review snippet reference [!code[c_HowTo_HostInIIS#100](../../../../samples/snippets/common/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  -->  
+ [!code-csharp[C_HowTo_HostInIIS#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#1)] 
+ [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)] 
+ [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
 ## See Also  
- [Hosting in Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [Hosting Services](../../../../docs/framework/wcf/hosting-services.md)   
- [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)   
- [Security](../../../../docs/framework/wcf/feature-details/security.md)   
+ [Hosting in Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [Hosting Services](../../../../docs/framework/wcf/hosting-services.md)  
+ [WCF Services and ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)  
+ [Security](../../../../docs/framework/wcf/feature-details/security.md)  
  [Windows Server App Fabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=201276)

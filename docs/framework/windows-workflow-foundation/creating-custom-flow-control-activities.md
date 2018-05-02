@@ -1,5 +1,5 @@
 ---
-title: "Creating custom flow control activities | Microsoft Docs"
+title: "Creating custom flow control activities"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 27f409f6-2d1d-4cfb-9765-93eb2ad667d5
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Creating custom flow control activities
 The .Net Framework contains a variety of flow-control activities that function similarly to abstract programming structures (such as <xref:System.Activities.Statements.Flowchart>)   or to standard programming statements (such as <xref:System.Activities.Statements.If>). This topic discusses the architecture of one of the sample projects, [Non-Generic ForEach](../../../docs/framework/windows-workflow-foundation/samples/non-generic-foreach.md).  
@@ -22,7 +24,6 @@ The .Net Framework contains a variety of flow-control activities that function s
 ```  
 public sealed class ForEach : NativeActivity  
     {  
-  
 ```  
   
  The custom class requires several members to store data being used by the activity, and to provide functionality to execute the activity’s child activities. These members include:  

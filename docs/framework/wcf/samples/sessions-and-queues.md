@@ -1,8 +1,8 @@
 ---
-title: "Sessions and Queues | Microsoft Docs"
+title: "Sessions and Queues"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
 caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Sessions and Queues
 This sample demonstrates how to send and receive a set of related messages in queued communication over the Message Queuing (MSMQ) transport. This sample uses the `netMsmqBinding` binding. The service is a self-hosted console application to enable you to observe the service receiving queued messages.  
@@ -51,7 +53,6 @@ public interface IOrderTaker
     [OperationContract(IsOneWay = true)]  
     void EndPurchaseOrder();  
 }  
-  
 ```  
   
  The service defines service operations in such a way that the first operation enlists in a transaction but does not automatically complete the transaction. Subsequent operations also enlist in the same transaction but do not automatically complete. The last operation in the session automatically completes the transaction. Thus, the same transaction is used for several operation invocations in the service contract. If any of the operations throw an exception, then the transaction rolls back and the session is put back into the queue. Upon successful completion of the last operation, the transaction is committed. The service uses `PerSession` as the <xref:System.ServiceModel.InstanceContextMode> to receive all messages in a session on the same instance of the service.  
@@ -123,7 +124,7 @@ public static void Main()
   
  The MSMQ queue name is specified in an appSettings section of the configuration file. The endpoint for the service is defined in the system.serviceModel section of the configuration file and specifies the `netMsmqBinding` binding.  
   
-```  
+```xml  
 <appSettings>  
   <!-- Use appSetting to configure MSMQ queue name. -->  
   <add key="queueName" value=".\private$\ServiceModelSamplesSession" />  
@@ -143,7 +144,6 @@ public static void Main()
   </services>  
   ...  
 <system.serviceModel>  
-  
 ```  
   
  The client creates a transaction scope. All messages in the session are sent to the queue within the transaction scope, causing it to be treated as an atomic unit where all messages succeed or fail. The transaction is committed by calling <xref:System.Transactions.TransactionScope.Complete%2A>.  
@@ -175,7 +175,6 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
     // Complete the transaction.  
     scope.Complete();  
 }  
-  
 ```  
   
 > [!NOTE]
@@ -228,7 +227,7 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 1.  If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration.  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <services>  
         <service name="Microsoft.ServiceModel.Samples.OrderTakerService"  

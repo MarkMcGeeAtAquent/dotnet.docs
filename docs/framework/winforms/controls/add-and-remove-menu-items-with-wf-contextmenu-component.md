@@ -1,5 +1,5 @@
 ---
-title: "How to: Add and Remove Menu Items with the Windows Forms ContextMenu Component | Microsoft Docs"
+title: "How to: Add and Remove Menu Items with the Windows Forms ContextMenu Component"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,22 +10,26 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "context menus, removing items"
+  - "context menus [Windows Forms], removing items"
   - "ContextMenu component [Windows Forms], adding items"
-  - "shortcut menus, removing items"
-  - "shortcut menus, examples"
-  - "context menus, adding items"
-  - "shortcut menus, adding items"
+  - "shortcut menus [Windows Forms], removing items"
+  - "shortcut menus [Windows Forms], examples"
+  - "context menus [Windows Forms], adding items"
+  - "shortcut menus [Windows Forms], adding items"
   - "ContextMenu component [Windows Forms], removing items"
-  - "context menus, examples"
+  - "context menus [Windows Forms], examples"
   - "examples [Windows Forms], context menus"
 ms.assetid: 426d1eaf-7fb8-4b0b-8a33-5e8721786ea4
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add and Remove Menu Items with the Windows Forms ContextMenu Component
 Explains how to add and remove shortcut menu items in Windows Forms.  
@@ -46,7 +50,6 @@ Explains how to add and remove shortcut menu items in Windows Forms.
     ContextMenu1.MenuItems.RemoveAt(0)  
     ' Removes a particular object from the shortcut menu.  
     ContextMenu1.MenuItems.Remove(mnuItemNew)  
-  
     ```  
   
     ```csharp  
@@ -54,7 +57,6 @@ Explains how to add and remove shortcut menu items in Windows Forms.
     contextMenu1.MenuItems.RemoveAt(0);  
     // Removes a particular object from the shortcut menu.  
     contextMenu1.MenuItems.Remove(mnuItemNew);  
-  
     ```  
   
     ```cpp  
@@ -70,12 +72,10 @@ Explains how to add and remove shortcut menu items in Windows Forms.
   
     ```vb  
     ContextMenu1.MenuItems.Clear()  
-  
     ```  
   
     ```csharp  
     contextMenu1.MenuItems.Clear();  
-  
     ```  
   
     ```cpp  
@@ -83,6 +83,6 @@ Explains how to add and remove shortcut menu items in Windows Forms.
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.ContextMenu>   
- [ContextMenu Component](../../../../docs/framework/winforms/controls/contextmenu-component-windows-forms.md)   
+ <xref:System.Windows.Forms.ContextMenu>  
+ [ContextMenu Component](../../../../docs/framework/winforms/controls/contextmenu-component-windows-forms.md)  
  [ContextMenu Component Overview](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md)

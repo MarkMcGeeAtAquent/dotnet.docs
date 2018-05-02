@@ -1,8 +1,8 @@
 ---
-title: "Boolean Data Types | Microsoft Docs"
+title: "Boolean Data Types"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Boolean Data Types
 Boolean operators work as expected in the common language runtime (CLR), except that short-circuiting behavior is not translated. For example, the Visual Basic `AndAlso` operator behaves like the `And` operator. The C# `&&` operator behaves like the `&` operator.  

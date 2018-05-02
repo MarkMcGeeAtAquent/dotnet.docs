@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode4::EnumerateVariableHomes Method | Microsoft Docs"
+title: "ICorDebugCode4::EnumerateVariableHomes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "ICorDebugCode4.EnumerateVariableHomes"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode4::EnumerateVariableHomes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateVariableHomes method [.NET Framework debugging]"
   - "ICorDebugCode4::EnumerateVariableHomes method [.NET Framework debugging]"
 ms.assetid: 802c01ff-8b80-4733-b6dd-03ab6ff7fa11
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode4::EnumerateVariableHomes Method
 Gets an enumerator to the local variables and arguments in a function.  
@@ -33,11 +36,9 @@ Gets an enumerator to the local variables and arguments in a function.
 ## Syntax  
   
 ```  
-  
 HRESULT EnumerateVariableHomes(  
     [out] ICorDebugVariableHomeEnum **ppEnum  
 );  
-  
 ```  
   
 #### Parameters  
@@ -57,5 +58,5 @@ HRESULT EnumerateVariableHomes(
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## See Also  
- [ICorDebugCode4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md)   
+ [ICorDebugCode4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

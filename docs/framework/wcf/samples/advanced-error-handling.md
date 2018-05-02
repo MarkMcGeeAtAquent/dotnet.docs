@@ -1,8 +1,8 @@
 ---
-title: "Advanced Error Handling | Microsoft Docs"
+title: "Advanced Error Handling"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ed54b687-78af-4eda-8507-9fd081bdea1a
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Advanced Error Handling
 This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] routing service. The routing service is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] component that makes it easy to include a content-based router in your application. This sample shows how the routing service intelligently recovers from errors, using transactions and other more complex messaging concepts such as multicasting.  
@@ -56,7 +58,6 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         The primary logging queue has 1 messages.   
         The backup logging queue has 0 messages.   
         Press <Enter> to continue  
-  
         ```  
   
     2.  The following is the output returned for case 3 (primary service and logging queue failures).  
@@ -68,7 +69,6 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         The primary logging queue does not exist.   
         The backup logging queue has 1 messages.   
         Press <ENTER> to continue.  
-  
         ```  
   
     3.  The following is the output returned for case 4 (primary service queue and primary and backup logging queue failures).  
@@ -81,7 +81,6 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         The backup logging queue does not exist.   
         The System Dead Letter queue has 1 messages.   
         Press <ENTER> to Quit.  
-  
         ```  
   
     4.  The following is the output returned for case 2 (primary service queue failure).  
@@ -93,7 +92,6 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         The primary logging queue has 1 messages.   
         The backup logging queue has 0 messages.   
         Press <ENTER> to continue.  
-  
         ```  
   
 ## Configurable Via Code or App.config  

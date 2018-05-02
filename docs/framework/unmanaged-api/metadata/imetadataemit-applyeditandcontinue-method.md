@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::ApplyEditAndContinue Method | Microsoft Docs"
+title: "IMetaDataEmit::ApplyEditAndContinue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.ApplyEditAndContinue"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::ApplyEditAndContinue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ApplyEditAndContinue method [.NET Framework metadata]"
   - "IMetaDataEmit::ApplyEditAndContinue method [.NET Framework metadata]"
 ms.assetid: 35991289-f389-495d-8caa-a6384fb1d557
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::ApplyEditAndContinue Method
 Updates the current assembly scope with the changes made in the specified metadata.  
@@ -54,5 +57,5 @@ HRESULT ApplyEditAndContinue (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

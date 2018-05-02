@@ -1,7 +1,8 @@
 ---
-title: "&lt;system.identityModel&gt; | Microsoft Docs"
+title: "&lt;system.identityModel&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 5
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;system.identityModel&gt;
 Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.  
@@ -21,7 +24,7 @@ Provides configuration for enabling Windows Identity Foundation (WIF) options in
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
 </system.identityModel>  
 ```  
@@ -50,7 +53,7 @@ Provides configuration for enabling Windows Identity Foundation (WIF) options in
 ## Example  
  The following example shows how to add a `<system.identityModel>` section to a configuration file. You must first add the configuration section and namespace declaration under the `<configSections>` element. Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.  
   
-```  
+```xml  
 <configuration>  
   <configSections>  
     <!--WIF 4.5 sections -->  

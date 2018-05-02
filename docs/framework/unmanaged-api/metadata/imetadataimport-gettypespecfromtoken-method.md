@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetTypeSpecFromToken Method | Microsoft Docs"
+title: "IMetaDataImport::GetTypeSpecFromToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetTypeSpecFromToken"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetTypeSpecFromToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTypeSpecFromToken method [.NET Framework metadata]"
   - "IMetaDataImport::GetTypeSpecFromToken method [.NET Framework metadata]"
 ms.assetid: ee518bda-3296-482e-a7b7-e9d51dd1a181
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetTypeSpecFromToken Method
 Gets the binary metadata signature of the type specification represented by the specified token.  
@@ -63,5 +66,5 @@ HRESULT GetTypeSpecFromToken (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

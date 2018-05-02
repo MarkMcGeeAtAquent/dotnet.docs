@@ -1,11 +1,14 @@
-<Type Name="SemaphoreFullException" FullName="System.Threading.SemaphoreFullException">
+﻿<Type Name="SemaphoreFullException" FullName="System.Threading.SemaphoreFullException">
   <TypeSignature Language="C#" Value="public class SemaphoreFullException : SystemException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SemaphoreFullException extends System.SystemException" />
   <TypeSignature Language="DocId" Value="T:System.Threading.SemaphoreFullException" />
+  <TypeSignature Language="VB.NET" Value="Public Class SemaphoreFullException&#xA;Inherits SystemException" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SemaphoreFullException : SystemException" />
   <AssemblyInfo>
     <AssemblyName>System.Threading</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -35,10 +38,10 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The count on a semaphore is decremented each time a thread enters the semaphore, and incremented when a thread releases the semaphore. When the count is zero, subsequent requests block until other threads release the semaphore. When all threads have released the semaphore, the count is at the maximum value specified when the semaphore was created. If a programming error causes a thread to call the <xref:System.Threading.Semaphore.Release%2A?displayProperty=fullName> method at this point, a <xref:System.Threading.SemaphoreFullException> is thrown.  
+ The count on a semaphore is decremented each time a thread enters the semaphore, and incremented when a thread releases the semaphore. When the count is zero, subsequent requests block until other threads release the semaphore. When all threads have released the semaphore, the count is at the maximum value specified when the semaphore was created. If a programming error causes a thread to call the <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> method at this point, a <xref:System.Threading.SemaphoreFullException> is thrown.  
   
 > [!NOTE]
->  The <xref:System.Threading.Semaphore> class does not enforce thread identity on calls to the <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=fullName> and <xref:System.Threading.Semaphore.Release%2A?displayProperty=fullName> methods. It is not necessary for the same thread that called <xref:System.Threading.WaitHandle.WaitOne%2A> to call <xref:System.Threading.Semaphore.Release%2A>.  
+>  The <xref:System.Threading.Semaphore> class does not enforce thread identity on calls to the <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType> and <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> methods. It is not necessary for the same thread that called <xref:System.Threading.WaitHandle.WaitOne%2A> to call <xref:System.Threading.Semaphore.Release%2A>.  
   
  <xref:System.Threading.SemaphoreFullException> does not necessarily indicate a problem with the code where the exception occurred. Consider the following scenario: Thread A and thread B enter a semaphore that has a maximum count of two. A programming error in thread B causes it to call <xref:System.Threading.Semaphore.Release%2A> twice, so that the count on the semaphore is full. As a result, when thread A eventually calls <xref:System.Threading.Semaphore.Release%2A>, a <xref:System.Threading.SemaphoreFullException> is thrown.  
   
@@ -55,17 +58,32 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Threading.Semaphore" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Threading.SemaphoreFullException" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SemaphoreFullException ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.SemaphoreFullException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SemaphoreFullException();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -94,17 +112,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.Semaphore" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SemaphoreFullException (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.SemaphoreFullException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SemaphoreFullException(System::String ^ message);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -136,12 +158,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.Semaphore" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected SemaphoreFullException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.SemaphoreFullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SemaphoreFullException(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -151,6 +176,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -164,21 +193,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](~/docs/framework/serialization/xml-and-soap-serialization.md).  
+ This constructor is called during deserialization to reconstitute the exception object transmitted over a stream. For more information, see [XML and SOAP Serialization](~/docs/standard/serialization/xml-and-soap-serialization.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.Semaphore" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SemaphoreFullException (string message, Exception innerException);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.SemaphoreFullException.#ctor(System.String,System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String, innerException As Exception)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SemaphoreFullException(System::String ^ message, Exception ^ innerException);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -205,6 +238,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.Semaphore" />
       </Docs>
     </Member>
   </Members>

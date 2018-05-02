@@ -1,8 +1,8 @@
 ---
-title: "&lt;wsFederationHttpBinding&gt; | Microsoft Docs"
+title: "&lt;wsFederationHttpBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "wsFederationBinding element"
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;wsFederationHttpBinding&gt;
 Defines a binding that supports WS-Federation.  
@@ -26,8 +28,7 @@ wsFederationBinding element
   
 ## Syntax  
   
-```  
-  
+```xml  
 <wsFederationHttpBinding>  
     <binding   
         bypassProxyOnLocal="Boolean"  
@@ -135,7 +136,7 @@ wsFederationBinding element
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Defines the security settings for the message. This element is of type <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|  
 |[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Defines the constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
-|[reliableSession](http://msdn.microsoft.com/en-us/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|Specifies if reliable sessions are established between channel endpoints.|  
+|[reliableSession](http://msdn.microsoft.com/library/9c93818a-7dfa-43d5-b3a1-1aafccf3a00b)|Specifies if reliable sessions are established between channel endpoints.|  
   
 ### Parent Elements  
   
@@ -150,7 +151,7 @@ wsFederationBinding element
   
  `wsFederationHttpBinding` is the same as that contained in `wsHttpBinding`  
   
- when [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) is set to the default value of <xref:System.ServiceModel.WSFederationHttpSecurityMode>.  
+ when [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) is set to the default value of <xref:System.ServiceModel.WSFederationHttpSecurityMode.Message>.  
   
  The `wsFederationHttpBinding` controls the details of the message security settings in [\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md). Note that the [\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md) element provides get access only as the security used by the binding cannot be changed once the binding is created.  
   
@@ -164,7 +165,7 @@ wsFederationBinding element
   
 ## Example  
   
-```  
+```xml  
 <configuration>  
 <system.ServiceModel>  
 <bindings>  
@@ -196,10 +197,10 @@ wsFederationBinding element
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.WSFederationHttpBinding>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>   
- [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.WSFederationHttpBinding>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement>  
+ [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

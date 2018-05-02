@@ -1,8 +1,8 @@
 ---
-title: "452 - MessageLogWarning | Microsoft Docs"
+title: "452 - MessageLogWarning"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 22a9f6ea-5b5f-4110-8a4e-9be9c983fbbb
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 452 - MessageLogWarning
 ## Properties  

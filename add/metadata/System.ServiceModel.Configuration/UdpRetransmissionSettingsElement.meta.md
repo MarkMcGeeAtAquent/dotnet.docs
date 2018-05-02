@@ -1,34 +1,48 @@
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.DelayUpperBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.MaxDelayPerRetransmission
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.MaxMulticastRetransmitCount
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.MaxUnicastRetransmitCount
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.UdpRetransmissionSettingsElement.DelayLowerBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

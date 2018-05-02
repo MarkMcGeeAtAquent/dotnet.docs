@@ -1,17 +1,19 @@
 ---
-title: "LINQ to Objects Activity | Microsoft Docs"
+title: "LINQ to Objects Activity"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 403c82e8-7f2b-42f6-93cd-95c35bc76ead
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # LINQ to Objects Activity
 This sample demonstrates how to create an activity to use LINQ to Objects to query elements in a collection.  
@@ -38,7 +40,6 @@ Activity wf = new FindInCollection<Employee>
     Collections = new LambdaValue<IEnumerable<Employee>>(c => employees),                
     Predicate = new LambdaValue<Func<Employee, bool>>(c => new Func<Employee, bool>(e => e.Role.Equals("Manager") && e.Location.Equals("Redmond")))  
 };  
-  
 ```  
   
  The following code shows how to create a workflow program that uses the custom FindInCollection activity, <xref:System.Activities.Statements.AddToCollection%601>, and <xref:System.Activities.Statements.ForEach%601> activities to populate a collection with employees, find all the employees that have developer roles and are located in Redmond, and then iterate through the resulting list.  
@@ -119,5 +120,5 @@ Activity sampleWorkflow = new Sequence
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Linq\LinqToObjects`  
   
 ## See Also  
- [Lambda Expressions (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=150381)   
+ [Lambda Expressions (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=150381)  
  [LINQ to Objects](http://go.microsoft.com/fwlink/?LinkID=150380)

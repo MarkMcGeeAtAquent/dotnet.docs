@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

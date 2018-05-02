@@ -1,5 +1,5 @@
 ---
-title: "Mitigation: WPF Window Rendering | Microsoft Docs"
+title: "Mitigation: WPF Window Rendering"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Mitigation: WPF Window Rendering
 In the [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] running on Windows 8 and above, the entire window is rendered without clipping when it extends outside of single display in a multi-monitor scenario.  
@@ -28,12 +30,10 @@ In the [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] running on Windows 8
   
 -   By adding the `<EnableMultiMonitorDisplayClipping>` element to the `<appSettings>` section of your application configuration file, you can disable or enable this behavior on apps running on Windows 8 or later. For example, the following configuration section disables rendering without clipping:  
   
-    ```  
-  
+    ```xml  
     <appSettings>  
         <add key="EnableMultiMonitorDisplayClipping" value="true"/>  
       </appSettings>  
-  
     ```  
   
      The `<EnableMultiMonitorDisplayClipping>` configuration setting can have either of two values:  

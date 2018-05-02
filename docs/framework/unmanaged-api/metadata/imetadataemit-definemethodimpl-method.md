@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DefineMethodImpl Method | Microsoft Docs"
+title: "IMetaDataEmit::DefineMethodImpl Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DefineMethodImpl"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DefineMethodImpl"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DefineMethodImpl method [.NET Framework metadata]"
   - "IMetaDataEmit::DefineMethodImpl method [.NET Framework metadata]"
 ms.assetid: 9dcc8b3d-33ee-4c7c-8d6f-322c57b94a0f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DefineMethodImpl Method
 Creates a definition for implementation of a method inherited from an interface, and returns a token to that method-implementation definition.  
@@ -60,5 +63,5 @@ HRESULT DefineMethodImpl (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

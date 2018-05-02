@@ -1,7 +1,9 @@
-<Type Name="SoapExtension" FullName="System.Web.Services.Protocols.SoapExtension">
+﻿<Type Name="SoapExtension" FullName="System.Web.Services.Protocols.SoapExtension">
   <TypeSignature Language="C#" Value="public abstract class SoapExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SoapExtension extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapExtension" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class SoapExtension" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SoapExtension abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Web.Services</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -32,12 +34,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.Services.Protocols.SoapMessageStage" />
+    <altmember cref="T:System.Web.Services.Protocols.SoapExtensionAttribute" />
+    <altmember cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected SoapExtension ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SoapExtension();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -54,6 +61,7 @@
       <MemberSignature Language="C#" Value="public virtual System.IO.Stream ChainStream (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream ChainStream(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.ChainStream(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IO::Stream ^ ChainStream(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -76,7 +84,7 @@
 ## Remarks  
  <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> ensures that SOAP extensions with the highest priority can modify the actual data closest to the SOAP message sent or returned over the wire.  
   
- SOAP extensions should save references of the <xref:System.IO.Stream> passed into <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> and the <xref:System.IO.Stream> returned from <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>. If the SOAP extension is configured to run with a XML Web service method, the <xref:System.IO.Stream> passed into <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> contains the serialized SOAP request at the <xref:System.Web.Services.Protocols.SoapMessageStage><xref:System.Web.Services.Protocols.SoapMessageStage>. Similarily, the <xref:System.IO.Stream> reference returned from <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> is written into when the serialization occurs and thus contains the serialized SOAP response in the <xref:System.Web.Services.Protocols.SoapMessageStage><xref:System.Web.Services.Protocols.SoapMessageStage>.  
+ SOAP extensions should save references of the <xref:System.IO.Stream> passed into <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> and the <xref:System.IO.Stream> returned from <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A>. If the SOAP extension is configured to run with a XML Web service method, the <xref:System.IO.Stream> passed into <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> contains the serialized SOAP request at the <xref:System.Web.Services.Protocols.SoapMessageStage.BeforeDeserialize><xref:System.Web.Services.Protocols.SoapMessageStage>. Similarily, the <xref:System.IO.Stream> reference returned from <xref:System.Web.Services.Protocols.SoapExtension.ChainStream%2A> is written into when the serialization occurs and thus contains the serialized SOAP response in the <xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>.  
   
    
   
@@ -91,10 +99,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetInitializer">
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>When overridden in a derived class, allows a SOAP extension to initialize data specific to an XML Web service method at a one time performance cost.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetInitializer">
       <MemberSignature Language="C#" Value="public abstract object GetInitializer (Type serviceType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInitializer(class System.Type serviceType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetInitializer (serviceType As Type) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Object ^ GetInitializer(Type ^ serviceType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -123,7 +143,7 @@
   
  If you add a reference to one of the configuration files, the SOAP extension runs for all XML Web services within the scope of that configuration file. When specifying, a SOAP extension by referencing a configuration file, ASP.NET invokes the <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A> overload that passes in a <xref:System.Type>. When specifying an extension by applying a custom attribute, ASP.NET invokes the <xref:System.Web.Services.Protocols.SoapExtension.GetInitializer%2A> that passes in a <xref:System.Web.Services.Protocols.LogicalMethodInfo> and a <xref:System.Web.Services.Protocols.SoapExtensionAttribute>.  
   
- For details on adding SOAP extensions to a configuration file, see [&#91;\<topic://cpconconfigurationoptionsforaspnetwebservices>&#93;](http://msdn.microsoft.com/en-us/1f0d71bc-8faa-4730-b500-2a6c7b5d4f6b).  
+ For details on adding SOAP extensions to a configuration file, see [&#91;\<topic://cpconconfigurationoptionsforaspnetwebservices>&#93;](http://msdn.microsoft.com/library/1f0d71bc-8faa-4730-b500-2a6c7b5d4f6b).  
   
    
   
@@ -142,6 +162,8 @@
       <MemberSignature Language="C#" Value="public abstract object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo, System.Web.Services.Protocols.SoapExtensionAttribute attribute);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo, class System.Web.Services.Protocols.SoapExtensionAttribute attribute) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo,System.Web.Services.Protocols.SoapExtensionAttribute)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetInitializer (methodInfo As LogicalMethodInfo, attribute As SoapExtensionAttribute) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Object ^ GetInitializer(System::Web::Services::Protocols::LogicalMethodInfo ^ methodInfo, System::Web::Services::Protocols::SoapExtensionAttribute ^ attribute);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -185,12 +207,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.Services.Protocols.SoapExtension.Initialize(System.Object)" />
+        <altmember cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />
+        <altmember cref="T:System.Web.Services.Protocols.SoapExtensionAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Initialize">
       <MemberSignature Language="C#" Value="public abstract void Initialize (object initializer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(object initializer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.Initialize(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub Initialize (initializer As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void Initialize(System::Object ^ initializer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -221,7 +248,7 @@
 -  
   
 > [!NOTE]
->  You can also add a SOAP extension without deriving from <xref:System.Web.Services.Protocols.SoapExtensionAttribute> by using the [\<soapExtensionTypes> Element](http://msdn.microsoft.com/en-us/7a373a98-6d82-4f8d-a6fc-2996da3fd54c) in a configuration file. For details, see [\<soapExtensionTypes> Element](http://msdn.microsoft.com/en-us/7a373a98-6d82-4f8d-a6fc-2996da3fd54c) and [SOAP Message Modification Using SOAP Extensions](http://msdn.microsoft.com/en-us/97d81ace-95e7-4acc-ae39-9692a0021e95).  
+>  You can also add a SOAP extension without deriving from <xref:System.Web.Services.Protocols.SoapExtensionAttribute> by using the [\<soapExtensionTypes> Element](http://msdn.microsoft.com/library/7a373a98-6d82-4f8d-a6fc-2996da3fd54c) in a configuration file. For details, see [\<soapExtensionTypes> Element](http://msdn.microsoft.com/library/7a373a98-6d82-4f8d-a6fc-2996da3fd54c) and [SOAP Message Modification Using SOAP Extensions](http://msdn.microsoft.com/library/97d81ace-95e7-4acc-ae39-9692a0021e95).  
   
 -  
   
@@ -242,6 +269,8 @@
       <MemberSignature Language="C#" Value="public abstract void ProcessMessage (System.Web.Services.Protocols.SoapMessage message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessMessage(class System.Web.Services.Protocols.SoapMessage message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapExtension.ProcessMessage(System.Web.Services.Protocols.SoapMessage)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub ProcessMessage (message As SoapMessage)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void ProcessMessage(System::Web::Services::Protocols::SoapMessage ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -266,7 +295,7 @@
    
   
 ## Examples  
- The following example is the <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A> portion of a SOAP extension that logs SOAP requests and SOAP responses. By logging the <xref:System.Web.Services.Protocols.SoapMessage> at the <xref:System.Web.Services.Protocols.SoapMessageStage><xref:System.Web.Services.Protocols.SoapMessageStage>, the SOAP extension accesses the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> to be sent over the wire. If the SOAP extension is applied to an XML Web service method created using ASP.NET, then the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> contains the SOAP response from the XML Web service method. If the SOAP extension is applied to an XML Web service client, the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> contains the SOAP request to an XML Web service method.  
+ The following example is the <xref:System.Web.Services.Protocols.SoapExtension.ProcessMessage%2A> portion of a SOAP extension that logs SOAP requests and SOAP responses. By logging the <xref:System.Web.Services.Protocols.SoapMessage> at the <xref:System.Web.Services.Protocols.SoapMessageStage.AfterSerialize><xref:System.Web.Services.Protocols.SoapMessageStage>, the SOAP extension accesses the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> to be sent over the wire. If the SOAP extension is applied to an XML Web service method created using ASP.NET, then the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> contains the SOAP response from the XML Web service method. If the SOAP extension is applied to an XML Web service client, the <xref:System.Web.Services.Protocols.SoapMessage.Stream%2A> contains the SOAP request to an XML Web service method.  
   
  Classic SoapExtension.ProcessMessage Example#1  
   

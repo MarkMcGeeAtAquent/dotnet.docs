@@ -1,7 +1,9 @@
-<Type Name="ServiceHost" FullName="System.ServiceModel.ServiceHost">
+﻿<Type Name="ServiceHost" FullName="System.ServiceModel.ServiceHost">
   <TypeSignature Language="C#" Value="public class ServiceHost : System.ServiceModel.ServiceHostBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceHost extends System.ServiceModel.ServiceHostBase" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceHost" />
+  <TypeSignature Language="VB.NET" Value="Public Class ServiceHost&#xA;Inherits ServiceHostBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ServiceHost : System::ServiceModel::ServiceHostBase" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -34,10 +36,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.ServiceHost" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected ServiceHost ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ServiceHost();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -57,9 +70,11 @@
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ServiceHost (object singletonInstance, Uri[] baseAddresses);" />
+      <MemberSignature Language="C#" Value="public ServiceHost (object singletonInstance, params Uri[] baseAddresses);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object singletonInstance, class System.Uri[] baseAddresses) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor(System.Object,System.Uri[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (singletonInstance As Object, ParamArray baseAddresses As Uri())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ServiceHost(System::Object ^ singletonInstance, ... cli::array &lt;Uri ^&gt; ^ baseAddresses);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -83,9 +98,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this constructor as an alternative to implementing a custom <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=fullName> when you want to provide a specific object instance for use by a singleton service. You may want to use this overload when your service implementation type is difficult to construct (for example, if it does not implement a default public constructor that has no parameters).  
+ Use this constructor as an alternative to implementing a custom <xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> when you want to provide a specific object instance for use by a singleton service. You may want to use this overload when your service implementation type is difficult to construct (for example, if it does not implement a default public constructor that has no parameters).  
   
- Note that when an object is provided to this overload, some features related to the [!INCLUDE[indigo1](~/includes/indigo1-md.md)] instancing behavior work differently. For example, calling <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=fullName> have no effect when a well-known object instance is provided using this constructor overload. Similarly, any other instance release mechanism is ignored. The <xref:System.ServiceModel.ServiceHost> always behaves as if the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=fullName> property is set to <xref:System.ServiceModel.ReleaseInstanceMode?displayProperty=fullName> for all operations.  
+ Note that when an object is provided to this overload, some features related to the [!INCLUDE[indigo1](~/includes/indigo1-md.md)] instancing behavior work differently. For example, calling <xref:System.ServiceModel.InstanceContext.ReleaseServiceInstance%2A?displayProperty=nameWithType> have no effect when a well-known object instance is provided using this constructor overload. Similarly, any other instance release mechanism is ignored. The <xref:System.ServiceModel.ServiceHost> always behaves as if the <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A?displayProperty=nameWithType> property is set to <xref:System.ServiceModel.ReleaseInstanceMode.None?displayProperty=nameWithType> for all operations.  
   
    
   
@@ -100,9 +115,11 @@
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public ServiceHost (Type serviceType, Uri[] baseAddresses);" />
+      <MemberSignature Language="C#" Value="public ServiceHost (Type serviceType, params Uri[] baseAddresses);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.#ctor(System.Type,System.Uri[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (serviceType As Type, ParamArray baseAddresses As Uri())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ServiceHost(Type ^ serviceType, ... cli::array &lt;Uri ^&gt; ^ baseAddresses);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -142,10 +159,20 @@
           <paramref name="serviceType" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="AddServiceEndpoint">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds a service endpoint to the hosted service.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="AddServiceEndpoint">
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpoint ^ AddServiceEndpoint(Type ^ implementedContract, System::ServiceModel::Channels::Binding ^ binding, System::String ^ address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -182,6 +209,7 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpoint ^ AddServiceEndpoint(Type ^ implementedContract, System::ServiceModel::Channels::Binding ^ binding, Uri ^ address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -218,6 +246,7 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, string address, Uri listenUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, string address, class System.Uri listenUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.String,System.Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpoint ^ AddServiceEndpoint(Type ^ implementedContract, System::ServiceModel::Channels::Binding ^ binding, System::String ^ address, Uri ^ listenUri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -261,6 +290,7 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint (Type implementedContract, System.ServiceModel.Channels.Binding binding, Uri address, Uri listenUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint AddServiceEndpoint(class System.Type implementedContract, class System.ServiceModel.Channels.Binding binding, class System.Uri address, class System.Uri listenUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.AddServiceEndpoint(System.Type,System.ServiceModel.Channels.Binding,System.Uri,System.Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpoint ^ AddServiceEndpoint(Type ^ implementedContract, System::ServiceModel::Channels::Binding ^ binding, Uri ^ address, Uri ^ listenUri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -305,6 +335,8 @@
       <MemberSignature Language="C#" Value="protected override void ApplyConfiguration ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyConfiguration() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.ApplyConfiguration" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub ApplyConfiguration ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void ApplyConfiguration();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -321,8 +353,10 @@
     </Member>
     <Member MemberName="CreateDescription">
       <MemberSignature Language="C#" Value="protected override System.ServiceModel.Description.ServiceDescription CreateDescription (out System.Collections.Generic.IDictionary&lt;string,System.ServiceModel.Description.ContractDescription&gt; implementedContracts);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Description.ServiceDescription CreateDescription(class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt; implementedContracts) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.Description.ServiceDescription CreateDescription([out] class System.Collections.Generic.IDictionary`2&lt;string, class System.ServiceModel.Description.ContractDescription&gt;&amp; implementedContracts) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.CreateDescription(System.Collections.Generic.IDictionary{System.String,System.ServiceModel.Description.ContractDescription}@)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateDescription (ByRef implementedContracts As IDictionary(Of String, ContractDescription)) As ServiceDescription" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::ServiceModel::Description::ServiceDescription ^ CreateDescription([Runtime::InteropServices::Out] System::Collections::Generic::IDictionary&lt;System::String ^, System::ServiceModel::Description::ContractDescription ^&gt; ^ % implementedContracts);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -349,10 +383,29 @@
         <exception cref="T:System.InvalidOperationException">The type of service hosted is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="InitializeDescription">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a description of the service hosted based on its type or instance.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method removes the requirement for passing base addresses as part of <xref:System.ServiceModel.ServiceHost.%23ctor%2A>. Classes that inherit from <xref:System.ServiceModel.ServiceHost> can call <xref:System.ServiceModel.ServiceHost.%23ctor%2A> and then can call one of the <xref:System.ServiceModel.ServiceHost.InitializeDescription%2A> when a base address is available. This is how the Service Model Metadata Utility Tool (Svcutil.exe) is implemented.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InitializeDescription">
       <MemberSignature Language="C#" Value="protected void InitializeDescription (object singletonInstance, System.ServiceModel.UriSchemeKeyedCollection baseAddresses);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeDescription(object singletonInstance, class System.ServiceModel.UriSchemeKeyedCollection baseAddresses) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.InitializeDescription(System.Object,System.ServiceModel.UriSchemeKeyedCollection)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub InitializeDescription (singletonInstance As Object, baseAddresses As UriSchemeKeyedCollection)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void InitializeDescription(System::Object ^ singletonInstance, System::ServiceModel::UriSchemeKeyedCollection ^ baseAddresses);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -378,6 +431,8 @@
       <MemberSignature Language="C#" Value="protected void InitializeDescription (Type serviceType, System.ServiceModel.UriSchemeKeyedCollection baseAddresses);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InitializeDescription(class System.Type serviceType, class System.ServiceModel.UriSchemeKeyedCollection baseAddresses) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.InitializeDescription(System.Type,System.ServiceModel.UriSchemeKeyedCollection)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub InitializeDescription (serviceType As Type, baseAddresses As UriSchemeKeyedCollection)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void InitializeDescription(Type ^ serviceType, System::ServiceModel::UriSchemeKeyedCollection ^ baseAddresses);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -403,6 +458,8 @@
       <MemberSignature Language="C#" Value="protected override void OnClosed ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceHost.OnClosed" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnClosed ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnClosed();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -447,6 +504,8 @@ protected override void OnClosed()
       <MemberSignature Language="C#" Value="public object SingletonInstance { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object SingletonInstance" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceHost.SingletonInstance" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SingletonInstance As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ SingletonInstance { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -468,22 +527,5 @@ protected override void OnClosed()
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="InitializeDescription">
-      <AssemblyInfo>
-        <AssemblyName>System.ServiceModel</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a description of the service hosted based on its type or instance.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- This method removes the requirement for passing base addresses as part of <xref:System.ServiceModel.ServiceHost.%23ctor%2A>. Classes that inherit from <xref:System.ServiceModel.ServiceHost> can call <xref:System.ServiceModel.ServiceHost.%23ctor%2A> and then can call one of the <xref:System.ServiceModel.ServiceHost.InitializeDescription%2A> when a base address is available. This is how the Service Model Metadata Utility Tool (Svcutil.exe) is implemented.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

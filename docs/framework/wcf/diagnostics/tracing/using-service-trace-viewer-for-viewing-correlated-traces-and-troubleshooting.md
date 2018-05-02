@@ -1,8 +1,8 @@
 ---
-title: "Using Service Trace Viewer for Viewing Correlated Traces and Troubleshooting | Microsoft Docs"
+title: "Using Service Trace Viewer for Viewing Correlated Traces and Troubleshooting"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using Service Trace Viewer for Viewing Correlated Traces and Troubleshooting
 This topic describes the format of trace data, how to view it, and approaches that use the Service Trace Viewer to troubleshoot your application.  
@@ -38,7 +40,7 @@ This topic describes the format of trace data, how to view it, and approaches th
   
 -   Thread id.  
   
--   A unique trace identifier, which is a URL that points to a destination in the online MSDN library, from which you can obtain more information related to the trace.  
+-   A unique trace identifier, which is a URL that points to a destination in Microsoft Docs, from which you can obtain more information related to the trace.  
   
  All of these can be seen in the upper right panel in the Service Trace Viewer, or in the **Basic Information** section in the formatted view of the lower-right panel when selecting a trace.  
   
@@ -65,7 +67,7 @@ This topic describes the format of trace data, how to view it, and approaches th
   
  If you examine the "Sent a message over a channel" trace, you may see the following content.  
   
-```  
+```xml  
 <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">  
    <System xmlns="http://schemas.microsoft.com/2004/06/windows/eventlog/system">  
       <EventID>262163</EventID>  
@@ -115,7 +117,7 @@ This topic describes the format of trace data, how to view it, and approaches th
   
  An activity is a logical unit of processing that groups all traces related to that processing unit. For example, you can define one activity for each request. Transfers create a causal relationship between activities within endpoints. Propagating the activity ID enables you to relate activities across endpoints. This can be done by setting `propagateActivity`=`true` in configuration at every endpoint. Activities, transfers, and propagation allow you to perform error correlation. In this way, you can find the root cause of an error more quickly.  
   
- On the client, one [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] activity is created for each object model call (for example, Open ChannelFactory, Add, Divide, and so on.) Each of the operation calls is processed in a “Process Action” activity.  
+ On the client, one [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] activity is created for each object model call (for example, Open ChannelFactory, Add, Divide, and so on.) Each of the operation calls is processed in a "Process Action" activity.  
   
  In the following screenshot, extracted from the [Tracing and Message Logging](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) sample the left panel displays the list of activities created in the client process, sorted by creation time. The following is a chronological list of activities:  
   
@@ -159,13 +161,13 @@ List of traces for the Process Action activity: we send the request and receive 
   
 2.  We create a Listen At activity for each listener in the ServiceHost (with transfers in and out of Open ServiceHost).  
   
-3.  When the listener detects a communication request initiated by the client, it transfers to a “Receive Bytes” activity, in which all bytes sent from the client are processed. In this activity, we can see any connection errors that have happened during the client-service interaction.  
+3.  When the listener detects a communication request initiated by the client, it transfers to a "Receive Bytes" activity, in which all bytes sent from the client are processed. In this activity, we can see any connection errors that have happened during the client-service interaction.  
   
-4.  For each set of bytes that is received that corresponds to a message, we process these bytes in a “Process Message” activity, where we create the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Message object. In this activity, we see errors related to a bad envelope or a malformed message.  
+4.  For each set of bytes that is received that corresponds to a message, we process these bytes in a "Process Message" activity, where we create the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Message object. In this activity, we see errors related to a bad envelope or a malformed message.  
   
 5.  Once the message is formed, we transfer to a Process Action activity. If `propagateActivity` is set to `true` on both the client and service, this activity has the same id as the one defined in the client, and described previously. From this stage we start to benefit from direct correlation across endpoints, because all traces emitted in [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] that are related to the request are in that same activity, including the response message processing.  
   
-6.  For out-of-process action, we create an “Execute user code” activity to isolate traces emitted in user code from the ones emitted in [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. In the preceding example, the “Service sends Add response” trace is emitted in the “Execute User code” activity not in the activity propagated by the client, if applicable.  
+6.  For out-of-process action, we create an "Execute user code" activity to isolate traces emitted in user code from the ones emitted in [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)]. In the preceding example, the "Service sends Add response" trace is emitted in the "Execute User code" activity not in the activity propagated by the client, if applicable.  
   
  In the illustration that follows, the first activity on the left is the root activity (0000), which is the default activity. The next three activities are to open the ServiceHost. The activity in column 5 is the listener, and the remaining activities (6 to 8) describe the WCF processing of a message, from bytes processing to user code activation.  
   
@@ -192,7 +194,7 @@ Selecting red or yellow activity to locate the root of a problem
   
  On the upper right panel, you can examine traces for the activity you selected on the left. You can then examine red or yellow traces in that panel and see how they are correlated. In the preceding graph, we see warning traces both for the client and service in the same Process Action activity.  
   
- If these traces do not provide you with the root cause of the error, you can utilize the graph by double-clicking the selected activity on the left panel (here Process action). The graph with related activities is then displayed. You can then expand related activities (by clicking the “+” signs) to find the first emitted trace in red or yellow in a related activity. Keep expanding the activities that happened just before the red or yellow trace of interest, following transfers to related activities or message flows across endpoints, until you track the root cause of the problem.  
+ If these traces do not provide you with the root cause of the error, you can utilize the graph by double-clicking the selected activity on the left panel (here Process action). The graph with related activities is then displayed. You can then expand related activities (by clicking the "+" signs) to find the first emitted trace in red or yellow in a related activity. Keep expanding the activities that happened just before the red or yellow trace of interest, following transfers to related activities or message flows across endpoints, until you track the root cause of the problem.  
   
  ![Using the Trace Viewer](../../../../../docs/framework/wcf/diagnostics/tracing/media/wcfc-e2etrace9s.gif "wcfc_e2etrace9s")  
 Expanding activities to track the root cause of a problem  
@@ -205,6 +207,6 @@ Expanding activities to track the root cause of a problem
 To start troubleshooting, you can also pick a red or yellow message trace and double click it to track the root cause  
   
 ## See Also  
- [End-To-End Tracing Scenarios](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)   
- [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)   
+ [End-To-End Tracing Scenarios](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  
+ [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)  
  [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)

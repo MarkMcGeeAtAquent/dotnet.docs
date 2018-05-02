@@ -1,5 +1,5 @@
 ---
-title: "Outputs from an XslTransform | Microsoft Docs"
+title: "Outputs from an XslTransform"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,16 +8,14 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
 caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Outputs from an XslTransform
 Since style sheets can determine the output format using an `<xsl:output>` statement with the `method` attribute, the following table describes what the output format is when the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method is used to write the output, and the output format is declared as a <xref:System.IO.Stream> or <xref:System.IO.TextWriter>.  

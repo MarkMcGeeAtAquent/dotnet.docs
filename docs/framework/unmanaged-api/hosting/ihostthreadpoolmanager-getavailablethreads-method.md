@@ -1,31 +1,34 @@
 ---
-title: "IHostThreadPoolManager::GetAvailableThreads Method | Microsoft Docs"
+title: "IHostThreadPoolManager::GetAvailableThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostThreadPoolManager.GetAvailableThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostThreadPoolManager::GetAvailableThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAvailableThreads method, IHostThreadPoolManager interface [.NET Framework hosting]"
   - "IHostThreadPoolManager::GetAvailableThreads method [.NET Framework hosting]"
 ms.assetid: 61d26dfd-7f24-4e7d-a63e-b30a463f08e1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostThreadPoolManager::GetAvailableThreads Method
 Gets the number of threads in the thread pool that are not currently processing work items.  
@@ -67,6 +70,6 @@ HRESULT GetAvailableThreads (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Threading.ThreadPool.GetAvailableThreads%2A>   
- <xref:System.Threading.ThreadPool>   
+ <xref:System.Threading.ThreadPool.GetAvailableThreads%2A>  
+ <xref:System.Threading.ThreadPool>  
  [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

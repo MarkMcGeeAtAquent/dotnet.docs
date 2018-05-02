@@ -1,47 +1,63 @@
 ---
 uid: System.Windows.Forms.OpacityConverter
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.CanConvertFrom
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.ConvertFrom
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.ConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.OpacityConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

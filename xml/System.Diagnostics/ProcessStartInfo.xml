@@ -1,10 +1,13 @@
-<Type Name="ProcessStartInfo" FullName="System.Diagnostics.ProcessStartInfo">
+﻿<Type Name="ProcessStartInfo" FullName="System.Diagnostics.ProcessStartInfo">
   <TypeSignature Language="C#" Value="public sealed class ProcessStartInfo" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ProcessStartInfo extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessStartInfo" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ProcessStartInfo" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ProcessStartInfo sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.Process</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -38,7 +41,7 @@
   
  Standard input is usually the keyboard, and standard output and standard error are usually the monitor screen. However, you can use the <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardInput%2A>, <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput%2A>, and <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardError%2A> properties to cause the process to get input from or return output to a file or other device. If you use the <xref:System.Diagnostics.Process.StandardInput%2A>, <xref:System.Diagnostics.Process.StandardOutput%2A>, or <xref:System.Diagnostics.Process.StandardError%2A> properties on the <xref:System.Diagnostics.Process> component, you must first set the corresponding value on the <xref:System.Diagnostics.ProcessStartInfo> property. Otherwise, the system throws an exception when you read or write to the stream.  
   
- Set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> to specify whether to start the process by using the operating system shell.  
+ Set the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> property to specify whether to start the process by using the operating system shell. If <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> is set to `false`, the new process inherits the standard input, standard output, and standard error streams of the calling process, unless the <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardInput%2A>, <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput%2A>, or <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardError%2A> properties, respectively, are set to `true`. 
   
  You can change the value of any <xref:System.Diagnostics.ProcessStartInfo> property up to the time that the process starts. After you start the process, changing these values has no effect.  
   
@@ -56,17 +59,31 @@
   
  ]]></format>
     </remarks>
-    <permission cref="T:System.Security.Permissions.SecurityPermission">for calling members of <see cref="T:System.Diagnostics.ProcessStartInfo" />. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />; [NIB: Named Permission Sets](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3): <see langword="FullTrust" />.</permission>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">for calling members of <see cref="T:System.Diagnostics.ProcessStartInfo" />. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />; [NIB: Named Permission Sets](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3): <see langword="FullTrust" />.</permission>
+    <altmember cref="T:System.Diagnostics.Process" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.ProcessStartInfo" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ProcessStartInfo ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.ProcessStartInfo.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ProcessStartInfo();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -97,10 +114,13 @@
       <MemberSignature Language="C#" Value="public ProcessStartInfo (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.ProcessStartInfo.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ProcessStartInfo(System::String ^ fileName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -134,10 +154,13 @@
       <MemberSignature Language="C#" Value="public ProcessStartInfo (string fileName, string arguments);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string arguments) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.ProcessStartInfo.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, arguments As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ProcessStartInfo(System::String ^ fileName, System::String ^ arguments);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -173,10 +196,13 @@
       <MemberSignature Language="C#" Value="public string Arguments { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Arguments" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Arguments" />
+      <MemberSignature Language="VB.NET" Value="Public Property Arguments As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Arguments { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -234,10 +260,13 @@
       <MemberSignature Language="C#" Value="public bool CreateNoWindow { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CreateNoWindow" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.CreateNoWindow" />
+      <MemberSignature Language="VB.NET" Value="Public Property CreateNoWindow As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CreateNoWindow { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -287,10 +316,13 @@
       <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Domain" />
+      <MemberSignature Language="VB.NET" Value="Public Property Domain As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Domain { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -310,19 +342,22 @@
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets a value that identifies the domain to use when starting the process.</summary>
-        <value>The Active Directory domain to use when starting the process. The domain property is primarily of interest to users within enterprise environments that use Active Directory.</value>
-        <remarks>To be added.</remarks>
+        <summary>Gets or sets a value that identifies the domain to use when starting the process. If this value is <see langword="null" />, the <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> property must be specified in UPN format. </summary>
+        <value>The Active Directory domain to use when starting the process. If this value is <see langword="null" />, the <see cref="P:System.Diagnostics.ProcessStartInfo.UserName" /> property must be specified in UPN format. </value>
+        <remarks>This property is primarily of interest to users within enterprise environments that use Active Directory.</remarks>
       </Docs>
     </Member>
     <Member MemberName="Environment">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Environment { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Environment" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Environment" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Environment As IDictionary(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ Environment { System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -360,12 +395,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.EnvironmentVariables" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" />
+        <altmember cref="M:System.Diagnostics.Process.Start" />
       </Docs>
     </Member>
     <Member MemberName="EnvironmentVariables">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringDictionary EnvironmentVariables { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringDictionary EnvironmentVariables" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.EnvironmentVariables" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EnvironmentVariables As StringDictionary" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::StringDictionary ^ EnvironmentVariables { System::Collections::Specialized::StringDictionary ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -375,6 +415,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -413,6 +457,8 @@
       <MemberSignature Language="C#" Value="public bool ErrorDialog { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ErrorDialog" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.ErrorDialog" />
+      <MemberSignature Language="VB.NET" Value="Public Property ErrorDialog As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ErrorDialog { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -422,6 +468,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -457,6 +507,8 @@
       <MemberSignature Language="C#" Value="public IntPtr ErrorDialogParentHandle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int ErrorDialogParentHandle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.ErrorDialogParentHandle" />
+      <MemberSignature Language="VB.NET" Value="Public Property ErrorDialogParentHandle As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr ErrorDialogParentHandle { IntPtr get(); void set(IntPtr value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -466,6 +518,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -495,10 +551,13 @@
       <MemberSignature Language="C#" Value="public string FileName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.FileName" />
+      <MemberSignature Language="VB.NET" Value="Public Property FileName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FileName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -560,10 +619,13 @@
       <MemberSignature Language="C#" Value="public bool LoadUserProfile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool LoadUserProfile" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.LoadUserProfile" />
+      <MemberSignature Language="VB.NET" Value="Public Property LoadUserProfile As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool LoadUserProfile { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -606,6 +668,8 @@
       <MemberSignature Language="C#" Value="public System.Security.SecureString Password { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.SecureString Password" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Password" />
+      <MemberSignature Language="VB.NET" Value="Public Property Password As SecureString" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::SecureString ^ Password { System::Security::SecureString ^ get(); void set(System::Security::SecureString ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -615,6 +679,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.SecureString</ReturnType>
@@ -638,7 +706,7 @@
  For more information about secure strings and an example of how to obtain a password to set this property, see the <xref:System.Security.SecureString> class.  
   
 > [!NOTE]
->  If you provide a value for the <xref:System.Diagnostics.ProcessStartInfo.Password%2A> property, the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> property must be `false`, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=fullName> method is called.  
+>  If you provide a value for the <xref:System.Diagnostics.ProcessStartInfo.Password%2A> property, the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> property must be `false`, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=nameWithType> method is called.  
   
  ]]></format>
         </remarks>
@@ -648,10 +716,13 @@
       <MemberSignature Language="C#" Value="public string PasswordInClearText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PasswordInClearText" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.PasswordInClearText" />
+      <MemberSignature Language="VB.NET" Value="Public Property PasswordInClearText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PasswordInClearText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -683,10 +754,13 @@
       <MemberSignature Language="C#" Value="public bool RedirectStandardError { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool RedirectStandardError" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
+      <MemberSignature Language="VB.NET" Value="Public Property RedirectStandardError As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool RedirectStandardError { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -782,16 +856,21 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
       </Docs>
     </Member>
     <Member MemberName="RedirectStandardInput">
       <MemberSignature Language="C#" Value="public bool RedirectStandardInput { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool RedirectStandardInput" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" />
+      <MemberSignature Language="VB.NET" Value="Public Property RedirectStandardInput As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool RedirectStandardInput { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -842,16 +921,21 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" />
+        <altmember cref="P:System.Diagnostics.Process.StandardInput" />
       </Docs>
     </Member>
     <Member MemberName="RedirectStandardOutput">
       <MemberSignature Language="C#" Value="public bool RedirectStandardOutput { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool RedirectStandardOutput" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
+      <MemberSignature Language="VB.NET" Value="Public Property RedirectStandardOutput As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool RedirectStandardOutput { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -937,16 +1021,21 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" />
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
       </Docs>
     </Member>
     <Member MemberName="StandardErrorEncoding">
       <MemberSignature Language="C#" Value="public System.Text.Encoding StandardErrorEncoding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding StandardErrorEncoding" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.StandardErrorEncoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property StandardErrorEncoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ StandardErrorEncoding { System::Text::Encoding ^ get(); void set(System::Text::Encoding ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -977,10 +1066,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public System.Text.Encoding StandardOutputEncoding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding StandardOutputEncoding" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.StandardOutputEncoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property StandardOutputEncoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ StandardOutputEncoding { System::Text::Encoding ^ get(); void set(System::Text::Encoding ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1011,10 +1103,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public string UserName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.UserName" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1034,8 +1129,8 @@ p.WaitForExit();
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets or sets the user name to be used when starting the process.</summary>
-        <value>The user name to use when starting the process.</value>
+        <summary>Gets or sets the user name to use when starting the process. If you use the UPN format, <paramref name="user" />@<paramref name="DNS_domain_name" />, the <see cref="P:System.Diagnostics.ProcessStartInfo.Domain" /> property must be <see langword="null" />.</summary>
+        <value>The user name to use when starting the process. If you use the UPN format, <paramref name="user" />@<paramref name="DNS_domain_name" />, the <see cref="P:System.Diagnostics.ProcessStartInfo.Domain" /> property must be <see langword="null" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1044,7 +1139,7 @@ p.WaitForExit();
 > [!IMPORTANT]
 >  The <xref:System.Diagnostics.ProcessStartInfo.WorkingDirectory%2A> property must be set if <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> and <xref:System.Diagnostics.ProcessStartInfo.Password%2A> are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.  
   
- If the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> property is not `null` or an empty string, the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> property must be `false`, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=fullName> method is called.  
+ If the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> property is not `null` or an empty string, the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> property must be `false`, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=nameWithType> method is called.  
   
  ]]></format>
         </remarks>
@@ -1054,10 +1149,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public bool UseShellExecute { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseShellExecute" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseShellExecute As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseShellExecute { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1085,7 +1183,7 @@ p.WaitForExit();
       <Docs>
         <summary>Gets or sets a value indicating whether to use the operating system shell to start the process.</summary>
         <value>
-          <see langword="true" /> if the shell should be used when starting the process; <see langword="false" /> if the process should be created directly from the executable file. The default is <see langword="true" />.</value>
+          <see langword="true" /> if the shell should be used when starting the process; <see langword="false" /> if the process should be created directly from the executable file. The default is <see langword="true" /> on .NET Framework apps and <see langword="false" /> on .NET Core apps.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1093,7 +1191,7 @@ p.WaitForExit();
  Setting this property to `false` enables you to redirect input, output, and error streams.  
   
 > [!NOTE]
->  <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> must be `false` if the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> property is not `null` or an empty string, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=fullName> method is called.  
+>  <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> must be `false` if the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> property is not `null` or an empty string, or an <xref:System.InvalidOperationException> will be thrown when the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=nameWithType> method is called.  
   
  When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the <xref:System.Diagnostics.Process> object. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A> is `false`, you can start only executables by using the <xref:System.Diagnostics.Process> object.  
   
@@ -1113,12 +1211,18 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">An attempt to set the value to <see langword="true" /> on Universal Windows Platform (UWP) apps occurs.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
       </Docs>
     </Member>
     <Member MemberName="Verb">
       <MemberSignature Language="C#" Value="public string Verb { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Verb" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Verb" />
+      <MemberSignature Language="VB.NET" Value="Public Property Verb As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Verb { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1128,6 +1232,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1167,12 +1275,15 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.Verbs" />
       </Docs>
     </Member>
     <Member MemberName="Verbs">
       <MemberSignature Language="C#" Value="public string[] Verbs { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] Verbs" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.Verbs" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Verbs As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ Verbs { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1182,6 +1293,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1215,12 +1330,15 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.Verb" />
       </Docs>
     </Member>
     <Member MemberName="WindowStyle">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessWindowStyle WindowStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.ProcessWindowStyle WindowStyle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.WindowStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property WindowStyle As ProcessWindowStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessWindowStyle WindowStyle { System::Diagnostics::ProcessWindowStyle get(); void set(System::Diagnostics::ProcessWindowStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1230,6 +1348,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1265,10 +1387,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public string WorkingDirectory { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string WorkingDirectory" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessStartInfo.WorkingDirectory" />
+      <MemberSignature Language="VB.NET" Value="Public Property WorkingDirectory As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ WorkingDirectory { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>

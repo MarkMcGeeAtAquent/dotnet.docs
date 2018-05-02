@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;allowAccounts&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;allowAccounts&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 763c7b1f-e7b0-4d99-a42c-4506fcb8da00
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;allowAccounts&gt;
 Specifies a user account for processes that host [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] services, and are granted connection access to the sharing service.  
@@ -22,8 +24,7 @@ Specifies a user account for processes that host [!INCLUDE[indigo2](../../../../
   
 ## Syntax  
   
-```  
-  
+```xml  
 <allowAccounts>  
    <add securityIdentifier="String"/>  
 </allowAccounts>  
@@ -50,7 +51,7 @@ Specifies a user account for processes that host [!INCLUDE[indigo2](../../../../
 ## Example  
  The following configuration example adds the five default identifiers for user accounts to this collection.  
   
-```  
+```xml  
 <allowAccounts>  
    // LocalSystem account  
    <add securityIdentifier="S-1-5-18"/>  
@@ -66,7 +67,7 @@ Specifies a user account for processes that host [!INCLUDE[indigo2](../../../../
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>   
- <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>   
- <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>   
+ <xref:System.ServiceModel.Activation.Configuration.NetTcpSection.AllowAccounts%2A>  
+ <xref:System.ServiceModel.Activation.Configuration.NetPipeSection.AllowAccounts%2A>  
+ <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElementCollection>  
  <xref:System.ServiceModel.Activation.Configuration.SecurityIdentifierElement>

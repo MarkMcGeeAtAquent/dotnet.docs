@@ -1,5 +1,5 @@
 ---
-title: "Configuring System-Provided Bindings | Microsoft Docs"
+title: "Configuring System-Provided Bindings"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -15,9 +15,11 @@ helpviewer_keywords:
   - "bindings [WCF], system-provided"
 ms.assetid: 443f8d65-f1f2-4311-83b3-4d8fdf7ccf16
 caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring System-Provided Bindings
 Bindings specify the communication mechanism to use when talking to an endpoint and indicate how to connect to an endpoint. Bindings consist of elements that define how the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] channels are layered up to provide the required communication features. A binding contains three types of elements:  
@@ -66,7 +68,7 @@ Bindings specify the communication mechanism to use when talking to an endpoint 
 |<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|None, (Message), Mixed|(None), Reliable Session|(None), Yes|No|  
 |<xref:System.ServiceModel.WS2007FederationHttpBinding>|WS-Federation|None, (Message), Mixed|(None), Reliable Session|(None), Yes|No|  
 |<xref:System.ServiceModel.NetTcpBinding>|.NET|None, (Transport), Message,<br /><br /> Mixed|Reliable Session, (Transport)|(None), Yes|Yes|  
-tNamedPipeBinding](assetId:///T:System.ServiceModel.NetNamedPipeBinding?qualifyHint=False&autoUpgrade=True)|.NET|None,<br /><br /> (Transport)|None, (Transport)|(None), Yes|Yes|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|None,<br /><br /> (Transport)|None, (Transport)|(None), Yes|Yes|  
 |<xref:System.ServiceModel.NetMsmqBinding>|.NET|None, Message, (Transport), Both|(None)|(None), Yes|No|  
 |<xref:System.ServiceModel.NetPeerTcpBinding>|Peer|None, Message, (Transport), Mixed|(None)|(None)|Yes|  
 |<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|None, (Transport)|(None)|(None), Yes|n/a|  
@@ -83,6 +85,6 @@ tNamedPipeBinding](assetId:///T:System.ServiceModel.NetNamedPipeBinding?qualifyH
 |Streaming|Specifies whether the message streaming is supported.|  
   
 ## See Also  
- [Endpoint Creation Overview](../../../../docs/framework/wcf/endpoint-creation-overview.md)   
- [Using Bindings to Configure Services and Clients](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)   
+ [Endpoint Creation Overview](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
+ [Using Bindings to Configure Services and Clients](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [Basic WCF Programming](../../../../docs/framework/wcf/basic-wcf-programming.md)

@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Activation.ActivatorLevel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

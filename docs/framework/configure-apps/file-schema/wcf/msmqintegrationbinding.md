@@ -1,24 +1,23 @@
 ---
-title: "&lt;msmqIntegrationBinding&gt; | Microsoft Docs"
+title: "&lt;msmqIntegrationBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "msmqIntegrationBinding Element"
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
 caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;msmqIntegrationBinding&gt;
 Defines a binding that provides queuing support by routing messages through MSMQ.  
@@ -29,8 +28,7 @@ msmqIntegrationBinding
   
 ## Syntax  
   
-```  
-  
+```xml  
 <msmqIntegrationBinding>  
    <binding   
        closeTimeout="TimeSpan"   
@@ -41,7 +39,7 @@ msmqIntegrationBinding
        maxReceivedMessageSize"Integer"  
        maxRetryCycles="Integer"   
        name="string"   
-       openTimeout="TimeSpan"        receiveContextEnabled=”Boolean”  
+       openTimeout="TimeSpan"        receiveContextEnabled="Boolean"  
        receiveErrorHandling="Drop/Fault/Move/Reject"  
        receiveTimeout="TimeSpan"   
        receiveRetryCount="Integer"  
@@ -74,7 +72,7 @@ msmqIntegrationBinding
 |receiveErrorHandling|A <xref:System.ServiceModel.ReceiveErrorHandling> value that specifies how poison and nondispatchable messages are handled.|  
 |receiveRetryCount|An integer that specifies the maximum number of immediate retries the queue manager should attempt if transmission of a message from the application queue to the application fails.<br /><br /> If the maximum number of delivery attempts is reached and the message is not accessed by the application, then the message is sent to a retry queue for redelivery at a later time. The amount of time before the message is transferred back to the sending queue is controlled by `retryCycleDelay`. If retry cycles reach the `maxRetryCycles` value, then the message is either sent to the poison-message queue, or a negative acknowledgement is sent back to the sender.|  
 |receiveTimeout|A <xref:System.TimeSpan> value that specifies the interval of time provided for a receive operation to complete. This value should be greater than or equal to <xref:System.TimeSpan.Zero>. The default is 00:10:00.|  
-|receiveContextEnabled|A Boolean that specifies if receive context for processing messages in queues is enabled. When this is set to `true`, a service can “peek” a message on the queue to begin processing it, and, if anything goes wrong and an exception is thrown, it remains on the queue. Services can also “lock” messages in order to retry processing at a later point in time. ReceiveContext provides a mechanism for “completing” the message once processed so it can be removed from the queue.Messages are no longer being read and re-written to queues over the network, and individual messages aren’t bouncing across different service instances during processing.|  
+|receiveContextEnabled|A Boolean that specifies if receive context for processing messages in queues is enabled. When this is set to `true`, a service can "peek" a message on the queue to begin processing it, and, if anything goes wrong and an exception is thrown, it remains on the queue. Services can also "lock" messages in order to retry processing at a later point in time. ReceiveContext provides a mechanism for "completing" the message once processed so it can be removed from the queue.Messages are no longer being read and re-written to queues over the network, and individual messages aren’t bouncing across different service instances during processing.|  
 |retryCycleDelay|A TimeSpan value that specifies the time delay between retry cycles when attempting to deliver a message that could not be delivered immediately. The value defines only the minimum wait time because actual wait time can be longer. The default value is 00:30:00. For more information, see <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.|  
 |sendTimeout|A <xref:System.TimeSpan> value that specifies the interval of time provided for a send operation to complete. This value should be greater than or equal to <xref:System.TimeSpan.Zero>. The default is 00:01:00.|  
 |serializationFormat|Defines the format used for serialization of the message body. This attribute is of type <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
@@ -105,11 +103,11 @@ msmqIntegrationBinding
 |[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|This element holds a collection of standard and custom bindings.|  
   
 ## Remarks  
- This binding element can be used to enable Windows Communication Foundation (WCF) applications to send messages to and receive messages from existing MSMQ applications that use either COM, MSMQ native APIs, or the types defined in the <xref:System.Messaging?displayProperty=fullName> namespace You can use this configuration element to specify ways to address the queue, transfer assurances, whether messages must be durably stored, and how messages should be protected and authenticated. For more information, see [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
+ This binding element can be used to enable Windows Communication Foundation (WCF) applications to send messages to and receive messages from existing MSMQ applications that use either COM, MSMQ native APIs, or the types defined in the <xref:System.Messaging?displayProperty=nameWithType> namespace You can use this configuration element to specify ways to address the queue, transfer assurances, whether messages must be durably stored, and how messages should be protected and authenticated. For more information, see [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md).  
   
 ## Example  
   
-```  
+```xml  
 <configuration>  
 <system.ServiceModel>  
     <bindings>  
@@ -141,11 +139,11 @@ msmqIntegrationBinding
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>   
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>   
- <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>   
- [\<binding>](../../../../../docs/framework/misc/binding.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.Configuration.MsmqIntegrationBindingElement>  
+ <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>  
+ <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
+ [\<binding>](../../../../../docs/framework/misc/binding.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [Queues in WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)

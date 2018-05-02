@@ -1,8 +1,8 @@
 ---
-title: "Service: Security Calls Not Authorized | Microsoft Docs"
+title: "Service: Security Calls Not Authorized"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 5
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Service: Security Calls Not Authorized
 Counter Name: Security Calls Not Authorized.  

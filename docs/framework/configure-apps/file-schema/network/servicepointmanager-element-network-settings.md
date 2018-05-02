@@ -1,8 +1,8 @@
 ---
-title: "&lt;servicePointManager&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;servicePointManager&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#servicePointManager"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/servicePointManager"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "servicePointManager element"
   - "<servicePointManager> element"
@@ -25,6 +20,8 @@ caps.latest.revision: 16
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;servicePointManager&gt; Element (Network Settings)
 Configures connections to network resources.  
@@ -36,9 +33,8 @@ Configures connections to network resources.
   
 ## Syntax  
   
-```  
-  
-      <servicePointManager  
+```xml  
+<servicePointManager  
   checkCertificateName="true|false"  
   checkCertificateRevocationList="true|false"  
   encryptionPolicy="AllowNoEncryption|NoEncryption|RequireEncryption"  
@@ -60,7 +56,7 @@ Configures connections to network resources.
 |`checkCertificateRevocationList`|Specifies whether the system should check whether the certificate has been revoked before using the certificate. The default value is `false`.|  
 |`dnsRefreshTimeout`|Specifies how long Domain Name Service (DNS) resolutions are cached in conjunction with the DNS Round Robin option, in milliseconds. The default value is 120,000 milliseconds (two minutes).|  
 |`enableDnsRoundRobin`|Specifies whether DNS resolutions of host names with multiple Internet Protocol (IP) addresses return all the addresses, or just the first one. The default value is `false`.|  
-|`encryptionPolicy`|Specifies the encryption policy applied to an SSL/TLS session on a <xref:System.Net.ServicePointManager> instance. The possible values are equivalent to the values for the <xref:System.Net.Security.EncryptionPolicy> enumeration. The use of <xref:System.Security.Authentication.CipherAlgorithmType> is required when the encryption policy is set to `NoEncryption`. The default value is `RequireEncryption`.|  
+|`encryptionPolicy`|Specifies the encryption policy applied to an SSL/TLS session on a <xref:System.Net.ServicePointManager> instance. The possible values are equivalent to the values for the <xref:System.Net.Security.EncryptionPolicy> enumeration. The use of <xref:System.Security.Authentication.CipherAlgorithmType.Null> is required when the encryption policy is set to `NoEncryption`. The default value is `RequireEncryption`.|  
 |`expect100Continue`|Specifies whether POST methods should expect to receive a `100-continue` response from the server. The default value is `true`.|  
 |`useNagleAlgorithm`|Specifies whether connections controlled by the service point manager use the Nagle algorithm. The default value is `true`.|  
   
@@ -79,6 +75,6 @@ Configures connections to network resources.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## See Also  
- <xref:System.Net.ServicePointManager>   
- <xref:System.Net.Security.EncryptionPolicy>   
+ <xref:System.Net.ServicePointManager>  
+ <xref:System.Net.Security.EncryptionPolicy>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -1,9 +1,13 @@
 ---
 uid: System.ServiceModel.Configuration.NetPeerTcpBindingCollectionElement
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Configuration.NetPeerTcpBindingCollectionElement.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

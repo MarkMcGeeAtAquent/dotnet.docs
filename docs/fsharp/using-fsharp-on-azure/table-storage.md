@@ -1,3 +1,4 @@
+
 ---
 title: Get started with Azure Table storage and the Azure Cosmos DB Table API using F#
 description: Store structured data in the cloud using Azure Table storage or Azure Cosmos DB.
@@ -12,7 +13,11 @@ ms.devlang: fsharp
 ms.assetid: 9e5d6cea-a98c-461e-a5cc-75f1d154eafd
 ---
 
+<<<<<<< HEAD
 # Get started with Azure Table storage and Azure Cosmos DB Table API using F# 
+=======
+# Get started with Azure Table storage and the Azure Cosmos DB Table API using F# 
+>>>>>>> 6f5a2f7717ccdab348104a9f6d6773fb482eead9
 
 Azure Table storage is a service that stores structured NoSQL data in the cloud. Table storage is a key/attribute store with a schemaless design. Because Table storage is schemaless, it's easy to adapt your data as the needs of your application evolve. Access to data is fast and cost-effective for all kinds of applications. Table storage is typically significantly lower in cost than traditional SQL for similar volumes of data.
 
@@ -34,18 +39,26 @@ For more information, see [Introduction to Azure Cosmos DB Table API](https://do
 
 This tutorial shows how to write F# code to do some common tasks using Azure Table storage or the Azure Cosmos DB Table API, including creating and deleting a table and inserting, updating, deleting, and querying table data.
 
+<<<<<<< HEAD
 For a conceptual overview of table storage, please see [the .NET guide for table storage](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-tables).
 
 ## Prerequisites
 
 To use this guide, you must first [create an Azure storage account](https://docs.microsoft.com/azure/storage/storage-create-storage-account) or [Azure Cosmos DB account](https://azure.microsoft.com/try/cosmosdb/).
+=======
+For a conceptual overview of table storage, please see [the .NET guide for table storage](/azure/storage/storage-dotnet-how-to-use-tables).
+
+## Prerequisites
+
+To use this guide, you must first [create an Azure storage account](/azure/storage/storage-create-storage-account) or [Azure Cosmos DB account](https://azure.microsoft.com/try/cosmosdb/).
+>>>>>>> 6f5a2f7717ccdab348104a9f6d6773fb482eead9
 
 
 ## Create an F# Script and Start F# Interactive
 
 The samples in this article can be used in either an F# application or an F# script. To create an F# script, create a file with the `.fsx` extension, for example `tables.fsx`, in your F# development environment.
 
-Next, use a [package manager](package-management.md) such as [Paket](https://fsprojects.github.io/Paket/) or [NuGet](https://www.nuget.org/) to install the `WindowsAzure.Storage` package and reference `WindowsAzure.Storage.dll` in your script using a `#r` directive.
+Next, use a [package manager](package-management.md) such as [Paket](https://fsprojects.github.io/Paket/) or [NuGet](https://www.nuget.org/) to install the `WindowsAzure.Storage` package and reference `WindowsAzure.Storage.dll` in your script using a `#r` directive. Do it again for `Microsoft.WindowsAzure.ConfigurationManager' in order to get the Microsoft.Azure namespace.
 
 ### Add namespace declarations
 
@@ -55,10 +68,17 @@ Add the following `open` statements to the top of the `tables.fsx` file:
 
 ### Get your Azure Storage connection string
 
+<<<<<<< HEAD
 If you are connecting to Azure Storage Table service, you'll need your connection string for this tutorial. You can copy your connection string from the Azure portal. For more information about connection strings, see [Configure Storage Connection Strings](https://docs.microsoft.com/azure/storage/storage-configure-connection-string).
 
 ### Get your Azure Cosmos DB connection string
 
+=======
+If you are connecting to Azure Storage Table service, you'll need your connection string for this tutorial. You can copy your connection string from the Azure portal. For more information about connection strings, see [Configure Storage Connection Strings](/azure/storage/storage-configure-connection-string).
+
+### Get your Azure Cosmos DB connection string
+
+>>>>>>> 6f5a2f7717ccdab348104a9f6d6773fb482eead9
 If you are connecting to Azure Cosmos DB, you'll need your connection string for this tutorial. You can copy your connection string from the Azure portal. In the Azure portal, in your Cosmos DB account, go to **Settings** > **Connection String**, and click the **Copy** button to copy your Primary Connection String. 
 
 For the tutorial, you'll enter your connection string in your script, like this:
@@ -200,8 +220,13 @@ Now that you've learned the basics of Table storage, follow these links
 to learn about more complex storage tasks and the Azure Cosmos DB Table API.
 
 - [Introduction to Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)
+<<<<<<< HEAD
 - [Storage Client Library for .NET reference](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+=======
+- [Storage Client Library for .NET reference](https://docs.microsoft.com/dotnet/api/overview/azure/storage?view=azure-dotnet)
+>>>>>>> 6f5a2f7717ccdab348104a9f6d6773fb482eead9
 - [Azure Storage Type Provider](http://fsprojects.github.io/AzureStorageTypeProvider/)
 - [Azure Storage Team Blog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Configuring Connection Strings](http://msdn.microsoft.com/library/azure/ee758697.aspx)
 - [Getting Started with Azure Table Storage in .NET](https://azure.microsoft.com/documentation/samples/storage-table-dotnet-getting-started/)
+

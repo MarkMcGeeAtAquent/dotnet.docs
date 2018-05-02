@@ -1,13 +1,17 @@
 ---
 uid: System.Windows.Diagnostics.ResourceDictionaryUnloadedEventArgs
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.ResourceDictionaryUnloadedEventArgs.ResourceDictionaryInfo
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

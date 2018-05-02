@@ -1,8 +1,8 @@
 ---
-title: "&lt;activityScheduledQuery&gt; of WCF | Microsoft Docs"
+title: "&lt;activityScheduledQuery&gt; of WCF"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 25f6eee1-3d98-4c39-b517-c0813f03f106
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;activityScheduledQuery&gt; of WCF
 Represents a collection of queries that are used to track an activity scheduled for execution by a parent activity. The query is necessary for a tracking participant to subscribe to activity scheduled records.  
@@ -29,7 +31,7 @@ Represents a collection of queries that are used to track an activity scheduled 
   
 ## Syntax  
   
-```vb  
+```xml
 <tracking>     <trackingProfile name="Name">       <workflow>          <activityScheduledQueries>             <activityScheduledQuery activityName="String"                 childActivityName="String"/>          </activityScheduledQueries>       </workflow>     </trackingProfile></tracking>  
 ```  
   
@@ -53,7 +55,7 @@ Represents a collection of queries that are used to track an activity scheduled 
 |[\<activityScheduledQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/activityscheduledquery.md)|A query that is used to track an activity scheduled for execution by a parent activity.|  
   
 ## See Also  
- [System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement](assetId:///System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement?qualifyHint=False&amp;autoUpgrade=True)   
- [System.Activities.Tracking.ActivityScheduledQuery](assetId:///System.Activities.Tracking.ActivityScheduledQuery?qualifyHint=False&amp;autoUpgrade=True)   
- [Workflow Tracking and Tracing](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)   
+ <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement>     
+ <xref:System.Activities.Tracking.ActivityScheduledQuery>     
+ [Workflow Tracking and Tracing](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
  [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

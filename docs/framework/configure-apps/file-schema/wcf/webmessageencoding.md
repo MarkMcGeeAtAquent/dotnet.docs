@@ -1,8 +1,8 @@
 ---
-title: "&lt;webMessageEncoding&gt; | Microsoft Docs"
+title: "&lt;webMessageEncoding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 892ca485-e21a-4a44-8e40-633161ef6796
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;webMessageEncoding&gt;
 Enables plain-text XML, JavaScript Object Notation (JSON) message encodings and "raw" binary content to be read and written when used in a [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] binding.  
@@ -26,13 +28,12 @@ Enables plain-text XML, JavaScript Object Notation (JSON) message encodings and 
   
 ## Syntax  
   
-```  
-  
+```xml  
 <webMessageEncoding   
       maxReadPoolSize="Integer"  
    maxWritePoolSize="Integer"  
   
-writeEncoding=”UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />  
+writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />  
 ```  
   
 ## Attributes and Elements  
@@ -73,23 +74,23 @@ writeEncoding=”UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />
   
 ## Example  
   
-```  
+```xml  
 <webMessageEncoding   
     maxReadPoolSize="256"  
     maxWritePoolSize="128"  
     messageVersion="None"  
-    textEncoding=”utf-8”   
+    textEncoding="utf-8"   
 />  
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>   
- [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.WebMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
+ [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

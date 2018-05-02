@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::CloseEnum Method | Microsoft Docs"
+title: "IMetaDataImport::CloseEnum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.CloseEnum"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::CloseEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport::CloseEnum method [.NET Framework metadata]"
   - "CloseEnum method, IMetaDataImport interface [.NET Framework metadata]"
 ms.assetid: 727819d5-1dab-4ebb-ac25-950b4111dc72
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::CloseEnum Method
 Closes the enumerator that is identified by the specified handle.  
@@ -55,5 +58,5 @@ void CloseEnum (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

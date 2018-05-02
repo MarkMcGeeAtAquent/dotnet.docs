@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo4::GetFunctionFromIP2 Method | Microsoft Docs"
+title: "ICorProfilerInfo4::GetFunctionFromIP2 Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo4.GetFunctionFromIP2"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo4::GetFunctionFromIP2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo4::GetFunctionFromIP2 method [.NET Framework profiling]"
   - "GetFunctionFromIP2 method, ICorProfilerInfo4 interface [.NET Framework profiling]"
 ms.assetid: 46ff70f4-13e9-40a0-802a-0a40abcfc6a0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo4::GetFunctionFromIP2 Method
 Maps a managed code instruction pointer to the JIT-recompiled version of a function.  

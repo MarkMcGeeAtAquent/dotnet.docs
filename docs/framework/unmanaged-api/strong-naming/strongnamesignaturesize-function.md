@@ -1,5 +1,5 @@
 ---
-title: "StrongNameSignatureSize Function | Microsoft Docs"
+title: "StrongNameSignatureSize Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameSignatureSize"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "StrongNameSignatureSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameSignatureSize function [.NET Framework strong naming]"
 ms.assetid: 4fde4cd0-f53e-4411-a2fe-fc5c54472f95
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameSignatureSize Function
 Returns the size of the strong name signature. `StrongNameSignatureSize` is typically used by compilers to determine how much space to reserve in the file when creating a delay-signed assembly.  
@@ -34,7 +37,7 @@ Returns the size of the strong name signature. `StrongNameSignatureSize` is typi
 ## Syntax  
   
 ```  
-BOOLEAN StrongNameSignatureSize (   
+BOOLEAN StrongNameSignatureSize (   
     [in]  BYTE   *pbPublicKeyBlob,  
     [in]  ULONG  cbPublicKeyBlob,   
     [in]  DWORD  *pcbSize  
@@ -67,5 +70,5 @@ BOOLEAN StrongNameSignatureSize ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureSize Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md)   
+ [StrongNameSignatureSize Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturesize-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

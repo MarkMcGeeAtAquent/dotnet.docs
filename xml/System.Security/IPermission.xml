@@ -1,7 +1,9 @@
-<Type Name="IPermission" FullName="System.Security.IPermission">
+﻿<Type Name="IPermission" FullName="System.Security.IPermission">
   <TypeSignature Language="C#" Value="public interface IPermission : System.Security.ISecurityEncodable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IPermission implements class System.Security.ISecurityEncodable" />
   <TypeSignature Language="DocId" Value="T:System.Security.IPermission" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IPermission&#xA;Implements ISecurityEncodable" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IPermission : System::Security::ISecurityEncodable" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -60,6 +66,8 @@
       <MemberSignature Language="C#" Value="public System.Security.IPermission Copy ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Copy() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Copy" />
+      <MemberSignature Language="VB.NET" Value="Public Function Copy () As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::IPermission ^ Copy();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -69,6 +77,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -100,6 +112,8 @@
       <MemberSignature Language="C#" Value="public void Demand ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Demand" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Demand ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Demand();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -109,6 +123,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -122,7 +140,7 @@
 ## Remarks  
  This method is typically used by secure libraries to ensure that callers have permission to access a resource. For example, a file class in a secure class library calls <xref:System.Security.CodeAccessPermission.Demand%2A> for the necessary <xref:System.Security.Permissions.FileIOPermission> before performing a file operation requested by the caller.  
   
- Although the majority of the classes that implement this interface method satisfy the security criteria by performing a full stack walk, a stack walk is not necessarily performed. An example of an implementation that does not perform a stack walk is <xref:System.Security.Permissions.PrincipalPermission.Demand%2A?displayProperty=fullName>.  
+ Although the majority of the classes that implement this interface method satisfy the security criteria by performing a full stack walk, a stack walk is not necessarily performed. An example of an implementation that does not perform a stack walk is <xref:System.Security.Permissions.PrincipalPermission.Demand%2A?displayProperty=nameWithType>.  
   
  When a stack walk is performed, the permissions of the code that calls this method are not examined; the check begins from the immediate caller of that code and proceeds up the stack. The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack. <xref:System.Security.CodeAccessPermission.Demand%2A> succeeds only if no <xref:System.Security.SecurityException> is raised.  
   
@@ -134,6 +152,8 @@
       <MemberSignature Language="C#" Value="public System.Security.IPermission Intersect (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Intersect(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Intersect (target As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::IPermission ^ Intersect(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -143,6 +163,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>
@@ -186,6 +210,8 @@
       <MemberSignature Language="C#" Value="public bool IsSubsetOf (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.IPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsSubsetOf (target As IPermission) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsSubsetOf(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -195,6 +221,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -221,7 +251,7 @@
   
 -   If `X`.IsSubsetOf(`Y`) and `Y`.IsSubsetOf(`Z`) both return `true`, `X`.IsSubsetOf(`Z`) returns `true`.  
   
- If `X` represents an empty <xref:System.Security.IPermission> object with a permission state of <xref:System.Security.Permissions.PermissionState> and `Y` represents an <xref:System.Security.IPermission> object that is `null`, `X`.IsSubsetOf(`Y`) returns `true`. If `Z` is also an empty permission, the compound set operation `X`.Union(Z).IsSubsetOf(Y) also returns `true` because the union of two empty permissions is an empty permission.  
+ If `X` represents an empty <xref:System.Security.IPermission> object with a permission state of <xref:System.Security.Permissions.PermissionState.None> and `Y` represents an <xref:System.Security.IPermission> object that is `null`, `X`.IsSubsetOf(`Y`) returns `true`. If `Z` is also an empty permission, the compound set operation `X`.Union(Z).IsSubsetOf(Y) also returns `true` because the union of two empty permissions is an empty permission.  
   
    
   
@@ -241,6 +271,8 @@
       <MemberSignature Language="C#" Value="public System.Security.IPermission Union (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.IPermission.Union(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Union (target As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::IPermission ^ Union(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -250,6 +282,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.IPermission</ReturnType>

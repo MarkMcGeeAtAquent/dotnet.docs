@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyImport::FindAssembliesByName Method | Microsoft Docs"
+title: "IMetaDataAssemblyImport::FindAssembliesByName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyImport.FindAssembliesByName"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyImport::FindAssembliesByName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FindAssembliesByName method [.NET Framework metadata]"
   - "IMetaDataAssemblyImport::FindAssembliesByName method [.NET Framework metadata]"
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyImport::FindAssembliesByName Method
 Gets an array of assemblies with the specified `szAssemblyName` parameter, using the standard rules employed by the common language runtime (CLR) for resolving references.  
@@ -88,5 +91,5 @@ HRESULT FindAssembliesByName (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [How the Runtime Locates Assemblies](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
+ [How the Runtime Locates Assemblies](../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
  [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

@@ -1,7 +1,9 @@
-<Type Name="WorkflowInvoker" FullName="System.Activities.WorkflowInvoker">
+﻿<Type Name="WorkflowInvoker" FullName="System.Activities.WorkflowInvoker">
   <TypeSignature Language="C#" Value="public sealed class WorkflowInvoker" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInvoker extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowInvoker" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WorkflowInvoker" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WorkflowInvoker sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Activities</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -37,6 +39,8 @@
       <MemberSignature Language="C#" Value="public WorkflowInvoker (System.Activities.Activity workflow);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Activity workflow) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.#ctor(System.Activities.Activity)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (workflow As Activity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WorkflowInvoker(System::Activities::Activity ^ workflow);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -65,10 +69,29 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="BeginInvoke">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Invokes a workflow asynchronously using the <see cref="T:System.IAsyncResult" /> asynchronous design pattern.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="BeginInvoke">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginInvoke(class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.BeginInvoke(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginInvoke (callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginInvoke(AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -92,7 +115,7 @@
 ## Remarks  
  To be notified when the workflow is complete and retrieve the output parameters of the workflow, call <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> from the `callback` method. If <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> is called before the workflow completes, it blocks until the workflow completes. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+ This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
   
    
   
@@ -111,6 +134,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginInvoke(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.BeginInvoke(System.Collections.Generic.IDictionary{System.String,System.Object},System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginInvoke (inputs As IDictionary(Of String, Object), callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginInvoke(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -136,7 +161,7 @@
 ## Remarks  
  To be notified when the workflow is complete and retrieve the output parameters of the workflow, call <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> from the `callback` method. If <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> is called before the workflow completes, it blocks until the workflow completes.  To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+ This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
   
    
   
@@ -155,6 +180,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (TimeSpan timeout, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginInvoke(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.BeginInvoke(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginInvoke (timeout As TimeSpan, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginInvoke(TimeSpan timeout, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -183,7 +210,7 @@
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+ This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
   
    
   
@@ -202,6 +229,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginInvoke(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.BeginInvoke(System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginInvoke (inputs As IDictionary(Of String, Object), timeout As TimeSpan, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginInvoke(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -232,7 +261,7 @@
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+ This method invokes a workflow asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
   
    
   
@@ -251,6 +280,8 @@
       <MemberSignature Language="C#" Value="public void CancelAsync (object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAsync(object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.CancelAsync(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelAsync (userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelAsync(System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -271,7 +302,7 @@
 ## Remarks  
  Only a workflow invoked by one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that takes a `userState` parameter can be canceled.  
   
- If the cancellation succeeds, the <xref:System.ComponentModel.Cancelled%2A> property of the <xref:System.Activities.InvokeCompletedEventArgs> passed to the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler is set to `true`; otherwise, it is set to `false`.  
+ If the cancellation succeeds, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> property of the <xref:System.Activities.InvokeCompletedEventArgs> passed to the <xref:System.Activities.WorkflowInvoker.InvokeCompleted> handler is set to `true`; otherwise, it is set to `false`.  
   
    
   
@@ -290,6 +321,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; EndInvoke (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; EndInvoke(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.EndInvoke(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndInvoke (result As IAsyncResult) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ EndInvoke(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -311,7 +344,7 @@
 ## Remarks  
  To be notified when the workflow is complete and retrieve the output parameters of the workflow, call <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> from the `callback` method specified by <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A>. If <xref:System.Activities.WorkflowInvoker.EndInvoke%2A> is called before the workflow completes, it blocks until the workflow completes.  
   
- This method returns the result of a workflow invoked asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
+ This method returns the result of a workflow invoked asynchronously using the <xref:System.IAsyncResult> asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
   
    
   
@@ -330,6 +363,8 @@
       <MemberSignature Language="C#" Value="public System.Activities.Hosting.WorkflowInstanceExtensionManager Extensions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Hosting.WorkflowInstanceExtensionManager Extensions" />
       <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowInvoker.Extensions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Extensions As WorkflowInstanceExtensionManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Activities::Hosting::WorkflowInstanceExtensionManager ^ Extensions { System::Activities::Hosting::WorkflowInstanceExtensionManager ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -358,10 +393,29 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Invoke">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Invokes a workflow synchronously and returns a dictionary of the root activity’s <see cref="T:System.Activities.OutArgument" /> and <see cref="T:System.Activities.InOutArgument" /> values keyed by argument name that represent the outputs of the workflow.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method blocks until the workflow has completed, including idle time. All workflow execution is guaranteed to execute on the invoking thread. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.Invoke%2A> overloads that take a <xref:System.TimeSpan>.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Invoke">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke () As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -383,7 +437,7 @@
    
   
 ## Examples  
- The following example invokes a workflow consisting of a single `DiceRoll` activity. The `DiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the call to `Invoke` returns, each output argument is returned in the outputs dictionary, keyed by argument name. The workflow is invoked twice, using the workflow definition passed into to the `WorkflowInvoker` constructor.  
+ The following example invokes a workflow consisting of a single `DiceRoll` activity. The `DiceRoll` activity has two output arguments that represent the results of the dice roll operation. When the call to `Invoke` returns, each output argument is returned in the outputs dictionary, keyed by argument name. The workflow is invoked twice, using the workflow definition passed into the `WorkflowInvoker` constructor.  
   
  [!code-csharp[CFX_WorkflowInvokerExample#130](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowinvokerexample/cs/program.cs#130)]  
   
@@ -401,6 +455,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Activities.Activity workflow);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Activities.Activity workflow) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Activities.Activity)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke (workflow As Activity) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Activities::Activity ^ workflow);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -443,6 +499,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke (inputs As IDictionary(Of String, Object)) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -487,6 +545,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke (timeout As TimeSpan) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -533,6 +593,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Activities.Activity workflow, System.Collections.Generic.IDictionary&lt;string,object&gt; inputs);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Activities.Activity workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Activities.Activity,System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke (workflow As Activity, inputs As IDictionary(Of String, Object)) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Activities::Activity ^ workflow, System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -579,6 +641,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Activities.Activity workflow, TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Activities.Activity workflow, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Activities.Activity,System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke (workflow As Activity, timeout As TimeSpan) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Activities::Activity ^ workflow, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -622,6 +686,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke (inputs As IDictionary(Of String, Object), timeout As TimeSpan) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -670,6 +736,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,object&gt; Invoke (System.Activities.Activity workflow, System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Invoke(class System.Activities.Activity workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke(System.Activities.Activity,System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke (workflow As Activity, inputs As IDictionary(Of String, Object), timeout As TimeSpan) As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Invoke(System::Activities::Activity ^ workflow, System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -715,6 +783,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static TResult Invoke&lt;TResult&gt; (System.Activities.Activity&lt;TResult&gt; workflow);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Invoke&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; workflow) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke``1(System.Activities.Activity{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke(Of TResult) (workflow As Activity(Of TResult)) As TResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; static TResult Invoke(System::Activities::Activity&lt;TResult&gt; ^ workflow);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -757,6 +827,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static TResult Invoke&lt;TResult&gt; (System.Activities.Activity&lt;TResult&gt; workflow, System.Collections.Generic.IDictionary&lt;string,object&gt; inputs);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Invoke&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke``1(System.Activities.Activity{``0},System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke(Of TResult) (workflow As Activity(Of TResult), inputs As IDictionary(Of String, Object)) As TResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; static TResult Invoke(System::Activities::Activity&lt;TResult&gt; ^ workflow, System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -804,6 +876,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public static TResult Invoke&lt;TResult&gt; (System.Activities.Activity&lt;TResult&gt; workflow, System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Invoke&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke``1(System.Activities.Activity{``0},System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke(Of TResult) (workflow As Activity(Of TResult), inputs As IDictionary(Of String, Object), timeout As TimeSpan) As TResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; static TResult Invoke(System::Activities::Activity&lt;TResult&gt; ^ workflow, System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -851,8 +925,10 @@ The time allotted to this operation may have been a portion of a longer timeout.
     </Member>
     <Member MemberName="Invoke&lt;TResult&gt;">
       <MemberSignature Language="C#" Value="public static TResult Invoke&lt;TResult&gt; (System.Activities.Activity&lt;TResult&gt; workflow, System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, out System.Collections.Generic.IDictionary&lt;string,object&gt; additionalOutputs, TimeSpan timeout);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Invoke&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; additionalOutputs, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TResult Invoke&lt;TResult&gt;(class System.Activities.Activity`1&lt;!!TResult&gt; workflow, class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, [out] class System.Collections.Generic.IDictionary`2&lt;string, object&gt;&amp; additionalOutputs, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.Invoke``1(System.Activities.Activity{``0},System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object}@,System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Invoke(Of TResult) (workflow As Activity(Of TResult), inputs As IDictionary(Of String, Object), ByRef additionalOutputs As IDictionary(Of String, Object), timeout As TimeSpan) As TResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; static TResult Invoke(System::Activities::Activity&lt;TResult&gt; ^ workflow, System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, [Runtime::InteropServices::Out] System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ % additionalOutputs, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -900,10 +976,31 @@ The time allotted to this operation may have been a portion of a longer timeout.
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="InvokeAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Invokes a workflow asynchronously using the event-based asynchronous design pattern.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
+  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InvokeAsync">
       <MemberSignature Language="C#" Value="public void InvokeAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -921,7 +1018,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 ## Remarks  
  To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -940,6 +1037,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.Collections.Generic.IDictionary{System.String,System.Object})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (inputs As IDictionary(Of String, Object))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -960,7 +1059,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 ## Remarks  
  To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -979,6 +1078,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1001,7 +1102,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
   
  To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1020,6 +1121,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (timeout As TimeSpan)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1043,7 +1146,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1062,6 +1165,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (inputs As IDictionary(Of String, Object), userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1086,7 +1191,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
   
  To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1105,6 +1210,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (inputs As IDictionary(Of String, Object), timeout As TimeSpan)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1130,7 +1237,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1149,6 +1256,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (TimeSpan timeout, object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(valuetype System.TimeSpan timeout, object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.TimeSpan,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (timeout As TimeSpan, userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(TimeSpan timeout, System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1176,7 +1285,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1195,6 +1304,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public void InvokeAsync (System.Collections.Generic.IDictionary&lt;string,object&gt; inputs, TimeSpan timeout, object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InvokeAsync(class System.Collections.Generic.IDictionary`2&lt;string, object&gt; inputs, valuetype System.TimeSpan timeout, object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInvoker.InvokeAsync(System.Collections.Generic.IDictionary{System.String,System.Object},System.TimeSpan,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InvokeAsync (inputs As IDictionary(Of String, Object), timeout As TimeSpan, userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InvokeAsync(System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ inputs, TimeSpan timeout, System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1224,7 +1335,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 > [!NOTE]
 >  The <xref:System.TimeoutException> is only thrown if the time-out interval elapses and the workflow becomes idle during execution. A workflow that takes longer than the specified time-out interval to complete completes successfully if the workflow does not become idle.  
   
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
+ This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
   
    
   
@@ -1243,6 +1354,8 @@ The time allotted to this operation may have been a portion of a longer timeout.
       <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Activities.InvokeCompletedEventArgs&gt; InvokeCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Activities.InvokeCompletedEventArgs&gt; InvokeCompleted" />
       <MemberSignature Language="DocId" Value="E:System.Activities.WorkflowInvoker.InvokeCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Event InvokeCompleted As EventHandler(Of InvokeCompletedEventArgs) " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler&lt;System::Activities::InvokeCompletedEventArgs ^&gt; ^ InvokeCompleted;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -1272,58 +1385,5 @@ The time allotted to this operation may have been a portion of a longer timeout.
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="BeginInvoke">
-      <AssemblyInfo>
-        <AssemblyName>System.Activities</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Invokes a workflow asynchronously using the <see cref="T:System.IAsyncResult" /> asynchronous design pattern.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- [!INCLUDE[crdefault](~/includes/crdefault-md.md)] [Asynchronous Programming Overview](http://go.microsoft.com/fwlink/?LinkId=141764).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Invoke">
-      <AssemblyInfo>
-        <AssemblyName>System.Activities</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Invokes a workflow synchronously and returns a dictionary of the root activity’s <see cref="T:System.Activities.OutArgument" /> and <see cref="T:System.Activities.InOutArgument" /> values keyed by argument name that represent the outputs of the workflow.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- This method blocks until the workflow has completed, including idle time. All workflow execution is guaranteed to execute on the invoking thread. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.Invoke%2A> overloads that take a <xref:System.TimeSpan>.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="InvokeAsync">
-      <AssemblyInfo>
-        <AssemblyName>System.Activities</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Invokes a workflow asynchronously using the event-based asynchronous design pattern.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- To be notified when the workflow is complete, handle <xref:System.Activities.WorkflowInvoker.InvokeCompleted>. To configure a time-out interval in which the workflow must complete, use one of the <xref:System.Activities.WorkflowInvoker.InvokeAsync%2A> overloads that take a <xref:System.TimeSpan>.  
-  
- This method invokes a workflow asynchronously using the event-based asynchronous design pattern. [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Event-based Asynchronous Pattern Overview](http://go.microsoft.com/fwlink/?LinkId=141765).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

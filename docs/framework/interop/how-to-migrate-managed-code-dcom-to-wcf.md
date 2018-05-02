@@ -1,5 +1,5 @@
 ---
-title: "How to: Migrate Managed-Code DCOM to WCF | Microsoft Docs"
+title: "How to: Migrate Managed-Code DCOM to WCF"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 ms.assetid: 52961ffc-d1c7-4f83-832c-786444b951ba
 caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Migrate Managed-Code DCOM to WCF
 Windows Communication Foundation (WCF) is the recommended and secure choice over Distributed Component Object Model (DCOM) for managed code calls between servers and clients in a distributed environment. This article shows how you to migrate code from DCOM to WCF for the following scenarios.  
@@ -55,7 +52,6 @@ public interface IRemoteObject
 public class Customer  
 {  
 }  
-  
 ```  
   
 ## The service returns an object by-value  
@@ -87,7 +83,6 @@ public interface ICustomerManager
     [OperationContract]     Customer GetCustomer(string firstName, string lastName);   
   
 }  
-  
 ```  
   
 ### Step 2: Define the data contract  
@@ -130,7 +125,6 @@ public class Address
     [DataMember]  
     public string Country;  
 }  
-  
 ```  
   
 ### Step 3: Implement the WCF service  
@@ -153,7 +147,7 @@ public class CustomerService: ICustomerManager
 ### Step 4: Configure the service and the client  
  To run a WCF service, you need to declare an endpoint that exposes that service interface at a specific URL using a specific WCF binding. A binding specifies the transport, encoding and protocol details for the clients and server to communicate. You typically add bindings to the service project’s configuration file (web.config). The following shows a binding entry for the example service:  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <services>  
@@ -165,12 +159,11 @@ public class CustomerService: ICustomerManager
     </services>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  Next, you need to configure the client to match the binding information specified by the service. To do so, add the following to the client’s application configuration (app.config) file.  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -180,7 +173,6 @@ public class CustomerService: ICustomerManager
                 contract="Shared.ICustomerManager"/>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ### Step 5: Run the service  
@@ -189,7 +181,6 @@ public class CustomerService: ICustomerManager
 ```  
 ServiceHost customerServiceHost = new ServiceHost(typeof(CustomerService));  
 customerServiceHost.Open();  
-  
 ```  
   
 ### Step 6: Call the service from the client  
@@ -200,7 +191,6 @@ ChannelFactory<ICustomerManager> factory =
      new ChannelFactory<ICustomerManager>("customermanager");  
 ICustomerManager service = factory.CreateChannel();  
 Customer customer = service.GetCustomer("Mary", "Smith");  
-  
 ```  
   
 ## The client sends a by-value object to the server  
@@ -213,7 +203,6 @@ public interface IRemoteService
 {  
     void SendObjectByValue(Customer customer);  
 }  
-  
 ```  
   
  This scenario uses the same service interface and data contract as shown in the first example. In addition, the client and service will be configured in the same way. In this example, a channel is created to send the object and run the same way. However, for this example, you will create a client that calls the service, passing an object by-value. The service method the client will call in the service contract is shown in bold:  
@@ -227,7 +216,6 @@ public interface ICustomerManager
     [OperationContract]  
     Customer GetCustomer(string firstName, string lastName);  
 }  
-  
 ```  
   
 ### Add code to the client that sends a by-value object  
@@ -274,7 +262,6 @@ public interface IRemoteService
  In this code, the sessionful object is marked with the `ServiceContract` attribute, which identifies it as a regular WCF service interface.  In addition, the <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A> property is set to indicate it will be a sessionful service.  
   
 ```  
-  
 [ServiceContract(SessionMode = SessionMode.Allowed)]  
 public interface ISessionBoundObject  
 {  
@@ -307,7 +294,6 @@ public interface ISessionBoundObject
         }  
   
     }  
-  
 ```  
   
 ### Step 2: Define the WCF factory service for the sessionful object  
@@ -320,7 +306,6 @@ public interface ISessionBoundObject
         [OperationContract]  
         EndpointAddress10 GetInstanceAddress();  
     }  
-  
 ```  
   
  Following is the implementation of this service. This implementation maintains a singleton channel factory to create sessionful objects.  When `GetInstanceAddress` is called, it creates a channel and creates an <xref:System.ServiceModel.EndpointAddress10> object that points to the remote address associated with this channel.   <xref:System.ServiceModel.EndpointAddress10> is a data type that can be returned to the client by-value.  
@@ -341,7 +326,6 @@ public class SessionBoundFactory : ISessionBoundFactory
             return EndpointAddress10.FromEndpointAddress(channel.RemoteAddress);  
         }  
     }  
-  
 ```  
   
 ### Step 3: Configure and start the WCF services  
@@ -353,7 +337,7 @@ public class SessionBoundFactory : ISessionBoundFactory
   
  Following is an example configuration file with these settings:  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -377,7 +361,6 @@ public class SessionBoundFactory : ISessionBoundFactory
     </services>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  Add the following lines to a console application, to self-host the service, and start the app.  
@@ -394,7 +377,7 @@ sessionBoundServiceHost.Open();
 ### Step 4: Configure the client and call the service  
  Configure the client to communicate with the WCF services by making the following entries in the project’s application configuration file (app.config).  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <client>  
@@ -409,7 +392,6 @@ sessionBoundServiceHost.Open();
     </client>    
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  To call the service, add the code to the client to do the following:  
@@ -446,7 +428,7 @@ if (sessionBoundObject.GetCurrentValue() == "Hello")
 ```  
   
 ## See Also  
- [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md)   
- [Designing and Implementing Services](../../../docs/framework/wcf/designing-and-implementing-services.md)   
- [Building Clients](../../../docs/framework/wcf/building-clients.md)   
+ [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Designing and Implementing Services](../../../docs/framework/wcf/designing-and-implementing-services.md)  
+ [Building Clients](../../../docs/framework/wcf/building-clients.md)  
  [Duplex Services](../../../docs/framework/wcf/feature-details/duplex-services.md)

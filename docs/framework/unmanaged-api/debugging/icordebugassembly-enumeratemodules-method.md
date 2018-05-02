@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAssembly::EnumerateModules Method | Microsoft Docs"
+title: "ICorDebugAssembly::EnumerateModules Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAssembly.EnumerateModules"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAssembly::EnumerateModules"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAssembly::EnumerateModules method [.NET Framework debugging]"
   - "EnumerateModules method [.NET Framework debugging]"
 ms.assetid: c7ba51a1-0dd5-4452-b471-232febe0f897
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAssembly::EnumerateModules Method
 Gets an enumerator for the modules contained in the `ICorDebugAssembly`.  

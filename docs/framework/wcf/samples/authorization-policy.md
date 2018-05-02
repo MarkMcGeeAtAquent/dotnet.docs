@@ -1,8 +1,8 @@
 ---
-title: "Authorization Policy | Microsoft Docs"
+title: "Authorization Policy"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
 caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Authorization Policy
 This sample demonstrates how to implement a custom claim authorization policy and an associated custom service authorization manager. This is useful when the service makes claim-based access checks to service operations and prior to the access checks, grants the caller certain rights. This sample shows both the process of adding claims as well as the process for doing an access check against the finalized set of claims. All application messages between the client and server are signed and encrypted. By default with the `wsHttpBinding` binding, a username and password supplied by the client are used to logon to a valid Windows NT account. This sample demonstrates how to utilize a custom <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>--> `System.IdentityModel.Selectors.UsernamePasswordValidator` to authenticate the client. In addition this sample shows the client authenticating to the service using an X.509 certificate. This sample shows an implementation of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> and <xref:System.ServiceModel.ServiceAuthorizationManager>, which between them grant access to specific methods of the service for specific users. This sample is based on the [Message Security User Name](../../../../docs/framework/wcf/samples/message-security-user-name.md), but demonstrates how to perform a claim transformation prior to the <xref:System.ServiceModel.ServiceAuthorizationManager> being called.  
@@ -37,7 +39,7 @@ This sample demonstrates how to implement a custom claim authorization policy an
   
  The service exposes two endpoints for communicating with the service, defined using the configuration file App.config. Each endpoint consists of an address, a binding, and a contract. One binding is configured with a standard `wsHttpBinding` binding that uses WS-Security and client username authentication. The other binding is configured with a standard `wsHttpBinding` binding that uses WS-Security and client certificate authentication. The [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) specifies that the user credentials are to be used for service authentication. The server certificate must contain the same value for the `SubjectName` property as the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -120,12 +122,11 @@ This sample demonstrates how to implement a custom claim authorization policy an
   </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
  Each client endpoint configuration consists of a configuration name, an absolute address for the service endpoint, the binding, and the contract. The client binding is configured with the appropriate security mode as specified in this case in the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) and `clientCredentialType` as specified in the [\<message>](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  
@@ -189,7 +190,6 @@ This sample demonstrates how to implement a custom claim authorization policy an
     </behaviors>  
   
   </system.serviceModel>  
-  
 ```  
   
  For the user name-based endpoint, the client implementation sets the user name and password to use.  
@@ -216,7 +216,6 @@ catch (Exception e)
 }  
   
 client1.Close();  
-  
 ```  
   
  For the certificate-based endpoint, the client implementation sets the client certificate to use.  
@@ -242,10 +241,9 @@ catch (Exception e)
 }  
   
 client2.Close();  
-  
 ```  
   
- This sample uses a custom <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> to validate user names and passwords. The sample implements `MyCustomUserNamePasswordValidator`, derived from <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. See the documentation about <xref:System.IdentityModel.Selectors.UsernamePasswordValidator> for more information. For the purposes of demonstrating the integration with the <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>, this custom validator sample implements the <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator.Validate%2A> --> `System.IdentityModel.Selectors.UsernamePasswordValidator.Validate` method to accept user name/password pairs where the user name matches the password as shown in the following code.  
+ This sample uses a custom <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> to validate user names and passwords. The sample implements `MyCustomUserNamePasswordValidator`, derived from <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. See the documentation about <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> for more information. For the purposes of demonstrating the integration with the <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>, this custom validator sample implements the <xref:System.IdentityModel.Selectors.UserNamePasswordValidator.Validate%2A> method to accept user name/password pairs where the user name matches the password as shown in the following code.  
   
 ```  
 public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator  
@@ -268,7 +266,6 @@ public class MyCustomUserNamePasswordValidator : UserNamePasswordValidator
     }  
   }  
 }  
-  
 ```  
   
  Once the validator is implemented in service code, the service host must be informed about the validator instance to use. This is done using the following code.  
@@ -280,7 +277,7 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
   
  Or you can do the same thing in configuration.  
   
-```  
+```xml  
 <behavior ...>  
     <serviceCredentials>  
       <!--   
@@ -318,19 +315,17 @@ public class MyServiceAuthorizationManager : ServiceAuthorizationManager
     return false;                   
   }  
 }  
-  
 ```  
   
  Once the custom <xref:System.ServiceModel.ServiceAuthorizationManager> is implemented, the service host must be informed about the <xref:System.ServiceModel.ServiceAuthorizationManager> to use. This is done as shown in the following code.  
   
-```  
+```xml  
 <behavior ...>  
     ...  
     <serviceAuthorization serviceAuthorizationManagerType="Microsoft.ServiceModel.Samples.MyServiceAuthorizationManager, service">  
         ...  
     </serviceAuthorization>  
 </behavior>  
-  
 ```  
   
  The primary <xref:System.IdentityModel.Policy.IAuthorizationPolicy> method to implement is the <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%28System.IdentityModel.Policy.EvaluationContext%2CSystem.Object%40%29> method.  
@@ -393,13 +388,12 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
   
  Once the custom <xref:System.IdentityModel.Policy.IAuthorizationPolicy> is implemented, the service host must be informed about the authorization policies to use.  
   
-```  
+```xml  
 <serviceAuthorization ...>  
        <authorizationPolicies>   
             <add policyType='Microsoft.ServiceModel.Samples.CustomAuthorizationPolicy.MyAuthorizationPolicy, PolicyLibrary' />  
        </authorizationPolicies>   
 </serviceAuthorization>  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. The client successfully calls the Add, Subtract and Multiple methods and gets an "Access is denied" message when trying to call the Divide method. Press ENTER in the client window to shut down the client.  
@@ -421,7 +415,6 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installing the server certificate into client's trusted certificate store.  
@@ -443,7 +436,6 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
     echo making client cert  
     echo ************  
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installing the client certificate into server's trusted certificate store.  
@@ -476,7 +468,7 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
   
 4.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To run the sample across computers  
   
@@ -506,7 +498,7 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
   
 13. On the server computer, launch Service.exe from the command prompt window.  
   
-14. On the client computer, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+14. On the client computer, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To clean up after the sample  
   

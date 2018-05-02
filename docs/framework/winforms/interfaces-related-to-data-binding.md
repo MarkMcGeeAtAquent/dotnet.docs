@@ -1,5 +1,5 @@
 ---
-title: "Interfaces Related to Data Binding | Microsoft Docs"
+title: "Interfaces Related to Data Binding"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,23 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "data [Windows Forms], data-binding interfaces"
   - "INotifyPropertyChanged interface"
   - "IBindingListView interface"
-  - "IList interface, Windows Forms data binding"
-  - "IBindingList interface, Windows Forms data binding"
-  - "interfaces, Windows Forms data binding"
-  - "IEditableObject interface, Windows Forms data binding"
-  - "data binding, interfaces"
-  - "IDataErrorInfo interface, Windows Forms data binding"
+  - "IList interface [Windows Forms], Windows Forms data binding"
+  - "IBindingList interface [Windows Forms], Windows Forms data binding"
+  - "interfaces [Windows Forms], Windows Forms data binding"
+  - "IEditableObject interface [Windows Forms], Windows Forms data binding"
+  - "data binding [Windows Forms], interfaces"
+  - "IDataErrorInfo interface [Windows Forms], Windows Forms data binding"
 ms.assetid: 14e49a2e-3e46-47ca-b491-70d546333277
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Interfaces Related to Data Binding
 With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many different data structures to suit the binding needs of your application and the data you are working with. You may want to create your own classes that provide or consume data in Windows Forms. These objects can offer varying levels of functionality and complexity, from basic data binding, to providing design-time support, error checking, change notification, or even support for a structured rollback of the changes made to the data itself.  
@@ -69,7 +69,7 @@ With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many
   
     -   The <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method discards any changes made to the object.  
   
-     For more information about how the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, and <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> methods work, see [Save data back to the database](http://msdn.microsoft.com/library/afe6cb8a-dc6a-428b-b07b-903ac02c890b).  
+     For more information about how the <xref:System.ComponentModel.IEditableObject.BeginEdit%2A>, <xref:System.ComponentModel.IEditableObject.EndEdit%2A>, and <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> methods work, see [Save data back to the database](/visualstudio/data-tools/save-data-back-to-the-database).  
   
      This transactional notion of data functionality is used by the <xref:System.Windows.Forms.DataGridView> control.  
   
@@ -112,7 +112,7 @@ With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many
   
 -   <xref:System.ComponentModel.IRaiseItemChangedEvents> interface  
   
-     A class that implements the <xref:System.ComponentModel.IRaiseItemChangedEvents> interface is a bindable list that also implements the <xref:System.ComponentModel.IBindingList> interface. This interface is used to indicate if your type raises <xref:System.ComponentModel.IBindingList.ListChanged> events of type <xref:System.ComponentModel.ListChangedType> through its <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> property.  
+     A class that implements the <xref:System.ComponentModel.IRaiseItemChangedEvents> interface is a bindable list that also implements the <xref:System.ComponentModel.IBindingList> interface. This interface is used to indicate if your type raises <xref:System.ComponentModel.IBindingList.ListChanged> events of type <xref:System.ComponentModel.ListChangedType.ItemChanged> through its <xref:System.ComponentModel.IRaiseItemChangedEvents.RaisesItemChangedEvents%2A> property.  
   
     > [!NOTE]
     >  You should implement the <xref:System.ComponentModel.IRaiseItemChangedEvents> if your data source provides the property to list event conversion described previously and is interacting with the <xref:System.Windows.Forms.BindingSource> component. Otherwise, the <xref:System.Windows.Forms.BindingSource> will also perform property to list event conversion resulting in slower performance.  
@@ -135,7 +135,7 @@ With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many
   
 -   <xref:System.ComponentModel.INotifyPropertyChanged> interface  
   
-     A class that implements this interface is a type that raises an event when any of its property values change. This interface is designed to replace the pattern of having a change event for each property of a control. When used in a <xref:System.ComponentModel.BindingList%601>, a business object should implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface and the BindingList\`1 will convert <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> events to <xref:System.ComponentModel.BindingList%601.ListChanged> events of type <xref:System.ComponentModel.ListChangedType>.  
+     A class that implements this interface is a type that raises an event when any of its property values change. This interface is designed to replace the pattern of having a change event for each property of a control. When used in a <xref:System.ComponentModel.BindingList%601>, a business object should implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface and the BindingList\`1 will convert <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> events to <xref:System.ComponentModel.BindingList%601.ListChanged> events of type <xref:System.ComponentModel.ListChangedType.ItemChanged>.  
   
     > [!NOTE]
     >  For change notification to occur in a binding between a bound client and a data source your bound data-source type should either implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface (preferred) or you can provide *propertyName*`Changed` events for the bound type, but you shouldn't do both.  
@@ -158,6 +158,6 @@ With [!INCLUDE[vstecado](../../../includes/vstecado-md.md)], you can create many
     >  A class that inherits from <xref:System.Windows.Forms.Control> manages bindings automatically through its <xref:System.Windows.Forms.Control.BindingContext%2A> property, so cases in which you need to implement the <xref:System.Windows.Forms.ICurrencyManagerProvider> are fairly rare.  
   
 ## See Also  
- [Data Binding and Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)   
- [How to: Create a Simple-Bound Control on a Windows Form](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)   
+ [Data Binding and Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)  
+ [How to: Create a Simple-Bound Control on a Windows Form](../../../docs/framework/winforms/how-to-create-a-simple-bound-control-on-a-windows-form.md)  
  [Windows Forms Data Binding](../../../docs/framework/winforms/windows-forms-data-binding.md)

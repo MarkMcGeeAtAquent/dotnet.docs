@@ -1,8 +1,8 @@
 ---
-title: "207 - FaultProviderInvoked | Microsoft Docs"
+title: "207 - FaultProviderInvoked"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b730d903-01c2-4deb-85a4-da12f8a21fe4
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 207 - FaultProviderInvoked
 ## Properties  

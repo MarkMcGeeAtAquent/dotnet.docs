@@ -1,17 +1,19 @@
 ---
-title: "Execution | Microsoft Docs"
+title: "Execution"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a9dcedcc-9f4c-45c2-8222-6bcbf48f3534
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Execution
 This section contains samples that demonstrate executing workflows in [!INCLUDE[wf](../../../../includes/wf-md.md)].  

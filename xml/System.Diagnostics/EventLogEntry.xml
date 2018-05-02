@@ -1,7 +1,9 @@
-<Type Name="EventLogEntry" FullName="System.Diagnostics.EventLogEntry">
+﻿<Type Name="EventLogEntry" FullName="System.Diagnostics.EventLogEntry">
   <TypeSignature Language="C#" Value="public sealed class EventLogEntry : System.ComponentModel.Component, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EventLogEntry extends System.ComponentModel.Component implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogEntry" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EventLogEntry&#xA;Inherits Component&#xA;Implements ISerializable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EventLogEntry sealed : System::ComponentModel::Component, System::Runtime::Serialization::ISerializable" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -28,10 +30,10 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You usually will not create instances of <xref:System.Diagnostics.EventLogEntry> directly when working with the <xref:System.Diagnostics.EventLog> class. The <xref:System.Diagnostics.EventLog.Entries%2A> member of the <xref:System.Diagnostics.EventLog> class contains a collection of <xref:System.Diagnostics.EventLogEntry> instances, which you iterate over when reading by using the <xref:System.Diagnostics.EventLogEntryCollection.Item%2A?displayProperty=fullName> class index member.  
+ You usually will not create instances of <xref:System.Diagnostics.EventLogEntry> directly when working with the <xref:System.Diagnostics.EventLog> class. The <xref:System.Diagnostics.EventLog.Entries%2A> member of the <xref:System.Diagnostics.EventLog> class contains a collection of <xref:System.Diagnostics.EventLogEntry> instances, which you iterate over when reading by using the <xref:System.Diagnostics.EventLogEntryCollection.Item%2A?displayProperty=nameWithType> class index member.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
    
   
@@ -44,12 +46,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.EventLog" />
+    <altmember cref="T:System.Diagnostics.EventLogEntryCollection" />
+    <altmember cref="T:System.Diagnostics.EventInstance" />
   </Docs>
   <Members>
     <Member MemberName="Category">
       <MemberSignature Language="C#" Value="public string Category { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Category" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Category" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Category As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Category { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -75,12 +82,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Exception">The space could not be allocated for one of the insertion strings associated with the category.</exception>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.CategoryNumber" />
+        <altmember cref="P:System.Diagnostics.EventInstance.CategoryId" />
       </Docs>
     </Member>
     <Member MemberName="CategoryNumber">
       <MemberSignature Language="C#" Value="public short CategoryNumber { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int16 CategoryNumber" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.CategoryNumber" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CategoryNumber As Short" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property short CategoryNumber { short get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -101,16 +112,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Each application (event source) can define its own numbered categories and the text strings to which they are mapped. The Event Viewer can use the category to filter events in the log. The categories must be numbered consecutively beginning with the number 1. The category number is specified by the <xref:System.Diagnostics.EventInstance.CategoryId%2A?displayProperty=fullName> property. The Event Viewer can display the category as a numeric value, or it can use the category as a resource identifier to display a localized category string. For more information, see <xref:System.Diagnostics.EventInstance>.  
+ Each application (event source) can define its own numbered categories and the text strings to which they are mapped. The Event Viewer can use the category to filter events in the log. The categories must be numbered consecutively beginning with the number 1. The category number is specified by the <xref:System.Diagnostics.EventInstance.CategoryId%2A?displayProperty=nameWithType> property. The Event Viewer can display the category as a numeric value, or it can use the category as a resource identifier to display a localized category string. For more information, see <xref:System.Diagnostics.EventInstance>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.EntryType" />
+        <altmember cref="P:System.Diagnostics.EventLogEntry.Category" />
+        <altmember cref="P:System.Diagnostics.EventInstance.CategoryId" />
       </Docs>
     </Member>
     <Member MemberName="Data">
       <MemberSignature Language="C#" Value="public byte[] Data { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Data" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Data" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Data As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ Data { cli::array &lt;System::Byte&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -141,6 +157,8 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogEntryType EntryType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.EventLogEntryType EntryType" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.EntryType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EntryType As EventLogEntryType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::EventLogEntryType EntryType { System::Diagnostics::EventLogEntryType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -174,12 +192,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventInstance.EntryType" />
       </Docs>
     </Member>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.EventLogEntry otherEntry);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Diagnostics.EventLogEntry otherEntry) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntry.Equals(System.Diagnostics.EventLogEntry)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Equals (otherEntry As EventLogEntry) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(System::Diagnostics::EventLogEntry ^ otherEntry);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -210,6 +232,8 @@
       <MemberSignature Language="C#" Value="public int EventID { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 EventID" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.EventID" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EventID As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int EventID { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -239,12 +263,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.InstanceId" />
       </Docs>
     </Member>
     <Member MemberName="Index">
       <MemberSignature Language="C#" Value="public int Index { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Index" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Index As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Index { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -275,6 +302,8 @@
       <MemberSignature Language="C#" Value="public long InstanceId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 InstanceId" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.InstanceId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InstanceId As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long InstanceId { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -315,12 +344,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventInstance.InstanceId" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
       </Docs>
     </Member>
     <Member MemberName="MachineName">
       <MemberSignature Language="C#" Value="public string MachineName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -344,6 +377,8 @@
       <MemberSignature Language="C#" Value="public string Message { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Message" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Message" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Message As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Message { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -372,12 +407,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Exception">The space could not be allocated for one of the insertion strings associated with the message.</exception>
+        <altmember cref="T:System.Diagnostics.EventInstance" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
       </Docs>
     </Member>
     <Member MemberName="ReplacementStrings">
       <MemberSignature Language="C#" Value="public string[] ReplacementStrings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] ReplacementStrings" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.ReplacementStrings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ReplacementStrings As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ ReplacementStrings { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -413,12 +452,16 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.Message" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
       </Docs>
     </Member>
     <Member MemberName="Source">
       <MemberSignature Language="C#" Value="public string Source { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Source" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.Source" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Source As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Source { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -452,13 +495,19 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
       </Docs>
     </Member>
     <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
       <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogEntry.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetObjectData (info As SerializationInfo, context As StreamingContext) Implements ISerializable.GetObjectData" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.Serialization.ISerializable.GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context) = System::Runtime::Serialization::ISerializable::GetObjectData;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -486,6 +535,8 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
       <MemberSignature Language="C#" Value="public DateTime TimeGenerated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeGenerated" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.TimeGenerated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TimeGenerated As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime TimeGenerated { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -512,12 +563,15 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.TimeWritten" />
       </Docs>
     </Member>
     <Member MemberName="TimeWritten">
       <MemberSignature Language="C#" Value="public DateTime TimeWritten { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime TimeWritten" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.TimeWritten" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TimeWritten As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime TimeWritten { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -542,12 +596,15 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.TimeGenerated" />
       </Docs>
     </Member>
     <Member MemberName="UserName">
       <MemberSignature Language="C#" Value="public string UserName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogEntry.UserName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -573,6 +630,7 @@ e1.WriteEntry(LocRM.GetString("strMessage"),
  ]]></format>
         </remarks>
         <exception cref="T:System.SystemException">Account information could not be obtained for the user's SID.</exception>
+        <altmember cref="P:System.Diagnostics.EventLogEntry.Source" />
       </Docs>
     </Member>
   </Members>

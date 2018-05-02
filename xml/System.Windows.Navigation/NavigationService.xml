@@ -1,7 +1,9 @@
-<Type Name="NavigationService" FullName="System.Windows.Navigation.NavigationService">
+﻿<Type Name="NavigationService" FullName="System.Windows.Navigation.NavigationService">
   <TypeSignature Language="C#" Value="public sealed class NavigationService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NavigationService extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationService" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class NavigationService" />
+  <TypeSignature Language="C++ CLI" Value="public ref class NavigationService sealed" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,17 +24,17 @@
   
  Content can be navigated to by providing an instance of an object and calling an overload of the <xref:System.Windows.Navigation.NavigationService.Navigate%2A> method that accepts an object:  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=fullName>  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=fullName>  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>  
   
  Alternatively, content can be navigated to by passing a relative or absolute [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] to one of the <xref:System.Windows.Navigation.NavigationService.Navigate%2A> method overloads that accepts a [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]:  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=fullName>  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=fullName>  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%2CSystem.Boolean%29?displayProperty=fullName>  
+-   <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%2CSystem.Boolean%29?displayProperty=nameWithType>  
   
  When content is navigated to by [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)], <xref:System.Windows.Navigation.NavigationService> will return an object that contains the content.  
   
@@ -85,6 +87,8 @@
       <MemberSignature Language="C#" Value="public void AddBackEntry (System.Windows.Navigation.CustomContentState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddBackEntry(class System.Windows.Navigation.CustomContentState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddBackEntry (state As CustomContentState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddBackEntry(System::Windows::Navigation::CustomContentState ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -109,12 +113,15 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="state" /> is <see langword="null" />, and a <see cref="T:System.Windows.Navigation.CustomContentState" /> object isn't returned from <see cref="M:System.Windows.Navigation.IProvideCustomContentState.GetContentState" />.</exception>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.RemoveBackEntry" />
       </Docs>
     </Member>
     <Member MemberName="CanGoBack">
       <MemberSignature Language="C#" Value="public bool CanGoBack { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanGoBack" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CanGoBack" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanGoBack As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanGoBack { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -138,12 +145,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Navigation.NavigationService.CanGoForward" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.GoForward" />
       </Docs>
     </Member>
     <Member MemberName="CanGoForward">
       <MemberSignature Language="C#" Value="public bool CanGoForward { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanGoForward" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CanGoForward" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanGoForward As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanGoForward { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -164,12 +175,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Navigation.NavigationService.CanGoBack" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.GoBack" />
       </Docs>
     </Member>
     <Member MemberName="Content">
       <MemberSignature Language="C#" Value="public object Content { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Content" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.Content" />
+      <MemberSignature Language="VB.NET" Value="Public Property Content As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Content { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -195,12 +210,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Windows.Navigation.NavigationService.Navigate" />
       </Docs>
     </Member>
     <Member MemberName="CurrentSource">
       <MemberSignature Language="C#" Value="public Uri CurrentSource { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CurrentSource" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.CurrentSource" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentSource As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ CurrentSource { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -228,6 +246,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event FragmentNavigation As FragmentNavigationEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::FragmentNavigationEventHandler ^ FragmentNavigation;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -267,7 +287,7 @@
  You should avoid directly initiating navigation from within a <xref:System.Windows.Navigation.NavigationService.FragmentNavigation> event handler. Since <xref:System.Windows.Navigation.NavigationService.FragmentNavigation> is raised during an existing navigation, initiating a new navigation from a <xref:System.Windows.Navigation.NavigationService.FragmentNavigation> event handler creates a nested navigation that can cause the <xref:System.ExecutionEngineException> to be thrown. Instead, you can indirectly initiate navigation by creating an asynchronous work item using the <xref:System.Windows.Threading.Dispatcher>.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>, it also raises <xref:System.Windows.Application.FragmentNavigation?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>, it also raises <xref:System.Windows.Application.FragmentNavigation?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
 > [!IMPORTANT]
 >  Fragment navigation is not supported for loose [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] pages (markup-only [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] files with `Page` as the root element) in the following cases:  
@@ -288,12 +308,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
       </Docs>
     </Member>
     <Member MemberName="GetNavigationService">
       <MemberSignature Language="C#" Value="public static System.Windows.Navigation.NavigationService GetNavigationService (System.Windows.DependencyObject dependencyObject);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Navigation.NavigationService GetNavigationService(class System.Windows.DependencyObject dependencyObject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GetNavigationService(System.Windows.DependencyObject)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::Navigation::NavigationService ^ GetNavigationService(System::Windows::DependencyObject ^ dependencyObject);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -308,7 +335,7 @@
       <Docs>
         <param name="dependencyObject">The <see cref="T:System.Windows.DependencyObject" /> in content that is hosted by a navigator.</param>
         <summary>Gets a reference to the <see cref="T:System.Windows.Navigation.NavigationService" /> for the navigator whose content contains the specified <see cref="T:System.Windows.DependencyObject" />.</summary>
-        <returns>A reference to the <see cref="T:System.Windows.Navigation.NavigationService" /> for the navigator whose content contains the specified <see cref="T:System.Windows.DependencyObject" />; can be <see langword="null" /> in some cases (see Remarks).</returns>
+        <returns>A reference to the <see cref="T:System.Windows.Navigation.NavigationService" /> for the navigator whose content contains the specified <see cref="T:System.Windows.DependencyObject" />; can be <see langword="null" /> in some cases.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -323,13 +350,13 @@
   
     1.  Is hosted by another navigator.  
   
-    2.  Has its <xref:System.Windows.Controls.Frame.JournalOwnership%2A> property set to <xref:System.Windows.Navigation.JournalOwnership>.  
+    2.  Has its <xref:System.Windows.Controls.Frame.JournalOwnership%2A> property set to <xref:System.Windows.Navigation.JournalOwnership.UsesParentJournal>.  
   
 -   Is not part of content that is hosted by a navigator.  
   
  [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)] offers two shortcuts for acquiring a reference to the <xref:System.Windows.Navigation.NavigationService>:  
   
--   The <xref:System.Windows.Navigation.NavigationService> that processed the navigation to a <xref:System.Windows.Controls.Page> can be accessed from the <xref:System.Windows.Controls.Page> itself by getting the value of its <xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=fullName> property.  
+-   The <xref:System.Windows.Navigation.NavigationService> that processed the navigation to a <xref:System.Windows.Controls.Page> can be accessed from the <xref:System.Windows.Controls.Page> itself by getting the value of its <xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=nameWithType> property.  
   
 -   The <xref:System.Windows.Navigation.NavigationService> that is used by a <xref:System.Windows.Controls.Frame> to process navigation can be accessed by getting the value of the <xref:System.Windows.Controls.Frame.NavigationService%2A> property.  
   
@@ -352,6 +379,8 @@
       <MemberSignature Language="C#" Value="public void GoBack ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoBack() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GoBack" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GoBack ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void GoBack();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -381,12 +410,16 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Navigation.NavigationService.GoBack" /> is called when there are no entries in back navigation history.</exception>
+        <altmember cref="P:System.Windows.Navigation.NavigationService.CanGoForward" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.GoForward" />
       </Docs>
     </Member>
     <Member MemberName="GoForward">
       <MemberSignature Language="C#" Value="public void GoForward ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoForward() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.GoForward" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GoForward ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void GoForward();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -416,12 +449,16 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Navigation.NavigationService.GoForward" /> is called when there are no entries in forward navigation history.</exception>
+        <altmember cref="P:System.Windows.Navigation.NavigationService.CanGoBack" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.GoBack" />
       </Docs>
     </Member>
     <Member MemberName="LoadCompleted">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event LoadCompleted As LoadCompletedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::LoadCompletedEventHandler ^ LoadCompleted;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -449,7 +486,7 @@
  <xref:System.Windows.Navigation.NavigationService.LoadCompleted> is not raised when the source page could not be found or loaded, in which case <xref:System.Windows.Navigation.NavigationService.NavigationFailed> is raised.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.LoadCompleted>, it also raises <xref:System.Windows.Application.LoadCompleted?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.LoadCompleted>, it also raises <xref:System.Windows.Application.LoadCompleted?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
    
   
@@ -461,12 +498,29 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Navigate">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Navigate asynchronously to the specified source content.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (object root);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(object root) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (root As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Navigate(System::Object ^ root);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -508,12 +562,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (Uri source);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (source As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Navigate(Uri ^ source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -559,12 +619,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (object root, object navigationState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(object root, object navigationState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (root As Object, navigationState As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Navigate(System::Object ^ root, System::Object ^ navigationState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -587,7 +653,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method has the same behavior as <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=fullName>, although an object is passed instead of a [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
+ This method has the same behavior as <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>, although an object is passed instead of a [!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)].  
   
    
   
@@ -599,12 +665,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object navigationState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source, object navigationState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (source As Uri, navigationState As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Navigate(Uri ^ source, System::Object ^ navigationState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -645,12 +717,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object navigationState, bool sandboxExternalContent);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Navigate(class System.Uri source, object navigationState, bool sandboxExternalContent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (source As Uri, navigationState As Object, sandboxExternalContent As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Navigate(Uri ^ source, System::Object ^ navigationState, bool sandboxExternalContent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -677,16 +755,22 @@
 ## Remarks  
  This method is only for standalone applications and [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)] content.  
   
- This method exhibits the same behavior as <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=fullName>, and extends it by ensuring that the content that is being downloaded is placed into a partial trust security sandbox (with the default Internet zone set of permissions - see [WPF Partial Trust Security](~/docs/framework/wpf/wpf-partial-trust-security.md)).  
+ This method exhibits the same behavior as <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>, and extends it by ensuring that the content that is being downloaded is placed into a partial trust security sandbox (with the default Internet zone set of permissions - see [WPF Partial Trust Security](~/docs/framework/wpf/wpf-partial-trust-security.md)).  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigated">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.Navigated" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Navigated As NavigatedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::NavigatedEventHandler ^ Navigated;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -716,7 +800,7 @@
  <xref:System.Windows.Navigation.NavigationService.Navigated> is not raised when the source page could not be found or loaded, in which case <xref:System.Windows.Navigation.NavigationService.NavigationFailed> is raised.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationFailed>, it also raises <xref:System.Windows.Application.NavigationFailed?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationFailed>, it also raises <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
    
   
@@ -728,12 +812,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
       </Docs>
     </Member>
     <Member MemberName="Navigating">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.Navigating" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Navigating As NavigatingCancelEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::NavigatingCancelEventHandler ^ Navigating;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -768,7 +860,7 @@
  After the first piece of content is navigated to by a navigator (<xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Frame>), each piece of content that is navigated away from is added to navigation history. If you need to save state information about the content you are navigating away from, you can add the state to the journal entry for that content by setting <xref:System.Windows.Navigation.NavigatingCancelEventArgs.ContentStateToSave%2A> with a <xref:System.Windows.Navigation.CustomContentState> object.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.Navigating>, it also raises <xref:System.Windows.Application.Navigating?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.Navigating>, it also raises <xref:System.Windows.Application.Navigating?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
    
   
@@ -782,12 +874,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Refresh" />
       </Docs>
     </Member>
     <Member MemberName="NavigationFailed">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
+      <MemberSignature Language="VB.NET" Value="Public Event NavigationFailed As NavigationFailedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::NavigationFailedEventHandler ^ NavigationFailed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -806,11 +907,11 @@
   
  When an exception results from a failed navigation, and is unhandled, the following events are raised in the order listed:  
   
--   <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=fullName>.  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>.  
   
--   <xref:System.Windows.Controls.Frame.NavigationFailed?displayProperty=fullName> or <xref:System.Windows.Navigation.NavigationWindow.NavigationFailed?displayProperty=fullName>.  
+-   <xref:System.Windows.Controls.Frame.NavigationFailed?displayProperty=nameWithType> or <xref:System.Windows.Navigation.NavigationWindow.NavigationFailed?displayProperty=nameWithType>.  
   
--   <xref:System.Windows.Application.NavigationFailed?displayProperty=fullName>.  
+-   <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>.  
   
 -   <xref:System.Windows.Application.DispatcherUnhandledException>.  
   
@@ -826,12 +927,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="M:System.Windows.Navigation.NavigationService.Refresh" />
       </Docs>
     </Member>
     <Member MemberName="NavigationProgress">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NavigationProgress As NavigationProgressEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::NavigationProgressEventHandler ^ NavigationProgress;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -859,7 +969,7 @@
  When navigating to a compiled XAML resource, the final <xref:System.Windows.Navigation.NavigationService.NavigationProgress> event may not be raised. This means that at the end of the download, the last reported <xref:System.Windows.Navigation.NavigationProgressEventArgs.BytesRead%2A> value may not equal the <xref:System.Windows.Navigation.NavigationProgressEventArgs.MaxBytes%2A> value. Handle the <xref:System.Windows.Navigation.NavigationService.LoadCompleted> event to be notified when the navigation has finished.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationProgress>, it also raises <xref:System.Windows.Application.NavigationProgress?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationProgress>, it also raises <xref:System.Windows.Application.NavigationProgress?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
    
   
@@ -871,12 +981,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
       </Docs>
     </Member>
     <Member MemberName="NavigationStopped">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationService.NavigationStopped" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NavigationStopped As NavigationStoppedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Navigation::NavigationStoppedEventHandler ^ NavigationStopped;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -897,10 +1015,10 @@
   
 -   The navigator (<xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Frame>).  
   
--   Additional data, if the navigation was initiated by calling either <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=fullName> or <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=fullName>.  
+-   Additional data, if the navigation was initiated by calling either <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType> or <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationStopped>, it also raises <xref:System.Windows.Application.NavigationStopped?displayProperty=fullName> event on the <xref:System.Windows.Application> object.  
+>  When <xref:System.Windows.Navigation.NavigationService> raises <xref:System.Windows.Navigation.NavigationService.NavigationStopped>, it also raises <xref:System.Windows.Application.NavigationStopped?displayProperty=nameWithType> event on the <xref:System.Windows.Application> object.  
   
    
   
@@ -912,12 +1030,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.FragmentNavigation" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationService.NavigationFailed" />
       </Docs>
     </Member>
     <Member MemberName="Refresh">
       <MemberSignature Language="C#" Value="public void Refresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Refresh ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Refresh();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -939,12 +1065,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationService.Navigating" />
       </Docs>
     </Member>
     <Member MemberName="RemoveBackEntry">
       <MemberSignature Language="C#" Value="public System.Windows.Navigation.JournalEntry RemoveBackEntry ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Navigation.JournalEntry RemoveBackEntry() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.RemoveBackEntry" />
+      <MemberSignature Language="VB.NET" Value="Public Function RemoveBackEntry () As JournalEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Navigation::JournalEntry ^ RemoveBackEntry();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -965,12 +1094,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationService.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
       </Docs>
     </Member>
     <Member MemberName="Source">
       <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationService.Source" />
+      <MemberSignature Language="VB.NET" Value="Public Property Source As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Source { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1000,6 +1132,8 @@
       <MemberSignature Language="C#" Value="public void StopLoading ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopLoading() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationService.StopLoading" />
+      <MemberSignature Language="VB.NET" Value="Public Sub StopLoading ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void StopLoading();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1034,6 +1168,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Windows.Navigation.NavigationService.Navigate" />
       </Docs>
     </Member>
   </Members>

@@ -1,6 +1,8 @@
 ---
 uid: Microsoft.Win32.SessionEndedEventHandler
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

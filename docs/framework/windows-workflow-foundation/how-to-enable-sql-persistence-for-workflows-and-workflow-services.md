@@ -1,5 +1,5 @@
 ---
-title: "How to: Enable SQL Persistence for Workflows and Workflow Services | Microsoft Docs"
+title: "How to: Enable SQL Persistence for Workflows and Workflow Services"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -7,16 +7,21 @@ ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
 caps.latest.revision: 36
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Enable SQL Persistence for Workflows and Workflow Services
 This topic describes how to configure the SQL Workflow Instance Store feature to enable persistence for your workflows and workflow services both programmatically and by using a configuration file.  
   
- Windows Server App Fabric simplifies the process of configuring persistence. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][App Fabric Persistence Configuration](http://go.microsoft.com/fwlink/?LinkId=201204)  
+ Windows Server App Fabric simplifies the process of configuring persistence. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [App Fabric Persistence Configuration](http://go.microsoft.com/fwlink/?LinkId=201204)  
   
  Before using the SQL Workflow Instance Store feature, create a database that the feature uses to persist workflow instances. The [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] set-up program copies SQL script files associated with the SQL Workflow Instance Store feature to the %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN folder. Run these script files against a SQL Server 2005 or SQL Server 2008 database that you want the SQL Workflow Instance Store to use to persist workflow instances. Run the SqlWorkflowInstanceStoreSchema.sql file first and then run the SqlWorkflowInstanceStoreLogic.sql file.  
   
@@ -49,7 +54,6 @@ This topic describes how to configure the SQL Workflow Instance Store feature to
 3.  Construct a <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> and assign it to the <xref:System.Activities.WorkflowApplication.InstanceStore%2A> of the <xref:System.Activities.WorkflowApplication> as shown in the following code example.  
   
     ```csharp  
-  
     SqlWorkflowInstanceStore store =   
         new SqlWorkflowInstanceStore("Server=.\\SQLEXPRESS;Initial Catalog=Persistence;Integrated Security=SSPI");  
   
@@ -57,13 +61,12 @@ This topic describes how to configure the SQL Workflow Instance Store feature to
         new WorkflowApplication(new Workflow1());  
   
     wfApp.InstanceStore = store;  
-  
     ```  
   
     > [!NOTE]
     >  Depending on your edition of SQL Server, the connection string server name may be different.  
   
-4.  Invoke the <xref:System.Activities.WorkflowApplication.Persist%2A> method on the <xref:System.Activities.WorkflowApplication> object to persist a workflow, or <xref:System.Activities.WorkflowApplication.Unload%2A> method to persist and unload a workflow. You can also handle the <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> event raised by the <xref:System.Activities.WorkflowApplication> object and return appropriate (<xref:System.Activities.PersistableIdleAction> or <xref:System.Activities.PersistableIdleAction>) member of <xref:System.Activities.PersistableIdleAction>.  
+4.  Invoke the <xref:System.Activities.WorkflowApplication.Persist%2A> method on the <xref:System.Activities.WorkflowApplication> object to persist a workflow, or <xref:System.Activities.WorkflowApplication.Unload%2A> method to persist and unload a workflow. You can also handle the <xref:System.Activities.WorkflowApplication.PersistableIdle%2A> event raised by the <xref:System.Activities.WorkflowApplication> object and return appropriate (<xref:System.Activities.PersistableIdleAction.Persist> or <xref:System.Activities.PersistableIdleAction.Unload>) member of <xref:System.Activities.PersistableIdleAction>.  
   
     ```csharp  
     wfApp.PersistableIdle = delegate(WorkflowApplicationIdleEventArgs e)  
@@ -94,16 +97,13 @@ This topic describes how to configure the SQL Workflow Instance Store feature to
 3.  Create an instance of the `WorkflowServiceHost` and add endpoints for the workflow service.  
   
     ```  
-  
     WorkflowServiceHost host = new WorkflowServiceHost(new CountingWorkflow(), new Uri(hostBaseAddress));  
     host.AddServiceEndpoint("ICountingWorkflow", new BasicHttpBinding(), "");  
-  
     ```  
   
 4.  Construct a `SqlWorkflowInstanceStoreBehavior` object and to set properties of the behavior object.  
   
     ```csharp  
-  
     SqlWorkflowInstanceStoreBehavior instanceStoreBehavior = new SqlWorkflowInstanceStoreBehavior(connectionString);  
     instanceStoreBehavior.HostLockRenewalPeriod = new TimeSpan(0, 0, 5);  
     instanceStoreBehavior.InstanceCompletionAction = InstanceCompletionAction.DeleteAll;  
@@ -111,15 +111,12 @@ This topic describes how to configure the SQL Workflow Instance Store feature to
     instanceStoreBehavior.InstanceEncodingOption = InstanceEncodingOption.GZip;  
     instanceStoreBehavior.RunnableInstancesDetectionPeriod = new TimeSpan("00:00:02");  
     host.Description.Behaviors.Add(instanceStoreBehavior);  
-  
     ```  
   
 5.  Open the workflow service host.  
   
     ```vb  
-  
     host.Open();  
-  
     ```  
   
 > [!IMPORTANT]
@@ -137,8 +134,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
   
  The `SqlWorkflowInstanceStoreBehavior`, a service behavior that allows you to conveniently change the [SQL Workflow Instance Store](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md) properties through XML configuration. For WAS-hosted workflow services, use the Web.config file. The following configuration example shows how to configure the SQL Workflow Instance Store by using the `sqlWorkflowInstanceStore` behavior element in a configuration file.  
   
-```  
-  
+```xml  
 <serviceBehaviors>  
     <behavior name="">  
         <sqlWorkflowInstanceStore   
@@ -152,7 +148,6 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
         <sqlWorkflowInstanceStore/>  
     </behavior>  
 </serviceBehaviors>  
-  
 ```  
   
  If you do not set values for the `connectionString` or the `connectionStringName` property, the SQL Workflow Instance Store uses the default named connection string `DefaultSqlWorkflowInstanceStoreConnectionString`.  
@@ -171,8 +166,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
   
 -   Adds the following behavior extension element to the Machine.config file so that you can use the <`sqlWorkflowInstanceStore`> service behavior element in the configuration file to configure persistence for your services.  
   
-    ```  
-  
+    ```xml  
     <configuration>  
         <system.serviceModel>  
             <extensions>  
@@ -182,5 +176,4 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
             </extensions>  
         <system.serviceModel>  
     <configuration>  
-  
     ```

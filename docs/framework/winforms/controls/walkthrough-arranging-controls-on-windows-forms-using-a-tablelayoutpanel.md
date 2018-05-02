@@ -1,16 +1,14 @@
 ---
-title: "Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel | Microsoft Docs"
+title: "Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "controls [Windows Forms], arranging with TableLayoutPanel"
   - "TableLayoutPanel control [Windows Forms], walkthroughs"
@@ -20,6 +18,8 @@ caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel
 Some applications require a form with a layout that arranges itself appropriately as the form is resized or as the contents change in size. When you need a dynamic layout and you do not want to handle <xref:System.Windows.Forms.Control.Layout> events explicitly in your code, consider using a layout panel.  
@@ -30,7 +30,7 @@ Some applications require a form with a layout that arranges itself appropriatel
   
  The <xref:System.Windows.Forms.TableLayoutPanel> arranges its contents in a grid, providing functionality similar to the HTML \<table> element. The <xref:System.Windows.Forms.TableLayoutPanel> control allows you to place controls in a grid layout without requiring you to precisely specify the position of each individual control. Its cells are arranged in rows and columns, and these can have different sizes. Cells can be merged across rows and columns. Cells can contain anything a form can contain and behave in most other respects as containers.  
   
- The <xref:System.Windows.Forms.TableLayoutPanel> control also provides a proportional resizing capability at run time, so your layout can change smoothly as your form is resized. This makes the <xref:System.Windows.Forms.TableLayoutPanel> control well suited for purposes such as data-entry forms and localized applications. For more information, see [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab) and [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c).  
+ The <xref:System.Windows.Forms.TableLayoutPanel> control also provides a proportional resizing capability at run time, so your layout can change smoothly as your form is resized. This makes the <xref:System.Windows.Forms.TableLayoutPanel> control well suited for purposes such as data-entry forms and localized applications. For more information, see [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/library/e193b4fc-912a-4917-b036-b76c7a6f58ab) and [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/library/c5240b6e-aaca-4286-9bae-778a416edb9c).  
   
  In general, you should not use a <xref:System.Windows.Forms.TableLayoutPanel> control as a container for the whole layout. Use <xref:System.Windows.Forms.TableLayoutPanel> controls to provide proportional resizing capabilities to parts of the layout.  
   
@@ -55,14 +55,14 @@ Some applications require a form with a layout that arranges itself appropriatel
  When you are finished, you will have an understanding of the role played by these important layout features.  
   
 > [!NOTE]
->  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## Creating the Project  
  The first step is to create the project and set up the form.  
   
 #### To create the project  
   
-1.  Create a Windows Application project called "TableLayoutPanelExample". For more information, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/en-us/b2f93fed-c635-4705-8d0e-cf079a264efa) .  
+1.  Create a Windows Application project called "TableLayoutPanelExample". For more information, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) .  
   
 2.  Select the form in the **Windows** **Forms Designer**.  
   
@@ -88,13 +88,13 @@ Some applications require a form with a layout that arranges itself appropriatel
   
 #### Positioning controls within cells  
   
-1.  Select the first <xref:System.Windows.Forms.Button> control. Change the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle>. Note that the <xref:System.Windows.Forms.Button> control expands to fill its cell.  
+1.  Select the first <xref:System.Windows.Forms.Button> control. Change the value of its <xref:System.Windows.Forms.Control.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>. Note that the <xref:System.Windows.Forms.Button> control expands to fill its cell.  
   
-2.  Select one of the other <xref:System.Windows.Forms.Button> controls. Change the value of its <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles>. Note that it is moved so that its right border is near the right border of the cell. The distance between the borders is the sum of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Margin%2A> property and the panel's <xref:System.Windows.Forms.Control.Padding%2A> property.  
+2.  Select one of the other <xref:System.Windows.Forms.Button> controls. Change the value of its <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles.Right>. Note that it is moved so that its right border is near the right border of the cell. The distance between the borders is the sum of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Margin%2A> property and the panel's <xref:System.Windows.Forms.Control.Padding%2A> property.  
   
-3.  Change the value of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles> and <xref:System.Windows.Forms.AnchorStyles>. Note that the control is sized to the width of the cell, with the <xref:System.Windows.Forms.Control.Margin%2A> and <xref:System.Windows.Forms.Control.Padding%2A> values taken into account.  
+3.  Change the value of the <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Anchor%2A> property to <xref:System.Windows.Forms.AnchorStyles.Right> and <xref:System.Windows.Forms.AnchorStyles.Left>. Note that the control is sized to the width of the cell, with the <xref:System.Windows.Forms.Control.Margin%2A> and <xref:System.Windows.Forms.Control.Padding%2A> values taken into account.  
   
-4.  Repeat steps 2 and 3 with the <xref:System.Windows.Forms.AnchorStyles> and <xref:System.Windows.Forms.AnchorStyles> styles.  
+4.  Repeat steps 2 and 3 with the <xref:System.Windows.Forms.AnchorStyles.Top> and <xref:System.Windows.Forms.AnchorStyles.Bottom> styles.  
   
 ## Setting Row and Column Properties  
  You can set individual properties of rows and columns by using the <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> and <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collections.  
@@ -105,11 +105,11 @@ Some applications require a form with a layout that arranges itself appropriatel
   
 2.  In the **Properties** windows, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection by clicking the ellipsis (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) button next to the **Columns** entry.  
   
-3.  Select the first column and change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType>. Click **OK** to accept the change. Note that the width of the first column is reduced to fit the <xref:System.Windows.Forms.Button> control. Also note that the width of the column is not resizable.  
+3.  Select the first column and change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.AutoSize>. Click **OK** to accept the change. Note that the width of the first column is reduced to fit the <xref:System.Windows.Forms.Button> control. Also note that the width of the column is not resizable.  
   
-4.  In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select the first column. Change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType>. Click **OK** to accept the change. Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger width and note that the width of the first column expands. Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a smaller width and note that the buttons in the first column are sized to fit the cell. Also note that the width of the column is resizable.  
+4.  In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select the first column. Change the value of its <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.Percent>. Click **OK** to accept the change. Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a larger width and note that the width of the first column expands. Resize the <xref:System.Windows.Forms.TableLayoutPanel> control to a smaller width and note that the buttons in the first column are sized to fit the cell. Also note that the width of the column is resizable.  
   
-5.  In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select all the listed columns. Set the value of every <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType>. Click **OK** to accept the change. Repeat with the <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> collection.  
+5.  In the **Properties** window, open the <xref:System.Windows.Forms.TableLayoutPanel.ColumnStyles%2A> collection and select all the listed columns. Set the value of every <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property to <xref:System.Windows.Forms.SizeType.Percent>. Click **OK** to accept the change. Repeat with the <xref:System.Windows.Forms.TableLayoutPanel.RowStyles%2A> collection.  
   
 6.  Grab one of the corner resizing handles and resize both the width and height of the <xref:System.Windows.Forms.TableLayoutPanel> control. Note that the rows and columns are resized as the <xref:System.Windows.Forms.TableLayoutPanel> control's size changes. Also note that the rows and columns are resizable with the horizontal and vertical sizing handles.  
   
@@ -144,7 +144,7 @@ Some applications require a form with a layout that arranges itself appropriatel
   
 2.  Once the <xref:System.Windows.Forms.TableLayoutPanel> control is full, double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** to insert another <xref:System.Windows.Forms.Button> control. Note that the <xref:System.Windows.Forms.TableLayoutPanel> control creates new cells to accommodate the new control. Insert a few more controls and observe the resizing behavior.  
   
-3.  Change the value of the <xref:System.Windows.Forms.TableLayoutPanel> control's <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> property to <xref:System.Windows.Forms.TableLayoutPanelGrowStyle>. Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** to insert <xref:System.Windows.Forms.Button> controls until the <xref:System.Windows.Forms.TableLayoutPanel> control is full. Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** again. Note that you receive an error message from the **Windows Forms Designer** informing you that additional rows and columns cannot be created.  
+3.  Change the value of the <xref:System.Windows.Forms.TableLayoutPanel> control's <xref:System.Windows.Forms.TableLayoutPanel.GrowStyle%2A> property to <xref:System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize>. Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** to insert <xref:System.Windows.Forms.Button> controls until the <xref:System.Windows.Forms.TableLayoutPanel> control is full. Double-click the <xref:System.Windows.Forms.Button> icon in the **Toolbox** again. Note that you receive an error message from the **Windows Forms Designer** informing you that additional rows and columns cannot be created.  
   
 ## Inserting a Control by Drawing Its Outline  
  You can insert a control into a <xref:System.Windows.Forms.TableLayoutPanel> control and specify its size by drawing its outline in a cell.  
@@ -187,15 +187,15 @@ Some applications require a form with a layout that arranges itself appropriatel
 -   Dock the <xref:System.Windows.Forms.TableLayoutPanel> control to the parent form. Resize the form and note the effect on the layout.  
   
 ## See Also  
- <xref:System.Windows.Forms.FlowLayoutPanel>   
- <xref:System.Windows.Forms.TableLayoutPanel>   
- [Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)   
- [Walkthrough: Arranging Controls on Windows Forms Using Snaplines](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)   
- [Microsoft Windows User Experience, Official Guidelines for User Interface Developers and Designers. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)   
- [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/en-us/e193b4fc-912a-4917-b036-b76c7a6f58ab)   
- [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/en-us/c5240b6e-aaca-4286-9bae-778a416edb9c)   
- [Best Practices for the TableLayoutPanel Control](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)   
- [AutoSize Property Overview](../../../../docs/framework/winforms/controls/autosize-property-overview.md)   
- [How to: Dock Controls on Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)   
- [How to: Anchor Controls on Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)   
+ <xref:System.Windows.Forms.FlowLayoutPanel>  
+ <xref:System.Windows.Forms.TableLayoutPanel>  
+ [Walkthrough: Arranging Controls on Windows Forms Using a FlowLayoutPanel](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)  
+ [Walkthrough: Arranging Controls on Windows Forms Using Snaplines](../../../../docs/framework/winforms/controls/walkthrough-arranging-controls-on-windows-forms-using-snaplines.md)  
+ [Microsoft Windows User Experience, Official Guidelines for User Interface Developers and Designers. Redmond, WA: Microsoft Press, 1999. (USBN: 0-7356-0566-1)](http://www.microsoft.com/mspress/southpacific/books/book11588.htm)  
+ [Walkthrough: Creating a Resizable Windows Form for Data Entry](http://msdn.microsoft.com/library/e193b4fc-912a-4917-b036-b76c7a6f58ab)  
+ [Walkthrough: Creating a Localizable Windows Form](http://msdn.microsoft.com/library/c5240b6e-aaca-4286-9bae-778a416edb9c)  
+ [Best Practices for the TableLayoutPanel Control](../../../../docs/framework/winforms/controls/best-practices-for-the-tablelayoutpanel-control.md)  
+ [AutoSize Property Overview](../../../../docs/framework/winforms/controls/autosize-property-overview.md)  
+ [How to: Dock Controls on Windows Forms](../../../../docs/framework/winforms/controls/how-to-dock-controls-on-windows-forms.md)  
+ [How to: Anchor Controls on Windows Forms](../../../../docs/framework/winforms/controls/how-to-anchor-controls-on-windows-forms.md)  
  [Walkthrough: Laying Out Windows Forms Controls with Padding, Margins, and the AutoSize Property](../../../../docs/framework/winforms/controls/windows-forms-controls-padding-autosize.md)

@@ -1,18 +1,24 @@
 ---
 uid: System.Windows.Forms.ToolStripSplitButton.ToolStripSplitButtonAccessibleObject
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ToolStripSplitButton.ToolStripSplitButtonAccessibleObject.#ctor(System.Windows.Forms.ToolStripSplitButton)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ToolStripSplitButton.ToolStripSplitButtonAccessibleObject.DoDefaultAction
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

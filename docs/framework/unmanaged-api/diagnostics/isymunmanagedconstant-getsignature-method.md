@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedConstant::GetSignature Method | Microsoft Docs"
+title: "ISymUnmanagedConstant::GetSignature Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedConstant.GetSignature"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedConstant::GetSignature"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetSignature method, ISymUnmanagedConstant interface [.NET Framework debugging]"
   - "ISymUnmanagedConstant::GetSignature method [.NET Framework debugging]"
 ms.assetid: 3eb41151-a228-43e3-ba8f-e6dd3ceb8542
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedConstant::GetSignature Method
 Gets the signature of the constant.  
@@ -57,6 +60,6 @@ HRESULT GetSignature(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedConstant Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)   
- [GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)   
+ [ISymUnmanagedConstant Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)  
+ [GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)  
  [GetValue Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)

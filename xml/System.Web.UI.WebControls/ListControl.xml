@@ -1,7 +1,9 @@
-<Type Name="ListControl" FullName="System.Web.UI.WebControls.ListControl">
+﻿<Type Name="ListControl" FullName="System.Web.UI.WebControls.ListControl">
   <TypeSignature Language="C#" Value="public abstract class ListControl : System.Web.UI.WebControls.DataBoundControl, System.Web.UI.IEditableTextControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ListControl extends System.Web.UI.WebControls.DataBoundControl implements class System.Web.UI.IEditableTextControl, class System.Web.UI.ITextControl" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListControl" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ListControl&#xA;Inherits DataBoundControl&#xA;Implements IEditableTextControl" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ListControl abstract : System::Web::UI::WebControls::DataBoundControl, System::Web::UI::IEditableTextControl" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -39,11 +41,11 @@
 ## Remarks  
  An instance of the <xref:System.Web.UI.WebControls.ListControl> abstract class cannot be created directly. Instead, this class is inherited by other classes, such as the <xref:System.Web.UI.WebControls.CheckBoxList>, <xref:System.Web.UI.WebControls.DropDownList>, <xref:System.Web.UI.WebControls.ListBox>, and <xref:System.Web.UI.WebControls.RadioButtonList> classes, to provide common basic functionality.  
   
- The properties of the <xref:System.Web.UI.WebControls.ListControl> class allow you to specify the source of the data to populate the list control. Use the <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A> property to specify the data source to bind to the list control. If the data source contains more than one table, use the <xref:System.Web.UI.WebControls.DataBoundControl.DataMember%2A> property to specify the table to use. You can bind different fields in the data source to the <xref:System.Web.UI.WebControls.ListItem.Text%2A?displayProperty=fullName> and <xref:System.Web.UI.WebControls.ListItem.Value%2A?displayProperty=fullName> properties of the items in the list control by setting the <xref:System.Web.UI.WebControls.ListControl.DataTextField%2A> and <xref:System.Web.UI.WebControls.ListControl.DataValueField%2A> properties, respectively. The text displayed for each item in the list control can by formatted by setting the <xref:System.Web.UI.WebControls.ListControl.DataTextFormatString%2A> property.  
+ The properties of the <xref:System.Web.UI.WebControls.ListControl> class allow you to specify the source of the data to populate the list control. Use the <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A> property to specify the data source to bind to the list control. If the data source contains more than one table, use the <xref:System.Web.UI.WebControls.DataBoundControl.DataMember%2A> property to specify the table to use. You can bind different fields in the data source to the <xref:System.Web.UI.WebControls.ListItem.Text%2A?displayProperty=nameWithType> and <xref:System.Web.UI.WebControls.ListItem.Value%2A?displayProperty=nameWithType> properties of the items in the list control by setting the <xref:System.Web.UI.WebControls.ListControl.DataTextField%2A> and <xref:System.Web.UI.WebControls.ListControl.DataValueField%2A> properties, respectively. The text displayed for each item in the list control can by formatted by setting the <xref:System.Web.UI.WebControls.ListControl.DataTextFormatString%2A> property.  
   
  All items displayed in the list control are stored in the <xref:System.Web.UI.WebControls.ListControl.Items%2A> collection. You can programmatically specify or determine the index of a selected item in the list control by using the <xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A> property. The properties of the selected item can be accessed by using the <xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A> property.  
   
- The <xref:System.Web.UI.WebControls.ListControl> class provides the <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged> event, which is raised when the selection in the list control changes between posts to the server. This allows you to provide a custom handler for this event. For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ The <xref:System.Web.UI.WebControls.ListControl> class provides the <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged> event, which is raised when the selection in the list control changes between posts to the server. This allows you to provide a custom handler for this event. For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  The <xref:System.Web.UI.WebControls.ListControl> class implements the <xref:System.Web.UI.IEditableTextControl> interface so that derived list-type controls can be used in the template mode of other controls.  
   
@@ -55,17 +57,24 @@
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.CheckBoxList" />
+    <altmember cref="T:System.Web.UI.WebControls.DropDownList" />
+    <altmember cref="T:System.Web.UI.WebControls.ListBox" />
+    <altmember cref="T:System.Web.UI.WebControls.RadioButtonList" />
+    <altmember cref="T:System.Web.UI.WebControls.ListItem" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ListControl ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ListControl();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -82,8 +91,8 @@
   
  create a <xref:System.Web.UI.WebControls.ListBox> control. The example uses a <xref:System.Web.UI.WebControls.PlaceHolder> control as a container for the <xref:System.Web.UI.WebControls.ListBox>.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlctor/CS/sourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlctor/VB/sourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlctor/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlctor/VB/sourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -93,6 +102,8 @@
       <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub AddAttributesToRender (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void AddAttributesToRender(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -118,12 +129,15 @@
         <block subset="none" type="overrides">
           <para>The <see cref="M:System.Web.UI.WebControls.ListControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" /> method overrides the <see cref="M:System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" /> method.</para>
         </block>
+        <altmember cref="M:System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
       </Docs>
     </Member>
     <Member MemberName="AppendDataBoundItems">
       <MemberSignature Language="C#" Value="public virtual bool AppendDataBoundItems { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AppendDataBoundItems" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.AppendDataBoundItems" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property AppendDataBoundItems As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool AppendDataBoundItems { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -159,17 +173,20 @@
 ## Examples  
  The following code example demonstrates how to include both data-bound items and items that are not data-bound in a <xref:System.Web.UI.WebControls.ListBox> control. In the <xref:System.Web.UI.Control.Load> event for the <xref:System.Web.UI.Page>, one item is added to the <xref:System.Web.UI.WebControls.ListControl.Items%2A> collection and the <xref:System.Web.UI.WebControls.ListControl.AppendDataBoundItems%2A> property is set to `true`. Then, the <xref:System.Web.UI.WebControls.ListBox> control is bound to a <xref:System.Data.DataTable> control. The resulting <xref:System.Web.UI.WebControls.ListBox> control contains both the data-bound items and the item that was added individually.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlAppendDataBoundItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAppendDataBoundItems/CS/AppendItemsCs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlAppendDataBoundItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAppendDataBoundItems/VB/AppendItemsVb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlAppendDataBoundItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAppendDataBoundItems/CS/AppendItemsCs.aspx#1)]
+ [!code-aspx-vb[ListControlAppendDataBoundItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAppendDataBoundItems/VB/AppendItemsVb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />
       </Docs>
     </Member>
     <Member MemberName="AutoPostBack">
       <MemberSignature Language="C#" Value="public virtual bool AutoPostBack { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AutoPostBack" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.AutoPostBack" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property AutoPostBack As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool AutoPostBack { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -207,8 +224,8 @@
 ## Examples  
  The following example demonstrates how to enable <xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A> for the <xref:System.Web.UI.WebControls.ListBox> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlAutoPostBack#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAutoPostBack/CS/ListControlAutoPostBackcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlAutoPostBack#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAutoPostBack/VB/ListControlAutoPostBackvb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlAutoPostBack#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlAutoPostBack/CS/ListControlAutoPostBackcs.aspx#1)]
+ [!code-aspx-vb[ListControlAutoPostBack#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlAutoPostBack/VB/ListControlAutoPostBackvb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -218,6 +235,8 @@
       <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.CausesValidation" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property CausesValidation As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CausesValidation { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -254,12 +273,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.Page.Validate" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.ValidationGroup" />
       </Docs>
     </Member>
     <Member MemberName="ClearSelection">
       <MemberSignature Language="C#" Value="public virtual void ClearSelection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearSelection() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.ClearSelection" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ClearSelection ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ClearSelection();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -279,12 +302,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.ListItem.Selected" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedItem" />
       </Docs>
     </Member>
     <Member MemberName="DataTextField">
       <MemberSignature Language="C#" Value="public virtual string DataTextField { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataTextField" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataTextField" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property DataTextField As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DataTextField { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -319,17 +346,21 @@
 ## Examples  
  The following example demonstrates how to specify the <xref:System.Web.UI.WebControls.ListControl.DataTextField%2A> for the <xref:System.Web.UI.WebControls.RadioButtonList> control. The <xref:System.Web.UI.WebControls.ListControl.DataTextField%2A> is the text that is displayed in the <xref:System.Web.UI.WebControls.RadioButtonList>.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />
+        <altmember cref="T:System.Web.UI.WebControls.RadioButtonList" />
       </Docs>
     </Member>
     <Member MemberName="DataTextFormatString">
       <MemberSignature Language="C#" Value="public virtual string DataTextFormatString { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataTextFormatString" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataTextFormatString" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property DataTextFormatString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DataTextFormatString { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -414,6 +445,8 @@
       <MemberSignature Language="C#" Value="public virtual string DataValueField { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataValueField" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.DataValueField" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property DataValueField As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DataValueField { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -448,17 +481,20 @@
 ## Examples  
  The following example demonstrates how to specify the <xref:System.Web.UI.WebControls.ListControl.DataValueField%2A> for the <xref:System.Web.UI.WebControls.RadioButtonList> control. The <xref:System.Web.UI.WebControls.ListControl.DataValueField%2A> is the value for the each item in the <xref:System.Web.UI.WebControls.RadioButtonList>.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.DataTextField" />
       </Docs>
     </Member>
     <Member MemberName="Items">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItemCollection Items { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListItemCollection Items" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.Items" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Items As ListItemCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::ListItemCollection ^ Items { System::Web::UI::WebControls::ListItemCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -495,17 +531,20 @@
 ## Examples  
  The following example demonstrates how to use the <xref:System.Web.UI.WebControls.ListControl.Items%2A> property to determine the selected items in a <xref:System.Web.UI.WebControls.CheckBoxList> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlItems/CS/ListControlItemscs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlItems/VB/ListControlItemsvb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlItems/CS/ListControlItemscs.aspx#1)]
+ [!code-aspx-vb[ListControlItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlItems/VB/ListControlItemsvb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.ListItemCollection" />
       </Docs>
     </Member>
     <Member MemberName="LoadViewState">
       <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.LoadViewState(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub LoadViewState (savedState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void LoadViewState(System::Object ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -531,12 +570,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Object" />
+        <altmember cref="M:System.Web.UI.Control.LoadViewState(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="OnDataBinding">
       <MemberSignature Language="C#" Value="protected override void OnDataBinding (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataBinding(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnDataBinding(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnDataBinding (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnDataBinding(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -552,12 +595,15 @@
         <param name="e">An <see cref="T:System.EventArgs" /> that contains event data.</param>
         <summary>Raises the <see cref="E:System.Web.UI.Control.DataBinding" /> event.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="E:System.Web.UI.Control.DataBinding" />
       </Docs>
     </Member>
     <Member MemberName="OnPreRender">
-      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="C#" Value="protected internal override void OnPreRender (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnPreRender(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub OnPreRender (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void OnPreRender(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -585,12 +631,16 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Web.UI.WebControls.ListControl.OnPreRender(System.EventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Web.UI.Control.PreRender" />
+        <altmember cref="T:System.EventArgs" />
       </Docs>
     </Member>
     <Member MemberName="OnSelectedIndexChanged">
       <MemberSignature Language="C#" Value="protected virtual void OnSelectedIndexChanged (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnSelectedIndexChanged (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnSelectedIndexChanged(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -614,7 +664,7 @@
 > [!NOTE]
 >  A list control must persist some values between posts to the server for this event to work correctly. Be sure that view state is enabled for the list control.  
   
- Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  The <xref:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -623,20 +673,23 @@
 ## Examples  
  The following example demonstrates how to specify and code a handler for the <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged> event to display the selection made by the user.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" />
       </Docs>
     </Member>
     <Member MemberName="OnTextChanged">
       <MemberSignature Language="C#" Value="protected virtual void OnTextChanged (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnTextChanged (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnTextChanged(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -664,12 +717,16 @@
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" /> method in a derived class, be sure to call the <see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" /> method for the base class so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Web.UI.WebControls.ListControl.TextChanged" />
+        <altmember cref="T:System.EventArgs" />
       </Docs>
     </Member>
     <Member MemberName="PerformDataBinding">
-      <MemberSignature Language="C#" Value="protected override void PerformDataBinding (System.Collections.IEnumerable dataSource);" />
+      <MemberSignature Language="C#" Value="protected internal override void PerformDataBinding (System.Collections.IEnumerable dataSource);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void PerformDataBinding(class System.Collections.IEnumerable dataSource) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.PerformDataBinding(System.Collections.IEnumerable)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub PerformDataBinding (dataSource As IEnumerable)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void PerformDataBinding(System::Collections::IEnumerable ^ dataSource);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -694,12 +751,15 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The cached value of <see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" /> is out of range.</exception>
         <exception cref="T:System.ArgumentException">The cached values of <see cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" /> and <see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" /> do not match.</exception>
+        <altmember cref="T:System.Collections.IEnumerable" />
       </Docs>
     </Member>
     <Member MemberName="PerformSelect">
       <MemberSignature Language="C#" Value="protected override void PerformSelect ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformSelect() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.PerformSelect" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub PerformSelect ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void PerformSelect();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -715,16 +775,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.UI.WebControls.ListControl.PerformSelect%2A> method calls the <xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A> method after data is retrieved to bind data to elements of the data-bound control. For more information, see <xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A?displayProperty=fullName>.  
+ The <xref:System.Web.UI.WebControls.ListControl.PerformSelect%2A> method calls the <xref:System.Web.UI.WebControls.ListControl.PerformDataBinding%2A> method after data is retrieved to bind data to elements of the data-bound control. For more information, see <xref:System.Web.UI.WebControls.DataBoundControl.PerformSelect%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.DataBoundControl.PerformSelect" />
+        <altmember cref="M:System.Web.UI.Control.DataBind" />
+        <altmember cref="M:System.Web.UI.Control.OnDataBinding(System.EventArgs)" />
+        <altmember cref="M:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="RenderContents">
-      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="C#" Value="protected internal override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub RenderContents (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void RenderContents(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -747,12 +813,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.HtmlTextWriter" />
       </Docs>
     </Member>
     <Member MemberName="SaveViewState">
       <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.SaveViewState" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function SaveViewState () As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Object ^ SaveViewState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -776,12 +845,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.Control.SaveViewState" />
       </Docs>
     </Member>
     <Member MemberName="SelectedIndex">
       <MemberSignature Language="C#" Value="public virtual int SelectedIndex { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property SelectedIndex As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int SelectedIndex { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -798,7 +870,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
@@ -825,18 +897,21 @@
 ## Examples  
  The following example demonstrates how to use <xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A> to determine the lowest index of the selected items in the <xref:System.Web.UI.WebControls.CheckBoxList>.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlSelectedIndex#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedIndex/CS/ListControlSelectedIndexcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlSelectedIndex#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedIndex/VB/ListControlSelectedIndexvb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlSelectedIndex#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedIndex/CS/ListControlSelectedIndexcs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedIndex#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedIndex/VB/ListControlSelectedIndexvb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The index was set to less than -1, or greater than or equal to the number of items on the list at the time the list is rendered.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.CheckBoxList" />
       </Docs>
     </Member>
     <Member MemberName="SelectedIndexChanged">
       <MemberSignature Language="C#" Value="public event EventHandler SelectedIndexChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedIndexChanged" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.ListControl.SelectedIndexChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event SelectedIndexChanged As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ SelectedIndexChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -856,24 +931,27 @@
 > [!NOTE]
 >  A list control must persist some values between posts to the server for this event to work correctly. Be sure that view state is enabled for the list control.  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
 ## Examples  
  The following example demonstrates how to specify and code a handler for the <xref:System.Web.UI.WebControls.ListControl.SelectedIndexChanged> event to display the selection made by the user.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.ListControl.OnSelectedIndexChanged(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="SelectedItem">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItem SelectedItem { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListItem SelectedItem" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedItem" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SelectedItem As ListItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::ListItem ^ SelectedItem { System::Web::UI::WebControls::ListItem ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -887,7 +965,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -907,17 +985,21 @@
 ## Examples  
  The following example demonstrates how to use <xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A> to get the individual properties of the currently selected item in the <xref:System.Web.UI.WebControls.RadioButtonList> and to display that item and its value.  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlDataSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlDataSource/CS/ListControlDataSourcecs.aspx#1)]
+ [!code-aspx-vb[ListControlDataSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlDataSource/VB/ListControlDataSourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.ListItem" />
+        <altmember cref="T:System.Web.UI.WebControls.RadioButtonList" />
       </Docs>
     </Member>
     <Member MemberName="SelectedValue">
       <MemberSignature Language="C#" Value="public virtual string SelectedValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SelectedValue" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.SelectedValue" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property SelectedValue As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ SelectedValue { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -925,7 +1007,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.Bindable(true, System.ComponentModel.BindingDirection.TwoWay)</AttributeName>
+          <AttributeName>System.ComponentModel.Bindable</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
@@ -934,7 +1016,7 @@
           <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
@@ -980,18 +1062,26 @@ if(DropDownList1.Items.FindByValue("2") != null) {
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  -->  
+ [!code-aspx-csharp[ListControlSelectedValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ListControlSelectedValue/CS/listcontrolselectedvaluecs.aspx#1)]
+ [!code-aspx-vb[ListControlSelectedValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ListControlSelectedValue/VB/listcontrolselectedvaluevb.aspx#1)]  
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentOutOfRangeException">The selected value is not in the list of available values and view state or other state has been loaded (a postback has been performed). For more information, see the Remarks section.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">The selected value is not in the list of available values and view state or other state has been loaded (a postback has been performed).</exception>
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedItem" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedIndex" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.DataValueField" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.Items" />
+        <altmember cref="T:System.Web.UI.WebControls.ListItem" />
+        <altmember cref="T:System.ArgumentOutOfRangeException" />
       </Docs>
     </Member>
     <Member MemberName="SetPostDataSelection">
       <MemberSignature Language="C#" Value="protected void SetPostDataSelection (int selectedIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetPostDataSelection(int32 selectedIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.SetPostDataSelection(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub SetPostDataSelection (selectedIndex As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void SetPostDataSelection(int selectedIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1020,6 +1110,8 @@ if(DropDownList1.Items.FindByValue("2") != null) {
       <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.TagKey" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property TagKey As HtmlTextWriterTag" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Web::UI::HtmlTextWriterTag TagKey { System::Web::UI::HtmlTextWriterTag get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1048,7 +1140,12 @@ if(DropDownList1.Items.FindByValue("2") != null) {
       <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.Text" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Text As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Text { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Web.UI.ITextControl.Text</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1061,7 +1158,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
           <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
@@ -1077,11 +1174,11 @@ if(DropDownList1.Items.FindByValue("2") != null) {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.UI.WebControls.ListControl.Text%2A> property gets and sets the same value that the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A>e property does.  
+ The <xref:System.Web.UI.WebControls.ListControl.Text%2A> property gets and sets the same value that the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property does.  
   
  The <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property is commonly used to determine the value of the selected item in the <xref:System.Web.UI.WebControls.ListControl> control. If no item is selected, an empty string ("") is returned.  
   
- You can also use the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property to select an item in the <xref:System.Web.UI.WebControls.ListControl> control by setting it with the value of the item. If no items in the <xref:System.Web.UI.WebControls.ListControl> control contain the specified value, an <xref:System.ArgumentOutOfRangeException?displayProperty=fullName> exception is thrown.  
+ You can also use the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property to select an item in the <xref:System.Web.UI.WebControls.ListControl> control by setting it with the value of the item. If no items in the <xref:System.Web.UI.WebControls.ListControl> control contain the specified value, an <xref:System.ArgumentOutOfRangeException?displayProperty=nameWithType> exception is thrown.  
   
  Control developers can override the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property to support features that are not related to the <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> property.  
   
@@ -1089,13 +1186,19 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" />
       </Docs>
     </Member>
     <Member MemberName="TextChanged">
       <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.ListControl.TextChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event TextChanged As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ TextChanged;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.Web.UI.IEditableTextControl.TextChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1111,7 +1214,7 @@ if(DropDownList1.Items.FindByValue("2") != null) {
 ## Remarks  
  The <xref:System.Web.UI.WebControls.ListControl.TextChanged> event is raised when the <xref:System.Web.UI.WebControls.ListControl.Text%2A> and <xref:System.Web.UI.WebControls.ListControl.SelectedValue%2A> properties change.  
   
- Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  The <xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1120,12 +1223,16 @@ if(DropDownList1.Items.FindByValue("2") != null) {
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" /> method in a derived class, be sure to call the <see cref="M:System.Web.UI.WebControls.ListControl.OnTextChanged(System.EventArgs)" /> method for the base class so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.Text" />
       </Docs>
     </Member>
     <Member MemberName="TrackViewState">
       <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.TrackViewState" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub TrackViewState ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void TrackViewState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1148,12 +1255,16 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.StateBag" />
+        <altmember cref="P:System.Web.UI.Control.ViewState" />
       </Docs>
     </Member>
     <Member MemberName="ValidationGroup">
       <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListControl.ValidationGroup" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ValidationGroup As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ValidationGroup { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1187,12 +1298,17 @@ if(DropDownList1.Items.FindByValue("2") != null) {
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.Page.Validate" />
+        <altmember cref="P:System.Web.UI.WebControls.ListControl.CausesValidation" />
+        <altmember cref="T:System.Web.UI.WebControls.RequiredFieldValidator" />
       </Docs>
     </Member>
     <Member MemberName="VerifyMultiSelect">
-      <MemberSignature Language="C#" Value="protected virtual void VerifyMultiSelect ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual void VerifyMultiSelect ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void VerifyMultiSelect() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListControl.VerifyMultiSelect" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub VerifyMultiSelect ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void VerifyMultiSelect();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

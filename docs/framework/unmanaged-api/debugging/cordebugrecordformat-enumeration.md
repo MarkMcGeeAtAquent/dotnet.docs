@@ -1,5 +1,5 @@
 ---
-title: "CorDebugRecordFormat Enumeration | Microsoft Docs"
+title: "CorDebugRecordFormat Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugRecordFormat"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: d680c1c0-16ab-4ccc-9444-39cf8e0e05ee
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugRecordFormat Enumeration
 Describes the format of the data in a byte array that contains information about a native exception debug event.  
@@ -28,12 +31,10 @@ Describes the format of the data in a byte array that contains information about
 ## Syntax  
   
 ```  
-  
 typedef enum CorDebugRecordFormat {  
     FORMAT_WINDOWS_EXCEPTIONRECORD32 = 1,  
     FORMAT_WINDOWS_EXCEPTIONRECORD64 = 2,  
 } CorDebugRecordFormat;  
-  
 ```  
   
 ## Members  

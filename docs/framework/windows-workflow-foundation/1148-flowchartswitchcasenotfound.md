@@ -1,5 +1,5 @@
 ---
-title: "1148 - FlowchartSwitchCaseNotFound | Microsoft Docs"
+title: "1148 - FlowchartSwitchCaseNotFound"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9ee7fcee-e040-4306-968e-ed840a1cb00c
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1148 - FlowchartSwitchCaseNotFound
 ## Properties  

@@ -1,8 +1,8 @@
 ---
-title: "704 - ServiceChannelBeginCallStart | Microsoft Docs"
+title: "704 - ServiceChannelBeginCallStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 708819d3-45cc-46c3-938c-80f38b1fa9e2
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 704 - ServiceChannelBeginCallStart
 ## Properties  

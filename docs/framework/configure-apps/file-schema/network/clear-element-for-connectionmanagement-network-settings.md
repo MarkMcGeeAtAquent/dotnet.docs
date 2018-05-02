@@ -1,8 +1,8 @@
 ---
-title: "&lt;clear&gt; Element for connectionManagement (Network Settings) | Microsoft Docs"
+title: "&lt;clear&gt; Element for connectionManagement (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/clear"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#clear"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<clear> element, connectionManagement"
   - "connectionManagement, clear element"
@@ -27,6 +22,8 @@ caps.latest.revision: 13
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;clear&gt; Element for connectionManagement (Network Settings)
 Clears the connection management list.  
@@ -38,10 +35,8 @@ Clears the connection management list.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <clear/>  
-  
 ```  
   
 ## Attributes and Elements  
@@ -66,9 +61,9 @@ Clears the connection management list.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example clears the connection management list and then adds new connection management entries for the server www.contoso.com and all other network hosts.  
+ The following example clears the connection management list and then adds new connection management entries for the server www.contoso.com and all other network hosts.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <connectionManagement>  
@@ -81,6 +76,6 @@ Clears the connection management list.
 ```  
   
 ## See Also  
- <xref:System.Net.ServicePoint>   
- <xref:System.Net.ServicePointManager>   
+ <xref:System.Net.ServicePoint>  
+ <xref:System.Net.ServicePointManager>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

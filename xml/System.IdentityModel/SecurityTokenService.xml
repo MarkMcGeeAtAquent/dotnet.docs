@@ -1,7 +1,9 @@
-<Type Name="SecurityTokenService" FullName="System.IdentityModel.SecurityTokenService">
+﻿<Type Name="SecurityTokenService" FullName="System.IdentityModel.SecurityTokenService">
   <TypeSignature Language="C#" Value="public abstract class SecurityTokenService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityTokenService extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.IdentityModel.SecurityTokenService" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class SecurityTokenService" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SecurityTokenService abstract" />
   <AssemblyInfo>
     <AssemblyName>System.IdentityModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -38,21 +40,25 @@
   
  [!code-csharp[WIFCustomTokenSTS#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#3)]  
   
- The following code shows how to invoke a custom passive STS to process a WS-Federation request by calling the <xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29?displayProperty=fullName> method from the code behind in the `default.aspx.cs` file.  
+ The following code shows how to invoke a custom passive STS to process a WS-Federation request by calling the <xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29?displayProperty=nameWithType> method from the code behind in the `default.aspx.cs` file.  
   
  [!code-csharp[WIFCustomTokenSTS#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/default.aspx.cs#1)]  
   
  ]]></format>
     </remarks>
     <block subset="none" type="overrides">
-      <para>You must override both the <see cref="M:System.IdentityModel.SecurityTokenService.GetScope(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" /> and the <see cref="M:System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope)" />methods.</para>
+      <para>You must override both the <see cref="M:System.IdentityModel.SecurityTokenService.GetScope(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" /> and the <see cref="M:System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope)" /> methods.</para>
     </block>
+    <altmember cref="T:System.IdentityModel.Scope" />
+    <altmember cref="T:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration" />
+    <altmember cref="T:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected SecurityTokenService (System.IdentityModel.Configuration.SecurityTokenServiceConfiguration securityTokenServiceConfiguration);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Configuration.SecurityTokenServiceConfiguration securityTokenServiceConfiguration) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.#ctor(System.IdentityModel.Configuration.SecurityTokenServiceConfiguration)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SecurityTokenService(System::IdentityModel::Configuration::SecurityTokenServiceConfiguration ^ securityTokenServiceConfiguration);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -80,6 +86,8 @@
       <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginCancel (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginCancel(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginCancel(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function BeginCancel (principal As ClaimsPrincipal, request As RequestSecurityToken, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IAsyncResult ^ BeginCancel(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -115,6 +123,7 @@
       <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginGetOutputClaimsIdentity (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Scope scope, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginGetOutputClaimsIdentity(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Scope scope, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginGetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual IAsyncResult ^ BeginGetOutputClaimsIdentity(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, System::IdentityModel::Scope ^ scope, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -152,6 +161,8 @@
       <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginGetScope (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginGetScope(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginGetScope(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function BeginGetScope (principal As ClaimsPrincipal, request As RequestSecurityToken, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual IAsyncResult ^ BeginGetScope(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -187,6 +198,8 @@
       <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginIssue (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginIssue(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginIssue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function BeginIssue (principal As ClaimsPrincipal, request As RequestSecurityToken, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IAsyncResult ^ BeginIssue(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -222,6 +235,8 @@
       <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginRenew (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRenew(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginRenew(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function BeginRenew (principal As ClaimsPrincipal, request As RequestSecurityToken, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IAsyncResult ^ BeginRenew(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -257,6 +272,8 @@
       <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginValidate (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginValidate(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.BeginValidate(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function BeginValidate (principal As ClaimsPrincipal, request As RequestSecurityToken, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IAsyncResult ^ BeginValidate(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -292,6 +309,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Cancel (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Cancel(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.Cancel(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Cancel (principal As ClaimsPrincipal, request As RequestSecurityToken) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ Cancel(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -323,6 +342,7 @@
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityTokenDescriptor CreateSecurityTokenDescriptor (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Scope scope);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityTokenDescriptor CreateSecurityTokenDescriptor(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Scope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.CreateSecurityTokenDescriptor(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Tokens::SecurityTokenDescriptor ^ CreateSecurityTokenDescriptor(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, System::IdentityModel::Scope ^ scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -360,6 +380,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndCancel (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndCancel(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndCancel(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EndCancel (result As IAsyncResult) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ EndCancel(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -389,6 +411,8 @@
       <MemberSignature Language="C#" Value="protected virtual System.Security.Claims.ClaimsIdentity EndGetOutputClaimsIdentity (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Claims.ClaimsIdentity EndGetOutputClaimsIdentity(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndGetOutputClaimsIdentity(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function EndGetOutputClaimsIdentity (result As IAsyncResult) As ClaimsIdentity" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Security::Claims::ClaimsIdentity ^ EndGetOutputClaimsIdentity(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -418,6 +442,8 @@
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Scope EndGetScope (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Scope EndGetScope(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndGetScope(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function EndGetScope (result As IAsyncResult) As Scope" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Scope ^ EndGetScope(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -447,6 +473,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndIssue (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndIssue(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndIssue(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EndIssue (result As IAsyncResult) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ EndIssue(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -476,6 +504,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndRenew (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndRenew(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndRenew(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EndRenew (result As IAsyncResult) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ EndRenew(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -505,6 +535,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndValidate (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse EndValidate(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.EndValidate(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EndValidate (result As IAsyncResult) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ EndValidate(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -534,6 +566,8 @@
       <MemberSignature Language="C#" Value="protected virtual string GetIssuerName ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetIssuerName() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetIssuerName" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetIssuerName () As String" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::String ^ GetIssuerName();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -556,12 +590,14 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetOutputClaimsIdentity">
       <MemberSignature Language="C#" Value="protected abstract System.Security.Claims.ClaimsIdentity GetOutputClaimsIdentity (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Scope scope);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Claims.ClaimsIdentity GetOutputClaimsIdentity(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Scope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetOutputClaimsIdentity(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract System::Security::Claims::ClaimsIdentity ^ GetOutputClaimsIdentity(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, System::IdentityModel::Scope ^ scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -603,12 +639,15 @@
         <block subset="none" type="overrides">
           <para>You must override this method in your implementation of the <see cref="T:System.IdentityModel.SecurityTokenService" /> class.</para>
         </block>
+        <altmember cref="T:System.IdentityModel.Scope" />
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetProofToken">
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.ProofDescriptor GetProofToken (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Scope scope);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.ProofDescriptor GetProofToken(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Scope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetProofToken(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Scope)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Tokens::ProofDescriptor ^ GetProofToken(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, System::IdentityModel::Scope ^ scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -642,12 +681,15 @@
  -or-  
   
  <paramref name="scope" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetRequestorProofEncryptingCredentials">
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.EncryptingCredentials GetRequestorProofEncryptingCredentials (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.EncryptingCredentials GetRequestorProofEncryptingCredentials(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetRequestorProofEncryptingCredentials(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetRequestorProofEncryptingCredentials (request As RequestSecurityToken) As EncryptingCredentials" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Tokens::EncryptingCredentials ^ GetRequestorProofEncryptingCredentials(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -669,7 +711,7 @@
 ## Remarks  
  This method is called from the <xref:System.IdentityModel.SecurityTokenService.GetProofToken%2A> method.  
   
- The default implementation does the following. Returns `null` if there is no encryption token specified in the request (the <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ProofEncryption%2A?displayProperty=fullName> property is `null`). Otherwise, if it can get the token as an <xref:System.IdentityModel.Tokens.X509SecurityToken>, it returns credentials based on that token. If it cannot resolve the token as an <xref:System.IdentityModel.Tokens.X509SecurityToken>, a <xref:System.IdentityModel.RequestFailedException> is thrown.  
+ The default implementation does the following. Returns `null` if there is no encryption token specified in the request (the <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken.ProofEncryption%2A?displayProperty=nameWithType> property is `null`). Otherwise, if it can get the token as an <xref:System.IdentityModel.Tokens.X509SecurityToken>, it returns credentials based on that token. If it cannot resolve the token as an <xref:System.IdentityModel.Tokens.X509SecurityToken>, a <xref:System.IdentityModel.RequestFailedException> is thrown.  
   
  ]]></format>
         </remarks>
@@ -681,6 +723,8 @@
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse GetResponse (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse GetResponse(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetResponse(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetResponse (request As RequestSecurityToken, tokenDescriptor As SecurityTokenDescriptor) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ GetResponse(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request, System::IdentityModel::Tokens::SecurityTokenDescriptor ^ tokenDescriptor);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -704,23 +748,26 @@
 ## Remarks  
  The <xref:System.IdentityModel.SecurityTokenService.GetResponse%2A> method is called as the last step from the token issuance pipeline, which is implemented by the <xref:System.IdentityModel.SecurityTokenService.Issue%2A> method. It creates and returns the response (RSTR) by using the original incoming request (RST) and the token descriptor that was built up during previous steps in the token issuance pipeline.  
   
- The default implementation creates the RSTR by passing the RST specified in the request parameter to the <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse.%23ctor%28System.IdentityModel.Protocols.WSTrust.WSTrustMessage%29?displayProperty=fullName> constructor, invoking the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.ApplyTo%2A?displayProperty=fullName> method on the token descriptor passed into <xref:System.IdentityModel.SecurityTokenService.GetResponse%2A> to apply its properties to the newly created RSTR, setting the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.AppliesTo%2A> property on the RSTR by using the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A> property on the token descriptor, and finally setting the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.ReplyTo%2A> property on the RSTR according to the following table:  
+ The default implementation creates the RSTR by passing the RST specified in the request parameter to the <xref:System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse.%23ctor%28System.IdentityModel.Protocols.WSTrust.WSTrustMessage%29?displayProperty=nameWithType> constructor, invoking the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.ApplyTo%2A?displayProperty=nameWithType> method on the token descriptor passed into <xref:System.IdentityModel.SecurityTokenService.GetResponse%2A> to apply its properties to the newly created RSTR, setting the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.AppliesTo%2A> property on the RSTR by using the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A> property on the token descriptor, and finally setting the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.ReplyTo%2A> property on the RSTR according to the following table:  
   
-|`RST.ReplyTo` property|<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A?displayProperty=fullName> property.|`RSTR.ReplyTo` property|  
+|`RST.ReplyTo` property|<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A?displayProperty=nameWithType> property.|`RSTR.ReplyTo` property|  
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|  
 |Set|Not Set|Not Set|  
-|Set|Set|<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A?displayProperty=fullName>|  
+|Set|Set|<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A?displayProperty=nameWithType>|  
 |Not Set|Set|Not Set|  
 |Not Set|Not Set|Not Set|  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetScope">
       <MemberSignature Language="C#" Value="protected abstract System.IdentityModel.Scope GetScope (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Scope GetScope(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetScope(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected MustOverride Function GetScope (principal As ClaimsPrincipal, request As RequestSecurityToken) As Scope" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract System::IdentityModel::Scope ^ GetScope(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -760,7 +807,7 @@
 ## Examples  
  The code example that is used in this topic is taken from the `Custom Token` sample. This sample provides custom classes that enable processing of Simple Web Tokens (SWT) and it includes an implementation of a passive STS that is capable of serving an SWT token. For an example of how to implement an active STS, you can see the `Federation Metadata` sample. For information about these samples and other samples available for WIF and about where to download them, see [WIF Code Sample Index](~/docs/framework/security/wif-code-sample-index.md).  
   
- The following code example shows an implementation of the <xref:System.IdentityModel.SecurityTokenService.GetScope%2A> method. This implementation verifies that the RP is recognized by the STS, validates the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.ReplyTo%2A> address in the request and sets the <xref:System.IdentityModel.Scope.ReplyToAddress%2A?displayProperty=fullName> property accordingly, and sets the signing and encrypting credentials to use with the RP based on certificates that are hard-coded in the file.  
+ The following code example shows an implementation of the <xref:System.IdentityModel.SecurityTokenService.GetScope%2A> method. This implementation verifies that the RP is recognized by the STS, validates the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.ReplyTo%2A> address in the request and sets the <xref:System.IdentityModel.Scope.ReplyToAddress%2A?displayProperty=nameWithType> property accordingly, and sets the signing and encrypting credentials to use with the RP based on certificates that are hard-coded in the file.  
   
  [!code-csharp[WIFCustomTokenSTS#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#4)]  
 [!code-csharp[WIFCustomTokenSTS#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/customsecuritytokenservice.cs#5)]  
@@ -769,14 +816,18 @@
  ]]></format>
         </remarks>
         <block subset="none" type="overrides">
-          <para>You must override this method in your implementation of the <see cref="T:System.IdentityModel.SecurityTokenService" />class.</para>
+          <para>You must override this method in your implementation of the <see cref="T:System.IdentityModel.SecurityTokenService" /> class.</para>
         </block>
+        <altmember cref="T:System.IdentityModel.Scope" />
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetSecurityTokenHandler">
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityTokenHandler GetSecurityTokenHandler (string requestedTokenType);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityTokenHandler GetSecurityTokenHandler(string requestedTokenType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetSecurityTokenHandler(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetSecurityTokenHandler (requestedTokenType As String) As SecurityTokenHandler" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Tokens::SecurityTokenHandler ^ GetSecurityTokenHandler(System::String ^ requestedTokenType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -802,12 +853,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="GetTokenLifetime">
       <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Protocols.WSTrust.Lifetime GetTokenLifetime (System.IdentityModel.Protocols.WSTrust.Lifetime requestLifetime);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.Lifetime GetTokenLifetime(class System.IdentityModel.Protocols.WSTrust.Lifetime requestLifetime) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.GetTokenLifetime(System.IdentityModel.Protocols.WSTrust.Lifetime)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetTokenLifetime (requestLifetime As Lifetime) As Lifetime" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::IdentityModel::Protocols::WSTrust::Lifetime ^ GetTokenLifetime(System::IdentityModel::Protocols::WSTrust::Lifetime ^ requestLifetime);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -831,21 +885,24 @@
   
 |Created (in)|Expires (in)|Created (in)|Expires (out)|  
 |--------------------|--------------------|--------------------|---------------------|  
-|`null`|`null`|<xref:System.DateTime.UtcNow%2A?displayProperty=fullName>|<xref:System.DateTime.UtcNow%2A?displayProperty=fullName> + <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenLifetime%2A?displayProperty=fullName>|  
-|C|`null`|C|C + <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenLifetime%2A?displayProperty=fullName>|  
-|`null`|E|<xref:System.DateTime.UtcNow%2A?displayProperty=fullName>|E|  
+|`null`|`null`|<xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType>|<xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType> + <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenLifetime%2A?displayProperty=nameWithType>|  
+|C|`null`|C|C + <xref:System.IdentityModel.Configuration.SecurityTokenServiceConfiguration.DefaultTokenLifetime%2A?displayProperty=nameWithType>|  
+|`null`|E|<xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType>|E|  
 |C|E|C|E|  
   
  This method is called from the default token issuance pipeline implemented in the <xref:System.IdentityModel.SecurityTokenService.Issue%2A> method.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
     <Member MemberName="Issue">
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Issue (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Issue(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Issue (principal As ClaimsPrincipal, request As RequestSecurityToken) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ Issue(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -873,7 +930,7 @@
   
 2.  The <xref:System.IdentityModel.SecurityTokenService.GetScope%2A> method to get a <xref:System.IdentityModel.Scope> object that contains information about the relying party (RP) associated with the request. You must override this method. If <xref:System.IdentityModel.SecurityTokenService.GetScope%2A> returns `null`, a <xref:System.InvalidOperationException> is thrown.  
   
-3.  The <xref:System.IdentityModel.SecurityTokenService.CreateSecurityTokenDescriptor%2A> method to return a security token descriptor based on the RST and the <xref:System.IdentityModel.Scope> object returned in the previous step. The security token descriptor (<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor>) contains information about the request in a form that can be used by a token handler. The <xref:System.IdentityModel.SecurityTokenService.SecurityTokenDescriptor%2A?displayProperty=fullName> property is set to the descriptor returned by the call. If `null` is returned or if the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.SigningCredentials%2A> property of the descriptor is `null`, an <xref:System.InvalidOperationException> is thrown. The exception is also thrown if the <xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A?displayProperty=fullName> property is `true` but the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.EncryptingCredentials%2A> property on the returned descriptor is `null`.  
+3.  The <xref:System.IdentityModel.SecurityTokenService.CreateSecurityTokenDescriptor%2A> method to return a security token descriptor based on the RST and the <xref:System.IdentityModel.Scope> object returned in the previous step. The security token descriptor (<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor>) contains information about the request in a form that can be used by a token handler. The <xref:System.IdentityModel.SecurityTokenService.SecurityTokenDescriptor%2A?displayProperty=nameWithType> property is set to the descriptor returned by the call. If `null` is returned or if the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.SigningCredentials%2A> property of the descriptor is `null`, an <xref:System.InvalidOperationException> is thrown. The exception is also thrown if the <xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A?displayProperty=nameWithType> property is `true` but the <xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.EncryptingCredentials%2A> property on the returned descriptor is `null`.  
   
 4.  The <xref:System.IdentityModel.SecurityTokenService.GetSecurityTokenHandler%2A> method to get the appropriate token handler based on the kind of token requested. If `null` is returned, a <xref:System.NotImplementedException> is thrown.  
   
@@ -897,6 +954,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsPrincipal Principal { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsPrincipal Principal" />
       <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.Principal" />
+      <MemberSignature Language="VB.NET" Value="Public Property Principal As ClaimsPrincipal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Claims::ClaimsPrincipal ^ Principal { System::Security::Claims::ClaimsPrincipal ^ get(); void set(System::Security::Claims::ClaimsPrincipal ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -915,6 +974,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Renew (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Renew(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.Renew(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Renew (principal As ClaimsPrincipal, request As RequestSecurityToken) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ Renew(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -946,6 +1007,8 @@
       <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.RequestSecurityToken Request { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken Request" />
       <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.Request" />
+      <MemberSignature Language="VB.NET" Value="Public Property Request As RequestSecurityToken" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ Request { System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ get(); void set(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -964,6 +1027,8 @@
       <MemberSignature Language="C#" Value="public System.IdentityModel.Scope Scope { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Scope Scope" />
       <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.Scope" />
+      <MemberSignature Language="VB.NET" Value="Public Property Scope As Scope" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IdentityModel::Scope ^ Scope { System::IdentityModel::Scope ^ get(); void set(System::IdentityModel::Scope ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -982,6 +1047,8 @@
       <MemberSignature Language="C#" Value="protected System.IdentityModel.Tokens.SecurityTokenDescriptor SecurityTokenDescriptor { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenDescriptor SecurityTokenDescriptor" />
       <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.SecurityTokenDescriptor" />
+      <MemberSignature Language="VB.NET" Value="Protected Property SecurityTokenDescriptor As SecurityTokenDescriptor" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::IdentityModel::Tokens::SecurityTokenDescriptor ^ SecurityTokenDescriptor { System::IdentityModel::Tokens::SecurityTokenDescriptor ^ get(); void set(System::IdentityModel::Tokens::SecurityTokenDescriptor ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -1001,6 +1068,8 @@
       <MemberSignature Language="C#" Value="public System.IdentityModel.Configuration.SecurityTokenServiceConfiguration SecurityTokenServiceConfiguration { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Configuration.SecurityTokenServiceConfiguration SecurityTokenServiceConfiguration" />
       <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.SecurityTokenServiceConfiguration" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SecurityTokenServiceConfiguration As SecurityTokenServiceConfiguration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IdentityModel::Configuration::SecurityTokenServiceConfiguration ^ SecurityTokenServiceConfiguration { System::IdentityModel::Configuration::SecurityTokenServiceConfiguration ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -1019,6 +1088,8 @@
       <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Validate (System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse Validate(class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.Validate(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Validate (principal As ClaimsPrincipal, request As RequestSecurityToken) As RequestSecurityTokenResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::IdentityModel::Protocols::WSTrust::RequestSecurityTokenResponse ^ Validate(System::Security::Claims::ClaimsPrincipal ^ principal, System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -1050,6 +1121,8 @@
       <MemberSignature Language="C#" Value="protected virtual void ValidateRequest (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateRequest(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.ValidateRequest(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub ValidateRequest (request As RequestSecurityToken)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void ValidateRequest(System::IdentityModel::Protocols::WSTrust::RequestSecurityToken ^ request);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IdentityModel</AssemblyName>
@@ -1070,7 +1143,7 @@
 ## Remarks  
  The <xref:System.IdentityModel.SecurityTokenService.ValidateRequest%2A> method is called from the token issuance pipeline (the <xref:System.IdentityModel.SecurityTokenService.Issue%2A> method) to validate the incoming RST. The RST is validated against the requirements (policy) of the STS and an appropriate exception is thrown if it is not valid.  
   
- The default implementation of the <xref:System.IdentityModel.SecurityTokenService> class supports only the RST-RSTR pattern and only the Issue binding of the WS-Trust specification (the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.RequestType%2A> property of the request must be set to <xref:System.IdentityModel.Protocols.WSTrust.RequestTypes.Issue?displayProperty=fullName>). The default implementation of this method enforces these requirements (and others noted in the exceptions section). You can override this method if you must enforce different validation requirements for your custom STS.  
+ The default implementation of the <xref:System.IdentityModel.SecurityTokenService> class supports only the RST-RSTR pattern and only the Issue binding of the WS-Trust specification (the <xref:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.RequestType%2A> property of the request must be set to <xref:System.IdentityModel.Protocols.WSTrust.RequestTypes.Issue?displayProperty=nameWithType>). The default implementation of this method enforces these requirements (and others noted in the exceptions section). You can override this method if you must enforce different validation requirements for your custom STS.  
   
  ]]></format>
         </remarks>
@@ -1089,6 +1162,7 @@
   
  The <see cref="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.KeyType" /> of the request is <see cref="F:System.IdentityModel.Protocols.WSTrust.KeyTypes.Bearer" /> and the <see langword="KeySize" /> element is present, but its value is not equal to zero.</exception>
         <exception cref="T:System.IdentityModel.UnsupportedTokenTypeBadRequestException">The STS does not support the request token type (based on the value of the <see cref="P:System.IdentityModel.Protocols.WSTrust.WSTrustMessage.TokenType" /> property of the request).</exception>
+        <altmember cref="M:System.IdentityModel.SecurityTokenService.Issue(System.Security.Claims.ClaimsPrincipal,System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)" />
       </Docs>
     </Member>
   </Members>

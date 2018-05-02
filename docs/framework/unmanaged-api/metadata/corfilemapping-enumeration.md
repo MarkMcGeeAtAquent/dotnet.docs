@@ -1,5 +1,5 @@
 ---
-title: "CorFileMapping Enumeration | Microsoft Docs"
+title: "CorFileMapping Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorFileMapping"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorFileMapping"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorFileMapping enumeration [.NET Framework metadata]"
 ms.assetid: 3ca41592-b8da-475a-8032-a15627730003
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorFileMapping Enumeration
 Contains values that describe the type of file mapping that is returned from a call to the [IMetaDataInfo::GetFileMapping](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) method.  
@@ -55,5 +58,5 @@ typedef enum CorFileMapping {
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)   
+ [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  [GetFileMapping Method](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md)

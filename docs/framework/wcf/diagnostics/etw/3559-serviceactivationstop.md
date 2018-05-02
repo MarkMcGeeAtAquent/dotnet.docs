@@ -1,8 +1,8 @@
 ---
-title: "3559 - ServiceActivationStop | Microsoft Docs"
+title: "3559 - ServiceActivationStop"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 57aa18b4-6512-4f1a-a4e3-71f58a867ed2
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3559 - ServiceActivationStop
 ## Properties  

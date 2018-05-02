@@ -1,5 +1,5 @@
 ---
-title: "CoreClrDebugRuntimeInfo Structure | Microsoft Docs"
+title: "CoreClrDebugRuntimeInfo Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CoreClrDebugRuntimeInfo"
-apilocation: 
+api_location: 
   - "mscordbi_macx86.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CoreClrDebugRuntimeInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "remote debugging API [Silverlight]"
   - "CoreDebugRuntimeInfo structure"
   - "Silverlight, remote debugging"
 ms.assetid: bd01c30f-b7a8-4179-9497-622b6599b1a6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CoreClrDebugRuntimeInfo Structure
 Represents a common language runtime (CLR) instance that is loaded in a process on a remote machine.  

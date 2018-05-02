@@ -1,26 +1,31 @@
 ---
-title: "WriteableMetadataUpdateMode Enumeration | Microsoft Docs"
+title: "WriteableMetadataUpdateMode Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "WriteableMetadataUpdateMode"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "WriteableMetadataUpdateMode"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 6758f4d3-6bc7-4c99-8582-e9be00566784
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WriteableMetadataUpdateMode Enumeration
 [Supported in the .NET Framework 4.5.2 and later versions]  
@@ -29,13 +34,11 @@ manager: "wpickett"
   
 ## Syntax  
   
-```vb  
-  
+```cpp
 typedef enum WriteableMetadataUpdateMode {  
    LegacyCompatPolicy,  
    AlwaysShowUpdates  
 } WriteableMetadataUpdateMode;  
-  
 ```  
   
 ## Members  
@@ -60,5 +63,5 @@ typedef enum WriteableMetadataUpdateMode {
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## See Also  
- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)   
+ [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  [SetWriteableMetadataUpdateMode Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)

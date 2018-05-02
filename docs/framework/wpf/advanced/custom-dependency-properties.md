@@ -1,5 +1,5 @@
 ---
-title: "Custom Dependency Properties | Microsoft Docs"
+title: "Custom Dependency Properties"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,20 +9,25 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "implementing, wrappers"
-  - "registering properties"
-  - "properties, metadata"
-  - "metadata, for properties"
-  - "custom dependency properties"
-  - "properties, registering"
-  - "wrappers, implementing"
-  - "dependency properties, custom"
+  - "implementing [WPF], wrappers"
+  - "registering properties [WPF]"
+  - "properties [WPF], metadata"
+  - "metadata [WPF], for properties"
+  - "custom dependency properties [WPF]"
+  - "properties [WPF], registering"
+  - "wrappers [WPF], implementing"
+  - "dependency properties [WPF], custom"
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
 caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Custom Dependency Properties
 This topic describes the reasons that [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application developers and component authors might want to create custom dependency property, and describes the implementation steps as well as some implementation options that can improve performance, usability, or versatility of the property.  
@@ -124,25 +129,25 @@ This topic describes the reasons that [!INCLUDE[TLA#tla_winclient](../../../../i
   
 #### Setting Appropriate Metadata Flags  
   
--   If your property (or changes in its value) affects the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], and in particular affects how the layout system should size or render your element in a page, set one or more of the following flags: <xref:System.Windows.FrameworkPropertyMetadataOptions>, <xref:System.Windows.FrameworkPropertyMetadataOptions>, <xref:System.Windows.FrameworkPropertyMetadataOptions>.  
+-   If your property (or changes in its value) affects the [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], and in particular affects how the layout system should size or render your element in a page, set one or more of the following flags: <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange>, <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender>.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> indicates that a change to this property requires a change to [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rendering where the containing object might require more or less space within the parent. For example, a "Width" property should have this flag set.  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsMeasure> indicates that a change to this property requires a change to [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rendering where the containing object might require more or less space within the parent. For example, a "Width" property should have this flag set.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> indicates that a change to this property requires a change to [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rendering that typically does not require a change in the dedicated space, but does indicate that the positioning within the space has changed. For example, an "Alignment" property should have this flag set.  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsArrange> indicates that a change to this property requires a change to [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rendering that typically does not require a change in the dedicated space, but does indicate that the positioning within the space has changed. For example, an "Alignment" property should have this flag set.  
   
-    -   <xref:System.Windows.FrameworkPropertyMetadataOptions> indicates that some other change has occurred that will not affect layout and measure, but does require another render. An example would be a property that changes a color of an existing element, such as "Background".  
+    -   <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsRender> indicates that some other change has occurred that will not affect layout and measure, but does require another render. An example would be a property that changes a color of an existing element, such as "Background".  
   
     -   These flags are often used as a protocol in metadata for your own override implementations of property system or layout callbacks. For instance, you might have an <xref:System.Windows.DependencyObject.OnPropertyChanged%2A> callback that will call <xref:System.Windows.UIElement.InvalidateArrange%2A> if any property of the instance reports a value change and has <xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A> as `true` in its metadata.  
   
--   Some properties may affect the rendering characteristics of the containing parent element, in ways above and beyond the changes in required size mentioned above. An example is the <xref:System.Windows.Documents.Paragraph.MinOrphanLines%2A> property used in the flow document model, where changes to that property can change the overall rendering of the flow document that contains the paragraph. Use <xref:System.Windows.FrameworkPropertyMetadataOptions> or <xref:System.Windows.FrameworkPropertyMetadataOptions> to identify similar cases in your own properties.  
+-   Some properties may affect the rendering characteristics of the containing parent element, in ways above and beyond the changes in required size mentioned above. An example is the <xref:System.Windows.Documents.Paragraph.MinOrphanLines%2A> property used in the flow document model, where changes to that property can change the overall rendering of the flow document that contains the paragraph. Use <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentArrange> or <xref:System.Windows.FrameworkPropertyMetadataOptions.AffectsParentMeasure> to identify similar cases in your own properties.  
   
 -   By default, dependency properties support data binding. You can deliberately disable data binding, for cases where there is no realistic scenario for data binding, or where performance in data binding for a large object is recognized as a problem.  
   
--   By default, data binding <xref:System.Windows.Data.Binding.Mode%2A> for dependency properties defaults to <xref:System.Windows.Data.BindingMode>. You can always change the binding to be <xref:System.Windows.Data.BindingMode> per binding instance; for details, see [Specify the Direction of the Binding](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md). But as the dependency property author, you can choose to make the property use <xref:System.Windows.Data.BindingMode> binding mode by default. An example of an existing dependency property is <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A?displayProperty=fullName>; the scenario for this property is that the <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> setting logic and the compositing of <xref:System.Windows.Controls.MenuItem> interact with the default theme style. The <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> property logic uses data binding natively to maintain the state of the property in accordance to other state properties and method calls. Another example property that binds <xref:System.Windows.Data.BindingMode> by default is <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=fullName>.  
+-   By default, data binding <xref:System.Windows.Data.Binding.Mode%2A> for dependency properties defaults to <xref:System.Windows.Data.BindingMode.OneWay>. You can always change the binding to be <xref:System.Windows.Data.BindingMode.TwoWay> per binding instance; for details, see [Specify the Direction of the Binding](../../../../docs/framework/wpf/data/how-to-specify-the-direction-of-the-binding.md). But as the dependency property author, you can choose to make the property use <xref:System.Windows.Data.BindingMode.TwoWay> binding mode by default. An example of an existing dependency property is <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A?displayProperty=nameWithType>; the scenario for this property is that the <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> setting logic and the compositing of <xref:System.Windows.Controls.MenuItem> interact with the default theme style. The <xref:System.Windows.Controls.MenuItem.IsSubmenuOpen%2A> property logic uses data binding natively to maintain the state of the property in accordance to other state properties and method calls. Another example property that binds <xref:System.Windows.Data.BindingMode.TwoWay> by default is <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>.  
   
--   You can also enable property inheritance in a custom dependency property by setting the <xref:System.Windows.FrameworkPropertyMetadataOptions> flag. Property inheritance is useful for a scenario where parent elements and child elements have a property in common, and it makes sense for the child elements to have that particular property value set to the same value as the parent set it. An example inheritable property is <xref:System.Windows.FrameworkElement.DataContext%2A>, which is used for binding operations to enable the important master-detail scenario for data presentation. By making <xref:System.Windows.FrameworkElement.DataContext%2A> inheritable, any child elements inherit that data context also. Because of property value inheritance, you can specify a data context at the page or application root, and do not need to respecify it for bindings in all possible child elements. <xref:System.Windows.FrameworkElement.DataContext%2A> is also a good example to illustrate that inheritance overrides the default value, but it can always be set locally on any particular child element; for details, see [Use the Master-Detail Pattern with Hierarchical Data](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md). Property value inheritance does have a possible performance cost, and thus should be used sparingly; for details, see [Property Value Inheritance](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).  
+-   You can also enable property inheritance in a custom dependency property by setting the <xref:System.Windows.FrameworkPropertyMetadataOptions.Inherits> flag. Property inheritance is useful for a scenario where parent elements and child elements have a property in common, and it makes sense for the child elements to have that particular property value set to the same value as the parent set it. An example inheritable property is <xref:System.Windows.FrameworkElement.DataContext%2A>, which is used for binding operations to enable the important master-detail scenario for data presentation. By making <xref:System.Windows.FrameworkElement.DataContext%2A> inheritable, any child elements inherit that data context also. Because of property value inheritance, you can specify a data context at the page or application root, and do not need to respecify it for bindings in all possible child elements. <xref:System.Windows.FrameworkElement.DataContext%2A> is also a good example to illustrate that inheritance overrides the default value, but it can always be set locally on any particular child element; for details, see [Use the Master-Detail Pattern with Hierarchical Data](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md). Property value inheritance does have a possible performance cost, and thus should be used sparingly; for details, see [Property Value Inheritance](../../../../docs/framework/wpf/advanced/property-value-inheritance.md).  
   
--   Set the <xref:System.Windows.FrameworkPropertyMetadataOptions> flag to indicate if your dependency property should be detected or used by navigation journaling services. An example is the <xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A> property; any item selected in a selection control should be persisted when the journaling history is navigated.  
+-   Set the <xref:System.Windows.FrameworkPropertyMetadataOptions.Journal> flag to indicate if your dependency property should be detected or used by navigation journaling services. An example is the <xref:System.Windows.Controls.Primitives.Selector.SelectedIndex%2A> property; any item selected in a selection control should be persisted when the journaling history is navigated.  
   
 <a name="RODP"></a>   
 ## Read-Only Dependency Properties  
@@ -161,10 +166,10 @@ This topic describes the reasons that [!INCLUDE[TLA#tla_winclient](../../../../i
  There is a general principle in managed code programming (often enforced by code analysis tools such as FxCop) that class constructors should not call virtual methods. This is because constructors can be called as base initialization of a derived class constructor, and entering the virtual method through the constructor might occur at an incomplete initialization state of the object instance being constructed. When you derive from any class that already derives from <xref:System.Windows.DependencyObject>, you should be aware that the property system itself calls and exposes virtual methods internally. These virtual methods are part of the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] property system services. Overriding the methods enables derived classes to participate in value determination. To avoid potential issues with runtime initialization, you should not set dependency property values within constructors of classes, unless you follow a very specific constructor pattern. For details, see [Safe Constructor Patterns for DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md).  
   
 ## See Also  
- [Dependency Properties Overview](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)   
- [Dependency Property Metadata](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)   
- [Control Authoring Overview](../../../../docs/framework/wpf/controls/control-authoring-overview.md)   
- [Collection-Type Dependency Properties](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)   
- [Dependency Property Security](../../../../docs/framework/wpf/advanced/dependency-property-security.md)   
- [XAML Loading and Dependency Properties](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)   
+ [Dependency Properties Overview](../../../../docs/framework/wpf/advanced/dependency-properties-overview.md)  
+ [Dependency Property Metadata](../../../../docs/framework/wpf/advanced/dependency-property-metadata.md)  
+ [Control Authoring Overview](../../../../docs/framework/wpf/controls/control-authoring-overview.md)  
+ [Collection-Type Dependency Properties](../../../../docs/framework/wpf/advanced/collection-type-dependency-properties.md)  
+ [Dependency Property Security](../../../../docs/framework/wpf/advanced/dependency-property-security.md)  
+ [XAML Loading and Dependency Properties](../../../../docs/framework/wpf/advanced/xaml-loading-and-dependency-properties.md)  
  [Safe Constructor Patterns for DependencyObjects](../../../../docs/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects.md)

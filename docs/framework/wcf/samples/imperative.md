@@ -1,8 +1,8 @@
 ---
-title: "Imperative | Microsoft Docs"
+title: "Imperative"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4f7ce807-c0e4-407a-92a6-22abafb40b51
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Imperative
 This sample demonstrates how to define a <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> for a service using code, instead of defining the `wsHttpBinding` binding in configuration. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.  
@@ -54,7 +56,6 @@ public static void Main()
         serviceHost.Close();                        
     }             
 }  
-  
 ```  
   
  The client creates a channel to communicate with the service as shown in the following sample code.  
@@ -71,13 +72,11 @@ String url = "http://localhost:8000/servicemodelsamples/service";
 EndpointAddress address = new EndpointAddress(url);  
 ChannelFactory<ICalculator> channelFactory = new ChannelFactory<ICalculator>(binding,address);  
 ICalculator channel = channelFactory.CreateChannel();  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  

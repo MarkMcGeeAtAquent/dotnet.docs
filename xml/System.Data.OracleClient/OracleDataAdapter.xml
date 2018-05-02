@@ -1,7 +1,9 @@
-<Type Name="OracleDataAdapter" FullName="System.Data.OracleClient.OracleDataAdapter">
+﻿<Type Name="OracleDataAdapter" FullName="System.Data.OracleClient.OracleDataAdapter">
   <TypeSignature Language="C#" Value="public sealed class OracleDataAdapter : System.Data.Common.DbDataAdapter, ICloneable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OracleDataAdapter extends System.Data.Common.DbDataAdapter implements class System.Data.IDataAdapter, class System.Data.IDbDataAdapter, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleDataAdapter" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class OracleDataAdapter&#xA;Inherits DbDataAdapter&#xA;Implements ICloneable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class OracleDataAdapter sealed : System::Data::Common::DbDataAdapter, ICloneable" />
   <AssemblyInfo>
     <AssemblyName>System.Data.OracleClient</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -38,7 +40,7 @@
   
  The <xref:System.Data.OracleClient.OracleDataAdapter> serves as a bridge between a **DataSet** and database for retrieving and saving data. The <xref:System.Data.OracleClient.OracleDataAdapter> provides this bridge by using <xref:System.Data.Common.DbDataAdapter.Fill%2A> to load data from the database into the <xref:System.Data.DataSet>, and using <xref:System.Data.Common.DbDataAdapter.Update%2A> to send changes made in the <xref:System.Data.DataSet> back to the data source.  
   
- When the <xref:System.Data.OracleClient.OracleDataAdapter> fills a <xref:System.Data.DataSet>, it creates the necessary tables and columns for the returned data if they do not already exist. However, primary key information is not included in the implicitly created schema unless the <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> property is set to <xref:System.Data.MissingSchemaAction>. You may also have the <xref:System.Data.OracleClient.OracleDataAdapter> create the schema of the <xref:System.Data.DataSet>, including primary key information, before filling it with data using <xref:System.Data.Common.DbDataAdapter.FillSchema%2A>. For more information, see [Adding Existing Constraints to a DataSet](~/docs/framework/data/adonet/adding-existing-constraints-to-a-dataset.md).  
+ When the <xref:System.Data.OracleClient.OracleDataAdapter> fills a <xref:System.Data.DataSet>, it creates the necessary tables and columns for the returned data if they do not already exist. However, primary key information is not included in the implicitly created schema unless the <xref:System.Data.Common.DataAdapter.MissingSchemaAction%2A> property is set to <xref:System.Data.MissingSchemaAction.AddWithKey>. You may also have the <xref:System.Data.OracleClient.OracleDataAdapter> create the schema of the <xref:System.Data.DataSet>, including primary key information, before filling it with data using <xref:System.Data.Common.DbDataAdapter.FillSchema%2A>. For more information, see [Adding Existing Constraints to a DataSet](~/docs/framework/data/adonet/adding-existing-constraints-to-a-dataset.md).  
   
 > [!NOTE]
 >  By default, numeric fields imported to a <xref:System.Data.DataTable> with <xref:System.Data.Common.DbDataAdapter.Fill%2A> are mapped to <xref:System.Data.OracleClient.OracleNumber> objects. It is possible to overflow the <xref:System.Data.OracleClient.OracleNumber>, and throw an Oracle exception, by importing a non-integral numeric value that is either too large or too high precision for the <xref:System.Data.OracleClient.OracleNumber>'s precision limitations. Refer to the description of <xref:System.Data.OracleClient.OracleNumber> for more information.  
@@ -142,7 +144,7 @@ END CURSPKG;
   
  Create the following Oracle package body on the Oracle server.  
   
-```  
+``` 
 CREATE OR REPLACE PACKAGE BODY CURSPKG AS   
     PROCEDURE OPEN_ONE_CURSOR (N_EMPNO IN NUMBER,   
                                IO_CURSOR OUT T_CURSOR)   
@@ -212,10 +214,21 @@ END CURSPKG;
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Data.OracleClient.OracleDataAdapter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public OracleDataAdapter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; OracleDataAdapter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -242,9 +255,7 @@ END CURSPKG;
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets some of its properties.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Sub CreateOracleDataAdapter()  
     Dim myOracleConnection As OracleConnection = New OracleConnection("Data Source=Oracle8i;Integrated Security=yes")  
     Dim custDA As OracleDataAdapter = New OracleDataAdapter  
@@ -268,9 +279,7 @@ Public Sub CreateOracleDataAdapter()
 End Sub  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static void CreateOracleDataAdapter()   
 {  
     OracleConnection myOracleConnection = new OracleConnection("Data Source=Oracle8i;Integrated Security=yes");  
@@ -303,6 +312,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="public OracleDataAdapter (System.Data.OracleClient.OracleCommand selectCommand);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.OracleClient.OracleCommand selectCommand) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.#ctor(System.Data.OracleClient.OracleCommand)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (selectCommand As OracleCommand)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; OracleDataAdapter(System::Data::OracleClient::OracleCommand ^ selectCommand);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -334,9 +345,7 @@ public static void CreateOracleDataAdapter()
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets some of its properties.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Sub CreateOracleDataAdapter()  
     Dim myOracleConnection As OracleConnection = New OracleConnection("Data Source=Oracle8i;Integrated Security=yes")  
     Dim myOracleCommand As OracleCommand = New OracleCommand("SELECT DeptNo, DName FROM Dept", myOracleConnection)  
@@ -360,9 +369,7 @@ Public Sub CreateOracleDataAdapter()
 End Sub  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static void CreateOracleDataAdapter()   
 {  
     OracleConnection myOracleConnection = new OracleConnection("Data Source=Oracle8i;Integrated Security=yes");  
@@ -395,6 +402,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="public OracleDataAdapter (string selectCommandText, System.Data.OracleClient.OracleConnection selectConnection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string selectCommandText, class System.Data.OracleClient.OracleConnection selectConnection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.#ctor(System.String,System.Data.OracleClient.OracleConnection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (selectCommandText As String, selectConnection As OracleConnection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; OracleDataAdapter(System::String ^ selectCommandText, System::Data::OracleClient::OracleConnection ^ selectConnection);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -419,9 +428,7 @@ public static void CreateOracleDataAdapter()
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets some of its properties.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Sub CreateOracleDataAdapter()  
     Dim myOracleConnection As OracleConnection = New OracleConnection("Data Source=Oracle8i;Integrated Security=yes")  
     Dim mySelectText As String = "SELECT DeptNo, DName FROM Dept"  
@@ -445,9 +452,7 @@ Public Sub CreateOracleDataAdapter()
 End Sub  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static void CreateOracleDataAdapter()   
 {  
     OracleConnection myOracleConnection = new OracleConnection("Data Source=Oracle8i;Integrated Security=yes");  
@@ -482,6 +487,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="public OracleDataAdapter (string selectCommandText, string selectConnectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string selectCommandText, string selectConnectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (selectCommandText As String, selectConnectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; OracleDataAdapter(System::String ^ selectCommandText, System::String ^ selectConnectionString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -501,9 +508,7 @@ public static void CreateOracleDataAdapter()
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets some of its properties.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Sub CreateOracleDataAdapter()  
     Dim myConnectionText As String = "Data Source=Oracle8i;Integrated Security=yes"  
     Dim mySelectText As String = "SELECT DeptNo, DName FROM Dept"  
@@ -529,9 +534,7 @@ Public Sub CreateOracleDataAdapter()
 End Sub  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static void CreateOracleDataAdapter()   
 {  
     string myConnectionText = "Data Source=Oracle8i;Integrated Security=yes";  
@@ -568,6 +571,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="protected override int AddToBatch (System.Data.IDbCommand command);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance int32 AddToBatch(class System.Data.IDbCommand command) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.AddToBatch(System.Data.IDbCommand)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function AddToBatch (command As IDbCommand) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override int AddToBatch(System::Data::IDbCommand ^ command);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -590,6 +595,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="protected override void ClearBatch ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearBatch() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.ClearBatch" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub ClearBatch ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void ClearBatch();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -608,6 +615,7 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="protected override System.Data.Common.RowUpdatedEventArgs CreateRowUpdatedEvent (System.Data.DataRow dataRow, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.RowUpdatedEventArgs CreateRowUpdatedEvent(class System.Data.DataRow dataRow, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.CreateRowUpdatedEvent(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Data::Common::RowUpdatedEventArgs ^ CreateRowUpdatedEvent(System::Data::DataRow ^ dataRow, System::Data::IDbCommand ^ command, System::Data::StatementType statementType, System::Data::Common::DataTableMapping ^ tableMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -636,6 +644,7 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="protected override System.Data.Common.RowUpdatingEventArgs CreateRowUpdatingEvent (System.Data.DataRow dataRow, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.RowUpdatingEventArgs CreateRowUpdatingEvent(class System.Data.DataRow dataRow, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.CreateRowUpdatingEvent(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Data::Common::RowUpdatingEventArgs ^ CreateRowUpdatingEvent(System::Data::DataRow ^ dataRow, System::Data::IDbCommand ^ command, System::Data::StatementType statementType, System::Data::Common::DataTableMapping ^ tableMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -664,6 +673,8 @@ public static void CreateOracleDataAdapter()
       <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand DeleteCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleCommand DeleteCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.DeleteCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property DeleteCommand As OracleCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::OracleClient::OracleCommand ^ DeleteCommand { System::Data::OracleClient::OracleCommand ^ get(); void set(System::Data::OracleClient::OracleCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -696,9 +707,7 @@ public static void CreateOracleDataAdapter()
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets the <xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A> and <xref:System.Data.OracleClient.OracleDataAdapter.DeleteCommand%2A> properties. It assumes you have already created an <xref:System.Data.OracleClient.OracleConnection> object.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As OracleDataAdapter   
   
   Dim da As OracleDataAdapter = New OracleDataAdapter()  
@@ -728,9 +737,7 @@ Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As Oracle
 End Function  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)  
 {  
   OracleDataAdapter da = new OracleDataAdapter();  
@@ -768,6 +775,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override int ExecuteBatch ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance int32 ExecuteBatch() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.ExecuteBatch" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ExecuteBatch () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override int ExecuteBatch();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -787,6 +796,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override System.Data.IDataParameter GetBatchedParameter (int commandIdentifier, int parameterIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.IDataParameter GetBatchedParameter(int32 commandIdentifier, int32 parameterIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.GetBatchedParameter(System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetBatchedParameter (commandIdentifier As Integer, parameterIndex As Integer) As IDataParameter" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Data::IDataParameter ^ GetBatchedParameter(int commandIdentifier, int parameterIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -809,8 +820,10 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
     </Member>
     <Member MemberName="GetBatchedRecordsAffected">
       <MemberSignature Language="C#" Value="protected override bool GetBatchedRecordsAffected (int commandIdentifier, out int recordsAffected, out Exception error);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool GetBatchedRecordsAffected(int32 commandIdentifier, int32 recordsAffected, class System.Exception error) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool GetBatchedRecordsAffected(int32 commandIdentifier, [out] int32&amp; recordsAffected, [out] class System.Exception&amp; error) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.GetBatchedRecordsAffected(System.Int32,System.Int32@,System.Exception@)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetBatchedRecordsAffected (commandIdentifier As Integer, ByRef recordsAffected As Integer, ByRef error As Exception) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool GetBatchedRecordsAffected(int commandIdentifier, [Runtime::InteropServices::Out] int % recordsAffected, [Runtime::InteropServices::Out] Exception ^ % error);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -837,6 +850,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override void InitializeBatching ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeBatching() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.InitializeBatching" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub InitializeBatching ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void InitializeBatching();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -855,6 +870,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand InsertCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleCommand InsertCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.InsertCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsertCommand As OracleCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::OracleClient::OracleCommand ^ InsertCommand { System::Data::OracleClient::OracleCommand ^ get(); void set(System::Data::OracleClient::OracleCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -892,9 +909,7 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets the <xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A> and <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> properties. It assumes you have already created an <xref:System.Data.OracleClient.OracleConnection> object.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As OracleDataAdapter   
   
   Dim da As OracleDataAdapter = New OracleDataAdapter()  
@@ -924,9 +939,7 @@ Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As Oracle
 End Function  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)  
 {  
   OracleDataAdapter da = new OracleDataAdapter();  
@@ -964,6 +977,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override void OnRowUpdated (System.Data.Common.RowUpdatedEventArgs value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRowUpdated(class System.Data.Common.RowUpdatedEventArgs value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.OnRowUpdated(System.Data.Common.RowUpdatedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnRowUpdated (value As RowUpdatedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnRowUpdated(System::Data::Common::RowUpdatedEventArgs ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -985,6 +1000,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override void OnRowUpdating (System.Data.Common.RowUpdatingEventArgs value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRowUpdating(class System.Data.Common.RowUpdatingEventArgs value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.OnRowUpdating(System.Data.Common.RowUpdatingEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnRowUpdating (value As RowUpdatingEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnRowUpdating(System::Data::Common::RowUpdatingEventArgs ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1006,6 +1023,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public event System.Data.OracleClient.OracleRowUpdatedEventHandler RowUpdated;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Data.OracleClient.OracleRowUpdatedEventHandler RowUpdated" />
       <MemberSignature Language="DocId" Value="E:System.Data.OracleClient.OracleDataAdapter.RowUpdated" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RowUpdated As OracleRowUpdatedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Data::OracleClient::OracleRowUpdatedEventHandler ^ RowUpdated;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1044,6 +1063,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public event System.Data.OracleClient.OracleRowUpdatingEventHandler RowUpdating;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Data.OracleClient.OracleRowUpdatingEventHandler RowUpdating" />
       <MemberSignature Language="DocId" Value="E:System.Data.OracleClient.OracleDataAdapter.RowUpdating" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RowUpdating As OracleRowUpdatingEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Data::OracleClient::OracleRowUpdatingEventHandler ^ RowUpdating;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1082,6 +1103,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand SelectCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleCommand SelectCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.SelectCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property SelectCommand As OracleCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::OracleClient::OracleCommand ^ SelectCommand { System::Data::OracleClient::OracleCommand ^ get(); void set(System::Data::OracleClient::OracleCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1114,9 +1137,7 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets the <xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A> and <xref:System.Data.OracleClient.OracleDataAdapter.InsertCommand%2A> properties. It assumes you have already created an <xref:System.Data.OracleClient.OracleConnection> object.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As OracleDataAdapter   
   
   Dim da As OracleDataAdapter = New OracleDataAdapter()  
@@ -1146,9 +1167,7 @@ Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As Oracle
 End Function  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)  
 {  
   OracleDataAdapter da = new OracleDataAdapter();  
@@ -1186,7 +1205,12 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.DeleteCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.DeleteCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.System#Data#IDbDataAdapter#DeleteCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property DeleteCommand As IDbCommand Implements IDbDataAdapter.DeleteCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.DeleteCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.DeleteCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1211,7 +1235,12 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.InsertCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.InsertCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.System#Data#IDbDataAdapter#InsertCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property InsertCommand As IDbCommand Implements IDbDataAdapter.InsertCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.InsertCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.InsertCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1236,7 +1265,12 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.SelectCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.SelectCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.System#Data#IDbDataAdapter#SelectCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property SelectCommand As IDbCommand Implements IDbDataAdapter.SelectCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.SelectCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.SelectCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1261,7 +1295,12 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.UpdateCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.UpdateCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.System#Data#IDbDataAdapter#UpdateCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property UpdateCommand As IDbCommand Implements IDbDataAdapter.UpdateCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.UpdateCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.UpdateCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1286,7 +1325,12 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.System#ICloneable#Clone" />
+      <MemberSignature Language="VB.NET" Value="Function Clone () As Object Implements ICloneable.Clone" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Object ^ System.ICloneable.Clone() = ICloneable::Clone;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ICloneable.Clone</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1312,6 +1356,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="protected override void TerminateBatching ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TerminateBatching() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleDataAdapter.TerminateBatching" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub TerminateBatching ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void TerminateBatching();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1330,6 +1376,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public override int UpdateBatchSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 UpdateBatchSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property UpdateBatchSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int UpdateBatchSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1342,40 +1390,23 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
         <summary>Gets or sets a value that enables or disables batch processing support, and specifies the number of commands that can be executed in a batch.</summary>
         <value>The number of rows to process per batch.  
   
- <list type="table">  
-<listheader>  
-<term> Value:  
+ <list type="table"><listheader><term> Value:  
   
- </term>  
-<description> Effect:  
+ </term><description> Effect:  
   
- </description>  
-</listheader>  
-<item>  
-<term> 0  
+ </description></listheader><item><term> 0  
   
- </term>  
-<description> There is no limit on the batch size.  
+ </term><description> There is no limit on the batch size.  
   
- </description>  
-</item>  
-<item>  
-<term> 1  
+ </description></item><item><term> 1  
   
- </term>  
-<description> Disables batch updating.  
+ </term><description> Disables batch updating.  
   
- </description>  
-</item>  
-<item>  
-<term> &gt; 1  
+ </description></item><item><term> &gt; 1  
   
- </term>  
-<description> Changes are sent using batches of <see cref="P:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize" /> operations at a time.  
+ </term><description> Changes are sent using batches of <see cref="P:System.Data.OracleClient.OracleDataAdapter.UpdateBatchSize" /> operations at a time.  
   
- </description>  
-</item>  
-</list>  
+ </description></item></list>  
   
  When setting this to a value other than 1 all the commands associated with the <see cref="T:System.Data.OracleClient.OracleDataAdapter" /> have to have their <see cref="P:System.Data.IDbCommand.UpdatedRowSource" /> property set to <see langword="None" /> or <see langword="OutputParameters" />. An exception is thrown otherwise.</value>
         <remarks>
@@ -1396,6 +1427,8 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
       <MemberSignature Language="C#" Value="public System.Data.OracleClient.OracleCommand UpdateCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OracleClient.OracleCommand UpdateCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleDataAdapter.UpdateCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property UpdateCommand As OracleCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::OracleClient::OracleCommand ^ UpdateCommand { System::Data::OracleClient::OracleCommand ^ get(); void set(System::Data::OracleClient::OracleCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.OracleClient</AssemblyName>
@@ -1433,9 +1466,7 @@ public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)
 ## Examples  
  The following example creates an <xref:System.Data.OracleClient.OracleDataAdapter> and sets the <xref:System.Data.OracleClient.OracleDataAdapter.SelectCommand%2A> and <xref:System.Data.OracleClient.OracleDataAdapter.UpdateCommand%2A> properties. It assumes you have already created an <xref:System.Data.OracleClient.OracleConnection> object.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As OracleDataAdapter   
   
   Dim da As OracleDataAdapter = New OracleDataAdapter()  
@@ -1469,9 +1500,7 @@ Public Shared Function CreateCustomerAdapter(conn As OracleConnection) As Oracle
 End Function  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 public static OracleDataAdapter CreateCustomerAdapter(OracleConnection conn)  
 {  
   OracleDataAdapter da = new OracleDataAdapter();  

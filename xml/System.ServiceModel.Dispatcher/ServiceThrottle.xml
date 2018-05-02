@@ -1,7 +1,9 @@
-<Type Name="ServiceThrottle" FullName="System.ServiceModel.Dispatcher.ServiceThrottle">
+﻿<Type Name="ServiceThrottle" FullName="System.ServiceModel.Dispatcher.ServiceThrottle">
   <TypeSignature Language="C#" Value="public sealed class ServiceThrottle" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceThrottle extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ServiceThrottle" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ServiceThrottle" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ServiceThrottle sealed" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -32,7 +34,7 @@
 ## Examples  
  The following code example shows the typical use of the <xref:System.ServiceModel.Dispatcher.ServiceThrottle> by referencing the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> in an application configuration file. In this case, the values that are specified establish, at most, one message processing at one time from one connection to one <xref:System.ServiceModel.InstanceContext>. Real-world usage must be determined through experience.  
   
- <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
   
  ]]></format>
     </remarks>
@@ -42,6 +44,8 @@
       <MemberSignature Language="C#" Value="public int MaxConcurrentCalls { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentCalls" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentCalls" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxConcurrentCalls As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxConcurrentCalls { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -67,7 +71,7 @@
 ## Examples  
  The following code example shows the typical use of the <xref:System.ServiceModel.Dispatcher.ServiceThrottle> by referencing the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> in an application configuration file. In this case, the values that are specified establish, at most, one message processing at one time from one connection to one <xref:System.ServiceModel.InstanceContext>. Real-world usage must be determined through experience.  
   
- <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
   
  ]]></format>
         </remarks>
@@ -77,6 +81,8 @@
       <MemberSignature Language="C#" Value="public int MaxConcurrentInstances { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentInstances" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxConcurrentInstances As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxConcurrentInstances { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -92,7 +98,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> property specifies the maximum number of <xref:System.ServiceModel.InstanceContext> objects in the service. It is important to keep in mind the relationship between the <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> property and the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> property. If <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> is <xref:System.ServiceModel.InstanceContextMode> the resulting value is the total number of sessions. If <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> is <xref:System.ServiceModel.InstanceContextMode>, the resulting value is the number of concurrent calls. If a message arrives while the maximum number of <xref:System.ServiceModel.InstanceContext> objects already exist, the message is held until an <xref:System.ServiceModel.InstanceContext> object closes.  
+ The <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> property specifies the maximum number of <xref:System.ServiceModel.InstanceContext> objects in the service. It is important to keep in mind the relationship between the <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> property and the <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> property. If <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> is <xref:System.ServiceModel.InstanceContextMode.PerSession> the resulting value is the total number of sessions. If <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> is <xref:System.ServiceModel.InstanceContextMode.PerCall>, the resulting value is the number of concurrent calls. If a message arrives while the maximum number of <xref:System.ServiceModel.InstanceContext> objects already exist, the message is held until an <xref:System.ServiceModel.InstanceContext> object closes.  
   
 > [!NOTE]
 >  A trace is written every time the value of this property is exceeded. The first trace is written as a warning.  
@@ -102,7 +108,7 @@
 ## Examples  
  The following code example shows the typical use of the <xref:System.ServiceModel.Dispatcher.ServiceThrottle> by referencing the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> in an application configuration file. In this case, the values that are specified establish, at most, one message processing at one time from one connection to one <xref:System.ServiceModel.InstanceContext>. Real-world usage must be determined through experience.  
   
- <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
   
  ]]></format>
         </remarks>
@@ -112,6 +118,8 @@
       <MemberSignature Language="C#" Value="public int MaxConcurrentSessions { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentSessions" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxConcurrentSessions As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxConcurrentSessions { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -134,14 +142,14 @@
   
  For more information about sessions, see [Using Sessions](~/docs/framework/wcf/using-sessions.md).  
   
- Typically, this property is set using the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A?displayProperty=fullName> property.  
+ Typically, this property is set using the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A?displayProperty=nameWithType> property.  
   
    
   
 ## Examples  
  The following code example shows the typical use of the <xref:System.ServiceModel.Dispatcher.ServiceThrottle> by referencing the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior> in an application configuration file. In this case, the values that are specified establish, at most, one message processing at one time from one connection to one <xref:System.ServiceModel.InstanceContext>. Real-world usage must be determined through experience.  
   
- <!-- TODO: review snippet reference [!code-csharp[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]  -->  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
   
  ]]></format>
         </remarks>

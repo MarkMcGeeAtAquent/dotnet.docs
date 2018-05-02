@@ -1,8 +1,8 @@
 ---
-title: "ConfigurationCodeGenerator | Microsoft Docs"
+title: "ConfigurationCodeGenerator"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3913aae8-165f-4014-9262-7fe426f90cb2
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ConfigurationCodeGenerator
 The ConfigurationCodeGenerator is a tool that you can use to expose your custom channel implementations to the configuration system. This allows users of your custom channel to configure your channel by using a .config file just as they would configure a system-provided binding such as `NetTcpBinding` or a custom binding using the `TcpTransportBindingElement`.  
@@ -32,21 +34,18 @@ The ConfigurationCodeGenerator is a tool that you can use to expose your custom 
   
     ```  
     ConfigurationCodeGenerator.exe /be:YourCustomBindingElementTypeName /sb:YourCustomStdBindingTypeName /dll:TheAssemblyWhereTheseTypesAreDefined  
-  
     ```  
   
      Or type the following if you have only a custom `BindingElement` type:  
   
     ```  
     ConfigurationCodeGenerator.exe /be:YourCustomBindingElementTypeName /dll: TheAssemblyWhereThisTypeIsDefined  
-  
     ```  
   
      Or type the following if you have only a custom `Binding` type:  
   
     ```  
     ConfigurationCodeGenerator.exe /sb:YourCustomStdBindingTypeName /dll:TheAssemblyWhereThisTypeIsDefined  
-  
     ```  
   
      The command generates three .cs files for the `BindingElement` (if you specified the /be: option), five .cs files for the standard `Binding` (if you specified the /sb: option), and a .xml file.  

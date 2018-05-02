@@ -1,10 +1,13 @@
-<Type Name="SqlConnectionStringBuilder" FullName="System.Data.SqlClient.SqlConnectionStringBuilder">
+﻿<Type Name="SqlConnectionStringBuilder" FullName="System.Data.SqlClient.SqlConnectionStringBuilder">
   <TypeSignature Language="C#" Value="public sealed class SqlConnectionStringBuilder : System.Data.Common.DbConnectionStringBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlConnectionStringBuilder extends System.Data.Common.DbConnectionStringBuilder" />
   <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlConnectionStringBuilder" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SqlConnectionStringBuilder&#xA;Inherits DbConnectionStringBuilder" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SqlConnectionStringBuilder sealed : System::Data::Common::DbConnectionStringBuilder" />
   <AssemblyInfo>
     <AssemblyName>System.Data.SqlClient</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
@@ -41,9 +44,7 @@
   
  The **Item** property handles tries to insert malicious entries. For example, the following code, using the default Item property (the indexer, in C#) correctly escapes the nested key/value pair:  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Dim builder As New System.Data.SqlClient.SqlConnectionStringBuilder  
 builder("Data Source") = "(local)"  
 builder("Integrated Security") = True  
@@ -51,9 +52,7 @@ builder("Initial Catalog") = "AdventureWorks;NewValue=Bad"
 Console.WriteLine(builder.ConnectionString)  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 System.Data.SqlClient.SqlConnectionStringBuilder builder =  
   new System.Data.SqlClient.SqlConnectionStringBuilder();  
 builder["Data Source"] = "(local)";  
@@ -85,14 +84,27 @@ Integrated Security=True
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlClient</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Data.SqlClient.SqlConnectionStringBuilder" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SqlConnectionStringBuilder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SqlConnectionStringBuilder();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -113,10 +125,13 @@ Integrated Security=True
       <MemberSignature Language="C#" Value="public SqlConnectionStringBuilder (string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SqlConnectionStringBuilder(System::String ^ connectionString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -161,10 +176,13 @@ Integrated Security=True
       <MemberSignature Language="C#" Value="public System.Data.SqlClient.ApplicationIntent ApplicationIntent { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SqlClient.ApplicationIntent ApplicationIntent" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationIntent" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplicationIntent As ApplicationIntent" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::SqlClient::ApplicationIntent ApplicationIntent { System::Data::SqlClient::ApplicationIntent get(); void set(System::Data::SqlClient::ApplicationIntent value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -180,14 +198,14 @@ Integrated Security=True
           <AttributeName>System.ComponentModel.DisplayName("ApplicationIntent")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Data.SqlClient.ApplicationIntent</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Declares the application workload type when connecting to a database in an SQL Server Availability Group. You can set the value of this property with <see cref="T:System.Data.SqlClient.ApplicationIntent" />. For more information about SqlClient support for Always On Availability Groups, see [SqlClient Support for High Availability, Disaster Recovery](../Topic/SqlClient%20Support%20for%20High%20Availability,%20Disaster%20Recovery.md).</summary>
+        <summary>Declares the application workload type when connecting to a database in an SQL Server Availability Group. You can set the value of this property with <see cref="T:System.Data.SqlClient.ApplicationIntent" />. For more information about SqlClient support for Always On Availability Groups, see [SqlClient Support for High Availability, Disaster Recovery](~/docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).</summary>
         <value>Returns the current value of the property (a value of type <see cref="T:System.Data.SqlClient.ApplicationIntent" />).</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -196,10 +214,13 @@ Integrated Security=True
       <MemberSignature Language="C#" Value="public string ApplicationName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ApplicationName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApplicationName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ApplicationName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -215,7 +236,7 @@ Integrated Security=True
           <AttributeName>System.ComponentModel.DisplayName("Application Name")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -255,6 +276,8 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public bool AsynchronousProcessing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AsynchronousProcessing" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.AsynchronousProcessing" />
+      <MemberSignature Language="VB.NET" Value="Public Property AsynchronousProcessing As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AsynchronousProcessing { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -266,7 +289,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("Asynchronous Processing")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -291,16 +314,22 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.SqlClient.SqlCommand.BeginExecuteReader" />
+        <altmember cref="M:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery" />
+        <altmember cref="M:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader" />
       </Docs>
     </Member>
     <Member MemberName="AttachDBFilename">
       <MemberSignature Language="C#" Value="public string AttachDBFilename { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AttachDBFilename" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.AttachDBFilename" />
+      <MemberSignature Language="VB.NET" Value="Public Property AttachDBFilename As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AttachDBFilename { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -319,7 +348,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.FileNameEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -355,6 +384,8 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlAuthenticationMethod Authentication { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SqlClient.SqlAuthenticationMethod Authentication" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Authentication" />
+      <MemberSignature Language="VB.NET" Value="Public Property Authentication As SqlAuthenticationMethod" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::SqlClient::SqlAuthenticationMethod Authentication { System::Data::SqlClient::SqlAuthenticationMethod get(); void set(System::Data::SqlClient::SqlAuthenticationMethod value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -366,7 +397,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("Authentication")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -382,10 +413,13 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public override void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -424,6 +458,8 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlConnectionColumnEncryptionSetting ColumnEncryptionSetting { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SqlClient.SqlConnectionColumnEncryptionSetting ColumnEncryptionSetting" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ColumnEncryptionSetting" />
+      <MemberSignature Language="VB.NET" Value="Public Property ColumnEncryptionSetting As SqlConnectionColumnEncryptionSetting" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::SqlClient::SqlConnectionColumnEncryptionSetting ColumnEncryptionSetting { System::Data::SqlClient::SqlConnectionColumnEncryptionSetting get(); void set(System::Data::SqlClient::SqlConnectionColumnEncryptionSetting value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -435,7 +471,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("Column Encryption Setting")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -451,6 +487,8 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public bool ConnectionReset { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ConnectionReset" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectionReset" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionReset As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ConnectionReset { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -465,7 +503,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("Connection Reset")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Obsolete("ConnectionReset has been deprecated.  SqlConnection will ignore the 'connection reset' keyword and always reset the connection")</AttributeName>
@@ -491,10 +529,13 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public int ConnectRetryCount { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectRetryCount" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectRetryCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectRetryCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ConnectRetryCount { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -510,7 +551,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("ConnectRetryCount")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -528,10 +569,13 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public int ConnectRetryInterval { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectRetryInterval" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectRetryInterval" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectRetryInterval As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ConnectRetryInterval { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -547,7 +591,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("ConnectRetryInterval")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -565,10 +609,13 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public int ConnectTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ConnectTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ConnectTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -584,7 +631,7 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
           <AttributeName>System.ComponentModel.DisplayName("Connect Timeout")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -617,10 +664,13 @@ Modified: Data Source=(local);Initial Catalog=AdventureWorks;Integrated Security
       <MemberSignature Language="C#" Value="public override bool ContainsKey (string keyword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ContainsKey(string keyword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.ContainsKey(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ContainsKey (keyword As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool ContainsKey(System::String ^ keyword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -675,6 +725,8 @@ False
       <MemberSignature Language="C#" Value="public bool ContextConnection { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ContextConnection" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.ContextConnection" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContextConnection As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ContextConnection { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -686,7 +738,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Context Connection")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -712,10 +764,13 @@ False
       <MemberSignature Language="C#" Value="public string CurrentLanguage { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CurrentLanguage" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.CurrentLanguage" />
+      <MemberSignature Language="VB.NET" Value="Public Property CurrentLanguage As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CurrentLanguage { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -731,7 +786,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Current Language")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -755,10 +810,13 @@ False
       <MemberSignature Language="C#" Value="public string DataSource { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSource As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DataSource { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -774,7 +832,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Data Source")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.SqlClient.SqlConnectionStringBuilder/SqlDataSourceConverter))</AttributeName>
@@ -809,10 +867,13 @@ False
       <MemberSignature Language="C#" Value="public bool Encrypt { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Encrypt" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Encrypt" />
+      <MemberSignature Language="VB.NET" Value="Public Property Encrypt As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Encrypt { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -828,7 +889,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Encrypt")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -851,6 +912,8 @@ False
       <MemberSignature Language="C#" Value="public bool Enlist { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Enlist" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Enlist" />
+      <MemberSignature Language="VB.NET" Value="Public Property Enlist As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Enlist { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -862,7 +925,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Enlist")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -870,7 +933,7 @@ False
       </ReturnValue>
       <Docs>
         <summary>Gets or sets a Boolean value that indicates whether the SQL Server connection pooler automatically enlists the connection in the creation thread's current transaction context.</summary>
-        <value>The value of the <see cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.Enlist" /> property, or <see langword="true " />if none has been supplied.</value>
+        <value>The value of the <see cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.Enlist" /> property, or <see langword="true" /> if none has been supplied.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -885,10 +948,13 @@ False
       <MemberSignature Language="C#" Value="public string FailoverPartner { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FailoverPartner" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.FailoverPartner" />
+      <MemberSignature Language="VB.NET" Value="Public Property FailoverPartner As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FailoverPartner { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -904,7 +970,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Failover Partner")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.SqlClient.SqlConnectionStringBuilder/SqlDataSourceConverter))</AttributeName>
@@ -924,6 +990,8 @@ False
       <MemberSignature Language="C#" Value="protected override void GetProperties (System.Collections.Hashtable propertyDescriptors);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetProperties(class System.Collections.Hashtable propertyDescriptors) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.GetProperties(System.Collections.Hashtable)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub GetProperties (propertyDescriptors As Hashtable)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void GetProperties(System::Collections::Hashtable ^ propertyDescriptors);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -946,10 +1014,13 @@ False
       <MemberSignature Language="C#" Value="public string InitialCatalog { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InitialCatalog" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.InitialCatalog" />
+      <MemberSignature Language="VB.NET" Value="Public Property InitialCatalog As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ InitialCatalog { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -965,7 +1036,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Initial Catalog")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.SqlClient.SqlConnectionStringBuilder/SqlInitialCatalogConverter))</AttributeName>
@@ -1000,10 +1071,13 @@ False
       <MemberSignature Language="C#" Value="public bool IntegratedSecurity { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IntegratedSecurity" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.IntegratedSecurity" />
+      <MemberSignature Language="VB.NET" Value="Public Property IntegratedSecurity As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IntegratedSecurity { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1019,7 +1093,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Integrated Security")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1053,6 +1127,8 @@ False
       <MemberSignature Language="C#" Value="public override bool IsFixedSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.IsFixedSize" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property IsFixedSize As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsFixedSize { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1073,10 +1149,13 @@ False
       <MemberSignature Language="C#" Value="public override object this[string keyword] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Overrides Property Item(keyword As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ default[System::String ^] { System::Object ^ get(System::String ^ keyword); void set(System::String ^ keyword, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1123,10 +1202,13 @@ False
       <MemberSignature Language="C#" Value="public override System.Collections.ICollection Keys { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Keys" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Keys As ICollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ICollection ^ Keys { System::Collections::ICollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1159,16 +1241,21 @@ False
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.Values" />
+        <altmember cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.Item(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="LoadBalanceTimeout">
       <MemberSignature Language="C#" Value="public int LoadBalanceTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 LoadBalanceTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.LoadBalanceTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property LoadBalanceTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int LoadBalanceTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1184,7 +1271,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Load Balance Timeout")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1207,10 +1294,13 @@ False
       <MemberSignature Language="C#" Value="public int MaxPoolSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxPoolSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.MaxPoolSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxPoolSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxPoolSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1226,7 +1316,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Max Pool Size")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1249,10 +1339,13 @@ False
       <MemberSignature Language="C#" Value="public int MinPoolSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MinPoolSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.MinPoolSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinPoolSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MinPoolSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1268,7 +1361,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Min Pool Size")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1291,10 +1384,13 @@ False
       <MemberSignature Language="C#" Value="public bool MultipleActiveResultSets { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MultipleActiveResultSets" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.MultipleActiveResultSets" />
+      <MemberSignature Language="VB.NET" Value="Public Property MultipleActiveResultSets As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MultipleActiveResultSets { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1310,7 +1406,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("MultipleActiveResultSets")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1343,10 +1439,13 @@ False
       <MemberSignature Language="C#" Value="public bool MultiSubnetFailover { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MultiSubnetFailover" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover" />
+      <MemberSignature Language="VB.NET" Value="Public Property MultiSubnetFailover As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MultiSubnetFailover { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1362,14 +1461,14 @@ False
           <AttributeName>System.ComponentModel.DisplayName("MultiSubnetFailover")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>If your application is connecting to an AlwaysOn availability group (AG) on different subnets, setting MultiSubnetFailover=true provides faster detection of and connection to the (currently) active server. For more information about SqlClient support for Always On Availability Groups, see [SqlClient Support for High Availability, Disaster Recovery](../Topic/SqlClient%20Support%20for%20High%20Availability,%20Disaster%20Recovery.md).</summary>
+        <summary>If your application is connecting to an AlwaysOn availability group (AG) on different subnets, setting MultiSubnetFailover=true provides faster detection of and connection to the (currently) active server. For more information about SqlClient support for Always On Availability Groups, see [SqlClient Support for High Availability, Disaster Recovery](~/docs/framework/data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).</summary>
         <value>Returns <see cref="T:System.Boolean" /> indicating the current value of the property.</value>
         <remarks>To be added.</remarks>
       </Docs>
@@ -1378,6 +1477,8 @@ False
       <MemberSignature Language="C#" Value="public string NetworkLibrary { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NetworkLibrary" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.NetworkLibrary" />
+      <MemberSignature Language="VB.NET" Value="Public Property NetworkLibrary As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ NetworkLibrary { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1389,7 +1490,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Network Library")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.SqlClient.SqlConnectionStringBuilder/NetworkLibraryConverter))</AttributeName>
@@ -1418,10 +1519,13 @@ False
       <MemberSignature Language="C#" Value="public int PacketSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PacketSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.PacketSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property PacketSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PacketSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1437,7 +1541,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Packet Size")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1460,10 +1564,13 @@ False
       <MemberSignature Language="C#" Value="public string Password { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Password" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Password" />
+      <MemberSignature Language="VB.NET" Value="Public Property Password As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Password { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1482,7 +1589,7 @@ False
           <AttributeName>System.ComponentModel.PasswordPropertyText(true)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1497,7 +1604,7 @@ False
 ## Remarks  
  This property corresponds to the "Password" and "pwd" keys within the connection string.  
   
- If <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> has not been set and you retrieve the value, the return value is <xref:System.String>. To reset the password for the connection string, pass null to the Item property.  
+ If <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> has not been set and you retrieve the value, the return value is <xref:System.String.Empty>. To reset the password for the connection string, pass null to the Item property.  
   
    
   
@@ -1516,10 +1623,13 @@ False
       <MemberSignature Language="C#" Value="public bool PersistSecurityInfo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PersistSecurityInfo" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.PersistSecurityInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Property PersistSecurityInfo As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool PersistSecurityInfo { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1535,7 +1645,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Persist Security Info")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1558,6 +1668,8 @@ False
       <MemberSignature Language="C#" Value="public System.Data.SqlClient.PoolBlockingPeriod PoolBlockingPeriod { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SqlClient.PoolBlockingPeriod PoolBlockingPeriod" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod" />
+      <MemberSignature Language="VB.NET" Value="Public Property PoolBlockingPeriod As PoolBlockingPeriod" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::SqlClient::PoolBlockingPeriod PoolBlockingPeriod { System::Data::SqlClient::PoolBlockingPeriod get(); void set(System::Data::SqlClient::PoolBlockingPeriod value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1569,7 +1681,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("PoolBlockingPeriod")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1584,7 +1696,7 @@ False
 ## Remarks  
  When connection pooling is enabled and  a timeout error or other login error occurs, an exception will be thrown and subsequent connection attempts will fail for the next five seconds, the "blocking period". If the application attempts to connect within the blocking period, the first exception will be thrown again. Subsequent failures after a blocking period ends will result in a new blocking period that is twice as long as the previous blocking period, up to a maximum of one minute.  
   
- Attempting to connect to Azure SQL databases can fail with transient errors which are typically recovered within a few seconds. However, with the connection pool blocking period behavior, you may not be able to reach your database for extensive periods even though the database is  available. This is especially problematic for apps that need to render fast. The **PoolBlockingPeriod** enables you to select the blocking period best suited for your app. See the [PoolBlockingPeriod Enumeration](../Topic/PoolBlockingPeriod%20Enumeration.md) for available settings.  
+ Attempting to connect to Azure SQL databases can fail with transient errors which are typically recovered within a few seconds. However, with the connection pool blocking period behavior, you may not be able to reach your database for extensive periods even though the database is  available. This is especially problematic for apps that need to render fast. The **PoolBlockingPeriod** enables you to select the blocking period best suited for your app. See the <xref:System.Data.SqlClient.PoolBlockingPeriod> enumeration for available settings.  
   
  ]]></format>
         </remarks>
@@ -1594,10 +1706,13 @@ False
       <MemberSignature Language="C#" Value="public bool Pooling { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Pooling" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Pooling" />
+      <MemberSignature Language="VB.NET" Value="Public Property Pooling As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Pooling { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1613,7 +1728,7 @@ False
           <AttributeName>System.ComponentModel.DisplayName("Pooling")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1636,10 +1751,13 @@ False
       <MemberSignature Language="C#" Value="public override bool Remove (string keyword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Remove(string keyword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Remove (keyword As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Remove(System::String ^ keyword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1727,10 +1845,13 @@ Database = AdventureWorks
       <MemberSignature Language="C#" Value="public bool Replication { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Replication" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Replication" />
+      <MemberSignature Language="VB.NET" Value="Public Property Replication As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Replication { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1746,7 +1867,7 @@ Database = AdventureWorks
           <AttributeName>System.ComponentModel.DisplayName("Replication")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1769,10 +1890,13 @@ Database = AdventureWorks
       <MemberSignature Language="C#" Value="public override bool ShouldSerialize (string keyword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ShouldSerialize(string keyword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.ShouldSerialize(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ShouldSerialize (keyword As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool ShouldSerialize(System::String ^ keyword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1808,6 +1932,8 @@ Database = AdventureWorks
       <MemberSignature Language="C#" Value="public string TransactionBinding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TransactionBinding" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.TransactionBinding" />
+      <MemberSignature Language="VB.NET" Value="Public Property TransactionBinding As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ TransactionBinding { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1819,7 +1945,7 @@ Database = AdventureWorks
           <AttributeName>System.ComponentModel.DisplayName("Transaction Binding")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1849,6 +1975,8 @@ Database = AdventureWorks
       <MemberSignature Language="C#" Value="public bool TransparentNetworkIPResolution { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool TransparentNetworkIPResolution" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.TransparentNetworkIPResolution" />
+      <MemberSignature Language="VB.NET" Value="Public Property TransparentNetworkIPResolution As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool TransparentNetworkIPResolution { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1860,7 +1988,7 @@ Database = AdventureWorks
           <AttributeName>System.ComponentModel.DisplayName("TransparentNetworkIPResolution")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1907,10 +2035,13 @@ Database = AdventureWorks
       <MemberSignature Language="C#" Value="public bool TrustServerCertificate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool TrustServerCertificate" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.TrustServerCertificate" />
+      <MemberSignature Language="VB.NET" Value="Public Property TrustServerCertificate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool TrustServerCertificate { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1926,7 +2057,7 @@ Database = AdventureWorks
           <AttributeName>System.ComponentModel.DisplayName("TrustServerCertificate")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1949,12 +2080,15 @@ Database = AdventureWorks
     </Member>
     <Member MemberName="TryGetValue">
       <MemberSignature Language="C#" Value="public override bool TryGetValue (string keyword, out object value);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetValue(string keyword, object value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryGetValue(string keyword, [out] object&amp; value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlConnectionStringBuilder.TryGetValue(System.String,System.Object@)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function TryGetValue (keyword As String, ByRef value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool TryGetValue(System::String ^ keyword, [Runtime::InteropServices::Out] System::Object ^ % value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2011,10 +2145,13 @@ Unable to retrieve value for null key.
       <MemberSignature Language="C#" Value="public string TypeSystemVersion { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TypeSystemVersion" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.TypeSystemVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeSystemVersion As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ TypeSystemVersion { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2030,7 +2167,7 @@ Unable to retrieve value for null key.
           <AttributeName>System.ComponentModel.DisplayName("Type System Version")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2040,40 +2177,23 @@ Unable to retrieve value for null key.
         <summary>Gets or sets a string value that indicates the type system the application expects.</summary>
         <value>The following table shows the possible values for the <see cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.TypeSystemVersion" /> property:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 2005  
+ </description></listheader><item><term> [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 2005  
   
- </term>  
-<description> Uses the [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 2005 type system. No conversions are made for the current version of ADO.NET.  
+ </term><description> Uses the [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] 2005 type system. No conversions are made for the current version of ADO.NET.  
   
- </description>  
-</item>  
-<item>  
-<term> SQL Server 2008  
+ </description></item><item><term> SQL Server 2008  
   
- </term>  
-<description> Uses the SQL Server 2008 type system.  
+ </term><description> Uses the SQL Server 2008 type system.  
   
- </description>  
-</item>  
-<item>  
-<term> Latest  
+ </description></item><item><term> Latest  
   
- </term>  
-<description> Use the latest version than this client-server pair can handle. This will automatically move forward as the client and server components are upgraded.  
+ </term><description> Use the latest version than this client-server pair can handle. This will automatically move forward as the client and server components are upgraded.  
   
- </description>  
-</item>  
-</list></value>
+ </description></item></list></value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2088,10 +2208,13 @@ Unable to retrieve value for null key.
       <MemberSignature Language="C#" Value="public string UserID { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserID" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.UserID" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserID { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2107,7 +2230,7 @@ Unable to retrieve value for null key.
           <AttributeName>System.ComponentModel.DisplayName("User ID")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2131,10 +2254,13 @@ Unable to retrieve value for null key.
       <MemberSignature Language="C#" Value="public bool UserInstance { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UserInstance" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.UserInstance" />
+      <MemberSignature Language="VB.NET" Value="Public Property UserInstance As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UserInstance { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2150,7 +2276,7 @@ Unable to retrieve value for null key.
           <AttributeName>System.ComponentModel.DisplayName("User Instance")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -2177,10 +2303,13 @@ Unable to retrieve value for null key.
       <MemberSignature Language="C#" Value="public override System.Collections.ICollection Values { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.Values" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Values As ICollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ICollection ^ Values { System::Collections::ICollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2213,16 +2342,20 @@ Unable to retrieve value for null key.
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.SqlClient.SqlConnectionStringBuilder.Keys" />
       </Docs>
     </Member>
     <Member MemberName="WorkstationID">
       <MemberSignature Language="C#" Value="public string WorkstationID { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string WorkstationID" />
       <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlConnectionStringBuilder.WorkstationID" />
+      <MemberSignature Language="VB.NET" Value="Public Property WorkstationID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ WorkstationID { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.SqlClient</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2238,7 +2371,7 @@ Unable to retrieve value for null key.
           <AttributeName>System.ComponentModel.DisplayName("Workstation ID")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

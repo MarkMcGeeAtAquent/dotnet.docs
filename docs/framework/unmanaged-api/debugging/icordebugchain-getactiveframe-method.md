@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugChain::GetActiveFrame Method | Microsoft Docs"
+title: "ICorDebugChain::GetActiveFrame Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugChain.GetActiveFrame"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugChain::GetActiveFrame"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugChain::GetActiveFrame method [.NET Framework debugging]"
   - "GetActiveFrame method, ICorDebugChain interface [.NET Framework debugging]"
 ms.assetid: 36887017-670b-4f21-b406-8fab956f84a3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugChain::GetActiveFrame Method
 Gets the active (that is, most recent) frame on the chain.  

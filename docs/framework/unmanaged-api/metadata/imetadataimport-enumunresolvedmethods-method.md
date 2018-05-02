@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumUnresolvedMethods Method | Microsoft Docs"
+title: "IMetaDataImport::EnumUnresolvedMethods Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumUnresolvedMethods"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumUnresolvedMethods"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumUnresolvedMethods method [.NET Framework metadata]"
   - "IMetaDataImport::EnumUnresolvedMethods method [.NET Framework metadata]"
 ms.assetid: eb3187d7-74cf-44b1-aeeb-7a8d2b60e3b7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumUnresolvedMethods Method
 Enumerates MemberDef tokens representing the unresolved methods in the current metadata scope.  
@@ -76,5 +79,5 @@ HRESULT EnumUnresolvedMethods (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

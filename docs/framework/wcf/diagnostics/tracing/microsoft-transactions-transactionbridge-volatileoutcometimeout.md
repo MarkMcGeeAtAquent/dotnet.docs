@@ -1,8 +1,8 @@
 ---
-title: "Microsoft.Transactions.TransactionBridge.VolatileOutcomeTimeout | Microsoft Docs"
+title: "Microsoft.Transactions.TransactionBridge.VolatileOutcomeTimeout"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2dbe34c5-57c7-4b64-9257-63021911d03c
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Microsoft.Transactions.TransactionBridge.VolatileOutcomeTimeout
 The WS-AT protocol service timed out waiting for a response to an outcome message from a volatile participant. The transaction outcome may be in doubt if the participant returns.  
@@ -25,6 +27,6 @@ The WS-AT protocol service timed out waiting for a response to an outcome messag
  Ensure that all Volatile participants are able to respond within the given amount of time. The default time period is 180 seconds.  If this is insufficient, increase the `VolatileOutcomeDelay` timer policy for WS-AT.  
   
 ## See Also  
- [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Using Tracing to Troubleshoot Your Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+ [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Using Tracing to Troubleshoot Your Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

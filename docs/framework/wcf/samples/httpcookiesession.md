@@ -1,8 +1,8 @@
 ---
-title: "HttpCookieSession | Microsoft Docs"
+title: "HttpCookieSession"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
 caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # HttpCookieSession
 This sample demonstrates how to build a custom protocol channel to use HTTP cookies for session management. This channel enables communication between [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services and ASMX clients or between [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] clients and ASMX services.  
@@ -93,7 +95,7 @@ InputQueue<RequestContext> requestQueue;
   
  The sample uses policy assertions for the service description. This allows the sample to publish its channel requirements to other clients that can consume the service. For example, this binding element publishes policy assertions to let potential clients know that it supports sessions. Because the sample enables the `ExchangeTerminateMessage` property in the binding element configuration, it adds the necessary assertions to show that the service supports an extra message exchange action to terminate the session conversation. Clients can then use this action. The following WSDL code shows the policy assertions created from the `HttpCookieSessionBindingElement`.  
   
-```  
+```xml  
 <wsp:Policy wsu:Id="HttpCookieSessionBinding_IWcfCookieSessionService_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">  
 <wsp:ExactlyOne>  
 <wsp:All>  
@@ -112,7 +114,7 @@ InputQueue<RequestContext> requestQueue;
 ### Binding Element Extension Section  
  The section `HttpCookieSessionBindingElementSection` is a <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> that exposes `HttpCookieSessionBindingElement` to the configuration system. With a few overrides the configuration section name, the type of the binding element and how to create the binding element are defined. We can then register the extension section in a configuration file as follows:  
   
-```  
+```xml  
 <configuration>        
     <system.serviceModel>        
       <extensions>          
@@ -168,7 +170,6 @@ Press <ENTER> to terminate client.
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

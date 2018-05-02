@@ -1,7 +1,7 @@
 ---
-title: "Performance of Chained Queries (LINQ to XML) (Visual Basic) | Microsoft Docs"
+title: "Performance of Chained Queries (LINQ to XML) (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: 589f2adc-69f9-404d-b9d6-4c28dabea7f7
 caps.latest.revision: 4
 author: dotnet-bot
@@ -32,7 +30,6 @@ Dim query2 = From e In query1 Where CInt(e) Mod 2 = 0e
 For Each i As var In query2  
 	Console.WriteLine("{0}", CInt(i))  
 Next  
-  
 ```  
   
  This example produces the following output:  

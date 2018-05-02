@@ -1,5 +1,5 @@
 ---
-title: "How to: Send Data Using the WebRequest Class | Microsoft Docs"
+title: "How to: Send Data Using the WebRequest Class"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WebRequest class, sending data to a host"
   - "Sending data to a host, using WebRequest class"
@@ -20,6 +18,8 @@ caps.latest.revision: 12
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Send Data Using the WebRequest Class
 The following procedure describes the steps used to send data to a server. This procedure is commonly used to post data to a Web page.  
@@ -34,7 +34,6 @@ The following procedure describes the steps used to send data to a server. This 
   
     ```vb  
     Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
-  
     ```  
   
     > [!NOTE]
@@ -48,7 +47,6 @@ The following procedure describes the steps used to send data to a server. This 
   
     ```vb  
     request.Credentials = CredentialCache.DefaultCredentials  
-  
     ```  
   
      In most cases, the **WebRequest** instance itself is sufficient to send data. However, if you need to set protocol-specific properties, you must cast the **WebRequest** to the protocol-specific type. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebRequest>, cast the **WebRequest** to an **HttpWebRequest** reference. The following code example shows how to set the HTTP-specific <xref:System.Net.HttpWebRequest.UserAgent%2A> property.  
@@ -129,11 +127,10 @@ The following procedure describes the steps used to send data to a server. This 
   
     ```vb  
     Dim response As WebResponse = request.GetResponse()  
-  
     ```  
   
     > [!NOTE]
-    >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=fullName> method. If you do not close the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
+    >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method. If you do not close the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
   
 10. You can access the properties of the **WebResponse** or cast the **WebResponse** to a protocol-specific instance to read protocol-specific properties. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebResponse>, cast the **WebResponse** to an **HttpWebResponse** reference.  
   
@@ -163,7 +160,6 @@ The following procedure describes the steps used to send data to a server. This 
   
     ```vb  
     response.Close()  
-  
     ```  
   
 ## Example  
@@ -263,12 +259,11 @@ Namespace Examples.System.Net
         End Sub  
     End Class  
 End Namespace  
-  
 ```  
   
 ## See Also  
- [Creating Internet Requests](../../../docs/framework/network-programming/creating-internet-requests.md)   
- [Using Streams on the Network](../../../docs/framework/network-programming/using-streams-on-the-network.md)   
- [Accessing the Internet Through a Proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)   
- [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)   
+ [Creating Internet Requests](../../../docs/framework/network-programming/creating-internet-requests.md)  
+ [Using Streams on the Network](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
+ [Accessing the Internet Through a Proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)  
  [How to: Request Data Using the WebRequest Class](../../../docs/framework/network-programming/how-to-request-data-using-the-webrequest-class.md)

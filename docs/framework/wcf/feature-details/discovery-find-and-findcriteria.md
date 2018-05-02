@@ -1,8 +1,8 @@
 ---
-title: "Discovery Find and FindCriteria | Microsoft Docs"
+title: "Discovery Find and FindCriteria"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Discovery Find and FindCriteria
 A discovery find operation is initiated by a client to discover one or more services and is one of the main actions in discovery. Performing a find sends a WS-Discovery Probe message over the network. Services that match the criteria specified reply with WS-Discovery ProbeMatch messages. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] discovery messages, see the [WS-Discovery specification](http://go.microsoft.com/fwlink/?LinkID=122347).  
@@ -26,23 +28,23 @@ A discovery find operation is initiated by a client to discover one or more serv
   
  Search criteria include:  
   
--   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement%2A> - Optional. The contract name of the service being searched for and the criteria typically used when searching for a service. If more than one contract name is specified, only service endpoints matching ALL contracts reply. Note that in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] an endpoint can only support one contract.  
+-   <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> - Optional. The contract name of the service being searched for and the criteria typically used when searching for a service. If more than one contract name is specified, only service endpoints matching ALL contracts reply. Note that in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] an endpoint can only support one contract.  
   
--   <xref:System.ServiceModel.Discovery.Configuration.ScopeElement%2A> - Optional. Scopes are absolute URIs that are used to categorize individual service endpoints. You may want to use this in scenarios where multiple endpoints expose the same contract and you want a way to search for a subset of the endpoints. If more than one scope is specified, only service endpoints matching ALL scopes reply.  
+-   <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> - Optional. Scopes are absolute URIs that are used to categorize individual service endpoints. You may want to use this in scenarios where multiple endpoints expose the same contract and you want a way to search for a subset of the endpoints. If more than one scope is specified, only service endpoints matching ALL scopes reply.  
   
 -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchBy%2A> - Specifies the matching algorithm to use while matching the scopes in the Probe message with that of the endpoint. There are five supported scope-matching rules:  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact%2A> does a basic case-sensitive string comparison.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> does a basic case-sensitive string comparison.  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix%2A> matches by segments separated by “/”. A search for http://contoso/building1 matches a service with scope http://contoso/building/floor1. Note that it does not match http://contoso/building100 because the last two segments do not match.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> matches by segments separated by "/". A search for http://contoso/building1 matches a service with scope http://contoso/building/floor1. Note that it does not match http://contoso/building100 because the last two segments do not match.  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap%2A> matches scopes by segments using an LDAP URL.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> matches scopes by segments using an LDAP URL.  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid%2A> matches scopes exactly using a UUID string.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByUuid?displayProperty=nameWithType> matches scopes exactly using a UUID string.  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone%2A> matches only those services that do not specify a scope.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByNone?displayProperty=nameWithType> matches only those services that do not specify a scope.  
   
-     If a scope-matching rule is not specified, <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix%2A> is used.  
+     If a scope-matching rule is not specified, <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix> is used.  
   
  Termination criteria include:  
   
@@ -68,12 +70,11 @@ findCriteria.Duration = TimeSpan.FromSeconds(10);
 FindResponse findResponse = discoveryClient.Find(findCriteria);  
   
 Console.WriteLine("Found {0} ICalculatorService endpoint(s).", findResponse.Endpoints.Count)  
-  
 ```  
   
 ## See Also  
- [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
- [Using the Discovery Client Channel](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)   
- [Discovery with Scopes](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)   
- [Asynchronous Find](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)   
+ [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [Using the Discovery Client Channel](../../../../docs/framework/wcf/feature-details/using-the-discovery-client-channel.md)  
+ [Discovery with Scopes](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
+ [Asynchronous Find](../../../../docs/framework/wcf/samples/asynchronous-find-sample.md)  
  [Basic](../../../../docs/framework/wcf/samples/basic-sample.md)

@@ -1,5 +1,5 @@
 ---
-title: "Security Trust Levels in Accessing Resources | Microsoft Docs"
+title: "Security Trust Levels in Accessing Resources"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Security Trust Levels in Accessing Resources
 This topic discusses how access is restricted on the types of resources that <xref:System.Transactions> exposes.  
@@ -30,7 +32,7 @@ This topic discusses how access is restricted on the types of resources that <xr
 ## Trust Levels  
   
 ### APTCA (Partial Trust)  
- The <xref:System.Transactions> assembly can be called by partially trusted code because it has been marked with the **AllowPartiallyTrustedCallers** attribute (APTCA). This attribute essentially removes the implicit <xref:System.Security.Permissions.SecurityAction> for the **FullTrust** permission set that is otherwise automatically placed on each publicly accessible method in each type. However, some types and members still require stronger permissions.  
+ The <xref:System.Transactions> assembly can be called by partially trusted code because it has been marked with the **AllowPartiallyTrustedCallers** attribute (APTCA). This attribute essentially removes the implicit <xref:System.Security.Permissions.SecurityAction.LinkDemand> for the **FullTrust** permission set that is otherwise automatically placed on each publicly accessible method in each type. However, some types and members still require stronger permissions.  
   
  The APTCA attribute enables applications to use transactions in partial trust within a single application domain. This enables non-escalated transactions and volatile enlistments that can be used for error handling. One example of this is a transacted hash table and an application that uses it. Data can be added to and removed from the hash table under a single transaction. If the transaction is later rolled back, all of the changes made to the hash table under that transaction can be undone.  
   
@@ -50,7 +52,7 @@ This topic discusses how access is restricted on the types of resources that <xr
   
  `PermissionSetAttribute(SecurityAction.LinkDemand, Name := "FullTrust")`  
   
--   <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=fullName>  
+-   <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType>  
   
 -   <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>  
   

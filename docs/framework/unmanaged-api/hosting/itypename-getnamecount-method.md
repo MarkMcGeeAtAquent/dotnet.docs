@@ -1,31 +1,34 @@
 ---
-title: "ITypeName::GetNameCount Method | Microsoft Docs"
+title: "ITypeName::GetNameCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeName.GetNameCount"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetNameCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetNameCount method [.NET Framework hosting]"
   - "ITypeName::GetNameCount method [.NET Framework hosting]"
 ms.assetid: 0beb909a-5095-40e5-909d-9ecc280300b8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeName::GetNameCount Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

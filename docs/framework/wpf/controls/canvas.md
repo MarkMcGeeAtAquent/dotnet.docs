@@ -1,5 +1,5 @@
 ---
-title: "Canvas | Microsoft Docs"
+title: "Canvas"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 63
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Canvas
 <xref:System.Windows.Controls.Canvas> is a layout control that enables absolute positioning of child elements.  
@@ -45,6 +47,6 @@ manager: "wpickett"
 ## Related Sections  
  [Layout](../../../../docs/framework/wpf/advanced/layout.md)  
   
- [Walkthrough: My First WPF Desktop Application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [Walkthrough: My first WPF desktop application](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
  [ScrollViewer Overview](../../../../docs/framework/wpf/controls/scrollviewer-overview.md)

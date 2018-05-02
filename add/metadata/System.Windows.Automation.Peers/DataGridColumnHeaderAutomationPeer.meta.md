@@ -1,13 +1,17 @@
 ---
 uid: System.Windows.Automation.Peers.DataGridColumnHeaderAutomationPeer
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.DataGridColumnHeaderAutomationPeer.#ctor(System.Windows.Controls.Primitives.DataGridColumnHeader)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

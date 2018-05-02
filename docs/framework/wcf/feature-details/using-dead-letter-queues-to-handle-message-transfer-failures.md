@@ -1,19 +1,24 @@
 ---
-title: "Using Dead-Letter Queues to Handle Message Transfer Failures | Microsoft Docs"
+title: "Using Dead-Letter Queues to Handle Message Transfer Failures"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using Dead-Letter Queues to Handle Message Transfer Failures
 Queued messages can fail delivery. These failed messages are recorded in a dead-letter queue. The failed delivery can be caused by reasons such as network failures, a deleted queue, a full queue, authentication failure, or a failure to deliver on time.  
@@ -48,7 +53,7 @@ Queued messages can fail delivery. These failed messages are recorded in a dead-
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] how to address queues, see [Service Endpoints and Queue Addressing](../../../../docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md).  
   
- The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] stack on the receiver matches addresses that the service is listening on with the address on the message. If the addresses match, the message is dispatched; if not, the message is not dispatched. This can cause problems when reading from the dead-letter queue, because messages in the dead-letter queue are typically addressed to the service and not the dead-letter queue service. Therefore, the service reading from the dead-letter queue must install an address filter `ServiceBehavior` that instructs the stack to match all messages in the queue independently of the addressee. Specifically, you must add a `ServiceBehavior` with the <xref:System.ServiceModel.AddressFilterMode> parameter to the service reading messages from the dead-letter queue.  
+ The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] stack on the receiver matches addresses that the service is listening on with the address on the message. If the addresses match, the message is dispatched; if not, the message is not dispatched. This can cause problems when reading from the dead-letter queue, because messages in the dead-letter queue are typically addressed to the service and not the dead-letter queue service. Therefore, the service reading from the dead-letter queue must install an address filter `ServiceBehavior` that instructs the stack to match all messages in the queue independently of the addressee. Specifically, you must add a `ServiceBehavior` with the <xref:System.ServiceModel.AddressFilterMode.Any> parameter to the service reading messages from the dead-letter queue.  
   
 ## Poison Message Handling from the Dead-Letter Queue  
  Poison message handling is available on dead-letter queues, with some conditions. Because you cannot create sub-queues from system queues, when reading from the system dead-letter queue, the `ReceiveErrorHandling` cannot be set to `Move`. Note that if you are reading from a custom dead-letter queue, you can have sub-queues and, therefore, `Move` is a valid disposition for the poison message.  
@@ -77,6 +82,6 @@ Queued messages can fail delivery. These failed messages are recorded in a dead-
   
   
 ## See Also  
- [Queues Overview](../../../../docs/framework/wcf/feature-details/queues-overview.md)   
- [How to: Exchange Queued Messages with WCF Endpoints](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)   
+ [Queues Overview](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [How to: Exchange Queued Messages with WCF Endpoints](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
  [Poison Message Handling](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)

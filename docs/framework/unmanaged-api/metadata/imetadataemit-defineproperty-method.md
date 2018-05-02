@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DefineProperty Method | Microsoft Docs"
+title: "IMetaDataEmit::DefineProperty Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DefineProperty"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DefineProperty"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit::DefineProperty method [.NET Framework metadata]"
   - "DefineProperty method [.NET Framework metadata]"
 ms.assetid: 5c4c1dc2-d40d-4173-bbe6-7058fb21c98f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DefineProperty Method
 Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.  
@@ -96,5 +99,5 @@ HRESULT DefineProperty (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

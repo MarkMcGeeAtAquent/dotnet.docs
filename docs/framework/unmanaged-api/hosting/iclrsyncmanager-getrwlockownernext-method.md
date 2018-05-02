@@ -1,5 +1,5 @@
 ---
-title: "ICLRSyncManager::GetRWLockOwnerNext Method | Microsoft Docs"
+title: "ICLRSyncManager::GetRWLockOwnerNext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRSyncManager.GetRWLockOwnerNext"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRSyncManager::GetRWLockOwnerNext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRSyncManager::GetRWLockOwnerNext method [.NET Framework hosting]"
   - "GetRWLockOwnerNext method [.NET Framework hosting]"
 ms.assetid: 0e025b6a-280e-40a2-a2d0-b15f58777b81
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRSyncManager::GetRWLockOwnerNext Method
 Gets the next [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance that is blocked on the current reader-writer lock.  
@@ -73,5 +76,5 @@ HRESULT GetRWLockOwnerNext (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)   
+ [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)

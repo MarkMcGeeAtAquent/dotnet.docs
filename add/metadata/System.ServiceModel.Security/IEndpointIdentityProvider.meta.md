@@ -1,13 +1,17 @@
 ---
 uid: System.ServiceModel.Security.IEndpointIdentityProvider
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IEndpointIdentityProvider.GetIdentityOfSelf(System.IdentityModel.Selectors.SecurityTokenRequirement)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

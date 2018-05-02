@@ -1,5 +1,5 @@
 ---
-title: "UI Automation Support for Standard Controls | Microsoft Docs"
+title: "UI Automation Support for Standard Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 11
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # UI Automation Support for Standard Controls
 > [!NOTE]

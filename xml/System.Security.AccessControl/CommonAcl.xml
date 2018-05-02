@@ -1,10 +1,13 @@
-<Type Name="CommonAcl" FullName="System.Security.AccessControl.CommonAcl">
+﻿<Type Name="CommonAcl" FullName="System.Security.AccessControl.CommonAcl">
   <TypeSignature Language="C#" Value="public abstract class CommonAcl : System.Security.AccessControl.GenericAcl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CommonAcl extends System.Security.AccessControl.GenericAcl" />
   <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.CommonAcl" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CommonAcl&#xA;Inherits GenericAcl" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CommonAcl abstract : System::Security::AccessControl::GenericAcl" />
   <AssemblyInfo>
     <AssemblyName>System.Security.AccessControl</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -28,15 +31,15 @@
   
 -   Inherit-only ACEs inside object ACLs are removed.  
   
--   <xref:System.Security.AccessControl.PropagationFlags>, <xref:System.Security.AccessControl.PropagationFlags>, <xref:System.Security.AccessControl.InheritanceFlags>, and <xref:System.Security.AccessControl.InheritanceFlags> flags on all ACEs in leaf object ACLs are cleared.  
+-   <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>, <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>, <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit>, and <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flags on all ACEs in leaf object ACLs are cleared.  
   
--   ACEs that have an <xref:System.Security.AccessControl.PropagationFlags> flag in the absence of the <xref:System.Security.AccessControl.InheritanceFlags> or <xref:System.Security.AccessControl.InheritanceFlags> flag are meaningless; they are removed.  
+-   ACEs that have an <xref:System.Security.AccessControl.PropagationFlags.InheritOnly> flag in the absence of the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> or <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag are meaningless; they are removed.  
   
--   The <xref:System.Security.AccessControl.PropagationFlags> flag in the absence of the <xref:System.Security.AccessControl.InheritanceFlags> or <xref:System.Security.AccessControl.InheritanceFlags> flag can be removed.  
+-   The <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit> flag in the absence of the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> or <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag can be removed.  
   
--   ACEs that have an <xref:System.Security.AccessControl.AuditFlags> value of <xref:System.Security.AccessControl.AuditFlags> or <xref:System.Security.AccessControl.AuditFlags> in discretionary access control lists (DACLs) are removed.  
+-   ACEs that have an <xref:System.Security.AccessControl.AuditFlags> value of <xref:System.Security.AccessControl.AuditFlags.Success> or <xref:System.Security.AccessControl.AuditFlags.Failure> in discretionary access control lists (DACLs) are removed.  
   
--   Any audit ACE that does not specify either <xref:System.Security.AccessControl.AuditFlags> or <xref:System.Security.AccessControl.AuditFlags> is removed.  
+-   Any audit ACE that does not specify either <xref:System.Security.AccessControl.AuditFlags.Success> or <xref:System.Security.AccessControl.AuditFlags.Failure> is removed.  
   
 -   On DACLs, SystemAudit and SystemAlarm ACEs are removed.  
   
@@ -66,10 +69,13 @@
       <MemberSignature Language="C#" Value="public override sealed int BinaryLength { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BinaryLength" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.BinaryLength" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable ReadOnly Property BinaryLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BinaryLength { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -89,10 +95,13 @@
       <MemberSignature Language="C#" Value="public override sealed int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Count" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -112,10 +121,13 @@
       <MemberSignature Language="C#" Value="public override sealed void GetBinaryForm (byte[] binaryForm, int offset);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetBinaryForm(unsigned int8[] binaryForm, int32 offset) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.GetBinaryForm(System.Byte[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Sub GetBinaryForm (binaryForm As Byte(), offset As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void GetBinaryForm(cli::array &lt;System::Byte&gt; ^ binaryForm, int offset);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -140,10 +152,13 @@
       <MemberSignature Language="C#" Value="public bool IsCanonical { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCanonical" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsCanonical" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsCanonical As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsCanonical { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -164,10 +179,13 @@
       <MemberSignature Language="C#" Value="public bool IsContainer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsContainer" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsContainer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsContainer As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsContainer { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -188,10 +206,13 @@
       <MemberSignature Language="C#" Value="public bool IsDS { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDS" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.IsDS" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsDS As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsDS { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -212,10 +233,13 @@
       <MemberSignature Language="C#" Value="public override sealed System.Security.AccessControl.GenericAce this[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.AccessControl.GenericAce Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Overrides NotOverridable Property Item(index As Integer) As GenericAce" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::AccessControl::GenericAce ^ default[int] { System::Security::AccessControl::GenericAce ^ get(int index); void set(int index, System::Security::AccessControl::GenericAce ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -239,10 +263,13 @@
       <MemberSignature Language="C#" Value="public void Purge (System.Security.Principal.SecurityIdentifier sid);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Purge(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.Purge(System.Security.Principal.SecurityIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Purge (sid As SecurityIdentifier)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Purge(System::Security::Principal::SecurityIdentifier ^ sid);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -265,10 +292,13 @@
       <MemberSignature Language="C#" Value="public void RemoveInheritedAces ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveInheritedAces() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.CommonAcl.RemoveInheritedAces" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveInheritedAces ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveInheritedAces();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -288,10 +318,13 @@
       <MemberSignature Language="C#" Value="public override sealed byte Revision { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Revision" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.CommonAcl.Revision" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable ReadOnly Property Revision As Byte" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Byte Revision { System::Byte get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.AccessControl</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

@@ -1,8 +1,8 @@
 ---
-title: "Metadata Publishing Behavior | Microsoft Docs"
+title: "Metadata Publishing Behavior"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,9 +14,11 @@ helpviewer_keywords:
   - "Metadata Publishing Behaviors Sample [Windows Communication Foundation]"
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
 caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Metadata Publishing Behavior
 The Metadata Publishing Behavior sample demonstrates how to control the metadata publishing features of a service. To prevent unintentional disclosure of potentially sensitive service metadata, the default configuration for [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services disables metadata publishing. This behavior is secure by default, but also means that you cannot use a metadata import tool (such as Svcutil.exe) to generate the client code required to call the service unless the service’s metadata publishing behavior is explicitly enabled in configuration.  
@@ -31,7 +33,7 @@ The Metadata Publishing Behavior sample demonstrates how to control the metadata
   
  For a service to expose metadata, the <xref:System.ServiceModel.Description.ServiceMetadataBehavior> must be configured on the service. When this behavior is present, you can publish metadata by configuring an endpoint to expose the <xref:System.ServiceModel.Description.IMetadataExchange> contract as an implementation of a WS-MetadataExchange (MEX) protocol. As a convenience, this contract has been given the abbreviated configuration name of "IMetadataExchange". This sample uses the `mexHttpBinding`, which is a convenience standard binding that is equivalent to the `wsHttpBinding` with the security mode set to `None`. A relative address of "mex" is used in the endpoint, which when resolved against the services base address results in an endpoint address of http://localhost/servicemodelsamples/service.svc/mex. The following shows the behavior configuration:  
   
-```  
+```xml  
 <behaviors>  
   <serviceBehaviors>  
     <behavior name="CalculatorServiceBehavior">  
@@ -50,7 +52,7 @@ The Metadata Publishing Behavior sample demonstrates how to control the metadata
   
  The following shows the MEX endpoint.  
   
-```  
+```xml  
 <!-- the MEX endpoint is exposed at   
      http://localhost/servicemodelsamples/service.svc/mex   
      To expose the IMetadataExchange contract, you   

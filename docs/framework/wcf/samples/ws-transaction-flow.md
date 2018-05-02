@@ -1,24 +1,23 @@
 ---
-title: "WS Transaction Flow | Microsoft Docs"
+title: "WS Transaction Flow"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Transactions"
 ms.assetid: f8eecbcf-990a-4dbb-b29b-c3f9e3b396bd
 caps.latest.revision: 43
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WS Transaction Flow
 This sample demonstrates the use of a client-coordinated transaction and the client and server options for transaction flow using either the WS-Atomic Transaction or OleTransactions protocol. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service but the operations are attributed to demonstrate the use of the `TransactionFlowAttribute` with the **TransactionFlowOption** enumeration to determine to what degree transaction flow is enabled. Within the scope of the flowed transaction, a log of the requested operations is written to a database and persists until the client coordinated transaction has completed - if the client transaction does not complete, the Web service transaction ensures that the appropriate updates to the database are not committed.  
@@ -44,7 +43,6 @@ public interface ICalculator
     [OperationContract]  
     double Divide(double n1, double n2);   
 }  
-  
 ```  
   
  This defines the operations in the order they are to be processed:  
@@ -59,7 +57,7 @@ public interface ICalculator
   
  To enable transaction flow, bindings with the [\<transactionFlow>](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) property enabled must be used in addition to the appropriate operation attributes. In this sample, the service's configuration exposes a TCP endpoint and an HTTP endpoint in addition to a Metadata Exchange endpoint. The TCP endpoint and the HTTP endpoint use the following bindings, both of which have the [\<transactionFlow>](../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md) property enabled.  
   
-```  
+```xml  
 <bindings>  
   <netTcpBinding>  
     <binding name="transactionalOleTransactionsTcpBinding"  
@@ -124,7 +122,6 @@ public class CalculatorService : ICalculator
 // Create a client using either wsat or oletx endpoint configurations  
 CalculatorClient client = new CalculatorClient("WSAtomicTransaction_endpoint");  
 // CalculatorClient client = new CalculatorClient("OleTransactions_endpoint");  
-  
 ```  
   
 > [!NOTE]
@@ -189,7 +186,6 @@ using (TransactionScope tx =
 }  
   
 Console.WriteLine("Transaction committed");  
-  
 ```  
   
  The calls to the operations are as follows:  

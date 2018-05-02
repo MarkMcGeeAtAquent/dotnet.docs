@@ -1,8 +1,8 @@
 ---
-title: "&lt;certificate&gt; of &lt;clientCertificate&gt; Element | Microsoft Docs"
+title: "&lt;certificate&gt; of &lt;clientCertificate&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 00297efb-a7f2-4e03-bc2b-943d545610fc
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;certificate&gt; of &lt;clientCertificate&gt; Element
 Specifies an X.509 certificate used to sign and encrypt messages.  
@@ -28,8 +30,7 @@ Specifies an X.509 certificate used to sign and encrypt messages.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <certificate findValue = "String"   
 storeLocation = "CurrentUser/LocalMachine"  
 storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"  
@@ -64,7 +65,7 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 ## Example  
  The following code specifies how to find an appropriate X.509 certificate and a custom validation type in the `<authentication>` element.  
   
-```  
+```xml  
 <serviceBehaviors>  
  <behavior name="myServiceBehavior">  
   <clientCertificate>  
@@ -84,9 +85,9 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.Certificate%2A>   
- <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Certificate%2A>   
- <xref:System.ServiceModel.Configuration.X509ClientCertificateCredentialsElement>   
- [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [How to: Create a Service that Employs a Custom Certificate Validator](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)   
+ <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.Certificate%2A>  
+ <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Certificate%2A>  
+ <xref:System.ServiceModel.Configuration.X509ClientCertificateCredentialsElement>  
+ [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [How to: Create a Service that Employs a Custom Certificate Validator](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)  
  [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)

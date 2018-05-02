@@ -1,19 +1,14 @@
 ---
-title: "&lt;generatePublisherEvidence&gt; Element | Microsoft Docs"
+title: "&lt;generatePublisherEvidence&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "generatePublisherEvidence element"
   - "<generatePublisherEvidence> element"
@@ -22,6 +17,8 @@ caps.latest.revision: 21
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;generatePublisherEvidence&gt; Element
 Specifies whether the runtime creates <xref:System.Security.Policy.Publisher> evidence for code access security (CAS).  
@@ -32,7 +29,7 @@ Specifies whether the runtime creates <xref:System.Security.Policy.Publisher> ev
   
 ## Syntax  
   
-```  
+```xml  
 <generatePublisherEvidence    
    enabled="true|false"/>  
 ```  
@@ -79,14 +76,14 @@ Specifies whether the runtime creates <xref:System.Security.Policy.Publisher> ev
 ## Example  
  The following example shows how to use the `<generatePublisherEvidence>` element to disable checking for CAS publisher policy for an application.  
   
-```  
+```xml  
 <configuration>  
-    <runtime>  
-        <generatePublisherEvidence enabled="false"/>  
-    </runtime>  
+    <runtime>  
+        <generatePublisherEvidence enabled="false"/>  
+    </runtime>  
 </configuration>  
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)

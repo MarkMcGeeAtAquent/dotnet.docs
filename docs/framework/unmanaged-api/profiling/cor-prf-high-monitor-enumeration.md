@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_HIGH_MONITOR Enumeration | Microsoft Docs"
+title: "COR_PRF_HIGH_MONITOR Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_HIGH_MONITOR Enumeration
 [Supported in the .NET Framework 4.5.2 and later versions]  
@@ -25,7 +25,6 @@ manager: "wpickett"
 ## Syntax  
   
 ```  
-  
 typedef enum {  
     COR_PRF_HIGH_MONITOR_NONE                = 0x00000000,  
     COR_PRF_HIGH_ADD_ASSEMBLY_REFERENCES     = 0x00000001,  
@@ -34,7 +33,6 @@ typedef enum {
     COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH      = COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED,  
     COR_PRF_HIGH_MONITOR_IMMUTABLE           = 0  
 } COR_PRF_HIGH_MONITOR;  
-  
 ```  
   
 ## Members  
@@ -63,6 +61,6 @@ typedef enum {
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## See Also  
- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)   
- [COR_PRF_MONITOR Enumeration](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)   
+ [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
+ [COR_PRF_MONITOR Enumeration](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)  
  [ICorProfilerInfo5 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-interface.md)

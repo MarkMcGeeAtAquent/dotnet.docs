@@ -1,5 +1,5 @@
 ---
-title: "Task 2: Host the Workflow Designer | Microsoft Docs"
+title: "Task 2: Host the Workflow Designer"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Task 2: Host the Workflow Designer
 This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] in a [!INCLUDE[avalon1](../../../includes/avalon1-md.md)] application.  
@@ -24,18 +26,17 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
   
 2.  Adjust the size of the window to make it easier to use the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. To do this, select **MainWindow** in the designer, press F4 to display the **Properties** window, and, in the **Layout** section there, set the **Width** to a value of 600 and the **Height** to a value of 350.  
   
-3.  Set the grid name by selecting the **Grid** panel in the designer (click the box inside the **MainWindow**) and setting the **Name** property at the top of the **Properties** window to “grid1”.  
+3.  Set the grid name by selecting the **Grid** panel in the designer (click the box inside the **MainWindow**) and setting the **Name** property at the top of the **Properties** window to "grid1".  
   
 4.  In the **Properties** window, click the ellipsis (**…**) next to the `ColumnDefinitions` property to open the **Collection Editor** dialog box.  
   
 5.  In the **Collection Editor** dialog box, click the **Add** button three times to insert three columns into the layout. The first column will contain the **Toolbox**, the second column will host the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], and the third column will be used for the property inspector.  
   
-6.  Set the `Width` property of the middle column to the value “4*”.  
+6.  Set the `Width` property of the middle column to the value "4*".  
   
 7.  Click **OK** to save the changes. The following XAML is added to your MainWindow.xaml file:  
   
-    ```  
-  
+    ```xml  
     <Grid Name="grid1">  
         <Grid.ColumnDefinitions>  
             <ColumnDefinition />  
@@ -43,7 +44,6 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
             <ColumnDefinition />  
         </Grid.ColumnDefinitions>  
     </Grid>  
-  
     ```  
   
 8.  In **Solution Explorer**, right-click MainWindow.xaml and select **View Code**. Modify the code by following these steps:  
@@ -51,7 +51,6 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
     1.  Add the following namespaces:  
   
         ```csharp  
-  
         using System.Activities;  
         using System.Activities.Core.Presentation;  
         using System.Activities.Presentation;  
@@ -59,13 +58,11 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
         using System.Activities.Presentation.Toolbox;  
         using System.Activities.Statements;  
         using System.ComponentModel;  
-  
         ```  
   
     2.  To declare a private member field to hold an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, add the following code to the `MainWindow` class.  
   
         ```csharp  
-  
         public partial class MainWindow : Window  
         {  
             private WorkflowDesigner wd;  
@@ -75,13 +72,11 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
                 InitializeComponent();  
             }  
         }  
-  
         ```  
   
     3.  Add the following `AddDesigner` method to the `MainWindow` class. The implementation creates an instance of the <xref:System.Activities.Presentation.WorkflowDesigner>, adds a <xref:System.Activities.Statements.Sequence> activity to it, and places it in middle column of the grid1 **Grid**.  
   
         ```csharp  
-  
         private void AddDesigner()  
         {  
             //Create an instance of WorkflowDesigner class.  
@@ -96,19 +91,16 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
             //Add the designer canvas to the grid.  
             grid1.Children.Add(this.wd.View);  
         }  
-  
         ```  
   
     4.  Register the designer metadata to add designer support for all the  built-in activities. This enables you to drop activities from the toolbox onto the original <xref:System.Activities.Statements.Sequence> activity in the [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. To do this, add the `RegisterMetadata` method to the `MainWindow` class.  
   
         ```csharp  
-  
         private void RegisterMetadata()  
         {               
             DesignerMetadata dm = new DesignerMetadata();  
             dm.Register();  
         }  
-  
         ```  
   
          [!INCLUDE[crabout](../../../includes/crabout-md.md)] registering activity designers, see [How to: Create a Custom Activity Designer](../../../docs/framework/windows-workflow-foundation/how-to-create-a-custom-activity-designer.md).  
@@ -126,7 +118,6 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
             // Add the WFF Designer  
             AddDesigner();  
         }  
-  
         ```  
   
         > [!NOTE]
@@ -137,6 +128,6 @@ This topic describes the procedure for hosting an instance of the [!INCLUDE[wfd1
 10. See [Task 3: Create the Toolbox and PropertyGrid Panes](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md) to learn how to add **Toolbox** and **PropertyGrid** support to your rehosted workflow designer.  
   
 ## See Also  
- [Rehosting the Workflow Designer](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)   
- [Task 1: Create a New Windows Presentation Foundation Application](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)   
+ [Rehosting the Workflow Designer](../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md)  
+ [Task 1: Create a New Windows Presentation Foundation Application](../../../docs/framework/windows-workflow-foundation/task-1-create-a-new-wpf-app.md)  
  [Task 3: Create the Toolbox and PropertyGrid Panes](../../../docs/framework/windows-workflow-foundation/task-3-create-the-toolbox-and-propertygrid-panes.md)

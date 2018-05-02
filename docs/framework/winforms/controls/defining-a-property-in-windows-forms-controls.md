@@ -1,8 +1,8 @@
 ---
-title: "Defining a Property in Windows Forms Controls | Microsoft Docs"
+title: "Defining a Property in Windows Forms Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "properties [Windows Forms], defining in code"
   - "custom controls [Windows Forms], defining properties in code"
@@ -19,6 +20,8 @@ caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Defining a Property in Windows Forms Controls
 For an overview of properties, see [Properties Overview](http://msdn.microsoft.com/library/8f1a1ff1-0f05-40e0-bfdf-80de8fff7d52). There are a few important considerations when defining a property:  
@@ -65,7 +68,6 @@ Public Class FlashTrackBar
    End Property  
    ...  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -112,7 +114,6 @@ Description("The current value of the track bar.  You can enter an actual value 
 Public ReadOnly Property Value() As Integer  
 ...  
 End Property  
-  
 ```  
   
 ```csharp  
@@ -128,7 +129,7 @@ public int Value {
 ```  
   
 ## See Also  
- [Properties in Windows Forms Controls](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)   
- [Defining Default Values with the ShouldSerialize and Reset Methods](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)   
- [Property-Changed Events](../../../../docs/framework/winforms/controls/property-changed-events.md)   
+ [Properties in Windows Forms Controls](../../../../docs/framework/winforms/controls/properties-in-windows-forms-controls.md)  
+ [Defining Default Values with the ShouldSerialize and Reset Methods](../../../../docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)  
+ [Property-Changed Events](../../../../docs/framework/winforms/controls/property-changed-events.md)  
  [Attributes in Windows Forms Controls](../../../../docs/framework/winforms/controls/attributes-in-windows-forms-controls.md)

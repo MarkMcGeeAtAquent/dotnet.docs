@@ -1,8 +1,8 @@
 ---
-title: "TCP Activation | Microsoft Docs"
+title: "TCP Activation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
 caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # TCP Activation
 This sample demonstrates hosting a service that uses Windows Process Activation Services (WAS) to activate a service that communicates over the net.tcp protocol. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -78,7 +80,7 @@ public class CalculatorService : ICalculator
   
  The following sample shows the configuration for the service:  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <services>  
@@ -116,7 +118,7 @@ public class CalculatorService : ICalculator
   
  The client's endpoint is configured as shown in the following sample code:  
   
-```  
+```xml  
 <system.serviceModel>  
     <bindings>  
         <netTcpBinding>  

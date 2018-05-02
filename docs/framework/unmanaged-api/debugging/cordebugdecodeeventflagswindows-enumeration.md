@@ -1,5 +1,5 @@
 ---
-title: "CorDebugDecodeEventFlagsWindows Enumeration | Microsoft Docs"
+title: "CorDebugDecodeEventFlagsWindows Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugDecodeEventFlagsWindows"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: aa6cf962-30ae-4cfd-8895-826deeb46a54
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugDecodeEventFlagsWindows Enumeration
 Provides additional information about debug events on the Windows platform.  
@@ -28,11 +31,9 @@ Provides additional information about debug events on the Windows platform.
 ## Syntax  
   
 ```  
-  
 typedef enum CorDebugDecodeEventFlagsWindows {  
     IS_FIRST_CHANCE = 1,  
 } CorDebugDecodeEventFlagsWindows;  
-  
 ```  
   
 ## Members  

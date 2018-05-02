@@ -1,31 +1,34 @@
 ---
-title: "IHostThreadPoolManager::SetMaxThreads Method | Microsoft Docs"
+title: "IHostThreadPoolManager::SetMaxThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostThreadPoolManager.SetMaxThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostThreadPoolManager::SetMaxThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostThreadPoolManager::SetMaxThreads method [.NET Framework hosting]"
   - "SetMaxThreads method, IHostThreadPoolManager interface [.NET Framework hosting]"
 ms.assetid: 77cfd347-95c2-4425-b807-4ecc2a8d4578
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostThreadPoolManager::SetMaxThreads Method
 Sets the maximum number of threads that the host can maintain in the thread pool.  
@@ -67,8 +70,8 @@ HRESULT SetMaxThreads (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Threading.ThreadPool.SetMaxThreads%2A>   
- <xref:System.Threading.ThreadPool>   
- [GetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)   
- [SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)   
+ <xref:System.Threading.ThreadPool.SetMaxThreads%2A>  
+ <xref:System.Threading.ThreadPool>  
+ [GetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getmaxthreads-method.md)  
+ [SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)  
  [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

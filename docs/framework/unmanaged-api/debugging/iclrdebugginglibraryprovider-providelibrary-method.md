@@ -1,5 +1,5 @@
 ---
-title: "ICLRDebuggingLibraryProvider::ProvideLibrary Method | Microsoft Docs"
+title: "ICLRDebuggingLibraryProvider::ProvideLibrary Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDebuggingLibraryProvider.ProvideLibrary Method"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDebuggingLibraryProvider::ProvideLibrary"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ProvideLibrary method [.NET Framework debugging]"
   - "ICLRDebuggingLibraryProvider::ProvideLibrary method [.NET Framework debugging]"
 ms.assetid: 86f06245-9517-49be-8d8c-ca5deaf34c02
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDebuggingLibraryProvider::ProvideLibrary Method
 Gets a library provider callback interface that allows common language runtime (CLR) version-specific debugging libraries to be located and loaded on demand.  
@@ -82,5 +85,5 @@ HRESULT ProvideLibrary(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

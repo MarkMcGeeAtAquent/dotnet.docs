@@ -1,8 +1,8 @@
 ---
-title: "&lt;peerTransport&gt; | Microsoft Docs"
+title: "&lt;peerTransport&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;peerTransport&gt;
 Defines a peer transport for a custom binding.  
@@ -26,8 +28,7 @@ Defines a peer transport for a custom binding.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <peerTransport   
     listenIpAddress="String"  
     maxBufferPoolSize="Integer"  
@@ -66,13 +67,13 @@ Defines a peer transport for a custom binding.
  This transport cannot be used with contracts that have request/reply operations.  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.PeerTransportElement>   
- <xref:System.ServiceModel.Channels.PeerTransportBindingElement>   
- <xref:System.ServiceModel.Channels.TransportBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)   
- [Choosing a Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.PeerTransportElement>  
+ <xref:System.ServiceModel.Channels.PeerTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.TransportBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
+ [Choosing a Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

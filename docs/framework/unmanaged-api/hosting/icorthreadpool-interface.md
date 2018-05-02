@@ -1,5 +1,5 @@
 ---
-title: "ICorThreadpool Interface | Microsoft Docs"
+title: "ICorThreadpool Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorThreadpool"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorThreadpool"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorThreadpool interface [.NET Framework hosting]"
 ms.assetid: 18485a27-cae3-4c6a-baa8-f7df601122d5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorThreadpool Interface
 Provides methods for accessing the thread pool.  

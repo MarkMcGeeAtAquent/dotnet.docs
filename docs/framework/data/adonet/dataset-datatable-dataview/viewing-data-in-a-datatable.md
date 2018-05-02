@@ -1,19 +1,24 @@
 ---
-title: "Viewing Data in a DataTable | Microsoft Docs"
+title: "Viewing Data in a DataTable"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Viewing Data in a DataTable
 You can access the contents of a <xref:System.Data.DataTable> by using the **Rows** and **Columns** collections of the **DataTable**. You can also use the <xref:System.Data.DataTable.Select%2A> method to return subsets of the data in a **DataTable** according to criteria including search criteria, sort order, and row state. Additionally, you can use the <xref:System.Data.DataRowCollection.Find%2A> method of the **DataRowCollection** when searching for a particular row using a primary key value.  
@@ -64,7 +69,6 @@ Else
     Console.WriteLine(vbTab & rowState)  
   Next  
 End If  
-  
 ```  
   
 ```csharp  
@@ -99,7 +103,6 @@ Dim deletedRows() As DataRow = workTable.Select(Nothing, Nothing, DataViewRowSta
 ' Retrieve rows where CustID > 5, and order by CustLName.  
 Dim custRows() As DataRow = workTable.Select( _  
     "CustID > 5", "CustLName ASC")  
-  
 ```  
   
 ```csharp  
@@ -112,10 +115,10 @@ DataRow[] custRows = workTable.Select("CustID > 5", "CustLName ASC");
 ```  
   
 ## See Also  
- <xref:System.Data.DataRow>   
- <xref:System.Data.DataSet>   
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataViewRowState>   
- [Manipulating Data in a DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
- [Row States and Row Versions](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)   
+ <xref:System.Data.DataRow>  
+ <xref:System.Data.DataSet>  
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataViewRowState>  
+ [Manipulating Data in a DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
+ [Row States and Row Versions](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

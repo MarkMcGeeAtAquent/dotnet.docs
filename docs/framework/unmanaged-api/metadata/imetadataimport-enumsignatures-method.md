@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumSignatures Method | Microsoft Docs"
+title: "IMetaDataImport::EnumSignatures Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumSignatures"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumSignatures"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumSignatures method [.NET Framework metadata]"
   - "IMetaDataImport::EnumSignatures method [.NET Framework metadata]"
 ms.assetid: d0d65060-6f90-42a2-95cf-6ffb04352996
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumSignatures Method
 Enumerates Signature tokens representing stand-alone signatures in the current scope.  
@@ -74,5 +77,5 @@ HRESULT EnumSignatures (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

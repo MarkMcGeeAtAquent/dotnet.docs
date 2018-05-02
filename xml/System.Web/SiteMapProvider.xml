@@ -1,7 +1,9 @@
-<Type Name="SiteMapProvider" FullName="System.Web.SiteMapProvider">
+﻿<Type Name="SiteMapProvider" FullName="System.Web.SiteMapProvider">
   <TypeSignature Language="C#" Value="public abstract class SiteMapProvider : System.Configuration.Provider.ProviderBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SiteMapProvider extends System.Configuration.Provider.ProviderBase" />
   <TypeSignature Language="DocId" Value="T:System.Web.SiteMapProvider" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class SiteMapProvider&#xA;Inherits ProviderBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SiteMapProvider abstract : System::Configuration::Provider::ProviderBase" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -40,7 +42,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to write a class that implements the abstract <xref:System.Web.SiteMapProvider> class. This example includes only a sample <xref:System.Web.SiteMapProvider> and a sample text file that works with it. To run the example you also need an entry in the Web.config file and an .aspx page. You can find these in the documentation for the <xref:System.Web.UI.WebControls.SiteMapDataSource.SiteMapProvider%2A?displayProperty=fullName> property.  
+ The following code example demonstrates how to write a class that implements the abstract <xref:System.Web.SiteMapProvider> class. This example includes only a sample <xref:System.Web.SiteMapProvider> and a sample text file that works with it. To run the example you also need an entry in the Web.config file and an .aspx page. You can find these in the documentation for the <xref:System.Web.UI.WebControls.SiteMapDataSource.SiteMapProvider%2A?displayProperty=nameWithType> property.  
   
  The example uses a comma-delimited file that follows an expected structure to load sitemap information. The first line of the file represents the root node of the sitemap, and subsequent lines are subnodes. Each subnode identifies its parent node by URL. An example of a file that meets these criteria is shown below.  
   
@@ -60,12 +62,16 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
     <block subset="none" type="overrides">
       <para>When you inherit from the <see cref="T:System.Web.SiteMapProvider" /> class, you must override the following members: <see cref="M:System.Web.SiteMapProvider.GetRootNodeCore" />, <see cref="M:System.Web.SiteMapProvider.FindSiteMapNode(System.String)" />, <see cref="M:System.Web.SiteMapProvider.GetChildNodes(System.Web.SiteMapNode)" />, and <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNode)" />.</para>
     </block>
+    <altmember cref="T:System.Web.SiteMapProvider" />
+    <altmember cref="T:System.Web.XmlSiteMapProvider" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected SiteMapProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SiteMapProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -86,10 +92,21 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="AddNode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds a <see cref="T:System.Web.SiteMapNode" /> object to the node collection that is maintained by the site map provider.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="AddNode">
       <MemberSignature Language="C#" Value="protected virtual void AddNode (System.Web.SiteMapNode node);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddNode(class System.Web.SiteMapNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.AddNode(System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub AddNode (node As SiteMapNode)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void AddNode(System::Web::SiteMapNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -112,12 +129,17 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.AddNode(System.Web.SiteMapNode,System.Web.SiteMapNode)" />
+        <altmember cref="T:System.Web.SiteMapNodeCollection" />
+        <altmember cref="T:System.Web.XmlSiteMapProvider" />
       </Docs>
     </Member>
     <Member MemberName="AddNode">
-      <MemberSignature Language="C#" Value="protected virtual void AddNode (System.Web.SiteMapNode node, System.Web.SiteMapNode parentNode);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void AddNode (System.Web.SiteMapNode node, System.Web.SiteMapNode parentNode);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void AddNode(class System.Web.SiteMapNode node, class System.Web.SiteMapNode parentNode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.AddNode(System.Web.SiteMapNode,System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub AddNode (node As SiteMapNode, parentNode As SiteMapNode)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void AddNode(System::Web::SiteMapNode ^ node, System::Web::SiteMapNode ^ parentNode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -138,17 +160,22 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Classes deriving from the <xref:System.Web.SiteMapProvider> class can override the <xref:System.Web.SiteMapProvider.AddNode%2A> method and provide logic for adding a <xref:System.Web.SiteMapNode> object with a specified parent to the node collection that is maintained by the site map provider. For example, the <xref:System.Web.XmlSiteMapProvider.AddNode%2A?displayProperty=fullName> method adds the <xref:System.Web.SiteMapNode> object that is specified by `node` to the <xref:System.Web.SiteMapNodeCollection> collection that is maintained by the <xref:System.Web.XmlSiteMapProvider> object and creates a parent/child relationship between the <xref:System.Web.SiteMapNode> object that is specified by `node` and `parentNode`. The default implementation of the <xref:System.Web.SiteMapProvider.AddNode%2A> method throws a <xref:System.NotImplementedException> exception.  
+ Classes deriving from the <xref:System.Web.SiteMapProvider> class can override the <xref:System.Web.SiteMapProvider.AddNode%2A> method and provide logic for adding a <xref:System.Web.SiteMapNode> object with a specified parent to the node collection that is maintained by the site map provider. For example, the <xref:System.Web.XmlSiteMapProvider.AddNode%2A?displayProperty=nameWithType> method adds the <xref:System.Web.SiteMapNode> object that is specified by `node` to the <xref:System.Web.SiteMapNodeCollection> collection that is maintained by the <xref:System.Web.XmlSiteMapProvider> object and creates a parent/child relationship between the <xref:System.Web.SiteMapNode> object that is specified by `node` and `parentNode`. The default implementation of the <xref:System.Web.SiteMapProvider.AddNode%2A> method throws a <xref:System.NotImplementedException> exception.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NotImplementedException">In all cases.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.AddNode(System.Web.SiteMapNode)" />
+        <altmember cref="T:System.Web.SiteMapNodeCollection" />
+        <altmember cref="T:System.Web.XmlSiteMapProvider" />
       </Docs>
     </Member>
     <Member MemberName="CurrentNode">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode CurrentNode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode CurrentNode" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.CurrentNode" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CurrentNode As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::SiteMapNode ^ CurrentNode { System::Web::SiteMapNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -180,12 +207,16 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.SiteMapProvider.RootNode" />
+        <altmember cref="P:System.Web.SiteMapProvider.SecurityTrimmingEnabled" />
       </Docs>
     </Member>
     <Member MemberName="EnableLocalization">
       <MemberSignature Language="C#" Value="public bool EnableLocalization { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableLocalization" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.EnableLocalization" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableLocalization As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnableLocalization { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -206,12 +237,26 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.SiteMapNode.Title" />
+        <altmember cref="P:System.Web.SiteMapNode.Description" />
+        <altmember cref="P:System.Web.SiteMapNode.Attributes" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindSiteMapNode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>When overridden in a derived class, retrieves a <see cref="T:System.Web.SiteMapNode" /> object that represents a page.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindSiteMapNode">
       <MemberSignature Language="C#" Value="public abstract System.Web.SiteMapNode FindSiteMapNode (string rawUrl);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode FindSiteMapNode(string rawUrl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.FindSiteMapNode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function FindSiteMapNode (rawUrl As String) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Web::SiteMapNode ^ FindSiteMapNode(System::String ^ rawUrl);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -255,12 +300,16 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="M:System.Web.SiteMapProvider.FindSiteMapNode(System.String)" /> method in a derived class, be sure to extend the search to any child providers, if a <see cref="T:System.Web.SiteMapNode" /> object that matches the URL is not found by the provider in the current site map and the provider supports child providers.</para>
         </block>
+        <altmember cref="P:System.Web.SiteMapProvider.CurrentNode" />
+        <altmember cref="M:System.Web.SiteMapProvider.FindSiteMapNode(System.Web.HttpContext)" />
       </Docs>
     </Member>
     <Member MemberName="FindSiteMapNode">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode FindSiteMapNode (System.Web.HttpContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode FindSiteMapNode(class System.Web.HttpContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.FindSiteMapNode(System.Web.HttpContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindSiteMapNode (context As HttpContext) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ FindSiteMapNode(System::Web::HttpContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -286,12 +335,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.FindSiteMapNode(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="FindSiteMapNodeFromKey">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode FindSiteMapNodeFromKey (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode FindSiteMapNodeFromKey(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.FindSiteMapNodeFromKey(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindSiteMapNodeFromKey (key As String) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ FindSiteMapNodeFromKey(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -311,7 +363,7 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.SiteMapProvider> implementation returns `null` in all cases. Classes that derive from the <xref:System.Web.SiteMapProvider> class can override the <xref:System.Web.SiteMapProvider.FindSiteMapNodeFromKey%2A> method to provide lookup functionality based on a unique key (instead of a URL, which is used by the <xref:System.Web.SiteMapProvider.FindSiteMapNode%2A> method). Implement the <xref:System.Web.SiteMapProvider.FindSiteMapNodeFromKey%2A> method if your site map provider implementation uses the <xref:System.Web.SiteMapNode.Key%2A?displayProperty=fullName> property of a <xref:System.Web.SiteMapNode> object as a primary identifier in a site map structure.  
+ The <xref:System.Web.SiteMapProvider> implementation returns `null` in all cases. Classes that derive from the <xref:System.Web.SiteMapProvider> class can override the <xref:System.Web.SiteMapProvider.FindSiteMapNodeFromKey%2A> method to provide lookup functionality based on a unique key (instead of a URL, which is used by the <xref:System.Web.SiteMapProvider.FindSiteMapNode%2A> method). Implement the <xref:System.Web.SiteMapProvider.FindSiteMapNodeFromKey%2A> method if your site map provider implementation uses the <xref:System.Web.SiteMapNode.Key%2A?displayProperty=nameWithType> property of a <xref:System.Web.SiteMapNode> object as a primary identifier in a site map structure.  
   
  The <xref:System.Web.StaticSiteMapProvider> class provides an implementation that handles searching for site map nodes that do not define a URL.  
   
@@ -319,12 +371,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.SiteMapProvider.FindSiteMapNode" />
       </Docs>
     </Member>
     <Member MemberName="GetChildNodes">
       <MemberSignature Language="C#" Value="public abstract System.Web.SiteMapNodeCollection GetChildNodes (System.Web.SiteMapNode node);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNodeCollection GetChildNodes(class System.Web.SiteMapNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetChildNodes(System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetChildNodes (node As SiteMapNode) As SiteMapNodeCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Web::SiteMapNodeCollection ^ GetChildNodes(System::Web::SiteMapNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -361,12 +416,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="M:System.Web.SiteMapProvider.GetChildNodes(System.Web.SiteMapNode)" /> method in a derived class, be sure to perform security trimming on the child nodes and ensure that the returned collection is read-only. The collection contains only the immediate children of the specified <paramref name="node" />.</para>
         </block>
+        <altmember cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNode)" />
       </Docs>
     </Member>
     <Member MemberName="GetCurrentNodeAndHintAncestorNodes">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode GetCurrentNodeAndHintAncestorNodes (int upLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode GetCurrentNodeAndHintAncestorNodes(int32 upLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetCurrentNodeAndHintAncestorNodes(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetCurrentNodeAndHintAncestorNodes (upLevel As Integer) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ GetCurrentNodeAndHintAncestorNodes(int upLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -396,12 +454,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="upLevel" /> is less than -1.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.GetCurrentNodeAndHintNeighborhoodNodes(System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetCurrentNodeAndHintNeighborhoodNodes">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode GetCurrentNodeAndHintNeighborhoodNodes (int upLevel, int downLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode GetCurrentNodeAndHintNeighborhoodNodes(int32 upLevel, int32 downLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetCurrentNodeAndHintNeighborhoodNodes(System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetCurrentNodeAndHintNeighborhoodNodes (upLevel As Integer, downLevel As Integer) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ GetCurrentNodeAndHintNeighborhoodNodes(int upLevel, int downLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -435,12 +496,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="upLevel" /> or <paramref name="downLevel" /> is less than -1.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.GetCurrentNodeAndHintAncestorNodes(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetParentNode">
       <MemberSignature Language="C#" Value="public abstract System.Web.SiteMapNode GetParentNode (System.Web.SiteMapNode node);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode GetParentNode(class System.Web.SiteMapNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetParentNode (node As SiteMapNode) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Web::SiteMapNode ^ GetParentNode(System::Web::SiteMapNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -457,12 +521,9 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <summary>When overridden in a derived class, retrieves the parent node of a specific <see cref="T:System.Web.SiteMapNode" /> object.</summary>
         <returns>A <see cref="T:System.Web.SiteMapNode" /> that represents the parent of <paramref name="node" />; otherwise, <see langword="null" />, if the <see cref="T:System.Web.SiteMapNode" /> has no parent or security trimming is enabled and the parent node is not accessible to the current user.  
   
- <block subset="none" type="note">  
-<para>  
- <see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNode)" /> might also return <see langword="null" /> if the parent node belongs to a different provider. In this case, use the <see cref="P:System.Web.SiteMapNode.ParentNode" /> property of <paramref name="node" /> instead.  
+ <block subset="none" type="note"><para><see cref="M:System.Web.SiteMapProvider.GetParentNode(System.Web.SiteMapNode)" /> might also return <see langword="null" /> if the parent node belongs to a different provider. In this case, use the <see cref="P:System.Web.SiteMapNode.ParentNode" /> property of <paramref name="node" /> instead.  
   
-</para>  
-</block></returns>
+</para></block></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -476,12 +537,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.GetChildNodes(System.Web.SiteMapNode)" />
       </Docs>
     </Member>
     <Member MemberName="GetParentNodeRelativeToCurrentNodeAndHintDownFromParent">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode GetParentNodeRelativeToCurrentNodeAndHintDownFromParent (int walkupLevels, int relativeDepthFromWalkup);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode GetParentNodeRelativeToCurrentNodeAndHintDownFromParent(int32 walkupLevels, int32 relativeDepthFromWalkup) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetParentNodeRelativeToCurrentNodeAndHintDownFromParent(System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetParentNodeRelativeToCurrentNodeAndHintDownFromParent (walkupLevels As Integer, relativeDepthFromWalkup As Integer) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ GetParentNodeRelativeToCurrentNodeAndHintDownFromParent(int walkupLevels, int relativeDepthFromWalkup);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -511,12 +575,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="walkupLevels" /> or <paramref name="relativeDepthFromWalkup" /> is less than 0.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.GetParentNodeRelativeToNodeAndHintDownFromParent(System.Web.SiteMapNode,System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetParentNodeRelativeToNodeAndHintDownFromParent">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode GetParentNodeRelativeToNodeAndHintDownFromParent (System.Web.SiteMapNode node, int walkupLevels, int relativeDepthFromWalkup);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.SiteMapNode GetParentNodeRelativeToNodeAndHintDownFromParent(class System.Web.SiteMapNode node, int32 walkupLevels, int32 relativeDepthFromWalkup) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetParentNodeRelativeToNodeAndHintDownFromParent(System.Web.SiteMapNode,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetParentNodeRelativeToNodeAndHintDownFromParent (node As SiteMapNode, walkupLevels As Integer, relativeDepthFromWalkup As Integer) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::SiteMapNode ^ GetParentNodeRelativeToNodeAndHintDownFromParent(System::Web::SiteMapNode ^ node, int walkupLevels, int relativeDepthFromWalkup);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -549,12 +616,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <exception cref="T:System.ArgumentOutOfRangeException">The value specified for <paramref name="walkupLevels" /> or <paramref name="relativeDepthFromWalkup" /> is less than 0.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="node" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.GetParentNodeRelativeToCurrentNodeAndHintDownFromParent(System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetRootNodeCore">
-      <MemberSignature Language="C#" Value="protected abstract System.Web.SiteMapNode GetRootNodeCore ();" />
+      <MemberSignature Language="C#" Value="protected internal abstract System.Web.SiteMapNode GetRootNodeCore ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Web.SiteMapNode GetRootNodeCore() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetRootNodeCore" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend MustOverride Function GetRootNodeCore () As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; abstract System::Web::SiteMapNode ^ GetRootNodeCore();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -581,12 +651,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.GetRootNodeCoreFromProvider(System.Web.SiteMapProvider)" />
       </Docs>
     </Member>
     <Member MemberName="GetRootNodeCoreFromProvider">
       <MemberSignature Language="C#" Value="protected static System.Web.SiteMapNode GetRootNodeCoreFromProvider (System.Web.SiteMapProvider provider);" />
       <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Web.SiteMapNode GetRootNodeCoreFromProvider(class System.Web.SiteMapProvider provider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.GetRootNodeCoreFromProvider(System.Web.SiteMapProvider)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function GetRootNodeCoreFromProvider (provider As SiteMapProvider) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static System::Web::SiteMapNode ^ GetRootNodeCoreFromProvider(System::Web::SiteMapProvider ^ provider);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -610,12 +683,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.GetRootNodeCore" />
       </Docs>
     </Member>
     <Member MemberName="HintAncestorNodes">
       <MemberSignature Language="C#" Value="public virtual void HintAncestorNodes (System.Web.SiteMapNode node, int upLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HintAncestorNodes(class System.Web.SiteMapNode node, int32 upLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.HintAncestorNodes(System.Web.SiteMapNode,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub HintAncestorNodes (node As SiteMapNode, upLevel As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void HintAncestorNodes(System::Web::SiteMapNode ^ node, int upLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -648,12 +724,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
           <paramref name="upLevel" /> is less than -1.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="node" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.HintNeighborhoodNodes(System.Web.SiteMapNode,System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="HintNeighborhoodNodes">
       <MemberSignature Language="C#" Value="public virtual void HintNeighborhoodNodes (System.Web.SiteMapNode node, int upLevel, int downLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HintNeighborhoodNodes(class System.Web.SiteMapNode node, int32 upLevel, int32 downLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.HintNeighborhoodNodes(System.Web.SiteMapNode,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub HintNeighborhoodNodes (node As SiteMapNode, upLevel As Integer, downLevel As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void HintNeighborhoodNodes(System::Web::SiteMapNode ^ node, int upLevel, int downLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -686,12 +765,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
           <paramref name="upLevel" /> or <paramref name="downLevel" /> is less than -1.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="node" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.SiteMapProvider.HintAncestorNodes(System.Web.SiteMapNode,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Initialize">
       <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection attributes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection attributes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Initialize (name As String, attributes As NameValueCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Initialize(System::String ^ name, System::Collections::Specialized::NameValueCollection ^ attributes);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -747,12 +829,17 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="M:System.Web.SiteMapProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method in a derived class, be sure to first call the <see cref="M:System.Web.SiteMapProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" /> method for the base class before performing your own initializations.</para>
         </block>
+        <altmember cref="T:System.Configuration.Provider.ProviderBase" />
+        <altmember cref="M:System.Web.StaticSiteMapProvider.BuildSiteMap" />
+        <altmember cref="M:System.Web.StaticSiteMapProvider.Clear" />
       </Docs>
     </Member>
     <Member MemberName="IsAccessibleToUser">
       <MemberSignature Language="C#" Value="public virtual bool IsAccessibleToUser (System.Web.HttpContext context, System.Web.SiteMapNode node);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAccessibleToUser(class System.Web.HttpContext context, class System.Web.SiteMapNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.IsAccessibleToUser(System.Web.HttpContext,System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsAccessibleToUser (context As HttpContext, node As SiteMapNode) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsAccessibleToUser(System::Web::HttpContext ^ context, System::Web::SiteMapNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -790,12 +877,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
  \- or -  
   
  <paramref name="node" /> is <see langword="null" />.</exception>
+        <altmember cref="P:System.Web.SiteMapProvider.SecurityTrimmingEnabled" />
       </Docs>
     </Member>
     <Member MemberName="ParentProvider">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapProvider ParentProvider { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider ParentProvider" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.ParentProvider" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ParentProvider As SiteMapProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::SiteMapProvider ^ ParentProvider { System::Web::SiteMapProvider ^ get(); void set(System::Web::SiteMapProvider ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -825,12 +915,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.SiteMapProvider.RootProvider" />
       </Docs>
     </Member>
     <Member MemberName="RemoveNode">
-      <MemberSignature Language="C#" Value="protected virtual void RemoveNode (System.Web.SiteMapNode node);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void RemoveNode (System.Web.SiteMapNode node);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void RemoveNode(class System.Web.SiteMapNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.RemoveNode(System.Web.SiteMapNode)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub RemoveNode (node As SiteMapNode)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void RemoveNode(System::Web::SiteMapNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -854,12 +947,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
  ]]></format>
         </remarks>
         <exception cref="T:System.NotImplementedException">In all cases.</exception>
+        <altmember cref="Overload:System.Web.SiteMapProvider.AddNode" />
       </Docs>
     </Member>
     <Member MemberName="ResolveSiteMapNode">
       <MemberSignature Language="C#" Value="protected System.Web.SiteMapNode ResolveSiteMapNode (System.Web.HttpContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.SiteMapNode ResolveSiteMapNode(class System.Web.HttpContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.SiteMapProvider.ResolveSiteMapNode(System.Web.HttpContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function ResolveSiteMapNode (context As HttpContext) As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; System::Web::SiteMapNode ^ ResolveSiteMapNode(System::Web::HttpContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -883,12 +979,17 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Web.SiteMapProvider.SiteMapResolve" />
+        <altmember cref="T:System.Web.SiteMapResolveEventArgs" />
+        <altmember cref="T:System.Web.SiteMapResolveEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="ResourceKey">
       <MemberSignature Language="C#" Value="public string ResourceKey { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ResourceKey" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.ResourceKey" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResourceKey As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ResourceKey { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -908,12 +1009,19 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.SiteMapNode.Title" />
+        <altmember cref="P:System.Web.SiteMapNode.Description" />
+        <altmember cref="P:System.Web.SiteMapNode.Attributes" />
+        <altmember cref="M:System.Web.SiteMapNode.GetImplicitResourceString(System.String)" />
+        <altmember cref="M:System.Web.SiteMapNode.GetExplicitResourceString(System.String,System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="RootNode">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapNode RootNode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapNode RootNode" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.RootNode" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property RootNode As SiteMapNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::SiteMapNode ^ RootNode { System::Web::SiteMapNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -946,12 +1054,16 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
         <block subset="none" type="overrides">
           <para>When overriding the <see cref="P:System.Web.SiteMapProvider.RootNode" /> property in a derived class, be sure that the implementation does not navigate the provider hierarchy, if one exists, to find the absolute root node of the site.</para>
         </block>
+        <altmember cref="M:System.Web.SiteMapProvider.GetRootNodeCore" />
+        <altmember cref="P:System.Web.SiteMapProvider.CurrentNode" />
       </Docs>
     </Member>
     <Member MemberName="RootProvider">
       <MemberSignature Language="C#" Value="public virtual System.Web.SiteMapProvider RootProvider { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SiteMapProvider RootProvider" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.RootProvider" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property RootProvider As SiteMapProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::SiteMapProvider ^ RootProvider { System::Web::SiteMapProvider ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -982,12 +1094,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.Provider.ProviderException">There is a circular reference to the current site map provider.</exception>
+        <altmember cref="P:System.Web.SiteMapProvider.ParentProvider" />
       </Docs>
     </Member>
     <Member MemberName="SecurityTrimmingEnabled">
       <MemberSignature Language="C#" Value="public bool SecurityTrimmingEnabled { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SecurityTrimmingEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.SiteMapProvider.SecurityTrimmingEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SecurityTrimmingEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SecurityTrimmingEnabled { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1008,12 +1123,15 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.SiteMapProvider.IsAccessibleToUser(System.Web.HttpContext,System.Web.SiteMapNode)" />
       </Docs>
     </Member>
     <Member MemberName="SiteMapResolve">
       <MemberSignature Language="C#" Value="public event System.Web.SiteMapResolveEventHandler SiteMapResolve;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Web.SiteMapResolveEventHandler SiteMapResolve" />
       <MemberSignature Language="DocId" Value="E:System.Web.SiteMapProvider.SiteMapResolve" />
+      <MemberSignature Language="VB.NET" Value="Public Event SiteMapResolve As SiteMapResolveEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Web::SiteMapResolveEventHandler ^ SiteMapResolve;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1030,10 +1148,13 @@ catalog.aspx,Online Catalog,Browse Our Many Great Items!,default.aspx
 ## Remarks  
  You can create a <xref:System.Web.SiteMapNode> representation of the currently requested page without implementing a custom site map provider by subscribing to the <xref:System.Web.SiteMapProvider.SiteMapResolve> event. Subscribers attach a <xref:System.Web.SiteMapResolveEventHandler> object to receive notification when the <xref:System.Web.SiteMapProvider.CurrentNode%2A> property is called and can return a custom <xref:System.Web.SiteMapNode> object instead of the default one that is returned by the <xref:System.Web.SiteMapProvider.CurrentNode%2A> property.  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Web.SiteMap.SiteMapResolve" />
+        <altmember cref="T:System.Web.SiteMapResolveEventHandler" />
+        <altmember cref="T:System.Web.SiteMapResolveEventArgs" />
       </Docs>
     </Member>
   </Members>

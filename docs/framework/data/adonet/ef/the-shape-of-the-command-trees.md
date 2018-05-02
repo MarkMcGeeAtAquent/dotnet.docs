@@ -1,8 +1,8 @@
 ---
-title: "The Shape of the Command Trees | Microsoft Docs"
+title: "The Shape of the Command Trees"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # The Shape of the Command Trees
 The SQL generation module is responsible for generating a backend specific SQL query based on a given input query command tree expression. This section discusses the characteristics, properties, and structure of the query command trees.  
@@ -102,9 +104,9 @@ The SQL generation module is responsible for generating a backend specific SQL q
 #### DbScanExpression  
  When used in output command trees, the DbScanExpression effectively represents a scan over a table, a view, or a store query, represented by EnitySetBase::Target.  
   
- If the metadata property “Defining Query” of the target is non-null, then it represents a query, the query text for which is provided in that metadata property in the provider’s specific language (or dialect) as specified in the store schema definition.  
+ If the metadata property "Defining Query" of the target is non-null, then it represents a query, the query text for which is provided in that metadata property in the provider’s specific language (or dialect) as specified in the store schema definition.  
   
- Otherwise, the target represents a table or a view. Its schema prefix is either in the “Schema” metadata property, if not null, otherwise is the entity container name.  The table or view name is either the “Table” metadata property, if not null, otherwise the Name property of the entity set base.  
+ Otherwise, the target represents a table or a view. Its schema prefix is either in the "Schema" metadata property, if not null, otherwise is the entity container name.  The table or view name is either the "Table" metadata property, if not null, otherwise the Name property of the entity set base.  
   
  All these properties originate from the definition of the corresponding EntitySet in the store schema definition file (the SSDL).  
   

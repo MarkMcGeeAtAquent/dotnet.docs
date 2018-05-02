@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumMembers Method | Microsoft Docs"
+title: "IMetaDataImport::EnumMembers Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumMembers"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumMembers"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport::EnumMembers method [.NET Framework metadata]"
   - "EnumMembers method [.NET Framework metadata]"
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumMembers Method
 Enumerates MemberDef tokens representing members of the specified type.  
@@ -78,5 +81,5 @@ HRESULT EnumMembers (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

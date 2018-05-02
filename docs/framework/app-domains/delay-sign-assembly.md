@@ -1,14 +1,14 @@
 ---
-title: "Delay Signing an Assembly | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
+title: "Delay Signing an Assembly"
+ms.date: "07/31/2017"
 ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
 ms.technology: 
   - "dotnet-bcl"
-ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "deferring assembly signing"
   - "signing assemblies"
@@ -20,6 +20,8 @@ caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Delay Signing an Assembly
 An organization can have a closely guarded key pair that developers do not have access to on a daily basis. The public key is often available, but access to the private key is restricted to only a few individuals. When developing assemblies with strong names, each assembly that references the strong-named target assembly contains the token of the public key used to give the target assembly a strong name. This requires that the public key be available during the development process.  
@@ -58,8 +60,8 @@ An organization can have a closely guarded key pair that developers do not have 
   
      With either the **–Vr** or **–Vk** option, you can optionally include an .snk file for test key signing.  
   
-    > [!CAUTION]
-    >  Use the **-Vr** or **–Vk** option only during development. Adding an assembly to the skip verification list creates a security vulnerability. A malicious assembly could use the fully specified assembly name (assembly name, version, culture, and public key token) of the assembly added to the skip verification list to fake its identity. This would allow the malicious assembly to also skip verification.  
+    > [!WARNING]
+    > Do not rely on strong names for security. They provide a unique identity only.
   
     > [!NOTE]
     >  If you use delay signing during development with Visual Studio on a 64-bit computer, and you compile an assembly for **Any CPU**, you might have to apply the **-Vr** option twice. (In Visual Studio, **Any CPU** is a value of the **Platform Target** build property; when you compile from the command line, it is the default.) To run your application from the command line or from File Explorer, use the 64-bit version of the [Sn.exe (Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) to apply the **-Vr** option to the assembly. To load the assembly into Visual Studio at design time (for example, if the assembly contains components that are used by other assemblies in your application), use the 32-bit version of the strong-name tool. This is because the just-in-time (JIT) compiler compiles the assembly to 64-bit native code when the assembly is run from the command line, and to 32-bit native code when the assembly is loaded into the design-time environment.  
@@ -73,7 +75,7 @@ An organization can have a closely guarded key pair that developers do not have 
     ```  
   
 ## See Also  
- [Creating Assemblies](../../../docs/framework/app-domains/create-assemblies.md)   
- [How to: Create a Public-Private Key Pair](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)   
- [Sn.exe (Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)   
+ [Creating Assemblies](../../../docs/framework/app-domains/create-assemblies.md)  
+ [How to: Create a Public-Private Key Pair](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
+ [Sn.exe (Strong Name Tool)](../../../docs/framework/tools/sn-exe-strong-name-tool.md)  
  [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)

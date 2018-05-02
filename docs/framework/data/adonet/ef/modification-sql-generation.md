@@ -1,8 +1,8 @@
 ---
-title: "Modification SQL Generation | Microsoft Docs"
+title: "Modification SQL Generation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Modification SQL Generation
 This section discusses how to develop a modification SQL generation module for your (SQL:1999-compliant database) provider. This module is responsible for translating a modification command tree into the appropriate SQL INSERT, UPDATE or DELETE statements.  
@@ -35,7 +37,7 @@ This section discusses how to develop a modification SQL generation module for y
   
  ![Diagram](../../../../../docs/framework/data/adonet/ef/media/558ba7b3-dd19-48d0-b91e-30a76415bf5f.gif "558ba7b3-dd19-48d0-b91e-30a76415bf5f")  
   
- DbModificationCommandTree has a Target property that represents the target set for the modification operation. The Target’s Expression property, which defines the input set is always DbScanExpression.  A DbScanExpression can either represent a table or a view, or a set of data defined with a query if the metadata property “Defining Query” of its Target is non-null.  
+ DbModificationCommandTree has a Target property that represents the target set for the modification operation. The Target’s Expression property, which defines the input set is always DbScanExpression.  A DbScanExpression can either represent a table or a view, or a set of data defined with a query if the metadata property "Defining Query" of its Target is non-null.  
   
  A DbScanExpression that represents a query could only reach a provider as a target of modification if the set was defined by using a defining query in the model but no function was provided for the corresponding modification operation. Providers may not be able to support such a scenario (SqlClient, for example, does not).  
   
@@ -114,11 +116,11 @@ The elements of the list are specified as type DbModificationClause, which speci
   
 ```  
 -- first insert Template  
-INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
+INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
 VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES   
   
 [SELECT <returning>   
- FROM <target>   
+ FROM <target>  
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]  
 ```  
   
@@ -128,14 +130,14 @@ VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES
 -- second insert template  
 DECLARE @generated_keys TABLE [(keyMember0, … keyMemberN)  
   
-INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
- OUTPUT inserted.KeyMember0, …, inserted.KeyMemberN INTO @generated_keys  
- VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES   
+INSERT <target>   [ (setClauseProperty0, .. setClausePropertyN)]    
+ OUTPUT inserted.KeyMember0, …, inserted.KeyMemberN INTO @generated_keys  
+ VALUES (setClauseValue0, .. setClauseValueN) |  DEFAULT VALUES  
   
 [SELECT <returning_over_t>   
- FROM @generated_keys  AS g   
+ FROM @generated_keys  AS g  
 JOIN <target> AS t ON g.KeyMember0 = t.KeyMember0 AND … g.KeyMemberN = t.KeyMemberN  
- WHERE @@ROWCOUNT > 0   
+ WHERE @@ROWCOUNT > 0  
 ```  
   
  The following is an example that uses the model that is included with the sample provider. It generates an insert command from a DbInsertCommandTree.  
@@ -196,12 +198,12 @@ where @@ROWCOUNT > 0 and [CategoryID] = scope_identity()
   
 ```  
 -- UPDATE Template   
-UPDATE <target>   
+UPDATE <target>   
 SET setClauseProprerty0 = setClauseValue0,  .. setClauseProprertyN = setClauseValueN  | @i = 0  
 WHERE <predicate>  
   
 [SELECT <returning>   
- FROM <target>   
+ FROM <target>  
  WHERE @@ROWCOUNT > 0 AND keyMember0 = keyValue0 AND .. keyMemberI =  keyValueI | scope_identity()  .. AND  keyMemberN = keyValueN]  
 ```  
   
@@ -255,7 +257,7 @@ where ([CategoryID] = @p1)
   
 ```  
 -- DELETE Template   
-DELETE <target>   
+DELETE <target>   
 WHERE <predicate>  
 ```  
   

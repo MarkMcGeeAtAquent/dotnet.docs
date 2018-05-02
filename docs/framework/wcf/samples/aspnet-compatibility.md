@@ -1,8 +1,8 @@
 ---
-title: "ASP.NET Compatibility | Microsoft Docs"
+title: "ASP.NET Compatibility"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c8b51f1e-c096-4c42-ad99-0519887bbbc5
 caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ASP.NET Compatibility
 This sample demonstrates how to enable [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Compatibility mode in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. Services running in [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Compatibility mode participate fully in the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application pipeline and can make use of [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] features such as file/URL authorization, session state, and the <xref:System.Web.HttpContext> class. The <xref:System.Web.HttpContext> class allows access to cookies, sessions, and other [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] features. This mode requires that the bindings use the HTTP transport and the service itself must be hosted in IIS.  
@@ -59,7 +61,6 @@ public interface ICalculatorSession
     [OperationContract]  
     double Result();  
 }  
-  
 ```  
   
  The service maintains state, using the feature, for each client as multiple service operations are called to perform a calculation. The client can retrieve the current result by calling `Result` and can clear the result to zero by calling `Clear`.  
@@ -118,10 +119,8 @@ public class CalculatorService : ICalculatorSession
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 0, + 100, - 50, * 17.65, / 2 = 441.25  
 Press <ENTER> to terminate client.  
-  
 ```  
   
 ### To set up, build, and run the sample  

@@ -1,5 +1,5 @@
 ---
-title: "IHostSyncManager::CreateRWLockReaderEvent Method | Microsoft Docs"
+title: "IHostSyncManager::CreateRWLockReaderEvent Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostSyncManager.CreateRWLockReaderEvent"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostSyncManager::CreateRWLockReaderEvent"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateRWLockReaderEvent method [.NET Framework hosting]"
   - "IHostSyncManager::CreateRWLockReaderEvent method [.NET Framework hosting]"
 ms.assetid: 68c4ea19-c47c-45c6-b420-d3a2ba1c2d50
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostSyncManager::CreateRWLockReaderEvent Method
 Creates a manual-reset event object for the implementation of a reader lock.  
@@ -75,7 +78,7 @@ HRESULT CreateRWLockReaderEvent (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)   
- [IHostAutoEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)   
- [IHostManualEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)   
+ [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
+ [IHostAutoEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
+ [IHostManualEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmanualevent-interface.md)  
  [IHostSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)

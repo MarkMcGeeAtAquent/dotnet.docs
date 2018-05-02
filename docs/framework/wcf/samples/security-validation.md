@@ -1,8 +1,8 @@
 ---
-title: "Security Validation | Microsoft Docs"
+title: "Security Validation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 35
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Security Validation
 This sample demonstrates how to use a custom behavior to validate services on a computer to ensure they meet specific criteria. In this sample, services are validated by the custom behavior by scanning through each endpoint on the service and checking to see whether they contain secure binding elements. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -55,7 +57,7 @@ public void Validate(ServiceDescription serviceDescription,
   
  Adding the following code to Web.config file adds the `serviceValidate` behavior extension for the service to recognize.  
   
-```  
+```xml  
 <system.serviceModel>  
     <extensions>  
         <behaviorExtensions>  
@@ -67,7 +69,7 @@ public void Validate(ServiceDescription serviceDescription,
   
  Once the behavior extension is added to the service, it is now possible to add the `endpointValidate` behavior to the list of behaviors in the Web.config file and thus, to the service.  
   
-```  
+```xml  
 <behaviors>  
     <serviceBehaviors>  
         <behavior name="CalcServiceSEB1">  

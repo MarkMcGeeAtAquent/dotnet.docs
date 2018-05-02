@@ -1,7 +1,9 @@
-<Type Name="HttpRequest" FullName="System.Web.HttpRequest">
+﻿<Type Name="HttpRequest" FullName="System.Web.HttpRequest">
   <TypeSignature Language="C#" Value="public sealed class HttpRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpRequest extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpRequest" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpRequest" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpRequest sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -111,8 +113,8 @@ End Class
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/CS/requestdetailscs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/VB/requestdetailsvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest_Sample1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/CS/requestdetailscs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest_Sample1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Sample1/VB/requestdetailsvb.aspx#1)]  
   
  ]]></format>
     </remarks>
@@ -122,6 +124,8 @@ End Class
       <MemberSignature Language="C#" Value="public HttpRequest (string filename, string url, string queryString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filename, string url, string queryString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (filename As String, url As String, queryString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; HttpRequest(System::String ^ filename, System::String ^ url, System::String ^ queryString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -135,7 +139,7 @@ End Class
       <Docs>
         <param name="filename">The name of the file associated with the request.</param>
         <param name="url">The information regarding the URL of the current request.</param>
-        <param name="queryString">The entire query string sent with the request (everything after the<c>'?'</c>).</param>
+        <param name="queryString">The entire query string sent with the request (everything after the <c>'?'</c>).</param>
         <summary>Initializes an <see cref="T:System.Web.HttpRequest" /> object.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -151,6 +155,8 @@ End Class
       <MemberSignature Language="C#" Value="public void Abort ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.Abort" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Abort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Abort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -178,6 +184,8 @@ End Class
       <MemberSignature Language="C#" Value="public string[] AcceptTypes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] AcceptTypes" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.AcceptTypes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AcceptTypes As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ AcceptTypes { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -206,6 +214,8 @@ End Class
       <MemberSignature Language="C#" Value="public string AnonymousID { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AnonymousID" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.AnonymousID" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AnonymousID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AnonymousID { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -221,9 +231,9 @@ End Class
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.HttpRequest.AnonymousID%2A> property assigns a long-lived unique identifier to a non-authenticated user, which can be used to track the user or assign profile properties to that user without storing data in a `Session` object. By default, the <xref:System.Web.HttpRequest.AnonymousID%2A> property is tracked using a cookie, but it can be set to use the URI when the <xref:System.Web.Configuration.SessionStateSection.Cookieless%2A> attribute in the anonymous identification configuration section is set to either the <xref:System.Web.HttpCookieMode>, <xref:System.Web.HttpCookieMode>, or <xref:System.Web.HttpCookieMode> value. You must explicitly clear the cookie if you no longer want it available, for example when an anonymous user is authenticated.  
+ The <xref:System.Web.HttpRequest.AnonymousID%2A> property assigns a long-lived unique identifier to a non-authenticated user, which can be used to track the user or assign profile properties to that user without storing data in a `Session` object. By default, the <xref:System.Web.HttpRequest.AnonymousID%2A> property is tracked using a cookie, but it can be set to use the URI when the <xref:System.Web.Configuration.SessionStateSection.Cookieless%2A> attribute in the anonymous identification configuration section is set to either the <xref:System.Web.HttpCookieMode.UseUri>, <xref:System.Web.HttpCookieMode.UseDeviceProfile>, or <xref:System.Web.HttpCookieMode.AutoDetect> value. You must explicitly clear the cookie if you no longer want it available, for example when an anonymous user is authenticated.  
   
- Anonymous identification is used when there is a need to identify entities that are not authenticated and when authorization is required. For more information, see [anonymousIdentification Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/2bd927ef-9057-4703-9c55-4cfb6d7d0929)  
+ Anonymous identification is used when there is a need to identify entities that are not authenticated and when authorization is required. For more information, see [anonymousIdentification Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/2bd927ef-9057-4703-9c55-4cfb6d7d0929)  
   
    
   
@@ -241,17 +251,21 @@ End Class
   
  The second part of the code example shows how to display the new <xref:System.Web.HttpRequest.AnonymousID%2A> that is created by the `AnonymousIdentification_Creating` event handler in the preceding example.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest_AnonymousID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_AnonymousID/CS/anonid_cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest_AnonymousID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_AnonymousID/vb/anonid_vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest_AnonymousID#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_AnonymousID/CS/anonid_cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest_AnonymousID#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_AnonymousID/vb/anonid_vb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpRequest.IsAuthenticated" />
+        <altmember cref="E:System.Web.Security.AnonymousIdentificationModule.Creating" />
       </Docs>
     </Member>
     <Member MemberName="ApplicationPath">
       <MemberSignature Language="C#" Value="public string ApplicationPath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationPath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ApplicationPath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ApplicationPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ApplicationPath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -279,8 +293,8 @@ End Class
   
  The following example uses the <xref:System.Web.HttpRequest.ApplicationPath%2A> property to programmatically construct a path to a resource that is in a fixed location in the application. The page that references the resource does not have to be located in the same directory as the resource.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest.ApplicationPath#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/CS/ApplicationPath.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest.ApplicationPath#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/VB/ApplicationPath.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest.ApplicationPath#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/CS/ApplicationPath.aspx#2)]
+ [!code-aspx-vb[System.Web.HttpRequest.ApplicationPath#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/VB/ApplicationPath.aspx#2)]  
   
  If you run this example in a Web application that is named WebSite1,  `/WebSite1` will be displayed as the value of the <xref:System.Web.HttpRequest.ApplicationPath%2A> property and `/WebSite1/images/Image1.gif` will be displayed as the complete path of the image.  
   
@@ -292,6 +306,8 @@ End Class
       <MemberSignature Language="C#" Value="public string AppRelativeCurrentExecutionFilePath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AppRelativeCurrentExecutionFilePath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AppRelativeCurrentExecutionFilePath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AppRelativeCurrentExecutionFilePath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -314,13 +330,13 @@ End Class
 ## Examples  
  The following example uses the <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath%2A> property to set the URL of an <xref:System.Web.UI.WebControls.Image> control to an image in the same directory as the page. Run this page at different levels of a directory structure to see the resulting <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath%2A> property values.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest.AppRelativeCurrentExecutionPath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.AppRelativeCurrentExecutionPath/CS/AppRelativeCurrentExecutionPathCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest.AppRelativeCurrentExecutionPath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.AppRelativeCurrentExecutionPath/VB/AppRelativeCurrentExecutionPathVB.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest.AppRelativeCurrentExecutionPath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.AppRelativeCurrentExecutionPath/CS/AppRelativeCurrentExecutionPathCS.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest.AppRelativeCurrentExecutionPath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.AppRelativeCurrentExecutionPath/VB/AppRelativeCurrentExecutionPathVB.aspx#1)]  
   
  The following example uses the <xref:System.Web.HttpRequest.AppRelativeCurrentExecutionFilePath%2A> property to programmatically set the path to a resource, based on the current path of the page.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest.ApplicationPath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/CS/apprelativecurrentexecutionfilepath.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest.ApplicationPath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/VB/apprelativecurrentexecutionfilepath.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest.ApplicationPath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/CS/apprelativecurrentexecutionfilepath.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest.ApplicationPath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.ApplicationPath/VB/apprelativecurrentexecutionfilepath.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -330,6 +346,8 @@ End Class
       <MemberSignature Language="C#" Value="public byte[] BinaryRead (int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] BinaryRead(int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.BinaryRead(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BinaryRead (count As Integer) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Byte&gt; ^ BinaryRead(int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -365,6 +383,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Web.HttpBrowserCapabilities Browser { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpBrowserCapabilities Browser" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Browser" />
+      <MemberSignature Language="VB.NET" Value="Public Property Browser As HttpBrowserCapabilities" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpBrowserCapabilities ^ Browser { System::Web::HttpBrowserCapabilities ^ get(); void set(System::Web::HttpBrowserCapabilities ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -387,12 +407,17 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.Page.ClientTarget" />
+        <altmember cref="T:System.Web.HttpBrowserCapabilities" />
+        <altmember cref="P:System.Web.HttpRequest.UserAgent" />
       </Docs>
     </Member>
     <Member MemberName="ClientCertificate">
       <MemberSignature Language="C#" Value="public System.Web.HttpClientCertificate ClientCertificate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpClientCertificate ClientCertificate" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ClientCertificate" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientCertificate As HttpClientCertificate" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpClientCertificate ^ ClientCertificate { System::Web::HttpClientCertificate ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -421,6 +446,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Text.Encoding ContentEncoding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding ContentEncoding" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ContentEncoding" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContentEncoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ ContentEncoding { System::Text::Encoding ^ get(); void set(System::Text::Encoding ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -436,7 +463,7 @@ End Class
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Default content encoding can be specified in the [globalization Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7) of a configuration file. If content encoding is also specified by the client, the default configuration settings are overridden.  
+ Default content encoding can be specified in the [globalization Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/e2dffc8e-ebd2-439b-a2fd-e3ac5e620da7) of a configuration file. If content encoding is also specified by the client, the default configuration settings are overridden.  
   
    
   
@@ -454,6 +481,8 @@ End Class
       <MemberSignature Language="C#" Value="public int ContentLength { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ContentLength" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ContentLength" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ContentLength { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -482,6 +511,8 @@ End Class
       <MemberSignature Language="C#" Value="public string ContentType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ContentType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContentType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ContentType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -520,6 +551,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Web.HttpCookieCollection Cookies { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCookieCollection Cookies" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Cookies" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Cookies As HttpCookieCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpCookieCollection ^ Cookies { System::Web::HttpCookieCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -538,7 +571,7 @@ End Class
  ASP.NET includes two intrinsic cookie collections. The collection accessed through the <xref:System.Web.HttpRequest.Cookies%2A> collection of <xref:System.Web.HttpRequest> contains cookies transmitted by the client to the server in the `Cookie` header. The collection accessed through the <xref:System.Web.HttpResponse.Cookies%2A> collection of <xref:System.Web.HttpResponse> contains new cookies created on the server and transmitted to the client in the `Set-Cookie` header.  
   
 > [!NOTE]
->  After you add a cookie by using the <xref:System.Web.HttpResponse.Cookies%2A?displayProperty=fullName> collection, the cookie is immediately available in the <xref:System.Web.HttpRequest.Cookies%2A?displayProperty=fullName> collection, even if the response has not been sent to the client.  
+>  After you add a cookie by using the <xref:System.Web.HttpResponse.Cookies%2A?displayProperty=nameWithType> collection, the cookie is immediately available in the <xref:System.Web.HttpRequest.Cookies%2A?displayProperty=nameWithType> collection, even if the response has not been sent to the client.  
   
    
   
@@ -550,12 +583,17 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpRequest.ValidateInput" />
+        <altmember cref="P:System.Web.HttpRequest.Form" />
+        <altmember cref="P:System.Web.HttpRequest.QueryString" />
       </Docs>
     </Member>
     <Member MemberName="CurrentExecutionFilePath">
       <MemberSignature Language="C#" Value="public string CurrentExecutionFilePath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CurrentExecutionFilePath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.CurrentExecutionFilePath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentExecutionFilePath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CurrentExecutionFilePath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -583,12 +621,19 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpRequest.FilePath" />
+        <altmember cref="P:System.Web.HttpRequest.Path" />
+        <altmember cref="P:System.Web.HttpRequest.PathInfo" />
+        <altmember cref="M:System.Web.HttpServerUtility.Execute(System.String)" />
+        <altmember cref="M:System.Web.HttpServerUtility.Transfer(System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="CurrentExecutionFilePathExtension">
       <MemberSignature Language="C#" Value="public string CurrentExecutionFilePathExtension { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CurrentExecutionFilePathExtension" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.CurrentExecutionFilePathExtension" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentExecutionFilePathExtension As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CurrentExecutionFilePathExtension { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -607,6 +652,8 @@ End Class
       <MemberSignature Language="C#" Value="public string FilePath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FilePath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.FilePath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FilePath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FilePath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -634,12 +681,16 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpRequest.PathInfo" />
+        <altmember cref="P:System.Web.HttpRequest.Path" />
       </Docs>
     </Member>
     <Member MemberName="Files">
       <MemberSignature Language="C#" Value="public System.Web.HttpFileCollection Files { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpFileCollection Files" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Files" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Files As HttpFileCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpFileCollection ^ Files { System::Web::HttpFileCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -673,6 +724,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.IO.Stream Filter { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream Filter" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Filter" />
+      <MemberSignature Language="VB.NET" Value="Public Property Filter As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::Stream ^ Filter { System::IO::Stream ^ get(); void set(System::IO::Stream ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -690,8 +743,8 @@ End Class
 ## Examples  
  The following code example creates two new classes, `QQQ1` and `QQQ2` that filter the <xref:System.Web.HttpRequest.InputStream%2A>. Put the classes into the Global.asax file in an ASP.NET application's directory so that all input for all ASP.NET Web pages in the application will be filtered.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest.Filter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.Filter/CS/systemwebhttprequestfilter.cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest.Filter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.Filter/VB/systemwebhttprequestfilter.vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest.Filter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.Filter/CS/systemwebhttprequestfilter.cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest.Filter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.Filter/VB/systemwebhttprequestfilter.vb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -702,6 +755,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Form { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Form" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Form" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Form As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ Form { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -729,12 +784,17 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpRequest.ValidateInput" />
+        <altmember cref="P:System.Web.HttpRequest.Cookies" />
+        <altmember cref="P:System.Web.HttpRequest.QueryString" />
       </Docs>
     </Member>
     <Member MemberName="GetBufferedInputStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream GetBufferedInputStream ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetBufferedInputStream() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.GetBufferedInputStream" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBufferedInputStream () As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::Stream ^ GetBufferedInputStream();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -768,10 +828,21 @@ End Class
  To avoid this exception, call the <see cref="P:System.Web.HttpRequest.ReadEntityBodyMode" /> method first. This exception is also thrown if the client disconnects while the entity body is being read.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetBufferlessInputStream">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a <see cref="T:System.IO.Stream" /> object that can be used to read the incoming HTTP entity body.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetBufferlessInputStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream GetBufferlessInputStream ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetBufferlessInputStream() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.GetBufferlessInputStream" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBufferlessInputStream () As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::Stream ^ GetBufferlessInputStream();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -809,12 +880,15 @@ End Class
 -   <see cref="M:System.Web.HttpRequest.GetBufferedInputStream" />  
   
  To avoid this exception, call the <see cref="P:System.Web.HttpRequest.ReadEntityBodyMode" /> method first. This exception is also thrown if the client disconnects while the entity body is being read.</exception>
+        <altmember cref="M:System.Web.HttpRequest.GetBufferedInputStream" />
       </Docs>
     </Member>
     <Member MemberName="GetBufferlessInputStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream GetBufferlessInputStream (bool disableMaxRequestLength);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetBufferlessInputStream(bool disableMaxRequestLength) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.GetBufferlessInputStream(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBufferlessInputStream (disableMaxRequestLength As Boolean) As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::Stream ^ GetBufferlessInputStream(bool disableMaxRequestLength);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -850,12 +924,15 @@ End Class
 -   The <see cref="M:System.Web.HttpRequest.GetBufferedInputStream" /> method.  
   
  To avoid this exception, call the <see cref="P:System.Web.HttpRequest.ReadEntityBodyMode" /> method first. This exception is also thrown if the client disconnects while the entity body is being read.</exception>
+        <altmember cref="M:System.Web.HttpRequest.GetBufferedInputStream" />
       </Docs>
     </Member>
     <Member MemberName="Headers">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Headers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Headers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Headers As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ Headers { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -889,6 +966,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ChannelBinding HttpChannelBinding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ChannelBinding HttpChannelBinding" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.HttpChannelBinding" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HttpChannelBinding As ChannelBinding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Authentication::ExtendedProtection::ChannelBinding ^ HttpChannelBinding { System::Security::Authentication::ExtendedProtection::ChannelBinding ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -908,6 +987,8 @@ End Class
       <MemberSignature Language="C#" Value="public string HttpMethod { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string HttpMethod" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.HttpMethod" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HttpMethod As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ HttpMethod { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -946,6 +1027,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.IO.Stream InputStream { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream InputStream" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.InputStream" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InputStream As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::Stream ^ InputStream { System::IO::Stream ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -970,10 +1053,32 @@ End Class
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="InsertEntityBody">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Provides a managed wrapper for the IIS method that inserts an HTTP request entity body into memory.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Web.HttpRequest.InsertEntityBody%2A> method overloads provide managed access to the IIS 7 `IHttpRequest::InsertEntityBody` method. The IIS method inserts an HTTP request entity body (the data that is posted by a client) into memory. This is useful because IIS does not maintain a copy of the request entity after it has been read. The <xref:System.Web.HttpRequest.InsertEntityBody%2A> methods create a copy of the HTTP request entity data and make it available to IIS for additional custom handling.  
+  
+> [!NOTE]
+>  The <xref:System.Web.HttpRequest.InsertEntityBody%2A> method overloads work only on IIS 7.0 or later, because the `IHttpRequest::InsertEntityBody` method was added in IIS 7.0.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InsertEntityBody">
       <MemberSignature Language="C#" Value="public void InsertEntityBody ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEntityBody() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.InsertEntityBody" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InsertEntityBody ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InsertEntityBody();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -991,7 +1096,7 @@ End Class
 ## Remarks  
  IIS does not maintain a copy of the request after it has been read. Therefore, it is recommended that only the handler for an HTTP request should read the request entity.  
   
- The <xref:System.Web.HttpRequest.InsertEntityBody%2A?displayProperty=fullName> method overload provides IIS with a copy of the request entity if it was previously read by ASP.NET. This method overload is useful for cases where ASP.NET has read the entity request and you want to reuse the existing request data.  
+ The <xref:System.Web.HttpRequest.InsertEntityBody%2A?displayProperty=nameWithType> method overload provides IIS with a copy of the request entity if it was previously read by ASP.NET. This method overload is useful for cases where ASP.NET has read the entity request and you want to reuse the existing request data.  
   
  ]]></format>
         </remarks>
@@ -1003,6 +1108,8 @@ End Class
       <MemberSignature Language="C#" Value="public void InsertEntityBody (byte[] buffer, int offset, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertEntityBody(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.InsertEntityBody(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InsertEntityBody (buffer As Byte(), offset As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InsertEntityBody(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1027,7 +1134,7 @@ End Class
 ## Remarks  
  IIS does not maintain a copy of the request after it has been read. Therefore, it is recommended that only the handler for an HTTP request should read the request entity.  
   
- The <xref:System.Web.HttpRequest.InsertEntityBody%2A?displayProperty=fullName> method overload is useful when you want to perform custom processing, such as inserting a different entity body into memory.  
+ The <xref:System.Web.HttpRequest.InsertEntityBody%2A?displayProperty=nameWithType> method overload is useful when you want to perform custom processing, such as inserting a different entity body into memory.  
   
  ]]></format>
         </remarks>
@@ -1044,6 +1151,8 @@ End Class
       <MemberSignature Language="C#" Value="public bool IsAuthenticated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.IsAuthenticated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAuthenticated As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAuthenticated { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1073,6 +1182,8 @@ End Class
       <MemberSignature Language="C#" Value="public bool IsLocal { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLocal" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.IsLocal" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLocal As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLocal { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1099,6 +1210,8 @@ End Class
       <MemberSignature Language="C#" Value="public bool IsSecureConnection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSecureConnection" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.IsSecureConnection" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSecureConnection As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSecureConnection { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1128,6 +1241,8 @@ End Class
       <MemberSignature Language="C#" Value="public string this[string key] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(key As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ default[System::String ^] { System::String ^ get(System::String ^ key); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1150,6 +1265,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Security.Principal.WindowsIdentity LogonUserIdentity { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.WindowsIdentity LogonUserIdentity" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.LogonUserIdentity" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LogonUserIdentity As WindowsIdentity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Principal::WindowsIdentity ^ LogonUserIdentity { System::Security::Principal::WindowsIdentity ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1172,8 +1289,8 @@ End Class
 ## Examples  
  The following code example shows how to retrieve the <xref:System.Web.HttpRequest.LogonUserIdentity%2A> property for the current user and write out the values of each item in a text file. Place this code on the ASP.NET page referenced by the form's `ACTION` attribute.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest_LogonUserIdentity#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_LogonUserIdentity/CS/logonuseridentity_cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest_LogonUserIdentity#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_LogonUserIdentity/VB/logonuseridentity_vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest_LogonUserIdentity#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_LogonUserIdentity/CS/logonuseridentity_cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest_LogonUserIdentity#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_LogonUserIdentity/VB/logonuseridentity_vb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -1184,6 +1301,8 @@ End Class
       <MemberSignature Language="C#" Value="public int[] MapImageCoordinates (string imageFieldName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32[] MapImageCoordinates(string imageFieldName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.MapImageCoordinates(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MapImageCoordinates (imageFieldName As String) As Integer()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;int&gt; ^ MapImageCoordinates(System::String ^ imageFieldName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1202,10 +1321,21 @@ End Class
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="MapPath">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Maps the virtual path in the requested URL to a physical path on the server for the current request.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="MapPath">
       <MemberSignature Language="C#" Value="public string MapPath (string virtualPath);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MapPath(string virtualPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.MapPath(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MapPath (virtualPath As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ MapPath(System::String ^ virtualPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1240,8 +1370,8 @@ End Class
   
  The first part of the example shows how to convert a virtual path to a fully qualified physical path using the <xref:System.Web.HttpRequest.MapPath%2A> method. This physical path is then passed to a <xref:System.IO.StreamReader> object, which obtains the contents of the file. The <xref:System.Web.HttpResponse.Write%2A> method is then called to display the content of the file on the page. The <xref:System.Web.HttpResponse.Filter%2A> property is used to attach a filter to the response stream that makes the text displayed to the page all uppercase.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest_Samples2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/CS/requestsamples2cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest_Samples2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/VB/requestsamples2vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest_Samples2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/CS/requestsamples2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest_Samples2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest_Samples2/VB/requestsamples2vb.aspx#1)]  
   
  The second part of the example shows a class that inherits from <xref:System.IO.Stream> and converts all characters in a stream to uppercase. Put this code in the `App_Code` folder for your application.  
   
@@ -1257,6 +1387,8 @@ End Class
       <MemberSignature Language="C#" Value="public string MapPath (string virtualPath, string baseVirtualDir, bool allowCrossAppMapping);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MapPath(string virtualPath, string baseVirtualDir, bool allowCrossAppMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.MapPath(System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MapPath (virtualPath As String, baseVirtualDir As String, allowCrossAppMapping As Boolean) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ MapPath(System::String ^ virtualPath, System::String ^ baseVirtualDir, bool allowCrossAppMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1294,6 +1426,8 @@ End Class
       <MemberSignature Language="C#" Value="public double[] MapRawImageCoordinates (string imageFieldName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float64[] MapRawImageCoordinates(string imageFieldName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.MapRawImageCoordinates(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MapRawImageCoordinates (imageFieldName As String) As Double()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;double&gt; ^ MapRawImageCoordinates(System::String ^ imageFieldName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1316,6 +1450,8 @@ End Class
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Params { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Params" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Params" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Params As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ Params { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1346,8 +1482,8 @@ End Class
 ## Examples  
  The following code example shows how to loop through the <xref:System.Web.HttpRequest.Params%2A> property for a page and how to display each key/value pair.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpRequest.Params#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.Params/CS/requestparamscs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpRequest.Params#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.Params/VB/requestparamsvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpRequest.Params#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpRequest.Params/CS/requestparamscs.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpRequest.Params#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpRequest.Params/VB/requestparamsvb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -1357,6 +1493,8 @@ End Class
       <MemberSignature Language="C#" Value="public string Path { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Path" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Path" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Path As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Path { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1384,12 +1522,16 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpRequest.FilePath" />
+        <altmember cref="P:System.Web.HttpRequest.PathInfo" />
       </Docs>
     </Member>
     <Member MemberName="PathInfo">
       <MemberSignature Language="C#" Value="public string PathInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PathInfo" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.PathInfo" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PathInfo As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PathInfo { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1417,12 +1559,16 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpRequest.Path" />
+        <altmember cref="P:System.Web.HttpRequest.FilePath" />
       </Docs>
     </Member>
     <Member MemberName="PhysicalApplicationPath">
       <MemberSignature Language="C#" Value="public string PhysicalApplicationPath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PhysicalApplicationPath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.PhysicalApplicationPath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PhysicalApplicationPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PhysicalApplicationPath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1451,6 +1597,8 @@ End Class
       <MemberSignature Language="C#" Value="public string PhysicalPath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PhysicalPath" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.PhysicalPath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PhysicalPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PhysicalPath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1478,12 +1626,16 @@ End Class
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpRequest.MapPath(System.String)" />
+        <altmember cref="P:System.Web.HttpRequest.CurrentExecutionFilePath" />
       </Docs>
     </Member>
     <Member MemberName="QueryString">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection QueryString { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryString" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.QueryString" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property QueryString As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ QueryString { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1499,9 +1651,9 @@ End Class
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following code example shows two ways to get the value of a query string variable named “fullname”. In each case, if the URL is `http://www.contoso.com/default.aspx?fullname=Fadi%20Fakhouri`, then the value returned is "Fadi Fakhouri" because the `%20` is URL-decoded into a space character. If the URL doesn’t have a `fullname` query string ID, the returned value would be `null`.  
+ The following code example shows two ways to get the value of a query string variable named "fullname". In each case, if the URL is `http://www.contoso.com/default.aspx?fullname=Fadi%20Fakhouri`, then the value returned is "Fadi Fakhouri" because the `%20` is URL-decoded into a space character. If the URL doesn’t have a `fullname` query string ID, the returned value would be `null`.  
   
- The first line of code looks for the key “fullname” only in the query string; the second line looks for the key “fullname” in all of the HTTP request collections. For more information about the second line, see <xref:System.Web.HttpRequest.Item%2A>.  
+ The first line of code looks for the key "fullname" only in the query string; the second line looks for the key "fullname" in all of the HTTP request collections. For more information about the second line, see <xref:System.Web.HttpRequest.Item%2A>.  
   
 ```csharp  
 string fullname1 = Request.QueryString["fullname"];  
@@ -1516,12 +1668,17 @@ Dim fullname2 As String = Request("fullname")
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpRequest.ValidateInput" />
+        <altmember cref="P:System.Web.HttpRequest.Form" />
+        <altmember cref="P:System.Web.HttpRequest.Cookies" />
       </Docs>
     </Member>
     <Member MemberName="RawUrl">
       <MemberSignature Language="C#" Value="public string RawUrl { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RawUrl" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.RawUrl" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RawUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RawUrl { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1555,6 +1712,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Web.ReadEntityBodyMode ReadEntityBodyMode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.ReadEntityBodyMode ReadEntityBodyMode" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ReadEntityBodyMode" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ReadEntityBodyMode As ReadEntityBodyMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::ReadEntityBodyMode ReadEntityBodyMode { System::Web::ReadEntityBodyMode get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1590,6 +1749,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Web.Routing.RequestContext RequestContext { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Routing.RequestContext RequestContext" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.RequestContext" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestContext As RequestContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Routing::RequestContext ^ RequestContext { System::Web::Routing::RequestContext ^ get(); void set(System::Web::Routing::RequestContext ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1615,6 +1776,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public string RequestType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RequestType" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.RequestType" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RequestType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1643,6 +1806,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public void SaveAs (string filename, bool includeHeaders);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, bool includeHeaders) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.SaveAs(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String, includeHeaders As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename, bool includeHeaders);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1682,6 +1847,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection ServerVariables { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection ServerVariables" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.ServerVariables" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ServerVariables As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ ServerVariables { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1715,6 +1882,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Threading.CancellationToken TimedOutToken { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken TimedOutToken" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.TimedOutToken" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TimedOutToken As CancellationToken" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::CancellationToken TimedOutToken { System::Threading::CancellationToken get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1730,11 +1899,11 @@ Dim fullname2 As String = Request("fullname")
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The timeout period can be specified in the Web.config file (see <xref:System.Web.Configuration.HttpRuntimeSection.ExecutionTimeout%2A?displayProperty=fullName>) or programmatically (see <xref:System.Web.HttpServerUtility.ScriptTimeout%2A?displayProperty=fullName>). The timeout period is measured from the time the request comes in. If the default timeout of 110 seconds is in effect, the cancellation token will be tripped no earlier than 110 seconds after request processing begins. You can change the <xref:System.Web.HttpServerUtility.ScriptTimeout%2A?displayProperty=fullName> property value, and as long this token hasn't tripped yet, the new timeout value will be respected.  
+ The timeout period can be specified in the Web.config file (see <xref:System.Web.Configuration.HttpRuntimeSection.ExecutionTimeout%2A?displayProperty=nameWithType>) or programmatically (see <xref:System.Web.HttpServerUtility.ScriptTimeout%2A?displayProperty=nameWithType>). The timeout period is measured from the time the request comes in. If the default timeout of 110 seconds is in effect, the cancellation token will be tripped no earlier than 110 seconds after request processing begins. You can change the <xref:System.Web.HttpServerUtility.ScriptTimeout%2A?displayProperty=nameWithType> property value, and as long this token hasn't tripped yet, the new timeout value will be respected.  
   
  Currently the token only provides 15 second granularity, which means that if the timeout value is 110 seconds, the token will be tripped sometime between 110 and 125 seconds after request processing begins. The granularity may change in the future.  
   
- Even though this property is thread-safe, there are restrictions on its use. For more information, see <xref:System.Web.HttpResponse.ClientDisconnectedToken%2A?displayProperty=fullName>.  
+ Even though this property is thread-safe, there are restrictions on its use. For more information, see <xref:System.Web.HttpResponse.ClientDisconnectedToken%2A?displayProperty=nameWithType>.  
   
  This property is meaningless if WebSockets request processing has started.  
   
@@ -1746,6 +1915,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Web.ITlsTokenBindingInfo TlsTokenBindingInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ITlsTokenBindingInfo TlsTokenBindingInfo" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.TlsTokenBindingInfo" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TlsTokenBindingInfo As ITlsTokenBindingInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::ITlsTokenBindingInfo ^ TlsTokenBindingInfo { System::Web::ITlsTokenBindingInfo ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1771,6 +1942,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public int TotalBytes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 TotalBytes" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.TotalBytes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TotalBytes As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int TotalBytes { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1799,6 +1972,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public System.Web.UnvalidatedRequestValues Unvalidated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UnvalidatedRequestValues Unvalidated" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Unvalidated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Unvalidated As UnvalidatedRequestValues" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UnvalidatedRequestValues ^ Unvalidated { System::Web::UnvalidatedRequestValues ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1821,12 +1996,15 @@ Dim fullname2 As String = Request("fullname")
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UnvalidatedRequestValues" />
       </Docs>
     </Member>
     <Member MemberName="Url">
       <MemberSignature Language="C#" Value="public Uri Url { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.Url" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Url As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Url { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1849,12 +2027,16 @@ Dim fullname2 As String = Request("fullname")
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Uri" />
+        <altmember cref="P:System.Web.HttpRequest.RawUrl" />
       </Docs>
     </Member>
     <Member MemberName="UrlReferrer">
       <MemberSignature Language="C#" Value="public Uri UrlReferrer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri UrlReferrer" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.UrlReferrer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UrlReferrer As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ UrlReferrer { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1884,6 +2066,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.UserAgent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserAgent As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserAgent { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1906,12 +2090,17 @@ Dim fullname2 As String = Request("fullname")
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.Page.ClientTarget" />
+        <altmember cref="T:System.Web.HttpBrowserCapabilities" />
+        <altmember cref="P:System.Web.HttpRequest.Browser" />
       </Docs>
     </Member>
     <Member MemberName="UserHostAddress">
       <MemberSignature Language="C#" Value="public string UserHostAddress { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserHostAddress" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.UserHostAddress" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserHostAddress As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserHostAddress { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1940,6 +2129,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public string UserHostName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserHostName" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.UserHostName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserHostName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserHostName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1968,6 +2159,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public string[] UserLanguages { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] UserLanguages" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpRequest.UserLanguages" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserLanguages As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ UserLanguages { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1998,6 +2191,8 @@ Dim fullname2 As String = Request("fullname")
       <MemberSignature Language="C#" Value="public void ValidateInput ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateInput() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpRequest.ValidateInput" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ValidateInput ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ValidateInput();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -2020,27 +2215,10 @@ Dim fullname2 As String = Request("fullname")
  ]]></format>
         </remarks>
         <exception cref="T:System.Web.HttpRequestValidationException">Potentially dangerous data was received from the client.</exception>
+        <altmember cref="P:System.Web.HttpRequest.Cookies" />
+        <altmember cref="P:System.Web.HttpRequest.Form" />
+        <altmember cref="P:System.Web.HttpRequest.QueryString" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="InsertEntityBody">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Provides a managed wrapper for the IIS method that inserts an HTTP request entity body into memory.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The <xref:System.Web.HttpRequest.InsertEntityBody%2A> method overloads provide managed access to the IIS 7 `IHttpRequest::InsertEntityBody` method. The IIS method inserts an HTTP request entity body (the data that is posted by a client) into memory. This is useful because IIS does not maintain a copy of the request entity after it has been read. The <xref:System.Web.HttpRequest.InsertEntityBody%2A> methods create a copy of the HTTP request entity data and make it available to IIS for additional custom handling.  
-  
-> [!NOTE]
->  The <xref:System.Web.HttpRequest.InsertEntityBody%2A> method overloads work only on IIS 7.0 or later, because the `IHttpRequest::InsertEntityBody` method was added in IIS 7.0.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

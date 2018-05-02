@@ -1,19 +1,24 @@
 ---
-title: "Convert a Sequence to a Generic List | Microsoft Docs"
+title: "Convert a Sequence to a Generic List"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 7ab76d93-6898-4e75-b76f-290a66ecead8
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Convert a Sequence to a Generic List
 Use <xref:System.Linq.Enumerable.ToList%2A> to create a generic List from a sequence.  

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyEmit Interface | Microsoft Docs"
+title: "IMetaDataAssemblyEmit Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyEmit"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyEmit"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataAssemblyEmit interface [.NET Framework metadata]"
 ms.assetid: 34fb03cc-2285-4a45-ac48-ad993b7a921a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyEmit Interface
 Provides methods that support the self-description model used by the common language runtime to resolve and consume resources.  
@@ -56,5 +59,5 @@ Provides methods that support the self-description model used by the common lang
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)   
+ [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

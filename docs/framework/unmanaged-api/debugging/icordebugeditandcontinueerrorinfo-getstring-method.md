@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEditAndContinueErrorInfo::GetString Method | Microsoft Docs"
+title: "ICorDebugEditAndContinueErrorInfo::GetString Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEditAndContinueErrorInfo.GetString"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEditAndContinueErrorInfo::GetString"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugEditAndContinueErrorInfo::GetString method [.NET Framework debugging]"
   - "GetString method, ICorDebugEditAndContinueErrorInfo interface [.NET Framework debugging]"
 ms.assetid: 85e2108b-ff03-4a15-ac5c-1eb5d84f38ca
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEditAndContinueErrorInfo::GetString Method
 `GetString` is obsolete. Do not call this method.  

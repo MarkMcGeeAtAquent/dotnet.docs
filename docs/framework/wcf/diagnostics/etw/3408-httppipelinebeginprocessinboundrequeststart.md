@@ -1,8 +1,8 @@
 ---
-title: "3408 - HttpPipelineBeginProcessInboundRequestStart | Microsoft Docs"
+title: "3408 - HttpPipelineBeginProcessInboundRequestStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7ca229e2-93bb-4993-807c-9ad5d4ab5092
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3408 - HttpPipelineBeginProcessInboundRequestStart
 ## Properties  

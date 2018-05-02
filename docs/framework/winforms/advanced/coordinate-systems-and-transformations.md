@@ -1,5 +1,5 @@
 ---
-title: "Coordinate Systems and Transformations | Microsoft Docs"
+title: "Coordinate Systems and Transformations"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,17 +9,17 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "transformations"
-  - "graphics, transformations"
+  - "graphics [Windows Forms], transformations"
   - "matrix transformations"
 ms.assetid: 9fef7451-bddf-4c68-9350-400d1f1f25a3
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Coordinate Systems and Transformations
 [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] provides a world transformation and a page transformation so that you can transform (rotate, scale, translate, and so on) the items you draw. The two transformations also allow you to work in a variety of coordinate systems.  

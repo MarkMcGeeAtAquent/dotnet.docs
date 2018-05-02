@@ -1,8 +1,8 @@
 ---
-title: "&lt;udpBinding&gt; | Microsoft Docs"
+title: "&lt;udpBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;udpBinding&gt;
 A configuration element used to configure the <xref:System.ServiceModel.UdpBinding> binding.  
@@ -24,15 +26,14 @@ A configuration element used to configure the <xref:System.ServiceModel.UdpBindi
   
 ## Syntax  
   
-```  
-  
+```xml  
 <udpBinding>  
    <binding   
        closeTimeout="TimeSpan"   
-       duplicateMessageHistoryLength=”Integer"  
+       duplicateMessageHistoryLength="Integer"  
        maxBufferPoolSize="Integer"  
-       maxBufferSize="Integer"       maxPendingMessagesTotalSize=”Integer”  
-       maxReceivedMessageSize="Integer"       maxRetransmitCount=”Integer”  
+       maxBufferSize="Integer"       maxPendingMessagesTotalSize="Integer"  
+       maxReceivedMessageSize="Integer"       maxRetransmitCount="Integer"  
        multicastInterfaceId="Integer"  
               name="string"   
        openTimeout="TimeSpan"   
@@ -83,7 +84,7 @@ A configuration element used to configure the <xref:System.ServiceModel.UdpBindi
 |[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|This element holds a collection of standard and custom bindings.|  
   
 ## Remarks  
- The UdpBinding allows WCF services to communicate over the UDP transport. It allows for “fire and forget” message exchanges where a client sends a message to a service and expects no response back.  
+ The UdpBinding allows WCF services to communicate over the UDP transport. It allows for "fire and forget" message exchanges where a client sends a message to a service and expects no response back.  
   
 ## Example  
  The following example shows how to configure the <xref:System.ServiceModel.UdpBinding> using the <`udpBinding`> element.  
@@ -109,11 +110,11 @@ A configuration element used to configure the <xref:System.ServiceModel.UdpBindi
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Channels.Binding>   
- <xref:System.ServiceModel.Channels.BindingElement>   
- <xref:System.ServiceModel.BasicHttpBinding>   
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.Channels.Binding>  
+ <xref:System.ServiceModel.Channels.BindingElement>  
+ <xref:System.ServiceModel.BasicHttpBinding>  
+ <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

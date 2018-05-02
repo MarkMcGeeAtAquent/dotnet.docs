@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEnum::Skip Method | Microsoft Docs"
+title: "ICorDebugEnum::Skip Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEnum.Skip"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEnum::Skip"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugEnum::Skip method [.NET Framework debugging]"
   - "Skip method, ICorDebugEnum interface [.NET Framework debugging]"
 ms.assetid: e925d88a-67a5-4f76-88b8-09cedeed0232
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEnum::Skip Method
 Moves the cursor forward in the enumeration by the specified number of items.  

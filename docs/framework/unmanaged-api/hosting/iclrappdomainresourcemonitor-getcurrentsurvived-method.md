@@ -1,5 +1,5 @@
 ---
-title: "ICLRAppDomainResourceMonitor::GetCurrentSurvived Method | Microsoft Docs"
+title: "ICLRAppDomainResourceMonitor::GetCurrentSurvived Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRAppDomainResourceMonitor.GetCurrentSurvived"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRAppDomainResourceMonitor::GetCurrentSurvived"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRAppDomainResourceMonitor::GetCurrentSurvived method [.NET Framework hosting]"
   - "GetCurrentSurvived method [.NET Framework hosting]"
 ms.assetid: 392e9009-40ef-40e3-ad4d-7ce93a989e78
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRAppDomainResourceMonitor::GetCurrentSurvived Method
 Gets the number of bytes that survived the last full, blocking garbage collection and that are referenced by the current application domain.  
@@ -58,9 +61,9 @@ HRESULT STDMETHODCALLTYPE GetCurrentSurvived(
 |COR_E_APPDOMAINUNLOADED|The application domain has been unloaded or does not exist.|  
   
 ## Remarks  
- Statistics are updated only after a full, blocking garbage collection; that is, a collection that includes all generations and that stops the application while collection occurs. For example, the <xref:System.GC.Collect?displayProperty=fullName> method overload performs a full, blocking collection. Concurrent garbage collection occurs in the background and does not block the application.  
+ Statistics are updated only after a full, blocking garbage collection; that is, a collection that includes all generations and that stops the application while collection occurs. For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload performs a full, blocking collection. Concurrent garbage collection occurs in the background and does not block the application.  
   
- The `GetCurrentSurvived` method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=fullName> property.  
+ The `GetCurrentSurvived` method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.  
   
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
@@ -72,7 +75,7 @@ HRESULT STDMETHODCALLTYPE GetCurrentSurvived(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRAppDomainResourceMonitor Interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)   
- [Application Domain Resource Monitoring](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)   
- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)   
+ [ICLRAppDomainResourceMonitor Interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+ [Application Domain Resource Monitoring](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)  
+ [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

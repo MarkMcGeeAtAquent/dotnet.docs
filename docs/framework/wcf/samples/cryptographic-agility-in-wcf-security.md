@@ -1,8 +1,8 @@
 ---
-title: "Cryptographic Agility in WCF Security | Microsoft Docs"
+title: "Cryptographic Agility in WCF Security"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 9
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Cryptographic Agility in WCF Security
 This sample shows how to specify in a standard/custom algorithm to provide a cryptographic agile implementation in a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service. The sample is composed of the following projects:  

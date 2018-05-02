@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapSegmentEnum Interface | Microsoft Docs"
+title: "ICorDebugHeapSegmentEnum Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHealRegionEnum"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapSegmentEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHeapSegmentEnum interface [.NET Framework debugging]"
 ms.assetid: 20fc1b9d-e228-4107-bd76-53934c1724b9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapSegmentEnum Interface
 Provides an enumerator for the memory regions of the managed heap. This interface is a subclass of the ICorDebugEnum interface.  

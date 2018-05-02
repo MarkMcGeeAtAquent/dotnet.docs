@@ -1,7 +1,9 @@
-<Type Name="BehaviorEditorPart" FullName="System.Web.UI.WebControls.WebParts.BehaviorEditorPart">
+﻿<Type Name="BehaviorEditorPart" FullName="System.Web.UI.WebControls.WebParts.BehaviorEditorPart">
   <TypeSignature Language="C#" Value="public sealed class BehaviorEditorPart : System.Web.UI.WebControls.WebParts.EditorPart" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BehaviorEditorPart extends System.Web.UI.WebControls.WebParts.EditorPart" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.BehaviorEditorPart" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class BehaviorEditorPart&#xA;Inherits EditorPart" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BehaviorEditorPart sealed : System::Web::UI::WebControls::WebParts::EditorPart" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -94,16 +96,16 @@
   
  The first part of this code example is the user control that enables users to change display modes on a Web page. For details about display modes and a description of the source code in this control, see [Walkthrough: Changing Display Modes on a Web Parts Page](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0). The documentation for this user control explains how to call the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope%2A> method to switch the page into shared mode, which enables the <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart> control to appear.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_BehaviorEditorPart_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/DisplayModeMenuCS.ascx#5)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_BehaviorEditorPart_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/DisplayModeMenuVB.ascx#5)]  -->  
+ [!code-aspx-csharp[WebParts_BehaviorEditorPart_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/DisplayModeMenuCS.ascx#5)]
+ [!code-aspx-vb[WebParts_BehaviorEditorPart_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/DisplayModeMenuVB.ascx#5)]  
   
  The second part of the code example is the Web page. It contains a declarative reference to an <xref:System.Web.UI.WebControls.WebParts.EditorZone> control, with a child `<zonetemplate>` element that contains declarative references to a <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart> control. Note that the page also contains a <xref:System.Web.UI.WebControls.BulletedList> control that is bound to the Pubs database; because this control resides in a <xref:System.Web.UI.WebControls.WebParts.WebPartZone>, it is able to function as a <xref:System.Web.UI.WebControls.WebParts.WebPart> control that can be edited by the <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart> control.  
   
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_BehaviorEditorPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/behavioreditorpartcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_BehaviorEditorPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/behavioreditorpartvb.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_BehaviorEditorPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/behavioreditorpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_BehaviorEditorPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/behavioreditorpartvb.aspx#1)]  
   
  The third part of the example is an entry in the Web.config file. You must make an entry like the following in the `<webParts>` section of the file, to enable an authorized user or set of users to edit the Web page when it is in shared personalization scope. This entry is a critical step; otherwise, the <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart> control will not be visible when you switch the page into edit mode.  
   
@@ -127,12 +129,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.AppearanceEditorPart" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.LayoutEditorPart" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public BehaviorEditorPart ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BehaviorEditorPart();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -157,6 +164,8 @@
       <MemberSignature Language="C#" Value="public override bool ApplyChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ApplyChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.ApplyChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ApplyChanges () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool ApplyChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -183,12 +192,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Exception">An error occurred when trying to set the value for a property on the associated <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> control.</exception>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.SyncChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.AppearanceEditorPart.ApplyChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.LayoutEditorPart.ApplyChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart.ApplyChanges" />
       </Docs>
     </Member>
     <Member MemberName="CreateChildControls">
-      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="C#" Value="protected internal override void CreateChildControls ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.CreateChildControls" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub CreateChildControls ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void CreateChildControls();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -207,6 +222,8 @@
       <MemberSignature Language="C#" Value="public override string DefaultButton { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DefaultButton" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.DefaultButton" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property DefaultButton As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DefaultButton { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -239,12 +256,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.LayoutEditorPart.DefaultButton" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.AppearanceEditorPart.DefaultButton" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart.DefaultButton" />
       </Docs>
     </Member>
     <Member MemberName="Display">
       <MemberSignature Language="C#" Value="public override bool Display { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Display" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.Display" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Display As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool Display { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -266,12 +288,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.LayoutEditorPart.Display" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart.Display" />
       </Docs>
     </Member>
     <Member MemberName="OnPreRender">
-      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="C#" Value="protected internal override void OnPreRender (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.OnPreRender(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub OnPreRender (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void OnPreRender(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -290,9 +316,11 @@
       </Docs>
     </Member>
     <Member MemberName="RenderContents">
-      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="C#" Value="protected internal override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub RenderContents (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void RenderContents(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -314,6 +342,8 @@
       <MemberSignature Language="C#" Value="public override void SyncChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SyncChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.SyncChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub SyncChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void SyncChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -335,12 +365,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.ApplyChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.AppearanceEditorPart.SyncChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.LayoutEditorPart.SyncChanges" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.PropertyGridEditorPart.SyncChanges" />
       </Docs>
     </Member>
     <Member MemberName="Title">
       <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Title" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.Title" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Title As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Title { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -365,8 +401,8 @@
   
  The following code shows how to set the title on a <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart> control declaratively in a Web page.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_BehaviorEditorPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/behavioreditorpartcs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_BehaviorEditorPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/behavioreditorpartvb.aspx#2)]  -->  
+ [!code-aspx-csharp[WebParts_BehaviorEditorPart_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/CS/behavioreditorpartcs.aspx#2)]
+ [!code-aspx-vb[WebParts_BehaviorEditorPart_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_BehaviorEditorPart_Overview/VB/behavioreditorpartvb.aspx#2)]  
   
  The next part of the code example shows how to set the value of the <xref:System.Web.UI.WebControls.WebParts.BehaviorEditorPart.Title%2A> property programmatically.  
   
@@ -380,6 +416,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.Part.Title" />
       </Docs>
     </Member>
   </Members>

@@ -1,7 +1,7 @@
 ---
-title: "Using Regular Expressions with the MaskedTextBox Control in Visual Basic | Microsoft Docs"
+title: "Using Regular Expressions with the MaskedTextBox Control in Visual Basic"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "strings [Visual Basic], regular expressions"
   - "strings [Visual Basic], masked edit"
@@ -18,27 +16,12 @@ ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Using Regular Expressions with the MaskedTextBox Control in Visual Basic
 This example demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.  
   
 ## Description of the Masking Language  
- The standard <xref:System.Windows.Forms.MaskedTextBox> masking language is based on the one used by the `Masked Edit` control in [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] 6.0 and should be familiar to users migrating from that platform.  
+ The standard <xref:System.Windows.Forms.MaskedTextBox> masking language is based on the one used by the `Masked Edit` control in [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] 6.0 and should be familiar to users migrating from that platform.  
   
  The <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property of the <xref:System.Windows.Forms.MaskedTextBox> control specifies what input mask to use. The mask must be a string composed of one or more of the masking elements from the following table.  
   
@@ -78,7 +61,7 @@ This example demonstrates how to convert simple regular expressions to work with
 |`$\d{6}.00`|`$999,999.00`|A currency value in the range of 0 to 999999. The currency, thousandth, and decimal characters will be replaced at run-time with their culture-specific equivalents.|  
   
 ## See Also  
- <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>   
- <xref:System.Windows.Forms.MaskedTextBox>   
- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)   
- [MaskedTextBox Control](http://msdn.microsoft.com/library/235d6121-027d-481d-8d59-4f6794d15d0c)
+ <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>  
+ <xref:System.Windows.Forms.MaskedTextBox>  
+ [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)  
+ [MaskedTextBox Control](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)

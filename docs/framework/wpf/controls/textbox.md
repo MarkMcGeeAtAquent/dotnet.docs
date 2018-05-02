@@ -1,8 +1,8 @@
 ---
-title: "TextBox | Microsoft Docs"
+title: "TextBox"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,6 +19,8 @@ caps.latest.revision: 74
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # TextBox
 The <xref:System.Windows.Controls.TextBox> control provides support for basic text input in WPF applications.  
@@ -37,5 +39,5 @@ The <xref:System.Windows.Controls.TextBox> control provides support for basic te
  <xref:System.Windows.Controls.PasswordBox>  
   
 ## See Also  
- [WPF Controls Gallery Sample](http://go.microsoft.com/fwlink/?LinkID=160053)   
+ [WPF Controls Gallery Sample](http://go.microsoft.com/fwlink/?LinkID=160053)  
  [TextBox Styles and Templates](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)

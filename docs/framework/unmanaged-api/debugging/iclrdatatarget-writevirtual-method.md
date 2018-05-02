@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::WriteVirtual Method | Microsoft Docs"
+title: "ICLRDataTarget::WriteVirtual Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.WriteVirtual"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::WriteVirtual"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRDataTarget::WriteVirtual method [.NET Framework debugging]"
   - "WriteVirtual method [.NET Framework debugging]"
 ms.assetid: d627e8b7-a605-40ac-b9bb-da9a3f1b66d9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::WriteVirtual Method
 Writes data from the specified buffer to the specified virtual memory address.  

@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::GetSectionDataLen Method | Microsoft Docs"
+title: "ICeeGen::GetSectionDataLen Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.GetSectionDataLen"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::GetSectionDataLen"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICeeGen::GetSectionDataLen method [.NET Framework metadata]"
   - "GetSectionDataLen method [.NET Framework metadata]"
 ms.assetid: e2a06ee4-b8ee-49c7-935a-c1031a29eef2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::GetSectionDataLen Method
 Gets the length of the specified section.  

@@ -1,5 +1,5 @@
 ---
-title: "How to: Build a Single-File Assembly | Microsoft Docs"
+title: "How to: Build a Single-File Assembly"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-bcl"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "assembly manifest, single-file assemblies"
   - "library assemblies"
@@ -22,6 +25,8 @@ caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Build a Single-File Assembly
 A single-file assembly, which is the simplest type of assembly, contains type information and implementation, as well as the [assembly manifest](../../../docs/framework/app-domains/assembly-manifest.md). You can use command-line compilers or [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] to create a single-file assembly. By default, the compiler creates an assembly file with an .exe extension.  
@@ -41,11 +46,11 @@ A single-file assembly, which is the simplest type of assembly, contains type in
   
  The following example creates an assembly named `myCode.exe` from a code module called `myCode`.  
   
-```csharp  
+```console
 csc myCode.cs  
 ```  
-  
-```vb  
+
+```console
 vbc myCode.vb  
 ```  
   
@@ -59,12 +64,12 @@ vbc myCode.vb
   
  The following example creates an assembly named `myAssembly.exe` from a code module called `myCode`.  
   
-```csharp  
-csc /out:myAssembly.exe myCode.cs  
+```console  
+csc -out:myAssembly.exe myCode.cs  
 ```  
   
-```vb  
-vbc /out:myAssembly.exe myCode.vb  
+```console
+vbc -out:myAssembly.exe myCode.vb  
 ```  
   
 ## Creating Library Assemblies  
@@ -74,22 +79,22 @@ vbc /out:myAssembly.exe myCode.vb
   
 1.  At the command prompt, type the following command:  
   
-     \<*compiler command*> **/t:library** \<*module name*>  
+     \<*compiler command*> **-t:library** \<*module name*>  
   
-     In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly. You can also use other compiler options, such as the **/out:** option.  
+     In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly. You can also use other compiler options, such as the **-out:** option.  
   
  The following example creates a library assembly named `myCodeAssembly.dll` from a code module called `myCode`.  
   
-```csharp  
-csc /out:myCodeLibrary.dll /t:library myCode.cs  
+```console  
+csc -out:myCodeLibrary.dll -t:library myCode.cs  
 ```  
   
-```vb  
-vbc /out:myCodeLibrary.dll /t:library myCode.vb  
+```console
+vbc -out:myCodeLibrary.dll -t:library myCode.vb  
 ```  
   
 ## See Also  
- [Creating Assemblies](../../../docs/framework/app-domains/create-assemblies.md)   
- [Multifile Assemblies](../../../docs/framework/app-domains/multifile-assemblies.md)   
- [How to: Build a Multifile Assembly](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)   
+ [Creating Assemblies](../../../docs/framework/app-domains/create-assemblies.md)  
+ [Multifile Assemblies](../../../docs/framework/app-domains/multifile-assemblies.md)  
+ [How to: Build a Multifile Assembly](../../../docs/framework/app-domains/how-to-build-a-multifile-assembly.md)  
  [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)

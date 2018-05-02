@@ -1,5 +1,5 @@
 ---
-title: "Accessibility | Microsoft Docs"
+title: "Accessibility"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,6 +18,8 @@ caps.latest.revision: 80
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Accessibility
 > [!NOTE]

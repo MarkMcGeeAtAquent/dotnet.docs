@@ -1,8 +1,8 @@
 ---
-title: "Behaviors | Microsoft Docs"
+title: "Behaviors"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b0885b65-4e74-4bc9-bbf0-eb7ebe566da1
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Behaviors
 This section contains samples that demonstrate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service behaviors.  

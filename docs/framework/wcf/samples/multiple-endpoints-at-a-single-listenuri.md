@@ -1,8 +1,8 @@
 ---
-title: "Multiple Endpoints at a Single ListenUri | Microsoft Docs"
+title: "Multiple Endpoints at a Single ListenUri"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 911ffad4-4d47-4430-b7c2-79192ce6bcbd
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Multiple Endpoints at a Single ListenUri
 This sample demonstrates a service that hosts multiple endpoints at a single `ListenUri`. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.  
@@ -28,7 +30,7 @@ This sample demonstrates a service that hosts multiple endpoints at a single `Li
 ## Service  
  The service in this sample has two contracts, `ICalculator` and `IEcho`. In addition to the customary `IMetadataExchange` endpoint, there are three application endpoints, as shown in the following code.  
   
-```  
+```xml  
 <endpoint address="urn:Stuff"  
         binding="wsHttpBinding"  
         contract="Microsoft.ServiceModel.Samples.ICalculator"   

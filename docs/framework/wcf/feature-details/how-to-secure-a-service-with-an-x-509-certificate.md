@@ -1,19 +1,24 @@
 ---
-title: "How to: Secure a Service with an X.509 Certificate | Microsoft Docs"
+title: "How to: Secure a Service with an X.509 Certificate"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
 caps.latest.revision: 8
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Secure a Service with an X.509 Certificate
 Securing a service with an X.509 certificate is a basic technique that most bindings in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] use. This topic walks through the steps of configuring a self-hosted service with an X.509 certificate.  
@@ -22,9 +27,9 @@ Securing a service with an X.509 certificate is a basic technique that most bind
   
 ### To configure a service with a certificate using code  
   
-1.  Create the service contract and the implemented service. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Designing and Implementing Services](../../../../docs/framework/wcf/designing-and-implementing-services.md).  
+1.  Create the service contract and the implemented service. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Designing and Implementing Services](../../../../docs/framework/wcf/designing-and-implementing-services.md).  
   
-2.  Create an instance of the <xref:System.ServiceModel.WSHttpBinding> class and set its security mode to <xref:System.ServiceModel.SecurityMode>, as shown in the following code.  
+2.  Create an instance of the <xref:System.ServiceModel.WSHttpBinding> class and set its security mode to <xref:System.ServiceModel.SecurityMode.Message>, as shown in the following code.  
   
      [!code-csharp[C_SecureWithCertificate#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#1)]
      [!code-vb[C_SecureWithCertificate#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#1)]  
@@ -54,7 +59,7 @@ Securing a service with an X.509 certificate is a basic technique that most bind
      [!code-csharp[C_SecureWithCertificate#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#6)]
      [!code-vb[C_SecureWithCertificate#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#6)]  
   
-8.  Use the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> method of the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> class to add the valid certificate to the service. The method can use one of several methods to find a certificate. This example uses the <xref:System.Security.Cryptography.X509Certificates.X509FindType> enumeration. The enumeration specifies that the supplied value is the name of the entity that the certificate was issued to.  
+8.  Use the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> method of the <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> class to add the valid certificate to the service. The method can use one of several methods to find a certificate. This example uses the <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> enumeration. The enumeration specifies that the supplied value is the name of the entity that the certificate was issued to.  
   
      [!code-csharp[C_SecureWithCertificate#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#7)]
      [!code-vb[C_SecureWithCertificate#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#7)]  

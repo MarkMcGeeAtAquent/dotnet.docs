@@ -1,19 +1,24 @@
 ---
-title: "Trusted Subsystem | Microsoft Docs"
+title: "Trusted Subsystem"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Trusted Subsystem
 A client accesses one or more Web services that are distributed across a network. The Web services are designed so that access to additional resources (such as databases or other Web services) is encapsulated in the business logic of the Web service. These resources must be protected against unauthorized access. The following illustration depicts a trusted subsystem process.  
@@ -54,7 +59,7 @@ A client accesses one or more Web services that are distributed across a network
 ### Configuration  
  The following configuration sets up the same endpoint using configuration.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -106,7 +111,7 @@ A client accesses one or more Web services that are distributed across a network
 ### Configuration  
  The following configuration sets up the same endpoint using configuration. Note the two bindings: One secures the service hosted in the trusted subsystem and the other communicates between the trusted subsystem and the back-end service.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -177,7 +182,7 @@ A client accesses one or more Web services that are distributed across a network
 ### Configuration  
  The following code configures the client to use message security over the HTTP protocol and a user name and password for authentication. The user name and password can only be specified using code (it is not configurable).  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -214,5 +219,5 @@ A client accesses one or more Web services that are distributed across a network
 ```  
   
 ## See Also  
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -1,7 +1,9 @@
-<Type Name="EntityConnection" FullName="System.Data.EntityClient.EntityConnection">
+﻿<Type Name="EntityConnection" FullName="System.Data.EntityClient.EntityConnection">
   <TypeSignature Language="C#" Value="public sealed class EntityConnection : System.Data.Common.DbConnection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityConnection extends System.Data.Common.DbConnection" />
   <TypeSignature Language="DocId" Value="T:System.Data.EntityClient.EntityConnection" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EntityConnection&#xA;Inherits DbConnection" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EntityConnection sealed : System::Data::Common::DbConnection" />
   <AssemblyInfo>
     <AssemblyName>System.Data.Entity</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -24,16 +26,43 @@
   
  When metadata is loaded, the <xref:System.Data.EntityClient.EntityConnection> verifies that the conceptual model, the storage model, and the mapping file are all present.  
   
- For code examples, see [Working with EntityClient](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
+ For code examples, see [Working with EntityClient](http://msdn.microsoft.com/library/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Data.EntityClient.EntityConnection" /> class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ To avoid inadvertently putting objects such as <xref:System.Data.Common.CommandTrees> and <xref:System.Data.Objects.ObjectContext> out of sync with their metadata, <xref:System.Data.EntityClient.EntityConnection> must lock its metadata. No changes to the connection string are allowed after the metadata is locked. The following are two scenarios in which metadata is locked:  
+  
+-   The <xref:System.Data.EntityClient.EntityConnection> instance is constructed through the default constructor, or through the <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> constructor, which accepts a connection string. In either case the connection string might be changed multiple times before the connection is opened. Calling <xref:System.Data.EntityClient.EntityConnection.Open%2A> or <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> locks the metadata.  
+  
+-   The <xref:System.Data.EntityClient.EntityConnection> instance is constructed through the <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> constructor, which accepts a <xref:System.Data.Metadata.Edm.MetadataWorkspace> and a <xref:System.Data.Common.DbConnection>. In this case the metadata is locked at construction time. No changes to the connection string are ever allowed.  
+  
+ When metadata is loaded, the <xref:System.Data.EntityClient.EntityConnection> verifies that the conceptual model, the storage model, and the mapping file are all present.  
+  
+ For code examples, see [Working with EntityClient](http://msdn.microsoft.com/library/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EntityConnection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntityConnection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -54,7 +83,7 @@
   
  When metadata is loaded, the <xref:System.Data.EntityClient.EntityConnection> verifies that the conceptual model, the storage model, and the mapping file are all present.  
   
- For code examples, see [Working with EntityClient](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
+ For code examples, see [Working with EntityClient](http://msdn.microsoft.com/library/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
   
  ]]></format>
         </remarks>
@@ -64,6 +93,8 @@
       <MemberSignature Language="C#" Value="public EntityConnection (string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntityConnection(System::String ^ connectionString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -89,7 +120,7 @@
   
  When metadata is loaded, the <xref:System.Data.EntityClient.EntityConnection> verifies that the conceptual model, the storage model, and the mapping file are all present.  
   
- For code examples, see [Working with EntityClient](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
+ For code examples, see [Working with EntityClient](http://msdn.microsoft.com/library/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
   
  ]]></format>
         </remarks>
@@ -100,6 +131,8 @@
       <MemberSignature Language="C#" Value="public EntityConnection (System.Data.Metadata.Edm.MetadataWorkspace workspace, System.Data.Common.DbConnection connection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.MetadataWorkspace workspace, class System.Data.Common.DbConnection connection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor(System.Data.Metadata.Edm.MetadataWorkspace,System.Data.Common.DbConnection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (workspace As MetadataWorkspace, connection As DbConnection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntityConnection(System::Data::Metadata::Edm::MetadataWorkspace ^ workspace, System::Data::Common::DbConnection ^ connection);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -150,6 +183,7 @@
       <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction BeginDbTransaction (System.Data.IsolationLevel isolationLevel);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbTransaction BeginDbTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginDbTransaction(System.Data.IsolationLevel)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Data::Common::DbTransaction ^ BeginDbTransaction(System::Data::IsolationLevel isolationLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -168,10 +202,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="BeginTransaction">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Begins a database transaction.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="BeginTransaction">
       <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityTransaction BeginTransaction ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityTransaction BeginTransaction() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginTransaction" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginTransaction () As EntityTransaction" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::EntityClient::EntityTransaction ^ BeginTransaction();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -188,7 +233,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> method uses the <xref:System.Data.IsolationLevel> transaction isolation level. To specify a different isolation level, call <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A>. This value might be interpreted differently by different underlying providers. If you want your application to be portable across multiple providers, it should explicitly specify the transaction isolation level by calling <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A>.  
+ The <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> method uses the <xref:System.Data.IsolationLevel.Unspecified> transaction isolation level. To specify a different isolation level, call <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A>. This value might be interpreted differently by different underlying providers. If you want your application to be portable across multiple providers, it should explicitly specify the transaction isolation level by calling <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A>.  
   
  At any particular moment there can be no more than one active transaction that was created through <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A>. An attempt to call any of the <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> overloads on an <xref:System.Data.EntityClient.EntityConnection> that already has a current transaction results in an <xref:System.InvalidOperationException>.  
   
@@ -209,6 +254,7 @@
       <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityTransaction BeginTransaction (System.Data.IsolationLevel isolationLevel);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityTransaction BeginTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginTransaction(System.Data.IsolationLevel)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::EntityClient::EntityTransaction ^ BeginTransaction(System::Data::IsolationLevel isolationLevel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -247,6 +293,8 @@
       <MemberSignature Language="C#" Value="public override void ChangeDatabase (string databaseName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ChangeDatabase(string databaseName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.ChangeDatabase(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub ChangeDatabase (databaseName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void ChangeDatabase(System::String ^ databaseName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -276,6 +324,8 @@
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -302,6 +352,8 @@
       <MemberSignature Language="C#" Value="public override string ConnectionString { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ConnectionString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ConnectionString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectionString { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -369,6 +421,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override int ConnectionTimeout { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ConnectionTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property ConnectionTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int ConnectionTimeout { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -395,6 +449,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityCommand CreateCommand ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityCommand CreateCommand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.CreateCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateCommand () As EntityCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::EntityClient::EntityCommand ^ CreateCommand();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -415,6 +471,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="protected override System.Data.Common.DbCommand CreateDbCommand ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbCommand CreateDbCommand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.CreateDbCommand" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateDbCommand () As DbCommand" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Data::Common::DbCommand ^ CreateDbCommand();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -434,6 +492,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override string Database { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Database" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.Database" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Database As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Database { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -460,6 +520,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override string DataSource { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.DataSource" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property DataSource As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DataSource { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -486,6 +548,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="protected override System.Data.Common.DbProviderFactory DbProviderFactory { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbProviderFactory DbProviderFactory" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.DbProviderFactory" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property DbProviderFactory As DbProviderFactory" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Data::Common::DbProviderFactory ^ DbProviderFactory { System::Data::Common::DbProviderFactory ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -504,6 +568,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -525,6 +591,7 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override void EnlistTransaction (System.Transactions.Transaction transaction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnlistTransaction(class System.Transactions.Transaction transaction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.EnlistTransaction(System.Transactions.Transaction)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void EnlistTransaction(System::Transactions::Transaction ^ transaction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -554,6 +621,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.MetadataWorkspace GetMetadataWorkspace ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.MetadataWorkspace GetMetadataWorkspace() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMetadataWorkspace () As MetadataWorkspace" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Metadata::Edm::MetadataWorkspace ^ GetMetadataWorkspace();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -575,7 +644,7 @@ Provider Connection String= 'Data Source=localhost;
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A <xref:System.Data.Metadata.Edm.MetadataWorkspace> is automatically created when the <xref:System.Data.EntityClient.EntityConnection> class is created. The creation process might throw metadata-specific exceptions. Metadata is loaded into memory and an Entity Data Model (EDM) application uses that metadata to access information about the underlying data source. For more information, see [ADO.NET Metadata](http://msdn.microsoft.com/en-us/196097a5-a791-4ac4-9e6a-805685d481d5).  
+ A <xref:System.Data.Metadata.Edm.MetadataWorkspace> is automatically created when the <xref:System.Data.EntityClient.EntityConnection> class is created. The creation process might throw metadata-specific exceptions. Metadata is loaded into memory and an Entity Data Model (EDM) application uses that metadata to access information about the underlying data source. For more information, see [ADO.NET Metadata](http://msdn.microsoft.com/library/196097a5-a791-4ac4-9e6a-805685d481d5).  
   
  To avoid inadvertently putting objects such as <xref:System.Data.Common.CommandTrees> and <xref:System.Data.Objects.ObjectContext> out of sync with their metadata, <xref:System.Data.EntityClient.EntityConnection> must lock its metadata. No changes to the connection string are allowed after the metadata is locked. The following are two scenarios in which metadata is locked:  
   
@@ -594,6 +663,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override void Open ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Open() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Open" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Open ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Open();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -604,7 +675,7 @@ Provider Connection String= 'Data Source=localhost;
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>Establishes a connection to the data source by calling the underlying data provider's<see langword=" Open" /> method.</summary>
+        <summary>Establishes a connection to the data source by calling the underlying data provider's <see langword="Open" /> method.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -627,6 +698,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override string ServerVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ServerVersion" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ServerVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property ServerVersion As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ServerVersion { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -646,6 +719,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public override System.Data.ConnectionState State { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ConnectionState State" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.State" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property State As ConnectionState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Data::ConnectionState State { System::Data::ConnectionState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -665,6 +740,8 @@ Provider Connection String= 'Data Source=localhost;
       <MemberSignature Language="C#" Value="public System.Data.Common.DbConnection StoreConnection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection StoreConnection" />
       <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.StoreConnection" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StoreConnection As DbConnection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Common::DbConnection ^ StoreConnection { System::Data::Common::DbConnection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -688,30 +765,5 @@ Provider Connection String= 'Data Source=localhost;
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Data.Entity</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Data.EntityClient.EntityConnection" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- To avoid inadvertently putting objects such as <xref:System.Data.Common.CommandTrees> and <xref:System.Data.Objects.ObjectContext> out of sync with their metadata, <xref:System.Data.EntityClient.EntityConnection> must lock its metadata. No changes to the connection string are allowed after the metadata is locked. The following are two scenarios in which metadata is locked:  
-  
--   The <xref:System.Data.EntityClient.EntityConnection> instance is constructed through the default constructor, or through the <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> constructor, which accepts a connection string. In either case the connection string might be changed multiple times before the connection is opened. Calling <xref:System.Data.EntityClient.EntityConnection.Open%2A> or <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> locks the metadata.  
-  
--   The <xref:System.Data.EntityClient.EntityConnection> instance is constructed through the <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> constructor, which accepts a <xref:System.Data.Metadata.Edm.MetadataWorkspace> and a <xref:System.Data.Common.DbConnection>. In this case the metadata is locked at construction time. No changes to the connection string are ever allowed.  
-  
- When metadata is loaded, the <xref:System.Data.EntityClient.EntityConnection> verifies that the conceptual model, the storage model, and the mapping file are all present.  
-  
- For code examples, see [Working with EntityClient](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

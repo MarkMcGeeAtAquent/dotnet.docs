@@ -1,5 +1,5 @@
 ---
-title: "ListView | Microsoft Docs"
+title: "ListView"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -19,6 +19,8 @@ caps.latest.revision: 64
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ListView
 The <xref:System.Windows.Controls.ListView> control provides the infrastructure to display a set of data items in different layouts or views.  

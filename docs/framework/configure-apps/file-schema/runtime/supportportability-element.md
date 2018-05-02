@@ -1,19 +1,14 @@
 ---
-title: "&lt;supportPortability&gt; Element | Microsoft Docs"
+title: "&lt;supportPortability&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "supportPortability element"
   - "<supportPortability> element"
@@ -22,6 +17,8 @@ caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;supportPortability&gt; Element
 Specifies that an application can reference the same assembly in two different implementations of the .NET Framework, by disabling the default behavior that treats the assemblies as equivalent for application portability purposes.  
@@ -33,7 +30,7 @@ Specifies that an application can reference the same assembly in two different i
   
 ## Syntax  
   
-```  
+```xml  
 <supportPortability PKT="public_key_token" enabled="true|false"/>  
 ```  
   
@@ -76,7 +73,7 @@ Specifies that an application can reference the same assembly in two different i
 ## Example  
  The following example enables an application to have references to both the .NET Framework implementation and the .NET Framework for Silverlight implementation of any .NET Framework assembly that exists in both implementations. The `/appconfig` compiler option must be used to specify the location of this app.config file.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding>  
@@ -88,5 +85,5 @@ Specifies that an application can reference the same assembly in two different i
 ```  
   
 ## See Also  
- [/appconfig (C# Compiler Options)](http://msdn.microsoft.com/library/ee523958.aspx)   
- [.NET Framework Assembly Unification Overview](http://msdn.microsoft.com/en-us/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)
+ [/appconfig (C# Compiler Options)](http://msdn.microsoft.com/library/ee523958.aspx)  
+ [.NET Framework Assembly Unification Overview](http://msdn.microsoft.com/library/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)

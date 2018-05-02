@@ -1,5 +1,5 @@
 ---
-title: project.json and csproj comparison - .NET Core | Microsoft Docs
+title: project.json and csproj comparison - .NET Core
 description: See a mapping between project.json and csproj elements.
 keywords: project.json, csproj, .NET Core, MSBuild
 author: natemcmaster
@@ -10,6 +10,8 @@ ms.prod: .net-core
 ms.technology: dotnet-cli
 ms.devlang: dotnet
 ms.assetid: 79c50621-a24a-4e64-bbb9-b953113e841c
+ms.workload: 
+  - dotnetcore
 ---
 
 # A mapping between project.json and csproj properties
@@ -56,7 +58,7 @@ By default, the project filename also specifies the value of the `<AssemblyName>
 </PropertyGroup>
 ```
 
-The `<AssemblyName>` will have a different value then `<PackageId>` if `buildOptions\outputName` property was defined in project.json. 
+The `<AssemblyName>` will have a different value than `<PackageId>` if `buildOptions\outputName` property was defined in project.json. 
 For more information, see [Other common build options](#other-common-build-options).
 
 ### version
@@ -327,7 +329,7 @@ There is no equivalent in csproj.
 
 ```xml
 <PropertyGroup>
-  <RuntimeIdentifiers>win7-x64;osx.10-11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
+  <RuntimeIdentifiers>win7-x64;osx.10.11-x64;ubuntu.16.04-x64</RuntimeIdentifiers>
 </PropertyGroup>
 ```
 
@@ -502,7 +504,7 @@ property is mapped to the [`description`](#-other-common-root-level-options) ele
 }
 ```
 
-Their equivalent in MSBuild are [targets](https://docs.microsoft.com/visualstudio/msbuild/msbuild-targets):
+Their equivalent in MSBuild are [targets](/visualstudio/msbuild/msbuild-targets):
 
 ```xml
 <Target Name="MyPreCompileTarget" BeforeTargets="Build">
@@ -572,12 +574,12 @@ However, you can set all those values in the csproj as well as MSBuild propertie
 ```
 
 Not supported in csproj. You must instead create include content files in your *.nuspec* file. 
-For more information, see [Including content files](https://docs.microsoft.com/nuget/schema/nuspec#including-content-files).
+For more information, see [Including content files](/nuget/schema/nuspec#including-content-files).
 
 ## files
 
 In *project.json*, build and pack could be extended to compile and embed from different folders.
-In MSBuild, this is done using [items](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items). The following example is a common conversion:
+In MSBuild, this is done using [items](/visualstudio/msbuild/common-msbuild-project-items). The following example is a common conversion:
 
 ```json
 {
@@ -633,7 +635,7 @@ Package layout inside the .nupkg can be modified with `PackagePath="path"`.
 Except for `Content`, most item groups require explicitly adding `Pack="true"` to 
 be included in the package. `Content` will be put in the *content* folder
 in a package since the MSBuild `<IncludeContentInPack>` property is set to `true` by default. 
-For more information, see [Including content in a package](https://docs.microsoft.com/nuget/schema/msbuild-targets#including-content-in-a-package).
+For more information, see [Including content in a package](/nuget/schema/msbuild-targets#including-content-in-a-package).
 
 `PackagePath="%(Identity)"` is a short way of setting package path
 to the project-relative file path.

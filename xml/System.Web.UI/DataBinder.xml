@@ -1,7 +1,9 @@
-<Type Name="DataBinder" FullName="System.Web.UI.DataBinder">
+﻿<Type Name="DataBinder" FullName="System.Web.UI.DataBinder">
   <TypeSignature Language="C#" Value="public sealed class DataBinder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataBinder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.DataBinder" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DataBinder" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataBinder sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -18,7 +20,7 @@
 ## Remarks  
  You can use the overloaded static <xref:System.Web.UI.DataBinder.Eval%2A> method of this class in data-binding syntax in an ASP.NET Web page. This provides an easier syntax to work with than standard data binding. However, because `DataBinder.Eval` provides automatic type conversion, it can result in slower performance.  
   
- For more information about ASP.NET data binding, expressions, and syntax, see [Binding to Databases](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742) and [Data-Binding Expressions Overview](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a).  
+ For more information about ASP.NET data binding, expressions, and syntax, see [Binding to Databases](http://msdn.microsoft.com/library/ab7b2846-975b-4057-a948-45527497c742) and [Data-Binding Expressions Overview](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a).  
   
  Starting in .NET Framework 4.5, you can use model binding to simplify some of the tasks that you had to perform through data-binding in earlier versions. For a tutorial series on using model binding with Web Forms, see [Model Binding and Web Forms](http://go.microsoft.com/fwlink/?LinkId=286117).  
   
@@ -29,8 +31,8 @@
   
  This example uses a custom `Product` class which exposes a string `Model` property and a numeric `UnitPrice` property.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.DataBinder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.DataBinder/CS/Default.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.DataBinder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.DataBinder/VB/Default.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.DataBinder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.DataBinder/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.DataBinder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.DataBinder/VB/Default.aspx#1)]  
   
  The following code is the custom `Product` class. This code should be included in a separate class file in the App_Code directory, such as Product.cs or Product.vb.  
   
@@ -39,12 +41,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.XPathBinder" />
+    <altmember cref="T:System.Web.UI.IBindableTemplate" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataBinder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataBinder();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -60,6 +66,8 @@
       <MemberSignature Language="C#" Value="public static bool EnableCaching { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property bool EnableCaching" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.DataBinder.EnableCaching" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property EnableCaching As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property bool EnableCaching { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -75,10 +83,29 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Eval">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Uses reflection to parse and evaluate a data-binding expression against an object at run time.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Starting in .NET Framework 4.5, you can use model binding to simplify some of the tasks that you had to perform through data-binding in earlier versions. For a tutorial series on using model binding with Web Forms, see [Model Binding and Web Forms](http://go.microsoft.com/fwlink/?LinkId=286117).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Eval">
       <MemberSignature Language="C#" Value="public static object Eval (object container, string expression);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Eval(object container, string expression) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.Eval(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Eval (container As Object, expression As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Eval(System::Object ^ container, System::String ^ expression);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -128,24 +155,30 @@
   
  In the declarative syntax for the <xref:System.Web.UI.WebControls.Repeater> control, you use the <xref:System.Web.UI.DataBinder.Eval%2A> method with `Container.DataItem` for the `container` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  -->  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  
   
  Or, you can call `Eval` function and not include the `container` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  -->  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="expression" /> is <see langword="null" /> or is an empty string after trimming.</exception>
+        <altmember cref="M:System.Web.UI.Control.DataBind" />
+        <altmember cref="T:System.Web.UI.DataBinding" />
+        <altmember cref="T:System.Web.UI.XPathBinder" />
+        <altmember cref="T:System.Web.UI.IBindableTemplate" />
       </Docs>
     </Member>
     <Member MemberName="Eval">
       <MemberSignature Language="C#" Value="public static string Eval (object container, string expression, string format);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Eval(object container, string expression, string format) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.Eval(System.Object,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Eval (container As Object, expression As String, format As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ Eval(System::Object ^ container, System::String ^ expression, System::String ^ format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -199,22 +232,35 @@
   
  In the declarative syntax for the <xref:System.Web.UI.WebControls.Repeater> control, you use the <xref:System.Web.UI.DataBinder.Eval%2A> method with `Container.DataItem` for the `container` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  -->  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts3.aspx#3)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts3.aspx#3)]  
   
  Or, you can call `Eval` function and not include the `container` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  -->  
+ [!code-aspx-csharp[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.databinder.eval/cs/showproducts4.aspx#4)]
+ [!code-aspx-vb[System.Web.UI.DataBinder.Eval#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.databinder.eval/vb/showproducts4.aspx#4)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.XPathBinder" />
+        <altmember cref="T:System.Web.UI.IBindableTemplate" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetDataItem">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves an object's declared data item.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetDataItem">
       <MemberSignature Language="C#" Value="public static object GetDataItem (object container);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDataItem(object container) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetDataItem(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDataItem (container As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetDataItem(System::Object ^ container);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -240,12 +286,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.IDataItemContainer" />
       </Docs>
     </Member>
     <Member MemberName="GetDataItem">
       <MemberSignature Language="C#" Value="public static object GetDataItem (object container, out bool foundDataItem);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDataItem(object container, bool foundDataItem) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDataItem(object container, [out] bool&amp; foundDataItem) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetDataItem(System.Object,System.Boolean@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDataItem (container As Object, ByRef foundDataItem As Boolean) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetDataItem(System::Object ^ container, [Runtime::InteropServices::Out] bool % foundDataItem);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -271,12 +320,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.IDataItemContainer" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetIndexedPropertyValue">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves the value of an indexed property.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetIndexedPropertyValue">
       <MemberSignature Language="C#" Value="public static object GetIndexedPropertyValue (object container, string expr);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetIndexedPropertyValue(object container, string expr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetIndexedPropertyValue(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetIndexedPropertyValue (container As Object, expr As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetIndexedPropertyValue(System::Object ^ container, System::String ^ expr);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -316,12 +377,15 @@
  \- or -  
   
  <paramref name="expr" /> does not allow indexed access.</exception>
+        <altmember cref="Overload:System.Web.UI.DataBinder.GetPropertyValue" />
       </Docs>
     </Member>
     <Member MemberName="GetIndexedPropertyValue">
       <MemberSignature Language="C#" Value="public static string GetIndexedPropertyValue (object container, string propName, string format);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetIndexedPropertyValue(object container, string propName, string format) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetIndexedPropertyValue(System.Object,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetIndexedPropertyValue (container As Object, propName As String, format As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ GetIndexedPropertyValue(System::Object ^ container, System::String ^ propName, System::String ^ format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -345,7 +409,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method invokes the <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method, and then uses the <xref:System.String.Format%2A?displayProperty=fullName> method to format the result as specified in the `format` parameter. A .NET Framework format string (like those used by <xref:System.String.Format%2A?displayProperty=fullName>) converts the <xref:System.Object> instance returned by the data-binding expression to a <xref:System.String> object.  
+ The <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method invokes the <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method, and then uses the <xref:System.String.Format%2A?displayProperty=nameWithType> method to format the result as specified in the `format` parameter. A .NET Framework format string (like those used by <xref:System.String.Format%2A?displayProperty=nameWithType>) converts the <xref:System.Object> instance returned by the data-binding expression to a <xref:System.String> object.  
   
  Exceptions that are thrown for the <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method apply to the <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method as well.  
   
@@ -354,17 +418,29 @@
 ## Examples  
  The following code example demonstrates how to use the <xref:System.Web.UI.DataBinder.GetIndexedPropertyValue%2A> method declaratively to bind to an indexed value.  
   
- <!-- TODO: review snippet reference [!code-csharp[Classic DataBinder.Eval Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataBinder.Eval Example/CS/sourcecs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[Classic DataBinder.Eval Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataBinder.Eval Example/VB/sourcevb.aspx#2)]  -->  
+ [!code-aspx-csharp[Classic DataBinder.Eval Example#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic DataBinder.Eval Example/CS/sourcecs.aspx#2)]
+ [!code-aspx-vb[Classic DataBinder.Eval Example#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic DataBinder.Eval Example/VB/sourcevb.aspx#2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.DataBinder.GetPropertyValue" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetPropertyValue">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves the value of a property.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetPropertyValue">
       <MemberSignature Language="C#" Value="public static object GetPropertyValue (object container, string propName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetPropertyValue(object container, string propName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetPropertyValue(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetPropertyValue (container As Object, propName As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetPropertyValue(System::Object ^ container, System::String ^ propName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -408,6 +484,8 @@
       <MemberSignature Language="C#" Value="public static string GetPropertyValue (object container, string propName, string format);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetPropertyValue(object container, string propName, string format) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.GetPropertyValue(System.Object,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetPropertyValue (container As Object, propName As String, format As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ GetPropertyValue(System::Object ^ container, System::String ^ propName, System::String ^ format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -453,6 +531,7 @@
       <MemberSignature Language="C#" Value="public static bool IsBindableType (Type type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsBindableType(class System.Type type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.DataBinder.IsBindableType(System.Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsBindableType(Type ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -472,22 +551,5 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="Eval">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Uses reflection to parse and evaluate a data-binding expression against an object at run time.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Starting in .NET Framework 4.5, you can use model binding to simplify some of the tasks that you had to perform through data-binding in earlier versions. For a tutorial series on using model binding with Web Forms, see [Model Binding and Web Forms](http://go.microsoft.com/fwlink/?LinkId=286117).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

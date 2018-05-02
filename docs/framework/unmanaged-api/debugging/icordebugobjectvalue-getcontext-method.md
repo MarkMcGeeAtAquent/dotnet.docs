@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugObjectValue::GetContext Method | Microsoft Docs"
+title: "ICorDebugObjectValue::GetContext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugObjectValue.GetContext"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugObjectValue::GetContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetContext method, ICorDebugObjectValue interface [.NET Framework debugging]"
   - "ICorDebugObjectValue::GetContext method [.NET Framework debugging]"
 ms.assetid: 40594774-5105-4187-a06b-4e7f50bada3c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugObjectValue::GetContext Method
 `GetContext` is not implemented in this version of the .NET Framework.  

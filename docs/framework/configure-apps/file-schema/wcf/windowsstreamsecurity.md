@@ -1,8 +1,8 @@
 ---
-title: "&lt;windowsStreamSecurity&gt; | Microsoft Docs"
+title: "&lt;windowsStreamSecurity&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 10
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;windowsStreamSecurity&gt;
 Specify Windows stream security settings of the custom binding.  
@@ -26,8 +28,7 @@ Specify Windows stream security settings of the custom binding.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <windowsStreamSecurity protectionLevel="None/Sign/EncryptAndSign"/>  
 ```  
   
@@ -53,10 +54,10 @@ Specify Windows stream security settings of the custom binding.
  Transports that use a stream-oriented protocol such as TCP and named pipes support stream-based transport upgrades. Specifically, WCF provides security upgrades. The configuration of this transport security is encapsulated by this configuration element  as well as by [\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), which can be configured and added to a custom binding  
   
 ## See Also  
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>   
- <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>  
+ <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

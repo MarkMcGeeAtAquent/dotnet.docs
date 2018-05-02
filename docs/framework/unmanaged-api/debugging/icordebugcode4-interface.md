@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode4 Interface | Microsoft Docs"
+title: "ICorDebugCode4 Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "ICorDebugCode4"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode4"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugCode4 interface [.NET Framework debugging]"
 ms.assetid: a3fdf523-274a-449c-920b-9fcb0aed1d97
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode4 Interface
 Provides a method that enables a debugger to enumerate the local variables and arguments in a function.  
@@ -52,5 +55,5 @@ Provides a method that enables a debugger to enumerate the local variables and a
 ## See Also  
     
     
- [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)   
+ [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

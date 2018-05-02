@@ -1,8 +1,8 @@
 ---
-title: "&lt;entries&gt; | Microsoft Docs"
+title: "&lt;entries&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 202e430c-c1b9-4343-abe2-ac78c181a3b7
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;entries&gt;
 A routing entry that contain mappings between the routing filters and the target endpoints to send messages to when the filter matches.  
@@ -26,14 +28,10 @@ A routing entry that contain mappings between the routing filters and the target
   
 ## Syntax  
   
-```vb  
-   <routing>      <filterTables>        <filterTable name="String">          <entries>            <add backupList=”String”                 endpointName="String"                  filterName="String"                  priority="Integer" />          </entries>        </table>      </routingTables></routing>  
-```  
-  
-```csharp  
-  
-```  
-  
+```xml
+   <routing>      <filterTables>        <filterTable name="String">          <entries>            <add backupList="String"                 endpointName="String"                  filterName="String"                  priority="Integer" />          </entries>        </table>      </routingTables></routing>  
+```
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
   
@@ -53,5 +51,5 @@ A routing entry that contain mappings between the routing filters and the target
 |[\<routing>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|A configuration section that contains a routing table.|  
   
 ## See Also  
- [System.ServiceModel.Routing.Configuration.RoutingSection](assetId:///System.ServiceModel.Routing.Configuration.RoutingSection?qualifyHint=False&amp;autoUpgrade=True)   
- [System.ServiceModel.Routing.Configuration.FilterTableEntryElement](assetId:///System.ServiceModel.Routing.Configuration.FilterTableEntryElement?qualifyHint=False&amp;autoUpgrade=True)
+ <xref:System.ServiceModel.Routing.Configuration.RoutingSection?displayProperty=nameWithType>       
+ <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement?displayProperty=nameWithType>    

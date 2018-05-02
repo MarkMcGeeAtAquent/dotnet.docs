@@ -1,23 +1,21 @@
 ---
-title: "&gt; (Greater Than) (Entity SQL) | Microsoft Docs"
+title: "&gt; (Greater Than) (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 4cea865c-677c-4b06-99a1-010f2ae2394a
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # &gt; (Greater Than) (Entity SQL)
 Compares two expressions to determine whether the left expression has a value greater than the right expression.  
@@ -25,7 +23,6 @@ Compares two expressions to determine whether the left expression has a value gr
 ## Syntax  
   
 ```  
-  
 expression > expression  
 ```  
   

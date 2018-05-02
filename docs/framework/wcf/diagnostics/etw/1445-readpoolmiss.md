@@ -1,8 +1,8 @@
 ---
-title: "1445 - ReadPoolMiss | Microsoft Docs"
+title: "1445 - ReadPoolMiss"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 6a8fa431-42a2-4a77-9a04-a269236e83ad
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1445 - ReadPoolMiss
 ## Properties  

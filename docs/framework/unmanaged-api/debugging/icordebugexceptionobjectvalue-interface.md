@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugExceptionObjectValue Interface | Microsoft Docs"
+title: "ICorDebugExceptionObjectValue Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugExceptionObjectValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugExceptionObjectValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugExceptionObjectValue interface [.NET Framework debugging]"
 ms.assetid: 43416dd5-8892-4106-9f59-f9143b19ddb4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugExceptionObjectValue Interface
 Extends the "ICorDebugObjectValue" interface to provide stack trace information from a managed exception object.  
@@ -36,7 +39,7 @@ Extends the "ICorDebugObjectValue" interface to provide stack trace information 
 |[EnumerateExceptionCallStack Method](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md)|Gets an enumerator to the call stack embedded in an exception object.|  
   
 ## Remarks  
- The call to `QueryInterface` will succeed for managed objects that derive from <xref:System.Exception?displayProperty=fullName>.  
+ The call to `QueryInterface` will succeed for managed objects that derive from <xref:System.Exception?displayProperty=nameWithType>.  
   
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
@@ -48,6 +51,6 @@ Extends the "ICorDebugObjectValue" interface to provide stack trace information 
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
- [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
+ [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)  
  

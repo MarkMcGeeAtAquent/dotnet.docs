@@ -1,10 +1,13 @@
-<Type Name="XmlTypeAttribute" FullName="System.Xml.Serialization.XmlTypeAttribute">
+﻿<Type Name="XmlTypeAttribute" FullName="System.Xml.Serialization.XmlTypeAttribute">
   <TypeSignature Language="C#" Value="public class XmlTypeAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlTypeAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlTypeAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlTypeAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlTypeAttribute : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Xml</AssemblyName>
@@ -21,7 +24,7 @@
   <Interfaces />
   <Attributes>
     <Attribute>
-      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Interface)</AttributeName>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.Struct)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -30,14 +33,14 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Xml.Serialization.XmlTypeAttribute> belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes or deserializes an object. For a complete list of similar attributes, see [Attributes That Control XML Serialization](~/docs/framework/serialization/attributes-that-control-xml-serialization.md).  
+ The <xref:System.Xml.Serialization.XmlTypeAttribute> belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes or deserializes an object. For a complete list of similar attributes, see [Attributes That Control XML Serialization](~/docs/standard/serialization/attributes-that-control-xml-serialization.md).  
   
  You can apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class, structure, enumeration, or interface declaration.  
   
- Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/framework/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
+ Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
   
 > [!NOTE]
->  If you set the <xref:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema%2A> property to `false`, the [XML Schema Definition Tool (Xsd.exe)](~/docs/framework/serialization/xml-schema-definition-tool-xsd-exe.md) does not include the type in the schema. By default, for each public class, the XSD tool generates a `complexType` and an element of that type.  
+>  If you set the <xref:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema%2A> property to `false`, the [XML Schema Definition Tool (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md) does not include the type in the schema. By default, for each public class, the XSD tool generates a `complexType` and an element of that type.  
   
  For more information about using attributes, see [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87).  
   
@@ -55,16 +58,33 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Xml.Serialization.XmlAttributeOverrides" />
+    <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+    <altmember cref="T:System.Xml.Serialization.XmlSerializer" />
+    <altmember cref="P:System.Xml.Serialization.XmlAttributes.XmlText" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlTypeAttribute" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlTypeAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTypeAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTypeAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -96,10 +116,13 @@
       <MemberSignature Language="C#" Value="public XmlTypeAttribute (string typeName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlTypeAttribute.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (typeName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlTypeAttribute(System::String ^ typeName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -120,7 +143,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/framework/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
+ Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
   
    
   
@@ -139,10 +162,13 @@
       <MemberSignature Language="C#" Value="public bool AnonymousType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AnonymousType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.AnonymousType" />
+      <MemberSignature Language="VB.NET" Value="Public Property AnonymousType As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AnonymousType { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -167,10 +193,13 @@
       <MemberSignature Language="C#" Value="public bool IncludeInSchema { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IncludeInSchema" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.IncludeInSchema" />
+      <MemberSignature Language="VB.NET" Value="Public Property IncludeInSchema As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IncludeInSchema { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -211,10 +240,13 @@
       <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.Namespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property Namespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Namespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -249,10 +281,13 @@
       <MemberSignature Language="C#" Value="public string TypeName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlTypeAttribute.TypeName" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ TypeName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -273,7 +308,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/framework/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
+ Apply the <xref:System.Xml.Serialization.XmlTypeAttribute> to a class to specify the XML type's namespace, the XML type name, and whether to include the type in the XML schema document. To see the results of setting the properties of the <xref:System.Xml.Serialization.XmlTypeAttribute> class, compile your application as an executable or DLL, and pass the resulting file to the [XML Schema Definition Tool (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md). The tool writes the schema, including the type definition.  
   
    
   

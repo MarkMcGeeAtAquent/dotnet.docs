@@ -1,8 +1,8 @@
 ---
-title: "&lt;localIssuer&gt; | Microsoft Docs"
+title: "&lt;localIssuer&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;localIssuer&gt;
 Specifies the address and binding of the local issuer to be used to obtain a security token.  
@@ -28,8 +30,7 @@ endpointBehaviors section
   
 ## Syntax  
   
-```  
-  
+```xml  
 <localIssuer address="string"  
       binding="string"  
       bindingConfiguration="string" />  
@@ -65,7 +66,7 @@ endpointBehaviors section
 ## Example  
  The following example sets the `address`, `binding`, and `bindingConfiguration` attributes of a `localIssuer` element.  
   
-```  
+```xml  
 <system.serviceModel>  
  <behaviors>  
  <endpointBehaviors>  
@@ -85,15 +86,15 @@ endpointBehaviors section
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.LocalIssuer%2A>   
- <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>   
- <xref:System.ServiceModel.Security.IssuedTokenClientCredential>   
- [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [How to: Configure a Local Issuer](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)   
- [Service Identity and Authentication](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)   
- [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)   
- [How to: Create a Federated Client](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
+ <xref:System.ServiceModel.Configuration.IssuedTokenClientElement.LocalIssuer%2A>  
+ <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>  
+ <xref:System.ServiceModel.Security.IssuedTokenClientCredential>  
+ [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [How to: Configure a Local Issuer](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
+ [Service Identity and Authentication](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [Security Behaviors](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)  
+ [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)  
+ [How to: Create a Federated Client](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
  [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

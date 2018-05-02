@@ -1,5 +1,5 @@
 ---
-title: "Hosting Global Static Functions | Microsoft Docs"
+title: "Hosting Global Static Functions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "global static functions [.NET Framework hosting]"
   - "hosting global static functions [.NET Framework]"
@@ -20,6 +18,8 @@ caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hosting Global Static Functions
 This section describes the unmanaged hosting functions used by the .NET Framework hosting APIs.  

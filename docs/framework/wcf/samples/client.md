@@ -1,8 +1,8 @@
 ---
-title: "Client | Microsoft Docs"
+title: "Client"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fabb0c70-b79b-4e58-a5d3-9705de85ee5b
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Client
 This section contains samples that demonstrate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client applications.  

@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a Socket | Microsoft Docs"
+title: "How to: Create a Socket"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "application protocols, sockets"
   - "Networking"
@@ -29,6 +27,8 @@ caps.latest.revision: 7
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Socket
 Before you can use a socket to communicate with remote devices, the socket must be initialized with protocol and network address information. The constructor for the <xref:System.Net.Sockets.Socket> class has parameters that specify the address family, socket type, and protocol type that the socket uses to make connections.  
@@ -44,7 +44,6 @@ Socket s = new Socket(AddressFamily.InterNetwork,
 ```vb  
 Dim s as New Socket(AddressFamily.InterNetwork, _  
    SocketType.Stream, ProtocolType.Tcp)  
-  
 ```  
   
  To use UDP instead of TCP, change the protocol type, as in the following example:  
@@ -57,7 +56,6 @@ Socket s = new Socket(AddressFamily.InterNetwork,
 ```vb  
 Dim s as New Socket(AddressFamily.InterNetwork, _  
    SocketType.Dgram, ProtocolType.Udp)  
-  
 ```  
   
  The <xref:System.Net.Sockets.AddressFamily> enumeration specifies the standard address families used by the **Socket** class to resolve network addresses (for example, the **AddressFamily.InterNetwork** member specifies the IP version 4 address family).  
@@ -69,5 +67,5 @@ Dim s as New Socket(AddressFamily.InterNetwork, _
  After a **Socket** is created, it can either initiate a connection to a remote endpoint or receive connections from remote devices.  
   
 ## See Also  
- [Using Client Sockets](../../../docs/framework/network-programming/using-client-sockets.md)   
+ [Using Client Sockets](../../../docs/framework/network-programming/using-client-sockets.md)  
  [Listening with Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)

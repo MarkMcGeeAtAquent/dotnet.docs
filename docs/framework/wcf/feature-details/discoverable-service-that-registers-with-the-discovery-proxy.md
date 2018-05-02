@@ -1,8 +1,8 @@
 ---
-title: "How to: Implement a Discoverable Service that Registers with the Discovery Proxy | Microsoft Docs"
+title: "How to: Implement a Discoverable Service that Registers with the Discovery Proxy"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Implement a Discoverable Service that Registers with the Discovery Proxy
 This topic is the second of four topics that discusses how to implement a discovery proxy. In the previous topic, [How to: Implement a Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md), you implemented a discovery proxy. In this topic, you create a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service that sends announcement messages (`Hello` and `Bye`) to the discovery proxy, causing it to register and unregister itself with the discovery proxy.  
@@ -32,14 +34,14 @@ This topic is the second of four topics that discusses how to implement a discov
   
 4.  Add the following using statements.  
   
-    ```  
+    ```csharp  
     using System;  
     using System.ServiceModel;  
     ```  
   
 5.  Within CalculatorService.cs, define the service contract.  
   
-    ```  
+    ```csharp  
     // Define a service contract.  
         [ServiceContract(Namespace = "http://Microsoft.Samples.Discovery")]  
         public interface ICalculatorService  
@@ -53,12 +55,11 @@ This topic is the second of four topics that discusses how to implement a discov
             [OperationContract]  
             double Divide(double n1, double n2);  
         }  
-  
     ```  
   
 6.  Also within CalculatorService.cs, implement the service contract.  
   
-    ```  
+    ```csharp  
     // Service class which implements the service contract.      
         public class CalculatorService : ICalculatorService  
         {  
@@ -94,7 +95,6 @@ This topic is the second of four topics that discusses how to implement a discov
                 return result;  
             }  
         }  
-  
     ```  
   
 ### To host the service  
@@ -103,18 +103,16 @@ This topic is the second of four topics that discusses how to implement a discov
   
 2.  Add the following using statements.  
   
-    ```  
+    ```csharp 
     using System;  
     using System.ServiceModel;  
     using System.ServiceModel.Description;  
     using System.ServiceModel.Discovery;  
-  
     ```  
   
 3.  Within the `Main()` method, add the following code:  
   
-    ```  
-  
+    ```csharp  
     // Define the base address of the service  
     Uri baseAddress = new Uri("net.tcp://localhost:9002/CalculatorService/" + Guid.NewGuid().ToString());  
     // Define the endpoint address where announcement messages will be sent  
@@ -169,7 +167,7 @@ This topic is the second of four topics that discusses how to implement a discov
 ## Example  
  This is the full listing of the code used in this topic.  
   
-```  
+```csharp  
 // CalculatorService.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -230,10 +228,9 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
-```  
+```csharp  
 // Program.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -294,10 +291,8 @@ namespace Microsoft.Samples.Discovery
     }  
 }  
 ```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
+
 ## See Also  
- [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)   
- [How to: Implement a Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)   
+ [WCF Discovery](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)  
+ [How to: Implement a Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)  
  [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)

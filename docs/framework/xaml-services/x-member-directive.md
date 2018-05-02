@@ -1,5 +1,5 @@
 ---
-title: "x:Member Directive | Microsoft Docs"
+title: "x:Member Directive"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 5
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # x:Member Directive
 Declares a XAML member in markup.  
@@ -21,7 +23,6 @@ Declares a XAML member in markup.
 ## XAML Object Element Usage  
   
 ```  
-  
 <object x:Class="className">  
   <x:Members>  
     <x:Member Name="propertyName"/>  

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::GetStringLayout Method | Microsoft Docs"
+title: "ICorProfilerInfo2::GetStringLayout Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.GetStringLayout"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::GetStringLayout"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStringLayout method [.NET Framework profiling]"
   - "ICorProfilerInfo2::GetStringLayout method [.NET Framework profiling]"
 ms.assetid: 43189651-a535-4803-a1d1-f1c427ace2ca
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::GetStringLayout Method
 Gets information about the layout of a string object. This method is deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], and is superseded by the [ICorProfilerInfo3::GetStringLayout2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getstringlayout2-method.md) method.  
@@ -73,5 +76,5 @@ HRESULT GetStringLayout(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

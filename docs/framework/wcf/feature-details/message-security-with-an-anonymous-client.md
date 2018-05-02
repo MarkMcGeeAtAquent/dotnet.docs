@@ -1,19 +1,24 @@
 ---
-title: "Message Security with an Anonymous Client | Microsoft Docs"
+title: "Message Security with an Anonymous Client"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
 caps.latest.revision: 15
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security with an Anonymous Client
 The following scenario shows a client and service secured by [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] message security. A design goal is to use message security rather than transport security, so that in the future it can support a richer claims-based model. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] using rich claims for authorization, see [Managing Claims and Authorization with the Identity Model](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).  
@@ -48,7 +53,7 @@ The following scenario shows a client and service secured by [!INCLUDE[indigo1](
 ### Configuration  
  The following configuration can be used instead of the code. The service behavior element is used to specify a certificate that is used to authenticate the service to the client. The service element must specify the behavior using the `behaviorConfiguration` attribute. The binding element specifies that the client credential type is `None`, allowing anonymous clients to use the service.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -106,7 +111,7 @@ The following scenario shows a client and service secured by [!INCLUDE[indigo1](
 ### Configuration  
  The following code configures the client.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -135,8 +140,8 @@ The following scenario shows a client and service secured by [!INCLUDE[indigo1](
 ```  
   
 ## See Also  
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)   
- [Message Security Anonymous](../../../../docs/framework/wcf/samples/message-security-anonymous.md)   
- [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [Distributed Application Security](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)  
+ [Message Security Anonymous](../../../../docs/framework/wcf/samples/message-security-anonymous.md)  
+ [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -1,7 +1,9 @@
-<Type Name="DataGridViewCheckBoxCell" FullName="System.Windows.Forms.DataGridViewCheckBoxCell">
+﻿<Type Name="DataGridViewCheckBoxCell" FullName="System.Windows.Forms.DataGridViewCheckBoxCell">
   <TypeSignature Language="C#" Value="public class DataGridViewCheckBoxCell : System.Windows.Forms.DataGridViewCell, System.Windows.Forms.IDataGridViewEditingCell" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewCheckBoxCell extends System.Windows.Forms.DataGridViewCell implements class System.Windows.Forms.IDataGridViewEditingCell" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewCheckBoxCell" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataGridViewCheckBoxCell&#xA;Inherits DataGridViewCell&#xA;Implements IDataGridViewEditingCell" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataGridViewCheckBoxCell : System::Windows::Forms::DataGridViewCell, System::Windows::Forms::IDataGridViewEditingCell" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,13 +24,13 @@
 ## Remarks  
  The <xref:System.Windows.Forms.DataGridViewCheckBoxCell> class is a specialized type of <xref:System.Windows.Forms.DataGridViewCell> used to display binary or ternary information presented through a check box UI. In the default binary mode, the cells can hold values of `true` or `false`. In ternary mode, the cells take on one of the <xref:System.Windows.Forms.CheckState> values. The <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property determines whether binary or ternary mode is in effect.  
   
- The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> is the column type specialized to hold cells of this type. By default, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A?displayProperty=fullName> is initialized to a new <xref:System.Windows.Forms.DataGridViewCheckBoxCell>. To pattern the cells within a column after an existing <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, set the column's <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A> property to the cell to use as a pattern.  
+ The <xref:System.Windows.Forms.DataGridViewCheckBoxColumn> is the column type specialized to hold cells of this type. By default, the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A?displayProperty=nameWithType> is initialized to a new <xref:System.Windows.Forms.DataGridViewCheckBoxCell>. To pattern the cells within a column after an existing <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, set the column's <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate%2A> property to the cell to use as a pattern.  
   
  The cell-related properties of the column are wrappers for the similarly-named properties of the template cell. Changing the property values of the template cell will affect only cells based on the template that are added after the change. Changing the cell-related property values of the column, however, will update the template cell and all other cells in the column, and refresh the column display if necessary.  
   
- When the current cell is a <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, the <xref:System.Windows.Forms.DataGridView.IsCurrentCellInEditMode%2A?displayProperty=fullName> property is always `true`.  
+ When the current cell is a <xref:System.Windows.Forms.DataGridViewCheckBoxCell>, the <xref:System.Windows.Forms.DataGridView.IsCurrentCellInEditMode%2A?displayProperty=nameWithType> property is always `true`.  
   
- Typically, check box cell values are intended either for storage, like any other data, or for performing bulk operations. If you want to respond immediately when users click a check box cell, you can handle the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=fullName> event, but this event occurs before the cell value is updated. If you need the new value at the time of the click, one option is to calculate what the expected value will be based on the current value. Another approach is to commit the change immediately, and handle the <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=fullName> event to respond to it. To commit the change when the cell is clicked, you must handle the <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged?displayProperty=fullName> event. In the handler, if the current cell is a check box cell, call the <xref:System.Windows.Forms.DataGridView.CommitEdit%2A?displayProperty=fullName> method and pass in the <xref:System.Windows.Forms.DataGridViewDataErrorContexts> value.  
+ Typically, check box cell values are intended either for storage, like any other data, or for performing bulk operations. If you want to respond immediately when users click a check box cell, you can handle the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> event, but this event occurs before the cell value is updated. If you need the new value at the time of the click, one option is to calculate what the expected value will be based on the current value. Another approach is to commit the change immediately, and handle the <xref:System.Windows.Forms.DataGridView.CellValueChanged?displayProperty=nameWithType> event to respond to it. To commit the change when the cell is clicked, you must handle the <xref:System.Windows.Forms.DataGridView.CurrentCellDirtyStateChanged?displayProperty=nameWithType> event. In the handler, if the current cell is a check box cell, call the <xref:System.Windows.Forms.DataGridView.CommitEdit%2A?displayProperty=nameWithType> method and pass in the <xref:System.Windows.Forms.DataGridViewDataErrorContexts.Commit> value.  
   
    
   
@@ -44,12 +46,28 @@
     <block subset="none" type="overrides">
       <para>When you derive from <see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" /> and add new properties to the derived class, be sure to override the <see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" /> method to copy the new properties during cloning operations. You should also call the base class's <see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" /> method so that the properties of the base class are copied to the new cell.</para>
     </block>
+    <altmember cref="T:System.Windows.Forms.DataGridView" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewCell" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewCheckBoxColumn" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.CellTemplate" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Forms.DataGridViewCheckBoxCell" /> class.</summary>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataGridViewCheckBoxCell ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataGridViewCheckBoxCell();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -66,12 +84,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataGridViewCheckBoxCell (bool threeState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool threeState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.#ctor(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (threeState As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataGridViewCheckBoxCell(bool threeState);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -92,12 +114,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
       </Docs>
     </Member>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public override object Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Clone () As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -121,12 +147,15 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" /> in a derived class, call the base class's <see cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.Clone" /> method so that the properties of the base class are copied to the new cell, and be sure to also copy the values of any properties that were added to the derived class.</para>
         </block>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
     <Member MemberName="ContentClickUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool ContentClickUnsharesRow (System.Windows.Forms.DataGridViewCellEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ContentClickUnsharesRow(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ContentClickUnsharesRow(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ContentClickUnsharesRow (e As DataGridViewCellEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool ContentClickUnsharesRow(System::Windows::Forms::DataGridViewCellEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -153,12 +182,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="ContentDoubleClickUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool ContentDoubleClickUnsharesRow (System.Windows.Forms.DataGridViewCellEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ContentDoubleClickUnsharesRow(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ContentDoubleClickUnsharesRow(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function ContentDoubleClickUnsharesRow (e As DataGridViewCellEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool ContentDoubleClickUnsharesRow(System::Windows::Forms::DataGridViewCellEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -185,12 +218,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentDoubleClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="CreateAccessibilityInstance">
       <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.CreateAccessibilityInstance" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateAccessibilityInstance () As AccessibleObject" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Forms::AccessibleObject ^ CreateAccessibilityInstance();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -214,13 +251,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewCheckBoxCell.DataGridViewCheckBoxCellAccessibleObject" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCell.AccessibilityObject" />
       </Docs>
     </Member>
     <Member MemberName="EditingCellFormattedValue">
       <MemberSignature Language="C#" Value="public virtual object EditingCellFormattedValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object EditingCellFormattedValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditingCellFormattedValue" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property EditingCellFormattedValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ EditingCellFormattedValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Forms.IDataGridViewEditingCell.EditingCellFormattedValue</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -242,13 +287,21 @@
   
  The assigned value is not of type <see cref="T:System.Boolean" /> nor of type <see cref="T:System.Windows.Forms.CheckState" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" /> property value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetEditingCellFormattedValue(System.Windows.Forms.DataGridViewDataErrorContexts)" />
       </Docs>
     </Member>
     <Member MemberName="EditingCellValueChanged">
       <MemberSignature Language="C#" Value="public virtual bool EditingCellValueChanged { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EditingCellValueChanged" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditingCellValueChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property EditingCellValueChanged As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool EditingCellValueChanged { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Forms.IDataGridViewEditingCell.EditingCellValueChanged</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -268,12 +321,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridView.NotifyCurrentCellDirty(System.Boolean)" />
+        <altmember cref="P:System.Windows.Forms.IDataGridViewEditingCell.EditingCellValueChanged" />
       </Docs>
     </Member>
     <Member MemberName="EditType">
       <MemberSignature Language="C#" Value="public override Type EditType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type EditType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.EditType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property EditType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ EditType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -293,12 +351,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
       </Docs>
     </Member>
     <Member MemberName="FalseValue">
       <MemberSignature Language="C#" Value="public object FalseValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object FalseValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property FalseValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ FalseValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -334,12 +396,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.FalseValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
       </Docs>
     </Member>
     <Member MemberName="FlatStyle">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property FlatStyle As FlatStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::FlatStyle FlatStyle { System::Windows::Forms::FlatStyle get(); void set(System::Windows::Forms::FlatStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -360,14 +428,14 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.FlatStyle> flat style is not supported by this cell type.  
+ The <xref:System.Windows.Forms.FlatStyle.Popup> flat style is not supported by this cell type.  
   
  Setting the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle%2A> property of the owning column also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FlatStyle%2A> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle%2A?displayProperty=fullName> property, which is similar to this property. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.  
+ The following code example demonstrates the use of the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle%2A?displayProperty=nameWithType> property, which is similar to this property. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.  
   
  [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#20)]
  [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#20)]
@@ -376,12 +444,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The specified value when setting this property is not a valid <see cref="T:System.Windows.Forms.FlatStyle" /> value.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.FlatStyle" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.FlatStyle" />
       </Docs>
     </Member>
     <Member MemberName="FormattedValueType">
       <MemberSignature Language="C#" Value="public override Type FormattedValueType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type FormattedValueType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property FormattedValueType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ FormattedValueType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -402,19 +475,24 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=fullName> property to determine the type of the cell contents. In this example, the <xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=fullName> property is used to determine whether the cell contains a <xref:System.String> before attempting to convert the value. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridView.SelectionChanged?displayProperty=fullName> event.  
+ The following code example demonstrates how to use the <xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType> property to determine the type of the cell contents. In this example, the <xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType> property is used to determine whether the cell contains a <xref:System.String> before attempting to convert the value. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridView.SelectionChanged?displayProperty=nameWithType> event.  
   
  [!code-csharp[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/CS/form1.cs#10)]
  [!code-vb[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/VB/form1.vb#10)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Windows.Forms.CheckState" />
       </Docs>
     </Member>
     <Member MemberName="GetContentBounds">
       <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetContentBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetContentBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetContentBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Drawing::Rectangle GetContentBounds(System::Drawing::Graphics ^ graphics, System::Windows::Forms::DataGridViewCellStyle ^ cellStyle, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -441,7 +519,12 @@
       <MemberSignature Language="C#" Value="public virtual object GetEditingCellFormattedValue (System.Windows.Forms.DataGridViewDataErrorContexts context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEditingCellFormattedValue(valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetEditingCellFormattedValue(System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEditingCellFormattedValue (context As DataGridViewDataErrorContexts) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ GetEditingCellFormattedValue(System::Windows::Forms::DataGridViewDataErrorContexts context);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Forms.IDataGridViewEditingCell.GetEditingCellFormattedValue(System.Windows.Forms.DataGridViewDataErrorContexts)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -460,17 +543,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When `context` includes the <xref:System.Windows.Forms.DataGridViewDataErrorContexts> value, this method returns an <xref:System.Object> that you can cast to a <xref:System.String> representation of the value. Otherwise, this method returns a <xref:System.Boolean> or a <xref:System.Windows.Forms.CheckState> value, depending on the value of the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType%2A> property.  
+ When `context` includes the <xref:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent> value, this method returns an <xref:System.Object> that you can cast to a <xref:System.String> representation of the value. Otherwise, this method returns a <xref:System.Boolean> or a <xref:System.Windows.Forms.CheckState> value, depending on the value of the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType%2A> property.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" /> property value is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />
       </Docs>
     </Member>
     <Member MemberName="GetErrorIconBounds">
       <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetErrorIconBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetErrorIconBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Drawing::Rectangle GetErrorIconBounds(System::Drawing::Graphics ^ graphics, System::Windows::Forms::DataGridViewCellStyle ^ cellStyle, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -491,12 +578,15 @@
         <summary>Returns the bounding rectangle that encloses the cell's error icon, if one is displayed.</summary>
         <returns>The <see cref="T:System.Drawing.Rectangle" /> that bounds the cell's error icon, if one is displayed; otherwise, <see cref="F:System.Drawing.Rectangle.Empty" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetFormattedValue">
       <MemberSignature Language="C#" Value="protected override object GetFormattedValue (object value, int rowIndex, ref System.Windows.Forms.DataGridViewCellStyle cellStyle, System.ComponentModel.TypeConverter valueTypeConverter, System.ComponentModel.TypeConverter formattedValueTypeConverter, System.Windows.Forms.DataGridViewDataErrorContexts context);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetFormattedValue(object value, int32 rowIndex, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.ComponentModel.TypeConverter valueTypeConverter, class System.ComponentModel.TypeConverter formattedValueTypeConverter, valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetFormattedValue(object value, int32 rowIndex, class System.Windows.Forms.DataGridViewCellStyle&amp; cellStyle, class System.ComponentModel.TypeConverter valueTypeConverter, class System.ComponentModel.TypeConverter formattedValueTypeConverter, valuetype System.Windows.Forms.DataGridViewDataErrorContexts context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetFormattedValue(System.Object,System.Int32,System.Windows.Forms.DataGridViewCellStyle@,System.ComponentModel.TypeConverter,System.ComponentModel.TypeConverter,System.Windows.Forms.DataGridViewDataErrorContexts)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetFormattedValue (value As Object, rowIndex As Integer, ByRef cellStyle As DataGridViewCellStyle, valueTypeConverter As TypeConverter, formattedValueTypeConverter As TypeConverter, context As DataGridViewDataErrorContexts) As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Object ^ GetFormattedValue(System::Object ^ value, int rowIndex, System::Windows::Forms::DataGridViewCellStyle ^ % cellStyle, System::ComponentModel::TypeConverter ^ valueTypeConverter, System::ComponentModel::TypeConverter ^ formattedValueTypeConverter, System::Windows::Forms::DataGridViewDataErrorContexts context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -530,22 +620,36 @@
   
  This method first attempts to convert `value` to a <xref:System.Boolean> or <xref:System.Windows.Forms.CheckState> value using the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue%2A>, <xref:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue%2A>, and <xref:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue%2A> properties if they have been set.  
   
- If the conversion is unsuccessful, the <xref:System.Windows.Forms.DataGridView.DataError?displayProperty=fullName> event occurs. If there is no handler for this event or the handler sets the <xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=fullName> property to `true`, an exception is thrown.  
+ If the conversion is unsuccessful, the <xref:System.Windows.Forms.DataGridView.DataError?displayProperty=nameWithType> event occurs. If there is no handler for this event or the handler sets the <xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=nameWithType> property to `true`, an exception is thrown.  
   
- If the conversion is successful or there is a handler for the <xref:System.Windows.Forms.DataGridView.DataError> event and it does not set the <xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=fullName> property to `true`, the <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=fullName> event occurs.  
+ If the conversion is successful or there is a handler for the <xref:System.Windows.Forms.DataGridView.DataError> event and it does not set the <xref:System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException%2A?displayProperty=nameWithType> property to `true`, the <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> event occurs.  
   
- A <xref:System.Windows.Forms.DataGridView.CellFormatting> event handler can modify both `value` and `cellStyle`. If the handler does not set the <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=fullName> property to `true`, however, this method formats `value` using the formatting properties of the `cellStyle` object. This can result in an additional <xref:System.Windows.Forms.DataGridView.DataError> event.  
+ A <xref:System.Windows.Forms.DataGridView.CellFormatting> event handler can modify both `value` and `cellStyle`. If the handler does not set the <xref:System.Windows.Forms.DataGridViewCellFormattingEventArgs.FormattingApplied%2A?displayProperty=nameWithType> property to `true`, however, this method formats `value` using the formatting properties of the `cellStyle` object. This can result in an additional <xref:System.Windows.Forms.DataGridView.DataError> event.  
   
- If formatting is successful and the `context` parameter value includes the <xref:System.Windows.Forms.DataGridViewDataErrorContexts> value, this method returns the <xref:System.String> version of the formatted value for copying to the Clipboard. Otherwise, this method returns the formatted value for display in the <xref:System.Windows.Forms.DataGridView> control.  
+ If formatting is successful and the `context` parameter value includes the <xref:System.Windows.Forms.DataGridViewDataErrorContexts.ClipboardContent> value, this method returns the <xref:System.String> version of the formatted value for copying to the Clipboard. Otherwise, this method returns the formatted value for display in the <xref:System.Windows.Forms.DataGridView> control.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FormattedValueType" />
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="E:System.Windows.Forms.DataGridView.DataError" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewCellStyle" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCellStyle.Format" />
+        <altmember cref="T:System.ComponentModel.TypeConverter" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewDataErrorContexts" />
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Windows.Forms.CheckState" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
+        <altmember cref="E:System.Windows.Forms.DataGridView.CellFormatting" />
       </Docs>
     </Member>
     <Member MemberName="GetPreferredSize">
       <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex, System.Drawing.Size constraintSize);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex, valuetype System.Drawing.Size constraintSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Drawing::Size GetPreferredSize(System::Drawing::Graphics ^ graphics, System::Windows::Forms::DataGridViewCellStyle ^ cellStyle, int rowIndex, System::Drawing::Size constraintSize);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -568,12 +672,15 @@
         <summary>Calculates the preferred size, in pixels, of the cell.</summary>
         <returns>A <see cref="T:System.Drawing.Size" /> that represents the preferred size, in pixels, of the cell.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
       </Docs>
     </Member>
     <Member MemberName="IndeterminateValue">
       <MemberSignature Language="C#" Value="public object IndeterminateValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object IndeterminateValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property IndeterminateValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ IndeterminateValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -609,12 +716,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.IndeterminateValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
       </Docs>
     </Member>
     <Member MemberName="KeyDownUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool KeyDownUnsharesRow (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool KeyDownUnsharesRow(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyDownUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function KeyDownUnsharesRow (e As KeyEventArgs, rowIndex As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool KeyDownUnsharesRow(System::Windows::Forms::KeyEventArgs ^ e, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -643,12 +756,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyDown(System.Windows.Forms.KeyEventArgs,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="KeyUpUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool KeyUpUnsharesRow (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool KeyUpUnsharesRow(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyUpUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function KeyUpUnsharesRow (e As KeyEventArgs, rowIndex As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool KeyUpUnsharesRow(System::Windows::Forms::KeyEventArgs ^ e, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -677,12 +794,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyUp(System.Windows.Forms.KeyEventArgs,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="MouseDownUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool MouseDownUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseDownUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseDownUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function MouseDownUnsharesRow (e As DataGridViewCellMouseEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool MouseDownUnsharesRow(System::Windows::Forms::DataGridViewCellMouseEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -710,12 +831,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="MouseEnterUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool MouseEnterUnsharesRow (int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseEnterUnsharesRow(int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseEnterUnsharesRow(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function MouseEnterUnsharesRow (rowIndex As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool MouseEnterUnsharesRow(int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -742,12 +867,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCell.OnMouseEnter(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="MouseLeaveUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool MouseLeaveUnsharesRow (int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseLeaveUnsharesRow(int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseLeaveUnsharesRow(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function MouseLeaveUnsharesRow (rowIndex As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool MouseLeaveUnsharesRow(int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -774,12 +903,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.ButtonState" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseLeave(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="MouseUpUnsharesRow">
       <MemberSignature Language="C#" Value="protected override bool MouseUpUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseUpUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseUpUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function MouseUpUnsharesRow (e As DataGridViewCellMouseEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override bool MouseUpUnsharesRow(System::Windows::Forms::DataGridViewCellMouseEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -807,12 +941,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnContentClick">
       <MemberSignature Language="C#" Value="protected override void OnContentClick (System.Windows.Forms.DataGridViewCellEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentClick(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnContentClick (e As DataGridViewCellEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnContentClick(System::Windows::Forms::DataGridViewCellEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -828,12 +966,15 @@
         <param name="e">A <see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" /> that contains the event data.</param>
         <summary>Called when the cell's contents are clicked.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewCell.OnContentClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnContentDoubleClick">
       <MemberSignature Language="C#" Value="protected override void OnContentDoubleClick (System.Windows.Forms.DataGridViewCellEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentDoubleClick(class System.Windows.Forms.DataGridViewCellEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnContentDoubleClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnContentDoubleClick (e As DataGridViewCellEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnContentDoubleClick(System::Windows::Forms::DataGridViewCellEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -849,12 +990,15 @@
         <param name="e">A <see cref="T:System.Windows.Forms.DataGridViewCellEventArgs" /> that contains the event data.</param>
         <summary>Called when the cell's contents are double-clicked.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewCell.OnContentDoubleClick(System.Windows.Forms.DataGridViewCellEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnKeyDown">
       <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyDown(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnKeyDown (e As KeyEventArgs, rowIndex As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnKeyDown(System::Windows::Forms::KeyEventArgs ^ e, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -877,16 +1021,22 @@
 ## Remarks  
  When activated by the space key, this method causes the cell's user interface (UI) to be updated.  
   
- This method is similar to the <xref:System.Windows.Forms.Control.OnKeyDown%2A?displayProperty=fullName> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.KeyDown?displayProperty=fullName> event is raised, but it does not actually raise the event.  
+ This method is similar to the <xref:System.Windows.Forms.Control.OnKeyDown%2A?displayProperty=nameWithType> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.KeyDown?displayProperty=nameWithType> event is raised, but it does not actually raise the event.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.Control.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.KeyDown" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyDownUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="OnKeyUp">
       <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnKeyUp(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnKeyUp (e As KeyEventArgs, rowIndex As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnKeyUp(System::Windows::Forms::KeyEventArgs ^ e, int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -907,18 +1057,24 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When activated by the SPACEBAR key (equivalent to the <xref:System.Windows.Forms.Keys?displayProperty=fullName> value), this method updates the cell's user interface (UI) and raises the <xref:System.Windows.Forms.DataGridView.OnCellClick%2A> event on the owning <xref:System.Windows.Forms.DataGridView>.  
+ When activated by the SPACEBAR key (equivalent to the <xref:System.Windows.Forms.Keys.Space?displayProperty=nameWithType> value), this method updates the cell's user interface (UI) and raises the <xref:System.Windows.Forms.DataGridView.OnCellClick%2A> event on the owning <xref:System.Windows.Forms.DataGridView>.  
   
- This method is similar to the <xref:System.Windows.Forms.Control.OnKeyUp%2A?displayProperty=fullName> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.KeyUp?displayProperty=fullName> event is raised, but it does not actually raise the event.  
+ This method is similar to the <xref:System.Windows.Forms.Control.OnKeyUp%2A?displayProperty=nameWithType> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.KeyUp?displayProperty=nameWithType> event is raised, but it does not actually raise the event.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.Control.OnKeyUp(System.Windows.Forms.KeyEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.KeyUp" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.KeyUpUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="OnLeave">
       <MemberSignature Language="C#" Value="protected override void OnLeave (int rowIndex, bool throughMouseClick);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLeave(int32 rowIndex, bool throughMouseClick) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnLeave(System.Int32,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnLeave (rowIndex As Integer, throughMouseClick As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnLeave(int rowIndex, bool throughMouseClick);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -942,16 +1098,21 @@
 ## Remarks  
  If the button is in a pushed state, this method updates the cell's user interface (UI).  
   
- This method is similar to the <xref:System.Windows.Forms.Control.OnLeave%2A?displayProperty=fullName> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.Leave?displayProperty=fullName> event is raised, but it does not actually raise the event.  
+ This method is similar to the <xref:System.Windows.Forms.Control.OnLeave%2A?displayProperty=nameWithType> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.Leave?displayProperty=nameWithType> event is raised, but it does not actually raise the event.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.Control.OnLeave(System.EventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.Leave" />
       </Docs>
     </Member>
     <Member MemberName="OnMouseDown">
       <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnMouseDown (e As DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnMouseDown(System::Windows::Forms::DataGridViewCellMouseEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -972,16 +1133,22 @@
 ## Remarks  
  This method causes the cell's user interface (UI) to be updated.  
   
- This method is similar to the <xref:System.Windows.Forms.Control.OnMouseDown%2A?displayProperty=fullName> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.MouseDown?displayProperty=fullName> event is raised, but it does not actually raise the event.  
+ This method is similar to the <xref:System.Windows.Forms.Control.OnMouseDown%2A?displayProperty=nameWithType> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.MouseDown?displayProperty=nameWithType> event is raised, but it does not actually raise the event.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseDownUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+        <altmember cref="M:System.Windows.Forms.Control.OnMouseDown(System.Windows.Forms.MouseEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.MouseDown" />
       </Docs>
     </Member>
     <Member MemberName="OnMouseLeave">
       <MemberSignature Language="C#" Value="protected override void OnMouseLeave (int rowIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(int32 rowIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseLeave(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnMouseLeave (rowIndex As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnMouseLeave(int rowIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1006,12 +1173,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseLeaveUnsharesRow(System.Int32)" />
+        <altmember cref="T:System.Windows.Forms.ButtonState" />
+        <altmember cref="M:System.Windows.Forms.Control.OnMouseLeave(System.EventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.MouseLeave" />
       </Docs>
     </Member>
     <Member MemberName="OnMouseMove">
       <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseMove(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnMouseMove (e As DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnMouseMove(System::Windows::Forms::DataGridViewCellMouseEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1032,16 +1206,21 @@
 ## Remarks  
  This method causes the cell's user interface (UI) to be updated.  
   
- This method is similar to the <xref:System.Windows.Forms.Control.OnMouseMove%2A?displayProperty=fullName> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.MouseMove?displayProperty=fullName> event is raised, but it does not actually raise the event.  
+ This method is similar to the <xref:System.Windows.Forms.Control.OnMouseMove%2A?displayProperty=nameWithType> method. It is called in the same circumstances in which a <xref:System.Windows.Forms.Control.MouseMove?displayProperty=nameWithType> event is raised, but it does not actually raise the event.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.Control.OnMouseMove(System.Windows.Forms.MouseEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.MouseMove" />
       </Docs>
     </Member>
     <Member MemberName="OnMouseUp">
       <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnMouseUp (e As DataGridViewCellMouseEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnMouseUp(System::Windows::Forms::DataGridViewCellMouseEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1066,12 +1245,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.Control.OnMouseUp(System.Windows.Forms.MouseEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Control.MouseUp" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.MouseUpUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="Paint">
       <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates elementState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Paint(System::Drawing::Graphics ^ graphics, System::Drawing::Rectangle clipBounds, System::Drawing::Rectangle cellBounds, int rowIndex, System::Windows::Forms::DataGridViewElementStates elementState, System::Object ^ value, System::Object ^ formattedValue, System::String ^ errorText, System::Windows::Forms::DataGridViewCellStyle ^ cellStyle, System::Windows::Forms::DataGridViewAdvancedBorderStyle ^ advancedBorderStyle, System::Windows::Forms::DataGridViewPaintParts paintParts);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1113,6 +1297,8 @@
       <MemberSignature Language="C#" Value="public override object ParseFormattedValue (object formattedValue, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.ComponentModel.TypeConverter formattedValueTypeConverter, System.ComponentModel.TypeConverter valueTypeConverter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ParseFormattedValue(object formattedValue, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.ComponentModel.TypeConverter formattedValueTypeConverter, class System.ComponentModel.TypeConverter valueTypeConverter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ParseFormattedValue(System.Object,System.Windows.Forms.DataGridViewCellStyle,System.ComponentModel.TypeConverter,System.ComponentModel.TypeConverter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ParseFormattedValue (formattedValue As Object, cellStyle As DataGridViewCellStyle, formattedValueTypeConverter As TypeConverter, valueTypeConverter As TypeConverter) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ ParseFormattedValue(System::Object ^ formattedValue, System::Windows::Forms::DataGridViewCellStyle ^ cellStyle, System::ComponentModel::TypeConverter ^ formattedValueTypeConverter, System::ComponentModel::TypeConverter ^ valueTypeConverter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1153,13 +1339,24 @@
  \- or -  
   
  The type of <paramref name="formattedValue" /> does not match the type indicated by the <see cref="P:System.Windows.Forms.DataGridViewCell.FormattedValueType" /> property.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewCellStyle" />
+        <altmember cref="T:System.ComponentModel.TypeConverter" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
       </Docs>
     </Member>
     <Member MemberName="PrepareEditingCellForEdit">
       <MemberSignature Language="C#" Value="public virtual void PrepareEditingCellForEdit (bool selectAll);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PrepareEditingCellForEdit(bool selectAll) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.PrepareEditingCellForEdit(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub PrepareEditingCellForEdit (selectAll As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void PrepareEditingCellForEdit(bool selectAll);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Forms.IDataGridViewEditingCell.PrepareEditingCellForEdit(System.Boolean)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1181,12 +1378,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
     <Member MemberName="ThreeState">
       <MemberSignature Language="C#" Value="public bool ThreeState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ThreeState" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
+      <MemberSignature Language="VB.NET" Value="Public Property ThreeState As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ThreeState { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1212,7 +1412,7 @@
   
  Setting the <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> property of the owning column also sets the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property of every cell in the column and refreshes the column display. To override the specified value for individual cells, set the cell values after you set the column value.  
   
- Unlike the column <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> property, the cell <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property does not automatically update the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property of the associated cell style when you change its value. When you change the cell <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property value to `true`, be sure to set the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property of the object returned by the <xref:System.Windows.Forms.DataGridViewCell.Style%2A> property to <xref:System.Windows.Forms.CheckState>. When you change the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property value to `false`, be sure to set the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property to `false`.  
+ Unlike the column <xref:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState%2A> property, the cell <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property does not automatically update the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property of the associated cell style when you change its value. When you change the cell <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property value to `true`, be sure to set the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property of the object returned by the <xref:System.Windows.Forms.DataGridViewCell.Style%2A> property to <xref:System.Windows.Forms.CheckState.Indeterminate>. When you change the <xref:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState%2A> property value to `false`, be sure to set the <xref:System.Windows.Forms.DataGridViewCellStyle.NullValue%2A> property to `false`.  
   
    
   
@@ -1225,12 +1425,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewCheckBoxCell.#ctor(System.Boolean)" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.ThreeState" />
       </Docs>
     </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewCheckBoxCell.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1251,12 +1457,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCell.RowIndex" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCell.ColumnIndex" />
       </Docs>
     </Member>
     <Member MemberName="TrueValue">
       <MemberSignature Language="C#" Value="public object TrueValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object TrueValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.TrueValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property TrueValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ TrueValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1292,12 +1503,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxColumn.TrueValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.IndeterminateValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.FalseValue" />
       </Docs>
     </Member>
     <Member MemberName="ValueType">
       <MemberSignature Language="C#" Value="public override Type ValueType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewCheckBoxCell.ValueType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ValueType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ ValueType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1321,6 +1538,11 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCheckBoxCell.ThreeState" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewColumn.ValueType" />
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Windows.Forms.CheckState" />
       </Docs>
     </Member>
   </Members>

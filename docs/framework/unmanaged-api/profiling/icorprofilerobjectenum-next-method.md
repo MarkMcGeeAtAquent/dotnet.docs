@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerObjectEnum::Next Method | Microsoft Docs"
+title: "ICorProfilerObjectEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerObjectEnum.Next"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerObjectEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Next method, ICorProfilerObjectEnum interface [.NET Framework profiling]"
   - "ICorProfilerObjectEnum::Next method [.NET Framework profiling]"
 ms.assetid: b420433c-5ebe-4986-bba1-97902e6db819
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerObjectEnum::Next Method
 Gets the specified number of contiguous objects from a sequential collection of objects, starting at the enumerator's current position in the sequence.  

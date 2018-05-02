@@ -1,5 +1,5 @@
 ---
-title: "Metadata Unions | Microsoft Docs"
+title: "Metadata Unions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "unmanaged unions [.NET Framework], metadata"
   - "unions [.NET Framework metadata]"
@@ -20,6 +18,8 @@ caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Metadata Unions
 This section describes the unmanaged unions that the metadata API uses.  

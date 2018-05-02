@@ -1,54 +1,72 @@
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.GetStandardValues
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.IncludeNoneAsStandardValue
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.ConvertFrom
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.ConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.TreeViewImageIndexConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

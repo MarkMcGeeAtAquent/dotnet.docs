@@ -1,5 +1,5 @@
 ---
-title: "How to: Use Flow Content Elements | Microsoft Docs"
+title: "How to: Use Flow Content Elements"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,13 +10,15 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "flow content elements"
-  - "documents, flow content elements"
+  - "flow content elements [WPF]"
+  - "documents [WPF], flow content elements"
 ms.assetid: 70fa11cd-5fa7-4872-a1cc-04d80f1132be
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Use Flow Content Elements
 The following example demonstrates declarative usage for various flow content elements and associated attributes.  Elements and attributes demonstrated include:  
@@ -48,4 +50,4 @@ The following example demonstrates declarative usage for various flow content el
 -   <xref:System.Windows.Documents.Underline> element  
   
 ## Example  
- [!code-xml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]
+ [!code-xaml[FlowDocInlineSnippets#_InlineElementsXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FlowDocInlineSnippets/CS/document.xaml#_inlineelementsxaml)]

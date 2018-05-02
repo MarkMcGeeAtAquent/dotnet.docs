@@ -1,7 +1,9 @@
-<Type Name="PagedDataSource" FullName="System.Web.UI.WebControls.PagedDataSource">
+﻿<Type Name="PagedDataSource" FullName="System.Web.UI.WebControls.PagedDataSource">
   <TypeSignature Language="C#" Value="public sealed class PagedDataSource : System.Collections.ICollection, System.ComponentModel.ITypedList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PagedDataSource extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ComponentModel.ITypedList" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PagedDataSource" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PagedDataSource&#xA;Implements ICollection, ITypedList" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PagedDataSource sealed : System::Collections::ICollection, System::ComponentModel::ITypedList" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,18 +27,28 @@
 ## Remarks  
  The <xref:System.Web.UI.WebControls.PagedDataSource> class encapsulates the properties that allow data-source controls, such as the <xref:System.Web.UI.WebControls.DataGrid>, <xref:System.Web.UI.WebControls.GridView>, <xref:System.Web.UI.WebControls.DetailsView>, and <xref:System.Web.UI.WebControls.FormView>, to perform paging. This class is used by control developers when providing paging support to a custom data-bound control.  
   
- This class uses the best available method to enumerate over the data belonging to the current page. If the underlying data source supports indexed access (such as <xref:System.Array?displayProperty=fullName> and <xref:System.Collections.IList?displayProperty=fullName>), this class uses it. Otherwise, it uses the enumerator created by the <xref:System.Collections.IEnumerable.GetEnumerator%2A> method.  
+ This class uses the best available method to enumerate over the data belonging to the current page. If the underlying data source supports indexed access (such as <xref:System.Array?displayProperty=nameWithType> and <xref:System.Collections.IList?displayProperty=nameWithType>), this class uses it. Otherwise, it uses the enumerator created by the <xref:System.Collections.IEnumerable.GetEnumerator%2A> method.  
   
  For a list of initial property values for an instance of <xref:System.Web.UI.WebControls.PagedDataSource>, see the <xref:System.Web.UI.WebControls.PagedDataSource.%23ctor%2A> constructor.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.DataGrid" />
+    <altmember cref="T:System.Web.UI.WebControls.DetailsView" />
+    <altmember cref="T:System.Web.UI.WebControls.FormView" />
+    <altmember cref="T:System.Web.UI.WebControls.GridView" />
+    <altmember cref="T:System.Collections.ICollection" />
+    <altmember cref="T:System.Array" />
+    <altmember cref="T:System.Collections.IList" />
+    <altmember cref="T:System.Collections.IEnumerable" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PagedDataSource ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PagedDataSource();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -70,6 +82,8 @@
       <MemberSignature Language="C#" Value="public bool AllowCustomPaging { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowCustomPaging" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowCustomPaging As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowCustomPaging { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -88,16 +102,19 @@
 ## Remarks  
  Use the <xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A> property to indicate whether custom paging is enabled. Custom paging is an optional type of paging provided specifically by the <xref:System.Web.UI.WebControls.DataGrid> control. ASP.NET version 2.0 data-bound control (such as <xref:System.Web.UI.WebControls.GridView>, <xref:System.Web.UI.WebControls.DetailsView>, and <xref:System.Web.UI.WebControls.FormView>) uses server-side paging and does not support custom paging. Custom paging and server-side paging are mutually exclusive. If you set <xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A> to `true`, be sure that <xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A> is set to `false`.  
   
- For more information about custom paging, see <xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=fullName>.  
+ For more information about custom paging, see <xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowPaging" />
       </Docs>
     </Member>
     <Member MemberName="AllowPaging">
       <MemberSignature Language="C#" Value="public bool AllowPaging { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowPaging" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowPaging" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowPaging As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowPaging { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -114,18 +131,27 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A> property to specify whether a data-bound control has paging enabled. ASP.NET version 2.0 data-bound controls (such as <xref:System.Web.UI.WebControls.GridView>, <xref:System.Web.UI.WebControls.DetailsView>, and <xref:System.Web.UI.WebControls.FormView>) also use server-side paging to provide automatic paging functionality. For more information on server-side paging, see <xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>. When using the <xref:System.Web.UI.WebControls.DataGrid> control, you can also provide your own custom paging logic. For more information on custom paging, see <xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=fullName> and <xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A?displayProperty=fullName>.  
+ Use the <xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A> property to specify whether a data-bound control has paging enabled. ASP.NET version 2.0 data-bound controls (such as <xref:System.Web.UI.WebControls.GridView>, <xref:System.Web.UI.WebControls.DetailsView>, and <xref:System.Web.UI.WebControls.FormView>) also use server-side paging to provide automatic paging functionality. For more information on server-side paging, see <xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>. When using the <xref:System.Web.UI.WebControls.DataGrid> control, you can also provide your own custom paging logic. For more information on custom paging, see <xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=nameWithType> and <xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A?displayProperty=nameWithType>.  
   
  For more information about paging support for data-bound controls, see the `AllowPaging` property of the data-bound control.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.DataGrid.AllowCustomPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.GridView.AllowPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.DetailsView.AllowPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.FormView.AllowPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.DataGrid.AllowPaging" />
       </Docs>
     </Member>
     <Member MemberName="AllowServerPaging">
       <MemberSignature Language="C#" Value="public bool AllowServerPaging { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowServerPaging" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowServerPaging As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowServerPaging { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -149,13 +175,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.CopyTo(System.Array,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CopyTo(Array ^ array, int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -175,17 +207,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this method to copy the contents of the data source into the specified <xref:System.Array?displayProperty=fullName>, starting at the specified index. The <xref:System.Array?displayProperty=fullName> is often used to iterate through the items in the data source.  
+ Use this method to copy the contents of the data source into the specified <xref:System.Array?displayProperty=nameWithType>, starting at the specified index. The <xref:System.Array?displayProperty=nameWithType> is often used to iterate through the items in the data source.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Array" />
       </Docs>
     </Member>
     <Member MemberName="Count">
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -215,12 +253,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsLastPage" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.FirstIndexInPage" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSource" />
       </Docs>
     </Member>
     <Member MemberName="CurrentPageIndex">
       <MemberSignature Language="C#" Value="public int CurrentPageIndex { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPageIndex" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex" />
+      <MemberSignature Language="VB.NET" Value="Public Property CurrentPageIndex As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int CurrentPageIndex { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -240,12 +287,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.Count" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageCount" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.VirtualCount" />
       </Docs>
     </Member>
     <Member MemberName="DataSource">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerable DataSource { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable DataSource" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.DataSource" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSource As IEnumerable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IEnumerable ^ DataSource { System::Collections::IEnumerable ^ get(); void set(System::Collections::IEnumerable ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -265,12 +318,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IEnumerable" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
       </Docs>
     </Member>
     <Member MemberName="DataSourceCount">
       <MemberSignature Language="C#" Value="public int DataSourceCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 DataSourceCount" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DataSourceCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int DataSourceCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -294,12 +351,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Web.HttpException">The data source is not an <see cref="T:System.Collections.ICollection" /> implemented object.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
       </Docs>
     </Member>
     <Member MemberName="FirstIndexInPage">
       <MemberSignature Language="C#" Value="public int FirstIndexInPage { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 FirstIndexInPage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.FirstIndexInPage" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FirstIndexInPage As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int FirstIndexInPage { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -322,13 +383,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSource" />
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -344,19 +413,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this method to create a <xref:System.Collections.IEnumerator?displayProperty=fullName> that can be iterated through to get each item in the data source. To access the item at the current position in the enumerator, use the <xref:System.Collections.IEnumerator.Current%2A?displayProperty=fullName> property. Use the <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=fullName> method to move to the next item in the collection. To move the enumerator to its initial position, use the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> method.  
+ Use this method to create a <xref:System.Collections.IEnumerator?displayProperty=nameWithType> that can be iterated through to get each item in the data source. To access the item at the current position in the enumerator, use the <xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType> property. Use the <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType> method to move to the next item in the collection. To move the enumerator to its initial position, use the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> method.  
   
 > [!NOTE]
->  When you initially get the enumerator or use the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> method to move the enumerator to the first item in the collection, you must call the <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=fullName> method. Otherwise, the item represented by the <xref:System.Collections.IEnumerator.Current%2A?displayProperty=fullName> property is undefined.  
+>  When you initially get the enumerator or use the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> method to move the enumerator to the first item in the collection, you must call the <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType> method. Otherwise, the item represented by the <xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType> property is undefined.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IEnumerable" />
+        <altmember cref="M:System.Collections.IEnumerator.Reset" />
+        <altmember cref="M:System.Collections.IEnumerator.MoveNext" />
+        <altmember cref="P:System.Collections.IEnumerator.Current" />
       </Docs>
     </Member>
     <Member MemberName="GetItemProperties">
       <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetItemProperties (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetItemProperties(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetItemProperties (listAccessors As PropertyDescriptor()) As PropertyDescriptorCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::ComponentModel::PropertyDescriptorCollection ^ GetItemProperties(cli::array &lt;System::ComponentModel::PropertyDescriptor ^&gt; ^ listAccessors);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -376,16 +451,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A> method to create a <xref:System.ComponentModel.PropertyDescriptorCollection?displayProperty=fullName> that represents the properties on each item used to bind data. If the <xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A> property is `null` or is not a <xref:System.ComponentModel.ITypedList?displayProperty=fullName> implemented object, `null` is returned. For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A> method, see <xref:System.ComponentModel.ITypedList.GetItemProperties%2A?displayProperty=fullName>.  
+ Use the <xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A> method to create a <xref:System.ComponentModel.PropertyDescriptorCollection?displayProperty=nameWithType> that represents the properties on each item used to bind data. If the <xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A> property is `null` or is not a <xref:System.ComponentModel.ITypedList?displayProperty=nameWithType> implemented object, `null` is returned. For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A> method, see <xref:System.ComponentModel.ITypedList.GetItemProperties%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ITypedList" />
+        <altmember cref="T:System.ComponentModel.PropertyDescriptorCollection" />
+        <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+        <altmember cref="M:System.ComponentModel.ITypedList.GetItemProperties(System.ComponentModel.PropertyDescriptor[])" />
       </Docs>
     </Member>
     <Member MemberName="GetListName">
       <MemberSignature Language="C#" Value="public string GetListName (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetListName(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetListName(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetListName (listAccessors As PropertyDescriptor()) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::String ^ GetListName(cli::array &lt;System::ComponentModel::PropertyDescriptor ^&gt; ^ listAccessors);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -406,16 +487,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method is inherited from <xref:System.ComponentModel.ITypedList?displayProperty=fullName> and is not applicable to this class. It has been implemented to return <xref:System.String.Empty?displayProperty=fullName> for all cases.  
+ This method is inherited from <xref:System.ComponentModel.ITypedList?displayProperty=nameWithType> and is not applicable to this class. It has been implemented to return <xref:System.String.Empty?displayProperty=nameWithType> for all cases.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ITypedList" />
+        <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+        <altmember cref="M:System.ComponentModel.ITypedList.GetListName(System.ComponentModel.PropertyDescriptor[])" />
       </Docs>
     </Member>
     <Member MemberName="IsCustomPagingEnabled">
       <MemberSignature Language="C#" Value="public bool IsCustomPagingEnabled { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCustomPagingEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsCustomPagingEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsCustomPagingEnabled { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -439,12 +525,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging" />
       </Docs>
     </Member>
     <Member MemberName="IsFirstPage">
       <MemberSignature Language="C#" Value="public bool IsFirstPage { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstPage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsFirstPage" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFirstPage As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFirstPage { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -465,12 +555,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsLastPage" />
       </Docs>
     </Member>
     <Member MemberName="IsLastPage">
       <MemberSignature Language="C#" Value="public bool IsLastPage { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLastPage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsLastPage" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLastPage As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLastPage { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -491,12 +584,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.IsFirstPage" />
       </Docs>
     </Member>
     <Member MemberName="IsPagingEnabled">
       <MemberSignature Language="C#" Value="public bool IsPagingEnabled { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsPagingEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsPagingEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsPagingEnabled { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -520,12 +616,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
       <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -552,6 +652,8 @@
       <MemberSignature Language="C#" Value="public bool IsServerPagingEnabled { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsServerPagingEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsServerPagingEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsServerPagingEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsServerPagingEnabled { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -572,13 +674,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageCount" />
       </Docs>
     </Member>
     <Member MemberName="IsSynchronized">
       <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsSynchronized" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSynchronized As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSynchronized { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.IsSynchronized</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -594,18 +704,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property is derived from the <xref:System.Collections.ICollection?displayProperty=fullName> class and is overridden to always return `false` to indicate that this class is not thread-safe.  
+ This property is derived from the <xref:System.Collections.ICollection?displayProperty=nameWithType> class and is overridden to always return `false` to indicate that this class is not thread-safe.  
   
- For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.IsSynchronized%2A> property, see the <xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=fullName> property of the <xref:System.Collections.ICollection?displayProperty=fullName> interface.  
+ For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.IsSynchronized%2A> property, see the <xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType> property of the <xref:System.Collections.ICollection?displayProperty=nameWithType> interface.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
+        <altmember cref="P:System.Collections.ICollection.IsSynchronized" />
       </Docs>
     </Member>
     <Member MemberName="PageCount">
       <MemberSignature Language="C#" Value="public int PageCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.PageCount" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PageCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PageCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -628,12 +742,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.Count" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.VirtualCount" />
       </Docs>
     </Member>
     <Member MemberName="PageSize">
       <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property PageSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PageSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -653,13 +774,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.Count" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.PageCount" />
+        <altmember cref="P:System.Web.UI.WebControls.PagedDataSource.VirtualCount" />
       </Docs>
     </Member>
     <Member MemberName="SyncRoot">
       <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.SyncRoot" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SyncRoot As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ SyncRoot { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.SyncRoot</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -676,16 +807,21 @@
 ## Remarks  
  The object returned in this implementation is the <xref:System.Web.UI.WebControls.PagedDataSource> object itself.  
   
- For more information on the <xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A> property, see the <xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=fullName> property of the <xref:System.Collections.ICollection?displayProperty=fullName> interface.  
+ For more information on the <xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A> property, see the <xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType> property of the <xref:System.Collections.ICollection?displayProperty=nameWithType> interface.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Object" />
+        <altmember cref="P:System.Collections.ICollection.SyncRoot" />
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="VirtualCount">
       <MemberSignature Language="C#" Value="public int VirtualCount { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 VirtualCount" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.VirtualCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property VirtualCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int VirtualCount { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -701,10 +837,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A> property when custom paging or server-side paging is used to determine the virtual number of items in the data source. For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A> property, see <xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A?displayProperty=fullName>.  
+ Use the <xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A> property when custom paging or server-side paging is used to determine the virtual number of items in the data source. For more information on the <xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A> property, see <xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.DataGrid.VirtualItemCount" />
       </Docs>
     </Member>
   </Members>

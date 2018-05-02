@@ -1,8 +1,8 @@
 ---
-title: "&lt;certificateReference&gt; for &lt;identity&gt; | Microsoft Docs"
+title: "&lt;certificateReference&gt; for &lt;identity&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ac359c65-c22d-42d2-97de-db53b77cebdb
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;certificateReference&gt; for &lt;identity&gt;
 Specifies settings for X.509 certificate validation. A secure [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] client that connects to an endpoint with this identity verifies that the claims presented by the server contain the identity claim used to construct this identity.  
@@ -23,8 +25,7 @@ Specifies settings for X.509 certificate validation. A secure [!INCLUDE[indigo1]
   
 ## Syntax  
   
-```  
-  
+```xml  
 <certificateReference   
         findValue="String"   
     isChainIncluded="Boolean"  
@@ -59,7 +60,7 @@ X509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 |[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Specifies settings that enable the authentication of an endpoint by other endpoints exchanging messages with it.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.CertificateReferenceElement>   
- <xref:System.ServiceModel.Configuration.IdentityElement>   
- <xref:System.ServiceModel.EndpointAddress>   
+ <xref:System.ServiceModel.Configuration.CertificateReferenceElement>  
+ <xref:System.ServiceModel.Configuration.IdentityElement>  
+ <xref:System.ServiceModel.EndpointAddress>  
  <xref:System.ServiceModel.EndpointAddress.Identity%2A>

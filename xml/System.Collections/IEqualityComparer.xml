@@ -1,13 +1,16 @@
-<Type Name="IEqualityComparer" FullName="System.Collections.IEqualityComparer">
+﻿<Type Name="IEqualityComparer" FullName="System.Collections.IEqualityComparer">
   <TypeSignature Language="C#" Value="public interface IEqualityComparer" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEqualityComparer" />
   <TypeSignature Language="DocId" Value="T:System.Collections.IEqualityComparer" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IEqualityComparer" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IEqualityComparer" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -34,16 +37,22 @@
   
  This interface supports only equality comparisons. Customization of comparisons for sorting and ordering is provided by the <xref:System.Collections.IComparer> interface.  
   
- For the generic version of this interface, see <xref:System.Collections.Generic.IEqualityComparer%601?displayProperty=fullName>.  
+ For the generic version of this interface, see <xref:System.Collections.Generic.IEqualityComparer%601?displayProperty=nameWithType>.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Collections.Hashtable" />
+    <altmember cref="T:System.Collections.Specialized.NameValueCollection" />
+    <altmember cref="T:System.Collections.Specialized.OrderedDictionary" />
+    <altmember cref="T:System.Collections.IComparer" />
   </Docs>
   <Members>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public bool Equals (object x, object y);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(object x, object y) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Equals (x As Object, y As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(System::Object ^ x, System::Object ^ y);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -51,6 +60,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -83,7 +93,7 @@
    
   
 ## Examples  
- The following code example demonstrates the implementation of a case-insensitive <xref:System.Collections.IEqualityComparer>. In this example, the <xref:System.Collections.CaseInsensitiveComparer.Compare%2A?displayProperty=fullName> method is used to determine whether two objects are equal, based on the provided <xref:System.Globalization.CultureInfo>.  
+ The following code example demonstrates the implementation of a case-insensitive <xref:System.Collections.IEqualityComparer>. In this example, the <xref:System.Collections.CaseInsensitiveComparer.Compare%2A?displayProperty=nameWithType> method is used to determine whether two objects are equal, based on the provided <xref:System.Globalization.CultureInfo>.  
   
  [!code-cpp[System.Collections.Hashtable_ctor#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CPP/hashtable_ctor.cpp#2)]
  [!code-csharp[System.Collections.Hashtable_ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.Hashtable_ctor/CS/hashtable_ctor.cs#2)]
@@ -104,6 +114,8 @@
       <MemberSignature Language="C#" Value="public int GetHashCode (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetHashCode (obj As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int GetHashCode(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -111,6 +123,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -152,6 +165,8 @@
         <block subset="none" type="overrides">
           <para>Implementations are required to ensure that if the <see cref="M:System.Collections.IEqualityComparer.Equals(System.Object,System.Object)" /> method returns <see langword="true" /> for two objects <c>x</c> and <c>y</c>, then the value returned by the <see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" /> method for <c>x</c> must equal the value returned for <c>y</c>.</para>
         </block>
+        <altmember cref="M:System.Object.GetHashCode" />
+        <altmember cref="T:System.Collections.IHashCodeProvider" />
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 ---
-title: "IGCHostControl::RequestVirtualMemLimit Method | Microsoft Docs"
+title: "IGCHostControl::RequestVirtualMemLimit Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IGCHostControl.RequestVirtualMemLimit"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "RequestVirtualMemLimit"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IGCHostControl::RequestVirtualMemLimit method [.NET Framework hosting]"
   - "RequestVirtualMemLimit method [.NET Framework hosting]"
 ms.assetid: f4984a8c-4c0e-4460-9aa1-d022b3621228
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IGCHostControl::RequestVirtualMemLimit Method
 Requests the host to change the limits of virtual memory.  

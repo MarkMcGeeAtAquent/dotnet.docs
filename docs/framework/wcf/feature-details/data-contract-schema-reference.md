@@ -1,8 +1,8 @@
 ---
-title: "Data Contract Schema Reference | Microsoft Docs"
+title: "Data Contract Schema Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,15 +13,17 @@ helpviewer_keywords:
   - "data contracts [WCF], schema reference"
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Data Contract Schema Reference
 This topic describes the subset of the XML Schema (XSD) used by <xref:System.Runtime.Serialization.DataContractSerializer> to describe common language runtime (CLR) types for XML serialization.  
   
 ## DataContractSerializer Mappings  
- The `DataContractSerializer` maps CLR types to XSD when metadata is exported from a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service using a metadata endpoint or the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Data Contract Serializer](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
+ The `DataContractSerializer` maps CLR types to XSD when metadata is exported from a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service using a metadata endpoint or the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Data Contract Serializer](../../../../docs/framework/wcf/feature-details/data-contract-serializer.md).  
   
  The `DataContractSerializer` also maps XSD to CLR types when Svcutil.exe is used to access Web Services Description Language (WSDL) or XSD documents and generate data contracts for services or clients.  
   
@@ -308,7 +310,7 @@ public enum MyEnum
   
  This class maps to the following schema by the `DataContractSerializer`. If enumeration values start from 1, `xs:annotation` blocks are not generated.  
   
-```  
+```xml  
 <xs:simpleType name="MyEnum">  
 <xs:restriction base="xs:string">  
  <xs:enumeration value="first">  
@@ -330,7 +332,7 @@ public enum MyEnum
     </EnumerationValue>  
    </xs:appinfo>  
   </xs:annotation>  
- </xs:enumeration>   
+ </xs:enumeration>  
 </xs:restriction>  
 </xs:simpleType>  
 ```  
@@ -369,7 +371,7 @@ public enum AuthFlags
   
  This type maps to the following schema.  
   
-```  
+```xml  
 <xs:simpleType name="AuthFlags">  
     <xs:list>  
       <xs:simpleType>  
@@ -425,7 +427,7 @@ public class Employee : Person
   
  This data contract maps to the following XML Schema type declaration.  
   
-```  
+```xml  
 <xs:complexType name="Employee">  
  <xs:complexContent mixed="false">  
   <xs:extension base="tns:Person">  
@@ -532,7 +534,7 @@ public class Employee : Person
 ## ISerializable types mapping  
  In [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.0, `ISerializable` was introduced as a general mechanism to serialize objects for persistence or data transfer. There are many [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types that implement `ISerializable` and that can be passed between applications. `DataContractSerializer` naturally provides support for `ISerializable` classes. The `DataContractSerializer` maps `ISerializable` implementation schema types that differ only by the QName (qualified name) of the type and are effectively property collections. For example, the `DataContractSerializer` maps <xref:System.Exception> to the following XSD type in the http://schemas.datacontract.org/2004/07/System namespace.  
   
-```  
+```xml  
 <xs:complexType name="Exception">  
  <xs:sequence>  
   <xs:any minOccurs="0" maxOccurs="unbounded"   
@@ -551,7 +553,7 @@ public class Employee : Person
   
  The following is a complete Data Contract Serialization schema declaration.  
   
-```  
+```xml  
 <xs:schema attributeFormDefault="qualified"          
    elementFormDefault="qualified"        
    targetNamespace =   
@@ -562,7 +564,7 @@ public class Employee : Person
  <!-- Top-level elements for primitive types. -->  
  <xs:element name="anyType" nillable="true" type="xs:anyType"/>  
  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>  
- <xs:element name="base64Binary"   
+ <xs:element name="base64Binary"  
        nillable="true" type="xs:base64Binary"/>  
  <xs:element name="boolean" nillable="true" type="xs:boolean"/>  
  <xs:element name="byte" nillable="true" type="xs:byte"/>  
@@ -575,13 +577,13 @@ public class Employee : Person
  <xs:element name="QName" nillable="true" type="xs:QName"/>  
  <xs:element name="short" nillable="true" type="xs:short"/>  
  <xs:element name="string" nillable="true" type="xs:string"/>  
- <xs:element name="unsignedByte"   
+ <xs:element name="unsignedByte"  
        nillable="true" type="xs:unsignedByte"/>  
- <xs:element name="unsignedInt"   
+ <xs:element name="unsignedInt"  
        nillable="true" type="xs:unsignedInt"/>  
- <xs:element name="unsignedLong"   
+ <xs:element name="unsignedLong"  
        nillable="true" type="xs:unsignedLong"/>  
- <xs:element name="unsignedShort"   
+ <xs:element name="unsignedShort"  
        nillable="true" type="xs:unsignedShort"/>  
   
  <!-- Primitive types introduced for certain .NET simple types. -->  
@@ -590,7 +592,7 @@ public class Employee : Person
   <xs:restriction base="xs:int"/>  
  </xs:simpleType>  
   
- <!-- xs:duration is restricted to an ordered value space,   
+ <!-- xs:duration is restricted to an ordered value space,  
     to map to System.TimeSpan -->  
  <xs:element name="duration" nillable="true" type="tns:duration"/>  
  <xs:simpleType name="duration">  
@@ -662,7 +664,7 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 ## DateTimeOffset Serialization  
  The <xref:System.DateTimeOffset> is not treated as a primitive type. Instead, it is serialized as a complex element with two parts. The first part represents the date time, and the second part represents the offset from the date time. An example of a serialized DateTimeOffset value is shown in the following code.  
   
-```  
+```xml  
 <OffSet xmlns:a="http://schemas.datacontract.org/2004/07/System">  
   <DateTime i:type="b:dateTime" xmlns=""   
     xmlns:b="http://www.w3.org/2001/XMLSchema">2008-08-28T08:00:00    
@@ -675,7 +677,7 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
   
  The schema is as follows.  
   
-```  
+```xml  
 <xs:schema targetNamespace="http://schemas.datacontract.org/2004/07/System">  
    <xs:complexType name="DateTimeOffset">  
       <xs:sequence minOccurs="1" maxOccurs="1">  
@@ -689,8 +691,8 @@ new XmlQualifiedName("Person","http://Microsoft.ServiceModel.Samples");
 ```  
   
 ## See Also  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.Runtime.Serialization.DataContractAttribute>   
- <xref:System.Runtime.Serialization.DataMemberAttribute>   
- <xref:System.Runtime.Serialization.XsdDataContractImporter>   
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.Runtime.Serialization.DataContractAttribute>  
+ <xref:System.Runtime.Serialization.DataMemberAttribute>  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter>  
  [Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)

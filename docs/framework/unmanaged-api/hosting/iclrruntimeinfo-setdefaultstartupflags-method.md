@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeInfo::SetDefaultStartupFlags Method | Microsoft Docs"
+title: "ICLRRuntimeInfo::SetDefaultStartupFlags Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeInfo.SetDefaultStartupFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeInfo::SetDefaultStartupFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeInfo::SetDefaultStartupFlags method [.NET Framework hosting]"
   - "SetDefaultStartupFlags method [.NET Framework hosting]"
 ms.assetid: 98ae174f-bff0-48f1-9e05-6cb63b451824
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeInfo::SetDefaultStartupFlags Method
 Sets the startup flags and the host configuration file that will be used to start the runtime. This method supersedes the use of the `startupFlags` parameter in the [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) and [CorBindToRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md) functions.  
@@ -65,6 +68,6 @@ HRESULT SetDefaultStartupFlags(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)   
- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)   
+ [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
+ [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

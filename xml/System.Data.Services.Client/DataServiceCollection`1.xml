@@ -1,7 +1,9 @@
-<Type Name="DataServiceCollection&lt;T&gt;" FullName="System.Data.Services.Client.DataServiceCollection&lt;T&gt;">
+﻿<Type Name="DataServiceCollection&lt;T&gt;" FullName="System.Data.Services.Client.DataServiceCollection&lt;T&gt;">
   <TypeSignature Language="C#" Value="public class DataServiceCollection&lt;T&gt; : System.Collections.ObjectModel.ObservableCollection&lt;T&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceCollection`1&lt;T&gt; extends System.Collections.ObjectModel.ObservableCollection`1&lt;!T&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceCollection`1" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataServiceCollection(Of T)&#xA;Inherits ObservableCollection(Of T)" />
+  <TypeSignature Language="C++ CLI" Value="generic &lt;typename T&gt;&#xA;public ref class DataServiceCollection : System::Collections::ObjectModel::ObservableCollection&lt;T&gt;" />
   <AssemblyInfo>
     <AssemblyName>System.Data.Services.Client</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -38,16 +40,28 @@
   
  The following is the XAML that defines the `SalesOrders` window in WPF for the previous example.  
   
- [!code-xml[Astoria Northwind Client#WpfDataBindingXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]  
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingXaml](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]  
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a new instance of the <see cref="T:System.Data.Services.Client.DataServiceCollection`1" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataServiceCollection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -61,7 +75,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  Automatic change tracking begins after items are loaded into the collection.  
   
@@ -73,6 +87,8 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (items As IEnumerable(Of T))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Collections::Generic::IEnumerable&lt;T&gt; ^ items);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -91,7 +107,7 @@
 ## Remarks  
  The <xref:System.Collections.Generic.IEnumerable%601> collection of objects supplied for `items` is usually a query that returns the items in the collection. However, any <xref:System.Collections.Generic.IEnumerable%601> collection of the correct type can be supplied.  
   
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  ]]></format>
         </remarks>
@@ -101,6 +117,8 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As DataServiceContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Data::Services::Client::DataServiceContext ^ context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -119,7 +137,7 @@
 ## Remarks  
  Use this constructor to create an empty <xref:System.Data.Services.Client.DataServiceCollection%601> to which entity objects can be added without executing a query against the service or when an <xref:System.Collections.Generic.IEnumerable%601> is not available.  
   
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  ]]></format>
         </remarks>
@@ -129,6 +147,7 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Collections::Generic::IEnumerable&lt;T&gt; ^ items, System::Data::Services::Client::TrackingMode trackingMode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -147,7 +166,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. Use this class constructor and supply a value of <xref:System.Data.Services.Client.TrackingMode> for `trackingMode` to create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. Use this class constructor and supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for `trackingMode` to create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  The <xref:System.Collections.Generic.IEnumerable%601> collection of objects supplied for `items` is usually a query that returns the items in the collection. However, any <xref:System.Collections.Generic.IEnumerable%601> collection of the correct type can be supplied.  
   
@@ -159,6 +178,8 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (context As DataServiceContext, entitySetName As String, entityChangedCallback As Func(Of EntityChangedParams, Boolean), collectionChangedCallback As Func(Of EntityCollectionChangedParams, Boolean))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Data::Services::Client::DataServiceContext ^ context, System::String ^ entitySetName, Func&lt;System::Data::Services::Client::EntityChangedParams ^, bool&gt; ^ entityChangedCallback, Func&lt;System::Data::Services::Client::EntityCollectionChangedParams ^, bool&gt; ^ collectionChangedCallback);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -183,7 +204,7 @@
 ## Remarks  
  Use this constructor to create an empty <xref:System.Data.Services.Client.DataServiceCollection%601> to which entity objects can be added without executing a query against the service or when an <xref:System.Collections.Generic.IEnumerable%601> is not available.  
   
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  ]]></format>
         </remarks>
@@ -193,6 +214,7 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Collections::Generic::IEnumerable&lt;T&gt; ^ items, System::Data::Services::Client::TrackingMode trackingMode, System::String ^ entitySetName, Func&lt;System::Data::Services::Client::EntityChangedParams ^, bool&gt; ^ entityChangedCallback, Func&lt;System::Data::Services::Client::EntityCollectionChangedParams ^, bool&gt; ^ collectionChangedCallback);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -219,7 +241,7 @@
 ## Remarks  
  The `entityChanged` and `collectionChanged` functions are invoked by the <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> events, respectively. The `entityChanged` method takes an <xref:System.Data.Services.Client.EntityCollectionChangedParams> value and the `collectionChanged` method takes a <xref:System.Data.Services.Client.EntityChangedParams> value. Both methods must return a Boolean value that indicates whether the event was handled by the function. When the method returns `true`, the default behavior still occurs.  
   
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. You can create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking when you create an instance using a constructor that enables you to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for <xref:System.Data.Services.Client.TrackingMode>. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  ]]></format>
         </remarks>
@@ -229,6 +251,7 @@
       <MemberSignature Language="C#" Value="public DataServiceCollection (System.Data.Services.Client.DataServiceContext context, System.Collections.Generic.IEnumerable&lt;T&gt; items, System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, Func&lt;System.Data.Services.Client.EntityChangedParams,bool&gt; entityChangedCallback, Func&lt;System.Data.Services.Client.EntityCollectionChangedParams,bool&gt; collectionChangedCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Services.Client.DataServiceContext context, class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items, valuetype System.Data.Services.Client.TrackingMode trackingMode, string entitySetName, class System.Func`2&lt;class System.Data.Services.Client.EntityChangedParams, bool&gt; entityChangedCallback, class System.Func`2&lt;class System.Data.Services.Client.EntityCollectionChangedParams, bool&gt; collectionChangedCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.#ctor(System.Data.Services.Client.DataServiceContext,System.Collections.Generic.IEnumerable{`0},System.Data.Services.Client.TrackingMode,System.String,System.Func{System.Data.Services.Client.EntityChangedParams,System.Boolean},System.Func{System.Data.Services.Client.EntityCollectionChangedParams,System.Boolean})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataServiceCollection(System::Data::Services::Client::DataServiceContext ^ context, System::Collections::Generic::IEnumerable&lt;T&gt; ^ items, System::Data::Services::Client::TrackingMode trackingMode, System::String ^ entitySetName, Func&lt;System::Data::Services::Client::EntityChangedParams ^, bool&gt; ^ entityChangedCallback, Func&lt;System::Data::Services::Client::EntityCollectionChangedParams ^, bool&gt; ^ collectionChangedCallback);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -255,7 +278,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. Use this class constructor to supply a value of <xref:System.Data.Services.Client.TrackingMode> for `trackingMode` to create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
+ By default, automatic change tracking is enabled for a <xref:System.Data.Services.Client.DataServiceCollection%601>. Use this class constructor to supply a value of <xref:System.Data.Services.Client.TrackingMode.None> for `trackingMode` to create an instance of <xref:System.Data.Services.Client.DataServiceCollection%601> that uses manual change tracking. When you use manual tracking, you must implement <xref:System.ComponentModel.INotifyPropertyChanged> and <xref:System.Collections.Specialized.INotifyCollectionChanged> and handle the raise events to manually report changes to the <xref:System.Data.Services.Client.DataServiceContext>.  
   
  The <xref:System.Data.Services.Client.DataServiceContext> must be supplied when `items` is not a <xref:System.Data.Services.Client.DataServiceQuery%601> or <xref:System.Data.Services.Client.QueryOperationResponse%601> that has a reference to a <xref:System.Data.Services.Client.DataServiceContext> instance.  
   
@@ -269,6 +292,8 @@
       <MemberSignature Language="C#" Value="public void Clear (bool stopTracking);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear(bool stopTracking) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Clear(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear (stopTracking As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear(bool stopTracking);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -298,6 +323,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; Continuation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!T&gt; Continuation" />
       <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceCollection`1.Continuation" />
+      <MemberSignature Language="VB.NET" Value="Public Property Continuation As DataServiceQueryContinuation(Of T)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Services::Client::DataServiceQueryContinuation&lt;T&gt; ^ Continuation { System::Data::Services::Client::DataServiceQueryContinuation&lt;T&gt; ^ get(); void set(System::Data::Services::Client::DataServiceQueryContinuation&lt;T&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -334,6 +361,8 @@
       <MemberSignature Language="C#" Value="public void Detach ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Detach() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Detach" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Detach ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Detach();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -362,6 +391,8 @@
       <MemberSignature Language="C#" Value="protected override void InsertItem (int index, T item);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, !T item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.InsertItem(System.Int32,`0)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub InsertItem (index As Integer, item As T)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void InsertItem(int index, T item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -389,10 +420,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Loads entities into the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Load">
       <MemberSignature Language="C#" Value="public void Load (System.Collections.Generic.IEnumerable&lt;T&gt; items);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Collections.Generic.IEnumerable`1&lt;!T&gt; items) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Load(System.Collections.Generic.IEnumerable{`0})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Load (items As IEnumerable(Of T))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Load(System::Collections::Generic::IEnumerable&lt;T&gt; ^ items);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>
@@ -424,6 +467,8 @@
       <MemberSignature Language="C#" Value="public void Load (T item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(!T item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceCollection`1.Load(`0)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Load (item As T)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Load(T item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Services.Client</AssemblyName>

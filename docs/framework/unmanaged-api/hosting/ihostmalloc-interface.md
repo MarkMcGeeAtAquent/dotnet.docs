@@ -1,5 +1,5 @@
 ---
-title: "IHostMalloc Interface | Microsoft Docs"
+title: "IHostMalloc Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMAlloc"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMAlloc"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostMAlloc interface [.NET Framework hosting]"
 ms.assetid: e3c6643b-6fc7-4a99-959d-4b7b4e63fdee
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMalloc Interface
 Provides methods that allow the common language runtime (CLR) to request fine-grained allocations from the heap through the host.  
@@ -50,5 +53,5 @@ Provides methods that allow the common language runtime (CLR) to request fine-gr
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)   
+ [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

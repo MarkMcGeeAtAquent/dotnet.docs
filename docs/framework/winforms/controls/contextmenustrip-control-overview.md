@@ -1,8 +1,8 @@
 ---
-title: "ContextMenuStrip Control Overview | Microsoft Docs"
+title: "ContextMenuStrip Control Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +11,17 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "ContextMenuStrip"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "context menus, ContextMenuStrip control [Windows Forms]"
-  - "shortcut menus, ContextMenuStrip control [Windows Forms]"
+  - "context menus [Windows Forms], ContextMenuStrip control [Windows Forms]"
+  - "shortcut menus [Windows Forms], ContextMenuStrip control [Windows Forms]"
   - "ContextMenuStrip control [Windows Forms], about ContextMenuStrip control"
 ms.assetid: 9787cdb3-88f1-4198-972f-eefd9524ce39
 caps.latest.revision: 5
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ContextMenuStrip Control Overview
 > [!NOTE]
@@ -40,8 +40,8 @@ manager: "wpickett"
 |<xref:System.Windows.Forms.ToolStripDropDownItem>|Provides basic functionality for controls derived from <xref:System.Windows.Forms.ToolStripItem> that display drop-down items when clicked.|  
   
 ## See Also  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.MenuStrip>   
- <xref:System.Windows.Forms.ContextMenuStrip>   
- <xref:System.Windows.Forms.ToolStripMenuItem>   
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ <xref:System.Windows.Forms.ContextMenuStrip>  
+ <xref:System.Windows.Forms.ToolStripMenuItem>  
  <xref:System.Windows.Forms.ToolStripDropDown>

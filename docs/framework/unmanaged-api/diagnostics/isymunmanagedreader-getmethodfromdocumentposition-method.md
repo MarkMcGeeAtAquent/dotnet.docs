@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetMethodFromDocumentPosition Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetMethodFromDocumentPosition Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetMethodFromDocumentPosition"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetMethodFromDocumentPosition"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetMethodFromDocumentPosition method [.NET Framework debugging]"
   - "ISymUnmanagedReader::GetMethodFromDocumentPosition method [.NET Framework debugging]"
 ms.assetid: 55773dbc-9053-46e3-8a3c-86caa9d91fb4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetMethodFromDocumentPosition Method
 Returns the method that contains the breakpoint at the given position in a document.  

@@ -1,7 +1,9 @@
-<Type Name="EventSchemaTraceListener" FullName="System.Diagnostics.EventSchemaTraceListener">
+﻿<Type Name="EventSchemaTraceListener" FullName="System.Diagnostics.EventSchemaTraceListener">
   <TypeSignature Language="C#" Value="public class EventSchemaTraceListener : System.Diagnostics.TextWriterTraceListener" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventSchemaTraceListener extends System.Diagnostics.TextWriterTraceListener" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventSchemaTraceListener" />
+  <TypeSignature Language="VB.NET" Value="Public Class EventSchemaTraceListener&#xA;Inherits TextWriterTraceListener" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EventSchemaTraceListener : System::Diagnostics::TextWriterTraceListener" />
   <AssemblyInfo>
     <AssemblyName>System.Core</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -62,7 +64,7 @@
   
 |Element|Attributes|Output|Notes|  
 |-------------|----------------|------------|-----------|  
-|`CallStack`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|Special characters such as > or < are replaced with escape sequences. See the escaped character translation table in the next table.|  
+|`CallStack`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions.Callstack> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|Special characters such as > or < are replaced with escape sequences. See the escaped character translation table in the next table.|  
 |`Computer`|None|Always present.|This element represents the value of the <xref:System.Environment.MachineName%2A> property.|  
 |`Correlation`|`ActivityID`|Always present.|If `ActivityID` is not specified, the default is an empty GUID.|  
 ||`RelatedActivityID`|Depends on the presence of the `relatedActivityId` parameter in the `Trace` method call.|The `RelatedActivityID` attribute corresponds to the `relatedActivityId` parameter of the <xref:System.Diagnostics.EventSchemaTraceListener.TraceTransfer%2A> method.|  
@@ -70,16 +72,16 @@
 |`Event`|None|Always present.|This element contains a trace event.|  
 |`EventData`|None|Present for event logs.|This element represents parameter input (`message`, `args`). It contains `Data` elements with escaped XML data that is created by calling the <xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A> method.|  
 |`EventID`|None|Always present.|This element represents parameter input (`id`).|  
-|`Execution`|`ProcessID`|Depends on the presence of the <xref:System.Diagnostics.TraceOptions> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The `ProcessID` attribute is specified in the <xref:System.Diagnostics.TraceEventCache>. On the Microsoft Windows 98 and Windows Millenium Edition operating systems, if `ProcessID` is larger than 2,147,483,647, it is a positive representation of a negative number and should be converted to obtain the correct process identifier.|  
+|`Execution`|`ProcessID`|Depends on the presence of the <xref:System.Diagnostics.TraceOptions.ProcessId> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The `ProcessID` attribute is specified in the <xref:System.Diagnostics.TraceEventCache>. On the Microsoft Windows 98 and Windows Millenium Edition operating systems, if `ProcessID` is larger than 2,147,483,647, it is a positive representation of a negative number and should be converted to obtain the correct process identifier.|  
 ||`ThreadID`|Present when `ProcessID` is present.|The `ThreadID` attribute is specified in the <xref:System.Diagnostics.TraceEventCache>.|  
-|`Level`|None|Always present.|This element represents parameter input (the numeric value of `eventType`). Parameter values that are larger than 255 are output as a level 8, which represents <xref:System.Diagnostics.TraceEventType?displayProperty=fullName>. Trace event types <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, and <xref:System.Diagnostics.TraceEventType> are output as levels 1, 2, 4, 8, and 10, respectively.|  
-|`LogicalOperationStack`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|Only one logical operation can exist. Therefore, the values are written as `LogicalOperation` nodes under the `LogicalOperationStack` element.|  
-|`OpCode`|None|Present when `Level` is greater than 255.|This element represents Trace event types that have numeric values greater than 255. <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, <xref:System.Diagnostics.TraceEventType>, or <xref:System.Diagnostics.TraceEventType> are output as levels 1, 2, 4, 8, and 10, respectively.|  
+|`Level`|None|Always present.|This element represents parameter input (the numeric value of `eventType`). Parameter values that are larger than 255 are output as a level 8, which represents <xref:System.Diagnostics.TraceEventType.Information?displayProperty=nameWithType>. Trace event types <xref:System.Diagnostics.TraceEventType.Critical>, <xref:System.Diagnostics.TraceEventType.Error>, <xref:System.Diagnostics.TraceEventType.Warning>, <xref:System.Diagnostics.TraceEventType.Information>, and <xref:System.Diagnostics.TraceEventType.Verbose> are output as levels 1, 2, 4, 8, and 10, respectively.|  
+|`LogicalOperationStack`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions.LogicalOperationStack> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|Only one logical operation can exist. Therefore, the values are written as `LogicalOperation` nodes under the `LogicalOperationStack` element.|  
+|`OpCode`|None|Present when `Level` is greater than 255.|This element represents Trace event types that have numeric values greater than 255. <xref:System.Diagnostics.TraceEventType.Start>, <xref:System.Diagnostics.TraceEventType.Stop>, <xref:System.Diagnostics.TraceEventType.Suspend>, <xref:System.Diagnostics.TraceEventType.Resume>, or <xref:System.Diagnostics.TraceEventType.Transfer> are output as levels 1, 2, 4, 8, and 10, respectively.|  
 |`Provider`|`GUID`|Always present.|Always empty.|  
 |`RenderingInfo`|`Culture`|Always present.|This attribute represents a resource string for the event type. It is always "en-EN\\".|  
 |`System`|`Name`|Always present.||  
-|`TimeCreated`|`SystemTime`|Depends on the presence of the <xref:System.Diagnostics.TraceOptions> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The time is the value of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A?displayProperty=fullName> property. This property is expressed as Coordinated Universal Time|  
-|`TimeStamp`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|This element is specified in the <xref:System.Diagnostics.TraceEventCache>.|  
+|`TimeCreated`|`SystemTime`|Depends on the presence of the <xref:System.Diagnostics.TraceOptions.DateTime> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|The time is the value of the <xref:System.Diagnostics.TraceEventCache.DateTime%2A?displayProperty=nameWithType> property. This property is expressed as Coordinated Universal Time|  
+|`TimeStamp`|None|Depends on the presence of the <xref:System.Diagnostics.TraceOptions.Timestamp> flag in the <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> property.|This element is specified in the <xref:System.Diagnostics.TraceEventCache>.|  
 |`UserData`|None|Present for data logs.|This element contains `Data` elements with unescaped, user-provided data from a <xref:System.Diagnostics.EventSchemaTraceListener.TraceData%2A> method.|  
   
  The following table shows the characters that are escaped in the XML output. Escaping occurs in all the elements and attributes except for the `UserData` element, which contains user-provided, unescaped data. The `UserData` element is a result of calls to the <xref:System.Diagnostics.EventSchemaTraceListener.TraceData%2A> method.  
@@ -107,10 +109,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.EventSchemaTraceListener" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -131,7 +144,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%29?displayProperty=fullName> constructor.  
+ The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%29?displayProperty=nameWithType> constructor.  
   
  [!code-csharp[System.Diagnostics.EventSchemaTraceListener.Ctors#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/CS/program.cs#1)]
  [!code-vb[System.Diagnostics.EventSchemaTraceListener.Ctors#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/VB/program.vb#1)]  
@@ -144,6 +157,8 @@
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName, string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName, System::String ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -161,7 +176,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%29?displayProperty=fullName> constructor.  
+ The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%29?displayProperty=nameWithType> constructor.  
   
  [!code-csharp[System.Diagnostics.EventSchemaTraceListener.Ctors#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/CS/program.cs#2)]
  [!code-vb[System.Diagnostics.EventSchemaTraceListener.Ctors#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/VB/program.vb#2)]  
@@ -174,6 +189,8 @@
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName, string name, int bufferSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name, int32 bufferSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String,System.String,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, name As String, bufferSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName, System::String ^ name, int bufferSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -198,7 +215,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%29?displayProperty=fullName> constructor.  
+ The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%29?displayProperty=nameWithType> constructor.  
   
  [!code-csharp[System.Diagnostics.EventSchemaTraceListener.Ctors#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/CS/program.cs#3)]
  [!code-vb[System.Diagnostics.EventSchemaTraceListener.Ctors#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/VB/program.vb#3)]  
@@ -211,6 +228,8 @@
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName, string name, int bufferSize, System.Diagnostics.TraceLogRetentionOption logRetentionOption);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name, int32 bufferSize, valuetype System.Diagnostics.TraceLogRetentionOption logRetentionOption) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String,System.String,System.Int32,System.Diagnostics.TraceLogRetentionOption)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, name As String, bufferSize As Integer, logRetentionOption As TraceLogRetentionOption)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName, System::String ^ name, int bufferSize, System::Diagnostics::TraceLogRetentionOption logRetentionOption);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -237,7 +256,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%2CSystem.Diagnostics.TraceLogRetentionOption%29?displayProperty=fullName> constructor.  
+ The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%2CSystem.Diagnostics.TraceLogRetentionOption%29?displayProperty=nameWithType> constructor.  
   
  [!code-csharp[System.Diagnostics.EventSchemaTraceListener.Ctors#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/CS/program.cs#4)]
  [!code-vb[System.Diagnostics.EventSchemaTraceListener.Ctors#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/VB/program.vb#4)]  
@@ -250,6 +269,8 @@
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName, string name, int bufferSize, System.Diagnostics.TraceLogRetentionOption logRetentionOption, long maximumFileSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name, int32 bufferSize, valuetype System.Diagnostics.TraceLogRetentionOption logRetentionOption, int64 maximumFileSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String,System.String,System.Int32,System.Diagnostics.TraceLogRetentionOption,System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, name As String, bufferSize As Integer, logRetentionOption As TraceLogRetentionOption, maximumFileSize As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName, System::String ^ name, int bufferSize, System::Diagnostics::TraceLogRetentionOption logRetentionOption, long maximumFileSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -278,7 +299,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%2CSystem.Diagnostics.TraceLogRetentionOption%2CSystem.Int64%29?displayProperty=fullName> constructor.  
+ The following code example demonstrates how to use the <xref:System.Diagnostics.EventSchemaTraceListener.%23ctor%28System.String%2CSystem.String%2CSystem.Int32%2CSystem.Diagnostics.TraceLogRetentionOption%2CSystem.Int64%29?displayProperty=nameWithType> constructor.  
   
  [!code-csharp[System.Diagnostics.EventSchemaTraceListener.Ctors#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/CS/program.cs#5)]
  [!code-vb[System.Diagnostics.EventSchemaTraceListener.Ctors#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.EventSchemaTraceListener.Ctors/VB/program.vb#5)]  
@@ -293,6 +314,8 @@
       <MemberSignature Language="C#" Value="public EventSchemaTraceListener (string fileName, string name, int bufferSize, System.Diagnostics.TraceLogRetentionOption logRetentionOption, long maximumFileSize, int maximumNumberOfFiles);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string name, int32 bufferSize, valuetype System.Diagnostics.TraceLogRetentionOption logRetentionOption, int64 maximumFileSize, int32 maximumNumberOfFiles) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.#ctor(System.String,System.String,System.Int32,System.Diagnostics.TraceLogRetentionOption,System.Int64,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String, name As String, bufferSize As Integer, logRetentionOption As TraceLogRetentionOption, maximumFileSize As Long, maximumNumberOfFiles As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventSchemaTraceListener(System::String ^ fileName, System::String ^ name, int bufferSize, System::Diagnostics::TraceLogRetentionOption logRetentionOption, long maximumFileSize, int maximumNumberOfFiles);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -338,6 +361,8 @@
       <MemberSignature Language="C#" Value="public int BufferSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.BufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BufferSize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -371,6 +396,8 @@
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -389,6 +416,8 @@
       <MemberSignature Language="C#" Value="public override void Fail (string message, string detailMessage);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Fail(string message, string detailMessage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.Fail(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Fail (message As String, detailMessage As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Fail(System::String ^ message, System::String ^ detailMessage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -412,6 +441,8 @@
       <MemberSignature Language="C#" Value="public override void Flush ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.Flush" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Flush ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Flush();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -435,6 +466,8 @@
       <MemberSignature Language="C#" Value="protected override string[] GetSupportedAttributes ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string[] GetSupportedAttributes() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.GetSupportedAttributes" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetSupportedAttributes () As String()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override cli::array &lt;System::String ^&gt; ^ GetSupportedAttributes();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -461,6 +494,8 @@
       <MemberSignature Language="C#" Value="public override bool IsThreadSafe { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsThreadSafe" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.IsThreadSafe" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property IsThreadSafe As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsThreadSafe { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -489,6 +524,8 @@
       <MemberSignature Language="C#" Value="public long MaximumFileSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumFileSize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.MaximumFileSize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MaximumFileSize As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long MaximumFileSize { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -510,11 +547,11 @@
   
 |TraceLogRetentionOption|Maximum file size|Default file size|  
 |-----------------------------|-----------------------|-----------------------|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|N/A|-1|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>0|4 KB|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>0|4 KB|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>0|4 KB|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>0|4 KB|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.LimitedCircularFiles>|N/A|-1|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.LimitedSequentialFiles>|>0|4 KB|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.SingleFileBoundedSize>|>0|4 KB|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.SingleFileUnboundedSize>|>0|4 KB|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.UnlimitedSequentialFiles>|>0|4 KB|  
   
    
   
@@ -532,6 +569,8 @@
       <MemberSignature Language="C#" Value="public int MaximumNumberOfFiles { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumNumberOfFiles" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.MaximumNumberOfFiles" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MaximumNumberOfFiles As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaximumNumberOfFiles { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -553,11 +592,11 @@
   
 |TraceLogRetentionOption|Maximum number of files|Default number of files|  
 |-----------------------------|-----------------------------|-----------------------------|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|N/A|1|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|N/A|1|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|N/A|-1|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>0|1|  
-|<xref:System.Diagnostics.TraceLogRetentionOption>|>1|2|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.LimitedCircularFiles>|N/A|1|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.LimitedSequentialFiles>|N/A|1|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.SingleFileBoundedSize>|N/A|-1|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.SingleFileUnboundedSize>|>0|1|  
+|<xref:System.Diagnostics.TraceLogRetentionOption.UnlimitedSequentialFiles>|>1|2|  
   
    
   
@@ -571,10 +610,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceData">
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes trace data to the log file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceData">
       <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceData (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, data As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceData(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::Object ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -616,9 +666,11 @@
       </Docs>
     </Member>
     <Member MemberName="TraceData">
-      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object[] data);" />
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceData (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, ParamArray data As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceData(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, ... cli::array &lt;System::Object ^&gt; ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -665,10 +717,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceEvent">
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes event trace information to the log file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceEvent">
       <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceEvent (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceEvent(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -710,9 +773,11 @@
       </Docs>
     </Member>
     <Member MemberName="TraceEvent">
-      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, object[] args);" />
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceEvent (eventCache As TraceEventCache, source As String, eventType As TraceEventType, id As Integer, format As String, ParamArray args As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceEvent(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, System::Diagnostics::TraceEventType eventType, int id, System::String ^ format, ... cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -752,7 +817,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before it is written. Therefore, a negative `id` value is written as a large positive integer. The <xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=fullName> method is called and the `format` string and `args` array are passed in as parameters. This method formats the `args` object array and writes the formatted array as the `Data` node in the `EventData` element.  
+ The `eventCache`, `source`, `eventType`, and `id` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before it is written. Therefore, a negative `id` value is written as a large positive integer. The <xref:System.String.Format%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method is called and the `format` string and `args` array are passed in as parameters. This method formats the `args` object array and writes the formatted array as the `Data` node in the `EventData` element.  
   
 > [!IMPORTANT]
 >  This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.  
@@ -765,6 +830,8 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.TraceLogRetentionOption TraceLogRetentionOption { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.TraceLogRetentionOption TraceLogRetentionOption" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.TraceLogRetentionOption" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TraceLogRetentionOption As TraceLogRetentionOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::TraceLogRetentionOption TraceLogRetentionOption { System::Diagnostics::TraceLogRetentionOption get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -793,6 +860,8 @@
       <MemberSignature Language="C#" Value="public override void TraceTransfer (System.Diagnostics.TraceEventCache eventCache, string source, int id, string message, Guid relatedActivityId);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceTransfer(class System.Diagnostics.TraceEventCache eventCache, string source, int32 id, string message, valuetype System.Guid relatedActivityId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.TraceTransfer(System.Diagnostics.TraceEventCache,System.String,System.Int32,System.String,System.Guid)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub TraceTransfer (eventCache As TraceEventCache, source As String, id As Integer, message As String, relatedActivityId As Guid)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void TraceTransfer(System::Diagnostics::TraceEventCache ^ eventCache, System::String ^ source, int id, System::String ^ message, Guid relatedActivityId);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -824,7 +893,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.EventSchemaTraceListener.TraceTransfer%2A> method is used to correlate related traces. The `eventCache`, `source`, `id`, and `relatedActivityId` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before it is written. Therefore, a negative `id` value is written as a large positive integer. The `message` parameter is written as the `Data` element. The <xref:System.Guid.ToString%28System.String%29?displayProperty=fullName> method is called to convert the `relatedActivityId` value to a "B" formatted string, which appears in the header. The `Opcode` element in the footer identifies the trace event type as a <xref:System.Diagnostics.TraceEventType>.  
+ The <xref:System.Diagnostics.EventSchemaTraceListener.TraceTransfer%2A> method is used to correlate related traces. The `eventCache`, `source`, `id`, and `relatedActivityId` parameters are used in the header and footer of the trace. The `id` parameter is converted to an unsigned integer before it is written. Therefore, a negative `id` value is written as a large positive integer. The `message` parameter is written as the `Data` element. The <xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType> method is called to convert the `relatedActivityId` value to a "B" formatted string, which appears in the header. The `Opcode` element in the footer identifies the trace event type as a <xref:System.Diagnostics.TraceEventType.Transfer>.  
   
 > [!IMPORTANT]
 >  The <xref:System.Diagnostics.EventSchemaTraceListener.TraceTransfer%2A> method should not be called by application code. It is intended to be used by a <xref:System.Diagnostics.TraceSource> object to emit the trace information for its <xref:System.Diagnostics.TraceSource.TraceTransfer%2A> method.  
@@ -837,6 +906,8 @@
       <MemberSignature Language="C#" Value="public override void Write (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.Write(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -855,7 +926,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A> method is called to log the message as an <xref:System.Diagnostics.TraceEventType> event.  
+ The <xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A> method is called to log the message as an <xref:System.Diagnostics.TraceEventType.Information> event.  
   
 > [!IMPORTANT]
 >  This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.  
@@ -868,6 +939,8 @@
       <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventSchemaTraceListener.WriteLine(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteLine (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteLine(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -886,7 +959,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A> method is called to log the message as an <xref:System.Diagnostics.TraceEventType> event.  
+ The <xref:System.Diagnostics.EventSchemaTraceListener.TraceEvent%2A> method is called to log the message as an <xref:System.Diagnostics.TraceEventType.Information> event.  
   
 > [!IMPORTANT]
 >  This method is not intended to be called directly by application code. It is called by methods of the <xref:System.Diagnostics.Debug>, <xref:System.Diagnostics.Trace>, and <xref:System.Diagnostics.TraceSource> classes to write trace data.  
@@ -899,6 +972,8 @@
       <MemberSignature Language="C#" Value="public System.IO.TextWriter Writer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.TextWriter Writer" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventSchemaTraceListener.Writer" />
+      <MemberSignature Language="VB.NET" Value="Public Property Writer As TextWriter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::TextWriter ^ Writer { System::IO::TextWriter ^ get(); void set(System::IO::TextWriter ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>

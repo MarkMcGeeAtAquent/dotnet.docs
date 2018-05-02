@@ -1,7 +1,9 @@
-<Type Name="RegistrySecurity" FullName="System.Security.AccessControl.RegistrySecurity">
+﻿<Type Name="RegistrySecurity" FullName="System.Security.AccessControl.RegistrySecurity">
   <TypeSignature Language="C#" Value="public sealed class RegistrySecurity : System.Security.AccessControl.NativeObjectSecurity" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegistrySecurity extends System.Security.AccessControl.NativeObjectSecurity" />
   <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.RegistrySecurity" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RegistrySecurity&#xA;Inherits NativeObjectSecurity" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RegistrySecurity sealed : System::Security::AccessControl::NativeObjectSecurity" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -10,6 +12,10 @@
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.AccessControl.NativeObjectSecurity</BaseTypeName>
@@ -48,12 +54,12 @@
   
 -   Adding or removing access control entries in ways that do not maintain the canonical ordering.  
   
- To modify Windows access control security for a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method to get the <xref:System.Security.AccessControl.RegistrySecurity> object. Modify the security object by adding and removing rules, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method to reattach it.  
+ To modify Windows access control security for a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method to get the <xref:System.Security.AccessControl.RegistrySecurity> object. Modify the security object by adding and removing rules, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method to reattach it.  
   
 > [!IMPORTANT]
->  Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method to assign the altered security object to the registry key.  
+>  Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method to assign the altered security object to the registry key.  
   
- To copy access control security from one registry key to another, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method to get a <xref:System.Security.AccessControl.RegistrySecurity> object representing the access and audit rules for the first registry key, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method to assign those rules to the second registry key. You can also assign the rules to a second registry key with an <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=fullName> or <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A?displayProperty=fullName> method that takes a <xref:System.Security.AccessControl.RegistrySecurity> object parameter.  
+ To copy access control security from one registry key to another, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method to get a <xref:System.Security.AccessControl.RegistrySecurity> object representing the access and audit rules for the first registry key, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method to assign those rules to the second registry key. You can also assign the rules to a second registry key with an <xref:Microsoft.Win32.RegistryKey.OpenSubKey%2A?displayProperty=nameWithType> or <xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A?displayProperty=nameWithType> method that takes a <xref:System.Security.AccessControl.RegistrySecurity> object parameter.  
   
  Users with an investment in the security descriptor definition language (SDDL) can use the <xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm%2A> method to set access rules for a registry key, and the <xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm%2A> method to obtain a string that represents the access rules in SDDL format. This is not recommended for new development.  
   
@@ -66,19 +72,19 @@
   
  The following code example shows how the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method removes rights from a compatible rule, and how the <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> method merges rights with compatible rules.  
   
- The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds a rule that allows the current user <xref:System.Security.AccessControl.RegistryRights?displayProperty=fullName> rights. The example then creates a rule that grants the user <xref:System.Security.AccessControl.RegistryRights?displayProperty=fullName>, with the same inheritance and propagation rights as the first rule, and uses the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to remove this new rule from the <xref:System.Security.AccessControl.RegistrySecurity> object. <xref:System.Security.AccessControl.RegistryRights> is a constituent of <xref:System.Security.AccessControl.RegistryRights>, so it is removed from the compatible rule. The rules in the <xref:System.Security.AccessControl.RegistrySecurity> object are displayed, showing the remaining constituents of <xref:System.Security.AccessControl.RegistryRights>.  
+ The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds a rule that allows the current user <xref:System.Security.AccessControl.RegistryRights.ReadKey?displayProperty=nameWithType> rights. The example then creates a rule that grants the user <xref:System.Security.AccessControl.RegistryRights.SetValue?displayProperty=nameWithType>, with the same inheritance and propagation rights as the first rule, and uses the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to remove this new rule from the <xref:System.Security.AccessControl.RegistrySecurity> object. <xref:System.Security.AccessControl.RegistryRights.SetValue> is a constituent of <xref:System.Security.AccessControl.RegistryRights.ReadKey>, so it is removed from the compatible rule. The rules in the <xref:System.Security.AccessControl.RegistrySecurity> object are displayed, showing the remaining constituents of <xref:System.Security.AccessControl.RegistryRights.ReadKey>.  
   
- The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> method to merge the <xref:System.Security.AccessControl.RegistryRights> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.  
+ The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> method to merge the <xref:System.Security.AccessControl.RegistryRights.SetValue> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName>.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType>.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.RemoveAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRule/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.RemoveAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRule/VB/source.vb#1)]  
   
  Example 2  
   
- The following code example demonstrates access rules with inheritance and propagation. The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object, then creates and adds two rules that have the <xref:System.Security.AccessControl.InheritanceFlags> flag. The first rule has no propagation flags, while the second has <xref:System.Security.AccessControl.PropagationFlags> and <xref:System.Security.AccessControl.PropagationFlags>.  
+ The following code example demonstrates access rules with inheritance and propagation. The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object, then creates and adds two rules that have the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> flag. The first rule has no propagation flags, while the second has <xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit> and <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>.  
   
  The program displays the rules in the <xref:System.Security.AccessControl.RegistrySecurity> object, and then uses the <xref:System.Security.AccessControl.RegistrySecurity> object to create a subkey. The program creates a child subkey and a grandchild subkey, then displays the security for each subkey. Finally, the program deletes the test keys.  
   
@@ -93,6 +99,8 @@
       <MemberSignature Language="C#" Value="public RegistrySecurity ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RegistrySecurity();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -102,6 +110,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -120,6 +132,8 @@
       <MemberSignature Language="C#" Value="public override Type AccessRightType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRightType" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.RegistrySecurity.AccessRightType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property AccessRightType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ AccessRightType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -129,6 +143,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -150,6 +168,7 @@
       <MemberSignature Language="C#" Value="public override System.Security.AccessControl.AccessRule AccessRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AccessRule AccessRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.AccessRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AccessControlType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::AccessControl::AccessRule ^ AccessRuleFactory(System::Security::Principal::IdentityReference ^ identityReference, int accessMask, bool isInherited, System::Security::AccessControl::InheritanceFlags inheritanceFlags, System::Security::AccessControl::PropagationFlags propagationFlags, System::Security::AccessControl::AccessControlType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -159,6 +178,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.AccessControl.AccessRule</ReturnType>
@@ -187,7 +210,7 @@
  The recommended way to create access control rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAccessRule> class.  
   
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
+>  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
   
  ]]></format>
         </remarks>
@@ -207,6 +230,8 @@
       <MemberSignature Language="C#" Value="public override Type AccessRuleType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type AccessRuleType" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.RegistrySecurity.AccessRuleType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property AccessRuleType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ AccessRuleType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -216,6 +241,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -237,6 +266,8 @@
       <MemberSignature Language="C#" Value="public void AddAccessRule (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAccessRule(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.AddAccessRule(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddAccessRule (rule As RegistryAccessRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddAccessRule(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -246,6 +277,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -262,11 +297,11 @@
 ## Remarks  
  The <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> method searches for rules with the same user or group and the same <xref:System.Security.AccessControl.AccessControlType> as `rule`. If none are found, `rule` is added. If a matching rule is found, the rights in `rule` are merged with the existing rule.  
   
- Rules cannot be merged if they have different inheritance flags. For example, if a user is allowed read access with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> is used to add a rule giving the user write access with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName>), the two rules cannot be merged.  
+ Rules cannot be merged if they have different inheritance flags. For example, if a user is allowed read access with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> is used to add a rule giving the user write access with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType>), the two rules cannot be merged.  
   
  Rules with different <xref:System.Security.AccessControl.AccessControlType> values are never merged.  
   
- Rules express rights in the most economical way. For example, if a user has <xref:System.Security.AccessControl.RegistryRights>, <xref:System.Security.AccessControl.RegistryRights> and <xref:System.Security.AccessControl.RegistryRights> rights, and you add a rule allowing <xref:System.Security.AccessControl.RegistryRights> rights, the user has all the constituent parts of <xref:System.Security.AccessControl.RegistryRights> rights. If you query the user's rights, you will see a rule containing <xref:System.Security.AccessControl.RegistryRights> rights. Similarly, if you remove <xref:System.Security.AccessControl.RegistryRights> rights, the other constituents of <xref:System.Security.AccessControl.RegistryRights> rights will reappear.  
+ Rules express rights in the most economical way. For example, if a user has <xref:System.Security.AccessControl.RegistryRights.QueryValues>, <xref:System.Security.AccessControl.RegistryRights.Notify> and <xref:System.Security.AccessControl.RegistryRights.ReadPermissions> rights, and you add a rule allowing <xref:System.Security.AccessControl.RegistryRights.EnumerateSubKeys> rights, the user has all the constituent parts of <xref:System.Security.AccessControl.RegistryRights.ReadKey> rights. If you query the user's rights, you will see a rule containing <xref:System.Security.AccessControl.RegistryRights.ReadKey> rights. Similarly, if you remove <xref:System.Security.AccessControl.RegistryRights.EnumerateSubKeys> rights, the other constituents of <xref:System.Security.AccessControl.RegistryRights.ReadKey> rights will reappear.  
   
    
   
@@ -274,7 +309,7 @@
  The following code example creates registry access rules and adds them to a <xref:System.Security.AccessControl.RegistrySecurity> object, showing how rules that allow and deny rights remain separate, while compatible rules of the same kind are merged.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. Examples that attach security objects can be found in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName>.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. Examples that attach security objects can be found in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> and <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType>.  
   
  A code example that demonstrates inheritance and propagation flags can be found in the <xref:System.Security.AccessControl.RegistryAccessRule> class.  
   
@@ -291,6 +326,8 @@
       <MemberSignature Language="C#" Value="public void AddAuditRule (System.Security.AccessControl.RegistryAuditRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddAuditRule(class System.Security.AccessControl.RegistryAuditRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.AddAuditRule(System.Security.AccessControl.RegistryAuditRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddAuditRule (rule As RegistryAuditRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddAuditRule(System::Security::AccessControl::RegistryAuditRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -300,6 +337,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -316,7 +357,7 @@
 ## Remarks  
  The <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule%2A> method searches for rules with the same user or group as `rule`. If none are found, `rule` is added. If a matching rule is found, the flags in `rule` are merged into the existing rule.  
   
- Rules cannot be merged if they have different inheritance flags. For example, if failed attempts to write to a key are audited for a particular user, with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule%2A> is used to add a rule specifying that failed attempts to change permissions are to be audited for the same user, but with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName>), the two rules cannot be merged.  
+ Rules cannot be merged if they have different inheritance flags. For example, if failed attempts to write to a key are audited for a particular user, with no inheritance flags, and <xref:System.Security.AccessControl.RegistrySecurity.AddAuditRule%2A> is used to add a rule specifying that failed attempts to change permissions are to be audited for the same user, but with inheritance for subkeys (<xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType>), the two rules cannot be merged.  
   
  ]]></format>
         </remarks>
@@ -326,6 +367,7 @@
       <MemberSignature Language="C#" Value="public override System.Security.AccessControl.AuditRule AuditRuleFactory (System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.AccessControl.AuditRule AuditRuleFactory(class System.Security.Principal.IdentityReference identityReference, int32 accessMask, bool isInherited, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.AuditRuleFactory(System.Security.Principal.IdentityReference,System.Int32,System.Boolean,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AuditFlags)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::AccessControl::AuditRule ^ AuditRuleFactory(System::Security::Principal::IdentityReference ^ identityReference, int accessMask, bool isInherited, System::Security::AccessControl::InheritanceFlags inheritanceFlags, System::Security::AccessControl::PropagationFlags propagationFlags, System::Security::AccessControl::AuditFlags flags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -335,6 +377,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.AccessControl.AuditRule</ReturnType>
@@ -363,7 +409,7 @@
  The recommended way to create audit rules is to use the constructors of the <xref:System.Security.AccessControl.RegistryAuditRule> class.  
   
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag, there is no point in doing so. For the purposes of audit control, the name/value pairs in a subkey are not separate objects. The audit rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
+>  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag, there is no point in doing so. For the purposes of audit control, the name/value pairs in a subkey are not separate objects. The audit rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
   
  ]]></format>
         </remarks>
@@ -383,6 +429,8 @@
       <MemberSignature Language="C#" Value="public override Type AuditRuleType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type AuditRuleType" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.RegistrySecurity.AuditRuleType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property AuditRuleType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Type ^ AuditRuleType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -392,6 +440,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -413,6 +465,8 @@
       <MemberSignature Language="C#" Value="public bool RemoveAccessRule (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAccessRule(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Function RemoveAccessRule (rule As RegistryAccessRule) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool RemoveAccessRule(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -422,6 +476,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -445,12 +503,12 @@
 ## Examples  
  The following code example shows how the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method removes rights from a compatible rule, and how the <xref:System.Security.AccessControl.RegistrySecurity.AddAccessRule%2A> method merges rights with compatible rules.  
   
- The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds a rule that allows the current user <xref:System.Security.AccessControl.RegistryRights?displayProperty=fullName> rights. The example then creates a rule that grants the user <xref:System.Security.AccessControl.RegistryRights?displayProperty=fullName>, with the same inheritance and propagation rights as the first rule, and uses the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to remove this new rule from the <xref:System.Security.AccessControl.RegistrySecurity> object. <xref:System.Security.AccessControl.RegistryRights> is a constituent of <xref:System.Security.AccessControl.RegistryRights>, so it is removed from the compatible rule. The rules in the <xref:System.Security.AccessControl.RegistrySecurity> object are displayed, showing the remaining constituents of <xref:System.Security.AccessControl.RegistryRights>.  
+ The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds a rule that allows the current user <xref:System.Security.AccessControl.RegistryRights.ReadKey?displayProperty=nameWithType> rights. The example then creates a rule that grants the user <xref:System.Security.AccessControl.RegistryRights.SetValue?displayProperty=nameWithType>, with the same inheritance and propagation rights as the first rule, and uses the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to remove this new rule from the <xref:System.Security.AccessControl.RegistrySecurity> object. <xref:System.Security.AccessControl.RegistryRights.SetValue> is a constituent of <xref:System.Security.AccessControl.RegistryRights.ReadKey>, so it is removed from the compatible rule. The rules in the <xref:System.Security.AccessControl.RegistrySecurity> object are displayed, showing the remaining constituents of <xref:System.Security.AccessControl.RegistryRights.ReadKey>.  
   
- The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to merge the <xref:System.Security.AccessControl.RegistryRights> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.  
+ The example code then calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to merge the <xref:System.Security.AccessControl.RegistryRights.SetValue> right back into the rule in the <xref:System.Security.AccessControl.RegistrySecurity> object.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName><xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName>.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. The second example in this section attaches a security object, and so do the examples in <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType><xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType>.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.RemoveAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRule/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.RemoveAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRule/VB/source.vb#1)]  
@@ -465,6 +523,8 @@
       <MemberSignature Language="C#" Value="public void RemoveAccessRuleAll (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAccessRuleAll(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAccessRuleAll (rule As RegistryAccessRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAccessRuleAll(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -474,6 +534,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -490,7 +554,7 @@
 ## Remarks  
  The current <xref:System.Security.AccessControl.RegistrySecurity> is searched for rules that have the same user and the same <xref:System.Security.AccessControl.AccessControlType> value as `rule`. Any rights, inheritance flags, or propagation flags specified by `rule` are ignored when performing this search. If no matching rules are found, no action is taken.  
   
- For example, if a user has multiple rules that allow various rights with different inheritance and propagation flags, you can remove all those rules by creating a <xref:System.Security.AccessControl.RegistryAccessRule> object that specifies the user and <xref:System.Security.AccessControl.AccessControlType?displayProperty=fullName>, with any arbitrary rights and flags, and passing that rule to the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll%2A> method.  
+ For example, if a user has multiple rules that allow various rights with different inheritance and propagation flags, you can remove all those rules by creating a <xref:System.Security.AccessControl.RegistryAccessRule> object that specifies the user and <xref:System.Security.AccessControl.AccessControlType.Allow?displayProperty=nameWithType>, with any arbitrary rights and flags, and passing that rule to the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll%2A> method.  
   
    
   
@@ -500,7 +564,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user to take ownership, and passes that rule to the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll%2A> method to remove the two rules that allow access.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRuleAll/VB/source.vb#1)]  
@@ -515,6 +579,8 @@
       <MemberSignature Language="C#" Value="public void RemoveAccessRuleSpecific (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAccessRuleSpecific(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAccessRuleSpecific (rule As RegistryAccessRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAccessRuleSpecific(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -524,6 +590,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -551,7 +621,7 @@
  The example creates two rules that allow different rights. The rules have compatible inheritance and propagation flags, so when the second rule is added it merges with the first. The example calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific%2A> method, specifying the first rule, but because the rules are merged there is no rule that matches. The example then calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRule%2A> method to the remove the second rule from the merged rule, and finally calls the <xref:System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific%2A> method to remove the first rule.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.RemoveAccessRuleSpecific/VB/source.vb#1)]  
@@ -566,6 +636,8 @@
       <MemberSignature Language="C#" Value="public bool RemoveAuditRule (System.Security.AccessControl.RegistryAuditRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RemoveAuditRule(class System.Security.AccessControl.RegistryAuditRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAuditRule(System.Security.AccessControl.RegistryAuditRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Function RemoveAuditRule (rule As RegistryAuditRule) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool RemoveAuditRule(System::Security::AccessControl::RegistryAuditRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -575,6 +647,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -603,6 +679,8 @@
       <MemberSignature Language="C#" Value="public void RemoveAuditRuleAll (System.Security.AccessControl.RegistryAuditRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleAll(class System.Security.AccessControl.RegistryAuditRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAuditRuleAll(System.Security.AccessControl.RegistryAuditRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAuditRuleAll (rule As RegistryAuditRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAuditRuleAll(System::Security::AccessControl::RegistryAuditRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -612,6 +690,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -638,6 +720,8 @@
       <MemberSignature Language="C#" Value="public void RemoveAuditRuleSpecific (System.Security.AccessControl.RegistryAuditRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAuditRuleSpecific(class System.Security.AccessControl.RegistryAuditRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.RemoveAuditRuleSpecific(System.Security.AccessControl.RegistryAuditRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAuditRuleSpecific (rule As RegistryAuditRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAuditRuleSpecific(System::Security::AccessControl::RegistryAuditRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -647,6 +731,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -676,6 +764,8 @@
       <MemberSignature Language="C#" Value="public void ResetAccessRule (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetAccessRule(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.ResetAccessRule(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ResetAccessRule (rule As RegistryAccessRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ResetAccessRule(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -685,6 +775,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -709,7 +803,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user only to read the key, and uses the <xref:System.Security.AccessControl.RegistrySecurity.ResetAccessRule%2A> method to remove the all rules for the user and replace them with the new rule.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.ResetAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.ResetAccessRule/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.ResetAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.ResetAccessRule/VB/source.vb#1)]  
@@ -722,6 +816,8 @@
       <MemberSignature Language="C#" Value="public void SetAccessRule (System.Security.AccessControl.RegistryAccessRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessRule(class System.Security.AccessControl.RegistryAccessRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.SetAccessRule(System.Security.AccessControl.RegistryAccessRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetAccessRule (rule As RegistryAccessRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAccessRule(System::Security::AccessControl::RegistryAccessRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -731,6 +827,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -745,7 +845,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the specified rule has <xref:System.Security.AccessControl.AccessControlType>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType>, all <xref:System.Security.AccessControl.AccessControlType> rules for the specified user are replaced with the specified rule.  
+ If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Allow>, the effect of this method is to remove all <xref:System.Security.AccessControl.AccessControlType.Allow> rules for the specified user, replacing them with the specified rule. If the specified rule has <xref:System.Security.AccessControl.AccessControlType.Deny>, all <xref:System.Security.AccessControl.AccessControlType.Deny> rules for the specified user are replaced with the specified rule.  
   
  If there are no rules whose user and <xref:System.Security.AccessControl.AccessControlType> match the specified rule, `rule` is added.  
   
@@ -757,7 +857,7 @@
  The example creates a <xref:System.Security.AccessControl.RegistrySecurity> object and adds rules that allow and deny various rights for the current user, with different inheritance and propagation flags. The example then creates a new rule that allows the current user only to read the key, and uses the <xref:System.Security.AccessControl.RegistrySecurity.SetAccessRule%2A> method to remove the two rules that allow access and to replace them with the new rule. The rule that denies access is not affected.  
   
 > [!NOTE]
->  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method.  
+>  This example does not attach the security object to a <xref:Microsoft.Win32.RegistryKey> object. See the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method and the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.AccessControl.RegistrySecurity.SetAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.SetAccessRule/CS/source.cs#1)]
  [!code-vb[System.Security.AccessControl.RegistrySecurity.SetAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.RegistrySecurity.SetAccessRule/VB/source.vb#1)]  
@@ -772,6 +872,8 @@
       <MemberSignature Language="C#" Value="public void SetAuditRule (System.Security.AccessControl.RegistryAuditRule rule);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAuditRule(class System.Security.AccessControl.RegistryAuditRule rule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistrySecurity.SetAuditRule(System.Security.AccessControl.RegistryAuditRule)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetAuditRule (rule As RegistryAuditRule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAuditRule(System::Security::AccessControl::RegistryAuditRule ^ rule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -781,6 +883,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

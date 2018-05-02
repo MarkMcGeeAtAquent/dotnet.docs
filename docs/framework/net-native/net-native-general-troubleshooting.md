@@ -1,5 +1,5 @@
 ---
-title: ".NET Native General Troubleshooting | Microsoft Docs"
+title: ".NET Native General Troubleshooting"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # .NET Native General Troubleshooting
 This topic describes how to troubleshoot potential issues that you might encounter when developing apps with [!INCLUDE[net_native](../../../includes/net-native-md.md)].  

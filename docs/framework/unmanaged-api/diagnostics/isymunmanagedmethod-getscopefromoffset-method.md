@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedMethod::GetScopeFromOffset Method | Microsoft Docs"
+title: "ISymUnmanagedMethod::GetScopeFromOffset Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedMethod.GetScopeFromOffset"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedMethod::GetScopeFromOffset"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetScopeFromOffset method [.NET Framework debugging]"
   - "ISymUnmanagedMethod::GetScopeFromOffset method [.NET Framework debugging]"
 ms.assetid: d14cf210-81f8-46e1-8b19-6ddec0ba8b11
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedMethod::GetScopeFromOffset Method
 Gets the most enclosing lexical scope within this method that encloses the given offset. This can be used to start local variable searches.  

@@ -1,6 +1,6 @@
 ---
 title: Async Overview
-description: Async Overview
+description: Learn how async programming is a key technique that makes it straightforward to handle blocking I/O and concurrent operations on multiple cores.
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,6 +10,9 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38e9d9-8284-46ee-a15f-199adc4f26f4
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 
 # Async Overview
@@ -23,16 +26,15 @@ Async programming is a key technique that makes it straightforward to handle blo
 
 ## Why Write Async Code?
 
-Modern apps make extensive use of file and networking I/O. I/O APIs traditionally block by default, resulting in poor user experiences and hardware utilization unless you want to learn and use challenging patterns. Async APIs and the language-level asynchronous programming model invert this model, making async execution the default with few new concepts to learn.
+Modern apps make extensive use of file and networking I/O. I/O APIs traditionally block by default, resulting in poor user experiences and hardware utilization unless you want to learn and use challenging patterns. Task-based async APIs and the language-level asynchronous programming model invert this model, making async execution the default with few new concepts to learn.
 
-Async code has the following characteritics:
+Async code has the following characteristics:
 
 * Handles more server requests by yielding threads to handle more requests while waiting for I/O requests to return.
 * Enables UIs to be more responsive by yielding threads to UI interaction while waiting for I/O requests and by transitioning long-running work to other CPU cores.
 * Many of the newer .NET APIs are asynchronous.
-* It’s super easy to write async code in .NET!
+* It's easy to write async code in .NET!
 
-## What’s next?
+## What's next?
 
-For a deep dive into async concepts and programming, see [Async in depth](async-in-depth.md).
-
+For a deep dive into async concepts and programming, see [Async in depth](async-in-depth.md) and [Task-based asynchronous programming](~/docs/standard/parallel-programming/task-based-asynchronous-programming.md).

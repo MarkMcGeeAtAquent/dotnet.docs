@@ -1,23 +1,31 @@
 ---
 uid: System.Diagnostics.Eventing.Reader.EventKeyword
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventKeyword.Name
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventKeyword.DisplayName
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventKeyword.Value
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

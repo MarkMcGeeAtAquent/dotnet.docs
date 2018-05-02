@@ -1,5 +1,5 @@
 ---
-title: "CLR ETW Providers | Microsoft Docs"
+title: "CLR ETW Providers"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CLR ETW Providers
 The common language runtime (CLR) has two providers: the runtime provider and the rundown provider.  

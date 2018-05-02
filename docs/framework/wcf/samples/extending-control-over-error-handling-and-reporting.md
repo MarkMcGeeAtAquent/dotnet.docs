@@ -1,8 +1,8 @@
 ---
-title: "Extending Control Over Error Handling and Reporting | Microsoft Docs"
+title: "Extending Control Over Error Handling and Reporting"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Extending Control Over Error Handling and Reporting
 This sample demonstrates how to extend control over error handling and error reporting in a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service using the <xref:System.ServiceModel.Dispatcher.IErrorHandler> interface. The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) with some additional code added to the service to handle errors. The client forces several error conditions. The service intercepts the errors and logs them in a file.  

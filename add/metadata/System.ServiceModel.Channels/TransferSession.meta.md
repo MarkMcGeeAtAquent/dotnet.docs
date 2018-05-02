@@ -1,6 +1,8 @@
 ---
 uid: System.ServiceModel.Channels.TransferSession
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

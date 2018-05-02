@@ -1,7 +1,8 @@
 ---
-title: "Mitigation: Serialization of Control Characters with the DataContractJsonSerializer | Microsoft Docs"
+title: "Mitigation: Serialization of Control Characters with the DataContractJsonSerializer"
 ms.custom: ""
 ms.date: "04/07/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
@@ -16,6 +17,8 @@ caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Mitigation: Serialization of Control Characters with the DataContractJsonSerializer
 

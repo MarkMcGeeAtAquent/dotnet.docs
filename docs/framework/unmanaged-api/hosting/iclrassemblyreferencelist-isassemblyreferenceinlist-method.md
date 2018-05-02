@@ -1,5 +1,5 @@
 ---
-title: "ICLRAssemblyReferenceList::IsAssemblyReferenceInList Method | Microsoft Docs"
+title: "ICLRAssemblyReferenceList::IsAssemblyReferenceInList Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRAssemblyReferenceList.IsAssemblyReferenceInList"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRAssemblyReferenceList::IsAssemblyReferenceInList"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRAssemblyReferenceList::IsAssemblyReferenceInList method [.NET Framework hosting]"
   - "IsAssemblyReferenceInList method [.NET Framework hosting]"
 ms.assetid: 8a570813-21be-407e-92a6-7ae8de3bc728
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRAssemblyReferenceList::IsAssemblyReferenceInList Method
 Gets a value that indicates whether the supplied pointer refers to an assembly in the list.  
@@ -60,7 +63,7 @@ HRESULT IsAssemblyReferenceInList (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)   
- [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)   
- [IHostAssemblyManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)   
+ [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
+ [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
+ [IHostAssemblyManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
  [IHostAssemblyStore Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

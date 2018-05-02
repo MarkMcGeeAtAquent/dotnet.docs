@@ -1,10 +1,13 @@
-<Type Name="ClaimsPrincipal" FullName="System.Security.Claims.ClaimsPrincipal">
+﻿<Type Name="ClaimsPrincipal" FullName="System.Security.Claims.ClaimsPrincipal">
   <TypeSignature Language="C#" Value="public class ClaimsPrincipal : System.Security.Principal.IPrincipal" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ClaimsPrincipal extends System.Object implements class System.Security.Principal.IPrincipal" />
   <TypeSignature Language="DocId" Value="T:System.Security.Claims.ClaimsPrincipal" />
+  <TypeSignature Language="VB.NET" Value="Public Class ClaimsPrincipal&#xA;Implements IPrincipal" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClaimsPrincipal : System::Security::Principal::IPrincipal" />
   <AssemblyInfo>
     <AssemblyName>System.Security.Claims</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -48,14 +51,14 @@
   
 -   Inline claims-based code access checks can be performed by configuring your application with a custom claims authorization manager and using either the <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> class to perform imperative access checks or the <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> to perform declarative access checks. Claims-based code access checks are performed inline, outside of the processing pipeline, and so are available to all applications as long as a claims authorization manager is configured.  
   
- You can obtain a <xref:System.Security.Claims.ClaimsPrincipal> instance for the principal associated with a request in an RP application (or the principal under which a thread is executing) by casting the <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> property to <xref:System.Security.Claims.ClaimsPrincipal>. The claims associated with an <xref:System.Security.Claims.ClaimsPrincipal> object are available through its <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A> property. The <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A> property returns all of the claims contained by the identities associated with the principal. In the uncommon case in which the <xref:System.Security.Claims.ClaimsPrincipal> contains multiple <xref:System.Security.Claims.ClaimsIdentity> instances, you can use the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> property or you can access the primary identity by using the <xref:System.Security.Claims.ClaimsPrincipal.Identity%2A> property. <xref:System.Security.Claims.ClaimsPrincipal> provides several methods through which these claims may be searched and fully supports Language Integrated Query (LINQ). Identities can be added to the principal by using the <xref:System.Security.Claims.ClaimsPrincipal.AddIdentities%2A> or <xref:System.Security.Claims.ClaimsPrincipal.AddIdentity%2A> methods.  
+ You can obtain a <xref:System.Security.Claims.ClaimsPrincipal> instance for the principal associated with a request in an RP application (or the principal under which a thread is executing) by casting the <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> property to <xref:System.Security.Claims.ClaimsPrincipal>. The claims associated with an <xref:System.Security.Claims.ClaimsPrincipal> object are available through its <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A> property. The <xref:System.Security.Claims.ClaimsPrincipal.Claims%2A> property returns all of the claims contained by the identities associated with the principal. In the uncommon case in which the <xref:System.Security.Claims.ClaimsPrincipal> contains multiple <xref:System.Security.Claims.ClaimsIdentity> instances, you can use the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> property or you can access the primary identity by using the <xref:System.Security.Claims.ClaimsPrincipal.Identity%2A> property. <xref:System.Security.Claims.ClaimsPrincipal> provides several methods through which these claims may be searched and fully supports Language Integrated Query (LINQ). Identities can be added to the principal by using the <xref:System.Security.Claims.ClaimsPrincipal.AddIdentities%2A> or <xref:System.Security.Claims.ClaimsPrincipal.AddIdentity%2A> methods.  
   
 > [!NOTE]
 >  To add identities to the <xref:System.Security.Claims.ClaimsPrincipal>, a caller must have full trust.  
   
  By default, WIF prioritizes <xref:System.Security.Principal.WindowsIdentity> objects when selecting the primary identity to return through the <xref:System.Security.Claims.ClaimsPrincipal.Identity%2A> property. You can modify this behavior by supplying a delegate through the <xref:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector%2A> property to perform the selection. The <xref:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector%2A> property provides similar functionality for the <xref:System.Security.Claims.ClaimsPrincipal.Current%2A> property.  
   
- In the claim-based model, whether a principal is in a specified role is determined by the claims presented by its underlying identities. The <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A> method essentially examines each identity associated with the principal to determine whether it possesses a claim with the specified role value. The type of the claim (represented by its <xref:System.Security.Claims.Claim.Type%2A?displayProperty=fullName> property) used to determine which claims should be examined during role checks is specified on an identity through its <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=fullName> property. Thus, the claims examined during role checks can be of a different type for different identities associated with the principal.  
+ In the claim-based model, whether a principal is in a specified role is determined by the claims presented by its underlying identities. The <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A> method essentially examines each identity associated with the principal to determine whether it possesses a claim with the specified role value. The type of the claim (represented by its <xref:System.Security.Claims.Claim.Type%2A?displayProperty=nameWithType> property) used to determine which claims should be examined during role checks is specified on an identity through its <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType> property. Thus, the claims examined during role checks can be of a different type for different identities associated with the principal.  
   
    
   
@@ -76,16 +79,33 @@ if (null != principal)
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Security.Claims.Claim" />
+    <altmember cref="T:System.Security.Claims.ClaimsIdentity" />
+    <altmember cref="T:System.Security.Claims.ClaimsAuthenticationManager" />
+    <altmember cref="T:System.Security.Claims.ClaimsAuthorizationManager" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.ClaimsPrincipal" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ClaimsPrincipal ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClaimsPrincipal();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -113,10 +133,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; identities);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; identities) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Collections.Generic.IEnumerable{System.Security.Claims.ClaimsIdentity})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (identities As IEnumerable(Of ClaimsIdentity))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClaimsPrincipal(System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^ identities);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -149,10 +172,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.IO.BinaryReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.IO.BinaryReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (reader As BinaryReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClaimsPrincipal(System::IO::BinaryReader ^ reader);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -167,19 +193,31 @@ if (null != principal)
         <Parameter Name="reader" Type="System.IO.BinaryReader" />
       </Parameters>
       <Docs>
-        <param name="reader">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="reader">A <see cref="T:System.IO.BinaryReader" /> pointing to a <see cref="T:System.Security.Claims.ClaimsPrincipal" />.</param>
+        <summary>Initializes an instance of <see cref="T:System.Security.Claims.ClaimsPrincipal" /> with the specified <see cref="T:System.IO.BinaryReader" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Normally, the <xref:System.IO.BinaryReader> is constructed using the bytes from <xref:System.Security.Claims.ClaimsIdentity.WriteTo%2A> and initialized in the same way as the <xref:System.IO.BinaryWriter>.
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Security.Principal.IIdentity identity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IIdentity identity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Security.Principal.IIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (identity As IIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClaimsPrincipal(System::Security::Principal::IIdentity ^ identity);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -212,10 +250,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public ClaimsPrincipal (System.Security.Principal.IPrincipal principal);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IPrincipal principal) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Security.Principal.IPrincipal)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (principal As IPrincipal)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClaimsPrincipal(System::Security::Principal::IPrincipal ^ principal);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -236,7 +277,7 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the specified principal is assignable from <xref:System.Security.Claims.ClaimsPrincipal>, all of its identities are added to the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> collection. If the specified principal is not assignable from <xref:System.Security.Claims.ClaimsPrincipal>, a new <xref:System.Security.Claims.ClaimsIdentity> is created from the <xref:System.Security.Principal.IIdentity> in its <xref:System.Security.Principal.IPrincipal.Identity%2A?displayProperty=fullName> property and added to the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> collection.  
+ If the specified principal is assignable from <xref:System.Security.Claims.ClaimsPrincipal>, all of its identities are added to the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> collection. If the specified principal is not assignable from <xref:System.Security.Claims.ClaimsPrincipal>, a new <xref:System.Security.Claims.ClaimsIdentity> is created from the <xref:System.Security.Principal.IIdentity> in its <xref:System.Security.Principal.IPrincipal.Identity%2A?displayProperty=nameWithType> property and added to the <xref:System.Security.Claims.ClaimsPrincipal.Identities%2A> collection.  
   
  ]]></format>
         </remarks>
@@ -248,6 +289,8 @@ if (null != principal)
       <MemberSignature Language="C#" Value="protected ClaimsPrincipal (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ClaimsPrincipal(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -257,6 +300,10 @@ if (null != principal)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -271,7 +318,7 @@ if (null != principal)
         <param name="info">The serialized data.</param>
         <param name="context">The context for serialization.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.ClaimsPrincipal" /> class from a serialized stream created by using <see cref="T:System.Runtime.Serialization.ISerializable" />.</summary>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="info" /> is **null**.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
@@ -281,10 +328,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual void AddIdentities (System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; identities);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIdentities(class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; identities) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.AddIdentities(System.Collections.Generic.IEnumerable{System.Security.Claims.ClaimsIdentity})" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub AddIdentities (identities As IEnumerable(Of ClaimsIdentity))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AddIdentities(System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^ identities);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -326,10 +376,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual void AddIdentity (System.Security.Claims.ClaimsIdentity identity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIdentity(class System.Security.Claims.ClaimsIdentity identity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.AddIdentity(System.Security.Claims.ClaimsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub AddIdentity (identity As ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AddIdentity(System::Security::Claims::ClaimsIdentity ^ identity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -371,10 +424,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; Claims { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; Claims" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Claims" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Claims As IEnumerable(Of Claim)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ Claims { System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -407,10 +463,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public static Func&lt;System.Security.Claims.ClaimsPrincipal&gt; ClaimsPrincipalSelector { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Func`1&lt;class System.Security.Claims.ClaimsPrincipal&gt; ClaimsPrincipalSelector" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property ClaimsPrincipalSelector As Func(Of ClaimsPrincipal)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property Func&lt;System::Security::Claims::ClaimsPrincipal ^&gt; ^ ClaimsPrincipalSelector { Func&lt;System::Security::Claims::ClaimsPrincipal ^&gt; ^ get(); void set(Func&lt;System::Security::Claims::ClaimsPrincipal ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -441,16 +500,20 @@ if (null != principal)
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Set operation requires full trust for the immediate caller. This member cannot be set by partially trusted or transparent code.</permission>
+        <altmember cref="P:System.Security.Claims.ClaimsPrincipal.Current" />
       </Docs>
     </Member>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public virtual System.Security.Claims.ClaimsPrincipal Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.ClaimsPrincipal Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Clone () As ClaimsPrincipal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::Claims::ClaimsPrincipal ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -468,17 +531,20 @@ if (null != principal)
       <Docs>
         <summary>Returns a copy of this instance.</summary>
         <returns>A new copy of the <see cref="T:System.Security.Claims.ClaimsPrincipal" /> object.</returns>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName="CreateClaimsIdentity">
       <MemberSignature Language="C#" Value="protected virtual System.Security.Claims.ClaimsIdentity CreateClaimsIdentity (System.IO.BinaryReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Claims.ClaimsIdentity CreateClaimsIdentity(class System.IO.BinaryReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.CreateClaimsIdentity(System.IO.BinaryReader)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function CreateClaimsIdentity (reader As BinaryReader) As ClaimsIdentity" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Security::Claims::ClaimsIdentity ^ CreateClaimsIdentity(System::IO::BinaryReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -499,17 +565,20 @@ if (null != principal)
         <param name="reader">The binary reader.</param>
         <summary>Creates a new claims identity.</summary>
         <returns>The created claims identity.</returns>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName="Current">
       <MemberSignature Language="C#" Value="public static System.Security.Claims.ClaimsPrincipal Current { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Security.Claims.ClaimsPrincipal Current" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Current" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Current As ClaimsPrincipal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Security::Claims::ClaimsPrincipal ^ Current { System::Security::Claims::ClaimsPrincipal ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -530,20 +599,24 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default, <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> is returned. You can change this behavior by setting the <xref:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector%2A> property to specify a delegate to be called to determine the current principal.  
+ By default, <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> is returned. You can change this behavior by setting the <xref:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector%2A> property to specify a delegate to be called to determine the current principal.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.ClaimsPrincipal.ClaimsPrincipalSelector" />
       </Docs>
     </Member>
     <Member MemberName="CustomSerializationData">
       <MemberSignature Language="C#" Value="protected virtual byte[] CustomSerializationData { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CustomSerializationData" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.CustomSerializationData" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable ReadOnly Property CustomSerializationData As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property cli::array &lt;System::Byte&gt; ^ CustomSerializationData { cli::array &lt;System::Byte&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -558,19 +631,32 @@ if (null != principal)
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <summary>Contains any additional data provided by a derived type. Typically set when calling <see cref="M:System.Security.Claims.ClaimsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])" />.</summary>
+        <value>A <see cref="T:System.Byte" /> array representing the additional serialized data.</value>
+        <remarks></remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindAll">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves all of the claims that match a specified condition.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindAll">
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; FindAll (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; FindAll(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindAll(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindAll (match As Predicate(Of Claim)) As IEnumerable(Of Claim)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ FindAll(Predicate&lt;System::Security::Claims::Claim ^&gt; ^ match);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -607,10 +693,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; FindAll (string type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; FindAll(string type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindAll(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindAll (type As String) As IEnumerable(Of Claim)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ FindAll(System::String ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -643,14 +732,27 @@ if (null != principal)
           <paramref name="type" /> is **null**.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindFirst">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves the first claim that matches a specified condition.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindFirst">
       <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim FindFirst (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim FindFirst(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindFirst(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindFirst (match As Predicate(Of Claim)) As Claim" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::Claims::Claim ^ FindFirst(Predicate&lt;System::Security::Claims::Claim ^&gt; ^ match);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -671,7 +773,7 @@ if (null != principal)
         <param name="match">The function that performs the matching logic.</param>
         <summary>Retrieves the first claim that is matched by the specified predicate.</summary>
         <returns>The first matching claim or <see langword="null" /> if no match is found.</returns>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="match" /> is **null**.</exception>
       </Docs>
@@ -680,10 +782,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim FindFirst (string type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim FindFirst(string type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.FindFirst(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function FindFirst (type As String) As Claim" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::Claims::Claim ^ FindFirst(System::String ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -704,7 +809,7 @@ if (null != principal)
         <param name="type">The claim type to match.</param>
         <summary>Retrieves the first claim with the specified claim type.</summary>
         <returns>The first matching claim or <see langword="null" /> if no match is found.</returns>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> is **null**.</exception>
       </Docs>
@@ -713,6 +818,8 @@ if (null != principal)
       <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -722,6 +829,10 @@ if (null != principal)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -739,20 +850,33 @@ if (null != principal)
         <param name="info">The object to populate with data.</param>
         <param name="context">The destination for this serialization. Can be <see langword="null" />.</param>
         <summary>Populates the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with data needed to serialize the current <see cref="T:System.Security.Claims.ClaimsPrincipal" /> object.</summary>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="info" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="HasClaim">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether any of the claims identities associated with this claims principal contains a claim that matches specified conditions.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="HasClaim">
       <MemberSignature Language="C#" Value="public virtual bool HasClaim (Predicate&lt;System.Security.Claims.Claim&gt; match);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasClaim(class System.Predicate`1&lt;class System.Security.Claims.Claim&gt; match) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.HasClaim(System.Predicate{System.Security.Claims.Claim})" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function HasClaim (match As Predicate(Of Claim)) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool HasClaim(Predicate&lt;System::Security::Claims::Claim ^&gt; ^ match);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -774,7 +898,7 @@ if (null != principal)
         <summary>Determines whether any of the claims identities associated with this claims principal contains a claim that is matched by the specified predicate.</summary>
         <returns>
           <see langword="true" /> if a matching claim exists; otherwise, <see langword="false" />.</returns>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="match" /> is **null**.</exception>
       </Docs>
@@ -783,10 +907,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual bool HasClaim (string type, string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasClaim(string type, string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.HasClaim(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function HasClaim (type As String, value As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool HasClaim(System::String ^ type, System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -830,10 +957,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt; Identities { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt; Identities" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Identities" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Identities As IEnumerable(Of ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^ Identities { System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -866,10 +996,16 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Security.Principal.IIdentity Identity { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.Identity" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Identity As IIdentity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Security::Principal::IIdentity ^ Identity { System::Security::Principal::IIdentity ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Security.Principal.IPrincipal.Identity</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -896,16 +1032,23 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector" />
       </Docs>
     </Member>
     <Member MemberName="IsInRole">
       <MemberSignature Language="C#" Value="public virtual bool IsInRole (string role);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(string role) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.IsInRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsInRole (role As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsInRole(System::String ^ role);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.Principal.IPrincipal.IsInRole(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -931,10 +1074,10 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A> method checks whether an identity that this claims principal possesses contains a claim of type <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=fullName> where the value of the claim is equal to the value specified by the `role` parameter.  
+ The <xref:System.Security.Claims.ClaimsPrincipal.IsInRole%2A> method checks whether an identity that this claims principal possesses contains a claim of type <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType> where the value of the claim is equal to the value specified by the `role` parameter.  
   
 > [!NOTE]
->  Each <xref:System.Security.Claims.ClaimsIdentity> has its own definition of the claim type that represents a role. This claim type can be accessed and set through the <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=fullName> property.  
+>  Each <xref:System.Security.Claims.ClaimsIdentity> has its own definition of the claim type that represents a role. This claim type can be accessed and set through the <xref:System.Security.Claims.ClaimsIdentity.RoleClaimType%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>
@@ -944,10 +1087,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public static Func&lt;System.Collections.Generic.IEnumerable&lt;System.Security.Claims.ClaimsIdentity&gt;,System.Security.Claims.ClaimsIdentity&gt; PrimaryIdentitySelector { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Func`2&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.ClaimsIdentity&gt;, class System.Security.Claims.ClaimsIdentity&gt; PrimaryIdentitySelector" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.ClaimsPrincipal.PrimaryIdentitySelector" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property PrimaryIdentitySelector As Func(Of IEnumerable(Of ClaimsIdentity), ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property Func&lt;System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^, System::Security::Claims::ClaimsIdentity ^&gt; ^ PrimaryIdentitySelector { Func&lt;System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^, System::Security::Claims::ClaimsIdentity ^&gt; ^ get(); void set(Func&lt;System::Collections::Generic::IEnumerable&lt;System::Security::Claims::ClaimsIdentity ^&gt; ^, System::Security::Claims::ClaimsIdentity ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -978,16 +1124,20 @@ if (null != principal)
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Set operation requires full trust for the immediate caller. This member cannot be set by partially trusted or transparent code.</permission>
+        <altmember cref="P:System.Security.Claims.ClaimsPrincipal.Identity" />
       </Docs>
     </Member>
     <Member MemberName="WriteTo">
       <MemberSignature Language="C#" Value="public virtual void WriteTo (System.IO.BinaryWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.WriteTo(System.IO.BinaryWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub WriteTo (writer As BinaryWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void WriteTo(System::IO::BinaryWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1005,19 +1155,24 @@ if (null != principal)
         <Parameter Name="writer" Type="System.IO.BinaryWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">The writer to use for data storage.</param>
+        <summary>Serializes using a <see cref="T:System.IO.BinaryWriter" />.</summary>
+        <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteTo">
       <MemberSignature Language="C#" Value="protected virtual void WriteTo (System.IO.BinaryWriter writer, byte[] userData);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer, unsigned int8[] userData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.ClaimsPrincipal.WriteTo(System.IO.BinaryWriter,System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub WriteTo (writer As BinaryWriter, userData As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void WriteTo(System::IO::BinaryWriter ^ writer, cli::array &lt;System::Byte&gt; ^ userData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1036,10 +1191,12 @@ if (null != principal)
         <Parameter Name="userData" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <param name="userData">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">The writer to use for data storage.</param>
+        <param name="userData">Additional data provided by the derived type.</param>
+        <summary>Serializes using a <see cref="T:System.IO.BinaryWriter" />.</summary>
+        <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
   </Members>

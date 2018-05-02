@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrame::GetCode Method | Microsoft Docs"
+title: "ICorDebugFrame::GetCode Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrame.GetCode"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrame::GetCode"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCode method, ICorDebugFrame interface [.NET Framework debugging]"
   - "ICorDebugFrame::GetCode method [.NET Framework debugging]"
 ms.assetid: fbaa0794-a031-4015-8beb-2749e47ac340
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrame::GetCode Method
 Gets a pointer to the code associated with this stack frame.  

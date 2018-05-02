@@ -1,19 +1,14 @@
 ---
-title: "&lt;namedCaches&gt; Element (Cache Settings) | Microsoft Docs"
+title: "&lt;namedCaches&gt; Element (Cache Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "namedCaches element"
   - "caching [.NET Framework], configuration"
@@ -23,6 +18,8 @@ caps.latest.revision: 14
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;namedCaches&gt; Element (Cache Settings)
 Specifies a collection of configuration settings for the named <xref:System.Runtime.Caching.MemoryCache> instances. The <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A> property references the collection of configuration settings from one or more `namedCaches` elements of the configuration file.  
@@ -34,9 +31,9 @@ Specifies a collection of configuration settings for the named <xref:System.Runt
   
 ## Syntax  
   
-```  
+```xml  
 <namedCaches>  
-  <add name="default"   
+  <add name="default"/>   
 </namedCaches>  
 ```  
   
@@ -50,10 +47,10 @@ Specifies a collection of configuration settings for the named <xref:System.Runt
   
 |Attribute|Description|  
 |---------------|-----------------|  
-|`CacheMemoryLimitMegabytes`|An integer value that specifies the maximum allowable size, in megabytes, that an instance of a <xref:System.Runtime.Caching.MemoryCache> can grow to. The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.|  
-|`Name`|The name of the cache.|  
-|`PhysicalMemoryLimitPercentage`|An integer value between 0 and 100 that specifies the maximum percentage of physically installed computer memory that can be consumed by the cache. The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.|  
-|`PollingInterval`|A value that indicates the time interval after which the cache implementation compares the current memory load against the absolute and percentage-based memory limits that are set for the cache instance. This value is entered in "HH:MM:SS" format.|  
+|`cacheMemoryLimitMegabytes`|An integer value that specifies the maximum allowable size, in megabytes, that an instance of a <xref:System.Runtime.Caching.MemoryCache> can grow to. The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.|  
+|`name`|The name of the cache.|  
+|`physicalMemoryLimitPercentage`|An integer value between 0 and 100 that specifies the maximum percentage of physically installed computer memory that can be consumed by the cache. The default value is 0, which means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used by default.|  
+|`pollingInterval`|A value that indicates the time interval after which the cache implementation compares the current memory load against the absolute and percentage-based memory limits that are set for the cache instance. This value is entered in "HH:MM:SS" format.|  
   
 ### Child Elements  
   
@@ -81,7 +78,7 @@ Specifies a collection of configuration settings for the named <xref:System.Runt
   
  The `cacheMemoryLimitMegabytes` attribute and the `physicalMemoryPercentage` attribute are set to zero. Setting these attributes to zero means that the autosizing heuristics of the <xref:System.Runtime.Caching.MemoryCache> class are used. The cache implementation compares the current memory load against the absolute and percentage-based memory limits every two minutes.  
   
-```  
+```xml  
 <configuration>  
   
   <system.runtime.caching>  
@@ -89,7 +86,7 @@ Specifies a collection of configuration settings for the named <xref:System.Runt
       <namedCaches>  
           <add name="default"   
                cacheMemoryLimitMegabytes="0"   
-               physicalMemoryPercentage="0"  
+               physicalMemoryLimitPercentage="0"  
                pollingInterval="00:02:00" />  
       </namedCaches>  
     </memoryCache>  

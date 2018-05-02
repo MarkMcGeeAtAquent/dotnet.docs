@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAssemblyEnum Interface1 | Microsoft Docs"
+title: "ICorDebugAssemblyEnum Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAssemblyEnum"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAssemblyEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAssemblyEnum interface [.NET Framework debugging]"
 ms.assetid: 891ceb43-5161-421e-a0bf-299962fd7efd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAssemblyEnum Interface1
 Implements ICorDebugEnum methods and enumerates ICorDebugAssembly arrays.  

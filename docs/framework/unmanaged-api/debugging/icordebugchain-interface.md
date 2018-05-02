@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugChain Interface1 | Microsoft Docs"
+title: "ICorDebugChain Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugChain"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugChain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugChain interface [.NET Framework debugging]"
 ms.assetid: f671f519-1cb3-4ae5-b9f1-abc5e783459f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugChain Interface1
 Represents a segment of a physical or logical call stack.  

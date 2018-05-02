@@ -1,14 +1,20 @@
 ---
 uid: System.ServiceModel.PeerTransportSecuritySettings
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.PeerTransportSecuritySettings.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.PeerTransportSecuritySettings.CredentialType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

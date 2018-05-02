@@ -1,30 +1,33 @@
 ---
-title: "ITypeName Interface | Microsoft Docs"
+title: "ITypeName Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeName"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ITypeName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ITypeName interface [.NET Framework hosting]"
 ms.assetid: 3be458bb-a519-4e22-b373-0b28f2c9cc3c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeName Interface
 Provides methods for obtaining type name information.  

@@ -1,59 +1,41 @@
 ---
-title: "Defining Classes (Visual Basic) | Microsoft Docs"
+title: "Defining Classes (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "execution, ending"
+  - "execution [Visual Basic], ending"
   - "objects [Visual Basic], initializing"
-  - "Initialize event"
-  - "files, closing"
-  - "programs, quitting"
+  - "Initialize event [Visual Basic]"
+  - "files [Visual Basic], closing"
+  - "programs [Visual Basic], quitting"
   - "code, exiting"
   - "objects [Visual Basic], creating"
   - "program termination"
   - "classes [Visual Basic], walkthroughs"
   - "class modules, walkthroughs"
-  - "Terminate event"
-  - "execution, stopping"
+  - "Terminate event [Visual Basic]"
+  - "execution [Visual Basic], stopping"
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Walkthrough: Defining Classes (Visual Basic)
 This walkthrough demonstrates how to define classes, which you can then use to create objects. It also shows you how to add properties and methods to the new class, and demonstrates how to initialize an object.  
   
-[!INCLUDE[note_settings_general](../../../../csharp/language-reference/compiler-messages/includes/note_settings_general_md.md)]  
+[!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### To define a class  
   
 1.  Create a project by clicking **New Project** on the **File** menu. The **New Project** dialog box appears.  
   
-2.  Select Windows Application from the list of [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] project templates to display the new project.  
+2.  Select Windows Application from the list of [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] project templates to display the new project.  
   
 3.  Add a new class to the project by clicking **Add Class** on the **Project** menu. The **Add New Item** dialog box appears.  
   
@@ -64,13 +46,13 @@ This walkthrough demonstrates how to define classes, which you can then use to c
      [!code-vb[VbVbalrOOP#5](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_1.vb)]  
   
     > [!NOTE]
-    >  You can use the [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] **Code Editor** to add a class to your startup form by typing the `Class` keyword followed by the name of the new class. The **Code Editor** provides a corresponding `End Class` statement for you.  
+    >  You can use the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] **Code Editor** to add a class to your startup form by typing the `Class` keyword followed by the name of the new class. The **Code Editor** provides a corresponding `End Class` statement for you.  
   
 6.  Define a private field for the class by adding the following code between the `Class` and `End Class` statements:  
   
      [!code-vb[VbVbalrOOP#7](../../../../visual-basic/misc/codesnippet/VisualBasic/walkthrough-defining-classes_2.vb)]  
   
-     Declaring the field as `Private` means it can be used only within the class. You can make fields available from outside a class by using access modifiers such as `Public` that provide more access. For more information, see [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+     Declaring the field as `Private` means it can be used only within the class. You can make fields available from outside a class by using access modifiers such as `Public` that provide more access. For more information, see [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 7.  Define a property for the class by adding the following code:  
   
@@ -101,5 +83,5 @@ This walkthrough demonstrates how to define classes, which you can then use to c
 2.  Click **OK** to dismiss the message box. The `Button1 Click` procedure changes the value of the `UserName` property and displays a message stating that the new value of `UserName` is "Worden, Joe".  
   
 ## See Also  
- [Object-Oriented Programming](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)   
+ [Object-Oriented Programming](http://msdn.microsoft.com/library/1cf6e655-3f30-45f1-9a5d-4a88ca24a1c2)  
  [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

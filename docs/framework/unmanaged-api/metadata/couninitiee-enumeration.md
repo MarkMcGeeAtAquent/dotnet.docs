@@ -1,5 +1,5 @@
 ---
-title: "COUNINITIEE Enumeration | Microsoft Docs"
+title: "COUNINITIEE Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COUNINITIEE"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COUNINITIEE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COUNINITIEE enumeration [.NET Framework metadata]"
 ms.assetid: c42baa79-f469-4330-95a2-baf7f021c2fc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COUNINITIEE Enumeration
 Specifies constants used by [CoUninitializeEE](../../../../docs/framework/unmanaged-api/hosting/couninitializeee-function.md) when initializing the common language runtime.  

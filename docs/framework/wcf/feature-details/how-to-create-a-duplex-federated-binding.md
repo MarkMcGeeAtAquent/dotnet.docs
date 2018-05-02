@@ -1,8 +1,8 @@
 ---
-title: "How to: Create a Duplex Federated Binding | Microsoft Docs"
+title: "How to: Create a Duplex Federated Binding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4331d2bc-5455-492a-9189-634a82597726
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Duplex Federated Binding
 <xref:System.ServiceModel.WSFederationHttpBinding> only supports the datagram and request/reply message exchange contracts. To use the duplex message exchange contract, you must create a custom binding. The following procedures show how to do this in configuration, using Message mode security for the HTTP and TCP transports, and using mixed mode security for the TCP transport. Sample code showing all 3 bindings is at the end of this topic.  
@@ -38,11 +40,11 @@ manager: "erikre"
   
 ### To create a duplex federated custom binding with TCP message security mode  
   
-1.  In the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) node of the configuration file, create a [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element.  
+1.  In the [\<bindings>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) node of the configuration file, create a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) element.   
   
-2.  Inside the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element, create a [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element with the `name` attribute set to `FederationDuplexTcpMessageSecurityBinding`.  
+2.  Inside the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) element, create a [\<binding>](../../../../docs/framework/misc/binding.md) element with the `name` attribute set to `FederationDuplexTcpMessageSecurityBinding`.  
   
-3.  Inside the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element, create a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element with the `authenticationMode` attribute set to `SecureConversation`.  
+3.  Inside the [\<binding>](../../../../docs/framework/misc/binding.md) element, create a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element with the `authenticationMode` attribute set to `SecureConversation`.  
   
 4.  Inside the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element, create a [\<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) element with the `authenticationMode` attribute set to `IssuedTokenForCertificate` or `IssuedTokenForSslNegotiated`.  
   
@@ -50,11 +52,11 @@ manager: "erikre"
   
 ### To create a duplex federated custom binding with TCP mixed security mode  
   
-1.  In the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) node of the configuration file, create a [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element.  
+1.  In the [\<bindings>](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) node of the configuration file, create a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) element.   
   
-2.  Inside the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element, create a [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element with the `name` attribute set to `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding`.  
+2.  Inside the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) element, create a [\<binding>](../../../../docs/framework/misc/binding.md) element with the `name` attribute set to `FederationDuplexTcpTransportSecurityWithMessageCredentialBinding`.  
   
-3.  Inside the [\<oneWay>](../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md) element, create a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element with the `authenticationMode` attribute set to `SecureConversation`.  
+3.  Inside the [\<binding>](../../../../docs/framework/misc/binding.md) element, create a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element with the `authenticationMode` attribute set to `SecureConversation`.  
   
 4.  Inside the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) element, create a [\<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) element with the `authenticationMode` attribute set to `IssuedTokenForCertificate` or `IssuedTokenForSslNegotiated`.  
   
@@ -70,8 +72,7 @@ manager: "erikre"
   
 ## Example  
   
-```  
-  
+```xml  
 <bindings>  
    <customBinding>  
       <binding name="FederationDuplexHttpMessageSecurityBinding">  
@@ -102,5 +103,4 @@ manager: "erikre"
        </binding>              
     </customBinding>  
 </bindings>  
-  
 ```

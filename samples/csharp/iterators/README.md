@@ -1,7 +1,7 @@
 C# Iterators Sample
 ================
 
-This sample is created during the [Iterators topic](https://docs.microsoft.com/dotnet/articles/csharp/iterators)
+This sample is created during the [Iterators topic](https://docs.microsoft.com/dotnet/csharp/iterators)
 for learning C# features. Please see that topic for detailed steps on the code
 for this sample.
 
@@ -21,3 +21,5 @@ To build and run the sample, type the following two commands:
 
 `dotnet restore` restores the dependencies for this sample.
 `dotnet run` builds the sample and runs the output assembly.
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

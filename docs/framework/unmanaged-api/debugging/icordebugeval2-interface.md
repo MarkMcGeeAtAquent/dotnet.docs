@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEval2 Interface1 | Microsoft Docs"
+title: "ICorDebugEval2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEval2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEval2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugEval2 interface [.NET Framework debugging]"
 ms.assetid: fce34531-2687-406d-9131-d6ad94f2ce0e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEval2 Interface1
 Extends "ICorDebugEval" to provide support for generic types.  

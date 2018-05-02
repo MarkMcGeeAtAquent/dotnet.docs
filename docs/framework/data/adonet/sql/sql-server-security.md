@@ -1,8 +1,8 @@
 ---
-title: "SQL Server Security | Microsoft Docs"
+title: "SQL Server Security"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9053724d-a1fb-4f0f-b9dc-7f6dd893e8ff
 caps.latest.revision: 8
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # SQL Server Security
 [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] has many features that support creating secure database applications.  
@@ -39,13 +41,12 @@ manager: "jhubbard"
  Describes security considerations for [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Express.  
   
 ## Related Sections  
- [Security and Protection (Database Engine)](http://msdn2.microsoft.com/library/bb510589\(SQL.100\).aspx.)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online security topics.  
-  
- [Security Considerations for SQL Server](http://go.microsoft.com/fwlink/?LinkId=98587)  
- [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] Books Online security topics.  
-  
+[Security Center for SQL Server Database Engine and Azure SQL Database](/sql/relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database)  
+Describes security considerations for SQL Server and Azure SQL Database.
+
+[Security Considerations for a SQL Server Installation](/sql/sql-server/install/security-considerations-for-a-sql-server-installation)  
+Describes security concerns to consider before installing SQL Server.
+
 ## See Also  
- [Securing ADO.NET Applications](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)   
- [SQL Server and ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)   
- [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [Securing ADO.NET Applications](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [SQL Server and ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  

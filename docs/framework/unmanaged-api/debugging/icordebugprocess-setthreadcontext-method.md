@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugProcess::SetThreadContext Method | Microsoft Docs"
+title: "ICorDebugProcess::SetThreadContext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess.SetThreadContext"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess::SetThreadContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugProcess::SetThreadContext method [.NET Framework debugging]"
   - "SetThreadContext method, ICorDebugProcess interface [.NET Framework debugging]"
 ms.assetid: a7b50175-2bf1-40be-8f65-64aec7aa1247
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess::SetThreadContext Method
 Sets the context for the given thread in this process.  

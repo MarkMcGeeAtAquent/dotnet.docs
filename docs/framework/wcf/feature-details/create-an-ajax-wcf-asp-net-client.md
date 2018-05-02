@@ -1,5 +1,5 @@
 ---
-title: "How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service | Microsoft Docs"
+title: "How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create an AJAX-Enabled WCF Service and an ASP.NET Client that Accesses the Service
 This topic shows how to use Visual Studio 2008 to create an AJAX-enabled [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service and an ASP.NET client that accesses the service. The code for the service and for the client are provided in the Example section after the steps for creating them are described in the Procedures section.  
@@ -174,7 +176,4 @@ alert(result);
         <input id="Button1" type="button" value="Price for 3 Sandwiches" onclick="return Button1_onclick()" /></p>  
 </body>  
 </html>  
-  
-```  
-  
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->
+```     

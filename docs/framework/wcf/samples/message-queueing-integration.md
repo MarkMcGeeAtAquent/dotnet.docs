@@ -1,8 +1,8 @@
 ---
-title: "Message Queueing Integration | Microsoft Docs"
+title: "Message Queueing Integration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8d2b47a0-5d51-45b5-9633-b62e064e8ea4
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Queueing Integration
 This section contains samples that demonstrate integration between Message Queuing and [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

@@ -1,8 +1,8 @@
 ---
-title: "606 - DecrementBusyCount | Microsoft Docs"
+title: "606 - DecrementBusyCount"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3dd6c6ae-1010-415c-82e4-51eaa897f1fa
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 606 - DecrementBusyCount
 ## Properties  

@@ -1,5 +1,5 @@
 ---
-title: "Secure Coding Guidelines | Microsoft Docs"
+title: "Secure Coding Guidelines"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,11 +8,6 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "managed wrapper to native code implementation"
   - "secure coding"
@@ -30,6 +25,9 @@ caps.latest.revision: 20
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Secure Coding Guidelines
 Evidence-based security and code access security provide very powerful, explicit mechanisms to implement security. Most application code can simply use the infrastructure implemented by the .NET Framework. In some cases, additional application-specific security is required, built either by extending the security system or by using new ad hoc methods.  

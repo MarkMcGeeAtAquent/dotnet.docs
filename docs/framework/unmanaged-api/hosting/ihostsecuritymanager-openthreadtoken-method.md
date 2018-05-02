@@ -1,5 +1,5 @@
 ---
-title: "IHostSecurityManager::OpenThreadToken Method | Microsoft Docs"
+title: "IHostSecurityManager::OpenThreadToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostSecurityManager.OpenThreadToken"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostSecurityManager::OpenThreadToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostSecurityManager::OpenThreadToken method [.NET Framework hosting]"
   - "OpenThreadToken method [.NET Framework hosting]"
 ms.assetid: d5999052-8bf0-4a9e-8621-da6284406b18
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostSecurityManager::OpenThreadToken Method
 Opens the discretionary access token associated with the currently executing thread.  
@@ -76,5 +79,5 @@ HRESULT OpenThreadToken (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)   
+ [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)  
  [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)

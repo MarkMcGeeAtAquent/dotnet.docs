@@ -1,5 +1,5 @@
 ---
-title: "Use Caching in UI Automation | Microsoft Docs"
+title: "Use Caching in UI Automation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-bcl"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "caching, UI Automation"
   - "UI Automation, caching"
@@ -17,6 +20,8 @@ caps.latest.revision: 14
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Use Caching in UI Automation
 > [!NOTE]
@@ -34,7 +39,7 @@ manager: "markl"
   
 4.  Specify the view of the subtree by setting the <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A> property.  
   
-5.  Set the <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> property to <xref:System.Windows.Automation.AutomationElementMode> if you wish to increase efficiency by not retrieving a full reference to objects. (This will make it impossible to retrieve current values from those objects.)  
+5.  Set the <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> property to <xref:System.Windows.Automation.AutomationElementMode.None> if you wish to increase efficiency by not retrieving a full reference to objects. (This will make it impossible to retrieve current values from those objects.)  
   
 6.  Activate the request by using <xref:System.Windows.Automation.CacheRequest.Activate%2A> within a `using` block (`Using` in [!INCLUDE[TLA#tla_visualbnet](../../../includes/tlasharptla-visualbnet-md.md)]).  
   

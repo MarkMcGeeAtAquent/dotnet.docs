@@ -1,5 +1,5 @@
 ---
-title: "How to: Traverse a Binary Tree with Parallel Tasks | Microsoft Docs"
+title: "How to: Traverse a Binary Tree with Parallel Tasks"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "tasks, how to traverse a tree"
 ms.assetid: 4265d169-6c69-4f36-b10d-b7ae7f72f4df
@@ -15,6 +18,9 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Traverse a Binary Tree with Parallel Tasks
 The following example shows two ways in which parallel tasks can be used to traverse a tree data structure. The creation of the tree itself is left as an exercise.  

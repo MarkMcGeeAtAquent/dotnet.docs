@@ -1,19 +1,27 @@
 ---
 uid: System.Transactions.IDtcTransaction
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IDtcTransaction.GetTransactionInfo(System.IntPtr)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IDtcTransaction.Abort(System.IntPtr,System.Int32,System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IDtcTransaction.Commit(System.Int32,System.Int32,System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

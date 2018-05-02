@@ -1,8 +1,8 @@
 ---
-title: "Client Validation | Microsoft Docs"
+title: "Client Validation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Client Validation
 Services frequently publish metadata to enable automatic generation and configuration of client proxy types. When the service is not trusted, client applications should validate that the metadata conforms to the client application's policy regarding security, transactions, the type of service contract and so on. The following sample demonstrates how to write a client endpoint behavior that validates the service endpoint to ensure that service endpoint is safe to use.  
@@ -34,19 +36,19 @@ Services frequently publish metadata to enable automatic generation and configur
   
 3.  Run the client application from \client\bin\Debug. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 5.  Remove the certificates by running Cleanup.bat when you have finished with the sample. Other security samples use the same certificates.  
   
 ### To run the sample across computers  
   
-1.  On the server, in a Visual Studio command prompt run with administrator privileges, type `setup.bat service`. Running `setup.bat`with the `service` argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.  
+1.  On the server, in a Visual Studio command prompt run with administrator privileges, type `setup.bat service`. Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the computer and exports the service certificate to a file named Service.cer.  
   
 2.  On the server, edit App.config to reflect the new certificate name. That is, change the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) element to the fully-qualified domain name of the computer.  
   
 3.  Copy the Service.cer file from the service directory to the client directory on the client computer.  
   
-4.  On the client, open a Visual Studio command prompt with administrator privileges, and type `setup.bat client`. Running `setup.bat`with the `client` argument creates a client certificate named Client.com and exports the client certificate to a file named Client.cer.  
+4.  On the client, open a Visual Studio command prompt with administrator privileges, and type `setup.bat client`. Running `setup.bat` with the `client` argument creates a client certificate named Client.com and exports the client certificate to a file named Client.cer.  
   
 5.  In the client.cs file change the address value of the MEX endpoint and the `findValue` for setting the default server certificate to match the new address of your service. You do this by replacing localhost with the fully-qualified domain name of the server. Rebuild.  
   
@@ -60,7 +62,7 @@ Services frequently publish metadata to enable automatic generation and configur
   
 10. On the client computer, run client.exe.  
   
-    1.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+    1.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   

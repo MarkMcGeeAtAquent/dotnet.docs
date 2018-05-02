@@ -1,33 +1,36 @@
 ---
-title: "ICoreClrDebugTarget::EnumRuntimes Method | Microsoft Docs"
+title: "ICoreClrDebugTarget::EnumRuntimes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICoreClrDebugTarget.EnumRuntimes"
-apilocation: 
+api_location: 
   - "mscordbi_macx86.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICoreClrDebugTarget::EnumRuntimes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "remote debugging API [Silverlight]"
   - "ICorClrDebugTarget::EnumRuntimes method [Silverlight debugging]"
   - "EnumRuntimes method, ICoreClrDebugTarget interface [Silverlight debugging]"
   - "Silverlight, remote debugging"
 ms.assetid: 316df866-442d-40cc-b049-45e8adcb65d1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICoreClrDebugTarget::EnumRuntimes Method
 Enumerates the common language runtimes (CLRs) in the specified process that is running on a remote computer.  

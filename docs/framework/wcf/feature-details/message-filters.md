@@ -1,8 +1,8 @@
 ---
-title: "Message Filters | Microsoft Docs"
+title: "Message Filters"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,6 +16,8 @@ caps.latest.revision: 8
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Filters
 To implement content-based routing, the Routing Service uses <xref:System.ServiceModel.Dispatcher.MessageFilter> implementations that inspect specific sections of a message, such as the address, endpoint name, or a specific XPath statement. If none of the message filters provided with [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] meet your needs, you can create a custom filter by creating a new implementation of the base <xref:System.ServiceModel.Dispatcher.MessageFilter> class.  
@@ -36,7 +38,7 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 |EndpointAddressPrefix|Uses the <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> class, with <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A> == `true` to match messages containing a specific address prefix.|The address to filter upon using longest prefix matching.|\<filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/" />|  
 |And|Uses the <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> class that always evaluates both conditions before returning.|filterData is not used; instead filter1 and filter2 have the names of the corresponding message filters (also in the table), which should be **AND**ed together.|\<filter name="and1" filterType="And" filter1="address1" filter2="action1" />|  
 |Custom|A user-defined type that extends the <xref:System.ServiceModel.Dispatcher.MessageFilter> class and has a constructor taking a string.|The customType attribute is the fully qualified type name of the class to create; filterData is the string to pass to the constructor when creating the filter.|\<filter name="custom1" filterType="Custom" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" filterData="Custom Data" />|  
-|EndpointName|Uses the <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> class to match messages based on the name of the service endpoint they arrived on.|The name of the service endpoint, for example: “serviceEndpoint1”.  This should be one of the endpoints exposed on the Routing Service.|\<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />|  
+|EndpointName|Uses the <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> class to match messages based on the name of the service endpoint they arrived on.|The name of the service endpoint, for example: "serviceEndpoint1".  This should be one of the endpoints exposed on the Routing Service.|\<filter name="stock1" filterType="Endpoint" filterData="SvcEndpoint" />|  
 |MatchAll|Uses the <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> class. This filter matches all arriving messages.|filterData is not used. This filter will always match all messages.|\<filter name="matchAll1" filterType="MatchAll" />|  
 |XPath|Uses the <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> class to match specific XPath queries within the message.|The XPath query to use when matching messages.|\<filter name="XPath1" filterType="XPath" filterData="//ns:element" />|  
   
@@ -57,7 +59,6 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
              customType="RoutingServiceFilters.RoundRobinMessageFilter,   
              RoutingService" filterData="group1"/>  
 </filters>  
-  
 ```  
   
 > [!NOTE]
@@ -78,7 +79,7 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 |tempuri|http://tempuri.org|  
 |ser|http://schemas.microsoft.com/2003/10/Serialization|  
   
- When you know that you will be using a specific namespace in your XPath queries, you can add it to the namespace table along with a unique namespace prefix and use the prefix in any XPath query instead of the full namespace. The following example defines a prefix of “custom” for the namespace “http://my.custom.namespace”, which is then used in the XPath query contained in filterData.  
+ When you know that you will be using a specific namespace in your XPath queries, you can add it to the namespace table along with a unique namespace prefix and use the prefix in any XPath query instead of the full namespace. The following example defines a prefix of "custom" for the namespace "http://my.custom.namespace", which is then used in the XPath query contained in filterData.  
   
 ```xml  
 <namespaceTable>  
@@ -87,7 +88,6 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 <filters>  
      <filter name="XPathFilter" filterType="XPath" filterData="/s12:Envelope/s12:Header/custom:RoundingCalculator = 1"/>  
 </filters>  
-  
 ```  
   
 ## Filter Tables  
@@ -96,8 +96,8 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 ```xml  
 <routing>  
      <filters>  
-       <filter name="AddAction" filterType="Action" filterData=”Add” />  
-       <filter name="SubtractAction" filterType="Action" filterData=”Subtract” />  
+       <filter name="AddAction" filterType="Action" filterData="Add" />  
+       <filter name="SubtractAction" filterType="Action" filterData="Subtract" />  
      </filters>  
      <filterTables>  
        <table name="routingTable1">  
@@ -108,7 +108,6 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
        </table>  
      </filterTables>      
 </routing>  
-  
 ```  
   
 ### Filter Evaluation Priority  
@@ -134,7 +133,6 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
                priority="0"/>  
      </filterTable>  
 </filterTables>  
-  
 ```  
   
  In the preceding example, if a message matches the XPathFilter, it will be routed to the roundingCalcEndpoint and no further filters in the table will be evaluated because all other filters are of a lower priority. However, if the message does not match the XPathFilter it will then be evaluated against all filters of the next lower priority, EndpointNameFilter and PrefixAddressFilter.  
@@ -143,7 +141,7 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 >  When possible, use exclusive filters instead of specifying a priority because priority evaluation can result in performance degradation.  
   
 ### Backup Lists  
- Each filter in the filter table can optionally specify a backup list, which is a named collection of endpoints (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>). This collection contains an ordered list of endpoints that the message will be transmitted to in the event of a <xref:System.ServiceModel.CommunicationException> when sending to the primary endpoint specified in <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A>. The following example defines a backup list named “backupServiceEndpoints” that contains two endpoints.  
+ Each filter in the filter table can optionally specify a backup list, which is a named collection of endpoints (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>). This collection contains an ordered list of endpoints that the message will be transmitted to in the event of a <xref:System.ServiceModel.CommunicationException> when sending to the primary endpoint specified in <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A>. The following example defines a backup list named "backupServiceEndpoints" that contains two endpoints.  
   
 ```xml  
 <filterTables>  
@@ -159,4 +157,4 @@ To implement content-based routing, the Routing Service uses <xref:System.Servic
 </backupLists>  
 ```  
   
- In the preceding example, if a send to the primary endpoint “Destination” fails, the Routing Service will try sending to each endpoint in the sequence they are listed, first sending to backupServiceQueue and subsequently sending to alternateServiceQueue if the send to backupServiceQueue fails. If all backup endpoints fail, a fault is returned.
+ In the preceding example, if a send to the primary endpoint "Destination" fails, the Routing Service will try sending to each endpoint in the sequence they are listed, first sending to backupServiceQueue and subsequently sending to alternateServiceQueue if the send to backupServiceQueue fails. If all backup endpoints fail, a fault is returned.

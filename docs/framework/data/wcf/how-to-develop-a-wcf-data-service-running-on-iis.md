@@ -1,5 +1,5 @@
 ---
-title: "How to: Develop a WCF Data Service Running on IIS | Microsoft Docs"
+title: "How to: Develop a WCF Data Service Running on IIS"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework-oob"
@@ -9,15 +9,20 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF Data Services, developing"
   - "WCF Data Services, deploying"
   - "WCF Data Services, hosting"
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Develop a WCF Data Service Running on IIS
 This topic shows how to use [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] to create a data service that is based on the Northwind sample database that is hosted by an ASP.NET Web application that is running on Internet Information Services (IIS). For an example of how to create the same Northwind data service as an ASP.NET Web application that runs on the ASP.NET Development Server, see the [WCF Data Services quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
@@ -51,13 +56,13 @@ This topic shows how to use [!INCLUDE[ssAstoria](../../../../includes/ssastoria-
   
     -   32-bit systems:  
   
-        ```ms-dos  
+        ```console
         "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i  
         ```  
   
     -   64-bit systems:  
   
-        ```ms-dos  
+        ```console
         "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i  
         ```  
   
@@ -67,13 +72,13 @@ This topic shows how to use [!INCLUDE[ssAstoria](../../../../includes/ssastoria-
   
     -   32-bit systems:  
   
-        ```ms-dos  
+        ```console
         "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable  
         ```  
   
     -   64-bit systems:  
   
-        ```ms-dos  
+        ```console
         "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable  
         ```  
   

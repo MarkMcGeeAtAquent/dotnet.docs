@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetDocuments Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetDocuments Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetDocuments"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetDocuments"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetDocuments method [.NET Framework debugging]"
   - "ISymUnmanagedReader::GetDocuments method [.NET Framework debugging]"
 ms.assetid: e3b73a3f-d089-4101-a9a9-5e0765d05b61
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetDocuments Method
 Returns an array of all the documents defined in the symbol store.  

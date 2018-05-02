@@ -1,5 +1,5 @@
 ---
-title: "Character Escapes in Regular Expressions | Microsoft Docs"
+title: "Character Escapes in Regular Expressions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "unescaped characters"
   - "replacement patterns"
@@ -21,6 +24,9 @@ caps.latest.revision: 31
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Character Escapes in Regular Expressions
 The backslash (\\) in a regular expression indicates one of the following:  

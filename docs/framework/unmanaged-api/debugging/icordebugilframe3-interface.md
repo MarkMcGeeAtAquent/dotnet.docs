@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILFrame3 Interface | Microsoft Docs"
+title: "ICorDebugILFrame3 Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugILFrame3"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: 15212cb5-93d4-4025-bec9-d4b9919eb1fe
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILFrame3 Interface
 Provides a method that encapsulates the return value of a function. `ICorDebugILFrame3` is a logical extension of the ICorDebugILFrame and ICorDebugILFrame2 interfaces.  
@@ -46,5 +49,5 @@ Provides a method that encapsulates the return value of a function. `ICorDebugIL
  **.NET Framework Versions:** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   
 ## See Also  
- [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)   
+ [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

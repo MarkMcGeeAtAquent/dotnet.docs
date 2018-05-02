@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugObjectValue2 Interface1 | Microsoft Docs"
+title: "ICorDebugObjectValue2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugObjectValue2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugObjectValue2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugObjectValue2 interface [.NET Framework debugging]"
 ms.assetid: f93cc2ec-0a12-4499-9bf6-405dc58c9a81
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugObjectValue2 Interface1
 Extends the "ICorDebugObjectValue" interface to support inheritance and overrides.  
@@ -50,5 +53,5 @@ Extends the "ICorDebugObjectValue" interface to support inheritance and override
  **NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  

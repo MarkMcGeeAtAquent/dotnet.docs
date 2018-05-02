@@ -1,19 +1,24 @@
 ---
-title: "Formulate Joins and Cross-Product Queries | Microsoft Docs"
+title: "Formulate Joins and Cross-Product Queries"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Formulate Joins and Cross-Product Queries
 The following examples show how to combine results from multiple tables.  

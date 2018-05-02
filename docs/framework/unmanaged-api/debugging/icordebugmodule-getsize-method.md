@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugModule::GetSize Method | Microsoft Docs"
+title: "ICorDebugModule::GetSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModule.GetSize"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModule::GetSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetSize method, ICorDebugModule interface [.NET Framework debugging]"
   - "ICorDebugModule::GetSize method [.NET Framework debugging]"
 ms.assetid: 5c68375d-145d-46ef-a7c8-2dc4257472de
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModule::GetSize Method
 Gets the size, in bytes, of the module.  

@@ -1,8 +1,8 @@
 ---
-title: "Custom Message Interceptor | Microsoft Docs"
+title: "Custom Message Interceptor"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Message Interceptor
 This sample demonstrates the use of the channel extensibility model. In particular, it shows how to implement a custom binding element that creates channel factories and channel listeners to intercept all incoming and outgoing messages at a particular point in the run-time stack. The sample also includes a client and server that demonstrate the use of these custom factories.  
@@ -69,7 +71,6 @@ public class InterceptingBindingElement : BindingElement
   
 ```  
 public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
-  
 ```  
   
 ## Adding Policy  
@@ -79,7 +80,6 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
  Included in the sample is an example implementation of `ChannelMessageInspector` which drops messages.  
   
 ```  
-  
 class DroppingServerElement : InterceptingElement  
 {  
     protected override ChannelMessageInterceptor CreateMessageInterceptor()  
@@ -91,7 +91,7 @@ class DroppingServerElement : InterceptingElement
   
  You can access it from configuration as follows:  
   
-```  
+```xml  
 <configuration>  
     ...  
     <system.serviceModel>  
@@ -105,19 +105,17 @@ class DroppingServerElement : InterceptingElement
         </extensions>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  The client and server both use this newly created configuration section to insert the custom factories into the lowest-level of their run-time channel stacks (above the transport level).  
   
-```  
+```xml  
 <customBinding>  
   <binding name="sampleBinding">  
     <droppingInterceptor/>  
     <httpTransport/>  
   </binding>  
 </customBinding>  
-  
 ```  
   
  The client uses the `MessageInterceptor` library to add a custom header to even numbered messages. The service on the other hand uses `MessageInterceptor` library to drop any messages that do not have this special header.  
@@ -142,7 +140,6 @@ Server dropped a message.
 Server dropped a message.  
 10 kph  
 Press ENTER to shut down client  
-  
 ```  
   
  The client reports 10 different wind speeds to the service, but only tags half of them with the special header.  
@@ -154,7 +151,6 @@ Press ENTER to exit.
 Dangerous wind detected! Reported speed (90) is greater than 64 kph.  
 Dangerous wind detected! Reported speed (70) is greater than 64 kph.  
 5 wind speed reports have been received.  
-  
 ```  
   
 #### To set up, build, and run the sample  
@@ -163,7 +159,6 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

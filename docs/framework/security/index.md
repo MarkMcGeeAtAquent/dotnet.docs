@@ -1,7 +1,8 @@
 ---
-title: "Windows Identity Foundation | Microsoft Docs"
+title: "Windows Identity Foundation"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 15
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Identity Foundation
 -   [What's New in Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEval::GetThread Method | Microsoft Docs"
+title: "ICorDebugEval::GetThread Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEval.GetThread"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEval::GetThread"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetThread method, ICorDebugEval interface [.NET Framework debugging]"
   - "ICorDebugEval::GetThread method [.NET Framework debugging]"
 ms.assetid: 57163b0d-c8a7-44af-9078-e7a895d29f9a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEval::GetThread Method
 Gets the thread in which this evaluation is executing or will execute.  

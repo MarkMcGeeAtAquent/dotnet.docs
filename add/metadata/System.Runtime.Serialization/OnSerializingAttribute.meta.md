@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Serialization.OnSerializingAttribute
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.OnSerializingAttribute.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

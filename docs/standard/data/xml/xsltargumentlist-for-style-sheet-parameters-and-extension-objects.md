@@ -1,5 +1,5 @@
 ---
-title: "XsltArgumentList for Style Sheet Parameters and Extension Objects | Microsoft Docs"
+title: "XsltArgumentList for Style Sheet Parameters and Extension Objects"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # XsltArgumentList for Style Sheet Parameters and Extension Objects
 The <xref:System.Xml.Xsl.XsltArgumentList> class contains Extensible Stylesheet Language for Transformations (XSLT) parameters and XSLT extension objects. When passed into the <xref:System.Xml.Xsl.XslTransform.Transform%2A> method, these parameters and extension objects can be invoked from style sheets.  
@@ -102,7 +103,6 @@ Public class Sample
   
   End Sub  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -147,7 +147,7 @@ public class Sample
 ### Input  
  order.xml  
   
-```  
+```xml  
 <!--Represents a customer order-->  
 <order>  
   <book ISBN='10-861003-324'>  
@@ -163,7 +163,7 @@ public class Sample
   
  discount.xsl  
   
-```  
+```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  
   <xsl:param name="discount"/>  
   <xsl:template match="/">  
@@ -178,7 +178,7 @@ public class Sample
   
 ### Output  
   
-```  
+```xml  
 <order>  
    <total>36.9</total>   
    15% discount if paid by: 5/6/2001 5:01:15 PM   
@@ -255,7 +255,6 @@ Public Class Sample
     End Function  
   End Class  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -316,7 +315,7 @@ public class Sample
 ### Input  
  number.xml  
   
-```  
+```xml  
 <?xml version='1.0'?>  
 <data>  
   <circle>  
@@ -330,7 +329,7 @@ public class Sample
   
  circle.xsl  
   
-```  
+```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
     xmlns:myObj="urn:myObj">  
   

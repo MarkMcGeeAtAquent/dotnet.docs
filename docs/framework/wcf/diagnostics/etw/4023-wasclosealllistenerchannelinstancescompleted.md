@@ -1,8 +1,8 @@
 ---
-title: "4023 - WasCloseAllListenerChannelInstancesCompleted | Microsoft Docs"
+title: "4023 - WasCloseAllListenerChannelInstancesCompleted"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 95dd5810-78a5-4183-98ef-77267dd64aac
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4023 - WasCloseAllListenerChannelInstancesCompleted
 ## Properties  

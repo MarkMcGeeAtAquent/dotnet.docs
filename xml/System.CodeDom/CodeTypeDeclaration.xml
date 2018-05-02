@@ -1,9 +1,15 @@
-<Type Name="CodeTypeDeclaration" FullName="System.CodeDom.CodeTypeDeclaration">
+﻿<Type Name="CodeTypeDeclaration" FullName="System.CodeDom.CodeTypeDeclaration">
   <TypeSignature Language="C#" Value="public class CodeTypeDeclaration : System.CodeDom.CodeTypeMember" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeTypeDeclaration extends System.CodeDom.CodeTypeMember" />
   <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeTypeDeclaration" />
+  <TypeSignature Language="VB.NET" Value="Public Class CodeTypeDeclaration&#xA;Inherits CodeTypeMember" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CodeTypeDeclaration : System::CodeDom::CodeTypeMember" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -12,7 +18,7 @@
   <Interfaces />
   <Attributes>
     <Attribute>
-      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface</AttributeName>
     </Attribute>
     <Attribute>
       <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
@@ -29,9 +35,9 @@
  The <xref:System.CodeDom.CodeTypeDeclaration.BaseTypes%2A> property specifies the base type or base types of the type being declared. The <xref:System.CodeDom.CodeTypeDeclaration.Members%2A> property contains the type members, which can include methods, fields, properties, comments and other types. The <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A> property indicates the <xref:System.Reflection.TypeAttributes> values for the type declaration, which indicate the type category of the type. The <xref:System.CodeDom.CodeTypeDeclaration.IsClass%2A>, <xref:System.CodeDom.CodeTypeDeclaration.IsStruct%2A>, <xref:System.CodeDom.CodeTypeDeclaration.IsEnum%2A>, and <xref:System.CodeDom.CodeTypeDeclaration.IsInterface%2A> methods indicate whether the type is a class, structure, enumeration, or interface type, respectively.  
   
 > [!NOTE]
->  Some programming languages only support the declaration of reference types, or classes. To check a language-specific CodeDOM code generator for support for declaring interfaces, enumerations, or value types, call the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method to test for the appropriate <xref:System.CodeDom.Compiler.GeneratorSupport> flags. <xref:System.CodeDom.Compiler.GeneratorSupport> indicates support for interfaces, <xref:System.CodeDom.Compiler.GeneratorSupport> indicates support for enumerations, and <xref:System.CodeDom.Compiler.GeneratorSupport> indicates support for value types such as structures.  
+>  Some programming languages only support the declaration of reference types, or classes. To check a language-specific CodeDOM code generator for support for declaring interfaces, enumerations, or value types, call the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method to test for the appropriate <xref:System.CodeDom.Compiler.GeneratorSupport> flags. <xref:System.CodeDom.Compiler.GeneratorSupport.DeclareInterfaces> indicates support for interfaces, <xref:System.CodeDom.Compiler.GeneratorSupport.DeclareEnums> indicates support for enumerations, and <xref:System.CodeDom.Compiler.GeneratorSupport.DeclareValueTypes> indicates support for value types such as structures.  
   
- You can build a class or a structure implementation in one complete declaration, or spread the implementation across multiple declarations. The <xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A> property indicates whether the type declaration is complete or partial. Not all code generators support partial type declarations, so you should test for this support by calling the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method with the flag <xref:System.CodeDom.Compiler.GeneratorSupport>.  
+ You can build a class or a structure implementation in one complete declaration, or spread the implementation across multiple declarations. The <xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A> property indicates whether the type declaration is complete or partial. Not all code generators support partial type declarations, so you should test for this support by calling the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method with the flag <xref:System.CodeDom.Compiler.GeneratorSupport.PartialTypes>.  
   
    
   
@@ -44,15 +50,32 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.CodeDom.CodeTypeDeclarationCollection" />
+    <altmember cref="T:System.CodeDom.Compiler.GeneratorSupport" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.CodeDom.CodeTypeDeclaration" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CodeTypeDeclaration ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDeclaration.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; CodeTypeDeclaration();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -65,9 +88,15 @@
       <MemberSignature Language="C#" Value="public CodeTypeDeclaration (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDeclaration.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; CodeTypeDeclaration(System::String ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -83,9 +112,15 @@
       <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceCollection BaseTypes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReferenceCollection BaseTypes" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.BaseTypes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BaseTypes As CodeTypeReferenceCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::CodeDom::CodeTypeReferenceCollection ^ BaseTypes { System::CodeDom::CodeTypeReferenceCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -105,18 +140,14 @@
   
  The following code illustrates the addition of a <xref:System.CodeDom.CodeTypeReference> to the collection that refers to <xref:System.Object>.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Dim ctd As New CodeTypeDeclaration("Class1")  
 ctd.IsClass = True  
 ctd.BaseTypes.Add(New CodeTypeReference(GetType(Object)))  
 ctd.BaseTypes.Add(New CodeTypeReference("Interface1"))  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 CodeTypeDeclaration ctd = new CodeTypeDeclaration("Class1");  
 ctd.IsClass = true;  
 ctd.BaseTypes.Add(new CodeTypeReference(typeof(Object)));  
@@ -125,14 +156,14 @@ ctd.BaseTypes.Add(new CodeTypeReference("Interface1"));
   
  The preceding code generates the equivalent of the following Visual Basic code.  
   
-```  
+```vb  
 Public Class Class1  
 Implements Interface1  
 ```  
   
  However, the Visual Basic code actually generated is the following.  
   
-```  
+```vb  
 Public Class Class1  
 Inherits Object  
 Implements Interface1  
@@ -140,15 +171,22 @@ Implements Interface1
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.CodeDom.CodeTypeReferenceCollection" />
       </Docs>
     </Member>
     <Member MemberName="IsClass">
       <MemberSignature Language="C#" Value="public bool IsClass { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsClass" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsClass" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsClass As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsClass { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -165,9 +203,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public bool IsEnum { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsEnum" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsEnum" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsEnum As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsEnum { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -184,9 +228,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public bool IsInterface { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInterface" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsInterface" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsInterface As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsInterface { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -203,9 +253,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public bool IsPartial { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsPartial" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsPartial" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsPartial As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsPartial { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -223,7 +279,7 @@ Implements Interface1
   
  A partial type declaration makes it easier to build different portions of a class or structure implementation in different modules of your application. The partial type declarations can be stored in one source file, or spread across multiple source files that are eventually compiled together to form the combined type implementation.  
   
- The C# language supports partial type declarations of classes and structures through the `partial` keyword. Visual Basic supports partial type declarations of classes and structures with the `Partial` keyword. Not all code generators support partial type declarations, so you should test for this support by calling the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method with the flag <xref:System.CodeDom.Compiler.GeneratorSupport>.  
+ The C# language supports partial type declarations of classes and structures through the `partial` keyword. Visual Basic supports partial type declarations of classes and structures with the `Partial` keyword. Not all code generators support partial type declarations, so you should test for this support by calling the <xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A> method with the flag <xref:System.CodeDom.Compiler.GeneratorSupport.PartialTypes>.  
   
 > [!NOTE]
 >  Partial type declarations are supported for classes and structures. If you specify a partial type declaration for an enumeration or interface, the generated code produces compiler errors.  
@@ -249,15 +305,22 @@ Implements Interface1
   
  ]]></format>
         </remarks>
+        <altmember cref="F:System.CodeDom.Compiler.GeneratorSupport.PartialTypes" />
       </Docs>
     </Member>
     <Member MemberName="IsStruct">
       <MemberSignature Language="C#" Value="public bool IsStruct { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsStruct" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsStruct" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsStruct As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsStruct { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -274,9 +337,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeMemberCollection Members { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeMemberCollection Members" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.Members" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Members As CodeTypeMemberCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::CodeDom::CodeTypeMemberCollection ^ Members { System::CodeDom::CodeTypeMemberCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -286,15 +355,22 @@ Implements Interface1
         <summary>Gets the collection of class members for the represented type.</summary>
         <value>A <see cref="T:System.CodeDom.CodeTypeMemberCollection" /> object that indicates the class members.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.CodeDom.CodeTypeMemberCollection" />
       </Docs>
     </Member>
     <Member MemberName="PopulateBaseTypes">
       <MemberSignature Language="C#" Value="public event EventHandler PopulateBaseTypes;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateBaseTypes" />
       <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeTypeDeclaration.PopulateBaseTypes" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event PopulateBaseTypes As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ PopulateBaseTypes;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -309,9 +385,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public event EventHandler PopulateMembers;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateMembers" />
       <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeTypeDeclaration.PopulateMembers" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event PopulateMembers As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ PopulateMembers;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -326,9 +408,15 @@ Implements Interface1
       <MemberSignature Language="C#" Value="public System.Reflection.TypeAttributes TypeAttributes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.TypeAttributes TypeAttributes" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.TypeAttributes" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeAttributes As TypeAttributes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Reflection::TypeAttributes TypeAttributes { System::Reflection::TypeAttributes get(); void set(System::Reflection::TypeAttributes value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -341,25 +429,32 @@ Implements Interface1
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Reflection.TypeAttributes> property contains the same type of values used by <xref:System.Reflection> when investigating a type at run time. Many of these flags do not correspond to the type declaration syntax for some languages. As a result, only the following flags are significant to <xref:System.CodeDom.CodeTypeDeclaration> : <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, <xref:System.Reflection.TypeAttributes>, and <xref:System.Reflection.TypeAttributes>.  
+ The <xref:System.Reflection.TypeAttributes> property contains the same type of values used by <xref:System.Reflection> when investigating a type at run time. Many of these flags do not correspond to the type declaration syntax for some languages. As a result, only the following flags are significant to <xref:System.CodeDom.CodeTypeDeclaration> : <xref:System.Reflection.TypeAttributes.Class>, <xref:System.Reflection.TypeAttributes.Interface>, <xref:System.Reflection.TypeAttributes.Abstract>, <xref:System.Reflection.TypeAttributes.Sealed>, <xref:System.Reflection.TypeAttributes.Public>, <xref:System.Reflection.TypeAttributes.NotPublic>, <xref:System.Reflection.TypeAttributes.NestedPublic>, and <xref:System.Reflection.TypeAttributes.NestedPrivate>.  
   
 > [!NOTE]
->  Some of the flags such as <xref:System.Reflection.TypeAttributes> overlap with the meaning of flags in the <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property of <xref:System.CodeDom.CodeTypeDeclaration> that is inherited from <xref:System.CodeDom.CodeTypeMember>. The <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property is a side effect of the <xref:System.CodeDom.CodeTypeDeclaration> class inheriting from <xref:System.CodeDom.CodeTypeMember> so that classes can be nested. The flags in the <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A> property should be used instead of the flags in the <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property.  
+>  Some of the flags such as <xref:System.Reflection.TypeAttributes.Abstract> overlap with the meaning of flags in the <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property of <xref:System.CodeDom.CodeTypeDeclaration> that is inherited from <xref:System.CodeDom.CodeTypeMember>. The <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property is a side effect of the <xref:System.CodeDom.CodeTypeDeclaration> class inheriting from <xref:System.CodeDom.CodeTypeMember> so that classes can be nested. The flags in the <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A> property should be used instead of the flags in the <xref:System.CodeDom.CodeTypeMember.Attributes%2A> property.  
   
 > [!NOTE]
->  The pattern for setting the visibility flags (flags containing the words `Public` or `Nested`) is to mask out all visibility flags using the <xref:System.Reflection.TypeAttributes> and then set the desired visibility flag. For example, the C# code statement to identify the <xref:System.CodeDom.CodeTypeDeclaration> (named `cd`) as an internal class is `cd.TypeAttributes = (cd.TypeAttributes & ~TypeAttributes.VisibilityMask) | TypeAttributes.NotPublic;`.  The code to set the same value in Visual Basic is `cd.TypeAttributes = (cd.TypeAttributes And (TypeAttributes.VisibilityMask Xor -1)) Or TypeAttributes.NotPublic`. Setting the <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A> property directly to a visibility flag (`cd.TypeAttributes = TypeAttributes.NotPublic;`) erases all other flags that might be set.  
+>  The pattern for setting the visibility flags (flags containing the words `Public` or `Nested`) is to mask out all visibility flags using the <xref:System.Reflection.TypeAttributes.VisibilityMask> and then set the desired visibility flag. For example, the C# code statement to identify the <xref:System.CodeDom.CodeTypeDeclaration> (named `cd`) as an internal class is `cd.TypeAttributes = (cd.TypeAttributes & ~TypeAttributes.VisibilityMask) | TypeAttributes.NotPublic;`.  The code to set the same value in Visual Basic is `cd.TypeAttributes = (cd.TypeAttributes And (TypeAttributes.VisibilityMask Xor -1)) Or TypeAttributes.NotPublic`. Setting the <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A> property directly to a visibility flag (`cd.TypeAttributes = TypeAttributes.NotPublic;`) erases all other flags that might be set.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.TypeAttributes" />
       </Docs>
     </Member>
     <Member MemberName="TypeParameters">
       <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeParameterCollection TypeParameters { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeParameterCollection TypeParameters" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.TypeParameters" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TypeParameters As CodeTypeParameterCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::CodeDom::CodeTypeParameterCollection ^ TypeParameters { System::CodeDom::CodeTypeParameterCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -383,6 +478,8 @@ Implements Interface1
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.CodeDom.CodeTypeParameterCollection" />
+        <altmember cref="T:System.CodeDom.CodeTypeParameter" />
       </Docs>
     </Member>
   </Members>

@@ -1,23 +1,21 @@
 ---
-title: "OVERLAPS (Entity SQL) | Microsoft Docs"
+title: "OVERLAPS (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 41743e89-79cb-4d7b-8a27-355b45024b61
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # OVERLAPS (Entity SQL)
 Determines whether two collections have common elements.  
@@ -25,7 +23,6 @@ Determines whether two collections have common elements.
 ## Syntax  
   
 ```  
-  
 expression OVERLAPS expression  
 ```  
   

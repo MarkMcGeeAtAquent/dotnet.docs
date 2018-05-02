@@ -1,8 +1,8 @@
 ---
-title: "3302 - ReceiveContextFaulted | Microsoft Docs"
+title: "3302 - ReceiveContextFaulted"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: af3d1fc2-40e9-4466-b756-51a582505f3d
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3302 - ReceiveContextFaulted
 ## Properties  

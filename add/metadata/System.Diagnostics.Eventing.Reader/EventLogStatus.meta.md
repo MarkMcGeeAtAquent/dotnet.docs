@@ -1,17 +1,23 @@
 ---
 uid: System.Diagnostics.Eventing.Reader.EventLogStatus
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventLogStatus.StatusCode
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventLogStatus.LogName
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

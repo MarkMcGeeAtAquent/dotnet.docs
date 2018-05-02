@@ -1,5 +1,5 @@
 ---
-title: "How to: Determine if a Data Format is Present in a Data Object | Microsoft Docs"
+title: "How to: Determine if a Data Format is Present in a Data Object"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "DataFormats class [WPF]"
   - "drag-and-drop [WPF], data formats present"
@@ -18,6 +21,8 @@ caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Determine if a Data Format is Present in a Data Object
 The following examples show how to use the various <xref:System.Windows.DataObject.GetDataPresent%2A> method overloads to query whether a particular data format is present in a data object.  

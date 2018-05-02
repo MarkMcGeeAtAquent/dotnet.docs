@@ -1,8 +1,8 @@
 ---
-title: "Hosting2 | Microsoft Docs"
+title: "Hosting2"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
 caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hosting
 The topics in the section describe service hosting. A service can be hosted by Internet Information Services (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, a Windows service, or by a managed application—this option is often referred to as *self hosting*.  
@@ -40,5 +42,5 @@ The topics in the section describe service hosting. A service can be hosted by I
  Describes how to specify multiple base addresses for a service using the same URI scheme on a single Web site.  
   
 ## See Also  
- [Hosting Services](../../../../docs/framework/wcf/hosting-services.md)   
+ [Hosting Services](../../../../docs/framework/wcf/hosting-services.md)  
  [Windows Server App Fabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=201276)

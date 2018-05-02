@@ -1,5 +1,5 @@
 ---
-title: "Windows Forms Visual Inheritance | Microsoft Docs"
+title: "Windows Forms Visual Inheritance"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,12 +9,10 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "base forms"
-  - "inheritance, forms"
-  - "inherited forms, Windows Forms"
+  - "inheritance [Windows Forms], forms"
+  - "inherited forms [Windows Forms], Windows Forms"
   - "inheritance"
   - "inherited forms"
   - "form inheritance"
@@ -24,6 +22,8 @@ caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Windows Forms Visual Inheritance
 Occasionally, you may decide that a project calls for a form similar to one that you have created in a previous project. Or, you may want to create a basic form with settings such as a watermark or certain control layout that you will then use again within a project, with each iteration containing modifications to the original form template. Form inheritance enables you to create a base form and then inherit from it and make modifications while preserving whatever original settings you need.  
@@ -47,7 +47,7 @@ Occasionally, you may decide that a project calls for a form similar to one that
  Gives directions for using the `GenerateMember` and `Modifiers` properties, which are relevant when the Windows Forms Designer generates a member variable for a component.  
   
 ## Related Sections  
- [NOT IN BUILD: Inheritance in Visual Basic](http://msdn.microsoft.com/en-us/e5e6e240-ed31-4657-820c-079b7c79313c)  
+ [Inheritance basics (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
  Describes how to define Visual Basic classes that serve as the basis for other classes.  
   
  [class](~/docs/csharp/language-reference/keywords/class.md)  

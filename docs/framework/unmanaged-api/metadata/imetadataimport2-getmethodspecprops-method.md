@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport2::GetMethodSpecProps Method | Microsoft Docs"
+title: "IMetaDataImport2::GetMethodSpecProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport2.GetMethodSpecProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport2::GetMethodSpecProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetMethodSpecProps method [.NET Framework metadata]"
   - "IMetaDataImport2::GetMethodSpecProps method [.NET Framework metadata]"
 ms.assetid: 9544b711-e669-4eaf-8630-ee862e5e4489
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport2::GetMethodSpecProps Method
 Gets the metadata signature of the method referenced by the specified MethodSpec token.  
@@ -64,5 +67,5 @@ HRESULT GetMethodSpecProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)   
+ [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICLRPolicyManager::SetActionOnFailure Method | Microsoft Docs"
+title: "ICLRPolicyManager::SetActionOnFailure Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRPolicyManager.SetActionOnFailure"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRPolicyManager::SetActionOnFailure"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetActionOnFailure method [.NET Framework hosting]"
   - "ICLRPolicyManager::SetActionOnFailure method [.NET Framework hosting]"
 ms.assetid: 4664033f-db97-4388-b988-2ec470796e58
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRPolicyManager::SetActionOnFailure Method
 Specifies the policy action the common language runtime (CLR) should take when the specified failure occurs.  
@@ -84,7 +87,7 @@ HRESULT SetActionOnFailure (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [EClrFailure Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)   
- [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)   
- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)   
+ [EClrFailure Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
+ [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
+ [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [ICLRPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)

@@ -1,6 +1,6 @@
 ---
 title: XML Documentation (F#)
-description: XML Documentation (F#)
+description: Learn about support in F# for generating documentation from comments. 
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart

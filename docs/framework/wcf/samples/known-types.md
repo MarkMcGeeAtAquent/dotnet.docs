@@ -1,8 +1,8 @@
 ---
-title: "Known Types | Microsoft Docs"
+title: "Known Types"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
 caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Known Types
 This sample demonstrates how to specify information about derived types in a data contract. Data contracts allow you to pass structured data to and from services. In object-oriented programming, a type that inherits from another type can be used in place of the original type. In service-oriented programming, schemas rather than types are communicated and therefore, the relationship between types is not preserved. The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute allows information about derived types to be included in the data contract. If this mechanism is not used, a derived type cannot be sent or received where a base type is expected.  
@@ -37,7 +39,6 @@ public interface ICalculator
     [OperationContract]  
     ComplexNumber Divide(ComplexNumber n1, ComplexNumber n2);  
 }  
-  
 ```  
   
  The <xref:System.Runtime.Serialization.DataContractAttribute> and <xref:System.Runtime.Serialization.DataMemberAttribute> is applied to the `ComplexNumber` class to indicate which fields of the class can be passed between the client and the service. The derived `ComplexNumberWithMagnitude` class can be used in place of `ComplexNumber`. The <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute on the `ComplexNumber` type indicates this.  
@@ -58,13 +59,11 @@ public class ComplexNumber
         this.Imaginary = imaginary;  
     }  
 }  
-  
 ```  
   
  The `ComplexNumberWithMagnitude` type derives from `ComplexNumber` but adds an additional data member, `Magnitude`.  
   
 ```  
-  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public class ComplexNumberWithMagnitude : ComplexNumber  
 {  
@@ -146,7 +145,6 @@ else
 {  
     Console.WriteLine("No magnitude was sent from the service");  
 }  
-  
 ```  
   
  When you run the sample, the requests and responses of the operation are displayed in the client console window. Note that a magnitude is printed for addition and subtraction but not for multiplication and division because of the way the service was implemented. Press ENTER in the client window to shut down the client.  

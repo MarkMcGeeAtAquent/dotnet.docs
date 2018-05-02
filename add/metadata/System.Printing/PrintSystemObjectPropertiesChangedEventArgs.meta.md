@@ -1,38 +1,42 @@
 ---
 uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs.PropertiesNames
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs.#ctor(System.Collections.Specialized.StringCollection)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs.Dispose(System.Boolean)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs.Dispose
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
----
-
----
-uid: System.Printing.PrintSystemObjectPropertiesChangedEventArgs.Dispose
-ms.author: "kempb"
-manager: "ghogen"
 ---

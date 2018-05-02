@@ -1,7 +1,9 @@
-<Type Name="BitmapDecoder" FullName="System.Windows.Media.Imaging.BitmapDecoder">
+﻿<Type Name="BitmapDecoder" FullName="System.Windows.Media.Imaging.BitmapDecoder">
   <TypeSignature Language="C#" Value="public abstract class BitmapDecoder : System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract BitmapDecoder extends System.Windows.Threading.DispatcherObject" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class BitmapDecoder&#xA;Inherits DispatcherObject" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BitmapDecoder abstract : System::Windows::Threading::DispatcherObject" />
   <AssemblyInfo>
     <AssemblyName>PresentationCore</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -37,12 +39,18 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
+    <altmember cref="T:System.Windows.Media.Imaging.BitmapEncoder" />
+    <altmember cref="T:System.Windows.Media.Imaging.BitmapFrame" />
+    <altmember cref="T:System.Windows.Controls.Image" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected BitmapDecoder ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; BitmapDecoder();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -58,6 +66,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapCodecInfo CodecInfo" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.CodecInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CodecInfo As BitmapCodecInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Media::Imaging::BitmapCodecInfo ^ CodecInfo { System::Windows::Media::Imaging::BitmapCodecInfo ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -90,12 +100,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapCodecInfo" />
       </Docs>
     </Member>
     <Member MemberName="ColorContexts">
       <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.ColorContext&gt; ColorContexts { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.ColorContext&gt; ColorContexts" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.ColorContexts" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property ColorContexts As ReadOnlyCollection(Of ColorContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Windows::Media::ColorContext ^&gt; ^ ColorContexts { System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Windows::Media::ColorContext ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -110,10 +123,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Create">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a <see cref="T:System.Windows.Media.Imaging.BitmapDecoder" /> by using the specified <see cref="T:System.Windows.Media.Imaging.BitmapCreateOptions" /> and <see cref="T:System.Windows.Media.Imaging.BitmapCacheOption" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (System.IO.Stream bitmapStream, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.IO.Stream bitmapStream, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.IO.Stream,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (bitmapStream As Stream, createOptions As BitmapCreateOptions, cacheOption As BitmapCacheOption) As BitmapDecoder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::Media::Imaging::BitmapDecoder ^ Create(System::IO::Stream ^ bitmapStream, System::Windows::Media::Imaging::BitmapCreateOptions createOptions, System::Windows::Media::Imaging::BitmapCacheOption cacheOption);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -137,7 +161,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Media.Imaging.BitmapCacheOption> cache option if you wish to close the `bitmapStream` after the decoder is created. The default <xref:System.Windows.Media.Imaging.BitmapCacheOption> cache option retains access to the stream until the bitmap is needed, and cleanup is handled by the garbage collector.  
+ Use the <xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad> cache option if you wish to close the `bitmapStream` after the decoder is created. The default <xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand> cache option retains access to the stream until the bitmap is needed, and cleanup is handled by the garbage collector.  
   
    
   
@@ -149,12 +173,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (bitmapUri As Uri, createOptions As BitmapCreateOptions, cacheOption As BitmapCacheOption) As BitmapDecoder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::Media::Imaging::BitmapDecoder ^ Create(Uri ^ bitmapUri, System::Windows::Media::Imaging::BitmapCreateOptions createOptions, System::Windows::Media::Imaging::BitmapCacheOption cacheOption);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -187,12 +214,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="bitmapUri" /> is <see langword="null" />.</exception>
         <exception cref="T:System.IO.FileFormatException">The <paramref name="bitmapUri" /> specifies a class ID of an unsupported format type.</exception>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapDecoder Create (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption, System.Net.Cache.RequestCachePolicy uriCachePolicy);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Imaging.BitmapDecoder Create(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption, class System.Net.Cache.RequestCachePolicy uriCachePolicy) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Create(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption,System.Net.Cache.RequestCachePolicy)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (bitmapUri As Uri, createOptions As BitmapCreateOptions, cacheOption As BitmapCacheOption, uriCachePolicy As RequestCachePolicy) As BitmapDecoder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Windows::Media::Imaging::BitmapDecoder ^ Create(Uri ^ bitmapUri, System::Windows::Media::Imaging::BitmapCreateOptions createOptions, System::Windows::Media::Imaging::BitmapCacheOption cacheOption, System::Net::Cache::RequestCachePolicy ^ uriCachePolicy);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -228,6 +258,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter CreateInPlaceBitmapMetadataWriter() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.CreateInPlaceBitmapMetadataWriter" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateInPlaceBitmapMetadataWriter () As InPlaceBitmapMetadataWriter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Windows::Media::Imaging::InPlaceBitmapMetadataWriter ^ CreateInPlaceBitmapMetadataWriter();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -244,7 +276,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following code example demonstrates how to create an <xref:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter> in order to update the [metadata](GTMT) associated with a [bitmap](GTMT) image.  
+ The following code example demonstrates how to create an <xref:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter> in order to update the metadata associated with a bitmap image.  
   
  [!code-cpp[bitmapmetadata#SetQuery](~/samples/snippets/cpp/VS_Snippets_Wpf/BitMapMetadata/CPP/BitmapMetadata.cpp#setquery)]
  [!code-csharp[bitmapmetadata#SetQuery](~/samples/snippets/csharp/VS_Snippets_Wpf/BitMapMetadata/CSharp/BitmapMetadata.cs#setquery)]
@@ -254,12 +286,16 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The file original image stream is read only.</exception>
         <exception cref="T:System.NotImplementedException">The decoder is not a built in decoder.</exception>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapMetadata" />
+        <altmember cref="T:System.Windows.Media.Imaging.InPlaceBitmapMetadataWriter" />
       </Docs>
     </Member>
     <Member MemberName="DownloadCompleted">
       <MemberSignature Language="C#" Value="public virtual event EventHandler DownloadCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DownloadCompleted" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Custom Event DownloadCompleted As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ DownloadCompleted;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -284,6 +320,8 @@
       <MemberSignature Language="C#" Value="public virtual event EventHandler&lt;System.Windows.Media.ExceptionEventArgs&gt; DownloadFailed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Media.ExceptionEventArgs&gt; DownloadFailed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadFailed" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Custom Event DownloadFailed As EventHandler(Of ExceptionEventArgs) " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler&lt;System::Windows::Media::ExceptionEventArgs ^&gt; ^ DownloadFailed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -311,6 +349,8 @@
       <MemberSignature Language="C#" Value="public virtual event EventHandler&lt;System.Windows.Media.Imaging.DownloadProgressEventArgs&gt; DownloadProgress;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Media.Imaging.DownloadProgressEventArgs&gt; DownloadProgress" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Media.Imaging.BitmapDecoder.DownloadProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Custom Event DownloadProgress As EventHandler(Of DownloadProgressEventArgs) " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler&lt;System::Windows::Media::Imaging::DownloadProgressEventArgs ^&gt; ^ DownloadProgress;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -339,6 +379,8 @@
       <MemberSignature Language="C#" Value="~BitmapDecoder ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!BitmapDecoder ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -364,7 +406,7 @@
 ## Remarks  
  This method overrides <xref:System.Object.Finalize%2A>. Application code should not call this method; an object's `Finalize` method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize%2A> method.  
   
- For more information, see [Finalize Methods and Destructors](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
+ For more information, see [Finalize Methods and Destructors](http://msdn.microsoft.com/library/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
   
  ]]></format>
         </remarks>
@@ -375,6 +417,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Media.Imaging.BitmapFrame&gt; Frames { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Media.Imaging.BitmapFrame&gt; Frames" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Frames" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Frames As ReadOnlyCollection(Of BitmapFrame)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Windows::Media::Imaging::BitmapFrame ^&gt; ^ Frames { System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Windows::Media::Imaging::BitmapFrame ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -404,12 +448,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapFrame" />
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
       </Docs>
     </Member>
     <Member MemberName="IsDownloading">
       <MemberSignature Language="C#" Value="public virtual bool IsDownloading { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDownloading" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.IsDownloading" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsDownloading As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsDownloading { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -429,6 +477,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapMetadata Metadata { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapMetadata Metadata" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Metadata" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Metadata As BitmapMetadata" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Media::Imaging::BitmapMetadata ^ Metadata { System::Windows::Media::Imaging::BitmapMetadata ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -453,12 +503,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapMetadata" />
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapFrame" />
       </Docs>
     </Member>
     <Member MemberName="Palette">
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapPalette Palette { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapPalette Palette" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Palette" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Palette As BitmapPalette" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Media::Imaging::BitmapPalette ^ Palette { System::Windows::Media::Imaging::BitmapPalette ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -476,12 +530,15 @@
         <summary>Gets the <see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> associated with this decoder.</summary>
         <value>The <see cref="T:System.Windows.Media.Imaging.BitmapPalette" /> associated with this decoder. If the bitmap has no palette, <see langword="null" /> is returned. This property has no default value.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapPalette" />
       </Docs>
     </Member>
     <Member MemberName="Preview">
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapSource Preview { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Preview" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Preview" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Preview As BitmapSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Media::Imaging::BitmapSource ^ Preview { System::Windows::Media::Imaging::BitmapSource ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -506,12 +563,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
       </Docs>
     </Member>
     <Member MemberName="Thumbnail">
       <MemberSignature Language="C#" Value="public virtual System.Windows.Media.Imaging.BitmapSource Thumbnail { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Thumbnail" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapDecoder.Thumbnail" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Thumbnail As BitmapSource" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Media::Imaging::BitmapSource ^ Thumbnail { System::Windows::Media::Imaging::BitmapSource ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -538,12 +598,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Media.Imaging.BitmapSource" />
       </Docs>
     </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapDecoder.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>

@@ -1,24 +1,23 @@
 ---
-title: "Default Message Contract | Microsoft Docs"
+title: "Default Message Contract"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Message Contract"
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
 caps.latest.revision: 35
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Default Message Contract
 The Default Message Contract sample demonstrates a service where a custom user-defined message is passed to and from service operations. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator interface as a typed service. Instead of the individual service operations for addition, subtraction, multiplication, and division used in the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), this sample passes a custom message that contains both the operands and the operator, and returns the result of the arithmetic calculation.  
@@ -38,7 +37,6 @@ public interface ICalculator
                   ReplyAction="http://test/MyMessage_action")]  
     MyMessage Calculate(MyMessage request);  
 }  
-  
 ```  
   
  The custom message `MyMessage` is defined in a class annotated with <xref:System.ServiceModel.MessageContractAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute> and <xref:System.ServiceModel.MessageBodyMemberAttribute> attributes. Only the third constructor is used in this sample. Using message contracts allows you to exercise full control over the SOAP message. In this sample, the <xref:System.ServiceModel.MessageHeaderAttribute> attribute is used to put `Operation` in a SOAP header. The operands `N1`, `N2` and the `Result` appear within the SOAP body because they have the <xref:System.ServiceModel.MessageBodyMemberAttribute> attribute applied.  
@@ -166,14 +164,12 @@ Console.WriteLine("Add({0},{1}) = {2}", request.N1, request.N2, response.Result)
  When you run the sample, the calculations are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  
 Divide(22,7) = 3.14285714285714  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
  At this point, custom user-defined messages have passed between the client and the service operation. The message contract defined that the operands and results were in the message body and that the operator was in a message header. Message logging can be configured to observe this message structure.  

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataValidate::ValidatorInit Method | Microsoft Docs"
+title: "IMetaDataValidate::ValidatorInit Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataValidate.ValidatorInit"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataValidate::ValidatorInit"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataValidate::ValidatorInit method [.NET Framework metadata]"
   - "ValidatorInit method [.NET Framework metadata]"
 ms.assetid: 6bafd75a-e2d0-4aea-aed1-074374d5dff6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataValidate::ValidatorInit Method
 Sets a flag that specifies the type of the module in the current metadata scope, and registers the specified callback method for validation errors.  

@@ -1,5 +1,5 @@
 ---
-title: "Brushes and Filled Shapes in GDI+ | Microsoft Docs"
+title: "Brushes and Filled Shapes in GDI+"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,20 +10,23 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "brushes, GDI+"
-  - "filled shapes, GDI+"
-  - "shapes, GDI+"
+  - "brushes [Windows Forms], GDI+"
+  - "filled shapes [Windows Forms], GDI+"
+  - "shapes [Windows Forms], GDI+"
   - "GDI+, brushes"
   - "GDI+, filled shapes"
   - "gradient brushes"
-  - "brushes, gradient"
+  - "brushes [Windows Forms], gradient"
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
 caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Brushes and Filled Shapes in GDI+
 A closed shape, such as a rectangle or an ellipse, consists of an outline and an interior. The outline is drawn with a pen and the interior is filled with a brush. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] provides several brush classes for filling the interiors of closed shapes: <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, and <xref:System.Drawing.Drawing2D.PathGradientBrush>. All of these classes inherit from the <xref:System.Drawing.Brush> class. The following illustration shows a rectangle filled with a solid brush and an ellipse filled with a hatch brush.  
@@ -45,7 +48,7 @@ A closed shape, such as a rectangle or an ellipse, consists of an outline and an
  [!code-csharp[LinesCurvesAndShapes#122](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#122)]
  [!code-vb[LinesCurvesAndShapes#122](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#122)]  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] provides more than 50 hatch styles; the three styles shown in the following illustration are <xref:System.Drawing.Drawing2D.HatchStyle>, <xref:System.Drawing.Drawing2D.HatchStyle>, and <xref:System.Drawing.Drawing2D.HatchStyle>.  
+ [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] provides more than 50 hatch styles; the three styles shown in the following illustration are <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, and <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.  
   
  ![Filled Shapes](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art18.gif "Aboutgdip02_art18")  
   
@@ -82,10 +85,10 @@ A closed shape, such as a rectangle or an ellipse, consists of an outline and an
  ![Filled Shape](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art23.gif "AboutGdip02_Art23")  
   
 ## See Also  
- <xref:System.Drawing.SolidBrush?displayProperty=fullName>   
- <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=fullName>   
- <xref:System.Drawing.TextureBrush?displayProperty=fullName>   
- <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=fullName>   
- [Lines, Curves, and Shapes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
- [How to: Draw a Filled Rectangle on a Windows Form](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-rectangle-on-a-windows-form.md)   
+ <xref:System.Drawing.SolidBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.Drawing2D.HatchBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.TextureBrush?displayProperty=nameWithType>  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush?displayProperty=nameWithType>  
+ [Lines, Curves, and Shapes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
+ [How to: Draw a Filled Rectangle on a Windows Form](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-rectangle-on-a-windows-form.md)  
  [How to: Draw a Filled Ellipse on a Windows Form](../../../../docs/framework/winforms/advanced/how-to-draw-a-filled-ellipse-on-a-windows-form.md)

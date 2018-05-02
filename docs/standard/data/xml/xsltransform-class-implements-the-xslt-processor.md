@@ -1,5 +1,5 @@
 ---
-title: "XslTransform Class Implements the XSLT Processor | Microsoft Docs"
+title: "XslTransform Class Implements the XSLT Processor"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
 caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # XslTransform Class Implements the XSLT Processor
 > [!NOTE]
@@ -27,7 +28,7 @@ manager: "wpickett"
   
  The <xref:System.Xml.Xsl.XslTransform> object in the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] only supports the XSLT 1.0 specification, defined with the following namespace:  
   
-```  
+```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">    
 ```  
   
@@ -43,37 +44,30 @@ manager: "wpickett"
   
 ```vb  
 Overloads Public Sub Load(String)  
-  
 ```  
   
 ```csharp  
 public void Load(string);  
-  
 ```  
   
 ```vb  
 Overloads Public Sub Load(String, XmlResolver)  
-  
 ```  
   
 ```csharp  
 public void Load(string, XmlResolver);  
-  
 ```  
   
 ```vb  
 Overloads Public Sub Load(XmlReader, XmlResolver, Evidence)  
-  
 ```  
   
 ```csharp  
 public void Load(XmlReader, XmlResolver, Evidence);  
-  
 ```  
   
 ```vb  
 Overloads Public Sub Load(XPathNavigator, XmlResolver, Evidence)  
-  
 ```  
   
 ```csharp  
@@ -142,7 +136,6 @@ public void Load(XPathNavigator, XmlResolver, Evidence);
 Dim xsltransform As XslTransform = New XslTransform()  
 xsltransform.Load("favorite.xsl")  
 xsltransform.Transform("MyDocument.Xml", "TransformResult.xml", Nothing)  
-  
 ```  
   
 ```csharp  
@@ -167,7 +160,6 @@ tmpDoc.LoadXml(testNode.OuterXml)
 ' to the Transform method.  
 Console.WriteLine(("Passing " + tmpDoc.OuterXml + " to print_root.xsl"))  
 xslt.Transform(tmpDoc, Nothing, Console.Out, Nothing)  
-  
 ```  
   
 ```csharp  
@@ -194,12 +186,12 @@ Root node is book.
   
  library.xml  
   
-```  
+```xml  
 <library>  
-  \<book genre='novel' ISBN='1-861001-57-5'>  
+  <book genre='novel' ISBN='1-861001-57-5'>  
      <title>Pride And Prejudice</title>  
   </book>  
-  \<book genre='novel' ISBN='1-81920-21-2'>  
+  <book genre='novel' ISBN='1-81920-21-2'>  
      <title>Hook</title>  
   </book>  
 </library>  
@@ -207,11 +199,11 @@ Root node is book.
   
  print_root.xsl  
   
-```  
+```xml  
 <stylesheet version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform" >  
   <output method="text" />   
   <template match="/">  
-     Root node is  \<value-of select="local-name(//*[position() = 1])" />   
+     Root node is  <value-of select="local-name(//*[position() = 1])" />   
   </template>  
 </stylesheet>  
 ```  
@@ -239,13 +231,13 @@ Root node is book.
 |Void Transform(IXPathNavigable input, XsltArgumentList args, Stream output)|Void Transform(IXPathNavigable input, XsltArgumentList args, Stream output, XmlResolver resolver)|  
 |Void Transform(String input, String output);|Void Transform(String input, String output, XmlResolver resolver);|  
   
- The <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=fullName> property is obsolete in [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.1. Instead, use the new <xref:System.Xml.Xsl.XslTransform.Transform%2A> overloads which take an <xref:System.Xml.XmlResolver> object.  
+ The <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> property is obsolete in [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.1. Instead, use the new <xref:System.Xml.Xsl.XslTransform.Transform%2A> overloads which take an <xref:System.Xml.XmlResolver> object.  
   
 ## See Also  
- <xref:System.Xml.Xsl.XslTransform>   
- [XSLT Transformations with the XslTransform Class](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)   
- [XPathNavigator in Transformations](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)   
- [XPathNodeIterator in Transformations](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)   
- [XPathDocument Input to XslTransform](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)   
- [XmlDataDocument Input to XslTransform](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)   
+ <xref:System.Xml.Xsl.XslTransform>  
+ [XSLT Transformations with the XslTransform Class](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XPathNavigator in Transformations](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)  
+ [XPathNodeIterator in Transformations](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)  
+ [XPathDocument Input to XslTransform](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)  
+ [XmlDataDocument Input to XslTransform](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)  
  [XmlDocument Input to XslTransform](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)

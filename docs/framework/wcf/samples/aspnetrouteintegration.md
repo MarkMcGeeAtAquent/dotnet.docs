@@ -1,8 +1,8 @@
 ---
-title: "AspNetRouteIntegration | Microsoft Docs"
+title: "AspNetRouteIntegration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0638ce0e-d053-47df-a447-688e447a03fb
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # AspNetRouteIntegration
 This sample demonstrates how to host a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] REST service using ASP.NET routes. The [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md) sample shows a self-hosted version of this scenario and discusses the service implementation in depth. This topic focuses on the ASP.NET integration feature. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] ASP.NET Routing, see <xref:System.Web.Routing>.  
@@ -46,7 +48,7 @@ This sample demonstrates how to host a [!INCLUDE[indigo1](../../../../includes/i
   
 2.  Press CTRL+SHIFT+B to build the solution.  
   
-3.  If it is not already open, press “CTRL+W, S” to open the **Solution Explorer** window.  
+3.  If it is not already open, press "CTRL+W, S" to open the **Solution Explorer** window.  
   
 4.  From the **Solution Explorer** windows, right-click the **Service** project and place the cursor over the **Debug** context menu option so that the **Start New Instance** context menu appears and select **Start New Instance**.  This launches the ASP.NET development server, which hosts the service.  
   

@@ -1,31 +1,34 @@
 ---
-title: "ITypeName::GetTypeArgumentCount Method | Microsoft Docs"
+title: "ITypeName::GetTypeArgumentCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeName.GetTypeArgumentCount"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetTypeArgumentCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTypeArgumentCount method [.NET Framework hosting]"
   - "ITypeName::GetTypeArgumentCount method [.NET Framework hosting]"
 ms.assetid: ecb5480c-761a-4b02-83e0-b79abc67fd08
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeName::GetTypeArgumentCount Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

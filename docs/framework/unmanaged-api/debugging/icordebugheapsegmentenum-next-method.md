@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapSegmentEnum::Next Method | Microsoft Docs"
+title: "ICorDebugHeapSegmentEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "Next"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapSegmentEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHeapSegmentEnum::Next method [.NET Framework debugging]"
   - "Next method, ICorDebugHeapSegmentEnum interface [.NET Framework debugging]"
 ms.assetid: 51625fd0-7399-49c7-b22b-5dfb05451fe6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapSegmentEnum::Next Method
 Gets the specified number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances that contain information about memory regions of the managed heap.  
@@ -61,5 +64,5 @@ HRESULT Next(
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorDebugHeapSegmentEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)   
+ [ICorDebugHeapSegmentEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugheapsegmentenum-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

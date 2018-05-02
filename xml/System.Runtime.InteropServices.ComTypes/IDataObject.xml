@@ -1,7 +1,9 @@
-<Type Name="IDataObject" FullName="System.Runtime.InteropServices.ComTypes.IDataObject">
+﻿<Type Name="IDataObject" FullName="System.Runtime.InteropServices.ComTypes.IDataObject">
   <TypeSignature Language="C#" Value="public interface IDataObject" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataObject" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.IDataObject" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IDataObject" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IDataObject" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -11,13 +13,17 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Interfaces />
   <Attributes>
     <Attribute>
       <AttributeName>System.Runtime.InteropServices.Guid("0000010e-0000-0000-C000-000000000046")</AttributeName>
     </Attribute>
     <Attribute>
-      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -36,8 +42,9 @@
   <Members>
     <Member MemberName="DAdvise">
       <MemberSignature Language="C#" Value="public int DAdvise (ref System.Runtime.InteropServices.ComTypes.FORMATETC pFormatetc, System.Runtime.InteropServices.ComTypes.ADVF advf, System.Runtime.InteropServices.ComTypes.IAdviseSink adviseSink, out int connection);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DAdvise(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC pFormatetc, valuetype System.Runtime.InteropServices.ComTypes.ADVF advf, class System.Runtime.InteropServices.ComTypes.IAdviseSink adviseSink, int32 connection) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 DAdvise([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; pFormatetc, valuetype System.Runtime.InteropServices.ComTypes.ADVF advf, class System.Runtime.InteropServices.ComTypes.IAdviseSink adviseSink, [out] int32&amp; connection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.DAdvise(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.ADVF,System.Runtime.InteropServices.ComTypes.IAdviseSink,System.Int32@)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int DAdvise(System::Runtime::InteropServices::ComTypes::FORMATETC % pFormatetc, System::Runtime::InteropServices::ComTypes::ADVF advf, System::Runtime::InteropServices::ComTypes::IAdviseSink ^ adviseSink, [Runtime::InteropServices::Out] int % connection);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -47,6 +54,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -65,56 +76,31 @@
         <summary>Creates a connection between a data object and an advisory sink. This method is called by an object that supports an advisory sink and enables the advisory sink to be notified of changes in the object's data.</summary>
         <returns>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> S_OK  
+ </description></listheader><item><term> S_OK  
   
- </term>  
-<description> The advisory connection was created.  
+ </term><description> The advisory connection was created.  
   
- </description>  
-</item>  
-<item>  
-<term> E_NOTIMPL  
+ </description></item><item><term> E_NOTIMPL  
   
- </term>  
-<description> This method is not implemented on the data object.  
+ </term><description> This method is not implemented on the data object.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_LINDEX  
+ </description></item><item><term> DV_E_LINDEX  
   
- </term>  
-<description> There is an invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
+ </term><description> There is an invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_FORMATETC  
+ </description></item><item><term> DV_E_FORMATETC  
   
- </term>  
-<description> There is an invalid value for the <paramref name="pFormatetc" /> parameter.  
+ </term><description> There is an invalid value for the <paramref name="pFormatetc" /> parameter.  
   
- </description>  
-</item>  
-<item>  
-<term> OLE_E_ADVISENOTSUPPORTED  
+ </description></item><item><term> OLE_E_ADVISENOTSUPPORTED  
   
- </term>  
-<description> The data object does not support change notification.  
+ </term><description> The data object does not support change notification.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -129,6 +115,8 @@
       <MemberSignature Language="C#" Value="public void DUnadvise (int connection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DUnadvise(int32 connection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.DUnadvise(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DUnadvise (connection As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DUnadvise(int connection);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -138,6 +126,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -160,8 +152,10 @@
     </Member>
     <Member MemberName="EnumDAdvise">
       <MemberSignature Language="C#" Value="public int EnumDAdvise (out System.Runtime.InteropServices.ComTypes.IEnumSTATDATA enumAdvise);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 EnumDAdvise(class System.Runtime.InteropServices.ComTypes.IEnumSTATDATA enumAdvise) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 EnumDAdvise([out] class System.Runtime.InteropServices.ComTypes.IEnumSTATDATA&amp; enumAdvise) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.EnumDAdvise(System.Runtime.InteropServices.ComTypes.IEnumSTATDATA@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EnumDAdvise (ByRef enumAdvise As IEnumSTATDATA) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int EnumDAdvise([Runtime::InteropServices::Out] System::Runtime::InteropServices::ComTypes::IEnumSTATDATA ^ % enumAdvise);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -171,6 +165,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -183,32 +181,19 @@
         <summary>Creates an object that can be used to enumerate the current advisory connections.</summary>
         <returns>This method supports the standard return value E_OUTOFMEMORY, as well as the following:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> S_OK  
+ </description></listheader><item><term> S_OK  
   
- </term>  
-<description> The enumerator object is successfully instantiated or there are no connections.  
+ </term><description> The enumerator object is successfully instantiated or there are no connections.  
   
- </description>  
-</item>  
-<item>  
-<term> OLE_E_ADVISENOTSUPPORTED  
+ </description></item><item><term> OLE_E_ADVISENOTSUPPORTED  
   
- </term>  
-<description> This object does not support advisory notifications.  
+ </term><description> This object does not support advisory notifications.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -223,6 +208,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ComTypes.IEnumFORMATETC EnumFormatEtc (System.Runtime.InteropServices.ComTypes.DATADIR direction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.InteropServices.ComTypes.IEnumFORMATETC EnumFormatEtc(valuetype System.Runtime.InteropServices.ComTypes.DATADIR direction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.EnumFormatEtc(System.Runtime.InteropServices.ComTypes.DATADIR)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EnumFormatEtc (direction As DATADIR) As IEnumFORMATETC" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Runtime::InteropServices::ComTypes::IEnumFORMATETC ^ EnumFormatEtc(System::Runtime::InteropServices::ComTypes::DATADIR direction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -232,6 +219,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.InteropServices.ComTypes.IEnumFORMATETC</ReturnType>
@@ -244,40 +235,23 @@
         <summary>Creates an object for enumerating the <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structures for a data object. These structures are used in calls to <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" /> or <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />.</summary>
         <returns>This method supports the standard return values E_INVALIDARG and E_OUTOFMEMORY, as well as the following:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> S_OK  
+ </description></listheader><item><term> S_OK  
   
- </term>  
-<description> The enumerator object was successfully created.  
+ </term><description> The enumerator object was successfully created.  
   
- </description>  
-</item>  
-<item>  
-<term> E_NOTIMPL  
+ </description></item><item><term> E_NOTIMPL  
   
- </term>  
-<description> The direction specified by the <paramref name="direction" /> parameter is not supported.  
+ </term><description> The direction specified by the <paramref name="direction" /> parameter is not supported.  
   
- </description>  
-</item>  
-<item>  
-<term> OLE_S_USEREG  
+ </description></item><item><term> OLE_S_USEREG  
   
- </term>  
-<description> Requests that OLE enumerate the formats from the registry.  
+ </term><description> Requests that OLE enumerate the formats from the registry.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -290,8 +264,10 @@
     </Member>
     <Member MemberName="GetCanonicalFormatEtc">
       <MemberSignature Language="C#" Value="public int GetCanonicalFormatEtc (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, out System.Runtime.InteropServices.ComTypes.FORMATETC formatOut);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCanonicalFormatEtc(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, valuetype System.Runtime.InteropServices.ComTypes.FORMATETC formatOut) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCanonicalFormatEtc([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatIn, [out] valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatOut) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetCanonicalFormatEtc(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetCanonicalFormatEtc (ByRef formatIn As FORMATETC, ByRef formatOut As FORMATETC) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int GetCanonicalFormatEtc(System::Runtime::InteropServices::ComTypes::FORMATETC % formatIn, [Runtime::InteropServices::Out] System::Runtime::InteropServices::ComTypes::FORMATETC % formatOut);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -301,6 +277,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -315,56 +295,31 @@
         <summary>Provides a standard <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structure that is logically equivalent to a more complex structure. Use this method to determine whether two different <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structures would return the same data, removing the need for duplicate rendering.</summary>
         <returns>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> S_OK  
+ </description></listheader><item><term> S_OK  
   
- </term>  
-<description> The returned <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structure is different from the one that was passed.  
+ </term><description> The returned <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structure is different from the one that was passed.  
   
- </description>  
-</item>  
-<item>  
-<term> DATA_S_SAMEFORMATETC  
+ </description></item><item><term> DATA_S_SAMEFORMATETC  
   
- </term>  
-<description> The <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structures are the same and <see langword="null" /> is returned in the <paramref name="formatOut" /> parameter.  
+ </term><description> The <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structures are the same and <see langword="null" /> is returned in the <paramref name="formatOut" /> parameter.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_LINDEX  
+ </description></item><item><term> DV_E_LINDEX  
   
- </term>  
-<description> There is an invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
+ </term><description> There is an invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_FORMATETC  
+ </description></item><item><term> DV_E_FORMATETC  
   
- </term>  
-<description> There is an invalid value for the <paramref name="pFormatetc" /> parameter.  
+ </term><description> There is an invalid value for the <paramref name="pFormatetc" /> parameter.  
   
- </description>  
-</item>  
-<item>  
-<term> OLE_E_NOTRUNNING  
+ </description></item><item><term> OLE_E_NOTRUNNING  
   
- </term>  
-<description> The application is not running.  
+ </term><description> The application is not running.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -377,8 +332,10 @@
     </Member>
     <Member MemberName="GetData">
       <MemberSignature Language="C#" Value="public void GetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC format, out System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC format, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM medium) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format, [out] valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GetData (ByRef format As FORMATETC, ByRef medium As STGMEDIUM)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void GetData(System::Runtime::InteropServices::ComTypes::FORMATETC % format, [Runtime::InteropServices::Out] System::Runtime::InteropServices::ComTypes::STGMEDIUM % medium);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -388,6 +345,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -412,8 +373,10 @@
     </Member>
     <Member MemberName="GetDataHere">
       <MemberSignature Language="C#" Value="public void GetDataHere (ref System.Runtime.InteropServices.ComTypes.FORMATETC format, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM medium);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetDataHere(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC format, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM medium) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetDataHere([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetDataHere(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GetDataHere (ByRef format As FORMATETC, ByRef medium As STGMEDIUM)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void GetDataHere(System::Runtime::InteropServices::ComTypes::FORMATETC % format, System::Runtime::InteropServices::ComTypes::STGMEDIUM % medium);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -423,6 +386,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -447,8 +414,10 @@
     </Member>
     <Member MemberName="QueryGetData">
       <MemberSignature Language="C#" Value="public int QueryGetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC format);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 QueryGetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC format) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 QueryGetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; format) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.QueryGetData(System.Runtime.InteropServices.ComTypes.FORMATETC@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function QueryGetData (ByRef format As FORMATETC) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int QueryGetData(System::Runtime::InteropServices::ComTypes::FORMATETC % format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -458,6 +427,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -470,64 +443,35 @@
         <summary>Determines whether the data object is capable of rendering the data described in the <see cref="T:System.Runtime.InteropServices.ComTypes.FORMATETC" /> structure. Objects attempting a paste or drop operation can call this method before calling <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" /> to get an indication of whether the operation may be successful.</summary>
         <returns>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> S_OK  
+ </description></listheader><item><term> S_OK  
   
- </term>  
-<description> A subsequent call to <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" /> would probably be successful.  
+ </term><description> A subsequent call to <see cref="M:System.Runtime.InteropServices.ComTypes.IDataObject.GetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@)" /> would probably be successful.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_LINDEX  
+ </description></item><item><term> DV_E_LINDEX  
   
- </term>  
-<description> An invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
+ </term><description> An invalid value for <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />; currently, only -1 is supported.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_FORMATETC  
+ </description></item><item><term> DV_E_FORMATETC  
   
- </term>  
-<description> An invalid value for the <paramref name="pFormatetc" /> parameter.  
+ </term><description> An invalid value for the <paramref name="pFormatetc" /> parameter.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_TYMED  
+ </description></item><item><term> DV_E_TYMED  
   
- </term>  
-<description> An invalid <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.tymed" /> value.  
+ </term><description> An invalid <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.tymed" /> value.  
   
- </description>  
-</item>  
-<item>  
-<term> DV_E_DVASPECT  
+ </description></item><item><term> DV_E_DVASPECT  
   
- </term>  
-<description> An invalid <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect" /> value.  
+ </term><description> An invalid <see cref="F:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect" /> value.  
   
- </description>  
-</item>  
-<item>  
-<term> OLE_E_NOTRUNNING  
+ </description></item><item><term> OLE_E_NOTRUNNING  
   
- </term>  
-<description> The application is not running.  
+ </term><description> The application is not running.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -540,8 +484,10 @@
     </Member>
     <Member MemberName="SetData">
       <MemberSignature Language="C#" Value="public void SetData (ref System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, ref System.Runtime.InteropServices.ComTypes.STGMEDIUM medium, bool release);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData(valuetype System.Runtime.InteropServices.ComTypes.FORMATETC formatIn, valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM medium, bool release) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetData([in]valuetype System.Runtime.InteropServices.ComTypes.FORMATETC&amp; formatIn, [in]valuetype System.Runtime.InteropServices.ComTypes.STGMEDIUM&amp; medium, bool release) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComTypes.IDataObject.SetData(System.Runtime.InteropServices.ComTypes.FORMATETC@,System.Runtime.InteropServices.ComTypes.STGMEDIUM@,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetData (ByRef formatIn As FORMATETC, ByRef medium As STGMEDIUM, release As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetData(System::Runtime::InteropServices::ComTypes::FORMATETC % formatIn, System::Runtime::InteropServices::ComTypes::STGMEDIUM % medium, bool release);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -551,6 +497,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

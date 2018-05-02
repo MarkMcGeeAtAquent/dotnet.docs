@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::SetTLSValue Method | Microsoft Docs"
+title: "ICLRDataTarget::SetTLSValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.SetTLSValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::SetTLSValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRDataTarget::SetTLSValue method [.NET Framework debugging]"
   - "SetTLSValue method [.NET Framework debugging]"
 ms.assetid: 4a2d6a24-749a-47ad-9f01-4517203d3f35
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::SetTLSValue Method
 Sets a value in the thread local storage (TLS) of the specified thread in the target process. This method is called by the common language runtime (CLR) data access services.  

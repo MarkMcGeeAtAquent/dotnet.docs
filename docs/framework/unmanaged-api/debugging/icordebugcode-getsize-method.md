@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode::GetSize Method | Microsoft Docs"
+title: "ICorDebugCode::GetSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode.GetSize"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode::GetSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetSize method, ICorDebugCode interface [.NET Framework debugging]"
   - "ICorDebugCode::GetSize method [.NET Framework debugging]"
 ms.assetid: 115bc6de-f5e2-4e8e-bb38-c7cf54045434
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode::GetSize Method
 Gets the size, in bytes, of the binary code represented by this "ICorDebugCode".  

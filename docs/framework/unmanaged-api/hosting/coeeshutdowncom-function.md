@@ -1,5 +1,5 @@
 ---
-title: "CoEEShutDownCOM Function | Microsoft Docs"
+title: "CoEEShutDownCOM Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,25 +9,28 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CoEEShutDownCOM"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "clr.dll"
   - "mscorwks.dll"
   - "mscoreei.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CoEEShutDownCOM"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CoEEShutDownCOM function [.NET Framework hosting]"
 ms.assetid: b634cae2-632f-4737-9be4-92d0652844d7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 18
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CoEEShutDownCOM Function
 Forces the common language runtime (CLR) to release all interface pointers it holds inside runtime callable wrappers (RCW). This has the effect of releasing all RCW caches. This global function is deprecated in the [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Instead, use the entry point for a specific runtime.  

@@ -1,5 +1,5 @@
 ---
-title: "Optimization for Shared Web Hosting | Microsoft Docs"
+title: "Optimization for Shared Web Hosting"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -17,6 +17,9 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Optimization for Shared Web Hosting
 If you are the administrator for a server that is shared by hosting several small Web sites, you can optimize performance and increase site capacity by adding the following `gcTrimCommitOnLowMemory` setting to the `runtime` node in the Aspnet.config file in the .NET directory:  
@@ -35,14 +38,14 @@ If you are the administrator for a server that is shared by hosting several smal
 ## Example  
  The following XML fragment shows how to enable the `gcTrimCommitOnLowMemory` setting. Ellipses indicate other settings that would be in the `runtime` node.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="UTF-8"?>  
 <configuration>  
-    <runtime>  
-    . . .  
-    <gcTrimCommitOnLowMemory enabled="true"/>  
-    </runtime>  
-    . . .  
+    <runtime>  
+    . . .  
+    <gcTrimCommitOnLowMemory enabled="true"/>  
+    </runtime>  
+    . . .  
 </configuration>  
 ```  
   

@@ -1,8 +1,8 @@
 ---
-title: "Windows Communication Foundation to Message Queuing | Microsoft Docs"
+title: "Windows Communication Foundation to Message Queuing"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
 caps.latest.revision: 32
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Communication Foundation to Message Queuing
 This sample demonstrates how a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] application can send a message to a Message Queuing (MSMQ) application. The service is a self-hosted console application to enable you to observe the service receiving queued messages. The service and client do not have to be running at the same time.  
@@ -36,7 +38,6 @@ static void Main(string[] args)
     Console.WriteLine("Order Service is running");  
     Console.ReadLine();  
 }  
-  
 ```  
   
  When a message is received in the queue, the message handler `ProcessOrder` is invoked.  
@@ -66,18 +67,16 @@ public static void ProcessOrder(Object source,
     }  
   
 }  
-  
 ```  
   
  The service extracts the `ProcessOrder` from the MSMQ message body, and processes the order.  
   
  The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.  
   
-```  
+```xml  
 <appSettings>  
     <add key="orderQueueName" value=".\private$\Orders" />  
 </appSettings>  
-  
 ```  
   
 > [!NOTE]
@@ -103,7 +102,6 @@ Console.WriteLine("Order has been submitted:{0}", po);
   
 //Closing the client gracefully closes the connection and cleans up resources  
 client.Close();  
-  
 ```  
   
  The client uses a custom client in-order to send the MSMQ message to the queue. Because the application that receives and processes the message is an MSMQ application and not a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application, there is no implicit service contract between the two applications. So, we cannot create a proxy using the Svcutil.exe tool in this scenario.  
@@ -111,7 +109,6 @@ client.Close();
  The custom client is essentially the same for all [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] applications that use the `MsmqIntegration` binding to send messages. Unlike other clients, it does not include a range of service operations. It is a submit message operation only.  
   
 ```  
-  
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public interface IOrderProcessor  
 {  
@@ -185,5 +182,5 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
   
 ## See Also  
- [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)   
+ [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  [Message Queuing](http://go.microsoft.com/fwlink/?LinkId=94968)

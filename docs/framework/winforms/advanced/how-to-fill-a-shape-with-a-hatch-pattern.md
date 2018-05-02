@@ -1,5 +1,5 @@
 ---
-title: "How to: Fill a Shape with a Hatch Pattern | Microsoft Docs"
+title: "How to: Fill a Shape with a Hatch Pattern"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,16 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "patterns, adding to shapes"
-  - "shapes, filling with patterns"
-  - "brushes, using hatch brushes"
+  - "patterns [Windows Forms], adding to shapes"
+  - "shapes [Windows Forms], filling with patterns"
+  - "brushes [Windows Forms], using hatch brushes"
 ms.assetid: 9c8300ff-187b-404f-af1f-ebd499f5b16f
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Fill a Shape with a Hatch Pattern
 A hatch pattern is made from two colors: one for the background and one for the lines that form the pattern over the background. To fill a closed shape with a hatch pattern, use a <xref:System.Drawing.Drawing2D.HatchBrush> object. The following example demonstrates how to fill an ellipse with a hatch pattern:  
@@ -27,17 +30,17 @@ A hatch pattern is made from two colors: one for the background and one for the 
 ## Example  
  The <xref:System.Drawing.Drawing2D.HatchBrush.%23ctor%2A> constructor takes three arguments: the hatch style, the color of the hatch line, and the color of the background. The hatch style argument can be any value from the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration. There are more than fifty elements in the <xref:System.Drawing.Drawing2D.HatchStyle> enumeration; a few of those elements are shown in the following list:  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.Vertical>  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.BackwardDiagonal>  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.Cross>  
   
--   <xref:System.Drawing.Drawing2D.HatchStyle>  
+-   <xref:System.Drawing.Drawing2D.HatchStyle.DiagonalCross>  
   
  The following illustration shows the filled ellipse.  
   

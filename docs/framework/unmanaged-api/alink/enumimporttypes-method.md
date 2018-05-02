@@ -1,5 +1,5 @@
 ---
-title: "EnumImportTypes Method | Microsoft Docs"
+title: "EnumImportTypes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "EnumImportTypes"
   - "IALink.EnumImportTypes"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "EnumImportTypes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumImportTypes method"
 ms.assetid: 83a0e4e7-ec06-40cb-9b63-700b9695bb04
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # EnumImportTypes Method
 Enumerates each type in each scope.  
@@ -61,6 +64,6 @@ HRESULT EnumImportTypes(
  Requires alink.h  
   
 ## See Also  
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICLRControl::GetCLRManager Method | Microsoft Docs"
+title: "ICLRControl::GetCLRManager Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRControl.GetCLRManager"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRControl::GetCLRManager"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCLRManager method [.NET Framework hosting]"
   - "ICLRControl::GetCLRManager method [.NET Framework hosting]"
 ms.assetid: 8a11bfa4-cbb0-4082-82b5-f9fba66c93f5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRControl::GetCLRManager Method
 Gets an interface pointer to an instance of any of the manager types the host can use to configure the common language runtime (CLR).  
@@ -82,5 +85,5 @@ HRESULT GetCLRManager (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)   
+ [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [IHostControl Interface](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

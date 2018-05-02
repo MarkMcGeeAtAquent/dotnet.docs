@@ -1,8 +1,8 @@
 ---
-title: "SplitContainer Control Overview (Windows Forms) | Microsoft Docs"
+title: "SplitContainer Control Overview (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,8 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "SplitContainer"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "SplitContainer control [Windows Forms], about SplitContainer control"
 ms.assetid: 6de5a5f7-97a5-402d-be6d-7e2785483db5
@@ -20,6 +18,8 @@ caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # SplitContainer Control Overview (Windows Forms)
 The Windows Forms <xref:System.Windows.Forms.SplitContainer> control can be thought of as a composite; it is two panels separated by a movable bar. When the mouse pointer is over the bar, the pointer changes shape to show that the bar is movable.  
@@ -33,7 +33,7 @@ The Windows Forms <xref:System.Windows.Forms.SplitContainer> control can be thou
   
  Be aware that the <xref:System.Windows.Forms.SplitContainer> control is keyboard-accessible by default; users can press the ARROW keys to move the splitter if the <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A> property is set to `false`.  
   
- The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself. Hence, when this property is set to <xref:System.Windows.Forms.Orientation>, the splitter runs from top to bottom, creating left and right panels.  
+ The <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property of the <xref:System.Windows.Forms.SplitContainer> control determines the direction of the splitter, not of the control itself. Hence, when this property is set to <xref:System.Windows.Forms.Orientation.Vertical>, the splitter runs from top to bottom, creating left and right panels.  
   
  Additionally, be aware that the value of the <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> property varies depending on the value of the <xref:System.Windows.Forms.SplitContainer.Orientation%2A> property. For more information, see <xref:System.Windows.Forms.SplitContainer.SplitterRectangle%2A> property.  
   
@@ -58,6 +58,6 @@ The Windows Forms <xref:System.Windows.Forms.SplitContainer> control can be thou
 |<xref:System.Windows.Forms.SplitContainer.SplitterMoved> event|Occurs when the splitter has moved.|  
   
 ## See Also  
- <xref:System.Windows.Forms.SplitContainer>   
- [SplitContainer Control](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)   
- [SplitContainer Control Sample](http://msdn.microsoft.com/en-us/9015fad0-7108-4d85-a83a-a72d038c4f65)
+ <xref:System.Windows.Forms.SplitContainer>  
+ [SplitContainer Control](../../../../docs/framework/winforms/controls/splitcontainer-control-windows-forms.md)  
+ [SplitContainer Control Sample](http://msdn.microsoft.com/library/9015fad0-7108-4d85-a83a-a72d038c4f65)

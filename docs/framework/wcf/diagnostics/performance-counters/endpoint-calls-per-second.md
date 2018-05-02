@@ -1,8 +1,8 @@
 ---
-title: "Endpoint: Calls Per Second | Microsoft Docs"
+title: "Endpoint: Calls Per Second"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ca0fc06d-d68f-4236-bd5f-c7ff6214acdd
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Endpoint: Calls Per Second
 Counter Name: Calls Per Second.  

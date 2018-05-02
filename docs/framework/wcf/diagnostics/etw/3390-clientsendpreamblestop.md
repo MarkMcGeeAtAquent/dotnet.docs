@@ -1,8 +1,8 @@
 ---
-title: "3390 - ClientSendPreambleStop | Microsoft Docs"
+title: "3390 - ClientSendPreambleStop"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fbf6e4ed-8538-417e-b4d1-a30b45ee6b5d
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3390 - ClientSendPreambleStop
 ## Properties  

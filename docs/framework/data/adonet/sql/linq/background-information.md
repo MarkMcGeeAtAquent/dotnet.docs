@@ -1,8 +1,8 @@
 ---
-title: "Background Information | Microsoft Docs"
+title: "Background Information"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,16 +11,18 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Background Information
 The topics in this section pertain to concepts and procedures that extend beyond the basics about using [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  Follow these steps to find additional examples of [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] code and applications:  
   
--   Search the MSDN Library for specific issues.  
+-   Search Microsoft Docs for specific issues.  
   
 -   Participate in the [LINQ Forum](http://go.microsoft.com/fwlink/?LinkId=76488), where you can discuss more complex topics in detail with experts.  
   

@@ -1,31 +1,34 @@
 ---
-title: "ITypeNameBuilder::CloseGenericArgument Method | Microsoft Docs"
+title: "ITypeNameBuilder::CloseGenericArgument Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeNameBuilder.CloseGenericArgument"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CloseGenericArgument"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ITypeNameBuilder::CloseGenericArgument method [.NET Framework hosting]"
   - "CloseGenericArgument method [.NET Framework hosting]"
 ms.assetid: c9a8178d-be1f-4ad4-abdb-d38470659b82
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeNameBuilder::CloseGenericArgument Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

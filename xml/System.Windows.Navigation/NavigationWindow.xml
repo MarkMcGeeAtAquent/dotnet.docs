@@ -1,7 +1,9 @@
-<Type Name="NavigationWindow" FullName="System.Windows.Navigation.NavigationWindow">
+﻿<Type Name="NavigationWindow" FullName="System.Windows.Navigation.NavigationWindow">
   <TypeSignature Language="C#" Value="public class NavigationWindow : System.Windows.Window, System.Windows.Markup.IUriContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi NavigationWindow extends System.Windows.Window implements class System.Windows.Markup.IUriContext" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationWindow" />
+  <TypeSignature Language="VB.NET" Value="Public Class NavigationWindow&#xA;Inherits Window&#xA;Implements IUriContext" />
+  <TypeSignature Language="C++ CLI" Value="public ref class NavigationWindow : System::Windows::Window, System::Windows::Markup::IUriContext" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -100,8 +102,7 @@
 ## Examples  
  The following example shows how to create a <xref:System.Windows.Navigation.NavigationWindow>.  
   
- <!-- TODO: review snippet reference [!code-xml[NavigationWindowSnippets#NavigationWindowAndSource](~/samples/snippets/xaml/VS_Snippets_Wpf/NavigationWindowSnippets/xaml/mainwindow.xaml#navigationwindowandsource)]  -->
- [!code-xml[NavigationWindowSnippets#NavigationWindowAndSource](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationWindowSnippets/CS/mainwindow.xaml#navigationwindowandsource)]  
+ [!code-xaml[NavigationWindowSnippets#NavigationWindowAndSource](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationWindowSnippets/CS/mainwindow.xaml#navigationwindowandsource)]   
   
  ]]></format>
     </remarks>
@@ -111,6 +112,8 @@
       <MemberSignature Language="C#" Value="public NavigationWindow ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NavigationWindow();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -127,7 +130,12 @@
       <MemberSignature Language="C#" Value="public void AddBackEntry (System.Windows.Navigation.CustomContentState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBackEntry(class System.Windows.Navigation.CustomContentState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddBackEntry (state As CustomContentState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AddBackEntry(System::Windows::Navigation::CustomContentState ^ state);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigator.AddBackEntry(System.Windows.Navigation.CustomContentState)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -145,7 +153,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.AddBackEntry%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -157,6 +165,8 @@
       <MemberSignature Language="C#" Value="protected override void AddChild (object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddChild(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddChild(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub AddChild (value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void AddChild(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -173,12 +183,15 @@
         <summary>Adds a child object.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">when this method is called. This prevents content from being added to <see cref="T:System.Windows.Navigation.NavigationWindow" /> using [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)].</exception>
+        <altmember cref="M:System.Windows.Markup.IAddChild.AddChild(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="AddText">
       <MemberSignature Language="C#" Value="protected override void AddText (string text);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddText(string text) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.AddText(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub AddText (text As String)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void AddText(System::String ^ text);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -195,13 +208,19 @@
         <summary>Adds text to the object.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">if the text parameter value contains non-whitespace characters.</exception>
+        <altmember cref="M:System.Windows.Markup.IAddChild.AddText(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="BackStack">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerable BackStack { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable BackStack" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.BackStack" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BackStack As IEnumerable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IEnumerable ^ BackStack { System::Collections::IEnumerable ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigator.BackStack</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -229,12 +248,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
+        <altmember cref="T:System.Windows.Navigation.CustomContentState" />
       </Docs>
     </Member>
     <Member MemberName="BackStackProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackStackProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackStackProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.BackStackProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly BackStackProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ BackStackProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -252,7 +275,12 @@
       <MemberSignature Language="C#" Value="public bool CanGoBack { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanGoBack" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CanGoBack" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanGoBack As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanGoBack { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigator.CanGoBack</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -268,7 +296,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.CanGoBack%2A?displayProperty=nameWithType>.  
   
 <a name="dependencyPropertyInfo_NavigationWindowCanGoBack"></a>   
 ## Dependency Property Information  
@@ -280,12 +308,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoBack" />
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoForward" />
       </Docs>
     </Member>
     <Member MemberName="CanGoBackProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoBackProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoBackProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.CanGoBackProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CanGoBackProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ CanGoBackProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -303,7 +336,12 @@
       <MemberSignature Language="C#" Value="public bool CanGoForward { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanGoForward" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanGoForward As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanGoForward { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigator.CanGoForward</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -330,12 +368,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoForward" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoBack" />
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
       </Docs>
     </Member>
     <Member MemberName="CanGoForwardProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanGoForwardProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanGoForwardProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.CanGoForwardProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CanGoForwardProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ CanGoForwardProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -353,7 +396,12 @@
       <MemberSignature Language="C#" Value="public Uri CurrentSource { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri CurrentSource" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.CurrentSource" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentSource As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ CurrentSource { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigatorBase.CurrentSource</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -368,7 +416,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationWindow.CurrentSource%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationWindow.CurrentSource%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -378,7 +426,12 @@
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerable ForwardStack { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable ForwardStack" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.ForwardStack" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ForwardStack As IEnumerable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IEnumerable ^ ForwardStack { System::Collections::IEnumerable ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigator.ForwardStack</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -406,12 +459,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
+        <altmember cref="T:System.Windows.Navigation.CustomContentState" />
       </Docs>
     </Member>
     <Member MemberName="ForwardStackProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ForwardStackProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ForwardStackProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.ForwardStackProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ForwardStackProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ForwardStackProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -429,7 +486,12 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.FragmentNavigationEventHandler FragmentNavigation" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event FragmentNavigation As FragmentNavigationEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::FragmentNavigationEventHandler ^ FragmentNavigation;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.FragmentNavigation</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -443,17 +505,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
       </Docs>
     </Member>
     <Member MemberName="GoBack">
       <MemberSignature Language="C#" Value="public void GoBack ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GoBack() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.GoBack" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GoBack ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GoBack();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigator.GoBack</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -467,13 +540,21 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Navigation.NavigationWindow.GoBack" /> is called when there are no entries in back navigation history.</exception>
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoBack" />
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoForward" />
       </Docs>
     </Member>
     <Member MemberName="GoForward">
       <MemberSignature Language="C#" Value="public void GoForward ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GoForward() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.GoForward" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GoForward ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GoForward();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigator.GoForward</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -487,13 +568,21 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="M:System.Windows.Navigation.NavigationWindow.GoForward" /> is called when there are no entries in forward navigation history.</exception>
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoForward" />
+        <altmember cref="P:System.Windows.Navigation.NavigationWindow.CanGoBack" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.GoBack" />
       </Docs>
     </Member>
     <Member MemberName="LoadCompleted">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event LoadCompleted As LoadCompletedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::LoadCompletedEventHandler ^ LoadCompleted;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.LoadCompleted</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -507,17 +596,37 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.LoadCompleted?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.LoadCompleted?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Navigate">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Navigates asynchronously to the specified source content.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (object content);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(object content) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (content As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Navigate(System::Object ^ content);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.Navigate(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -537,7 +646,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%29?displayProperty=nameWithType>.  
   
    
   
@@ -549,13 +658,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (Uri source);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(class System.Uri source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (source As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Navigate(Uri ^ source);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.Navigate(System.Uri)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -575,7 +692,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%29?displayProperty=nameWithType>.  
   
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_uri#initcap#plural](~/includes/tlasharptla-urisharpinitcapsharpplural-md.md)] can be either relative or absolute. For more information, see [Pack URIs in WPF](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md).  
@@ -590,13 +707,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (object content, object extraData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(object content, object extraData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (content As Object, extraData As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Navigate(System::Object ^ content, System::Object ^ extraData);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.Navigate(System.Object,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -618,17 +743,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri,System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigate">
       <MemberSignature Language="C#" Value="public bool Navigate (Uri source, object extraData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Navigate(class System.Uri source, object extraData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Navigate (source As Uri, extraData As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Navigate(Uri ^ source, System::Object ^ extraData);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.Navigate(System.Uri,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -650,17 +783,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigate%28System.Uri%2CSystem.Object%29?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Uri)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object)" />
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.Navigate(System.Object,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Navigated">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Navigated As NavigatedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::NavigatedEventHandler ^ Navigated;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.Navigated</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -674,17 +815,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigated?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigated?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
     <Member MemberName="Navigating">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Navigating As NavigatingCancelEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::NavigatingCancelEventHandler ^ Navigating;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.Navigating</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -698,17 +850,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Navigating?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
     <Member MemberName="NavigationFailed">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationFailedEventHandler NavigationFailed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NavigationFailed As NavigationFailedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::NavigationFailedEventHandler ^ NavigationFailed;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.NavigationFailed</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -722,17 +885,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
     <Member MemberName="NavigationProgress">
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationProgressEventHandler NavigationProgress" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NavigationProgress As NavigationProgressEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::NavigationProgressEventHandler ^ NavigationProgress;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.NavigationProgress</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -746,17 +920,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.NavigationProgress?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.NavigationProgress?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
     <Member MemberName="NavigationService">
       <MemberSignature Language="C#" Value="public System.Windows.Navigation.NavigationService NavigationService { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Navigation.NavigationService NavigationService" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.NavigationService" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NavigationService As NavigationService" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Navigation::NavigationService ^ NavigationService { System::Windows::Navigation::NavigationService ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.IJournalNavigationScopeHost.NavigationService</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -773,7 +958,7 @@
 ## Remarks  
  <xref:System.Windows.Navigation.NavigationWindow> uses a <xref:System.Windows.Navigation.NavigationService> to provide navigation services to content that is hosted by <xref:System.Windows.Navigation.NavigationWindow>. The <xref:System.Windows.Navigation.NavigationWindow.NavigationService%2A> property is useful for code in a custom <xref:System.Windows.Navigation.NavigationWindow> to get a reference to the <xref:System.Windows.Navigation.NavigationService>, to handle navigation events, for example.  
   
- Content that is hosted by a <xref:System.Windows.Navigation.NavigationWindow>, such as <xref:System.Windows.Controls.Page>, should use the <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=fullName> method or <xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=fullName> property to get a reference to the <xref:System.Windows.Navigation.NavigationService>.  
+ Content that is hosted by a <xref:System.Windows.Navigation.NavigationWindow>, such as <xref:System.Windows.Controls.Page>, should use the <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType> method or <xref:System.Windows.Controls.Page.NavigationService%2A?displayProperty=nameWithType> property to get a reference to the <xref:System.Windows.Navigation.NavigationService>.  
   
  ]]></format>
         </remarks>
@@ -783,7 +968,12 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigationStoppedEventHandler NavigationStopped" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Navigation.NavigationWindow.NavigationStopped" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NavigationStopped As NavigationStoppedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::Windows::Navigation::NavigationStoppedEventHandler ^ NavigationStopped;" />
       <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:MS.Internal.AppModel.INavigatorBase.NavigationStopped</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -797,16 +987,24 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.NavigationStopped?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.NavigationStopped?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigating" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.Navigated" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.LoadCompleted" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationProgress" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.NavigationFailed" />
+        <altmember cref="E:System.Windows.Navigation.NavigationWindow.FragmentNavigation" />
       </Docs>
     </Member>
     <Member MemberName="OnApplyTemplate">
       <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnApplyTemplate" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub OnApplyTemplate ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void OnApplyTemplate();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -830,6 +1028,8 @@
       <MemberSignature Language="C#" Value="protected override void OnClosed (EventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed(class System.EventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnClosed(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnClosed (args As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnClosed(EventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -858,6 +1058,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.OnCreateAutomationPeer" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnCreateAutomationPeer () As AutomationPeer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Automation::Peers::AutomationPeer ^ OnCreateAutomationPeer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -884,7 +1086,12 @@
       <MemberSignature Language="C#" Value="public void Refresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Refresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Refresh ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Refresh();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.Refresh</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -899,7 +1106,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Refresh%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Refresh%2A?displayProperty=nameWithType>.  
   
    
   
@@ -917,7 +1124,12 @@
       <MemberSignature Language="C#" Value="public System.Windows.Navigation.JournalEntry RemoveBackEntry ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Navigation.JournalEntry RemoveBackEntry() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.RemoveBackEntry" />
+      <MemberSignature Language="VB.NET" Value="Public Function RemoveBackEntry () As JournalEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Windows::Navigation::JournalEntry ^ RemoveBackEntry();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigator.RemoveBackEntry</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -933,16 +1145,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.RemoveBackEntry%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Navigation.NavigationWindow.AddBackEntry(System.Windows.Navigation.CustomContentState)" />
       </Docs>
     </Member>
     <Member MemberName="SandboxExternalContent">
       <MemberSignature Language="C#" Value="public bool SandboxExternalContent { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SandboxExternalContent" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.SandboxExternalContent" />
+      <MemberSignature Language="VB.NET" Value="Public Property SandboxExternalContent As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SandboxExternalContent { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -959,7 +1174,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- External content is [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] content that is not included with an application as either a resource file or a content file (for more information, see [WPF Application Resource, Content, and Data Files](../Topic/WPF%20Application%20Resource,%20Content,%20and%20Data%20Files.md)).  
+ External content is [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] content that is not included with an application as either a resource file or a content file (for more information, see [WPF Application Resource, Content, and Data Files](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)).  
   
  When <xref:System.Windows.Navigation.NavigationWindow.SandboxExternalContent%2A> is true, and the content of the <xref:System.Windows.Navigation.NavigationWindow> is an external [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] file, the content is loaded into a partial trust security sandbox that is limited to the default Internet zone permission set. Additionally, the external content is loaded into a separate process. Consequently, the external content becomes isolated and does not have access to application-scope resources, such as resource dictionaries (for more information, see <xref:System.Windows.ResourceDictionary>).  
   
@@ -984,6 +1199,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SandboxExternalContentProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SandboxExternalContentProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.SandboxExternalContentProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly SandboxExternalContentProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ SandboxExternalContentProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1001,6 +1218,8 @@
       <MemberSignature Language="C#" Value="public override bool ShouldSerializeContent ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool ShouldSerializeContent() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.ShouldSerializeContent" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ShouldSerializeContent () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool ShouldSerializeContent();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1033,6 +1252,8 @@
       <MemberSignature Language="C#" Value="public bool ShowsNavigationUI { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ShowsNavigationUI" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI" />
+      <MemberSignature Language="VB.NET" Value="Public Property ShowsNavigationUI As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ShowsNavigationUI { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1069,6 +1290,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowsNavigationUIProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowsNavigationUIProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.ShowsNavigationUIProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ShowsNavigationUIProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ShowsNavigationUIProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1086,7 +1309,12 @@
       <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.Source" />
+      <MemberSignature Language="VB.NET" Value="Public Property Source As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Source { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:MS.Internal.AppModel.INavigatorBase.Source</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1106,7 +1334,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- See <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
 >  [!INCLUDE[TLA#tla_uri#initcap#plural](~/includes/tlasharptla-urisharpinitcapsharpplural-md.md)] can be either relative or absolute. For more information, see [Pack URIs in WPF](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md).  
@@ -1135,6 +1363,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SourceProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SourceProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Navigation.NavigationWindow.SourceProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly SourceProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ SourceProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1152,7 +1382,12 @@
       <MemberSignature Language="C#" Value="public void StopLoading ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopLoading() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Navigation.NavigationWindow.StopLoading" />
+      <MemberSignature Language="VB.NET" Value="Public Sub StopLoading ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void StopLoading();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:MS.Internal.AppModel.INavigatorBase.StopLoading</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1169,7 +1404,7 @@
 ## Remarks  
  <xref:System.Windows.Navigation.NavigationWindow.StopLoading%2A> stops the download of the requested content, and causes the <xref:System.Windows.Navigation.NavigationWindow.NavigationStopped> event to be raised.  
   
- See <xref:System.Windows.Navigation.NavigationService.StopLoading%2A?displayProperty=fullName>.  
+ See <xref:System.Windows.Navigation.NavigationService.StopLoading%2A?displayProperty=nameWithType>.  
   
    
   
@@ -1181,13 +1416,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Windows.Navigation.NavigationWindow.Navigate" />
       </Docs>
     </Member>
     <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
       <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationWindow.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberSignature Language="VB.NET" Value=" Property BaseUri As Uri Implements IUriContext.BaseUri" />
+      <MemberSignature Language="C++ CLI" Value="property Uri ^ System.Windows.Markup.IUriContext.BaseUri { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Markup.IUriContext.BaseUri</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>

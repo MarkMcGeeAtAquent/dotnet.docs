@@ -1,5 +1,5 @@
 ---
-title: "1011 - ScheduleExecuteActivityWorkItem | Microsoft Docs"
+title: "1011 - ScheduleExecuteActivityWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e503ae46-ad6b-4fcb-8c0e-146d59a8eff1
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1011 - ScheduleExecuteActivityWorkItem
 ## Properties  

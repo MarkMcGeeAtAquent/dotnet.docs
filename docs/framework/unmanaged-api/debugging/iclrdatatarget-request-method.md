@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::Request Method | Microsoft Docs"
+title: "ICLRDataTarget::Request Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.Request"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::Request"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRDataTarget::Request method [.NET Framework debugging]"
   - "Request method [.NET Framework debugging]"
 ms.assetid: 4723bd1c-eddb-4ed2-897a-010024a47e01
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::Request Method
 Called by the common language runtime (CLR) data access services to request an operation, as defined by the implementation.  

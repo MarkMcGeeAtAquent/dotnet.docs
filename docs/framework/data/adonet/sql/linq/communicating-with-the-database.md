@@ -1,8 +1,8 @@
 ---
-title: "Communicating with the Database | Microsoft Docs"
+title: "Communicating with the Database"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 659d9817-bcaa-457f-9639-169394177274
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Communicating with the Database
 The topics in this section describe some basic aspects of how you establish and maintain communication with the database.  

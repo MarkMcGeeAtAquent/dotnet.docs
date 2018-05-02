@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::EndInprocDebugging Method | Microsoft Docs"
+title: "ICorProfilerInfo::EndInprocDebugging Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.EndInprocDebugging"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::EndInprocDebugging"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo::EndInprocDebugging method [.NET Framework profiling]"
   - "EndInprocDebugging method [.NET Framework profiling]"
 ms.assetid: 35bc1188-9767-4141-8038-60ea015b99ac
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::EndInprocDebugging Method
 Shuts down an in-process debugging session. This method is obsolete in the .NET Framework version 2.0.  

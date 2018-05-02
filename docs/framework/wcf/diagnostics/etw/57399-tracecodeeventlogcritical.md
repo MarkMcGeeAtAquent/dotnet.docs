@@ -1,8 +1,8 @@
 ---
-title: "57399 - TraceCodeEventLogCritical | Microsoft Docs"
+title: "57399 - TraceCodeEventLogCritical"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0f41451c-1e90-4bc1-8538-2876df819c7f
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 57399 - TraceCodeEventLogCritical
 ## Properties  

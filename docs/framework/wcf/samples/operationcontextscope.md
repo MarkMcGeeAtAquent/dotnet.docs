@@ -1,8 +1,8 @@
 ---
-title: "OperationContextScope | Microsoft Docs"
+title: "OperationContextScope"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # OperationContextScope
 The OperationContextScope sample demonstrates how to send extra information on a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] call using headers. In this sample, both the server and client are console applications.  
@@ -117,7 +119,6 @@ Using client2 to send message
 Did server retrieve the header? : Actual: False, Expected: False  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
 #### To set up, build, and run the sample  

@@ -1,7 +1,9 @@
-<Type Name="Clock" FullName="Microsoft.VisualBasic.Devices.Clock">
+﻿<Type Name="Clock" FullName="Microsoft.VisualBasic.Devices.Clock">
   <TypeSignature Language="C#" Value="public class Clock" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Clock extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Clock" />
+  <TypeSignature Language="VB.NET" Value="Public Class Clock" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Clock" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.VisualBasic</AssemblyName>
     <AssemblyVersion>10.0.0.0</AssemblyVersion>
@@ -27,12 +29,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Clock ();" />
       <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Clock.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Clock();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -48,6 +53,8 @@
       <MemberSignature Language="C#" Value="public DateTime GmtTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime GmtTime" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Clock.GmtTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property GmtTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime GmtTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -63,7 +70,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `My.Computer.Clock.GmtTime` property has the same behavior as the <xref:System.DateTime.UtcNow%2A?displayProperty=fullName> property.  
+ The `My.Computer.Clock.GmtTime` property has the same behavior as the <xref:System.DateTime.UtcNow%2A?displayProperty=nameWithType> property.  
   
 ## Availability by Project Type  
   
@@ -86,12 +93,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Devices.Clock.LocalTime" />
+        <altmember cref="P:System.DateTime.UtcNow" />
       </Docs>
     </Member>
     <Member MemberName="LocalTime">
       <MemberSignature Language="C#" Value="public DateTime LocalTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LocalTime" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Clock.LocalTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LocalTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime LocalTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -107,7 +118,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `My.Computer.Clock.LocalTime` property has the same behavior as the <xref:System.DateTime.Now%2A?displayProperty=fullName> property.  
+ The `My.Computer.Clock.LocalTime` property has the same behavior as the <xref:System.DateTime.Now%2A?displayProperty=nameWithType> property.  
   
 ## Availability by Project Type  
   
@@ -130,12 +141,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.Devices.Clock.GmtTime" />
+        <altmember cref="P:System.DateTime.Now" />
       </Docs>
     </Member>
     <Member MemberName="TickCount">
       <MemberSignature Language="C#" Value="public int TickCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 TickCount" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Clock.TickCount" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TickCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int TickCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -156,7 +171,7 @@
  You can use this property to make your application's behavior dependent on the length of time it has been running, or you can use it to label events, both of which are independent of the computer's clock.  
   
 > [!CAUTION]
->  When the value of the `TickCount` property reaches the maximum integer value (<xref:System.Int32>), it then jumps to the minimum integer value (<xref:System.Int32>), a negative number, and continues to increment.  
+>  When the value of the `TickCount` property reaches the maximum integer value (<xref:System.Int32.MaxValue>), it then jumps to the minimum integer value (<xref:System.Int32.MinValue>), a negative number, and continues to increment.  
   
  If the computer runs continuously, `TickCount` increments from zero to the maximum integer value in approximately 24.9 days.  
   
@@ -164,7 +179,7 @@
   
  Use the <xref:Microsoft.VisualBasic.Devices.Clock.LocalTime%2A> property or <xref:Microsoft.VisualBasic.Devices.Clock.GmtTime%2A> property to obtain the current local date and time on this computer.  
   
- The `My.Computer.Clock.TickCount` property has the same behavior as the <xref:System.Environment.TickCount%2A?displayProperty=fullName> property.  
+ The `My.Computer.Clock.TickCount` property has the same behavior as the <xref:System.Environment.TickCount%2A?displayProperty=nameWithType> property.  
   
 ## Availability by Project Type  
   
@@ -187,6 +202,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Environment.TickCount" />
       </Docs>
     </Member>
   </Members>

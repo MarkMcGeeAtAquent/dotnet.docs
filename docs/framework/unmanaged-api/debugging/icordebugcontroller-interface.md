@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugController Interface1 | Microsoft Docs"
+title: "ICorDebugController Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugController"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugController"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugController interface [.NET Framework debugging]"
 ms.assetid: dbb1c4dc-269a-459b-ab1d-6c70788782ce
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugController Interface1
 Represents a scope, either a <xref:System.Diagnostics.Process> or an <xref:System.AppDomain>, in which code execution context can be controlled.  

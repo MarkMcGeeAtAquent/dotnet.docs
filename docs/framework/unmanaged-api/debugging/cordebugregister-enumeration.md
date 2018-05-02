@@ -1,5 +1,5 @@
 ---
-title: "CorDebugRegister Enumeration | Microsoft Docs"
+title: "CorDebugRegister Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugRegister"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugRegister"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugRegister enumeration [.NET Framework debugging]"
 ms.assetid: 003bb138-7960-4291-ac88-0d87e470ff70
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugRegister Enumeration
 Specifies the registers associated with a given processor architecture.  

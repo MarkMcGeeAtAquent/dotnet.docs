@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ObjectAllocated Method | Microsoft Docs"
+title: "ICorProfilerCallback::ObjectAllocated Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ObjectAllocated"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ObjectAllocated"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ObjectAllocated method [.NET Framework profiling]"
   - "ICorProfilerCallback::ObjectAllocated method [.NET Framework profiling]"
 ms.assetid: eb412622-77cc-4abd-a2cd-c910fe8edd54
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ObjectAllocated Method
 Notifies the profiler that memory within the heap has been allocated for an object.  
@@ -58,6 +61,6 @@ HRESULT ObjectAllocated(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
- [ClassLoadStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
+ [ClassLoadStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)  
  [ClassLoadFinished Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md)

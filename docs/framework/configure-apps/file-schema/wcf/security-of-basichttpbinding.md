@@ -1,8 +1,8 @@
 ---
-title: "&lt;security&gt; of &lt;basicHttpBinding&gt; | Microsoft Docs"
+title: "&lt;security&gt; of &lt;basicHttpBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 16
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;security&gt; of &lt;basicHttpBinding&gt;
 Defines the security capabilities of the [\<basicHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -26,8 +28,7 @@ Defines the security capabilities of the [\<basicHttpBinding>](../../../../../do
   
 ## Syntax  
   
-```  
-  
+```xml  
 <security mode="Message/None/Transport/TransportWithCredential">  
    <transport  
       clientCredentialType="Basic/Certificate/Digest/None/Ntlm/Windows"  
@@ -75,13 +76,13 @@ Defines the security capabilities of the [\<basicHttpBinding>](../../../../../do
  By default, the SOAP message is not secured and the client is not authenticated. This element enables you to configure additional security settings for the `basicHttpBinding` element.  
   
 ## See Also  
- <xref:System.ServiceModel.BasicHttpBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>   
- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>   
- <xref:System.ServiceModel.BasicHttpSecurity>   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Selecting a Credential Type](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.BasicHttpBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.BasicHttpBindingElement.Security%2A>  
+ <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>  
+ <xref:System.ServiceModel.BasicHttpSecurity>  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Selecting a Credential Type](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

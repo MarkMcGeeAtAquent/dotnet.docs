@@ -1,8 +1,8 @@
 ---
-title: "How to: Enable Reordering of ToolStrip Items at Run Time in Windows Forms | Microsoft Docs"
+title: "How to: Enable Reordering of ToolStrip Items at Run Time in Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,10 +10,10 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "ToolStrip control [Windows Forms], examples"
-  - "AllowItemReorder property"
   - "examples [Windows Forms], toolbars"
   - "toolbars [Windows Forms], rearranging controls"
   - "ToolStrip control [Windows Forms], reordering items"
@@ -22,6 +22,8 @@ caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Enable Reordering of ToolStrip Items at Run Time in Windows Forms
 You can enable the user to rearrange <xref:System.Windows.Forms.ToolStripItem> controls on the <xref:System.Windows.Forms.ToolStrip>.  
@@ -34,17 +36,15 @@ You can enable the user to rearrange <xref:System.Windows.Forms.ToolStripItem> c
   
     ```vb  
     toolStrip1.AllowItemReorder = True  
-  
     ```  
   
     ```csharp  
     toolStrip1.AllowItemReorder = true;  
-  
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.ToolStrip>   
- <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>   
- [ToolStrip Control Overview](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)   
- [ToolStrip Control Architecture](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)   
+ <xref:System.Windows.Forms.ToolStrip>  
+ <xref:System.Windows.Forms.ToolStrip.AllowItemReorder%2A>  
+ [ToolStrip Control Overview](../../../../docs/framework/winforms/controls/toolstrip-control-overview-windows-forms.md)  
+ [ToolStrip Control Architecture](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md)  
  [ToolStrip Technology Summary](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md)

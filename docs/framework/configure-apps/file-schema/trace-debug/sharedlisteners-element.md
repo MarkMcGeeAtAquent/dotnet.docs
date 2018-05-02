@@ -1,8 +1,8 @@
 ---
-title: "&lt;sharedListeners&gt; Element | Microsoft Docs"
+title: "&lt;sharedListeners&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#sharedListeners"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sharedListeners"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<sharedListeners> element"
   - "listeners"
@@ -28,6 +23,8 @@ caps.latest.revision: 10
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;sharedListeners&gt; Element
 Contains listeners that any source or trace element can reference.  These listeners do not receive any traces by default, and it is not possible to retrieve these listeners at run time. Listeners identified as shared listeners can be added to sources or traces by name.  
@@ -38,7 +35,7 @@ Contains listeners that any source or trace element can reference.  These listen
   
 ## Syntax  
   
-```  
+```xml  
 <sharedListeners>   
   <add>...</add>  
 </sharedListeners>  
@@ -71,7 +68,7 @@ Contains listeners that any source or trace element can reference.  These listen
 ## Example  
  The following example shows how to use the `<sharedListeners>` element to add the listener `console` to the `Listeners` collection for both the <xref:System.Diagnostics.TraceSource> and <xref:System.Diagnostics.Trace> classes. The console trace listener writes trace information to the console through calls to either <xref:System.Diagnostics.TraceSource> or <xref:System.Diagnostics.Trace>.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sharedListeners>  
@@ -100,6 +97,6 @@ Contains listeners that any source or trace element can reference.  These listen
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.TraceListener>   
- [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
+ <xref:System.Diagnostics.TraceListener>  
+ [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [Trace Listeners](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

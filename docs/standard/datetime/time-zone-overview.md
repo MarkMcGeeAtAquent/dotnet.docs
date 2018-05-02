@@ -1,5 +1,5 @@
 ---
-title: "Time zone overview | Microsoft Docs"
+title: "Time zone overview"
 ms.custom: ""
 ms.date: "04/10/2017"
 ms.prod: ".net"
@@ -25,6 +25,9 @@ caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 
 # Time zone overview

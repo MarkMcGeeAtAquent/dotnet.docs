@@ -1,8 +1,8 @@
 ---
-title: "Reliable Messaging Protocol version 1.0 | Microsoft Docs"
+title: "Reliable Messaging Protocol version 1.0"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a5509a5c-de24-4bc2-9a48-19138055dcce
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Reliable Messaging Protocol version 1.0
 This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implementation details for the WS-Reliable Messaging February 2005 (version 1.0) protocol necessary for interoperation using the HTTP transport. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] follows the WS-Reliable Messaging specification with the constraints and clarifications explained in this topic. Note that the WS-ReliableMessaging version 1.0 protocol is implemented starting with the [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)].  
@@ -69,7 +71,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
  An example of a `CreateSequence` message.  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action s:mustUnderstand="1">  
@@ -106,7 +108,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
  An example of a `CreateSequenceResponse` message.  
   
-```  
+```xml  
 <s:Envelope>  
   <s:Header>  
     <a:Action s:mustUnderstand="1">  
@@ -147,7 +149,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
  An example of a Sequence Header.  
   
-```  
+```xml  
 <wsrm:Sequence>  
   <wsrm:Identifier>  
     urn:uuid:addabbbf-60cb-44d3-8c5b-9e0841629a36  
@@ -162,7 +164,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
 ### AckRequested Header  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses `AckRequested` Header as a keep-alive mechanism. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not generate the optional `MessageNumber` element. Upon receiving a message with an `AckRequested` header that contains the `MessageNumber` element, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ignores the `MessageNumber` element’s value, as shown in the following example.  
   
-```  
+```xml  
 <wsrm:AckRequested>  
   <wsrm:Identifier>  
     urn:uuid:addabbbf-60cb-44d3-8c5b-9e0841629a36  
@@ -177,7 +179,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
 -   B1402: When [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] must generate an acknowledgement prior to receiving any sequence messages (for example, to satisfy an `AckRequested` message), [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generates a `SequenceAcknowledgement` header that contains the range 0-0, as shown in the following example.  
   
-    ```  
+    ```xml  
     <wsrm:SequenceAcknowledgement>  
       <wsrm:Identifier>  
         urn:uuid:addabbbf-60cb-44d3-8c5b-9e0841629a36  
@@ -197,7 +199,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
 -   B1503:When the service endpoint reaches its connection limit and cannot process new connections, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] generates an additional `CreateSequenceRefused` fault subcode, `netrm:ConnectionLimitReached`, as shown in the following example.  
   
-    ```  
+    ```xml  
     <s:Envelope>  
       <s:Header>  
         <wsa:Action>  
@@ -288,7 +290,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
      The following is an example.  
   
-    ```  
+    ```xml  
     <wsrm:RMAssertion>  
       <wsrm:InactivityTimeout Milliseconds="600000" />  
       <wsrm:AcknowledgementInterval Milliseconds="200" />  
@@ -304,7 +306,7 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
   
 -   B4002: When Reliable Messaging Flow Control is enabled, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not require a `netrm:BufferRemaining` element to be present in `SequenceAcknowledgement` header, as shown in the following example.  
   
-    ```  
+    ```xml  
     <wsrm:SequenceAcknowledgement>  
       <wsrm:Identifier>  
         http://fabrikam123.com/abc  
@@ -314,7 +316,6 @@ This topic covers [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] implem
         8  
       </netrm:BufferRemaining>  
     </wsrm:SequenceAcknowledgement>  
-  
     ```  
   
 -   B4003: [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses `netrm:BufferRemaining` to indicate how many new messages the Reliable Messaging Destination can buffer.  

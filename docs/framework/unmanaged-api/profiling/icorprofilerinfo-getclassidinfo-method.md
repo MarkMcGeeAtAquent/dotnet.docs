@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetClassIDInfo Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetClassIDInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetClassIDInfo"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetClassIDInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetClassIDInfo method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetClassIDInfo method [.NET Framework profiling]"
 ms.assetid: 9e93b99e-5aca-415c-8e37-7f33753b612d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetClassIDInfo Method
 Gets the parent module and the metadata token for the specified class.  

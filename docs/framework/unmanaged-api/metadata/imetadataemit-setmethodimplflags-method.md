@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::SetMethodImplFlags Method | Microsoft Docs"
+title: "IMetaDataEmit::SetMethodImplFlags Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.SetMethodImplFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::SetMethodImplFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit::SetMethodImplFlags method [.NET Framework metadata]"
   - "SetMethodImpFlags method [.NET Framework metadata]"
 ms.assetid: 4bc82d9b-9544-4be3-ba51-a2d4d806158a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::SetMethodImplFlags Method
 Sets or updates the metadata signature of the inherited method implementation that is referenced by the specified token.  
@@ -56,5 +59,5 @@ HRESULT SetMethodImplFlags (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

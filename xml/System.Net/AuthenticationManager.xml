@@ -1,7 +1,9 @@
-<Type Name="AuthenticationManager" FullName="System.Net.AuthenticationManager">
+﻿<Type Name="AuthenticationManager" FullName="System.Net.AuthenticationManager">
   <TypeSignature Language="C#" Value="public class AuthenticationManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticationManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.AuthenticationManager" />
+  <TypeSignature Language="VB.NET" Value="Public Class AuthenticationManager" />
+  <TypeSignature Language="C++ CLI" Value="public ref class AuthenticationManager" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -23,7 +29,7 @@
 ## Remarks  
  <xref:System.Net.AuthenticationManager> is a static class that manages the authentication modules that an application uses. When a request is made to protected resources, the <xref:System.Net.AuthenticationManager> calls the <xref:System.Net.AuthenticationManager.Authenticate%2A> method to get an <xref:System.Net.Authorization> instance to use in subsequent requests.  
   
- The <xref:System.Net.AuthenticationManager> queries each registered authentication module by calling the <xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=fullName> method for each module. The first authentication module to return an <xref:System.Net.Authorization> instance is used to authenticate the request.  
+ The <xref:System.Net.AuthenticationManager> queries each registered authentication module by calling the <xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=nameWithType> method for each module. The first authentication module to return an <xref:System.Net.Authorization> instance is used to authenticate the request.  
   
  Modules that provide the basic, digest, negotiate, NTLM, and Kerberos authentication types are registered with the <xref:System.Net.AuthenticationManager> by default. Additional authentication modules that implement the <xref:System.Net.IAuthenticationModule> interface can be added using the <xref:System.Net.AuthenticationManager.Register%2A> method. Authentication modules are called in the order in which they were added to the list.  
   
@@ -45,6 +51,8 @@
       <MemberSignature Language="C#" Value="public static System.Net.Authorization Authenticate (string challenge, System.Net.WebRequest request, System.Net.ICredentials credentials);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Authorization Authenticate(string challenge, class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Authenticate (challenge As String, request As WebRequest, credentials As ICredentials) As Authorization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Net::Authorization ^ Authenticate(System::String ^ challenge, System::Net::WebRequest ^ request, System::Net::ICredentials ^ credentials);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -54,6 +62,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Authorization</ReturnType>
@@ -73,7 +85,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.AuthenticationManager.Authenticate%2A> method calls the <xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=fullName> method on each registered authentication module until one of the module responds with an <xref:System.Net.Authorization> instance.  
+ The <xref:System.Net.AuthenticationManager.Authenticate%2A> method calls the <xref:System.Net.IAuthenticationModule.Authenticate%2A?displayProperty=nameWithType> method on each registered authentication module until one of the module responds with an <xref:System.Net.Authorization> instance.  
   
  The first <xref:System.Net.Authorization> instance returned is used to authenticate the request. If no authentication module can authenticate the request, the <xref:System.Net.AuthenticationManager.Authenticate%2A> method returns `null`.  
   
@@ -97,6 +109,8 @@
       <MemberSignature Language="C#" Value="public static System.Net.ICredentialPolicy CredentialPolicy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Net.ICredentialPolicy CredentialPolicy" />
       <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.CredentialPolicy" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property CredentialPolicy As ICredentialPolicy" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Net::ICredentialPolicy ^ CredentialPolicy { System::Net::ICredentialPolicy ^ get(); void set(System::Net::ICredentialPolicy ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -106,6 +120,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.ICredentialPolicy</ReturnType>
@@ -137,6 +155,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.Specialized.StringDictionary CustomTargetNameDictionary { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Collections.Specialized.StringDictionary CustomTargetNameDictionary" />
       <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.CustomTargetNameDictionary" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property CustomTargetNameDictionary As StringDictionary" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Collections::Specialized::StringDictionary ^ CustomTargetNameDictionary { System::Collections::Specialized::StringDictionary ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -146,6 +166,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -162,7 +186,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- An SPN is a name by which a client uniquely identifies an instance of a service or application on a server for purposes of mutual authentication. Mutual authentication is requested by default, and you can require it by setting <xref:System.Net.WebRequest.AuthenticationLevel%2A?displayProperty=fullName> to <xref:System.Net.Security.AuthenticationLevel> in your request.  
+ An SPN is a name by which a client uniquely identifies an instance of a service or application on a server for purposes of mutual authentication. Mutual authentication is requested by default, and you can require it by setting <xref:System.Net.WebRequest.AuthenticationLevel%2A?displayProperty=nameWithType> to <xref:System.Net.Security.AuthenticationLevel.MutualAuthRequired> in your request.  
   
  When a <xref:System.Net.WebRequest> requires mutual authentication, the SPN for the destination must be supplied by the client. If you know the SPN, you can add it to the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> before sending the request. If you have not added SPN information to this dictionary, the <xref:System.Net.AuthenticationManager> uses the <xref:System.Net.WebRequest.RequestUri%2A> method to compose the most likely SPN; however, this is a computed value and might be incorrect. If mutual authentication is attempted and fails, you can check the dictionary to determine the computed SPN. No SPN is entered into the dictionary if the authentication protocol does not support mutual authentication.  
   
@@ -174,7 +198,7 @@
 > [!NOTE]
 >  When Kerberos authentication is performed through a proxy, both the proxy and the ultimate host name need to be resolved to an SPN. The proxy name resolution is protected by a timeout. Resolution of the ultimate host name to a SPN requires a DNS lookup, and there is no timeout associated directly with this operation. Therefore synchronous operations may take longer to timeout. To overcome this, add the ultimate host's URI prefix to the SPN cache prior to making requests to it.  
   
- Version 3.5 SP1 now defaults to specifying the host name used in the request URL in the SPN in the NTLM (NT LAN Manager) authentication exchange when the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> property is not set. The host name used in the request URL may be different from the Host header specified in the <xref:System.Net.HttpRequestHeader?displayProperty=fullName> in the client request. The host name used in the request URL may be different from the actual host name of the server, the machine name of the server, the computer's IP address, or the loopback address. In these cases, Windows will fail the authentication request. To address the issue, you may need to notify Windows that the host name used in the request URL in the client request ("contoso", for example) is actually an alternate name for the local computer.  
+ Version 3.5 SP1 now defaults to specifying the host name used in the request URL in the SPN in the NTLM (NT LAN Manager) authentication exchange when the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> property is not set. The host name used in the request URL may be different from the Host header specified in the <xref:System.Net.HttpRequestHeader?displayProperty=nameWithType> in the client request. The host name used in the request URL may be different from the actual host name of the server, the machine name of the server, the computer's IP address, or the loopback address. In these cases, Windows will fail the authentication request. To address the issue, you may need to notify Windows that the host name used in the request URL in the client request ("contoso", for example) is actually an alternate name for the local computer.  
   
    
   
@@ -192,6 +216,8 @@
       <MemberSignature Language="C#" Value="public static System.Net.Authorization PreAuthenticate (System.Net.WebRequest request, System.Net.ICredentials credentials);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Authorization PreAuthenticate(class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function PreAuthenticate (request As WebRequest, credentials As ICredentials) As Authorization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Net::Authorization ^ PreAuthenticate(System::Net::WebRequest ^ request, System::Net::ICredentials ^ credentials);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -201,6 +227,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Authorization</ReturnType>
@@ -220,7 +250,7 @@
 ## Remarks  
  If the authentication module can preauthenticate the request, the <xref:System.Net.AuthenticationManager.PreAuthenticate%2A> method returns an Authentication instance and sends the authorization information to the server preemptively instead of waiting for the resource to issue a challenge. This behavior is outlined in section 3.3 of RFC 2617 (HTTP Authentication: Basic and Digest Access Authentication). Authentication modules that support preauthentication allow clients to improve server efficiency by avoiding extra round trips caused by authentication challenges.  
   
- Authorization modules that can preauthenticate requests set the <xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A?displayProperty=fullName> property to `true`.  
+ Authorization modules that can preauthenticate requests set the <xref:System.Net.IAuthenticationModule.CanPreAuthenticate%2A?displayProperty=nameWithType> property to `true`.  
   
  ]]></format>
         </remarks>
@@ -232,6 +262,8 @@
       <MemberSignature Language="C#" Value="public static void Register (System.Net.IAuthenticationModule authenticationModule);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Register(class System.Net.IAuthenticationModule authenticationModule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Register(System.Net.IAuthenticationModule)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Register (authenticationModule As IAuthenticationModule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Register(System::Net::IAuthenticationModule ^ authenticationModule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -241,6 +273,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -277,6 +313,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator RegisteredModules { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Collections.IEnumerator RegisteredModules" />
       <MemberSignature Language="DocId" Value="P:System.Net.AuthenticationManager.RegisteredModules" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property RegisteredModules As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Collections::IEnumerator ^ RegisteredModules { System::Collections::IEnumerator ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -286,6 +324,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>
@@ -312,10 +354,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Unregister">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes authentication modules from the list of registered modules.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Unregister">
       <MemberSignature Language="C#" Value="public static void Unregister (System.Net.IAuthenticationModule authenticationModule);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(class System.Net.IAuthenticationModule authenticationModule) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Unregister(System.Net.IAuthenticationModule)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Unregister (authenticationModule As IAuthenticationModule)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Unregister(System::Net::IAuthenticationModule ^ authenticationModule);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -325,6 +379,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -362,6 +420,8 @@
       <MemberSignature Language="C#" Value="public static void Unregister (string authenticationScheme);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unregister(string authenticationScheme) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.AuthenticationManager.Unregister(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Unregister (authenticationScheme As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Unregister(System::String ^ authenticationScheme);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -371,6 +431,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

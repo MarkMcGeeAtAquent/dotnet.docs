@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit2::SaveDeltaToStream Method | Microsoft Docs"
+title: "IMetaDataEmit2::SaveDeltaToStream Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit2.SaveDeltaToStream"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit2::SaveDeltaToStream"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit2::SaveDeltaToStream method [.NET Framework metadata]"
   - "SaveDeltaToStream method [.NET Framework metadata]"
 ms.assetid: ecd786e8-f9a4-4190-a6ef-af18e8c6d654
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit2::SaveDeltaToStream Method
 Saves changes from the current edit-and-continue session to the specified stream.  
@@ -56,5 +59,5 @@ HRESULT SaveDeltaToStream (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)   
+ [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

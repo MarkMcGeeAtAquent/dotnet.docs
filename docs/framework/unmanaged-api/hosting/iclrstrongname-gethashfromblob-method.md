@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::GetHashFromBlob Method | Microsoft Docs"
+title: "ICLRStrongName::GetHashFromBlob Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.GetHashFromBlob"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::GetHashFromBlob"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::GetHashFromBlob method [.NET Framework hosting]"
   - "GetHashFromBlob method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: f91d0f89-f356-49ac-aafb-50fad963c13d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::GetHashFromBlob Method
 Gets a hash of the assembly at the specified memory address, using the specified hash algorithm.  

@@ -1,7 +1,9 @@
-<Type Name="PowerEase" FullName="System.Windows.Media.Animation.PowerEase">
+﻿<Type Name="PowerEase" FullName="System.Windows.Media.Animation.PowerEase">
   <TypeSignature Language="C#" Value="public class PowerEase : System.Windows.Media.Animation.EasingFunctionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PowerEase extends System.Windows.Media.Animation.EasingFunctionBase" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.PowerEase" />
+  <TypeSignature Language="VB.NET" Value="Public Class PowerEase&#xA;Inherits EasingFunctionBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PowerEase : System::Windows::Media::Animation::EasingFunctionBase" />
   <AssemblyInfo>
     <AssemblyName>PresentationCore</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -44,17 +46,28 @@
 ## Examples  
  The following example applies a <xref:System.Windows.Media.Animation.PowerEase> easing function with a <xref:System.Windows.Media.Animation.PowerEase.Power%2A> property value of `20` to a <xref:System.Windows.Media.Animation.DoubleAnimation> to create a decelerating animation. Because the <xref:System.Windows.Media.Animation.PowerEase.Power%2A> value is so high, the deceleration is sudden compared to if you used a lower value.  
   
- <!-- TODO: review snippet reference [!code-xml[PowerEase#PowerEase](~/samples/snippets/xaml/VS_Snippets_Wpf/powerease/xaml/window1.xaml#powerease)]  -->
- [!code-xml[PowerEase#PowerEase](~/samples/snippets/csharp/VS_Snippets_Wpf/powerease/CS/window1.xaml#powerease)]  
+ [!code-xaml[PowerEase#PowerEase](~/samples/snippets/csharp/VS_Snippets_Wpf/powerease/CS/window1.xaml#powerease)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Media.Animation.BackEase" />
+    <altmember cref="T:System.Windows.Media.Animation.BounceEase" />
+    <altmember cref="T:System.Windows.Media.Animation.CircleEase" />
+    <altmember cref="T:System.Windows.Media.Animation.CubicEase" />
+    <altmember cref="T:System.Windows.Media.Animation.ElasticEase" />
+    <altmember cref="T:System.Windows.Media.Animation.ExponentialEase" />
+    <altmember cref="T:System.Windows.Media.Animation.QuadraticEase" />
+    <altmember cref="T:System.Windows.Media.Animation.QuarticEase" />
+    <altmember cref="T:System.Windows.Media.Animation.QuinticEase" />
+    <altmember cref="T:System.Windows.Media.Animation.SineEase" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PowerEase ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.PowerEase.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PowerEase();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -70,6 +83,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.PowerEase.CreateInstanceCore" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateInstanceCore () As Freezable" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Freezable ^ CreateInstanceCore();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -104,6 +119,8 @@
       <MemberSignature Language="C#" Value="protected override double EaseInCore (double normalizedTime);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.PowerEase.EaseInCore(System.Double)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function EaseInCore (normalizedTime As Double) As Double" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override double EaseInCore(double normalizedTime);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -123,9 +140,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method transforms normalized time to control the pace of an animation for the <xref:System.Windows.Media.Animation.EasingMode> case of <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>.  
+ This method transforms normalized time to control the pace of an animation for the <xref:System.Windows.Media.Animation.EasingMode.EaseIn> case of <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>.  
   
- You only have to specify your easing function for the <xref:System.Windows.Media.Animation.EasingMode> case because the implementation of the <xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A> method transforms `normalizedTime` for the <xref:System.Windows.Media.Animation.EasingMode> and <xref:System.Windows.Media.Animation.EasingMode> cases.  
+ You only have to specify your easing function for the <xref:System.Windows.Media.Animation.EasingMode.EaseIn> case because the implementation of the <xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A> method transforms `normalizedTime` for the <xref:System.Windows.Media.Animation.EasingMode.EaseOut> and <xref:System.Windows.Media.Animation.EasingMode.EaseInOut> cases.  
   
  ]]></format>
         </remarks>
@@ -135,6 +152,8 @@
       <MemberSignature Language="C#" Value="public double Power { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 Power" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.PowerEase.Power" />
+      <MemberSignature Language="VB.NET" Value="Public Property Power As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double Power { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -164,8 +183,7 @@
 ## Examples  
  The following example applies a <xref:System.Windows.Media.Animation.PowerEase> easing function with a <xref:System.Windows.Media.Animation.PowerEase.Power%2A> property value of `20` to a <xref:System.Windows.Media.Animation.DoubleAnimation> to create a decelerating animation. Because the <xref:System.Windows.Media.Animation.PowerEase.Power%2A> value is so high, the deceleration is sudden compared to if you used a lower value.  
   
- <!-- TODO: review snippet reference [!code-xml[PowerEase#PowerEase](~/samples/snippets/xaml/VS_Snippets_Wpf/powerease/xaml/window1.xaml#powerease)]  -->
- [!code-xml[PowerEase#PowerEase](~/samples/snippets/csharp/VS_Snippets_Wpf/powerease/CS/window1.xaml#powerease)]  
+ [!code-xaml[PowerEase#PowerEase](~/samples/snippets/csharp/VS_Snippets_Wpf/powerease/CS/window1.xaml#powerease)]  
   
  ]]></format>
         </remarks>
@@ -175,6 +193,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PowerProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PowerProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.PowerEase.PowerProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly PowerProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ PowerProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>

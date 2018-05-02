@@ -1,9 +1,13 @@
 ---
 uid: XamlGeneratedNamespace.GeneratedInternalTypeHelper
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: XamlGeneratedNamespace.GeneratedInternalTypeHelper.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

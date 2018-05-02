@@ -1,8 +1,8 @@
 ---
-title: "&lt;transport&gt; of &lt;netNamedPipeBinding&gt; | Microsoft Docs"
+title: "&lt;transport&gt; of &lt;netNamedPipeBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;transport&gt; of &lt;netNamedPipeBinding&gt;
 Defines the transport security settings for a named pipe.  
@@ -27,8 +29,7 @@ Defines the transport security settings for a named pipe.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <netNamedPipeBinding>  
    <binding>  
       <security mode="None/Transport">  
@@ -57,12 +58,12 @@ Defines the transport security settings for a named pipe.
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netnamedpipebinding.md)|Defines the security settings for a binding.|  
   
 ## See Also  
- <xref:System.ServiceModel.NamedPipeTransportSecurity>   
- <xref:System.ServiceModel.Configuration.NetNamedPipeSecurityElement.Transport%2A>   
- <xref:System.ServiceModel.NetNamedPipeSecurity.Transport%2A>   
- <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.NamedPipeTransportSecurity>  
+ <xref:System.ServiceModel.Configuration.NetNamedPipeSecurityElement.Transport%2A>  
+ <xref:System.ServiceModel.NetNamedPipeSecurity.Transport%2A>  
+ <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

@@ -1,8 +1,8 @@
 ---
-title: "ASP.NET Caching Integration | Microsoft Docs"
+title: "ASP.NET Caching Integration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ASP.NET Caching Integration
 This sample demonstrates how to utilize the ASP.NET output cache with the WCF WEB HTTP programming model. Please see the [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md) sample for a self-hosted version of this scenario that discusses the service implementation in depth. This topic focuses on the ASP.NET output cache integration feature.  
@@ -33,7 +35,7 @@ This sample demonstrates how to utilize the ASP.NET output cache with the WCF WE
 ## Discussion  
  The sample uses the <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> to utilize ASP.NET output caching with the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service. The <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> is applied to service operations, and provides the name of a cache profile in a configuration file that should be applied to responses from the given operation.  
   
- In the Service.cs file of the sample Service project, both the `GetCustomer` and `GetCustomers` operations are marked with the <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, which provides the cache profile name “CacheFor60Seconds”. In the Web.config file of the Service project, the cache profile “CacheFor60Seconds” is provided under the <`caching`> element of <`system.web`>. For this cache profile, the value of the `duration` attribute is “60”, so responses associated with this profile are cached in the ASP.NET output cache for 60 seconds. Also, for this cache profile, the `varmByParam` attribute is set to “format” so requests with different values for the `format` query string parameter have their responses cached separately. Lastly, the cache profile’s `varyByHeader` attribute is set to “Accept”, so requests with different Accept header values have their responses cached separately.  
+ In the Service.cs file of the sample Service project, both the `GetCustomer` and `GetCustomers` operations are marked with the <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, which provides the cache profile name "CacheFor60Seconds". In the Web.config file of the Service project, the cache profile "CacheFor60Seconds" is provided under the <`caching`> element of <`system.web`>. For this cache profile, the value of the `duration` attribute is "60", so responses associated with this profile are cached in the ASP.NET output cache for 60 seconds. Also, for this cache profile, the `varmByParam` attribute is set to "format" so requests with different values for the `format` query string parameter have their responses cached separately. Lastly, the cache profile’s `varyByHeader` attribute is set to "Accept", so requests with different Accept header values have their responses cached separately.  
   
  Program.cs in the Client project demonstrates how such a client can be authored using <xref:System.Net.HttpWebRequest>. Note that this is just one way to access a WCF service. It is also possible to access the service using other .NET Framework classes like the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] channel factory and <xref:System.Net.WebClient>. Other samples in the SDK (such as the [Basic HTTP Service](../../../../docs/framework/wcf/samples/basic-http-service.md) sample and the [Automatic Format Selection](../../../../docs/framework/wcf/samples/automatic-format-selection.md) sample) illustrate how to use these classes to communicate with a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service.  
   

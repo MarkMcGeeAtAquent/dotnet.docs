@@ -1,5 +1,5 @@
 ---
-title: "WCF Troubleshooting Quickstart | Microsoft Docs"
+title: "WCF Troubleshooting Quickstart"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,9 +14,11 @@ helpviewer_keywords:
   - "Windows Communication Foundation [WCF], troubleshooting"
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WCF Troubleshooting Quickstart
 This topic lists a number of known issues customers have run into while developing WCF clients and services. If the issue you are running into is not in this list, we recommend you configure tracing for your service. This will generate a trace file that you can view with the trace file viewer and get detailed information about exceptions that may be occurring within the service. For more information on configuring tracing, see: [Configuring Tracing](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). For more information on the trace file viewer, see: [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
@@ -53,7 +55,7 @@ This topic lists a number of known issues customers have run into while developi
   
  HTTP Error 404.3 – Not FoundThe page you are requesting cannot be served because of the extension configuration. If the page is a script, add a handler. If the file should be downloaded, add a MIME map. Detailed Error InformationModule StaticFileModule.  
   
- This error message occurs when “Windows Communication Foundation HTTP Activation” is not explicitly set in the Control Panel. To set this go to the Control Panel, click Programs in the lower left hand corner of the window. Click Turn Windows features on or off. Expand Microsoft .NET Framework 3.5.1 and select Windows Communication Foundation HTTP Activation.  
+ This error message occurs when "Windows Communication Foundation HTTP Activation" is not explicitly set in the Control Panel. To set this go to the Control Panel, click Programs in the lower left hand corner of the window. Click Turn Windows features on or off. Expand Microsoft .NET Framework 3.5.1 and select Windows Communication Foundation HTTP Activation.  
   
 <a name="BKMK_q1"></a>   
 ## Sometimes I receive a MessageSecurityException on the second request if my client is idle for a while after the first request. What is happening?  
@@ -61,7 +63,7 @@ This topic lists a number of known issues customers have run into while developi
   
 <a name="BKMK_q2"></a>   
 ## My service starts to reject new clients after about 10 clients are interacting with it. What is happening?  
- By default, services can have only 10 concurrent sessions. Therefore, if the service bindings use sessions, the service accepts new client connections until it reaches that number, after which it refuses new client connections until one of the current sessions ends. You can support more clients in a number of ways. If your service does not require sessions, do not use a sessionful binding. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Using Sessions](../../../docs/framework/wcf/using-sessions.md).) Another option is to increase the session limit by changing the value of the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> property to the number appropriate to your circumstance.  
+ By default, services can have only 10 concurrent sessions. Therefore, if the service bindings use sessions, the service accepts new client connections until it reaches that number, after which it refuses new client connections until one of the current sessions ends. You can support more clients in a number of ways. If your service does not require sessions, do not use a sessionful binding. ([!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Using Sessions](../../../docs/framework/wcf/using-sessions.md).) Another option is to increase the session limit by changing the value of the <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> property to the number appropriate to your circumstance.  
   
 <a name="BKMK_q3"></a>   
 ## Can I load my service configuration from somewhere other than the WCF application’s configuration file?  
@@ -69,30 +71,34 @@ This topic lists a number of known issues customers have run into while developi
   
  The following code example shows how to override the <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> method and directly configure an endpoint.  
   
-```  
+```csharp
 public class MyServiceHost : ServiceHost  
 {  
-  public MyServiceHost(Type serviceType, params Uri[] baseAddresses)    
-    : base(serviceType, baseAddresses)  
-  { Console.WriteLine("MyServiceHost Constructor"); }  
+    public MyServiceHost(Type serviceType, params Uri[] baseAddresses)    
+      : base(serviceType, baseAddresses)  
+    {
+        Console.WriteLine("MyServiceHost Constructor");
+    }  
   
-  protected override void ApplyConfiguration()  
-  {  
-    string straddress = GetAddress();  
-    Uri address = new Uri(straddress);  
-    Binding binding = GetBinding();  
-    base.AddServiceEndpoint(typeof(IData), binding, address);  
-  }  
+    protected override void ApplyConfiguration()  
+    {  
+        string straddress = GetAddress();  
+        Uri address = new Uri(straddress);  
+        Binding binding = GetBinding();  
+        base.AddServiceEndpoint(typeof(IData), binding, address);  
+    }  
   
-  string GetAddress()  
-  { return "http://MyMachine:7777/MyEndpointAddress/"; }  
+    string GetAddress()  
+    {
+        return "http://MyMachine:7777/MyEndpointAddress/";
+    }  
   
-  Binding GetBinding()  
-  {  
-    WSHttpBinding binding = new WSHttpBinding();  
-    binding.Security.Mode = SecurityMode.None;  
-    return binding;  
-  }  
+    Binding GetBinding()  
+    {  
+        WSHttpBinding binding = new WSHttpBinding();  
+        binding.Security.Mode = SecurityMode.None;  
+        return binding;  
+    }  
 }  
 ```  
   
@@ -104,13 +110,13 @@ public class MyServiceHost : ServiceHost
   
 -   You might need to open the port to the application. For details, see [Firewall Instructions](../../../docs/framework/wcf/samples/firewall-instructions.md) from the SDK samples.  
   
--   For other possible issues, see the samples topic [Running the Samples in a Workgroup and Across Machines](http://msdn.microsoft.com/en-us/a451a525-e7ce-452d-9da9-620221260113).  
+-   For other possible issues, see the samples topic [Running the Samples in a Workgroup and Across Machines](http://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113).  
   
 -   If your client is using Windows credentials and the exception is a <xref:System.ServiceModel.Security.SecurityNegotiationException>, configure Kerberos as follows.  
   
     1.  Add the identity credentials to the endpoint element in the client’s App.config file:  
   
-        ```  
+        ```xml
         <endpoint   
           address="http://MyServer:8000/MyService/"   
           binding="wsHttpBinding"   
@@ -126,8 +132,8 @@ public class MyServiceHost : ServiceHost
   
     2.  Run the self-hosted service under the System or NetworkService account. You can run this command to create a command window under the System account:  
   
-        ```  
-        at 12:36  /interactive "cmd.exe"  
+        ```console
+        at 12:36 /interactive "cmd.exe"  
         ```  
   
     3.  Host the service under Internet Information Services (IIS), which, by default, uses the service principal name (SPN) account.  
@@ -150,13 +156,13 @@ public class MyServiceHost : ServiceHost
   
 -   Cannot depend upon exceptions serializing in a standard way. Some—like <xref:System.Security.SecurityException>—may not be serializable at all.  
   
--   Exposes internal implementation details to clients. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Specifying and Handling Faults in Contracts and Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+-   Exposes internal implementation details to clients. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Specifying and Handling Faults in Contracts and Services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
  If you are debugging an application, however, you can serialize exception information and return it to the client by using the <xref:System.ServiceModel.Description.ServiceDebugBehavior> class.  
   
 <a name="BKMK_q6"></a>   
 ## It seems like one-way and request-reply operations return at roughly the same speed when the reply contains no data. What's happening?  
- Specifying that an operation is one way means only that the operation contract accepts an input message and does not return an output message. In [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], all client invocations return when the outbound data has been written to the wire or an exception is thrown. One-way operations work the same way, and they can throw if the service cannot be located or block if the service is not prepared to accept the data from the network. Typically in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], this results in one-way calls returning to the client more quickly than request-reply; but any condition that slows the sending of the outbound data over the network slows one-way operations as well as request-reply operations. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][One-Way Services](../../../docs/framework/wcf/feature-details/one-way-services.md) and [Accessing Services Using a WCF Client](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+ Specifying that an operation is one way means only that the operation contract accepts an input message and does not return an output message. In [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], all client invocations return when the outbound data has been written to the wire or an exception is thrown. One-way operations work the same way, and they can throw if the service cannot be located or block if the service is not prepared to accept the data from the network. Typically in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], this results in one-way calls returning to the client more quickly than request-reply; but any condition that slows the sending of the outbound data over the network slows one-way operations as well as request-reply operations. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [One-Way Services](../../../docs/framework/wcf/feature-details/one-way-services.md) and [Accessing Services Using a WCF Client](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
 <a name="BKMK_q77"></a>   
 ## I’m using an X.509 certificate with my service and I get a System.Security.Cryptography.CryptographicException. What’s happening?  
@@ -168,7 +174,7 @@ public class MyServiceHost : ServiceHost
   
 <a name="BKMK_q88"></a>   
 ## I changed the first parameter of an operation from uppercase to lowercase; now my client throws an exception. What's happening?  
- The value of the parameter names in the operation signature are part of the contract and are case-sensitive. Use the <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=fullName> attribute when you need to distinguish between the local parameter name and the metadata that describes the operation for client applications.  
+ The value of the parameter names in the operation signature are part of the contract and are case-sensitive. Use the <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> attribute when you need to distinguish between the local parameter name and the metadata that describes the operation for client applications.  
   
 <a name="BKMK_q99"></a>   
 ## I’m using one of my tracing tools and I get an EndpointNotFoundException. What’s happening?  
@@ -176,7 +182,7 @@ public class MyServiceHost : ServiceHost
   
  The following code example shows an example client configuration file.  
   
-```  
+```xml
 <endpoint   
   address=http://localhost:8000/MyServer/  
   binding="wsHttpBinding"  
@@ -203,56 +209,52 @@ public class MyServiceHost : ServiceHost
   
 ```xml  
 <services>  
-      <service name="Microsoft.Samples.NetTcp.CalculatorService">  
-        <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
-        <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
-      </service>  
-    </services>  
-  
+  <service name="Microsoft.Samples.NetTcp.CalculatorService">  
+    <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
+    <endpoint address="mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
+  </service>  
+</services>  
 ```  
   
  And if you modify one of the NetTcpBinding settings as shown in the following configuration snippet:  
   
 ```xml  
 <bindings>  
-      <netTcpBinding>  
-        <binding closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" transactionFlow="false" transferMode="Buffered" transactionProtocol="OleTransactions" hostNameComparisonMode="StrongWildcard" listenBacklog="10" maxBufferPoolSize="524288" maxBufferSize="65536" maxConnections="11" maxReceivedMessageSize="65536">  
-          <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384"/>  
-          <reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false"/>  
-          <security mode="Transport">  
-            <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign"/>  
-          </security>  
-        </binding>  
-      </netTcpBinding>  
-    </bindings>  
-  
+  <netTcpBinding>  
+    <binding closeTimeout="00:01:00" openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00" transactionFlow="false" transferMode="Buffered" transactionProtocol="OleTransactions" hostNameComparisonMode="StrongWildcard" listenBacklog="10" maxBufferPoolSize="524288" maxBufferSize="65536" maxConnections="11" maxReceivedMessageSize="65536">  
+      <readerQuotas maxDepth="32" maxStringContentLength="8192" maxArrayLength="16384" maxBytesPerRead="4096" maxNameTableCharCount="16384"/>  
+      <reliableSession ordered="true" inactivityTimeout="00:10:00" enabled="false"/>  
+      <security mode="Transport">  
+        <transport clientCredentialType="Windows" protectionLevel="EncryptAndSign"/>  
+      </security>  
+    </binding>  
+  </netTcpBinding>  
+</bindings>  
 ```  
   
  You will see an error like the following: Unhandled Exception: System.ServiceModel.AddressAlreadyInUseException: There is already a listener on IP endpoint 0.0.0.0:9000 You can work around this error by specifying a fully qualified URL with a different port for the MEX endpoint as shown in the following configuration snippet:  
   
-```  
+```xml
 <services>  
-      <service name="Microsoft.Samples.NetTcp.CalculatorService">  
-        <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
-        <endpoint address="net.tcp://localhost:9001/servicemodelsamples/mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
-      </service>  
-    </services>  
-  
+  <service name="Microsoft.Samples.NetTcp.CalculatorService">  
+    <endpoint address="calcsvc" binding ="netTcpBinding" contract="Microsoft.Samples.NetTcp.ICalculator"/>  
+    <endpoint address="net.tcp://localhost:9001/servicemodelsamples/mex" binding="mexTcpBinding" contract="IMetadataExchange" />  
+  </service>  
+</services>  
 ```  
   
 <a name="BK_MK99"></a>   
 ## When calling a WCF Web HTTP application from a WCF SOAP application the service returns the following error: 405 Method Not Allowed  
  Calling a WCF Web HTTP application (a service that uses the <xref:System.ServiceModel.WebHttpBinding> and <xref:System.ServiceModel.Description.WebHttpBehavior>) from a WCF service may generate the following exception: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: The remote server returned an unexpected response: (405) Method Not Allowed.` This exception occurs because WCF overwrites the outgoing <xref:System.ServiceModel.OperationContext> with the incoming <xref:System.ServiceModel.OperationContext>. To solve this problem create an <xref:System.ServiceModel.OperationContextScope> within the WCF Web HTTP service operation. For example:  
   
-```ecmascript  
+```csharp
 public string Echo(string input)  
-        {  
-            using (new OperationContextScope(this.InnerChannel))  
-            {  
-                return base.Channel.Echo(input);  
-            }  
-        }  
-  
+{  
+    using (new OperationContextScope(this.InnerChannel))  
+    {  
+        return base.Channel.Echo(input);  
+    }  
+}  
 ```  
   
 ## See Also  

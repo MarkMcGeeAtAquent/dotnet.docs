@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugProcess2 Interface1 | Microsoft Docs"
+title: "ICorDebugProcess2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugProcess2 interface [.NET Framework debugging]"
 ms.assetid: 73332138-5fea-441f-b893-61af87d45a42
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess2 Interface1
 A logical extension of the ICorDebugProcess interface, which represents a process running managed code.  

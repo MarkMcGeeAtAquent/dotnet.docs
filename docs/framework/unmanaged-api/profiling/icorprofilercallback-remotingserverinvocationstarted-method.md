@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::RemotingServerInvocationStarted Method | Microsoft Docs"
+title: "ICorProfilerCallback::RemotingServerInvocationStarted Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.RemotingServerInvocationStarted"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::RemotingServerInvocationStarted"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RemotingServerInvocationStarted method [.NET Framework profiling]"
   - "ICorProfilerCallback::RemotingServerInvocationStarted method [.NET Framework profiling]"
 ms.assetid: 86051a11-ad8e-4ace-9a11-ff0f982a5e11
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::RemotingServerInvocationStarted Method
 Notifies the profiler that the process is invoking a method in response to a remote method invocation request.  

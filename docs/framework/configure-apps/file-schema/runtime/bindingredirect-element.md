@@ -1,8 +1,8 @@
 ---
-title: "&lt;bindingRedirect&gt; Element | Microsoft Docs"
+title: "&lt;bindingRedirect&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/bindingRedirect"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#bindingRedirect"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<bindingRedirect> element"
   - "container tags, <bindingRedirect> element"
@@ -26,6 +21,8 @@ caps.latest.revision: 12
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;bindingRedirect&gt; Element
 Redirects one assembly version to another.  
@@ -38,9 +35,8 @@ Redirects one assembly version to another.
   
 ## Syntax  
   
-```  
-  
-   <bindingRedirect    
+```xml  
+   <bindingRedirect    
 oldVersion="existing assembly version"  
 newVersion="new assembly version"/>  
 ```  
@@ -80,7 +76,7 @@ newVersion="new assembly version"/>
 ## Example  
  The following example shows how to redirect one assembly version to another.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -97,6 +93,6 @@ newVersion="new assembly version"/>
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirecting Assembly Versions](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

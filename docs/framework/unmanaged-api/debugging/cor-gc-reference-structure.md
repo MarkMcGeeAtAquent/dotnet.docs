@@ -1,5 +1,5 @@
 ---
-title: "COR_GC_REFERENCE Structure | Microsoft Docs"
+title: "COR_GC_REFERENCE Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_GC_REFERENCE"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_GC_REFERENCE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_GC_REFERENCE structure [.NET Framework debugging]"
 ms.assetid: 162e8179-0cd4-4110-8f06-5f387698bd62
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_GC_REFERENCE Structure
 Contains information about an object that is to be garbage-collected.  
@@ -76,5 +79,5 @@ typedef struct _COR_GC_REFERENCE {
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

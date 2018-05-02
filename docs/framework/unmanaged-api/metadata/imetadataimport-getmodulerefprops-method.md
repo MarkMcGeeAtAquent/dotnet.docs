@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetModuleRefProps Method | Microsoft Docs"
+title: "IMetaDataImport::GetModuleRefProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetModuleRefProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetModuleRefProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetModuleRefProps method [.NET Framework metadata]"
   - "IMetaDataImport::GetModuleRefProps method [.NET Framework metadata]"
 ms.assetid: b558e766-4c11-4628-ae47-b4e0a1800168
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetModuleRefProps Method
 Gets the name of the module referenced by the specified metadata token.  
@@ -64,5 +67,5 @@ HRESULT GetModuleRefProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

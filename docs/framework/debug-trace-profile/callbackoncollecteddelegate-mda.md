@@ -1,5 +1,5 @@
 ---
-title: "callbackOnCollectedDelegate MDA | Microsoft Docs"
+title: "callbackOnCollectedDelegate MDA"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,7 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "cpp"
 helpviewer_keywords: 
   - "MDAs (managed debugging assistants), garbage collection"
   - "managed debugging assistants (MDAs), callback on collected delegates"
@@ -29,6 +26,8 @@ caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # callbackOnCollectedDelegate MDA
 The `callbackOnCollectedDelegate` managed debugging assistant (MDA) is activated if a delegate is marshaled from managed to unmanaged code as a function pointer and a callback is placed on that function pointer after the delegate has been garbage collected.  
@@ -57,7 +56,7 @@ The `callbackOnCollectedDelegate` managed debugging assistant (MDA) is activated
 ## Configuration  
  The following example shows the application configuration options. It sets the number of thunks the MDA keeps alive to 1,500. The default `listSize` value is 1,000, the minimum is 50, and the maximum is 2,000.  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <callbackOnCollectedDelegate listSize="1500" />  
@@ -117,7 +116,7 @@ public class Entry
 ```  
   
 ## See Also  
- <xref:System.Runtime.InteropServices.MarshalAsAttribute>   
- [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)   
- [Interop Marshaling](../../../docs/framework/interop/interop-marshaling.md)   
+ <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
+ [Diagnosing Errors with Managed Debugging Assistants](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)  
+ [Interop Marshaling](../../../docs/framework/interop/interop-marshaling.md)  
  [gcUnmanagedToManaged](../../../docs/framework/debug-trace-profile/gcunmanagedtomanaged-mda.md)

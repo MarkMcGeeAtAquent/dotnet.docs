@@ -1,10 +1,13 @@
-<Type Name="ConsoleKeyInfo" FullName="System.ConsoleKeyInfo">
+﻿<Type Name="ConsoleKeyInfo" FullName="System.ConsoleKeyInfo">
   <TypeSignature Language="C#" Value="public struct ConsoleKeyInfo" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit ConsoleKeyInfo extends System.ValueType" />
   <TypeSignature Language="DocId" Value="T:System.ConsoleKeyInfo" />
+  <TypeSignature Language="VB.NET" Value="Public Structure ConsoleKeyInfo" />
+  <TypeSignature Language="C++ CLI" Value="public value class ConsoleKeyInfo" />
   <AssemblyInfo>
     <AssemblyName>System.Console</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -25,7 +28,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ConsoleKeyInfo> type is not intended to be created by users. Instead, it is returned to the user in response to calling the <xref:System.Console.ReadKey%2A?displayProperty=fullName> method.  
+ The <xref:System.ConsoleKeyInfo> type is not intended to be created by users. Instead, it is returned to the user in response to calling the <xref:System.Console.ReadKey%2A?displayProperty=nameWithType> method.  
   
  The <xref:System.ConsoleKeyInfo> object describes the <xref:System.ConsoleKey> constant and Unicode character, if any, that correspond to the pressed console key. The <xref:System.ConsoleKeyInfo> object also describes, in a bitwise combination of <xref:System.ConsoleModifiers> values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.  
   
@@ -40,16 +43,21 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.ConsoleModifiers" />
+    <altmember cref="T:System.ConsoleKey" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConsoleKeyInfo (char keyChar, ConsoleKey key, bool shift, bool alt, bool control);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char keyChar, valuetype System.ConsoleKey key, bool shift, bool alt, bool control) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.#ctor(System.Char,System.ConsoleKey,System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (keyChar As Char, key As ConsoleKey, shift As Boolean, alt As Boolean, control As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConsoleKeyInfo(char keyChar, ConsoleKey key, bool shift, bool alt, bool control);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -81,7 +89,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This type is not intended to be created by users. Instead, it is returned to the user in response to calling the <xref:System.Console.ReadKey%2A?displayProperty=fullName> method.  
+ This type is not intended to be created by users. Instead, it is returned to the user in response to calling the <xref:System.Console.ReadKey%2A?displayProperty=nameWithType> method.  
   
  The <xref:System.ConsoleKeyInfo> type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed.  
   
@@ -90,14 +98,27 @@
         <exception cref="T:System.ArgumentOutOfRangeException">The numeric value of the <paramref name="key" /> parameter is less than 0 or greater than 255.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>System.Console</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a value indicating whether an object or specified <see cref="T:System.ConsoleKeyInfo" /> object is equal to the current <see cref="T:System.ConsoleKeyInfo" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public bool Equals (ConsoleKeyInfo obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.ConsoleKeyInfo obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.Equals(System.ConsoleKeyInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Equals (obj As ConsoleKeyInfo) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Equals(ConsoleKeyInfo obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -125,7 +146,7 @@
 ## Remarks  
  Two <xref:System.ConsoleKeyInfo> objects are equal if their corresponding <xref:System.ConsoleKeyInfo.KeyChar%2A>, <xref:System.ConsoleKeyInfo.Key%2A>, and <xref:System.ConsoleKeyInfo.Modifiers%2A> properties are equal.  
   
- The <xref:System.ConsoleKeyInfo.Equals%2A> method performs slightly better than the <xref:System.ConsoleKeyInfo.Equals%28System.Object%29?displayProperty=fullName> method because it does not have to convert `obj` to an object.  
+ The <xref:System.ConsoleKeyInfo.Equals%2A> method performs slightly better than the <xref:System.ConsoleKeyInfo.Equals%28System.Object%29?displayProperty=nameWithType> method because it does not have to convert `obj` to an object.  
   
  ]]></format>
         </remarks>
@@ -135,10 +156,13 @@
       <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -183,10 +207,13 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -227,10 +254,13 @@
       <MemberSignature Language="C#" Value="public ConsoleKey Key { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ConsoleKey Key" />
       <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.Key" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Key As ConsoleKey" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property ConsoleKey Key { ConsoleKey get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -265,10 +295,13 @@
       <MemberSignature Language="C#" Value="public char KeyChar { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance char KeyChar" />
       <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.KeyChar" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property KeyChar As Char" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property char KeyChar { char get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -307,10 +340,13 @@
       <MemberSignature Language="C#" Value="public ConsoleModifiers Modifiers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ConsoleModifiers Modifiers" />
       <MemberSignature Language="DocId" Value="P:System.ConsoleKeyInfo.Modifiers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Modifiers As ConsoleModifiers" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property ConsoleModifiers Modifiers { ConsoleModifiers get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -342,13 +378,16 @@
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.ConsoleKeyInfo a, valuetype System.ConsoleKeyInfo b) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.op_Equality(System.ConsoleKeyInfo,System.ConsoleKeyInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (a As ConsoleKeyInfo, b As ConsoleKeyInfo) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(ConsoleKeyInfo a, ConsoleKeyInfo b);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -378,18 +417,21 @@
 ## Remarks  
  Two <xref:System.ConsoleKeyInfo> objects are equal if their corresponding <xref:System.ConsoleKeyInfo.KeyChar%2A>, <xref:System.ConsoleKeyInfo.Key%2A>, and <xref:System.ConsoleKeyInfo.Modifiers%2A> properties are equal.  
   
- The equivalent method for this operator is <xref:System.ConsoleKeyInfo.Equals%28System.ConsoleKeyInfo%2CSystem.ConsoleKeyInfo%29?displayProperty=fullName>]]></format>
+ The equivalent method for this operator is <xref:System.ConsoleKeyInfo.Equals%28System.ConsoleKeyInfo%29?displayProperty=nameWithType>.]]></format>
         </remarks>
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (ConsoleKeyInfo a, ConsoleKeyInfo b);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.ConsoleKeyInfo a, valuetype System.ConsoleKeyInfo b) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ConsoleKeyInfo.op_Inequality(System.ConsoleKeyInfo,System.ConsoleKeyInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (a As ConsoleKeyInfo, b As ConsoleKeyInfo) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(ConsoleKeyInfo a, ConsoleKeyInfo b);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

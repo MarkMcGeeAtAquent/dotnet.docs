@@ -1,8 +1,8 @@
 ---
-title: "&lt;sources&gt; Element | Microsoft Docs"
+title: "&lt;sources&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#sources"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "sources element"
   - "trace sources"
@@ -26,6 +21,8 @@ caps.latest.revision: 7
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;sources&gt; Element
 Specifies trace sources that initiate tracing messages.  
@@ -36,7 +33,7 @@ Specifies trace sources that initiate tracing messages.
   
 ## Syntax  
   
-```  
+```xml  
 <sources>  
    <source>...</source>  
 </sources>  
@@ -67,7 +64,7 @@ Specifies trace sources that initiate tracing messages.
 ## Example  
  The following example shows how to use the `<sources>` element to add the trace source `mySource` and to set the level for the source switch named `sourceSwitch`. A console trace listener is added that writes trace information to the console.  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <sources>  
@@ -91,11 +88,11 @@ Specifies trace sources that initiate tracing messages.
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.DefaultTraceListener>   
- <xref:System.Diagnostics.TextWriterTraceListener>   
- <xref:System.Diagnostics.ConsoleTraceListener>   
- <xref:System.Diagnostics.EventLogTraceListener>   
- <xref:System.Diagnostics.XmlWriterTraceListener>   
- [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.DefaultTraceListener>  
+ <xref:System.Diagnostics.TextWriterTraceListener>  
+ <xref:System.Diagnostics.ConsoleTraceListener>  
+ <xref:System.Diagnostics.EventLogTraceListener>  
+ <xref:System.Diagnostics.XmlWriterTraceListener>  
+ [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)

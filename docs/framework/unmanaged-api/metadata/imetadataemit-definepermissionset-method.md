@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DefinePermissionSet Method | Microsoft Docs"
+title: "IMetaDataEmit::DefinePermissionSet Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DefinePermissionSet"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DefinePermissionSet"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DefinePermissionSet method [.NET Framework metadata]"
   - "IMetaDataEmit::DefinePermissionSet method [.NET Framework metadata]"
 ms.assetid: 36cffbf7-82ca-4cf9-bf60-50ab491ac2d9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DefinePermissionSet Method
 Creates a definition for a permission set with the specified metadata signature, and gets a token to that permission set definition.  
@@ -68,5 +71,5 @@ HRESULT DefinePermissionSet (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

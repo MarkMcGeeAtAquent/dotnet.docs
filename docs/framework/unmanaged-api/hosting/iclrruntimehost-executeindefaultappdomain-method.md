@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeHost::ExecuteInDefaultAppDomain Method | Microsoft Docs"
+title: "ICLRRuntimeHost::ExecuteInDefaultAppDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeHost.ExecuteInDefaultAppDomain"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeHost::ExecuteInDefaultAppDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeHost::ExecuteInDefaultAppDomain method [.NET Framework hosting]"
   - "ExecuteInDefaultAppDomain method [.NET Framework hosting]"
 ms.assetid: 30b5cf9a-a762-4bd4-be12-d6c1442b78b1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeHost::ExecuteInDefaultAppDomain Method
 Calls the specified method of the specified type in the specified managed assembly.  

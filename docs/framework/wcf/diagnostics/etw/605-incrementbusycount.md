@@ -1,8 +1,8 @@
 ---
-title: "605 - IncrementBusyCount | Microsoft Docs"
+title: "605 - IncrementBusyCount"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 33ea5f9e-cd58-4833-8082-b99bab5cb254
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 605 - IncrementBusyCount
 ## Properties  

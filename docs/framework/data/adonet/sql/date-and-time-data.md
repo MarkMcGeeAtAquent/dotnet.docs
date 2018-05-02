@@ -1,19 +1,24 @@
 ---
-title: "Date and Time Data | Microsoft Docs"
+title: "Date and Time Data"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
 caps.latest.revision: 7
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Date and Time Data
 SQL Server 2008 introduces new data types for handling date and time information. The new data types include separate types for date and time, and expanded data types with greater range, precision, and time-zone awareness. Starting with the .NET Framework version 3.5 Service Pack (SP) 1, the .NET Framework Data Provider for SQL Server (<xref:System.Data.SqlClient>) provides full support for all the new features of the SQL Server 2008 Database Engine. You must install the .NET Framework 3.5 SP1 (or later) to use these new features with SqlClient.  
@@ -52,7 +57,7 @@ SQL Server 2008 introduces new data types for handling date and time information
  For more information about how SQL Server interprets date and time data, see [Using Date and Time Data](http://go.microsoft.com/fwlink/?LinkID=98361) in SQL Server 2008 Books Online.  
   
 ## Date/Time Data Types and Parameters  
- You can specify the data type of a <xref:System.Data.SqlClient.SqlParameter> by using one of the <xref:System.Data.SqlDbType> enumerations. The following enumerations have been added to <xref:System.Data.SqlDbType> to support the new date and time data types.  
+ The following enumerations have been added to <xref:System.Data.SqlDbType> to support the new date and time data types.  
   
 -   `SqlDbType.Date`  
   
@@ -61,7 +66,12 @@ SQL Server 2008 introduces new data types for handling date and time information
 -   `SqlDbType.DateTime2`  
   
 -   `SqlDbType.DateTimeOffSet`  
-  
+
+You can specify the data type of a <xref:System.Data.SqlClient.SqlParameter> by using one of the preceding <xref:System.Data.SqlDbType> enumerations. 
+
+> [!NOTE]
+> You cannot set the `DbType` property of a `SqlParameter` to `SqlDbType.Date`.
+
  You can also specify the type of a <xref:System.Data.SqlClient.SqlParameter> generically by setting the <xref:System.Data.SqlClient.SqlParameter.DbType%2A> property of a `SqlParameter` object to a particular <xref:System.Data.DbType> enumeration value. The following enumeration values have been added to <xref:System.Data.DbType> to support the `datetime2` and `datetimeoffset` data types:  
   
 -   DbType.DateTime2  
@@ -182,7 +192,7 @@ command.Parameters.AddWithValue( _
     "@date", DateTimeOffset.Parse("16660902"))  
 ```  
   
- The `@date` parameter could map to a `date`, `datetime`, or `datetime2` data type on the server. When working with the new `datetime` data types, you must explicitly set the parameter's <xref:System.Data.SqlDbType> property to the data type of the instance. Using <xref:System.Data.SqlDbType> or implicitly supplying parameter values can cause problems with backward compatibility with the `datetime` and `smalldatetime` data types.  
+ The `@date` parameter could map to a `date`, `datetime`, or `datetime2` data type on the server. When working with the new `datetime` data types, you must explicitly set the parameter's <xref:System.Data.SqlDbType> property to the data type of the instance. Using <xref:System.Data.SqlDbType.Variant> or implicitly supplying parameter values can cause problems with backward compatibility with the `datetime` and `smalldatetime` data types.  
   
  The following table shows which `SqlDbTypes` are inferred from which CLR types:  
   
@@ -238,7 +248,7 @@ command.Parameters.AddWithValue( _
 |[Data Types (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=98362)|Describes system data types in SQL Server 2008.|  
   
 ## See Also  
- [SQL Server Data Type Mappings](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)   
- [Configuring Parameters and Parameter Data Types](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)   
- [SQL Server Data Types and ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)   
+ [SQL Server Data Type Mappings](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)  
+ [Configuring Parameters and Parameter Data Types](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)  
+ [SQL Server Data Types and ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

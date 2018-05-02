@@ -1,7 +1,9 @@
-<Type Name="FileStream" FullName="System.IO.FileStream">
+﻿<Type Name="FileStream" FullName="System.IO.FileStream">
   <TypeSignature Language="C#" Value="public class FileStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.IO.FileStream" />
+  <TypeSignature Language="VB.NET" Value="Public Class FileStream&#xA;Inherits Stream" />
+  <TypeSignature Language="C++ CLI" Value="public ref class FileStream : System::IO::Stream" />
   <AssemblyInfo>
     <AssemblyName>System.IO.FileSystem</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
@@ -15,6 +17,10 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.IO.Stream</BaseTypeName>
   </Base>
@@ -25,21 +31,15 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Provides a <see cref="T:System.IO.Stream" /> for a file, supporting both synchronous and asynchronous read and write operations.  
-  
- To browse the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs#e23a38af5d11ddd3).</summary>
+    <summary>Provides a <see cref="T:System.IO.Stream" /> for a file, supporting both synchronous and asynchronous read and write operations.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-  
-> [!NOTE]
->  To view the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/io/filestream.cs#e23a38af5d11ddd3). You can browse through the source code online, download the reference for offline viewing, and step through the sources (including patches and updates) during debugging; see [instructions](http://referencesource.microsoft.com/).  
-  
  Use the <xref:System.IO.FileStream> class to read from, write to, open, and close files on a file system, and to manipulate other file-related operating system handles, including pipes, standard input, and standard output. You can use the <xref:System.IO.FileStream.Read%2A>, <xref:System.IO.FileStream.Write%2A>, <xref:System.IO.Stream.CopyTo%2A>, and <xref:System.IO.FileStream.Flush%2A> methods to perform synchronous operations, or the <xref:System.IO.FileStream.ReadAsync%2A>, <xref:System.IO.FileStream.WriteAsync%2A>, <xref:System.IO.Stream.CopyToAsync%2A>, and <xref:System.IO.FileStream.FlushAsync%2A> methods to perform asynchronous operations. Use the asynchronous methods to perform resource-intensive file operations without blocking the main thread. This performance consideration is particularly important in a [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] app or [!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. <xref:System.IO.FileStream> buffers input and output for better performance.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  The <xref:System.IO.FileStream.IsAsync%2A> property detects whether the file handle was opened asynchronously. You specify this value when you create an instance of the <xref:System.IO.FileStream> class using a constructor that has an `isAsync`, `useAsync`, or `options` parameter. When the property is `true`, the stream utilizes overlapped I/O to perform file operations asynchronously. However, the <xref:System.IO.FileStream.IsAsync%2A> property does not have to be `true` to call the <xref:System.IO.FileStream.ReadAsync%2A>, <xref:System.IO.FileStream.WriteAsync%2A>, or <xref:System.IO.Stream.CopyToAsync%2A> method. When the <xref:System.IO.FileStream.IsAsync%2A> property is `false` and you call the asynchronous read and write operations, the UI thread is still not blocked, but the actual I/O operation is performed synchronously.  
   
@@ -79,12 +79,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.IO.File" />
+    <altmember cref="T:System.IO.FileAccess" />
+    <altmember cref="T:System.IO.FileMode" />
+    <altmember cref="T:System.IO.FileShare" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.IO.FileStream" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As SafeFileHandle, access As FileAccess)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(Microsoft::Win32::SafeHandles::SafeFileHandle ^ handle, System::IO::FileAccess access);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -98,6 +113,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
@@ -140,6 +159,8 @@
       <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As IntPtr, access As FileAccess)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(IntPtr handle, System::IO::FileAccess access);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -149,6 +170,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -196,6 +221,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -209,6 +236,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -239,7 +270,7 @@
   
  `FileShare.Read` is the default for those <xref:System.IO.FileStream> constructors without a `FileShare` parameter.  
   
- For constructors without a <xref:System.IO.FileAccess> parameter, if the `mode` parameter is set to <xref:System.IO.FileMode>, <xref:System.IO.FileAccess> is the default access. Otherwise, the access is set to <xref:System.IO.FileAccess>.  
+ For constructors without a <xref:System.IO.FileAccess> parameter, if the `mode` parameter is set to <xref:System.IO.FileMode.Append>, <xref:System.IO.FileAccess.Write> is the default access. Otherwise, the access is set to <xref:System.IO.FileAccess.ReadWrite>.  
   
 > [!CAUTION]
 >  When you compile a set of characters with a particular cultural setting and retrieve those same characters with a different cultural setting, the characters might not be interpretable, and could cause an exception to be thrown.  
@@ -279,12 +310,15 @@
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="mode" /> contains an invalid value.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading, writing, and appending to files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, and <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
+        <altmember cref="F:System.IO.Path.InvalidPathChars" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access, int bufferSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access, int32 bufferSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As SafeFileHandle, access As FileAccess, bufferSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(Microsoft::Win32::SafeHandles::SafeFileHandle ^ handle, System::IO::FileAccess access, int bufferSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -298,6 +332,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
@@ -345,6 +383,8 @@
       <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As IntPtr, access As FileAccess, ownsHandle As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(IntPtr handle, System::IO::FileAccess access, bool ownsHandle);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -354,6 +394,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -404,6 +448,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, access As FileAccess)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::IO::FileAccess access);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -417,6 +463,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -481,6 +531,8 @@
       <MemberSignature Language="C#" Value="public FileStream (Microsoft.Win32.SafeHandles.SafeFileHandle handle, System.IO.FileAccess access, int bufferSize, bool isAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Win32.SafeHandles.SafeFileHandle handle, valuetype System.IO.FileAccess access, int32 bufferSize, bool isAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(Microsoft.Win32.SafeHandles.SafeFileHandle,System.IO.FileAccess,System.Int32,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As SafeFileHandle, access As FileAccess, bufferSize As Integer, isAsync As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(Microsoft::Win32::SafeHandles::SafeFileHandle ^ handle, System::IO::FileAccess access, int bufferSize, bool isAsync);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -494,6 +546,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="handle" Type="Microsoft.Win32.SafeHandles.SafeFileHandle" />
@@ -546,6 +602,8 @@
       <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle, int bufferSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle, int32 bufferSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As IntPtr, access As FileAccess, ownsHandle As Boolean, bufferSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(IntPtr handle, System::IO::FileAccess access, bool ownsHandle, int bufferSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -555,6 +613,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -607,6 +669,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, access As FileAccess, share As FileShare)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::IO::FileAccess access, System::IO::FileShare share);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -620,6 +684,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -697,6 +765,8 @@
       <MemberSignature Language="C#" Value="public FileStream (IntPtr handle, System.IO.FileAccess access, bool ownsHandle, int bufferSize, bool isAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle, valuetype System.IO.FileAccess access, bool ownsHandle, int32 bufferSize, bool isAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.IntPtr,System.IO.FileAccess,System.Boolean,System.Int32,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (handle As IntPtr, access As FileAccess, ownsHandle As Boolean, bufferSize As Integer, isAsync As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(IntPtr handle, System::IO::FileAccess access, bool ownsHandle, int bufferSize, bool isAsync);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -706,6 +776,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -762,6 +836,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, access As FileAccess, share As FileShare, bufferSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::IO::FileAccess access, System::IO::FileShare share, int bufferSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -775,6 +851,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -847,6 +927,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, bool useAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, bool useAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, access As FileAccess, share As FileShare, bufferSize As Integer, useAsync As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::IO::FileAccess access, System::IO::FileShare share, int bufferSize, bool useAsync);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -860,6 +942,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -937,12 +1023,15 @@
         <exception cref="T:System.UnauthorizedAccessException">The <paramref name="access" /> requested is not permitted by the operating system for the specified <paramref name="path" />, such as when <paramref name="access" /> is <see langword="Write" /> or <see langword="ReadWrite" /> and the file or directory is set for read-only access.</exception>
         <exception cref="T:System.IO.PathTooLongException">The specified path, file name, or both exceed the system-defined maximum length. For example, on Windows-based platforms, paths must be less than 248 characters, and file names must be less than 260 characters.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading, writing, and appending to files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />, and <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" />.</permission>
+        <altmember cref="T:System.IO.File" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.FileOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, access As FileAccess, share As FileShare, bufferSize As Integer, options As FileOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::IO::FileAccess access, System::IO::FileShare share, int bufferSize, System::IO::FileOptions options);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -956,6 +1045,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="path" Type="System.String" />
@@ -1041,6 +1134,8 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.Security.AccessControl.FileSystemRights rights, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.Security.AccessControl.FileSystemRights rights, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.Security.AccessControl.FileSystemRights,System.IO.FileShare,System.Int32,System.IO.FileOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (path As String, mode As FileMode, rights As FileSystemRights, share As FileShare, bufferSize As Integer, options As FileOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::Security::AccessControl::FileSystemRights rights, System::IO::FileShare share, int bufferSize, System::IO::FileOptions options);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1125,6 +1220,7 @@
       <MemberSignature Language="C#" Value="public FileStream (string path, System.IO.FileMode mode, System.Security.AccessControl.FileSystemRights rights, System.IO.FileShare share, int bufferSize, System.IO.FileOptions options, System.Security.AccessControl.FileSecurity fileSecurity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.Security.AccessControl.FileSystemRights rights, valuetype System.IO.FileShare share, int32 bufferSize, valuetype System.IO.FileOptions options, class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.#ctor(System.String,System.IO.FileMode,System.Security.AccessControl.FileSystemRights,System.IO.FileShare,System.Int32,System.IO.FileOptions,System.Security.AccessControl.FileSecurity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileStream(System::String ^ path, System::IO::FileMode mode, System::Security::AccessControl::FileSystemRights rights, System::IO::FileShare share, int bufferSize, System::IO::FileOptions options, System::Security::AccessControl::FileSecurity ^ fileSecurity);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1217,9 +1313,14 @@
       </Docs>
     </Member>
     <Member MemberName="BeginRead">
-      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1230,23 +1331,35 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="numBytes" Type="System.Int32" />
-        <Parameter Name="userCallback" Type="System.AsyncCallback" />
-        <Parameter Name="stateObject" Type="System.Object" />
+        <Parameter Name="array" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" />
+        <Parameter Name="numBytes" Type="System.Int32" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="stateObject" Type="System.Object" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.0" />
       </Parameters>
       <Docs>
         <param name="array">The buffer to read data into.</param>
+        <param name="buffer">To be added.</param>
         <param name="offset">The byte offset in <c>array</c> at which to begin reading.</param>
         <param name="numBytes">The maximum number of bytes to read.</param>
+        <param name="count">To be added.</param>
         <param name="userCallback">The method to be called when the asynchronous read operation is completed.</param>
+        <param name="callback">To be added.</param>
         <param name="stateObject">A user-provided object that distinguishes this particular asynchronous read request from other requests.</param>
-        <summary>Begins an asynchronous read operation. (Consider using <see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead; see the Remarks section.)</summary>
+        <param name="state">To be added.</param>
+        <summary>Begins an asynchronous read operation. (Consider using <see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead.)</summary>
         <returns>An object that references the asynchronous read.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1289,9 +1402,14 @@
       </Docs>
     </Member>
     <Member MemberName="BeginWrite">
-      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] array, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] array, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" FrameworkAlternate="netcore-2.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1302,23 +1420,35 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="array" Type="System.Byte[]" />
-        <Parameter Name="offset" Type="System.Int32" />
-        <Parameter Name="numBytes" Type="System.Int32" />
-        <Parameter Name="userCallback" Type="System.AsyncCallback" />
-        <Parameter Name="stateObject" Type="System.Object" />
+        <Parameter Name="array" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="buffer" Type="System.Byte[]" Index="0" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="offset" Type="System.Int32" Index="1" />
+        <Parameter Name="numBytes" Type="System.Int32" Index="2" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="count" Type="System.Int32" Index="2" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="callback" Type="System.AsyncCallback" Index="3" FrameworkAlternate="netcore-2.0" />
+        <Parameter Name="stateObject" Type="System.Object" Index="4" FrameworkAlternate="netcore-1.0;netcore-1.1" />
+        <Parameter Name="state" Type="System.Object" Index="4" FrameworkAlternate="netcore-2.0" />
       </Parameters>
       <Docs>
         <param name="array">The buffer containing data to write to the current stream.</param>
+        <param name="buffer">To be added.</param>
         <param name="offset">The zero-based byte offset in <c>array</c> at which to begin copying bytes to the current stream.</param>
         <param name="numBytes">The maximum number of bytes to write.</param>
+        <param name="count">To be added.</param>
         <param name="userCallback">The method to be called when the asynchronous write operation is completed.</param>
+        <param name="callback">To be added.</param>
         <param name="stateObject">A user-provided object that distinguishes this particular asynchronous write request from other requests.</param>
-        <summary>Begins an asynchronous write operation. (Consider using <see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead; see the Remarks section.)</summary>
+        <param name="state">To be added.</param>
+        <summary>Begins an asynchronous write operation. (Consider using <see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead.)</summary>
         <returns>An object that references the asynchronous write.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1364,6 +1494,8 @@
       <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanRead" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanRead As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanRead { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1377,6 +1509,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1410,6 +1546,8 @@
       <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanSeek" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanSeek As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanSeek { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1423,6 +1561,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1456,6 +1598,8 @@
       <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.CanWrite" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanWrite As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanWrite { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1469,6 +1613,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1508,6 +1656,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1521,6 +1671,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1554,6 +1708,8 @@
       <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.EndRead(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function EndRead (asyncResult As IAsyncResult) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int EndRead(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1564,6 +1720,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -1572,7 +1732,7 @@
       </Parameters>
       <Docs>
         <param name="asyncResult">The reference to the pending asynchronous request to wait for.</param>
-        <summary>Waits for the pending asynchronous read operation to complete. (Consider using <see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead; see the Remarks section.)</summary>
+        <summary>Waits for the pending asynchronous read operation to complete. (Consider using <see cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead.)</summary>
         <returns>The number of bytes read from the stream, between 0 and the number of bytes you requested. Streams only return 0 at the end of the stream, otherwise, they should block until at least 1 byte is available.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -1609,6 +1769,8 @@
       <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.EndWrite(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub EndWrite (asyncResult As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void EndWrite(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1619,6 +1781,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1627,7 +1793,7 @@
       </Parameters>
       <Docs>
         <param name="asyncResult">The pending asynchronous I/O request.</param>
-        <summary>Ends an asynchronous write operation and blocks until the I/O operation is complete. (Consider using <see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead; see the Remarks section.)</summary>
+        <summary>Ends an asynchronous write operation and blocks until the I/O operation is complete. (Consider using <see cref="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" /> instead.)</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -1661,6 +1827,8 @@
       <MemberSignature Language="C#" Value="~FileStream ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!FileStream ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1674,6 +1842,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1691,10 +1863,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Flush">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Clears buffers for this stream and causes any buffered data to be written to the file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Flush">
       <MemberSignature Language="C#" Value="public override void Flush ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Flush" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Flush ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Flush();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1709,6 +1892,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1719,17 +1906,17 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.Stream.Flush%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.Stream.Flush%2A?displayProperty=nameWithType>.  
   
- When you call the <xref:System.IO.FileStream.Flush%2A?displayProperty=fullName> method, the operating system I/O buffer is also flushed.  
+ When you call the <xref:System.IO.FileStream.Flush%2A?displayProperty=nameWithType> method, the operating system I/O buffer is also flushed.  
   
- A stream’s encoder is not flushed unless you explicitly call <xref:System.IO.FileStream.Flush%2A> or dispose of the object. Setting <xref:System.IO.StreamWriter.AutoFlush%2A?displayProperty=fullName> to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.  
+ A stream’s encoder is not flushed unless you explicitly call <xref:System.IO.FileStream.Flush%2A> or dispose of the object. Setting <xref:System.IO.StreamWriter.AutoFlush%2A?displayProperty=nameWithType> to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.  
   
  Because a buffer can be used for either reading or writing, <xref:System.IO.FileStream.Flush> performs the following two functions:  
   
 -   Any data previously written to the buffer is copied to the file and the buffer is cleared except for its encoder state.  
   
--   If <xref:System.IO.BufferedStream.CanSeek%2A?displayProperty=fullName> is `true` and data was previously copied from the file to the buffer for reading, the current position within the file is decremented by the number of unread bytes in the buffer. The buffer is then cleared.  
+-   If <xref:System.IO.BufferedStream.CanSeek%2A?displayProperty=nameWithType> is `true` and data was previously copied from the file to the buffer for reading, the current position within the file is decremented by the number of unread bytes in the buffer. The buffer is then cleared.  
   
  Use the <xref:System.IO.FileStream.Flush%28System.Boolean%29> method overload when you want to ensure that all buffered data in intermediate file buffers is written to disk.  
   
@@ -1746,12 +1933,15 @@
         </remarks>
         <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
         <exception cref="T:System.ObjectDisposedException">The stream is closed.</exception>
+        <altmember cref="M:System.IO.FileStream.Flush(System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="Flush">
       <MemberSignature Language="C#" Value="public virtual void Flush (bool flushToDisk);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush(bool flushToDisk) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Flush(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Flush (flushToDisk As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Flush(bool flushToDisk);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1765,6 +1955,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1786,12 +1980,14 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.IO.FileStream.Flush" />
       </Docs>
     </Member>
     <Member MemberName="FlushAsync">
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ FlushAsync(System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1805,6 +2001,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1822,7 +2022,7 @@
 ## Remarks  
  When you call the <xref:System.IO.FileStream.FlushAsync%2A> method, the operating system I/O buffer is also flushed.  
   
- If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
+ If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
   
  ]]></format>
         </remarks>
@@ -1833,6 +2033,8 @@
       <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.GetAccessControl" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAccessControl () As FileSecurity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::AccessControl::FileSecurity ^ GetAccessControl();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1850,7 +2052,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- While the <xref:System.IO.FileStream> class and <xref:System.IO.FileStream.GetAccessControl%2A> can be used to retrieve the access control list (ACL) entries of an existing file, consider using <xref:System.IO.File.GetAccessControl%2A?displayProperty=fullName> method, as it is easier to use.  
+ While the <xref:System.IO.FileStream> class and <xref:System.IO.FileStream.GetAccessControl%2A> can be used to retrieve the access control list (ACL) entries of an existing file, consider using <xref:System.IO.File.GetAccessControl%2A?displayProperty=nameWithType> method, as it is easier to use.  
   
  Use the <xref:System.IO.FileStream.GetAccessControl%2A> method to retrieve the ACL entries for a file.  
   
@@ -1872,6 +2074,8 @@
       <MemberSignature Language="C#" Value="public virtual IntPtr Handle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Handle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Handle As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property IntPtr Handle { IntPtr get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1881,6 +2085,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1915,6 +2123,8 @@
       <MemberSignature Language="C#" Value="public virtual bool IsAsync { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAsync" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.IsAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsAsync As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsAsync { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1928,6 +2138,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1961,6 +2175,8 @@
       <MemberSignature Language="C#" Value="public override long Length { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Length" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Length As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property long Length { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -1974,6 +2190,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -2007,6 +2227,8 @@
       <MemberSignature Language="C#" Value="public virtual void Lock (long position, long length);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Lock(int64 position, int64 length) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Lock(System.Int64,System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Lock (position As Long, length As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Lock(long position, long length);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2016,6 +2238,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2057,6 +2283,8 @@
       <MemberSignature Language="C#" Value="public string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Name" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2070,6 +2298,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -2101,6 +2333,8 @@
       <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.Position" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Position As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property long Position { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2114,6 +2348,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -2152,8 +2390,10 @@
     </Member>
     <Member MemberName="Read">
       <MemberSignature Language="C#" Value="public override int Read (byte[] array, int offset, int count);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(unsigned int8[] array, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] unsigned int8[] array, int32 offset, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read (array As Byte(), offset As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read(cli::array &lt;System::Byte&gt; ^ array, int offset, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2167,6 +2407,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2223,6 +2467,7 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;int&gt; ^ ReadAsync(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2236,6 +2481,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
@@ -2261,7 +2510,7 @@
   
  Use the <xref:System.IO.FileStream.CanRead%2A> property to determine whether the current instance supports reading.  
   
- If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
+ If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
   
    
   
@@ -2287,6 +2536,8 @@
       <MemberSignature Language="C#" Value="public override int ReadByte ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadByte() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.ReadByte" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadByte () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int ReadByte();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2300,6 +2551,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2341,6 +2596,8 @@
       <MemberSignature Language="C#" Value="public virtual Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileStream.SafeFileHandle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SafeFileHandle As SafeFileHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Microsoft::Win32::SafeHandles::SafeFileHandle ^ SafeFileHandle { Microsoft::Win32::SafeHandles::SafeFileHandle ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2354,6 +2611,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>Microsoft.Win32.SafeHandles.SafeFileHandle</ReturnType>
@@ -2381,6 +2642,8 @@
       <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Seek (offset As Long, origin As SeekOrigin) As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override long Seek(long offset, System::IO::SeekOrigin origin);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2394,6 +2657,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -2411,10 +2678,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.Stream.Seek%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.Stream.Seek%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  Use the <xref:System.IO.FileStream.CanSeek%2A?displayProperty=fullName> property to determine whether the current instance supports seeking. For additional information, see <xref:System.IO.Stream.CanSeek%2A?displayProperty=fullName>.  
+>  Use the <xref:System.IO.FileStream.CanSeek%2A?displayProperty=nameWithType> property to determine whether the current instance supports seeking. For additional information, see <xref:System.IO.Stream.CanSeek%2A?displayProperty=nameWithType>.  
   
  You can seek to any location beyond the length of the stream. When you seek beyond the length of the file, the file size grows. In Windows NT and later versions, data added to the end of the file is set to zero. In Windows 98 or earlier versions, data added to the end of the file is not set to zero, which means that previously deleted data is visible to the stream.  
   
@@ -2446,6 +2713,7 @@
       <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.FileSecurity fileSecurity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.SetAccessControl(System.Security.AccessControl.FileSecurity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAccessControl(System::Security::AccessControl::FileSecurity ^ fileSecurity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2465,7 +2733,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- While the <xref:System.IO.FileStream> class and <xref:System.IO.FileStream.SetAccessControl%2A> can be used on an existing file, consider using the <xref:System.IO.File.SetAccessControl%2A?displayProperty=fullName> method as it is easier to use.  
+ While the <xref:System.IO.FileStream> class and <xref:System.IO.FileStream.SetAccessControl%2A> can be used on an existing file, consider using the <xref:System.IO.File.SetAccessControl%2A?displayProperty=nameWithType> method as it is easier to use.  
   
  The <xref:System.IO.FileStream.SetAccessControl%2A> method applies access control list (ACL) entries to a file that represents the noninherited ACL list.  
   
@@ -2486,6 +2754,8 @@
       <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.SetLength(System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub SetLength (value As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void SetLength(long value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2499,6 +2769,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2535,6 +2809,8 @@
       <MemberSignature Language="C#" Value="public virtual void Unlock (long position, long length);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unlock(int64 position, int64 length) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Unlock(System.Int64,System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Unlock (position As Long, length As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Unlock(long position, long length);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2544,6 +2820,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2581,6 +2861,8 @@
       <MemberSignature Language="C#" Value="public override void Write (byte[] array, int offset, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] array, int32 offset, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (array As Byte(), offset As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(cli::array &lt;System::Byte&gt; ^ array, int offset, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2594,6 +2876,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2653,6 +2939,7 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteAsync(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2666,6 +2953,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2691,7 +2982,7 @@
   
  Use the <xref:System.IO.FileStream.CanWrite%2A> property to determine whether the current instance supports reading.  
   
- If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
+ If the operation is canceled before it completes, the returned task contains the <xref:System.Threading.Tasks.TaskStatus.Canceled> value for the <xref:System.Threading.Tasks.Task.Status%2A> property. If the handle to the file is disposed, the returned task contains the <xref:System.ObjectDisposedException> exception in the <xref:System.Threading.Tasks.Task.Exception%2A> property.  
   
    
   
@@ -2717,6 +3008,8 @@
       <MemberSignature Language="C#" Value="public override void WriteByte (byte value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteByte(unsigned int8 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileStream.WriteByte(System.Byte)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteByte (value As Byte)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteByte(System::Byte value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
@@ -2730,6 +3023,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

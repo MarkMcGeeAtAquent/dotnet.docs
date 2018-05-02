@@ -1,8 +1,8 @@
 ---
-title: "OperationBehaviorAttribute | Microsoft Docs"
+title: "OperationBehaviorAttribute"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8c9b0755-9e83-411f-bdcb-61a586022797
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # OperationBehaviorAttribute
 OperationBehaviorAttribute  

@@ -1,25 +1,22 @@
 ---
-title: "How to: Host and Run a Basic Windows Communication Foundation Service | Microsoft Docs"
-ms.custom: ""
+title: "How to: Host and Run a Basic Windows Communication Foundation Service"
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
-ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF services [WCF]"
   - "WCF services [WCF], running"
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-caps.latest.revision: 58
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Host and Run a Basic Windows Communication Foundation Service
 This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] application. For an overview of all six of the tasks, see the [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md) topic.  
@@ -36,7 +33,7 @@ This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../
   
  A complete listing of the code written in this task is provided in the example following the procedure.  
   
-### To create a new console application to host the service  
+## To create a new console application to host the service  
   
 1.  Create a new Console Application project by right-clicking on the Getting Started solution, selecting, **Add**, **New Project**. In the **Add New Project** dialog on the left hand side of the dialog select **Windows** under **C#** or **VB**. In the center section of the dialog select **Console Application**. Name the project GettingStartedHost.  
   
@@ -52,7 +49,7 @@ This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../
   
 -   Open the Program.cs or Module.vb file and enter the following code:  
   
-    ```  
+    ```csharp
     // program.cs  
     using System;  
     using System.Collections.Generic;  
@@ -102,11 +99,10 @@ This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../
             }  
         }  
     }  
-  
     ```  
   
-    ```  
-    ‘Module1.vb  
+    ```vb
+    'Module1.vb  
     Imports System  
     Imports System.ServiceModel  
     Imports System.ServiceModel.Description  
@@ -154,11 +150,11 @@ This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../
     End Module  
     ```  
   
-    1.  Step 1 - Creates an instance of the Uri class to hold the base address of the service. Services are identified by a URL which contains a base address and an optional URI. The base address is formatted as follows:[transport]://[machine-name or domain][:optional port #]/[optional URI segment]The base address for the calculator service uses the HTTP transport, localhost, port 8000, and the URI segment “GettingStarted”  
+    1.  Step 1 - Creates an instance of the Uri class to hold the base address of the service. Services are identified by a URL which contains a base address and an optional URI. The base address is formatted as follows:[transport]://[machine-name or domain][:optional port #]/[optional URI segment]The base address for the calculator service uses the HTTP transport, localhost, port 8000, and the URI segment "GettingStarted"  
   
     2.  Step 2 – Creates an instance of the <xref:System.ServiceModel.ServiceHost> class to host the service. The constructor takes two parameters, the type of the class that implements the service contract, and the base address of the service.  
   
-    3.  Step 3 – Creates a <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` instance. A service endpoint is composed of an address, a binding, and a service contract. The <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint`  constructor therefore takes the service contract interface type, a binding, and an address. The service contract is `ICalculator`, which you defined and implement in the service type. The binding used in this sample is <xref:System.ServiceModel.WSHttpBinding> which is a built-in binding that is used for connecting to endpoints that conform to the WS-* specifications. For more information about WCF bindings, see [WCF Bindings Overview](../../../docs/framework/wcf/bindings-overview.md). The address is appended to the base address to identify the endpoint. The address specified in this code is “Calculator” so the fully qualified address for the endpoint is `“http://localhost:8000/GettingStartedService/Calculator”` Adding a service endpoint is optional when using .NET Framework 4.0 or later. In these versions, if no endpoints are added in code or configuration, WCF adds one default endpoint for each combination of base address and contract implemented by the service. For more information about default endpoints see [Specifying an Endpoint Address](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+    3.  Step 3 – Creates a <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint` instance. A service endpoint is composed of an address, a binding, and a service contract. The <!--zz <xref:System.ServiceModel.ServiceEndpoint>--> ` System.ServiceModel.ServiceEndpoint`  constructor therefore takes the service contract interface type, a binding, and an address. The service contract is `ICalculator`, which you defined and implement in the service type. The binding used in this sample is <xref:System.ServiceModel.WSHttpBinding> which is a built-in binding that is used for connecting to endpoints that conform to the WS-* specifications. For more information about WCF bindings, see [WCF Bindings Overview](../../../docs/framework/wcf/bindings-overview.md). The address is appended to the base address to identify the endpoint. The address specified in this code is "CalculatorService" so the fully qualified address for the endpoint is `"http://localhost:8000/GettingStarted/CalculatorService"` Adding a service endpoint is optional when using .NET Framework 4.0 or later. In these versions, if no endpoints are added in code or configuration, WCF adds one default endpoint for each combination of base address and contract implemented by the service. For more information about default endpoints see [Specifying an Endpoint Address](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
         > [!IMPORTANT]
         >  Adding a service endpoint is optional when using .NET Framework 4 or later. In these versions, if no endpoints are added in code or configuration, WCF adds one default endpoint for each combination of base address and contract implemented by the service. For more information about default endpoints see [Specifying an Endpoint Address](../../../docs/framework/wcf/specifying-an-endpoint-address.md). [!INCLUDE[crabout](../../../includes/crabout-md.md)] default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
@@ -176,9 +172,9 @@ This is the third of six tasks required to create a [!INCLUDE[indigo1](../../../
 ## Example  
  The following example includes the service contract and implementation from previous steps in the tutorial and hosts the service in a console application.  
   
- To compile this with a command-line compiler, compile IService1.cs and Service2.cs into a class library referencing `System.ServiceModel.dll`. And compile Program.cs to a console application.  
+ To compile this with a command-line compiler, compile IService1.cs and Service1.cs into a class library referencing `System.ServiceModel.dll`. And compile Program.cs to a console application.  
   
-```  
+```csharp
 // IService1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -202,10 +198,9 @@ namespace GettingStartedLib
             double Divide(double n1, double n2);  
         }  
 }  
-  
 ```  
   
-```  
+```csharp
 // Service1.cs  
 using System;  
 using System.Collections.Generic;  
@@ -252,10 +247,9 @@ namespace GettingStartedLib
         }  
     }  
 }  
-  
 ```  
   
-```  
+```csharp
 //Program.cs  
 using System;  
 using System.Collections.Generic;  
@@ -305,11 +299,10 @@ namespace GettingStartedHost
         }  
     }  
 }  
-  
 ```  
   
-```  
-‘IService1.vb  
+```vb
+'IService1.vb  
 Imports System  
 Imports System.ServiceModel  
   
@@ -330,8 +323,8 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
-```  
-‘Service1.vb  
+```vb
+'Service1.vb  
 Imports System  
 Imports System.ServiceModel  
   
@@ -375,8 +368,8 @@ Namespace GettingStartedLib
 End Namespace  
 ```  
   
-```  
-‘Module1.vb  
+```vb
+'Module1.vb  
 Imports System  
 Imports System.ServiceModel  
 Imports System.ServiceModel.Description  
@@ -431,5 +424,5 @@ End Module
  Now the service is running. Proceed to [How to: Create a Client](../../../docs/framework/wcf/how-to-create-a-wcf-client.md). For troubleshooting information, see [Troubleshooting the Getting Started Tutorial](../../../docs/framework/wcf/troubleshooting-the-getting-started-tutorial.md).  
   
 ## See Also  
- [Getting Started](../../../docs/framework/wcf/samples/getting-started-sample.md)   
+ [Getting Started](../../../docs/framework/wcf/samples/getting-started-sample.md)  
  [Self-Host](../../../docs/framework/wcf/samples/self-host.md)

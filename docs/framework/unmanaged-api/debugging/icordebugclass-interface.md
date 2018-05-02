@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugClass Interface1 | Microsoft Docs"
+title: "ICorDebugClass Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugClass"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugClass"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugClass interface [.NET Framework debugging]"
 ms.assetid: 03a6facb-f12f-49be-9839-e73b9c791cd5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugClass Interface1
 Represents a type, which can be either basic or complex (that is, user-defined). If the type is generic, `ICorDebugClass` represents the uninstantiated generic type.  

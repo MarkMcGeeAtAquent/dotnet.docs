@@ -1,17 +1,14 @@
 ---
-title: "Message Security User Name | Microsoft Docs"
+title: "Message Security User Name"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "WS Security"
 ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
@@ -19,6 +16,8 @@ caps.latest.revision: 57
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security User Name
 This sample demonstrates how to implement an application that uses WS-Security with username authentication for the client and requires server authentication using the server's X.509v3 certificate. All application messages between the client and server are signed and encrypted. By default, the username and password supplied by the client are used to logon to a valid Windows account. This sample is based on the [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). This sample consists of a client console program (Client.exe) and a service library (Service.dll) hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern.  
@@ -34,7 +33,7 @@ This sample demonstrates how to implement an application that uses WS-Security w
   
  The service exposes a single endpoint for communicating with the service, which is defined using the configuration file Web.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), which defaults to using message security. This sample sets the standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) to use client username authentication. The behavior specifies that the user credentials are to be used for service authentication. The server certificate must contain the same value for the subject name as the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   <protocolMapping>  
     <add scheme="http" binding="wsHttpBinding" />  
@@ -77,7 +76,7 @@ This sample demonstrates how to implement an application that uses WS-Security w
   
  The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract. The client binding is configured with the appropriate `securityMode` and `authenticationMode`. When running in a cross-computer scenario, the service endpoint address must be changed accordingly.  
   
-```  
+```xml  
 <system.serviceModel>  
   <client>  
     <endpoint address="http://localhost/servicemodelsamples/service.svc"   
@@ -139,7 +138,6 @@ Console.WriteLine(client.GetCallerIdentity());
 ...  
 //Closing the client gracefully closes the connection and cleans up resources.  
 client.Close();  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
@@ -151,7 +149,6 @@ Subtract(145,76.54) = 68.46
 Multiply(9,81.25) = 731.25  
 Divide(22,7) = 3.14285714285714  
 Press <ENTER> to terminate client.  
-  
 ```  
   
  The Setup.bat batch file included with the MessageSecurity samples enables you to configure the server with a relevant certificate to run a hosted application that requires certificate-based security. The batch file can be run in two modes. To run the batch file in the single-computer mode, type `setup.bat` at the command line. To run it in service mode type `setup.bat service`. You use this mode when running the sample across computers. See the setup procedure at the end of this topic for details.  
@@ -180,7 +177,6 @@ Press <ENTER> to terminate client.
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
-  
     ```  
   
 -   Granting permissions on the certificate's private key  
@@ -220,7 +216,7 @@ Press <ENTER> to terminate client.
   
 4.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across computers  
   
@@ -242,7 +238,7 @@ Press <ENTER> to terminate client.
   
 9. On the client, run ImportServiceCert.bat in a Visual Studio command prompt opened with administrator privileges. This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.  
   
-10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   

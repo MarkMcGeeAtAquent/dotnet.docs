@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumModuleRefs Method | Microsoft Docs"
+title: "IMetaDataImport::EnumModuleRefs Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumModuleRefs"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumModuleRefs"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumModuleRefs method [.NET Framework metadata]"
   - "IMetaDataImport::EnumModuleRefs method [.NET Framework metadata]"
 ms.assetid: 53441f3a-68d2-477c-906e-37c55dfcfb4d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumModuleRefs Method
 Enumerates ModuleRef tokens that represent imported modules.  
@@ -71,5 +74,5 @@ HRESULT EnumModuleRefs (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

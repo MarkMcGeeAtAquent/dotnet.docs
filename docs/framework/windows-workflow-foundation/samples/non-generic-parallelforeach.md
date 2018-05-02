@@ -1,17 +1,19 @@
 ---
-title: "Non-Generic ParallelForEach | Microsoft Docs"
+title: "Non-Generic ParallelForEach"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: de17e7a2-257b-48b3-91a1-860e2e9bf6e6
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Non-Generic ParallelForEach
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] ships in its toolbox a set of Control Flow activities, including <xref:System.Activities.Statements.ParallelForEach%601>, which allows iterating through <!--zz <xref:System.Collections.IEnumerable%601> --> `System.Collections.IEnumerable` collections.  
@@ -65,18 +67,18 @@ string[] names = { "bill", "steve", "ray" };
 DelegateInArgument<object> iterationVariable = new DelegateInArgument<object>() { Name = "iterationVariable" };  
   
 Activity sampleUsage =  
-    new ParallelForEach  
-    {  
-       Values = new InArgument<IEnumerable>(c=> names),  
-       Body = new ActivityAction<object>   
-       {                          
-           Argument = iterationVariable,  
-           Handler = new WriteLine  
-           {  
-               Text = new InArgument<string>(env => string.Format("Hello {0}",                                                               iterationVariable.Get(env)))  
-           }  
-       }  
-   };  
+    new ParallelForEach  
+    {  
+       Values = new InArgument<IEnumerable>(c=> names),  
+       Body = new ActivityAction<object>   
+       {                          
+           Argument = iterationVariable,  
+           Handler = new WriteLine  
+           {  
+               Text = new InArgument<string>(env => string.Format("Hello {0}",                                                               iterationVariable.Get(env)))  
+           }  
+       }  
+   };  
 ```  
   
 ## ParallelForEach Designer  

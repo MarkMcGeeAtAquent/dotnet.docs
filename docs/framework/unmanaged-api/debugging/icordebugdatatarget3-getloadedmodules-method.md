@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugDataTarget3::GetLoadedModules Method | Microsoft Docs"
+title: "ICorDebugDataTarget3::GetLoadedModules Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 9a48c05b-1949-416e-933c-52549b6fcf5e
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugDataTarget3::GetLoadedModules Method
 Gets a list of the modules that have been loaded so far.  
@@ -23,13 +23,11 @@ Gets a list of the modules that have been loaded so far.
 ## Syntax  
   
 ```  
-  
 HRESULT GetLoadedModules(  
    [in] ULONG32 cRequestedModules,  
    [out] ULONG32 *pcFetchedModules,  
    [out, size_is(cRequestedModules), length_is(*pcFetchedModules)] ICorDebugLoadedModule *pLoadedModules[]  
 );  
-  
 ```  
   
 #### Parameters  
@@ -57,5 +55,5 @@ HRESULT GetLoadedModules(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-interface.md)   
+ [ICorDebugDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

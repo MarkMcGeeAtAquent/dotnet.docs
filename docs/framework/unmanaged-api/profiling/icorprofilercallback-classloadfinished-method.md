@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ClassLoadFinished Method | Microsoft Docs"
+title: "ICorProfilerCallback::ClassLoadFinished Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ClassLoadFinished"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ClassLoadFinished"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ClassLoadFinished method [.NET Framework profiling]"
   - "ICorProfilerCallback::ClassLoadFinished method [.NET Framework profiling]"
 ms.assetid: 3dd80fbe-d62d-4d4d-acf8-5b7d0efe607e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ClassLoadFinished Method
 Notifies the profiler that a class has finished loading.  
@@ -60,5 +63,5 @@ HRESULT ClassLoadFinished(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ClassLoadStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)

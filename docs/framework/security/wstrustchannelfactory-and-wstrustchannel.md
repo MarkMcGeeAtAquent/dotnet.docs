@@ -1,7 +1,8 @@
 ---
-title: "WSTrustChannelFactory and WSTrustChannel | Microsoft Docs"
+title: "WSTrustChannelFactory and WSTrustChannel"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 9
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # WSTrustChannelFactory and WSTrustChannel
 If you are already familiar with Windows Communication Foundation (WCF), you know that a WCF client is already federation aware. By configuring a WCF client with a <xref:System.ServiceModel.WSFederationHttpBinding> or similar custom binding, you can enable federated authentication to a service.  
@@ -58,7 +61,7 @@ If you are already familiar with Windows Communication Foundation (WCF), you kno
   
 ```  
 IHelloService serviceChannel = channelFactory.CreateChannelActingAs<IHelloService>( clientSamlToken );  
-serviceChannel.Hello(“Hi!”);  
+serviceChannel.Hello("Hi!");  
 ```  
   
  WIF provides the following benefits:  
@@ -88,7 +91,7 @@ SecurityToken token = channel.Issue(rst, out rstr);
  So far, we’ve only seen how to obtain a token. The token that is returned from the <xref:System.ServiceModel.Security.WSTrustChannel> object is a `GenericXmlSecurityToken` that contains all of the information that is necessary for authentication to a relying party. The following code example shows how to use this token.  
   
 ```  
-IHelloService serviceChannel = channelFactory.CreateChannelWithIssuedToken<IHelloService>( token ); serviceChannel.Hello(“Hi!”);  
+IHelloService serviceChannel = channelFactory.CreateChannelWithIssuedToken<IHelloService>( token ); serviceChannel.Hello("Hi!");  
 ```  
   
  The <xref:System.ServiceModel.ChannelFactory%601.CreateChannelWithIssuedToken%2A> extension method on the `ChannelFactory` object indicates to WIF that you have obtained a token out of band, and that it should stop the normal WCF call to the issuer and instead use the token that you obtained to authenticate to the relying party. This has the following benefits:  

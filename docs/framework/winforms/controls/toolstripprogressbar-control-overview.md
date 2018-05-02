@@ -1,8 +1,8 @@
 ---
-title: "ToolStripProgressBar Control Overview | Microsoft Docs"
+title: "ToolStripProgressBar Control Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,17 +11,17 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "ToolStripProgressBar"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "toolbars [Windows Forms], progress bars"
-  - "progress controls"
+  - "progress controls [Windows Forms]"
   - "ToolStripProgressBar control [Windows Forms], about ToolStripProgressBar control"
 ms.assetid: ec3ab522-5fe4-4b4d-a551-bc19e84f4774
 caps.latest.revision: 6
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ToolStripProgressBar Control Overview
 The <xref:System.Windows.Forms.ToolStripProgressBar> combines the rafting and rendering functionality of all <xref:System.Windows.Forms.ToolStrip> controls with its typical process-tracking functionality. A <xref:System.Windows.Forms.ToolStripProgressBar> is most usually hosted by <xref:System.Windows.Forms.StatusStrip>, and less frequently by a <xref:System.Windows.Forms.ToolStrip>.  
@@ -32,7 +32,7 @@ The <xref:System.Windows.Forms.ToolStripProgressBar> combines the rafting and re
   
 |Name|Description|  
 |----------|-----------------|  
-|<xref:System.Windows.Forms.ToolStripProgressBar.MarqueeAnimationSpeed%2A>|Gets or sets a value representing the delay between each <xref:System.Windows.Forms.ProgressBarStyle> display update, in milliseconds.|  
+|<xref:System.Windows.Forms.ToolStripProgressBar.MarqueeAnimationSpeed%2A>|Gets or sets a value representing the delay between each <xref:System.Windows.Forms.ProgressBarStyle.Marquee> display update, in milliseconds.|  
 |<xref:System.Windows.Forms.ProgressBar.Maximum%2A>|Gets or sets the upper bound of the range that is defined for this <xref:System.Windows.Forms.ToolStripProgressBar>.|  
 |<xref:System.Windows.Forms.ToolStripProgressBar.Minimum%2A>|Gets or sets the lower bound of the range that is defined for this <xref:System.Windows.Forms.ToolStripProgressBar>.|  
 |<xref:System.Windows.Forms.ToolStripProgressBar.Style%2A>|Gets or sets the style that the <xref:System.Windows.Forms.ToolStripProgressBar> uses to display the progress of an operation.|  

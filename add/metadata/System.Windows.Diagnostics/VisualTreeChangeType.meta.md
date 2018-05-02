@@ -1,4 +1,6 @@
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---

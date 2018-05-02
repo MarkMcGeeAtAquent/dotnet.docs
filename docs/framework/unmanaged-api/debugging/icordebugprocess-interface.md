@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugProcess Interface1 | Microsoft Docs"
+title: "ICorDebugProcess Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugProcess interface [.NET Framework debugging]"
 ms.assetid: be86f4b5-418a-4c5c-a67c-97148c65ed8c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess Interface1
 Represents a process that is executing managed code. This interface is a subclass of ICorDebugController.  
@@ -66,5 +69,5 @@ Represents a process that is executing managed code. This interface is a subclas
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)   
+ [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

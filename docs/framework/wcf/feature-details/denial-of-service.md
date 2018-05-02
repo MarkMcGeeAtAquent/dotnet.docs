@@ -1,8 +1,8 @@
 ---
-title: "Denial of Service | Microsoft Docs"
+title: "Denial of Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "denial of service [WCF]"
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Denial of Service
 Denial of service occurs when a system is overwhelmed in such a way that messages cannot be processed, or they are processed extremely slowly.  
@@ -43,14 +45,14 @@ Denial of service occurs when a system is overwhelmed in such a way that message
 -   <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.InactivityTimeout%2A>:  controls the maximum time the service keeps a secure conversation alive without receiving an application message from the client for the conversation. This quota prevents clients from establishing secure conversations at the service, thereby causing the service to maintain state per client, but never using them.  
   
 ## WSDualHttpBinding or Dual Custom Bindings Require Client Authentication  
- By default, the <xref:System.ServiceModel.WSDualHttpBinding> has security enabled. It is possible, however, that if the client authentication is disabled by setting the <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> property to <xref:System.ServiceModel.MessageCredentialType>, a malicious user can cause a denial of service attack on a third service. This can occur because a malicious client can direct the service to send a stream of messages to a third service.  
+ By default, the <xref:System.ServiceModel.WSDualHttpBinding> has security enabled. It is possible, however, that if the client authentication is disabled by setting the <xref:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType%2A> property to <xref:System.ServiceModel.MessageCredentialType.None>, a malicious user can cause a denial of service attack on a third service. This can occur because a malicious client can direct the service to send a stream of messages to a third service.  
   
  To mitigate this, do not set the property to `None`. Also be aware of this possibility when creating a custom binding that has a dual message pattern.  
   
 ## Auditing Event Log Can Be Filled  
  If a malicious user understands that auditing is enabled, that attacker can send invalid messages that cause audit entries to be written. If the audit log is filled in this manner, the auditing system fails.  
   
- To mitigate this, set the <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> property to `true` and use the properties of the Event Viewer to control the auditing behavior. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] using the Event Viewer to view and manage event logs, see [Event Viewer](http://go.microsoft.com/fwlink/?LinkId=186123). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Auditing](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ To mitigate this, set the <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> property to `true` and use the properties of the Event Viewer to control the auditing behavior. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] using the Event Viewer to view and manage event logs, see [Event Viewer](http://go.microsoft.com/fwlink/?LinkId=186123). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Auditing](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ## Invalid Implementations of IAuthorizationPolicy Can Cause Service Hangs  
  Calling the <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> method on a faulty implementation of the <xref:System.IdentityModel.Policy.IAuthorizationPolicy> interface can cause the service to hang.  
@@ -65,7 +67,7 @@ Denial of service occurs when a system is overwhelmed in such a way that message
   
  The impact is that [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services may fail to open on domains with autoenrollment. This occurs because the default service X.509 credential search criteria might be ambiguous because multiple certificates with the machine's fully qualified Domain Name System (DNS) name exist. One certificate originates from autoenrollment; the other might be a self-issued certificate.  
   
- To mitigate this, reference the exact certificate to use by using a more precise search criterion on the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). For example, use the <xref:System.Security.Cryptography.X509Certificates.X509FindType> option, and specify the certificate by its unique thumbprint (hash).  
+ To mitigate this, reference the exact certificate to use by using a more precise search criterion on the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). For example, use the <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> option, and specify the certificate by its unique thumbprint (hash).  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] the autoenrollment feature, see [Certificate Autoenrollment in Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=95166).  
   
@@ -86,10 +88,10 @@ Denial of service occurs when a system is overwhelmed in such a way that message
  To mitigate this, set the limit for the maximum number of active sessions and the maximum lifetime for a session by setting the <xref:System.ServiceModel.Channels.SecurityBindingElement> property of the <xref:System.ServiceModel.Channels.SecurityBindingElement> class.  
   
 ## See Also  
- [Security Considerations](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)   
- [Information Disclosure](../../../../docs/framework/wcf/feature-details/information-disclosure.md)   
- [Elevation of Privilege](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)   
- [Denial of Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)   
- [Replay Attacks](../../../../docs/framework/wcf/feature-details/replay-attacks.md)   
- [Tampering](../../../../docs/framework/wcf/feature-details/tampering.md)   
+ [Security Considerations](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ [Information Disclosure](../../../../docs/framework/wcf/feature-details/information-disclosure.md)  
+ [Elevation of Privilege](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)  
+ [Denial of Service](../../../../docs/framework/wcf/feature-details/denial-of-service.md)  
+ [Replay Attacks](../../../../docs/framework/wcf/feature-details/replay-attacks.md)  
+ [Tampering](../../../../docs/framework/wcf/feature-details/tampering.md)  
  [Unsupported Scenarios](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)

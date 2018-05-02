@@ -1,17 +1,19 @@
 ---
-title: "Durable Delay | Microsoft Docs"
+title: "Durable Delay"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 220ec240-b958-430c-81ff-b734a6aa97ae
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Durable Delay
 This sample demonstrates how to use a durable delay, which is a delay that persists the workflow to a durable device during the delay. The sample workflow contains two messages to the console that are separated by a delay. When the delay is triggered, the workflow is unloaded and waits 5 seconds in the workflow instance store before being reloaded in memory.  
@@ -41,9 +43,8 @@ This sample demonstrates how to use a durable delay, which is a delay that persi
   
     3.  Edit the WorkflowManagementService.exe.config file and add the following connection string inside the <`database`> element.  
   
-        ```  
+        ```xml  
         <database connectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=DefaultSampleStore;Integrated Security=True;Asynchronous Processing=True" />  
-  
         ```  
   
     4.  Navigate to the DurableDelay\CS directory.  
@@ -73,6 +74,4 @@ This sample demonstrates how to use a durable delay, which is a delay that persi
 >   
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDelay`  
-  
-## See Also
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDelay`

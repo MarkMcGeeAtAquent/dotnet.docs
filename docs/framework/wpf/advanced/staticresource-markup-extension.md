@@ -1,5 +1,5 @@
 ---
-title: "StaticResource Markup Extension | Microsoft Docs"
+title: "StaticResource Markup Extension"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -13,29 +13,31 @@ f1_keywords:
   - "StaticResource"
   - "StaticResourceExtension"
 helpviewer_keywords: 
-  - "XAML, StaticResource markup extension"
-  - "StaticResource markup extensions"
+  - "XAML [WPF], StaticResource markup extension"
+  - "StaticResource markup extensions [WPF]"
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # StaticResource Markup Extension
 Provides a value for any [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] property attribute by looking up a reference to an already defined resource. Lookup behavior for that resource is analogous to load-time lookup, which will look for resources that were previously loaded from the markup of the current [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page as well as other application sources, and will generate that resource value as the property value in the run-time objects.  
   
 ## XAML Attribute Usage  
   
-```  
-<object property="{StaticResource key}" .../>  
+```xml  
+<object property="{StaticResource key}" .../>  
 ```  
   
 ## XAML Object Element Usage  
   
-```  
+```xml  
 <object>  
   <object.property>  
-<StaticResource ResourceKey="key" .../>  
+<StaticResource ResourceKey="key" .../>  
   </object.property>  
 </object>  
 ```  
@@ -44,7 +46,7 @@ Provides a value for any [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharp
   
 |||  
 |-|-|  
-|`key`|The key for the requested resource. This key was initially assigned by the [x:Key Directive](../../../../docs/framework/xaml-services/x-key-directive.md) if a resource was created in markup, or was provided as the `key` parameter when calling <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=fullName> if the resource was created in code.|  
+|`key`|The key for the requested resource. This key was initially assigned by the [x:Key Directive](../../../../docs/framework/xaml-services/x-key-directive.md) if a resource was created in markup, or was provided as the `key` parameter when calling <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> if the resource was created in code.|  
   
 ## Remarks  
   
@@ -63,8 +65,8 @@ Provides a value for any [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharp
   
  `StaticResource` can also be used in a verbose attribute usage that specifies the <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> property as a property=value pair:  
   
-```  
-<object property="{StaticResource ResourceKey=key}" .../>  
+```xml  
+<object property="{StaticResource ResourceKey=key}" .../>  
 ```  
   
  The verbose usage is often useful for extensions that have more than one settable property, or if some properties are optional. Because `StaticResource` has only one settable property, which is required, this verbose usage is not typical.  
@@ -74,8 +76,8 @@ Provides a value for any [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharp
  `StaticResource` is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] use the { and } characters in their attribute syntax, which is the convention by which a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor recognizes that a markup extension must process the attribute. For more information, see [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
 ## See Also  
- [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)   
- [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)   
- [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md)   
+ [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [XAML Overview (WPF)](../../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)  
+ [Markup Extensions and WPF XAML](../../../../docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)  
+ [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md)  
  [Resources and Code](../../../../docs/framework/wpf/advanced/resources-and-code.md)

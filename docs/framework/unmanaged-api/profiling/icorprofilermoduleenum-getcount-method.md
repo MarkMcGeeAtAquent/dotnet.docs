@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerModuleEnum::GetCount Method | Microsoft Docs"
+title: "ICorProfilerModuleEnum::GetCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerModuleEnum.GetCount Method"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerModuleEnum::GetCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerModuleEnum::GetCount method [.NET Framework profiling]"
   - "GetCount method, ICorProfilerModuleEnum interface [.NET Framework profiling]"
 ms.assetid: f0a4a5e0-4689-474b-b0f4-37ca0639c918
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerModuleEnum::GetCount Method
 Gets the number of managed modules that were loaded into the application.  
@@ -50,5 +53,5 @@ HRESULT GetCount([out] ULONG * pcelt);
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorProfilerModuleEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)   
+ [ICorProfilerModuleEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

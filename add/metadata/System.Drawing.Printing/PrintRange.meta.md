@@ -1,6 +1,8 @@
 ---
 uid: System.Drawing.Printing.PrintRange
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

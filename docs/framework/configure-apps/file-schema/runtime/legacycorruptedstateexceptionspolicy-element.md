@@ -1,19 +1,14 @@
 ---
-title: "&lt;legacyCorruptedStateExceptionsPolicy&gt; Element | Microsoft Docs"
+title: "&lt;legacyCorruptedStateExceptionsPolicy&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<legacyCorruptedStateExceptionsPolicy> element"
   - "legacyCorruptedStateExceptionsPolicy element"
@@ -22,6 +17,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;legacyCorruptedStateExceptionsPolicy&gt; Element
 Specifies whether the common language runtime allows managed code to catch access violations and other corrupted state exceptions.  
@@ -32,7 +29,7 @@ Specifies whether the common language runtime allows managed code to catch acces
   
 ## Syntax  
   
-```  
+```xml  
 <legacyCorruptedStateExceptionsPolicy enabled="true|false"/>  
 ```  
   
@@ -71,14 +68,14 @@ Specifies whether the common language runtime allows managed code to catch acces
   
  -or-  
   
--   Apply the <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=fullName> attribute to the method that contains the exceptions `catch` block.  
+-   Apply the <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> attribute to the method that contains the exceptions `catch` block.  
   
  This configuration element is available only in the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] and later.  
   
 ## Example  
  The following example shows how to specify that the application should revert to the behavior before the [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)], and catch all corrupting state exception failures.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <legacyCorruptedStateExceptionsPolicy enabled="true" />  
@@ -87,6 +84,6 @@ Specifies whether the common language runtime allows managed code to catch acces
 ```  
   
 ## See Also  
- <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>   
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+ <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>  
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)

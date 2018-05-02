@@ -1,8 +1,8 @@
 ---
-title: "Transport: Custom Transactions over UDP Sample | Microsoft Docs"
+title: "Transport: Custom Transactions over UDP Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Transport: Custom Transactions over UDP Sample
 This sample is based on the [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) sample in the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)][Transport Extensibility](../../../../docs/framework/wcf/samples/transport-extensibility.md). It extends the UDP Transport sample to support custom transaction flow and demonstrates the use of the <xref:System.ServiceModel.Channels.TransactionMessageProperty> property.  
@@ -96,7 +98,6 @@ public class TransactionFlowInspector : IClientMessageInspector
       [...]  
  }  
 }  
-  
 ```  
   
  The `TransactionFlowInspector` itself is passed to the framework using a custom behavior: the `TransactionFlowBehavior`.  
@@ -246,7 +247,7 @@ if (transaction != null)
   
 10. Note that Svcutil.exe does not generate the binding extension configuration for the `sampleProfileUdpBinding`; you must add it manually.  
   
-    ```  
+    ```xml  
     <configuration>  
         <system.serviceModel>      
             …  

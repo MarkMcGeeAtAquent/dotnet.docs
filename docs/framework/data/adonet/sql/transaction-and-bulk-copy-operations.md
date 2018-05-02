@@ -1,19 +1,24 @@
 ---
-title: "Transaction and Bulk Copy Operations | Microsoft Docs"
+title: "Transaction and Bulk Copy Operations"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: f6f0cbc9-f7bf-4d6e-875f-ad1ba0b4aa62
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Transaction and Bulk Copy Operations
 Bulk copy operations can be performed as isolated operations or as part of a multiple step transaction. This latter option enables you to perform more than one bulk copy operation within the same transaction, as well as perform other database operations (such as inserts, updates, and deletes) while still being able to commit or roll back the entire transaction.  
@@ -36,7 +41,7 @@ Bulk copy operations can be performed as isolated operations or as part of a mul
 ## Performing a Dedicated Bulk Copy Operation in a Transaction  
  By default, a bulk copy operation is its own transaction. When you want to perform a dedicated bulk copy operation, create a new instance of <xref:System.Data.SqlClient.SqlBulkCopy> with a connection string, or use an existing <xref:System.Data.SqlClient.SqlConnection> object without an active transaction. In each scenario, the bulk copy operation creates, and then commits or rolls back the transaction.  
   
- You can explicitly specify the <xref:System.Data.SqlClient.SqlBulkCopyOptions> option in the <xref:System.Data.SqlClient.SqlBulkCopy> class constructor to explicitly cause a bulk copy operation to execute in its own transaction, causing each batch of the bulk copy operation to execute within a separate transaction.  
+ You can explicitly specify the <xref:System.Data.SqlClient.SqlBulkCopyOptions.UseInternalTransaction> option in the <xref:System.Data.SqlClient.SqlBulkCopy> class constructor to explicitly cause a bulk copy operation to execute in its own transaction, causing each batch of the bulk copy operation to execute within a separate transaction.  
   
 > [!NOTE]
 >  Since different batches are executed in different transactions, if an error occurs during the bulk copy operation, all the rows in the current batch will be rolled back, but rows from previous batches will remain in the database.  
@@ -63,5 +68,5 @@ Bulk copy operations can be performed as isolated operations or as part of a mul
  [!code-vb[DataWorks SqlBulkCopy.SqlTransaction#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlBulkCopy.SqlTransaction/VB/source.vb#1)]  
   
 ## See Also  
- [Bulk Copy Operations in SQL Server](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)   
+ [Bulk Copy Operations in SQL Server](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,8 +1,8 @@
 ---
-title: "&lt;providerOption&gt; Element | Microsoft Docs"
+title: "&lt;providerOption&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "provideroption"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<provideroption> element"
   - "providerOptions"
@@ -25,6 +20,8 @@ caps.latest.revision: 22
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;providerOption&gt; Element
 Specifies the compiler version attributes for a language provider.  
@@ -37,7 +34,7 @@ Specifies the compiler version attributes for a language provider.
   
 ## Syntax  
   
-```  
+```xml  
 <providerOption  
   name="option-name"  
   value="option-value"  
@@ -78,7 +75,7 @@ Specifies the compiler version attributes for a language provider.
 ## Example  
  The following example demonstrates how to specify that version 3.5 of the C# code provider should be used.  
   
-```  
+```xml  
 <configuration>  
   <system.codedom>  
     <compilers>  
@@ -101,9 +98,9 @@ Specifies the compiler version attributes for a language provider.
 ```  
   
 ## See Also  
- <xref:System.CodeDom.Compiler.CompilerInfo>   
- <xref:System.CodeDom.Compiler.CodeDomProvider>   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)   
- [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)   
- [compiler Element for compilers for compilation (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)
+ <xref:System.CodeDom.Compiler.CompilerInfo>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<compilers> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)  
+ [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)  
+ [compiler Element for compilers for compilation (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e)

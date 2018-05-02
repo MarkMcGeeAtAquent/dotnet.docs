@@ -1,5 +1,5 @@
 ---
-title: "How to: Complete Windows Forms Print Jobs | Microsoft Docs"
+title: "How to: Complete Windows Forms Print Jobs"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,15 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "print jobs, completing in Windows Forms"
+  - "print jobs [Windows Forms], completing in Windows Forms"
   - "printing [Windows Forms], print jobs"
 ms.assetid: 23ec74f7-34c5-4710-82a0-ee2914518548
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Complete Windows Forms Print Jobs
 Frequently, word processors and other applications that involve printing will provide the option to display a message to users that a print job is complete. You can provide this functionality in your Windows Forms by handling the <xref:System.Drawing.Printing.PrintDocument.EndPrint> event of the <xref:System.Drawing.Printing.PrintDocument> component.  
@@ -31,12 +35,10 @@ Frequently, word processors and other applications that involve printing will pr
   
     ```vb  
     PrintDocument1.DocumentName = "MyTextFile"  
-  
     ```  
   
     ```csharp  
     printDocument1.DocumentName = "MyTextFile";  
-  
     ```  
   
     ```cpp  
@@ -51,7 +53,6 @@ Frequently, word processors and other applications that involve printing will pr
     Private Sub PrintDocument1_EndPrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles PrintDocument1.EndPrint  
        MessageBox.Show(PrintDocument1.DocumentName + " has finished printing.")  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -61,7 +62,6 @@ Frequently, word processors and other applications that involve printing will pr
        MessageBox.Show(printDocument1.DocumentName +   
           " has finished printing.");  
     }  
-  
     ```  
   
     ```cpp  
@@ -80,7 +80,6 @@ Frequently, word processors and other applications that involve printing will pr
     this.printDocument1.EndPrint += new  
        System.Drawing.Printing.PrintEventHandler  
        (this.printDocument1_EndPrint);  
-  
     ```  
   
     ```cpp  
@@ -90,5 +89,5 @@ Frequently, word processors and other applications that involve printing will pr
     ```  
   
 ## See Also  
- <xref:System.Drawing.Printing.PrintDocument>   
+ <xref:System.Drawing.Printing.PrintDocument>  
  [Windows Forms Print Support](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

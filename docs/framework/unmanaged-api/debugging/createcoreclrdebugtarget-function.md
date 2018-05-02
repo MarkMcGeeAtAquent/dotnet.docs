@@ -1,5 +1,5 @@
 ---
-title: "CreateCoreClrDebugTarget Function | Microsoft Docs"
+title: "CreateCoreClrDebugTarget Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CreateCorClrDebugTarget"
-apilocation: 
+api_location: 
   - "mscordbi_macx86.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CreateCoreClrDebugTarget"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "remote debugging API [Silverlight]"
   - "Silverlight, remote debugging"
   - "CreateCoreClrDebugTarget function"
 ms.assetid: 1cf4ca8e-d9bb-4633-9adf-5e24315bf87a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CreateCoreClrDebugTarget Function
 Creates a connection to a debugger proxy that is running on a remote machine, and returns an [ICoreClrDebugTarget](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md) object that can be used to query running processes and loaded runtimes on the remote machine.  

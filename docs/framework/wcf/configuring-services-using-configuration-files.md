@@ -1,5 +1,5 @@
 ---
-title: "Configuring Services Using Configuration Files | Microsoft Docs"
+title: "Configuring Services Using Configuration Files"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,15 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "configuring services [WCF]"
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
 caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Services Using Configuration Files
 Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with a configuration file gives you the flexibility of providing endpoint and service behavior data at the point of deployment instead of at design time. This topic outlines the primary techniques available.  
@@ -42,11 +41,11 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
 ## Major Sections of the Configuration File  
  The main sections in the configuration file include the following elements.  
   
-```  
-\<system.ServiceModel>  
+```xml  
+<system.ServiceModel>  
   
    <services>  
-   \<!—- Define the service endpoints. This section is optional in the new  
+   <!—- Define the service endpoints. This section is optional in the new  
     default configuration model in .NET Framework 4. -->  
       <service>  
          <endpoint/>  
@@ -63,13 +62,13 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
    </bindings>  
   
    <behaviors>  
-   \<!-- One or more of the system-provided or custom behavior elements. -->  
+   <!-- One or more of the system-provided or custom behavior elements. -->  
       <behavior>  
       <!-- For example, a <throttling> element. -->  
       </behavior>  
    </behaviors>  
   
-\</system.ServiceModel>  
+</system.ServiceModel>  
 ```  
   
 > [!NOTE]
@@ -100,7 +99,7 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
   
 -   `contract`. Specifies the interface that defines the contract. This is the interface implemented in the common language runtime (CLR) type specified by the `name` attribute of the `service` element.  
   
--   [\<endpoint> element reference](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
+-   [\<endpoint> element reference](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017)  
   
 ### The \<bindings> Element  
  The `bindings` element contains the specifications for all bindings that can be used by any endpoint defined in any service.  
@@ -110,7 +109,7 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
 ### The \<binding> Element  
  The `binding` elements contained in the `bindings` element can be either one of the system-provided bindings (see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md)) or a custom binding (see [Custom Bindings](../../../docs/framework/wcf/extending/custom-bindings.md)). The `binding` element has a `name` attribute that correlates the binding with the endpoint specified in the `bindingConfiguration` attribute of the `endpoint` element. If no name is specified then that binding corresponds to the default of that binding type.  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)] configuring services and clients, see [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] configuring services and clients, see [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a).  
   
  [\<binding>](../../../docs/framework/misc/binding.md)  
   
@@ -127,15 +126,15 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
 ## How to Use Binding and Behavior Configurations  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] makes it easy to share configurations between endpoints using a reference system in configuration. Rather than directly assigning configuration values to an endpoint, binding-related configuration values are grouped in `bindingConfiguration` elements in the `<binding>` section. A binding configuration is a named group of settings on a binding. Endpoints can then reference the `bindingConfiguration` by name.  
   
-```  
-\<?xml version="1.0" encoding="utf-8"?>  
+```xml  
+<?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
- \<system.serviceModel>  
+ <system.serviceModel>  
   <bindings>  
     <basicHttpBinding>  
      <binding name="myBindingConfiguration1" closeTimeout="00:01:00" />  
      <binding name="myBindingConfiguration2" closeTimeout="00:02:00" />  
-     <binding closeTimeout="00:03:00" />  \<!—- Default binding for basicHttpBinding -->  
+     <binding closeTimeout="00:03:00" />  <!—- Default binding for basicHttpBinding -->  
     </basicHttpBinding>  
      </bindings>  
      <services>  
@@ -153,7 +152,7 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
           contract="MyContract" />  
        </service>  
       </services>  
-    \</system.serviceModel>  
+    </system.serviceModel>  
 </configuration>  
 ```  
   
@@ -161,10 +160,10 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
   
  A `behaviorConfiguration` is implemented the same way, as illustrated in the following sample.  
   
-```  
-\<?xml version="1.0" encoding="utf-8"?>  
+```xml  
+<?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
-  \<system.serviceModel>  
+  <system.serviceModel>  
     <behaviors>  
       <endpointBehaviors>  
         <behavior name="myBehavior">  
@@ -180,13 +179,13 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
     </behaviors>  
     <services>  
      <service name="NewServiceType">  
-       \<endpoint   
+       <endpoint   
           address="myAddress3" behaviorConfiguration="myBehavior"  
           binding="basicHttpBinding"  
-          contract=”MyContract” />  
+          contract="MyContract" />  
       </service>  
     </services>  
-   \</system.serviceModel>  
+   </system.serviceModel>  
 </configuration>  
 ```  
   
@@ -201,7 +200,7 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
   
 ```xml  
 <configuration>  
-  \<system.serviceModel>  
+  <system.serviceModel>  
     <behaviors>  
       <serviceBehaviors>  
         <behavior>  
@@ -209,16 +208,15 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  \</system.serviceModel>  
+  </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  And you have a child Web.config located at ~\Child\Web.config with the following contents:  
   
 ```xml  
 <configuration>  
-  \<system.serviceModel>  
+  <system.serviceModel>  
     <behaviors>  
       <serviceBehaviors>  
         <behavior>  
@@ -226,9 +224,8 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  \</system.serviceModel>  
+  </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  The service located at ~\Child\Service.svc will behave as though it has both the serviceDebug and serviceMetadata behaviors. The service located at ~\Service.svc will only have the serviceDebug behavior. What happens is that the two behavior collections with the same name (in this case the empty string) are merged.  
@@ -237,7 +234,7 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
   
 ```xml  
 <configuration>  
-  \<system.serviceModel>  
+  <system.serviceModel>  
     <behaviors>  
       <serviceBehaviors>  
         <behavior>  
@@ -246,14 +243,13 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  \</system.serviceModel>  
+  </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ```xml  
 <configuration>  
-  \<system.serviceModel>  
+  <system.serviceModel>  
     <behaviors>  
       <serviceBehaviors>  
         <behavior>  
@@ -262,9 +258,8 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  \</system.serviceModel>  
+  </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  Behavior merge is done for nameless behavior collections as shown above and named behavior collections as well.  
@@ -273,10 +268,10 @@ Configuring a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service with 
   
  Behavior merge applies to both endpoint behaviors and service behaviors in configuration.  
   
- If a child behavior collection contains a behavior that’s already present in the parent behavior collection, the child behavior overrides the parent. So if a parent behavior collection had `<serviceMetadata httpGetEnabled="False" />` and a child behavior collection had `<serviceMetadata httpGetEnabled="True" />`, the child behavior would override the parent behavior in the behavior collection and httpGetEnabled would be “true”.  
+ If a child behavior collection contains a behavior that’s already present in the parent behavior collection, the child behavior overrides the parent. So if a parent behavior collection had `<serviceMetadata httpGetEnabled="False" />` and a child behavior collection had `<serviceMetadata httpGetEnabled="True" />`, the child behavior would override the parent behavior in the behavior collection and httpGetEnabled would be "true".  
   
 ## See Also  
- [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md)   
- [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/en-us/13cb368e-88d4-4c61-8eed-2af0361c6d7a)   
- [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)   
+ [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md)  
+ [Configuring Windows Communication Foundation Applications](http://msdn.microsoft.com/library/13cb368e-88d4-4c61-8eed-2af0361c6d7a)  
+ [\<service>](../../../docs/framework/configure-apps/file-schema/wcf/service.md)  
  [\<binding>](../../../docs/framework/misc/binding.md)

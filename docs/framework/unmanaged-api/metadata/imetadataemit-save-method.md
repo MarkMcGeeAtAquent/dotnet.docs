@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::Save Method | Microsoft Docs"
+title: "IMetaDataEmit::Save Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.Save"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::Save"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Save method, IMetaDataEmit interface [.NET Framework metadata]"
   - "IMetaDataEmit::Save method [.NET Framework metadata]"
 ms.assetid: c1de8400-adfe-4a71-b828-a1d0cc1ea505
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::Save Method
 Saves all metadata in the current scope to the file at the specified address.  
@@ -56,5 +59,5 @@ HRESULT Save (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

@@ -1,4 +1,6 @@
 ---
 uid: System.ServiceModel.Activities.Tracking
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

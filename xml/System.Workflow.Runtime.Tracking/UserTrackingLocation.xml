@@ -1,7 +1,9 @@
-<Type Name="UserTrackingLocation" FullName="System.Workflow.Runtime.Tracking.UserTrackingLocation">
+﻿<Type Name="UserTrackingLocation" FullName="System.Workflow.Runtime.Tracking.UserTrackingLocation">
   <TypeSignature Language="C#" Value="public sealed class UserTrackingLocation" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UserTrackingLocation extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class UserTrackingLocation" />
+  <TypeSignature Language="C++ CLI" Value="public ref class UserTrackingLocation sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Workflow.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,12 +27,12 @@
 > [!NOTE]
 >  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
   
- An activity designer or a workflow designer may use any of the overloaded <xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=fullName> and <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%2A?displayProperty=fullName> methods to instrument the workflow to emit data to the runtime tracking infrastructure as a user event. The data emitted is referred to as user data. Unlike activity status events, and workflow status events, which occur only on activity or workflow status changes, user events can occur at any location that is instrumented in a workflow. A <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> defines the matching parameters for such a location by specifying the type of the user data, the type of the activity from which it must be emitted, a collection of conditions that can more precisely qualify an instance or instances of this activity, an optional key name with which the user data must be associated, whether derived types of the user data should be matched, and whether user data emitted from activities derived from the type of the specified activity should be matched.  
+ An activity designer or a workflow designer may use any of the overloaded <xref:System.Workflow.ComponentModel.Activity.TrackData%2A?displayProperty=nameWithType> and <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%2A?displayProperty=nameWithType> methods to instrument the workflow to emit data to the runtime tracking infrastructure as a user event. The data emitted is referred to as user data. Unlike activity status events, and workflow status events, which occur only on activity or workflow status changes, user events can occur at any location that is instrumented in a workflow. A <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> defines the matching parameters for such a location by specifying the type of the user data, the type of the activity from which it must be emitted, a collection of conditions that can more precisely qualify an instance or instances of this activity, an optional key name with which the user data must be associated, whether derived types of the user data should be matched, and whether user data emitted from activities derived from the type of the specified activity should be matched.  
   
 > [!NOTE]
 >  A single <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> may refer to more than one actual location in the potential execution path of a workflow instance.  
   
- You may add a <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> to either <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A?displayProperty=fullName> or <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A?displayProperty=fullName> in order to define the match parameters for a <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> in a <xref:System.Workflow.Runtime.Tracking.TrackingProfile>.  
+ You may add a <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> to either <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.MatchingLocations%2A?displayProperty=nameWithType> or <xref:System.Workflow.Runtime.Tracking.UserTrackPoint.ExcludedLocations%2A?displayProperty=nameWithType> in order to define the match parameters for a <xref:System.Workflow.Runtime.Tracking.UserTrackPoint> in a <xref:System.Workflow.Runtime.Tracking.TrackingProfile>.  
   
  There are three general conditions which must be met in the following order for the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> to be matched by the runtime tracking infrastructure: the activity that has emitted a user event must match the set of activities specified by <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType%2A>, <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName%2A>, <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions%2A>, and <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedActivityTypes%2A>; the key, if one exists, associated with the user data must match <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A>; and, the type of the user data emitted by the user event must match the set of user data types specified by <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType%2A>, <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName%2A>, and <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedArgumentTypes%2A>. Only if all three of these conditions are met, does the runtime tracking infrastructure consider the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> matched.  
   
@@ -42,10 +44,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Workflow.Runtime.Tracking.UserTrackingLocation" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public UserTrackingLocation ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -68,6 +81,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentTypeName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(System::String ^ argumentTypeName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -93,6 +108,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(Type ^ argumentType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -118,6 +135,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName, string activityTypeName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName, string activityTypeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentTypeName As String, activityTypeName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(System::String ^ argumentTypeName, System::String ^ activityTypeName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -145,6 +164,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (string argumentTypeName, Type activityType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string argumentTypeName, class System.Type activityType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.String,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentTypeName As String, activityType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(System::String ^ argumentTypeName, Type ^ activityType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -172,6 +193,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType, string activityTypeName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType, string activityTypeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentType As Type, activityTypeName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(Type ^ argumentType, System::String ^ activityTypeName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -199,6 +222,8 @@
       <MemberSignature Language="C#" Value="public UserTrackingLocation (Type argumentType, Type activityType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type argumentType, class System.Type activityType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.UserTrackingLocation.#ctor(System.Type,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (argumentType As Type, activityType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UserTrackingLocation(Type ^ argumentType, Type ^ activityType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -226,6 +251,8 @@
       <MemberSignature Language="C#" Value="public Type ActivityType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ActivityType" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActivityType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ActivityType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -253,6 +280,8 @@
       <MemberSignature Language="C#" Value="public string ActivityTypeName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ActivityTypeName" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ActivityTypeName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActivityTypeName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ActivityTypeName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -282,6 +311,8 @@
       <MemberSignature Language="C#" Value="public Type ArgumentType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ArgumentType" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ArgumentType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ArgumentType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -309,6 +340,8 @@
       <MemberSignature Language="C#" Value="public string ArgumentTypeName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ArgumentTypeName" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ArgumentTypeName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ArgumentTypeName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -336,6 +369,8 @@
       <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingConditionCollection Conditions" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.Conditions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Conditions As TrackingConditionCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Workflow::Runtime::Tracking::TrackingConditionCollection ^ Conditions { System::Workflow::Runtime::Tracking::TrackingConditionCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -363,6 +398,8 @@
       <MemberSignature Language="C#" Value="public string KeyName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string KeyName" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName" />
+      <MemberSignature Language="VB.NET" Value="Public Property KeyName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ KeyName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -378,7 +415,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- An activity designer or a workflow designer can use either <xref:System.Workflow.ComponentModel.Activity.TrackData%28System.String%2CSystem.Object%29?displayProperty=fullName> or <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%28System.String%2CSystem.Object%29?displayProperty=fullName> to associate a string key with the user data that is emitted in a user event. If <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> is not a null reference (`Nothing`), the key associated with the user data must match the value of <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> for the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> to be matched. If <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> is a null reference (`Nothing`), the runtime tracking infrastructure does not check for a matching key to determine whether the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> is matched.  
+ An activity designer or a workflow designer can use either <xref:System.Workflow.ComponentModel.Activity.TrackData%28System.String%2CSystem.Object%29?displayProperty=nameWithType> or <xref:System.Workflow.ComponentModel.ActivityExecutionContext.TrackData%28System.String%2CSystem.Object%29?displayProperty=nameWithType> to associate a string key with the user data that is emitted in a user event. If <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> is not a null reference (`Nothing`), the key associated with the user data must match the value of <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> for the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> to be matched. If <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation.KeyName%2A> is a null reference (`Nothing`), the runtime tracking infrastructure does not check for a matching key to determine whether the <xref:System.Workflow.Runtime.Tracking.UserTrackingLocation> is matched.  
   
  ]]></format>
         </remarks>
@@ -388,6 +425,8 @@
       <MemberSignature Language="C#" Value="public bool MatchDerivedActivityTypes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MatchDerivedActivityTypes" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedActivityTypes" />
+      <MemberSignature Language="VB.NET" Value="Public Property MatchDerivedActivityTypes As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MatchDerivedActivityTypes { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -407,6 +446,8 @@
       <MemberSignature Language="C#" Value="public bool MatchDerivedArgumentTypes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MatchDerivedArgumentTypes" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.MatchDerivedArgumentTypes" />
+      <MemberSignature Language="VB.NET" Value="Public Property MatchDerivedArgumentTypes As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MatchDerivedArgumentTypes { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Workflow.Runtime</AssemblyName>
@@ -416,7 +457,7 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>The User tracking location is a way to filter user tracked data. The user can filter by the type of the user tracked data by specifying the <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" /> or <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" />. Setting the <see langword="MatchDerrivedArgumentTypes" /><see langword="Boolean" /> value to <see langword="true" /> specifies that the user tracked data can be of type ArgumentType/ArgumentTypeName or a type derived from the ArgumentType/ArgumentTypeName.</summary>
+        <summary>The User tracking location is a way to filter user tracked data. The user can filter by the type of the user tracked data by specifying the <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" /> or <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" />. Setting the <see langword="MatchDerivedArgumentTypes" /> to <see langword="true" /> specifies that the user tracked data can be of type ArgumentType/ArgumentTypeName or a type derived from the ArgumentType/ArgumentTypeName.</summary>
         <value>
           <see langword="true" /> if user data derived from the type of the user data specified by <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentType" /> or <see cref="P:System.Workflow.Runtime.Tracking.UserTrackingLocation.ArgumentTypeName" /> should be tracked; otherwise, <see langword="false" />. The default is <see langword="false" />.</value>
         <remarks>To be added.</remarks>

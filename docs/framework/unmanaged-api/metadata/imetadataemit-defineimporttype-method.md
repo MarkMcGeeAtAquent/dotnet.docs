@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DefineImportType Method | Microsoft Docs"
+title: "IMetaDataEmit::DefineImportType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DefineImportType"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DefineImportType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DefineImportType method [.NET Framework metadata]"
   - "IMetaDataEmit::DefineImportType method [.NET Framework metadata]"
 ms.assetid: 37fd27af-8062-4904-ace4-51bb78ec600a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DefineImportType Method
 Creates a reference to the specified type that is defined outside the current scope, and defines a token for that reference.  
@@ -79,5 +82,5 @@ HRESULT DefineImportType (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

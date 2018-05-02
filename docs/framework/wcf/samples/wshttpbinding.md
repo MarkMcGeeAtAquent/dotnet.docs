@@ -1,24 +1,23 @@
 ---
-title: "WSHttpBinding | Microsoft Docs"
+title: "WSHttpBinding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "WS Profile binding"
 ms.assetid: 22d85b19-0135-4141-9179-a0e9c343ad73
 caps.latest.revision: 39
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WSHttpBinding
 This sample demonstrates how to implement a typical service and a typical client using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)]. This sample consists of a client console program (client.exe) and a service library hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern. The contract is defined by the `ICalculator` interface, which exposes math operations (add, subtract, multiply, and divide). The client makes synchronous requests to a given math operation and the service replies with the result. Client activity is visible in the console window.  
@@ -37,7 +36,7 @@ This sample demonstrates how to implement a typical service and a typical client
   
  This sample exposes the `ICalculator` contract using the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). The configuration of this binding has been expanded in the Web.config file.  
   
-```  
+```xml
 <bindings>  
   <wsHttpBinding>  
     <!--The following is the expanded configuration section for a-->  
@@ -78,7 +77,6 @@ This sample demonstrates how to implement a typical service and a typical client
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  
@@ -93,7 +91,6 @@ Press <ENTER> to terminate client.
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

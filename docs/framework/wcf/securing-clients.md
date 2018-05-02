@@ -1,5 +1,5 @@
 ---
-title: "Securing Clients | Microsoft Docs"
+title: "Securing Clients"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -16,6 +16,8 @@ caps.latest.revision: 22
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing Clients
 In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates the security requirements for clients. That is, the service specifies what security mode to use, and whether or not the client must provide a credential. The process of securing a client, therefore, is simple: use the metadata obtained from the service (if it is published) and build a client. The metadata specifies how to configure the client. If the service requires that the client supply a credential, then you must obtain a credential that fits the requirement. This topic discusses the process in further detail. [!INCLUDE[crabout](../../../includes/crabout-md.md)] creating a secure service, see [Securing Services](../../../docs/framework/wcf/securing-services.md).  
@@ -48,7 +50,7 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
   
  The `<security>` element can contain either a `<transport>` or `<message>` element, or both. The significant element is the one that matches the security mode. For example, the following code specifies that the security mode is `"Message"`, and the client credential type for the `<message>` element is `"Certificate"`. In this case, the `<transport>` element can be ignored. However, the `<message>` element specifies that an X.509 certificate must be supplied.  
   
-```  
+```xml  
 <wsHttpBinding>  
     <binding name="WSHttpBinding_ICalculator">  
        <security mode="Message">  
@@ -65,7 +67,7 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
   
  Note that if the `clientCredentialType` attribute is set to `"Windows"`, as shown in the following example, you do not need to supply an actual credential value. This is because the Windows integrated security provides the actual credential (a Kerberos token) of the person who is running the client.  
   
-```  
+```xml  
 <security mode="Message">  
     <transport clientCredentialType="Windows "   
         realm="" />  
@@ -97,7 +99,7 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
 #### Setting a \<clientCredentials> Value in Configuration  
  Credential values are specified by using an endpoint behavior as child elements of the [\<clientCredentials>](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) element. The element used depends on the client credential type. For example, the following example shows the configuration to set an X.509 certificate using the <[\<clientCertificate>](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <behaviors>  
@@ -113,7 +115,7 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
 </configuration>  
 ```  
   
- To set the client credential in configuration, add an [\<endpointBehaviors>](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) element to the configuration file. Additionally, the added behavior element must be linked to the service's endpoint using the `behaviorConfiguration` attribute of the [\<endpoint>](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element as shown in the following example. The value of the `behaviorConfiguration` attribute must match the value of the behavior `name` attribute.  
+ To set the client credential in configuration, add an [\<endpointBehaviors>](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) element to the configuration file. Additionally, the added behavior element must be linked to the service's endpoint using the `behaviorConfiguration` attribute of the [\<endpoint>](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element as shown in the following example. The value of the `behaviorConfiguration` attribute must match the value of the behavior `name` attribute.  
   
  `<configuration>`  
   
@@ -145,7 +147,7 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
 > [!NOTE]
 >  `ClientCredentialType` is ignored when `SecurityMode` is set to `"TransportWithMessageCredential",` as shown in the following sample configuration.  
   
-```  
+```xml  
 <wsHttpBinding>  
     <binding name="PingBinding">  
         <security mode="TransportWithMessageCredential"  >  
@@ -159,15 +161,15 @@ In [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service dictates th
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>   
- <xref:System.ServiceModel.ClientBase%601>   
- <xref:System.ServiceModel.Description.ClientCredentials>   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>   
- <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>   
- [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)   
- [Configuration Editor Tool (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)   
- [Securing Services](../../../docs/framework/wcf/securing-services.md)   
- [Accessing Services Using a WCF Client](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)   
- [How to: Specify Client Credential Values](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)   
- [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)   
+ <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>  
+ <xref:System.ServiceModel.ClientBase%601>  
+ <xref:System.ServiceModel.Description.ClientCredentials>  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>  
+ <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>  
+ [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)  
+ [Configuration Editor Tool (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)  
+ [Securing Services](../../../docs/framework/wcf/securing-services.md)  
+ [Accessing Services Using a WCF Client](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)  
+ [How to: Specify Client Credential Values](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)  
+ [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)  
  [How to: Specify the Client Credential Type](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)

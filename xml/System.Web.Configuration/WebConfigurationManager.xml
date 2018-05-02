@@ -1,7 +1,9 @@
-<Type Name="WebConfigurationManager" FullName="System.Web.Configuration.WebConfigurationManager">
+﻿<Type Name="WebConfigurationManager" FullName="System.Web.Configuration.WebConfigurationManager">
   <TypeSignature Language="C#" Value="public static class WebConfigurationManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WebConfigurationManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebConfigurationManager" />
+  <TypeSignature Language="VB.NET" Value="Public Class WebConfigurationManager" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WebConfigurationManager abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -55,12 +57,10 @@
   
  If your application needs read-only access to its own configuration, it is recommended you use the <see cref="Overload:System.Web.Configuration.WebConfigurationManager.GetSection" /> methods. These methods provide access to the cached configuration values for the current application, which has better performance than the <see cref="T:System.Configuration.Configuration" /> class.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  If you use a static <see langword="GetSection" /> method that takes a <paramref name="path" /> parameter, the path parameter must refer to the application in which the code is running; otherwise, the parameter is ignored and configuration information for the currently-running application is returned.  
   
-</para>  
-</block>  
+</para></block>  
   
  You use one of the <see cref="Overload:System.Configuration.Configuration.Save" /> methods to write configuration information. Note that the user or process that writes must have the following permissions:  
   
@@ -68,12 +68,16 @@
   
 -   Read permissions on all the configuration files.</para>
     </block>
+    <altmember cref="T:System.Configuration.Configuration" />
+    <altmember cref="T:System.Configuration.ConfigurationManager" />
   </Docs>
   <Members>
     <Member MemberName="AppSettings">
       <MemberSignature Language="C#" Value="public static System.Collections.Specialized.NameValueCollection AppSettings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Collections.Specialized.NameValueCollection AppSettings" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebConfigurationManager.AppSettings" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property AppSettings As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Collections::Specialized::NameValueCollection ^ AppSettings { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -102,12 +106,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid <see cref="T:System.Collections.Specialized.NameValueCollection" /> object could not be retrieved with the application settings data.</exception>
+        <altmember cref="T:System.Configuration.AppSettingsSection" />
+        <altmember cref="T:System.Collections.Specialized.NameValueCollection" />
       </Docs>
     </Member>
     <Member MemberName="ConnectionStrings">
       <MemberSignature Language="C#" Value="public static System.Configuration.ConnectionStringSettingsCollection ConnectionStrings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Configuration.ConnectionStringSettingsCollection ConnectionStrings" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebConfigurationManager.ConnectionStrings" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property ConnectionStrings As ConnectionStringSettingsCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Configuration::ConnectionStringSettingsCollection ^ ConnectionStrings { System::Configuration::ConnectionStringSettingsCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -131,12 +139,27 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid <see cref="T:System.Configuration.ConnectionStringSettingsCollection" /> object could not be retrieved.</exception>
+        <altmember cref="T:System.Configuration.ConnectionStringsSection" />
+        <altmember cref="T:System.Configuration.ConnectionStringSettingsCollection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetSection">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves the specified configuration section from the current Web application's default configuration file.</summary>
+        <altmember cref="T:System.Configuration.Configuration" />
+        <altmember cref="T:System.Configuration.ConfigurationManager" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetSection">
       <MemberSignature Language="C#" Value="public static object GetSection (string sectionName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSection(string sectionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetSection (sectionName As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetSection(System::String ^ sectionName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -185,12 +208,15 @@
         <block subset="none" type="overrides">
           <para>The return value must be cast to the expected configuration type before use. To avoid possible casting exceptions, you should use a conditional casting operation like the <see langword="as" /> operator in C# or the  function in Visual Basic.</para>
         </block>
+        <altmember cref="T:System.Configuration.ConfigurationSection" />
       </Docs>
     </Member>
     <Member MemberName="GetSection">
       <MemberSignature Language="C#" Value="public static object GetSection (string sectionName, string path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetSection(string sectionName, string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetSection(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetSection (sectionName As String, path As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetSection(System::String ^ sectionName, System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -242,12 +268,15 @@
         <block subset="none" type="overrides">
           <para>The return value must be cast to the expected configuration type before use. To avoid possible casting exceptions, you should use a conditional casting operation like the <see langword="as" /> operator in C# or the  function in Visual Basic.</para>
         </block>
+        <altmember cref="T:System.Configuration.ConfigurationSection" />
       </Docs>
     </Member>
     <Member MemberName="GetWebApplicationSection">
       <MemberSignature Language="C#" Value="public static object GetWebApplicationSection (string sectionName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetWebApplicationSection(string sectionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.GetWebApplicationSection(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetWebApplicationSection (sectionName As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetWebApplicationSection(System::String ^ sectionName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -291,12 +320,25 @@
         <block subset="none" type="overrides">
           <para>The return value must be cast to the expected configuration type before use. To avoid possible casting exceptions, you should use a conditional casting operation like the <see langword="as" /> operator in C# or the  function in Visual Basic.</para>
         </block>
+        <altmember cref="T:System.Configuration.ConfigurationSection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="OpenMachineConfiguration">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Opens the machine-configuration file as a <see cref="T:System.Configuration.Configuration" /> object to allow read or write operations.</summary>
+        <altmember cref="T:System.Configuration.ConfigurationSection" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OpenMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMachineConfiguration () As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMachineConfiguration();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -326,12 +368,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMachineConfiguration (locationSubPath As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMachineConfiguration(System::String ^ locationSubPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -364,12 +409,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMachineConfiguration (locationSubPath As String, server As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMachineConfiguration(System::String ^ locationSubPath, System::String ^ server);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -404,12 +452,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server, IntPtr userToken);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server, native int userToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMachineConfiguration (locationSubPath As String, server As String, userToken As IntPtr) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMachineConfiguration(System::String ^ locationSubPath, System::String ^ server, IntPtr userToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -450,12 +501,16 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Valid values were not supplied for the <paramref name="server" /> or <paramref name="userToken" /> parameters.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
+        <altmember cref="T:System.Security.Principal.WindowsIdentity" />
       </Docs>
     </Member>
     <Member MemberName="OpenMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMachineConfiguration (string locationSubPath, string server, string userName, string password);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMachineConfiguration(string locationSubPath, string server, string userName, string password) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMachineConfiguration(System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMachineConfiguration (locationSubPath As String, server As String, userName As String, password As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMachineConfiguration(System::String ^ locationSubPath, System::String ^ server, System::String ^ userName, System::String ^ password);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -495,12 +550,25 @@
         </remarks>
         <exception cref="T:System.ArgumentException">The <paramref name="server" /> or <paramref name="userName" /> and <paramref name="password" /> parameters were invalid.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="OpenMappedMachineConfiguration">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Opens the machine-configuration file as a <see cref="T:System.Configuration.Configuration" /> object to allow read or write operations.</summary>
+        <altmember cref="T:System.Configuration.Configuration" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OpenMappedMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedMachineConfiguration (System.Configuration.ConfigurationFileMap fileMap);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedMachineConfiguration(class System.Configuration.ConfigurationFileMap fileMap) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedMachineConfiguration(System.Configuration.ConfigurationFileMap)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMappedMachineConfiguration (fileMap As ConfigurationFileMap) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMappedMachineConfiguration(System::Configuration::ConfigurationFileMap ^ fileMap);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -518,12 +586,16 @@
         <returns>A <see cref="T:System.Configuration.Configuration" /> object.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
       </Docs>
     </Member>
     <Member MemberName="OpenMappedMachineConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedMachineConfiguration (System.Configuration.ConfigurationFileMap fileMap, string locationSubPath);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedMachineConfiguration(class System.Configuration.ConfigurationFileMap fileMap, string locationSubPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedMachineConfiguration(System.Configuration.ConfigurationFileMap,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMappedMachineConfiguration (fileMap As ConfigurationFileMap, locationSubPath As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMappedMachineConfiguration(System::Configuration::ConfigurationFileMap ^ fileMap, System::String ^ locationSubPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -543,12 +615,43 @@
         <returns>A <see cref="T:System.Configuration.Configuration" /> object.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="OpenMappedWebConfiguration">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Opens the Web-application configuration file as a <see cref="T:System.Configuration.Configuration" /> object using the specified file mapping to allow read or write operations.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ You use the mapping mechanism when you need to map your virtual directory hierarchy to a physical directory.  
+  
+   
+  
+## Examples  
+ The following example shows how to map a virtual directory hierarchy to a physical one. The example shown here is used in the overloaded members.  
+  
+ [!code-csharp[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#20)]
+ [!code-vb[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OpenMappedWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMappedWebConfiguration (fileMap As WebConfigurationFileMap, path As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMappedWebConfiguration(System::Web::Configuration::WebConfigurationFileMap ^ fileMap, System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -590,12 +693,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
       </Docs>
     </Member>
     <Member MemberName="OpenMappedWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMappedWebConfiguration (fileMap As WebConfigurationFileMap, path As String, site As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMappedWebConfiguration(System::Web::Configuration::WebConfigurationFileMap ^ fileMap, System::String ^ path, System::String ^ site);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -634,12 +741,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
       </Docs>
     </Member>
     <Member MemberName="OpenMappedWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenMappedWebConfiguration (System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site, string locationSubPath);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenMappedWebConfiguration(class System.Web.Configuration.WebConfigurationFileMap fileMap, string path, string site, string locationSubPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenMappedWebConfiguration(System.Web.Configuration.WebConfigurationFileMap,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenMappedWebConfiguration (fileMap As WebConfigurationFileMap, path As String, site As String, locationSubPath As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenMappedWebConfiguration(System::Web::Configuration::WebConfigurationFileMap ^ fileMap, System::String ^ path, System::String ^ site, System::String ^ locationSubPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -680,12 +791,27 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="OpenWebConfiguration">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Opens the Web-application configuration file as a <see cref="T:System.Configuration.Configuration" /> object.</summary>
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMapping" />
+        <altmember cref="T:System.Web.Configuration.VirtualDirectoryMappingCollection" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -718,12 +844,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String, site As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path, System::String ^ site);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -758,12 +887,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String, site As String, locationSubPath As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path, System::String ^ site, System::String ^ locationSubPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -800,12 +932,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String, site As String, locationSubPath As String, server As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path, System::String ^ site, System::String ^ locationSubPath, System::String ^ server);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -845,12 +980,15 @@
         </remarks>
         <exception cref="T:System.ArgumentException">The server parameter was invalid.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server, IntPtr userToken);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server, native int userToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String, site As String, locationSubPath As String, server As String, userToken As IntPtr) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path, System::String ^ site, System::String ^ locationSubPath, System::String ^ server, IntPtr userToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -897,12 +1035,16 @@
         </remarks>
         <exception cref="T:System.ArgumentException">The <paramref name="server" /> or <paramref name="userToken" /> parameters were invalid.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">A valid configuration file could not be loaded.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
+        <altmember cref="T:System.Security.Principal.WindowsIdentity" />
       </Docs>
     </Member>
     <Member MemberName="OpenWebConfiguration">
       <MemberSignature Language="C#" Value="public static System.Configuration.Configuration OpenWebConfiguration (string path, string site, string locationSubPath, string server, string userName, string password);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.Configuration OpenWebConfiguration(string path, string site, string locationSubPath, string server, string userName, string password) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration(System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function OpenWebConfiguration (path As String, site As String, locationSubPath As String, server As String, userName As String, password As String) As Configuration" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Configuration::Configuration ^ OpenWebConfiguration(System::String ^ path, System::String ^ site, System::String ^ locationSubPath, System::String ^ server, System::String ^ userName, System::String ^ password);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -950,32 +1092,8 @@
         </remarks>
         <exception cref="T:System.ArgumentException">The <paramref name="server" /> or <paramref name="userName" /> and <paramref name="password" /> parameters were invalid.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">Could not load a valid configuration file.</exception>
+        <altmember cref="T:System.Configuration.Configuration" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="OpenMappedWebConfiguration">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Opens the Web-application configuration file as a <see cref="T:System.Configuration.Configuration" /> object using the specified file mapping to allow read or write operations.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- You use the mapping mechanism when you need to map your virtual directory hierarchy to a physical directory.  
-  
-   
-  
-## Examples  
- The following example shows how to map a virtual directory hierarchy to a physical one. The example shown here is used in the overloaded members.  
-  
- [!code-csharp[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/CS/WebConfigurationManager.cs#20)]
- [!code-vb[System.Web.Configuration.WebConfigurationManager#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.WebConfigurationManager/VB/WebConfigurationManager.vb#20)]  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

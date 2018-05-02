@@ -1,5 +1,5 @@
 ---
-title: "IHostMemoryManager::NeedsVirtualAddressSpace Method | Microsoft Docs"
+title: "IHostMemoryManager::NeedsVirtualAddressSpace Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMemoryManager.NeedsVirtualAddressSpace"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMemoryManager::NeedsVirtualAddressSpace"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostMemoryManager::NeedsVirtualAddressSpace method [.NET Framework hosting]"
   - "NeedsVirtualAddressSpace method [.NET Framework hosting]"
 ms.assetid: 71f0eab5-0170-46f8-9f88-1df5abdeb34a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMemoryManager::NeedsVirtualAddressSpace Method
 Notifies the host that the common language runtime (CLR) is going to attempt to use the specified memory.  

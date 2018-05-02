@@ -1,8 +1,8 @@
 ---
-title: "SecurityNegotiationFailure | Microsoft Docs"
+title: "SecurityNegotiationFailure"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 6
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # SecurityNegotiationFailure
 Id: 172  
@@ -26,5 +28,5 @@ Id: 172
  This event indicates that Security negotiation failed. The event lists the service, action, client identity, activity ID, and negotiation.  
   
 ## See Also  
- [Event Logging](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)   
+ [Event Logging](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)  
  [Events General Reference](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

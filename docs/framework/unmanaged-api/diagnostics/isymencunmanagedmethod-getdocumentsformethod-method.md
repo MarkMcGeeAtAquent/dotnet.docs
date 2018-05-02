@@ -1,5 +1,5 @@
 ---
-title: "ISymENCUnmanagedMethod::GetDocumentsForMethod Method | Microsoft Docs"
+title: "ISymENCUnmanagedMethod::GetDocumentsForMethod Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymENCUnmanagedMethod.GetDocumentsForMethod"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymENCUnmanagedMethod::GetDocumentsForMethod"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetDocumentsForMethod method [.NET Framework debugging]"
   - "ISymENCUnmanagedMethod::GetDocumentsForMethod method [.NET Framework debugging]"
 ms.assetid: bd6ccde5-d578-48d8-abed-b474fbd48d13
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymENCUnmanagedMethod::GetDocumentsForMethod Method
 Gets the documents that this method has lines in.  

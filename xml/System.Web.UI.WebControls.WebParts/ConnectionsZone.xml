@@ -1,7 +1,9 @@
-<Type Name="ConnectionsZone" FullName="System.Web.UI.WebControls.WebParts.ConnectionsZone">
+﻿<Type Name="ConnectionsZone" FullName="System.Web.UI.WebControls.WebParts.ConnectionsZone">
   <TypeSignature Language="C#" Value="public class ConnectionsZone : System.Web.UI.WebControls.WebParts.ToolZone" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionsZone extends System.Web.UI.WebControls.WebParts.ToolZone" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />
+  <TypeSignature Language="VB.NET" Value="Public Class ConnectionsZone&#xA;Inherits ToolZone" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConnectionsZone : System::Web::UI::WebControls::WebParts::ToolZone" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -66,8 +68,8 @@
   
  The first part of this code example is the user control that enables users to switch display modes on a Web page. For details about display modes and a description of the source code in this control, see [Walkthrough: Changing Display Modes on a Web Parts Page](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/displaymodemenucs.ascx#6)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/DisplayModeMenuVB.ascx#6)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/DisplayModeMenuVB.ascx#6)]  
   
  The second part of the example is the source file with the interface and custom controls. Notice that the `ZipCodeWebPart` control implements the `IZipCode` interface, adding a `ConnectionProvider` attribute so that the control can act as a provider for a connection. The `WeatherWebPart` control has a method marked with a `ConnectionConsumer` attribute, where it consumes the `IZipCode` interface, so it can act as a consumer in a connection.  
   
@@ -78,8 +80,8 @@
   
  The third part of the example code is the Web page. Near the top are `Register` directives for the user control and the custom controls used in the connection. An <`asp:connectionszone>` element is declared in the page as an example of using the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control declaratively. Within the element, a number of properties are set declaratively. Other properties on the connections zone are set programmatically in the `<script>` section of the page.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the Web page in a browser. Use the **Display Mode** drop-down list control to switch the page to connect mode. On the verbs menu of the **ZIP Code Provider** control (the verbs menu is indicated by the downward arrow in the control's title bar), click the connect verb. A <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control appears. Note that in the connection UI, an **End Connection** button appears; the connection has already been declared in the markup of the page, so the controls are already connected. Click **End Connection**, and then use the **Display Mode** control again to return the page to browse mode. Next, return the page to connect mode again, click the connect verb on one of the controls, and note that the connection UI now displays a hyperlink that enables you to form a connection between the controls. Click the link, and use the connection UI to select connection points and establish the connection.  
   
@@ -88,12 +90,18 @@
     <block subset="none" type="overrides">
       <para>The <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" /> class can be extended, if developers want to change its behavior or the default UI that it provides for working with connections.</para>
     </block>
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebZone" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionPoint" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartZoneBase" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectionsZone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConnectionsZone();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -123,8 +131,8 @@
   
  On the Web page, in the `Page_Init` method, a new <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control is created (using the constructor) and added to the page. When a user sets the page to connect mode and clicks the connect verb on one of the <xref:System.Web.UI.WebControls.WebParts.WebPart> controls, a <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control appears.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/CS/connectionZoneCtorCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/VB/connectionZoneCtorVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_ctor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/CS/connectionZoneCtorCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_ctor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_ctor/VB/connectionZoneCtorVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. The connection UI appears, and the controls are already connected because the connection was declared in the markup of the page.  
   
@@ -136,6 +144,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb CancelVerb { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb CancelVerb" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CancelVerb As WebPartVerb" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerb ^ CancelVerb { System::Web::UI::WebControls::WebParts::WebPartVerb ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -146,7 +156,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
@@ -186,19 +196,23 @@
   
  The Web page declares an `<asp:connectionszone>` element, and within the element, it declares a `<cancelverb>` element and sets some properties using attributes. Also, in the `Page_PreRender` method, the code sets some properties on the cancel verb for the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to disconnect the controls that are already connected due to the declarative connection on the page. Click the **Select a consumer for the provider to connect with** hyperlink, and notice the effect of setting the various properties. If you position your mouse pointer over the **Terminate** button, the custom description text appears in a ToolTip.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.EditorZoneBase.CancelVerb" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="protected override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.Close" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -218,12 +232,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb" />
       </Docs>
     </Member>
     <Member MemberName="CloseVerb">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb CloseVerb { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb CloseVerb" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CloseVerb" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CloseVerb As WebPartVerb" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerb ^ CloseVerb { System::Web::UI::WebControls::WebParts::WebPartVerb ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -234,7 +251,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
@@ -276,19 +293,23 @@
   
  The Web page declares an `<asp:connectionszone>` element, and within the element, it declares a `<closeverb>` element and sets a property using attributes. Also, in the `Page_PreRender` method, the code sets a property on the close verb for the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to disconnect the controls that are already connected due to the declarative connection on the page. Click the **Select a consumer for the provider to connect with** hyperlink, and notice the effect of setting the various properties. If you position your mouse pointer over the **Close Zone** button at the bottom of the connection UI, the custom description text appears in a ToolTip. Notice that the header close verb at the top of the connections zone is represented by a hyperlink, and your property assignments on the close verb have no effect on the header close verb.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CloseVerb" />
       </Docs>
     </Member>
     <Member MemberName="ConfigureConnectionTitle">
       <MemberSignature Language="C#" Value="public virtual string ConfigureConnectionTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConfigureConnectionTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConfigureConnectionTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConfigureConnectionTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -323,8 +344,8 @@
   
  The Web page declares an `<asp:connectionszone>` element, and in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Because the connection already exists, you now see an **End Connection** button, and a **Configure** button, which represents the configure verb. If your connection were configurable (it is not in this code example), the **Configure** button would be enabled; you could click it to open the Configure Connections section, and the title would be the value the code assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle%2A> property.  
   
@@ -336,6 +357,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb ConfigureVerb { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb ConfigureVerb" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureVerb" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property ConfigureVerb As WebPartVerb" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerb ^ ConfigureVerb { System::Web::UI::WebControls::WebParts::WebPartVerb ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -346,7 +369,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
@@ -386,19 +409,23 @@
   
  The Web page declares an `<asp:connectionszone>` element, and within the element, it declares a `<configureverb>` element and sets a property using attributes. Also, in the `Page_PreRender` method, the code sets a property on the configure verb for the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Notice that there is an **End Connection** button to disconnect the controls that are already connected, and a disabled **Configure** button. If your code example used a transformer that included a configuration wizard, the **Configure** button would be enabled, and users could click it to configure the connection. If you position your mouse pointer over the **Configure** button in the connection UI, the custom description text appears in a ToolTip.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.Wizard" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConfigureConnectionTitle" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToConsumerInstructionText">
       <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerInstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerInstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToConsumerInstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToConsumerInstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -435,19 +462,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to end the connection, and then click the **Select a consumer for the provider to connect with** hyperlink. The consumer connection UI appears, and the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText%2A> property appears just above the area with the control that allows you to select a connection point on the consumer for connecting with the provider.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToConsumerText">
       <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToConsumerText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToConsumerText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -482,19 +513,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to end the connection, and then notice that the hyperlink appears with the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToConsumerTitle">
       <MemberSignature Language="C#" Value="public virtual string ConnectToConsumerTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToConsumerTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToConsumerTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToConsumerTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -529,19 +564,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to end the connection, and then click the link to select a consumer. In the view for selecting a consumer, note that the title text of the section is the text that the code assigns to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerTitle%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToConsumerText" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToProviderInstructionText">
       <MemberSignature Language="C#" Value="public virtual string ConnectToProviderInstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderInstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToProviderInstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToProviderInstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -578,19 +617,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. Click the **End Connection** button to end the connection, and then click the **Select a provider for the consumer to connect with** hyperlink. The provider connection UI appears, and the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText%2A> property appears just above the area with the control that allows you to select a connection point on the provider for connecting with the consumer.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToProviderText">
       <MemberSignature Language="C#" Value="public virtual string ConnectToProviderText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToProviderText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToProviderText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -625,19 +668,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. Click the **End Connection** button to end the connection, and then notice that the hyperlink appears with the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
       </Docs>
     </Member>
     <Member MemberName="ConnectToProviderTitle">
       <MemberSignature Language="C#" Value="public virtual string ConnectToProviderTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectToProviderTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConnectToProviderTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectToProviderTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -672,19 +719,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. Click the **End Connection** button to end the connection, and then click the link to select a provider. In the view for selecting a provider, note that the title text of the section is the text that the code assigns to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectToProviderTitle%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle" />
       </Docs>
     </Member>
     <Member MemberName="ConnectVerb">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb ConnectVerb { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb ConnectVerb" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConnectVerb" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property ConnectVerb As WebPartVerb" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerb ^ ConnectVerb { System::Web::UI::WebControls::WebParts::WebPartVerb ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -695,7 +746,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
@@ -738,19 +789,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, within the element tags, it declares a `<connectverb>` element and sets some properties using attributes. Also, in the `Page_PreRender` method, the code sets some properties on the connect verb for the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Click the **End Connection** button to disconnect the controls that are already connected due to the declarative connection on the page. Click the **Select a consumer for the provider to connect with** hyperlink, and notice the effect of setting the various properties. If you position your mouse pointer over the **Connect Controls** button, the custom description text appears in a ToolTip.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />
       </Docs>
     </Member>
     <Member MemberName="ConsumersInstructionText">
       <MemberSignature Language="C#" Value="public virtual string ConsumersInstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConsumersInstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConsumersInstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConsumersInstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -785,19 +839,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. In the view that opens for the existing connection, look in the consumers section for the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
       </Docs>
     </Member>
     <Member MemberName="ConsumersTitle">
       <MemberSignature Language="C#" Value="public virtual string ConsumersTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConsumersTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ConsumersTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConsumersTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -832,19 +889,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. In the view that opens for the existing connection, look in the consumers section for the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle" />
       </Docs>
     </Member>
     <Member MemberName="CreateChildControls">
-      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="C#" Value="protected internal override void CreateChildControls ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.CreateChildControls" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub CreateChildControls ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void CreateChildControls();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -860,16 +920,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides the base <xref:System.Web.UI.Control.CreateChildControls%2A?displayProperty=fullName> method. It prepares all connection-related objects needed for connections (for example, it retrieves the connection point objects from the available consumer and provider controls), and it creates the various user interface (UI) controls that users interact with in the connection UI to establish a connection.  
+ This method overrides the base <xref:System.Web.UI.Control.CreateChildControls%2A?displayProperty=nameWithType> method. It prepares all connection-related objects needed for connections (for example, it retrieves the connection point objects from the available consumer and provider controls), and it creates the various user interface (UI) controls that users interact with in the connection UI to establish a connection.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.Control.CreateChildControls" />
       </Docs>
     </Member>
     <Member MemberName="DisconnectVerb">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.WebPartVerb DisconnectVerb { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerb DisconnectVerb" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.DisconnectVerb" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property DisconnectVerb As WebPartVerb" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::WebPartVerb ^ DisconnectVerb { System::Web::UI::WebControls::WebParts::WebPartVerb ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -880,7 +943,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
@@ -920,19 +983,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, within the element tags, declares a `<disconnectverb>` element and sets some properties using attributes. Also, in the `Page_PreRender` method, the code sets some properties on the disconnect verb for the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Provider** control, and click the connect verb. Note the effect of the property values that were set on the disconnect verb. If you position your mouse pointer over the **End Connection** button, the custom description text appears in a ToolTip. Click the **End Connection** button to disconnect the controls that are already connected due to the declarative connection on the page.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.CancelVerb" />
       </Docs>
     </Member>
     <Member MemberName="Display">
       <MemberSignature Language="C#" Value="protected override bool Display { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Display" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.Display" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property Display As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property bool Display { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -946,12 +1012,15 @@
         <value>
           <see langword="true" /> if the <see cref="T:System.Web.UI.WebControls.WebParts.ToolZone" /> is currently displayed; otherwise, <see langword="false" />. The default value is <see langword="false" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ToolZone.Display" />
       </Docs>
     </Member>
     <Member MemberName="EmptyZoneText">
       <MemberSignature Language="C#" Value="public override string EmptyZoneText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string EmptyZoneText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.EmptyZoneText" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property EmptyZoneText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ EmptyZoneText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -982,12 +1051,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebZone.EmptyZoneText" />
       </Docs>
     </Member>
     <Member MemberName="ExistingConnectionErrorMessage">
       <MemberSignature Language="C#" Value="public virtual string ExistingConnectionErrorMessage { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ExistingConnectionErrorMessage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ExistingConnectionErrorMessage" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ExistingConnectionErrorMessage As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ExistingConnectionErrorMessage { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1006,6 +1078,8 @@
       <MemberSignature Language="C#" Value="public virtual string GetFromText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string GetFromText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property GetFromText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ GetFromText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1040,19 +1114,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, look in the providers section for the text that precedes the named provider. This is the text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText" />
       </Docs>
     </Member>
     <Member MemberName="GetText">
       <MemberSignature Language="C#" Value="public virtual string GetText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string GetText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property GetText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ GetText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1087,19 +1165,23 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, look in the providers section for the text that precedes the named consumer. This is the text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText" />
       </Docs>
     </Member>
     <Member MemberName="HeaderText">
       <MemberSignature Language="C#" Value="public override string HeaderText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property HeaderText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ HeaderText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1136,19 +1218,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, note that the header text at the top of the connections zone is the value assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.HeaderText%2A> property in the code example.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebZone.HeaderText" />
       </Docs>
     </Member>
     <Member MemberName="InstructionText">
       <MemberSignature Language="C#" Value="public override string InstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property InstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ InstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1185,19 +1270,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, note that the instruction text near the top of the connections zone is the value assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText%2A> property in the code example.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle" />
       </Docs>
     </Member>
     <Member MemberName="InstructionTitle">
       <MemberSignature Language="C#" Value="public virtual string InstructionTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InstructionTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property InstructionTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ InstructionTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1235,19 +1323,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, note that the instruction title just below the header text, near the top of the connections zone, is the value assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionTitle%2A> property in the code example.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.InstructionText" />
       </Docs>
     </Member>
     <Member MemberName="LoadControlState">
-      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="C#" Value="protected internal override void LoadControlState (object savedState);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.LoadControlState(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub LoadControlState (savedState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void LoadControlState(System::Object ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1271,12 +1362,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The length of <paramref name="savedState" /> does not equal the length of the array created by the <see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState" /> method.</exception>
+        <altmember cref="M:System.Web.UI.Control.LoadControlState(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="LoadViewState">
       <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.LoadViewState(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub LoadViewState (savedState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void LoadViewState(System::Object ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1302,12 +1396,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The length of <paramref name="savedState" /> does not equal the length of the array created by the <see cref="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState" /> method.</exception>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.WebZone.LoadViewState(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="NewConnectionErrorMessage">
       <MemberSignature Language="C#" Value="public virtual string NewConnectionErrorMessage { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NewConnectionErrorMessage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NewConnectionErrorMessage" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property NewConnectionErrorMessage As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ NewConnectionErrorMessage { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1326,6 +1423,8 @@
       <MemberSignature Language="C#" Value="public virtual string NoExistingConnectionInstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NoExistingConnectionInstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property NoExistingConnectionInstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ NoExistingConnectionInstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1360,19 +1459,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, click the **End Connection** button. Note that the instruction text for no existing connections appears near the bottom of the connection UI, just above the close verb in the zone's footer area.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle" />
       </Docs>
     </Member>
     <Member MemberName="NoExistingConnectionTitle">
       <MemberSignature Language="C#" Value="public virtual string NoExistingConnectionTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NoExistingConnectionTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property NoExistingConnectionTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ NoExistingConnectionTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1407,19 +1509,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, click the **End Connection** button. Note that the instruction title for no existing connections occurs just below the link that enables users to create a new connection.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.NoExistingConnectionInstructionText" />
       </Docs>
     </Member>
     <Member MemberName="OnDisplayModeChanged">
       <MemberSignature Language="C#" Value="protected override void OnDisplayModeChanged (object sender, System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDisplayModeChanged(object sender, class System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnDisplayModeChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnDisplayModeChanged (sender As Object, e As WebPartDisplayModeEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnDisplayModeChanged(System::Object ^ sender, System::Web::UI::WebControls::WebParts::WebPartDisplayModeEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1446,12 +1551,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.OnDisplayModeChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs)" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.WebPartManager.OnDisplayModeChanged(System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnInit">
-      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="C#" Value="protected internal override void OnInit (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnInit(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub OnInit (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void OnInit(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1470,16 +1579,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method calls the base <xref:System.Web.UI.WebControls.WebParts.ToolZone.OnInit%2A?displayProperty=fullName> method, and adds custom handling to prepare the Web page to display the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
+ This method calls the base <xref:System.Web.UI.WebControls.WebParts.ToolZone.OnInit%2A?displayProperty=nameWithType> method, and adds custom handling to prepare the Web page to display the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.OnInit(System.EventArgs)" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.WebZone.OnInit(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="OnSelectedWebPartChanged">
       <MemberSignature Language="C#" Value="protected override void OnSelectedWebPartChanged (object sender, System.Web.UI.WebControls.WebParts.WebPartEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedWebPartChanged(object sender, class System.Web.UI.WebControls.WebParts.WebPartEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.OnSelectedWebPartChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnSelectedWebPartChanged (sender As Object, e As WebPartEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnSelectedWebPartChanged(System::Object ^ sender, System::Web::UI::WebControls::WebParts::WebPartEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1504,12 +1617,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.OnSelectedWebPartChanged(System.Object,System.Web.UI.WebControls.WebParts.WebPartEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="PartChromeType">
       <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WebParts.PartChromeType PartChromeType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PartChromeType PartChromeType" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.PartChromeType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property PartChromeType As PartChromeType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::PartChromeType PartChromeType { System::Web::UI::WebControls::WebParts::PartChromeType get(); void set(System::Web::UI::WebControls::WebParts::PartChromeType value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1540,12 +1656,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebZone.PartChromeType" />
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" />
       </Docs>
     </Member>
     <Member MemberName="ProvidersInstructionText">
       <MemberSignature Language="C#" Value="public virtual string ProvidersInstructionText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ProvidersInstructionText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ProvidersInstructionText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ProvidersInstructionText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1580,19 +1700,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, look in the providers section for the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersInstructionText%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersInstructionText" />
       </Docs>
     </Member>
     <Member MemberName="ProvidersTitle">
       <MemberSignature Language="C#" Value="public virtual string ProvidersTitle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ProvidersTitle" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ProvidersTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ProvidersTitle { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1627,19 +1750,22 @@
   
  The Web page declares an `<asp:connectionszone>` element and, in the `Page_PreRender` method, the code assigns a value to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/CS/connectionZoneCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionZone_Overview/VB/connectionZoneVB.aspx#1)]  
   
  Load the page in a browser. Switch to connect mode, using the **Display Mode** control. Click the verbs menu arrow on the **ZIP Code Consumer** control, and click the connect verb. In the view that opens for the existing connection, look in the providers section for the custom text assigned to the <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.ProvidersTitle%2A> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.ConsumersTitle" />
       </Docs>
     </Member>
     <Member MemberName="RaisePostBackEvent">
       <MemberSignature Language="C#" Value="protected override void RaisePostBackEvent (string eventArgument);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RaisePostBackEvent(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub RaisePostBackEvent (eventArgument As String)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void RaisePostBackEvent(System::String ^ eventArgument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1662,12 +1788,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.RaisePostBackEvent(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Render">
-      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="C#" Value="protected internal override void Render (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub Render (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void Render(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1686,16 +1815,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.Render%2A> method updates the connection user interface (UI) with any changes that occurred since the child controls were created or during the prerendering stage, and then calls the base <xref:System.Web.UI.WebControls.CompositeControl.Render%2A?displayProperty=fullName> method to write the contents of the zone to the Web page.  
+ The <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.Render%2A> method updates the connection user interface (UI) with any changes that occurred since the child controls were created or during the prerendering stage, and then calls the base <xref:System.Web.UI.WebControls.CompositeControl.Render%2A?displayProperty=nameWithType> method to write the contents of the zone to the Web page.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.CompositeControl.Render(System.Web.UI.HtmlTextWriter)" />
       </Docs>
     </Member>
     <Member MemberName="RenderBody">
       <MemberSignature Language="C#" Value="protected override void RenderBody (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderBody(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub RenderBody (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void RenderBody(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1714,18 +1846,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The body of a Web Parts control is the portion between its header and footer areas. The <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody%2A> method overrides the rendering of the body region that is done by the base <xref:System.Web.UI.WebControls.WebParts.WebZone.RenderBody%2A?displayProperty=fullName> method.  
+ The body of a Web Parts control is the portion between its header and footer areas. The <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderBody%2A> method overrides the rendering of the body region that is done by the base <xref:System.Web.UI.WebControls.WebParts.WebZone.RenderBody%2A?displayProperty=nameWithType> method.  
   
  This method adds to the base rendering unique style attributes that apply to a <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control, and it also renders the appropriate content for the child controls in the connection user interface (UI), based on previous selections made by a user in the UI.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.WebZone.RenderBody(System.Web.UI.HtmlTextWriter)" />
       </Docs>
     </Member>
     <Member MemberName="RenderVerbs">
       <MemberSignature Language="C#" Value="protected override void RenderVerbs (System.Web.UI.HtmlTextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderVerbs(class System.Web.UI.HtmlTextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.RenderVerbs(System.Web.UI.HtmlTextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub RenderVerbs (writer As HtmlTextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void RenderVerbs(System::Web::UI::HtmlTextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1744,16 +1879,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method renders the several zone-level verbs that are included with a <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control. As a part of this method, the <xref:System.Web.UI.WebControls.WebParts.ToolZone.RenderVerb%2A?displayProperty=fullName> method is also called to render the individual details of each verb.  
+ This method renders the several zone-level verbs that are included with a <xref:System.Web.UI.WebControls.WebParts.ConnectionsZone> control. As a part of this method, the <xref:System.Web.UI.WebControls.WebParts.ToolZone.RenderVerb%2A?displayProperty=nameWithType> method is also called to render the individual details of each verb.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.RenderVerbs(System.Web.UI.HtmlTextWriter)" />
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.RenderVerb(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.WebPartVerb)" />
       </Docs>
     </Member>
     <Member MemberName="SaveControlState">
-      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="C#" Value="protected internal override object SaveControlState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveControlState" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Function SaveControlState () As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override System::Object ^ SaveControlState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1774,12 +1913,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.Control.SaveControlState" />
       </Docs>
     </Member>
     <Member MemberName="SaveViewState">
       <MemberSignature Language="C#" Value="protected override object SaveViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.SaveViewState" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function SaveViewState () As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Object ^ SaveViewState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1802,12 +1944,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.SaveViewState" />
       </Docs>
     </Member>
     <Member MemberName="SendText">
       <MemberSignature Language="C#" Value="public virtual string SendText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SendText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property SendText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ SendText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1829,12 +1974,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText" />
       </Docs>
     </Member>
     <Member MemberName="SendToText">
       <MemberSignature Language="C#" Value="public virtual string SendToText { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SendToText" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendToText" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property SendToText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ SendToText { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1856,12 +2005,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.SendText" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.GetFromText" />
       </Docs>
     </Member>
     <Member MemberName="TrackViewState">
       <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionsZone.TrackViewState" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub TrackViewState ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void TrackViewState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1881,12 +2034,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.WebParts.ToolZone.TrackViewState" />
       </Docs>
     </Member>
     <Member MemberName="WebPartToConnect">
       <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPart WebPartToConnect { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart WebPartToConnect" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionsZone.WebPartToConnect" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property WebPartToConnect As WebPart" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::Web::UI::WebControls::WebParts::WebPart ^ WebPartToConnect { System::Web::UI::WebControls::WebParts::WebPart ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1909,6 +2065,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.WebPartManager.SelectedWebPart" />
       </Docs>
     </Member>
   </Members>

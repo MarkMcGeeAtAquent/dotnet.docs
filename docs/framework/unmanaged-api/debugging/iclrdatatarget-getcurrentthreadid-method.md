@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::GetCurrentThreadID Method | Microsoft Docs"
+title: "ICLRDataTarget::GetCurrentThreadID Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.GetCurrentThreadID"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::GetCurrentThreadID"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCurrentThreadID method, ICLRDataTarget interface [.NET Framework debugging]"
   - "ICLRDataTarget::GetCurrentThreadID method [.NET Framework debugging]"
 ms.assetid: dc9a0a6c-d592-4fb7-86ed-62684da3b0e1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::GetCurrentThreadID Method
 Gets the operating system identifier for the current thread.  

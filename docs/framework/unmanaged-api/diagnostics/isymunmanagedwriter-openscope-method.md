@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::OpenScope Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::OpenScope Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.OpenScope"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::OpenScope"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "OpenScope method, ISymUnmanagedWriter interface [.NET Framework debugging]"
   - "ISymUnmanagedWriter::OpenScope method [.NET Framework debugging]"
 ms.assetid: dbea0644-3873-4329-90b8-624163e87467
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::OpenScope Method
 Opens a new lexical scope in the current method. The scope becomes the new current scope and is pushed onto a stack of scopes. Scopes must form a hierarchy. Siblings are not allowed to overlap.  

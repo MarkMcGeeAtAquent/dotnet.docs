@@ -1,5 +1,5 @@
 ---
-title: "Impersonating and Reverting | Microsoft Docs"
+title: "Impersonating and Reverting"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,10 +9,8 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WindowsIdentity objects, impersonating"
   - "security [.NET Framework], impersonating Windows accounts"
@@ -22,6 +20,9 @@ caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Impersonating and Reverting
 Sometimes you might need to obtain a Windows account token to impersonate a Windows account. For example, your ASP.NET-based application might have to act on behalf of several users at different times. Your application might accept a token that represents an administrator from Internet Information Services (IIS), impersonate that user, perform an operation, and revert to the previous identity. Next, it might accept a token from IIS that represents a user with fewer rights, perform some operation, and revert again.  
@@ -34,29 +35,26 @@ Sometimes you might need to obtain a Windows account token to impersonate a Wind
   
     ```csharp  
     WindowsIdentity ImpersonatedIdentity = new WindowsIdentity(hToken);  
-  
     ```  
   
     ```vb  
     Dim ImpersonatedIdentity As New WindowsIdentity(hToken)  
     ```  
   
-3.  Begin impersonation by creating a new instance of the <xref:System.Security.Principal.WindowsImpersonationContext> class and initializing it with the <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A?displayProperty=fullName> method of the initialized class, as shown in the following code.  
+3.  Begin impersonation by creating a new instance of the <xref:System.Security.Principal.WindowsImpersonationContext> class and initializing it with the <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A?displayProperty=nameWithType> method of the initialized class, as shown in the following code.  
   
     ```csharp  
     WindowsImpersonationContext MyImpersonation = ImpersonatedIdentity.Impersonate();  
-  
     ```  
   
     ```vb  
     WindowsImpersonationContext MyImpersonation = ImpersonatedIdentity.Impersonate()  
     ```  
   
-4.  When you no longer need to impersonate, call the <xref:System.Security.Principal.WindowsImpersonationContext.Undo%2A?displayProperty=fullName> method to revert the impersonation, as shown in the following code.  
+4.  When you no longer need to impersonate, call the <xref:System.Security.Principal.WindowsImpersonationContext.Undo%2A?displayProperty=nameWithType> method to revert the impersonation, as shown in the following code.  
   
     ```csharp  
     MyImpersonation.Undo();  
-  
     ```  
   
     ```vb  
@@ -68,7 +66,7 @@ Sometimes you might need to obtain a Windows account token to impersonate a Wind
  Note that neither **Impersonate** nor **Undo** changes the **Principal** object (<xref:System.Security.Principal.IPrincipal>)  associated with the current call context. Rather, impersonation and reverting change the token associated with the current operating system process..  
   
 ## See Also  
- <xref:System.Security.Principal.WindowsIdentity>   
- <xref:System.Security.Principal.WindowsImpersonationContext>   
- [Principal and Identity Objects](../../../docs/standard/security/principal-and-identity-objects.md)   
+ <xref:System.Security.Principal.WindowsIdentity>  
+ <xref:System.Security.Principal.WindowsImpersonationContext>  
+ [Principal and Identity Objects](../../../docs/standard/security/principal-and-identity-objects.md)  
  [Interoperating with Unmanaged Code](../../../docs/framework/interop/index.md)

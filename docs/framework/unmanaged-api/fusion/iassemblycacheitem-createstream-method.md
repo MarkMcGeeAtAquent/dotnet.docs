@@ -1,5 +1,5 @@
 ---
-title: "IAssemblyCacheItem::CreateStream Method | Microsoft Docs"
+title: "IAssemblyCacheItem::CreateStream Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAssemblyCacheItem.CreateStream"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAssemblyCacheItem::CreateStream"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateStream method [.NET Framework fusion]"
   - "IAsssemblyCacheItem::CreateStream method [.NET Framework fusion]"
 ms.assetid: 697ab0f4-470c-4baa-a415-4a975c42d0d5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAssemblyCacheItem::CreateStream Method
 Creates a stream with the specified name and format.  

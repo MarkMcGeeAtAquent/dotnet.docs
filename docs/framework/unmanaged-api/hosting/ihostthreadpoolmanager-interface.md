@@ -1,30 +1,33 @@
 ---
-title: "IHostThreadPoolManager Interface | Microsoft Docs"
+title: "IHostThreadPoolManager Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostThreadPoolManager"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostThreadPoolManager"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostThreadPoolManager interface [.NET Framework hosting]"
 ms.assetid: c3a2cd90-7c4e-4374-bb87-b41befb8344f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostThreadPoolManager Interface
 Provides methods that enable the common language runtime (CLR) to configure the thread pool and to queue work items to the thread pool.  
@@ -53,6 +56,6 @@ Provides methods that enable the common language runtime (CLR) to configure the 
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Threading>   
- <xref:System.Threading.ThreadPool>   
+ <xref:System.Threading>  
+ <xref:System.Threading.ThreadPool>  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

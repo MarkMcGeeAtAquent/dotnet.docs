@@ -1,5 +1,5 @@
 ---
-title: "UI Automation Support for the Edit Control Type | Microsoft Docs"
+title: "UI Automation Support for the Edit Control Type"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,6 +18,8 @@ caps.latest.revision: 29
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # UI Automation Support for the Edit Control Type
 > [!NOTE]
@@ -99,6 +101,6 @@ manager: "markl"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Required|None|  
   
 ## See Also  
- <xref:System.Windows.Automation.ControlType.Edit>   
- [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)   
+ <xref:System.Windows.Automation.ControlType.Edit>  
+ [UI Automation Control Types Overview](../../../docs/framework/ui-automation/ui-automation-control-types-overview.md)  
  [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: "Configuring Tracking for a Workflow | Microsoft Docs"
+title: "Configuring Tracking for a Workflow"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Tracking for a Workflow
 A workflow can execute in three ways:  
@@ -34,21 +36,20 @@ LogActivity activity = new LogActivity();
   
 WorkflowApplication instance = new WorkflowApplication(activity);  
 EtwTrackingParticipant trackingParticipant =  
-    new EtwTrackingParticipant  
+    new EtwTrackingParticipant  
 {  
   
-        TrackingProfile = new TrackingProfile  
-           {  
-               Name = "SampleTrackingProfile",  
-               ActivityDefinitionId = "ProcessOrder",  
-               Queries = new WorkflowInstanceQuery  
-               {  
-                  States = { "*" }  
-              }  
-          }  
-       };  
+        TrackingProfile = new TrackingProfile  
+           {  
+               Name = "SampleTrackingProfile",  
+               ActivityDefinitionId = "ProcessOrder",  
+               Queries = new WorkflowInstanceQuery  
+               {  
+                  States = { "*" }  
+              }  
+          }  
+       };  
 instance.Extensions.Add(trackingParticipant);  
-  
 ```  
   
 ### Configuring Workflow Service Tracking  
@@ -56,16 +57,14 @@ instance.Extensions.Add(trackingParticipant);
   
  For a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> using the <`behavior`> element in a configuration file, as shown in the following example.  
   
-```  
-  
+```xml  
 <behaviors>  
    <serviceBehaviors>  
-        <behavior>  
-          <etwTracking profileName="Sample Tracking Profile" />  
-        </behavior>              
+        <behavior>  
+          <etwTracking profileName="Sample Tracking Profile" />  
+        </behavior>              
    </serviceBehaviors>  
 <behaviors>  
-  
 ```  
   
  Alternatively, for a workflow service hosted in <xref:System.ServiceModel.WorkflowServiceHost>, you can add the <xref:System.Activities.Tracking.EtwTrackingParticipant> behavior extension through code. To add a custom tracking participant, create a new behavior extension and add it to the <xref:System.ServiceModel.ServiceHost> as shown in the following example code.  
@@ -75,15 +74,14 @@ instance.Extensions.Add(trackingParticipant);
   
 ```  
 ServiceHost svcHost = new ServiceHost(typeof(WorkflowService), new   
-                                 Uri("http://localhost:8001/Sample"));  
+                                 Uri("http://localhost:8001/Sample"));  
 EtwTrackingBehavior trackingBehavior =   
-    new EtwTrackingBehavior  
-    {  
-        ProfileName = "Sample Tracking Profile"  
-    };  
+    new EtwTrackingBehavior  
+    {  
+        ProfileName = "Sample Tracking Profile"  
+    };  
 svcHost.Description.Behaviors.Add(trackingBehavior);  
 svcHost.Open();  
-  
 ```  
   
  The tracking participant is added to the workflow service host as an extension to the behavior.  
@@ -125,7 +123,6 @@ TrackingProfile GetProfile(string profileName, string displayName)
             }  
   
             return trackingProfile;  
-  
 ```  
   
  This sample code shows how to add a tracking profile to a workflow host.  
@@ -152,7 +149,6 @@ if (null != workflowServiceHost)
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());  
 invoker.Extensions.Add(customTrackingParticipant);  
 invoker.Invoke();  
-  
 ```  
   
 ### Viewing tracking records in Event Viewer  
@@ -197,38 +193,34 @@ invoker.Invoke();
   
 1.  Declare the provider ID in the application configuration file.  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <diagnostics etwProviderId="2720e974-9fe9-477a-bb60-81fe3bf91eec"/>  
     </system.serviceModel>  
-  
     ```  
   
 2.  Copy the manifest file from %windir%\Microsoft.NET\Framework\\<latest version of [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]>\Microsoft.Windows.ApplicationServer.Applications.man to a temporary location, and rename it to Microsoft.Windows.ApplicationServer.Applications_Provider1.man  
   
 3.  Change the GUID in the manifest file to the new GUID.  
   
-    ```  
+    ```xml  
     <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"  
-  
     ```  
   
 4.  Change the provider name if you do not want to uninstall the default provider.  
   
-    ```  
+    ```xml  
     <provider name="Microsoft-Windows-Application Server-Applications" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}"  
-  
     ```  
   
 5.  If you changed the provider name in the previous step, change the channel names in the manifest file to the new provider name.  
   
-    ```  
+    ```xml  
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Admin" chid="ADMIN_CHANNEL" symbol="ADMIN_CHANNEL" type="Admin" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ADMIN_CHANNEL.message)" />  
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Operational" chid="OPERATIONAL_CHANNEL" symbol="OPERATIONAL_CHANNEL" type="Operational" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.OPERATIONAL_CHANNEL.message)" />  
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" />  
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Debug" chid="DEBUG_CHANNEL" symbol="DEBUG_CHANNEL" type="Debug" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.DEBUG_CHANNEL.message)" />  
     <channel name="Microsoft-Windows-Application Server-Applications_Provider1/Perf" chid="PERF_CHANNEL" symbol="PERF_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.PERF_CHANNEL.message)" />  
-  
     ```  
   
 6.  Generate the resource DLL by following these steps.  
@@ -239,14 +231,12 @@ invoker.Invoke();
   
         ```  
         mc.exe Microsoft.Windows.ApplicationServer.Applications_Provider1.man  
-  
         ```  
   
     3.  Run rc.exe on the resource file generated in the previous step.  
   
         ```  
-        rc.exe  Microsoft.Windows.ApplicationServer.Applications_Provider1.rc  
-  
+        rc.exe  Microsoft.Windows.ApplicationServer.Applications_Provider1.rc  
         ```  
   
     4.  Create an empty cs file called NewProviderReg.cs.  
@@ -259,9 +249,8 @@ invoker.Invoke();
   
     6.  Change the resource and message dl namel in the manifest file from `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` to the new dll name.  
   
-        ```  
+        ```xml  
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">  
-  
         ```  
   
     7.  Use [wevtutil](http://go.microsoft.com/fwlink/?LinkId=184608) to register the manifest.  
@@ -271,5 +260,5 @@ invoker.Invoke();
         ```  
   
 ## See Also  
- [Windows Server App Fabric Monitoring](http://go.microsoft.com/fwlink/?LinkId=201273)   
+ [Windows Server App Fabric Monitoring](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [Monitoring Applications with App Fabric](http://go.microsoft.com/fwlink/?LinkId=201275)

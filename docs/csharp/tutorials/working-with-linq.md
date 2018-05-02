@@ -36,7 +36,7 @@ You’ll need to setup your machine to run .NET core. You can find the installat
 
 ## Create the Application
 
-The first step is to create a new application. Open a command prompt and create a new directory for your application. Make that the current directory. Type the command `dotnet new console` at the command prompt. This creates the starter files for a basic “Hello World” application.
+The first step is to create a new application. Open a command prompt and create a new directory for your application. Make that the current directory. Type the command `dotnet new console` at the command prompt. This creates the starter files for a basic "Hello World" application.
 
 If you've never used C# before, [this tutorial](console-teleprompter.md) explains the structure of a C# program. You can read that and then return here to learn more about LINQ. 
 
@@ -325,6 +325,6 @@ Compile and run again. The output is a little cleaner, and the code is a bit mor
 
 ## Conclusion
 
-This sample should you some of the methods used in LINQ, how to create your own methods that will be easily used with LINQ enabled code. It also showed you the differences between lazy and eager evaluation, and the affect that decision can have on performance.
+This sample showed you some of the methods used in LINQ, how to create your own methods that will be easily used with LINQ enabled code. It also showed you the differences between lazy and eager evaluation, and the effect that decision can have on performance.
 
-You learned a bit about one magician's technique. Magician's use the faro shuffle because they can control where every card moves in the deck. In some tricks, the magician has an audience member place a card on top of the deck, and shuffles a few times, knowing where that card goes. Other illusions require the deck set a certain way. A magician will set the deck prior to performing the trick. Then she will shuffle the deck 5 times using an inner shuffle. On stage, she can show what looks like a random deck, shuffle it 3 more times, and have the deck set exactly how she wants.
+You learned a bit about one magician's technique. Magicians use the faro shuffle because they can control where every card moves in the deck. In some tricks, the magician has an audience member place a card on top of the deck, and shuffles a few times, knowing where that card goes. Other illusions require the deck set a certain way. A magician will set the deck prior to performing the trick. Then she will shuffle the deck 5 times using an inner shuffle. On stage, she can show what looks like a random deck, shuffle it 3 more times, and have the deck set exactly how she wants.

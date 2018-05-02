@@ -1,8 +1,8 @@
 ---
-title: "Data Contract Serializer | Microsoft Docs"
+title: "Data Contract Serializer"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ helpviewer_keywords:
   - "DataContractSerializer"
 ms.assetid: 3d64837e-0a0c-4cc8-90ff-a5c6f313c63a
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Data Contract Serializer
 The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] infrastructure uses the <xref:System.Runtime.Serialization.DataContractSerializer> class as the default serializer. The topics in this section provide more details for using it as a stand-alone serializer.  
@@ -44,5 +46,5 @@ The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] infrastructure uses 
  [Data Transfer and Serialization](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)  
   
 ## See Also  
- [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)   
+ [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
  [Specifying Data Transfer in Service Contracts](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)

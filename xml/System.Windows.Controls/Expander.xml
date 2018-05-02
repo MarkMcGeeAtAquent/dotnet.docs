@@ -1,7 +1,9 @@
-<Type Name="Expander" FullName="System.Windows.Controls.Expander">
+﻿<Type Name="Expander" FullName="System.Windows.Controls.Expander">
   <TypeSignature Language="C#" Value="public class Expander : System.Windows.Controls.HeaderedContentControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi Expander extends System.Windows.Controls.HeaderedContentControl" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Expander" />
+  <TypeSignature Language="VB.NET" Value="Public Class Expander&#xA;Inherits HeaderedContentControl" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Expander : System::Windows::Controls::HeaderedContentControl" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -29,7 +31,7 @@
   
  If the content of the expanded window is too large for the window, you can wrap the content of the <xref:System.Windows.Controls.Expander> in a <xref:System.Windows.Controls.ScrollViewer> control to provide scrollable content. Scrolling capability is not automatically provided by the <xref:System.Windows.Controls.Expander> control.  
   
- For an <xref:System.Windows.Controls.Expander> to work correctly, do not specify a <xref:System.Windows.FrameworkElement.Height%2A> on the <xref:System.Windows.Controls.Expander> control when the <xref:System.Windows.Controls.Expander.ExpandDirection%2A> property is set to <xref:System.Windows.Controls.ExpandDirection> or <xref:System.Windows.Controls.ExpandDirection>. Similarly, do not specify a <xref:System.Windows.FrameworkElement.Width%2A> on the <xref:System.Windows.Controls.Expander> control when the <xref:System.Windows.Controls.Expander.ExpandDirection%2A> property is set to <xref:System.Windows.Controls.ExpandDirection> or <xref:System.Windows.Controls.ExpandDirection>. When you set a size on the <xref:System.Windows.Controls.Expander> control in the direction that the expanded content is displayed, the area that is defined by the size parameter is displayed with a border around it. This area displays even when the window is collapsed. To set the size of the expanded window, set size dimensions on the content of the <xref:System.Windows.Controls.Expander> control or the <xref:System.Windows.Controls.ScrollViewer> that encloses the content.  
+ For an <xref:System.Windows.Controls.Expander> to work correctly, do not specify a <xref:System.Windows.FrameworkElement.Height%2A> on the <xref:System.Windows.Controls.Expander> control when the <xref:System.Windows.Controls.Expander.ExpandDirection%2A> property is set to <xref:System.Windows.Controls.ExpandDirection.Down> or <xref:System.Windows.Controls.ExpandDirection.Up>. Similarly, do not specify a <xref:System.Windows.FrameworkElement.Width%2A> on the <xref:System.Windows.Controls.Expander> control when the <xref:System.Windows.Controls.Expander.ExpandDirection%2A> property is set to <xref:System.Windows.Controls.ExpandDirection.Left> or <xref:System.Windows.Controls.ExpandDirection.Right>. When you set a size on the <xref:System.Windows.Controls.Expander> control in the direction that the expanded content is displayed, the area that is defined by the size parameter is displayed with a border around it. This area displays even when the window is collapsed. To set the size of the expanded window, set size dimensions on the content of the <xref:System.Windows.Controls.Expander> control or the <xref:System.Windows.Controls.ScrollViewer> that encloses the content.  
   
  When an <xref:System.Windows.Controls.Expander> control is the last element in a <xref:System.Windows.Controls.DockPanel>, the <xref:System.Windows.Controls.Expander> is sized to fill the remaining area of the <xref:System.Windows.Controls.DockPanel>. To prevent this, set the <xref:System.Windows.Controls.DockPanel.LastChildFill%2A> property on the <xref:System.Windows.Controls.DockPanel> to `false`, or make sure that the <xref:System.Windows.Controls.Expander> is not the last element in a <xref:System.Windows.Controls.DockPanel>.  
   
@@ -48,16 +50,19 @@
 ## Examples  
  The following example shows how to create a simple <xref:System.Windows.Controls.Expander> control.  
   
- [!code-xml[ExpanderExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
+ [!code-xaml[ExpanderExample#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderExample/CSharp/Page1.xaml#2)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Controls.ExpandDirection" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Expander ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Expander();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -73,6 +78,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Collapsed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Collapsed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Expander.Collapsed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Collapsed As RoutedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::RoutedEventHandler ^ Collapsed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -105,7 +112,7 @@
   
  [!code-csharp[ExpanderSnips#Collapsed](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#collapsed)]
  [!code-vb[ExpanderSnips#Collapsed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#collapsed)]
- [!code-xml[ExpanderSnips#Collapsed](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#collapsed)]  
+ [!code-xaml[ExpanderSnips#Collapsed](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#collapsed)]  
   
  The following example shows how to define the event handler.  
   
@@ -114,12 +121,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Controls.Expander.Expanded" />
       </Docs>
     </Member>
     <Member MemberName="CollapsedEvent">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CollapsedEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CollapsedEvent" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.CollapsedEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CollapsedEvent As RoutedEvent " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::RoutedEvent ^ CollapsedEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -137,6 +147,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Controls.ExpandDirection ExpandDirection { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.ExpandDirection ExpandDirection" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Expander.ExpandDirection" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExpandDirection As ExpandDirection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Controls::ExpandDirection ExpandDirection { System::Windows::Controls::ExpandDirection get(); void set(System::Windows::Controls::ExpandDirection value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -166,7 +178,7 @@
   
 |||  
 |-|-|  
-|Identifier field|<xref:System.Windows.Controls.Expander>|  
+|Identifier field|<xref:System.Windows.Controls.Expander.ExpandDirectionProperty>|  
 |Metadata properties set to `true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
   
    
@@ -176,16 +188,19 @@
   
  [!code-csharp[ExpanderSnips#ExpandDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#expanddirection)]
  [!code-vb[ExpanderSnips#ExpandDirection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#expanddirection)]
- [!code-xml[ExpanderSnips#ExpandDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanddirection)]  
+ [!code-xaml[ExpanderSnips#ExpandDirection](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanddirection)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Controls.ExpandDirection" />
       </Docs>
     </Member>
     <Member MemberName="ExpandDirectionProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ExpandDirectionProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ExpandDirectionProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.ExpandDirectionProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ExpandDirectionProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ ExpandDirectionProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -203,6 +218,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Expanded;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Expanded" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Expander.Expanded" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Expanded As RoutedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::RoutedEventHandler ^ Expanded;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -235,7 +252,7 @@
   
  [!code-csharp[ExpanderSnips#Expanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#expanded)]
  [!code-vb[ExpanderSnips#Expanded](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#expanded)]
- [!code-xml[ExpanderSnips#Expanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanded)]  
+ [!code-xaml[ExpanderSnips#Expanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#expanded)]  
   
  The following example shows how to define the event handler.  
   
@@ -244,12 +261,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Controls.Expander.Collapsed" />
       </Docs>
     </Member>
     <Member MemberName="ExpandedEvent">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ExpandedEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ExpandedEvent" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.ExpandedEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ExpandedEvent As RoutedEvent " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::RoutedEvent ^ ExpandedEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -267,6 +287,8 @@
       <MemberSignature Language="C#" Value="public bool IsExpanded { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsExpanded" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Expander.IsExpanded" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsExpanded As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsExpanded { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -297,7 +319,7 @@
   
 |||  
 |-|-|  
-|Identifier field|<xref:System.Windows.Controls.Expander>|  
+|Identifier field|<xref:System.Windows.Controls.Expander.IsExpandedProperty>|  
 |Metadata properties set to `true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
   
    
@@ -307,7 +329,7 @@
   
  [!code-csharp[ExpanderSnips#IsExpanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml.cs#isexpanded)]
  [!code-vb[ExpanderSnips#IsExpanded](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpanderSnips/visualbasic/window1.xaml.vb#isexpanded)]
- [!code-xml[ExpanderSnips#IsExpanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#isexpanded)]  
+ [!code-xaml[ExpanderSnips#IsExpanded](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpanderSnips/CSharp/Window1.xaml#isexpanded)]  
   
  ]]></format>
         </remarks>
@@ -317,6 +339,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsExpandedProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsExpandedProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Expander.IsExpandedProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly IsExpandedProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ IsExpandedProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -330,10 +354,33 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnApplyTemplate" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub OnApplyTemplate ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void OnApplyTemplate();" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Invoked whenever application code or internal processes call the <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" /> method.</summary>
+        <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.FrameworkElement.ApplyTemplate" />
+      </Docs>
+    </Member>
     <Member MemberName="OnCollapsed">
       <MemberSignature Language="C#" Value="protected virtual void OnCollapsed ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCollapsed() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnCollapsed" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCollapsed ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCollapsed();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -352,6 +399,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnCreateAutomationPeer" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnCreateAutomationPeer () As AutomationPeer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Automation::Peers::AutomationPeer ^ OnCreateAutomationPeer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -371,6 +420,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnExpanded ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnExpanded() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Expander.OnExpanded" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnExpanded ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnExpanded();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>

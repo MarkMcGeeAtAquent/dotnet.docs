@@ -1,29 +1,34 @@
 ---
 uid: System.Transactions.TransactionManagerCommunicationException
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionManagerCommunicationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionManagerCommunicationException.#ctor
-manager: "ghogen"
----
-
----
-uid: System.Transactions.TransactionManagerCommunicationException.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionManagerCommunicationException.#ctor(System.String,System.Exception)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionManagerCommunicationException.#ctor(System.String)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

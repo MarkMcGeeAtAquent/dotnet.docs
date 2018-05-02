@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport2::GetGenericParamConstraintProps Method | Microsoft Docs"
+title: "IMetaDataImport2::GetGenericParamConstraintProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport2.GetGenericParamConstraintProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport2::GetGenericParamConstraintProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport2::GetGenericParamConstraintProps method [.NET Framework metadata]"
   - "GetGenericParamConstraintProps method [.NET Framework metadata]"
 ms.assetid: c5fee4a0-b132-4e5e-8730-e586ce314b9a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport2::GetGenericParamConstraintProps Method
 Gets the metadata associated with the generic parameter constraint represented by the specified constraint token.  
@@ -60,5 +63,5 @@ HRESULT GetGenericParamConstraintProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)   
+ [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

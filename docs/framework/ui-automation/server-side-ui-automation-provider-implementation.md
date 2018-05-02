@@ -1,5 +1,5 @@
 ---
-title: "Server-Side UI Automation Provider Implementation | Microsoft Docs"
+title: "Server-Side UI Automation Provider Implementation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,6 +18,8 @@ caps.latest.revision: 39
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Server-Side UI Automation Provider Implementation
 > [!NOTE]
@@ -145,7 +147,7 @@ manager: "markl"
   
  The structure of the fragment is determined by your implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A>. For each possible direction from each fragment, this method returns the provider object for the element in that direction. If there is no element in that direction, the method returns a `null` reference.  
   
- The fragment root supports navigation only to child elements. For example, a list box returns the first item in the list when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection>, and the last item when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection>. The fragment root does not support navigation to a parent or siblings; this is handled by the host window provider.  
+ The fragment root supports navigation only to child elements. For example, a list box returns the first item in the list when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection.FirstChild>, and the last item when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection.LastChild>. The fragment root does not support navigation to a parent or siblings; this is handled by the host window provider.  
   
  Elements of a fragment that are not the root must support navigation to the parent, and to any siblings and children they have.  
   
@@ -176,11 +178,11 @@ manager: "markl"
  To accomplish this, the fragment root provider for the rebar exposes a set of children representing the bands. Each band has a single provider that may expose properties and patterns. In its implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, the band provider returns the default window provider for the control HWND, which it obtains by calling <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>, passing in the control's window handle. Finally, the fragment root provider for the rebar implements the <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> interface, and in its implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> it returns the appropriate band provider for the control contained in the specified HWND.  
   
 ## See Also  
- [UI Automation Providers Overview](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)   
- [Expose a Server-side UI Automation Provider](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)   
- [Return Properties from a UI Automation Provider](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)   
- [Raise Events from a UI Automation Provider](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)   
- [Enable Navigation in a UI Automation Fragment Provider](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)   
- [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)   
- [Simple Provider Sample](http://msdn.microsoft.com/en-us/c10a6255-e8dc-494b-a051-15111b47984a)   
- [Fragment Provider Sample](http://msdn.microsoft.com/en-us/778ef1bc-8610-4bc9-886e-aeff94a8a13e)
+ [UI Automation Providers Overview](../../../docs/framework/ui-automation/ui-automation-providers-overview.md)  
+ [Expose a Server-side UI Automation Provider](../../../docs/framework/ui-automation/expose-a-server-side-ui-automation-provider.md)  
+ [Return Properties from a UI Automation Provider](../../../docs/framework/ui-automation/return-properties-from-a-ui-automation-provider.md)  
+ [Raise Events from a UI Automation Provider](../../../docs/framework/ui-automation/raise-events-from-a-ui-automation-provider.md)  
+ [Enable Navigation in a UI Automation Fragment Provider](../../../docs/framework/ui-automation/enable-navigation-in-a-ui-automation-fragment-provider.md)  
+ [Support Control Patterns in a UI Automation Provider](../../../docs/framework/ui-automation/support-control-patterns-in-a-ui-automation-provider.md)  
+ [Simple Provider Sample](http://msdn.microsoft.com/library/c10a6255-e8dc-494b-a051-15111b47984a)  
+ [Fragment Provider Sample](http://msdn.microsoft.com/library/778ef1bc-8610-4bc9-886e-aeff94a8a13e)

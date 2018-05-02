@@ -1,4 +1,6 @@
 ---
 uid: System.Transactions.TransactionScopeAsyncFlowOption
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

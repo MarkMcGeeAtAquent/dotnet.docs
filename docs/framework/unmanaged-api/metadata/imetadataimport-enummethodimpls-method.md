@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumMethodImpls Method | Microsoft Docs"
+title: "IMetaDataImport::EnumMethodImpls Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumMethodImpls"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumMethodImpls"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumMethodImpls method [.NET Framework metadata]"
   - "IMetaDataImport::EnumMethodImpls method [.NET Framework metadata]"
 ms.assetid: 4e0f865d-88b5-44bd-be35-492622e5e08e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumMethodImpls Method
 Enumerates MethodBody and MethodDeclaration tokens representing methods of the specified type.  
@@ -79,5 +82,5 @@ HRESULT EnumMethodImpls (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

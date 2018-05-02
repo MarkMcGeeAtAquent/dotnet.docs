@@ -1,8 +1,8 @@
 ---
-title: "Defining an Event in Windows Forms Controls | Microsoft Docs"
+title: "Defining an Event in Windows Forms Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "events [Windows Forms], defining within Windows Forms custom controls"
   - "custom controls [Windows Forms], events using code"
@@ -19,6 +20,8 @@ caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Defining an Event in Windows Forms Controls
 For details about defining custom events, see [Events](../../../../docs/standard/events/index.md). If you define an event that does not have any associated data, use the base type for event data, <xref:System.EventArgs>, and use <xref:System.EventHandler> as the event delegate. All that remains to do is to define an event member and a protected `On`*EventName* method that raises the event.  
@@ -83,6 +86,6 @@ public class FlashTrackBar : Control {
 ```  
   
 ## See Also  
- [Events in Windows Forms Controls](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)   
- [Events](../../../../docs/standard/events/index.md)   
+ [Events in Windows Forms Controls](../../../../docs/framework/winforms/controls/events-in-windows-forms-controls.md)  
+ [Events](../../../../docs/standard/events/index.md)  
  [Events](../../../../docs/standard/events/index.md)

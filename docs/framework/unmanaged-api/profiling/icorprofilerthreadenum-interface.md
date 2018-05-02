@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerThreadEnum Interface | Microsoft Docs"
+title: "ICorProfilerThreadEnum Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerThreadEnum"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerThreadEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerThreadEnum interface [.NET Framework profiling]"
 ms.assetid: 1e35031b-e095-4c14-9644-8deeb3081e0b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerThreadEnum Interface
 Provides methods to sequentially iterate through a collection of threads in the common language runtime.  
@@ -52,5 +55,5 @@ Provides methods to sequentially iterate through a collection of threads in the 
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

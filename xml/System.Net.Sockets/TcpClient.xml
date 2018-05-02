@@ -1,10 +1,13 @@
-<Type Name="TcpClient" FullName="System.Net.Sockets.TcpClient">
+﻿<Type Name="TcpClient" FullName="System.Net.Sockets.TcpClient">
   <TypeSignature Language="C#" Value="public class TcpClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TcpClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.TcpClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class TcpClient&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class TcpClient : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Net.Sockets</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -55,16 +58,37 @@
     <block subset="none" type="overrides">
       <para>To send and receive data, use the <see cref="M:System.Net.Sockets.TcpClient.GetStream" /> method to obtain a <see cref="T:System.Net.Sockets.NetworkStream" />. Call the <see cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" /> and <see cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" /> methods of the <see cref="T:System.Net.Sockets.NetworkStream" /> to send and receive data with the remote host. Use the <see cref="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" /> method to release all resources associated with the <see cref="T:System.Net.Sockets.TcpClient" />.</para>
     </block>
+    <altmember cref="T:System.Net.Sockets.TcpListener" />
+    <altmember cref="T:System.Net.Sockets.NetworkStream" />
+    <altmember cref="T:System.Net.Sockets.Socket" />
+    <altmember cref="T:System.Net.Sockets.ProtocolType" />
+    <altmember cref="T:System.Net.IPEndPoint" />
+    <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
+    <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
+    <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Net.Sockets.TcpClient" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TcpClient ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TcpClient();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -101,12 +125,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TcpClient (System.Net.IPEndPoint localEP);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPEndPoint localEP) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.#ctor(System.Net.IPEndPoint)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (localEP As IPEndPoint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TcpClient(System::Net::IPEndPoint ^ localEP);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -116,6 +143,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="localEP" Type="System.Net.IPEndPoint" />
@@ -146,16 +177,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The  <paramref name="localEP" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="T:System.Net.IPEndPoint" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TcpClient (System.Net.Sockets.AddressFamily family);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Sockets.AddressFamily family) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.#ctor(System.Net.Sockets.AddressFamily)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (family As AddressFamily)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TcpClient(System::Net::Sockets::AddressFamily family);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -202,6 +238,8 @@
       <MemberSignature Language="C#" Value="public TcpClient (string hostname, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string hostname, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.#ctor(System.String,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (hostname As String, port As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TcpClient(System::String ^ hostname, int port);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -211,6 +249,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="hostname" Type="System.String" />
@@ -229,7 +271,7 @@
  If IPv6 is enabled and the <xref:System.Net.Sockets.TcpClient.%23ctor%28System.String%2CSystem.Int32%29> method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -247,17 +289,22 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="hostname" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="port" /> parameter is not between <see cref="F:System.Net.IPEndPoint.MinPort" /> and <see cref="F:System.Net.IPEndPoint.MaxPort" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
+        <altmember cref="Overload:System.Net.Sockets.TcpClient.#ctor" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Active">
       <MemberSignature Language="C#" Value="protected bool Active { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Active" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.Active" />
+      <MemberSignature Language="VB.NET" Value="Protected Property Active As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool Active { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -283,16 +330,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.Socket.Connected" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Available">
       <MemberSignature Language="C#" Value="public int Available { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Available" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.Available" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Available As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Available { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -315,7 +367,7 @@
 ## Remarks  
  <xref:System.Net.Sockets.TcpClient.Available%2A> is a way to determine whether data is queued for reading. If data is available, call <xref:System.Net.Sockets.NetworkStream.Read%2A> to get the data. The available data is the total amount of data queued in the network buffer for reading. If no data is queued in the network buffer, <xref:System.Net.Sockets.TcpClient.Available%2A> returns 0.  
   
- If the remote host shuts down or closes the connection, <xref:System.Net.Sockets.TcpClient.Available%2A> may throw a <xref:System.Net.Sockets.SocketException>. If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
+ If the remote host shuts down or closes the connection, <xref:System.Net.Sockets.TcpClient.Available%2A> may throw a <xref:System.Net.Sockets.SocketException>. If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
   
    
   
@@ -327,14 +379,26 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="BeginConnect">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Begins an asynchronous request for a remote host connection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="BeginConnect">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginConnect (System.Net.IPAddress address, int port, AsyncCallback requestCallback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginConnect(class System.Net.IPAddress address, int32 port, class System.AsyncCallback requestCallback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.BeginConnect(System.Net.IPAddress,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginConnect (address As IPAddress, port As Integer, requestCallback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginConnect(System::Net::IPAddress ^ address, int port, AsyncCallback ^ requestCallback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -344,6 +408,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -382,7 +450,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="address" /> parameter is <see langword="null" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have permission for the requested operation.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The port number is not valid.</exception>
@@ -392,6 +460,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginConnect (System.Net.IPAddress[] addresses, int port, AsyncCallback requestCallback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginConnect(class System.Net.IPAddress[] addresses, int32 port, class System.AsyncCallback requestCallback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.BeginConnect(System.Net.IPAddress[],System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginConnect (addresses As IPAddress(), port As Integer, requestCallback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginConnect(cli::array &lt;System::Net::IPAddress ^&gt; ^ addresses, int port, AsyncCallback ^ requestCallback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -401,6 +471,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -441,7 +515,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="addresses" /> parameter is <see langword="null" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have permission for the requested operation.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The port number is not valid.</exception>
@@ -451,6 +525,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginConnect (string host, int port, AsyncCallback requestCallback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginConnect(string host, int32 port, class System.AsyncCallback requestCallback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.BeginConnect(System.String,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginConnect (host As String, port As Integer, requestCallback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginConnect(System::String ^ host, int port, AsyncCallback ^ requestCallback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -460,6 +536,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -498,7 +578,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="host" /> parameter is <see langword="null" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have permission for the requested operation.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The port number is not valid.</exception>
@@ -508,10 +588,13 @@
       <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket Client { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.Socket Client" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.Client" />
+      <MemberSignature Language="VB.NET" Value="Public Property Client As Socket" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::Sockets::Socket ^ Client { System::Net::Sockets::Socket ^ get(); void set(System::Net::Sockets::Socket ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -544,12 +627,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.Sockets.Socket" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -559,6 +645,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -589,10 +679,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Connect">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Connects the client to a remote TCP host using the specified host name and port number.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Connect">
       <MemberSignature Language="C#" Value="public void Connect (System.Net.IPEndPoint remoteEP);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect(class System.Net.IPEndPoint remoteEP) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Connect(System.Net.IPEndPoint)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Connect (remoteEP As IPEndPoint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Connect(System::Net::IPEndPoint ^ remoteEP);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -602,6 +704,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -619,7 +725,7 @@
  Call this method to establish a synchronous remote host connection to the specified <xref:System.Net.IPEndPoint>. Before you call <xref:System.Net.Sockets.TcpClient.Connect%2A> you must create an instance of the <xref:System.Net.IPEndPoint> class using an IP address and a port number. Use this <xref:System.Net.IPEndPoint> as the `remoteEP` parameter. The <xref:System.Net.Sockets.TcpClient.Connect%2A> method will block until it either connects or fails. After connecting with the remote host, use the <xref:System.Net.Sockets.TcpClient.GetStream%2A> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream>. Use this <xref:System.Net.Sockets.NetworkStream> to send and receive data.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md)  
@@ -636,14 +742,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="remoteEp" /> parameter is <see langword="null" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.TcpClient" /> is closed.</exception>
+        <altmember cref="T:System.Net.IPEndPoint" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.GetStream" />
       </Docs>
     </Member>
     <Member MemberName="Connect">
       <MemberSignature Language="C#" Value="public void Connect (System.Net.IPAddress address, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect(class System.Net.IPAddress address, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Connect(System.Net.IPAddress,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Connect (address As IPAddress, port As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Connect(System::Net::IPAddress ^ address, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -653,6 +763,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -672,7 +786,7 @@
  Call this method to establish a synchronous remote host connection to the specified <xref:System.Net.IPAddress> and port number. The <xref:System.Net.Sockets.TcpClient.Connect%2A> method will block until it either connects or fails. After connecting with the remote host, use the <xref:System.Net.Sockets.TcpClient.GetStream%2A> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream>. Use this <xref:System.Net.Sockets.NetworkStream> to send and receive data.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -690,15 +804,18 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="address" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="port" /> is not between <see cref="F:System.Net.IPEndPoint.MinPort" /> and <see cref="F:System.Net.IPEndPoint.MaxPort" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">
           <see cref="T:System.Net.Sockets.TcpClient" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.TcpClient.GetStream" />
       </Docs>
     </Member>
     <Member MemberName="Connect">
       <MemberSignature Language="C#" Value="public void Connect (System.Net.IPAddress[] ipAddresses, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect(class System.Net.IPAddress[] ipAddresses, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Connect(System.Net.IPAddress[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Connect (ipAddresses As IPAddress(), port As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Connect(cli::array &lt;System::Net::IPAddress ^&gt; ^ ipAddresses, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -708,6 +825,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -727,7 +848,7 @@
  This method is typically used immediately after a call to the <xref:System.Net.Dns.BeginGetHostAddresses%2A> method, which can return multiple IP addresses for a single host. Call the <xref:System.Net.Sockets.TcpClient.Connect%2A> method to establish a synchronous remote host connection to the host specified by the array of <xref:System.Net.IPAddress> elements and the port number. The <xref:System.Net.Sockets.TcpClient.Connect%2A> method will block until it either connects or fails. After connecting with the remote host, use the <xref:System.Net.Sockets.TcpClient.GetStream%2A> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream>. Use this <xref:System.Net.Sockets.NetworkStream> to send and receive data.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -744,16 +865,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="ipAddresses" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The port number is not valid.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have permission for the requested operation.</exception>
         <exception cref="T:System.NotSupportedException">This method is valid for sockets that use the <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> flag or the <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> flag.</exception>
+        <altmember cref="T:System.Net.Sockets.TcpListener" />
       </Docs>
     </Member>
     <Member MemberName="Connect">
       <MemberSignature Language="C#" Value="public void Connect (string hostname, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect(string hostname, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Connect (hostname As String, port As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Connect(System::String ^ hostname, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -763,6 +887,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -784,7 +912,7 @@
  If IPv6 is enabled and the <xref:System.Net.Sockets.TcpClient.Connect%28System.String%2CSystem.Int32%29> method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -802,19 +930,34 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="hostname" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="port" /> parameter is not between <see cref="F:System.Net.IPEndPoint.MinPort" /> and <see cref="F:System.Net.IPEndPoint.MaxPort" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">
           <see cref="T:System.Net.Sockets.TcpClient" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.Socket.Connect(System.Net.EndPoint)" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.GetStream" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ConnectAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Connects the client to a remote TCP host using the specified host name and port number as an asynchronous operation.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ConnectAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (System.Net.IPAddress address, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(class System.Net.IPAddress address, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.ConnectAsync(System.Net.IPAddress,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConnectAsync (address As IPAddress, port As Integer) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ConnectAsync(System::Net::IPAddress ^ address, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -848,7 +991,7 @@
  Call this method to establish a synchronous remote host connection to the specified <xref:System.Net.IPAddress> and port number as an asynchronous operation. After connecting with the remote host, use the <xref:System.Net.Sockets.TcpClient.GetStream%2A> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream>. Use this <xref:System.Net.Sockets.NetworkStream> to send and receive data.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -857,19 +1000,23 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="address" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="port" /> is not between <see cref="F:System.Net.IPEndPoint.MinPort" /> and <see cref="F:System.Net.IPEndPoint.MaxPort" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">
           <see cref="T:System.Net.Sockets.TcpClient" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.TcpClient.GetStream" />
       </Docs>
     </Member>
     <Member MemberName="ConnectAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (System.Net.IPAddress[] addresses, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(class System.Net.IPAddress[] addresses, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.ConnectAsync(System.Net.IPAddress[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConnectAsync (addresses As IPAddress(), port As Integer) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ConnectAsync(cli::array &lt;System::Net::IPAddress ^&gt; ^ addresses, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -903,7 +1050,7 @@
  This method is typically used immediately after a call to the <xref:System.Net.Dns.BeginGetHostAddresses%2A> method, which can return multiple IP addresses for a single host. Call this method to establish a synchronous remote host connection to the host specified by the array of <xref:System.Net.IPAddress> elements and the port number as an asynchronous operation. After connecting with the remote host, use the <xref:System.Net.Sockets.TcpClient.GetStream%2A> method to obtain the underlying <xref:System.Net.Sockets.NetworkStream>. Use this <xref:System.Net.Sockets.NetworkStream> to send and receive data.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -912,20 +1059,24 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="ipAddresses" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The port number is not valid.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
         <exception cref="T:System.Security.SecurityException">A caller higher in the call stack does not have permission for the requested operation.</exception>
         <exception cref="T:System.NotSupportedException">This method is valid for sockets that use the <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> flag or the <see cref="F:System.Net.Sockets.AddressFamily.InterNetworkV6" /> flag.</exception>
+        <altmember cref="T:System.Net.Sockets.TcpListener" />
       </Docs>
     </Member>
     <Member MemberName="ConnectAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ConnectAsync (string host, int port);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ConnectAsync(string host, int32 port) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.ConnectAsync(System.String,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConnectAsync (host As String, port As Integer) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ConnectAsync(System::String ^ host, int port);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -961,7 +1112,7 @@
  If IPv6 is enabled and the <xref:System.Net.Sockets.TcpClient.ConnectAsync%28System.String%2CSystem.Int32%29> method is called to connect to a host that resolves to both IPv6 and IPv4 addresses, the connection to the IPv6 address will be attempted first before the IPv4 address. This may have the effect of delaying the time to establish the connection if the host is not listening on the IPv6 address.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -970,19 +1121,24 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="hostname" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="port" /> parameter is not between <see cref="F:System.Net.IPEndPoint.MinPort" /> and <see cref="F:System.Net.IPEndPoint.MaxPort" />.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">
           <see cref="T:System.Net.Sockets.TcpClient" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.Socket.Connect(System.Net.EndPoint)" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.GetStream" />
       </Docs>
     </Member>
     <Member MemberName="Connected">
       <MemberSignature Language="C#" Value="public bool Connected { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Connected" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.Connected" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Connected As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Connected { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1024,10 +1180,16 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1051,10 +1213,13 @@
       <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1091,7 +1256,7 @@
           <para>
             <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean)" />, be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement <see langword="Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
- For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
+ For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
         </block>
       </Docs>
     </Member>
@@ -1099,6 +1264,8 @@
       <MemberSignature Language="C#" Value="public void EndConnect (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndConnect(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.EndConnect(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndConnect (asyncResult As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EndConnect(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1108,6 +1275,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1125,7 +1296,7 @@
  This method blocks until the operation is complete. To perform this operation synchronously, use a <xref:System.Net.Sockets.TcpClient.Connect%2A> method.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in the MSDN library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library) for a detailed description of the error.  
   
    
   
@@ -1140,7 +1311,7 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="asyncResult" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="asyncResult" /> parameter was not returned by a call to a <see cref="Overload:System.Net.Sockets.TcpClient.BeginConnect" /> method.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="M:System.Net.Sockets.TcpClient.EndConnect(System.IAsyncResult)" /> method was previously called for the asynchronous connection.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the <see cref="T:System.Net.Sockets.Socket" />. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the <see cref="T:System.Net.Sockets.Socket" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The underlying <see cref="T:System.Net.Sockets.Socket" /> has been closed.</exception>
       </Docs>
     </Member>
@@ -1148,10 +1319,13 @@
       <MemberSignature Language="C#" Value="public bool ExclusiveAddressUse { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ExclusiveAddressUse" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.ExclusiveAddressUse" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExclusiveAddressUse As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ExclusiveAddressUse { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1195,10 +1369,13 @@
       <MemberSignature Language="C#" Value="~TcpClient ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!TcpClient ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1219,24 +1396,28 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.Object.Finalize%2A?displayProperty=fullName>. Application code should not call this method; an object's <xref:System.Object.Finalize%2A> method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName> method.  
+ This method overrides <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. Application code should not call this method; an object's <xref:System.Object.Finalize%2A> method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> method.  
   
  The <xref:System.Net.Sockets.TcpClient> class finalizer closes the TCP connection and releases all managed resources associated with the <xref:System.Net.Sockets.TcpClient>. These resources include the underlying <xref:System.Net.Sockets.Socket> used for connecting with the remote host, and the <xref:System.Net.Sockets.NetworkStream> used to send and receive data. The finalizer does not release any unmanaged resources.  
   
- For more information, see [Finalize Methods and Destructors](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
+ For more information, see [Finalize Methods and Destructors](http://msdn.microsoft.com/library/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.Sockets.TcpClient.Close" />
       </Docs>
     </Member>
     <Member MemberName="GetStream">
       <MemberSignature Language="C#" Value="public System.Net.Sockets.NetworkStream GetStream ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Sockets.NetworkStream GetStream() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.GetStream" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetStream () As NetworkStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Net::Sockets::NetworkStream ^ GetStream();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1266,7 +1447,7 @@
 >  You must close the <xref:System.Net.Sockets.NetworkStream> when you are through sending and receiving data. Closing <xref:System.Net.Sockets.TcpClient> does not release the <xref:System.Net.Sockets.NetworkStream>.  
   
 > [!NOTE]
->  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+>  If you receive a <xref:System.Net.Sockets.SocketException>, use <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> to obtain the specific error code. After you have obtained this code, you can refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).  
@@ -1284,16 +1465,25 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Net.Sockets.TcpClient" /> is not connected to a remote host.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.TcpClient" /> has been closed.</exception>
+        <altmember cref="T:System.Net.Sockets.NetworkStream" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.DataAvailable" />
+        <altmember cref="T:System.IO.Stream" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.Connect(System.String,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="LingerState">
       <MemberSignature Language="C#" Value="public System.Net.Sockets.LingerOption LingerState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.LingerOption LingerState" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.LingerState" />
+      <MemberSignature Language="VB.NET" Value="Public Property LingerState As LingerOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::Sockets::LingerOption ^ LingerState { System::Net::Sockets::LingerOption ^ get(); void set(System::Net::Sockets::LingerOption ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1343,16 +1533,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.Sockets.LingerOption" />
+        <altmember cref="M:System.Net.Sockets.TcpClient.Close" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="NoDelay">
       <MemberSignature Language="C#" Value="public bool NoDelay { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool NoDelay" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.NoDelay" />
+      <MemberSignature Language="VB.NET" Value="Public Property NoDelay As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool NoDelay { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1393,10 +1589,13 @@
       <MemberSignature Language="C#" Value="public int ReceiveBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.ReceiveBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReceiveBufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ReceiveBufferSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1419,7 +1618,7 @@
 ## Remarks  
  The <xref:System.Net.Sockets.TcpClient.ReceiveBufferSize%2A> property gets or sets the number of bytes that you are expecting to store in the receive buffer for each read operation. This property actually manipulates the network buffer space allocated for receiving incoming data.  
   
- Your network buffer should be at least as large as your application buffer to ensure that the desired data will be available when you call the <xref:System.Net.Sockets.NetworkStream.Read%2A?displayProperty=fullName> method. Use the <xref:System.Net.Sockets.TcpClient.ReceiveBufferSize%2A> property to set this size. If your application will be receiving bulk data, you should pass the <xref:System.Net.Sockets.NetworkStream.Read%2A> method a very large application buffer.  
+ Your network buffer should be at least as large as your application buffer to ensure that the desired data will be available when you call the <xref:System.Net.Sockets.NetworkStream.Read%2A?displayProperty=nameWithType> method. Use the <xref:System.Net.Sockets.TcpClient.ReceiveBufferSize%2A> property to set this size. If your application will be receiving bulk data, you should pass the <xref:System.Net.Sockets.NetworkStream.Read%2A> method a very large application buffer.  
   
  If the network buffer is smaller than the amount of data you request in the <xref:System.Net.Sockets.NetworkStream.Read%2A> method, you will not be able to retrieve the desired amount of data in one read operation. This incurs the overhead of additional calls to the <xref:System.Net.Sockets.NetworkStream.Read%2A> method.  
   
@@ -1439,16 +1638,21 @@
  -or-  
   
  In .NET Compact Framework applications, you cannot set this property. For a workaround, see the Platform Note in Remarks.</exception>
+        <altmember cref="P:System.Net.Sockets.TcpClient.SendBufferSize" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="ReceiveTimeout">
       <MemberSignature Language="C#" Value="public int ReceiveTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.ReceiveTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReceiveTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ReceiveTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1482,16 +1686,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="P:System.Net.Sockets.TcpClient.SendTimeout" />
       </Docs>
     </Member>
     <Member MemberName="SendBufferSize">
       <MemberSignature Language="C#" Value="public int SendBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SendBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.SendBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property SendBufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int SendBufferSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1512,7 +1721,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.Sockets.TcpClient.SendBufferSize%2A> property gets or sets the number of bytes that you are expecting to send in each call to the <xref:System.Net.Sockets.NetworkStream.Write%2A?displayProperty=fullName> method. This property actually manipulates the network buffer space allocated for send operation.  
+ The <xref:System.Net.Sockets.TcpClient.SendBufferSize%2A> property gets or sets the number of bytes that you are expecting to send in each call to the <xref:System.Net.Sockets.NetworkStream.Write%2A?displayProperty=nameWithType> method. This property actually manipulates the network buffer space allocated for send operation.  
   
  Your network buffer should be at least as large as your application buffer to ensure that the desired data will be stored and sent in one operation. Use the <xref:System.Net.Sockets.TcpClient.SendBufferSize%2A> property to set this size. If your application will be sending bulk data, you should pass the <xref:System.Net.Sockets.NetworkStream.Write%2A> method a very large application buffer.  
   
@@ -1529,16 +1738,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.TcpClient.ReceiveBufferSize" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="SendTimeout">
       <MemberSignature Language="C#" Value="public int SendTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SendTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpClient.SendTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property SendTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int SendTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1574,13 +1788,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="P:System.Net.Sockets.TcpClient.ReceiveTimeout" />
       </Docs>
     </Member>
     <Member MemberName="System.IDisposable.Dispose">
       <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpClient.System#IDisposable#Dispose" />
+      <MemberSignature Language="VB.NET" Value="Sub Dispose () Implements IDisposable.Dispose" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.IDisposable.Dispose() = IDisposable::Dispose;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>

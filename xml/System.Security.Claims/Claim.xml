@@ -1,10 +1,13 @@
-<Type Name="Claim" FullName="System.Security.Claims.Claim">
+﻿<Type Name="Claim" FullName="System.Security.Claims.Claim">
   <TypeSignature Language="C#" Value="public class Claim" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Claim extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Security.Claims.Claim" />
+  <TypeSignature Language="VB.NET" Value="Public Class Claim" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Claim" />
   <AssemblyInfo>
     <AssemblyName>System.Security.Claims</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -31,7 +34,7 @@
   
  The following describes important properties of the <xref:System.Security.Claims.Claim> class:  
   
--   The <xref:System.Security.Claims.Claim.Type%2A> property is a string (typically a URI) that contains the semantic information about the claim; it tells you what the value of the claim means. For example, a claim with a claim type of <xref:System.Security.Claims.ClaimTypes.GivenName> (“http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname”) represents a user’s first name. The value of the <xref:System.Security.Claims.Claim.Type%2A> property can be one of the well-known claim types defined in the <xref:System.Security.Claims.ClaimTypes> class, or it can be an arbitrary URI as defined by the issuer. For example, a claim type of “urn:spendinglimit” might represent a user attribute which makes sense within the business context of the issuer.  
+-   The <xref:System.Security.Claims.Claim.Type%2A> property is a string (typically a URI) that contains the semantic information about the claim; it tells you what the value of the claim means. For example, a claim with a claim type of <xref:System.Security.Claims.ClaimTypes.GivenName> ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname") represents a user’s first name. The value of the <xref:System.Security.Claims.Claim.Type%2A> property can be one of the well-known claim types defined in the <xref:System.Security.Claims.ClaimTypes> class, or it can be an arbitrary URI as defined by the issuer. For example, a claim type of "urn:spendinglimit" might represent a user attribute which makes sense within the business context of the issuer.  
   
 -   The <xref:System.Security.Claims.Claim.Value%2A> property contains the value of the claim. In order to reduce dependencies and simplify administration, in WIF the value of a claim is represented only as a string. For more complex value types, it is recommended that you use standard XML schema types to indicate how the value is meant to be serialized into and deserialized from a string.  
   
@@ -46,7 +49,7 @@
    
   
 ## Examples  
- The following example extracts the claims associated to the authenticated user performing an HTTP request and writes them in the HTTP response. The current user is read from the <xref:System.Web.HttpContext> as a <xref:System.Security.Claims.ClaimsPrincipal> and the claims are read from it. The claims are then written to HTTP the response.  
+ The following example extracts the claims associated to the authenticated user performing an HTTP request and writes them in the HTTP response. The current user is read from the <xref:System.Web.HttpContext> as a <xref:System.Security.Claims.ClaimsPrincipal> and the claims are read from it. The claims are then written to the <xref:System.Web.HttpResponse> object.  
   
 ```csharp  
 ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;  
@@ -63,16 +66,32 @@ if (null != principal)
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Security.Claims.ClaimsIdentity" />
+    <altmember cref="T:System.Security.Claims.ClaimsPrincipal" />
+    <altmember cref="T:System.IdentityModel.Tokens.IssuerNameRegistry" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (System.IO.BinaryReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.IO.BinaryReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (reader As BinaryReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::IO::BinaryReader ^ reader);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -87,19 +106,31 @@ if (null != principal)
         <Parameter Name="reader" Type="System.IO.BinaryReader" />
       </Parameters>
       <Docs>
-        <param name="reader">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="reader">A <see cref="T:System.IO.BinaryReader" /> pointing to a <see cref="T:System.Security.Claims.Claim" />.</param>
+        <summary>Initializes an instance of <see cref="T:System.Security.Claims.Claim" /> with the specified <see cref="T:System.IO.BinaryReader" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Normally, the reader is constructed from the bytes returned from <xref:System.Security.Claims.Claim.WriteTo%2A>. 
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected Claim (System.Security.Claims.Claim other);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.Claim other) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.Security.Claims.Claim)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (other As Claim)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; Claim(System::Security::Claims::Claim ^ other);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -116,17 +147,20 @@ if (null != principal)
       <Docs>
         <param name="other">The security claim.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class.</summary>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (System.IO.BinaryReader reader, System.Security.Claims.ClaimsIdentity subject);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.BinaryReader reader, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.IO.BinaryReader,System.Security.Claims.ClaimsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (reader As BinaryReader, subject As ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::IO::BinaryReader ^ reader, System::Security::Claims::ClaimsIdentity ^ subject);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -144,18 +178,21 @@ if (null != principal)
       <Docs>
         <param name="reader">The binary reader.</param>
         <param name="subject">The subject that this claim describes.</param>
-        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class with the specified reader, and subject.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class with the specified reader and subject.</summary>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected Claim (System.Security.Claims.Claim other, System.Security.Claims.ClaimsIdentity subject);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.Claim other, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.Security.Claims.Claim,System.Security.Claims.ClaimsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (other As Claim, subject As ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; Claim(System::Security::Claims::Claim ^ other, System::Security::Claims::ClaimsIdentity ^ subject);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -173,18 +210,21 @@ if (null != principal)
       <Docs>
         <param name="other">The security claim.</param>
         <param name="subject">The subject that this claim describes.</param>
-        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class with the specified security claim, and subject.</summary>
-        <remarks>To be added.</remarks>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class with the specified security claim and subject.</summary>
+        <remarks></remarks>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (string type, string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As String, value As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::String ^ type, System::String ^ value);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -207,22 +247,27 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Security.Claims.Claim.Subject%2A> property is set to `null`. The <xref:System.Security.Claims.Claim.Issuer%2A> and <xref:System.Security.Claims.Claim.OriginalIssuer%2A> properties are set to <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>. The <xref:System.Security.Claims.Claim.ValueType%2A> property is set to <xref:System.Security.Claims.ClaimValueTypes.String?displayProperty=fullName>  
+ The <xref:System.Security.Claims.Claim.Subject%2A> property is set to `null`. The <xref:System.Security.Claims.Claim.Issuer%2A> and <xref:System.Security.Claims.Claim.OriginalIssuer%2A> properties are set to <xref:System.Security.Claims.ClaimsIdentity.DefaultIssuer>. The <xref:System.Security.Claims.Claim.ValueType%2A> property is set to <xref:System.Security.Claims.ClaimValueTypes.String?displayProperty=nameWithType>  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> or <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Security.Claims.ClaimTypes" />
+        <altmember cref="T:System.Security.Claims.ClaimValueTypes" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As String, value As String, valueType As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::String ^ type, System::String ^ value, System::String ^ valueType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -253,16 +298,21 @@ if (null != principal)
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> or <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Security.Claims.ClaimTypes" />
+        <altmember cref="T:System.Security.Claims.ClaimValueTypes" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As String, value As String, valueType As String, issuer As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::String ^ type, System::String ^ value, System::String ^ valueType, System::String ^ issuer);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -295,16 +345,21 @@ if (null != principal)
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> or <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Security.Claims.ClaimTypes" />
+        <altmember cref="T:System.Security.Claims.ClaimValueTypes" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer, string originalIssuer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer, string originalIssuer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As String, value As String, valueType As String, issuer As String, originalIssuer As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::String ^ type, System::String ^ value, System::String ^ valueType, System::String ^ issuer, System::String ^ originalIssuer);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -339,16 +394,21 @@ if (null != principal)
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> or <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Security.Claims.ClaimTypes" />
+        <altmember cref="T:System.Security.Claims.ClaimValueTypes" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Claim (string type, string value, string valueType, string issuer, string originalIssuer, System.Security.Claims.ClaimsIdentity subject);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, string value, string valueType, string issuer, string originalIssuer, class System.Security.Claims.ClaimsIdentity subject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.#ctor(System.String,System.String,System.String,System.String,System.String,System.Security.Claims.ClaimsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As String, value As String, valueType As String, issuer As String, originalIssuer As String, subject As ClaimsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Claim(System::String ^ type, System::String ^ value, System::String ^ valueType, System::String ^ issuer, System::String ^ originalIssuer, System::Security::Claims::ClaimsIdentity ^ subject);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -375,19 +435,34 @@ if (null != principal)
         <param name="originalIssuer">The original issuer of the claim. If this parameter is empty or <see langword="null" />, then the <see cref="P:System.Security.Claims.Claim.OriginalIssuer" /> property is set to the value of the <see cref="P:System.Security.Claims.Claim.Issuer" /> property.</param>
         <param name="subject">The subject that this claim describes.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Security.Claims.Claim" /> class with the specified claim type, value, value type, issuer, original issuer and subject.</summary>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> or <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Security.Claims.ClaimTypes" />
+        <altmember cref="T:System.Security.Claims.ClaimValueTypes" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Clone">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Claims</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a new <see cref="T:System.Security.Claims.Claim" /> object copied from this object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Clone () As Claim" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::Claims::Claim ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -419,10 +494,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public virtual System.Security.Claims.Claim Clone (System.Security.Claims.ClaimsIdentity identity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Claims.Claim Clone(class System.Security.Claims.ClaimsIdentity identity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.Clone(System.Security.Claims.ClaimsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Clone (identity As ClaimsIdentity) As Claim" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::Claims::Claim ^ Clone(System::Security::Claims::ClaimsIdentity ^ identity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -457,10 +535,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="protected virtual byte[] CustomSerializationData { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] CustomSerializationData" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.CustomSerializationData" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable ReadOnly Property CustomSerializationData As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property cli::array &lt;System::Byte&gt; ^ CustomSerializationData { cli::array &lt;System::Byte&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -475,19 +556,29 @@ if (null != principal)
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>Returns <see cref="T:System.Byte" />.</value>
-        <remarks>To be added.</remarks>
+        <summary>Contains any additional data provided by a derived type.</summary>
+        <value>A <see cref="T:System.Byte" /> array representing the additional serialized data.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[
+
+## Remarks  
+ The <xref:System.Security.Claims.Claim.CustomSerializationData%2A> property is typically set when calling <xref:System.Security.Claims.ClaimsIdentity.WriteTo(System.IO.BinaryWriter,System.Byte[])>.
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Issuer">
       <MemberSignature Language="C#" Value="public string Issuer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Issuer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Issuer As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Issuer { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -512,16 +603,21 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.Claim.OriginalIssuer" />
+        <altmember cref="T:System.IdentityModel.Tokens.IssuerNameRegistry" />
       </Docs>
     </Member>
     <Member MemberName="OriginalIssuer">
       <MemberSignature Language="C#" Value="public string OriginalIssuer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string OriginalIssuer" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.OriginalIssuer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OriginalIssuer As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ OriginalIssuer { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -550,16 +646,21 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.Claim.Issuer" />
+        <altmember cref="T:System.IdentityModel.Tokens.IssuerNameRegistry" />
       </Docs>
     </Member>
     <Member MemberName="Properties">
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Properties { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Properties" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Properties" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Properties As IDictionary(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ Properties { System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -584,16 +685,20 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Security.Claims.ClaimProperties" />
       </Docs>
     </Member>
     <Member MemberName="Subject">
       <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsIdentity Subject { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsIdentity Subject" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Subject" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Subject As ClaimsIdentity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Claims::ClaimsIdentity ^ Subject { System::Security::Claims::ClaimsIdentity ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -624,10 +729,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -649,7 +757,7 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The string that is returned contains the values of the <xref:System.Security.Claims.Claim.Type%2A> and <xref:System.Security.Claims.Claim.Value%2A> properties in the following format:.”Type: Value”.  
+ The string that is returned contains the values of the <xref:System.Security.Claims.Claim.Type%2A> and <xref:System.Security.Claims.Claim.Value%2A> properties in the following format:."Type: Value".  
   
  ]]></format>
         </remarks>
@@ -659,10 +767,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public string Type { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Type" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Type" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Type As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Type { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -683,7 +794,7 @@ if (null != principal)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Security.Claims.Claim.Type%2A> property provides the semantic content of the claim, that is, it states what the claim is about. For example, a claim with a claim type of <xref:System.Security.Claims.ClaimTypes.GivenName> (“http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname”) represents a user’s first name. The claim type is typically a URI; however, you are not limited to any specific format other than that it must be representable as a string. The only general requirement is that the claim issuer and the claim consumer must agree about the meaning of the claim. Constants for the well-known claim types used by Windows Identity Foundation (WIF) are available through the <xref:System.Security.Claims.ClaimTypes> class. The claim value is provided by the <xref:System.Security.Claims.Claim.Value%2A> property.  
+ The <xref:System.Security.Claims.Claim.Type%2A> property provides the semantic content of the claim, that is, it states what the claim is about. For example, a claim with a claim type of <xref:System.Security.Claims.ClaimTypes.GivenName> ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname") represents a user’s first name. The claim type is typically a URI; however, you are not limited to any specific format other than that it must be representable as a string. The only general requirement is that the claim issuer and the claim consumer must agree about the meaning of the claim. Constants for the well-known claim types used by Windows Identity Foundation (WIF) are available through the <xref:System.Security.Claims.ClaimTypes> class. The claim value is provided by the <xref:System.Security.Claims.Claim.Value%2A> property.  
   
  ]]></format>
         </remarks>
@@ -693,10 +804,13 @@ if (null != principal)
       <MemberSignature Language="C#" Value="public string Value { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Value" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.Value" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Value As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Value { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -723,16 +837,21 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.Claim.ValueType" />
+        <altmember cref="P:System.Security.Claims.Claim.Type" />
       </Docs>
     </Member>
     <Member MemberName="ValueType">
       <MemberSignature Language="C#" Value="public string ValueType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ValueType" />
       <MemberSignature Language="DocId" Value="P:System.Security.Claims.Claim.ValueType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ValueType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ValueType { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -757,16 +876,20 @@ if (null != principal)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Security.Claims.Claim.Value" />
       </Docs>
     </Member>
     <Member MemberName="WriteTo">
       <MemberSignature Language="C#" Value="public virtual void WriteTo (System.IO.BinaryWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.WriteTo(System.IO.BinaryWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub WriteTo (writer As BinaryWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void WriteTo(System::IO::BinaryWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -784,19 +907,24 @@ if (null != principal)
         <Parameter Name="writer" Type="System.IO.BinaryWriter" />
       </Parameters>
       <Docs>
-        <param name="writer">To be added.</param>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <param name="writer">The writer to use for data storage.</param>
+        <summary>Writes this <see cref="T:System.Security.Claims.Claim" /> to the writer.</summary>
+        <remarks></remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="WriteTo">
       <MemberSignature Language="C#" Value="protected virtual void WriteTo (System.IO.BinaryWriter writer, byte[] userData);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteTo(class System.IO.BinaryWriter writer, unsigned int8[] userData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Claims.Claim.WriteTo(System.IO.BinaryWriter,System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub WriteTo (writer As BinaryWriter, userData As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void WriteTo(System::IO::BinaryWriter ^ writer, cli::array &lt;System::Byte&gt; ^ userData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Claims</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -815,10 +943,10 @@ if (null != principal)
         <Parameter Name="userData" Type="System.Byte[]" />
       </Parameters>
       <Docs>
-        <param name="writer">The writer to write this claim</param>
-        <param name="userData">The user data to claim</param>
+        <param name="writer">The writer to write this claim.</param>
+        <param name="userData">The user data to claim.</param>
         <summary>Writes this <see cref="T:System.Security.Claims.Claim" /> to the writer.</summary>
-        <remarks>To be added.</remarks>
+        <remarks></remarks>
       </Docs>
     </Member>
   </Members>

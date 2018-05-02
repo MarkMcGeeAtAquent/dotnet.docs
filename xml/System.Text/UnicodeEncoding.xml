@@ -1,11 +1,14 @@
-<Type Name="UnicodeEncoding" FullName="System.Text.UnicodeEncoding">
+﻿<Type Name="UnicodeEncoding" FullName="System.Text.UnicodeEncoding">
   <TypeSignature Language="C#" Value="public class UnicodeEncoding : System.Text.Encoding" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit UnicodeEncoding extends System.Text.Encoding" />
   <TypeSignature Language="DocId" Value="T:System.Text.UnicodeEncoding" />
+  <TypeSignature Language="VB.NET" Value="Public Class UnicodeEncoding&#xA;Inherits Encoding" />
+  <TypeSignature Language="C++ CLI" Value="public ref class UnicodeEncoding : System::Text::Encoding" />
   <AssemblyInfo>
     <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -49,7 +52,7 @@
   
 -   Little endian byte order: 41 00 00 00  
   
- It is generally more efficient to store Unicode characters using the native byte order of a particular platform. For example, it is better to use the little endian byte order on little endian platforms, such as Intel computers. The <xref:System.Text.UnicodeEncoding> class corresponds to the Windows code pages 1200 (little endian byte order) and 1201 (big endian byte order). You can determine the "endianness" of a particular architecture by calling the <xref:System.BitConverter.IsLittleEndian?displayProperty=fullName> method.  
+ It is generally more efficient to store Unicode characters using the native byte order of a particular platform. For example, it is better to use the little endian byte order on little endian platforms, such as Intel computers. The <xref:System.Text.UnicodeEncoding> class corresponds to the Windows code pages 1200 (little endian byte order) and 1201 (big endian byte order). You can determine the "endianness" of a particular architecture by calling the <xref:System.BitConverter.IsLittleEndian?displayProperty=nameWithType> method.  
   
  Optionally, the <xref:System.Text.UnicodeEncoding> object provides a byte order mark (BOM), which is an array of bytes that can be prefixed to the sequence of bytes resulting from the encoding process. If the preamble contains a byte order mark (BOM), it helps the decoder determine the byte order and the transformation format or UTF.  
   
@@ -62,10 +65,10 @@
 |Member|Endianness|BOM|Error detection|  
 |------------|----------------|---------|---------------------|  
 |<xref:System.Text.Encoding.BigEndianUnicode%2A>|Big-endian|Yes|No (Replacement fallback)|  
-|<xref:System.Text.Encoding.Unicode%2A?displayProperty=fullName>|Little-endian|Yes|No (Replacement fallback)|  
-|<xref:System.Text.UnicodeEncoding.%23ctor?displayProperty=fullName>|Little-endian|Yes|No (Replacement fallback)|  
+|<xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType>|Little-endian|Yes|No (Replacement fallback)|  
+|<xref:System.Text.UnicodeEncoding.%23ctor?displayProperty=nameWithType>|Little-endian|Yes|No (Replacement fallback)|  
 |<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%29>|Configurable|Configurable|No (Replacement fallback)|  
-|<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=fullName>|Configurable|Configurable|Configurable|  
+|<xref:System.Text.UnicodeEncoding.%23ctor%28System.Boolean%2CSystem.Boolean%2CSystem.Boolean%29?displayProperty=nameWithType>|Configurable|Configurable|Configurable|  
   
  The <xref:System.Text.UnicodeEncoding.GetByteCount%2A> method determines how many bytes result in encoding a set of Unicode characters, and the <xref:System.Text.UnicodeEncoding.GetBytes%2A> method performs the actual encoding.  
   
@@ -89,17 +92,40 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Text.Encoding" />
+    <altmember cref="T:System.Text.Encoder" />
+    <altmember cref="T:System.Text.Decoder" />
+    <altmember cref="T:System.Text.UTF32Encoding" />
+    <altmember cref="T:System.Text.UTF8Encoding" />
+    <altmember cref="T:System.Text.UTF7Encoding" />
+    <altmember cref="T:System.Text.ASCIIEncoding" />
+    <altmember cref="T:System.Globalization.UnicodeCategory" />
+    <altmember cref="T:System.Globalization.CharUnicodeInfo" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Text.UnicodeEncoding" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public UnicodeEncoding ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UnicodeEncoding();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -139,11 +165,14 @@
       <MemberSignature Language="C#" Value="public UnicodeEncoding (bool bigEndian, bool byteOrderMark);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool bigEndian, bool byteOrderMark) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (bigEndian As Boolean, byteOrderMark As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UnicodeEncoding(bool bigEndian, bool byteOrderMark);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -162,7 +191,7 @@
         <param name="bigEndian">
           <see langword="true" /> to use the big endian byte order (most significant byte first), or <see langword="false" /> to use the little endian byte order (least significant byte first).</param>
         <param name="byteOrderMark">
-          <see langword="true" /> to specify that the <see cref="M:System.Text.UnicodeEncoding.GetPreamble" /> method returns a Unicode byte order mark; otherwise, <see langword="false" />. See the Remarks section for more information.</param>
+          <see langword="true" /> to specify that the <see cref="M:System.Text.UnicodeEncoding.GetPreamble" /> method returns a Unicode byte order mark; otherwise, <see langword="false" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Text.UnicodeEncoding" /> class. Parameters specify whether to use the big endian byte order and whether the <see cref="M:System.Text.UnicodeEncoding.GetPreamble" /> method returns a Unicode byte order mark.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -186,17 +215,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetPreamble" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public UnicodeEncoding (bool bigEndian, bool byteOrderMark, bool throwOnInvalidBytes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool bigEndian, bool byteOrderMark, bool throwOnInvalidBytes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.#ctor(System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (bigEndian As Boolean, byteOrderMark As Boolean, throwOnInvalidBytes As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UnicodeEncoding(bool bigEndian, bool byteOrderMark, bool throwOnInvalidBytes);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -216,7 +249,7 @@
         <param name="bigEndian">
           <see langword="true" /> to use the big endian byte order (most significant byte first); <see langword="false" /> to use the little endian byte order (least significant byte first).</param>
         <param name="byteOrderMark">
-          <see langword="true" /> to specify that the <see cref="M:System.Text.UnicodeEncoding.GetPreamble" /> method returns a Unicode byte order mark; otherwise, <see langword="false" />. See the Remarks section for more information.</param>
+          <see langword="true" /> to specify that the <see cref="M:System.Text.UnicodeEncoding.GetPreamble" /> method returns a Unicode byte order mark; otherwise, <see langword="false" />.</param>
         <param name="throwOnInvalidBytes">
           <see langword="true" /> to specify that an exception should be thrown when an invalid encoding is detected; otherwise, <see langword="false" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Text.UnicodeEncoding" /> class. Parameters specify whether to use the big endian byte order, whether to provide a Unicode byte order mark, and whether to throw an exception when an invalid encoding is detected.</summary>
@@ -226,7 +259,7 @@
 ## Remarks  
  The `byteOrderMark` parameter controls the operation of the <xref:System.Text.UnicodeEncoding.GetPreamble%2A> method. If `true`, the method returns a byte array containing the Unicode byte order mark (BOM) in UTF-16 format.  If `false`, it returns a zero-length byte array. However, setting `byteOrderMark` to `true` does not cause the <xref:System.Text.UnicodeEncoding.GetBytes%2A> method to prefix the BOM at the beginning of the byte array, nor does it cause the <xref:System.Text.UnicodeEncoding.GetByteCount%2A> method to include the number of bytes in the BOM in the byte count.  
   
- If the `throwOnInvalidBytes` parameter is `true`, a method that detects an invalid byte sequence throws <xref:System.ArgumentException?displayProperty=fullName>. Otherwise, the method does not throw an exception, and the invalid sequence is ignored.  
+ If the `throwOnInvalidBytes` parameter is `true`, a method that detects an invalid byte sequence throws <xref:System.ArgumentException?displayProperty=nameWithType>. Otherwise, the method does not throw an exception, and the invalid sequence is ignored.  
   
 > [!NOTE]
 >  For security reasons, your applications are recommended to use this constructor to create an instance of the <xref:System.Text.UnicodeEncoding> class and turn on error detection by setting `throwOnInvalidBytes` to `true`.  
@@ -242,12 +275,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetPreamble" />
       </Docs>
     </Member>
     <Member MemberName="CharSize">
       <MemberSignature Language="C#" Value="public const int CharSize = 2;" />
       <MemberSignature Language="ILAsm" Value=".field public static literal int32 CharSize = (2)" />
       <MemberSignature Language="DocId" Value="F:System.Text.UnicodeEncoding.CharSize" />
+      <MemberSignature Language="VB.NET" Value="Public Const CharSize As Integer  = 2" />
+      <MemberSignature Language="C++ CLI" Value="public: int CharSize = 2;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -257,6 +293,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -287,11 +327,14 @@
       <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -338,17 +381,33 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Text.UnicodeEncoding.#ctor" />
+        <altmember cref="M:System.Object.Equals(System.Object)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetByteCount">
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Calculates the number of bytes produced by encoding a set of characters.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetByteCount">
       <MemberSignature Language="C#" Value="public override int GetByteCount (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetByteCount(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetByteCount(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetByteCount (s As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetByteCount(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -396,7 +455,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="s" /> is <see langword="null " />.</exception>
+          <paramref name="s" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The resulting number of bytes is greater than the maximum number that can be returned as an integer.</exception>
         <exception cref="T:System.ArgumentException">Error detection is enabled, and <paramref name="s" /> contains an invalid sequence of characters.</exception>
         <exception cref="T:System.Text.EncoderFallbackException">A fallback occurred (see [Character Encoding in the .NET Framework](~/docs/standard/base-types/character-encoding.md) for fuller explanation)  
@@ -404,12 +463,16 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
       </Docs>
     </Member>
     <Member MemberName="GetByteCount">
       <MemberSignature Language="C#" Value="public override int GetByteCount (char* chars, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetByteCount(char* chars, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetByteCount(System.Char*,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetByteCount(char* chars, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -419,6 +482,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -457,7 +524,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="chars" /> is <see langword="null " />.</exception>
+          <paramref name="chars" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="count" /> is less than zero.  
   
@@ -471,17 +538,23 @@
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
       </Docs>
     </Member>
     <Member MemberName="GetByteCount">
       <MemberSignature Language="C#" Value="public override int GetByteCount (char[] chars, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetByteCount(char[] chars, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetByteCount (chars As Char(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetByteCount(cli::array &lt;char&gt; ^ chars, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -532,7 +605,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="chars" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+          <paramref name="chars" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="index" /> or <paramref name="count" /> is less than zero.  
   
@@ -549,12 +622,26 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetBytes">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Encodes a set of characters into a sequence of bytes.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetBytes">
       <MemberSignature Language="C#" Value="public override int GetBytes (char* chars, int charCount, byte* bytes, int byteCount);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetBytes(char* chars, int32 charCount, unsigned int8* bytes, int32 byteCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetBytes(System.Char*,System.Int32,System.Byte*,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetBytes(char* chars, int charCount, System::Byte* bytes, int byteCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -564,6 +651,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -608,11 +699,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="chars" /> is <see langword="null " />(<see langword="Nothing" />).  
+          <paramref name="chars" /> is <see langword="null" /> (<see langword="Nothing" />).  
   
  -or-  
   
- <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+ <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="charCount" /> or <paramref name="byteCount" /> is less than zero.</exception>
         <exception cref="T:System.ArgumentException">Error detection is enabled, and <paramref name="chars" /> contains an invalid sequence of characters.  
@@ -626,17 +717,23 @@
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetBytes">
       <MemberSignature Language="C#" Value="public override int GetBytes (char[] chars, int charIndex, int charCount, byte[] bytes, int byteIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetBytes(char[] chars, int32 charIndex, int32 charCount, unsigned int8[] bytes, int32 byteIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetBytes(System.Char[],System.Int32,System.Int32,System.Byte[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetBytes (chars As Char(), charIndex As Integer, charCount As Integer, bytes As Byte(), byteIndex As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetBytes(cli::array &lt;char&gt; ^ chars, int charIndex, int charCount, cli::array &lt;System::Byte&gt; ^ bytes, int byteIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -695,11 +792,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="chars" /> is <see langword="null " />(<see langword="Nothing" />).  
+          <paramref name="chars" /> is <see langword="null" /> (<see langword="Nothing" />).  
   
  -or-  
   
- <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+ <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="charIndex" /> or <paramref name="charCount" /> or <paramref name="byteIndex" /> is less than zero.  
   
@@ -720,17 +817,23 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetBytes">
       <MemberSignature Language="C#" Value="public override int GetBytes (string s, int charIndex, int charCount, byte[] bytes, int byteIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetBytes(string s, int32 charIndex, int32 charCount, unsigned int8[] bytes, int32 byteIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetBytes (s As String, charIndex As Integer, charCount As Integer, bytes As Byte(), byteIndex As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetBytes(System::String ^ s, int charIndex, int charCount, cli::array &lt;System::Byte&gt; ^ bytes, int byteIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -789,11 +892,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="s" /> is <see langword="null " />.  
+          <paramref name="s" /> is <see langword="null" />.  
   
  -or-  
   
- <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+ <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="charIndex" /> or <paramref name="charCount" /> or <paramref name="byteIndex" /> is less than zero.  
   
@@ -814,12 +917,26 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCharCount">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Calculates the number of characters produced by decoding a sequence of bytes.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCharCount">
       <MemberSignature Language="C#" Value="public override int GetCharCount (byte* bytes, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetCharCount(unsigned int8* bytes, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte*,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetCharCount(System::Byte* bytes, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -829,6 +946,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -864,7 +985,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+          <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="count" /> is less than zero.  
   
@@ -878,17 +999,23 @@
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="Overload:System.Text.UnicodeEncoding.GetChars" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
       </Docs>
     </Member>
     <Member MemberName="GetCharCount">
       <MemberSignature Language="C#" Value="public override int GetCharCount (byte[] bytes, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetCharCount(unsigned int8[] bytes, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetCharCount (bytes As Byte(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetCharCount(cli::array &lt;System::Byte&gt; ^ bytes, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -938,7 +1065,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+          <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="index" /> or <paramref name="count" /> is less than zero.  
   
@@ -955,12 +1082,26 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+        <altmember cref="Overload:System.Text.UnicodeEncoding.GetChars" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetChars">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Decodes a sequence of bytes into a set of characters.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetChars">
       <MemberSignature Language="C#" Value="public override int GetChars (byte* bytes, int byteCount, char* chars, int charCount);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetChars(unsigned int8* bytes, int32 byteCount, char* chars, int32 charCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetChars(System.Byte*,System.Int32,System.Char*,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetChars(System::Byte* bytes, int byteCount, char* chars, int charCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -970,6 +1111,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1006,18 +1151,18 @@
   
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.  
   
- If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=fullName> method.  
+ If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=nameWithType> method.  
   
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> object provided by the <xref:System.Text.UnicodeEncoding.GetDecoder%2A> or the <xref:System.Text.UnicodeEncoding.GetEncoder%2A> method, respectively.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).  
+          <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).  
   
  -or-  
   
- <paramref name="chars" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+ <paramref name="chars" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="byteCount" /> or <paramref name="charCount" /> is less than zero.</exception>
         <exception cref="T:System.ArgumentException">Error detection is enabled, and <paramref name="bytes" /> contains an invalid sequence of bytes.  
@@ -1031,17 +1176,24 @@
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetChars">
       <MemberSignature Language="C#" Value="public override int GetChars (byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetChars(unsigned int8[] bytes, int32 byteIndex, int32 byteCount, char[] chars, int32 charIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetChars (bytes As Byte(), byteIndex As Integer, byteCount As Integer, chars As Char(), charIndex As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetChars(cli::array &lt;System::Byte&gt; ^ bytes, int byteIndex, int byteCount, cli::array &lt;char&gt; ^ chars, int charIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1083,7 +1235,7 @@
   
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.  
   
- If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=fullName> method.  
+ If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=nameWithType> method.  
   
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> provided by the <xref:System.Text.UnicodeEncoding.GetDecoder%2A> method or the <xref:System.Text.UnicodeEncoding.GetEncoder%2A> method, respectively.  
   
@@ -1099,11 +1251,11 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).  
+          <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).  
   
  -or-  
   
- <paramref name="chars" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+ <paramref name="chars" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="byteIndex" /> or <paramref name="byteCount" /> or <paramref name="charIndex" /> is less than zero.  
   
@@ -1124,17 +1276,24 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="GetDecoder">
       <MemberSignature Language="C#" Value="public override System.Text.Decoder GetDecoder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Text.Decoder GetDecoder() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetDecoder" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetDecoder () As Decoder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Text::Decoder ^ GetDecoder();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1156,7 +1315,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Text.Decoder.GetChars%2A?displayProperty=fullName> method converts sequential blocks of bytes into sequential blocks of characters, in a manner similar to the <xref:System.Text.UnicodeEncoding.GetChars%2A>. However, a <xref:System.Text.Decoder> maintains state information between calls so it can correctly decode byte sequences that span blocks. The <xref:System.Text.Decoder> also preserves trailing bytes at the end of data blocks and uses the trailing bytes in the next decoding operation. Therefore, <xref:System.Text.UnicodeEncoding.GetDecoder%2A> and <xref:System.Text.UnicodeEncoding.GetEncoder%2A> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.  
+ The <xref:System.Text.Decoder.GetChars%2A?displayProperty=nameWithType> method converts sequential blocks of bytes into sequential blocks of characters, in a manner similar to the <xref:System.Text.UnicodeEncoding.GetChars%2A>. However, a <xref:System.Text.Decoder> maintains state information between calls so it can correctly decode byte sequences that span blocks. The <xref:System.Text.Decoder> also preserves trailing bytes at the end of data blocks and uses the trailing bytes in the next decoding operation. Therefore, <xref:System.Text.UnicodeEncoding.GetDecoder%2A> and <xref:System.Text.UnicodeEncoding.GetEncoder%2A> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.  
   
  If error detection is enabled, that is, the `throwOnInvalidBytes` parameter of the constructor is set to `true`, error detection is also enabled in the <xref:System.Text.Decoder> returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the decoder is undefined and processing must stop.  
   
@@ -1171,17 +1330,25 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Text.Decoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
       </Docs>
     </Member>
     <Member MemberName="GetEncoder">
       <MemberSignature Language="C#" Value="public override System.Text.Encoder GetEncoder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Text.Encoder GetEncoder() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetEncoder" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEncoder () As Encoder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Text::Encoder ^ GetEncoder();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1208,7 +1375,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Text.Encoder.GetBytes%2A?displayProperty=fullName> method converts sequential blocks of characters into sequential blocks of bytes in a manner similar to the <xref:System.Text.UnicodeEncoding.GetBytes%2A> method of this class. However, a <xref:System.Text.Encoder> object maintains state information between calls so that it can correctly encode character sequences that span blocks. The <xref:System.Text.Encoder> object also preserves trailing characters at the end of data blocks and uses the trailing characters in the next encoding operation. For example, a data block might end with an unmatched high surrogate, and the matching low surrogate might be in the next data block. Therefore, <xref:System.Text.UnicodeEncoding.GetDecoder%2A> and <xref:System.Text.UnicodeEncoding.GetEncoder%2A> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.  
+ The <xref:System.Text.Encoder.GetBytes%2A?displayProperty=nameWithType> method converts sequential blocks of characters into sequential blocks of bytes in a manner similar to the <xref:System.Text.UnicodeEncoding.GetBytes%2A> method of this class. However, a <xref:System.Text.Encoder> object maintains state information between calls so that it can correctly encode character sequences that span blocks. The <xref:System.Text.Encoder> object also preserves trailing characters at the end of data blocks and uses the trailing characters in the next encoding operation. For example, a data block might end with an unmatched high surrogate, and the matching low surrogate might be in the next data block. Therefore, <xref:System.Text.UnicodeEncoding.GetDecoder%2A> and <xref:System.Text.UnicodeEncoding.GetEncoder%2A> are useful for network transmission and file operations, because those operations often deal with blocks of data instead of a complete data stream.  
   
  If error detection is enabled, that is, the `throwOnInvalidBytes` parameter of the constructor is set to `true`, error detection is also enabled in the <xref:System.Text.Encoder> object returned by this method. If error detection is enabled and an invalid sequence is encountered, the state of the encoder is undefined and processing must stop.  
   
@@ -1223,17 +1390,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Text.Encoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1252,17 +1426,21 @@
         <summary>Returns the hash code for the current instance.</summary>
         <returns>The hash code for the current <see cref="T:System.Text.UnicodeEncoding" /> object.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Object.GetHashCode" />
       </Docs>
     </Member>
     <Member MemberName="GetMaxByteCount">
       <MemberSignature Language="C#" Value="public override int GetMaxByteCount (int charCount);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMaxByteCount(int32 charCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetMaxByteCount(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetMaxByteCount (charCount As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetMaxByteCount(int charCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1291,7 +1469,7 @@
   
  <xref:System.Text.UnicodeEncoding.GetMaxByteCount%2A> retrieves a worst-case number, including the worst case for the currently selected <xref:System.Text.EncoderFallback>. If a fallback is chosen with a potentially large string, <xref:System.Text.UnicodeEncoding.GetMaxByteCount%2A> can return large values.  
   
- In most cases, this method retrieves reasonable numbers for small strings. For large strings, you might have to choose between using very large buffers and catching errors in the rare case that a more reasonable buffer is exceeded. You might also want to consider a different approach using <xref:System.Text.UnicodeEncoding.GetByteCount%2A> or <xref:System.Text.Encoder.Convert%2A?displayProperty=fullName>.  
+ In most cases, this method retrieves reasonable numbers for small strings. For large strings, you might have to choose between using very large buffers and catching errors in the rare case that a more reasonable buffer is exceeded. You might also want to consider a different approach using <xref:System.Text.UnicodeEncoding.GetByteCount%2A> or <xref:System.Text.Encoder.Convert%2A?displayProperty=nameWithType>.  
   
  <xref:System.Text.UnicodeEncoding.GetMaxByteCount%2A> has no relation to <xref:System.Text.UnicodeEncoding.GetChars%2A>. If your application needs a similar function to use with <xref:System.Text.UnicodeEncoding.GetChars%2A>, it should use <xref:System.Text.UnicodeEncoding.GetMaxCharCount%2A>.  
   
@@ -1320,17 +1498,23 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.EncoderFallback" /> is set to <see cref="T:System.Text.EncoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetBytes(System.String,System.Int32,System.Int32,System.Byte[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetByteCount(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetEncoder" />
       </Docs>
     </Member>
     <Member MemberName="GetMaxCharCount">
       <MemberSignature Language="C#" Value="public override int GetMaxCharCount (int byteCount);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMaxCharCount(int32 byteCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetMaxCharCount (byteCount As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetMaxCharCount(int byteCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1388,17 +1572,24 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
       </Docs>
     </Member>
     <Member MemberName="GetPreamble">
       <MemberSignature Language="C#" Value="public override byte[] GetPreamble ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] GetPreamble() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetPreamble" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetPreamble () As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ GetPreamble();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1428,7 +1619,7 @@
   
  You can instantiate a <xref:System.Text.UnicodeEncoding> object whose <xref:System.Text.UnicodeEncoding.GetPreamble%2A> method returns a valid BOM in the following ways:  
   
--   By retrieving the <xref:System.Text.UnicodeEncoding> object returned by the <xref:System.Text.Encoding.Unicode%2A?displayProperty=fullName> or <xref:System.Text.Encoding.BigEndianUnicode%2A?displayProperty=fullName> property.  
+-   By retrieving the <xref:System.Text.UnicodeEncoding> object returned by the <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> or <xref:System.Text.Encoding.BigEndianUnicode%2A?displayProperty=nameWithType> property.  
   
 -   By calling the parameterless <xref:System.Text.UnicodeEncoding.%23ctor> constructor to instantiate a <xref:System.Text.UnicodeEncoding> object.  
   
@@ -1467,11 +1658,14 @@
       <MemberSignature Language="C#" Value="public override string GetString (byte[] bytes, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetString(unsigned int8[] bytes, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.UnicodeEncoding.GetString(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetString (bytes As Byte(), index As Integer, count As Integer) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ GetString(cli::array &lt;System::Byte&gt; ^ bytes, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding.Extensions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1510,7 +1704,7 @@
 ## Remarks  
  With error detection, an invalid sequence causes this method to throw a <xref:System.ArgumentException>. Without error detection, invalid sequences are ignored, and no exception is thrown.  
   
- If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=fullName> method.  
+ If the range of bytes to be decoded includes the byte order mark (BOM) and the byte array was returned by a method of a non-BOM aware type, the character U+FFFE is included in the character array returned by this method. You can remove it by calling the <xref:System.String.TrimStart%2A?displayProperty=nameWithType> method.  
   
  Data to be converted, such as data read from a stream, might be available only in sequential blocks. In this case, or if the amount of data is so large that it needs to be divided into smaller blocks, the application should use the <xref:System.Text.Decoder> or the <xref:System.Text.Encoder> object provided by the <xref:System.Text.UnicodeEncoding.GetDecoder%2A> or the <xref:System.Text.UnicodeEncoding.GetEncoder%2A> method, respectively.  
   
@@ -1522,12 +1716,12 @@
  [!code-csharp[System.Text.UTF8Encoding.GetString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.utf8encoding.getstring/cs/getstring1.cs#1)]
  [!code-vb[System.Text.UTF8Encoding.GetString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.utf8encoding.getstring/vb/getstring1.vb#1)]  
   
- Note that in this case the decoded string differs from the original string, since it begins with a 16-bit byte order mark U+FFFD. This means that the two strings will compare as unequal, and that if the string is output, the BOM will be displayed as the replacement character "?". To remove the BOM at the beginning of the string, you can call the <xref:System.String.TrimStart%2A?displayProperty=fullName> method.  
+ Note that in this case the decoded string differs from the original string, since it begins with a 16-bit byte order mark U+FFFD. This means that the two strings will compare as unequal, and that if the string is output, the BOM will be displayed as the replacement character "?". To remove the BOM at the beginning of the string, you can call the <xref:System.String.TrimStart%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="bytes" /> is <see langword="null " />(<see langword="Nothing" />).</exception>
+          <paramref name="bytes" /> is <see langword="null" /> (<see langword="Nothing" />).</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="index" /> or <paramref name="count" /> is less than zero.  
   
@@ -1540,6 +1734,10 @@
  -and-  
   
  <see cref="P:System.Text.Encoding.DecoderFallback" /> is set to <see cref="T:System.Text.DecoderExceptionFallback" />.</exception>
+        <altmember cref="M:System.Text.UnicodeEncoding.GetChars(System.Byte[],System.Int32,System.Int32,System.Char[],System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetDecoder" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetCharCount(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Text.UnicodeEncoding.GetMaxCharCount(System.Int32)" />
       </Docs>
     </Member>
   </Members>

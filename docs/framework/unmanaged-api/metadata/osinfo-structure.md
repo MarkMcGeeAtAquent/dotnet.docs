@@ -1,5 +1,5 @@
 ---
-title: "OSINFO Structure | Microsoft Docs"
+title: "OSINFO Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "OSINFO"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "OSINFO"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "OSINFO structure [.NET Framework metadata]"
 ms.assetid: fac7b480-7adb-4450-a5e9-690fed81ffae
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # OSINFO Structure
 Contains details about the operating system for an assembly or module.  
@@ -60,5 +63,5 @@ typedef struct {
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)   
+ [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
  [IMetaDataAssemblyEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

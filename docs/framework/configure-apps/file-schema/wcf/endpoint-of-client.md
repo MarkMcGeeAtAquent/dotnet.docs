@@ -1,22 +1,21 @@
 ---
-title: "&lt;endpoint&gt; of &lt;client&gt; | Microsoft Docs"
+title: "&lt;endpoint&gt; of &lt;client&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;endpoint&gt; of &lt;client&gt;
 Specifies contract, binding, and address properties of the channel endpoint, which is used by clients to connect to service endpoints on the server.  
@@ -27,13 +26,12 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
   
 ## Syntax  
   
-```  
-  
+```xml  
 <endpoint address="String"  
    behaviorConfiguration="String"  
    binding="String"  
    bindingConfiguration="String"  
-   contract="String"   endpointConfiguration=”String”   kind=”String”  
+   contract="String"   endpointConfiguration="String"   kind="String"  
    name="String"  
 </endpoint>  
 ```  
@@ -70,7 +68,7 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
 ## Example  
  This is an example of a channel endpoint configuration.  
   
-```  
+```xml  
 <endpoint address="/HelloWorld/"  
     bindingConfiguration="usingDefaults"  
     name="MyBinding"  
@@ -80,10 +78,10 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ChannelEndpointElement>   
- <xref:System.ServiceModel.Configuration.ClientSection>   
- <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>   
- <xref:System.ServiceModel.Configuration.ClientSection.Endpoints%2A>   
- <xref:System.ServiceModel.Configuration.ChannelEndpointElement>   
- [WCF Client Configuration](../../../../../docs/framework/wcf/feature-details/client-configuration.md)   
+ <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
+ <xref:System.ServiceModel.Configuration.ClientSection>  
+ <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>  
+ <xref:System.ServiceModel.Configuration.ClientSection.Endpoints%2A>  
+ <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
+ [WCF Client Configuration](../../../../../docs/framework/wcf/feature-details/client-configuration.md)  
  [Clients](../../../../../docs/framework/wcf/feature-details/clients.md)

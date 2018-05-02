@@ -1,8 +1,8 @@
 ---
-title: "&lt;probing&gt; Element | Microsoft Docs"
+title: "&lt;probing&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/probing"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#probing"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<probing> element"
   - "container tags, <probing> element"
@@ -26,6 +21,8 @@ caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;probing&gt; Element
 Specifies application base subdirectories for the common language runtime to search when loading assemblies.  
@@ -37,7 +34,7 @@ Specifies application base subdirectories for the common language runtime to sea
   
 ## Syntax  
   
-```  
+```xml  
 <probing privatePath="paths"/>  
 ```  
   
@@ -64,7 +61,7 @@ Specifies application base subdirectories for the common language runtime to sea
 ## Example  
  The following example shows how to specify application base subdirectories the runtime should search for assemblies.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -75,7 +72,7 @@ Specifies application base subdirectories for the common language runtime to sea
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Specifying an Assembly's Location](../../../../../docs/framework/configure-apps/specify-assembly-location.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Specifying an Assembly's Location](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
  [How the Runtime Locates Assemblies](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

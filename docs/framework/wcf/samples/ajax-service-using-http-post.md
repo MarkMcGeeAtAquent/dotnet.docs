@@ -1,8 +1,8 @@
 ---
-title: "AJAX Service Using HTTP POST | Microsoft Docs"
+title: "AJAX Service Using HTTP POST"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1ac80f20-ac1c-4ed1-9850-7e49569ff44e
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # AJAX Service Using HTTP POST
 This sample demonstrates how to use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] to create an [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Asynchronous JavaScript and XML (AJAX) service that uses HTTP POST. An AJAX service is one that you can access by using basic JavaScript code from a Web browser client. This sample builds on the [Basic AJAX Service](../../../../docs/framework/wcf/samples/basic-ajax-service.md) sample; the only difference between the two samples is the use of HTTP POST instead of HTTP GET.  
@@ -25,7 +27,7 @@ This sample demonstrates how to use [!INCLUDE[indigo1](../../../../includes/indi
   
  The service in the following sample is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service with no AJAX-specific code.  
   
- If the <xref:System.ServiceModel.Web.WebInvokeAttribute> attribute is applied on an operation, or the <xref:System.ServiceModel.Web.WebGetAttribute> attribute is not applied, the default HTTP verb (“POST”) is used. POST requests are harder to construct than GET requests, but they are not cached; use POST requests for all operations where caching is not appropriate.  
+ If the <xref:System.ServiceModel.Web.WebInvokeAttribute> attribute is applied on an operation, or the <xref:System.ServiceModel.Web.WebGetAttribute> attribute is not applied, the default HTTP verb ("POST") is used. POST requests are harder to construct than GET requests, but they are not cached; use POST requests for all operations where caching is not appropriate.  
   
 ```  
 [ServiceContract(Namespace = "PostAjaxService")]  
@@ -34,7 +36,6 @@ This sample demonstrates how to use [!INCLUDE[indigo1](../../../../includes/indi
         double Add(double n1, double n2);  
         //Other operations omitted…  
     }  
-  
 ```  
   
  Create an AJAX endpoint on the service by using the <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, just as in the Basic AJAX Service sample.  

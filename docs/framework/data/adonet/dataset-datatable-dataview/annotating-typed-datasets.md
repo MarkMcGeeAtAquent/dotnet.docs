@@ -1,26 +1,31 @@
 ---
-title: "Annotating Typed DataSets | Microsoft Docs"
+title: "Annotating Typed DataSets"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
 caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Annotating Typed DataSets
 Annotations enable you to modify the names of the elements in your typed <xref:System.Data.DataSet> without modifying the underlying schema. Modifying the names of the elements in your underlying schema would cause the typed **DataSet** to refer to objects that do not exist in the data source, as well as lose a reference to the objects that do exist in the data source.  
   
  Using annotations, you can customize the names of objects in your typed **DataSet** with more meaningful names, making code more readable and your typed **DataSet** easier for clients to use, while leaving underlying schema intact. For example, the following schema element for the **Customers** table of the **Northwind** database would result in a **DataRow** object name of **CustomersRow** and a <xref:System.Data.DataRowCollection> named **Customers**.  
   
-```  
+```xml  
 <xs:element name="Customers">  
   <xs:complexType>  
     <xs:sequence>  
@@ -32,7 +37,7 @@ Annotations enable you to modify the names of the elements in your typed <xref:S
   
  A **DataRowCollection** name of **Customers** is meaningful in client code, but a **DataRow** name of **CustomersRow** is misleading because it is a single object. Also, in common scenarios, the object would be referred to without the **Row** identifier and instead would be simply referred to as a **Customer** object. The solution is to annotate the schema and identify new names for the **DataRow** and **DataRowCollection** objects. Following is the annotated version of the previous schema.  
   
-```  
+```xml  
 <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
   <xs:complexType>  
     <xs:sequence>  
@@ -85,7 +90,7 @@ xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"
   
  The following is a sample annotated schema that exposes the **Customers** table of the **Northwind** database with a relation to the **Orders** table included.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema id="CustomerDataSet"   
       xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
@@ -182,7 +187,6 @@ Private Shared Sub OnCustomerChanged( _
     sender As Object, e As CustomerDataSet.CustomerChangeEvent)  
   
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -227,8 +231,8 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
 ```  
   
 ## See Also  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataSet>   
- [Typed DataSets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)   
- [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataSet>  
+ [Typed DataSets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
+ [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

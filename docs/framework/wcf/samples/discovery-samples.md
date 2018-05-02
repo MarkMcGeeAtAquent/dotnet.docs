@@ -1,8 +1,8 @@
 ---
-title: "Discovery (Samples) | Microsoft Docs"
+title: "Discovery (Samples)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 522a00b4-a789-4e8c-b8d7-a4c3d863a182
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Discovery (Samples)
 This section contains samples related to the Discovery feature.  
@@ -38,7 +40,7 @@ This section contains samples related to the Discovery feature.
  Demonstrates how to create an implementation of a Discovery Proxy to store information about existing services and how clients can query that proxy for information.  
   
  [Discover a Service with Unique Listen Uri Mode Sample](../../../../docs/framework/wcf/samples/discover-a-service-with-unique-listen-uri-mode-sample.md)  
- Demonstrates how to discover a service that has the <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> property set to <xref:System.ServiceModel.Description.ListenUriMode>.  
+ Demonstrates how to discover a service that has the <xref:System.ServiceModel.Channels.BindingContext.ListenUriMode%2A> property set to <xref:System.ServiceModel.Description.ListenUriMode.Unique>.  
   
  [Discovery with Scopes](../../../../docs/framework/wcf/samples/discovery-with-scopes-sample.md)  
  Demonstrates how to use scopes to categorize discoverable endpoints as well how to use <xref:System.ServiceModel.Discovery.DiscoveryClient> to perform an asynchronous search for endpoints.  

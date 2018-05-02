@@ -1,8 +1,8 @@
 ---
-title: "Addressing | Microsoft Docs"
+title: "Addressing"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Addressing
 The Addressing sample demonstrates various aspects and features of endpoint addresses. The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md). In this sample the service is self-hosted. Both the service and the client are console applications. The service defines multiple endpoints using a combination of relative and absolute endpoint addresses.  
@@ -23,22 +25,20 @@ The Addressing sample demonstrates various aspects and features of endpoint addr
   
  The service configuration file specifies a base address and four endpoints. The base address is specified using the add element, under service/host/baseAddresses as demonstrated in the following sample configuration.  
   
-```  
-<service   
-    name="Microsoft.ServiceModel.Samples.CalculatorService"  
-    behaviorConfiguration="CalculatorServiceBehavior">  
+```xml  
+<service name="Microsoft.ServiceModel.Samples.CalculatorService"  
+         behaviorConfiguration="CalculatorServiceBehavior">  
   <host>  
     <baseAddresses>  
-      <add baseAddress="http://localhost:8000/ServiceModelSamples/service"/>  
+      <add baseAddress="http://localhost:8000/ServiceModelSamples/service" />  
     </baseAddresses>  
   </host>  
-  ...  
 </service>  
 ```  
   
  The first endpoint definition shown in the following sample configuration specifies a relative address, which means the endpoint address is a combination of the base address and the relative address following the rules of URI composition.  
   
-```  
+```xml
 <!-- Empty relative address specified:   
      use the base address provided by the host. -->  
 <!-- The endpoint address is  
@@ -52,7 +52,7 @@ The Addressing sample demonstrates various aspects and features of endpoint addr
   
  The second endpoint definition also specifies a relative address, as shown in the following sample configuration.  
   
-```  
+```xml  
 <!-- The relative address specified: use the base address -->  
 <!-- provided by the host + path. The endpoint address is -->  
 <!-- http://localhost:8000/servicemodelsamples/service/test. -->  
@@ -65,7 +65,7 @@ The Addressing sample demonstrates various aspects and features of endpoint addr
   
  The third endpoint definition specifies an absolute address, as shown in the following sample configuration.  
   
-```  
+```xml  
 <endpoint address="http://localhost:8001/hello/servicemodelsamples"  
           binding="wsHttpBinding"  
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
@@ -75,7 +75,7 @@ The Addressing sample demonstrates various aspects and features of endpoint addr
   
  The fourth endpoint address specifies an absolute address and a different transport—TCP. The base address plays no role in the address. The actual endpoint address is net.tcp://localhost:9000/servicemodelsamples/service.  
   
-```  
+```xml  
 <!-- The absolute address specified, different transport: -->  
 <!-- use the specified address, and ignore the base address. -->  
 <!-- The endpoint address is -->  
@@ -111,7 +111,6 @@ Endpoint - address:  http://localhost:8000/ServiceModelSamples/service/mex
   
 The service is ready.  
 Press <ENTER> to terminate service.  
-  
 ```  
   
  When you run the client, the operation requests and responses are displayed in both the service and client console windows. Press ENTER in each console window to shut down the service and client.  

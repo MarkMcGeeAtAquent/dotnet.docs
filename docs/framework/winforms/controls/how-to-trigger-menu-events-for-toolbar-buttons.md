@@ -1,8 +1,8 @@
 ---
-title: "How to: Trigger Menu Events for Toolbar Buttons | Microsoft Docs"
+title: "How to: Trigger Menu Events for Toolbar Buttons"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,9 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "examples [Windows Forms], toolbars"
   - "ToolBar control [Windows Forms], click event handlers"
@@ -21,6 +23,8 @@ caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Trigger Menu Events for Toolbar Buttons
 > [!NOTE]
@@ -46,7 +50,6 @@ manager: "wpickett"
     ' Add the event handler delegate.  
        AddHandler ToolBar1.ButtonClick, AddressOf Me.ToolBar1_ButtonClick  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -59,7 +62,6 @@ manager: "wpickett"
        toolBar1.ButtonClick +=   
           new ToolBarButtonClickEventHandler(this.toolBar1_ButtonClick);  
     }  
-  
     ```  
   
     ```cpp  
@@ -95,7 +97,6 @@ manager: "wpickett"
            MessageBox.Show("Third toolbar button clicked")  
        End Select  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -117,7 +118,6 @@ manager: "wpickett"
              break;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -143,7 +143,7 @@ manager: "wpickett"
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.ToolBar>   
- [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)   
- [How to: Define an Icon for a ToolBar Button](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)   
+ <xref:System.Windows.Forms.ToolBar>  
+ [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md)  
+ [How to: Define an Icon for a ToolBar Button](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
  [ToolBar Control](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)

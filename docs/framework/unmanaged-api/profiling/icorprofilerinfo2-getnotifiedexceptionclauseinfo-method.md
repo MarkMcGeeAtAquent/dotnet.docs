@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::GetNotifiedExceptionClauseInfo Method | Microsoft Docs"
+title: "ICorProfilerInfo2::GetNotifiedExceptionClauseInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.GetNotifiedExceptionClauseInfo"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::GetNotifiedExceptionClauseInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo2::GetNotifiedExceptionCaluseInfo method [.NET Framework profiling]"
   - "GetNotifiedExceptionCaluseInfo method [.NET Framework profiling]"
 ms.assetid: f9594a7e-cb0c-4c48-accb-29f762aa0c21
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::GetNotifiedExceptionClauseInfo Method
 Gets the native address and frame information for the exception clause (`catch`/`finally`/`filter`) that is about to be run or has just been run.  
@@ -56,5 +59,5 @@ HRESULT GetNotifiedExceptionClauseInfo(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

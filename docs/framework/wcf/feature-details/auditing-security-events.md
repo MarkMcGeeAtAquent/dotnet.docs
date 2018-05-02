@@ -1,5 +1,5 @@
 ---
-title: "Auditing Security Events | Microsoft Docs"
+title: "Auditing Security Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -16,6 +16,8 @@ caps.latest.revision: 27
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Auditing Security Events
 Applications created with [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] can log security events (either success, failure, or both) with the auditing feature. The events are written to the Windows system event log and can be examined using the Event Viewer.  
@@ -62,7 +64,7 @@ Applications created with [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
 ### Configuration  
  You can also use configuration to specify auditing behavior by adding a [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) under the [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md). You must add the element under a [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) as shown in the following code.  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <behaviors>  
@@ -105,11 +107,11 @@ Applications created with [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
 |Default user experience|All authenticated users can write to the Application log, so no additional permission step is needed for application processes.|The application process (context) must have `SeAuditPrivilege`.|  
   
 ## See Also  
- <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>   
- <xref:System.ServiceModel.AuditLogLocation>   
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Basic WCF Programming](../../../../docs/framework/wcf/basic-wcf-programming.md)   
- [How to: Audit Security Events](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)   
- [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)   
- [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)   
+ <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>  
+ <xref:System.ServiceModel.AuditLogLocation>  
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [Basic WCF Programming](../../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [How to: Audit Security Events](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)  
+ [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)  
+ [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

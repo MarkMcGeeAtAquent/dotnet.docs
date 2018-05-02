@@ -1,7 +1,9 @@
-<Type Name="SortVersion" FullName="System.Globalization.SortVersion">
+﻿<Type Name="SortVersion" FullName="System.Globalization.SortVersion">
   <TypeSignature Language="C#" Value="public sealed class SortVersion : IEquatable&lt;System.Globalization.SortVersion&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SortVersion extends System.Object implements class System.IEquatable`1&lt;class System.Globalization.SortVersion&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Globalization.SortVersion" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SortVersion&#xA;Implements IEquatable(Of SortVersion)" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SortVersion sealed : IEquatable&lt;System::Globalization::SortVersion ^&gt;" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -47,7 +53,7 @@
   
 -   By calling the <xref:System.Globalization.SortVersion.%23ctor%2A> constructor, which instantiates a new <xref:System.Globalization.SortVersion> object based on a version number and sort ID. This constructor is most useful when recreating a <xref:System.Globalization.SortVersion> object from saved data.  
   
--   By retrieving the value of the <xref:System.Globalization.CompareInfo.Version%2A?displayProperty=fullName> property. This property provides information about the Unicode version used by the .NET Framework on which the application is running.  
+-   By retrieving the value of the <xref:System.Globalization.CompareInfo.Version%2A?displayProperty=nameWithType> property. This property provides information about the Unicode version used by the .NET Framework on which the application is running.  
   
  The <xref:System.Globalization.SortVersion> class has two properties, <xref:System.Globalization.SortVersion.FullVersion%2A> and <xref:System.Globalization.SortVersion.SortId%2A>, that indicate the Unicode version and the specific culture used for string comparison. The <xref:System.Globalization.SortVersion.FullVersion%2A> property is an arbitrary numeric value that reflects the Unicode version used for string comparison, and the <xref:System.Globalization.SortVersion.SortId%2A> property is an arbitrary <xref:System.Guid> that reflects the culture whose conventions are used for string comparison. The values of these two properties are important only when you compare two <xref:System.Globalization.SortVersion> objects by using the <xref:System.Globalization.SortVersion.Equals%2A> method, the <xref:System.Globalization.SortVersion.op_Equality%2A> operator, or the <xref:System.Globalization.SortVersion.op_Inequality%2A> operator.  
   
@@ -73,12 +79,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="P:System.Globalization.CompareInfo.Version" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SortVersion (int fullVersion, Guid sortId);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 fullVersion, valuetype System.Guid sortId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.#ctor(System.Int32,System.Guid)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fullVersion As Integer, sortId As Guid)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SortVersion(int fullVersion, Guid sortId);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -88,6 +97,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="fullVersion" Type="System.Int32" />
@@ -107,13 +120,29 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Globalization.CompareInfo.Version" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a value that indicates whether two <see cref="T:System.Globalization.SortVersion" /> instances are equal.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public bool Equals (System.Globalization.SortVersion other);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Globalization.SortVersion other) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.Equals(System.Globalization.SortVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Equals (other As SortVersion) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Equals(System::Globalization::SortVersion ^ other);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IEquatable`1.Equals(`0)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -122,6 +151,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -142,12 +175,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Globalization.SortVersion.op_Equality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
       </Docs>
     </Member>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -157,6 +193,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -177,12 +217,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Globalization.SortVersion.op_Equality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
       </Docs>
     </Member>
     <Member MemberName="FullVersion">
       <MemberSignature Language="C#" Value="public int FullVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 FullVersion" />
       <MemberSignature Language="DocId" Value="P:System.Globalization.SortVersion.FullVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FullVersion As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int FullVersion { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -192,6 +235,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -213,6 +260,8 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -222,6 +271,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -234,9 +287,11 @@
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (System.Globalization.SortVersion left, System.Globalization.SortVersion right);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Globalization.SortVersion left, System.Globalization.SortVersion right);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Globalization.SortVersion left, class System.Globalization.SortVersion right) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.op_Equality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (left As SortVersion, right As SortVersion) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Globalization::SortVersion ^ left, System::Globalization::SortVersion ^ right);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -246,6 +301,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -268,12 +327,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Globalization.SortVersion.Equals(System.Globalization.SortVersion)" />
+        <altmember cref="M:System.Globalization.SortVersion.op_Inequality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (System.Globalization.SortVersion left, System.Globalization.SortVersion right);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Globalization.SortVersion left, System.Globalization.SortVersion right);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Globalization.SortVersion left, class System.Globalization.SortVersion right) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Globalization.SortVersion.op_Inequality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (left As SortVersion, right As SortVersion) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Globalization::SortVersion ^ left, System::Globalization::SortVersion ^ right);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -283,6 +346,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -305,12 +372,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Globalization.SortVersion.Equals(System.Globalization.SortVersion)" />
+        <altmember cref="M:System.Globalization.SortVersion.op_Inequality(System.Globalization.SortVersion,System.Globalization.SortVersion)" />
       </Docs>
     </Member>
     <Member MemberName="SortId">
       <MemberSignature Language="C#" Value="public Guid SortId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid SortId" />
       <MemberSignature Language="DocId" Value="P:System.Globalization.SortVersion.SortId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SortId As Guid" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Guid SortId { Guid get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -320,6 +391,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Guid</ReturnType>

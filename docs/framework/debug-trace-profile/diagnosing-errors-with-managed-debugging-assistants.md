@@ -1,5 +1,5 @@
 ---
-title: "Diagnosing Errors with Managed Debugging Assistants | Microsoft Docs"
+title: "Diagnosing Errors with Managed Debugging Assistants"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "EHMDA"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "run-time error debugging"
   - "managed code, run-time debugging"
@@ -46,6 +41,8 @@ caps.latest.revision: 63
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Diagnosing Errors with Managed Debugging Assistants
 Managed debugging assistants (MDAs) are debugging aids that work in conjunction with the common language runtime (CLR) to provide information on runtime state. The assistants generate informational messages about runtime events that you cannot otherwise trap. You can use MDAs to isolate hard-to-find application bugs that occur when transitioning between managed and unmanaged code. You can enable or disable all MDAs by adding a key to the Windows registry or by setting an environment variable. You can enable specific MDAs by using application configuration settings. You can set additional configuration settings for some individual MDAs in the application's configuration file. Because these configuration files are parsed when the runtime is loaded, you must enable the MDA before the managed application starts. You cannot enable it for applications that have already started.  
@@ -111,13 +108,11 @@ Windows Registry Editor Version 5.00
   
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework]  
 "MDA"="1"  
-  
 ```  
   
  If the computer is running a 32-bit application on a 64-bit operating system, then the MDA key should be set like the following:  
   
 ```  
-  
       Windows Registry Editor Version 5.00   
   
 [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NETFramework]  
@@ -154,7 +149,7 @@ Windows Registry Editor Version 5.00
 ### Enabling and Disabling MDAs by Using Application-Specific Configuration Settings  
  You can enable, disable, and configure some assistants individually in the MDA configuration file for the application. To enable the use of an application configuration file for configuring MDAs, either the MDA registry key or the COMPLUS_MDA environment variable must be set. The application configuration file is typically located in the same directory as the application's executable (.exe) file. The file name takes the form *ApplicationName*.mda.config; for example, notepad.exe.mda.config. Assistants that are enabled in the application configuration file may have attributes or elements specifically designed to control that assistant's behavior. The following example shows how to enable and configure the [marshaling](../../../docs/framework/debug-trace-profile/marshaling-mda.md).  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <marshaling>  
@@ -173,7 +168,7 @@ Windows Registry Editor Version 5.00
   
  The following example shows how to enable multiple MDAs by using their default settings.  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <illegalPrepareConstrainedRegion />  

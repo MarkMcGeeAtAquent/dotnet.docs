@@ -1,8 +1,8 @@
 ---
-title: "User Name Password Validator | Microsoft Docs"
+title: "User Name Password Validator"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # User Name Password Validator
 This sample demonstrates how to implement a custom UserNamePassword Validator. This is useful in cases where none of the built-in UserNamePassword Validation modes is appropriate for the requirements of the application; for example, when username/password pairs are stored in some external store, such as a database. This sample shows a service that has a custom validator that checks for two particular username/password pairs. The client uses such a username/password pair to authenticate to the service.  
@@ -40,7 +42,7 @@ This sample demonstrates how to implement a custom UserNamePassword Validator. T
   
  The service exposes a single endpoint for communicating with the service, defined using the configuration file, App.config. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard `wsHttpBinding` that defaults to using WS-Securityand username authentication. The service behavior specifies the `Custom` mode for validating client username/password pairs along with the type of the validator class. The behavior also specifies the server certificate using the `serviceCertificate` element. The server certificate has to contain the same value for the `SubjectName` as the `findValue` in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -92,12 +94,11 @@ This sample demonstrates how to implement a custom UserNamePassword Validator. T
   </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
  The client endpoint configuration consists of a configuration name, an absolute address for the service endpoint, the binding, and the contract. The client binding is configured with the appropriate mode and message `clientCredentialType`.  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  
@@ -142,7 +143,6 @@ address="http://localhost:8001/servicemodelsamples/service/username"
     </behaviors>  
   
   </system.serviceModel>  
-  
 ```  
   
  The client implementation prompts the user to enter a username and password.  
@@ -203,7 +203,6 @@ try
       proxy.Abort();  
   }  
 }  
-  
 ```  
   
  This sample uses a custom UserNamePasswordValidator to validate username/password pairs. The sample implements `CustomUserNamePasswordValidator`, derived from <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. See the documentation for <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> for more information. This particular custom validator sample implements the `Validate` method to accept two particular username/password pairs as shown in the following code.  
@@ -211,10 +210,10 @@ try
 ```  
 public class CustomUserNameValidator : UserNamePasswordValidator  
 {  
- // This method validates users. It allows in two users,   
+ // This method validates users. It allows in two users,  
  // test1 and test2 with passwords 1tset and 2tset respectively.  
- // This code is for illustration purposes only and   
- // MUST NOT be used in a production environment because it   
+ // This code is for illustration purposes only and  
+ // MUST NOT be used in a production environment because it  
  // is NOT secure.  
  public override void Validate(string userName, string password)  
  {  
@@ -240,7 +239,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
  Or you can do the same thing in configuration as follows.  
   
-```  
+```xml  
 <behaviors>  
  <serviceBehaviors>  
   <behavior name="CalculatorServiceBehavior">  
@@ -254,7 +253,6 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   </behavior>  
  </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. The client should successfully call all the methods. Press ENTER in the client window to shut down the client.  
@@ -276,7 +274,6 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
     echo making server cert  
     echo ************  
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installing the server certificate into client's trusted certificate store:  
@@ -304,7 +301,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 3.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To run the sample across machines  
   
@@ -326,7 +323,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 9. On the client machine, launch Client.exe from a command prompt window.  
   
-10. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To clean up after the sample  
   

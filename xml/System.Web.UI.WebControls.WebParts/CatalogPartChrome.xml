@@ -1,7 +1,9 @@
-<Type Name="CatalogPartChrome" FullName="System.Web.UI.WebControls.WebParts.CatalogPartChrome">
+﻿<Type Name="CatalogPartChrome" FullName="System.Web.UI.WebControls.WebParts.CatalogPartChrome">
   <TypeSignature Language="C#" Value="public class CatalogPartChrome" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CatalogPartChrome extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />
+  <TypeSignature Language="VB.NET" Value="Public Class CatalogPartChrome" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CatalogPartChrome" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -39,8 +41,8 @@
   
  The second part of the example is the Web page. Note that there is a `Register` directive near the top of the file to register the compiled component and a tag prefix. Also note that the page references the custom catalog zone using the element `<aspSample:MyCatalogZone>`.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/CatalogPartDemo.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/CatalogPartDemo.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/CatalogPartDemo.aspx#1)]
+ [!code-aspx-vb[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/CatalogPartDemo.aspx#1)]  
   
  The third part of the example contains the implementation of the custom catalog part chrome and catalog part zone. `MyCatalogZone` extends <xref:System.Web.UI.WebControls.WebParts.CatalogZone> and overrides <xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogPartChrome%2A> to return the custom catalog part chrome. `MyCatalogPartChrome` changes the background color of the catalog control in the <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle%2A> method. The background color of the zone is changed in the <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender%2A> method, and text is added to the catalog part in the <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents%2A> method.  
   
@@ -52,12 +54,18 @@
     <block subset="none" type="overrides">
       <para>If you inherit from the <see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" /> class, you must create a customized <see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" /> zone to return your customized <see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" /> class. The Example section for this class overview demonstrates how to create a customized <see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" /> zone to return a customized <see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" /> class.</para>
     </block>
+    <altmember cref="M:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogPartChrome" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartChrome" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.EditorPartChrome" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public CatalogPartChrome (System.Web.UI.WebControls.WebParts.CatalogZoneBase zone);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.CatalogZoneBase zone) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.#ctor(System.Web.UI.WebControls.WebParts.CatalogZoneBase)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (zone As CatalogZoneBase)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; CatalogPartChrome(System::Web::UI::WebControls::WebParts::CatalogZoneBase ^ zone);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -84,6 +92,7 @@
       <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.Style CreateCatalogPartChromeStyle (System.Web.UI.WebControls.WebParts.CatalogPart catalogPart, System.Web.UI.WebControls.WebParts.PartChromeType chromeType);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.Style CreateCatalogPartChromeStyle(class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart, valuetype System.Web.UI.WebControls.WebParts.PartChromeType chromeType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle(System.Web.UI.WebControls.WebParts.CatalogPart,System.Web.UI.WebControls.WebParts.PartChromeType)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Web::UI::WebControls::Style ^ CreateCatalogPartChromeStyle(System::Web::UI::WebControls::WebParts::CatalogPart ^ catalogPart, System::Web::UI::WebControls::WebParts::PartChromeType chromeType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -129,6 +138,8 @@
       <MemberSignature Language="C#" Value="public virtual void PerformPreRender ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PerformPreRender() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub PerformPreRender ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void PerformPreRender();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -162,6 +173,7 @@
       <MemberSignature Language="C#" Value="public virtual void RenderCatalogPart (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderCatalogPart(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderCatalogPart(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void RenderCatalogPart(System::Web::UI::HtmlTextWriter ^ writer, System::Web::UI::WebControls::WebParts::CatalogPart ^ catalogPart);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -193,6 +205,7 @@
       <MemberSignature Language="C#" Value="protected virtual void RenderPartContents (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderPartContents(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void RenderPartContents(System::Web::UI::HtmlTextWriter ^ writer, System::Web::UI::WebControls::WebParts::CatalogPart ^ catalogPart);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -235,6 +248,8 @@
       <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPartChrome.Zone" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property Zone As CatalogZoneBase" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::Web::UI::WebControls::WebParts::CatalogZoneBase ^ Zone { System::Web::UI::WebControls::WebParts::CatalogZoneBase ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

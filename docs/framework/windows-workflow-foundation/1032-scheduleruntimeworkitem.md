@@ -1,5 +1,5 @@
 ---
-title: "1032 - ScheduleRuntimeWorkItem | Microsoft Docs"
+title: "1032 - ScheduleRuntimeWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 54688101-becf-42f3-80ca-f53a7b527620
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1032 - ScheduleRuntimeWorkItem
 ## Properties  

@@ -1,7 +1,7 @@
 ---
-title: "How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (C#) | Microsoft Docs"
+title: "How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (C#)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-csharp"
 
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
 caps.latest.revision: 3
 author: "BillWagner"
@@ -27,7 +25,7 @@ XPath allows you to find the union of the results of two XPath location paths.
  You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.  
   
 ## Example  
- This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection. Note that the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results. The results of the XPath expression evaluation are also in document order.  
+ This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection. Note that the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results. The results of the XPath expression evaluation are also in document order.  
   
  This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   

@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeHost::Stop Method | Microsoft Docs"
+title: "ICLRRuntimeHost::Stop Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeHost.Stop"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeHost::Stop"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeHost::Stop method [.NET Framework hosting]"
   - "Stop method, ICLRRuntimeHost interface [.NET Framework hosting]"
 ms.assetid: b8fd7daf-8f8d-4ad7-92ae-019db244cec1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeHost::Stop Method
 Stops the execution of code by the common language runtime (CLR).  

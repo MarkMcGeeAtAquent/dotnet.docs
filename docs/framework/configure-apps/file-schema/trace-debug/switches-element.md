@@ -1,8 +1,8 @@
 ---
-title: "&lt;switches&gt; Element | Microsoft Docs"
+title: "&lt;switches&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/switches"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#switches"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<switches> element"
   - "switches element"
@@ -26,6 +21,8 @@ caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;switches&gt; Element
 Contains trace switches and the level where the trace switches are set.  
@@ -36,9 +33,8 @@ Contains trace switches and the level where the trace switches are set.
   
 ## Syntax  
   
-```  
-  
-      <switches>   
+```xml  
+      <switches>   
 </switches>  
 ```  
   
@@ -67,19 +63,19 @@ Contains trace switches and the level where the trace switches are set.
 ## Example  
  The following example shows how to use the **\<switch>** element to set the `General` trace switch to the <xref:System.Diagnostics.TraceLevel> level, and enable the `Data` Boolean trace switch.  
   
-```  
+```xml  
 <configuration>  
-   \<system.diagnostics>  
+   <system.diagnostics>  
       <switches>  
          <add name="General" value="4" />  
          <add name="Data" value="1" />  
       </switches>  
-   \</system.diagnostics>  
+   </system.diagnostics>  
 </configuration>  
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.Switch>   
- <xref:System.Diagnostics.TraceSwitch>   
- <xref:System.Diagnostics.BooleanSwitch>   
+ <xref:System.Diagnostics.Switch>  
+ <xref:System.Diagnostics.TraceSwitch>  
+ <xref:System.Diagnostics.BooleanSwitch>  
  [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

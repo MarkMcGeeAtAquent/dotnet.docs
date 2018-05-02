@@ -1,7 +1,9 @@
-<Type Name="CodeActivity&lt;TResult&gt;" FullName="System.Activities.CodeActivity&lt;TResult&gt;">
+﻿<Type Name="CodeActivity&lt;TResult&gt;" FullName="System.Activities.CodeActivity&lt;TResult&gt;">
   <TypeSignature Language="C#" Value="public abstract class CodeActivity&lt;TResult&gt; : System.Activities.Activity&lt;TResult&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeActivity`1&lt;TResult&gt; extends System.Activities.Activity`1&lt;!TResult&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Activities.CodeActivity`1" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CodeActivity(Of TResult)&#xA;Inherits Activity(Of TResult)" />
+  <TypeSignature Language="C++ CLI" Value="generic &lt;typename TResult&gt;&#xA;public ref class CodeActivity abstract : System::Activities::Activity&lt;TResult&gt;" />
   <AssemblyInfo>
     <AssemblyName>System.Activities</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -40,6 +42,8 @@
       <MemberSignature Language="C#" Value="protected CodeActivity ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.CodeActivity`1.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; CodeActivity();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -51,10 +55,29 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CacheMetadata">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Custom activity authors can provide validation logic in an activity's <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> override. Any exceptions that are thrown from <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> are not treated as validation errors. These exceptions will escape from the call to <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> and must be handled by the caller.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CacheMetadata">
       <MemberSignature Language="C#" Value="protected override sealed void CacheMetadata (System.Activities.ActivityMetadata metadata);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CacheMetadata(valuetype System.Activities.ActivityMetadata metadata) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.CodeActivity`1.CacheMetadata(System.Activities.ActivityMetadata)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Sub CacheMetadata (metadata As ActivityMetadata)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void CacheMetadata(System::Activities::ActivityMetadata metadata);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -83,6 +106,8 @@
       <MemberSignature Language="C#" Value="protected virtual void CacheMetadata (System.Activities.CodeActivityMetadata metadata);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CacheMetadata(valuetype System.Activities.CodeActivityMetadata metadata) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.CodeActivity`1.CacheMetadata(System.Activities.CodeActivityMetadata)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub CacheMetadata (metadata As CodeActivityMetadata)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void CacheMetadata(System::Activities::CodeActivityMetadata metadata);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -101,8 +126,8 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The workflow runtime uses the default implementation of <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> to ensure correct construction of a workflow as well as to manage run-time relationships and lifetime rules. The default implementation of <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> examines the public members of the activity type using the type’s <xref:System.ComponentModel.TypeDescriptor>. These public members are of type <xref:System.Activities.Argument>, <xref:System.Activities.Variable>, [T:System.Collections.Generic.IEnumerable\<T:System.Activities.Variable>](assetId:///T:System.Collections.Generic.IEnumerable\<T:System.Activities.Variable>?qualifyHint=False&amp;autoUpgrade=True), <xref:System.Activities.Activity>, [T:System.Collections.Generic.IEnumerable\<T:System.Activities.Activity>](assetId:///T:System.Collections.Generic.IEnumerable\<T:System.Activities.Activity>?qualifyHint=False&amp;autoUpgrade=True), or <xref:System.Activities.ActivityDelegate>. You can override this method to customize the building of the activity’s run-time description and to provide custom validation logic. Any exceptions that are thrown from <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> are not treated as validation errors. These exceptions will escape from the call to <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> and must be handled by the caller.  
-  
+ The workflow runtime uses the default implementation of <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> to ensure correct construction of a workflow as well as to manage run-time relationships and lifetime rules. The default implementation of <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> examines the public members of the activity type using the type’s <xref:System.ComponentModel.TypeDescriptor>. These public members are of type <xref:System.Activities.Argument>, <xref:System.Activities.Variable>, [IEnumerable\<Variable>](xref:System.Collections.Generic.IEnumerable%601), <xref:System.Activities.Activity>, [IEnumerable\<Activity>](xref:System.Collections.Generic.IEnumerable%601), or <xref:System.Activities.ActivityDelegate>. You can override this method to customize the building of the activity’s run-time description and to provide custom validation logic. Any exceptions that are thrown from <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> are not treated as validation errors. These exceptions will escape from the call to <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> and must be handled by the caller.
+
  ]]></format>
         </remarks>
       </Docs>
@@ -111,6 +136,8 @@
       <MemberSignature Language="C#" Value="protected abstract TResult Execute (System.Activities.CodeActivityContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance !TResult Execute(class System.Activities.CodeActivityContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.CodeActivity`1.Execute(System.Activities.CodeActivityContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected MustOverride Function Execute (context As CodeActivityContext) As TResult" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract TResult Execute(System::Activities::CodeActivityContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -133,6 +160,8 @@
       <MemberSignature Language="C#" Value="protected override sealed Func&lt;System.Activities.Activity&gt; Implementation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Func`1&lt;class System.Activities.Activity&gt; Implementation" />
       <MemberSignature Language="DocId" Value="P:System.Activities.CodeActivity`1.Implementation" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Property Implementation As Func(Of Activity)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property Func&lt;System::Activities::Activity ^&gt; ^ Implementation { Func&lt;System::Activities::Activity ^&gt; ^ get(); void set(Func&lt;System::Activities::Activity ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -160,9 +189,11 @@
       </Docs>
     </Member>
     <Member MemberName="ImplementationVersion">
-      <MemberSignature Language="C#" Value="protected override sealed Version ImplementationVersion { get; set; }" />
+      <MemberSignature Language="C#" Value="protected internal override sealed Version ImplementationVersion { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Version ImplementationVersion" />
       <MemberSignature Language="DocId" Value="P:System.Activities.CodeActivity`1.ImplementationVersion" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides NotOverridable Property ImplementationVersion As Version" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; property Version ^ ImplementationVersion { Version ^ get(); void set(Version ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -181,6 +212,8 @@
       <MemberSignature Language="C#" Value="protected override sealed void OnCreateDynamicUpdateMap (System.Activities.DynamicUpdate.UpdateMapMetadata metadata, System.Activities.Activity originalActivity);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnCreateDynamicUpdateMap(class System.Activities.DynamicUpdate.UpdateMapMetadata metadata, class System.Activities.Activity originalActivity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Activities.CodeActivity`1.OnCreateDynamicUpdateMap(System.Activities.DynamicUpdate.UpdateMapMetadata,System.Activities.Activity)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Sub OnCreateDynamicUpdateMap (metadata As UpdateMapMetadata, originalActivity As Activity)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnCreateDynamicUpdateMap(System::Activities::DynamicUpdate::UpdateMapMetadata ^ metadata, System::Activities::Activity ^ originalActivity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Activities</AssemblyName>
@@ -200,22 +233,5 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="CacheMetadata">
-      <AssemblyInfo>
-        <AssemblyName>System.Activities</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Creates and validates a description of the activity’s arguments, variables, child activities, and activity delegates.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Custom activity authors can provide validation logic in an activity's <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> override. Any exceptions that are thrown from <xref:System.Activities.CodeActivity%601.CacheMetadata%2A> are not treated as validation errors. These exceptions will escape from the call to <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> and must be handled by the caller.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

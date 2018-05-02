@@ -1,8 +1,8 @@
 ---
-title: "Streaming Message Transfer | Microsoft Docs"
+title: "Streaming Message Transfer"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Streaming Message Transfer
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] transports support two modes for transferring messages:  

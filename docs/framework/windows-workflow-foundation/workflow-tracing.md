@@ -1,5 +1,5 @@
 ---
-title: "Workflow Tracing | Microsoft Docs"
+title: "Workflow Tracing"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Workflow Tracing
 Workflow tracing offers a way to capture diagnostic information using .NET Framework trace listeners. Tracing can be enabled if a problem is detected with the application and then disabled again once the problem is resolved. There are two ways you could enable debug tracing for workflows. You can configure it using the Event Trace viewer or you can use <xref:System.Diagnostics> to send trace events to a file.  
@@ -31,7 +33,7 @@ Workflow tracing offers a way to capture diagnostic information using .NET Frame
   
     2.  Change the \<bufferSize> value in the Windows.ApplicationServer.Applications.man file to 32.  
   
-        ```  
+        ```xml  
         <channel name="Microsoft-Windows-Application Server-Applications/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" >  
                     <publishing>  
                       <bufferSize>32</bufferSize>  
@@ -47,7 +49,7 @@ Workflow tracing offers a way to capture diagnostic information using .NET Frame
 ## Enabling Debug Tracing using System.Diagnostics  
  These listeners can be configured in the App.config file of the workflow application, or the Web.config for a workflow service. In this example, a [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) is configured to save tracing information to the MyTraceLog.txt file in the current directory.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -74,5 +76,5 @@ Workflow tracing offers a way to capture diagnostic information using .NET Frame
 ```  
   
 ## See Also  
- [Windows Server App Fabric Monitoring](http://go.microsoft.com/fwlink/?LinkId=201273)   
+ [Windows Server App Fabric Monitoring](http://go.microsoft.com/fwlink/?LinkId=201273)  
  [Monitoring Applications with App Fabric](http://go.microsoft.com/fwlink/?LinkId=201275)

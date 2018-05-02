@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_STATIC_TYPE Enumeration | Microsoft Docs"
+title: "COR_PRF_STATIC_TYPE Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_STATIC_TYPE"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_STATIC_TYPE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_STATIC_TYPE enumeration [.NET Framework profiling]"
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_STATIC_TYPE Enumeration
 Indicates whether a field is static and, if so, the static quality that applies to the field. These values can be combined using the bitwise OR operation to indicate that the field has multiple, different static qualities.  

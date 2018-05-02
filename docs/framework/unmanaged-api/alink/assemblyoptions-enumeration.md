@@ -1,5 +1,5 @@
 ---
-title: "AssemblyOptions Enumeration | Microsoft Docs"
+title: "AssemblyOptions Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "AssemblyOptions"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "AssemblyOptions"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Alink API, AssemblyOptions enumeration"
   - "AssemblyOptions enumeration"
 ms.assetid: 84f83921-64cb-49e3-ac8b-22a0b77b18a8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # AssemblyOptions Enumeration
 Enumerates the assembly options.  

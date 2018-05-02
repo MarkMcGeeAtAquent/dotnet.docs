@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetThreadContext Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetThreadContext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetThreadContext"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetThreadContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo::GetThreadContext method [.NET Framework profiling]"
   - "GetThreadContext method, ICorProfilerInfo interface [.NET Framework profiling]"
 ms.assetid: 79446216-4b8b-484c-8fe3-e87dbf9df2fd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetThreadContext Method
 Gets the context identity currently associated with the specified thread.  

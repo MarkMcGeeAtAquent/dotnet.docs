@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedScope2::GetConstants Method | Microsoft Docs"
+title: "ISymUnmanagedScope2::GetConstants Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedScope2.GetConstants"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedScope2::GetConstants"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedScope2::GetConstants method [.NET Framework debugging]"
   - "GetConstants method [.NET Framework debugging]"
 ms.assetid: f241b620-9ec5-42fd-92ef-3b22329db72a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedScope2::GetConstants Method
 Gets the local constants defined within this scope.  

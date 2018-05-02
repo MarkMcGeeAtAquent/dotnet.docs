@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugMetaDataLocator Interface | Microsoft Docs"
+title: "ICorDebugMetaDataLocator Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugMetaDataLocator"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugMetaDataLocator"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugMetaDataLocator interface [.NET Framework debugging]"
 ms.assetid: 287f5ecd-863f-4090-a615-077859f0257b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugMetaDataLocator Interface
 Provides metadata information to the debugger.  
@@ -50,5 +53,5 @@ Provides metadata information to the debugger.
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

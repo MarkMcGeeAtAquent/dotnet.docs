@@ -1,8 +1,8 @@
 ---
-title: "Federation Sample | Microsoft Docs"
+title: "Federation Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Federation Sample
 This sample demonstrates federated security.  
@@ -33,7 +35,7 @@ This sample demonstrates federated security.
   
  The BookStore service supports two operations, `BrowseBooks` and `BuyBook`. It allows anonymous access to the `BrowseBooks` operation, but requires authenticated access to access the `BuyBooks` operation. The authentication takes the form of a token issued by the BookStore STS. The configuration file for the BookStore Service points clients to the BookStore STS using the `wsFederationHttpBinding`.  
   
-```  
+```xml  
 <wsFederationHttpBinding>  
 <!-- This is the Service binding for the BuyBooks endpoint. It redirects clients to the BookStore STS -->  
     <binding name='BuyBookBinding'>  
@@ -53,7 +55,7 @@ This sample demonstrates federated security.
   
  The BookStore STS then requires that clients authenticate using a token issued by the HomeRealm STS. Again, the configuration file for the BookStore STS points clients to the HomeRealm STS using the `wsFederationHttpBinding`.  
   
-```  
+```xml  
 <wsFederationHttpBinding>  
  <!-- This is the binding for the clients requesting tokens from this STS. It redirects clients to the HomeRealm STS -->  
     <binding name='BookStoreSTSBinding'>  

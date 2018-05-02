@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugReferenceValue Interface1 | Microsoft Docs"
+title: "ICorDebugReferenceValue Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugReferenceValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugReferenceValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugReferenceValue interface [.NET Framework debugging]"
 ms.assetid: 2040e2be-119a-4cfb-ae52-b0b6f052665c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 18
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugReferenceValue Interface1
 Provides methods that manage a value that is a reference to an object. (That is, this interface provides methods that manage a pointer.) This interface implements "ICorDebugValue".  

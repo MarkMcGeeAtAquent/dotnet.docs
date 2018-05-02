@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataConverter::GetMetaDataFromTypeInfo Method | Microsoft Docs"
+title: "IMetaDataConverter::GetMetaDataFromTypeInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataConverter.GetMetaDataFromTypeInfo"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataConverter::GetMetaDataFromTypeInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetMetaDataFromTypeInfo method [.NET Framework metadata]"
   - "IMetaDataConverter::GetMetaDataFromTypeInfo method [.NET Framework metadata]"
 ms.assetid: d44484bb-23a3-49c3-9e46-69d0d9ab4f0f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataConverter::GetMetaDataFromTypeInfo Method
 Gets a pointer to an [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) instance that represents the metadata signature of the type library referenced by the specified `ITypeInfo` instance.  
@@ -56,5 +59,5 @@ HRESULT GetMetaDataFromTypeInfo (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

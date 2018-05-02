@@ -1,17 +1,19 @@
 ---
-title: "Extract WF Data using Tracking | Microsoft Docs"
+title: "Extract WF Data using Tracking"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e30c68f5-8c6a-495a-bd20-667a4364c68e
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Extract WF Data using Tracking
 This sample demonstrates how to use workflow tracking to extract workflow variables and arguments from activities. It also shows the addition of annotations to tracking records and the extraction of data payload within custom tracking records. The sample uses the Event Tracing for Windows (ETW) tracking participant to extract data from the workflow.  
@@ -68,13 +70,13 @@ This sample demonstrates how to use workflow tracking to extract workflow variab
   
      Custom tracking records can carry payload data defined within this activity. Subscribing for custom tracking records in a tracking profile allows the extraction of the payload within the tracking record. The custom tracking records can be extracted with custom a <xref:System.Activities.Tracking.TrackingQuery>. The following code example is a tracking profile that extracts a custom tracking record along with its payload.  
   
-    ```  
+    ```xml  
     <customTrackingQuery name="QuoteLookupEvent" activityName="GetStockPrice"/>  
     ```  
   
  The sample demonstrates the extraction of a variables, arguments, custom records and adding annotations using a profile specified in a Web.config. Tracking is enabled on the sample workflow service by adding an `<etwTracking>` behavior element. The following code example enables tracking for the `ExtractWorkflowVariables` tracking profile.  
   
-```  
+```xml  
 <serviceBehaviors>  
      <behavior>  
                <etwTracking profileName="ExtractWorkflowVariables"/>  

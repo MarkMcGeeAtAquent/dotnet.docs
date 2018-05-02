@@ -1,5 +1,5 @@
 ---
-title: "107 -- BookmarkResumptionRecord | Microsoft Docs"
+title: "107 -- BookmarkResumptionRecord"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: aa2d37ed-2bfa-439b-89e8-a9354027f155
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 107 -- BookmarkResumptionRecord
 ## Properties  

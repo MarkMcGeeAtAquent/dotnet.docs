@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ModuleLoadStarted Method | Microsoft Docs"
+title: "ICorProfilerCallback::ModuleLoadStarted Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ModuleLoadStarted"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ModuleLoadStarted"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ModuleLoadStarted method [.NET Framework profiling]"
   - "ICorProfilerCallback::ModuleLoadStarted method [.NET Framework profiling]"
 ms.assetid: 9cd2fe75-408a-400f-a6b1-9979624a2fe2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ModuleLoadStarted Method
 Notifies the profiler that a module is being loaded.  

@@ -1,16 +1,14 @@
 ---
-title: "Windows Forms Controls | Microsoft Docs"
+title: "Windows Forms Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "Windows Forms controls"
   - "controls [Windows Forms]"
@@ -20,6 +18,8 @@ caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Windows Forms Controls
 As you design and modify the user interface of your Windows Forms applications, you will need to add, align, and position controls. Controls are objects that are contained within form objects. Each type of control has its own set of properties, methods, and events that make it suitable for a particular purpose. You can manipulate controls in the designer and write code to add controls dynamically at run time.  
@@ -47,5 +47,5 @@ As you design and modify the user interface of your Windows Forms applications, 
  [Client Applications](../../../../docs/framework/develop-client-apps.md)  
  Provides an overview of developing Windows-based applications.  
   
- [Windows Forms Walkthroughs](http://msdn.microsoft.com/en-us/fd44d13d-4733-416f-aefc-32592e59e5d9)  
+ [Windows Forms Walkthroughs](http://msdn.microsoft.com/library/fd44d13d-4733-416f-aefc-32592e59e5d9)  
  Lists walkthrough topics about Windows Forms and controls.

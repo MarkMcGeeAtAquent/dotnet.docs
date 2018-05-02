@@ -1,5 +1,5 @@
 ---
-title: "Context Exchange Protocol | Microsoft Docs"
+title: "Context Exchange Protocol"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Context Exchange Protocol
 This section describes the context exchange protocol introduced in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)][!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] release. This protocol allows the client channel to accept a context supplied by a service and apply it to all subsequent requests to that service sent over the same client channel instance. The implementation of the context exchange protocol can use one of the following two mechanisms to propagate the context between the server and the client: HTTP cookies or a SOAP header.  
@@ -59,17 +61,17 @@ This section describes the context exchange protocol introduced in [!INCLUDE[ind
   
  Service endpoints that require support for the context exchange protocol can make it explicit in the published policy. Two new policy assertions have been introduced to represent the requirement for the client to support the context exchange protocol at the SOAP level or to enable HTTP cookie support. Generation of these assertions into the policy on the service is controlled by the value of the <xref:System.ServiceModel.Channels.ContextBindingElement.ContextExchangeMechanism%2A> property as follows:  
   
--   For <xref:System.ServiceModel.Channels.ContextExchangeMechanism>, the following assertion is generated:  
+-   For <xref:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader>, the following assertion is generated:  
   
-    ```  
+    ```xml  
     <IncludeContext   
     xmlns="http://schemas.microsoft.com/ws/2006/05/context"  
     protectionLevel="Sign" />  
     ```  
   
--   For <xref:System.ServiceModel.Channels.ContextExchangeMechanism>, the following assertion is generated:  
+-   For <xref:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie>, the following assertion is generated:  
   
-    ```  
+    ```xml  
     <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  
     ```  
   

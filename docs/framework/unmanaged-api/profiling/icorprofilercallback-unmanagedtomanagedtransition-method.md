@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::UnmanagedToManagedTransition Method | Microsoft Docs"
+title: "ICorProfilerCallback::UnmanagedToManagedTransition Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.UnmanagedToManagedTransition"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::UnmanagedToManagedTransition"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::UnmanagedToManagedTransition method [.NET Framework profiling]"
   - "UnmanagedToManagedTransition method [.NET Framework profiling]"
 ms.assetid: ade2cc01-9b81-4e09-a5f9-b3b9dda27e96
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::UnmanagedToManagedTransition Method
 Notifies the profiler that a transition from unmanaged code to managed code has occurred.  
@@ -60,7 +63,7 @@ HRESULT UnmanagedToManagedTransition(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
- [ManagedToUnmanagedTransition Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md)   
- [Using Explicit PInvoke in C++ (DllImport Attribute)](http://msdn.microsoft.com/library/18e5218c-6916-48a1-a127-f66e22ef15fc)   
- [Using C++ Interop (Implicit PInvoke)](http://msdn.microsoft.com/library/5f710bf1-88ae-4c4e-8326-b3f0b7c4c68a)
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
+ [ManagedToUnmanagedTransition Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md)  
+ [Using Explicit PInvoke in C++ (DllImport Attribute)](/cpp/dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute)  
+ [Using C++ Interop (Implicit PInvoke)](/cpp/dotnet/using-cpp-interop-implicit-pinvoke)

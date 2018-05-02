@@ -1,5 +1,5 @@
 ---
-title: "CorDebugCodeInvokePurpose Enumeration | Microsoft Docs"
+title: "CorDebugCodeInvokePurpose Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugInvokePurpose"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: 31833a2d-a0d6-48a1-b05f-995ca307a08f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugCodeInvokePurpose Enumeration
 Describes why an exported function calls managed code.  
@@ -28,7 +31,6 @@ Describes why an exported function calls managed code.
 ## Syntax  
   
 ```  
-  
 typedef enum CorDebugCodeInvokePurpose  
 {  
     CODE_INVOKE_PURPOSE_NONE,  
@@ -36,7 +38,6 @@ typedef enum CorDebugCodeInvokePurpose
     CODE_INVOKE_PURPOSE_CLASS_INIT,  
     CODE_INVOKE_PURPOSE_INTERFACE_DISPATCH,  
 } CorDebugCodeInvokePurpose;  
-  
 ```  
   
 ## Members  
@@ -64,5 +65,5 @@ typedef enum CorDebugCodeInvokePurpose
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)   
+ [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -1,10 +1,13 @@
-<Type Name="WaitOrTimerCallback" FullName="System.Threading.WaitOrTimerCallback">
+﻿<Type Name="WaitOrTimerCallback" FullName="System.Threading.WaitOrTimerCallback">
   <TypeSignature Language="C#" Value="public delegate void WaitOrTimerCallback(object state, bool timedOut);" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WaitOrTimerCallback extends System.MulticastDelegate" />
   <TypeSignature Language="DocId" Value="T:System.Threading.WaitOrTimerCallback" />
+  <TypeSignature Language="VB.NET" Value="Public Delegate Sub WaitOrTimerCallback(state As Object, timedOut As Boolean)" />
+  <TypeSignature Language="C++ CLI" Value="public delegate void WaitOrTimerCallback(System::Object ^ state, bool timedOut);" />
   <AssemblyInfo>
     <AssemblyName>System.Threading.ThreadPool</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -41,9 +44,8 @@
 ## Remarks  
  <xref:System.Threading.WaitOrTimerCallback> represents a callback method that you want to execute when a registered wait handle times out or is signaled. Create the delegate by passing your callback method to the <xref:System.Threading.WaitOrTimerCallback> constructor. Your method must have the signature shown here.  
   
- Create the registered wait handle by passing the <xref:System.Threading.WaitOrTimerCallback> delegate and a <xref:System.Threading.WaitHandle> to <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=fullName>. Your callback method executes each time the <xref:System.Threading.WaitHandle> times out or is signaled.  
+ Create the registered wait handle by passing the <xref:System.Threading.WaitOrTimerCallback> delegate and a <xref:System.Threading.WaitHandle> to <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType>. Your callback method executes each time the <xref:System.Threading.WaitHandle> times out or is signaled.  
   
- [Visual Basic]  
   
 > [!NOTE]
 >  Visual Basic users can omit the <xref:System.Threading.WaitOrTimerCallback> constructor, and simply use the `AddressOf` operator when passing the callback method to <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A>. Visual Basic automatically calls the correct delegate constructor.  

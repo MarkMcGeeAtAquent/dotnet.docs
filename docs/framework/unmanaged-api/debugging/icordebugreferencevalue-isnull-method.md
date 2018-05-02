@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugReferenceValue::IsNull Method | Microsoft Docs"
+title: "ICorDebugReferenceValue::IsNull Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugReferenceValue.IsNull"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugReferenceValue::IsNull"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IsNull method, ICorDebugReferenceValue interface [.NET Framework debugging]"
   - "ICorDebugReferenceValue::IsNull method [.NET Framework debugging]"
 ms.assetid: 99e8c8d7-a1c0-47c8-9dbd-03e0b2bcb4d5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugReferenceValue::IsNull Method
 Gets a value that indicates whether this ICorDebugReferenceValue is a null value, in which case the `ICorDebugReferenceValue` does not point to an object.  

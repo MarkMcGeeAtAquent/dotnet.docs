@@ -1,5 +1,5 @@
 ---
-title: "Runtime Directives (rd.xml) Configuration File Reference | Microsoft Docs"
+title: "Runtime Directives (rd.xml) Configuration File Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,12 +14,13 @@ caps.latest.revision: 27
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Runtime Directives (rd.xml) Configuration File Reference
 A runtime directives (.rd.xml) file is an XML configuration file that specifies whether designated program elements are available for reflection. Here’s an example of a runtime directives file:  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
 <Application>  
   <Namespace Name="Contoso.Cloud.AppServices" Serialize="Required Public" />  
@@ -35,7 +36,6 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   </Namespace>  
 </Application>  
 </Directives>  
-  
 ```  
   
 ## The structure of a runtime directives file  
@@ -49,41 +49,41 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
  [Application](../../../docs/framework/net-native/application-element-net-native.md) [0:1]  
  [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
+ . . .  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
- [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]   
- . . .   
- [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (subclasses of the containing type) [O:1]   
- [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
- [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (containing type is an attribute) [O:1]   
+ . . .  
+ [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
+ [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (subclasses of the containing type) [O:1]  
+ [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
+ . . .  
+ [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
+ . . .  
+ [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (containing type is an attribute) [O:1]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
- [Parameter](../../../docs/framework/net-native/parameter-element-net-native.md) [0:M]   
+ [Parameter](../../../docs/framework/net-native/parameter-element-net-native.md) [0:M]  
  [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0:M]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
- [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]   
+ [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]  
  [Property](../../../docs/framework/net-native/property-element-net-native.md) [0:M]  
  [Field](../../../docs/framework/net-native/field-element-net-native.md) [0:M]  
  [Event](../../../docs/framework/net-native/event-element-net-native.md) [0:M]  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
+ . . .  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
- [Parameter](../../../docs/framework/net-native/parameter-element-net-native.md) [0:M]   
+ [Parameter](../../../docs/framework/net-native/parameter-element-net-native.md) [0:M]  
  [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0:M]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
  [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]  
@@ -93,36 +93,36 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
  [Library](../../../docs/framework/net-native/library-element-net-native.md) [0:M]  
  [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
+ . . .  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
  [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
- [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]   
- . . .   
- [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (subclasses of the containing type) [O:1]   
- [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
- [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (containing type is an attribute) [O:1]   
+ . . .  
+ [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
+ [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md) (subclasses of the containing type) [O:1]  
+ [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
+ . . .  
+ [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
+ . . .  
+ [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (containing type is an attribute) [O:1]  
  [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0:M]  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
- [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]   
+ [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]  
  [Property](../../../docs/framework/net-native/property-element-net-native.md) [0:M]  
  [Field](../../../docs/framework/net-native/field-element-net-native.md) [0:M]  
  [Event](../../../docs/framework/net-native/event-element-net-native.md) [0:M]  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
  [Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M]  
- . . .   
+ . . .  
  [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (constructed generic type) [0:M]  
- . . .   
+ . . .  
  [Method](../../../docs/framework/net-native/method-element-net-native.md) [0:M]  
  [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (constructed generic method) [0:M]  
  [Property](../../../docs/framework/net-native/property-element-net-native.md) [0:M]  
@@ -133,17 +133,15 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  A [Library](../../../docs/framework/net-native/library-element-net-native.md) element has a single attribute, `Name`, that specifies the name of a library or assembly, without its file extension. For example, the following [Library](../../../docs/framework/net-native/library-element-net-native.md) element applies to an assembly named Extensions.dll.  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
   <Application>  
-     \<!-- Child elements go here -->    
+     <!-- Child elements go here -->    
   </Application>  
   <Library Name="Extensions">  
-     \<!-- Child elements go here -->    
+     <!-- Child elements go here -->    
   </Library>  
 </Directives>  
-  
 ```  
   
 <a name="Directives"></a>   
@@ -165,11 +163,11 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
 -   `Serialize`. Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and serialized by third-party libraries such as the Newtonsoft JSON serializer.  
   
--   `DataContractSerializer`. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> class.  
+-   `DataContractSerializer`. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
   
--   `DataContractJsonSerializer`. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> class.  
+-   `DataContractJsonSerializer`. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
   
--   `XmlSerializer`. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> class.  
+-   `XmlSerializer`. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.  
   
 -   `MarshalObject`. Controls policy for marshaling reference types to WinRT and COM.  
   
@@ -197,8 +195,7 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  For example, the following runtime directives file defines policy for all types and members in the assembly DataClasses.dll. It enables reflection for serialization of all public properties, enables browsing for all types and type members, enables activation for all types (because of the `Dynamic` attribute), and enables reflection for all public types and members.  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Assembly Name="DataClasses" Serialize="Required Public"   
@@ -206,10 +203,9 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
                 Dynamic="Public"  />  
    </Application>  
    <Library Name="UtilityLibrary">  
-     \<!-- Child elements go here -->    
+     <!-- Child elements go here -->    
    </Library>  
 </Directives>  
-  
 ```  
   
 ### Specifying policy for members  
@@ -257,30 +253,26 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  For example, if a single project includes the following two runtime directives files, the serialization policy for DataClasses.dll is set to both `Required Public` and `All`. In this case, the serialization policy would be resolved as `Required All`.  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Assembly Name="DataClasses" Serialize="Required Public"/>  
    </Application>  
    <Library Name="DataClasses">  
-      \<!-- any other elements -->  
+      <!-- any other elements -->  
    </Library>  
 </Directives>  
-  
 ```  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Assembly Name="DataClasses" Serialize="All" />  
    </Application>  
    <Library Name="DataClasses">  
-      \<!-- any other elements -->  
+      <!-- any other elements -->  
    </Library>  
 </Directives>  
-  
 ```  
   
  However, if two directives in a single runtime directives file try to set the same policy type for the same program element, the XML Scheme Definition tool displays an error message.  
@@ -290,8 +282,7 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  In the following example, the serialization policy setting for everything in `DataClasses` that’s not in `DataClasses.ViewModels` would be `Required Public`, and everything that's in both `DataClasses` and `DataClasses.ViewModels` would be `All`.  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Assembly Name="DataClasses" Serialize="Required Public" >  
@@ -299,17 +290,15 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
       </Assembly>  
    </Appliction>  
    <Library Name="DataClasses">  
-      \<!-- any other elements -->  
+      <!-- any other elements -->  
    </Library>  
 </Directives>  
-  
 ```  
   
 ### If open generics and instantiated elements apply the same policy type  
  In the following example, `Dictionary<int,int>` is assigned the `Browse` policy only if the engine has another reason to give it the `Browse` policy (which would otherwise be the default behavior); every other instantiation of <xref:System.Collections.Generic.Dictionary%602> will have all of its members browsable.  
   
-```  
-  
+```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Application>  
       <Assembly Name="DataClasses" Serialize="Required Public" >  
@@ -321,10 +310,9 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
                          Arguments="System.Int32,System.Int32" Browse="Auto" />  
    </Application>  
    <Library Name="DataClasses">  
-      \<!-- any other elements -->  
+      <!-- any other elements -->  
    </Library>  
 </Directives>  
-  
 ```  
   
 ### How policy is inferred  
@@ -404,7 +392,7 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
 -   If the method is generic, the types over which the method is instantiated are marked with the `Browse` policy.  
   
--   The method can be invoked by `MethodInfo.Invoke`, and delegate creation becomes possible by <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=fullName>.  
+-   The method can be invoked by `MethodInfo.Invoke`, and delegate creation becomes possible by <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=nameWithType>.  
   
  Applying the `Dynamic` policy to a field involves the following policy changes:  
   
@@ -425,7 +413,7 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  Applying the `Activation` policy to a method involves the following policy change:  
   
--   The constructor can be invoked by the <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=fullName> and <xref:System.Activator.CreateInstance%2A?displayProperty=fullName> methods. For methods, the `Activation` policy affects constructors only.  
+-   The constructor can be invoked by the <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=nameWithType> and <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> methods. For methods, the `Activation` policy affects constructors only.  
   
  Applying the `Activation` policy to a field has no effect.  
   
@@ -478,5 +466,5 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
  For more information, see the "Differences in Serializers" section in [Migrating Your Windows Store App to .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).  
   
 ## See Also  
- [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)   
+ [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [Reflection and .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)

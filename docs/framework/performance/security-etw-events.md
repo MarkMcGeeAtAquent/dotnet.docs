@@ -1,5 +1,5 @@
 ---
-title: "Security ETW Events | Microsoft Docs"
+title: "Security ETW Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Security ETW Events
 <a name="top"></a> Security events are raised during strong name verification and Authenticode verification.  

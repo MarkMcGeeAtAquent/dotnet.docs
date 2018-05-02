@@ -1,8 +1,8 @@
 ---
-title: "&lt;workflowControlEndpoint&gt; | Microsoft Docs"
+title: "&lt;workflowControlEndpoint&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,22 +11,27 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 6c89e76c-643b-4b6a-9b25-628f753d7027
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;workflowControlEndpoint&gt;
 This configuration element defines a standard endpoint for controlling the execution of workflow instances (create, run, suspend, terminate, etc).  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<standardEndpoints>  
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>       <workflowControlEndpoint>           <standardEndpoint                  name="String" />        </workflowControlEndpoint>            </standardEndpoints>  
+  <standardEndpoints>
+    <workflowControlEndpoint>
+      <standardEndpoint name="String" />
+    </workflowControlEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   

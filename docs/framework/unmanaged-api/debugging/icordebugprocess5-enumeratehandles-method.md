@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugProcess5::EnumerateHandles Method | Microsoft Docs"
+title: "ICorDebugProcess5::EnumerateHandles Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess5.EnumerateHandles"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess5::EnumerateHandles"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateHandles method, ICorDebugProcess5 interface [.NET Framework debugging]"
   - "ICorDebugProcess5::EnumerateHandles method [.NET Framework debugging]"
 ms.assetid: 7d7fa796-0dc6-4ee8-9d56-40166246d91d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess5::EnumerateHandles Method
 Gets an enumerator for object handles in a process.  
@@ -65,5 +68,5 @@ HRESULT EnumerateHandles(     [in] CorGCReferenceType types,
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

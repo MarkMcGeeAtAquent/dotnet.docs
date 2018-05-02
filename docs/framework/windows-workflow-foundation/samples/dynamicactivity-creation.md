@@ -1,17 +1,19 @@
 ---
-title: "DynamicActivity Creation | Microsoft Docs"
+title: "DynamicActivity Creation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d8ebe82f-98c8-4452-aed7-2c60a512b097
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # DynamicActivity Creation
 This sample demonstrates two different ways to create an activity at runtime using the <xref:System.Activities.DynamicActivity> activity.  
@@ -44,7 +46,6 @@ DynamicActivity act = new DynamicActivity()
         }  
     },  
 };  
-  
 ```  
   
  The following code example shows the complete definition of the `DynamicActivity` that computes the average of the values in a list.  
@@ -103,7 +104,7 @@ DynamicActivity act = new DynamicActivity()
   
  When created in XAML, the input and output are declared as shown in the following example.  
   
-```  
+```xml  
 <Activity x:Class="Microsoft.Samples.DynamicActivityCreation.FindAverage"  
           xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"  
           xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
@@ -117,20 +118,18 @@ DynamicActivity act = new DynamicActivity()
 </Activity>  
 ```  
   
- The XAML can be created visually using the [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]. If it is included in a Visual Studio project, be sure to set its “Build Action” to “None” to prevent it from being compiled. The XAML can then be loaded dynamically using the following call.  
+ The XAML can be created visually using the [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)]. If it is included in a Visual Studio project, be sure to set its "Build Action" to "None" to prevent it from being compiled. The XAML can then be loaded dynamically using the following call.  
   
 ```  
 Activity act2 = ActivityXamlServices.Load(@"FindAverage.xaml");  
-  
 ```  
   
- The <xref:System.Activities.DynamicActivity> instance created programmatically or through loading a XAML workflow can be used as shown in the following code example. Please note that “act” passed to the `WorkflowInvoker.Invoke` is the “act” <xref:System.Activities.Activity> defined in the first code example.  
+ The <xref:System.Activities.DynamicActivity> instance created programmatically or through loading a XAML workflow can be used as shown in the following code example. Please note that "act" passed to the `WorkflowInvoker.Invoke` is the "act" <xref:System.Activities.Activity> defined in the first code example.  
   
 ```  
 IDictionary<string, object> results = WorkflowInvoker.Invoke(act, new Dictionary<string, object> { { "Numbers", numbers } });  
   
 Console.WriteLine("The average calculated using the code activity is = " + results["Average"]);  
-  
 ```  
   
 #### To use this sample  
@@ -144,7 +143,7 @@ Console.WriteLine("The average calculated using the code activity is = " + resul
 ## Command line arguments  
  This sample accepts command line arguments. Users can provide a list of numbers for the activity to calculate their average. The list of numbers to be used is passed as a list of numbers separated by a space. For example, to calculate the average of 5, 10, and 32 invoke the sample using the following command line.  
   
- **DynamicActivityCreation 5 10 32**   
+ **DynamicActivityCreation 5 10 32**  
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
 >   
@@ -152,6 +151,4 @@ Console.WriteLine("The average calculated using the code activity is = " + resul
 >   
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\DynamicActivity\DynamicActivityCreation`  
-  
-## See Also
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\DynamicActivity\DynamicActivityCreation`

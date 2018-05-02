@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeHost::ExecuteInAppDomain Method | Microsoft Docs"
+title: "ICLRRuntimeHost::ExecuteInAppDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeHost.ExecuteInAppDomain"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeHost::ExecuteInAppDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeHost::ExecuteInAppDomain method [.NET Framework hosting]"
   - "ExecuteInAppDomain method [.NET Framework hosting]"
 ms.assetid: e2b0e2db-3fae-4b56-844e-d30a125a660c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeHost::ExecuteInAppDomain Method
 Specifies the <xref:System.AppDomain> in which to execute the specified managed code.  

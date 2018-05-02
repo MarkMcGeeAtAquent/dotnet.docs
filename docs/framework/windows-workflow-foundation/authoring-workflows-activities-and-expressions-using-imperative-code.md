@@ -1,5 +1,5 @@
 ---
-title: "Authoring Workflows, Activities, and Expressions Using Imperative Code | Microsoft Docs"
+title: "Authoring Workflows, Activities, and Expressions Using Imperative Code"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Authoring Workflows, Activities, and Expressions Using Imperative Code
 A workflow definition is a tree of configured activity objects. This tree of activities can be defined many ways, including by hand-editing XAML or by using the Workflow Designer to produce XAML. Use of XAML, however, is not a requirement. Workflow definitions can also be created programmatically. This topic provides an overview of creating workflow definitions, activities, and expressions by using code. For examples of working with XAML workflows using code, see [Serializing Workflows and Activities to and from XAML](../../../docs/framework/windows-workflow-foundation/serializing-workflows-and-activities-to-and-from-xaml.md).  
@@ -33,7 +35,7 @@ A workflow definition is a tree of configured activity objects. This tree of act
   
  [!code-csharp[CFX_WorkflowApplicationExample#49](../../../samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#49)]  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]object initializers, see [How to: Initialize Objects without Calling a Constructor (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=161015) and [How to: Declare an Object by Using an Object Initializer](http://go.microsoft.com/fwlink/?LinkId=161016).  
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] object initializers, see [How to: Initialize Objects without Calling a Constructor (C# Programming Guide)](http://go.microsoft.com/fwlink/?LinkId=161015) and [How to: Declare an Object by Using an Object Initializer](http://go.microsoft.com/fwlink/?LinkId=161016).  
   
 ### Working with Variables, Literal Values, and Expressions  
  When creating a workflow definition using code, be aware of what code executes as part of the creation of the workflow definition and what code executes as part of the execution of an instance of that workflow. For example, the following workflow is intended to generate a random number and write it to the console.  
@@ -89,7 +91,6 @@ new WriteLine
 {  
     Text = new Literal<string>("Hello World.")  
 }  
-  
 ```  
   
  It is invalid to initialize a literal expression with any reference type except <xref:System.String>. In the following example, an <xref:System.Activities.Statements.Assign> activity's <xref:System.Activities.Statements.Assign.Value%2A> property is initialized with a literal expression using a `List<string>`.  
@@ -100,7 +101,6 @@ new Assign
     To = new OutArgument<List<string>>(items),  
     Value = new InArgument<List<string>>(new List<string>())  
 },  
-  
 ```  
   
  When the workflow containing this activity is validated, the following validation error is returned: "Literal only supports value types and the immutable type System.String. The type System.Collections.Generic.List`1[System.String] cannot be used as a literal." If the workflow is invoked, an <xref:System.Activities.InvalidWorkflowException> is thrown that contains the text of the validation error. This is a validation error because creating a literal expression with a reference type does not create a new instance of the reference type for each instance of the workflow. To resolve this, replace the literal expression with one that creates and returns a new instance of the reference type.  
@@ -111,7 +111,6 @@ new Assign
     To = new OutArgument<List<string>>(items),  
     Value = new InArgument<List<string>>(new VisualBasicValue<List<string>>("New List(Of String)"))  
 },  
-  
 ```  
   
  [!INCLUDE[crabout](../../../includes/crabout-md.md)] expressions, see [Expressions](../../../docs/framework/windows-workflow-foundation/expressions.md).  
@@ -178,7 +177,6 @@ class Square : Activity<int>
         };  
     }  
 }  
-  
 ```  
   
  In the following example, a workflow definition consisting of a single `Square` activity is invoked using <xref:System.Activities.WorkflowInvoker>.  
@@ -187,10 +185,9 @@ class Square : Activity<int>
 Dictionary<string, object> inputs = new Dictionary<string, object> {{ "Value", 5}};  
 int result = WorkflowInvoker.Invoke(new Square(), inputs);  
 Console.WriteLine("Result: {0}", result);  
-  
 ```  
   
  When the workflow is invoked, the following output is displayed to the console:  
   
- **Squaring the value: 5**   
+ **Squaring the value: 5**  
 **Result: 25**

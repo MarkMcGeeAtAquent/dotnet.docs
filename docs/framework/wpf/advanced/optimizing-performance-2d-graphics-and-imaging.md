@@ -1,5 +1,5 @@
 ---
-title: "Optimizing Performance: 2D Graphics and Imaging | Microsoft Docs"
+title: "Optimizing Performance: 2D Graphics and Imaging"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "graphics, performance"
-  - "drawing, optimizing performance"
-  - "imaging, optimizing performance"
-  - "shapes, optimizing performance"
-  - "2-D graphics"
-  - "images, optimizing performance"
+  - "graphics [WPF], performance"
+  - "drawing [WPF], optimizing performance"
+  - "imaging [WPF], optimizing performance"
+  - "shapes [WPF], optimizing performance"
+  - "2-D graphics [WPF]"
+  - "images [WPF], optimizing performance"
 ms.assetid: e335601e-28c8-4d64-ba27-778fffd55f72
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Optimizing Performance: 2D Graphics and Imaging
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provides a wide range of 2D graphics and imaging functionality that can be optimized for your application requirements. This topic provides information about performance optimization in those areas.  
@@ -60,7 +65,7 @@ manager: "wpickett"
   
  The following example uses attribute syntax to create a triangular <xref:System.Windows.Media.StreamGeometry> in [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
- [!code-xml[GeometriesMiscSnippets_snip#StreamGeometryTriangleExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/StreamGeometryExample.xaml#streamgeometrytriangleexamplewholepage)]  
+ [!code-xaml[GeometriesMiscSnippets_snip#StreamGeometryTriangleExampleWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/GeometriesMiscSnippets_snip/XAML/StreamGeometryExample.xaml#streamgeometrytriangleexamplewholepage)]  
   
  For more information on <xref:System.Windows.Media.StreamGeometry> objects, see [Create a Shape Using a StreamGeometry](../../../../docs/framework/wpf/graphics-multimedia/how-to-create-a-shape-using-a-streamgeometry.md).  
   
@@ -83,7 +88,7 @@ manager: "wpickett"
 -   For more information, see [Imaging Overview](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md).  
   
 ### BitmapScalingMode  
- When animating the scale of any bitmap, the default high-quality image re-sampling algorithm can sometimes consume sufficient system resources to cause frame rate degradation, effectively causing animations to stutter. By setting the <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> property of the <xref:System.Windows.Media.RenderOptions> object to <xref:System.Windows.Media.BitmapScalingMode> you can create a smoother animation when scaling a bitmap. <xref:System.Windows.Media.BitmapScalingMode> mode tells the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering engine to switch from a quality-optimized algorithm to a speed-optimized algorithm when processing images.  
+ When animating the scale of any bitmap, the default high-quality image re-sampling algorithm can sometimes consume sufficient system resources to cause frame rate degradation, effectively causing animations to stutter. By setting the <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A> property of the <xref:System.Windows.Media.RenderOptions> object to <xref:System.Windows.Media.BitmapScalingMode.LowQuality> you can create a smoother animation when scaling a bitmap. <xref:System.Windows.Media.BitmapScalingMode.LowQuality> mode tells the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rendering engine to switch from a quality-optimized algorithm to a speed-optimized algorithm when processing images.  
   
  The following example shows how to set the <xref:System.Windows.Media.BitmapScalingMode> for an image object.  
   
@@ -93,7 +98,7 @@ manager: "wpickett"
 ### CachingHint  
  By default, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] does not cache the rendered contents of <xref:System.Windows.Media.TileBrush> objects, such as <xref:System.Windows.Media.DrawingBrush> and <xref:System.Windows.Media.VisualBrush>. In static scenarios where neither the contents nor use of the <xref:System.Windows.Media.TileBrush> in the scene is changing, this makes sense, since it conserves video memory. It does not make as much sense when a <xref:System.Windows.Media.TileBrush> with static content is used in a non-static way—for example, when a static <xref:System.Windows.Media.DrawingBrush> or <xref:System.Windows.Media.VisualBrush> is mapped to the surface of a rotating 3D object. The default behavior of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] is to re-render the entire content of the <xref:System.Windows.Media.DrawingBrush> or <xref:System.Windows.Media.VisualBrush> for every frame, even though the content is unchanging.  
   
- By setting the <xref:System.Windows.Media.RenderOptions.CachingHint%2A> property of the <xref:System.Windows.Media.RenderOptions> object to <xref:System.Windows.Media.CachingHint> you can increase performance by using cached versions of the tiled brush objects.  
+ By setting the <xref:System.Windows.Media.RenderOptions.CachingHint%2A> property of the <xref:System.Windows.Media.RenderOptions> object to <xref:System.Windows.Media.CachingHint.Cache> you can increase performance by using cached versions of the tiled brush objects.  
   
  The <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMinimum%2A> and <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMaximum%2A> property values are relative size values that determine when the <xref:System.Windows.Media.TileBrush> object should be regenerated due to changes in scale. For example, by setting the <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMaximum%2A> property to 2.0, the cache for the <xref:System.Windows.Media.TileBrush> only needs to be regenerated when its size exceeds twice the size of the current cache.  
   
@@ -103,13 +108,13 @@ manager: "wpickett"
  [!code-vb[RenderOptions#RenderOptionsSnippet3](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet3)]  
   
 ## See Also  
- [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)   
- [Planning for Application Performance](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)   
- [Taking Advantage of Hardware](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)   
- [Layout and Design](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)   
- [Object Behavior](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)   
- [Application Resources](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)   
- [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)   
- [Data Binding](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)   
- [Other Performance Recommendations](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)   
+ [Optimizing WPF Application Performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)  
+ [Planning for Application Performance](../../../../docs/framework/wpf/advanced/planning-for-application-performance.md)  
+ [Taking Advantage of Hardware](../../../../docs/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware.md)  
+ [Layout and Design](../../../../docs/framework/wpf/advanced/optimizing-performance-layout-and-design.md)  
+ [Object Behavior](../../../../docs/framework/wpf/advanced/optimizing-performance-object-behavior.md)  
+ [Application Resources](../../../../docs/framework/wpf/advanced/optimizing-performance-application-resources.md)  
+ [Text](../../../../docs/framework/wpf/advanced/optimizing-performance-text.md)  
+ [Data Binding](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)  
+ [Other Performance Recommendations](../../../../docs/framework/wpf/advanced/optimizing-performance-other-recommendations.md)  
  [Animation Tips and Tricks](../../../../docs/framework/wpf/graphics-multimedia/animation-tips-and-tricks.md)

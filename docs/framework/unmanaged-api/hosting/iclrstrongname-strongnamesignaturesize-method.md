@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameSignatureSize Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameSignatureSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameSignatureSize"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameSignatureSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::StrongNameSignatureSize method [.NET Framework hosting]"
   - "StrongNameSignatureSize method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: 76d4f93a-5e25-4399-abcc-a1389549481d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameSignatureSize Method
 Returns the size of the strong name signature. This method is typically used by compilers to determine how much space to reserve in the file when creating a delay-signed assembly.  
@@ -33,7 +36,7 @@ Returns the size of the strong name signature. This method is typically used by 
 ## Syntax  
   
 ```  
-HRESULT StrongNameSignatureSize (   
+HRESULT StrongNameSignatureSize (   
     [in]  BYTE   *pbPublicKeyBlob,  
     [in]  ULONG  cbPublicKeyBlob,   
     [in]  DWORD  *pcbSize  

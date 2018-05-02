@@ -1,5 +1,5 @@
 ---
-title: "StrongNameSignatureVerificationFromImage Function | Microsoft Docs"
+title: "StrongNameSignatureVerificationFromImage Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameSignatureVerificationFromImage"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "StrongNameSignatureVerificationFromImage"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongnameSignatureVerificationFromImage function [.NET Framework strong naming]"
 ms.assetid: 9fb144d2-07e0-4a0e-8e05-907bbb6c9e03
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameSignatureVerificationFromImage Function
 Verifies that an assembly that has already been mapped to memory is valid for the associated public key.  
@@ -85,5 +88,5 @@ BOOLEAN StrongNameSignatureVerificationFromImage (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureVerificationFromImage Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)   
+ [StrongNameSignatureVerificationFromImage Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverificationfromimage-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

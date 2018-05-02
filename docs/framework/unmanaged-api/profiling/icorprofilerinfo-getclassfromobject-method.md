@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetClassFromObject Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetClassFromObject Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetClassFromObject"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetClassFromObject"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetClassFromObject method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetClassFromObject method [.NET Framework profiling]"
 ms.assetid: b97493fb-713e-49d5-a73e-5688b2ad0700
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetClassFromObject Method
 Gets the `ClassID` of an object, given its `ObjectID`.  

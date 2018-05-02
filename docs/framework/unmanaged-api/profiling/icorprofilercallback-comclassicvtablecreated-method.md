@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::COMClassicVTableCreated Method | Microsoft Docs"
+title: "ICorProfilerCallback::COMClassicVTableCreated Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.COMClassicVTableCreated"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::COMClassicVTableCreated"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COMClassicVTableCreated method [.NET Framework profiling]"
   - "ICorProfilerCallback::COMClassicVTableCreated method [.NET Framework profiling]"
 ms.assetid: 6e1834ab-c359-498a-b10b-984ae23cdda4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::COMClassicVTableCreated Method
 Notifies the profiler that a COM interop vtable for the specified IID and class has been created.  
@@ -68,5 +71,5 @@ HRESULT COMClassicVTableCreated(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [COMClassicVTableDestroyed Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtabledestroyed-method.md)

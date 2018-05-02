@@ -1,5 +1,5 @@
 ---
-title: "Common Security Scenarios | Microsoft Docs"
+title: "Common Security Scenarios"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -16,6 +16,8 @@ caps.latest.revision: 18
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Common Security Scenarios
 The topics in this section catalog a number of possible client and service security configurations. Configurations vary according to a number of factors. For example, whether a service or client is on an intranet, or whether the security is provided by Windows or transport (such as HTTPS).  
@@ -86,5 +88,5 @@ The topics in this section catalog a number of possible client and service secur
  [Auditing](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)  
   
 ## See Also  
- [Security Guidance and Best Practices](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)   
+ [Security Guidance and Best Practices](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -1,21 +1,26 @@
 ---
-title: "Specifying Data Transfer in Service Contracts | Microsoft Docs"
+title: "Specifying Data Transfer in Service Contracts"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "service contracts [WCF], data transfer"
 ms.assetid: 7c5a26c8-89c9-4bcb-a4bc-7131e6d01f0c
 caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Specifying Data Transfer in Service Contracts
 The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] can be thought of as a messaging infrastructure. Service operations can receive messages, process them, and send them messages. Messages are described using operation contracts. For example, consider the following contract.  
@@ -55,9 +60,9 @@ float GetAirfare(string fromCity, string toCity, out string currency);
     Function GetAirfare(fromCity As String, toCity As String) As Double  
 ```  
   
- Additionally, you may use reference parameters to make a parameter part of both the request and the reply message. The parameters must be of types that can be serialized (converted to XML). By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses a component called the <xref:System.Runtime.Serialization.DataContractSerializer> class to perform this conversion. Most primitive types (such as `int`, `string`, `float`, and `DateTime`.) are supported. User-defined types must normally have a data contract. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
+ Additionally, you may use reference parameters to make a parameter part of both the request and the reply message. The parameters must be of types that can be serialized (converted to XML). By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses a component called the <xref:System.Runtime.Serialization.DataContractSerializer> class to perform this conversion. Most primitive types (such as `int`, `string`, `float`, and `DateTime`.) are supported. User-defined types must normally have a data contract. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Using Data Contracts](../../../../docs/framework/wcf/feature-details/using-data-contracts.md).  
   
-```  
+```csharp
 public interface IAirfareQuoteService  
 {  
     [OperationContract]  
@@ -88,7 +93,6 @@ Public Interface IAirfareQuoteService
         Public toCity As String  
     End Class  
 End Interface  
-  
 ```  
   
  Occasionally, the `DataContractSerializer` is not adequate to serialize your types. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] supports an alternative serialization engine, the <xref:System.Xml.Serialization.XmlSerializer>, which you can also use to serialize parameters. The <xref:System.Xml.Serialization.XmlSerializer> allows you to use more control over the resultant XML using attributes such as the `XmlAttributeAttribute`. To switch to using the <xref:System.Xml.Serialization.XmlSerializer> for a particular operation or for the entire service, apply the <xref:System.ServiceModel.XmlSerializerFormatAttribute> attribute to an operation or a service. For example:  
@@ -108,7 +112,6 @@ public class Itinerary
     [XmlAttribute]  
     public bool isFirstClass;  
 }  
-  
 ```  
   
 ```vb  
@@ -127,7 +130,6 @@ Class Itinerary
     <XmlSerializerFormat()>  
     Public isFirstClass As Boolean  
 End Class  
-  
 ```  
   
  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md). Remember that manually switching to the <xref:System.Xml.Serialization.XmlSerializer> as shown here is not recommended unless you have specific reasons to do so as detailed in that topic.  
@@ -139,13 +141,11 @@ End Class
 public float GetAirfare(  
     [MessageParameter(Name="fromCity")] string originCity,  
     [MessageParameter(Name="toCity")] string destinationCity);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
   Function GetAirfare(<MessageParameter(Name := "fromCity")> fromCity As String, <MessageParameter(Name := "toCity")> toCity As String) As Double  
-  
 ```  
   
 ## Describing Empty Messages  
@@ -166,13 +166,11 @@ public float GetAirfare(
 ```csharp  
 [OperationContract]  
 public void SetTemperature(int temperature);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Sub SetTemperature(temperature As Integer)  
-  
 ```  
   
  This is different from a one-way operation, such as:  
@@ -180,13 +178,11 @@ Sub SetTemperature(temperature As Integer)
 ```csharp  
 [OperationContract(IsOneWay=true)]  
 public void SetLightbulbStatus(bool isOn);  
-  
 ```  
   
 ```vb  
 <OperationContract(IsOneWay:=True)>  
 Sub SetLightbulbStatus(isOne As Boolean)  
-  
 ```  
   
  The `SetTemperatureStatus` operation returns an empty message. It may return a fault instead if there is a problem processing the input message. The `SetLightbulbStatus` operation returns nothing. There is no way to communicate a fault condition from this operation.  
@@ -222,7 +218,6 @@ public class Itinerary
     [DataMember] public string fromCity;  
     [DataMember] public string toCity;  
 }  
-  
 ```  
   
 ```vb  
@@ -252,7 +247,6 @@ Public Class Itinerary
     <DataMember()> Public Property fromCity As String  
     <DataMember()> Public Property toCity As String  
 End Class  
-  
 ```  
   
  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Using Message Contracts](../../../../docs/framework/wcf/feature-details/using-message-contracts.md).  
@@ -267,13 +261,11 @@ End Class
 ```csharp  
 [OperationContract]  
 public Stream DownloadFile(string fileName);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Function DownloadFile(fileName As String) As String  
-  
 ```  
   
  You cannot combine `Stream` and non-stream data in a single message body. Use a message contract to put the extra data in message headers. The following example shows the incorrect usage of streams when defining the operation contract.  
@@ -282,14 +274,12 @@ Function DownloadFile(fileName As String) As String
 //Incorrect:  
 // [OperationContract]  
 // public void UploadFile (string fileName, Stream fileData);  
-  
 ```  
   
 ```vb  
 'Incorrect:  
     '<OperationContract()>  
     Public Sub UploadFile(fileName As String, fileData As StreamingContext)  
-  
 ```  
   
  The following sample shows the correct usage of streams when defining an operation contract.  
@@ -304,7 +294,6 @@ public class UploadFileMessage
     [MessageHeader] public string fileName;  
     [MessageBodyMember] public Stream fileData;  
 }  
-  
 ```  
   
 ```vb  
@@ -318,7 +307,6 @@ Public Class UploadFileMessage
     <MessageBodyMember()>  
     Public Property fileData As Stream  
 End Class  
-  
 ```  
   
  [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Large Data and Streaming](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md).  
@@ -329,13 +317,11 @@ End Class
 ```csharp  
 [OperationContract]  
 public void LogMessage(Message m);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Sub LogMessage(m As Message)  
-  
 ```  
   
  This is an advanced scenario, which is described in detail in [Using the Message Class](../../../../docs/framework/wcf/feature-details/using-the-message-class.md).  
@@ -346,13 +332,11 @@ Sub LogMessage(m As Message)
 ```csharp  
 [OperationContract]  
 float GetAirfare(string fromCity, string toCity, DateTime date);  
-  
 ```  
   
 ```vb  
 <OperationContract()>  
 Function GetAirfare(fromCity As String, toCity As String, date as DateTime)  
-  
 ```  
   
  This operation may either return a normal message that contains a `float` number, or a fault message that contains a fault code and a description. You can accomplish this by throwing a <xref:System.ServiceModel.FaultException> in your service implementation.  
@@ -375,7 +359,6 @@ public class ItineraryNotAvailableFault
     [DataMember]  
     public DateTime alternativeSuggestedDate;  
 }  
-  
 ```  
   
 ```vb  
@@ -391,10 +374,9 @@ Public Class
   <DataMember()>  
   Public Property alternativeSuggestedDate As DateTime  
 End Class  
-  
 ```  
   
- These additional faults can be generated by throwing a <xref:System.ServiceModel.FaultException%601> of the appropriate data contract type. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Handling Exceptions and Faults](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
+ These additional faults can be generated by throwing a <xref:System.ServiceModel.FaultException%601> of the appropriate data contract type. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Handling Exceptions and Faults](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md).  
   
  You cannot use the <xref:System.Xml.Serialization.XmlSerializer> class to describe faults. The <xref:System.ServiceModel.XmlSerializerFormatAttribute> has no effect on fault contracts.  
   
@@ -404,13 +386,11 @@ End Class
 ```csharp  
 [OperationContract]  
 public bool IsLibraryItemAvailable(LibraryItem item);  
-  
 ```  
   
-```vbs  
+```vb
 <OperationContract()>  
     Function IsLibraryItemAvailable(item As LibraryItem) As Boolean  
-  
 ```  
   
  Assume that two types, `Book` and `Magazine`, derive from `LibraryItem`. To use these types in the `IsLibraryItemAvailable` operation, you can change the operation as follows:  
@@ -426,7 +406,6 @@ public bool IsLibraryItemAvailable(LibraryItem item);
  Alternatively, you can use the <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute when the default <xref:System.Runtime.Serialization.DataContractSerializer> is in use, as shown in the following example code.  
   
 ```csharp  
-  
 [OperationContract]  
 public bool IsLibraryItemAvailable(LibraryItem item);  
   
@@ -439,7 +418,6 @@ public class LibraryItem
 {  
     //code omitted  
 }  
-  
 ```  
   
 ```vb  
@@ -453,12 +431,11 @@ Function IsLibraryItemAvailable(item As LibraryItem) As Boolean
 Public Class LibraryItem  
   'Code Omitted  
 End Class  
-  
 ```  
   
  You can use the <xref:System.Xml.Serialization.XmlIncludeAttribute> attribute when using the <xref:System.Xml.Serialization.XmlSerializer>.  
   
- You can apply the <xref:System.ServiceModel.ServiceKnownTypeAttribute> attribute to an operation or to the entire service. It accepts either a type or the name of the method to call to get a list of known types, just like the <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
+ You can apply the <xref:System.ServiceModel.ServiceKnownTypeAttribute> attribute to an operation or to the entire service. It accepts either a type or the name of the method to call to get a list of known types, just like the <xref:System.Runtime.Serialization.KnownTypeAttribute> attribute. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md).  
   
 ## Specifying the Use and Style  
  When describing services using Web Services Description Language (WSDL), the two commonly used styles are Document and remote procedure call (RPC). In the Document style, the entire message body is described using the schema, and the WSDL describes the various message body parts by referring to elements within that schema. In the RPC style, the WSDL refers to a schema type for each message part rather than an element. In some cases, you have to manually select one of these styles. You can do this by applying the <xref:System.ServiceModel.DataContractFormatAttribute> attribute and setting the `Style` property (when the <xref:System.Runtime.Serialization.DataContractSerializer> is in use), or by setting `Style` on the <xref:System.ServiceModel.XmlSerializerFormatAttribute> attribute (when using the <xref:System.Xml.Serialization.XmlSerializer>).  
@@ -474,7 +451,6 @@ End Class
  When the default <xref:System.Runtime.Serialization.DataContractSerializer> is in use, you can control some aspects of the serialization process on the service by applying the <xref:System.ServiceModel.ServiceBehaviorAttribute> attribute to the service. Specifically, you may use the `MaxItemsInObjectGraph` property to set the quota that limits the maximum number of objects the <xref:System.Runtime.Serialization.DataContractSerializer> deserializes. You can use the `IgnoreExtensionDataObject` property to turn off the round-tripping versioning feature. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] quotas, see [Security Considerations for Data](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] round-tripping, see [Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ```csharp  
-  
 [ServiceBehavior(MaxItemsInObjectGraph=100000)]  
 public class MyDataService:IDataService  
 {  
@@ -486,7 +462,6 @@ public class MyDataService:IDataService
 ```  
   
 ```vb  
-  
 <ServiceBehavior(MaxItemsInObjectGraph:=100000)>  
 Public Class MyDataService Implements IDataService  
   
@@ -494,13 +469,12 @@ Public Class MyDataService Implements IDataService
          ‘ Implementation omitted  
     End Function  
 End Interface  
-  
 ```  
   
 ### Serialization Behaviors  
  Two behaviors are available in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], the <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> and the <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior> that are automatically plugged in depending on which serializer is in use for a particular operation. Because these behaviors are applied automatically, you normally do not have to be aware of them.  
   
- However, the `DataContractSerializerOperationBehavior` has the `MaxItemsInObjectGraph`, `IgnoreExtensionDataObject`, and `DataContractSurrogate` properties that you may use to customize the serialization process. The first two properties have the same meaning as discussed in the previous section. You can use the `DataContractSurrogate` property to enable data contract surrogates, which are a powerful mechanism for customizing and extending the serialization process. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Data Contract Surrogates](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
+ However, the `DataContractSerializerOperationBehavior` has the `MaxItemsInObjectGraph`, `IgnoreExtensionDataObject`, and `DataContractSurrogate` properties that you may use to customize the serialization process. The first two properties have the same meaning as discussed in the previous section. You can use the `DataContractSurrogate` property to enable data contract surrogates, which are a powerful mechanism for customizing and extending the serialization process. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Data Contract Surrogates](../../../../docs/framework/wcf/extending/data-contract-surrogates.md).  
   
  You can use the `DataContractSerializerOperationBehavior` to customize both client and server serialization. The following example shows how to increase the `MaxItemsInObjectGraph` quota on the client.  
   
@@ -517,7 +491,6 @@ foreach (OperationDescription op in factory.Endpoint.Contract.Operations)
     }  
 }  
 IDataService client = factory.CreateChannel();  
-  
 ```  
   
 ```vb  
@@ -529,7 +502,6 @@ For Each op As OperationDescription In factory.Endpoint.Contract.Operations
         End If  
      Next  
     Dim client As IDataService = factory.CreateChannel  
-  
 ```  
   
  Following is the equivalent code on the service, in the self-hosted case.  
@@ -550,7 +522,6 @@ foreach (OperationDescription op in ep.Contract.Operations)
 }  
 }  
 serviceHost.Open();  
-  
 ```  
   
 ```vb  
@@ -565,7 +536,6 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
             Next  
         Next  
         serviceHost.Open()  
-  
 ```  
   
  In the Web-hosted case, you must create a new `ServiceHost` derived class and use a service host factory to plug it in.  
@@ -573,7 +543,7 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
 ### Controlling Serialization Settings in Configuration  
  The `MaxItemsInObjectGraph` and `IgnoreExtensionDataObject` can be controlled through configuration by using the `dataContractSerializer` endpoint or service behavior, as shown in the following example.  
   
-```  
+```xml  
 <configuration>  
     <system.serviceModel>  
         <behaviors>  
@@ -593,7 +563,6 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
         </client>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ### Shared Type Serialization, Object Graph Preservation, and Custom Serializers  
@@ -614,6 +583,6 @@ Dim serviceHost As ServiceHost = New ServiceHost(GetType(IDataService))
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] advanced serialization concepts, see [Serialization and Deserialization](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ## See Also  
- [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)   
- [How to: Enable Streaming](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)   
+ [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)  
+ [How to: Enable Streaming](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)  
  [How to: Create a Basic Data Contract for a Class or Structure](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)

@@ -1,5 +1,5 @@
 ---
-title: "3550 - BufferOutOfOrderMessageNoInstance | Microsoft Docs"
+title: "3550 - BufferOutOfOrderMessageNoInstance"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1299d294-99b8-430e-98b1-55f5f17002f3
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3550 - BufferOutOfOrderMessageNoInstance
 ## Properties  

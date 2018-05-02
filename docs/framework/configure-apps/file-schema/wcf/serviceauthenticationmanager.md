@@ -1,8 +1,8 @@
 ---
-title: "&lt;serviceAuthenticationManager&gt; | Microsoft Docs"
+title: "&lt;serviceAuthenticationManager&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,14 +11,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5d69e64f-f325-4d55-8e2d-0fb30f222dda
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;serviceAuthenticationManager&gt;
 Provides a workflow configuration element that establishes at the service level the validity of a transmission, message, or originator..  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
 \<behavior>  
@@ -26,8 +28,14 @@ Provides a workflow configuration element that establishes at the service level 
   
 ## Syntax  
   
-```  
-<behaviors>  <serviceBehaviors>    <behavior name=String">      <serviceAuthenticationManager serviceAuthenticationManagerType =”String”/>    </behavior>  </serviceBehaviors></behaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <serviceAuthenticationManager serviceAuthenticationManagerType="String" />
+    </behavior>
+  </serviceBehaviors>
+</behaviors>  
 ```  
   
 ## Attributes and Elements  

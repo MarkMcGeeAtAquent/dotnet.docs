@@ -1,8 +1,8 @@
 ---
-title: "Channel Factory | Microsoft Docs"
+title: "Channel Factory"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Channel Factory
 This sample demonstrates how a client application can create a channel with the <xref:System.ServiceModel.ChannelFactory> class instead of a generated client. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.  
@@ -42,7 +44,6 @@ double value1 = 100.00D;
 double value2 = 15.99D;  
 double result = channel.Add(value1, value2);  
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
-  
 ```  
   
  To close the channel, it must first be cast to an <xref:System.ServiceModel.IClientChannel> interface. This is because the channel as generated is declared in the client application using the `ICalculator` interface, which has methods like `Add` and `Subtract` but not `Close`. The `Close` method originates on the <xref:System.ServiceModel.ICommunicationObject> interface.  
@@ -50,7 +51,6 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);
 ```  
 // Close the channel.  
  ((IClientChannel)client).Close();  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client application.  

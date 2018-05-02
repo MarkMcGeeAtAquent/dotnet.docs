@@ -1,8 +1,8 @@
 ---
-title: "&lt;webRequestModules&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;webRequestModules&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#webRequestModules"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "webRequestModules element"
   - "<webRequestModules> element"
@@ -25,6 +20,8 @@ caps.latest.revision: 14
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;webRequestModules&gt; Element (Network Settings)
 Specifies modules to use to request information from network hosts.  
@@ -35,9 +32,8 @@ Specifies modules to use to request information from network hosts.
   
 ## Syntax  
   
-```  
-  
-      <webRequestModules>   
+```xml  
+<webRequestModules>   
 </webRequestModules>  
 ```  
   
@@ -70,9 +66,9 @@ Specifies modules to use to request information from network hosts.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example registers the default HTTP module. You should replace the values for Version and PublicKeyToken with the correct values for the specified module.  
+ The following example registers the default HTTP module. You should replace the values for Version and PublicKeyToken with the correct values for the specified module.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <webRequestModules>  
@@ -86,6 +82,6 @@ Specifies modules to use to request information from network hosts.
 ```  
   
 ## See Also  
- <xref:System.Net.WebRequest>   
- <xref:System.Net.IWebRequestCreate>   
+ <xref:System.Net.WebRequest>  
+ <xref:System.Net.IWebRequestCreate>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

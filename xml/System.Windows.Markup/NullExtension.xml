@@ -1,7 +1,9 @@
-<Type Name="NullExtension" FullName="System.Windows.Markup.NullExtension">
+﻿<Type Name="NullExtension" FullName="System.Windows.Markup.NullExtension">
   <TypeSignature Language="C#" Value="public class NullExtension : System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NullExtension extends System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.NullExtension" />
+  <TypeSignature Language="VB.NET" Value="Public Class NullExtension&#xA;Inherits MarkupExtension" />
+  <TypeSignature Language="C++ CLI" Value="public ref class NullExtension : System::Windows::Markup::MarkupExtension" />
   <AssemblyInfo>
     <AssemblyName>System.Xaml</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -35,8 +37,6 @@
 ## WPF Usage Notes  
  For WPF dependency properties, when you set a dependency property value to `null`, you are not necessarily setting the property to its default value, even if it is a reference property. The default value of a dependency property depends on its dependency property registration. An unset value is not necessarily `null` either; see <xref:System.Windows.DependencyProperty.UnsetValue>. For more information, see <xref:System.Windows.DependencyObject.ClearValue%2A> or [Dependency Properties Overview](~/docs/framework/wpf/advanced/dependency-properties-overview.md).  
   
-<a name="xamlTextUsage_NullExtension"></a>   
-## XAML Text Usage  
  ]]></format>
     </remarks>
   </Docs>
@@ -45,6 +45,8 @@
       <MemberSignature Language="C#" Value="public NullExtension ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NullExtension.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NullExtension();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -60,6 +62,8 @@
       <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.NullExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ProvideValue (serviceProvider As IServiceProvider) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ ProvideValue(IServiceProvider ^ serviceProvider);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -81,10 +85,12 @@
 ## Remarks  
  This method supports XAML processor implementations, and is not intended to be called directly. A XAML processor implementation uses this method when it creates object graphs that include an `x:Null` extension usage. This relies on general behavior for XAML processors when they process any <xref:System.Windows.Markup.MarkupExtension> and call its `ProvideValue` implementation.  
   
- This implementation does not rely on services that are based on the passed `serviceProvider`. It always returns a null reference regardless of context. In the .NET Framework XAML Services implementation, the value to return is obtained by referencing the <xref:System.Xaml.XamlLanguage.Null%2A?displayProperty=fullName> static value.  
+ This implementation does not rely on services that are based on the passed `serviceProvider`. It always returns a null reference regardless of context. In the .NET Framework XAML Services implementation, the value to return is obtained by referencing the <xref:System.Xaml.XamlLanguage.Null%2A?displayProperty=nameWithType> static value.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xaml.XamlLanguage.Null" />
+        <altmember cref="T:System.Windows.Markup.MarkupExtension" />
       </Docs>
     </Member>
   </Members>

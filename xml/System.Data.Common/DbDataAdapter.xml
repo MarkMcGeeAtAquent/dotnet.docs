@@ -1,7 +1,9 @@
-<Type Name="DbDataAdapter" FullName="System.Data.Common.DbDataAdapter">
+﻿<Type Name="DbDataAdapter" FullName="System.Data.Common.DbDataAdapter">
   <TypeSignature Language="C#" Value="public abstract class DbDataAdapter : System.Data.Common.DataAdapter, ICloneable, System.Data.IDbDataAdapter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DbDataAdapter extends System.Data.Common.DataAdapter implements class System.Data.IDataAdapter, class System.Data.IDbDataAdapter, class System.ICloneable" />
   <TypeSignature Language="DocId" Value="T:System.Data.Common.DbDataAdapter" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class DbDataAdapter&#xA;Inherits DataAdapter&#xA;Implements ICloneable, IDbDataAdapter" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DbDataAdapter abstract : System::Data::Common::DataAdapter, ICloneable, System::Data::IDbDataAdapter" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Data.Common.DataAdapter</BaseTypeName>
@@ -28,68 +34,59 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Data.Common.DbDataAdapter> class inherits from the <xref:System.Data.Common.DataAdapter> class and helps a class implement a **DataAdapter** designed for use with a relational database.  
+ The <xref:System.Data.Common.DbDataAdapter> class inherits from the <xref:System.Data.Common.DataAdapter> class and implements the <xref:System.Data.IDbDataAdapter> interface. It helps a class implement a **DataAdapter** designed for use with a relational database.  
   
- An application does not create an instance of the <xref:System.Data.Common.DbDataAdapter> interface directly, but creates an instance of a class that inherits <xref:System.Data.IDbDataAdapter> and <xref:System.Data.Common.DbDataAdapter>.  
+ An application does not create an instance of the <xref:System.Data.Common.DbDataAdapter> class directly, but creates an instance of a class that inherits from it.  
   
- Classes that inherit <xref:System.Data.Common.DbDataAdapter> must implement the inherited members, and typically define additional members to add provider-specific functionality. For example, the <xref:System.Data.Common.DbDataAdapter> class defines the <xref:System.Data.IDbDataAdapter.SelectCommand%2A> property, and the <xref:System.Data.Common.DbDataAdapter> interface defines eight overloads of the <xref:System.Data.IDataAdapter.Fill%2A> method. In turn, the <xref:System.Data.OleDb.OleDbDataAdapter> class inherits the <xref:System.Data.Common.DbDataAdapter.Fill%2A> method, and also defines two additional overloads of <xref:System.Data.OleDb.OleDbDataAdapter.Fill%2A> that take an ADO Recordset object as a parameter.  
+ Classes that inherit <xref:System.Data.Common.DbDataAdapter> must implement the inherited members, and typically define additional members to add provider-specific functionality. For example, the <xref:System.Data.Common.DbDataAdapter> class defines the <xref:System.Data.IDbDataAdapter.SelectCommand%2A> property, and the <xref:System.Data.Common.DbDataAdapter> class defines eight overloads of the <xref:System.Data.IDataAdapter.Fill%2A> method. In turn, the <xref:System.Data.OleDb.OleDbDataAdapter> class inherits the <xref:System.Data.Common.DbDataAdapter.Fill%2A> method, and also defines two additional overloads of <xref:System.Data.OleDb.OleDbDataAdapter.Fill%2A> that take an ADO Recordset object as a parameter.  
   
  ]]></format>
     </remarks>
     <block subset="none" type="overrides">
       <para>When you inherit from the <see cref="T:System.Data.Common.DbDataAdapter" /> class, we recommend that you implement the following constructors:  
   
- <list type="table">  
-<listheader>  
-<term> Item  
+ <list type="table"><listheader><term> Item  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> *Prv*DataAdapter()  
+ </description></listheader><item><term> *Prv*DataAdapter()  
   
- </term>  
-<description> Initializes a new instance of the *Prv*DataAdapter class.  
+ </term><description> Initializes a new instance of the *Prv*DataAdapter class.  
   
- </description>  
-</item>  
-<item>  
-<term> *Prv*DataAdapter(*Prv*Command *selectCommand*)  
+ </description></item><item><term> *Prv*DataAdapter(*Prv*Command *selectCommand*)  
   
- </term>  
-<description> Initializes a new instance of the *Prv*DataAdapter class with the specified SQL SELECT statement.  
+ </term><description> Initializes a new instance of the *Prv*DataAdapter class with the specified SQL SELECT statement.  
   
- </description>  
-</item>  
-<item>  
-<term> *Prv*DataAdapter(string *selectCommandText*, string *selectConnectionString*)  
+ </description></item><item><term> *Prv*DataAdapter(string *selectCommandText*, string *selectConnectionString*)  
   
- </term>  
-<description> Initializes a new instance of the *Prv*DataAdapter class with an SQL SELECT statement and a connection string.  
+ </term><description> Initializes a new instance of the *Prv*DataAdapter class with an SQL SELECT statement and a connection string.  
   
- </description>  
-</item>  
-<item>  
-<term> *Prv*DataAdapter(string *selectCommandText*, *Prv*Connection *selectConnection*)  
+ </description></item><item><term> *Prv*DataAdapter(string *selectCommandText*, *Prv*Connection *selectConnection*)  
   
- </term>  
-<description> Initializes a new instance of the *Prv*DataAdapter class with an SQL SELECT statement and a *Prv*Connection object.  
+ </term><description> Initializes a new instance of the *Prv*DataAdapter class with an SQL SELECT statement and a *Prv*Connection object.  
   
- </description>  
-</item>  
-</list>  
+ </description></item></list>  
   
- To promote consistency among .NET Framework data providers, you should name the inheriting class in the form <paramref name="Prv" />DataAdapter, where <paramref name="Prv" /> is the uniform prefix given to all classes in a specific .NET Framework data provider namespace. For example, "Sql" is the prefix of the <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> class in the **System.Data.SqlClient** namespace.</para>
+ To promote consistency among .NET Framework data providers, you should name the inheriting class in the form *Prv*DataAdapter, where *Prv* is the uniform prefix given to all classes in a specific .NET Framework data provider namespace. For example, "Sql" is the prefix of the <see cref="T:System.Data.SqlClient.SqlDataAdapter" /> class in the **System.Data.SqlClient** namespace.</para>
     </block>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of a <see langword="DataAdapter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected DbDataAdapter ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; DbDataAdapter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -99,6 +96,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -128,6 +129,8 @@
       <MemberSignature Language="C#" Value="protected DbDataAdapter (System.Data.Common.DbDataAdapter adapter);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Data.Common.DbDataAdapter adapter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.#ctor(System.Data.Common.DbDataAdapter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (adapter As DbDataAdapter)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; DbDataAdapter(System::Data::Common::DbDataAdapter ^ adapter);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -137,6 +140,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="adapter" Type="System.Data.Common.DbDataAdapter" />
@@ -158,6 +165,8 @@
       <MemberSignature Language="C#" Value="protected virtual int AddToBatch (System.Data.IDbCommand command);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 AddToBatch(class System.Data.IDbCommand command) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.AddToBatch(System.Data.IDbCommand)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function AddToBatch (command As IDbCommand) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int AddToBatch(System::Data::IDbCommand ^ command);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -167,6 +176,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -198,6 +211,8 @@
       <MemberSignature Language="C#" Value="protected virtual void ClearBatch ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ClearBatch() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.ClearBatch" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub ClearBatch ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void ClearBatch();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -207,6 +222,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -234,6 +253,7 @@
       <MemberSignature Language="C#" Value="protected virtual System.Data.Common.RowUpdatedEventArgs CreateRowUpdatedEvent (System.Data.DataRow dataRow, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.Common.RowUpdatedEventArgs CreateRowUpdatedEvent(class System.Data.DataRow dataRow, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.CreateRowUpdatedEvent(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Data::Common::RowUpdatedEventArgs ^ CreateRowUpdatedEvent(System::Data::DataRow ^ dataRow, System::Data::IDbCommand ^ command, System::Data::StatementType statementType, System::Data::Common::DataTableMapping ^ tableMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -243,6 +263,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Common.RowUpdatedEventArgs</ReturnType>
@@ -270,6 +294,7 @@
       <MemberSignature Language="C#" Value="protected virtual System.Data.Common.RowUpdatingEventArgs CreateRowUpdatingEvent (System.Data.DataRow dataRow, System.Data.IDbCommand command, System.Data.StatementType statementType, System.Data.Common.DataTableMapping tableMapping);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.Common.RowUpdatingEventArgs CreateRowUpdatingEvent(class System.Data.DataRow dataRow, class System.Data.IDbCommand command, valuetype System.Data.StatementType statementType, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.CreateRowUpdatingEvent(System.Data.DataRow,System.Data.IDbCommand,System.Data.StatementType,System.Data.Common.DataTableMapping)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Data::Common::RowUpdatingEventArgs ^ CreateRowUpdatingEvent(System::Data::DataRow ^ dataRow, System::Data::IDbCommand ^ command, System::Data::StatementType statementType, System::Data::Common::DataTableMapping ^ tableMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -279,6 +304,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Common.RowUpdatingEventArgs</ReturnType>
@@ -306,6 +335,8 @@
       <MemberSignature Language="C#" Value="public const string DefaultSourceTableName;" />
       <MemberSignature Language="ILAsm" Value=".field public static literal string DefaultSourceTableName" />
       <MemberSignature Language="DocId" Value="F:System.Data.Common.DbDataAdapter.DefaultSourceTableName" />
+      <MemberSignature Language="VB.NET" Value="Public Const DefaultSourceTableName As String " />
+      <MemberSignature Language="C++ CLI" Value="public: System::String ^ DefaultSourceTableName;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -315,6 +346,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -337,6 +372,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand DeleteCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbCommand DeleteCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.DeleteCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property DeleteCommand As DbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Common::DbCommand ^ DeleteCommand { System::Data::Common::DbCommand ^ get(); void set(System::Data::Common::DbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -347,12 +384,16 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -383,6 +424,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -392,6 +435,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -410,6 +457,8 @@
       <MemberSignature Language="C#" Value="protected virtual int ExecuteBatch ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 ExecuteBatch() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.ExecuteBatch" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function ExecuteBatch () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int ExecuteBatch();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -419,6 +468,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -442,11 +495,25 @@
         </block>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Fill">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Fills a <see cref="T:System.Data.DataSet" /> or a <see cref="T:System.Data.DataTable" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Fill">
       <MemberSignature Language="C#" Value="public override int Fill (System.Data.DataSet dataSet);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Fill(class System.Data.DataSet dataSet) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Fill(System::Data::DataSet ^ dataSet);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.IDataAdapter.Fill(System.Data.DataSet)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -455,6 +522,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -503,6 +574,7 @@
       <MemberSignature Language="C#" Value="public int Fill (System.Data.DataTable dataTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Fill(class System.Data.DataTable dataTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Fill(System::Data::DataTable ^ dataTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -512,6 +584,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -572,6 +648,7 @@ DataSet dataset = new DataSet();
       <MemberSignature Language="C#" Value="public int Fill (System.Data.DataSet dataSet, string srcTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Fill(class System.Data.DataSet dataSet, string srcTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Fill(System::Data::DataSet ^ dataSet, System::String ^ srcTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -581,6 +658,10 @@ DataSet dataset = new DataSet();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -661,6 +742,7 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="protected virtual int Fill (System.Data.DataTable dataTable, System.Data.IDbCommand command, System.Data.CommandBehavior behavior);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 Fill(class System.Data.DataTable dataTable, class System.Data.IDbCommand command, valuetype System.Data.CommandBehavior behavior) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable,System.Data.IDbCommand,System.Data.CommandBehavior)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int Fill(System::Data::DataTable ^ dataTable, System::Data::IDbCommand ^ command, System::Data::CommandBehavior behavior);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -670,6 +752,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -712,9 +798,11 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       </Docs>
     </Member>
     <Member MemberName="Fill">
-      <MemberSignature Language="C#" Value="public int Fill (int startRecord, int maxRecords, System.Data.DataTable[] dataTables);" />
+      <MemberSignature Language="C#" Value="public int Fill (int startRecord, int maxRecords, params System.Data.DataTable[] dataTables);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Fill(int32 startRecord, int32 maxRecords, class System.Data.DataTable[] dataTables) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Int32,System.Int32,System.Data.DataTable[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function Fill (startRecord As Integer, maxRecords As Integer, ParamArray dataTables As DataTable()) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Fill(int startRecord, int maxRecords, ... cli::array &lt;System::Data::DataTable ^&gt; ^ dataTables);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -724,6 +812,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -772,6 +864,7 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="public int Fill (System.Data.DataSet dataSet, int startRecord, int maxRecords, string srcTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Fill(class System.Data.DataSet dataSet, int32 startRecord, int32 maxRecords, string srcTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet,System.Int32,System.Int32,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Fill(System::Data::DataSet ^ dataSet, int startRecord, int maxRecords, System::String ^ srcTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -781,6 +874,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -887,6 +984,8 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="protected virtual int Fill (System.Data.DataTable[] dataTables, int startRecord, int maxRecords, System.Data.IDbCommand command, System.Data.CommandBehavior behavior);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 Fill(class System.Data.DataTable[] dataTables, int32 startRecord, int32 maxRecords, class System.Data.IDbCommand command, valuetype System.Data.CommandBehavior behavior) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataTable[],System.Int32,System.Int32,System.Data.IDbCommand,System.Data.CommandBehavior)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function Fill (dataTables As DataTable(), startRecord As Integer, maxRecords As Integer, command As IDbCommand, behavior As CommandBehavior) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int Fill(cli::array &lt;System::Data::DataTable ^&gt; ^ dataTables, int startRecord, int maxRecords, System::Data::IDbCommand ^ command, System::Data::CommandBehavior behavior);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -896,6 +995,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -981,6 +1084,7 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="protected virtual int Fill (System.Data.DataSet dataSet, int startRecord, int maxRecords, string srcTable, System.Data.IDbCommand command, System.Data.CommandBehavior behavior);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 Fill(class System.Data.DataSet dataSet, int32 startRecord, int32 maxRecords, string srcTable, class System.Data.IDbCommand command, valuetype System.Data.CommandBehavior behavior) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Fill(System.Data.DataSet,System.Int32,System.Int32,System.String,System.Data.IDbCommand,System.Data.CommandBehavior)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int Fill(System::Data::DataSet ^ dataSet, int startRecord, int maxRecords, System::String ^ srcTable, System::Data::IDbCommand ^ command, System::Data::CommandBehavior behavior);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -990,6 +1094,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1060,9 +1168,11 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       </Docs>
     </Member>
     <Member MemberName="FillCommandBehavior">
-      <MemberSignature Language="C#" Value="protected System.Data.CommandBehavior FillCommandBehavior { get; set; }" />
+      <MemberSignature Language="C#" Value="protected internal System.Data.CommandBehavior FillCommandBehavior { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.CommandBehavior FillCommandBehavior" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.FillCommandBehavior" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Property FillCommandBehavior As CommandBehavior" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; property System::Data::CommandBehavior FillCommandBehavior { System::Data::CommandBehavior get(); void set(System::Data::CommandBehavior value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1073,6 +1183,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.CommandBehavior</ReturnType>
       </ReturnValue>
@@ -1082,11 +1196,25 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="FillSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds a <see cref="T:System.Data.DataTable" /> to a <see cref="T:System.Data.DataSet" /> and configures the schema to match that in the data source.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FillSchema">
       <MemberSignature Language="C#" Value="public override System.Data.DataTable[] FillSchema (System.Data.DataSet dataSet, System.Data.SchemaType schemaType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.DataTable[] FillSchema(class System.Data.DataSet dataSet, valuetype System.Data.SchemaType schemaType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.FillSchema(System.Data.DataSet,System.Data.SchemaType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Data::DataTable ^&gt; ^ FillSchema(System::Data::DataSet ^ dataSet, System::Data::SchemaType schemaType);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.IDataAdapter.FillSchema(System.Data.DataSet,System.Data.SchemaType)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1095,6 +1223,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable[]</ReturnType>
@@ -1165,6 +1297,7 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="public System.Data.DataTable FillSchema (System.Data.DataTable dataTable, System.Data.SchemaType schemaType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable FillSchema(class System.Data.DataTable dataTable, valuetype System.Data.SchemaType schemaType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.FillSchema(System.Data.DataTable,System.Data.SchemaType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataTable ^ FillSchema(System::Data::DataTable ^ dataTable, System::Data::SchemaType schemaType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1174,6 +1307,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable</ReturnType>
@@ -1244,6 +1381,7 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <MemberSignature Language="C#" Value="public System.Data.DataTable[] FillSchema (System.Data.DataSet dataSet, System.Data.SchemaType schemaType, string srcTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTable[] FillSchema(class System.Data.DataSet dataSet, valuetype System.Data.SchemaType schemaType, string srcTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.FillSchema(System.Data.DataSet,System.Data.SchemaType,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataTable ^&gt; ^ FillSchema(System::Data::DataSet ^ dataSet, System::Data::SchemaType schemaType, System::String ^ srcTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1253,6 +1391,10 @@ adapter.Fill(dataset, "AAA"); // Fills table "aaa" because only one similarly na
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable[]</ReturnType>
@@ -1344,6 +1486,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual System.Data.DataTable FillSchema (System.Data.DataTable dataTable, System.Data.SchemaType schemaType, System.Data.IDbCommand command, System.Data.CommandBehavior behavior);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.DataTable FillSchema(class System.Data.DataTable dataTable, valuetype System.Data.SchemaType schemaType, class System.Data.IDbCommand command, valuetype System.Data.CommandBehavior behavior) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.FillSchema(System.Data.DataTable,System.Data.SchemaType,System.Data.IDbCommand,System.Data.CommandBehavior)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Data::DataTable ^ FillSchema(System::Data::DataTable ^ dataTable, System::Data::SchemaType schemaType, System::Data::IDbCommand ^ command, System::Data::CommandBehavior behavior);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1353,6 +1496,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable</ReturnType>
@@ -1420,6 +1567,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual System.Data.DataTable[] FillSchema (System.Data.DataSet dataSet, System.Data.SchemaType schemaType, System.Data.IDbCommand command, string srcTable, System.Data.CommandBehavior behavior);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.DataTable[] FillSchema(class System.Data.DataSet dataSet, valuetype System.Data.SchemaType schemaType, class System.Data.IDbCommand command, string srcTable, valuetype System.Data.CommandBehavior behavior) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.FillSchema(System.Data.DataSet,System.Data.SchemaType,System.Data.IDbCommand,System.String,System.Data.CommandBehavior)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual cli::array &lt;System::Data::DataTable ^&gt; ^ FillSchema(System::Data::DataSet ^ dataSet, System::Data::SchemaType schemaType, System::Data::IDbCommand ^ command, System::String ^ srcTable, System::Data::CommandBehavior behavior);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1429,6 +1577,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable[]</ReturnType>
@@ -1516,6 +1668,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual System.Data.IDataParameter GetBatchedParameter (int commandIdentifier, int parameterIndex);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.IDataParameter GetBatchedParameter(int32 commandIdentifier, int32 parameterIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.GetBatchedParameter(System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetBatchedParameter (commandIdentifier As Integer, parameterIndex As Integer) As IDataParameter" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Data::IDataParameter ^ GetBatchedParameter(int commandIdentifier, int parameterIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1525,6 +1679,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDataParameter</ReturnType>
@@ -1556,8 +1714,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
     </Member>
     <Member MemberName="GetBatchedRecordsAffected">
       <MemberSignature Language="C#" Value="protected virtual bool GetBatchedRecordsAffected (int commandIdentifier, out int recordsAffected, out Exception error);" />
-      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GetBatchedRecordsAffected(int32 commandIdentifier, int32 recordsAffected, class System.Exception error) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool GetBatchedRecordsAffected(int32 commandIdentifier, [out] int32&amp; recordsAffected, [out] class System.Exception&amp; error) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.GetBatchedRecordsAffected(System.Int32,System.Int32@,System.Exception@)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetBatchedRecordsAffected (commandIdentifier As Integer, ByRef recordsAffected As Integer, ByRef error As Exception) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool GetBatchedRecordsAffected(int commandIdentifier, [Runtime::InteropServices::Out] int % recordsAffected, [Runtime::InteropServices::Out] Exception ^ % error);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1567,6 +1727,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1596,7 +1760,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public override System.Data.IDataParameter[] GetFillParameters ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Data.IDataParameter[] GetFillParameters() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.GetFillParameters" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetFillParameters () As IDataParameter()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Data::IDataParameter ^&gt; ^ GetFillParameters();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.IDataAdapter.GetFillParameters</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1605,6 +1774,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1625,6 +1798,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual void InitializeBatching ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeBatching() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.InitializeBatching" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub InitializeBatching ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void InitializeBatching();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1634,6 +1809,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1661,6 +1840,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand InsertCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbCommand InsertCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.InsertCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property InsertCommand As DbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Common::DbCommand ^ InsertCommand { System::Data::Common::DbCommand ^ get(); void set(System::Data::Common::DbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1671,12 +1852,16 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1707,6 +1892,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual void OnRowUpdated (System.Data.Common.RowUpdatedEventArgs value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRowUpdated(class System.Data.Common.RowUpdatedEventArgs value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.OnRowUpdated(System.Data.Common.RowUpdatedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRowUpdated (value As RowUpdatedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRowUpdated(System::Data::Common::RowUpdatedEventArgs ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1716,6 +1903,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1730,7 +1921,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For an overview, see [NIB: Raising an Event](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2).  
+ Raising an event invokes the event handler through a delegate. For an overview, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  ]]></format>
         </remarks>
@@ -1743,6 +1934,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual void OnRowUpdating (System.Data.Common.RowUpdatingEventArgs value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRowUpdating(class System.Data.Common.RowUpdatingEventArgs value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.OnRowUpdating(System.Data.Common.RowUpdatingEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRowUpdating (value As RowUpdatingEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRowUpdating(System::Data::Common::RowUpdatingEventArgs ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1752,6 +1945,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1766,7 +1963,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For an overview, see [NIB: Raising an Event](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2).  
+ Raising an event invokes the event handler through a delegate. For an overview, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  ]]></format>
         </remarks>
@@ -1779,6 +1976,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand SelectCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbCommand SelectCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.SelectCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property SelectCommand As DbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Common::DbCommand ^ SelectCommand { System::Data::Common::DbCommand ^ get(); void set(System::Data::Common::DbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1789,12 +1988,16 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1820,7 +2023,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.DeleteCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.DeleteCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.System#Data#IDbDataAdapter#DeleteCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property DeleteCommand As IDbCommand Implements IDbDataAdapter.DeleteCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.DeleteCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.DeleteCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1829,6 +2037,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -1852,7 +2064,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.InsertCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.InsertCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.System#Data#IDbDataAdapter#InsertCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property InsertCommand As IDbCommand Implements IDbDataAdapter.InsertCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.InsertCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.InsertCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1861,6 +2078,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -1884,7 +2105,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.SelectCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.SelectCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.System#Data#IDbDataAdapter#SelectCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property SelectCommand As IDbCommand Implements IDbDataAdapter.SelectCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.SelectCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.SelectCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1893,6 +2119,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -1916,7 +2146,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="System.Data.IDbCommand System.Data.IDbDataAdapter.UpdateCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbCommand System.Data.IDbDataAdapter.UpdateCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.System#Data#IDbDataAdapter#UpdateCommand" />
+      <MemberSignature Language="VB.NET" Value=" Property UpdateCommand As IDbCommand Implements IDbDataAdapter.UpdateCommand" />
+      <MemberSignature Language="C++ CLI" Value="property System::Data::IDbCommand ^ System.Data.IDbDataAdapter.UpdateCommand { System::Data::IDbCommand ^ get(); void set(System::Data::IDbCommand ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Data.IDbDataAdapter.UpdateCommand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1925,6 +2160,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.IDbCommand</ReturnType>
@@ -1948,7 +2187,12 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.System#ICloneable#Clone" />
+      <MemberSignature Language="VB.NET" Value="Function Clone () As Object Implements ICloneable.Clone" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Object ^ System.ICloneable.Clone() = ICloneable::Clone;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ICloneable.Clone</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1957,6 +2201,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1971,7 +2219,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
 ## Remarks  
  This member is an explicit interface member implementation. It can be used only when the <xref:System.Data.Common.DbDataAdapter> instance is cast to an <xref:System.ICloneable> interface.  
   
- For more information, see <xref:System.ICloneable.Clone%2A?displayProperty=fullName>.  
+ For more information, see <xref:System.ICloneable.Clone%2A?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -1981,6 +2229,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual void TerminateBatching ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TerminateBatching() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.TerminateBatching" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub TerminateBatching ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void TerminateBatching();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1990,6 +2240,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2013,10 +2267,22 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
         </block>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Update">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Updates the values in the database by executing the respective INSERT, UPDATE, or DELETE statements for each inserted, updated, or deleted row in the <see cref="T:System.Data.DataSet" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Update">
       <MemberSignature Language="C#" Value="public int Update (System.Data.DataRow[] dataRows);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Update(class System.Data.DataRow[] dataRows) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataRow[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function Update (dataRows As DataRow()) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Update(cli::array &lt;System::Data::DataRow ^&gt; ^ dataRows);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2026,6 +2292,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2082,7 +2352,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
  The `SourceVersion` property of a .NET Framework data provider's `Parameter` class determines whether to use the Original, Current, or Proposed version of the column value. This capability is often used to include original values in the WHERE clause of an UPDATE statement to check for optimistic concurrency violations.  
   
 > [!NOTE]
->  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus>.  
+>  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.  
   
    
   
@@ -2112,7 +2382,11 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public override int Update (System.Data.DataSet dataSet);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Update(class System.Data.DataSet dataSet) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Update(System::Data::DataSet ^ dataSet);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Data.IDataAdapter.Update(System.Data.DataSet)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2121,6 +2395,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2177,7 +2455,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
  The `SourceVersion` property of a .NET Framework data provider's `Parameter` class determines whether to use the Original, Current, or Proposed version of the column value. This capability is often used to include original values in the WHERE clause of an UPDATE statement to check for optimistic concurrency violations.  
   
 > [!NOTE]
->  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus>.  
+>  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.  
   
    
   
@@ -2197,6 +2475,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public int Update (System.Data.DataTable dataTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Update(class System.Data.DataTable dataTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Update(System::Data::DataTable ^ dataTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2206,6 +2485,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2262,7 +2545,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
  The `SourceVersion` property of a .NET Framework data provider's `Parameter` class determines whether to use the Original, Current, or Proposed version of the column value. This capability is often used to include original values in the WHERE clause of an UPDATE statement to check for optimistic concurrency violations.  
   
 > [!NOTE]
->  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus>.  
+>  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.  
   
    
   
@@ -2292,6 +2575,8 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="protected virtual int Update (System.Data.DataRow[] dataRows, System.Data.Common.DataTableMapping tableMapping);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance int32 Update(class System.Data.DataRow[] dataRows, class System.Data.Common.DataTableMapping tableMapping) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataRow[],System.Data.Common.DataTableMapping)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function Update (dataRows As DataRow(), tableMapping As DataTableMapping) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual int Update(cli::array &lt;System::Data::DataRow ^&gt; ^ dataRows, System::Data::Common::DataTableMapping ^ tableMapping);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2301,6 +2586,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2359,7 +2648,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
  The `SourceVersion` property of a .NET Framework data provider's `Parameter` class determines whether to use the Original, Current, or Proposed version of the column value. This capability is often used to include original values in the WHERE clause of an UPDATE statement to check for optimistic concurrency violations.  
   
 > [!NOTE]
->  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus>.  
+>  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.  
   
  ]]></format>
         </remarks>
@@ -2381,6 +2670,7 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <MemberSignature Language="C#" Value="public int Update (System.Data.DataSet dataSet, string srcTable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Update(class System.Data.DataSet dataSet, string srcTable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Common.DbDataAdapter.Update(System.Data.DataSet,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Update(System::Data::DataSet ^ dataSet, System::String ^ srcTable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2390,6 +2680,10 @@ adapter.FillSchema(dataset, "AAA"); // Fills the schema of table "aaa" because o
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -2467,7 +2761,7 @@ DataSet dataset = new DataSet();
  The `SourceVersion` property of a .NET Framework data provider's `Parameter` class determines whether to use the Original, Current, or Proposed version of the column value. This capability is often used to include original values in the WHERE clause of an UPDATE statement to check for optimistic concurrency violations.  
   
 > [!NOTE]
->  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus>.  
+>  If an error occurs while updating a row, an exception is thrown and execution of the update is discontinued. To continue the update operation without generating exceptions when an error is encountered, set the <xref:System.Data.Common.DataAdapter.ContinueUpdateOnError%2A> property to `true` before calling <xref:System.Data.Common.DbDataAdapter.Update%2A>. You may also respond to errors on a per-row basis within the `RowUpdated` event of a DataAdapter. To continue the update operation without generating an exception within the `RowUpdated` event, set the <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> property of the <xref:System.Data.Common.RowUpdatedEventArgs> to <xref:System.Data.UpdateStatus.Continue>.  
   
    
   
@@ -2488,6 +2782,8 @@ DataSet dataset = new DataSet();
       <MemberSignature Language="C#" Value="public virtual int UpdateBatchSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 UpdateBatchSize" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.UpdateBatchSize" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property UpdateBatchSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int UpdateBatchSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2497,6 +2793,10 @@ DataSet dataset = new DataSet();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2510,42 +2810,25 @@ DataSet dataset = new DataSet();
         <summary>Gets or sets a value that enables or disables batch processing support, and specifies the number of commands that can be executed in a batch.</summary>
         <value>The number of rows to process per batch.  
   
- <list type="table">  
-<listheader>  
-<term> Value is  
+ <list type="table"><listheader><term> Value is  
   
- </term>  
-<description> Effect  
+ </term><description> Effect  
   
- </description>  
-</listheader>  
-<item>  
-<term> 0  
+ </description></listheader><item><term> 0  
   
- </term>  
-<description> There is no limit on the batch size.  
+ </term><description> There is no limit on the batch size.  
   
- </description>  
-</item>  
-<item>  
-<term> 1  
+ </description></item><item><term> 1  
   
- </term>  
-<description> Disables batch updating.  
+ </term><description> Disables batch updating.  
   
- </description>  
-</item>  
-<item>  
-<term> &gt; 1  
+ </description></item><item><term> &gt; 1  
   
- </term>  
-<description> Changes are sent using batches of <see cref="P:System.Data.Common.DbDataAdapter.UpdateBatchSize" /> operations at a time.  
+ </term><description> Changes are sent using batches of <see cref="P:System.Data.Common.DbDataAdapter.UpdateBatchSize" /> operations at a time.  
   
- </description>  
-</item>  
-</list>  
+ </description></item></list>  
   
- When setting this to a value other than 1 ,all the commands associated with the <see cref="T:System.Data.Common.DbDataAdapter" /> must have their <see cref="P:System.Data.IDbCommand.UpdatedRowSource" /> property set to **None** or **OutputParameters**. An exception will be thrown otherwise.</value>
+ When setting this to a value other than 1, all the commands associated with the <see cref="T:System.Data.Common.DbDataAdapter" /> must have their <see cref="P:System.Data.IDbCommand.UpdatedRowSource" /> property set to **None** or **OutputParameters**. An exception will be thrown otherwise.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2564,6 +2847,8 @@ DataSet dataset = new DataSet();
       <MemberSignature Language="C#" Value="public System.Data.Common.DbCommand UpdateCommand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbCommand UpdateCommand" />
       <MemberSignature Language="DocId" Value="P:System.Data.Common.DbDataAdapter.UpdateCommand" />
+      <MemberSignature Language="VB.NET" Value="Public Property UpdateCommand As DbCommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Common::DbCommand ^ UpdateCommand { System::Data::Common::DbCommand ^ get(); void set(System::Data::Common::DbCommand ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2574,12 +2859,16 @@ DataSet dataset = new DataSet();
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

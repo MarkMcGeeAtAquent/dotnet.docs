@@ -1,5 +1,5 @@
 ---
-title: "Configuring Bindings for Windows Communication Foundation Services | Microsoft Docs"
+title: "Configuring Bindings for Windows Communication Foundation Services"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,15 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "binding configuration [WCF]"
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
 caps.latest.revision: 36
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Bindings for Windows Communication Foundation Services
 When creating an application, you often want to defer decisions to the administrator after the deployment of the application. For example, there is often no way of knowing in advance what a service address, or Uniform Resource Identifier (URI), will be. Instead of hard-coding an address, it is preferable to allow an administrator to do so after creating a service. This flexibility is accomplished through configuration.  
@@ -29,7 +28,7 @@ When creating an application, you often want to defer decisions to the administr
 ## Major Sections  
  The [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] configuration scheme includes the following three major sections (`serviceModel`, `bindings`, and `services`):  
   
-```  
+```xml  
 <configuration>  
     <system.serviceModel>  
         <bindings>  
@@ -43,7 +42,7 @@ When creating an application, you often want to defer decisions to the administr
 ```  
   
 ### ServiceModel Elements  
- You can use the section bounded by the `system.ServiceModel` element to configure a service type with one or more endpoints, as well as settings for a service. Each endpoint can then be configured with an address, a contract, and a binding. [!INCLUDE[crabout](../../../includes/crabout-md.md)] endpoints, see [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md). If no endpoints are specified, the runtime adds default endpoints. [!INCLUDE[crabout](../../../includes/crabout-md.md)]default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ You can use the section bounded by the `system.ServiceModel` element to configure a service type with one or more endpoints, as well as settings for a service. Each endpoint can then be configured with an address, a contract, and a binding. [!INCLUDE[crabout](../../../includes/crabout-md.md)] endpoints, see [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md). If no endpoints are specified, the runtime adds default endpoints. [!INCLUDE[crabout](../../../includes/crabout-md.md)] default endpoints, bindings, and behaviors, see [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
  A binding specifies transports (HTTP, TCP, pipes, Message Queuing) and protocols (Security, Reliability, Transaction flows) and consists of binding elements, each of which specifies an aspect of how an endpoint communicates with the world.  
   
@@ -56,15 +55,14 @@ When creating an application, you often want to defer decisions to the administr
 #### Specifying an Endpoint to Use a Binding Type  
  The first example illustrates how to specify an endpoint configured with an address, a contract, and a binding.  
   
-```  
+```xml  
 <service name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">  
   <!—- This section is optional with the default configuration introduced  
        in .NET Framework 4. -->  
   <endpoint   
       address="/HelloWorld2/"  
       contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-      binding="basicHttpBinding" />  
-  </endpoint>  
+      binding="basicHttpBinding" />
 </service>  
 ```  
   
@@ -84,13 +82,12 @@ When creating an application, you often want to defer decisions to the administr
 > [!NOTE]
 >  If you give a particular name to the binding, the `bindingConfiguration` specified in the service endpoint must match with it.  
   
-```  
+```xml  
 <service name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">  
   <endpoint   
       address="/HelloWorld2/"  
       contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-      binding="basicHttpBinding" />  
-  </endpoint>  
+      binding="basicHttpBinding" />
 </service>  
 <bindings>  
     <basicHttpBinding   
@@ -105,7 +102,7 @@ When creating an application, you often want to defer decisions to the administr
 > [!NOTE]
 >  If you give a particular name to the behavior, the `behaviorConfiguration` specified in the service or endpoint section must match it.  
   
-```  
+```xml  
 <behaviors>  
     <behavior>  
         <ServiceMetadata httpGetEnabled="true" />   
@@ -113,12 +110,11 @@ When creating an application, you often want to defer decisions to the administr
 </behaviors>  
 <services>  
     <service   
-       name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
+       name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
        <endpoint   
           address="http://computer:8080/Hello"  
           contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
-          binding="basicHttpBinding" />  
-       </endpoint>  
+          binding="basicHttpBinding" />
     </service>  
 </services>  
 ```  
@@ -130,20 +126,18 @@ When creating an application, you often want to defer decisions to the administr
 ## Specifying a Service with Two Endpoints Using Different Binding Values  
  In this last example, two endpoints are configured for the `HelloWorld` service type. Each endpoint uses a different customized  `bindingConfiguration` attribute of the same binding type (each modifies the `basicHttpBinding`).  
   
-```  
+```xml  
 <service name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">  
     <endpoint  
         address="http://computer:8080/Hello1"  
         contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
         binding="basicHttpBinding"  
-        bindingConfiguration="shortTimeout"  
-    </endpoint>  
+        bindingConfiguration="shortTimeout" />
     <endpoint  
         address="http://computer:8080/Hello2"  
         contract="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null"  
         binding="basicHttpBinding"  
-        bindingConfiguration="Secure"  
-     </endpoint>  
+        bindingConfiguration="Secure" />
 </service>  
 <bindings>  
     <basicHttpBinding   
@@ -151,8 +145,9 @@ When creating an application, you often want to defer decisions to the administr
         timeout="00:00:00:01"   
      />  
      <basicHttpBinding   
-        name="Secure" />  
+        name="Secure">  
         <Security mode="Transport" />  
+     </basicHttpBinding>
 </bindings>  
 ```  
   
@@ -160,8 +155,8 @@ When creating an application, you often want to defer decisions to the administr
   
 ```xml  
 <protocolMapping>  
-    <add scheme=”http” binding=”basicHttpBinding” bindingConfiguration=”shortTimeout” />  
-    <add scheme=”https” binding=”basicHttpBinding” bindingConfiguration=”Secure” />  
+    <add scheme="http" binding="basicHttpBinding" bindingConfiguration="shortTimeout" />  
+    <add scheme="https" binding="basicHttpBinding" bindingConfiguration="Secure" />  
 </protocolMapping>  
 <bindings>  
     <basicHttpBinding   
@@ -175,7 +170,7 @@ When creating an application, you often want to defer decisions to the administr
 ```  
   
 ## See Also  
- [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md)   
- [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md)   
- [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md)   
+ [Simplified Configuration](../../../docs/framework/wcf/simplified-configuration.md)  
+ [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md)  
+ [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [Using Bindings to Configure Services and Clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)

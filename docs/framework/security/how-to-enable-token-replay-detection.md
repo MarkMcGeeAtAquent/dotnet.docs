@@ -1,7 +1,8 @@
 ---
-title: "How To: Enable Token Replay Detection | Microsoft Docs"
+title: "How To: Enable Token Replay Detection"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How To: Enable Token Replay Detection
 ## Applies To  
@@ -70,10 +73,10 @@ manager: "mbaldwin"
   
 6.  Add the following **\<tokenReplayDetection>** element to the *Web.config* configuration file immediately following the **\<system.identityModel>** and **\<identityConfiguration>** elements, like shown:  
   
-    ```  
+    ```xml  
     <system.identityModel>  
         <identityConfiguration>  
-            <tokenReplayDetection enabled=”true”/>  
+            <tokenReplayDetection enabled="true"/>  
     ```  
   
 ## Step 2 – Test Your Solution  

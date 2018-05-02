@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedMethod::GetParameters Method | Microsoft Docs"
+title: "ISymUnmanagedMethod::GetParameters Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedMethod.GetParameters"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedMethod::GetParameters"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedMethod::GetParameters method [.NET Framework debugging]"
   - "GetParameters method [.NET Framework debugging]"
 ms.assetid: 3a8074f1-facc-4a3f-bb9b-d6574fc2fc74
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedMethod::GetParameters Method
 Gets the parameters for this method. The parameters are returned in the order in which they are defined within the method's signature.  

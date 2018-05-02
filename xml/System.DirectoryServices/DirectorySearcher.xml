@@ -1,10 +1,13 @@
-<Type Name="DirectorySearcher" FullName="System.DirectoryServices.DirectorySearcher">
+﻿<Type Name="DirectorySearcher" FullName="System.DirectoryServices.DirectorySearcher">
   <TypeSignature Language="C#" Value="public class DirectorySearcher : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectorySearcher extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.DirectorySearcher" />
+  <TypeSignature Language="VB.NET" Value="Public Class DirectorySearcher&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DirectorySearcher : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System.DirectoryServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
@@ -21,11 +24,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use a <xref:System.DirectoryServices.DirectorySearcher> object to search and perform queries against an Active Directory Domain Services hierarchy using Lightweight Directory Access Protocol (LDAP). LDAP is the only system-supplied Active Directory Service Interfaces (ADSI) provider that supports directory searching. An administrator can make, alter, and delete objects that are found in the hierarchy. For more information, see [Using System.DirectoryServices](http://msdn.microsoft.com/en-us/ffa2f003-3a9a-4e2a-815e-825c8ddd7949).  
+ Use a <xref:System.DirectoryServices.DirectorySearcher> object to search and perform queries against an Active Directory Domain Services hierarchy using Lightweight Directory Access Protocol (LDAP). LDAP is the only system-supplied Active Directory Service Interfaces (ADSI) provider that supports directory searching. An administrator can make, alter, and delete objects that are found in the hierarchy. For more information, see [Using System.DirectoryServices](http://msdn.microsoft.com/library/ffa2f003-3a9a-4e2a-815e-825c8ddd7949).  
   
  When you create an instance of <xref:System.DirectoryServices.DirectorySearcher>, you specify the root you want to retrieve, and an optional list of properties to retrieve. The <xref:System.DirectoryServices.DirectorySearcher.SearchRoot%2A> property enables you to set additional properties to do the following tasks:  
   
--   Cache the search results on the local computer. Set the <xref:System.DirectoryServices.DirectorySearcher.CacheResults%2A> property to `true` to store directory information on the local computer. Updates are made to this local cache and committed to Active Directory Domain Services only when the <xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A?displayProperty=fullName> method is called.  
+-   Cache the search results on the local computer. Set the <xref:System.DirectoryServices.DirectorySearcher.CacheResults%2A> property to `true` to store directory information on the local computer. Updates are made to this local cache and committed to Active Directory Domain Services only when the <xref:System.DirectoryServices.DirectoryEntry.CommitChanges%2A?displayProperty=nameWithType> method is called.  
   
 -   Specify the length of time to search, using the  <xref:System.DirectoryServices.DirectorySearcher.ServerTimeLimit%2A> property.  
   
@@ -41,23 +44,50 @@
  For a list of initial property values for an instance of the <xref:System.DirectoryServices.DirectorySearcher> class, see the <xref:System.DirectoryServices.DirectorySearcher.%23ctor> constructor.  
   
 > [!NOTE]
->  It is assumed that you have a general understanding of Active Directory Domain Services before using this class. For more information, see the <xref:System.DirectoryServices?displayProperty=fullName> overview.  
+>  It is assumed that you have a general understanding of Active Directory Domain Services before using this class. For more information, see the <xref:System.DirectoryServices?displayProperty=nameWithType> overview.  
   
  ]]></format>
     </remarks>
     <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
       <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
     </permission>
+    <altmember cref="T:System.DirectoryServices.DirectoryEntries" />
+    <altmember cref="T:System.DirectoryServices.DirectoryEntry" />
+    <altmember cref="Overload:System.DirectoryServices.DirectorySearcher.#ctor" />
+    <altmember cref="T:System.DirectoryServices.DirectorySearcher" />
+    <altmember cref="T:System.DirectoryServices.PropertyCollection" />
+    <altmember cref="T:System.DirectoryServices.PropertyValueCollection" />
+    <altmember cref="T:System.DirectoryServices.ReferralChasingOption" />
+    <altmember cref="T:System.DirectoryServices.SearchResultCollection" />
+    <altmember cref="T:System.DirectoryServices.SearchResult" />
+    <altmember cref="T:System.DirectoryServices.ResultPropertyValueCollection" />
+    <altmember cref="T:System.DirectoryServices.SearchScope" />
+    <altmember cref="T:System.DirectoryServices.SortDirection" />
+    <altmember cref="T:System.DirectoryServices.SortOption" />
+    <altmember cref="N:System.DirectoryServices" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.DirectoryServices.DirectorySearcher" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -73,23 +103,30 @@
 |<xref:System.DirectoryServices.DirectorySearcher.SearchRoot%2A>|A null reference (`Nothing` in Visual Basic)|  
 |<xref:System.DirectoryServices.DirectorySearcher.Filter%2A>|"(objectClass=*)"|  
 |<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A>|An empty <xref:System.Collections.Specialized.StringCollection> object|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (System.DirectoryServices.DirectoryEntry searchRoot);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.DirectoryEntry searchRoot) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.DirectoryServices.DirectoryEntry)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (searchRoot As DirectoryEntry)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::DirectoryServices::DirectoryEntry ^ searchRoot);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="searchRoot" Type="System.DirectoryServices.DirectoryEntry" />
@@ -107,23 +144,30 @@
 |--------------|-------------------|  
 |<xref:System.DirectoryServices.DirectorySearcher.Filter%2A>|"(objectClass=*)"|  
 |<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A>|An empty <xref:System.Collections.Specialized.StringCollection> object|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (string filter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (filter As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::String ^ filter);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="filter" Type="System.String" />
@@ -141,23 +185,30 @@
 |--------------|-------------------|  
 |<xref:System.DirectoryServices.DirectorySearcher.SearchRoot%2A>|A null reference (`Nothing` in Visual Basic)|  
 |<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A>|An empty <xref:System.Collections.Specialized.StringCollection> object|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (System.DirectoryServices.DirectoryEntry searchRoot, string filter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.DirectoryEntry searchRoot, string filter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.DirectoryServices.DirectoryEntry,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (searchRoot As DirectoryEntry, filter As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::DirectoryServices::DirectoryEntry ^ searchRoot, System::String ^ filter);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="searchRoot" Type="System.DirectoryServices.DirectoryEntry" />
@@ -176,23 +227,30 @@
 |Property|Initial value|  
 |--------------|-------------------|  
 |<xref:System.DirectoryServices.DirectorySearcher.PropertiesToLoad%2A>|An empty <xref:System.Collections.Specialized.StringCollection> object.|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (string filter, string[] propertiesToLoad);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filter, string[] propertiesToLoad) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.String,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (filter As String, propertiesToLoad As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::String ^ filter, cli::array &lt;System::String ^&gt; ^ propertiesToLoad);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="filter" Type="System.String" />
@@ -211,23 +269,30 @@
 |Property|Initial value|  
 |--------------|-------------------|  
 |<xref:System.DirectoryServices.DirectorySearcher.SearchRoot%2A>|A null reference (`Nothing` in Visual Basic)|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (System.DirectoryServices.DirectoryEntry searchRoot, string filter, string[] propertiesToLoad);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.DirectoryEntry searchRoot, string filter, string[] propertiesToLoad) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.DirectoryServices.DirectoryEntry,System.String,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (searchRoot As DirectoryEntry, filter As String, propertiesToLoad As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::DirectoryServices::DirectoryEntry ^ searchRoot, System::String ^ filter, cli::array &lt;System::String ^&gt; ^ propertiesToLoad);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="searchRoot" Type="System.DirectoryServices.DirectoryEntry" />
@@ -247,23 +312,30 @@
   
 |Property|Initial value|  
 |--------------|-------------------|  
-|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope>|  
+|<xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A>|<xref:System.DirectoryServices.SearchScope.Subtree>|  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (string filter, string[] propertiesToLoad, System.DirectoryServices.SearchScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string filter, string[] propertiesToLoad, valuetype System.DirectoryServices.SearchScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.String,System.String[],System.DirectoryServices.SearchScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (filter As String, propertiesToLoad As String(), scope As SearchScope)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::String ^ filter, cli::array &lt;System::String ^&gt; ^ propertiesToLoad, System::DirectoryServices::SearchScope scope);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="filter" Type="System.String" />
@@ -290,16 +362,23 @@
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectorySearcher (System.DirectoryServices.DirectoryEntry searchRoot, string filter, string[] propertiesToLoad, System.DirectoryServices.SearchScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.DirectoryEntry searchRoot, string filter, string[] propertiesToLoad, valuetype System.DirectoryServices.SearchScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.#ctor(System.DirectoryServices.DirectoryEntry,System.String,System.String[],System.DirectoryServices.SearchScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (searchRoot As DirectoryEntry, filter As String, propertiesToLoad As String(), scope As SearchScope)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectorySearcher(System::DirectoryServices::DirectoryEntry ^ searchRoot, System::String ^ filter, cli::array &lt;System::String ^&gt; ^ propertiesToLoad, System::DirectoryServices::SearchScope scope);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="searchRoot" Type="System.DirectoryServices.DirectoryEntry" />
@@ -317,16 +396,23 @@
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
           <see cref="F:System.Security.Permissions.SecurityAction.Demand" />
         </permission>
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.Filter" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName="Asynchronous">
       <MemberSignature Language="C#" Value="public bool Asynchronous { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Asynchronous" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.Asynchronous" />
+      <MemberSignature Language="VB.NET" Value="Public Property Asynchronous As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Asynchronous { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -381,10 +467,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public string AttributeScopeQuery { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AttributeScopeQuery" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery" />
+      <MemberSignature Language="VB.NET" Value="Public Property AttributeScopeQuery As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AttributeScopeQuery { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -414,7 +503,7 @@ SearchResultCollection res = src.FindAll();
   
  The search is performed against the objects that are identified by the distinguished name that is specified in the attribute of the base object. For example, if the base object is an adschema group class and the <xref:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery%2A> is set to "member," then the search will be performed against all objects that are members of the group. For more information, see the adschema "Group" class topic in the MSDN Library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library).  
   
- When the <xref:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery%2A> property is used, the <xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A> property must be set to <xref:System.DirectoryServices.SearchScope>. If the <xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A> property is set to any other value, setting the <xref:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery%2A> property will throw an <xref:System.ArgumentException>.  
+ When the <xref:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery%2A> property is used, the <xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A> property must be set to <xref:System.DirectoryServices.SearchScope.Base>. If the <xref:System.DirectoryServices.DirectorySearcher.SearchScope%2A> property is set to any other value, setting the <xref:System.DirectoryServices.DirectorySearcher.AttributeScopeQuery%2A> property will throw an <xref:System.ArgumentException>.  
   
  For more information, see the "Performing an Attribute Scope Query" topic in the MSDN Library at [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)).  
   
@@ -446,10 +535,13 @@ foreach(SearchResult res in src.FindAll())
       <MemberSignature Language="C#" Value="public bool CacheResults { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CacheResults" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.CacheResults" />
+      <MemberSignature Language="VB.NET" Value="Public Property CacheResults As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CacheResults { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -480,10 +572,13 @@ foreach(SearchResult res in src.FindAll())
       <MemberSignature Language="C#" Value="public TimeSpan ClientTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ClientTimeout" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.ClientTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClientTimeout As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan ClientTimeout { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -508,16 +603,20 @@ foreach(SearchResult res in src.FindAll())
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.TimeSpan" />
       </Docs>
     </Member>
     <Member MemberName="DerefAlias">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.DereferenceAlias DerefAlias { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.DereferenceAlias DerefAlias" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.DerefAlias" />
+      <MemberSignature Language="VB.NET" Value="Public Property DerefAlias As DereferenceAlias" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::DereferenceAlias DerefAlias { System::DirectoryServices::DereferenceAlias get(); void set(System::DirectoryServices::DereferenceAlias value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -540,7 +639,7 @@ foreach(SearchResult res in src.FindAll())
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following C# example shows how to set the <xref:System.DirectoryServices.DirectorySearcher.DerefAlias%2A> property to <xref:System.DirectoryServices.DereferenceAlias> , so that it dereferences aliases when both searching subordinates and locating base objects.  
+ The following C# example shows how to set the <xref:System.DirectoryServices.DirectorySearcher.DerefAlias%2A> property to <xref:System.DirectoryServices.DereferenceAlias.Always> , so that it dereferences aliases when both searching subordinates and locating base objects.  
   
 ```  
 using System.DirectoryServices;  
@@ -558,16 +657,20 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.DirectoryServices.DereferenceAlias" />
       </Docs>
     </Member>
     <Member MemberName="DirectorySynchronization">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectorySynchronization DirectorySynchronization { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectorySynchronization DirectorySynchronization" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.DirectorySynchronization" />
+      <MemberSignature Language="VB.NET" Value="Public Property DirectorySynchronization As DirectorySynchronization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::DirectorySynchronization ^ DirectorySynchronization { System::DirectoryServices::DirectorySynchronization ^ get(); void set(System::DirectoryServices::DirectorySynchronization ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -605,10 +708,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -627,10 +733,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ExtendedDN ExtendedDN { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ExtendedDN ExtendedDN" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.ExtendedDN" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtendedDN As ExtendedDN" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ExtendedDN ExtendedDN { System::DirectoryServices::ExtendedDN get(); void set(System::DirectoryServices::ExtendedDN value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -673,10 +782,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public string Filter { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.Filter" />
+      <MemberSignature Language="VB.NET" Value="Public Property Filter As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Filter { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -724,10 +836,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.SearchResultCollection FindAll ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.SearchResultCollection FindAll() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.FindAll" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindAll () As SearchResultCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::SearchResultCollection ^ FindAll();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.SearchResultCollection</ReturnType>
@@ -746,16 +861,20 @@ SearchResultCollection res = src.FindAll();
         </remarks>
         <exception cref="T:System.InvalidOperationException">The specified <see cref="T:System.DirectoryServices.DirectoryEntry" /> is not a container.</exception>
         <exception cref="T:System.NotSupportedException">Searching is not supported by the provider that is being used.</exception>
+        <altmember cref="M:System.DirectoryServices.DirectorySearcher.FindOne" />
       </Docs>
     </Member>
     <Member MemberName="FindOne">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.SearchResult FindOne ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.SearchResult FindOne() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectorySearcher.FindOne" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindOne () As SearchResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::SearchResult ^ FindOne();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.SearchResult</ReturnType>
@@ -772,16 +891,20 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.DirectoryServices.DirectorySearcher.FindAll" />
       </Docs>
     </Member>
     <Member MemberName="PageSize">
       <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.PageSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property PageSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PageSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -812,14 +935,17 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection PropertiesToLoad { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringCollection PropertiesToLoad" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.PropertiesToLoad" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PropertiesToLoad As StringCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::StringCollection ^ PropertiesToLoad { System::Collections::Specialized::StringCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
@@ -846,16 +972,20 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.Specialized.StringCollection" />
       </Docs>
     </Member>
     <Member MemberName="PropertyNamesOnly">
       <MemberSignature Language="C#" Value="public bool PropertyNamesOnly { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PropertyNamesOnly" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.PropertyNamesOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Property PropertyNamesOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool PropertyNamesOnly { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -879,10 +1009,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ReferralChasingOption ReferralChasing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ReferralChasingOption ReferralChasing" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.ReferralChasing" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReferralChasing As ReferralChasingOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ReferralChasingOption ReferralChasing { System::DirectoryServices::ReferralChasingOption get(); void set(System::DirectoryServices::ReferralChasingOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -907,16 +1040,20 @@ SearchResultCollection res = src.FindAll();
  ]]></format>
         </remarks>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The value is not one of the <see cref="T:System.DirectoryServices.ReferralChasingOption" /> values.</exception>
+        <altmember cref="T:System.DirectoryServices.ReferralChasingOption" />
       </Docs>
     </Member>
     <Member MemberName="SearchRoot">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry SearchRoot { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryEntry SearchRoot" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.SearchRoot" />
+      <MemberSignature Language="VB.NET" Value="Public Property SearchRoot As DirectoryEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::DirectoryEntry ^ SearchRoot { System::DirectoryServices::DirectoryEntry ^ get(); void set(System::DirectoryServices::DirectoryEntry ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -966,10 +1103,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.SearchScope SearchScope { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.SearchScope SearchScope" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.SearchScope" />
+      <MemberSignature Language="VB.NET" Value="Public Property SearchScope As SearchScope" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::SearchScope SearchScope { System::DirectoryServices::SearchScope get(); void set(System::DirectoryServices::SearchScope value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -989,17 +1129,21 @@ SearchResultCollection res = src.FindAll();
         <summary>Gets or sets a value indicating the scope of the search that is observed by the server.</summary>
         <value>One of the <see cref="T:System.DirectoryServices.SearchScope" /> values. The default is <see cref="F:System.DirectoryServices.SearchScope.Subtree" />.</value>
         <remarks>To be added.</remarks>
-        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The value is not one of the <see cref="T:System.DirectoryServices.ReferralChasingOption" /> values.</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">The value is not one of the <see cref="T:System.DirectoryServices.SearchScope" /> values.</exception>
+        <altmember cref="T:System.DirectoryServices.SearchScope" />
       </Docs>
     </Member>
     <Member MemberName="SecurityMasks">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.SecurityMasks SecurityMasks { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.SecurityMasks SecurityMasks" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.SecurityMasks" />
+      <MemberSignature Language="VB.NET" Value="Public Property SecurityMasks As SecurityMasks" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::SecurityMasks SecurityMasks { System::DirectoryServices::SecurityMasks get(); void set(System::DirectoryServices::SecurityMasks value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1035,16 +1179,20 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.DirectoryServices.SecurityMasks" />
       </Docs>
     </Member>
     <Member MemberName="ServerPageTimeLimit">
       <MemberSignature Language="C#" Value="public TimeSpan ServerPageTimeLimit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ServerPageTimeLimit" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.ServerPageTimeLimit" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServerPageTimeLimit As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan ServerPageTimeLimit { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1072,16 +1220,21 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.TimeSpan" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.PageSize" />
       </Docs>
     </Member>
     <Member MemberName="ServerTimeLimit">
       <MemberSignature Language="C#" Value="public TimeSpan ServerTimeLimit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ServerTimeLimit" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.ServerTimeLimit" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServerTimeLimit As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan ServerTimeLimit { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1111,16 +1264,21 @@ SearchResultCollection res = src.FindAll();
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.TimeSpan" />
+        <altmember cref="P:System.DirectoryServices.DirectorySearcher.ServerPageTimeLimit" />
       </Docs>
     </Member>
     <Member MemberName="SizeLimit">
       <MemberSignature Language="C#" Value="public int SizeLimit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SizeLimit" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.SizeLimit" />
+      <MemberSignature Language="VB.NET" Value="Public Property SizeLimit As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int SizeLimit { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1154,14 +1312,17 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.SortOption Sort { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.SortOption Sort" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.Sort" />
+      <MemberSignature Language="VB.NET" Value="Public Property Sort As SortOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::SortOption ^ Sort { System::DirectoryServices::SortOption ^ get(); void set(System::DirectoryServices::SortOption ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
@@ -1178,16 +1339,20 @@ SearchResultCollection res = src.FindAll();
         <value>A <see cref="T:System.DirectoryServices.SortOption" /> object that specifies the property and direction that the search results should be sorted on.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentNullException">The property value is <see langword="null" /> (Nothing in Visual Basic).</exception>
+        <altmember cref="T:System.DirectoryServices.SortOption" />
       </Docs>
     </Member>
     <Member MemberName="Tombstone">
       <MemberSignature Language="C#" Value="public bool Tombstone { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Tombstone" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.Tombstone" />
+      <MemberSignature Language="VB.NET" Value="Public Property Tombstone As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Tombstone { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1233,10 +1398,13 @@ SearchResultCollection res = src.FindAll();
       <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryVirtualListView VirtualListView { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryVirtualListView VirtualListView" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectorySearcher.VirtualListView" />
+      <MemberSignature Language="VB.NET" Value="Public Property VirtualListView As DirectoryVirtualListView" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::DirectoryVirtualListView ^ VirtualListView { System::DirectoryServices::DirectoryVirtualListView ^ get(); void set(System::DirectoryServices::DirectoryVirtualListView ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1259,6 +1427,7 @@ SearchResultCollection res = src.FindAll();
         <summary>Gets or sets a value indicating the virtual list view options for the search.</summary>
         <value>A <see cref="T:System.DirectoryServices.DirectoryVirtualListView" /> object that contains the virtual list view search information. The default value for this property is <see langword="null" />, which means do not use the virtual list view search option.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.DirectoryServices.DirectoryVirtualListView" />
       </Docs>
     </Member>
   </Members>

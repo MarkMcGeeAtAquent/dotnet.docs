@@ -1,5 +1,5 @@
 ---
-title: "ISymENCUnmanagedMethod::GetDocumentsForMethodCount Method | Microsoft Docs"
+title: "ISymENCUnmanagedMethod::GetDocumentsForMethodCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymENCUnmanagedMethod.GetDocumentsForMethodCount"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymENCUnmanagedMethod::GetDocumentsForMethodCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetDocumentsForMethodCount method [.NET Framework debugging]"
   - "ISymENCUnmanagedMethod::GetDocumentsForMethodCount method [.NET Framework debugging]"
 ms.assetid: cc1a823a-3ff3-4a33-b641-96edc93d2b17
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymENCUnmanagedMethod::GetDocumentsForMethodCount Method
 Gets the number of documents that this method has lines in.  

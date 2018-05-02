@@ -1,19 +1,24 @@
 ---
-title: "Convert a Sequence to an Array | Microsoft Docs"
+title: "Convert a Sequence to an Array"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: bf0af444-890d-43e2-aeca-98589dd74ddf
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Convert a Sequence to an Array
 Use <xref:System.Linq.Enumerable.ToArray%2A> to create an array from a sequence.  

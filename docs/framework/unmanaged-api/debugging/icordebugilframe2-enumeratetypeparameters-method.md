@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILFrame2::EnumerateTypeParameters Method | Microsoft Docs"
+title: "ICorDebugILFrame2::EnumerateTypeParameters Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugILFrame2.EnumerateTypeParameters"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugILFrame2::EnumerateTypeParameters"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateTypeParameters method, ICorDebugILFrame2 interface [.NET Framework debugging]"
   - "ICorDebugILFrame2::EnumerateTypeParameters method [.NET Framework debugging]"
 ms.assetid: 722d0d74-e0df-491f-98c4-62d501dfaf6f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILFrame2::EnumerateTypeParameters Method
 Gets an ICorDebugTypeEnum object that contains the <xref:System.Type> parameters in this frame.  

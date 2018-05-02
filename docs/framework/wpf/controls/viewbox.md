@@ -1,8 +1,8 @@
 ---
-title: "Viewbox | Microsoft Docs"
+title: "Viewbox"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -21,6 +21,8 @@ caps.latest.revision: 61
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Viewbox
 The <xref:System.Windows.Controls.Viewbox> control is used to stretch or scale a child element.  

@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugProcess2::GetReferenceValueFromGCHandle Method | Microsoft Docs"
+title: "ICorDebugProcess2::GetReferenceValueFromGCHandle Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess2.GetReferenceValueFromGCHandle"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess2::GetReferenceValueFromGCHandle"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetReferenceValueFromGCHandle method [.NET Framework debugging]"
   - "ICorDebugProcess2::GetReferenceValueFromGCHandle method [.NET Framework debugging]"
 ms.assetid: 8bdd7f4c-19f2-4ede-875e-603773e8c128
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess2::GetReferenceValueFromGCHandle Method
 Gets a reference pointer to the specified managed object that has a garbage collection handle.  

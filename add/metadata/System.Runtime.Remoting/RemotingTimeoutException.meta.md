@@ -1,24 +1,27 @@
 ---
 uid: System.Runtime.Remoting.RemotingTimeoutException
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.RemotingTimeoutException.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.RemotingTimeoutException.#ctor(System.String)
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.RemotingTimeoutException.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.RemotingTimeoutException.#ctor(System.String,System.Exception)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

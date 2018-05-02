@@ -1,12 +1,12 @@
 ---
-title: What's New in C# 7 | C# Guide
+title: What's New in C# 7 - C# Guide
 description: Get an overview of the new features coming in the upcoming version 7 of the C# language.    
 keywords: C#, .NET, .NET Core, Latest Features, What's New
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/21/2016
 ms.topic: article
-ms.prod: visual-studio-dev-15
+ms.prod: .net
 ms.technology: devlang-csharp
 ms.devlang: csharp
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
@@ -15,10 +15,12 @@ ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 # What's new in C# 7
 
 C# 7 adds a number of new features to the C# language:
-* [`out` variables](#out-variables):
+* [`out` variables](#out-variables)
     - You can declare `out` values inline as arguments to the method where they are used.
 * [Tuples](#tuples)
     - You can create lightweight, unnamed types that contain multiple public fields. Compilers and IDE tools understand the semantics of these types.
+* [Discards](#discards)
+    - Discards are temporary, write-only variables used in assignments when you don't care about the value assigned. They are particularly useful when deconstructing tuples and user-defined types, as well as when calling methods with `out` parameters.
 * [Pattern Matching](#pattern-matching)
     - You can create branching logic based on arbitrary types and values of the members of those types.
 * [`ref` locals and returns](#ref-locals-and-returns)
@@ -82,6 +84,22 @@ return result;
 
 ## Tuples
 
+> [!NOTE]
+> The new tuples features require the <xref:System.ValueTuple> types.
+> You must add the NuGet package [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) in order to use it
+> on platforms that do not include the types.
+>
+> This is similar to other language features that rely on types
+> delivered in the framework. Example include `async` and `await`
+> relying on the `INotifyCompletion` interface, and LINQ relying
+> on `IEnumerable<T>`. However, the delivery mechanism is changing
+> as .NET is becoming more platform independent. The .NET Framework
+> may not always ship on the same cadence as the language compiler. When new language
+> features rely on new types, those types will be available as NuGet packages when
+> the language features ship. As these new types get added to the .NET Standard
+> API and delivered as part of the framework, the NuGet package requirement will
+> be removed.
+
 C# provides a rich syntax for classes and structs that is used to explain
 your design intent. But sometimes that rich syntax requires extra
 work with minimal benefit. You may often write methods that need a simple
@@ -91,34 +109,34 @@ that contain multiple fields to represent the data members.
 The fields are not validated, and you cannot define your own methods
 
 > [!NOTE]
-> Tuples were available before C# 7 as an API, but had many limitations.
-> Most importantly, the members of these tuples were named 
-> `Item1`, `Item2` and so on. The language support enables semantic names
-> for the fields of a Tuple.
+> Tuples were available before C# 7,
+> but they were inefficient and had no language support.
+> This meant that tuple elements could only be referenced as
+> `Item1`, `Item2` and so on. C# 7 introduces language support for tuples,
+> which enables semantic names for the fields of a tuple using new,
+> more efficient tuple types.
 
 You can create a tuple by assigning each member to a value:
 
 [!code-csharp[UnnamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#04_UnnamedTuple "Unnamed tuple")]
 
 That assignment creates a tuple whose members are `Item1` and `Item2`,
-following the existing @System.Tuple syntax.
-You can modify that assignment to create a tuple that provides semantic
+which you can use in the same way as <xref:System.Tuple>
+You can change the syntax to create a tuple that provides semantic
 names to each of the members of the tuple:
 
 [!code-csharp[NamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#05_NamedTuple "Named tuple")]
 
-> [!NOTE]
-> The new tuples features require the `System.ValueTuple` type. For Visual Studio 15
-> Preview 5 and earlier preview releases, you must add the NuGet package "System.ValueTuple",
-> available in the pre-release stream.
-
 The `namedLetters` tuple contains fields referred to as `Alpha` and
-`Beta`. In a tuple assignment, you can also specify the names of the fields
+`Beta`. Those names exist only at compile time and are not preserved
+for example when inspecting the tuple using reflection at runtime.
+
+In a tuple assignment, you can also specify the names of the fields
 on the right-hand side of the assignment:
 
 [!code-csharp[ImplicitNamedTuple](../../../samples/snippets/csharp/new-in-7/program.cs#06_ImplicitNamedTuple "Implicitly named tuple")]
 
-The language allows you to specify names for the fields on both the
+You can specify names for the fields on both the
 left and right-hand side of the assignment:
 
 [!code-csharp[NamedTupleConflict](../../../samples/snippets/csharp/new-in-7/program.cs#07_NamedTupleConflict "Named tuple conflict")]
@@ -182,6 +200,26 @@ can rename the extract variables as part of the assignment:
 You can learn more in depth about tuples in the
 [tuples topic](../tuples.md).
 
+## Discards
+
+Often when deconstructing a tuple or calling a method with `out` parameters, you're forced to define a variable whose value you don't care about and don't intend to use. C# adds support for *discards* to handle this scenario. A discard is a write-only variable whose name is `_` (the underscore character); you can assign all of the values that you intend to discard to the single variable. A discard is like an unassigned variable; apart from the assignment statement, the discard can't be used in code.
+
+Discards are supported in the following scenarios:
+
+* When deconstructing tuples or user-defined types.
+
+* When calling methods with [out](../language-reference/keywords/out-parameter-modifier.md) parameters.
+
+* In a pattern matching operation with the [is](../language-reference/keywords/is.md) and [switch](../language-reference/keywords/switch.md) statements.
+
+* As a standalone identifier when you want to explicitly identify the value of an assignment as a discard.
+
+The following example defines a `QueryCityDataForYears` method that returns a 6-tuple that contains a data for a city for two different years. The method call in the example is concerned only with the two population values returned by the method and so treats the remaining values in the tuple as discards when it deconstructs the tuple.
+
+[!code-csharp[Tuple-discard](../../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
+
+For more information, see [Discards](../discards.md).
+ 
 ## Pattern matching
 
 *Pattern matching* is a feature that allows you to implement method dispatch on
@@ -210,7 +248,7 @@ of a number of die rolls:
 [!code-csharp[SumDieRolls](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#14_SumDieRolls "Sum die rolls")]
 
 You might quickly find that you need to find the sum of die rolls where
-some of the rolls are made with more than one die. Part of the input
+some of the rolls are made with multiple dice (dice is the plural of die). Part of the input
 sequence may be multiple results instead of a single number:
 
 [!code-csharp[SumDieRollsWithGroups](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#15_SumDieRollsWithGroups "Sum die rolls with groups")]
@@ -266,9 +304,9 @@ use percentile dice to represent larger ranges of numbers.
 > together and you can get every number from 0 through 99.
 
 To add this kind of die to your collection, first define a type to represent
-the percentile die:
+the percentile dice. The `TensDigit` property stores values `0`, `10`, `20`, up to `90`:
 
-[!code-csharp[18_PercentileDie](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDie "Percentile Die type")]
+[!code-csharp[18_PercentileDice](../../../samples/snippets/csharp/new-in-7/patternmatch.cs#18_PercentileDice "Percentile Die type")]
 
 Then, add a `case` match expression for the new type:
 
@@ -362,17 +400,15 @@ modified. The local variable has been declared with the `ref` modifier,
 and it will take a `ref` return. You must initialize a `ref` variable when
 it is declared, you cannot split the declaration and the initialization.
 
-The C# language has two other rules that protect you from misusing
+The C# language has three other rules that protect you from misusing
 the `ref` locals and returns:
 
-* You cannot assign a value to a `ref` variable.
+* You cannot assign a standard method return value to a `ref` local variable.
     - That disallows statements like `ref int i = sequence.Count();`
 * You cannot return a `ref` to a variable whose lifetime does not extend beyond the execution of the method.
-    - That means you cannot return a reference to a local variable, or similar scope.
-
-These rules ensure that you cannot accidentally mix value variables and
-reference variables. They also ensure that you cannot have a reference
-variable refer to storage that is a candidate for garbage collection.
+    - That means you cannot return a reference to a local variable or a variable with a similar scope.
+* `ref` locals and returns can't be used with async methods.
+    - The compiler can't know if the referenced variable has been set to its final value when the async method returns.
 
 The addition of ref locals and ref returns enable algorithms that are more
 efficient by avoiding copying values, or performing dereferencing operations
@@ -462,7 +498,7 @@ and *indexers*. The following code shows examples of each:
 > to demonstrate the syntax. You should not implement a
 > finalizer in your class unless it is necessary to  release
 > unmanaged resources. You should also consider using the
-> @System.Runtime.InteropServices.SafeHandle class instead
+> <xref:System.Runtime.InteropServices.SafeHandle> class instead
 > of managing unmanaged resources directly.
 
 These new locations for expression-bodied members represent
@@ -500,7 +536,7 @@ throw statements in the body of the constructor:
 > For that reason, designs that throw exceptions during construction are
 > discouraged.
 
-## Generalized async return types 
+## Generalized async return types
 
 Returning a `Task` object from async methods can introduce
 performance bottlenecks in certain paths. `Task` is a reference
@@ -520,8 +556,8 @@ feature:
 [!code-csharp[UsingValueTask](../../../samples/snippets/csharp/new-in-7/AsyncWork.cs#30_UsingValueTask "Using ValueTask")]
 
 > [!NOTE]
-> You need to add the pre-release NuGet package `System.Threading.Tasks.Extensions`
-> in order to use `ValueTask` in Visual Studio 15 Preview 5.
+> You need to add the NuGet package [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/)
+> in order to use the <xref:System.Threading.Tasks.ValueTask%601> type.
 
 A simple optimization would be to use `ValueTask` in places where
 `Task` would be used before. However, if you want to perform extra

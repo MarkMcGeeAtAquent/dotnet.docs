@@ -1,36 +1,48 @@
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter.CanConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.ColumnHeaderConverter.ConvertTo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---

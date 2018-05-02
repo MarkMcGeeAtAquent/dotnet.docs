@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::DefineDocument Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::DefineDocument Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.DefineDocument"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::DefineDocument"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedWriter::DefineDocument method [.NET Framework debugging]"
   - "DefineDocument method [.NET Framework debugging]"
 ms.assetid: c3bf15b0-3250-4bbe-b9b5-c5d695289b6f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::DefineDocument Method
 Defines a source document. GUIDs are provided for known languages, vendors, and document types.  

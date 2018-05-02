@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_FUNCTION_ARGUMENT_RANGE Structure | Microsoft Docs"
+title: "COR_PRF_FUNCTION_ARGUMENT_RANGE Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_FUNCTION_ARGUMENT_RANGE"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_FUNCTION_ARGUMENT_RANGE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_FUNCTION_ARGUMENT_RANGE structure [.NET Framework profiling'"
 ms.assetid: 9f469eac-ac66-419b-8668-fe705bc1a51f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_FUNCTION_ARGUMENT_RANGE Structure
 Represents a block of function arguments stored contiguously in left-to-right order in memory.  

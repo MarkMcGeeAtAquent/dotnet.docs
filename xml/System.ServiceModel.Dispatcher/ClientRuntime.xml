@@ -1,11 +1,19 @@
-<Type Name="ClientRuntime" FullName="System.ServiceModel.Dispatcher.ClientRuntime">
+﻿<Type Name="ClientRuntime" FullName="System.ServiceModel.Dispatcher.ClientRuntime">
   <TypeSignature Language="C#" Value="public sealed class ClientRuntime" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientRuntime extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ClientRuntime" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ClientRuntime" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClientRuntime sealed" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ServiceModel.Dispatcher.ClientRuntimeCompatBase</BaseTypeName>
@@ -13,7 +21,7 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Represents the insertion point for classes that extend the functionality of [!INCLUDE[indigo1](~/includes/indigo1-md.md)] client objects for all messages handled by a client application.</summary>
+    <summary>Represents the insertion point for classes that extend the functionality of Windows Communication Foundation (WCF) client objects for all messages handled by a client application.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -61,16 +69,14 @@
    
   
 ## Examples  
- In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName> inserts a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName> into the client runtime by adding it to the <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> property.  
+ In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> inserts a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> into the client runtime by adding it to the <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> property.  
   
  [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
  [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
   
  The following code example shows a configuration file that loads the endpoint behavior into the client endpoint.  
   
- <!-- TODO: review snippet reference [!code[Interceptors#3](~/samples/snippets/common/VS_Snippets_CFX/interceptors/common/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-csharp[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[Interceptors#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/client.exe.config#3)]  -->  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
   
  ]]></format>
     </remarks>
@@ -80,6 +86,8 @@
       <MemberSignature Language="C#" Value="public Type CallbackClientType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type CallbackClientType" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.CallbackClientType" />
+      <MemberSignature Language="VB.NET" Value="Public Property CallbackClientType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ CallbackClientType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -99,6 +107,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.DispatchRuntime CallbackDispatchRuntime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.DispatchRuntime CallbackDispatchRuntime" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CallbackDispatchRuntime As DispatchRuntime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::Dispatcher::DispatchRuntime ^ CallbackDispatchRuntime { System::ServiceModel::Dispatcher::DispatchRuntime ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -117,11 +127,17 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ChannelInitializers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ChannelInitializers As SynchronizedCollection(Of IChannelInitializer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IChannelInitializer ^&gt; ^ ChannelInitializers { System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IChannelInitializer ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt;</ReturnType>
@@ -143,11 +159,19 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt; ClientMessageInspectors { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.IClientMessageInspector&gt; ClientMessageInspectors" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ClientMessageInspectors" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientMessageInspectors As ICollection(Of IClientMessageInspector)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::IClientMessageInspector ^&gt; ^ ClientMessageInspectors { System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::IClientMessageInspector ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt;</ReturnType>
@@ -169,11 +193,19 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.ClientOperation&gt; ClientOperations { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.ClientOperation&gt; ClientOperations" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ClientOperations" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientOperations As ICollection(Of ClientOperation)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::ClientOperation ^&gt; ^ ClientOperations { System::Collections::Generic::ICollection&lt;System::ServiceModel::Dispatcher::ClientOperation ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.ClientOperation&gt;</ReturnType>
@@ -195,11 +227,19 @@
       <MemberSignature Language="C#" Value="public Type ContractClientType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContractClientType" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractClientType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContractClientType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ContractClientType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Type</ReturnType>
@@ -214,11 +254,19 @@
       <MemberSignature Language="C#" Value="public string ContractName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContractName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ContractName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -233,11 +281,19 @@
       <MemberSignature Language="C#" Value="public string ContractNamespace { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContractNamespace" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractNamespace" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContractNamespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ContractNamespace { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -252,11 +308,17 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt; InteractiveChannelInitializers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt; InteractiveChannelInitializers" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.InteractiveChannelInitializers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InteractiveChannelInitializers As SynchronizedCollection(Of IInteractiveChannelInitializer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IInteractiveChannelInitializer ^&gt; ^ InteractiveChannelInitializers { System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IInteractiveChannelInitializer ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt;</ReturnType>
@@ -286,11 +348,19 @@
       <MemberSignature Language="C#" Value="public bool ManualAddressing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ManualAddressing" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing" />
+      <MemberSignature Language="VB.NET" Value="Public Property ManualAddressing As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ManualAddressing { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -298,7 +368,7 @@
       <Docs>
         <summary>Gets or sets a value that indicates whether the client adds addressing headers to request-reply messages.</summary>
         <value>
-          <see langword="true" /> if the client does not add any addressing headers; otherwise, <see langword="false" />. The default is <see langword="false" />. See Remarks.</value>
+          <see langword="true" /> if the client does not add any addressing headers; otherwise, <see langword="false" />. The default is <see langword="false" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -316,11 +386,19 @@
       <MemberSignature Language="C#" Value="public int MaxFaultSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxFaultSize" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MaxFaultSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxFaultSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxFaultSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -342,6 +420,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt; MessageInspectors { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IClientMessageInspector&gt; MessageInspectors" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MessageInspectors As SynchronizedCollection(Of IClientMessageInspector)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IClientMessageInspector ^&gt; ^ MessageInspectors { System::Collections::Generic::SynchronizedCollection&lt;System::ServiceModel::Dispatcher::IClientMessageInspector ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -363,16 +443,14 @@
    
   
 ## Examples  
- In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName> inserts a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=fullName> into the client runtime by adding it to the <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> property.  
+ In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> inserts a <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> into the client runtime by adding it to the <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> property.  
   
  [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
  [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
   
  The following code example shows a configuration file that loads the endpoint behavior into the client endpoint.  
   
- <!-- TODO: review snippet reference [!code[Interceptors#3](~/samples/snippets/common/VS_Snippets_CFX/interceptors/common/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-csharp[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[Interceptors#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/client.exe.config#3)]  -->  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
   
  ]]></format>
         </remarks>
@@ -382,6 +460,8 @@
       <MemberSignature Language="C#" Value="public bool MessageVersionNoneFaultsEnabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MessageVersionNoneFaultsEnabled" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property MessageVersionNoneFaultsEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MessageVersionNoneFaultsEnabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -402,6 +482,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedKeyedCollection&lt;string,System.ServiceModel.Dispatcher.ClientOperation&gt; Operations { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedKeyedCollection`2&lt;string, class System.ServiceModel.Dispatcher.ClientOperation&gt; Operations" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.Operations" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Operations As SynchronizedKeyedCollection(Of String, ClientOperation)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::SynchronizedKeyedCollection&lt;System::String ^, System::ServiceModel::Dispatcher::ClientOperation ^&gt; ^ Operations { System::Collections::Generic::SynchronizedKeyedCollection&lt;System::String ^, System::ServiceModel::Dispatcher::ClientOperation ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -423,7 +505,7 @@
    
   
 ## Examples  
- In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=fullName> inserts a <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=fullName> into the client runtime by adding it to each <xref:System.ServiceModel.Dispatcher.ClientOperation> in the <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> property.  
+ In the following code example an <xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> inserts a <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> into the client runtime by adding it to each <xref:System.ServiceModel.Dispatcher.ClientOperation> in the <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> property.  
   
  [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
  [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
@@ -436,11 +518,19 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.IClientOperationSelector OperationSelector { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.IClientOperationSelector OperationSelector" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.OperationSelector" />
+      <MemberSignature Language="VB.NET" Value="Public Property OperationSelector As IClientOperationSelector" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::Dispatcher::IClientOperationSelector ^ OperationSelector { System::ServiceModel::Dispatcher::IClientOperationSelector ^ get(); void set(System::ServiceModel::Dispatcher::IClientOperationSelector ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Dispatcher.IClientOperationSelector</ReturnType>
@@ -462,11 +552,19 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ClientOperation UnhandledClientOperation { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ClientOperation UnhandledClientOperation" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.UnhandledClientOperation" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UnhandledClientOperation As ClientOperation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::Dispatcher::ClientOperation ^ UnhandledClientOperation { System::ServiceModel::Dispatcher::ClientOperation ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ServiceModel.Dispatcher.ClientOperation</ReturnType>
@@ -481,6 +579,8 @@
       <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ValidateMustUnderstand" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValidateMustUnderstand As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ValidateMustUnderstand { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -508,11 +608,19 @@
       <MemberSignature Language="C#" Value="public Uri Via { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Via" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.Via" />
+      <MemberSignature Language="VB.NET" Value="Public Property Via As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Via { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -526,7 +634,7 @@
 ## Remarks  
  Set the <xref:System.ServiceModel.Dispatcher.ClientRuntime.Via%2A> property to specify a transport address for messages when the immediate destination of messages is not the client's <xref:System.ServiceModel.EndpointAddress.Uri%2A>. This enables you to specify SOAP intermediaries and handle scenarios in which the value of the <xref:System.ServiceModel.EndpointAddress.Uri%2A> property of the client is a logical name.  
   
- It is this value that the <xref:System.ServiceModel.Description.ClientViaBehavior?displayProperty=fullName> sets from a configuration file.  
+ It is this value that the <xref:System.ServiceModel.Description.ClientViaBehavior?displayProperty=nameWithType> sets from a configuration file.  
   
  ]]></format>
         </remarks>

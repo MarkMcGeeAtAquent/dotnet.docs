@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocumentWriter::SetSource Method | Microsoft Docs"
+title: "ISymUnmanagedDocumentWriter::SetSource Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocumentWriter.SetSource"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocumentWriter::SetSource"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocumentWriter::SetSource method [.NET Framework debugging]"
   - "SetSource method [.NET Framework debugging]"
 ms.assetid: ea5b9d9f-ff06-4bd3-8de5-6435343aba59
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocumentWriter::SetSource Method
 Sets embedded source for a document that is being written.  

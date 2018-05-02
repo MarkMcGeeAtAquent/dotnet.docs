@@ -1,8 +1,8 @@
 ---
-title: "Membership and Role Provider | Microsoft Docs"
+title: "Membership and Role Provider"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Membership and Role Provider
 The Membership and Role Provider sample demonstrates how a service can use the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership and role providers to authenticate and authorize clients.  
@@ -37,7 +39,7 @@ The Membership and Role Provider sample demonstrates how a service can use the [
   
  The membership and role providers are configured to use a store backed by SQL Server. A connection string and various options are specified in the service configuration file. The membership provider is given the name `SqlMembershipProvider` while the role provider is given the name `SqlRoleProvider`.  
   
-```  
+```xml  
 <!-- Set the connection string for SQL Server -->  
 <connectionStrings>  
   <add name="SqlConn"   
@@ -77,7 +79,7 @@ The Membership and Role Provider sample demonstrates how a service can use the [
   
  The service exposes a single endpoint for communicating with the service, which is defined by using the Web.config configuration file. The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard `wsHttpBinding`, which defaults to using Windows authentication. This sample sets the standard `wsHttpBinding` to use username authentication. The behavior specifies that the server certificate is to be used for service authentication. The server certificate must contain the same value for the `SubjectName` as the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) configuration element. In addition the behavior specifies that authentication of username-password pairs is performed by the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] membership provider and role mapping is performed by the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] role provider by specifying the names defined for the two providers.  
   
-```  
+```xml  
 <system.serviceModel>  
   
   <protocolMapping>  
@@ -144,7 +146,7 @@ The Membership and Role Provider sample demonstrates how a service can use the [
   
 3.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across computers  
   
@@ -166,7 +168,7 @@ The Membership and Role Provider sample demonstrates how a service can use the [
   
 9. On the client, open a Visual Studio command prompt with administrative privileges and run ImportServiceCert.bat. This imports the service certificate from the Service.cer file into the CurrentUser - TrustedPeople store.  
   
-10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   

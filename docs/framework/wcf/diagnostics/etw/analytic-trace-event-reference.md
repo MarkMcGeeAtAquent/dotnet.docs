@@ -1,8 +1,8 @@
 ---
-title: "Analytic Trace Event Reference | Microsoft Docs"
+title: "Analytic Trace Event Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "analytic tracing [WCF]. reference"
 ms.assetid: e44540cf-44a1-4efc-b965-7fbfd2131d73
 caps.latest.revision: 50
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Analytic Trace Event Reference
 The following table defines the event levels, identifiers, and messages associated with the [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Analytic Tracing.  

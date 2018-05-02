@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedNamespace::GetName Method | Microsoft Docs"
+title: "ISymUnmanagedNamespace::GetName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedNamespace.GetName"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedNamespace::GetName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedNamespace::GetName method [.NET Framework debugging]"
   - "GetName method, ISymUnmanagedNamespace interface [.NET Framework debugging]"
 ms.assetid: 657bf91d-005a-4ea4-9298-04d1291c0bc3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedNamespace::GetName Method
 Gets the name of this namespace.  

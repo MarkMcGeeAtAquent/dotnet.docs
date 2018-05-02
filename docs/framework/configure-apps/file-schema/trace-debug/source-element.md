@@ -1,30 +1,21 @@
 ---
-title: "&lt;source&gt; Element | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
-ms.reviewer: ""
-ms.suite: ""
+title: "&lt;source&gt; Element"
+ms.date: "09/29/2017"
+ms.prod: ".net-framework"
 ms.technology: 
   - "dotnet-clr"
-ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#source"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<source> element"
   - "source element"
-ms.assetid: ecf86505-735d-4844-aaba-266fdd134218
-caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;source&gt; Element
 Specifies a trace source that initiates tracing messages.  
@@ -36,7 +27,7 @@ Specifies a trace source that initiates tracing messages.
   
 ## Syntax  
   
-```  
+```xml  
 <source>   
   <listeners>...</listeners>  
 </source>  
@@ -58,7 +49,7 @@ Specifies a trace source that initiates tracing messages.
   
 |Element|Description|  
 |-------------|-----------------|  
-|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|Contains listeners that collect, store, and route messages.|  
+|[\<listeners>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-source.md)|Contains listeners that collect, store, and route messages.|  
   
 ### Parent Elements  
   
@@ -74,7 +65,7 @@ Specifies a trace source that initiates tracing messages.
 ## Example  
  The following example shows how to use the `<source>` element to add the trace source `mySource` and to set the level for the source switch named `sourceSwitch`. A console trace listener is added that writes trace information to the console.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -95,5 +86,5 @@ Specifies a trace source that initiates tracing messages.
 ```  
   
 ## See Also  
- [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
+ [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [Trace Switches](../../../../../docs/framework/debug-trace-profile/trace-switches.md)

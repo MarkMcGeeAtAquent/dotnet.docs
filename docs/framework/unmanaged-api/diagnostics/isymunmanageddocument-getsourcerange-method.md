@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::GetSourceRange Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::GetSourceRange Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.GetSourceRange"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::GetSourceRange"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocument::GetSourceRange method [.NET Framework debugging]"
   - "GetSourceRange method [.NET Framework debugging]"
 ms.assetid: 20fefee7-1040-41ba-93dc-bd42f68b90c2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::GetSourceRange Method
 Returns the specified range of the embedded source into the given buffer. The buffer must be large enough to hold the source.  

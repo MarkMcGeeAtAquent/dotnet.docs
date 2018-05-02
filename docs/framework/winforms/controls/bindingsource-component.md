@@ -1,18 +1,16 @@
 ---
-title: "BindingSource Component | Microsoft Docs"
+title: "BindingSource Component"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "data binding, Windows Forms"
+  - "data binding [Windows Forms], Windows Forms"
   - "Windows Forms, data binding control"
   - "BindingSource component [Windows Forms]"
 ms.assetid: 3e2faf4c-f5b8-4fa6-9fbc-f59c37ec2fb9
@@ -20,6 +18,8 @@ caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # BindingSource Component
 Encapsulates a data source for binding to controls.  
@@ -76,4 +76,4 @@ Encapsulates a data source for binding to controls.
  [Windows Forms Data Binding](../../../../docs/framework/winforms/windows-forms-data-binding.md)  
  Contains links to topics describing the Windows Forms data binding architecture.  
   
- Also see [Bind controls to data in Visual Studio](http://msdn.microsoft.com/library/be8b6623-86a6-493e-ab7a-050de4661fd6).
+ Also see [Bind controls to data in Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).

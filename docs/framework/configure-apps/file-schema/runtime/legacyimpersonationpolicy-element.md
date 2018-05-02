@@ -1,8 +1,8 @@
 ---
-title: "&lt;legacyImpersonationPolicy&gt; Element | Microsoft Docs"
+title: "&lt;legacyImpersonationPolicy&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#legacyImpersonationPolicy"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/legacyImpersonationPolicy"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<legacyImpersonationPolicy> element"
   - "legacyImpersonationPolicy element"
@@ -25,6 +20,8 @@ caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;legacyImpersonationPolicy&gt; Element
 Specifies that the Windows identity does not flow across asynchronous points, regardless of the flow settings for the execution context on the current thread.  
@@ -35,7 +32,7 @@ Specifies that the Windows identity does not flow across asynchronous points, re
   
 ## Syntax  
   
-```  
+```xml  
 <legacyImpersonationPolicy    
    enabled="true|false"/>  
 ```  
@@ -78,7 +75,7 @@ Specifies that the Windows identity does not flow across asynchronous points, re
   
 1.  In managed code on a per-thread basis.  
   
-     You can suppress the flow on a per-thread basis by modifying the <xref:System.Threading.ExecutionContext> and <xref:System.Security.SecurityContext> settings by using the <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=fullName>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=fullName> or <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=fullName> method.  
+     You can suppress the flow on a per-thread basis by modifying the <xref:System.Threading.ExecutionContext> and <xref:System.Security.SecurityContext> settings by using the <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType> or <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> method.  
   
 2.  In the call to the unmanaged hosting interface to load the common language runtime (CLR).  
   
@@ -94,19 +91,17 @@ Specifies that the Windows identity does not flow across asynchronous points, re
  ASP.NET by default disables the impersonation flow in the aspnet.config file by using the following configuration settings:  
   
 ```  
-  
 configuration>  
    <runtime>  
       <legacyImpersonationPolicy enabled="true"/>  
       <alwaysFlowImpersonationPolicy enabled="false"/>  
    </runtime>  
 </configuration>  
-  
 ```  
   
  In ASP.NET, if you want to allow the flow of impersonation instead, you must explicitly use the following configuration settings:  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <legacyImpersonationPolicy enabled="false"/>  
@@ -118,7 +113,7 @@ configuration>
 ## Example  
  The following example shows how to specify the legacy behavior that does not flow the Windows identity across asynchronous points.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <legacyImpersonationPolicy enabled="true"/>  
@@ -127,6 +122,6 @@ configuration>
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<alwaysFlowImpersonationPolicy> Element](../../../../../docs/framework/configure-apps/file-schema/runtime/alwaysflowimpersonationpolicy-element.md)

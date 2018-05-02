@@ -1,5 +1,5 @@
 ---
-title: "ICorDebug::CreateProcess Method | Microsoft Docs"
+title: "ICorDebug::CreateProcess Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebug.CreateProcess"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebug::CreateProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebug::CreateProcess method [.NET Framework debugging]"
   - "CreateProcess method, ICorDebugProcess interface [.NET Framework debugging]"
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 21
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebug::CreateProcess Method
 Launches a process and its primary thread under the control of the debugger.  

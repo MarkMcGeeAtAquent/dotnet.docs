@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumMethodsWithName Method | Microsoft Docs"
+title: "IMetaDataImport::EnumMethodsWithName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumMethodsWithName"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumMethodsWithName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport::EnumMethodsWithName method [.NET Framework metadata]"
   - "EnumMethodsWithName method [.NET Framework metadata]"
 ms.assetid: a8624913-2e23-46ad-a0c1-bb8eccbbf20f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumMethodsWithName Method
 Enumerates methods that have the specified name and that are defined by the type referenced by the specified TypeDef token.  
@@ -82,5 +85,5 @@ HRESULT EnumMethodsWithName (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

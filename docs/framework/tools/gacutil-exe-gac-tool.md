@@ -1,5 +1,5 @@
 ---
-title: "Gacutil.exe (Global Assembly Cache Tool) | Microsoft Docs"
+title: "Gacutil.exe (Global Assembly Cache Tool)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "assemblies [.NET Framework], global assembly cache"
   - "global assembly cache, viewing contents"
@@ -34,6 +29,8 @@ caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Gacutil.exe (Global Assembly Cache Tool)
 The Global Assembly Cache tool allows you to view and manipulate the contents of the global assembly cache and download cache.  
@@ -45,7 +42,6 @@ The Global Assembly Cache tool allows you to view and manipulate the contents of
 ## Syntax  
   
 ```  
-  
 gacutil [options] [assemblyName | assemblyPath | assemblyListFile]  
 ```  
   
@@ -160,7 +156,7 @@ gacutil /l
 ```  
   
 ## See Also  
- [Tools](../../../docs/framework/tools/index.md)   
- [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)   
- [Regasm.exe (Assembly Registration Tool)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)   
+ [Tools](../../../docs/framework/tools/index.md)  
+ [Global Assembly Cache](../../../docs/framework/app-domains/gac.md)  
+ [Regasm.exe (Assembly Registration Tool)](../../../docs/framework/tools/regasm-exe-assembly-registration-tool.md)  
  [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -1,8 +1,8 @@
 ---
-title: "Feed Formatter (JSON) | Microsoft Docs"
+title: "Feed Formatter (JSON)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f9c0b295-55e7-48ea-b308-ba51c7d31143
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Feed Formatter (JSON)
 This sample shows how to serialize an instance of a <xref:System.ServiceModel.Syndication.SyndicationFeed> class in JavaScript Object Notation (JSON) format by using a custom <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> and the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
@@ -37,7 +39,6 @@ select new SyndicationItem()
 //Write the feed out to a MemoryStream in JSON format  
 DataContractJsonSerializer writeSerializer = new DataContractJsonSerializer(typeof(JsonFeedFormatter));  
 writeSerializer.WriteObject(stream, new JsonFeedFormatter(feed));  
-  
 ```  
   
 ## Reading a JSON feed  

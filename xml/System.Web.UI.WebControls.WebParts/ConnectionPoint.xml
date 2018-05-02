@@ -1,7 +1,9 @@
-<Type Name="ConnectionPoint" FullName="System.Web.UI.WebControls.WebParts.ConnectionPoint">
+﻿<Type Name="ConnectionPoint" FullName="System.Web.UI.WebControls.WebParts.ConnectionPoint">
   <TypeSignature Language="C#" Value="public abstract class ConnectionPoint" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConnectionPoint extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionPoint" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ConnectionPoint" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConnectionPoint abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -52,8 +54,8 @@
   
  The first part of this code example is the user control that enables users to change display modes on a Web page. Save the following source code to an .ascx file, giving it the file name that is assigned to the `Src` attribute of the `Register` directive for this user control, which is near the top of the hosting Web page. For details about display modes and a description of the source code in this control, see [Walkthrough: Changing Display Modes on a Web Parts Page](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/displaymodemenucs.ascx#6)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/DisplayModeMenuVB.ascx#6)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/displaymodemenucs.ascx#6)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/DisplayModeMenuVB.ascx#6)]  
   
  The second part of the code example is the source code for the interface and controls. The source file contains a simple interface named `IZipCode`. There is also a <xref:System.Web.UI.WebControls.WebParts.WebPart> class named `ZipCodeWebPart` that implements the interface and acts as the provider control. Its `ProvideIZipCode` method is the callback method that implements the interface's only member. The method simply returns an instance of the interface. Note that the method is marked with a `ConnectionProvider` attribute in its metadata. This is the mechanism for identifying the method as the callback method for the provider's connection point. The other <xref:System.Web.UI.WebControls.WebParts.WebPart> class is named `WeatherWebPart`, and it acts as the consumer for the connection. This class has a method named `GetZipCode` that gets an instance of the `IZipCode` interface from the provider control. Note that this method is marked as the consumer's connection point method with a `ConnectionConsumer` attribute in its metadata. This is the mechanism for identifying the connection point method in the consumer control.  
   
@@ -64,19 +66,22 @@
   
  The third part of the code example is the Web page. Near the top are `Register` directives to register the custom controls that form the connection, and the user control that enables users to change display modes on the page. The connection itself is created declaratively within the `<staticconnections>` element on the page. You can also create the connection programmatically; the code for doing that is contained in the `Button1_Click` method. Whether the connection is created declaratively or programmatically, connection points must always be specified for both the provider and the consumer. The `Button2_Click` method accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint> objects for both the provider and the consumer, and writes some of their property values to a label in the page.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  After you load the page in a browser, click the **Connection Point Details** button. Information about the provider and consumer connection points established in the declarative connection appears. Next, use the **Display Mode** drop-down control to switch the page into connect mode. On the verbs menu of one of the <xref:System.Web.UI.WebControls.WebParts.WebPart> controls (represented by a downward arrow in the title bar), click the connect verb. The connection UI appears, created automatically by the `<asp:connectionszone>` control declared in the page. Click the **Disconnect** button to terminate the existing connection. Use the **Display Mode** control to return the page to browse mode. Next, click the **Dynamic Connection** button to create a connection programmatically. Click the **Connection Point Details** button again, to indicate details about the two connection point objects.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />
   </Docs>
   <Members>
     <Member MemberName="AllowsMultipleConnections">
       <MemberSignature Language="C#" Value="public bool AllowsMultipleConnections { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowsMultipleConnections" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AllowsMultipleConnections As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowsMultipleConnections { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -97,7 +102,7 @@
   
  In contrast, <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> objects have their <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections%2A> property value set to `false` (by the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute> class) because the Web Parts control set by default allows consumer connection points to establish a connection to only one provider at a time.  
   
- You can change the default behavior concerning multiple connections by assigning different values to the <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute.AllowsMultipleConnections%2A?displayProperty=fullName> property (for providers) or the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections%2A?displayProperty=fullName> property (for consumers) on the two <xref:System.Attribute> classes used for connection attributes. If you enable consumer connection points to connect to multiple providers at the same time, your code must deal with any resulting synchronization issues.  
+ You can change the default behavior concerning multiple connections by assigning different values to the <xref:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute.AllowsMultipleConnections%2A?displayProperty=nameWithType> property (for providers) or the <xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections%2A?displayProperty=nameWithType> property (for consumers) on the two <xref:System.Attribute> classes used for connection attributes. If you enable consumer connection points to connect to multiple providers at the same time, your code must deal with any resulting synchronization issues.  
   
    
   
@@ -106,17 +111,21 @@
   
  The code in the `Button2_Click` method of the Web page accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections%2A> property on each of the connection point objects and writes each value to a label. Execute the code by clicking the **Connection Point Details** button after the page is loaded in a browser.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
       </Docs>
     </Member>
     <Member MemberName="ControlType">
       <MemberSignature Language="C#" Value="public Type ControlType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ControlType" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ControlType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ControlType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -143,17 +152,20 @@
   
  The code in the `Button2_Click` method of the Web page accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ControlType%2A> property on each of the connection point objects and writes each value to a label. Execute the code by clicking the **Connection Point Details** button after the page is loaded in a browser.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Type" />
       </Docs>
     </Member>
     <Member MemberName="DefaultID">
       <MemberSignature Language="C#" Value="public static readonly string DefaultID;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string DefaultID" />
       <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly DefaultID As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ DefaultID;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -174,12 +186,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID" />
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
       </Docs>
     </Member>
     <Member MemberName="DisplayName">
       <MemberSignature Language="C#" Value="public string DisplayName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.DisplayName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DisplayName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DisplayName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -201,12 +218,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
       </Docs>
     </Member>
     <Member MemberName="GetEnabled">
       <MemberSignature Language="C#" Value="public virtual bool GetEnabled (System.Web.UI.Control control);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetEnabled(class System.Web.UI.Control control) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionPoint.GetEnabled(System.Web.UI.Control)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool GetEnabled(System::Web::UI::Control ^ control);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -236,8 +256,8 @@
   
  The code in the `Button2_Click` method of the Web page accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.GetEnabled%2A> method on each of the connection point objects and writes each value to a label. Execute the code by clicking the **Connection Point Details** button after the page is loaded in a browser.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -247,6 +267,8 @@
       <MemberSignature Language="C#" Value="public string ID { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ID" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ID { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -273,17 +295,20 @@
   
  The code in the `Button2_Click` method of the Web page accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID%2A> property on each of the connection point objects and writes each value to a label. Execute the code by clicking the **Connection Point Details** button after the page is loaded in a browser.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="F:System.Web.UI.WebControls.WebParts.ConnectionPoint.DefaultID" />
       </Docs>
     </Member>
     <Member MemberName="InterfaceType">
       <MemberSignature Language="C#" Value="public Type InterfaceType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type InterfaceType" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InterfaceType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ InterfaceType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -308,11 +333,12 @@
   
  The code in the `Button2_Click` method of the Web page accesses the <xref:System.Web.UI.WebControls.WebParts.ConnectionPoint.InterfaceType%2A> property on each of the connection point objects and writes each value to a label. Execute the code by clicking the **Connection Point Details** button after the page is loaded in a browser.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/CS/connectionPointCS.aspx#1)]
+ [!code-aspx-vb[WebParts_ConnectionPoint_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_ConnectionPoint_Overview/VB/connectionPointVB.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Type" />
       </Docs>
     </Member>
   </Members>

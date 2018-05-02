@@ -1,52 +1,34 @@
 ---
-title: "How to: Use a Class that Defines Operators (Visual Basic) | Microsoft Docs"
+title: "How to: Use a Class that Defines Operators (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "operator procedures, calling"
-  - "procedures, operator"
-  - "procedures, calling"
+  - "operator procedures [Visual Basic], calling"
+  - "procedures [Visual Basic], operator"
+  - "procedures [Visual Basic], calling"
   - "examples [Visual Basic], CType"
-  - "syntax, Operator procedures"
+  - "syntax [Visual Basic], Operator procedures"
   - "operators [Visual Basic], overloading"
-  - "return values, Operator procedures"
+  - "return values [Visual Basic], Operator procedures"
   - "operator overloading"
 ms.assetid: 7ccce94a-6ca0-47d1-9f3f-13385d34f5d5
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # How to: Use a Class that Defines Operators (Visual Basic)
-If you are using a class or structure that defines its own operators, you can access those operators from [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)].  
+If you are using a class or structure that defines its own operators, you can access those operators from [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)].  
   
  Defining an operator on a class or structure is also called *overloading* the operator.  
   
 ## Example  
- The following example accesses the SQL structure <xref:System.Data.SqlTypes.SqlString>, which defines the conversion operators ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) in both directions between a SQL string and a [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] string. Use `CType(`*SQL string expression*, `String)` to convert a SQL string to a [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] string, and `CType(`*Visual Basic string expression*, <xref:System.Data.SqlTypes.SqlString>`)` to convert in the other direction.  
+ The following example accesses the SQL structure <xref:System.Data.SqlTypes.SqlString>, which defines the conversion operators ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) in both directions between a SQL string and a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] string. Use `CType(`*SQL string expression*, `String)` to convert a SQL string to a [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] string, and `CType(`*Visual Basic string expression*, <xref:System.Data.SqlTypes.SqlString>`)` to convert in the other direction.  
   
  [!code-vb[VbVbcnProcedures#30](./codesnippet/VisualBasic/how-to-use-a-class-that-defines-operators_1.vb)]  
   
@@ -62,13 +44,13 @@ If you are using a class or structure that defines its own operators, you can ac
  Your project must have references to System.Data and System.XML.  
   
 ## See Also  
- [Operator Procedures](./operator-procedures.md)   
- [How to: Define an Operator](./how-to-define-an-operator.md)   
- [How to: Define a Conversion Operator](./how-to-define-a-conversion-operator.md)   
- [How to: Call an Operator Procedure](./how-to-call-an-operator-procedure.md)   
- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)   
- [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)   
- [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)   
- [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)   
- [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)   
+ [Operator Procedures](./operator-procedures.md)  
+ [How to: Define an Operator](./how-to-define-an-operator.md)  
+ [How to: Define a Conversion Operator](./how-to-define-a-conversion-operator.md)  
+ [How to: Call an Operator Procedure](./how-to-call-an-operator-procedure.md)  
+ [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)  
+ [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)  
+ [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [How to: Declare a Structure](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [Implicit and Explicit Conversions](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
  [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)

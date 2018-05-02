@@ -1,8 +1,8 @@
 ---
-title: "Service: Calls Faulted Per Second | Microsoft Docs"
+title: "Service: Calls Faulted Per Second"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 94247356-2b29-4b50-b639-91ca8c1cf3a9
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service: Calls Faulted Per Second
 Counter Name: Calls Faulted Per Second.  

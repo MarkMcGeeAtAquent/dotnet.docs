@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetRVA Method | Microsoft Docs"
+title: "IMetaDataImport::GetRVA Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetRVA"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetRVA"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetRVA method [.NET Framework metadata]"
   - "IMetaDataImport::GetRVA method [.NET Framework metadata]"
 ms.assetid: ea422217-988b-4acd-b2db-c55357938275
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetRVA Method
 Gets the relative virtual address (RVA) and the implementation flags of the method or field represented by the specified token.  
@@ -60,5 +63,5 @@ HRESULT GetRVA (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

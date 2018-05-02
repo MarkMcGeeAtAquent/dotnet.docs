@@ -1,5 +1,5 @@
 ---
-title: "CorDebugIntercept Enumeration | Microsoft Docs"
+title: "CorDebugIntercept Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugIntercept"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugIntercept"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugIntercept enumeration [.NET Framework debugging]"
 ms.assetid: 3d5b642e-7ef2-428b-a5ae-509c35ed461a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugIntercept Enumeration
 Indicates the types of code that can be intercepted (that is, stepped into).  

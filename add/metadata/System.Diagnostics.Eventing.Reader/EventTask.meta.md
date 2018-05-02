@@ -1,29 +1,39 @@
 ---
 uid: System.Diagnostics.Eventing.Reader.EventTask
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventTask.DisplayName
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventTask.Name
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventTask.Value
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventTask.EventGuid
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

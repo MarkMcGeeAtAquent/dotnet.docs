@@ -1,5 +1,5 @@
 ---
-title: "How Keyboard Input Works | Microsoft Docs"
+title: "How Keyboard Input Works"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,17 +9,17 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "keyboard input, about keyboard input"
-  - "keyboards, keyboard input"
+  - "keyboard input [Windows Forms], about keyboard input"
+  - "keyboards [Windows Forms], keyboard input"
   - "Windows Forms, keyboard input"
 ms.assetid: 9a29433c-a180-49bb-b74c-d187786584c8
 caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How Keyboard Input Works
 Windows Forms processes keyboard input by raising keyboard events in response to Windows messages. Most Windows Forms applications process keyboard input exclusively by handling the keyboard events. However, you need to understand how keyboard messages work so you can implement more advanced keyboard-input scenarios, such as intercepting keys before they reach a control. This topic describes the types of key data that Windows Forms recognizes and provides an overview of how keyboard messages are routed. For information about keyboard events, see [Using Keyboard Events](../../../docs/framework/winforms/using-keyboard-events.md).  
@@ -66,7 +66,7 @@ Windows Forms processes keyboard input by raising keyboard events in response to
 |<xref:System.Windows.Forms.Control.ProcessKeyEventArgs%2A>|This method raises the <xref:System.Windows.Forms.Control.KeyDown>, <xref:System.Windows.Forms.Control.KeyPress>, and <xref:System.Windows.Forms.Control.KeyUp> events, as appropriate.|  
   
 ## Overriding Keyboard Methods  
- There are many methods available for overriding when a keyboard message is preprocessed and processed; however, some methods are much better choices than others. Following table shows tasks you might want to accomplish and the best way to override the keyboard methods. For more information on overriding methods, see [NOT IN BUILD: Overriding Properties and Methods](http://msdn.microsoft.com/en-us/2167e8f5-1225-4b13-9ebd-02591ba90213).  
+ There are many methods available for overriding when a keyboard message is preprocessed and processed; however, some methods are much better choices than others. Following table shows tasks you might want to accomplish and the best way to override the keyboard methods. For more information on overriding methods, see [Overriding properties and methods in derived classes](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md#overriding-properties-and-methods-in-derived-classes).  
   
 |Task|Method|  
 |----------|------------|  
@@ -77,9 +77,9 @@ Windows Forms processes keyboard input by raising keyboard events in response to
 |Perform custom mnemonic handling; for example, you want to handle mnemonics on owner-drawn buttons contained in a toolbar.|Override <xref:System.Windows.Forms.Control.ProcessMnemonic%2A>.|  
   
 ## See Also  
- <xref:System.Windows.Forms.Keys>   
- <xref:System.Windows.Forms.Control.WndProc%2A>   
- <xref:System.Windows.Forms.Control.PreProcessMessage%2A>   
- [My.Computer.Keyboard Object](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)   
- [Accessing the Keyboard](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)   
+ <xref:System.Windows.Forms.Keys>  
+ <xref:System.Windows.Forms.Control.WndProc%2A>  
+ <xref:System.Windows.Forms.Control.PreProcessMessage%2A>  
+ [My.Computer.Keyboard Object](~/docs/visual-basic/language-reference/objects/my-computer-keyboard-object.md)  
+ [Accessing the Keyboard](~/docs/visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)  
  [Using Keyboard Events](../../../docs/framework/winforms/using-keyboard-events.md)

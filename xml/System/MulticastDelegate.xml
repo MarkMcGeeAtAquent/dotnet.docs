@@ -1,13 +1,16 @@
-<Type Name="MulticastDelegate" FullName="System.MulticastDelegate">
+﻿<Type Name="MulticastDelegate" FullName="System.MulticastDelegate">
   <TypeSignature Language="C#" Value="public abstract class MulticastDelegate : Delegate" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract serializable beforefieldinit MulticastDelegate extends System.Delegate" />
   <TypeSignature Language="DocId" Value="T:System.MulticastDelegate" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class MulticastDelegate&#xA;Inherits Delegate" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MulticastDelegate abstract : Delegate" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -52,7 +55,7 @@
   
  Note that both methods include a single string parameter and return `void`. In other words, both methods can be assigned to the  `CheckAndDisplayDelegate` delegate.  
   
- The `Test.Main` method is the application entry point. It instantiates a `StringContainer` object, populates it with strings, and creates two `CheckAndDisplayDelegate` delegates, `conStart` and `vowelStart`, that invoke a single method. It then calls the <xref:System.Delegate.Combine%2A?displayProperty=fullName> method to create the `multipleDelegates` delegate, which initially contains the `ConStart` and  `VowelStart` delegates. Note that when the `multipleDelegates` delegate is invoked, it displays all the strings in the collection in their original order. This is because each letter is passed separately to each delegate, and each letter meets the filtering criteria of only one of the two delegates. Finally, after calls to <xref:System.Delegate.Remove%2A?displayProperty=fullName> and <xref:System.Delegate.Combine%2A?displayProperty=fullName>, `multipleDelegates` contains two `conStart` delegates. When it is invoked, each string in the `StringContainer` object is displayed twice.  
+ The `Test.Main` method is the application entry point. It instantiates a `StringContainer` object, populates it with strings, and creates two `CheckAndDisplayDelegate` delegates, `conStart` and `vowelStart`, that invoke a single method. It then calls the <xref:System.Delegate.Combine%2A?displayProperty=nameWithType> method to create the `multipleDelegates` delegate, which initially contains the `ConStart` and  `VowelStart` delegates. Note that when the `multipleDelegates` delegate is invoked, it displays all the strings in the collection in their original order. This is because each letter is passed separately to each delegate, and each letter meets the filtering criteria of only one of the two delegates. Finally, after calls to <xref:System.Delegate.Remove%2A?displayProperty=nameWithType> and <xref:System.Delegate.Combine%2A?displayProperty=nameWithType>, `multipleDelegates` contains two `conStart` delegates. When it is invoked, each string in the `StringContainer` object is displayed twice.  
   
  [!code-cpp[Multicast Delegate Introduction#1](~/samples/snippets/cpp/VS_Snippets_CLR/Multicast Delegate Introduction/CPP/delegatestring.cpp#1)]
  [!code-csharp[Multicast Delegate Introduction#1](~/samples/snippets/csharp/VS_Snippets_CLR/Multicast Delegate Introduction/CS/delegatestring.cs#1)]
@@ -62,10 +65,22 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.MulticastDelegate" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected MulticastDelegate (object target, string method);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(object target, string method) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.#ctor(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (target As Object, method As String)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; MulticastDelegate(System::Object ^ target, System::String ^ method);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -75,6 +90,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="target" Type="System.Object" />
@@ -88,7 +107,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor cannot be used in application code. To create a delegate by specifying the name of an instance method, use an overload of the <xref:System.Delegate.CreateDelegate%2A?displayProperty=fullName> method that specifies a method name and a target object. For example, the <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%29?displayProperty=fullName> method overload creates a delegate for an instance method with a specified name.  
+ This constructor cannot be used in application code. To create a delegate by specifying the name of an instance method, use an overload of the <xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType> method that specifies a method name and a target object. For example, the <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Object%2CSystem.String%29?displayProperty=nameWithType> method overload creates a delegate for an instance method with a specified name.  
   
  ]]></format>
         </remarks>
@@ -100,6 +119,8 @@
       <MemberSignature Language="C#" Value="protected MulticastDelegate (Type target, string method);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Type target, string method) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.#ctor(System.Type,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (target As Type, method As String)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; MulticastDelegate(Type ^ target, System::String ^ method);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -109,6 +130,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="target" Type="System.Type" />
@@ -122,7 +147,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor cannot be used in application code. To create a delegate by specifying the name of a static method, use an overload of the <xref:System.Delegate.CreateDelegate%2A?displayProperty=fullName> method that specifies a method name but does not specify a target object. For example, the <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%29?displayProperty=fullName> method overload creates a static delegate for a method with a specified name.  
+ This constructor cannot be used in application code. To create a delegate by specifying the name of a static method, use an overload of the <xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType> method that specifies a method name but does not specify a target object. For example, the <xref:System.Delegate.CreateDelegate%28System.Type%2CSystem.Type%2CSystem.String%29?displayProperty=nameWithType> method overload creates a static delegate for a method with a specified name.  
   
  ]]></format>
         </remarks>
@@ -134,6 +159,8 @@
       <MemberSignature Language="C#" Value="protected override sealed Delegate CombineImpl (Delegate follow);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Delegate CombineImpl(class System.Delegate follow) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.CombineImpl(System.Delegate)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Function CombineImpl (follow As Delegate) As Delegate" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override Delegate ^ CombineImpl(Delegate ^ follow);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -143,6 +170,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Delegate</ReturnType>
@@ -165,6 +196,8 @@
       <MemberSignature Language="C#" Value="protected override sealed object DynamicInvokeImpl (object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object DynamicInvokeImpl(object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.DynamicInvokeImpl(System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Function DynamicInvokeImpl (args As Object()) As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Object ^ DynamicInvokeImpl(cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -188,6 +221,8 @@
       <MemberSignature Language="C#" Value="public override sealed bool Equals (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Function Equals (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -195,6 +230,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -234,6 +270,8 @@
       <MemberSignature Language="C#" Value="public override sealed int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -241,6 +279,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -267,6 +306,8 @@
       <MemberSignature Language="C#" Value="public override sealed Delegate[] GetInvocationList ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Delegate[] GetInvocationList() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetInvocationList" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides NotOverridable Function GetInvocationList () As Delegate()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;Delegate ^&gt; ^ GetInvocationList();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -274,6 +315,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -307,6 +349,8 @@
       <MemberSignature Language="C#" Value="protected override System.Reflection.MethodInfo GetMethodImpl ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MethodInfo GetMethodImpl() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetMethodImpl" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetMethodImpl () As MethodInfo" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Reflection::MethodInfo ^ GetMethodImpl();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -316,6 +360,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodInfo</ReturnType>
@@ -338,6 +386,8 @@
       <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -347,6 +397,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -374,12 +428,16 @@
         <exception cref="T:System.MemberAccessException">Cannot create an instance of an abstract class, or this member was invoked with a late-binding mechanism.</exception>
         <exception cref="T:System.Runtime.Serialization.SerializationException">A serialization error occurred.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Object" />
+        <altmember cref="T:System.Runtime.Serialization.SerializationInfo" />
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (MulticastDelegate d1, MulticastDelegate d2);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (MulticastDelegate d1, MulticastDelegate d2);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.MulticastDelegate d1, class System.MulticastDelegate d2) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.op_Equality(System.MulticastDelegate,System.MulticastDelegate)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (d1 As MulticastDelegate, d2 As MulticastDelegate) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(MulticastDelegate ^ d1, MulticastDelegate ^ d2);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -387,6 +445,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -418,16 +477,18 @@
   
  Two invocation list elements are equal if they invoke the same instance method on the same target instance, or they invoke the same static method.  
   
- The equivalent method for this operator is <xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=fullName>]]></format>
+ The equivalent method for this operator is <xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
         </remarks>
         <exception cref="T:System.MemberAccessException">Cannot create an instance of an abstract class, or this member was invoked with a late-binding mechanism.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (MulticastDelegate d1, MulticastDelegate d2);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (MulticastDelegate d1, MulticastDelegate d2);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.MulticastDelegate d1, class System.MulticastDelegate d2) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.op_Inequality(System.MulticastDelegate,System.MulticastDelegate)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (d1 As MulticastDelegate, d2 As MulticastDelegate) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(MulticastDelegate ^ d1, MulticastDelegate ^ d2);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -435,6 +496,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -466,7 +528,7 @@
   
  Two invocation list elements are equal if they invoke the same instance method on the same target instance, or they invoke the same static method.  
   
- The equivalent method for this operator is <xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=fullName>]]></format>
+ The equivalent method for this operator is <xref:System.MulticastDelegate.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
         </remarks>
         <exception cref="T:System.MemberAccessException">Cannot create an instance of an abstract class, or this member was invoked with a late-binding mechanism.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
@@ -476,6 +538,8 @@
       <MemberSignature Language="C#" Value="protected override sealed Delegate RemoveImpl (Delegate value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Delegate RemoveImpl(class System.Delegate value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.MulticastDelegate.RemoveImpl(System.Delegate)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides NotOverridable Function RemoveImpl (value As Delegate) As Delegate" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override Delegate ^ RemoveImpl(Delegate ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -485,6 +549,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Delegate</ReturnType>

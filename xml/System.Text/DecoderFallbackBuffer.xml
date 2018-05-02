@@ -1,7 +1,9 @@
-<Type Name="DecoderFallbackBuffer" FullName="System.Text.DecoderFallbackBuffer">
+﻿<Type Name="DecoderFallbackBuffer" FullName="System.Text.DecoderFallbackBuffer">
   <TypeSignature Language="C#" Value="public abstract class DecoderFallbackBuffer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DecoderFallbackBuffer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Text.DecoderFallbackBuffer" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class DecoderFallbackBuffer" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DecoderFallbackBuffer abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Text.Encoding</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
@@ -14,6 +16,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -53,12 +59,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Text.DecoderFallback" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected DecoderFallbackBuffer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; DecoderFallbackBuffer();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -73,6 +82,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.Text.DecoderFallbackBuffer" /> class.</summary>
@@ -83,6 +96,8 @@
       <MemberSignature Language="C#" Value="public abstract bool Fallback (byte[] bytesUnknown, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Fallback(unsigned int8[] bytesUnknown, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.Fallback(System.Byte[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Fallback (bytesUnknown As Byte(), index As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract bool Fallback(cli::array &lt;System::Byte&gt; ^ bytesUnknown, int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -96,6 +111,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -114,7 +133,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Text.Encoding.GetChars%2A?displayProperty=fullName>, <xref:System.Text.Encoding.GetString%2A?displayProperty=fullName>, and <xref:System.Text.Decoder.Convert%2A?displayProperty=fullName> methods call <xref:System.Text.DecoderFallbackBuffer.Fallback%2A> if they encounter an unknown input byte sequence that cannot be decoded. A return value of `true` indicates that the fallback buffer can process the input byte sequence, which causes the calling method to call the <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A> method to obtain each character of the fallback buffer. Because it does not process individual bytes, the <xref:System.Text.DecoderFallbackBuffer.Fallback%2A> method in an exception fallback handler throws an exception.  
+ The <xref:System.Text.Encoding.GetChars%2A?displayProperty=nameWithType>, <xref:System.Text.Encoding.GetString%2A?displayProperty=nameWithType>, and <xref:System.Text.Decoder.Convert%2A?displayProperty=nameWithType> methods call <xref:System.Text.DecoderFallbackBuffer.Fallback%2A> if they encounter an unknown input byte sequence that cannot be decoded. A return value of `true` indicates that the fallback buffer can process the input byte sequence, which causes the calling method to call the <xref:System.Text.DecoderFallbackBuffer.GetNextChar%2A> method to obtain each character of the fallback buffer. Because it does not process individual bytes, the <xref:System.Text.DecoderFallbackBuffer.Fallback%2A> method in an exception fallback handler throws an exception.  
   
  ]]></format>
         </remarks>
@@ -124,6 +143,8 @@
       <MemberSignature Language="C#" Value="public abstract char GetNextChar ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance char GetNextChar() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.GetNextChar" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetNextChar () As Char" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract char GetNextChar();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -137,6 +158,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>
@@ -161,6 +186,8 @@
       <MemberSignature Language="C#" Value="public abstract bool MovePrevious ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MovePrevious() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.MovePrevious" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function MovePrevious () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract bool MovePrevious();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -174,6 +201,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -197,6 +228,8 @@
       <MemberSignature Language="C#" Value="public abstract int Remaining { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Remaining" />
       <MemberSignature Language="DocId" Value="P:System.Text.DecoderFallbackBuffer.Remaining" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property Remaining As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract property int Remaining { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -210,6 +243,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -233,6 +270,8 @@
       <MemberSignature Language="C#" Value="public virtual void Reset ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Text.DecoderFallbackBuffer.Reset" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Reset ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Reset();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Text.Encoding</AssemblyName>
@@ -246,6 +285,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>

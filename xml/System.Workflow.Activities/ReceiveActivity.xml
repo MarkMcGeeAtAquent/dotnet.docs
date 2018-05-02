@@ -1,7 +1,9 @@
-<Type Name="ReceiveActivity" FullName="System.Workflow.Activities.ReceiveActivity">
+﻿<Type Name="ReceiveActivity" FullName="System.Workflow.Activities.ReceiveActivity">
   <TypeSignature Language="C#" Value="public sealed class ReceiveActivity : System.Workflow.Activities.SequenceActivity, System.Workflow.Activities.IEventActivity, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.QueueEventArgs&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ReceiveActivity extends System.Workflow.Activities.SequenceActivity implements class System.Workflow.Activities.IEventActivity, class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.QueueEventArgs&gt;" />
   <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.ReceiveActivity" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ReceiveActivity&#xA;Inherits SequenceActivity&#xA;Implements IActivityEventListener(Of QueueEventArgs), IEventActivity" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ReceiveActivity sealed : System::Workflow::Activities::SequenceActivity, System::Workflow::Activities::IEventActivity, System::Workflow::ComponentModel::IActivityEventListener&lt;System::Workflow::ComponentModel::QueueEventArgs ^&gt;" />
   <AssemblyInfo>
     <AssemblyName>System.WorkflowServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -32,7 +34,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Service activity that implements an operation defined by a [!INCLUDE[indigo1](~/includes/indigo1-md.md)] service contract.</summary>
+    <summary>Service activity that implements an operation defined by a Windows Communication Foundation (WCF) service contract.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -65,12 +67,32 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Workflow.Activities.SendActivity" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Workflow.Activities.ReceiveActivity" /> class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Workflow.Activities.ReceiveActivity> constructor is typically invoked in the code-beside file created by the workflow designer.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ReceiveActivity ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ReceiveActivity();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -100,6 +122,8 @@
       <MemberSignature Language="C#" Value="public ReceiveActivity (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ReceiveActivity(System::String ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -132,6 +156,8 @@
       <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Cancel (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Cancel(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.Cancel(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function Cancel (executionContext As ActivityExecutionContext) As ActivityExecutionStatus" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Workflow::ComponentModel::ActivityExecutionStatus Cancel(System::Workflow::ComponentModel::ActivityExecutionContext ^ executionContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -154,6 +180,8 @@
       <MemberSignature Language="C#" Value="public bool CanCreateInstance { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanCreateInstance" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.CanCreateInstance" />
+      <MemberSignature Language="VB.NET" Value="Public Property CanCreateInstance As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanCreateInstance { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -167,7 +195,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -202,6 +230,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Context { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Context" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.Context" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Context As IDictionary(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ Context { System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -212,7 +242,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -242,6 +272,8 @@
       <MemberSignature Language="C#" Value="public System.Workflow.Activities.ContextToken ContextToken { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.ContextToken ContextToken" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.ContextToken" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContextToken As ContextToken" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Workflow::Activities::ContextToken ^ ContextToken { System::Workflow::Activities::ContextToken ^ get(); void set(System::Workflow::Activities::ContextToken ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -255,7 +287,7 @@
           <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+          <AttributeName>System.ComponentModel.RefreshProperties</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.Activities.ContextTokenTypeConverter))</AttributeName>
@@ -290,6 +322,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -311,6 +345,8 @@
       <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function Execute (executionContext As ActivityExecutionContext) As ActivityExecutionStatus" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Workflow::ComponentModel::ActivityExecutionStatus Execute(System::Workflow::ComponentModel::ActivityExecutionContext ^ executionContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -333,6 +369,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.FaultException FaultMessage { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.FaultException FaultMessage" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.FaultMessage" />
+      <MemberSignature Language="VB.NET" Value="Public Property FaultMessage As FaultException" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ServiceModel::FaultException ^ FaultMessage { System::ServiceModel::FaultException ^ get(); void set(System::ServiceModel::FaultException ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -346,7 +384,7 @@
           <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -378,6 +416,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty FaultMessageProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty FaultMessageProperty" />
       <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.ReceiveActivity.FaultMessageProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly FaultMessageProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Workflow::ComponentModel::DependencyProperty ^ FaultMessageProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -402,10 +442,28 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetContext">
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a dictionary that contains the context information used for communication between a client and the workflow service.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Context information is used for communication between the client and the service it is communicating with and includes such things as identification for correlation.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetContext">
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetContext (System.Workflow.ComponentModel.Activity activity, System.Workflow.Activities.ContextToken contextToken);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetContext(class System.Workflow.ComponentModel.Activity activity, class System.Workflow.Activities.ContextToken contextToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.GetContext(System.Workflow.ComponentModel.Activity,System.Workflow.Activities.ContextToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ GetContext(System::Workflow::ComponentModel::Activity ^ activity, System::Workflow::Activities::ContextToken ^ contextToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -444,6 +502,7 @@
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetContext (System.Workflow.ComponentModel.Activity activity, string contextName, string ownerActivityName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetContext(class System.Workflow.ComponentModel.Activity activity, string contextName, string ownerActivityName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.GetContext(System.Workflow.ComponentModel.Activity,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ GetContext(System::Workflow::ComponentModel::Activity ^ activity, System::String ^ contextName, System::String ^ ownerActivityName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -484,6 +543,7 @@
       <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;string,string&gt; GetRootContext (System.Workflow.ComponentModel.Activity activity);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GetRootContext(class System.Workflow.ComponentModel.Activity activity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.GetRootContext(System.Workflow.ComponentModel.Activity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ GetRootContext(System::Workflow::ComponentModel::Activity ^ activity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -520,6 +580,8 @@
       <MemberSignature Language="C#" Value="public static object GetWorkflowServiceAttributes (object dependencyObject);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetWorkflowServiceAttributes(object dependencyObject) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.GetWorkflowServiceAttributes(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetWorkflowServiceAttributes (dependencyObject As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetWorkflowServiceAttributes(System::Object ^ dependencyObject);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -539,7 +601,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Workflow.Activities.ReceiveActivity> property is an attached dependency property defined by the <xref:System.Workflow.Activities.ReceiveActivity> activity. This dependency property is attached to the root workflow that contains the <xref:System.Workflow.Activities.ReceiveActivity> activity using the <xref:System.Workflow.Activities.ReceiveActivity.SetWorkflowServiceAttributes%2A> method call at design time.  
+ The <xref:System.Workflow.Activities.ReceiveActivity.WorkflowServiceAttributesProperty> property is an attached dependency property defined by the <xref:System.Workflow.Activities.ReceiveActivity> activity. This dependency property is attached to the root workflow that contains the <xref:System.Workflow.Activities.ReceiveActivity> activity using the <xref:System.Workflow.Activities.ReceiveActivity.SetWorkflowServiceAttributes%2A> method call at design time.  
   
  The <xref:System.Workflow.Activities.ReceiveActivity.WorkflowServiceAttributesProperty> property is used for defining service-level behavior attributes that are applied to the workflow service when it starts. These cannot be modified at runtime.  
   
@@ -564,6 +626,7 @@
       <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus HandleFault (System.Workflow.ComponentModel.ActivityExecutionContext executionContext, Exception exception);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus HandleFault(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext, class System.Exception exception) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.HandleFault(System.Workflow.ComponentModel.ActivityExecutionContext,System.Exception)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Workflow::ComponentModel::ActivityExecutionStatus HandleFault(System::Workflow::ComponentModel::ActivityExecutionContext ^ executionContext, Exception ^ exception);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -585,9 +648,11 @@
       </Docs>
     </Member>
     <Member MemberName="Initialize">
-      <MemberSignature Language="C#" Value="protected override void Initialize (IServiceProvider provider);" />
+      <MemberSignature Language="C#" Value="protected internal override void Initialize (IServiceProvider provider);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Initialize(class System.IServiceProvider provider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.Initialize(System.IServiceProvider)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub Initialize (provider As IServiceProvider)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void Initialize(IServiceProvider ^ provider);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -609,6 +674,8 @@
       <MemberSignature Language="C#" Value="protected override void InitializeProperties ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeProperties() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.InitializeProperties" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub InitializeProperties ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void InitializeProperties();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -627,6 +694,8 @@
       <MemberSignature Language="C#" Value="protected override void OnSequenceComplete (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSequenceComplete(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.OnSequenceComplete(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnSequenceComplete (executionContext As ActivityExecutionContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnSequenceComplete(System::Workflow::ComponentModel::ActivityExecutionContext ^ executionContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -648,6 +717,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Workflow.Activities.OperationValidationEventArgs&gt; OperationValidation;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Workflow.Activities.OperationValidationEventArgs&gt; OperationValidation" />
       <MemberSignature Language="DocId" Value="E:System.Workflow.Activities.ReceiveActivity.OperationValidation" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event OperationValidation As EventHandler(Of OperationValidationEventArgs) " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler&lt;System::Workflow::Activities::OperationValidationEventArgs ^&gt; ^ OperationValidation;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -672,7 +743,7 @@
 ## Remarks  
  This is an optional event handler that is fired when the <xref:System.Workflow.Activities.ReceiveActivity> activity is about to receive a message. The associated handler can be used to perform ClaimSet-based security checks to authorize client invocation of the service operation implemented by the <xref:System.Workflow.Activities.ReceiveActivity> activity.  
   
- Setting <xref:System.Workflow.Activities.OperationValidationEventArgs.IsValid%2A?displayProperty=fullName> to `false` in the event handler rejects the service operation invocation and the client receives a <xref:System.ServiceModel.FaultException>. If <xref:System.Workflow.Activities.OperationValidationEventArgs.IsValid%2A?displayProperty=fullName> is set to `true`, then the service operation invocation succeeds and the <xref:System.Workflow.Activities.ReceiveActivity> activity receives and processes the message.  
+ Setting <xref:System.Workflow.Activities.OperationValidationEventArgs.IsValid%2A?displayProperty=nameWithType> to `false` in the event handler rejects the service operation invocation and the client receives a <xref:System.ServiceModel.FaultException>. If <xref:System.Workflow.Activities.OperationValidationEventArgs.IsValid%2A?displayProperty=nameWithType> is set to `true`, then the service operation invocation succeeds and the <xref:System.Workflow.Activities.ReceiveActivity> activity receives and processes the message.  
   
    
   
@@ -689,6 +760,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty OperationValidationEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty OperationValidationEvent" />
       <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.ReceiveActivity.OperationValidationEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly OperationValidationEvent As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Workflow::ComponentModel::DependencyProperty ^ OperationValidationEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -713,6 +786,8 @@
       <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.WorkflowParameterBindingCollection ParameterBindings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.WorkflowParameterBindingCollection ParameterBindings" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.ParameterBindings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ParameterBindings As WorkflowParameterBindingCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Workflow::ComponentModel::WorkflowParameterBindingCollection ^ ParameterBindings { System::Workflow::ComponentModel::WorkflowParameterBindingCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -723,7 +798,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -757,6 +832,8 @@
       <MemberSignature Language="C#" Value="public System.Workflow.Activities.OperationInfoBase ServiceOperationInfo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Activities.OperationInfoBase ServiceOperationInfo" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.ServiceOperationInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServiceOperationInfo As OperationInfoBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Workflow::Activities::OperationInfoBase ^ ServiceOperationInfo { System::Workflow::Activities::OperationInfoBase ^ get(); void set(System::Workflow::Activities::OperationInfoBase ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -767,7 +844,7 @@
           <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Visible)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -799,6 +876,8 @@
       <MemberSignature Language="C#" Value="public static void SetWorkflowServiceAttributes (object dependencyObject, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetWorkflowServiceAttributes(object dependencyObject, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.SetWorkflowServiceAttributes(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SetWorkflowServiceAttributes (dependencyObject As Object, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SetWorkflowServiceAttributes(System::Object ^ dependencyObject, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -819,9 +898,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Workflow.Activities.ReceiveActivity> property is an attached dependency property defined by the <xref:System.Workflow.Activities.ReceiveActivity> activity. This dependency property is attached to the root workflow that contains the <xref:System.Workflow.Activities.ReceiveActivity> activity using the <xref:System.Workflow.Activities.ReceiveActivity.SetWorkflowServiceAttributes%2A> method call at design time.  
+ The <xref:System.Workflow.Activities.ReceiveActivity.WorkflowServiceAttributesProperty> property is an attached dependency property defined by the <xref:System.Workflow.Activities.ReceiveActivity> activity. This dependency property is attached to the root workflow that contains the <xref:System.Workflow.Activities.ReceiveActivity> activity using the <xref:System.Workflow.Activities.ReceiveActivity.SetWorkflowServiceAttributes%2A> method call at design time.  
   
- The <xref:System.Workflow.Activities.ReceiveActivity> property is used for defining service-level behavior attributes that are applied to the workflow service when it starts. These cannot be modified at runtime.  
+ The <xref:System.Workflow.Activities.ReceiveActivity.WorkflowServiceAttributesProperty> property is used for defining service-level behavior attributes that are applied to the workflow service when it starts. These cannot be modified at runtime.  
   
 > [!NOTE]
 >  If the current workflow starts another workflow using a <xref:System.Workflow.Activities.InvokeWorkflowActivity> activity, the invoked workflow does not inherit the invoking workflow's service attributes.  
@@ -844,7 +923,12 @@
       <MemberSignature Language="C#" Value="IComparable System.Workflow.Activities.IEventActivity.QueueName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IComparable System.Workflow.Activities.IEventActivity.QueueName" />
       <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.ReceiveActivity.System#Workflow#Activities#IEventActivity#QueueName" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property QueueName As IComparable Implements IEventActivity.QueueName" />
+      <MemberSignature Language="C++ CLI" Value="property IComparable ^ System.Workflow.Activities.IEventActivity.QueueName { IComparable ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Workflow.Activities.IEventActivity.QueueName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -862,7 +946,12 @@
       <MemberSignature Language="C#" Value="void IEventActivity.Subscribe (System.Workflow.ComponentModel.ActivityExecutionContext parentContext, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.QueueEventArgs&gt; parentEventHandler);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.Activities.IEventActivity.Subscribe(class System.Workflow.ComponentModel.ActivityExecutionContext parentContext, class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.QueueEventArgs&gt; parentEventHandler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.System#Workflow#Activities#IEventActivity#Subscribe(System.Workflow.ComponentModel.ActivityExecutionContext,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.QueueEventArgs})" />
+      <MemberSignature Language="VB.NET" Value="Sub Subscribe (parentContext As ActivityExecutionContext, parentEventHandler As IActivityEventListener(Of QueueEventArgs)) Implements IEventActivity.Subscribe" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Workflow.Activities.IEventActivity.Subscribe(System::Workflow::ComponentModel::ActivityExecutionContext ^ parentContext, System::Workflow::ComponentModel::IActivityEventListener&lt;System::Workflow::ComponentModel::QueueEventArgs ^&gt; ^ parentEventHandler) = System::Workflow::Activities::IEventActivity::Subscribe;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Workflow.Activities.IEventActivity.Subscribe(System.Workflow.ComponentModel.ActivityExecutionContext,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.QueueEventArgs})</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -885,7 +974,12 @@
       <MemberSignature Language="C#" Value="void IEventActivity.Unsubscribe (System.Workflow.ComponentModel.ActivityExecutionContext parentContext, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.QueueEventArgs&gt; parentEventHandler);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.Activities.IEventActivity.Unsubscribe(class System.Workflow.ComponentModel.ActivityExecutionContext parentContext, class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.QueueEventArgs&gt; parentEventHandler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.System#Workflow#Activities#IEventActivity#Unsubscribe(System.Workflow.ComponentModel.ActivityExecutionContext,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.QueueEventArgs})" />
+      <MemberSignature Language="VB.NET" Value="Sub Unsubscribe (parentContext As ActivityExecutionContext, parentEventHandler As IActivityEventListener(Of QueueEventArgs)) Implements IEventActivity.Unsubscribe" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Workflow.Activities.IEventActivity.Unsubscribe(System::Workflow::ComponentModel::ActivityExecutionContext ^ parentContext, System::Workflow::ComponentModel::IActivityEventListener&lt;System::Workflow::ComponentModel::QueueEventArgs ^&gt; ^ parentEventHandler) = System::Workflow::Activities::IEventActivity::Unsubscribe;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Workflow.Activities.IEventActivity.Unsubscribe(System.Workflow.ComponentModel.ActivityExecutionContext,System.Workflow.ComponentModel.IActivityEventListener{System.Workflow.ComponentModel.QueueEventArgs})</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -908,7 +1002,12 @@
       <MemberSignature Language="C#" Value="void IActivityEventListener&lt;QueueEventArgs&gt;.OnEvent (object sender, System.Workflow.ComponentModel.QueueEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.QueueEventArgs&gt;.OnEvent(object sender, class System.Workflow.ComponentModel.QueueEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ReceiveActivity.System#Workflow#ComponentModel#IActivityEventListener&lt;System#Workflow#ComponentModel#QueueEventArgs&gt;#OnEvent(System.Object,System.Workflow.ComponentModel.QueueEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Sub OnEvent (sender As Object, e As QueueEventArgs) Implements IActivityEventListener(Of QueueEventArgs).OnEvent" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.QueueEventArgs&gt;.OnEvent(System::Object ^ sender, System::Workflow::ComponentModel::QueueEventArgs ^ e) = System::Workflow::ComponentModel::IActivityEventListener&lt;System::Workflow::ComponentModel::QueueEventArgs ^&gt;::OnEvent;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Workflow.ComponentModel.IActivityEventListener`1.OnEvent(System.Object,`0)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -931,6 +1030,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Workflow.ComponentModel.DependencyProperty WorkflowServiceAttributesProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Workflow.ComponentModel.DependencyProperty WorkflowServiceAttributesProperty" />
       <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.ReceiveActivity.WorkflowServiceAttributesProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly WorkflowServiceAttributesProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Workflow::ComponentModel::DependencyProperty ^ WorkflowServiceAttributesProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.WorkflowServices</AssemblyName>
@@ -953,39 +1054,5 @@
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.WorkflowServices</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Workflow.Activities.ReceiveActivity" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The <xref:System.Workflow.Activities.ReceiveActivity> constructor is typically invoked in the code-beside file created by the workflow designer.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="GetContext">
-      <AssemblyInfo>
-        <AssemblyName>System.WorkflowServices</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Returns a dictionary that contains the context information used for communication between a client and the workflow service.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Context information is used for communication between the client and the service it is communicating with and includes such things as identification for correlation.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

@@ -1,7 +1,9 @@
-<Type Name="DefaultPropertiesToSend" FullName="System.Messaging.DefaultPropertiesToSend">
+﻿<Type Name="DefaultPropertiesToSend" FullName="System.Messaging.DefaultPropertiesToSend">
   <TypeSignature Language="C#" Value="public class DefaultPropertiesToSend" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultPropertiesToSend extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Messaging.DefaultPropertiesToSend" />
+  <TypeSignature Language="VB.NET" Value="Public Class DefaultPropertiesToSend" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DefaultPropertiesToSend" />
   <AssemblyInfo>
     <AssemblyName>System.Messaging</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -21,7 +23,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can set default values on selected properties for messages sent to a <xref:System.Messaging.MessageQueue>. <xref:System.Messaging.DefaultPropertiesToSend> is used to specify default property values of the message being sent when objects other than <xref:System.Messaging.Message> instances are sent to a queue, for example, the string argument passed into the <xref:System.Messaging.MessageQueue.Send%2A> method in the code fragment, `myMessageQueue.Send("hello")`. The <xref:System.Messaging.Message> class has corresponding, identically named properties to those in <xref:System.Messaging.DefaultPropertiesToSend> that provide the values when sending a <xref:System.Messaging.Message> instance specifically. Even if you have specified <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=fullName> for a queue, sending a <xref:System.Messaging.Message> object to that queue will cause the values for the identically named <xref:System.Messaging.Message> properties to override the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> values.  
+ You can set default values on selected properties for messages sent to a <xref:System.Messaging.MessageQueue>. <xref:System.Messaging.DefaultPropertiesToSend> is used to specify default property values of the message being sent when objects other than <xref:System.Messaging.Message> instances are sent to a queue, for example, the string argument passed into the <xref:System.Messaging.MessageQueue.Send%2A> method in the code fragment, `myMessageQueue.Send("hello")`. The <xref:System.Messaging.Message> class has corresponding, identically named properties to those in <xref:System.Messaging.DefaultPropertiesToSend> that provide the values when sending a <xref:System.Messaging.Message> instance specifically. Even if you have specified <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType> for a queue, sending a <xref:System.Messaging.Message> object to that queue will cause the values for the identically named <xref:System.Messaging.Message> properties to override the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> values.  
   
  Properties that you do not set explicitly default to the values specified by the constructor, <xref:System.Messaging.DefaultPropertiesToSend.%23ctor%2A>.  
   
@@ -38,12 +40,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Messaging.Message" />
+    <altmember cref="P:System.Messaging.MessageQueue.DefaultPropertiesToSend" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DefaultPropertiesToSend ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Messaging.DefaultPropertiesToSend.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DefaultPropertiesToSend();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -56,9 +62,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can create a new instance of <xref:System.Messaging.DefaultPropertiesToSend> to define default property values to associate with objects sent to a queue that are not of type <xref:System.Messaging.Message>. When working with <xref:System.Messaging.MessageQueue> objects, a <xref:System.Messaging.DefaultPropertiesToSend> instance is created for you and associated with the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=fullName> member of the <xref:System.Messaging.MessageQueue>.  
+ You can create a new instance of <xref:System.Messaging.DefaultPropertiesToSend> to define default property values to associate with objects sent to a queue that are not of type <xref:System.Messaging.Message>. When working with <xref:System.Messaging.MessageQueue> objects, a <xref:System.Messaging.DefaultPropertiesToSend> instance is created for you and associated with the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType> member of the <xref:System.Messaging.MessageQueue>.  
   
- There are two ways to define a queue's default properties to send, as shown in the following C# code. You can set values for this instance of <xref:System.Messaging.DefaultPropertiesToSend> and associate it with the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=fullName> property:  
+ There are two ways to define a queue's default properties to send, as shown in the following C# code. You can set values for this instance of <xref:System.Messaging.DefaultPropertiesToSend> and associate it with the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType> property:  
   
 ```  
 DefaultPropertiesToSend myDefaultProperties = new DefaultPropertiesToSend();  
@@ -79,7 +85,7 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   myMessageQueue.Send("hello");  
 ```  
   
- If you choose the second of these options, you do not need to call the <xref:System.Messaging.DefaultPropertiesToSend.%23ctor%2A> constructor explicitly. You might want to create instances of <xref:System.Messaging.DefaultPropertiesToSend>, for example, if the properties' default values depend on some criterion of the message being sent. You can create multiple <xref:System.Messaging.DefaultPropertiesToSend> instances and assign one to the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=fullName> property before sending the message to the queue.  
+ If you choose the second of these options, you do not need to call the <xref:System.Messaging.DefaultPropertiesToSend.%23ctor%2A> constructor explicitly. You might want to create instances of <xref:System.Messaging.DefaultPropertiesToSend>, for example, if the properties' default values depend on some criterion of the message being sent. You can create multiple <xref:System.Messaging.DefaultPropertiesToSend> instances and assign one to the queue's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType> property before sending the message to the queue.  
   
  The following table shows initial property values for an instance of <xref:System.Messaging.DefaultPropertiesToSend>.  
   
@@ -107,12 +113,21 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Messaging.AcknowledgeTypes" />
+        <altmember cref="T:System.Messaging.EncryptionAlgorithm" />
+        <altmember cref="T:System.Messaging.HashAlgorithm" />
+        <altmember cref="T:System.Messaging.MessagePriority" />
+        <altmember cref="F:System.Messaging.Message.InfiniteTimeout" />
+        <altmember cref="P:System.Messaging.MessageQueue.DefaultPropertiesToSend" />
+        <altmember cref="T:System.Messaging.Message" />
       </Docs>
     </Member>
     <Member MemberName="AcknowledgeType">
       <MemberSignature Language="C#" Value="public System.Messaging.AcknowledgeTypes AcknowledgeType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.AcknowledgeTypes AcknowledgeType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AcknowledgeType" />
+      <MemberSignature Language="VB.NET" Value="Public Property AcknowledgeType As AcknowledgeTypes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::AcknowledgeTypes AcknowledgeType { System::Messaging::AcknowledgeTypes get(); void set(System::Messaging::AcknowledgeTypes value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -140,12 +155,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AdministrationQueue" />
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="T:System.Messaging.AcknowledgeTypes" />
       </Docs>
     </Member>
     <Member MemberName="AdministrationQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue AdministrationQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue AdministrationQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AdministrationQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property AdministrationQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ AdministrationQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -175,12 +195,16 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.AdministrationQueue" />
       </Docs>
     </Member>
     <Member MemberName="AppSpecific">
       <MemberSignature Language="C#" Value="public int AppSpecific { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 AppSpecific" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AppSpecific" />
+      <MemberSignature Language="VB.NET" Value="Public Property AppSpecific As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int AppSpecific { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -212,12 +236,16 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.Extension" />
+        <altmember cref="P:System.Messaging.Message.AppSpecific" />
       </Docs>
     </Member>
     <Member MemberName="AttachSenderId">
       <MemberSignature Language="C#" Value="public bool AttachSenderId { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AttachSenderId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.AttachSenderId" />
+      <MemberSignature Language="VB.NET" Value="Public Property AttachSenderId As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AttachSenderId { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -248,12 +276,19 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseAuthentication" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.HashAlgorithm" />
+        <altmember cref="P:System.Messaging.Message.AttachSenderId" />
+        <altmember cref="P:System.Messaging.Message.SenderId" />
       </Docs>
     </Member>
     <Member MemberName="EncryptionAlgorithm">
       <MemberSignature Language="C#" Value="public System.Messaging.EncryptionAlgorithm EncryptionAlgorithm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.EncryptionAlgorithm EncryptionAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.EncryptionAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Property EncryptionAlgorithm As EncryptionAlgorithm" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::EncryptionAlgorithm EncryptionAlgorithm { System::Messaging::EncryptionAlgorithm get(); void set(System::Messaging::EncryptionAlgorithm value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -283,12 +318,19 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseEncryption" />
+        <altmember cref="P:System.Messaging.MessageQueue.EncryptionRequired" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.EncryptionAlgorithm" />
+        <altmember cref="T:System.Messaging.EncryptionAlgorithm" />
       </Docs>
     </Member>
     <Member MemberName="Extension">
       <MemberSignature Language="C#" Value="public byte[] Extension { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Extension" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Extension" />
+      <MemberSignature Language="VB.NET" Value="Public Property Extension As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ Extension { cli::array &lt;System::Byte&gt; ^ get(); void set(cli::array &lt;System::Byte&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -322,12 +364,16 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AppSpecific" />
+        <altmember cref="P:System.Messaging.Message.Extension" />
       </Docs>
     </Member>
     <Member MemberName="HashAlgorithm">
       <MemberSignature Language="C#" Value="public System.Messaging.HashAlgorithm HashAlgorithm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.HashAlgorithm HashAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.HashAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Property HashAlgorithm As HashAlgorithm" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::HashAlgorithm HashAlgorithm { System::Messaging::HashAlgorithm get(); void set(System::Messaging::HashAlgorithm value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -357,12 +403,19 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseAuthentication" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AttachSenderId" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="P:System.Messaging.Message.HashAlgorithm" />
+        <altmember cref="T:System.Messaging.HashAlgorithm" />
       </Docs>
     </Member>
     <Member MemberName="Label">
       <MemberSignature Language="C#" Value="public string Label { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Label" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Label" />
+      <MemberSignature Language="VB.NET" Value="Public Property Label As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Label { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -392,12 +445,16 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.Message.Label" />
+        <altmember cref="P:System.Messaging.MessageQueue.Label" />
       </Docs>
     </Member>
     <Member MemberName="Priority">
       <MemberSignature Language="C#" Value="public System.Messaging.MessagePriority Priority { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessagePriority Priority" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Priority" />
+      <MemberSignature Language="VB.NET" Value="Public Property Priority As MessagePriority" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessagePriority Priority { System::Messaging::MessagePriority get(); void set(System::Messaging::MessagePriority value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -427,12 +484,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.MessageQueue.BasePriority" />
+        <altmember cref="P:System.Messaging.Message.Priority" />
+        <altmember cref="T:System.Messaging.MessagePriority" />
       </Docs>
     </Member>
     <Member MemberName="Recoverable">
       <MemberSignature Language="C#" Value="public bool Recoverable { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Recoverable" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.Recoverable" />
+      <MemberSignature Language="VB.NET" Value="Public Property Recoverable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Recoverable { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -465,12 +527,16 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseTracing" />
+        <altmember cref="P:System.Messaging.Message.Recoverable" />
       </Docs>
     </Member>
     <Member MemberName="ResponseQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue ResponseQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue ResponseQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.ResponseQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ ResponseQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -500,12 +566,15 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.Message.ResponseQueue" />
       </Docs>
     </Member>
     <Member MemberName="TimeToBeReceived">
       <MemberSignature Language="C#" Value="public TimeSpan TimeToBeReceived { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToBeReceived" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived" />
+      <MemberSignature Language="VB.NET" Value="Public Property TimeToBeReceived As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TimeToBeReceived { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -545,12 +614,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue" />
+        <altmember cref="F:System.Messaging.Message.InfiniteTimeout" />
+        <altmember cref="P:System.Messaging.Message.TimeToBeReceived" />
       </Docs>
     </Member>
     <Member MemberName="TimeToReachQueue">
       <MemberSignature Language="C#" Value="public TimeSpan TimeToReachQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToReachQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TimeToReachQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property TimeToReachQueue As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TimeToReachQueue { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -584,12 +658,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.TimeToBeReceived" />
+        <altmember cref="F:System.Messaging.Message.InfiniteTimeout" />
+        <altmember cref="P:System.Messaging.Message.TimeToReachQueue" />
       </Docs>
     </Member>
     <Member MemberName="TransactionStatusQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue TransactionStatusQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue TransactionStatusQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.TransactionStatusQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property TransactionStatusQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ TransactionStatusQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -621,12 +700,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.MessageQueue.Transactional" />
+        <altmember cref="T:System.Messaging.AcknowledgeTypes" />
+        <altmember cref="P:System.Messaging.Message.TransactionStatusQueue" />
       </Docs>
     </Member>
     <Member MemberName="UseAuthentication">
       <MemberSignature Language="C#" Value="public bool UseAuthentication { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseAuthentication" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseAuthentication" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseAuthentication As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseAuthentication { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -659,12 +743,18 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.AttachSenderId" />
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
       </Docs>
     </Member>
     <Member MemberName="UseDeadLetterQueue">
       <MemberSignature Language="C#" Value="public bool UseDeadLetterQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseDeadLetterQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseDeadLetterQueue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseDeadLetterQueue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -699,12 +789,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseTracing" />
+        <altmember cref="P:System.Messaging.Message.UseDeadLetterQueue" />
       </Docs>
     </Member>
     <Member MemberName="UseEncryption">
       <MemberSignature Language="C#" Value="public bool UseEncryption { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseEncryption" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseEncryption" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseEncryption As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseEncryption { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -735,12 +830,17 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.EncryptionAlgorithm" />
+        <altmember cref="P:System.Messaging.MessageQueue.EncryptionRequired" />
+        <altmember cref="P:System.Messaging.Message.UseEncryption" />
       </Docs>
     </Member>
     <Member MemberName="UseJournalQueue">
       <MemberSignature Language="C#" Value="public bool UseJournalQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseJournalQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseJournalQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseJournalQueue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseJournalQueue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -773,16 +873,23 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  You do not create a journal or dead-letter queue. These are both system queues that are generated by Message Queuing.  
   
- Journaling can be specified by both the message and the queue. When <xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A?displayProperty=fullName> is `true`, the message is journaled when it is sent. When <xref:System.Messaging.MessageQueue.UseJournalQueue%2A?displayProperty=fullName> is `true`, the message is journaled when it is received.  
+ Journaling can be specified by both the message and the queue. When <xref:System.Messaging.DefaultPropertiesToSend.UseJournalQueue%2A?displayProperty=nameWithType> is `true`, the message is journaled when it is sent. When <xref:System.Messaging.MessageQueue.UseJournalQueue%2A?displayProperty=nameWithType> is `true`, the message is journaled when it is received.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseTracing" />
+        <altmember cref="P:System.Messaging.MessageQueue.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.MessageQueue.MaximumJournalSize" />
+        <altmember cref="P:System.Messaging.Message.UseJournalQueue" />
       </Docs>
     </Member>
     <Member MemberName="UseTracing">
       <MemberSignature Language="C#" Value="public bool UseTracing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseTracing" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.DefaultPropertiesToSend.UseTracing" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseTracing As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseTracing { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -813,6 +920,9 @@ myMessageQueue.DefaultPropertiesToSend.Label = "myLabel";
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseDeadLetterQueue" />
+        <altmember cref="P:System.Messaging.DefaultPropertiesToSend.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.Message.UseTracing" />
       </Docs>
     </Member>
   </Members>

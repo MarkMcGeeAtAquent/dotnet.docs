@@ -1,5 +1,5 @@
 ---
-title: "NOTIFY_FILTER Enumeration | Microsoft Docs"
+title: "NOTIFY_FILTER Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "NOTIFY_FILTER"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "NOTIFY_FILTER"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "NOTIFY_FILTER enumeration [.NET Framework debugging]"
 ms.assetid: 4789d08f-8683-45d3-ac30-73d48c61e470
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # NOTIFY_FILTER Enumeration
 Identifies callbacks for debugger functions. For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.  

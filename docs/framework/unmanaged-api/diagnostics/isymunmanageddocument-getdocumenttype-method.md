@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::GetDocumentType Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::GetDocumentType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.GetDocumentType"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::GetDocumentType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocument::GetDocumentType method [.NET Framework debugging]"
   - "GetDocumentType method [.NET Framework debugging]"
 ms.assetid: 2d381ab1-7e7c-4281-af2b-e54d879b3ef8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::GetDocumentType Method
 Gets the document type of this document.  

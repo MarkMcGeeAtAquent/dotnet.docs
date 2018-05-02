@@ -1,5 +1,5 @@
 ---
-title: "ECustomDumpItemKind Enumeration | Microsoft Docs"
+title: "ECustomDumpItemKind Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ECustomDumpItemKind"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ECustomDumpItemKind"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ECustomDumpItemKind enumeration [.NET Framework hosting]"
 ms.assetid: 7105a6c8-6e4e-48de-ac3d-74ac75e5de2e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ECustomDumpItemKind Enumeration
 Reserved for future extension of the [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) structure.  
@@ -53,5 +56,5 @@ typedef enum {
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)   
+ [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

@@ -1,10 +1,13 @@
-<Type Name="Parallel" FullName="System.Threading.Tasks.Parallel">
+﻿<Type Name="Parallel" FullName="System.Threading.Tasks.Parallel">
   <TypeSignature Language="C#" Value="public static class Parallel" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Parallel extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Parallel" />
+  <TypeSignature Language="VB.NET" Value="Public Class Parallel" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Parallel abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -40,14 +43,27 @@
     <threadsafe>All public and protected members of <see cref="T:System.Threading.Tasks.Parallel" /> are thread-safe and may be used concurrently from multiple threads.</threadsafe>
   </Docs>
   <Members>
+    <MemberGroup MemberName="For">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Executes a <see langword="for" /> (<see langword="For" /> in Visual Basic) loop in which iterations may run in parallel.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="For">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (int fromInclusive, int toExclusive, Action&lt;int,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int32 fromInclusive, int32 toExclusive, class System.Action`2&lt;int32, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For (fromInclusive As Integer, toExclusive As Integer, body As Action(Of Integer, ParallelLoopState)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, Action&lt;int, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -95,27 +111,31 @@
    
   
 ## Examples  
- The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=fullName> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A?displayProperty=fullName> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=fullName> method.  
+ The following example executes up to 100 iterations of a loop in parallel. Each iteration pauses for a random interval from 1 to 1,000 milliseconds. A randomly generated value determines on which iteration of the loop the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=nameWithType> method is called. As the output from the example shows, no iterations whose index is greater than the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A?displayProperty=nameWithType> property value start after the call to the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/cs/break1.cs#2)]
  [!code-vb[System.Threading.Tasks.ParallelLoopState#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallelloopstate/vb/break1.vb#2)]  
   
- Because iterations of the loop are still likely to be executing when the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=fullName> method is called, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A?displayProperty=fullName> property to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=fullName> method. If  the property value is `true`, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A?displayProperty=fullName> property and, if it is greater than the current iteration's index value, returns immediately.  
+ Because iterations of the loop are still likely to be executing when the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=nameWithType> method is called, each iteration calls the <xref:System.Threading.Tasks.ParallelLoopState.ShouldExitCurrentIteration%2A?displayProperty=nameWithType> property to check whether another iteration has called the <xref:System.Threading.Tasks.ParallelLoopState.Break%2A?displayProperty=nameWithType> method. If  the property value is `true`, the iteration checks the value of the <xref:System.Threading.Tasks.ParallelLoopState.LowestBreakIteration%2A?displayProperty=nameWithType> property and, if it is greater than the current iteration's index value, returns immediately.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="body" /> argument is <see langword="null" />.</exception>
         <exception cref="T:System.AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
+        <altmember cref="T:System.Threading.Tasks.ParallelLoopState" />
       </Docs>
     </Member>
     <Member MemberName="For">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (int fromInclusive, int toExclusive, Action&lt;int&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int32 fromInclusive, int32 toExclusive, class System.Action`1&lt;int32&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Action{System.Int32})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For (fromInclusive As Integer, toExclusive As Integer, body As Action(Of Integer)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, Action&lt;int&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -166,10 +186,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (long fromInclusive, long toExclusive, Action&lt;long,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int64 fromInclusive, int64 toExclusive, class System.Action`2&lt;int64, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For (fromInclusive As Long, toExclusive As Long, body As Action(Of Long, ParallelLoopState)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, Action&lt;long, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -220,10 +243,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (long fromInclusive, long toExclusive, Action&lt;long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int64 fromInclusive, int64 toExclusive, class System.Action`1&lt;int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Action{System.Int64})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For (fromInclusive As Long, toExclusive As Long, body As Action(Of Long)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, Action&lt;long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -266,10 +292,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (int fromInclusive, int toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;int,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int32 fromInclusive, int32 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`2&lt;int32, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;int, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -320,10 +348,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (int fromInclusive, int toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;int&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int32 fromInclusive, int32 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`1&lt;int32&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Action{System.Int32})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;int&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -382,10 +412,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (long fromInclusive, long toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;long,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int64 fromInclusive, int64 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`2&lt;int64, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;long, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -423,7 +455,7 @@
    
   
 ## Examples  
- The following example shows how to use the <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName> method with a <xref:System.Threading.Tasks.ParallelOptions> object:  
+ The following example shows how to use the <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> method with a <xref:System.Threading.Tasks.ParallelOptions> object:  
   
  [!code-csharp[System.Threading.Tasks.Parallel#03](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallel/cs/parallelfor.cs#03)]
  [!code-vb[System.Threading.Tasks.Parallel#03](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallel/vb/parallelfor.vb#03)]  
@@ -444,10 +476,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For (long fromInclusive, long toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For(int64 fromInclusive, int64 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`1&lt;int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Action{System.Int64})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -506,10 +540,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt; (int fromInclusive, int toExclusive, Func&lt;TLocal&gt; localInit, Func&lt;int,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt;(int32 fromInclusive, int32 toExclusive, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;int32, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For(Of TLocal) (fromInclusive As Integer, toExclusive As Integer, localInit As Func(Of TLocal), body As Func(Of Integer, ParallelLoopState, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, Func&lt;TLocal&gt; ^ localInit, Func&lt;int, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -550,7 +587,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.  
   
@@ -574,10 +611,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt; (long fromInclusive, long toExclusive, Func&lt;TLocal&gt; localInit, Func&lt;long,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt;(int64 fromInclusive, int64 toExclusive, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;int64, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function For(Of TLocal) (fromInclusive As Long, toExclusive As Long, localInit As Func(Of TLocal), body As Func(Of Long, ParallelLoopState, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, Func&lt;TLocal&gt; ^ localInit, Func&lt;long, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -618,7 +658,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.  
   
@@ -642,10 +682,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt; (int fromInclusive, int toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;int,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt;(int32 fromInclusive, int32 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;int32, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For``1(System.Int32,System.Int32,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int32,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult For(int fromInclusive, int toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;int, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -688,7 +730,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple threads; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.  
   
@@ -724,10 +766,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt; (long fromInclusive, long toExclusive, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;long,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult For&lt;TLocal&gt;(int64 fromInclusive, int64 toExclusive, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;int64, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.For``1(System.Int64,System.Int64,System.Threading.Tasks.ParallelOptions,System.Func{``0},System.Func{System.Int64,System.Threading.Tasks.ParallelLoopState,``0,``0},System.Action{``0})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult For(long fromInclusive, long toExclusive, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;long, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -770,7 +814,7 @@
   
  The `localInit` delegate is invoked once for each thread that participates in the loop's execution and returns the initial local state for each of those threads. These initial states are passed to the first `body` invocations on each thread. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each thread returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per thread to perform a final action on each thread's local state. This delegate might be invoked concurrently on multiple threads; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  If `fromInclusive` is greater than or equal to `toExclusive`, then the method returns immediately without performing any iterations.  
   
@@ -794,14 +838,27 @@
         <exception cref="T:System.AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ForEach&lt;TSource&gt;">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Executes a <see langword="foreach" /> (<see langword="For Each " /> in Visual Basic) operation in which iterations may run in parallel.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ForEach&lt;TSource&gt;">
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.OrderablePartitioner&lt;TSource&gt; source, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.OrderablePartitioner`1&lt;!!TSource&gt; source, class System.Action`3&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As OrderablePartitioner(Of TSource), body As Action(Of TSource, ParallelLoopState, Long)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::OrderablePartitioner&lt;TSource&gt; ^ source, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -832,7 +889,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
@@ -856,10 +913,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Action`2&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As Partitioner(Of TSource), body As Action(Of TSource, ParallelLoopState)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -890,7 +950,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
@@ -914,10 +974,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, Action&lt;TSource&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Action`1&lt;!!TSource&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Action{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As Partitioner(Of TSource), body As Action(Of TSource)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, Action&lt;TSource&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -948,12 +1011,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
    
   
 ## Examples  
- The following example shows how to implement a range partitioner for use with <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName>:  
+ The following example shows how to implement a range partitioner for use with <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType>:  
   
  [!code-csharp[System.Threading.Tasks.Parallel_RangePartitioners#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallel_rangepartitioners/cs/rangepartitioner.cs#01)]
  [!code-vb[System.Threading.Tasks.Parallel_RangePartitioners#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallel_rangepartitioners/vb/rangepart.vb#01)]  
@@ -980,10 +1043,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Action`3&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As IEnumerable(Of TSource), body As Action(Of TSource, ParallelLoopState, Long)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1030,10 +1096,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Action`2&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As IEnumerable(Of TSource), body As Action(Of TSource, ParallelLoopState)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1080,10 +1149,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Action&lt;TSource&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Action`1&lt;!!TSource&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource) (source As IEnumerable(Of TSource), body As Action(Of TSource)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, Action&lt;TSource&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1138,10 +1210,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.OrderablePartitioner&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.OrderablePartitioner`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`3&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::OrderablePartitioner&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1174,7 +1248,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName>method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
@@ -1204,10 +1278,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`2&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1240,7 +1316,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
@@ -1266,10 +1342,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`1&lt;!!TSource&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1302,7 +1380,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
+ This overload is provided for scenarios where you want to override the default partitioning scheme. For example, small loop bodies might benefit from partitioning the range. The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method expects custom partitioners to support dynamic partitioning. For more information, see [Custom Partitioners for PLINQ and TPL](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md) and [How to: Implement Dynamic Partitions](~/docs/standard/parallel-programming/how-to-implement-dynamic-partitions.md).  
   
  ]]></format>
         </remarks>
@@ -1328,10 +1406,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState,long&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`3&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState,System.Int64})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1386,10 +1466,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource,System.Threading.Tasks.ParallelLoopState&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`2&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0,System.Threading.Tasks.ParallelLoopState})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource, System::Threading::Tasks::ParallelLoopState ^&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1444,10 +1526,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Action&lt;TSource&gt; body);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action`1&lt;!!TSource&gt; body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Action{``0})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Action&lt;TSource&gt; ^ body);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1502,10 +1586,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Concurrent.OrderablePartitioner&lt;TSource&gt; source, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,long,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Concurrent.OrderablePartitioner`1&lt;!!TSource&gt; source, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`5&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource, TLocal) (source As OrderablePartitioner(Of TSource), localInit As Func(Of TLocal), body As Func(Of TSource, ParallelLoopState, Long, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::OrderablePartitioner&lt;TSource&gt; ^ source, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1546,7 +1633,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -1571,10 +1658,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource, TLocal) (source As Partitioner(Of TSource), localInit As Func(Of TLocal), body As Func(Of TSource, ParallelLoopState, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1615,7 +1705,7 @@
   
  The `localInit` delegate is invoked once for each thread that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -1640,10 +1730,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,long,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`5&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource, TLocal) (source As IEnumerable(Of TSource), localInit As Func(Of TLocal), body As Func(Of TSource, ParallelLoopState, Long, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1684,7 +1777,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task’s local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -1708,10 +1801,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ForEach(Of TSource, TLocal) (source As IEnumerable(Of TSource), localInit As Func(Of TLocal), body As Func(Of TSource, ParallelLoopState, TLocal, TLocal), localFinally As Action(Of TLocal)) As ParallelLoopResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1752,7 +1848,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per thread to perform a final action on each task’s local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
    
   
@@ -1784,10 +1880,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Concurrent.OrderablePartitioner&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,long,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Concurrent.OrderablePartitioner`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`5&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.OrderablePartitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::OrderablePartitioner&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1830,7 +1928,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each thread returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task’s local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -1857,10 +1955,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Concurrent.Partitioner&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Concurrent.Partitioner`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Concurrent.Partitioner{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Concurrent::Partitioner&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1903,7 +2003,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per task to perform a final action on each task's local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -1934,10 +2034,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,long,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`5&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, int64, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,System.Int64,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, long, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1980,7 +2082,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per thread to perform a final action on each task’s local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -2010,10 +2112,12 @@
       <MemberSignature Language="C#" Value="public static System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource,TLocal&gt; (System.Collections.Generic.IEnumerable&lt;TSource&gt; source, System.Threading.Tasks.ParallelOptions parallelOptions, Func&lt;TLocal&gt; localInit, Func&lt;TSource,System.Threading.Tasks.ParallelLoopState,TLocal,TLocal&gt; body, Action&lt;TLocal&gt; localFinally);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.Tasks.ParallelLoopResult ForEach&lt;TSource, TLocal&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!TSource&gt; source, class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Func`1&lt;!!TLocal&gt; localInit, class System.Func`4&lt;!!TSource, class System.Threading.Tasks.ParallelLoopState, !!TLocal, !!TLocal&gt; body, class System.Action`1&lt;!!TLocal&gt; localFinally) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.ForEach``2(System.Collections.Generic.IEnumerable{``0},System.Threading.Tasks.ParallelOptions,System.Func{``1},System.Func{``0,System.Threading.Tasks.ParallelLoopState,``1,``1},System.Action{``1})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TSource, typename TLocal&gt;&#xA; static System::Threading::Tasks::ParallelLoopResult ForEach(System::Collections::Generic::IEnumerable&lt;TSource&gt; ^ source, System::Threading::Tasks::ParallelOptions ^ parallelOptions, Func&lt;TLocal&gt; ^ localInit, Func&lt;TSource, System::Threading::Tasks::ParallelLoopState ^, TLocal, TLocal&gt; ^ body, Action&lt;TLocal&gt; ^ localFinally);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2056,7 +2160,7 @@
   
  The `localInit` delegate is invoked once for each task that participates in the loop's execution and returns the initial local state for each of those tasks. These initial states are passed to the first `body` invocations on each task. Then, every subsequent body invocation returns a possibly modified state value that is passed to the next body invocation. Finally, the last body invocation on each task returns a state value that is passed to the `localFinally` delegate. The `localFinally` delegate is invoked once per thread to perform a final action on each task’s local state. This delegate might be invoked concurrently on multiple tasks; therefore, you must synchronize access to any shared variables.  
   
- The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
+ The <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method may use more tasks than threads over the lifetime of its execution, as existing tasks complete and are replaced by new tasks. This gives the underlying <xref:System.Threading.Tasks.TaskScheduler> object the chance to add, change, or remove threads that service the loop.  
   
  ]]></format>
         </remarks>
@@ -2082,14 +2186,27 @@
         <exception cref="T:System.AggregateException">The exception that contains all the individual exceptions thrown on all threads.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Invoke">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Executes each of the provided actions, possibly in parallel.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Invoke">
-      <MemberSignature Language="C#" Value="public static void Invoke (Action[] actions);" />
+      <MemberSignature Language="C#" Value="public static void Invoke (params Action[] actions);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Action[] actions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.Invoke(System.Action[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Invoke (ParamArray actions As Action())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Invoke(... cli::array &lt;Action ^&gt; ^ actions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2128,7 +2245,7 @@
    
   
 ## Examples  
- This example demonstrates how to use the <xref:System.Threading.Tasks.Parallel.Invoke%2A>method with other methods, anonymous delegates, and lambda expressions.  
+ This example demonstrates how to use the <xref:System.Threading.Tasks.Parallel.Invoke%2A> method with other methods, anonymous delegates, and lambda expressions.  
   
  [!code-csharp[System.Threading.Tasks.Parallel#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.parallel/cs/parallelinvoke.cs#01)]
  [!code-vb[System.Threading.Tasks.Parallel#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.parallel/vb/parallelinvoke.vb#01)]  
@@ -2141,13 +2258,15 @@
       </Docs>
     </Member>
     <Member MemberName="Invoke">
-      <MemberSignature Language="C#" Value="public static void Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, Action[] actions);" />
+      <MemberSignature Language="C#" Value="public static void Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, params Action[] actions);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Invoke(class System.Threading.Tasks.ParallelOptions parallelOptions, class System.Action[] actions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Parallel.Invoke(System.Threading.Tasks.ParallelOptions,System.Action[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Invoke(System::Threading::Tasks::ParallelOptions ^ parallelOptions, ... cli::array &lt;Action ^&gt; ^ actions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

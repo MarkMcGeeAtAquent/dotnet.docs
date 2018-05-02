@@ -1,5 +1,5 @@
 ---
-title: "SignTool.exe (Sign Tool) | Microsoft Docs"
+title: "SignTool.exe (Sign Tool)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Sign tool"
   - "SignTool.exe"
@@ -22,6 +17,8 @@ caps.latest.revision: 33
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SignTool.exe (Sign Tool)
 Sign Tool is a command-line tool that digitally signs files, verifies signatures in files, and time-stamps files.  
@@ -33,7 +30,6 @@ Sign Tool is a command-line tool that digitally signs files, verifies signatures
 ## Syntax  
   
 ```  
-  
 signtool [command] [options] [file_name | ...]  
 ```  
   
@@ -86,7 +82,7 @@ signtool [command] [options] [file_name | ...]
 |`/csp`  *CSPName*|Specifies the cryptographic service provider (CSP) that contains the private key container.|  
 |`/d`  *Desc*|Specifies a description of the signed content.|  
 |`/du`  *URL*|Specifies a Uniform Resource Locator (URL) for the expanded description of the signed content.|  
-|`/f`  *SignCertFile*|Specifies the signing certificate in a file. If the file is in Personal Information Exchange (PFX) format and protected by a password, use the `/p` option to specify the password. If the file does not contain private keys, use the `/csp` and `/k` options to specify the CSP and private key container name.|  
+|`/f`  *SignCertFile*|Specifies the signing certificate in a file. If the file is in Personal Information Exchange (PFX) format and protected by a password, use the `/p` option to specify the password. If the file does not contain private keys, use the `/csp` and `/kc` options to specify the CSP and private key container name.|  
 |`/fd`|Specifies the file digest algorithm to use for creating file signatures. The default is SHA1.|  
 |`/i`  *IssuerName*|Specifies the name of the issuer of the signing certificate. This value can be a substring of the entire issuer name.|  
 |`/kc`  *PrivKeyContainerName*|Specifies the private key container name.|  
@@ -159,7 +155,7 @@ signtool [command] [options] [file_name | ...]
 |2|Execution has completed with warnings.|  
   
 ## Examples  
- The following command adds the catalog file MyCatalogFileName.cat to the system component and driver database. The `/v` option generates a unique name if necessary to prevent replacing an existing catalog file named `MyCatalogFileName.cat`.  
+ The following command adds the catalog file MyCatalogFileName.cat to the system component and driver database. The `/u` option generates a unique name if necessary to prevent replacing an existing catalog file named `MyCatalogFileName.cat`.  
   
 ```  
 signtool catdb /v /u MyCatalogFileName.cat  
@@ -180,7 +176,7 @@ signtool sign /f MyCert.pfx /p MyPassword MyFile.exe
  The following command digitally signs and time-stamps a file. The certificate used to sign the file is stored in a PFX file.  
   
 ```  
-signtool sign /f MyCert.pfx /t  HYPERLINK "http://timestamp.verisign.com/scripts/timstamp.dll" http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
+signtool sign /f MyCert.pfx /t http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
 ```  
   
  The following command signs a file by using a certificate located in the `My` store that has a subject name of `My Company Certificate`.  
@@ -198,7 +194,7 @@ Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl
  The following command time-stamps a file that has already been digitally signed.  
   
 ```  
-signtool timestamp /t  HYPERLINK "http://timestamp.verisign.com/scripts/timstamp.dll" http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
+signtool timestamp /t http://timestamp.verisign.com/scripts/timstamp.dll MyFile.exe  
 ```  
   
  The following command verifies that a file has been signed.  
@@ -220,5 +216,5 @@ signtool verify /c MyCatalog.cat SystemFile.dll
 ```  
   
 ## See Also  
- [Tools](../../../docs/framework/tools/index.md)   
+ [Tools](../../../docs/framework/tools/index.md)  
  [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

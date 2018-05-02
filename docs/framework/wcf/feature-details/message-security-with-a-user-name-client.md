@@ -1,19 +1,24 @@
 ---
-title: "Message Security with a User Name Client | Microsoft Docs"
+title: "Message Security with a User Name Client"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
 caps.latest.revision: 15
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security with a User Name Client
 The following illustration shows an [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service and client secured using message-level security. The service is authenticated with an X.509 certificate. The client authenticates using a user name and password.  
@@ -49,7 +54,7 @@ The following illustration shows an [!INCLUDE[indigo1](../../../../includes/indi
 ### Configuration  
  The following configuration can be used instead of the code:  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -100,7 +105,7 @@ The following illustration shows an [!INCLUDE[indigo1](../../../../includes/indi
 ### Configuration  
  The following code configures the client. The binding is to message mode security, and the client credential type is set to `UserName`. The user name and password can only be specified using code (it is not configurable).  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -129,8 +134,8 @@ The following illustration shows an [!INCLUDE[indigo1](../../../../includes/indi
 ```  
   
 ## See Also  
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Message Security User Name](../../../../docs/framework/wcf/samples/message-security-user-name.md)   
- [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
- [\<identity>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)   
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [Message Security User Name](../../../../docs/framework/wcf/samples/message-security-user-name.md)  
+ [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
+ [\<identity>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

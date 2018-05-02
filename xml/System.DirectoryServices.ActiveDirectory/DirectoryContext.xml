@@ -1,10 +1,13 @@
-<Type Name="DirectoryContext" FullName="System.DirectoryServices.ActiveDirectory.DirectoryContext">
+﻿<Type Name="DirectoryContext" FullName="System.DirectoryServices.ActiveDirectory.DirectoryContext">
   <TypeSignature Language="C#" Value="public class DirectoryContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi DirectoryContext extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+  <TypeSignature Language="VB.NET" Value="Public Class DirectoryContext" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DirectoryContext" />
   <AssemblyInfo>
     <AssemblyName>System.DirectoryServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -24,25 +27,38 @@
   
 |Target type|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType> member|Target name format|  
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|  
-|Domain Controller|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|The DNS name of the domain controller.|  
-|AD LDS Instance|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|The DNS name of the AD LDS server and the LDAP port number, for example, ad_lds_instance.fabrikam.com:389.|  
-|Domain|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|The DNS name of the domain, for example, sales.corp.fabrikam.com.|  
-|Forest|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|The DNS name of the forest, for example, corp.fabrikam.com.|  
-|Application Partition|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|The DNS name of the application partition.|  
-|AD LDS Configuration Set|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType>|One of the keywords that is associated with the service connection point registered by AD LDS instances for the configuration set.|  
+|Domain Controller|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.DirectoryServer>|The DNS name of the domain controller.|  
+|AD LDS Instance|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.DirectoryServer>|The DNS name of the AD LDS server and the LDAP port number, for example, ad_lds_instance.fabrikam.com:389.|  
+|Domain|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Domain>|The DNS name of the domain, for example, sales.corp.fabrikam.com.|  
+|Forest|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Forest>|The DNS name of the forest, for example, corp.fabrikam.com.|  
+|Application Partition|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.ApplicationPartition>|The DNS name of the application partition.|  
+|AD LDS Configuration Set|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.ConfigurationSet>|One of the keywords that is associated with the service connection point registered by AD LDS instances for the configuration set.|  
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (contextType As DirectoryContextType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectoryContext(System::DirectoryServices::ActiveDirectory::DirectoryContextType contextType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
@@ -55,16 +71,20 @@
           <paramref name="contextType" /> is not valid.</exception>
         <exception cref="T:System.PlatformNotSupportedException">This class does not work on the current platform.</exception>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (contextType As DirectoryContextType, name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectoryContext(System::DirectoryServices::ActiveDirectory::DirectoryContextType contextType, System::String ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
@@ -83,16 +103,20 @@
           <paramref name="contextType" /> is not valid.</exception>
         <exception cref="T:System.PlatformNotSupportedException">This class does not work on the current platform.</exception>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string username, string password);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string username, string password) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (contextType As DirectoryContextType, username As String, password As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectoryContext(System::DirectoryServices::ActiveDirectory::DirectoryContextType contextType, System::String ^ username, System::String ^ password);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
@@ -109,16 +133,20 @@
           <paramref name="contextType" /> is not valid.</exception>
         <exception cref="T:System.PlatformNotSupportedException">This class does not work on the current platform.</exception>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name, string username, string password);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name, string username, string password) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (contextType As DirectoryContextType, name As String, username As String, password As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DirectoryContext(System::DirectoryServices::ActiveDirectory::DirectoryContextType contextType, System::String ^ name, System::String ^ username, System::String ^ password);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
@@ -141,16 +169,20 @@
           <paramref name="contextType" /> is not valid.</exception>
         <exception cref="T:System.PlatformNotSupportedException">This class does not work on the current platform.</exception>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
       </Docs>
     </Member>
     <Member MemberName="ContextType">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DirectoryContextType ContextType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType ContextType" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.ContextType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContextType As DirectoryContextType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DirectoryContextType ContextType { System::DirectoryServices::ActiveDirectory::DirectoryContextType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DirectoryContextType</ReturnType>
@@ -159,16 +191,20 @@
         <summary>Gets the type of the context object.</summary>
         <value>One of the <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" /> members that specifies the type of context.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
       </Docs>
     </Member>
     <Member MemberName="Name">
       <MemberSignature Language="C#" Value="public string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.Name" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -183,10 +219,13 @@
       <MemberSignature Language="C#" Value="public string UserName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.UserName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

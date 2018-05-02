@@ -1,5 +1,5 @@
 ---
-title: "Application Domains and Assemblies How-to Topics | Microsoft Docs"
+title: "Application Domains and Assemblies How-to Topics"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Application Domains and Assemblies How-to Topics
 The following sections contain links to all How-to topics found in the conceptual documentation for programming with application domains and assemblies.  

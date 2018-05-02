@@ -1,54 +1,36 @@
 ---
-title: "Comparison Operators in Visual Basic | Microsoft Docs"
+title: "Comparison Operators in Visual Basic"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "comparison operators, comparing strings"
-  - "comparison operators, comparing objects"
+  - "comparison operators [Visual Basic], comparing strings"
+  - "comparison operators [Visual Basic], comparing objects"
   - "strings [Visual Basic], comparing"
-  - "comparison operators"
+  - "comparison operators [Visual Basic]"
   - "string comparison [Visual Basic], operators"
   - "objects [Visual Basic], comparing"
-  - "numbers, comparing"
+  - "numbers [Visual Basic], comparing"
   - "Visual Basic code, operators"
   - "string comparison [Visual Basic]"
-  - "numeric values, comparing"
-  - "comparison operators, comparing numeric values"
+  - "numeric values [Visual Basic], comparing"
+  - "comparison operators [Visual Basic], comparing numeric values"
   - "operators [Visual Basic], comparison"
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Comparison Operators in Visual Basic
 Comparison operators compare two expressions and return a `Boolean` value that represents the relationship of their values. There are operators for comparing numeric values, operators for comparing strings, and operators for comparing objects. All three types of operators are discussed herein.  
   
 ## Comparing Numeric Values  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compares numeric values using six numeric comparison operators. Each operator takes as operands two expressions that evaluate to numeric values. The following table lists the operators and shows examples of each.  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compares numeric values using six numeric comparison operators. Each operator takes as operands two expressions that evaluate to numeric values. The following table lists the operators and shows examples of each.  
   
 |Operator|Condition tested|Examples|  
 |--------------|----------------------|--------------|  
@@ -60,7 +42,7 @@ Comparison operators compare two expressions and return a `Boolean` value that r
 |`>=` (Greater than or equal to)|Is the value of the first expression greater than or equal to the value of the second?|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
 ## Comparing Strings  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compares strings using the [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md) as well as the numeric comparison operators. The `Like` operator allows you to specify a pattern. The string is then compared against the pattern, and if it matches, the result is `True`. Otherwise, the result is `False`. The numeric operators allow you to compare `String` values based on their sort order, as the following example shows.  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compares strings using the [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md) as well as the numeric comparison operators. The `Like` operator allows you to specify a pattern. The string is then compared against the pattern, and if it matches, the result is `True`. Otherwise, the result is `False`. The numeric operators allow you to compare `String` values based on their sort order, as the following example shows.  
   
  `"73" < "9"`  
   
@@ -81,7 +63,7 @@ Comparison operators compare two expressions and return a `Boolean` value that r
  The sort order is based on either a binary comparison or a textual comparison depending on the setting of `Option Compare`. For more information see [Option Compare Statement](../../../../visual-basic/language-reference/statements/option-compare-statement.md).  
   
 ## Comparing Objects  
- [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compares two object reference variables with the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) and the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md). You can use either of these operators to determine if two reference variables refer to the same object instance. The following example illustrates this.  
+ [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compares two object reference variables with the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) and the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md). You can use either of these operators to determine if two reference variables refer to the same object instance. The following example illustrates this.  
   
  [!code-vb[VbVbalrOperators#65](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/comparison-operators_1.vb)]  
   
@@ -111,9 +93,9 @@ Comparison operators compare two expressions and return a `Boolean` value that r
  For more information, see [TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md).  
   
 ## See Also  
- [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)   
- [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)   
- [Operators](../../../../visual-basic/language-reference/operators/index.md)   
- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)   
- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)   
+ [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)  
+ [Comparison Operators](../../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Operators](../../../../visual-basic/language-reference/operators/index.md)  
+ [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)  
+ [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)  
  [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

@@ -1,30 +1,33 @@
 ---
-title: "StackOverflowType Enumeration | Microsoft Docs"
+title: "StackOverflowType Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StackOverflowType"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "StackOverflowType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StackOverflowType enumeration [.NET Framework hosting]"
 ms.assetid: dab648ad-972b-479c-b129-b4c1dcbd932e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StackOverflowType Enumeration
 Contains values that indicate the underlying cause of a stack overflow event.  

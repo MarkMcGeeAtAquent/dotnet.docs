@@ -1,5 +1,5 @@
 ---
-title: "IHostAssemblyManager::GetNonHostStoreAssemblies Method | Microsoft Docs"
+title: "IHostAssemblyManager::GetNonHostStoreAssemblies Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostAssemblyManager.GetNonHostStoreAssemblies"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostAssemblyManager::GetNonHostStoreAssemblies"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostAssemblyManager::GetNonHostStoreAssemblies method [.NET Framework hosting]"
   - "GetNonHostStoreAssemblies method [.NET Framework hosting]"
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostAssemblyManager::GetNonHostStoreAssemblies Method
 Gets an interface pointer to an [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) that represents the list of assemblies that the host expects the common language runtime (CLR) to load.  
@@ -80,6 +83,6 @@ HRESULT GetNonHostStoreAssemblies (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)   
- [IHostAssemblyManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)   
+ [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
+ [IHostAssemblyManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  
  [IHostAssemblyStore Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)

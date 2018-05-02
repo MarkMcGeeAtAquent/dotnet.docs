@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetModuleMetaData Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetModuleMetaData Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetModuleMetaData"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetModuleMetaData"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetModuleMetaData method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetModuleMetaData method [.NET Framework profiling]"
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetModuleMetaData Method
 Gets a metadata interface instance that maps to the specified module.  

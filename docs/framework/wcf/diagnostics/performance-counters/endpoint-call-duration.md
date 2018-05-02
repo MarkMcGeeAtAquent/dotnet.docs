@@ -1,8 +1,8 @@
 ---
-title: "Endpoint: Call Duration | Microsoft Docs"
+title: "Endpoint: Call Duration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1aebe748-ad05-4ade-819c-d480379ccfb9
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Endpoint: Call Duration
 The average duration of calls to this endpoint.  The average duration is calculated based on this equation: (N1-N0)/(D1-D0).  

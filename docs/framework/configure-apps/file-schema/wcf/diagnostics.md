@@ -1,8 +1,8 @@
 ---
-title: "&lt;diagnostics&gt; | Microsoft Docs"
+title: "&lt;diagnostics&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0c2f95c4-cc12-4fb5-a70c-7fc6fa95db58
 caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;diagnostics&gt;
 The `diagnostics` element defines settings that can be used by an administrator for run-time inspection and control.  
@@ -23,10 +25,9 @@ The `diagnostics` element defines settings that can be used by an administrator 
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
-   <diagnostics etwProviderId=”String”       performanceCounters="Off/ServiceOnly/All/Default"              wmiProviderEnabled="Boolean" >       <endToEndTracing activityTracing="Boolean"  
+   <diagnostics etwProviderId="String"       performanceCounters="Off/ServiceOnly/All/Default"              wmiProviderEnabled="Boolean" >       <endToEndTracing activityTracing="Boolean"  
           messageFlowTracing="Boolean"  
           propagateActivity="Boolean" />  
        <messageLogging logEntireMessage="Boolean"  
@@ -72,7 +73,7 @@ The `diagnostics` element defines settings that can be used by an administrator 
   
 ## Example  
   
-```  
+```xml  
 <diagnostics wmiProviderEnabled="false"  
        performanceCounters="all">  
        <messageLogging logEntireMessage="true"  
@@ -89,5 +90,5 @@ The `diagnostics` element defines settings that can be used by an administrator 
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
  <xref:System.ServiceModel.Diagnostics>

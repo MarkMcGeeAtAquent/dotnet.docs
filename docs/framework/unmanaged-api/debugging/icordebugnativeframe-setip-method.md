@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugNativeFrame::SetIP Method | Microsoft Docs"
+title: "ICorDebugNativeFrame::SetIP Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugNativeFrame.SetIP"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugNativeFrame::SetIP"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugNativeFrame::SetIP method [.NET Framework debugging]"
   - "SetIP method, ICorDebugNativeFrame interface [.NET Framework debugging]"
 ms.assetid: 57784a51-c76d-48f8-9392-584d0e1946d9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugNativeFrame::SetIP Method
 Sets the instruction pointer to the specified offset location in native code.  

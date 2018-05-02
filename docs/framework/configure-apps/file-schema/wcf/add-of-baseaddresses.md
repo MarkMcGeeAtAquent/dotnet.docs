@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;baseAddresses&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;baseAddresses&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1bd7426f-5f4f-43fc-b8e9-de842219aa32
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;baseAddresses&gt;
 Represents a configuration element that specifies the base addresses used by the service host.  
@@ -27,8 +29,7 @@ Represents a configuration element that specifies the base addresses used by the
   
 ## Syntax  
   
-```  
-  
+```xml  
 <add baseAddress="string" />  
 ```  
   
@@ -54,7 +55,7 @@ Represents a configuration element that specifies the base addresses used by the
 |[\<baseAddresses>](../../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)|A collection of `baseAddress` elements.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.HostElement>   
- <xref:System.ServiceModel.ServiceHost>   
- <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A>   
+ <xref:System.ServiceModel.Configuration.HostElement>  
+ <xref:System.ServiceModel.ServiceHost>  
+ <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A>  
  [Hosting](../../../../../docs/framework/wcf/feature-details/hosting.md)

@@ -1,5 +1,5 @@
 ---
-title: "115 - WorkflowInstanceAbortedRecordWithId | Microsoft Docs"
+title: "115 - WorkflowInstanceAbortedRecordWithId"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0293dd4e-e6ae-473a-b3d6-c2d38f9bd875
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 115 - WorkflowInstanceAbortedRecordWithId
 ## Properties  

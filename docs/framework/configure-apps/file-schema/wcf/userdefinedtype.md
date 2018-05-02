@@ -1,8 +1,8 @@
 ---
-title: "&lt;userDefinedType&gt; | Microsoft Docs"
+title: "&lt;userDefinedType&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0f70ec06-8249-4f0c-9f49-b4df59985fb8
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;userDefinedType&gt;
 Represents a User Defined Type (UDT) that is to be included in the service contract.  
@@ -25,8 +27,7 @@ Represents a User Defined Type (UDT) that is to be included in the service contr
   
 ## Syntax  
   
-```  
-  
+```xml  
 <comContracts>  
   <comContract>  
       <userDefinedTypes>  
@@ -68,7 +69,7 @@ Represents a User Defined Type (UDT) that is to be included in the service contr
   
  The following example demonstrates adding two specific UDTs to the <`userDefinedTypes`> section of the configuration file for this purpose.  
   
-```  
+```xml  
 <comContracts>  
   <comContract  
       contract="{5163B1E7-F0CF-4B6A-9A02-4AB654F34284}"  
@@ -99,9 +100,9 @@ Represents a User Defined Type (UDT) that is to be included in the service contr
  When the service is initialized, the integration runtime looks up the specified types and adds them to the known types collection for the specified contracts.  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>   
- <xref:System.ServiceModel.Configuration.ComUdtElementCollection>   
- <xref:System.ServiceModel.Configuration.ComUdtElement>   
- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)   
- [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)   
+ <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>  
+ <xref:System.ServiceModel.Configuration.ComUdtElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComUdtElement>  
+ [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
+ [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [How to: Configure COM+ Service Settings](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

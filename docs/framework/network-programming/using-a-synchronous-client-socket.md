@@ -1,5 +1,5 @@
 ---
-title: "Using a Synchronous Client Socket | Microsoft Docs"
+title: "Using a Synchronous Client Socket"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "application protocols, sockets"
   - "sending data, sockets"
@@ -29,17 +27,18 @@ caps.latest.revision: 12
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Using a Synchronous Client Socket
 A synchronous client socket suspends the application program while the network operation completes. Synchronous sockets are not suitable for applications that make heavy use of the network for their operation, but they can enable simple access to network services for other applications.  
   
- To send data, pass a byte array to one of the <xref:System.Net.Sockets.Socket> class's send-data methods (<xref:System.Net.Sockets.Socket.Send%2A> and <xref:System.Net.Sockets.Socket.SendTo%2A>). The following example encodes a string into a byte array buffer using the <xref:System.Text.Encoding.ASCII%2A?displayProperty=fullName> property and then transmits the buffer to the network device using the **Send** method. The **Send** method returns the number of bytes sent to the network device.  
+ To send data, pass a byte array to one of the <xref:System.Net.Sockets.Socket> class's send-data methods (<xref:System.Net.Sockets.Socket.Send%2A> and <xref:System.Net.Sockets.Socket.SendTo%2A>). The following example encodes a string into a byte array buffer using the <xref:System.Text.Encoding.ASCII%2A?displayProperty=nameWithType> property and then transmits the buffer to the network device using the **Send** method. The **Send** method returns the number of bytes sent to the network device.  
   
 ```vb  
 Dim msg As Byte() = _  
     System.Text.Encoding.ASCII.GetBytes("This is a test.")  
 Dim bytesSent As Integer = s.Send(msg)  
-  
 ```  
   
 ```csharp  
@@ -56,7 +55,6 @@ Dim bytes(1024) As Byte
 Dim bytesRec = s.Receive(bytes)  
 Console.WriteLine("Echoed text = {0}", _  
     System.Text.Encoding.ASCII.GetString(bytes, 0, bytesRec))  
-  
 ```  
   
 ```csharp  
@@ -79,6 +77,6 @@ s.Close();
 ```  
   
 ## See Also  
- [Using an Asynchronous Client Socket](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)   
- [Listening with Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)   
+ [Using an Asynchronous Client Socket](../../../docs/framework/network-programming/using-an-asynchronous-client-socket.md)  
+ [Listening with Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)  
  [Synchronous Client Socket Example](../../../docs/framework/network-programming/synchronous-client-socket-example.md)

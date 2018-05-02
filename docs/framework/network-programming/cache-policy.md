@@ -1,5 +1,5 @@
 ---
-title: "Cache Policy | Microsoft Docs"
+title: "Cache Policy"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -7,11 +7,6 @@ ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "time-based cache policies"
   - "location-based cache policies"
@@ -25,6 +20,8 @@ caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Cache Policy
 A cache policy defines rules that are used to determine whether a request can be satisfied using a cached copy of the requested resource. Applications specify client cache requirements for freshness, but the effective cache policy is determined by the client cache requirements, the server's content expiration requirements, and the server's revalidation requirements. The interaction of client cache policy and server requirements always results in the most conservative cache policy, to help ensure that the freshest content is returned to the client application.  
@@ -36,10 +33,10 @@ A cache policy defines rules that are used to determine whether a request can be
 |Class name|Description|  
 |----------------|-----------------|  
 |<xref:System.Net.Cache.HttpRequestCachePolicy>|Represents location-based and time-based cache policies for resources requested using <xref:System.Net.HttpWebRequest> objects.|  
-|<xref:System.Net.Cache.RequestCachePolicy>|Represents location-based cache policies or the <xref:System.Net.Cache.RequestCacheLevel> time-based cache policy for resources requested using <xref:System.Net.WebRequest> objects.|  
+|<xref:System.Net.Cache.RequestCachePolicy>|Represents location-based cache policies or the <xref:System.Net.Cache.RequestCacheLevel.Default> time-based cache policy for resources requested using <xref:System.Net.WebRequest> objects.|  
 |<xref:System.Net.Cache.HttpCacheAgeControl>|Specifies values used to create time-based <xref:System.Net.Cache.HttpRequestCachePolicy> objects.|  
 |<xref:System.Net.Cache.HttpRequestCacheLevel>|Specifies values used to create location-based and time-based <xref:System.Net.Cache.HttpRequestCachePolicy> objects.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Specifies values used to create location-based or the <xref:System.Net.Cache.RequestCacheLevel> time-based <xref:System.Net.Cache.RequestCachePolicy> objects.|  
+|<xref:System.Net.Cache.RequestCacheLevel>|Specifies values used to create location-based or the <xref:System.Net.Cache.RequestCacheLevel.Default> time-based <xref:System.Net.Cache.RequestCachePolicy> objects.|  
   
  You can define a cache policy for all requests made by your application or for individual requests. When you specify both an application-level cache policy and a request-level cache policy, the request-level policy is used. You can specify an application-level cache policy programmatically or by using the application or machine configuration files. For more information, see [\<requestCaching> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  
   
@@ -48,7 +45,7 @@ A cache policy defines rules that are used to determine whether a request can be
  For code examples that demonstrate creating and using cache policies, see [Configuring Caching in Network Applications](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
   
 ## See Also  
- [Cache Management for Network Applications](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
- [Location-Based Cache Policies](../../../docs/framework/network-programming/location-based-cache-policies.md)   
- [Time-Based Cache Policies](../../../docs/framework/network-programming/time-based-cache-policies.md)   
+ [Cache Management for Network Applications](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Location-Based Cache Policies](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [Time-Based Cache Policies](../../../docs/framework/network-programming/time-based-cache-policies.md)  
  [Configuring Caching in Network Applications](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)

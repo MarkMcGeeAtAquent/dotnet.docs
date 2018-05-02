@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapValue::CreateRelocBreakpoint Method | Microsoft Docs"
+title: "ICorDebugHeapValue::CreateRelocBreakpoint Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHeapValue.CreateRelocBreakpoint"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapValue::CreateRelocBreakpoint"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHeapValue::CreateRelocBreakpoint method [.NET Framework debugging]"
   - "CreateRelocBreakpoint method [.NET Framework debugging]"
 ms.assetid: 54d31e7b-b1e2-4f2b-8a4f-867b8759fe41
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapValue::CreateRelocBreakpoint Method
 This method is not implemented in the current version of the .NET Framework.  

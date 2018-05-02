@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugStringValue::GetString Method | Microsoft Docs"
+title: "ICorDebugStringValue::GetString Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugStringValue.GetString"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugStringValue::GetString"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugStringValue::GetString method [.NET Framework debugging]"
   - "GetString method, ICorDebugStringValue interface [.NET Framework debugging]"
 ms.assetid: 2b94bda7-09ee-435d-91b9-c4e31af1896c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugStringValue::GetString Method
 Gets the string referenced by this ICorDebugStringValue.  

@@ -1,19 +1,27 @@
 ---
 uid: System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory.ReleaseHandler(System.Web.IHttpHandler)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory.GetHandler(System.Web.HttpContext,System.String,System.String,System.String)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

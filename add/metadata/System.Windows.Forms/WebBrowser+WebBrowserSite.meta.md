@@ -1,13 +1,17 @@
 ---
 uid: System.Windows.Forms.WebBrowser.WebBrowserSite
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.WebBrowser.WebBrowserSite.#ctor(System.Windows.Forms.WebBrowser)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

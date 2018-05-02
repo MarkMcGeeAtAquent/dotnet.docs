@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyImport::GetManifestResourceProps Method | Microsoft Docs"
+title: "IMetaDataAssemblyImport::GetManifestResourceProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyImport.GetManifestResourceProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyImport::GetManifestResourceProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetManifestResourceProps method [.NET Framework metadata]"
   - "IMetaDataAssemblyImport::GetManifestResourceProps method [.NET Framework metadata]"
 ms.assetid: 00be4789-ac63-4397-b2ec-1629a5c5a585
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyImport::GetManifestResourceProps Method
 Gets the set of properties of the manifest resource with the specified metadata signature.  

@@ -1,8 +1,8 @@
 ---
-title: "&lt;bindingElementExtensions&gt; | Microsoft Docs"
+title: "&lt;bindingElementExtensions&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;bindingElementExtensions&gt;
 This section enables the use of a custom binding element from a machine or application configuration file. You can add a custom binding element to this collection by using the `add` keyword, and setting the `type` attribute of the element to a binding element extension, as well as the `name` attribute to the custom binding element.  
@@ -22,7 +24,7 @@ This section enables the use of a custom binding element from a machine or appli
   
  The following example uses the `add` element, as well as the `name` attribute to add a binding extension to the `bindingElementExtensions` section of the configuration file.  
   
-```  
+```xml  
 <system.serviceModel>  
     <extensions>  
         <bindingElementExtensions>  
@@ -37,7 +39,7 @@ This section enables the use of a custom binding element from a machine or appli
   
  After the element and its configuration type are defined, the extension can be used as part of a custom binding as shown in the following example.  
   
-```  
+```xml  
 <customBinding>  
      <binding name="test2">  
          <udpTransport />  
@@ -48,5 +50,5 @@ This section enables the use of a custom binding element from a machine or appli
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>   
+ <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>  
  [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)

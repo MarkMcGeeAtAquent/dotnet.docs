@@ -1,5 +1,5 @@
 ---
-title: "Securing WCF Data Services | Microsoft Docs"
+title: "Securing WCF Data Services"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework-oob"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "securing application [WCF Data Services]"
   - "WCF Data Services, security"
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing WCF Data Services
 This topic describes security considerations that are specific to developing, deploying, and running [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] and applications that access services that support the [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. You should also follow recommendations for creating secure [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] applications.  
@@ -35,7 +40,7 @@ This topic describes security considerations that are specific to developing, de
 |Basic and digest authentication|Credentials consisting of a user name and password are required for authentication. Supports authentication of non-Windows clients. **Security Note:**  Basic authentication credentials (user name and password) are sent in the clear and can be intercepted. Digest authentication sends a hash based-on the supplied credentials, which makes it more secure than basic authentication. Both are susceptible to man-in-the-middle attacks. When using these authentication methods, you should consider encrypting communication between client and the data service by using the Secure Sockets Layer (SSL). <br /><br /> Microsoft Internet Information Services (IIS) provides an implementation of both basic and digest authentication for HTTP requests in an [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application. This Windows Authentication Provider implementation enables a .NET Framework client application to supply credentials in the HTTP header of the request to the data service to seamlessly negotiate authentication of a Windows user. For more information, see [Digest Authentication Technical Reference](http://go.microsoft.com/fwlink/?LinkId=200408).<br /><br /> When you want to have your data service use basic authentication based on some custom authentication service and not Windows credentials, you must implement a custom [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] HTTP Module for authentication.<br /><br /> [!INCLUDE[crexample](../../../../includes/crexample-md.md)] how to use a custom basic authentication scheme with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see the post on [Custom Basic Authentication](http://go.microsoft.com/fwlink/?LinkID=200388) in the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] and authentication series.|  
 |Windows authentication|Windows-based credentials are exchanged by using NTLM or Kerberos. This mechanism is more secure than basic or digest authentication, but it requires that the client be a Windows-based application. IIS also provides an implementation of Windows authentication for HTTP requests in an [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application. For more information, see [ASP.NET Forms Authentication Overview](http://msdn.microsoft.com/library/099c1587-6934-476e-ac95-28f534bc9708).<br /><br /> [!INCLUDE[crexample](../../../../includes/crexample-md.md)] how to use Windows authentication with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see the post on [Windows Authentication](http://go.microsoft.com/fwlink/?LinkID=200384) in the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] and authentication series.|  
 |[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] forms authentication|Forms authentication lets you authenticate users by using your own code and then maintain an authentication token in a cookie or in the page URL. You authenticate the user name and password of your users using a login form that you create. Unauthenticated requests are redirected to a login page, where the user provides credentials and submits the form. If the application authenticates the request, the system issues a ticket that contains a key for reestablishing the identity for subsequent requests. For more information, see [Forms Authentication Provider](http://msdn.microsoft.com/library/77e21ba2-bad1-4967-a8ec-74942dea7e47). **Security Note:**  By default, the cookie that contains the forms authentication ticket is not secured when you use forms authentication in a [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application. You should consider requiring SSL to protect both the authentication ticket and the initial login credentials. <br /><br /> [!INCLUDE[crexample](../../../../includes/crexample-md.md)] how to use forms authentication with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see the post on [Forms Authentication](http://go.microsoft.com/fwlink/?LinkID=200389) in the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] and authentication series.|  
-|Claims-based authentication|In claims-based authentication, the data service relies on a trusted “third-party” identity provider service to authenticate the user. The identity provider positively authenticates the user that is requesting access to data service resources and issues a token that grants access to the requested resources. This token is then presented to the data service, which then grants access to the user based on the trust relationship with the identity service that issued the access token.<br /><br /> The benefit of using a claims-based authentication provider is that they can be used to authenticate various types of clients across trust domains. By employing such a third-party provider, a data service can offload the requirements of maintaining and authenticating users. OAuth 2.0 is a claims-based authentication protocol that is supported by Windows Azure AppFabric Access Control for federated authorization as a service. This protocol supports REST-based services. [!INCLUDE[crexample](../../../../includes/crexample-md.md)] how to use OAuth 2.0 with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see the post on [OData and OAuth](http://go.microsoft.com/fwlink/?LinkId=200514) in the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] and authentication series.|  
+|Claims-based authentication|In claims-based authentication, the data service relies on a trusted "third-party" identity provider service to authenticate the user. The identity provider positively authenticates the user that is requesting access to data service resources and issues a token that grants access to the requested resources. This token is then presented to the data service, which then grants access to the user based on the trust relationship with the identity service that issued the access token.<br /><br /> The benefit of using a claims-based authentication provider is that they can be used to authenticate various types of clients across trust domains. By employing such a third-party provider, a data service can offload the requirements of maintaining and authenticating users. OAuth 2.0 is a claims-based authentication protocol that is supported by Windows Azure AppFabric Access Control for federated authorization as a service. This protocol supports REST-based services. [!INCLUDE[crexample](../../../../includes/crexample-md.md)] how to use OAuth 2.0 with [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], see the post on [OData and OAuth](http://go.microsoft.com/fwlink/?LinkId=200514) in the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] and authentication series.|  
   
 <a name="clientAuthentication"></a>   
 ### Authentication in the Client Library  
@@ -114,5 +119,5 @@ context.Credentials = _
 -   We recommend that client applications always validate user input as well as data accepted from untrusted services.  
   
 ## See Also  
- [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)   
+ [Defining WCF Data Services](../../../../docs/framework/data/wcf/defining-wcf-data-services.md)  
  [WCF Data Services Client Library](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)

@@ -1,8 +1,8 @@
 ---
-title: "403 - SuspendSignpostEvent | Microsoft Docs"
+title: "403 - SuspendSignpostEvent"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fb2e6f29-e556-47b4-b4c1-acd6b8879702
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 403 - SuspendSignpostEvent
 ## Properties  

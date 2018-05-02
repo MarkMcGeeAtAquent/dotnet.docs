@@ -1,22 +1,27 @@
 ---
-title: "Federation | Microsoft Docs"
+title: "Federation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, federation"
   - "federation [WCF]"
 ms.assetid: 2f1e646f-8361-48d4-9d5d-1b961f31ede4
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Federation
 This topic provides a brief overview of the concept of federated security. It also describes [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] support for deploying federated security architectures. For a sample application that demonstrates federation, see [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md).  
@@ -63,7 +68,7 @@ This topic provides a brief overview of the concept of federated security. It al
   
  In a federated security architecture, users from organization A know that if they want to access the Web service in organization B that they must present a valid security token from the STS at organization B, which authenticates and authorizes their access to the specific service.  
   
- On contacting the STS B, the users receive another level of indirection from the policy associated with the STS. They must present a valid security token from the STS A (that is, the client trust realm) before the STS B can issue them a security token. This is a corollary of the trust relationship established between the two organizations and implies that organization B does not have to manage identities for users from organization A. In practice, STS B typically has a null `issuerAddress` and `issuerMetadataAddress`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][How to: Configure a Local Issuer](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). In that case, the client consults a local policy to locate STS A. This configuration is called *home realm federation* and it scales better because STS B does not have to maintain information about STS A.  
+ On contacting the STS B, the users receive another level of indirection from the policy associated with the STS. They must present a valid security token from the STS A (that is, the client trust realm) before the STS B can issue them a security token. This is a corollary of the trust relationship established between the two organizations and implies that organization B does not have to manage identities for users from organization A. In practice, STS B typically has a null `issuerAddress` and `issuerMetadataAddress`. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [How to: Configure a Local Issuer](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md). In that case, the client consults a local policy to locate STS A. This configuration is called *home realm federation* and it scales better because STS B does not have to maintain information about STS A.  
   
  The users then contact the STS at organization A and obtain a security token by presenting authentication credentials that they normally use to gain access to any other resource within organization A. This also alleviates the problem of users having to maintain multiple sets of credentials or using the same set of credentials at multiple service sites.  
   
@@ -102,7 +107,7 @@ This topic provides a brief overview of the concept of federated security. It al
   
  The service endpoint `MyServiceEndpoint` uses the [\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) and requires a valid Security Assertions Markup Language (SAML) token with an `accessAuthorized` claim issued by STS B. This is declaratively specified in the service configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service type="FederationSample.MyService"      
@@ -167,7 +172,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
   
  STS B exposes a single endpoint, called `STSEndpoint` that can be use to request security tokens. Specifically, STS B issues SAML tokens with the `accessAuthorized` claim, which can be presented at the `MyService` service site for accessing the service. However, STS B requires users to present a valid SAML token issued by STS A that contains the `userAuthenticated` claim. This is declaratively specified in the STS configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service type="FederationSample.STS_B" behaviorConfiguration=  
@@ -229,7 +234,7 @@ operationRequirementType="FederationSample.MyServiceOperationRequirement, MyServ
   
  Similar to the STS B, the STS A is also a Web service that issues security tokens and exposes a single endpoint for this purpose. However, it uses a different binding (`wsHttpBinding`) and requires users to present a valid [!INCLUDE[infocard](../../../../includes/infocard-md.md)] with an `emailAddress` claim. In response, it issues SAML tokens with the `userAuthenticated` claim. This is declaratively specified in the service configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
   <services>  
     <service type="FederationSample.STS_A" behaviorConfiguration="STS-A_Behavior">  

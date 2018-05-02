@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugStackWalk::GetContext Method | Microsoft Docs"
+title: "ICorDebugStackWalk::GetContext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugStackWalk.GetContext Method"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugStackWalk::GetContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetContext method, ICorDebugStackWalk interface [.NET Framework debugging]"
   - "ICorDebugStackWalk::GetContext method [.NET Framework debugging]"
 ms.assetid: 081d1c95-152b-4797-8552-18453eb7b14b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugStackWalk::GetContext Method
 Returns the context for the current frame in the [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) object.  
@@ -77,5 +80,5 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

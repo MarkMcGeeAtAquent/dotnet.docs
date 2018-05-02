@@ -1,19 +1,27 @@
 ---
 uid: System.ServiceModel.PeerNodeAddress
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.PeerNodeAddress.#ctor(System.ServiceModel.EndpointAddress,System.Collections.ObjectModel.ReadOnlyCollection{System.Net.IPAddress})
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.PeerNodeAddress.IPAddresses
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.PeerNodeAddress.EndpointAddress
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

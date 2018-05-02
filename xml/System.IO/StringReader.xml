@@ -1,7 +1,9 @@
-<Type Name="StringReader" FullName="System.IO.StringReader">
+﻿<Type Name="StringReader" FullName="System.IO.StringReader">
   <TypeSignature Language="C#" Value="public class StringReader : System.IO.TextReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringReader extends System.IO.TextReader" />
   <TypeSignature Language="DocId" Value="T:System.IO.StringReader" />
+  <TypeSignature Language="VB.NET" Value="Public Class StringReader&#xA;Inherits TextReader" />
+  <TypeSignature Language="C++ CLI" Value="public ref class StringReader : System::IO::TextReader" />
   <AssemblyInfo>
     <AssemblyName>System.IO</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,6 +18,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.IO.TextReader</BaseTypeName>
@@ -34,8 +40,7 @@
 ## Remarks  
  <xref:System.IO.StringReader> enables you to read a string synchronously or asynchronously. You can read a character at a time with the <xref:System.IO.StringReader.Read%2A> or the <xref:System.IO.StringReader.ReadAsync%2A> method, a line at a time using the <xref:System.IO.StringReader.ReadLine%2A> or the <xref:System.IO.StringReader.ReadLineAsync%2A> method and an entire string using the <xref:System.IO.StringReader.ReadToEnd%2A> or the <xref:System.IO.StringReader.ReadToEndAsync%2A> method.  
   
-> [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+[!INCLUDE[note_unnecessary_dispose](~/includes/note-unnecessary-dispose.md)]
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -44,11 +49,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -62,12 +67,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.IO.TextReader" />
+    <altmember cref="T:System.IO.StringWriter" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public StringReader (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (s As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringReader(System::String ^ s);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -83,6 +92,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="s" Type="System.String" />
@@ -101,11 +114,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -127,6 +140,8 @@
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -136,6 +151,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -149,7 +168,7 @@
 ## Remarks  
  For an example of creating a file and writing text to a file, see [How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md). For an example of reading text from a file, see [How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md). For an example of reading from and writing to a binary file, see [How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md).  
   
- This method overrides the <xref:System.IO.Stream.Close%2A?displayProperty=fullName> method.  
+ This method overrides the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method.  
   
  This implementation of `Close` calls the <xref:System.IO.StringReader.Dispose%2A> method passing a `true` value.  
   
@@ -165,6 +184,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -180,6 +201,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -209,6 +234,8 @@
       <MemberSignature Language="C#" Value="public override int Peek ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Peek() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Peek" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Peek () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Peek();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -224,6 +251,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -238,7 +269,7 @@
 ## Remarks  
  The <xref:System.IO.StringReader.Peek%2A> method returns an integer value in order to determine whether the end of the file, or another error has occurred. This allows a user to first check if the returned value is -1 before casting it to a <xref:System.Char> type.  
   
- This method overrides the <xref:System.IO.TextReader.Peek%2A?displayProperty=fullName> method.  
+ This method overrides the <xref:System.IO.TextReader.Peek%2A?displayProperty=nameWithType> method.  
   
  The current position of the `StringReader` is not changed by this operation.  
   
@@ -249,17 +280,30 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ObjectDisposedException">The current reader is closed.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Read">
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads the next character or next set of characters from the input string.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Read">
       <MemberSignature Language="C#" Value="public override int Read ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Read" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -276,6 +320,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -287,7 +335,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides the <xref:System.IO.TextReader.Read%2A?displayProperty=fullName> method.  
+ This method overrides the <xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType> method.  
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -296,11 +344,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -320,8 +368,10 @@
     </Member>
     <Member MemberName="Read">
       <MemberSignature Language="C#" Value="public override int Read (char[] buffer, int index, int count);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.Read(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read (buffer As Char(), index As Integer, count As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -337,6 +387,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -356,7 +410,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.TextReader.Read%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.TextReader.Read%2A?displayProperty=nameWithType>.  
   
  The method will read up to `count` characters from the <xref:System.IO.StringReader> into the `buffer` character array starting at position `index`. Returns the actual number of characters read, or zero if the end of the string has been reached and no characters are read.  
   
@@ -367,11 +421,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -389,6 +443,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadAsync (buffer As Char(), index As Integer, count As Integer) As Task(Of Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;int&gt; ^ ReadAsync(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -404,6 +460,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -453,6 +513,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadBlockAsync (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadBlockAsync(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadBlockAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadBlockAsync (buffer As Char(), index As Integer, count As Integer) As Task(Of Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;int&gt; ^ ReadBlockAsync(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -468,6 +530,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -509,6 +575,8 @@
       <MemberSignature Language="C#" Value="public override string ReadLine ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadLine() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadLine" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadLine () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ReadLine();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -525,6 +593,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -536,7 +608,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides the <xref:System.IO.TextReader.ReadLine%2A?displayProperty=fullName> method.  
+ This method overrides the <xref:System.IO.TextReader.ReadLine%2A?displayProperty=nameWithType> method.  
   
  A line is defined as a sequence of characters followed by a line feed ("\n"), a carriage return ("\r"), or a carriage return immediately followed by a line feed ("\r\n"). The string that is returned does not contain the terminating carriage return or line feed. The returned value is `null` if the end of the string has been reached.  
   
@@ -549,11 +621,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -576,6 +648,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadLineAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadLineAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadLineAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadLineAsync () As Task(Of String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;System::String ^&gt; ^ ReadLineAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -591,6 +665,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -624,6 +702,8 @@
       <MemberSignature Language="C#" Value="public override string ReadToEnd ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ReadToEnd() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadToEnd" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadToEnd () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ReadToEnd();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -640,6 +720,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -651,7 +735,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides the <xref:System.IO.TextReader.ReadToEnd%2A?displayProperty=fullName> method.  
+ This method overrides the <xref:System.IO.TextReader.ReadToEnd%2A?displayProperty=nameWithType> method.  
   
  If the current method throws an <xref:System.OutOfMemoryException>, the reader's position in the underlying string is advanced by the number of characters the method was able to read, but the characters already read into the internal <xref:System.IO.StringReader.ReadToEnd%2A> buffer are discarded. Because the position of the reader in the string cannot be changed, the characters already read are unrecoverable, and can be accessed only by reinitializing the <xref:System.IO.StringReader>. To avoid such a situation, use the <xref:System.IO.StringReader.Read%2A> method and store the read characters in a preallocated buffer.  
   
@@ -662,11 +746,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -689,6 +773,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;string&gt; ReadToEndAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;string&gt; ReadToEndAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringReader.ReadToEndAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReadToEndAsync () As Task(Of String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;System::String ^&gt; ^ ReadToEndAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -704,6 +790,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

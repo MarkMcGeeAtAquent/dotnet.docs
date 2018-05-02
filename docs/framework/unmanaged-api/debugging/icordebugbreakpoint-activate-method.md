@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugBreakpoint::Activate Method | Microsoft Docs"
+title: "ICorDebugBreakpoint::Activate Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugBreakpoint.Activate"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugBreakpoint::Activate"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugBreakpoint::Activate method [.NET Framework debugging]"
   - "Activate method [.NET Framework debugging]"
 ms.assetid: e30c29f7-3f19-4081-b572-a731aa14cd44
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugBreakpoint::Activate Method
 Sets the active state of this `ICorDebugBreakpoint`.  

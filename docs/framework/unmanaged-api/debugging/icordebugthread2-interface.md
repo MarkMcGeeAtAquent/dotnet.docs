@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugThread2 Interface1 | Microsoft Docs"
+title: "ICorDebugThread2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugThread2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugThread2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugThread2 interface [.NET Framework debugging]"
 ms.assetid: 678f89f9-cce7-46d1-af87-5e989abaa93c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugThread2 Interface1
 Serves as a logical extension to the ICorDebugThread interface.  

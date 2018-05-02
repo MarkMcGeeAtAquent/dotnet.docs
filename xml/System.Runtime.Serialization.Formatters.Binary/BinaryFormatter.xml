@@ -1,7 +1,9 @@
-<Type Name="BinaryFormatter" FullName="System.Runtime.Serialization.Formatters.Binary.BinaryFormatter">
+﻿<Type Name="BinaryFormatter" FullName="System.Runtime.Serialization.Formatters.Binary.BinaryFormatter">
   <TypeSignature Language="C#" Value="public sealed class BinaryFormatter : System.Runtime.Remoting.Messaging.IRemotingFormatter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BinaryFormatter extends System.Object implements class System.Runtime.Remoting.Messaging.IRemotingFormatter, class System.Runtime.Serialization.IFormatter" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class BinaryFormatter&#xA;Implements IRemotingFormatter" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BinaryFormatter sealed : System::Runtime::Remoting::Messaging::IRemotingFormatter" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -41,7 +47,7 @@
  The serialization procedure for a method response is identical to that of a method call, except the first object of the object graph must support the <xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage> interface. To deserialize a method response, use the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A> method. To save time, details about the caller object are not sent to the remote object during the method call. These details are instead obtained from the original method call, which is passed to the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A> method in the <xref:System.Runtime.Remoting.Messaging.IMethodCallMessage> parameter. The first object in the graph returned by the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A> method supports the <xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage> interface.  
   
 > [!IMPORTANT]
->  Using binary serialization to deserialize untrusted data can lead to security risks. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Using binary serialization to deserialize untrusted data can lead to security risks. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
 ## Unpaired Surrogates  
  Any unpaired surrogate characters are lost in binary serialization. For example, the following string contains a high surrogate Unicode character `(\ud800`) in between the two `Test` words:  
@@ -86,10 +92,22 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public BinaryFormatter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BinaryFormatter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -99,6 +117,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -112,7 +134,7 @@
 |Property Type|Condition|  
 |-------------------|---------------|  
 |<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.SurrogateSelector%2A>|`null`|  
-|<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Context%2A>|A <xref:System.Runtime.Serialization.StreamingContext> with a value that indicates that serialized data can be transmitted to or received from any of the other contexts. (<xref:System.Runtime.Serialization.StreamingContextStates?displayProperty=fullName>)|  
+|<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Context%2A>|A <xref:System.Runtime.Serialization.StreamingContext> with a value that indicates that serialized data can be transmitted to or received from any of the other contexts. (<xref:System.Runtime.Serialization.StreamingContextStates.All?displayProperty=nameWithType>)|  
   
    
   
@@ -129,6 +151,8 @@
       <MemberSignature Language="C#" Value="public BinaryFormatter (System.Runtime.Serialization.ISurrogateSelector selector, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.ISurrogateSelector selector, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.#ctor(System.Runtime.Serialization.ISurrogateSelector,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (selector As ISurrogateSelector, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BinaryFormatter(System::Runtime::Serialization::ISurrogateSelector ^ selector, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -138,6 +162,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector" />
@@ -163,6 +191,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterAssemblyStyle AssemblyFormat { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterAssemblyStyle AssemblyFormat" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.AssemblyFormat" />
+      <MemberSignature Language="VB.NET" Value="Public Property AssemblyFormat As FormatterAssemblyStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::Formatters::FormatterAssemblyStyle AssemblyFormat { System::Runtime::Serialization::Formatters::FormatterAssemblyStyle get(); void set(System::Runtime::Serialization::Formatters::FormatterAssemblyStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -172,6 +202,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.Formatters.FormatterAssemblyStyle</ReturnType>
@@ -180,13 +214,19 @@
         <summary>Gets or sets the behavior of the deserializer with regards to finding and loading assemblies.</summary>
         <value>One of the <see cref="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle" /> values that specifies the deserializer behavior.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle" />
       </Docs>
     </Member>
     <Member MemberName="Binder">
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.SerializationBinder Binder { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.SerializationBinder Binder" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Binder" />
+      <MemberSignature Language="VB.NET" Value="Public Property Binder As SerializationBinder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::SerializationBinder ^ Binder { System::Runtime::Serialization::SerializationBinder ^ get(); void set(System::Runtime::Serialization::SerializationBinder ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Serialization.IFormatter.Binder</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -195,6 +235,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.SerializationBinder</ReturnType>
@@ -212,13 +256,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.Serialization.SerializationBinder" />
       </Docs>
     </Member>
     <Member MemberName="Context">
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.StreamingContext Context { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContext Context" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Context" />
+      <MemberSignature Language="VB.NET" Value="Public Property Context As StreamingContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::StreamingContext Context { System::Runtime::Serialization::StreamingContext get(); void set(System::Runtime::Serialization::StreamingContext value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Serialization.IFormatter.Context</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -227,6 +277,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.StreamingContext</ReturnType>
@@ -242,13 +296,39 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.Serialization.StreamingContext" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Deserialize">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Deserializes a stream into an object graph.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Deserialize">
       <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(System.IO.Stream)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Deserialize (serializationStream As Stream) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ Deserialize(System::IO::Stream ^ serializationStream);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.IFormatter.Deserialize(System.IO.Stream)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -257,6 +337,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -275,7 +359,7 @@
  For successful deserialization, the current position in the stream must be at the beginning of the object graph.  
   
 > [!IMPORTANT]
->  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
    
   
@@ -300,7 +384,12 @@
       <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Deserialize (serializationStream As Stream, handler As HeaderHandler) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ Deserialize(System::IO::Stream ^ serializationStream, System::Runtime::Remoting::Messaging::HeaderHandler ^ handler);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Messaging.IRemotingFormatter.Deserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -332,7 +421,7 @@
  In order for deserialization to succeed the current position in the stream must be at the beginning of the object graph.  
   
 > [!IMPORTANT]
->  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
  ]]></format>
         </remarks>
@@ -350,6 +439,8 @@
       <MemberSignature Language="C#" Value="public object DeserializeMethodResponse (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler, System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object DeserializeMethodResponse(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler, class System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler,System.Runtime.Remoting.Messaging.IMethodCallMessage)" />
+      <MemberSignature Language="VB.NET" Value="Public Function DeserializeMethodResponse (serializationStream As Stream, handler As HeaderHandler, methodCallMessage As IMethodCallMessage) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ DeserializeMethodResponse(System::IO::Stream ^ serializationStream, System::Runtime::Remoting::Messaging::HeaderHandler ^ handler, System::Runtime::Remoting::Messaging::IMethodCallMessage ^ methodCallMessage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -395,6 +486,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.TypeFilterLevel FilterLevel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel FilterLevel" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.FilterLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property FilterLevel As TypeFilterLevel" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::Formatters::TypeFilterLevel FilterLevel { System::Runtime::Serialization::Formatters::TypeFilterLevel get(); void set(System::Runtime::Serialization::Formatters::TypeFilterLevel value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -404,6 +497,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
@@ -415,17 +512,32 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Supported values are <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel> and <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel> (the default). For details about deserialization levels, see [&#91;\<topic://cpconAutomaticDeserializationInNETRemoting>&#93;](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
+ Supported values are <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low> and <xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full> (the default). For details about deserialization levels, see [&#91;\<topic://cpconAutomaticDeserializationInNETRemoting>&#93;](http://msdn.microsoft.com/library/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
   
  ]]></format>
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Serialize">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Serializes an object, or graph of connected objects, to the given stream.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Serialize">
       <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(System.IO.Stream,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Serialize (serializationStream As Stream, graph As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Serialize(System::IO::Stream ^ serializationStream, System::Object ^ graph);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.IFormatter.Serialize(System.IO.Stream,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -434,6 +546,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -470,7 +586,12 @@
       <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph, System.Runtime.Remoting.Messaging.Header[] headers);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph, class System.Runtime.Remoting.Messaging.Header[] headers) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(System.IO.Stream,System.Object,System.Runtime.Remoting.Messaging.Header[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Serialize (serializationStream As Stream, graph As Object, headers As Header())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Serialize(System::IO::Stream ^ serializationStream, System::Object ^ graph, cli::array &lt;System::Runtime::Remoting::Messaging::Header ^&gt; ^ headers);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Remoting.Messaging.IRemotingFormatter.Serialize(System.IO.Stream,System.Object,System.Runtime.Remoting.Messaging.Header[])</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -514,7 +635,12 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ISurrogateSelector SurrogateSelector { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ISurrogateSelector SurrogateSelector" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.SurrogateSelector" />
+      <MemberSignature Language="VB.NET" Value="Public Property SurrogateSelector As ISurrogateSelector" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::ISurrogateSelector ^ SurrogateSelector { System::Runtime::Serialization::ISurrogateSelector ^ get(); void set(System::Runtime::Serialization::ISurrogateSelector ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.Serialization.IFormatter.SurrogateSelector</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -523,6 +649,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
@@ -538,12 +668,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.Serialization.SurrogateSelector" />
       </Docs>
     </Member>
     <Member MemberName="TypeFormat">
       <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.TypeFormat" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeFormat As FormatterTypeStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Serialization::Formatters::FormatterTypeStyle TypeFormat { System::Runtime::Serialization::Formatters::FormatterTypeStyle get(); void set(System::Runtime::Serialization::Formatters::FormatterTypeStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -554,6 +687,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
       </ReturnValue>
@@ -561,12 +698,15 @@
         <summary>Gets or sets the format in which type descriptions are laid out in the serialized stream.</summary>
         <value>The style of type layouts to use.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Runtime.Serialization.Formatters.FormatterTypeStyle" />
       </Docs>
     </Member>
     <Member MemberName="UnsafeDeserialize">
       <MemberSignature Language="C#" Value="public object UnsafeDeserialize (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object UnsafeDeserialize(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UnsafeDeserialize (serializationStream As Stream, handler As HeaderHandler) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ UnsafeDeserialize(System::IO::Stream ^ serializationStream, System::Runtime::Remoting::Messaging::HeaderHandler ^ handler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -599,12 +739,12 @@
 ## Remarks  
  Headers are used only for specific remoting applications.  
   
- This method uses <xref:System.Security.Permissions.SecurityAction?displayProperty=fullName> to prevent it from being called from untrusted code; only the immediate caller is required to have <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=fullName> permission. Do not use this method if your code can be called from partially trusted code. In partially trusted scenarios, use <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A> instead. In full trust scenarios, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserialize%2A> provides better performance than <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>.  
+ This method uses <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> to prevent it from being called from untrusted code; only the immediate caller is required to have <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> permission. Do not use this method if your code can be called from partially trusted code. In partially trusted scenarios, use <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A> instead. In full trust scenarios, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserialize%2A> provides better performance than <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>.  
   
  For successful deserialization, the current position in the stream must be at the beginning of the object graph.  
   
 > [!IMPORTANT]
->  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
  ]]></format>
         </remarks>
@@ -618,6 +758,8 @@
       <MemberSignature Language="C#" Value="public object UnsafeDeserializeMethodResponse (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler, System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object UnsafeDeserializeMethodResponse(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler, class System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserializeMethodResponse(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler,System.Runtime.Remoting.Messaging.IMethodCallMessage)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UnsafeDeserializeMethodResponse (serializationStream As Stream, handler As HeaderHandler, methodCallMessage As IMethodCallMessage) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ UnsafeDeserializeMethodResponse(System::IO::Stream ^ serializationStream, System::Runtime::Remoting::Messaging::HeaderHandler ^ handler, System::Runtime::Remoting::Messaging::IMethodCallMessage ^ methodCallMessage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -652,12 +794,12 @@
 ## Remarks  
  Details about the caller object are not sent to the remote object during the method call. Instead, these details are obtained from the original method call that is passed to the current method in the `methodCallMessage` parameter.  
   
- This method uses <xref:System.Security.Permissions.SecurityAction?displayProperty=fullName> to prevent it from being called from untrusted code; only the immediate caller is required to have <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=fullName> permission. Do not use this method if your code can be called from partially trusted code. In partially trusted scenarios, use <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A> instead. In full trust scenarios, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserializeMethodResponse%2A> provides better performance than <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>.  
+ This method uses <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> to prevent it from being called from untrusted code; only the immediate caller is required to have <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> permission. Do not use this method if your code can be called from partially trusted code. In partially trusted scenarios, use <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A> instead. In full trust scenarios, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserializeMethodResponse%2A> provides better performance than <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>.  
   
  For successful deserialization, the current position in the stream must be at the beginning of the object graph.  
   
 > [!IMPORTANT]
->  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
  ]]></format>
         </remarks>
@@ -667,25 +809,5 @@
         <permission cref="T:System.Security.Permissions.SecurityPermission">To provide serialization services. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />.</permission>
       </Docs>
     </Member>
-    <MemberGroup MemberName="Deserialize">
-      <AssemblyInfo>
-        <AssemblyName>mscorlib</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Deserializes a stream into an object graph.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!IMPORTANT]
->  Calling this method with untrusted data is a security risk. Call this method only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

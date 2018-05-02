@@ -1,8 +1,8 @@
 ---
-title: "How to: Respond to Windows Forms CheckBox Clicks | Microsoft Docs"
+title: "How to: Respond to Windows Forms CheckBox Clicks"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,18 +10,22 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "Click event, CheckBox control"
+  - "Click event [Windows Forms], CheckBox control"
   - "CheckBox control [Windows Forms], Click events"
   - "events [Windows Forms], Click events"
   - "double-clicks"
-  - "check boxes, responding to events"
+  - "check boxes [Windows Forms], responding to events"
 ms.assetid: c39f901e-8899-43b6-aa31-939cbf7089fb
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Respond to Windows Forms CheckBox Clicks
 Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> control, the <xref:System.Windows.Forms.Control.Click> event occurs. You can program your application to perform some action depending upon the state of the check box.  
@@ -40,7 +44,6 @@ Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> cont
           CheckBox1.Text = "Unchecked"  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -57,7 +60,6 @@ Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> cont
           checkBox1.Text = "Unchecked";  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -99,7 +101,6 @@ Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> cont
              ' Code for indeterminate state.  
        End Select   
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -118,7 +119,6 @@ Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> cont
              break;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -141,10 +141,10 @@ Whenever a user clicks a Windows Forms <xref:System.Windows.Forms.CheckBox> cont
     ```  
   
     > [!NOTE]
-    >  When the <xref:System.Windows.Forms.CheckBox.ThreeState%2A> property is set to `true`, the <xref:System.Windows.Forms.CheckBox.Checked%2A> property returns `true` for both <xref:System.Windows.Forms.CheckState> and <xref:System.Windows.Forms.CheckState>.  
+    >  When the <xref:System.Windows.Forms.CheckBox.ThreeState%2A> property is set to `true`, the <xref:System.Windows.Forms.CheckBox.Checked%2A> property returns `true` for both <xref:System.Windows.Forms.CheckState.Checked> and <xref:System.Windows.Forms.CheckState.Indeterminate>.  
   
 ## See Also  
- <xref:System.Windows.Forms.CheckBox>   
- [CheckBox Control Overview](../../../../docs/framework/winforms/controls/checkbox-control-overview-windows-forms.md)   
- [How to: Set Options with Windows Forms CheckBox Controls](../../../../docs/framework/winforms/controls/how-to-set-options-with-windows-forms-checkbox-controls.md)   
+ <xref:System.Windows.Forms.CheckBox>  
+ [CheckBox Control Overview](../../../../docs/framework/winforms/controls/checkbox-control-overview-windows-forms.md)  
+ [How to: Set Options with Windows Forms CheckBox Controls](../../../../docs/framework/winforms/controls/how-to-set-options-with-windows-forms-checkbox-controls.md)  
  [CheckBox Control](../../../../docs/framework/winforms/controls/checkbox-control-windows-forms.md)

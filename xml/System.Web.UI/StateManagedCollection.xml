@@ -1,7 +1,9 @@
-<Type Name="StateManagedCollection" FullName="System.Web.UI.StateManagedCollection">
+﻿<Type Name="StateManagedCollection" FullName="System.Web.UI.StateManagedCollection">
   <TypeSignature Language="C#" Value="public abstract class StateManagedCollection : System.Collections.IList, System.Web.UI.IStateManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StateManagedCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Web.UI.IStateManager" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class StateManagedCollection&#xA;Implements IList, IStateManager" />
+  <TypeSignature Language="C++ CLI" Value="public ref class StateManagedCollection abstract : System::Collections::IList, System::Web::UI::IStateManager" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -40,12 +42,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.IStateManager" />
+    <altmember cref="T:System.Web.UI.StateBag" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected StateManagedCollection ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; StateManagedCollection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -68,7 +74,12 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Clear</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -87,13 +98,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnClear" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnClearComplete" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CopyTo(Array ^ array, int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -139,7 +156,12 @@
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -157,6 +179,8 @@
       <MemberSignature Language="C#" Value="protected virtual object CreateKnownType (int index);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateKnownType(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.CreateKnownType(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function CreateKnownType (index As Integer) As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Object ^ CreateKnownType(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -176,7 +200,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A> method is called internally by the <xref:System.Web.UI.StateManagedCollection> collection in its implementation of the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23LoadViewState%2A?displayProperty=fullName> method. Derived collections override the <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A> method to return a default instance of the <xref:System.Web.UI.IStateManager> type identified by the provided `index`, which maps to one of the types returned by the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A> method.  
+ The <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A> method is called internally by the <xref:System.Web.UI.StateManagedCollection> collection in its implementation of the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23LoadViewState%2A?displayProperty=nameWithType> method. Derived collections override the <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A> method to return a default instance of the <xref:System.Web.UI.IStateManager> type identified by the provided `index`, which maps to one of the types returned by the <xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A> method.  
   
    
   
@@ -189,13 +213,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">In all cases when not overridden in a derived class.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.GetKnownTypes" />
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -208,12 +238,15 @@
         <summary>Returns an iterator that iterates through the <see cref="T:System.Web.UI.StateManagedCollection" /> collection.</summary>
         <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the <see cref="T:System.Web.UI.StateManagedCollection" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Collections.IEnumerable.GetEnumerator" />
       </Docs>
     </Member>
     <Member MemberName="GetKnownTypes">
       <MemberSignature Language="C#" Value="protected virtual Type[] GetKnownTypes ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type[] GetKnownTypes() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.GetKnownTypes" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetKnownTypes () As Type()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual cli::array &lt;Type ^&gt; ^ GetKnownTypes();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -242,12 +275,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.CreateKnownType(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="OnClear">
       <MemberSignature Language="C#" Value="protected virtual void OnClear ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnClear" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnClear ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnClear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -267,12 +303,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.Clear" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnClearComplete" />
       </Docs>
     </Member>
     <Member MemberName="OnClearComplete">
       <MemberSignature Language="C#" Value="protected virtual void OnClearComplete ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClearComplete() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnClearComplete" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnClearComplete ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnClearComplete();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -292,12 +332,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.Clear" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnClear" />
       </Docs>
     </Member>
     <Member MemberName="OnInsert">
       <MemberSignature Language="C#" Value="protected virtual void OnInsert (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsert(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnInsert(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnInsert (index As Integer, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnInsert(int index, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -322,12 +366,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsertComplete(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="OnInsertComplete">
       <MemberSignature Language="C#" Value="protected virtual void OnInsertComplete (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnInsertComplete (index As Integer, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnInsertComplete(int index, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -352,12 +401,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsert(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="OnRemove">
       <MemberSignature Language="C#" Value="protected virtual void OnRemove (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemove(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnRemove(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRemove (index As Integer, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRemove(int index, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -382,12 +436,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemoveComplete(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="OnRemoveComplete">
       <MemberSignature Language="C#" Value="protected virtual void OnRemoveComplete (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemoveComplete(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnRemoveComplete(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRemoveComplete (index As Integer, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRemoveComplete(int index, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -412,12 +471,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemove(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="OnValidate">
       <MemberSignature Language="C#" Value="protected virtual void OnValidate (object value);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValidate(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnValidate(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnValidate (value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnValidate(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -442,12 +506,20 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Contains(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#IndexOf(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="SetDirty">
       <MemberSignature Language="C#" Value="public void SetDirty ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDirty() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.SetDirty" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetDirty ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetDirty();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -467,12 +539,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.SetDirtyObject(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateBag.SetDirty(System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="SetDirtyObject">
       <MemberSignature Language="C#" Value="protected abstract void SetDirtyObject (object o);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetDirtyObject(object o) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.SetDirtyObject(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected MustOverride Sub SetDirtyObject (o As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract void SetDirtyObject(System::Object ^ o);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -503,13 +579,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.ICollection.Count">
       <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#Count" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property Count As Integer Implements ICollection.Count" />
+      <MemberSignature Language="C++ CLI" Value="property int System.Collections.ICollection.Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -527,7 +609,12 @@
       <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsSynchronized As Boolean Implements ICollection.IsSynchronized" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.ICollection.IsSynchronized { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.IsSynchronized</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -540,13 +627,19 @@
         <value>
           <see langword="false" /> in all cases.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#SyncRoot" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.ICollection.SyncRoot">
       <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property SyncRoot As Object Implements ICollection.SyncRoot" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.ICollection.SyncRoot { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.SyncRoot</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -559,13 +652,19 @@
         <value>
           <see langword="null" /> in all cases.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#IsSynchronized" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
       <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerator ^ System.Collections.IEnumerable.GetEnumerator() = System::Collections::IEnumerable::GetEnumerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -578,13 +677,19 @@
         <summary>Returns an iterator that iterates through the <see cref="T:System.Web.UI.StateManagedCollection" /> collection.</summary>
         <returns>An <see cref="T:System.Collections.IEnumerator" /> that can be used to iterate through the <see cref="T:System.Web.UI.StateManagedCollection" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Collections.IEnumerable.GetEnumerator" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Add">
       <MemberSignature Language="C#" Value="int IList.Add (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Add (value As Object) As Integer Implements IList.Add" />
+      <MemberSignature Language="C++ CLI" Value=" virtual int System.Collections.IList.Add(System::Object ^ value) = System::Collections::IList::Add;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Add(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -596,7 +701,7 @@
         <Parameter Name="value" Type="System.Object" />
       </Parameters>
       <Docs>
-        <param name="value">The<see langword=" object " />to add to the <see cref="T:System.Web.UI.StateManagedCollection" />.</param>
+        <param name="value">The <see langword="object" /> to add to the <see cref="T:System.Web.UI.StateManagedCollection" />.</param>
         <summary>Adds an item to the <see cref="T:System.Web.UI.StateManagedCollection" /> collection.</summary>
         <returns>The position at which the new element was inserted.</returns>
         <remarks>
@@ -608,13 +713,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The specified <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsertComplete(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnValidate(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Clear">
       <MemberSignature Language="C#" Value="void IList.Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Clear" />
+      <MemberSignature Language="VB.NET" Value="Sub Clear () Implements IList.Clear" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.Clear() = System::Collections::IList::Clear;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Clear</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -633,13 +747,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.Clear" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Contains">
       <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Contains (value As Object) As Boolean Implements IList.Contains" />
+      <MemberSignature Language="C++ CLI" Value=" virtual bool System.Collections.IList.Contains(System::Object ^ value) = System::Collections::IList::Contains;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Contains(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -663,13 +783,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnValidate(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IndexOf">
       <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function IndexOf (value As Object) As Integer Implements IList.IndexOf" />
+      <MemberSignature Language="C++ CLI" Value=" virtual int System.Collections.IList.IndexOf(System::Object ^ value) = System::Collections::IList::IndexOf;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.IndexOf(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -692,13 +818,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Collections#IList#Item(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Insert">
       <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Insert (index As Integer, value As Object) Implements IList.Insert" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.Insert(int index, System::Object ^ value) = System::Collections::IList::Insert;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Insert(System.Int32,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -725,13 +857,21 @@
         <exception cref="T:System.ArgumentOutOfRangeException">The specified <paramref name="index" /> is out of range of the collection.</exception>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Web.UI.StateManagedCollection" /> is read-only.</exception>
         <exception cref="T:System.ArgumentNullException">The specified <paramref name="value" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsert(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnInsertComplete(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IsFixedSize">
       <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsFixedSize" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFixedSize As Boolean Implements IList.IsFixedSize" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.IList.IsFixedSize { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsFixedSize</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -744,13 +884,19 @@
         <value>
           <see langword="false" /> in all cases.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsReadOnly" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IsReadOnly">
       <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsReadOnly As Boolean Implements IList.IsReadOnly" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.IList.IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsReadOnly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -763,13 +909,19 @@
         <value>
           <see langword="true" /> if the <see cref="T:System.Web.UI.StateManagedCollection" /> is read-only; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsFixedSize" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Item">
       <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value=" Property Item(index As Integer) As Object Implements IList.Item" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.IList.Item[int] { System::Object ^ get(int index); void set(int index, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.Item(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -786,13 +938,19 @@
         <value>The element at the specified index.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The specified <paramref name="index" /> is out of range of the collection.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#IndexOf(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Remove">
       <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Remove (value As Object) Implements IList.Remove" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.Remove(System::Object ^ value) = System::Collections::IList::Remove;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Remove(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -815,13 +973,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Web.UI.StateManagedCollection" /> is read-only.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemove(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemoveComplete(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.RemoveAt">
       <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Sub RemoveAt (index As Integer) Implements IList.RemoveAt" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.RemoveAt(int index) = System::Collections::IList::RemoveAt;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.RemoveAt(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -844,13 +1010,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">The <see cref="T:System.Web.UI.StateManagedCollection" /> is read-only.</exception>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemove(System.Int32,System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.OnRemoveComplete(System.Int32,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
       <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsTrackingViewState As Boolean Implements IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Web.UI.IStateManager.IsTrackingViewState { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Web.UI.IStateManager.IsTrackingViewState</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -863,13 +1037,21 @@
         <value>
           <see langword="true" /> if the collection is marked to save its own state and the state of all the <see cref="T:System.Web.UI.IStateManager" /> items it contains; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#TrackViewState" />
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
       <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object savedState);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub LoadViewState (savedState As Object) Implements IStateManager.LoadViewState" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Web.UI.IStateManager.LoadViewState(System::Object ^ savedState) = System::Web::UI::IStateManager::LoadViewState;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Web.UI.IStateManager.LoadViewState(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -889,19 +1071,27 @@
 ## Remarks  
  This method restores view-state information that was saved by the <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A> method.  
   
- View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
+ View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/library/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
   
  This method is used primarily by control developers. You can override this method to specify how a custom server control restores its view state. For more information, see [ASP.NET State Management Overview](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#TrackViewState" />
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
       <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberSignature Language="VB.NET" Value="Function SaveViewState () As Object Implements IStateManager.SaveViewState" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Object ^ System.Web.UI.IStateManager.SaveViewState() = System::Web::UI::IStateManager::SaveViewState;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Web.UI.IStateManager.SaveViewState</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -919,19 +1109,27 @@
 ## Remarks  
  This method is used primarily by control developers.  
   
- View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
+ View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/library/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
   
- When view state is saved, this string object is returned to the client as a variable that is stored in an HTML hidden element (`<input type="hidden">`). When you author custom server controls, you can improve efficiency by overriding this method and modifying your server control's <xref:System.Web.UI.Control.ViewState%2A> property. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1) and[ASP.NET State Management Overview](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce).  
+ When view state is saved, this string object is returned to the client as a variable that is stored in an HTML hidden element (`<input type="hidden">`). When you author custom server controls, you can improve efficiency by overriding this method and modifying your server control's <xref:System.Web.UI.Control.ViewState%2A> property. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/library/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1) and[ASP.NET State Management Overview](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#TrackViewState" />
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
       <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberSignature Language="VB.NET" Value="Sub TrackViewState () Implements IStateManager.TrackViewState" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Web.UI.IStateManager.TrackViewState() = System::Web::UI::IStateManager::TrackViewState;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Web.UI.IStateManager.TrackViewState</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -946,10 +1144,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
+ View state is the accumulation of the values of a server control's properties. These values are automatically placed in the server control's <xref:System.Web.UI.Control.ViewState%2A> property, which is an instance of the <xref:System.Web.UI.StateBag> class. This property's value is then persisted to a string object after the save state stage of the server control life cycle. For more information, see [NIB: ASP.NET Web Server Controls](http://msdn.microsoft.com/library/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+        <altmember cref="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
       </Docs>
     </Member>
   </Members>

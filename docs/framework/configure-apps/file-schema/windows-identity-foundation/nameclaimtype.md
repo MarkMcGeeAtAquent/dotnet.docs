@@ -1,7 +1,8 @@
 ---
-title: "&lt;nameClaimType&gt; | Microsoft Docs"
+title: "&lt;nameClaimType&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;nameClaimType&gt;
 Sets the claim type that specifies the <xref:System.Security.Principal.IIdentity.Name%2A> property. The claim type is used to search for a <xref:System.Security.Claims.Claim> in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of this token handler. The value of the matching claim is then set as the name of the <xref:System.Security.Principal.IIdentity> generated from this token handler.  
@@ -26,18 +29,18 @@ Sets the claim type that specifies the <xref:System.Security.Principal.IIdentity
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add>  
-        <samlSecurityTokenRequirement>  
-          <nameClaimType value=xs:string>  
-          </nameClaimType>  
-        </samlSecurityTokenRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add>  
+        <samlSecurityTokenRequirement>  
+          <nameClaimType value=xs:string>  
+          </nameClaimType>  
+        </samlSecurityTokenRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
@@ -64,7 +67,7 @@ Sets the claim type that specifies the <xref:System.Security.Principal.IIdentity
   
 ## Example  
   
-```  
+```xml  
 <add type="System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel">  
     <samlSecurityTokenRequirement>  
         <nameClaimType value="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" />  

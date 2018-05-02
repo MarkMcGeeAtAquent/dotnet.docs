@@ -1,5 +1,5 @@
 ---
-title: "WorkFlow Service Registration Tool (WFServicesReg.exe) | Microsoft Docs"
+title: "WorkFlow Service Registration Tool (WFServicesReg.exe)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WorkFlow Service Registration Tool (WFServicesReg.exe)
 Workflow Services Registration tool (WFServicesReg.exe) is a stand-alone tool that can be used to add, remove, or repair the configuration elements for Windows Workflow Foundation (WF) services.  
@@ -21,7 +23,6 @@ Workflow Services Registration tool (WFServicesReg.exe) is a stand-alone tool th
 ## Syntax  
   
 ```  
-  
 WFServicesReg.exe [-c | -r | -v | -m | -i]  
 ```  
   
@@ -89,7 +90,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 #### Scriptmap deleted under a particular Web site  
  On a [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] machine, .xoml or .rules is accidentally deleted from a particular Web site (for example, the Default Web Site) rather than from the Web Sites node.  
   
- To repair deleted handlers for a particular Web site, you should run “WFServicesReg.exe /r” to remove handlers from all Web sites, then run “WFServicesReg.exe /c” to create the appropriate handlers for all Web sites.  
+ To repair deleted handlers for a particular Web site, you should run "WFServicesReg.exe /r" to remove handlers from all Web sites, then run "WFServicesReg.exe /c" to create the appropriate handlers for all Web sites.  
   
 ### Configuring handlers after switching IIS mode  
- When IIS is in shared configuration mode and [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] is installed, the IIS metabase is configured under a shared location. If you switch IIS to non-shared configuration mode, the local metabase will not contain the required handlers. To configure the local metabase properly, you can either import the shared metabase to local, or run “WFServicesReg.exe /c”, which configures the local metabase.
+ When IIS is in shared configuration mode and [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] is installed, the IIS metabase is configured under a shared location. If you switch IIS to non-shared configuration mode, the local metabase will not contain the required handlers. To configure the local metabase properly, you can either import the shared metabase to local, or run "WFServicesReg.exe /c", which configures the local metabase.

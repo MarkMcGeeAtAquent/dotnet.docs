@@ -1,5 +1,5 @@
 ---
-title: "Walkthrough: Creating an Accessible Windows-based Application | Microsoft Docs"
+title: "Walkthrough: Creating an Accessible Windows-based Application"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,17 +9,17 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "accessibility, Windows applications"
-  - "Windows applications, accessibility"
+  - "accessibility [Windows Forms], Windows applications"
+  - "Windows applications [Windows Forms], accessibility"
   - "applications [Windows Forms], accessibility"
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
 caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Creating an Accessible Windows-based Application
 Creating an accessible application has important business implications. Many governments have accessibility regulations for software purchase. The Certified for Windows logo includes accessibility requirements. An estimated 30 million residents of the U.S. alone, many of them potential customers, are affected by the accessibility of software.  
@@ -36,7 +36,7 @@ Creating an accessible application has important business implications. Many gov
   
 -   Avoid conveying important information by sound alone.  
   
- For more information, see [Resources for Designing Accessible Applications](http://msdn.microsoft.com/library/426bf023-bb34-43c4-9edb-c307191c8170).  
+ For more information, see [Resources for Designing Accessible Applications](/visualstudio/ide/reference/resources-for-designing-accessible-applications).  
   
  For information on supporting varying keyboard layouts, see [Best Practices for Developing World-Ready Applications](../../../../docs/standard/globalization-localization/best-practices-for-developing-world-ready-apps.md).  
   
@@ -49,7 +49,7 @@ Creating an accessible application has important business implications. Many gov
   
 #### To begin making the application  
   
--   Create a new Windows Application in [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]. Name the project **PizzaOrder**. (For details see [Creating New Solutions and Projects](http://msdn.microsoft.com/library/836f8ca0-3fc9-4f4b-9090-45f2e4d2e9c8).)  
+-   Create a new Windows Application in [!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]. Name the project **PizzaOrder**. (For details see [Creating New Solutions and Projects](/visualstudio/ide/creating-solutions-and-projects).)  
   
 ## Adding the Controls to the Form  
  When adding the controls to a form, keep in mind the following guidelines to make an accessible application:  

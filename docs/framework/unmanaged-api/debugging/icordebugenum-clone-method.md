@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEnum::Clone Method | Microsoft Docs"
+title: "ICorDebugEnum::Clone Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEnum.Clone"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEnum::Clone"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Clone method, ICorDebugEnum interface [.NET Framework debugging]"
   - "ICorDebugEnum::Clone method [.NET Framework debugging]"
 ms.assetid: 57eefaf3-75cf-4496-bc94-88c0706861b7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEnum::Clone Method
 Creates a copy of this ICorDebugEnum object.  

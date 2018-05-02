@@ -1,5 +1,5 @@
 ---
-title: "StrongNameTokenFromPublicKey Function | Microsoft Docs"
+title: "StrongNameTokenFromPublicKey Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,26 +9,29 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameTokenFromPublicKey"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "mscorsn.dll"
   - "clr.dll"
   - "mscorwks.dll"
   - "mscoreei.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "StrongNameTokenFromPublicKey"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameTokenFromPublicKey function [.NET Framework strong naming]"
 ms.assetid: 997e9e57-abb2-4217-bf20-1df621a75add
+topic_type: 
+  - "apiref"
 caps.latest.revision: 19
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameTokenFromPublicKey Function
 Gets a token representing a public key. A strong name token is the shortened form of a public key.  
@@ -38,7 +41,7 @@ Gets a token representing a public key. A strong name token is the shortened for
 ## Syntax  
   
 ```  
-BOOLEANStrongNameTokenFromPublicKey (   
+BOOLEANStrongNameTokenFromPublicKey (   
     [in]  BYTE    *pbPublicKeyBlob,  
     [in]  ULONG   cbPublicKeyBlob,  
     [out] BYTE    **ppbStrongNameToken,  
@@ -77,6 +80,6 @@ BOOLEANStrongNameTokenFromPublicKey ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [StrongNameTokenFromPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)   
- [StrongNameGetPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)   
+ [StrongNameTokenFromPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)  
+ [StrongNameGetPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)  
  [PublicKeyBlob Structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)

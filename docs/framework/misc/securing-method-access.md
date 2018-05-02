@@ -1,5 +1,5 @@
 ---
-title: "Securing Method Access | Microsoft Docs"
+title: "Securing Method Access"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "code security, method access"
   - "secure coding, method access"
@@ -24,6 +22,8 @@ caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing Method Access
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -36,7 +36,7 @@ manager: "wpickett"
   
 -   Limit the scope of accessibility to the class, assembly, or derived classes, if they can be trusted. This is the simplest way to limit method access. Note that, in general, derived classes can be less trustworthy than the class they derive from, though in some cases they share the parent class's identity. In particular, do not infer trust from the keyword **protected**, which is not necessarily used in the security context.  
   
--   Limit the method access to callers of a specified identity--essentially, any particular [evidence](http://msdn.microsoft.com/en-us/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (strong name, publisher, zone, and so on) you choose.  
+-   Limit the method access to callers of a specified identity--essentially, any particular [evidence](http://msdn.microsoft.com/library/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (strong name, publisher, zone, and so on) you choose.  
   
 -   Limit the method access to callers having whatever permissions you select.  
   
@@ -52,7 +52,6 @@ manager: "wpickett"
 <StrongNameIdentityPermissionAttribute(SecurityAction.Demand, PublicKey := "…hex…", Name := "App1", Version := "0.0.0.0")>  _  
 Public Class Class1  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -80,7 +79,6 @@ public class Class1
 System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name := "FullTrust")>  _  
 Public Class CanDeriveFromMe  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -97,7 +95,6 @@ public class CanDeriveFromMe
 <System.Security.Permissions.PermissionSetAttribute(System.Security.Permissions.SecurityAction.LinkDemand, Name := "FullTrust")>  _  
 NotInheritable Public Class CannotDeriveFromMe  
 End Class  
-  
 ```  
   
 ```csharp  

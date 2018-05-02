@@ -1,8 +1,8 @@
 ---
-title: "Discovery Security Sample | Microsoft Docs"
+title: "Discovery Security Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 13
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Discovery Security Sample
 The Discovery specification does not require that endpoints that participate in the discovery process to be secure. Enhancing the discovery messages with security mitigates various types of attacks (message alteration, denial of service, replay, spoofing). This sample implements custom channels that compute and verify message signatures using the compact signature format (described in Section 8.2 of the WS-Discovery specification). The sample supports both the [2005 Discovery specification](http://go.microsoft.com/fwlink/?LinkId=177912) and the [1.1 version](http://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -28,17 +30,16 @@ The Discovery specification does not require that endpoints that participate in 
 ## Secure Channel Factory  
  The secure channel factory creates output or duplex channels that add a compact signature to message headers. To keep messages as small as possible the compact signature format is used. The structure of a compact signature is shown in the following example.  
   
-```  
+```xml  
 <d:Security ... >   
   [<d:Sig Scheme="xs:anyURI"   
          [KeyId="xs:base64Binary"]?  
           Refs="..."  
-         [PrefixList]=”xs:NMTOKENS”   
+         [PrefixList]="xs:NMTOKENS"   
           Sig="xs:base64Binary"   
           ... />]?  
   ...   
 </d:Security>  
-  
 ```  
   
 > [!NOTE]

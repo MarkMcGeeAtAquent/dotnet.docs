@@ -1,10 +1,13 @@
-<Type Name="ConsoleCancelEventArgs" FullName="System.ConsoleCancelEventArgs">
+﻿<Type Name="ConsoleCancelEventArgs" FullName="System.ConsoleCancelEventArgs">
   <TypeSignature Language="C#" Value="public sealed class ConsoleCancelEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ConsoleCancelEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.ConsoleCancelEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ConsoleCancelEventArgs&#xA;Inherits EventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConsoleCancelEventArgs sealed : EventArgs" />
   <AssemblyInfo>
     <AssemblyName>System.Console</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -25,7 +28,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A user can interrupt a console application process by simultaneously pressing the <xref:System.ConsoleModifiers> modifier key and the <xref:System.ConsoleKey> console key (Ctrl+C), or the <xref:System.ConsoleModifiers> modifier key and the Break console key (Ctrl+Break). The .NET Framework consequently provides a <xref:System.ConsoleCancelEventArgs> object to the event handler for the <xref:System.Console.CancelKeyPress?displayProperty=fullName> event to specify whether the process should be cancelled.  
+ A user can interrupt a console application process by simultaneously pressing the <xref:System.ConsoleModifiers.Control> modifier key and the <xref:System.ConsoleKey.C> console key (Ctrl+C), or the <xref:System.ConsoleModifiers.Control> modifier key and the Break console key (Ctrl+Break). The .NET Framework consequently provides a <xref:System.ConsoleCancelEventArgs> object to the event handler for the <xref:System.Console.CancelKeyPress?displayProperty=nameWithType> event to specify whether the process should be cancelled.  
   
  If the <xref:System.ConsoleCancelEventArgs.Cancel%2A> property is set to `true` in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the <xref:System.ConsoleCancelEventArgs> property is `false`, and the process terminates.  
   
@@ -46,10 +49,13 @@
       <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
       <MemberSignature Language="DocId" Value="P:System.ConsoleCancelEventArgs.Cancel" />
+      <MemberSignature Language="VB.NET" Value="Public Property Cancel As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Cancel { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -89,16 +95,23 @@
         <block subset="none" type="usage">
           <para>In the [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)] and [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], attempting to set the <see cref="P:System.ConsoleCancelEventArgs.Cancel" /> property to <see langword="true" /> if the <see cref="E:System.Console.CancelKeyPress" /> event was invoked by the user pressing Ctrl+Break threw an <see cref="T:System.InvalidOperationException" /> exception. In the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can set the <see cref="P:System.ConsoleCancelEventArgs.Cancel" /> property to <see langword="true" /> after the user presses Ctrl+Break and cancel the termination of the application.</para>
         </block>
+        <altmember cref="T:System.ConsoleCancelEventHandler" />
+        <altmember cref="T:System.ConsoleKey" />
+        <altmember cref="T:System.ConsoleModifiers" />
+        <altmember cref="P:System.ConsoleCancelEventArgs.SpecialKey" />
       </Docs>
     </Member>
     <Member MemberName="SpecialKey">
       <MemberSignature Language="C#" Value="public ConsoleSpecialKey SpecialKey { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ConsoleSpecialKey SpecialKey" />
       <MemberSignature Language="DocId" Value="P:System.ConsoleCancelEventArgs.SpecialKey" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SpecialKey As ConsoleSpecialKey" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property ConsoleSpecialKey SpecialKey { ConsoleSpecialKey get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Console</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

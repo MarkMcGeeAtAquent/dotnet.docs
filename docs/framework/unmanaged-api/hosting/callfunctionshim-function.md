@@ -1,5 +1,5 @@
 ---
-title: "CallFunctionShim Function | Microsoft Docs"
+title: "CallFunctionShim Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CallFunctionShim"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CallFunctionShim"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CallfunctionShim function [.NET Framework hosting]"
 ms.assetid: 37118465-ddf3-41f0-bf27-335b72777e63
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CallFunctionShim Function
 Makes a call to the function that has the specified name and parameters in the specified library.  

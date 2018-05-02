@@ -1,8 +1,8 @@
 ---
-title: "Net.TCP Port Sharing Sample | Microsoft Docs"
+title: "Net.TCP Port Sharing Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Net.TCP Port Sharing Sample
 The TCP/IP protocol uses a 16-bit number, called a port, to differentiate connections to multiple network applications running on the same machine. If an application is listening on a port, then all TCP traffic for that port goes to that application. Other applications cannot listen on that port at the same time.  
@@ -136,7 +138,6 @@ Press <ENTER> to terminate client.
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

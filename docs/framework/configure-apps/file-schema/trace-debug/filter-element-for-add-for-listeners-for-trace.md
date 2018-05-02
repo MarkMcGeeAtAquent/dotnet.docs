@@ -1,8 +1,8 @@
 ---
-title: "&lt;filter&gt; Element for &lt;add&gt; for &lt;listeners&gt; for &lt;trace&gt; | Microsoft Docs"
+title: "&lt;filter&gt; Element for &lt;add&gt; for &lt;listeners&gt; for &lt;trace&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/add/filter"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "initializeData attribute"
   - "filter element for <add> for <listeners> for <trace>"
@@ -25,6 +20,8 @@ caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;filter&gt; Element for &lt;add&gt; for &lt;listeners&gt; for &lt;trace&gt;
 Adds a filter to a listener in the `Listeners` collection for a trace.  
@@ -38,7 +35,7 @@ Adds a filter to a listener in the `Listeners` collection for a trace.
   
 ## Syntax  
   
-```  
+```xml  
 <filter   
   type="traceFilterClassName"   
   initializeData="data" />  
@@ -75,7 +72,7 @@ Adds a filter to a listener in the `Listeners` collection for a trace.
 ## Example  
  The following example shows how to use the `<filter>` element to add a filter to the listener `console` in the `Listeners` collection for trace, specifying the filter event level as `Error`.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <trace autoflush="false" indentsize="4">  
@@ -93,8 +90,8 @@ Adds a filter to a listener in the `Listeners` collection for a trace.
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.Trace>   
- <xref:System.Diagnostics.TraceListener>   
- <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=fullName>   
- <xref:System.Diagnostics.TraceFilter>   
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.TraceListener>  
+ <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=nameWithType>  
+ <xref:System.Diagnostics.TraceFilter>  
  [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

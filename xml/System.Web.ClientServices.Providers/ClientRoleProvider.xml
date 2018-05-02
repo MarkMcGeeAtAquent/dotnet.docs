@@ -1,7 +1,9 @@
-<Type Name="ClientRoleProvider" FullName="System.Web.ClientServices.Providers.ClientRoleProvider">
+﻿<Type Name="ClientRoleProvider" FullName="System.Web.ClientServices.Providers.ClientRoleProvider">
   <TypeSignature Language="C#" Value="public class ClientRoleProvider : System.Web.Security.RoleProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientRoleProvider extends System.Web.Security.RoleProvider" />
   <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.Providers.ClientRoleProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Class ClientRoleProvider&#xA;Inherits RoleProvider" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClientRoleProvider : System::Web::Security::RoleProvider" />
   <AssemblyInfo>
     <AssemblyName>System.Web.Extensions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -11,16 +13,16 @@
   </Base>
   <Interfaces />
   <Docs>
-    <summary>Gets role information for Windows-based applications from an [!INCLUDE[ajax_current_short](~/includes/ajax-current-short-md.md)] roles service.</summary>
+    <summary>Gets role information for Windows-based applications from an Microsoft Ajax roles service.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can use client application services to retrieve role information from an existing roles service by configuring your application to use the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class. After configuration, you can determine whether an authenticated user is in a particular role by calling the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Security.Principal.IPrincipal> returned by the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> property. For applications configured to use client application services, this property returns a <xref:System.Web.ClientServices.ClientRolePrincipal>. Because this class implements the <xref:System.Security.Principal.IPrincipal> interface, you do not need to reference it explicitly. The <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A?displayProperty=fullName> method internally calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A?displayProperty=fullName> method.  
+ You can use client application services to retrieve role information from an existing roles service by configuring your application to use the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class. After configuration, you can determine whether an authenticated user is in a particular role by calling the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Security.Principal.IPrincipal> returned by the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> property. For applications configured to use client application services, this property returns a <xref:System.Web.ClientServices.ClientRolePrincipal>. Because this class implements the <xref:System.Security.Principal.IPrincipal> interface, you do not need to reference it explicitly. The <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A?displayProperty=nameWithType> method internally calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A?displayProperty=nameWithType> method.  
   
  The <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class is a read-only role membership provider that retrieves role information for authenticated users from the roles service indicated by the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.ServiceUri%2A> property. The value of the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.ServiceUri%2A> property is typically retrieved from the application configuration file along with other configuration values. For more information, see [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
- You can retrieve the current <xref:System.Web.ClientServices.Providers.ClientRoleProvider> instance through the `static` <xref:System.Web.Security.Roles.Provider%2A?displayProperty=fullName> property.  
+ You can retrieve the current <xref:System.Web.ClientServices.Providers.ClientRoleProvider> instance through the `static` <xref:System.Web.Security.Roles.Provider%2A?displayProperty=nameWithType> property.  
   
  The <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class supports only the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> and <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A> methods of the <xref:System.Web.Security.RoleProvider> abstract class. When you call one of these methods for a particular user, the service provider first checks the local data cache for role information. If the cache does not contain any role information or the cache has expired, the service provider retrieves the role information from the roles service and adds it to the cache.  
   
@@ -38,12 +40,21 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="P:System.Threading.Thread.CurrentPrincipal" />
+    <altmember cref="T:System.Web.ClientServices.ClientRolePrincipal" />
+    <altmember cref="M:System.Web.ClientServices.ClientRolePrincipal.IsInRole(System.String)" />
+    <altmember cref="P:System.Web.ClientServices.Providers.ClientRoleProvider.ServiceUri" />
+    <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser(System.String)" />
+    <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole(System.String,System.String)" />
+    <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.ResetCache" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ClientRoleProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClientRoleProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -59,6 +70,8 @@
       <MemberSignature Language="C#" Value="public override void AddUsersToRoles (string[] usernames, string[] roleNames);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddUsersToRoles(string[] usernames, string[] roleNames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.AddUsersToRoles(System.String[],System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub AddUsersToRoles (usernames As String(), roleNames As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void AddUsersToRoles(cli::array &lt;System::String ^&gt; ^ usernames, cli::array &lt;System::String ^&gt; ^ roleNames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -83,6 +96,8 @@
       <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
       <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientRoleProvider.ApplicationName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ApplicationName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ApplicationName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -108,6 +123,8 @@
       <MemberSignature Language="C#" Value="public override void CreateRole (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateRole(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.CreateRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub CreateRole (roleName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void CreateRole(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -130,6 +147,8 @@
       <MemberSignature Language="C#" Value="public override bool DeleteRole (string roleName, bool throwOnPopulatedRole);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteRole(string roleName, bool throwOnPopulatedRole) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.DeleteRole(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DeleteRole (roleName As String, throwOnPopulatedRole As Boolean) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool DeleteRole(System::String ^ roleName, bool throwOnPopulatedRole);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -155,6 +174,8 @@
       <MemberSignature Language="C#" Value="public override string[] FindUsersInRole (string roleName, string usernameToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] FindUsersInRole(string roleName, string usernameToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.FindUsersInRole(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function FindUsersInRole (roleName As String, usernameToMatch As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ FindUsersInRole(System::String ^ roleName, System::String ^ usernameToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -180,6 +201,8 @@
       <MemberSignature Language="C#" Value="public override string[] GetAllRoles ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetAllRoles() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetAllRoles" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetAllRoles () As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetAllRoles();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -200,6 +223,8 @@
       <MemberSignature Language="C#" Value="public override string[] GetRolesForUser (string username);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetRolesForUser(string username) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetRolesForUser (username As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetRolesForUser(System::String ^ username);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -219,7 +244,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> method retrieves role information for the current, authenticated user, which you must specify in the `username` parameter. You can get the user name through the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> property as follows: `Thread.CurrentPrincipal.Identity.Name`.  
+ The <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> method retrieves role information for the current, authenticated user, which you must specify in the `username` parameter. You can get the user name through the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> property as follows: `Thread.CurrentPrincipal.Identity.Name`.  
   
  The service provider caches role information about the local file system to avoid unnecessary service calls. For more information, see the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class overview.  
   
@@ -239,12 +264,16 @@
  -or-  
   
  <paramref name="username" /> is not the user name of the current, authenticated user.</exception>
+        <altmember cref="P:System.Threading.Thread.CurrentPrincipal" />
+        <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole(System.String,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetUsersInRole">
       <MemberSignature Language="C#" Value="public override string[] GetUsersInRole (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetUsersInRole(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetUsersInRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetUsersInRole (roleName As String) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::String ^&gt; ^ GetUsersInRole(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -268,6 +297,8 @@
       <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Initialize (name As String, config As NameValueCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Initialize(System::String ^ name, System::Collections::Specialized::NameValueCollection ^ config);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -317,7 +348,7 @@
   
  -or-  
   
- <paramref name="config" /> contains an unrecognized value. For more information, see the Remarks section.</exception>
+ <paramref name="config" /> contains an unrecognized value.</exception>
         <exception cref="T:System.InvalidOperationException">This <see cref="T:System.Web.ClientServices.Providers.ClientRoleProvider" /> has already been initialized.</exception>
         <exception cref="T:System.FormatException">
           <paramref name="config" /> contains a <c>cacheTimeout</c> value that is not in the correct format for conversion to an <see cref="T:System.Int32" /> value.</exception>
@@ -329,6 +360,8 @@
       <MemberSignature Language="C#" Value="public override bool IsUserInRole (string username, string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsUserInRole(string username, string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsUserInRole (username As String, roleName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsUserInRole(System::String ^ username, System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -351,7 +384,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can determine whether an authenticated user is in a particular role by calling the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Security.Principal.IPrincipal> returned by the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=fullName> property. For applications configured to use client application services, this property returns a <xref:System.Web.ClientServices.ClientRolePrincipal>. Because this class implements the <xref:System.Security.Principal.IPrincipal> interface, you do not need to reference it explicitly. The <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A?displayProperty=fullName> method internally calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A> method. The <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A> method uses the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> method to determine whether the user indicated by `username` is in the role indicated by `roleName`.  
+ You can determine whether an authenticated user is in a particular role by calling the <xref:System.Security.Principal.IPrincipal.IsInRole%2A> method of the <xref:System.Security.Principal.IPrincipal> returned by the `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> property. For applications configured to use client application services, this property returns a <xref:System.Web.ClientServices.ClientRolePrincipal>. Because this class implements the <xref:System.Security.Principal.IPrincipal> interface, you do not need to reference it explicitly. The <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A?displayProperty=nameWithType> method internally calls the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A> method. The <xref:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole%2A> method uses the <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> method to determine whether the user indicated by `username` is in the role indicated by `roleName`.  
   
  The service provider caches role information about the local file system to avoid unnecessary service calls. For more information, see the <xref:System.Web.ClientServices.Providers.ClientRoleProvider> class overview.  
   
@@ -376,12 +409,18 @@
  -or-  
   
  The roles service is not available.</exception>
+        <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser(System.String)" />
+        <altmember cref="P:System.Threading.Thread.CurrentPrincipal" />
+        <altmember cref="T:System.Web.ClientServices.ClientRolePrincipal" />
+        <altmember cref="M:System.Web.ClientServices.ClientRolePrincipal.IsInRole(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="RemoveUsersFromRoles">
       <MemberSignature Language="C#" Value="public override void RemoveUsersFromRoles (string[] usernames, string[] roleNames);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveUsersFromRoles(string[] usernames, string[] roleNames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub RemoveUsersFromRoles (usernames As String(), roleNames As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void RemoveUsersFromRoles(cli::array &lt;System::String ^&gt; ^ usernames, cli::array &lt;System::String ^&gt; ^ roleNames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -406,6 +445,8 @@
       <MemberSignature Language="C#" Value="public void ResetCache ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetCache() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.ResetCache" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ResetCache ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ResetCache();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -435,12 +476,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser(System.String)" />
+        <altmember cref="M:System.Web.ClientServices.Providers.ClientRoleProvider.IsUserInRole(System.String,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="RoleExists">
       <MemberSignature Language="C#" Value="public override bool RoleExists (string roleName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool RoleExists(string roleName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientRoleProvider.RoleExists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function RoleExists (roleName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool RoleExists(System::String ^ roleName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>
@@ -464,6 +509,8 @@
       <MemberSignature Language="C#" Value="public string ServiceUri { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ServiceUri" />
       <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientRoleProvider.ServiceUri" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServiceUri As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ServiceUri { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Extensions</AssemblyName>

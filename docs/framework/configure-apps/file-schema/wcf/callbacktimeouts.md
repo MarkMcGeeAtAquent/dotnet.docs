@@ -1,8 +1,8 @@
 ---
-title: "&lt;callbackTimeouts&gt; | Microsoft Docs"
+title: "&lt;callbackTimeouts&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d7fcfc5f-6d35-491e-8fa6-2f964c1e792f
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;callbackTimeouts&gt;
 Specifies the timeout value when flowing transactions from server to client.in a duplex callback contract scenario.  
@@ -26,8 +28,7 @@ Specifies the timeout value when flowing transactions from server to client.in a
   
 ## Syntax  
   
-```  
-  
+```xml  
 <callbackTimeOuts transactionTimeout="TimeSpan" />  
 ```  
   
@@ -41,7 +42,7 @@ Specifies the timeout value when flowing transactions from server to client.in a
   
 |Attribute|Description|  
 |---------------|-----------------|  
-|`transactionTimeout`|A <xref:System.TimeSpan> value that specifies the interval of time within which transactions must complete or be automatically terminated. The default is “00:00:00”.|  
+|`transactionTimeout`|A <xref:System.TimeSpan> value that specifies the interval of time within which transactions must complete or be automatically terminated. The default is "00:00:00".|  
   
 ### Child Elements  
  None.  

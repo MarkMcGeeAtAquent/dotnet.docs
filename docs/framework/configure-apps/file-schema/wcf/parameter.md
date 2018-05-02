@@ -1,8 +1,8 @@
 ---
-title: "&lt;parameter&gt; | Microsoft Docs"
+title: "&lt;parameter&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0fb41e2d-64f7-44ab-993e-05892eac6d82
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;parameter&gt;
 Specifies the generic parameter when a declared type is a generic type.  
@@ -27,8 +29,7 @@ Specifies the generic parameter when a declared type is a generic type.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <parameter index="integer"  
                       type=String" />  
 ```  
@@ -67,7 +68,7 @@ Specifies the generic parameter when a declared type is a generic type.
  This configuration element cannot have both attributes at the same time. If both attributes are set, a <xref:System.Configuration.ConfigurationErrorsException> occurs.  
   
 ## See Also  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)   
- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)   
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
+ [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
  [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-declaredtypes-element.md)

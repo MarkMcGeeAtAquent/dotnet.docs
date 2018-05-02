@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetILToNativeMapping Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetILToNativeMapping Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetILToNativeMapping"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetILToNativeMapping"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetILToNativeMapping method, ICorProfilerInfo interface [.NET Framework profiling]"
   - "ICorProfilerInfo::GetILToNativeMapping method [.NET Framework profiling]"
 ms.assetid: 6a5431ef-22fb-4e53-bac5-703986297eb1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 20
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetILToNativeMapping Method
 Gets a map from Microsoft intermediate language (MSIL) offsets to native offsets for the code contained in the specified function.  
@@ -71,7 +74,7 @@ HRESULT GetILToNativeMapping(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
- [GetILToNativeMapping2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getiltonativemapping2-method.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
+ [GetILToNativeMapping2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getiltonativemapping2-method.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

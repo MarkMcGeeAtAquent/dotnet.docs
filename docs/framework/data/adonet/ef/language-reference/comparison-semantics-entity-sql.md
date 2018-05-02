@@ -1,23 +1,21 @@
 ---
-title: "Comparison Semantics (Entity SQL) | Microsoft Docs"
+title: "Comparison Semantics (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Comparison Semantics (Entity SQL)
 Performing any of the following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] operators involves comparison of type instances:  
@@ -35,7 +33,7 @@ Performing any of the following [!INCLUDE[esql](../../../../../../includes/esql-
   
 -   \<=  
   
--   >  
+-   \>  
   
 -   \>=  
   

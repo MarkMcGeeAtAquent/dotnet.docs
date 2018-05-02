@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Lifetime.LeaseState
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

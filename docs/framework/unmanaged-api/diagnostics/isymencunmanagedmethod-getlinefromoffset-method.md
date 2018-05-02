@@ -1,5 +1,5 @@
 ---
-title: "ISymENCUnmanagedMethod::GetLineFromOffset Method | Microsoft Docs"
+title: "ISymENCUnmanagedMethod::GetLineFromOffset Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymENCUnmanagedMethod.GetLineFromOffset"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymENCUnmanagedMethod::GetLineFromOffset"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetLineFromOffset method [.NET Framework debugging]"
   - "ISymENCUnmanagedMethod::GetLineFromOffset method [.NET Framework debugging]"
 ms.assetid: cc09bad2-fb34-4d13-a521-6ec7b1a1d915
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymENCUnmanagedMethod::GetLineFromOffset Method
 Gets the line information associated with an offset. If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.  

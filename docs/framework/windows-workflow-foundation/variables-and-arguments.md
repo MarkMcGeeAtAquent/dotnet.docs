@@ -1,5 +1,5 @@
 ---
-title: "Variables and Arguments | Microsoft Docs"
+title: "Variables and Arguments"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d03dbe34-5b2e-4f21-8b57-693ee49611b8
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Variables and Arguments
 In [!INCLUDE[wf](../../../includes/wf-md.md)], variables represent the storage of data and arguments represent the flow of data into and out of an activity. An activity has a set of arguments and they make up the signature of the activity. Additionally, an activity can maintain a list of variables to which a developer can add or remove variables during the design of a workflow. An argument is bound using an expression that returns a value.  
@@ -63,7 +65,7 @@ Variable<string> var = new Variable<string>
  The lifetime of a variable at runtime is equal to the lifetime of the activity that declares it. When an activity completes, its variables are cleaned up and can no longer be referenced.  
   
 ## Arguments  
- Activity authors use arguments to define the way data flows into and out of an activity. Each argument has a specified direction: <xref:System.Activities.ArgumentDirection>, <xref:System.Activities.ArgumentDirection>, or <xref:System.Activities.ArgumentDirection>.  
+ Activity authors use arguments to define the way data flows into and out of an activity. Each argument has a specified direction: <xref:System.Activities.ArgumentDirection.In>, <xref:System.Activities.ArgumentDirection.Out>, or <xref:System.Activities.ArgumentDirection.InOut>.  
   
  The workflow runtime makes the following guarantees about the timing of data movement into and out of activities:  
   
@@ -127,7 +129,7 @@ WorkflowInvoker.Invoke(wf);
 ```  
   
 ### Using Variables and Arguments in Code-Based Activities  
- The previous examples show how to use arguments and variables in workflows and declarative activities. Arguments and variables are also used in code-based activities. Conceptually the usage is very similar. Variables represent data storage within the activity, and arguments represent the flow of data into or out of the activity, and are bound by the workflow author to other variables or arguments in the workflow that represent where the data flows to or from. To get or set the value of a variable or argument in an activity, an activity context must be used that represents the current execution environment of the activity. This is passed into the <xref:System.Activities.CodeActivity%601.Execute%2A> method of the activity by the workflow runtime. In this example, a custom `Add` activity is defined that has two <xref:System.Activities.ArgumentDirection> arguments. To access the value of the arguments, the <xref:System.Activities.Argument.Get%2A> method is used and the context that was passed in by the workflow runtime is used.  
+ The previous examples show how to use arguments and variables in workflows and declarative activities. Arguments and variables are also used in code-based activities. Conceptually the usage is very similar. Variables represent data storage within the activity, and arguments represent the flow of data into or out of the activity, and are bound by the workflow author to other variables or arguments in the workflow that represent where the data flows to or from. To get or set the value of a variable or argument in an activity, an activity context must be used that represents the current execution environment of the activity. This is passed into the <xref:System.Activities.CodeActivity%601.Execute%2A> method of the activity by the workflow runtime. In this example, a custom `Add` activity is defined that has two <xref:System.Activities.ArgumentDirection.In> arguments. To access the value of the arguments, the <xref:System.Activities.Argument.Get%2A> method is used and the context that was passed in by the workflow runtime is used.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -145,4 +147,4 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- [!INCLUDE[crabout](../../../includes/crabout-md.md)]working with arguments, variables, and expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md) and [Required Arguments and Overload Groups](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).
+ [!INCLUDE[crabout](../../../includes/crabout-md.md)] working with arguments, variables, and expressions in code, see [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md) and [Required Arguments and Overload Groups](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).

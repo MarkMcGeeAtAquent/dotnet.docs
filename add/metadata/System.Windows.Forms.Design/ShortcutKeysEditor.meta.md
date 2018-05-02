@@ -1,36 +1,48 @@
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor.EditValue
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor.GetEditStyle
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor.#ctor
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-winforms"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Forms.Design.ShortcutKeysEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::LoadAssembly Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::LoadAssembly Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.LoadAssembly"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::LoadAssembly"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "LoadAssembly method [.NET Framework debugging]"
   - "ICorDebugManagedCallback::LoadAssembly method [.NET Framework debugging]"
 ms.assetid: 55cb673a-e240-43a6-a406-6912e7c0fe66
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::LoadAssembly Method
 Notifies the debugger that a common language runtime (CLR) assembly has been successfully loaded.  
@@ -56,5 +59,5 @@ HRESULT LoadAssembly (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [UnloadAssembly Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)   
+ [UnloadAssembly Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadassembly-method.md)  
  [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

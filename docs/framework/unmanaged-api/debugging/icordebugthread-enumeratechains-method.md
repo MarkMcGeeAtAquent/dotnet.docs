@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugThread::EnumerateChains Method | Microsoft Docs"
+title: "ICorDebugThread::EnumerateChains Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugThread.EnumerateChains"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugThread::EnumerateChains"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateChains method [.NET Framework debugging]"
   - "ICorDebugThread::EnumerateChains method [.NET Framework debugging]"
 ms.assetid: ec00bc21-117e-4acd-9301-2cfafd5be8d3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugThread::EnumerateChains Method
 Gets an interface pointer to an ICorDebugChainEnum enumerator that contains all the stack chains in this ICorDebugThread object.  

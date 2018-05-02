@@ -1,7 +1,8 @@
 ---
-title: "&lt;roleClaimType&gt; | Microsoft Docs"
+title: "&lt;roleClaimType&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;roleClaimType&gt;
 Specifies the claim type that defines the role type claims in the collection of <xref:System.Security.Claims.ClaimsIdentity> objects returned by the <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> method of the token handler.  
@@ -26,18 +29,18 @@ Specifies the claim type that defines the role type claims in the collection of 
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add>  
-        <samlSecurityTokenRequirement>  
-          <roleClaimType value=xs:string>  
-          </roleClaimType>  
-        </samlSecurityTokenRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add>  
+        <samlSecurityTokenRequirement>  
+          <roleClaimType value=xs:string>  
+          </roleClaimType>  
+        </samlSecurityTokenRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
@@ -64,7 +67,7 @@ Specifies the claim type that defines the role type claims in the collection of 
   
 ## Example  
   
-```  
+```xml  
 <add type="System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel">  
     <samlSecurityTokenRequirement>  
         <roleClaimType value="schemas.microsoft.com/ws/2006/04/identity/claims/role" />  

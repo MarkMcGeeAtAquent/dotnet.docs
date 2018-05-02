@@ -1,13 +1,16 @@
-<Type Name="SecurityCriticalAttribute" FullName="System.Security.SecurityCriticalAttribute">
+﻿<Type Name="SecurityCriticalAttribute" FullName="System.Security.SecurityCriticalAttribute">
   <TypeSignature Language="C#" Value="public sealed class SecurityCriticalAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityCriticalAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Security.SecurityCriticalAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SecurityCriticalAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SecurityCriticalAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -38,16 +41,33 @@
 > [!NOTE]
 >  The <xref:System.Security.SecurityCriticalAttribute> is equivalent to a link demand for full trust. A type or member marked with the <xref:System.Security.SecurityCriticalAttribute> can be called only by fully trusted code; it does not have to demand specific permissions. It cannot be called by partially trusted code.  
   
- Applying the <xref:System.Security.SecurityCriticalAttribute> at the assembly level identifies the assembly as a security-critical assembly. The entire assembly can be identified as critical by setting the scope parameter <xref:System.Security.SecurityCriticalScope?displayProperty=fullName>.  
+ Applying the <xref:System.Security.SecurityCriticalAttribute> at the assembly level identifies the assembly as a security-critical assembly. The entire assembly can be identified as critical by setting the scope parameter <xref:System.Security.SecurityCriticalScope.Everything?displayProperty=nameWithType>.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Security.SecurityTransparentAttribute" />
+    <altmember cref="T:System.Security.SecuritySafeCriticalAttribute" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.SecurityCriticalAttribute" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SecurityCriticalAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.SecurityCriticalAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SecurityCriticalAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -55,6 +75,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -75,6 +96,8 @@
       <MemberSignature Language="C#" Value="public SecurityCriticalAttribute (System.Security.SecurityCriticalScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.SecurityCriticalScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.SecurityCriticalAttribute.#ctor(System.Security.SecurityCriticalScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (scope As SecurityCriticalScope)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SecurityCriticalAttribute(System::Security::SecurityCriticalScope scope);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -84,6 +107,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="scope" Type="System.Security.SecurityCriticalScope" />
@@ -95,7 +122,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor is provided for compatibility with the .NET Framework version 2.0 transparency model. It does not apply to the [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]. For more information, see [Security-Transparent Code, Level 2](../Topic/Security-Transparent%20Code,%20Level%202.md).  
+ This constructor is provided for compatibility with the .NET Framework version 2.0 transparency model. It does not apply to the [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]. For more information, see [Security-Transparent Code, Level 2](~/docs/framework/misc/security-transparent-code-level-2.md).  
   
  ]]></format>
         </remarks>
@@ -105,6 +132,8 @@
       <MemberSignature Language="C#" Value="public System.Security.SecurityCriticalScope Scope { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.SecurityCriticalScope Scope" />
       <MemberSignature Language="DocId" Value="P:System.Security.SecurityCriticalAttribute.Scope" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Scope As SecurityCriticalScope" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::SecurityCriticalScope Scope { System::Security::SecurityCriticalScope get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -114,6 +143,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

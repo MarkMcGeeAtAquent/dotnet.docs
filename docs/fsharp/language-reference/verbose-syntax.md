@@ -1,6 +1,6 @@
 ---
 title: Verbose Syntax (F#)
-description: Verbose Syntax (F#)
+description: Learn the difference between verbose and lightweight syntax in the F# programming language.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -34,7 +34,7 @@ compound expressions
 </td>
 <td>
 
-```
+```xml
 <expression1>
 <expression2>
 ```
@@ -75,9 +75,10 @@ code block
 </td><td>
 
 ```
-<expression1>
-<expression2>
-...
+(
+    <expression1>
+    <expression2>
+)
 ```
 
 </td><td>

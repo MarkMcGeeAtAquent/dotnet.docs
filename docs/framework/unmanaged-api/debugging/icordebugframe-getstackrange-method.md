@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrame::GetStackRange Method | Microsoft Docs"
+title: "ICorDebugFrame::GetStackRange Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrame.GetStackRange"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrame::GetStackRange"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStackRange method, ICorDebugFrame interface [.NET Framework debugging]"
   - "ICorDebugFrame::GetStackRange method [.NET Framework debugging]"
 ms.assetid: fab037cb-fda6-40fb-9367-921e435dd5a0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrame::GetStackRange Method
 Gets the absolute address range of this stack frame.  

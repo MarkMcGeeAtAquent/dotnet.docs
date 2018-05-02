@@ -1,8 +1,8 @@
 ---
-title: "WAS Activation Architecture | Microsoft Docs"
+title: "WAS Activation Architecture"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WAS Activation Architecture
 This topic itemizes and discusses the components of the Windows Process Activation Service (also known as WAS).  
@@ -48,7 +50,7 @@ This topic itemizes and discusses the components of the Windows Process Activati
   
  Listener adapters for specific protocols are registered during installation in the applicationHost.config file, as shown in the following XML example.  
   
-```  
+```xml  
 <system.applicationHost>  
     <listenerAdapters>  
         <add name="http" />  
@@ -67,7 +69,7 @@ This topic itemizes and discusses the components of the Windows Process Activati
 ### Protocol Handlers  
  Process and AppDomain protocol handlers for specific protocols are registered in the machine-level Web.config file.  
   
-```  
+```xml  
 <system.web>  
    <protocols>  
       <add name="net.tcp"   
@@ -80,7 +82,7 @@ This topic itemizes and discusses the components of the Windows Process Activati
         processHandlerType=  
          "System.ServiceModel.WasHosting.NamedPipeProcessProtocolHandler"  
           appDomainHandlerType=  
-           "System.ServiceModel.WasHosting.NamedPipeAppDomainProtocolHandler”/>  
+           "System.ServiceModel.WasHosting.NamedPipeAppDomainProtocolHandler"/>  
       <add name="net.msmq"  
         processHandlerType=  
          "System.ServiceModel.WasHosting.MsmqProcessProtocolHandler"  
@@ -92,5 +94,5 @@ This topic itemizes and discusses the components of the Windows Process Activati
 ```  
   
 ## See Also  
- [Configuring WAS for Use with WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)   
+ [Configuring WAS for Use with WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)  
  [Windows Server App Fabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=201276)

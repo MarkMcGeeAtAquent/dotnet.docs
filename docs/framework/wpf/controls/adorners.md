@@ -1,5 +1,5 @@
 ---
-title: "Adorners | Microsoft Docs"
+title: "Adorners"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,6 +18,8 @@ caps.latest.revision: 61
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Adorners
 This section provides information about Adorners and the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Adorner framework.  

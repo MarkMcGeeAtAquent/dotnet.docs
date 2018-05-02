@@ -1,5 +1,5 @@
 ---
-title: "WS-AtomicTransaction Configuration Utility (wsatConfig.exe) | Microsoft Docs"
+title: "WS-AtomicTransaction Configuration Utility (wsatConfig.exe)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 The WS-AtomicTransaction Configuration Utility is used to configure basic WS-AtomicTransaction support settings.  
@@ -21,7 +23,6 @@ The WS-AtomicTransaction Configuration Utility is used to configure basic WS-Ato
 ## Syntax  
   
 ```  
-  
 wsatConfig [Options]  
 ```  
   
@@ -57,5 +58,5 @@ wsatConfig [Options]
 |-virtualServer:\<virtualServer>|Specifies the DTC resource cluster name.|  
   
 ## See Also  
- [Using WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)   
+ [Using WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)  
  [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

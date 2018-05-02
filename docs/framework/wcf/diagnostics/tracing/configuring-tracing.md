@@ -1,8 +1,8 @@
 ---
-title: "Configuring Tracing | Microsoft Docs"
+title: "Configuring Tracing"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "tracing [WCF]"
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
 caps.latest.revision: 53
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Tracing
 This topic describes how you can enable tracing, configure trace sources to emit traces and set trace levels, set activity tracing and propagation to support end-to-end trace correlation, and set trace listeners to access traces.  
@@ -38,9 +40,9 @@ This topic describes how you can enable tracing, configure trace sources to emit
   
  If you use [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] extensibility points such as custom operation invokers, you should emit your own traces. This is because if you implement an extensibility point, [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] can no longer emit the standard traces in the default path. If you do not implement manual tracing support by emitting traces, you may not see the traces you expect.  
   
- You can configure tracing by editing the application’s configuration file—either Web.config for Web-hosted applications, or Appname.exe.config for self-hosted applications. The following is an example of such edit. For more information on these settings, see the “Configuring Trace Listeners to Consume Traces” section.  
+ You can configure tracing by editing the application’s configuration file—either Web.config for Web-hosted applications, or Appname.exe.config for self-hosted applications. The following is an example of such edit. For more information on these settings, see the "Configuring Trace Listeners to Consume Traces" section.  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <sources>  
@@ -80,7 +82,7 @@ This topic describes how you can enable tracing, configure trace sources to emit
   
  You can configure each trace source to use the same (shared) listener, as indicated in the following configuration example.  
   
-```  
+```xml  
 <configuration>  
     <system.diagnostics>  
         <sources>  
@@ -124,7 +126,7 @@ This topic describes how you can enable tracing, configure trace sources to emit
   
  In addition, you can add user-defined trace sources, as demonstrated by the following example, to emit user code traces.  
   
-```  
+```xml  
 <system.diagnostics>  
    <sources>  
        <source name="UserTraceSource" switchValue="Warning, ActivityTracing" >  
@@ -148,7 +150,7 @@ This topic describes how you can enable tracing, configure trace sources to emit
   
  You can configure a custom trace listener to send traces on the wire, for example, to a remote database. As an application deployer, you should enforce proper access control on the trace logs in the remote machine.  
   
- You can also configure a trace listener programmatically. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][How to: Create and Initialize Trace Listeners](http://go.microsoft.com/fwlink/?LinkId=94648) and [Creating a Custom TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239).  
+ You can also configure a trace listener programmatically. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [How to: Create and Initialize Trace Listeners](http://go.microsoft.com/fwlink/?LinkId=94648) and [Creating a Custom TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
 >  Because `System.Diagnostics.XmlWriterTraceListener` is not thread-safe, the trace source may lock resources exclusively when outputting traces. When many threads output traces to a trace source configured to use this listener, resource contention may occur, which results in a significant performance issue. To resolve this problem, you should implement a custom listener that is thread-safe.  
@@ -159,11 +161,11 @@ This topic describes how you can enable tracing, configure trace sources to emit
 |Trace Level|Nature of the Tracked Events|Content of the Tracked Events|Tracked Events|User Target|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
 |Off|N/A|N/A|No traces are emitted.|N/A|  
-|Critical|“Negative” events: events that indicate an unexpected processing or an error condition.||Unhandled exceptions including the following are logged:<br /><br /> -   OutOfMemoryException<br />-   ThreadAbortException (the CLR invokes any ThreadAbortExceptionHandler)<br />-   StackOverflowException (cannot be caught)<br />-   ConfigurationErrorsException<br />-   SEHException<br />-   Application start errors<br />-   Failfast events<br />-   System hangs<br />-   Poison messages: message traces that cause the application to fail.|Administrators<br /><br /> Application developers|  
-|Error|“Negative” events: events that indicate an unexpected processing or an error condition.|Unexpected processing has happened. The application was not able to perform a task as expected. However, the application is still up and running.|All exceptions are logged.|Administrators<br /><br /> Application developers|  
-|Warning|“Negative” events: events that indicate an unexpected processing or an error condition.|A possible problem has occurred or may occur, but the application still functions correctly. However, it may not continue to work properly.|-   The application is receiving more requests than its throttling settings allow.<br />-   The receiving queue is near its maximum configured capacity.<br />-   Timeout has exceeded.<br />-   Credentials are rejected.|Administrators<br /><br /> Application developers|  
-|Information|“Positive” events: events that mark successful milestones|Important and successful milestones of application execution, regardless of whether the application is working properly or not.|In general, messages helpful for monitoring and diagnosing system status, measuring performance or profiling are generated. You can use such information for capacity planning and performance management:<br /><br /> -   Channels are created.<br />-   Endpoint listeners are created.<br />-   Message enters/leaves transport.<br />-   Security token is retrieved.<br />-   Configuration setting is read.|Administrators<br /><br /> Application developers<br /><br /> Product developers.|  
-|Verbose|“Positive” events: events that mark successful milestones.|Low level events for both user code and servicing are emitted.|In general, you can use this level for debugging or application optimization.<br /><br /> -   Understood message header.|Administrators<br /><br /> Application developers<br /><br /> Product developers.|  
+|Critical|"Negative" events: events that indicate an unexpected processing or an error condition.||Unhandled exceptions including the following are logged:<br /><br /> -   OutOfMemoryException<br />-   ThreadAbortException (the CLR invokes any ThreadAbortExceptionHandler)<br />-   StackOverflowException (cannot be caught)<br />-   ConfigurationErrorsException<br />-   SEHException<br />-   Application start errors<br />-   Failfast events<br />-   System hangs<br />-   Poison messages: message traces that cause the application to fail.|Administrators<br /><br /> Application developers|  
+|Error|"Negative" events: events that indicate an unexpected processing or an error condition.|Unexpected processing has happened. The application was not able to perform a task as expected. However, the application is still up and running.|All exceptions are logged.|Administrators<br /><br /> Application developers|  
+|Warning|"Negative" events: events that indicate an unexpected processing or an error condition.|A possible problem has occurred or may occur, but the application still functions correctly. However, it may not continue to work properly.|-   The application is receiving more requests than its throttling settings allow.<br />-   The receiving queue is near its maximum configured capacity.<br />-   Timeout has exceeded.<br />-   Credentials are rejected.|Administrators<br /><br /> Application developers|  
+|Information|"Positive" events: events that mark successful milestones|Important and successful milestones of application execution, regardless of whether the application is working properly or not.|In general, messages helpful for monitoring and diagnosing system status, measuring performance or profiling are generated. You can use such information for capacity planning and performance management:<br /><br /> -   Channels are created.<br />-   Endpoint listeners are created.<br />-   Message enters/leaves transport.<br />-   Security token is retrieved.<br />-   Configuration setting is read.|Administrators<br /><br /> Application developers<br /><br /> Product developers.|  
+|Verbose|"Positive" events: events that mark successful milestones.|Low level events for both user code and servicing are emitted.|In general, you can use this level for debugging or application optimization.<br /><br /> -   Understood message header.|Administrators<br /><br /> Application developers<br /><br /> Product developers.|  
 |ActivityTracing||Flow events between processing activities and components.|This level allows administrators and developers to correlate applications in the same application domain:<br /><br /> -   Traces for activity boundaries, such as start/stop.<br />-   Traces for transfers.|All|  
 |All||Application may function properly. All events are emitted.|All previous events.|All|  
   
@@ -182,12 +184,12 @@ This topic describes how you can enable tracing, configure trace sources to emit
   
  [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] activity tracing and propagation, see [Propagation](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
   
- Both `propagateActivity`and `ActivityTracing`Boolean values apply to the System.ServiceModel TraceSource. The`ActivityTracing`value also applies to any trace source, including [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] or user-defined ones.  
+ Both `propagateActivity` and `ActivityTracing` Boolean values apply to the System.ServiceModel TraceSource. The `ActivityTracing` value also applies to any trace source, including [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] or user-defined ones.  
   
  You cannot use the `propagateActivity` attribute with user-defined trace sources. For user code activity ID propagation, make sure you do not set ServiceModel `ActivityTracing`, while still having ServiceModel `propagateActivity` attribute set to `true`.  
   
 ## See Also  
- [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)   
- [How to: Create and Initialize Trace Listeners](http://go.microsoft.com/fwlink/?LinkId=94648)   
+ [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)  
+ [How to: Create and Initialize Trace Listeners](http://go.microsoft.com/fwlink/?LinkId=94648)  
  [Creating a Custom TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239)

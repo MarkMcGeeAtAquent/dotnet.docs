@@ -1,5 +1,5 @@
 ---
-title: "Application Startup Time | Microsoft Docs"
+title: "Application Startup Time"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,7 +11,7 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
   - "splash screen [WPF], startup time"
-  - "WPF, startup time"
+  - "WPF [WPF], startup time"
   - "startup time [WPF]"
   - "application startup [WPF]"
   - "performance [WPF], startup time"
@@ -20,6 +20,8 @@ caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Application Startup Time
 The amount of time that is required for a WPF application to start can vary greatly. This topic describes various techniques for reducing the perceived and actual startup time for a Windows Presentation Foundation (WPF) application.  
@@ -89,7 +91,7 @@ The amount of time that is required for a WPF application to start can vary grea
   
  Starting in [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)], there is a configuration option that allows the Authenticode verification to be bypassed. To do this, add the following setting to the app.exe.config file:  
   
-```  
+```xml  
 <configuration>  
     <runtime>  
         <generatePublisherEvidence enabled="false"/>   
@@ -120,7 +122,7 @@ The amount of time that is required for a WPF application to start can vary grea
 ## Configure ClickOnce to Check for Updates After Startup  
  If your application uses [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], avoid network access on startup by configuring [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] to check the deployment site for updates after the application starts.  
   
- If you use the XAML browser application (XBAP) model, keep in mind that [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] checks the deployment site for updates even if the XBAP is already in the [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] cache. For more information, see [ClickOnce Security and Deployment](http://msdn.microsoft.com/library/abab6d34-c3c2-45c1-a8b6-43c7d3131e7a).  
+ If you use the XAML browser application (XBAP) model, keep in mind that [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] checks the deployment site for updates even if the XBAP is already in the [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] cache. For more information, see [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
   
 ## Configure the PresentationFontCache Service to Start Automatically  
  The first WPF application to run after a reboot is the PresentationFontCache service. The service caches the system fonts, improves font access, and improves overall performance. There is an overhead in starting the service, and in some controlled environments, consider configuring the service to start automatically when the system reboots.  
@@ -129,10 +131,10 @@ The amount of time that is required for a WPF application to start can vary grea
  Instead of using XAML to set the <xref:System.Windows.FrameworkElement.DataContext%2A> declaratively for the main window, consider setting it programmatically in the <xref:System.Windows.Application.OnActivated%2A> method.  
   
 ## See Also  
- <xref:System.Windows.SplashScreen>   
- <xref:System.AppDomain>   
- <xref:System.Resources.NeutralResourcesLanguageAttribute>   
- <xref:System.Resources.ResourceManager>   
- [Add a Splash Screen to a WPF Application](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)   
- [Ngen.exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)   
+ <xref:System.Windows.SplashScreen>  
+ <xref:System.AppDomain>  
+ <xref:System.Resources.NeutralResourcesLanguageAttribute>  
+ <xref:System.Resources.ResourceManager>  
+ [Add a Splash Screen to a WPF Application](../../../../docs/framework/wpf/app-development/how-to-add-a-splash-screen-to-a-wpf-application.md)  
+ [Ngen.exe (Native Image Generator)](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)  
  [\<generatePublisherEvidence> Element](../../../../docs/framework/configure-apps/file-schema/runtime/generatepublisherevidence-element.md)

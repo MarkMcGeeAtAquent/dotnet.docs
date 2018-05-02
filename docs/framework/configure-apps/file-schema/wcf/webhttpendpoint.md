@@ -1,8 +1,8 @@
 ---
-title: "&lt;webHttpEndpoint&gt; | Microsoft Docs"
+title: "&lt;webHttpEndpoint&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,22 +11,30 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ecaaeb6f-ebd0-411d-8b53-92477cd45347
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;webHttpEndpoint&gt;
 This configuration element defines a standard endpoint with a fixed [\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md) binding that automatically adds the [\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) behavior. Use this endpoint when writing a REST service.  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<standardEndpoints>  
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>       <webHttpEndpoint>           <standardEndpoint             automaticFormatSelectionEnabled="String"              defaultOutgoingResponseFormat=”Xml/Json”             helpEnabled=”Boolean”             webEndpointType=”String”/>             </webHttpEndpoint>     </standardEndpoints>  
+  <standardEndpoints>
+    <webHttpEndpoint>
+      <standardEndpoint automaticFormatSelectionEnabled="String" 
+                        defaultOutgoingResponseFormat="Xml/Json" 
+                        helpEnabled="Boolean" 
+                        webEndpointType="String"/>
+    </webHttpEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
@@ -52,5 +60,5 @@ This configuration element defines a standard endpoint with a fixed [\<webHttpBi
 |[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.|  
   
 ## See Also  
- <xref:System.ServiceModel.Description.WebHttpEndpoint>   
+ <xref:System.ServiceModel.Description.WebHttpEndpoint>  
  <xref:System.ServiceModel.Configuration.WebHttpEndpointElement>

@@ -1,4 +1,6 @@
 ---
 uid: System.ServiceModel.MsmqIntegration
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

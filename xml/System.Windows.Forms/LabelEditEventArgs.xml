@@ -1,7 +1,9 @@
-<Type Name="LabelEditEventArgs" FullName="System.Windows.Forms.LabelEditEventArgs">
+﻿<Type Name="LabelEditEventArgs" FullName="System.Windows.Forms.LabelEditEventArgs">
   <TypeSignature Language="C#" Value="public class LabelEditEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LabelEditEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LabelEditEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class LabelEditEventArgs&#xA;Inherits EventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class LabelEditEventArgs : EventArgs" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,15 +18,15 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A <xref:System.Windows.Forms.LabelEditEventArgs> specifies the index and caption of a <xref:System.Windows.Forms.ListViewItem> and the caption after it has been edited by the user. This class also provides a <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> property. You can use this property in a <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> event handler to prevent the user from editing the label. You can also use it in an <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event handler to revert the change, returning the label it to its original value. This is useful when you want to validate user input before committing the change.  
+ A <xref:System.Windows.Forms.LabelEditEventArgs> specifies the index and caption of a <xref:System.Windows.Forms.ListViewItem> and the caption after it has been edited by the user. This class also provides a <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> property. You can use this property in a <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> event handler to prevent the user from editing the label. You can also use it in an <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event handler to revert the change, returning the label it to its original value. This is useful when you want to validate user input before committing the change.  
   
 > [!NOTE]
->  Because the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event takes place before the label edit is committed, calling the <xref:System.Windows.Forms.ListView.Sort%2A?displayProperty=fullName> method in a handler for this event will sort the item using the original value.  
+>  Because the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event takes place before the label edit is committed, calling the <xref:System.Windows.Forms.ListView.Sort%2A?displayProperty=nameWithType> method in a handler for this event will sort the item using the original value.  
   
    
   
 ## Examples  
- The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a <xref:System.Windows.Forms.ListView> control named `ListView1` and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
+ The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a <xref:System.Windows.Forms.ListView> control named `ListView1` and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
   
  [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
  [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
@@ -32,12 +34,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.ListView" />
+    <altmember cref="T:System.Windows.Forms.ListViewItem" />
+    <altmember cref="E:System.Windows.Forms.ListView.BeforeLabelEdit" />
+    <altmember cref="E:System.Windows.Forms.ListView.AfterLabelEdit" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Forms.LabelEditEventArgs" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public LabelEditEventArgs (int item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LabelEditEventArgs.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (item As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; LabelEditEventArgs(int item);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -53,7 +70,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can use this constructor when raising the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> or <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event at run time to specify a specific list item in the <xref:System.Windows.Forms.ListView> to edit.  
+ You can use this constructor when raising the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> or <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event at run time to specify a specific list item in the <xref:System.Windows.Forms.ListView> to edit.  
   
  ]]></format>
         </remarks>
@@ -63,6 +80,8 @@
       <MemberSignature Language="C#" Value="public LabelEditEventArgs (int item, string label);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 item, string label) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LabelEditEventArgs.#ctor(System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (item As Integer, label As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; LabelEditEventArgs(int item, System::String ^ label);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -80,7 +99,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can use this constructor when raising the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> or <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event at run time to specify a list item in the <xref:System.Windows.Forms.ListView> to edit. The constructor also enables you to specify the new text associated with the label of the <xref:System.Windows.Forms.ListViewItem>.  
+ You can use this constructor when raising the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> or <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event at run time to specify a list item in the <xref:System.Windows.Forms.ListView> to edit. The constructor also enables you to specify the new text associated with the label of the <xref:System.Windows.Forms.ListViewItem>.  
   
  ]]></format>
         </remarks>
@@ -90,6 +109,8 @@
       <MemberSignature Language="C#" Value="public bool CancelEdit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CancelEdit" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.CancelEdit" />
+      <MemberSignature Language="VB.NET" Value="Public Property CancelEdit As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CancelEdit { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -111,7 +132,7 @@
    
   
 ## Examples  
- The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a ListView control named ListView1 and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
+ The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a ListView control named ListView1 and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
   
  [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
  [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
@@ -125,6 +146,8 @@
       <MemberSignature Language="C#" Value="public int Item { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Item" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.Item" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Item As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Item { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -140,7 +163,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=fullName> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a ListView control named ListView1 and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
+ The following code example demonstrates handling the <xref:System.Windows.Forms.ListView.BeforeLabelEdit?displayProperty=nameWithType> event and using the <xref:System.Windows.Forms.LabelEditEventArgs.Item%2A> and <xref:System.Windows.Forms.LabelEditEventArgs.CancelEdit%2A> properties. To run the example, paste the following code in a form containing a ListView control named ListView1 and populated with at least 3 items. Ensure all events are associated with their event-handling methods.  
   
  [!code-cpp[System.Windows.Forms.ListView3#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CPP/form1.cpp#1)]
  [!code-csharp[System.Windows.Forms.ListView3#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView3/CS/form1.cs#1)]
@@ -154,6 +177,8 @@
       <MemberSignature Language="C#" Value="public string Label { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Label" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LabelEditEventArgs.Label" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Label As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Label { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -169,9 +194,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Examples  
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=fullName> with <xref:System.Console.WriteLine%2A?displayProperty=fullName> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.  
+ The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event. This report helps you to learn when the event occurs and can assist you in debugging. To report on multiple events or on events that occur frequently, consider replacing <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> with <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> or appending the message to a multiline <xref:System.Windows.Forms.TextBox>.  
   
- To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListView> named `ListView1`. Then ensure that the event handler is associated with the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=fullName> event.  
+ To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListView> named `ListView1`. Then ensure that the event handler is associated with the <xref:System.Windows.Forms.ListView.AfterLabelEdit?displayProperty=nameWithType> event.  
   
  [!code-csharp[System.Windows.Forms.EventExamples#463](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#463)]
  [!code-vb[System.Windows.Forms.EventExamples#463](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#463)]  

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerFunctionEnum::Skip Method | Microsoft Docs"
+title: "ICorProfilerFunctionEnum::Skip Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerFunctionEnum.Skip Method"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerFunctionEnum::Skip"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Skip method, ICorProfilerFunctionEnum interface [.NET Framework profiling]"
   - "ICorProfilerFunctionEnum::Skip method [.NET Framework profiling]"
 ms.assetid: 051465b9-e479-494a-804b-c880323b4cbe
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerFunctionEnum::Skip Method
 Advances the enumerator's cursor from its current position so that the specified number of elements are skipped.  
@@ -61,5 +64,5 @@ HRESULT Skip([in] ULONG celt);
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)   
+ [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

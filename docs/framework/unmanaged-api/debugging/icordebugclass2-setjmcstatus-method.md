@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugClass2::SetJMCStatus Method | Microsoft Docs"
+title: "ICorDebugClass2::SetJMCStatus Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugClass2.SetJMCStatus"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugClass2::SetJMCStatus"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugClass2::SetJMCStatus method [.NET Framework debugging]"
   - "SetJMCStatus method, ICorDebugClass2 interface [.NET Framework debugging]"
 ms.assetid: 077e6c7f-f857-480c-bebb-76ee1de4e8fc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugClass2::SetJMCStatus Method
 For each method of the class, sets a value that indicates whether the method is user-defined code.  

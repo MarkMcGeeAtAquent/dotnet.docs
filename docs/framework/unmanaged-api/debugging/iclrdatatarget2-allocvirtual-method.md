@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget2::AllocVirtual Method | Microsoft Docs"
+title: "ICLRDataTarget2::AllocVirtual Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget2.AllocVirtual"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget2::AllocVirtual"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRDataTarget2::AllocVirtual method [.NET Framework debugging]"
   - "AllocVirtual method [.NET Framework debugging]"
 ms.assetid: e3226230-964b-47fb-9f53-d6fdbeda1e9e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget2::AllocVirtual Method
 Called by the common language runtime (CLR) data access services to allocate memory in the address space of this target process.  
@@ -73,5 +76,5 @@ HRESULT AllocVirtual(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRDataTarget2 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)   
+ [ICLRDataTarget2 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)  
  [FreeVirtual Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-freevirtual-method.md)

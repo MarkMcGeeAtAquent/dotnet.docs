@@ -1,8 +1,8 @@
 ---
-title: "How to: Migrate AJAX-Enabled ASP.NET Web Services to WCF | Microsoft Docs"
+title: "How to: Migrate AJAX-Enabled ASP.NET Web Services to WCF"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1428df4d-b18f-4e6d-bd4d-79ab3dd5147c
 caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Migrate AJAX-Enabled ASP.NET Web Services to WCF
 This topic outlines procedures to migrate a basic ASP.NET AJAX service to an equivalent AJAX-enabled [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service. It shows how to create a functionally equivalent [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] version of an ASP.NET AJAX service. The two services can then be used side by side, or the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service can be used to replace the ASP.NET AJAX service.  
@@ -48,7 +50,7 @@ This topic outlines procedures to migrate a basic ASP.NET AJAX service to an equ
   
 8.  Click the **Invoke** button on the `HelloWorld` test page. You should receive the following XML response.  
   
-    ```  
+    ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
     <string xmlns="http://tempuri.org/">Hello World</string>  
     ```  
@@ -93,7 +95,7 @@ This topic outlines procedures to migrate a basic ASP.NET AJAX service to an equ
     { … }  
     ```  
   
-7.  Add the <xref:System.ServiceModel.Web.WebInvokeAttribute> to the `HelloWorld` operation and set the <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> property to return <xref:System.ServiceModel.Web.WebMessageFormat>. Note that, if not set, the default return type is <xref:System.ServiceModel.Web.WebMessageFormat>.  
+7.  Add the <xref:System.ServiceModel.Web.WebInvokeAttribute> to the `HelloWorld` operation and set the <xref:System.ServiceModel.Web.WebInvokeAttribute.ResponseFormat%2A> property to return <xref:System.ServiceModel.Web.WebMessageFormat.Xml>. Note that, if not set, the default return type is <xref:System.ServiceModel.Web.WebMessageFormat.Json>.  
   
     ```  
     [OperationContract]  
@@ -110,7 +112,7 @@ This topic outlines procedures to migrate a basic ASP.NET AJAX service to an equ
   
 10. The service now exposes an endpoint at `WCFHello.svc/HelloWorld`, which responds to HTTP POST requests. HTTP POST requests cannot be tested from the browser, but the endpoint returns XML following XML.  
   
-    ```  
+    ```xml  
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello World</string>  
     ```  
   
@@ -189,21 +191,21 @@ namespace ASPHello
   
 -   If ASMX Web Service is added first, invoking method on [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service causes exception in <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> because the Web Service style definition of the order in the proxy takes precedence.  
   
- There are significant differences in behavior between the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> and the ASP.NET AJAX <!--zz <xref:System.Web.Script.Serialization.JavascriptSerializer>--> `JavascriptSerializer`. For example, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> represents a dictionary as an array of key/value pairs, whereas the ASP.NET AJAX <xref:System.Web.Script.Serialization.JavascriptSerializer> represents a dictionary as actual JSON objects. So the following is the dictionary represented in ASP.NET AJAX.  
+ There are significant differences in behavior between the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> and the ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>. For example, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> represents a dictionary as an array of key/value pairs, whereas the ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer> represents a dictionary as actual JSON objects. So the following is the dictionary represented in ASP.NET AJAX.  
   
 ```  
 Dictionary<string, int> d = new Dictionary<string, int>();  
-d.Add(“one”, 1);  
-d.Add(“two”, 2);  
+d.Add("one", 1);  
+d.Add("two", 2);  
 ```  
   
  This dictionary is represented in JSON objects as shown in the following list:  
   
 -   [{"Key":"one","Value":1},{"Key":"two","Value":2}] by the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>  
   
--   {“one”:1,”two”:2} by the ASP.NET AJAX <xref:System.Web.Script.Serialization.JavascriptSerializer>  
+-   {"one":1,"two":2} by the ASP.NET AJAX <xref:System.Web.Script.Serialization.JavaScriptSerializer>  
   
- The <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> is more powerful in the sense that it can handle dictionaries where the key type is not string, while the <xref:System.Web.Script.Serialization.JavascriptSerializer> cannot. But the latter is more JSON-friendly.  
+ The <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> is more powerful in the sense that it can handle dictionaries where the key type is not string, while the <xref:System.Web.Script.Serialization.JavaScriptSerializer> cannot. But the latter is more JSON-friendly.  
   
  The significant differences between these serializers are summarized in the following table.  
   

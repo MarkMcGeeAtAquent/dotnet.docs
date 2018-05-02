@@ -1,13 +1,11 @@
 ---
-title: "Try...Catch...Finally Statement (Visual Basic) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Try...Catch...Finally Statement (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Try...Catch...Finally"
@@ -15,38 +13,21 @@ f1_keywords:
   - "vb.Finally"
   - "vb.Catch"
   - "vb.Try"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "Try...Catch...Finally statements"
-  - "Try statement"
+  - "Try statement [Visual Basic]"
   - "try-catch exception handling, Try...Catch...Finally statements"
   - "error handling, while running code"
-  - "Try statement, Try...Catch...Finally"
+  - "Try statement [Visual Basic], Try...Catch...Finally"
   - "Finally keyword [Visual Basic], Try...Catch...Finally"
-  - "Catch statement"
-  - "When keyword"
+  - "Catch statement [Visual Basic]"
+  - "When keyword [Visual Basic]"
   - "Visual Basic code, handling errors while running"
   - "structured exception handling, Try...Catch...Finally statements"
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
 caps.latest.revision: 69
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Try...Catch...Finally Statement (Visual Basic)
 Provides a way to handle some or all possible errors that may occur in a given block of code, while still running code.  
@@ -85,7 +66,7 @@ End Try
 ## Remarks  
  If you expect that a particular exception might occur during a particular section of code, put the code in a `Try` block and use a `Catch` block to retain control and handle the exception if it occurs.  
   
- A `Try…Catch` statement consists of a `Try` block followed by one or more `Catch` clauses, which specify handlers for various exceptions. When an exception is thrown in a `Try` block, [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] looks for the `Catch` statement that handles the exception. If a matching `Catch` statement is not found, [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] examines the method that called the current method, and so on up the call stack. If no `Catch` block is found, [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] displays an unhandled exception message to the user and stops execution of the program.  
+ A `Try…Catch` statement consists of a `Try` block followed by one or more `Catch` clauses, which specify handlers for various exceptions. When an exception is thrown in a `Try` block, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] looks for the `Catch` statement that handles the exception. If a matching `Catch` statement is not found, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] examines the method that called the current method, and so on up the call stack. If no `Catch` block is found, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] displays an unhandled exception message to the user and stops execution of the program.  
   
  You can use more than one `Catch` statement in a `Try…Catch` statement. If you do this, the order of the `Catch` clauses is significant because they are examined in order. Catch the more specific exceptions before the less specific ones.  
   
@@ -95,12 +76,12 @@ End Try
   
 -   The statement has no `exception` variable, for example: `Catch`  
   
- When a `Try…Catch…Finally` statement is nested in another `Try` block, [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] first examines each `Catch` statement in the innermost `Try` block. If no matching `Catch` statement is found, the search proceeds to the `Catch` statements of the outer `Try…Catch…Finally` block.  
+ When a `Try…Catch…Finally` statement is nested in another `Try` block, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] first examines each `Catch` statement in the innermost `Try` block. If no matching `Catch` statement is found, the search proceeds to the `Catch` statements of the outer `Try…Catch…Finally` block.  
   
  Local variables from a `Try` block are not available in a `Catch` block because they are separate blocks. If you want to use a variable in more than one block, declare the variable outside the `Try...Catch...Finally` structure.  
   
 > [!TIP]
->  The `Try…Catch…Finally` statement is available as an IntelliSense code snippet. In the Code Snippets Manager, expand **Code Patterns - If, For Each, Try Catch, Property, etc**, and then **Error Handling (Exceptions)**. For more information, see [Code Snippets](https://docs.microsoft.com/visualstudio/ide/code-snippets).  
+>  The `Try…Catch…Finally` statement is available as an IntelliSense code snippet. In the Code Snippets Manager, expand **Code Patterns - If, For Each, Try Catch, Property, etc**, and then **Error Handling (Exceptions)**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
   
 ## Finally Block  
  If you have one or more statements that must run before you exit the `Try` structure, use a `Finally` block. Control passes to the `Finally` block just before it passes out of the `Try…Catch` structure. This is true even if an exception occurs anywhere inside the `Try` structure.  
@@ -145,14 +126,14 @@ End Try
   
  A task returned by an Async method may end in a faulted state, indicating that it completed due to an unhandled exception. A task may also end in a canceled state, which results in an `OperationCanceledException` being thrown out of the await expression. To catch either type of exception, place the `Await` expression that's associated with the task in a `Try` block, and catch the exception in the `Catch` block. An example is provided later in this topic.  
   
- A task can be in a faulted state because multiple exceptions were responsible for its faulting. For example, the task might be the result of a call to <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>. When you await such a task, the caught exception is only one of the exceptions, and you can't predict which exception will be caught. An example is provided later in this topic.  
+ A task can be in a faulted state because multiple exceptions were responsible for its faulting. For example, the task might be the result of a call to <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. When you await such a task, the caught exception is only one of the exceptions, and you can't predict which exception will be caught. An example is provided later in this topic.  
   
  An `Await` expression can't be inside a `Catch` block or `Finally` block.  
   
 ## Iterators  
  An iterator function or `Get` accessor performs a custom iteration over a collection. An iterator uses a [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) statement to return each element of the collection one at a time. You call an iterator function by using a [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
- A `Yield` statement can be inside a `Try` block. A `Try` block that contains a `Yield` statement can have `Catch` blocks, and can have a `Finally` block. See the "Try Blocks in Visual Basic" section of [Iterators](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7) for an example.  
+ A `Yield` statement can be inside a `Try` block. A `Try` block that contains a `Yield` statement can have `Catch` blocks, and can have a `Finally` block. See the "Try Blocks in Visual Basic" section of [Iterators](../../programming-guide/concepts/iterators.md) for an example.  
   
  A `Yield` statement cannot be inside a `Catch` block or a `Finally` block.  
   
@@ -197,17 +178,17 @@ End Try
  [!code-vb[csAsyncExceptions#1](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_7.vb)]  
   
 ## Example  
- The following example illustrates exception handling where multiple tasks can result in multiple exceptions. The `Try` block has the `Await` expression for the task that <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> returned. The task is complete when the three tasks to which <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> is applied are complete.  
+ The following example illustrates exception handling where multiple tasks can result in multiple exceptions. The `Try` block has the `Await` expression for the task that <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> returned. The task is complete when the three tasks to which <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> is applied are complete.  
   
  Each of the three tasks causes an exception. The `Catch` block iterates through the exceptions, which are found in the `Exception.InnerExceptions` property of the task that `Task.WhenAll` returned.  
   
  [!code-vb[csAsyncExceptions#3](../../../csharp/language-reference/keywords/codesnippet/VisualBasic/try-catch-finally-statement_8.vb)]  
   
 ## See Also  
- <xref:Microsoft.VisualBasic.Information.Err%2A>   
- <xref:System.Exception>   
- [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)   
- [On Error Statement](../../../visual-basic/language-reference/statements/on-error-statement.md)   
- [Best Practices for Using Code Snippets](https://docs.microsoft.com/visualstudio/ide/best-practices-for-using-code-snippets)   
- [Exception Handling](https://msdn.microsoft.com/library/dd997415)   
+ <xref:Microsoft.VisualBasic.Information.Err%2A>  
+ <xref:System.Exception>  
+ [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)  
+ [On Error Statement](../../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [Best Practices for Using Code Snippets](/visualstudio/ide/best-practices-for-using-code-snippets)  
+ [Exception Handling](../../../standard/parallel-programming/exception-handling-task-parallel-library.md)  
  [Throw Statement](../../../visual-basic/language-reference/statements/throw-statement.md)

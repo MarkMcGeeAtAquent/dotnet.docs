@@ -1,7 +1,9 @@
-<Type Name="GCHandle" FullName="System.Runtime.InteropServices.GCHandle">
+﻿<Type Name="GCHandle" FullName="System.Runtime.InteropServices.GCHandle">
   <TypeSignature Language="C#" Value="public struct GCHandle" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit GCHandle extends System.ValueType" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.GCHandle" />
+  <TypeSignature Language="VB.NET" Value="Public Structure GCHandle" />
+  <TypeSignature Language="C++ CLI" Value="public value class GCHandle" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.InteropServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -9,6 +11,7 @@
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -50,12 +53,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
   </Docs>
   <Members>
     <Member MemberName="AddrOfPinnedObject">
       <MemberSignature Language="C#" Value="public IntPtr AddrOfPinnedObject ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance native int AddrOfPinnedObject() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.AddrOfPinnedObject" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddrOfPinnedObject () As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IntPtr AddrOfPinnedObject();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -64,6 +70,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -91,12 +98,29 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The handle is any type other than <see cref="F:System.Runtime.InteropServices.GCHandleType.Pinned" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Alloc">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Allocates a handle for the specified object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Alloc">
       <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.GCHandle Alloc (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.InteropServices.GCHandle Alloc(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.Alloc(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Alloc (value As Object) As GCHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::InteropServices::GCHandle Alloc(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -105,6 +129,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -129,7 +154,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Runtime.InteropServices.GCHandleType> handles are opaque, which means that you cannot resolve the address of the object it contains through the handle.  
+ <xref:System.Runtime.InteropServices.GCHandleType.Normal> handles are opaque, which means that you cannot resolve the address of the object it contains through the handle.  
   
    
   
@@ -143,12 +168,15 @@
         </remarks>
         <exception cref="T:System.ArgumentException">An instance with nonprimitive (non-blittable) members cannot be pinned.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="Alloc">
       <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.GCHandle Alloc (object value, System.Runtime.InteropServices.GCHandleType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.InteropServices.GCHandle Alloc(object value, valuetype System.Runtime.InteropServices.GCHandleType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.Alloc(System.Object,System.Runtime.InteropServices.GCHandleType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Alloc (value As Object, type As GCHandleType) As GCHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::InteropServices::GCHandle Alloc(System::Object ^ value, System::Runtime::InteropServices::GCHandleType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -157,6 +185,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -182,12 +211,15 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">An instance with nonprimitive (non-blittable) members cannot be pinned.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (o As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ o);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -196,6 +228,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -231,6 +264,8 @@
       <MemberSignature Language="C#" Value="public void Free ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Free() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.Free" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Free ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Free();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -239,6 +274,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -279,6 +315,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.GCHandle FromIntPtr (IntPtr value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.InteropServices.GCHandle FromIntPtr(native int value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.FromIntPtr(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromIntPtr (value As IntPtr) As GCHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::InteropServices::GCHandle FromIntPtr(IntPtr value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -287,6 +325,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -326,6 +365,8 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -334,6 +375,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -365,6 +407,8 @@
       <MemberSignature Language="C#" Value="public bool IsAllocated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAllocated" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.GCHandle.IsAllocated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAllocated As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAllocated { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -373,6 +417,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -394,16 +439,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this property when using <xref:System.Runtime.InteropServices.GCHandleType> handles to determine if the <xref:System.Runtime.InteropServices.GCHandle> is still available. When the garbage collector collects the object, the <xref:System.Runtime.InteropServices.GCHandleType> handle can still be resurrected in the finalizer. In that case, the handle is not allocated (it is lost when the garbage collector attempts to collect the object), even though the target object is valid.  
+ Use this property when using <xref:System.Runtime.InteropServices.GCHandleType.Weak> handles to determine if the <xref:System.Runtime.InteropServices.GCHandle> is still available. When the garbage collector collects the object, the <xref:System.Runtime.InteropServices.GCHandleType.Weak> handle can still be resurrected in the finalizer. In that case, the handle is not allocated (it is lost when the garbage collector attempts to collect the object), even though the target object is valid.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (System.Runtime.InteropServices.GCHandle a, System.Runtime.InteropServices.GCHandle b);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Runtime.InteropServices.GCHandle a, System.Runtime.InteropServices.GCHandle b);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Runtime.InteropServices.GCHandle a, valuetype System.Runtime.InteropServices.GCHandle b) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.op_Equality(System.Runtime.InteropServices.GCHandle,System.Runtime.InteropServices.GCHandle)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (a As GCHandle, b As GCHandle) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Runtime::InteropServices::GCHandle a, System::Runtime::InteropServices::GCHandle b);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -412,6 +460,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -436,14 +485,30 @@
         <returns>
           <see langword="true" /> if the <paramref name="a" /> and <paramref name="b" /> parameters are equal; otherwise, <see langword="false" />.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[The equivalent method for this operator is <xref:System.Runtime.InteropServices.GCHandle.Equals%28System.Runtime.InteropServices.GCHandle%2CSystem.Runtime.InteropServices.GCHandle%29?displayProperty=fullName>]]></format>
+          <format type="text/markdown"><![CDATA[The equivalent method for this operator is <xref:System.Runtime.InteropServices.GCHandle.Equals%2A?displayProperty=nameWithType>.]]></format>
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="op_Explicit">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Converts the value of a <see cref="T:System.Runtime.InteropServices.GCHandle" /> object to another type.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="op_Explicit">
-      <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.GCHandle op_Explicit (IntPtr value);" />
+      <MemberSignature Language="C#" Value="public static explicit operator System.Runtime.InteropServices.GCHandle (IntPtr value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Runtime.InteropServices.GCHandle op_Explicit(native int value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.op_Explicit(System.IntPtr)~System.Runtime.InteropServices.GCHandle" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Narrowing Operator CType (value As IntPtr) As GCHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static explicit operator System::Runtime::InteropServices::GCHandle(IntPtr value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -452,6 +517,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -469,16 +535,27 @@
         <Parameter Name="value" Type="System.IntPtr" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="value">An <see cref="T:System.IntPtr" /> that indicates the handle for which the conversion is required.</param>
+        <summary>A <see cref="T:System.Runtime.InteropServices.GCHandle" /> is stored using an internal integer representation.</summary>
+        <returns>The stored <see cref="T:System.Runtime.InteropServices.GCHandle" /> object using an internal integer representation.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method allows you to retrieve a <xref:System.Runtime.InteropServices.GCHandle> from an integer value.  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="op_Explicit">
-      <MemberSignature Language="C#" Value="public static IntPtr op_Explicit (System.Runtime.InteropServices.GCHandle value);" />
+      <MemberSignature Language="C#" Value="public static explicit operator IntPtr (System.Runtime.InteropServices.GCHandle value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname native int op_Explicit(valuetype System.Runtime.InteropServices.GCHandle value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.op_Explicit(System.Runtime.InteropServices.GCHandle)~System.IntPtr" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Narrowing Operator CType (value As GCHandle) As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static explicit operator IntPtr(System::Runtime::InteropServices::GCHandle value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -487,6 +564,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -504,16 +582,27 @@
         <Parameter Name="value" Type="System.Runtime.InteropServices.GCHandle" />
       </Parameters>
       <Docs>
-        <param name="value">To be added.</param>
-        <summary>To be added.</summary>
-        <returns>To be added.</returns>
-        <remarks>To be added.</remarks>
+        <param name="value">The <see cref="T:System.Runtime.InteropServices.GCHandle" /> for which the integer is required.</param>
+        <summary>A <see cref="T:System.Runtime.InteropServices.GCHandle" /> is stored using an internal integer representation.</summary>
+        <returns>The integer value.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method can be used to retrieve the integer value from a <xref:System.Runtime.InteropServices.GCHandle>.  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (System.Runtime.InteropServices.GCHandle a, System.Runtime.InteropServices.GCHandle b);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Runtime.InteropServices.GCHandle a, System.Runtime.InteropServices.GCHandle b);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Runtime.InteropServices.GCHandle a, valuetype System.Runtime.InteropServices.GCHandle b) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.op_Inequality(System.Runtime.InteropServices.GCHandle,System.Runtime.InteropServices.GCHandle)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (a As GCHandle, b As GCHandle) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Runtime::InteropServices::GCHandle a, System::Runtime::InteropServices::GCHandle b);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -522,6 +611,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -546,7 +636,7 @@
         <returns>
           <see langword="true" /> if the <paramref name="a" /> and <paramref name="b" /> parameters are not equal; otherwise, <see langword="false" />.</returns>
         <remarks>
-          <format type="text/markdown"><![CDATA[The equivalent method for this operator is <xref:System.Runtime.InteropServices.GCHandle.Compare%28System.Runtime.InteropServices.GCHandle%2CSystem.Runtime.InteropServices.GCHandle%29?displayProperty=fullName>]]></format>
+          <format type="text/markdown"><![CDATA[The equivalent method for this operator is <xref:System.Runtime.InteropServices.GCHandle.Equals%2A?displayProperty=nameWithType>.]]></format>
         </remarks>
       </Docs>
     </Member>
@@ -554,6 +644,8 @@
       <MemberSignature Language="C#" Value="public object Target { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Target" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.GCHandle.Target" />
+      <MemberSignature Language="VB.NET" Value="Public Property Target As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Target { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -562,6 +654,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -591,12 +684,15 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The handle was freed, or never initialized.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.InteropServices.GCHandleType" />
       </Docs>
     </Member>
     <Member MemberName="ToIntPtr">
       <MemberSignature Language="C#" Value="public static IntPtr ToIntPtr (System.Runtime.InteropServices.GCHandle value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int ToIntPtr(valuetype System.Runtime.InteropServices.GCHandle value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ToIntPtr (value As GCHandle) As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IntPtr ToIntPtr(System::Runtime::InteropServices::GCHandle value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -605,6 +701,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

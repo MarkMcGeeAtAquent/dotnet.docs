@@ -1,5 +1,5 @@
 ---
-title: "SetNonAssemblyFlags Method | Microsoft Docs"
+title: "SetNonAssemblyFlags Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IALink.SetNonAssemblyFlags"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SetNonAssemblyFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetNonAssemblyFlags method"
 ms.assetid: f8ba6fc8-f5aa-4066-ac96-56332758f5ec
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SetNonAssemblyFlags Method
 Sets flags that are not assembly-specific.  
@@ -48,6 +51,6 @@ HRESULT SetNonAssemblyFlags(
  Requires alink.h  
   
 ## See Also  
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

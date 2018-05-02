@@ -1,5 +1,5 @@
 ---
-title: "Application Domain Resource Monitoring (ARM) ETW Events | Microsoft Docs"
+title: "Application Domain Resource Monitoring (ARM) ETW Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Application Domain Resource Monitoring (ARM) ETW Events
 <a name="top"></a> These events provide detailed diagnostic information about the state of an application domain. You can use these events or use the application domain resource monitoring (ARM) feature to obtain the same information.  

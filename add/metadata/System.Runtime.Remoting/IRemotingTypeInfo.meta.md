@@ -1,14 +1,20 @@
 ---
 uid: System.Runtime.Remoting.IRemotingTypeInfo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.IRemotingTypeInfo.TypeName
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.IRemotingTypeInfo.CanCastTo(System.Type,System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

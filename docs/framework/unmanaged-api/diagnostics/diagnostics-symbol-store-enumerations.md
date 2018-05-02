@@ -1,5 +1,5 @@
 ---
-title: "Diagnostics Symbol Store Enumerations | Microsoft Docs"
+title: "Diagnostics Symbol Store Enumerations"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "unmanaged enumerations [.NET Framework], diagnostics symbol store"
   - "unmanaged enumerations [.NET Framework], debugging"
@@ -21,6 +19,8 @@ caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Diagnostics Symbol Store Enumerations
 This topic describes the unmanaged enumerations that the diagnostics symbol store API uses.  

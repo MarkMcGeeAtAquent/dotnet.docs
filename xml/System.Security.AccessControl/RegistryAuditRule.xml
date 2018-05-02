@@ -1,7 +1,9 @@
-<Type Name="RegistryAuditRule" FullName="System.Security.AccessControl.RegistryAuditRule">
+﻿<Type Name="RegistryAuditRule" FullName="System.Security.AccessControl.RegistryAuditRule">
   <TypeSignature Language="C#" Value="public sealed class RegistryAuditRule : System.Security.AccessControl.AuditRule" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegistryAuditRule extends System.Security.AccessControl.AuditRule" />
   <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.RegistryAuditRule" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RegistryAuditRule&#xA;Inherits AuditRule" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RegistryAuditRule sealed : System::Security::AccessControl::AuditRule" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -10,6 +12,10 @@
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Security.AccessControl.AuditRule</BaseTypeName>
@@ -26,17 +32,17 @@
 > [!NOTE]
 >  Windows access control security can only be applied to registry keys. It cannot be applied to individual key/value pairs stored in a key.  
   
- To get a list of the audit rules currently applied to a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method to get a <xref:System.Security.AccessControl.RegistrySecurity> object, and then use its <xref:System.Security.AccessControl.CommonObjectSecurity.GetAuditRules%2A> method to obtain a collection of <xref:System.Security.AccessControl.RegistryAuditRule> objects.  
+ To get a list of the audit rules currently applied to a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method to get a <xref:System.Security.AccessControl.RegistrySecurity> object, and then use its <xref:System.Security.AccessControl.CommonObjectSecurity.GetAuditRules%2A> method to obtain a collection of <xref:System.Security.AccessControl.RegistryAuditRule> objects.  
   
  <xref:System.Security.AccessControl.RegistryAuditRule> objects do not map one-to-one with access control entries in the underlying discretionary access control list (DACL). When you get the set of all audit rules for a registry key, the set contains the minimum number of rules currently required to express all the access control entries.  
   
 > [!NOTE]
 >  The underlying access control entries change as you apply and remove rules. The information in rules is merged if possible, to maintain the smallest number of access control entries. Thus, when you read the current list of rules, it might not look exactly like the list of all the rules you have added.  
   
- Use <xref:System.Security.AccessControl.RegistryAuditRule> objects to specify access rights to be audited for a user or group. To apply a rule to a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=fullName> method to get the <xref:System.Security.AccessControl.RegistrySecurity> object. Modify the <xref:System.Security.AccessControl.RegistrySecurity> object by using its methods to add the rule, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method to reattach the security object.  
+ Use <xref:System.Security.AccessControl.RegistryAuditRule> objects to specify access rights to be audited for a user or group. To apply a rule to a registry key, use the <xref:Microsoft.Win32.RegistryKey.GetAccessControl%2A?displayProperty=nameWithType> method to get the <xref:System.Security.AccessControl.RegistrySecurity> object. Modify the <xref:System.Security.AccessControl.RegistrySecurity> object by using its methods to add the rule, and then use the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method to reattach the security object.  
   
 > [!IMPORTANT]
->  Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=fullName> method to assign the altered security object to the registry key.  
+>  Changes you make to a <xref:System.Security.AccessControl.RegistrySecurity> object do not affect the access levels of the registry key until you call the <xref:Microsoft.Win32.RegistryKey.SetAccessControl%2A?displayProperty=nameWithType> method to assign the altered security object to the registry key.  
   
  <xref:System.Security.AccessControl.RegistryAuditRule> objects are immutable. Security for a registry key is modified by using the methods of the <xref:System.Security.AccessControl.RegistrySecurity> class to add or remove rules; as you do this, the underlying access control entries are modified.  
   
@@ -44,10 +50,20 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.AccessControl.RegistryAuditRule" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public RegistryAuditRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAuditRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AuditFlags)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RegistryAuditRule(System::Security::Principal::IdentityReference ^ identity, System::Security::AccessControl::RegistryRights registryRights, System::Security::AccessControl::InheritanceFlags inheritanceFlags, System::Security::AccessControl::PropagationFlags propagationFlags, System::Security::AccessControl::AuditFlags flags);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -57,6 +73,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
@@ -76,21 +96,21 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- All registry keys are containers, so the only inheritance flag that is meaningful for registry keys is the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag. If this flag is not specified, the propagation flags are ignored, and only the immediate key is affected. If the flag is present, the rule is propagated as shown in the following table. The table assumes there is a subkey S with child subkey CS and grandchild subkey GS. That is, the path for the grandchild subkey is S\CS\GS.  
+ All registry keys are containers, so the only inheritance flag that is meaningful for registry keys is the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType> flag. If this flag is not specified, the propagation flags are ignored, and only the immediate key is affected. If the flag is present, the rule is propagated as shown in the following table. The table assumes there is a subkey S with child subkey CS and grandchild subkey GS. That is, the path for the grandchild subkey is S\CS\GS.  
   
 |Propagation flags|S|CS|GS|  
 |-----------------------|-------|--------|--------|  
-|<xref:System.Security.AccessControl.PropagationFlags>|X|X|X|  
-|<xref:System.Security.AccessControl.PropagationFlags>|X|X||  
-|<xref:System.Security.AccessControl.PropagationFlags>||X|X|  
-|<xref:System.Security.AccessControl.PropagationFlags>, <xref:System.Security.AccessControl.PropagationFlags>||X||  
+|<xref:System.Security.AccessControl.PropagationFlags.None>|X|X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>|X|X||  
+|<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>, <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X||  
   
  The pattern for the grandchild subkey governs all subkeys contained by the grandchild subkey.  
   
- For example, if the <xref:System.Security.AccessControl.InheritanceFlags> flag is specified for `inheritanceFlags` and the <xref:System.Security.AccessControl.PropagationFlags> propagation flag is specified for `propagationFlags`, this rule does not apply to the immediate subkey, but does apply to all its immediate child subkeys and to all subkeys they contain.  
+ For example, if the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> flag is specified for `inheritanceFlags` and the <xref:System.Security.AccessControl.PropagationFlags.InheritOnly> propagation flag is specified for `propagationFlags`, this rule does not apply to the immediate subkey, but does apply to all its immediate child subkeys and to all subkeys they contain.  
   
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag for `inheritanceFlags`, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
+>  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag for `inheritanceFlags`, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
   
  ]]></format>
         </remarks>
@@ -122,6 +142,7 @@
       <MemberSignature Language="C#" Value="public RegistryAuditRule (string identity, System.Security.AccessControl.RegistryRights registryRights, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.Security.AccessControl.RegistryRights registryRights, valuetype System.Security.AccessControl.InheritanceFlags inheritanceFlags, valuetype System.Security.AccessControl.PropagationFlags propagationFlags, valuetype System.Security.AccessControl.AuditFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.RegistryAuditRule.#ctor(System.String,System.Security.AccessControl.RegistryRights,System.Security.AccessControl.InheritanceFlags,System.Security.AccessControl.PropagationFlags,System.Security.AccessControl.AuditFlags)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RegistryAuditRule(System::String ^ identity, System::Security::AccessControl::RegistryRights registryRights, System::Security::AccessControl::InheritanceFlags inheritanceFlags, System::Security::AccessControl::PropagationFlags propagationFlags, System::Security::AccessControl::AuditFlags flags);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -131,6 +152,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="identity" Type="System.String" />
@@ -150,23 +175,23 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- All registry keys are containers, so the only inheritance flag that is meaningful for registry keys is the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag. If this flag is not specified, the propagation flags are ignored, and only the immediate key is affected. If the flag is present, the rule is propagated as shown in the following table. The table assumes there is a subkey S with child subkey CS and grandchild subkey GS. That is, the path for the grandchild subkey is S\CS\GS.  
+ All registry keys are containers, so the only inheritance flag that is meaningful for registry keys is the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit?displayProperty=nameWithType> flag. If this flag is not specified, the propagation flags are ignored, and only the immediate key is affected. If the flag is present, the rule is propagated as shown in the following table. The table assumes there is a subkey S with child subkey CS and grandchild subkey GS. That is, the path for the grandchild subkey is S\CS\GS.  
   
 |Propagation flags|S|CS|GS|  
 |-----------------------|-------|--------|--------|  
-|<xref:System.Security.AccessControl.PropagationFlags>|X|X|X|  
-|<xref:System.Security.AccessControl.PropagationFlags>|X|X||  
-|<xref:System.Security.AccessControl.PropagationFlags>||X|X|  
-|<xref:System.Security.AccessControl.PropagationFlags>, <xref:System.Security.AccessControl.PropagationFlags>||X||  
+|<xref:System.Security.AccessControl.PropagationFlags.None>|X|X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>|X|X||  
+|<xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X|X|  
+|<xref:System.Security.AccessControl.PropagationFlags.NoPropagateInherit>, <xref:System.Security.AccessControl.PropagationFlags.InheritOnly>||X||  
   
  The pattern for the grandchild subkey governs all subkeys contained by the grandchild subkey.  
   
- For example, if the <xref:System.Security.AccessControl.InheritanceFlags> flag is specified for `inheritanceFlags` and the <xref:System.Security.AccessControl.PropagationFlags> propagation flag is specified for `propagationFlags`, this rule does not apply to the immediate subkey, but does apply to all its immediate child subkeys and to all subkeys they contain.  
+ For example, if the <xref:System.Security.AccessControl.InheritanceFlags.ContainerInherit> flag is specified for `inheritanceFlags` and the <xref:System.Security.AccessControl.PropagationFlags.InheritOnly> propagation flag is specified for `propagationFlags`, this rule does not apply to the immediate subkey, but does apply to all its immediate child subkeys and to all subkeys they contain.  
   
 > [!NOTE]
->  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags?displayProperty=fullName> flag for `inheritanceFlags`, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
+>  Although you can specify the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit?displayProperty=nameWithType> flag for `inheritanceFlags`, there is no point in doing so. For the purposes of access control, the name/value pairs in a subkey are not separate objects. The access rights to name/value pairs are controlled by the rights of the subkey. Furthermore, since all subkeys are containers (that is, they can contain other subkeys), they are not affected by the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag. Finally, specifying the <xref:System.Security.AccessControl.InheritanceFlags.ObjectInherit> flag needlessly complicates the maintenance of rules, because it interferes with the normal combination of compatible rules.  
   
- This constructor is equivalent to creating an <xref:System.Security.Principal.NTAccount> object, by passing `identity` to the <xref:System.Security.Principal.NTAccount.%23ctor%28System.String%29?displayProperty=fullName> constructor, and passing the newly created <xref:System.Security.Principal.NTAccount> object to the <xref:System.Security.AccessControl.RegistryAuditRule.%23ctor%28System.Security.Principal.IdentityReference%2CSystem.Security.AccessControl.RegistryRights%2CSystem.Security.AccessControl.InheritanceFlags%2CSystem.Security.AccessControl.PropagationFlags%2CSystem.Security.AccessControl.AuditFlags%29> constructor.  
+ This constructor is equivalent to creating an <xref:System.Security.Principal.NTAccount> object, by passing `identity` to the <xref:System.Security.Principal.NTAccount.%23ctor%28System.String%29?displayProperty=nameWithType> constructor, and passing the newly created <xref:System.Security.Principal.NTAccount> object to the <xref:System.Security.AccessControl.RegistryAuditRule.%23ctor%28System.Security.Principal.IdentityReference%2CSystem.Security.AccessControl.RegistryRights%2CSystem.Security.AccessControl.InheritanceFlags%2CSystem.Security.AccessControl.PropagationFlags%2CSystem.Security.AccessControl.AuditFlags%29> constructor.  
   
  ]]></format>
         </remarks>
@@ -202,6 +227,8 @@
       <MemberSignature Language="C#" Value="public System.Security.AccessControl.RegistryRights RegistryRights { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.RegistryRights RegistryRights" />
       <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.RegistryAuditRule.RegistryRights" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RegistryRights As RegistryRights" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::AccessControl::RegistryRights RegistryRights { System::Security::AccessControl::RegistryRights get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry.AccessControl</AssemblyName>
@@ -211,6 +238,10 @@
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.AccessControl.RegistryRights</ReturnType>

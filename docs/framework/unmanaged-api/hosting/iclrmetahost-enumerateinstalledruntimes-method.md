@@ -1,5 +1,5 @@
 ---
-title: "ICLRMetaHost::EnumerateInstalledRuntimes Method | Microsoft Docs"
+title: "ICLRMetaHost::EnumerateInstalledRuntimes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRMetaHost.EnumerateInstalledRuntimes"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRMetaHost::EnumerateInstalledRuntimes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRMetaHost::EnumerateInstalledRuntimes method [.NET Framework hosting]"
   - "EnumerateInstalledRuntimes method [.NET Framework hosting]"
 ms.assetid: 9e359384-0d3d-451c-807e-5d7fcebf2be7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 18
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRMetaHost::EnumerateInstalledRuntimes Method
 Returns an enumeration that contains a valid [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface for each version of the common language runtime (CLR) that is installed on a computer.  
@@ -59,5 +62,5 @@ HRESULT EnumerateInstalledRuntimes (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)   
+ [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

@@ -1,19 +1,24 @@
 ---
-title: "Side by Side Versioning in WorkflowServiceHost | Microsoft Docs"
+title: "Side by Side Versioning in WorkflowServiceHost"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Side by Side Versioning in WorkflowServiceHost
 The <xref:System.ServiceModel.Activities.WorkflowServiceHost> side-by-side versioning introduced in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] provides the capability to host multiple versions of a workflow service on a single endpoint. The side-by-side functionality provided allows a workflow service to be configured so that new instances of the workflow service are created using the new workflow definition, while running instances complete using the existing definition. This topic provides an overview of workflow service side-by-side execution using <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
@@ -64,7 +69,6 @@ WorkflowService service = new WorkflowService
         Version = new Version(1, 0, 0, 0)  
     }  
 };  
-  
 ```  
   
 ```vb  
@@ -129,7 +133,6 @@ WorkflowService serviceV1 = new WorkflowService
   
 // Add the previous version of the service to the SupportedVersions collection.  
 host.SupportedVersions.Add(serviceV1);  
-  
 ```  
   
 ```vb  

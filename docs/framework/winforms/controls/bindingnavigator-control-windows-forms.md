@@ -1,16 +1,14 @@
 ---
-title: "BindingNavigator Control (Windows Forms) | Microsoft Docs"
+title: "BindingNavigator Control (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "BindingNavigator control [Windows Forms]"
   - "data [Windows Forms], navigating"
@@ -20,6 +18,8 @@ caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # BindingNavigator Control (Windows Forms)
 The `BindingNavigator` control is the navigation and manipulation user interface (UI) for controls that are bound to data. The `BindingNavigator` control enables users to navigate through and manipulate data on a Windows Form.  
@@ -46,4 +46,4 @@ The `BindingNavigator` control is the navigation and manipulation user interface
  Provides reference documentation for the <xref:System.Windows.Forms.BindingSource> control.  
   
 ## Related Sections  
- [Bind controls to data in Visual Studio](http://msdn.microsoft.com/library/be8b6623-86a6-493e-ab7a-050de4661fd6)
+ [Bind controls to data in Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

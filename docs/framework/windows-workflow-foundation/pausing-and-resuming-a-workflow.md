@@ -1,5 +1,5 @@
 ---
-title: "Pausing and Resuming a Workflow | Microsoft Docs"
+title: "Pausing and Resuming a Workflow"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 11f38339-79c7-4295-b610-24a7223bbf6d
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Pausing and Resuming a Workflow
 Workflows will pause and resume in response to bookmarks and blocking activities such as <xref:System.Activities.Statements.Delay>, but a workflow can also be explicitly paused, unloaded, and resumed by using persistence.  
@@ -29,7 +31,6 @@ catch (TimeoutException e)
 {  
     Console.WriteLine(e.Message);  
 }  
-  
 ```  
   
 ## Resuming a Workflow  
@@ -39,7 +40,6 @@ catch (TimeoutException e)
 WorkflowApplication application = new WorkflowApplication(activity);  
 application.InstanceStore = instanceStore;  
 application.Load(id);  
-  
 ```  
   
 ## Example  
@@ -59,7 +59,7 @@ static void StartAndUnloadInstance()
     SqlWorkflowInstanceStore instanceStore = SetupSqlpersistenceStore();  
     wfApp.InstanceStore = instanceStore;  
     wfApp.Extensions.Add(SetupMyFileTrackingParticipant);  
-    wfApp.PersistableIdle = (e) => {          ///persists application state and remove it from memory   
+    wfApp.PersistableIdle = (e) => {          ///persists application state and remove it from memory   
     return PersistableIdleAction.Unload;  
     };  
     wfApp.Unloaded = (e) => {  
@@ -72,7 +72,7 @@ static void StartAndUnloadInstance()
 }  
   
 static void LoadAndCompleteInstance(Guid id)   
-{            
+{            
     Console.WriteLine("Press <enter> to load the persisted workflow");  
     Console.ReadLine();  
     AutoResetEvent waitHandler = new AutoResetEvent(false);  
@@ -105,7 +105,7 @@ public static Activity GetDelayedWF()
   
 private static SqlWorkflowInstanceStore SetupSqlpersistenceStore()   
 {   
-     string connectionString = ConfigurationManager.AppSettings["SqlWF4PersistenceConnectionString"].ToString();  
+     string connectionString = ConfigurationManager.AppSettings["SqlWF4PersistenceConnectionString"].ToString();  
     SqlWorkflowInstanceStore sqlWFInstanceStore = new SqlWorkflowInstanceStore(connectionString);  
     sqlWFInstanceStore.InstanceCompletionAction = InstanceCompletionAction.DeleteAll;  
     InstanceHandle handle = sqlWFInstanceStore.CreateInstanceHandle();  
@@ -114,5 +114,4 @@ private static SqlWorkflowInstanceStore SetupSqlpersistenceStore()
     sqlWFInstanceStore.DefaultInstanceOwner = view.InstanceOwner;  
     return sqlWFInstanceStore;  
 }  
-  
 ```

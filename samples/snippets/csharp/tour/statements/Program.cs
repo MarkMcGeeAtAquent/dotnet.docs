@@ -54,8 +54,8 @@ namespace Statements
                     Console.WriteLine("One argument");
                     break;
                 default:
-                Console.WriteLine($"{n} arguments");
-                break;
+                    Console.WriteLine($"{n} arguments");
+                    break;
             }
         }
 
@@ -75,10 +75,10 @@ namespace Statements
             do 
             {
                 s = Console.ReadLine();
-                if (string.IsNullOrEmpty(s)) 
-                    Console.WriteLine(s);
+                Console.WriteLine(s);
             } while (!string.IsNullOrEmpty(s));
         }
+        
 
         static void ForStatement(string[] args)
         {

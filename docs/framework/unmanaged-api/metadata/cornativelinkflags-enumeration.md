@@ -1,5 +1,5 @@
 ---
-title: "CorNativeLinkFlags Enumeration | Microsoft Docs"
+title: "CorNativeLinkFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorNativeLinkFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorNativeLinkFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorNativeLinkFlags enumeration [.NET Framework metadata]"
 ms.assetid: 8027df7c-cfad-4724-bda0-7538d9519070
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorNativeLinkFlags Enumeration
 Provides flag values used by the linker when linking native code.  

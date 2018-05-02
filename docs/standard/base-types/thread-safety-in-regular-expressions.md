@@ -1,5 +1,5 @@
 ---
-title: "Thread Safety in Regular Expressions | Microsoft Docs"
+title: "Thread Safety in Regular Expressions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -19,6 +19,9 @@ caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Thread Safety in Regular Expressions
 The <xref:System.Text.RegularExpressions.Regex> class itself is thread safe and immutable (read-only). That is, **Regex** objects can be created on any thread and shared between threads; matching methods can be called from any thread and never alter any global state.  

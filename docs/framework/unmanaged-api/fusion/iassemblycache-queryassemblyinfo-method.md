@@ -1,5 +1,5 @@
 ---
-title: "IAssemblyCache::QueryAssemblyInfo Method | Microsoft Docs"
+title: "IAssemblyCache::QueryAssemblyInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAssemblyCache.QueryAssemblyInfo"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAssemblyCache::QueryAssemblyInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IAssemblyCache::QueryAssemblyInfo method [.NET Framework fusion]"
   - "QueryAssemblyInfo method [.NET Framework fusion]"
 ms.assetid: 09313cb5-06f6-43bd-94f4-1055c6b0c99a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAssemblyCache::QueryAssemblyInfo Method
 Gets the requested data about the specified assembly.  

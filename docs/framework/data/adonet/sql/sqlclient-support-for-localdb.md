@@ -1,8 +1,8 @@
 ---
-title: "SqlClient Support for LocalDB | Microsoft Docs"
+title: "SqlClient Support for LocalDB"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
 caps.latest.revision: 14
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # SqlClient Support for LocalDB
 Beginning in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] code name Denali, a lightweight version of [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)], called LocalDB, will be available. This topic discusses how to connect to a LocalDB database.  
@@ -44,7 +46,7 @@ Beginning in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 
   
 -   Specify the LocalDB instances to create in the app.config file, as follows.  The version number of the instance should be the same as the version number of your LocalDB installation.  
   
-    ```  
+    ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
     <configuration>  
       <configSections>  
@@ -65,5 +67,5 @@ Beginning in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] 
 -   Use the `AttachDBFilename` connection string keyword to specify the .MDF file.  
   
 ## See Also  
- [SQL Server Features and ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)   
+ [SQL Server Features and ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

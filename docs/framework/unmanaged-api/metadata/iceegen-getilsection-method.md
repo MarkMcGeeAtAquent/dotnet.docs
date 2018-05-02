@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::GetIlSection Method | Microsoft Docs"
+title: "ICeeGen::GetIlSection Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.GetIlSection"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::GetIlSection"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetIlSection method [.NET Framework metadata]"
   - "ICeeGen::GetIlSection method [.NET Framework metadata]"
 ms.assetid: 6f2db2ca-203f-4ac3-9530-208642ca385e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::GetIlSection Method
 Gets the section of the intermediate language code base referenced by the specified handle.  

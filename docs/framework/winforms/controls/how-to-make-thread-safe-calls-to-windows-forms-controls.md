@@ -1,24 +1,26 @@
 ---
-title: "How to: Make Thread-Safe Calls to Windows Forms Controls | Microsoft Docs"
+title: "How to: Make Thread-Safe Calls to Windows Forms Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
+  - "cpp"
 f1_keywords: 
   - "EHInvalidOperation.WinForms.IllegalCrossThreadCall"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "thread safety, calling controls [Windows Forms]"
-  - "calling controls, thread safety [Windows Forms]"
+  - "thread safety [Windows Forms], calling controls [Windows Forms]"
+  - "calling controls [Windows Forms], thread safety [Windows Forms]"
   - "CheckForIllegalCrossThreadCalls property [Windows Forms]"
-  - "Windows Forms controls, multithreading"
-  - "BackgroundWorker class, examples"
+  - "Windows Forms controls [Windows Forms], multithreading"
+  - "BackgroundWorker class [Windows Forms], examples"
   - "threading [Windows Forms], cross-thread calls"
   - "controls [Windows Forms], multithreading"
 ms.assetid: 138f38b6-1099-4fd5-910c-390b41cbad35
@@ -26,6 +28,8 @@ caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Make Thread-Safe Calls to Windows Forms Controls
 If you use multithreading to improve the performance of your Windows Forms applications, you must make sure that you make calls to your controls in a thread-safe way.  
@@ -101,7 +105,7 @@ private:
  This exception occurs reliably during debugging and, under some circumstances, at run time. You might see this exception when you debug applications that you wrote with the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] prior to the [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. You are strongly advised to fix this problem when you see it, but you can disable it by setting the <xref:System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls%2A> property to `false`. This causes your control to run like it would run under Visual Studio .NET 2003 and the [!INCLUDE[net_v11_short](../../../../includes/net-v11-short-md.md)].  
   
 > [!NOTE]
->  If you are using ActiveX controls on a form, you may receive the cross-thread <xref:System.InvalidOperationException> when you run under the debugger. When this occurs, the ActiveX control does not support multithreading. For more information about using ActiveX controls with Windows Forms, see [Windows Forms and Unmanaged Applications](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md). If you are using Visual Studio, you can prevent this exception by disabling the Visual Studio hosting process, see [How to: Disable the Hosting Process](http://msdn.microsoft.com/library/9157488d-737f-454b-8d8d-36f99de38bb0).  
+>  If you are using ActiveX controls on a form, you may receive the cross-thread <xref:System.InvalidOperationException> when you run under the debugger. When this occurs, the ActiveX control does not support multithreading. For more information about using ActiveX controls with Windows Forms, see [Windows Forms and Unmanaged Applications](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md). If you are using Visual Studio, you can prevent this exception by disabling the Visual Studio hosting process, see [How to: Disable the Hosting Process](/visualstudio/ide/how-to-disable-the-hosting-process).  
   
 ## Making Thread-Safe Calls to Windows Forms Controls  
   
@@ -234,7 +238,7 @@ private void SetText(string text)
 ' Invoke method.  
 '  
 ' If the calling thread is the same as the thread that created  
- ' the TextBox control, the Text property is set directly.   
+ ' the TextBox control, the Text property is set directly.  
   
  Private Sub SetText(ByVal [text] As String)  
   
@@ -409,7 +413,7 @@ private:
  The following code example is a complete Windows Forms application that consists of a form with three buttons and one text box. The first button demonstrates unsafe cross-thread access, the second button demonstrates safe access by using <xref:System.Windows.Forms.Control.Invoke%2A>, and the third button demonstrates safe access by using <xref:System.ComponentModel.BackgroundWorker>.  
   
 > [!NOTE]
->  For instructions on how to run the example, see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/en-us/cc447f7e-4c3b-4397-9d05-aeba3ca49416). This example requires references to the System.Drawing and System.Windows.Forms assemblies.  
+>  For instructions on how to run the example, see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/cc447f7e-4c3b-4397-9d05-aeba3ca49416). This example requires references to the System.Drawing and System.Windows.Forms assemblies.  
   
 ```csharp  
 using System;  
@@ -1052,8 +1056,8 @@ int main()
 >  When you use multithreading of any sort, your code can be exposed to very serious and complex bugs. For more information, see [Managed Threading Best Practices](../../../../docs/standard/threading/managed-threading-best-practices.md) before you implement any solution that uses multithreading.  
   
 ## See Also  
- <xref:System.ComponentModel.BackgroundWorker>   
- [How to: Run an Operation in the Background](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)   
- [How to: Implement a Form That Uses a Background Operation](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)   
- [Developing Custom Windows Forms Controls with the .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)   
+ <xref:System.ComponentModel.BackgroundWorker>  
+ [How to: Run an Operation in the Background](../../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)  
+ [How to: Implement a Form That Uses a Background Operation](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
+ [Developing Custom Windows Forms Controls with the .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
  [Windows Forms and Unmanaged Applications](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)

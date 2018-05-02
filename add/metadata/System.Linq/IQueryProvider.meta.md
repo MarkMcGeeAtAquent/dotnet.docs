@@ -1,11 +1,15 @@
 ---
 uid: System.Linq.IQueryProvider
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "billchi"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Linq.IQueryProvider.CreateQuery(System.Linq.Expressions.Expression)
+ms.technology: 
+  - "dotnet-standard"
 author: "BillWagner"
 ms.author: "wiwagn"
 manager: "wpickett"
@@ -13,28 +17,38 @@ manager: "wpickett"
 
 ---
 uid: System.Linq.IQueryProvider.CreateQuery``1(System.Linq.Expressions.Expression)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "billchi"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Linq.IQueryProvider.Execute
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Linq.IQueryProvider.Execute``1(System.Linq.Expressions.Expression)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "billchi"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Linq.IQueryProvider.CreateQuery
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Linq.IQueryProvider.Execute(System.Linq.Expressions.Expression)
+ms.technology: 
+  - "dotnet-standard"
 author: "BillWagner"
 ms.author: "wiwagn"
 manager: "wpickett"

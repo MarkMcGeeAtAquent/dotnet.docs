@@ -1,5 +1,5 @@
 ---
-title: "IHostSyncManager::CreateCrstWithSpinCount Method | Microsoft Docs"
+title: "IHostSyncManager::CreateCrstWithSpinCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostSyncManager.CreateCrstWithSpinCount"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostSyncManager::CreateCrstWithSpinCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateCrstWithSpinCount method [.NET Framework hosting]"
   - "IHostSyncManager::CreateCrstWithSpinCount method [.NET Framework hosting]"
 ms.assetid: 7280fa8c-3639-4abf-91cb-bc343da742d1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostSyncManager::CreateCrstWithSpinCount Method
 Creates a critical section object with spin count for synchronization.  
@@ -71,6 +74,6 @@ HRESULT CreateCrstWithSpinCount (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)   
- [IHostSemaphore Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)   
+ [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
+ [IHostSemaphore Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md)  
  [IHostSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)

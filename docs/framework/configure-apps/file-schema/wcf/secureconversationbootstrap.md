@@ -1,8 +1,8 @@
 ---
-title: "&lt;secureConversationBootstrap&gt; | Microsoft Docs"
+title: "&lt;secureConversationBootstrap&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 13
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;secureConversationBootstrap&gt;
 Specifies the default values used for initiating a secure conversation service.  
@@ -27,8 +29,7 @@ Specifies the default values used for initiating a secure conversation service.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <secureConversationBootstrap  
    allowSerializedSigningTokenOnReply="Boolean"  
    authenticationMode="AuthenticationMode"  
@@ -65,7 +66,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |`requireDerivedKeys`|A Boolean value that specifies whether keys can be derived from the original proof keys. The default is `true`.|  
 |`requireSecurityContextCancellation`|A Boolean value that specifies whether security context should be cancelled and terminated when it is no longer required. The default is `true`.|  
 |`requireSignatureConfirmation`|A Boolean value that specifies whether WS-Security signature confirmation is enabled. When set to `true`, message signatures are confirmed by the responder. The default is `false`.<br /><br /> Signature confirmation is used to confirm that the service is responding in full awareness of a request.|  
-|`securityHeaderLayout`|Specifies the ordering of the elements in security header. Valid values are:<br /><br /> -   Strict. Items are added to the security header according to the general principle of “declare before use”.<br />-   Lax. Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   LaxWithTimestampFirst. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   LaxWithTimestampLast. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is Strict.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
+|`securityHeaderLayout`|Specifies the ordering of the elements in security header. Valid values are:<br /><br /> -   Strict. Items are added to the security header according to the general principle of "declare before use".<br />-   Lax. Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   LaxWithTimestampFirst. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   LaxWithTimestampLast. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is Strict.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
   
 ### Child Elements  
   
@@ -82,13 +83,13 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Specifies the security options for a custom binding.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>   
- <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>   
- <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)   
- [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)   
+ <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  
+ <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
+ [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [Custom Binding Security](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

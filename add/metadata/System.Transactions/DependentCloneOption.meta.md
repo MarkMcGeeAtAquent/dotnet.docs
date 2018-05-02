@@ -1,4 +1,6 @@
 ---
 uid: System.Transactions.DependentCloneOption
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

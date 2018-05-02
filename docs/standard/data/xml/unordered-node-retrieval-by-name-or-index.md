@@ -1,5 +1,5 @@
 ---
-title: "Unordered Node Retrieval by Name or Index | Microsoft Docs"
+title: "Unordered Node Retrieval by Name or Index"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Unordered Node Retrieval by Name or Index
 The **XmlNamedNodeMap** is described in the World Wide Web Consortium (W3C) specification as the NamedNodeMap and is required to handle an unordered set of nodes with the ability to reference nodes by their name or index. The only way you have access to an **XmlNamedNodeMap** is when an **XmlNamedNodeMap** is returned through a method or property. There are three methods or properties that return an **XmlNamedNodeMap**:  
@@ -40,7 +41,7 @@ Class test
   
     Public Shared Sub Main()  
         Dim doc As New XmlDocument()  
-        doc.LoadXml("<root> \<child1 attr1='val1' attr2='val2'> text1 </child1> \<child2 attr3='val3'> text2 </child2> </root> ")  
+        doc.LoadXml("<root> <child1 attr1='val1' attr2='val2'> text1 </child1> <child2 attr3='val3'> text2 </child2> </root> ")  
   
         ' Get the attributes of node "child2 "  
         Dim ac As XmlAttributeCollection = doc.DocumentElement.ChildNodes(1).Attributes  
@@ -85,7 +86,7 @@ using System.Xml;
 class test {  
     public static void Main() {  
         XmlDocument doc = new XmlDocument();  
-        doc.LoadXml( "<root> \<child1 attr1='val1' attr2='val2'> text1 </child1> \<child2 attr3='val3'> text2 </child2> </root> " );  
+        doc.LoadXml( "<root> <child1 attr1='val1' attr2='val2'> text1 </child1> <child2 attr3='val3'> text2 </child2> </root> " );  
   
         // Get the attributes of node "child2"  
         XmlAttributeCollection ac = doc.DocumentElement.ChildNodes[1].Attributes;  

@@ -1,30 +1,33 @@
 ---
-title: "IManagedObject Interface | Microsoft Docs"
+title: "IManagedObject Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IManagedObject"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IManagedObject"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IManagedObject interface [.NET Framework hosting]"
 ms.assetid: 1fbbf572-6d28-41a5-82fb-579ac90bfcf5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IManagedObject Interface
 Provides methods for controlling a managed object.  

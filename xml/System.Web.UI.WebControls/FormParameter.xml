@@ -1,7 +1,9 @@
-<Type Name="FormParameter" FullName="System.Web.UI.WebControls.FormParameter">
+﻿<Type Name="FormParameter" FullName="System.Web.UI.WebControls.FormParameter">
   <TypeSignature Language="C#" Value="public class FormParameter : System.Web.UI.WebControls.Parameter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormParameter extends System.Web.UI.WebControls.Parameter" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormParameter" />
+  <TypeSignature Language="VB.NET" Value="Public Class FormParameter&#xA;Inherits Parameter" />
+  <TypeSignature Language="C++ CLI" Value="public ref class FormParameter : System::Web::UI::WebControls::Parameter" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -36,17 +38,33 @@
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/CS/sql24cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_24sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_24sql/VB/sql24vb.aspx#1)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.ControlParameter" />
+    <altmember cref="T:System.Web.UI.WebControls.CookieParameter" />
+    <altmember cref="T:System.Web.UI.WebControls.ProfileParameter" />
+    <altmember cref="T:System.Web.UI.WebControls.QueryStringParameter" />
+    <altmember cref="T:System.Web.UI.WebControls.SessionParameter" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Web.UI.WebControls.FormParameter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FormParameter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FormParameter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -59,7 +77,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A <xref:System.Web.UI.WebControls.FormParameter> object created with the <xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A> constructor is initialized with default values for all its properties. The <xref:System.Web.UI.WebControls.FormParameter.FormField%2A> is initialized to <xref:System.String.Empty?displayProperty=fullName>. Additionally, the <xref:System.Web.UI.WebControls.Parameter.Name%2A> property is initialized to <xref:System.String.Empty?displayProperty=fullName>, the <xref:System.Web.UI.WebControls.Parameter.Type%2A> property is initialized to <xref:System.TypeCode?displayProperty=fullName>, the <xref:System.Web.UI.WebControls.Parameter.Direction%2A> property is initialized to <xref:System.Data.ParameterDirection>, and the <xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A> property is initialized to null (`Nothing` in Visual Basic).  
+ A <xref:System.Web.UI.WebControls.FormParameter> object created with the <xref:System.Web.UI.WebControls.FormParameter.%23ctor%2A> constructor is initialized with default values for all its properties. The <xref:System.Web.UI.WebControls.FormParameter.FormField%2A> is initialized to <xref:System.String.Empty?displayProperty=nameWithType>. Additionally, the <xref:System.Web.UI.WebControls.Parameter.Name%2A> property is initialized to <xref:System.String.Empty?displayProperty=nameWithType>, the <xref:System.Web.UI.WebControls.Parameter.Type%2A> property is initialized to <xref:System.TypeCode.Object?displayProperty=nameWithType>, the <xref:System.Web.UI.WebControls.Parameter.Direction%2A> property is initialized to <xref:System.Data.ParameterDirection.Input>, and the <xref:System.Web.UI.WebControls.Parameter.DefaultValue%2A> property is initialized to null (`Nothing` in Visual Basic).  
   
    
   
@@ -68,8 +86,8 @@
 > [!IMPORTANT]
 >  The <xref:System.Web.UI.WebControls.FormParameter> does not validate the value passed by the form element in any way; it uses the raw value. In most cases, you can validate the value of the <xref:System.Web.UI.WebControls.FormParameter> before it is used by a data source control by handling an event, such as the `Selecting`, `Updating`, `Inserting`, or `Deleting` event exposed by the data source control you are using. If the value of the parameter does not pass your validation tests, you can cancel the data operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property of the associated <xref:System.ComponentModel.CancelEventArgs> class to `true`.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/CS/fp1cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/VB/fp1vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/CS/fp1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_1/VB/fp1vb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -79,6 +97,8 @@
       <MemberSignature Language="C#" Value="protected FormParameter (System.Web.UI.WebControls.FormParameter original);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.FormParameter original) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.Web.UI.WebControls.FormParameter)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (original As FormParameter)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; FormParameter(System::Web::UI::WebControls::FormParameter ^ original);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -98,12 +118,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.FormParameter.Clone" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FormParameter (string name, string formField);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string formField) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, formField As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FormParameter(System::String ^ name, System::String ^ formField);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -130,17 +153,20 @@
 > [!IMPORTANT]
 >  The <xref:System.Web.UI.WebControls.FormParameter> does not validate the value passed by the form element in any way; it uses the raw value. In most cases, you can validate the value of the <xref:System.Web.UI.WebControls.FormParameter> before it is used by a data source control by handling an event, such as the `Selecting`, `Updating`, `Inserting`, or `Deleting` event exposed by the data source control you are using. If the value of the parameter does not pass your validation tests, you can cancel the data operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property of the associated <xref:System.ComponentModel.CancelEventArgs> class to `true`.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/CS/fp2cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/VB/fp2vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/CS/fp2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_2/VB/fp2vb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.Parameter.Name" />
+        <altmember cref="P:System.Web.UI.WebControls.FormParameter.FormField" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FormParameter (string name, System.Data.DbType dbType, string formField);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.DbType dbType, string formField) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.Data.DbType,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FormParameter(System::String ^ name, System::Data::DbType dbType, System::String ^ formField);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -163,6 +189,8 @@
       <MemberSignature Language="C#" Value="public FormParameter (string name, TypeCode type, string formField);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.TypeCode type, string formField) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.#ctor(System.String,System.TypeCode,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, type As TypeCode, formField As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FormParameter(System::String ^ name, TypeCode type, System::String ^ formField);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -191,17 +219,21 @@
 > [!IMPORTANT]
 >  The <xref:System.Web.UI.WebControls.FormParameter> does not validate the value passed by the form element in any way; it uses the raw value. In most cases, you can validate the value of the <xref:System.Web.UI.WebControls.FormParameter> before it is used by a data source control by handling an event, such as the `Selecting`, `Updating`, `Inserting`, or `Deleting` event exposed by the data source control you are using. If the value of the parameter does not pass your validation tests, you can cancel the data operation by setting the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> property of the associated <xref:System.ComponentModel.CancelEventArgs> class to `true`.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/CS/fp3cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/VB/fp3vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/CS/fp3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.FormParameter_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.FormParameter_3/VB/fp3vb.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.Parameter.Name" />
+        <altmember cref="P:System.Web.UI.WebControls.FormParameter.FormField" />
       </Docs>
     </Member>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.Parameter Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.Parameter Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.Clone" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function Clone () As Parameter" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Web::UI::WebControls::Parameter ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -222,12 +254,14 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.FormParameter.#ctor(System.Web.UI.WebControls.FormParameter)" />
       </Docs>
     </Member>
     <Member MemberName="Evaluate">
-      <MemberSignature Language="C#" Value="protected override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
+      <MemberSignature Language="C#" Value="protected internal override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object Evaluate(class System.Web.HttpContext context, class System.Web.UI.Control control) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FormParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override System::Object ^ Evaluate(System::Web::HttpContext ^ context, System::Web::UI::Control ^ control);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -255,12 +289,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.FormParameter.FormField" />
       </Docs>
     </Member>
     <Member MemberName="FormField">
       <MemberSignature Language="C#" Value="public string FormField { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FormField" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormParameter.FormField" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormField As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FormField { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -292,8 +329,8 @@
   
  The <xref:System.Web.UI.WebControls.ObjectDataSource.FilterExpression%2A> property specifies an expression used to filter the data retrieved by the <xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>. This property uses parameter placeholders that are evaluated to the parameters contained in the <xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters%2A> collection. In this example, the parameter placeholder is a <xref:System.Web.UI.WebControls.FormParameter> bound to the value of the <xref:System.Web.UI.WebControls.TextBox> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/objds9cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/objds9vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/CS/objds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_9/VB/objds9vb.aspx#1)]  
   
  The following code example shows the middle-tier business object that the previous code example uses. This example consists of two basic classes: The `EmployeeLogic` class encapsulates business logic, and the `NorthwindEmployee` class is a model class that contains only the basic functionality required to load and persist data from the data tier. For simplicity, the `EmployeeLogic` class creates a static set of data, rather than retrieving the data from a data tier. It is also helpful for this example, because the sample relies on the user to provide the full name of a Northwind Traders employee to demonstrate filtering. For a complete working example, you must compile and use these classes with the ASP.NET code examples provided.  
   
@@ -305,12 +342,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.Parameter.DefaultValue" />
+        <altmember cref="M:System.Web.UI.WebControls.FormParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
       </Docs>
     </Member>
     <Member MemberName="ValidateInput">
       <MemberSignature Language="C#" Value="public bool ValidateInput { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ValidateInput" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.FormParameter.ValidateInput" />
+      <MemberSignature Language="VB.NET" Value="Public Property ValidateInput As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ValidateInput { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

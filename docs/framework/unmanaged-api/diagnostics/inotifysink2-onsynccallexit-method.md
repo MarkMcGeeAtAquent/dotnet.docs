@@ -1,5 +1,5 @@
 ---
-title: "INotifySink2::OnSyncCallExit Method | Microsoft Docs"
+title: "INotifySink2::OnSyncCallExit Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "INotifySink2.OnSyncCallExit"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "INotifySink2::OnSyncCallExit"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "INotifySink2::OnSyncCallExit method [.NET Framework debugging]"
   - "OnSyncCallExit method [.NET Framework debugging]"
 ms.assetid: d9d7600e-a8f5-443a-96de-67d26e130f2d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # INotifySink2::OnSyncCallExit Method
 Gets invoked when exiting a call.  
@@ -58,6 +61,6 @@ HRESULT OnSyncCallExit
  **Header:** ProtocolNotify2.idl  
   
 ## See Also  
- [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)   
- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)   
+ [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
+ [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
  [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

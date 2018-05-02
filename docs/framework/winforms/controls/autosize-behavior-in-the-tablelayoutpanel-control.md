@@ -1,5 +1,5 @@
 ---
-title: "AutoSize Behavior in the TableLayoutPanel Control | Microsoft Docs"
+title: "AutoSize Behavior in the TableLayoutPanel Control"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,12 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "AutoSize property, TableLayoutPanel control"
+  - "AutoSize property [Windows Forms], tableLayoutPanel control"
   - "controls [Windows Forms], sizing"
   - "localizing forms"
-  - "layout [Windows Forms],AutoSize"
-  - "sizing, automatic"
+  - "layout [Windows Forms], AutoSize"
+  - "sizing [Windows Forms], automatic"
   - "TableLayoutPanel control [Windows Forms], AutoSize behavior"
   - "automatic sizing"
   - "AutoSizeMode property"
@@ -25,6 +23,8 @@ caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # AutoSize Behavior in the TableLayoutPanel Control
 ## Distinct AutoSize Behaviors  
@@ -39,9 +39,9 @@ manager: "wpickett"
   
 |AutoSize setting|Style interaction|  
 |----------------------|-----------------------|  
-|`false`|The <xref:System.Windows.Forms.TableLayoutPanel> control proceeds from left to right, and allocates space for the column or row or in the following order.<br /><br /> 1.  If the <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property is set to <xref:System.Windows.Forms.SizeType>, the number of pixels specified by <xref:System.Windows.Forms.ColumnStyle.Width%2A> or <xref:System.Windows.Forms.RowStyle.Height%2A> is allocated.<br />2.  If the <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property is set to <xref:System.Windows.Forms.SizeType>, the number of pixels returned by the child control’s <xref:System.Windows.Forms.Control.GetPreferredSize%2A> method is allocated.<br />3.  After space for all <xref:System.Windows.Forms.SizeType> and <xref:System.Windows.Forms.SizeType> columns or rows is allocated, any columns or rows with <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> set to <xref:System.Windows.Forms.SizeType> are used to proportionally allocate the remaining free space|  
-|`true`|Similar to the previous interaction, with the exception that <xref:System.Windows.Forms.SizeType> columns or rows acquire an automatic sizing aspect.<br /><br /> The <xref:System.Windows.Forms.TableLayoutPanel> control expands the column or row to create adequate free space, so that no column or row with <xref:System.Windows.Forms.SizeType> styling clips its contents. The <xref:System.Windows.Forms.TableLayoutPanel> control allocates the new space proportionally according to the <xref:System.Windows.Forms.ColumnStyle.Width%2A> or <xref:System.Windows.Forms.RowStyle.Height%2A> property.|  
+|`false`|The <xref:System.Windows.Forms.TableLayoutPanel> control proceeds from left to right, and allocates space for the column or row or in the following order.<br /><br /> 1.  If the <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property is set to <xref:System.Windows.Forms.SizeType.Absolute>, the number of pixels specified by <xref:System.Windows.Forms.ColumnStyle.Width%2A> or <xref:System.Windows.Forms.RowStyle.Height%2A> is allocated.<br />2.  If the <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> property is set to <xref:System.Windows.Forms.SizeType.AutoSize>, the number of pixels returned by the child control’s <xref:System.Windows.Forms.Control.GetPreferredSize%2A> method is allocated.<br />3.  After space for all <xref:System.Windows.Forms.SizeType.Absolute> and <xref:System.Windows.Forms.SizeType.AutoSize> columns or rows is allocated, any columns or rows with <xref:System.Windows.Forms.TableLayoutStyle.SizeType%2A> set to <xref:System.Windows.Forms.SizeType.Percent> are used to proportionally allocate the remaining free space|  
+|`true`|Similar to the previous interaction, with the exception that <xref:System.Windows.Forms.SizeType.Percent> columns or rows acquire an automatic sizing aspect.<br /><br /> The <xref:System.Windows.Forms.TableLayoutPanel> control expands the column or row to create adequate free space, so that no column or row with <xref:System.Windows.Forms.SizeType.Percent> styling clips its contents. The <xref:System.Windows.Forms.TableLayoutPanel> control allocates the new space proportionally according to the <xref:System.Windows.Forms.ColumnStyle.Width%2A> or <xref:System.Windows.Forms.RowStyle.Height%2A> property.|  
   
 ## See Also  
- <xref:System.Windows.Forms.TableLayoutPanel>   
+ <xref:System.Windows.Forms.TableLayoutPanel>  
  [TableLayoutPanel Control Overview](../../../../docs/framework/winforms/controls/tablelayoutpanel-control-overview.md)

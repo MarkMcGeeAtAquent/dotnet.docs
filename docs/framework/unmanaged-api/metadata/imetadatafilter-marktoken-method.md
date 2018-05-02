@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataFilter::MarkToken Method | Microsoft Docs"
+title: "IMetaDataFilter::MarkToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataFilter.MarkToken"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataFilter::MarkToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataFilter::MarkToken method [.NET Framework metadata]"
   - "MarkToken method, IMetaDataFilter interface [.NET Framework metadata]"
 ms.assetid: bd492834-6529-4d39-b93d-f8cdbd3e297f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataFilter::MarkToken Method
 Sets a value indicating that the specified metadata token has been processed.  

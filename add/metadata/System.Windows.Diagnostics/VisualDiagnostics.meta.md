@@ -1,14 +1,20 @@
 ---
 uid: System.Windows.Diagnostics.VisualDiagnostics
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualDiagnostics.VisualTreeChanged
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo(System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---

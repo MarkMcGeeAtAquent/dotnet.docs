@@ -1,5 +1,5 @@
 ---
-title: "Runtime Exceptions in .NET Native Apps | Microsoft Docs"
+title: "Runtime Exceptions in .NET Native Apps"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Runtime Exceptions in .NET Native Apps
 It is important to test the release builds of your Universal Windows Platform app on their target platforms because the debug and release configurations are completely different. By default, the debug configuration uses the .NET Core runtime to compile your app, but the release configuration uses .NET Native to compile your app to native code.  
@@ -42,23 +44,19 @@ It is important to test the release builds of your Universal Windows Platform ap
  To minimize application executable size, .NET Native does not include the full text of exception messages. As a result, runtime exceptions thrown in release builds may not display the full text of exception messages. Instead, the text may consist of a substring along with a link to follow for more information. For example, the exception information may appear as:  
   
 ```  
-  
 Exception thrown: '$16_System.AggregateException' in Unknown Module.  
   
 Additional information: AggregateException_ctor_DefaultMessage  
   
 If there is a handler for this exception, the program may be safely continued.  
-  
 ```  
   
  If you need the complete exception message,  run the debug build instead. For example, the previous exception information  from the release build might appear as follows in the debug build:  
   
 ```  
-  
 Exception thrown: 'System.AggregateException' in NativeApp.exe.  
   
 Additional information: Value does not fall within the expected range.  
-  
 ```  
   
 <a name="CallStack"></a>   
@@ -68,5 +66,5 @@ Additional information: Value does not fall within the expected range.
  To get the full stack, run the debug build instead.  
   
 ## See Also  
- [Debugging .NET Native Windows Universal Apps](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)   
+ [Debugging .NET Native Windows Universal Apps](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)  
  [Getting Started](../../../docs/framework/net-native/getting-started-with-net-native.md)

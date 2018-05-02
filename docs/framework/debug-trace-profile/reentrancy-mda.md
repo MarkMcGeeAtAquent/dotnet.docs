@@ -1,5 +1,5 @@
 ---
-title: "reentrancy MDA | Microsoft Docs"
+title: "reentrancy MDA"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "unmanaged code, debugging"
   - "transitioning threads unmanaged to managed code"
@@ -30,6 +25,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # reentrancy MDA
 The `reentrancy` managed debugging assistant (MDA) is activated when an attempt is made to transition from native to managed code in cases where a prior switch from managed to native code was not performed through an orderly transition.  
@@ -67,7 +64,7 @@ ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.
   
 ## Configuration  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <reentrancy />  

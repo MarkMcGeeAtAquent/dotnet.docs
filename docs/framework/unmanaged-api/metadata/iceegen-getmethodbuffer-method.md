@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::GetMethodBuffer Method | Microsoft Docs"
+title: "ICeeGen::GetMethodBuffer Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.GetMethodBuffer"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::GetMethodBuffer"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICeeGen::GetMethodBuffer method [.NET Framework metadata]"
   - "GetMethodBuffer method [.NET Framework metadata]"
 ms.assetid: c7c5b39a-d4ac-41f1-9d1e-44163f563a49
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::GetMethodBuffer Method
 Gets a buffer of the appropriate size for the method at the specified relative virtual address.  

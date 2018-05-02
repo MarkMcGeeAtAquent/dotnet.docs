@@ -1,5 +1,5 @@
 ---
-title: "ClearType Overview | Microsoft Docs"
+title: "ClearType Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,13 +10,15 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "typography, ClearType technology"
-  - "ClearType, technology"
+  - "typography [WPF], ClearType technology"
+  - "ClearType [WPF], technology"
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
 caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ClearType Overview
 This topic provides an overview of the [!INCLUDE[TLA#tla_ct](../../../../includes/tlasharptla-ct-md.md)] technology found in the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  

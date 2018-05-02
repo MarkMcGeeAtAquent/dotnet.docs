@@ -1,5 +1,5 @@
 ---
-title: "Exception Thrown_V1 ETW Event | Microsoft Docs"
+title: "Exception Thrown_V1 ETW Event"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Exception Thrown_V1 ETW Event
 This event captures information about the exceptions that are thrown.  

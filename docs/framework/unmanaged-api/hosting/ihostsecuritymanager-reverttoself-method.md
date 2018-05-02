@@ -1,5 +1,5 @@
 ---
-title: "IHostSecurityManager::RevertToSelf Method | Microsoft Docs"
+title: "IHostSecurityManager::RevertToSelf Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostSecurityManager.RevertToSelf"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostSecurityManager::RevertToSelf"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RevertToSelf method [.NET Framework hosting]"
   - "IHostSecurityManager::RevertToSelf method [.NET Framework hosting]"
 ms.assetid: 189f28f8-f9a1-4192-aedc-91084e4f8b99
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostSecurityManager::RevertToSelf Method
 Terminates impersonation of the current user identity and returns the original thread token.  
@@ -60,6 +63,6 @@ HRESULT RevertToSelf ();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)   
- [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)   
+ [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)  
+ [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
  [ImpersonateLoggedOnUser Method](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-impersonateloggedonuser-method.md)

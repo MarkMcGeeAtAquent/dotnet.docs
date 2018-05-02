@@ -1,5 +1,5 @@
 ---
-title: "EmitManifest Method | Microsoft Docs"
+title: "EmitManifest Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "EmitManifest"
   - "IALink.EmitManifest"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "EmitManifest"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EmitManifest method"
 ms.assetid: fdebc1f3-b62e-4d9e-b775-8ccaa8ecb250
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # EmitManifest Method
 Emits the final manifest. Call this method after importing all other files and setting all options. Do not call this method for unbound modules.  
@@ -57,6 +60,6 @@ HRESULT EmitManifest(
  Requires alink.h.  
   
 ## See Also  
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

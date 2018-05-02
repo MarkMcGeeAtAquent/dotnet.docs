@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::GenerateCeeMemoryImage Method | Microsoft Docs"
+title: "ICeeGen::GenerateCeeMemoryImage Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.GenerateCeeMemoryImage"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::GenerateCeeMemoryImage"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICeeGen::GenerateCeeMemoryImage method [.NET Framework metadata]"
   - "GenerateCeeMemoryImage method [.NET Framework metadata]"
 ms.assetid: b3847495-0ae6-4a72-b496-65ce2424afc6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::GenerateCeeMemoryImage Method
 Generates an image in memory for the code base.  

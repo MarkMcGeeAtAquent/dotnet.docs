@@ -1,5 +1,5 @@
 ---
-title: "CorNativeLinkType Enumeration | Microsoft Docs"
+title: "CorNativeLinkType Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorNativeLinkType"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorNativeLinkType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorNativeLinkType enumeration [.NET Framework metadata]"
 ms.assetid: 4f86ff37-2dab-4e64-819a-76b3bfe828ff
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorNativeLinkType Enumeration
 Provides values that indicate the type linked in native code.  

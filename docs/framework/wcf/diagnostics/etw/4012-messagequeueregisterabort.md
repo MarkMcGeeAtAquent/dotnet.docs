@@ -1,8 +1,8 @@
 ---
-title: "4012 - MessageQueueRegisterAbort | Microsoft Docs"
+title: "4012 - MessageQueueRegisterAbort"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b992f9ee-bae5-4bad-99ad-e141e2f0b036
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4012 - MessageQueueRegisterAbort
 ## Properties  

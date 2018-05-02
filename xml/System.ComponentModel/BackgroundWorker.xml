@@ -1,10 +1,13 @@
-<Type Name="BackgroundWorker" FullName="System.ComponentModel.BackgroundWorker">
+﻿<Type Name="BackgroundWorker" FullName="System.ComponentModel.BackgroundWorker">
   <TypeSignature Language="C#" Value="public class BackgroundWorker : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BackgroundWorker extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.BackgroundWorker" />
+  <TypeSignature Language="VB.NET" Value="Public Class BackgroundWorker&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BackgroundWorker : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -19,8 +22,7 @@
     <BaseTypeName>System.Object</BaseTypeName>
     <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
   </Base>
-  <Interfaces>
-  </Interfaces>
+  <Interfaces></Interfaces>
   <Attributes>
     <Attribute>
       <AttributeName>System.ComponentModel.DefaultEvent("DoWork")</AttributeName>
@@ -43,7 +45,7 @@
 >   
 >  <xref:System.ComponentModel.BackgroundWorker> events are not marshaled across <xref:System.AppDomain> boundaries. Do not use a <xref:System.ComponentModel.BackgroundWorker> component to perform multithreaded operations in more than one <xref:System.AppDomain>.  
   
- If your background operation requires a parameter, call <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> with your parameter. Inside the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler, you can extract the parameter from the <xref:System.ComponentModel.DoWorkEventArgs.Argument%2A?displayProperty=fullName> property.  
+ If your background operation requires a parameter, call <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> with your parameter. Inside the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler, you can extract the parameter from the <xref:System.ComponentModel.DoWorkEventArgs.Argument%2A?displayProperty=nameWithType> property.  
   
  For more information about <xref:System.ComponentModel.BackgroundWorker>, see [How to: Run an Operation in the Background](~/docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md).  
   
@@ -77,10 +79,13 @@
       <MemberSignature Language="C#" Value="public BackgroundWorker ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; BackgroundWorker();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -108,10 +113,13 @@
       <MemberSignature Language="C#" Value="public void CancelAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.CancelAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelAsync ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -137,7 +145,7 @@
  When you call <xref:System.ComponentModel.BackgroundWorker.CancelAsync%2A>, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> property to see if it has been set to `true`.  
   
 > [!CAUTION]
->  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
+>  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
   
    
   
@@ -158,10 +166,13 @@
       <MemberSignature Language="C#" Value="public bool CancellationPending { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CancellationPending" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.CancellationPending" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CancellationPending As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CancellationPending { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -209,7 +220,12 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
@@ -227,6 +243,8 @@
       <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
@@ -248,10 +266,13 @@
       <MemberSignature Language="C#" Value="public event System.ComponentModel.DoWorkEventHandler DoWork;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.DoWorkEventHandler DoWork" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.DoWork" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event DoWork As DoWorkEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::DoWorkEventHandler ^ DoWork;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -273,18 +294,18 @@
 ## Remarks  
  This event is raised when you call the <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method. This is where you start the operation that performs the potentially time-consuming work.  
   
- Your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler should periodically check the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> property value and abort the operation if it is `true`. When this occurs, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> flag of <xref:System.ComponentModel.DoWorkEventArgs?displayProperty=fullName> to `true`, and the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will be set to `true`.  
+ Your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler should periodically check the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> property value and abort the operation if it is `true`. When this occurs, you can set the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> flag of <xref:System.ComponentModel.DoWorkEventArgs?displayProperty=nameWithType> to `true`, and the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will be set to `true`.  
   
 > [!CAUTION]
->  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
+>  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
   
- If your operation produces a result, you can assign the result to the <xref:System.ComponentModel.DoWorkEventArgs.Result%2A?displayProperty=fullName> property. This will be available to the <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler in the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=fullName> property.  
+ If your operation produces a result, you can assign the result to the <xref:System.ComponentModel.DoWorkEventArgs.Result%2A?displayProperty=nameWithType> property. This will be available to the <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler in the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType> property.  
   
- If the operation raises an exception that your code does not handle, the <xref:System.ComponentModel.BackgroundWorker> catches the exception and passes it into the <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler, where it is exposed as the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName>. If you are running under the Visual Studio debugger, the debugger will break at the point in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler where the unhandled exception was raised. If you have more than one <xref:System.ComponentModel.BackgroundWorker>, you should not reference any of them directly, as this would couple your <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler to a specific instance of <xref:System.ComponentModel.BackgroundWorker>. Instead, you should access your <xref:System.ComponentModel.BackgroundWorker> by casting the `sender` parameter in your <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler.  
+ If the operation raises an exception that your code does not handle, the <xref:System.ComponentModel.BackgroundWorker> catches the exception and passes it into the <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler, where it is exposed as the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType>. If you are running under the Visual Studio debugger, the debugger will break at the point in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler where the unhandled exception was raised. If you have more than one <xref:System.ComponentModel.BackgroundWorker>, you should not reference any of them directly, as this would couple your <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler to a specific instance of <xref:System.ComponentModel.BackgroundWorker>. Instead, you should access your <xref:System.ComponentModel.BackgroundWorker> by casting the `sender` parameter in your <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler.  
   
  You must be careful not to manipulate any user-interface objects in your <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler. Instead, communicate to the user interface through the <xref:System.ComponentModel.BackgroundWorker> events.  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
@@ -303,10 +324,13 @@
       <MemberSignature Language="C#" Value="public bool IsBusy { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsBusy" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.IsBusy" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsBusy As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsBusy { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -345,16 +369,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.ComponentModel.BackgroundWorker.RunWorkerCompleted" />
+        <altmember cref="T:System.EventArgs" />
+        <altmember cref="Overload:System.ComponentModel.BackgroundWorker.RunWorkerAsync" />
       </Docs>
     </Member>
     <Member MemberName="OnDoWork">
       <MemberSignature Language="C#" Value="protected virtual void OnDoWork (System.ComponentModel.DoWorkEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDoWork(class System.ComponentModel.DoWorkEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnDoWork(System.ComponentModel.DoWorkEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnDoWork (e As DoWorkEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnDoWork(System::ComponentModel::DoWorkEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -381,10 +411,13 @@
       <MemberSignature Language="C#" Value="protected virtual void OnProgressChanged (System.ComponentModel.ProgressChangedEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnProgressChanged(class System.ComponentModel.ProgressChangedEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnProgressChanged (e As ProgressChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnProgressChanged(System::ComponentModel::ProgressChangedEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -408,7 +441,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [NIB: Raising an Event](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.ComponentModel.BackgroundWorker.OnProgressChanged%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -425,16 +458,20 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.ComponentModel.BackgroundWorker.OnProgressChanged(System.ComponentModel.ProgressChangedEventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />
       </Docs>
     </Member>
     <Member MemberName="OnRunWorkerCompleted">
       <MemberSignature Language="C#" Value="protected virtual void OnRunWorkerCompleted (System.ComponentModel.RunWorkerCompletedEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRunWorkerCompleted(class System.ComponentModel.RunWorkerCompletedEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRunWorkerCompleted (e As RunWorkerCompletedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRunWorkerCompleted(System::ComponentModel::RunWorkerCompletedEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -458,7 +495,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [NIB: Raising an Event](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -467,16 +504,20 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.ComponentModel.BackgroundWorker.OnRunWorkerCompleted(System.ComponentModel.RunWorkerCompletedEventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.ComponentModel.BackgroundWorker.RunWorkerCompleted" />
       </Docs>
     </Member>
     <Member MemberName="ProgressChanged">
       <MemberSignature Language="C#" Value="public event System.ComponentModel.ProgressChangedEventHandler ProgressChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ProgressChangedEventHandler ProgressChanged" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.ProgressChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event ProgressChanged As ProgressChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::ProgressChangedEventHandler ^ ProgressChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -498,7 +539,7 @@
 ## Remarks  
  This event is raised when you call the <xref:System.ComponentModel.BackgroundWorker.ReportProgress%2A> method.  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
@@ -513,14 +554,27 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ReportProgress">
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Raises the <see cref="E:System.ComponentModel.BackgroundWorker.ProgressChanged" /> event.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ReportProgress">
       <MemberSignature Language="C#" Value="public void ReportProgress (int percentProgress);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportProgress(int32 percentProgress) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReportProgress (percentProgress As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReportProgress(int percentProgress);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -568,10 +622,13 @@
       <MemberSignature Language="C#" Value="public void ReportProgress (int percentProgress, object userState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportProgress(int32 percentProgress, object userState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReportProgress (percentProgress As Integer, userState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReportProgress(int percentProgress, System::Object ^ userState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -614,14 +671,27 @@
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.ComponentModel.BackgroundWorker.WorkerReportsProgress" /> property is set to <see langword="false" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="RunWorkerAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Starts execution of a background operation.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RunWorkerAsync">
       <MemberSignature Language="C#" Value="public void RunWorkerAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RunWorkerAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RunWorkerAsync ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RunWorkerAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -658,16 +728,20 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> is <see langword="true" />.</exception>
+        <altmember cref="E:System.ComponentModel.BackgroundWorker.DoWork" />
       </Docs>
     </Member>
     <Member MemberName="RunWorkerAsync">
       <MemberSignature Language="C#" Value="public void RunWorkerAsync (object argument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RunWorkerAsync(object argument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RunWorkerAsync (argument As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RunWorkerAsync(System::Object ^ argument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -710,16 +784,20 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">
           <see cref="P:System.ComponentModel.BackgroundWorker.IsBusy" /> is <see langword="true" />.</exception>
+        <altmember cref="E:System.ComponentModel.BackgroundWorker.DoWork" />
       </Docs>
     </Member>
     <Member MemberName="RunWorkerCompleted">
       <MemberSignature Language="C#" Value="public event System.ComponentModel.RunWorkerCompletedEventHandler RunWorkerCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.RunWorkerCompletedEventHandler RunWorkerCompleted" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.BackgroundWorker.RunWorkerCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RunWorkerCompleted As RunWorkerCompletedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::RunWorkerCompletedEventHandler ^ RunWorkerCompleted;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -741,16 +819,16 @@
 ## Remarks  
  This event is raised when the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler returns.  
   
- If the operation completes successfully and its result is assigned in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler, you can access the result through the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=fullName> property.  
+ If the operation completes successfully and its result is assigned in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler, you can access the result through the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType> property.  
   
- The <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> indicates that an exception was thrown by the operation.  
+ The <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> indicates that an exception was thrown by the operation.  
   
- The <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> indicates whether a cancellation request was processed by the background operation. If your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler detects a cancellation request by checking the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> flag and setting the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> flag of <xref:System.ComponentModel.DoWorkEventArgs?displayProperty=fullName> to `true`, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> also will be set to `true`.  
+ The <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> property of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> indicates whether a cancellation request was processed by the background operation. If your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler detects a cancellation request by checking the <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> flag and setting the <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> flag of <xref:System.ComponentModel.DoWorkEventArgs?displayProperty=nameWithType> to `true`, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> also will be set to `true`.  
   
 > [!CAUTION]
->  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=fullName> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
+>  Be aware that your code in the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler may finish its work as a cancellation request is being made, and your polling loop may miss <xref:System.ComponentModel.BackgroundWorker.CancellationPending%2A> being set to `true`. In this case, the <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> flag of <xref:System.ComponentModel.RunWorkerCompletedEventArgs?displayProperty=nameWithType> in your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler will not be set to `true`, even though a cancellation request was made. This situation is called a *race condition* and is a common concern in multithreaded programming. For more information about multithreading design issues, see [Managed Threading Best Practices](~/docs/standard/threading/managed-threading-best-practices.md).  
   
- Your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler should always check the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=fullName> and <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A?displayProperty=fullName> properties before accessing the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=fullName> property. If an exception was raised or if the operation was canceled, accessing the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=fullName> property raises an exception.  
+ Your <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler should always check the <xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A?displayProperty=nameWithType> and <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A?displayProperty=nameWithType> properties before accessing the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType> property. If an exception was raised or if the operation was canceled, accessing the <xref:System.ComponentModel.RunWorkerCompletedEventArgs.Result%2A?displayProperty=nameWithType> property raises an exception.  
   
    
   
@@ -769,10 +847,13 @@
       <MemberSignature Language="C#" Value="public bool WorkerReportsProgress { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool WorkerReportsProgress" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.WorkerReportsProgress" />
+      <MemberSignature Language="VB.NET" Value="Public Property WorkerReportsProgress As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool WorkerReportsProgress { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -803,16 +884,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.ComponentModel.BackgroundWorker.ReportProgress(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="WorkerSupportsCancellation">
       <MemberSignature Language="C#" Value="public bool WorkerSupportsCancellation { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool WorkerSupportsCancellation" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.BackgroundWorker.WorkerSupportsCancellation" />
+      <MemberSignature Language="VB.NET" Value="Public Property WorkerSupportsCancellation As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool WorkerSupportsCancellation { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -843,6 +928,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.ComponentModel.BackgroundWorker.CancelAsync" />
       </Docs>
     </Member>
   </Members>

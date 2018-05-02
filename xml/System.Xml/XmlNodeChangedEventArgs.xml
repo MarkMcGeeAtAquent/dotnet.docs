@@ -1,7 +1,9 @@
-<Type Name="XmlNodeChangedEventArgs" FullName="System.Xml.XmlNodeChangedEventArgs">
+﻿<Type Name="XmlNodeChangedEventArgs" FullName="System.Xml.XmlNodeChangedEventArgs">
   <TypeSignature Language="C#" Value="public class XmlNodeChangedEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlNodeChangedEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlNodeChangedEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlNodeChangedEventArgs&#xA;Inherits EventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlNodeChangedEventArgs : EventArgs" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XmlDocument</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
@@ -14,6 +16,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.EventArgs</BaseTypeName>
@@ -43,12 +49,15 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Xml.XmlNodeChangedEventHandler" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlNodeChangedEventArgs (System.Xml.XmlNode node, System.Xml.XmlNode oldParent, System.Xml.XmlNode newParent, string oldValue, string newValue, System.Xml.XmlNodeChangedAction action);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlNode node, class System.Xml.XmlNode oldParent, class System.Xml.XmlNode newParent, string oldValue, string newValue, valuetype System.Xml.XmlNodeChangedAction action) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlNodeChangedEventArgs.#ctor(System.Xml.XmlNode,System.Xml.XmlNode,System.Xml.XmlNode,System.String,System.String,System.Xml.XmlNodeChangedAction)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (node As XmlNode, oldParent As XmlNode, newParent As XmlNode, oldValue As String, newValue As String, action As XmlNodeChangedAction)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlNodeChangedEventArgs(System::Xml::XmlNode ^ node, System::Xml::XmlNode ^ oldParent, System::Xml::XmlNode ^ newParent, System::String ^ oldValue, System::String ^ newValue, System::Xml::XmlNodeChangedAction action);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -62,6 +71,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="node" Type="System.Xml.XmlNode" />
@@ -86,6 +99,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public System.Xml.XmlNodeChangedAction Action { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeChangedAction Action" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.Action" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Action As XmlNodeChangedAction" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlNodeChangedAction Action { System::Xml::XmlNodeChangedAction get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -99,6 +114,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeChangedAction</ReturnType>
@@ -107,47 +126,26 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
         <summary>Gets a value indicating what type of node change event is occurring.</summary>
         <value>An <see langword="XmlNodeChangedAction" /> value describing the node change event.  
   
- <list type="table">  
-<listheader>  
-<term> XmlNodeChangedAction Value  
+ <list type="table"><listheader><term> XmlNodeChangedAction Value  
   
- </term>  
-<description> Description  
+ </term><description> Description  
   
- </description>  
-</listheader>  
-<item>  
-<term> Insert  
+ </description></listheader><item><term> Insert  
   
- </term>  
-<description> A node has been or will be inserted.  
+ </term><description> A node has been or will be inserted.  
   
- </description>  
-</item>  
-<item>  
-<term> Remove  
+ </description></item><item><term> Remove  
   
- </term>  
-<description> A node has been or will be removed.  
+ </term><description> A node has been or will be removed.  
   
- </description>  
-</item>  
-<item>  
-<term> Change  
+ </description></item><item><term> Change  
   
- </term>  
-<description> A node has been or will be changed.  
+ </term><description> A node has been or will be changed.  
   
- </description>  
-</item>  
-</list>  
-  
- <block subset="none" type="note">  
-<para>  
+ </description></item></list><block subset="none" type="note"><para>  
  The <see langword="Action" /> value does not differentiate between when the event occurred (before or after). You can create separate event handlers to handle both instances.  
   
-</para>  
-</block></value>
+</para></block></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -155,6 +153,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public System.Xml.XmlNode NewParent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode NewParent" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.NewParent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NewParent As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlNode ^ NewParent { System::Xml::XmlNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -168,6 +168,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -176,12 +180,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
         <summary>Gets the value of the <see cref="P:System.Xml.XmlNode.ParentNode" /> after the operation completes.</summary>
         <value>The value of the <see langword="ParentNode" /> after the operation completes. This property returns <see langword="null" /> if the node is being removed.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  For attribute nodes this property returns the <see cref="P:System.Xml.XmlAttribute.OwnerElement" />.  
   
-</para>  
-</block></value>
+</para></block></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -189,6 +191,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public string NewValue { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NewValue" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.NewValue" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NewValue As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ NewValue { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -202,6 +206,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -218,6 +226,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public System.Xml.XmlNode Node { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode Node" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.Node" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Node As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlNode ^ Node { System::Xml::XmlNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -231,6 +241,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -245,6 +259,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public System.Xml.XmlNode OldParent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode OldParent" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.OldParent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OldParent As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlNode ^ OldParent { System::Xml::XmlNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -258,6 +274,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -266,12 +286,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
         <summary>Gets the value of the <see cref="P:System.Xml.XmlNode.ParentNode" /> before the operation began.</summary>
         <value>The value of the <see langword="ParentNode" /> before the operation began. This property returns <see langword="null" /> if the node did not have a parent.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  For attribute nodes this property returns the <see cref="P:System.Xml.XmlAttribute.OwnerElement" />.  
   
-</para>  
-</block></value>
+</para></block></value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -279,6 +297,8 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <MemberSignature Language="C#" Value="public string OldValue { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string OldValue" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlNodeChangedEventArgs.OldValue" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OldValue As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ OldValue { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -292,6 +312,10 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

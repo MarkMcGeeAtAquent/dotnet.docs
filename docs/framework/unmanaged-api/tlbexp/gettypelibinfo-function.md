@@ -1,5 +1,5 @@
 ---
-title: "GetTypeLibInfo Function | Microsoft Docs"
+title: "GetTypeLibInfo Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "GetTypeLibInfo"
-apilocation: 
+api_location: 
   - "TlbRef.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "GetTypeLibInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTypeLibInfo function [.NET Framework]"
 ms.assetid: a1c4d165-9bdc-4ca8-940e-292d4ffcc338
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # GetTypeLibInfo Function
 Returns information about the specified type library by examining its [TLIBATTR](https://msdn.microsoft.com/library/ms221376\(v=vs.85\).aspx) structure.  
@@ -32,7 +35,6 @@ Returns information about the specified type library by examining its [TLIBATTR]
 ## Syntax  
   
 ```  
-  
 HRESULT GetTypeLibInfo(  
     [in]   LPWSTR     szFile,  
     [out]  GUID      *pTypeLibID,  
@@ -41,7 +43,6 @@ HRESULT GetTypeLibInfo(
     [out]  USHORT    *pTypeLibMajorVer,  
     [out]  USHORT    *pTypeLibMinorVer  
 );  
-  
 ```  
   
 #### Parameters  
@@ -78,5 +79,5 @@ HRESULT GetTypeLibInfo(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Tlbexp Helper Functions](../../../../docs/framework/unmanaged-api/tlbexp/index.md)   
+ [Tlbexp Helper Functions](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  [LoadTypeLibEx Function](https://msdn.microsoft.com/library/ms221249\(v=vs.85\).aspx)

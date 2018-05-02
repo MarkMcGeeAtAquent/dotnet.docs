@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::GetMinThreads Method | Microsoft Docs"
+title: "IHostIoCompletionManager::GetMinThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.GetMinThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::GetMinThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetMinThreads method, IHostIoCompletionManager interface [.NET Framework hosting]"
   - "IHostIoCompletionManager::GetMinThreads method [.NET Framework hosting]"
 ms.assetid: d7a7f733-677d-481c-b3d5-444fcc502b8e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::GetMinThreads Method
 Gets the minimum number of threads that the host provides for processing I/O requests.  
@@ -67,5 +70,5 @@ HRESULT GetMinThreads (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)   
+ [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

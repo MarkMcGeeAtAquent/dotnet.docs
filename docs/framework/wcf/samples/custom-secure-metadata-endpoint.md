@@ -1,8 +1,8 @@
 ---
-title: "Custom Secure Metadata Endpoint | Microsoft Docs"
+title: "Custom Secure Metadata Endpoint"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 19
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Secure Metadata Endpoint
 This sample demonstrates how to implement a service with a secure metadata endpoint that uses one of the non-metadata exchange bindings, and how to configure [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) or clients to fetch the metadata from such a metadata endpoint. There are two system-provided bindings available for exposing metadata endpoints: mexHttpBinding and mexHttpsBinding. mexHttpBinding is used to expose a metadata endpoint over HTTP in a non-secure manner. mexHttpsBinding is used to expose a metadata endpoint over HTTPS in a secure manner. This sample illustrates how to expose a secure metadata endpoint using the <xref:System.ServiceModel.WSHttpBinding>. You would want to do this when you want to change the security settings on the binding, but you do not want to use HTTPS. If you use the mexHttpsBinding your metadata endpoint will be secure, but there is no way to modify the binding settings.  
@@ -24,11 +26,10 @@ This sample demonstrates how to implement a service with a secure metadata endpo
 ## Service  
  The service in this sample has two endpoints. The application endpoint serves the `ICalculator` contract on a `WSHttpBinding` with `ReliableSession` enabled and `Message` security using certificates. The metadata endpoint also uses `WSHttpBinding`, with the same security settings but with no `ReliableSession`. Here is the relevant configuration:  
   
-```  
-<services>  
-    …  
+```xml  
+<services>   
     <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
-            behaviorConfiguration="CalculatorServiceBehavior">  
+             behaviorConfiguration="CalculatorServiceBehavior">  
      <!-- use base address provided by host -->  
      <endpoint address=""  
        binding="wsHttpBinding"  
@@ -74,7 +75,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  The Svcutil.exe.config file looks like a normal client configuration file. The only unusual aspects are the client endpoint name and contract:  
   
-```  
+```xml  
 <endpoint name="http"  
           binding="wsHttpBinding"  
           bindingConfiguration="Binding1"  
@@ -149,7 +150,7 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 2.  Run the client application from \MetadataResolverClient\bin or \SvcutilClient\bin. Client activity is displayed on the client console application.  
   
-3.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 4.  Remove the certificates by running Cleanup.bat when you have finished with the sample. Other security samples use the same certificates.  
   
@@ -175,7 +176,7 @@ ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Bin
   
 10. On the client machine, run the MetadataResolverClient or the SvcutilClient from VS.  
   
-    1.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+    1.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To clean up after the sample  
   

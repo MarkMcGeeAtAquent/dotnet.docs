@@ -1,5 +1,5 @@
 ---
-title: "CorLocalRefPreservation Enumeration | Microsoft Docs"
+title: "CorLocalRefPreservation Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorLocalRefPreservation"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorLocalRefPreservation"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorLocalRefPreservation enumeration [.NET Framework metadata]"
 ms.assetid: 44757163-1228-4213-a4c4-d4de503cc75d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorLocalRefPreservation Enumeration
 Contains flag values for the treatment of local references.  

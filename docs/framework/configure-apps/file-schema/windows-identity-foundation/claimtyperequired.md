@@ -1,7 +1,8 @@
 ---
-title: "&lt;claimTypeRequired&gt; | Microsoft Docs"
+title: "&lt;claimTypeRequired&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 5
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;claimTypeRequired&gt;
 Specifies the set of required claims for incoming security tokens.  
@@ -23,12 +26,12 @@ Specifies the set of required claims for incoming security tokens.
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <claimTypeRequired>  
-    </claimTypeRequired>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <claimTypeRequired>  
+    </claimTypeRequired>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   

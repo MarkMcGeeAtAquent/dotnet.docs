@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ExceptionUnwindFinallyLeave Method | Microsoft Docs"
+title: "ICorProfilerCallback::ExceptionUnwindFinallyLeave Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ExceptionUnwindFinallyLeave"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ExceptionUnwindFinallyLeave"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::ExceptionUnwindFinallyLeave method [.NET Framework profiling]"
   - "ExceptionUnwindFinallyLeave method [.NET Framework profiling]"
 ms.assetid: 2350351e-f253-4c0c-a191-f952bc5700e6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ExceptionUnwindFinallyLeave Method
 Notifies the profiler that the unwind phase of exception handling has left a `finally` clause.  
@@ -51,5 +54,5 @@ HRESULT ExceptionUnwindFinallyLeave();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ExceptionUnwindFinallyEnter Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)

@@ -1,5 +1,5 @@
 ---
-title: "Securing Exception Handling | Microsoft Docs"
+title: "Securing Exception Handling"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,7 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "cpp"
 helpviewer_keywords: 
   - "code security, exception handling"
   - "security [.NET Framework], exception handling"
@@ -24,6 +21,8 @@ caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing Exception Handling
 In Visual C++ and Visual Basic, a filter expression further up the stack runs before any **finally** statement. The **catch** block associated with that filter runs after the **finally** statement. For more information, see [Using User-Filtered Exceptions](../../../docs/standard/exceptions/using-user-filtered-exception-handlers.md). This section examines the security implications of this order. Consider the following pseudocode example that illustrates the order in which filter statements and **finally** statements run.  
@@ -100,7 +99,6 @@ YourObject.YourMethod()
       Thread.CurrentThread.CurrentUICulture = saveCulture;  
    }  
 }  
-  
 ```  
   
 ```vb  

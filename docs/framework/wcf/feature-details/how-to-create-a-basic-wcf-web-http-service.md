@@ -1,19 +1,24 @@
 ---
-title: "How to: Create a Basic WCF Web HTTP Service | Microsoft Docs"
+title: "How to: Create a Basic WCF Web HTTP Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Basic WCF Web HTTP Service
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] allows you to create a service that exposes a Web endpoint. Web endpoints send data by XML or JSON, there is no SOAP envelope. This topic demonstrates how to expose such an endpoint.  
@@ -70,7 +75,6 @@ manager: "erikre"
      This sample demonstrates how to host a Web-Style service with a console application. You can also host such a service within IIS. To do this, specify the <xref:System.ServiceModel.Activation.WebServiceHostFactory> class in a .svc file as the following code demonstrates.  
   
     ```  
-  
           <%ServiceHost   
     language=c#  
     Debug="true"  
@@ -114,9 +118,9 @@ manager: "erikre"
  When compiling Service.cs reference System.ServiceModel.dll and System.ServiceModel.Web.dll.  
   
 ## See Also  
- <xref:System.ServiceModel.WebHttpBinding>   
- <xref:System.ServiceModel.Web.WebGetAttribute>   
- <xref:System.ServiceModel.Web.WebInvokeAttribute>   
- <xref:System.ServiceModel.Web.WebServiceHost>   
- <xref:System.ServiceModel.Description.WebHttpBehavior>   
+ <xref:System.ServiceModel.WebHttpBinding>  
+ <xref:System.ServiceModel.Web.WebGetAttribute>  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute>  
+ <xref:System.ServiceModel.Web.WebServiceHost>  
+ <xref:System.ServiceModel.Description.WebHttpBehavior>  
  [WCF Web HTTP Programming Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

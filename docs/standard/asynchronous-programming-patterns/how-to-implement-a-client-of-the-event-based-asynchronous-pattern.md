@@ -1,5 +1,5 @@
 ---
-title: "How to: Implement a Client of the Event-based Asynchronous Pattern | Microsoft Docs"
+title: "How to: Implement a Client of the Event-based Asynchronous Pattern"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Event-based Asynchronous Pattern"
   - "ProgressChangedEventArgs class"
@@ -25,6 +28,9 @@ caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Implement a Client of the Event-based Asynchronous Pattern
 The following code example demonstrates how to use a component that adheres to the [Event-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). The form for this example uses the `PrimeNumberCalculator` component described in [How to: Implement a Component That Supports the Event-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
@@ -41,6 +47,6 @@ The following code example demonstrates how to use a component that adheres to t
  [!code-vb[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#10)]  
   
 ## See Also  
- <xref:System.ComponentModel.AsyncOperation>   
- <xref:System.ComponentModel.AsyncOperationManager>   
+ <xref:System.ComponentModel.AsyncOperation>  
+ <xref:System.ComponentModel.AsyncOperationManager>  
  <xref:System.Windows.Forms.WindowsFormsSynchronizationContext>

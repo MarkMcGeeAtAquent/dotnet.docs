@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetNextBlob Method | Microsoft Docs"
+title: "IMetaDataTables::GetNextBlob Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetNextBlob"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetNextBlob"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataTables::GetNextBlob method [.NET Framework metadata]"
   - "GetNextBlob method [.NET Framework metadata]"
 ms.assetid: 017c8ab4-4c09-4754-9935-5b0b49cabecb
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetNextBlob Method
 Gets the index of the next binary large object (BLOB) in the table.  
@@ -56,5 +59,5 @@ HRESULT GetNextBlob (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

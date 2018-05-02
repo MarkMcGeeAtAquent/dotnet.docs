@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapValue::IsValid Method | Microsoft Docs"
+title: "ICorDebugHeapValue::IsValid Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHeapValue.IsValid"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapValue::IsValid"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IsValid method [.NET Framework debugging]"
   - "ICorDebugHeapValue::IsValid method [.NET Framework debugging]"
 ms.assetid: 68e20e62-203d-46d8-bb91-8d3c61cfacc3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapValue::IsValid Method
 Gets a value that indicates whether the object represented by this ICorDebugHeapValue is valid.  

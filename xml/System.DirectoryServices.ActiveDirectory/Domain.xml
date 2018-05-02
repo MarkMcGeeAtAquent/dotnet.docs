@@ -1,10 +1,13 @@
-<Type Name="Domain" FullName="System.DirectoryServices.ActiveDirectory.Domain">
+﻿<Type Name="Domain" FullName="System.DirectoryServices.ActiveDirectory.Domain">
   <TypeSignature Language="C#" Value="public class Domain : System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Domain extends System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition" />
   <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.Domain" />
+  <TypeSignature Language="VB.NET" Value="Public Class Domain&#xA;Inherits ActiveDirectoryPartition" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Domain : System::DirectoryServices::ActiveDirectory::ActiveDirectoryPartition" />
   <AssemblyInfo>
     <AssemblyName>System.DirectoryServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.DirectoryServices.ActiveDirectory.ActiveDirectoryPartition</BaseTypeName>
@@ -20,10 +23,13 @@
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainCollection Children { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainCollection Children" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Children" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Children As DomainCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainCollection ^ Children { System::DirectoryServices::ActiveDirectory::DomainCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainCollection</ReturnType>
@@ -33,16 +39,20 @@
         <value>An <see cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" /> object that contains the child domains.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainCollection" />
       </Docs>
     </Member>
     <Member MemberName="CreateLocalSideOfTrustRelationship">
       <MemberSignature Language="C#" Value="public void CreateLocalSideOfTrustRelationship (string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateLocalSideOfTrustRelationship(string targetDomainName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CreateLocalSideOfTrustRelationship (targetDomainName As String, direction As TrustDirection, trustPassword As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CreateLocalSideOfTrustRelationship(System::String ^ targetDomainName, System::DirectoryServices::ActiveDirectory::TrustDirection direction, System::String ^ trustPassword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -55,7 +65,7 @@
       <Docs>
         <param name="targetDomainName">The DNS name of the domain that the trust is created with.</param>
         <param name="direction">One of the <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> members that determines the direction of the trust, relative to this domain.</param>
-        <param name="trustPassword">The password for the trust. See remarks below.</param>
+        <param name="trustPassword">The password for the trust.</param>
         <summary>Creates the local side of a trust relationship with the specified domain.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -65,7 +75,7 @@
   
  The `trustPassword` parameter associates a password with the created trust. When the other side of the trust is created, the same password is provided and the two local trusts are then bound to each other.  
   
- To programmatically create both sides of a trust relationship in a single method call, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship%2A?displayProperty=fullName> method.  
+ To programmatically create both sides of a trust relationship in a single method call, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
@@ -80,16 +90,21 @@
           <paramref name="direction" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Docs>
     </Member>
     <Member MemberName="CreateTrustRelationship">
       <MemberSignature Language="C#" Value="public void CreateTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CreateTrustRelationship (targetDomain As Domain, direction As TrustDirection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CreateTrustRelationship(System::DirectoryServices::ActiveDirectory::Domain ^ targetDomain, System::DirectoryServices::ActiveDirectory::TrustDirection direction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -106,7 +121,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method creates both sides of a trust relationship with a single method call. The <xref:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship%2A?displayProperty=fullName> method is used to create only one side of a trust.  
+ This method creates both sides of a trust relationship with a single method call. The <xref:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship%2A?displayProperty=nameWithType> method is used to create only one side of a trust.  
   
  ]]></format>
         </remarks>
@@ -119,16 +134,21 @@
           <paramref name="direction" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Docs>
     </Member>
     <Member MemberName="DeleteLocalSideOfTrustRelationship">
       <MemberSignature Language="C#" Value="public void DeleteLocalSideOfTrustRelationship (string targetDomainName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteLocalSideOfTrustRelationship(string targetDomainName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DeleteLocalSideOfTrustRelationship (targetDomainName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DeleteLocalSideOfTrustRelationship(System::String ^ targetDomainName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -145,7 +165,7 @@
 ## Remarks  
  When one side of a trust relationship is deleted, the trust longer exists.  
   
- To delete both sides of a trust relationship with one method call, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship%2A?displayProperty=fullName> method.  
+ To delete both sides of a trust relationship with one method call, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
@@ -158,16 +178,21 @@
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.CreateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain)" />
       </Docs>
     </Member>
     <Member MemberName="DeleteTrustRelationship">
       <MemberSignature Language="C#" Value="public void DeleteTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DeleteTrustRelationship (targetDomain As Domain)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DeleteTrustRelationship(System::DirectoryServices::ActiveDirectory::Domain ^ targetDomain);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -182,7 +207,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To delete only one side of a trust relationship, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship%2A?displayProperty=fullName> method.  
+ To delete only one side of a trust relationship, use the <xref:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
@@ -193,16 +218,21 @@
           <paramref name="targetDomain" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.DeleteLocalSideOfTrustRelationship(System.String)" />
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
       </Docs>
     </Member>
     <Member MemberName="DomainControllers">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection DomainControllers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection DomainControllers" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainControllers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DomainControllers As DomainControllerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ DomainControllers { System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
@@ -212,16 +242,20 @@
         <value>A <see cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" /> object that contains the domain controllers in this domain.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />
       </Docs>
     </Member>
     <Member MemberName="DomainMode">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainMode DomainMode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.DomainMode DomainMode" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainMode" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DomainMode As DomainMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainMode DomainMode { System::DirectoryServices::ActiveDirectory::DomainMode get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainMode</ReturnType>
@@ -231,16 +265,20 @@
         <value>One of the <see cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" /> values that indicates the mode that this domain is operating in.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" />
       </Docs>
     </Member>
     <Member MemberName="DomainModeLevel">
       <MemberSignature Language="C#" Value="public int DomainModeLevel { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 DomainModeLevel" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.DomainModeLevel" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DomainModeLevel As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int DomainModeLevel { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -251,14 +289,27 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindAllDiscoverableDomainControllers">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Finds all of the discoverable domain controllers in this domain.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindAllDiscoverableDomainControllers">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDiscoverableDomainControllers" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindAllDiscoverableDomainControllers () As DomainControllerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ FindAllDiscoverableDomainControllers();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
@@ -277,16 +328,20 @@
         </remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">The target server is either busy or unavailable.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />
       </Docs>
     </Member>
     <Member MemberName="FindAllDiscoverableDomainControllers">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers (string siteName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers(string siteName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDiscoverableDomainControllers(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindAllDiscoverableDomainControllers (siteName As String) As DomainControllerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ FindAllDiscoverableDomainControllers(System::String ^ siteName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
@@ -314,16 +369,30 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="siteName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindAllDomainControllers">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Finds all of the domain controllers in this domain.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindAllDomainControllers">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDomainControllers" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindAllDomainControllers () As DomainControllerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ FindAllDomainControllers();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
@@ -335,16 +404,20 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">The target server is either busy or unavailable.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />
       </Docs>
     </Member>
     <Member MemberName="FindAllDomainControllers">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers (string siteName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers(string siteName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindAllDomainControllers(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindAllDomainControllers (siteName As String) As DomainControllerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainControllerCollection ^ FindAllDomainControllers(System::String ^ siteName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainControllerCollection</ReturnType>
@@ -363,16 +436,30 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="siteName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainControllerCollection" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindDomainController">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Finds any domain controller in this domain.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindDomainController">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindDomainController () As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainController ^ FindDomainController();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -392,16 +479,20 @@
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">A domain controller cannot be located.</exception>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">A call to the underlying directory service resulted in an error.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
       </Docs>
     </Member>
     <Member MemberName="FindDomainController">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindDomainController (flag As LocatorOptions) As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainController ^ FindDomainController(System::DirectoryServices::ActiveDirectory::LocatorOptions flag);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -418,16 +509,21 @@
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">A call to the underlying directory service resulted in an error.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="flag" /> parameter contains an invalid value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />
       </Docs>
     </Member>
     <Member MemberName="FindDomainController">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (string siteName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindDomainController (siteName As String) As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainController ^ FindDomainController(System::String ^ siteName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -447,16 +543,20 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="siteName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
       </Docs>
     </Member>
     <Member MemberName="FindDomainController">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController (string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName, valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.FindDomainController(System.String,System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FindDomainController (siteName As String, flag As LocatorOptions) As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::DomainController ^ FindDomainController(System::String ^ siteName, System::DirectoryServices::ActiveDirectory::LocatorOptions flag);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -481,16 +581,21 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="siteName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />
       </Docs>
     </Member>
     <Member MemberName="Forest">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.Forest Forest { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.Forest Forest" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Forest" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Forest As Forest" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::Forest ^ Forest { System::DirectoryServices::ActiveDirectory::Forest ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.Forest</ReturnType>
@@ -500,16 +605,20 @@
         <value>A <see cref="T:System.DirectoryServices.ActiveDirectory.Forest" /> object that represents the forest that this domain is a member of.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.Forest" />
       </Docs>
     </Member>
     <Member MemberName="GetAllTrustRelationships">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetAllTrustRelationships" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAllTrustRelationships () As TrustRelationshipInformationCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::TrustRelationshipInformationCollection ^ GetAllTrustRelationships();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection</ReturnType>
@@ -523,16 +632,20 @@
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">The target server is either busy or unavailable.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection" />
       </Docs>
     </Member>
     <Member MemberName="GetComputerDomain">
       <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetComputerDomain ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetComputerDomain() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetComputerDomain" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetComputerDomain () As Domain" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::DirectoryServices::ActiveDirectory::Domain ^ GetComputerDomain();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
@@ -550,16 +663,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">A connection to the domain could not be made.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.GetCurrentDomain" />
       </Docs>
     </Member>
     <Member MemberName="GetCurrentDomain">
       <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetCurrentDomain ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetCurrentDomain() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetCurrentDomain" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCurrentDomain () As Domain" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::DirectoryServices::ActiveDirectory::Domain ^ GetCurrentDomain();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
@@ -586,10 +703,13 @@
       <MemberSignature Language="C#" Value="public override System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetDirectoryEntry" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetDirectoryEntry () As DirectoryEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::DirectoryServices::DirectoryEntry ^ GetDirectoryEntry();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
@@ -601,16 +721,20 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
         <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">Demand value: <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+        <altmember cref="T:System.DirectoryServices.DirectoryEntry" />
       </Docs>
     </Member>
     <Member MemberName="GetDomain">
       <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.Domain GetDomain (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.Domain GetDomain(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetDomain(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDomain (context As DirectoryContext) As Domain" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::DirectoryServices::ActiveDirectory::Domain ^ GetDomain(System::DirectoryServices::ActiveDirectory::DirectoryContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
@@ -628,16 +752,20 @@
           <paramref name="context" /> is not valid.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="context" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />
       </Docs>
     </Member>
     <Member MemberName="GetSelectiveAuthenticationStatus">
       <MemberSignature Language="C#" Value="public bool GetSelectiveAuthenticationStatus (string targetDomainName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSelectiveAuthenticationStatus(string targetDomainName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetSelectiveAuthenticationStatus(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSelectiveAuthenticationStatus (targetDomainName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetSelectiveAuthenticationStatus(System::String ^ targetDomainName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -660,16 +788,20 @@
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.SetSelectiveAuthenticationStatus(System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="GetSidFilteringStatus">
       <MemberSignature Language="C#" Value="public bool GetSidFilteringStatus (string targetDomainName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetSidFilteringStatus(string targetDomainName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetSidFilteringStatus(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSidFilteringStatus (targetDomainName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetSidFilteringStatus(System::String ^ targetDomainName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -692,16 +824,20 @@
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.SetSidFilteringStatus(System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="GetTrustRelationship">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation GetTrustRelationship (string targetDomainName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation GetTrustRelationship(string targetDomainName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.GetTrustRelationship(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTrustRelationship (targetDomainName As String) As TrustRelationshipInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::DirectoryServices::ActiveDirectory::TrustRelationshipInformation ^ GetTrustRelationship(System::String ^ targetDomainName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation</ReturnType>
@@ -723,16 +859,20 @@
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation" />
       </Docs>
     </Member>
     <Member MemberName="InfrastructureRoleOwner">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController InfrastructureRoleOwner { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController InfrastructureRoleOwner" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.InfrastructureRoleOwner" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InfrastructureRoleOwner As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainController ^ InfrastructureRoleOwner { System::DirectoryServices::ActiveDirectory::DomainController ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -742,16 +882,20 @@
         <value>An <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> object that represents the domain controller that holds the infrastructure owner role.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
       </Docs>
     </Member>
     <Member MemberName="Parent">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.Domain Parent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.Domain Parent" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.Parent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Parent As Domain" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::Domain ^ Parent { System::DirectoryServices::ActiveDirectory::Domain ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.Domain</ReturnType>
@@ -767,10 +911,13 @@
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController PdcRoleOwner { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController PdcRoleOwner" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.PdcRoleOwner" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PdcRoleOwner As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainController ^ PdcRoleOwner { System::DirectoryServices::ActiveDirectory::DomainController ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -780,16 +927,19 @@
         <value>An <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> object that represents the domain controller that holds the PDC emulator role for this domain.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
       </Docs>
     </Member>
     <Member MemberName="RaiseDomainFunctionality">
       <MemberSignature Language="C#" Value="public void RaiseDomainFunctionality (System.DirectoryServices.ActiveDirectory.DomainMode domainMode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseDomainFunctionality(valuetype System.DirectoryServices.ActiveDirectory.DomainMode domainMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RaiseDomainFunctionality(System.DirectoryServices.ActiveDirectory.DomainMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RaiseDomainFunctionality(System::DirectoryServices::ActiveDirectory::DomainMode domainMode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -812,10 +962,10 @@
   
 |Current mode|Mode can be raised to|  
 |------------------|---------------------------|  
-|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode>|  
-|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|  
-|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|  
-|<xref:System.DirectoryServices.ActiveDirectory.DomainMode>|None|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000MixedDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000NativeDomain><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003InterimDomain><br /><br /> <xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2000NativeDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003InterimDomain>|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|  
+|<xref:System.DirectoryServices.ActiveDirectory.DomainMode.Windows2003Domain>|None|  
   
  ]]></format>
         </remarks>
@@ -826,16 +976,20 @@
           <paramref name="domainMode" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" /> enumeration value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainMode" />
       </Docs>
     </Member>
     <Member MemberName="RaiseDomainFunctionalityLevel">
       <MemberSignature Language="C#" Value="public void RaiseDomainFunctionalityLevel (int domainMode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RaiseDomainFunctionalityLevel(int32 domainMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RaiseDomainFunctionalityLevel(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RaiseDomainFunctionalityLevel (domainMode As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RaiseDomainFunctionalityLevel(int domainMode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -853,10 +1007,13 @@
       <MemberSignature Language="C#" Value="public void RepairTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RepairTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RepairTrustRelationship (targetDomain As Domain)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RepairTrustRelationship(System::DirectoryServices::ActiveDirectory::Domain ^ targetDomain);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -882,16 +1039,20 @@
           <paramref name="targetDomain" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.Domain" />
       </Docs>
     </Member>
     <Member MemberName="RidRoleOwner">
       <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController RidRoleOwner { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.DomainController RidRoleOwner" />
       <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.Domain.RidRoleOwner" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RidRoleOwner As DomainController" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::DirectoryServices::ActiveDirectory::DomainController ^ RidRoleOwner { System::DirectoryServices::ActiveDirectory::DomainController ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
@@ -901,16 +1062,20 @@
         <value>An <see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" /> object that represents the domain controller that holds the relative identifier (RID) master role for this domain.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />
       </Docs>
     </Member>
     <Member MemberName="SetSelectiveAuthenticationStatus">
       <MemberSignature Language="C#" Value="public void SetSelectiveAuthenticationStatus (string targetDomainName, bool enable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSelectiveAuthenticationStatus(string targetDomainName, bool enable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.SetSelectiveAuthenticationStatus(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetSelectiveAuthenticationStatus (targetDomainName As String, enable As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetSelectiveAuthenticationStatus(System::String ^ targetDomainName, bool enable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -934,16 +1099,20 @@
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.GetSelectiveAuthenticationStatus(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="SetSidFilteringStatus">
       <MemberSignature Language="C#" Value="public void SetSidFilteringStatus (string targetDomainName, bool enable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSidFilteringStatus(string targetDomainName, bool enable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.SetSidFilteringStatus(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetSidFilteringStatus (targetDomainName As String, enable As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetSidFilteringStatus(System::String ^ targetDomainName, bool enable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -966,16 +1135,30 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="targetDomainName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ObjectDisposedException">The current object has been disposed.</exception>
+        <altmember cref="M:System.DirectoryServices.ActiveDirectory.Domain.GetSidFilteringStatus(System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="UpdateLocalSideOfTrustRelationship">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Updates the local side of a trust relationship.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="UpdateLocalSideOfTrustRelationship">
       <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetDomainName, string newTrustPassword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetDomainName, string newTrustPassword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateLocalSideOfTrustRelationship(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UpdateLocalSideOfTrustRelationship (targetDomainName As String, newTrustPassword As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UpdateLocalSideOfTrustRelationship(System::String ^ targetDomainName, System::String ^ newTrustPassword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1011,10 +1194,13 @@
       <MemberSignature Language="C#" Value="public void UpdateLocalSideOfTrustRelationship (string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateLocalSideOfTrustRelationship(string targetDomainName, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateLocalSideOfTrustRelationship(System.String,System.DirectoryServices.ActiveDirectory.TrustDirection,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UpdateLocalSideOfTrustRelationship (targetDomainName As String, newTrustDirection As TrustDirection, newTrustPassword As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UpdateLocalSideOfTrustRelationship(System::String ^ targetDomainName, System::DirectoryServices::ActiveDirectory::TrustDirection newTrustDirection, System::String ^ newTrustPassword);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1041,16 +1227,20 @@
           <paramref name="newTrustDirection" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Docs>
     </Member>
     <Member MemberName="UpdateTrustRelationship">
       <MemberSignature Language="C#" Value="public void UpdateTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UpdateTrustRelationship (targetDomain As Domain, newTrustDirection As TrustDirection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UpdateTrustRelationship(System::DirectoryServices::ActiveDirectory::Domain ^ targetDomain, System::DirectoryServices::ActiveDirectory::TrustDirection newTrustDirection);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1073,16 +1263,20 @@
           <paramref name="newTrustDirection" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Docs>
     </Member>
     <Member MemberName="VerifyOutboundTrustRelationship">
       <MemberSignature Language="C#" Value="public void VerifyOutboundTrustRelationship (string targetDomainName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyOutboundTrustRelationship(string targetDomainName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.VerifyOutboundTrustRelationship(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub VerifyOutboundTrustRelationship (targetDomainName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void VerifyOutboundTrustRelationship(System::String ^ targetDomainName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1116,10 +1310,13 @@
       <MemberSignature Language="C#" Value="public void VerifyTrustRelationship (System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyTrustRelationship(class System.DirectoryServices.ActiveDirectory.Domain targetDomain, valuetype System.DirectoryServices.ActiveDirectory.TrustDirection direction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.Domain.VerifyTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain,System.DirectoryServices.ActiveDirectory.TrustDirection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub VerifyTrustRelationship (targetDomain As Domain, direction As TrustDirection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void VerifyTrustRelationship(System::DirectoryServices::ActiveDirectory::Domain ^ targetDomain, System::DirectoryServices::ActiveDirectory::TrustDirection direction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.DirectoryServices</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1149,6 +1346,7 @@
           <paramref name="direction" /> is not a valid <see cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" /> value.</exception>
         <exception cref="T:System.ObjectDisposedException">The object has been disposed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">The specified account does not have permission to perform this operation.</exception>
+        <altmember cref="T:System.DirectoryServices.ActiveDirectory.TrustDirection" />
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 ---
-title: "Regular Expression Language - Quick Reference | Microsoft Docs"
+title: "Regular Expression Language - Quick Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -24,6 +24,9 @@ caps.latest.revision: 56
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Regular Expression Language - Quick Reference
 <a name="top"></a> A regular expression is a pattern that the regular expression engine attempts to match in input text. A pattern consists of one or more character literals, operators, or constructs.  For a brief introduction, see [.NET Regular Expressions](../../../docs/standard/base-types/regular-expressions.md).  
@@ -64,7 +67,7 @@ manager: "wpickett"
 |`\x` *nn*|Uses hexadecimal representation to specify a character (*nn* consists of exactly two digits).|`\w\x20\w`|"a b", "c d" in<br /><br /> "a bc d"|  
 |`\c` *X*<br /><br /> `\c` *x*|Matches the ASCII control character that is specified by *X* or *x*, where *X* or *x* is the letter of the control character.|`\cC`|"\x0003" in "\x0003" (Ctrl-C)|  
 |`\u` *nnnn*|Matches a Unicode character by using hexadecimal representation (exactly four digits, as represented by *nnnn*).|`\w\u0020\w`|"a b", "c d" in<br /><br /> "a bc d"|  
-|`\`|When followed by a character that is not recognized as an escaped character in this and other tables in this topic, matches that character. For example, `\*` is the same as `\x2A`, and `\.` is the same as `\x2E`. This allows the regular expression engine to disambiguate language elements (such as * or ?) and character literals (represented by `\*` or `\?`).|`\d+[\+-x\*]\d+`|"2+2" and "3*9" in "(2+2) \* 3\*9"|  
+|`\`|When followed by a character that is not recognized as an escaped character in this and other tables in this topic, matches that character. For example, `\*` is the same as `\x2A`, and `\.` is the same as `\x2E`. This allows the regular expression engine to disambiguate language elements (such as \* or ?) and character literals (represented by `\*` or `\?`).|`\d+[\+-x\*]\d+`|"2+2" and "3\*9" in "(2+2) \* 3\*9"|  
   
  [Back to top](#top)  
   
@@ -114,7 +117,7 @@ manager: "wpickett"
 |------------------------|-----------------|-------------|-------------|  
 |`(` *subexpression* `)`|Captures the matched subexpression and assigns it a one-based ordinal number.|`(\w)\1`|"ee" in "deep"|  
 |`(?<` *name* `>` *subexpression* `)`|Captures the matched subexpression into a named group.|`(?<double>\w)\k<double>`|"ee" in "deep"|  
-|`(?<` *name1* `-` *name2* `>` *subexpression* `)`|Defines a balancing group definition. For more information, see the "Balancing Group Definition" section in [Grouping Constructs](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|"((1-3)*(3-1))" in "3+2^((1-3)\*(3-1))"|  
+|`(?<` *name1* `-` *name2* `>` *subexpression* `)`|Defines a balancing group definition. For more information, see the "Balancing Group Definition" section in [Grouping Constructs](grouping-constructs-in-regular-expressions.md).|`(((?'Open'\()[^\(\)]*)+((?'Close-Open'\))[^\(\)]*)+)*(?(Open)(?!))$`|"((1-3)\*(3-1))" in "3+2^((1-3)\*(3-1))"|  
 |`(?:` *subexpression* `)`|Defines a noncapturing group.|`Write(?:Line)?`|"WriteLine" in "Console.WriteLine()"<br /><br /> "Write" in "Console.Write(value)"|  
 |`(?imnsx-imnsx:` *subexpression* `)`|Applies or disables the specified options within *subexpression*. For more information, see [Regular Expression Options](regular-expression-options.md).|`A\d{2}(?i:\w+)\b`|"A12xl", "A12XL" in "A12xl A12XL a12xl"|  
 |`(?=` *subexpression* `)`|Zero-width positive lookahead assertion.|`\w+(?=\.)`|"is", "ran", and "out" in "He is. The dog ran. The sun is out."|  
@@ -163,9 +166,9 @@ manager: "wpickett"
   
 |Alternation construct|Description|Pattern|Matches|  
 |---------------------------|-----------------|-------------|-------------|  
-|`&#124;`|Matches any one element separated by the vertical bar (&#124;) character.|`th(e&#124;is&#124;at)`|"the", "this" in "this is the day. "|  
-|`(?(` *expression* `)` *yes* `&#124;` *no* `)`|Matches *yes* if the regular expression pattern designated by *expression* matches; otherwise, matches the optional *no* part. *expression* is interpreted as a zero-width assertion.|`(?(A)A\d{2}\b&#124;\b\d{3}\b)`|"A10", "910" in "A10 C103 910"|  
-|`(?(` *name* `)` *yes* `&#124;` *no* `)`|Matches *yes* if *name*, a named or numbered capturing group, has a match; otherwise, matches the optional *no*.|`(?<quoted>")?(?(quoted).+?"&#124;\S+\s)`|Dogs.jpg, "Yiska playing.jpg" in "Dogs.jpg "Yiska playing.jpg""|  
+|<code>&#124;</code>|Matches any one element separated by the vertical bar (&#124;) character.|<code>th(e&#124;is&#124;at)</code>|"the", "this" in "this is the day. "|  
+|`(?(` *expression* `)` *yes* <code>&#124;</code> *no* `)`|Matches *yes* if the regular expression pattern designated by *expression* matches; otherwise, matches the optional *no* part. *expression* is interpreted as a zero-width assertion.|<code>(?(A)A\d{2}\b&#124;\b\d{3}\b)</code>|"A10", "910" in "A10 C103 910"|  
+|`(?(` *name* `)` *yes* <code>&#124;</code> *no* `)`|Matches *yes* if *name*, a named or numbered capturing group, has a match; otherwise, matches the optional *no*.|<code>(?&lt;quoted&gt;&quot;)?(?(quoted).+?&quot;&#124;\S+\s)</code>|Dogs.jpg, "Yiska playing.jpg" in "Dogs.jpg "Yiska playing.jpg""|  
   
  [Back to top](#top)  
   
@@ -188,7 +191,7 @@ manager: "wpickett"
   
 <a name="options"></a>   
 ## Regular Expression Options  
- You can specify options that control how the regular expression engine interprets a regular expression pattern. Many of these options can be specified either inline (in the regular expression pattern) or as one or more [RegexOptions](assetId:///T:System.Text.RegularExpressions.RegexOptions?qualifyHint=False&autoUpgrade=True) constants. This quick reference lists only inline options. For more information about inline and [RegexOptions](assetId:///T:System.Text.RegularExpressions.RegexOptions?qualifyHint=False&autoUpgrade=True) options, see the article [Regular Expression Options](regular-expression-options.md).  
+ You can specify options that control how the regular expression engine interprets a regular expression pattern. Many of these options can be specified either inline (in the regular expression pattern) or as one or more <xref:System.Text.RegularExpressions.RegexOptions> constants. This quick reference lists only inline options. For more information about inline and <xref:System.Text.RegularExpressions.RegexOptions> options, see the article [Regular Expression Options](regular-expression-options.md).  
   
  You can specify an inline option in two ways:  
   
@@ -219,10 +222,10 @@ manager: "wpickett"
 |`#` [to end of line]|X-mode comment. The comment starts at an unescaped `#` and continues to the end of the line.|`(?x)\bA\w+\b#Matches words starting with A`|  
   
 ## See Also  
- [System.Text.RegularExpressions](assetId:///N:System.Text.RegularExpressions?qualifyHint=True&autoUpgrade=True)   
- [Regex](assetId:///T:System.Text.RegularExpressions.Regex?qualifyHint=False&autoUpgrade=True)   
- [Regular Expressions](regular-expressions.md)   
- [Regular Expression Classes](the-regular-expression-object-model.md)   
- [Regular Expression Examples](regular-expression-examples.md)   
- [Regular Expressions - Quick Reference (download in Word format)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)   
+ <xref:System.Text.RegularExpressions?displayProperty=nameWithType>  
+ <xref:System.Text.RegularExpressions.Regex>  
+ [Regular Expressions](regular-expressions.md)  
+ [Regular Expression Classes](the-regular-expression-object-model.md)  
+ [Regular Expression Examples](regular-expression-examples.md)  
+ [Regular Expressions - Quick Reference (download in Word format)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx)  
  [Regular Expressions - Quick Reference (download in PDF format)](http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.pdf)

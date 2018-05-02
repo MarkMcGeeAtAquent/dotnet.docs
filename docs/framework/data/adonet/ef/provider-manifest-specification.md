@@ -1,8 +1,8 @@
 ---
-title: "Provider Manifest Specification | Microsoft Docs"
+title: "Provider Manifest Specification"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Provider Manifest Specification
 This section discusses how a data store provider can support the types and functions in the data store.  
@@ -76,7 +78,7 @@ This section discusses how a data store provider can support the types and funct
   
  For example:  
   
-```  
+```xml  
 <Schema Namespace="Northwind" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:edm="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">  
 ```  
   
@@ -97,7 +99,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ```  
   
 #### Using a Provider Manifest Token  
- For the offline scenario, the token is picked from SSDL representation. The SSDL allows you to specify a ProviderManifestToken (see [Schema Element (SSDL)](http://msdn.microsoft.com/en-us/fec75ae4-7f16-4421-9265-9dac61509222) for more information). For example, if a connection cannot be opened, the SSDL has a provider manifest token that specifies information about the manifest.  
+ For the offline scenario, the token is picked from SSDL representation. The SSDL allows you to specify a ProviderManifestToken (see [Schema Element (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222) for more information). For example, if a connection cannot be opened, the SSDL has a provider manifest token that specifies information about the manifest.  
   
 ```  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
@@ -106,7 +108,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ### Provider Manifest Schema  
  The schema of information defined for each provider contains the static information to be consumed by metadata:  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema elementFormDefault="qualified"  
    xmlns:xs="http://www.w3.org/2001/XMLSchema"  

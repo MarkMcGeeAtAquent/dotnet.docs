@@ -1,17 +1,19 @@
 ---
-title: "Hiring Process | Microsoft Docs"
+title: "Hiring Process"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hiring Process
 This sample demonstrates how to implement a business process using messaging activities and two workflows hosted as workflow services. These workflows are part of the IT infrastructure of a fictional company called Contoso, Inc.  
@@ -209,7 +211,7 @@ This sample demonstrates how to implement a business process using messaging act
   
 1.  The job position should appear on the external Web site. As a person interested in applying for the job, you may apply for this position and submit your resume.  
   
-2.  If you go back to the Job Postings List service, you can “view resumes” that have been collected so far.  
+2.  If you go back to the Job Postings List service, you can "view resumes" that have been collected so far.  
   
 3.  HR can also stop collecting resumes (for example, once the right candidate has been identified).  
   
@@ -219,7 +221,7 @@ This sample demonstrates how to implement a business process using messaging act
   
 2.  If the solution fails to build, verify the following:  
   
-    -   The reference to `ContosoHR` is not missing from the `InternalClient` or `CareersWebSite`projects.  
+    -   The reference to `ContosoHR` is not missing from the `InternalClient` or `CareersWebSite` projects.  
   
 3.  If the solution fails to execute, verify the following:  
   
@@ -237,6 +239,4 @@ This sample demonstrates how to implement a business process using messaging act
   
 1.  Delete the SQL Server instance store by running Cleanup.bat, located in DbSetup folder.  
   
-2.  Delete the source code form your hard drive.  
-  
-## See Also
+2.  Delete the source code form your hard drive.

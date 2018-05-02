@@ -1,5 +1,5 @@
 ---
-title: "1027 - StartTransactionContextWorkItem | Microsoft Docs"
+title: "1027 - StartTransactionContextWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 116ae5ec-b9d5-4231-824e-270d00eea7b8
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1027 - StartTransactionContextWorkItem
 ## Properties  

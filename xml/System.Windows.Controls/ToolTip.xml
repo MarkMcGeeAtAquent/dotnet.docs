@@ -1,7 +1,9 @@
-<Type Name="ToolTip" FullName="System.Windows.Controls.ToolTip">
+﻿<Type Name="ToolTip" FullName="System.Windows.Controls.ToolTip">
   <TypeSignature Language="C#" Value="public class ToolTip : System.Windows.Controls.ContentControl" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ToolTip extends System.Windows.Controls.ContentControl" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ToolTip" />
+  <TypeSignature Language="VB.NET" Value="Public Class ToolTip&#xA;Inherits ContentControl" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ToolTip : System::Windows::Controls::ContentControl" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -28,11 +30,11 @@
   
  You use a <xref:System.Windows.Controls.ToolTip> control to provide information to the user. For example, you can use a <xref:System.Windows.Controls.ToolTip> to provide the name of a <xref:System.Windows.Controls.Button> or a <xref:System.Windows.Controls.ToolBar> in a <xref:System.Windows.Controls.ToolBarTray>. The content of a <xref:System.Windows.Controls.ToolTip> control can vary from a simple text string to more complex content such as a <xref:System.Windows.Controls.StackPanel> that has embedded text and images. The content of a <xref:System.Windows.Controls.ToolTip> cannot receive focus.  
   
- A <xref:System.Windows.Controls.ToolTip> control cannot have a parent.  For example, you cannot set the <xref:System.Windows.Controls.ContentControl.Content%2A> property of a <xref:System.Windows.Controls.Button> to a <xref:System.Windows.Controls.ToolTip> Instead, assign a <xref:System.Windows.Controls.ToolTip> to the <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=fullName> and <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=fullName> properties.  
+ A <xref:System.Windows.Controls.ToolTip> control cannot have a parent.  For example, you cannot set the <xref:System.Windows.Controls.ContentControl.Content%2A> property of a <xref:System.Windows.Controls.Button> to a <xref:System.Windows.Controls.ToolTip> Instead, assign a <xref:System.Windows.Controls.ToolTip> to the <xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=nameWithType> and <xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType> properties.  
   
  You can use a <xref:System.Windows.Controls.ToolTip> on multiple elements by defining a <xref:System.Windows.Controls.ToolTip> in a <xref:System.Windows.ResourceDictionary>.  
   
- The properties of the <xref:System.Windows.Controls.ToolTip> class are used to define the position and behavior of the tooltip. Many of these properties are also defined in the <xref:System.Windows.Controls.ToolTipService> class. If the value of one of these properties is specified by both the <xref:System.Windows.Controls.ToolTip> property and the <xref:System.Windows.Controls.ToolTipService>attached property, the value of the <xref:System.Windows.Controls.ToolTipService> property is used. In addition, the <xref:System.Windows.Controls.ToolTipService> class provides properties to set timing behavior. These attached properties are not included in the <xref:System.Windows.Controls.ToolTip> class but can be used by the control.  
+ The properties of the <xref:System.Windows.Controls.ToolTip> class are used to define the position and behavior of the tooltip. Many of these properties are also defined in the <xref:System.Windows.Controls.ToolTipService> class. If the value of one of these properties is specified by both the <xref:System.Windows.Controls.ToolTip> property and the <xref:System.Windows.Controls.ToolTipService> attached property, the value of the <xref:System.Windows.Controls.ToolTipService> property is used. In addition, the <xref:System.Windows.Controls.ToolTipService> class provides properties to set timing behavior. These attached properties are not included in the <xref:System.Windows.Controls.ToolTip> class but can be used by the control.  
   
 ## Customizing the ToolTip Control  
  To apply the same property settings to multiple <xref:System.Windows.Controls.ToolTip> controls, use the <xref:System.Windows.FrameworkElement.Style%2A> property. You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance. For more information about creating a <xref:System.Windows.Controls.ControlTemplate>, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  To see the parts and states that are specific to the <xref:System.Windows.Controls.ToolTip>, see [ToolTip Styles and Templates](~/docs/framework/wpf/controls/tooltip-styles-and-templates.md).  
@@ -49,11 +51,11 @@
   
  The following example shows how to define a tooltip by assigning text to the <xref:System.Windows.FrameworkElement.ToolTip%2A> property.  
   
- [!code-xml[ToolTipSimple#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#1)]  
+ [!code-xaml[ToolTipSimple#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#1)]  
   
  The following example shows how to define a tooltip by assigning a <xref:System.Windows.Controls.ToolTip> object to the <xref:System.Windows.FrameworkElement.ToolTip%2A> property.  
   
- [!code-xml[ToolTipSimple#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipSimple#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipSimple/CSharp/Pane1.xaml#tooltip)]  
   
  The following example uses code to generate a <xref:System.Windows.Controls.ToolTip> object. The example creates a <xref:System.Windows.Controls.ToolTip> (`tt`) and associates it with a <xref:System.Windows.Controls.Button>.  
   
@@ -62,12 +64,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Controls.ToolTipEventArgs" />
+    <altmember cref="T:System.Windows.Controls.ToolTipEventHandler" />
+    <altmember cref="T:System.Windows.Controls.ToolTipService" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ToolTip ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ToolTip();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -83,6 +90,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Closed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Closed" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Controls.ToolTip.Closed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Closed As RoutedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::RoutedEventHandler ^ Closed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -97,7 +106,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.FrameworkElement.ToolTipClosing?displayProperty=fullName> event is also raised when the <xref:System.Windows.Controls.ToolTip> control is closed.  
+ The <xref:System.Windows.FrameworkElement.ToolTipClosing?displayProperty=nameWithType> event is also raised when the <xref:System.Windows.Controls.ToolTip> control is closed.  
   
 <a name="routedEventInfo_Closed"></a>   
 ## Routed Event Information  
@@ -121,12 +130,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Controls.ToolTip.Opened" />
+        <altmember cref="E:System.Windows.FrameworkElement.ToolTipClosing" />
       </Docs>
     </Member>
     <Member MemberName="ClosedEvent">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ClosedEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ClosedEvent" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.ClosedEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ClosedEvent As RoutedEvent " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::RoutedEvent ^ ClosedEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -144,6 +157,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.CustomPopupPlacementCallback" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomPopupPlacementCallback As CustomPopupPlacementCallback" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Controls::Primitives::CustomPopupPlacementCallback ^ CustomPopupPlacementCallback { System::Windows::Controls::Primitives::CustomPopupPlacementCallback ^ get(); void set(System::Windows::Controls::Primitives::CustomPopupPlacementCallback ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -167,7 +182,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Controls.ToolTip.Placement%2A> property must be set to <xref:System.Windows.Controls.Primitives.PlacementMode> for the callback delegate to be used.  
+ The <xref:System.Windows.Controls.ToolTip.Placement%2A> property must be set to <xref:System.Windows.Controls.Primitives.PlacementMode.Custom> for the callback delegate to be used.  
   
  The <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegate returns an array of possible points that are defined with respect to the <xref:System.Windows.Controls.ToolTip.PlacementTarget%2A>. When the <xref:System.Windows.Controls.ToolTip> is displayed, a point is chosen that maximizes the amount of the <xref:System.Windows.Controls.ToolTip> window that is visible.  
   
@@ -192,12 +207,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Controls.Primitives.CustomPopupPlacementCallback" />
       </Docs>
     </Member>
     <Member MemberName="CustomPopupPlacementCallbackProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.CustomPopupPlacementCallbackProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CustomPopupPlacementCallbackProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ CustomPopupPlacementCallbackProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -215,6 +233,8 @@
       <MemberSignature Language="C#" Value="public bool HasDropShadow { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasDropShadow" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.HasDropShadow" />
+      <MemberSignature Language="VB.NET" Value="Public Property HasDropShadow As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasDropShadow { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -231,7 +251,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When the <xref:System.Windows.Controls.ToolTip> opens, the value is set to the value of <xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=fullName>. Setting this property to `true` has no effect if the <xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=fullName> property is `false`.  
+ When the <xref:System.Windows.Controls.ToolTip> opens, the value is set to the value of <xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=nameWithType>. Setting this property to `true` has no effect if the <xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=nameWithType> property is `false`.  
   
 <a name="dependencyPropertyInfo_HasDropShadow"></a>   
 ## Dependency Property Information  
@@ -246,16 +266,19 @@
 ## Examples  
  The following example shows how to set the <xref:System.Windows.Controls.ToolTip.HasDropShadow%2A> property for a <xref:System.Windows.Controls.ToolTip> control.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTipService.HasDropShadow" />
       </Docs>
     </Member>
     <Member MemberName="HasDropShadowProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasDropShadowProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasDropShadowProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.HasDropShadowProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly HasDropShadowProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ HasDropShadowProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -273,6 +296,8 @@
       <MemberSignature Language="C#" Value="public double HorizontalOffset { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.HorizontalOffset" />
+      <MemberSignature Language="VB.NET" Value="Public Property HorizontalOffset As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double HorizontalOffset { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -314,19 +339,24 @@
 ## Examples  
  The following example shows how to create and position a <xref:System.Windows.Controls.ToolTip>.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.VerticalOffset" />
+        <altmember cref="P:System.Windows.Controls.Primitives.Popup.HorizontalOffset" />
+        <altmember cref="T:System.Windows.Controls.Primitives.Popup" />
       </Docs>
     </Member>
     <Member MemberName="HorizontalOffsetProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.HorizontalOffsetProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly HorizontalOffsetProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ HorizontalOffsetProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -344,6 +374,8 @@
       <MemberSignature Language="C#" Value="public bool IsOpen { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsOpen" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.IsOpen" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsOpen As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsOpen { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -360,7 +392,7 @@
           <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -380,17 +412,20 @@
   
 |||  
 |-|-|  
-|Identifier field|<xref:System.Windows.Controls.ToolTip>|  
-|Metadata properties set to `true`|<xref:System.Windows.FrameworkPropertyMetadataOptions>|  
+|Identifier field|<xref:System.Windows.Controls.ToolTip.IsOpenProperty>|  
+|Metadata properties set to `true`|<xref:System.Windows.FrameworkPropertyMetadataOptions.BindsTwoWayByDefault>|  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.StaysOpen" />
       </Docs>
     </Member>
     <Member MemberName="IsOpenProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOpenProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOpenProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.IsOpenProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly IsOpenProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ IsOpenProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -408,6 +443,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnClosed (System.Windows.RoutedEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.Windows.RoutedEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.OnClosed(System.Windows.RoutedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnClosed (e As RoutedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnClosed(System::Windows::RoutedEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -423,12 +460,16 @@
         <param name="e">The event information.</param>
         <summary>Responds to the <see cref="E:System.Windows.Controls.ToolTip.Closed" /> event.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="E:System.Windows.Controls.ToolTip.Closed" />
+        <altmember cref="E:System.Windows.Controls.ToolTip.Opened" />
       </Docs>
     </Member>
     <Member MemberName="OnContentChanged">
       <MemberSignature Language="C#" Value="protected override void OnContentChanged (object oldContent, object newContent);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContentChanged(object oldContent, object newContent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.OnContentChanged(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub OnContentChanged (oldContent As Object, newContent As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void OnContentChanged(System::Object ^ oldContent, System::Object ^ newContent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -452,6 +493,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.OnCreateAutomationPeer" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function OnCreateAutomationPeer () As AutomationPeer" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Automation::Peers::AutomationPeer ^ OnCreateAutomationPeer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -471,6 +514,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnOpened (System.Windows.RoutedEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnOpened(class System.Windows.RoutedEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.OnOpened(System.Windows.RoutedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnOpened (e As RoutedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnOpened(System::Windows::RoutedEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -486,12 +531,16 @@
         <param name="e">The event information.</param>
         <summary>Responds to the <see cref="E:System.Windows.Controls.ToolTip.Opened" /> event.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="E:System.Windows.Controls.ToolTip.Opened" />
+        <altmember cref="E:System.Windows.Controls.ToolTip.Closed" />
       </Docs>
     </Member>
     <Member MemberName="OnVisualParentChanged">
-      <MemberSignature Language="C#" Value="protected override void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
+      <MemberSignature Language="C#" Value="protected internal override void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualParentChanged(class System.Windows.DependencyObject oldParent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTip.OnVisualParentChanged(System.Windows.DependencyObject)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub OnVisualParentChanged (oldParent As DependencyObject)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void OnVisualParentChanged(System::Windows::DependencyObject ^ oldParent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -513,6 +562,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Opened;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Opened" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Controls.ToolTip.Opened" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Opened As RoutedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::RoutedEventHandler ^ Opened;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -527,7 +578,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=fullName> event is also raised when the <xref:System.Windows.Controls.ToolTip> control opens.  
+ The <xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=nameWithType> event is also raised when the <xref:System.Windows.Controls.ToolTip> control opens.  
   
 <a name="routedEventInfo_Opened"></a>   
 ## Routed Event Information  
@@ -551,12 +602,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Controls.ToolTip.Closed" />
+        <altmember cref="E:System.Windows.FrameworkElement.ToolTipOpening" />
       </Docs>
     </Member>
     <Member MemberName="OpenedEvent">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent OpenedEvent;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent OpenedEvent" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.OpenedEvent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly OpenedEvent As RoutedEvent " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::RoutedEvent ^ OpenedEvent;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -574,6 +629,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.PlacementMode Placement { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.PlacementMode Placement" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.Placement" />
+      <MemberSignature Language="VB.NET" Value="Public Property Placement As PlacementMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Controls::Primitives::PlacementMode Placement { System::Windows::Controls::Primitives::PlacementMode get(); void set(System::Windows::Controls::Primitives::PlacementMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -612,19 +669,25 @@
 ## Examples  
  The following example shows how to create and position a <xref:System.Windows.Controls.ToolTip>.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.PlacementTarget" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.HorizontalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.VerticalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.PlacementRectangle" />
       </Docs>
     </Member>
     <Member MemberName="PlacementProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.PlacementProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly PlacementProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ PlacementProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -642,6 +705,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Rect PlacementRectangle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect PlacementRectangle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.PlacementRectangle" />
+      <MemberSignature Language="VB.NET" Value="Public Property PlacementRectangle As Rect" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Rect PlacementRectangle { System::Windows::Rect get(); void set(System::Windows::Rect value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -680,19 +745,26 @@
 ## Examples  
  The following example shows how to create and position a <xref:System.Windows.Controls.ToolTip>.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.PlacementTarget" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.HorizontalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.VerticalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.Placement" />
+        <altmember cref="P:System.Windows.Controls.Primitives.Popup.Placement" />
       </Docs>
     </Member>
     <Member MemberName="PlacementRectangleProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementRectangleProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementRectangleProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.PlacementRectangleProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly PlacementRectangleProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ PlacementRectangleProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -710,6 +782,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.UIElement PlacementTarget { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement PlacementTarget" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.PlacementTarget" />
+      <MemberSignature Language="VB.NET" Value="Public Property PlacementTarget As UIElement" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::UIElement ^ PlacementTarget { System::Windows::UIElement ^ get(); void set(System::Windows::UIElement ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -723,7 +797,7 @@
           <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -751,19 +825,25 @@
 ## Examples  
  The following example shows how to create and position a <xref:System.Windows.Controls.ToolTip>.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.Placement" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.HorizontalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.VerticalOffset" />
+        <altmember cref="P:System.Windows.Controls.ToolTip.PlacementRectangle" />
       </Docs>
     </Member>
     <Member MemberName="PlacementTargetProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementTargetProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementTargetProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.PlacementTargetProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly PlacementTargetProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ PlacementTargetProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -781,6 +861,8 @@
       <MemberSignature Language="C#" Value="public bool StaysOpen { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool StaysOpen" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.StaysOpen" />
+      <MemberSignature Language="VB.NET" Value="Public Property StaysOpen As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool StaysOpen { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -824,6 +906,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StaysOpenProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StaysOpenProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.StaysOpenProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly StaysOpenProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ StaysOpenProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -841,6 +925,8 @@
       <MemberSignature Language="C#" Value="public double VerticalOffset { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ToolTip.VerticalOffset" />
+      <MemberSignature Language="VB.NET" Value="Public Property VerticalOffset As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double VerticalOffset { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -882,19 +968,24 @@
 ## Examples  
  The following example shows how to create and position a <xref:System.Windows.Controls.ToolTip>.  
   
- [!code-xml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
+ [!code-xaml[ToolTipService#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#tooltip)]  
   
  [!code-csharp[ToolTipService#ToolTipCode](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipcode)]
  [!code-vb[ToolTipService#ToolTipCode](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipcode)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Controls.ToolTip.HorizontalOffset" />
+        <altmember cref="P:System.Windows.Controls.Primitives.Popup.VerticalOffset" />
+        <altmember cref="T:System.Windows.Controls.Primitives.Popup" />
       </Docs>
     </Member>
     <Member MemberName="VerticalOffsetProperty">
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTip.VerticalOffsetProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly VerticalOffsetProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ VerticalOffsetProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>

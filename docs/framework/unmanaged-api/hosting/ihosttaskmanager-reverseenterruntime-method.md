@@ -1,31 +1,34 @@
 ---
-title: "IHostTaskManager::ReverseEnterRuntime Method | Microsoft Docs"
+title: "IHostTaskManager::ReverseEnterRuntime Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostTaskManager.ReverseEnterRuntime"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostTaskManager::ReverseEnterRuntime"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostTaskManager::ReverseEnterRuntime method [.NET Framework hosting]"
   - "ReverseEnterRuntime method [.NET Framework hosting]"
 ms.assetid: b1e26bff-d3ea-436e-9867-29720df999f4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostTaskManager::ReverseEnterRuntime Method
 Notifies the host that a call is being made into the common language runtime (CLR) from unmanaged code.  
@@ -64,7 +67,7 @@ HRESULT ReverseEnterRuntime ();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)   
- [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)   
- [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)   
+ [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
+ [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  
+ [IHostTask Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)  
  [IHostTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-interface.md)

@@ -1,10 +1,13 @@
-<Type Name="Thread" FullName="System.Threading.Thread">
+﻿<Type Name="Thread" FullName="System.Threading.Thread">
   <TypeSignature Language="C#" Value="public sealed class Thread : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, System.Runtime.InteropServices._Thread" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Thread extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.Runtime.InteropServices._Thread" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Thread" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Thread&#xA;Inherits CriticalFinalizerObject&#xA;Implements _Thread" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Thread sealed : System::Runtime::ConstrainedExecution::CriticalFinalizerObject, System::Runtime::InteropServices::_Thread" />
   <AssemblyInfo>
     <AssemblyName>System.Threading.Thread</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -50,8 +53,7 @@
  [Foreground and background threads](#Foreground)   
  [Culture and threads](#Culture)   
  [Getting information about and controlling threads](#Properties)   
- [Accessing the source code for the Thread class](#Source)  
-  
+   
 <a name="Starting"></a>   
 ## Starting a thread  
  You start a thread by supplying a delegate that represents the method the thread is to execute in its class constructor. You then call the <xref:System.Threading.Thread.Start%2A> method to begin execution.  
@@ -136,9 +138,9 @@
   
  You can do either of the following to ensure that all of the threads executing in an application share the same culture and UI culture:  
   
--   You can pass a <xref:System.Globalization.CultureInfo> object that represents that culture to the <xref:System.Threading.ParameterizedThreadStart> delegate or the <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%2CSystem.Object%29?displayProperty=fullName> method.  
+-   You can pass a <xref:System.Globalization.CultureInfo> object that represents that culture to the <xref:System.Threading.ParameterizedThreadStart> delegate or the <xref:System.Threading.ThreadPool.QueueUserWorkItem%28System.Threading.WaitCallback%2CSystem.Object%29?displayProperty=nameWithType> method.  
   
--   For apps running on the [!INCLUDE[net_v45](~/includes/net-v45-md.md)] and later versions, you can define the culture and UI culture that is to be assigned to all threads created in an application domain by setting the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=fullName> and <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=fullName> properties. Note that this is a per-application domain setting.  
+-   For apps running on the [!INCLUDE[net_v45](~/includes/net-v45-md.md)] and later versions, you can define the culture and UI culture that is to be assigned to all threads created in an application domain by setting the value of the <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> and <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> properties. Note that this is a per-application domain setting.  
   
  For more information and examples, see the "Culture and threads" section of the <xref:System.Globalization.CultureInfo> class topic.  
   
@@ -162,12 +164,6 @@
 -   The read-only <xref:System.Threading.Thread.IsThreadPoolThread%2A> property, which indicates whether a thread is  a thread pool thread.  
   
 -   The <xref:System.Threading.Thread.IsBackground%2A> property. For more information, see the [Foreground and background threads](#Foreground) section.  
-  
-<a name="Source"></a>   
-## Accessing the source code for the Thread class  
- To view the .NET Framework source code for the <xref:System.Threading.Thread> class, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/threading/thread.cs#3980e012bae82e96). You can browse through the source code online, download the reference for offline viewing, and step through the sources (including patches and updates) during debugging; see [instructions](http://referencesource.microsoft.com/).  
-  
-   
   
 ## Examples  
  The following example demonstrates simple threading functionality.  
@@ -204,14 +200,27 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     <threadsafe>This type is thread safe.</threadsafe>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Threading.Thread" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Thread (System.Threading.ParameterizedThreadStart start);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.ParameterizedThreadStart start) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.#ctor(System.Threading.ParameterizedThreadStart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (start As ParameterizedThreadStart)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Thread(System::Threading::ParameterizedThreadStart ^ start);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -255,16 +264,22 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="start" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Threading.ParameterizedThreadStart" />
+        <altmember cref="Overload:System.Threading.Thread.Start" />
+        <altmember cref="T:System.AppDomain" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Thread (System.Threading.ThreadStart start);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.ThreadStart start) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.#ctor(System.Threading.ThreadStart)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (start As ThreadStart)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Thread(System::Threading::ThreadStart ^ start);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -313,12 +328,16 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="start" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="T:System.Threading.ThreadStart" />
+        <altmember cref="Overload:System.Threading.Thread.Start" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Thread (System.Threading.ParameterizedThreadStart start, int maxStackSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.ParameterizedThreadStart start, int32 maxStackSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.#ctor(System.Threading.ParameterizedThreadStart,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (start As ParameterizedThreadStart, maxStackSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Thread(System::Threading::ParameterizedThreadStart ^ start, int maxStackSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -328,6 +347,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -383,6 +406,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public Thread (System.Threading.ThreadStart start, int maxStackSize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.ThreadStart start, int32 maxStackSize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.#ctor(System.Threading.ThreadStart,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (start As ThreadStart, maxStackSize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Thread(System::Threading::ThreadStart ^ start, int maxStackSize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -392,6 +417,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -443,10 +472,22 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <paramref name="maxStackSize" /> is less than zero.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Abort">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Raises a <see cref="T:System.Threading.ThreadAbortException" /> in the thread on which it is invoked, to begin the process of terminating the thread. Calling this method usually terminates the thread.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Abort">
       <MemberSignature Language="C#" Value="public void Abort ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Abort" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Abort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Abort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -456,6 +497,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -479,25 +524,31 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  If `Abort` is called on a thread that has not been started, the thread will abort when <xref:System.Threading.Thread.Start%2A> is called. If `Abort` is called on a thread that is blocked or is sleeping, the thread is interrupted and then aborted.  
   
- If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort%2A>, and <xref:System.Threading.ThreadState> is added to the <xref:System.Threading.Thread.ThreadState%2A> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume%2A> is called.  
+ If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort%2A>, and <xref:System.Threading.ThreadState.AbortRequested> is added to the <xref:System.Threading.Thread.ThreadState%2A> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume%2A> is called.  
   
  If `Abort` is called on a managed thread while it is executing unmanaged code, a `ThreadAbortException` is not thrown until the thread returns to managed code.  
   
  If two calls to `Abort` come at the same time, it is possible for one call to set the state information and the other call to execute the `Abort`. However, an application cannot detect this situation.  
   
- After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.  
+ After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState.AbortRequested>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState.Stopped>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.  
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread that is being aborted is currently suspended.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for advanced operations on threads. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />.</permission>
+        <altmember cref="T:System.Threading.ThreadAbortException" />
+        <altmember cref="F:System.Threading.ThreadState.Aborted" />
+        <altmember cref="F:System.Threading.ThreadState.AbortRequested" />
       </Docs>
     </Member>
     <Member MemberName="Abort">
       <MemberSignature Language="C#" Value="public void Abort (object stateInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort(object stateInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Abort(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Abort (stateInfo As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Abort(System::Object ^ stateInfo);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -507,6 +558,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -533,13 +588,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  If `Abort` is called on a thread that has not been started, the thread will abort when <xref:System.Threading.Thread.Start%2A> is called. If `Abort` is called on a thread that is blocked or is sleeping, the thread is interrupted and then aborted.  
   
- If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort%2A>, and <xref:System.Threading.ThreadState> is added to the <xref:System.Threading.Thread.ThreadState%2A> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume%2A> is called.  
+ If `Abort` is called on a thread that has been suspended, a <xref:System.Threading.ThreadStateException> is thrown in the thread that called <xref:System.Threading.Thread.Abort%2A>, and <xref:System.Threading.ThreadState.AbortRequested> is added to the <xref:System.Threading.Thread.ThreadState%2A> property of the thread being aborted. A <xref:System.Threading.ThreadAbortException> is not thrown in the suspended thread until <xref:System.Threading.Thread.Resume%2A> is called.  
   
  If `Abort` is called on a managed thread while it is executing unmanaged code, a `ThreadAbortException` is not thrown until the thread returns to managed code.  
   
  If two calls to `Abort` come at the same time, it is possible for one call to set the state information and the other call to execute the `Abort`. However, an application cannot detect this situation.  
   
- After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.  
+ After `Abort` is invoked on a thread, the state of the thread includes <xref:System.Threading.ThreadState.AbortRequested>. After the thread has terminated as a result of a successful call to `Abort`, the state of the thread is changed to <xref:System.Threading.ThreadState.Stopped>. With sufficient permissions, a thread that is the target of an `Abort` can cancel the abort using the `ResetAbort` method. For an example that demonstrates calling the `ResetAbort` method, see the `ThreadAbortException` class.  
   
    
   
@@ -552,15 +607,21 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread that is being aborted is currently suspended.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for advanced operations on threads. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />.</permission>
+        <altmember cref="T:System.Threading.ThreadAbortException" />
+        <altmember cref="F:System.Threading.ThreadState.Aborted" />
+        <altmember cref="F:System.Threading.ThreadState.AbortRequested" />
       </Docs>
     </Member>
     <Member MemberName="AllocateDataSlot">
       <MemberSignature Language="C#" Value="public static LocalDataStoreSlot AllocateDataSlot ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot AllocateDataSlot() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.AllocateDataSlot" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AllocateDataSlot () As LocalDataStoreSlot" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static LocalDataStoreSlot ^ AllocateDataSlot();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -570,6 +631,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.LocalDataStoreSlot</ReturnType>
@@ -619,6 +684,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static LocalDataStoreSlot AllocateNamedDataSlot (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot AllocateNamedDataSlot(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.AllocateNamedDataSlot(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AllocateNamedDataSlot (name As String) As LocalDataStoreSlot" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static LocalDataStoreSlot ^ AllocateNamedDataSlot(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -628,6 +695,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.LocalDataStoreSlot</ReturnType>
@@ -689,6 +760,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Threading.ApartmentState ApartmentState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ApartmentState ApartmentState" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.ApartmentState" />
+      <MemberSignature Language="VB.NET" Value="Public Property ApartmentState As ApartmentState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::ApartmentState ApartmentState { System::Threading::ApartmentState get(); void set(System::Threading::ApartmentState value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -698,6 +771,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -721,7 +798,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  An attempt to use the <xref:System.Threading.Thread.ApartmentState%2A> property to set the apartment state of a thread whose apartment state has already been set is ignored. However, the <xref:System.Threading.Thread.SetApartmentState%2A> method throws a <xref:System.InvalidOperationException> in this case.  
   
 > [!IMPORTANT]
->  In the .NET Framework version 2.0, new threads are initialized as <xref:System.Threading.ApartmentState?displayProperty=fullName> if their apartment state has not been set before they are started. The main application thread is initialized to <xref:System.Threading.ApartmentState?displayProperty=fullName> by default. You can no longer set the main application thread to <xref:System.Threading.ApartmentState?displayProperty=fullName> by setting the <xref:System.Threading.ApartmentState?displayProperty=fullName> property on the first line of code. Use the <xref:System.STAThreadAttribute> instead.  
+>  In the .NET Framework version 2.0, new threads are initialized as <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> if their apartment state has not been set before they are started. The main application thread is initialized to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> by default. You can no longer set the main application thread to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType> by setting the <xref:System.Threading.ApartmentState?displayProperty=nameWithType> property on the first line of code. Use the <xref:System.STAThreadAttribute> instead.  
   
  In the .NET Framework version 2.0, you can specify the COM threading model for a C++ application using the [/CLRTHREADATTRIBUTE (Set CLR Thread Attribute)](http://msdn.microsoft.com/library/4907e9ef-5031-446c-aecf-0a0b32fae1e8) linker option.  
   
@@ -737,12 +814,17 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">An attempt is made to set this property to a state that is not a valid apartment state (a state other than single-threaded apartment (<see langword="STA" />) or multithreaded apartment (<see langword="MTA" />)).</exception>
+        <altmember cref="T:System.Threading.ThreadState" />
+        <altmember cref="M:System.Threading.Thread.GetApartmentState" />
+        <altmember cref="M:System.Threading.Thread.SetApartmentState(System.Threading.ApartmentState)" />
       </Docs>
     </Member>
     <Member MemberName="BeginCriticalRegion">
       <MemberSignature Language="C#" Value="public static void BeginCriticalRegion ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BeginCriticalRegion() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.BeginCriticalRegion" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub BeginCriticalRegion ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void BeginCriticalRegion();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -752,6 +834,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -787,12 +873,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Threading.Thread.EndCriticalRegion" />
       </Docs>
     </Member>
     <Member MemberName="BeginThreadAffinity">
       <MemberSignature Language="C#" Value="public static void BeginThreadAffinity ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void BeginThreadAffinity() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.BeginThreadAffinity" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub BeginThreadAffinity ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void BeginThreadAffinity();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -802,6 +891,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -837,12 +930,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Threading.Thread.EndThreadAffinity" />
       </Docs>
     </Member>
     <Member MemberName="CurrentContext">
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Contexts.Context CurrentContext { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Remoting.Contexts.Context CurrentContext" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.CurrentContext" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property CurrentContext As Context" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Runtime::Remoting::Contexts::Context ^ CurrentContext { System::Runtime::Remoting::Contexts::Context ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -864,6 +960,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CurrentCulture { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CurrentCulture" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.CurrentCulture" />
+      <MemberSignature Language="VB.NET" Value="Public Property CurrentCulture As CultureInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Globalization::CultureInfo ^ CurrentCulture { System::Globalization::CultureInfo ^ get(); void set(System::Globalization::CultureInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -873,6 +971,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -889,7 +991,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Globalization.CultureInfo> object that is returned by this property, together with its associated objects, determine the default format for dates, times, numbers, currency values, the sorting order of text, casing conventions, and string comparisons. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName> property to learn how a thread's default culture is determined, and how users set culture information for their computers.  
+ The <xref:System.Globalization.CultureInfo> object that is returned by this property, together with its associated objects, determine the default format for dates, times, numbers, currency values, the sorting order of text, casing conventions, and string comparisons. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> property to learn how a thread's default culture is determined, and how users set culture information for their computers.  
   
  Beginning with the [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)], you can set the <xref:System.Threading.Thread.CurrentCulture%2A> property to a neutral culture. This is because the behavior of the <xref:System.Globalization.CultureInfo> class has changed: When it represents a neutral culture, its property values (in particular, the <xref:System.Globalization.CultureInfo.Calendar%2A>, <xref:System.Globalization.CultureInfo.CompareInfo%2A>, <xref:System.Globalization.CultureInfo.DateTimeFormat%2A>, <xref:System.Globalization.CultureInfo.NumberFormat%2A>, and <xref:System.Globalization.CultureInfo.TextInfo%2A> properties) now reflect the specific culture that is associated with the neutral culture. In earlier versions of the .NET Framework, the <xref:System.Threading.Thread.CurrentCulture%2A> property threw a <xref:System.NotSupportedException> exception when a neutral culture was assigned.  
   
@@ -912,6 +1014,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static System.Security.Principal.IPrincipal CurrentPrincipal { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Security.Principal.IPrincipal CurrentPrincipal" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.CurrentPrincipal" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property CurrentPrincipal As IPrincipal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Security::Principal::IPrincipal ^ CurrentPrincipal { System::Security::Principal::IPrincipal ^ get(); void set(System::Security::Principal::IPrincipal ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -921,6 +1025,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
@@ -948,10 +1056,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static System.Threading.Thread CurrentThread { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Threading.Thread CurrentThread" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.CurrentThread" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property CurrentThread As Thread" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Threading::Thread ^ CurrentThread { System::Threading::Thread ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -982,7 +1093,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  [!code-csharp[System.Threading.Thread.CurrentThread#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.thread.currentthread/cs/currentthread2.cs#1)]
  [!code-vb[System.Threading.Thread.CurrentThread#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.thread.currentthread/vb/currentthread2.vb#1)]  
   
- Each child task generates 1 million random numbers between 1 and 1 million and returns their mean. The parent task calls the <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=fullName> method to ensure that the child tasks have completed before displaying the mean returned by each task and calculating the mean of means.  
+ Each child task generates 1 million random numbers between 1 and 1 million and returns their mean. The parent task calls the <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType> method to ensure that the child tasks have completed before displaying the mean returned by each task and calculating the mean of means.  
   
  Note that while the application runs on a foreground thread, each task runs on a thread pool thread.  
   
@@ -994,6 +1105,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo CurrentUICulture { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo CurrentUICulture" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.CurrentUICulture" />
+      <MemberSignature Language="VB.NET" Value="Public Property CurrentUICulture As CultureInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Globalization::CultureInfo ^ CurrentUICulture { System::Globalization::CultureInfo ^ get(); void set(System::Globalization::CultureInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1003,6 +1116,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1019,12 +1136,12 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The UI culture specifies the resources an application needs to support user input and output, and by default is the same as the operating system culture. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=fullName> property to learn how a thread's default UI culture is determined.  
+ The UI culture specifies the resources an application needs to support user input and output, and by default is the same as the operating system culture. See the <xref:System.Globalization.CultureInfo> class to learn about culture names and identifiers, the differences between invariant, neutral, and specific cultures, and the way culture information affects threads and application domains. See the <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> property to learn how a thread's default UI culture is determined.  
   
- The <xref:System.Globalization.CultureInfo> returned by this property can be a neutral culture. Neutral cultures should not be used with formatting methods such as <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=fullName>, <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=fullName>, and <xref:System.Convert.ToString%28System.Char%2CSystem.IFormatProvider%29?displayProperty=fullName>. Use the <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=fullName> method to get a specific culture, or use the <xref:System.Threading.Thread.CurrentCulture%2A> property.  
+ The <xref:System.Globalization.CultureInfo> returned by this property can be a neutral culture. Neutral cultures should not be used with formatting methods such as <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>, <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, and <xref:System.Convert.ToString%28System.Char%2CSystem.IFormatProvider%29?displayProperty=nameWithType>. Use the <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType> method to get a specific culture, or use the <xref:System.Threading.Thread.CurrentCulture%2A> property.  
   
 > [!NOTE]
->  The <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=fullName> method throws <xref:System.ArgumentException> for the neutral cultures "zh-Hant" ("zh-CHT") and "zh-Hans" ("zh-CHS").  
+>  The <xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType> method throws <xref:System.ArgumentException> for the neutral cultures "zh-Hant" ("zh-CHT") and "zh-Hans" ("zh-CHS").  
   
    
   
@@ -1050,6 +1167,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void DisableComObjectEagerCleanup ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DisableComObjectEagerCleanup() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.DisableComObjectEagerCleanup" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DisableComObjectEagerCleanup ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DisableComObjectEagerCleanup();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1059,6 +1178,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1078,7 +1201,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  Such applications can use the <xref:System.Threading.Thread.DisableComObjectEagerCleanup%2A> method to prevent the CLR from doing automatic reclamation of runtime callable wrappers.  
   
- When this method has been called on a thread, automatic cleanup cannot be re-enabled for that thread. When your application is ready to clean up runtime callable wrappers, use the <xref:System.Runtime.InteropServices.Marshal.CleanupUnusedObjectsInCurrentContext%2A?displayProperty=fullName> method to instruct the runtime to clean up all runtime callable wrappers in the current context. Message pumping occurs while the method executes.  
+ When this method has been called on a thread, automatic cleanup cannot be re-enabled for that thread. When your application is ready to clean up runtime callable wrappers, use the <xref:System.Runtime.InteropServices.Marshal.CleanupUnusedObjectsInCurrentContext%2A?displayProperty=nameWithType> method to instruct the runtime to clean up all runtime callable wrappers in the current context. Message pumping occurs while the method executes.  
   
  ]]></format>
         </remarks>
@@ -1089,6 +1212,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void EndCriticalRegion ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EndCriticalRegion() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.EndCriticalRegion" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub EndCriticalRegion ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void EndCriticalRegion();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1098,6 +1223,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1133,12 +1262,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Threading.Thread.BeginCriticalRegion" />
       </Docs>
     </Member>
     <Member MemberName="EndThreadAffinity">
       <MemberSignature Language="C#" Value="public static void EndThreadAffinity ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EndThreadAffinity() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.EndThreadAffinity" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub EndThreadAffinity ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void EndThreadAffinity();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1148,6 +1280,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1183,12 +1319,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Threading.Thread.BeginThreadAffinity" />
       </Docs>
     </Member>
     <Member MemberName="ExecutionContext">
       <MemberSignature Language="C#" Value="public System.Threading.ExecutionContext ExecutionContext { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.ExecutionContext ExecutionContext" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.ExecutionContext" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExecutionContext As ExecutionContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::ExecutionContext ^ ExecutionContext { System::Threading::ExecutionContext ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1198,6 +1337,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1227,11 +1370,17 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="~Thread ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!Thread ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1258,6 +1407,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void FreeNamedDataSlot (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FreeNamedDataSlot(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.FreeNamedDataSlot(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub FreeNamedDataSlot (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void FreeNamedDataSlot(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1267,6 +1418,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1285,7 +1440,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 > [!IMPORTANT]
 >  The .NET Framework provides two mechanisms for using thread local storage (TLS): thread-relative static fields (that is, fields that are marked with the <xref:System.ThreadStaticAttribute> attribute) and data slots. Thread-relative static fields provide much better performance than data slots, and enable compile-time type checking. For more information about using TLS, see [Thread Local Storage: Thread-Relative Static Fields and Data Slots](~/docs/standard/threading/thread-local-storage-thread-relative-static-fields-and-data-slots.md).  
   
- After any thread calls `FreeNamedDataSlot`, any other thread that calls <xref:System.Threading.Thread.GetNamedDataSlot%2A> with the same name will allocate a new slot associated with the name. Subsequent calls to `GetNamedDataSlot` by any thread will return the new slot. However, any thread that still has a <xref:System.LocalDataStoreSlot?displayProperty=fullName> returned by an earlier call to `GetNamedDataSlot` can continue to use the old slot.  
+ After any thread calls `FreeNamedDataSlot`, any other thread that calls <xref:System.Threading.Thread.GetNamedDataSlot%2A> with the same name will allocate a new slot associated with the name. Subsequent calls to `GetNamedDataSlot` by any thread will return the new slot. However, any thread that still has a <xref:System.LocalDataStoreSlot?displayProperty=nameWithType> returned by an earlier call to `GetNamedDataSlot` can continue to use the old slot.  
   
  A slot that has been associated with a name is released only when every `LocalDataStoreSlot` that was obtained prior to the call to `FreeNamedDataSlot` has been released and garbage-collected.  
   
@@ -1320,6 +1475,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Threading.ApartmentState GetApartmentState ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Threading.ApartmentState GetApartmentState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetApartmentState" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetApartmentState () As ApartmentState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::ApartmentState GetApartmentState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1329,6 +1486,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.ApartmentState</ReturnType>
@@ -1346,7 +1507,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
    
   
 ## Examples  
- The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState?displayProperty=fullName> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState?displayProperty=fullName>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState?displayProperty=fullName> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
+ The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
   
  After the thread is started, the <xref:System.Threading.Thread.TrySetApartmentState%2A> method is used again. This time it throws <xref:System.Threading.ThreadStateException> because the thread has already been started.  
   
@@ -1362,6 +1523,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Threading.CompressedStack GetCompressedStack ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.CompressedStack GetCompressedStack() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetCompressedStack" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetCompressedStack () As CompressedStack" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::CompressedStack ^ GetCompressedStack();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1371,6 +1534,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1403,6 +1570,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static object GetData (LocalDataStoreSlot slot);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetData(class System.LocalDataStoreSlot slot) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetData(System.LocalDataStoreSlot)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetData (slot As LocalDataStoreSlot) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetData(LocalDataStoreSlot ^ slot);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1412,6 +1581,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1459,12 +1632,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Threading.Thread.SetData(System.LocalDataStoreSlot,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="GetDomain">
       <MemberSignature Language="C#" Value="public static AppDomain GetDomain ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.AppDomain GetDomain() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetDomain" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDomain () As AppDomain" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static AppDomain ^ GetDomain();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1474,6 +1650,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.AppDomain</ReturnType>
@@ -1500,6 +1680,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static int GetDomainID ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetDomainID() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetDomainID" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDomainID () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetDomainID();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1509,6 +1691,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1535,6 +1721,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1544,6 +1732,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1571,6 +1763,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static LocalDataStoreSlot GetNamedDataSlot (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot GetNamedDataSlot(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.GetNamedDataSlot(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetNamedDataSlot (name As String) As LocalDataStoreSlot" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static LocalDataStoreSlot ^ GetNamedDataSlot(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1580,6 +1774,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.LocalDataStoreSlot</ReturnType>
@@ -1632,6 +1830,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void Interrupt ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Interrupt() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Interrupt" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Interrupt ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Interrupt();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1641,6 +1841,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1674,16 +1878,20 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.Security.SecurityException">The caller does not have the appropriate <see cref="T:System.Security.Permissions.SecurityPermission" />.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for advanced operations on threads. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />.</permission>
+        <altmember cref="T:System.Threading.ThreadState" />
       </Docs>
     </Member>
     <Member MemberName="IsAlive">
       <MemberSignature Language="C#" Value="public bool IsAlive { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAlive" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.IsAlive" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAlive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAlive { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1708,10 +1916,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public bool IsBackground { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsBackground" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.IsBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsBackground As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsBackground { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1768,6 +1979,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public bool IsThreadPoolThread { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsThreadPoolThread" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.IsThreadPoolThread" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsThreadPoolThread As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsThreadPoolThread { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1777,6 +1990,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1802,16 +2019,30 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.ThreadPool" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Join">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Blocks the calling thread until the thread represented by this instance terminates.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Join">
       <MemberSignature Language="C#" Value="public void Join ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Join() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Join" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Join ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Join();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1847,7 +2078,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
 > [!WARNING]
 >  You should never call the <xref:System.Threading.Thread.Join%2A> method of the <xref:System.Threading.Thread> object that represents the current thread from the current thread. This causes your app to hang because the current thread waits upon itself indefinitely,  
   
- This method changes the state of the calling thread to include <xref:System.Threading.ThreadState?displayProperty=fullName>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState?displayProperty=fullName> state.  
+ This method changes the state of the calling thread to include <xref:System.Threading.ThreadState.WaitSleepJoin?displayProperty=nameWithType>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> state.  
   
  ]]></format>
         </remarks>
@@ -1859,10 +2090,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public bool Join (int millisecondsTimeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Join(int32 millisecondsTimeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Join(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Join (millisecondsTimeout As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Join(int millisecondsTimeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1898,11 +2132,11 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  [!code-csharp[System.Threading.Thread.Join#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.thread.join/cs/join1b.cs#2)]
  [!code-vb[System.Threading.Thread.Join#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.thread.join/vb/join1b.vb#2)]  
   
- If <xref:System.Threading.Timeout.Infinite?displayProperty=fullName> is specified for the `millisecondsTimeout` parameter, this method behaves identically to the <xref:System.Threading.Thread.Join> method overload, except for the return value.  
+ If <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> is specified for the `millisecondsTimeout` parameter, this method behaves identically to the <xref:System.Threading.Thread.Join> method overload, except for the return value.  
   
  If the thread has already terminated when <xref:System.Threading.Thread.Join%2A> is called, the method returns immediately.  
   
- This method changes the state of the calling thread to include <xref:System.Threading.ThreadState?displayProperty=fullName>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState?displayProperty=fullName> state.  
+ This method changes the state of the calling thread to include <xref:System.Threading.ThreadState.WaitSleepJoin?displayProperty=nameWithType>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> state.  
   
  ]]></format>
         </remarks>
@@ -1914,6 +2148,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public bool Join (TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Join(valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Join(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Join (timeout As TimeSpan) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Join(TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1923,6 +2159,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1944,11 +2184,11 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
  [!code-csharp[System.Threading.Thread.Join#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.thread.join/cs/join1c.cs#3)]
  [!code-vb[System.Threading.Thread.Join#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.thread.join/vb/join1c.vb#3)]  
   
- If <xref:System.Threading.Timeout.Infinite?displayProperty=fullName> is specified for `timeout`, this method behaves identically to the <xref:System.Threading.Thread.Join> method overload, except for the return value.  
+ If <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> is specified for `timeout`, this method behaves identically to the <xref:System.Threading.Thread.Join> method overload, except for the return value.  
   
  If the thread has already terminated when <xref:System.Threading.Thread.Join%2A> is called, the method returns immediately.  
   
- This method changes the state of the current thread to include <xref:System.Threading.ThreadState>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState?displayProperty=fullName> state.  
+ This method changes the state of the current thread to include <xref:System.Threading.ThreadState.WaitSleepJoin>. You cannot invoke `Join` on a thread that is in the <xref:System.Threading.ThreadState.Unstarted?displayProperty=nameWithType> state.  
   
    
   
@@ -1969,10 +2209,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public int ManagedThreadId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ManagedThreadId" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.ManagedThreadId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ManagedThreadId As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ManagedThreadId { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2010,6 +2253,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void MemoryBarrier ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MemoryBarrier() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.MemoryBarrier" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub MemoryBarrier ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void MemoryBarrier();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2019,6 +2264,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2047,10 +2296,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public string Name { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Name { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2093,6 +2345,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority Priority { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority Priority" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.Priority" />
+      <MemberSignature Language="VB.NET" Value="Public Property Priority As ThreadPriority" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::ThreadPriority Priority { System::Threading::ThreadPriority get(); void set(System::Threading::ThreadPriority value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2102,6 +2356,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2138,7 +2396,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
    
   
 ## Examples  
- The following example shows the result of changing the priority of a thread. Three threads are created, the priority of one thread is set to <xref:System.Threading.ThreadPriority?displayProperty=fullName>, and the priority of a second is set to <xref:System.Threading.ThreadPriority?displayProperty=fullName>. Each thread increments a variable in a `while` loop and runs for a set time.  
+ The following example shows the result of changing the priority of a thread. Three threads are created, the priority of one thread is set to <xref:System.Threading.ThreadPriority.BelowNormal?displayProperty=nameWithType>, and the priority of a second is set to <xref:System.Threading.ThreadPriority.AboveNormal?displayProperty=nameWithType>. Each thread increments a variable in a `while` loop and runs for a set time.  
   
  [!code-csharp[System.Threading.ThreadPriority#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Threading.ThreadPriority/cs/Example1.cs#1)]
  [!code-vb[System.Threading.ThreadPriority#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Threading.ThreadPriority/vb/Example1.vb#1)]  
@@ -2147,12 +2405,15 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
         <exception cref="T:System.Threading.ThreadStateException">The thread has reached a final state, such as <see cref="F:System.Threading.ThreadState.Aborted" />.</exception>
         <exception cref="T:System.ArgumentException">The value specified for a set operation is not a valid <see cref="T:System.Threading.ThreadPriority" /> value.</exception>
+        <altmember cref="T:System.Threading.ThreadPriority" />
       </Docs>
     </Member>
     <Member MemberName="ResetAbort">
       <MemberSignature Language="C#" Value="public static void ResetAbort ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ResetAbort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.ResetAbort" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub ResetAbort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void ResetAbort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2162,6 +2423,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2186,6 +2451,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported.</exception>
         <exception cref="T:System.Threading.ThreadStateException">
           <see langword="Abort" /> was not invoked on the current thread.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required security permission for the current thread.</exception>
@@ -2196,6 +2462,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void Resume ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Resume" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Resume ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Resume();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2205,6 +2473,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2230,6 +2502,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread has not been started, is dead, or is not in the suspended state.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the appropriate <see cref="T:System.Security.Permissions.SecurityPermission" />.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for advanced operations on threads. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" /></permission>
@@ -2239,6 +2512,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void SetApartmentState (System.Threading.ApartmentState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetApartmentState(valuetype System.Threading.ApartmentState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.SetApartmentState(System.Threading.ApartmentState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetApartmentState (state As ApartmentState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetApartmentState(System::Threading::ApartmentState state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2248,6 +2523,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2262,17 +2541,17 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- New threads are initialized as <xref:System.Threading.ApartmentState?displayProperty=fullName> if their apartment state has not been set before they are started. Apartment state must be set before a thread is started.  
+ New threads are initialized as <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> if their apartment state has not been set before they are started. Apartment state must be set before a thread is started.  
   
 > [!NOTE]
->  The main application thread is initialized to <xref:System.Threading.ApartmentState?displayProperty=fullName> by default. The only way to set the apartment state of the main application thread to <xref:System.Threading.ApartmentState?displayProperty=fullName> is to apply the <xref:System.STAThreadAttribute> attribute to the entry point method.  
+>  The main application thread is initialized to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> by default. The only way to set the apartment state of the main application thread to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType> is to apply the <xref:System.STAThreadAttribute> attribute to the entry point method.  
   
  The <xref:System.Threading.Thread.SetApartmentState%2A> method, along with the <xref:System.Threading.Thread.GetApartmentState%2A> method and the <xref:System.Threading.Thread.TrySetApartmentState%2A> method, replaces the <xref:System.Threading.Thread.ApartmentState%2A> property.  
   
    
   
 ## Examples  
- The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState?displayProperty=fullName> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState?displayProperty=fullName>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState?displayProperty=fullName> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
+ The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
   
  After the thread is started, the <xref:System.Threading.Thread.TrySetApartmentState%2A> method is used again. This time it throws <xref:System.Threading.ThreadStateException> because the thread has already been started.  
   
@@ -2282,6 +2561,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported on the macOS and Linux platforms.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="state" /> is not a valid apartment state.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread has already been started.</exception>
@@ -2292,6 +2572,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void SetCompressedStack (System.Threading.CompressedStack stack);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCompressedStack(class System.Threading.CompressedStack stack) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.SetCompressedStack(System.Threading.CompressedStack)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetCompressedStack (stack As CompressedStack)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetCompressedStack(System::Threading::CompressedStack ^ stack);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2301,6 +2583,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2335,6 +2621,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void SetData (LocalDataStoreSlot slot, object data);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetData(class System.LocalDataStoreSlot slot, object data) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.SetData(System.LocalDataStoreSlot,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SetData (slot As LocalDataStoreSlot, data As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SetData(LocalDataStoreSlot ^ slot, System::Object ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2344,6 +2632,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2392,16 +2684,30 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Threading.Thread.GetData(System.LocalDataStoreSlot)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Sleep">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Suspends the current thread for the specified amount of time.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Sleep">
       <MemberSignature Language="C#" Value="public static void Sleep (int millisecondsTimeout);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Sleep(int32 millisecondsTimeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Sleep(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Sleep (millisecondsTimeout As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Sleep(int millisecondsTimeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2430,11 +2736,11 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The thread will not be scheduled for execution by the operating system for the amount of time specified. This method changes the state of the thread to include <xref:System.Threading.ThreadState>.  
+ The thread will not be scheduled for execution by the operating system for the amount of time specified. This method changes the state of the thread to include <xref:System.Threading.ThreadState.WaitSleepJoin>.  
   
- You can specify <xref:System.Threading.Timeout.Infinite?displayProperty=fullName> for the `millisecondsTimeout` parameter to suspend the thread indefinitely. However, we recommend that you use other <xref:System.Threading?displayProperty=fullName> classes such as <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.EventWaitHandle>, or <xref:System.Threading.Semaphore> instead to sychronize threads or manage resources.  
+ You can specify <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> for the `millisecondsTimeout` parameter to suspend the thread indefinitely. However, we recommend that you use other <xref:System.Threading?displayProperty=nameWithType> classes such as <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.EventWaitHandle>, or <xref:System.Threading.Semaphore> instead to sychronize threads or manage resources.  
   
- The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. For more information on clock resolution and the waiting time, see the [Sleep function](http://msdn.microsoft.com/library/windows/desktop/ms686298.aspx) topic. This method calls the [Sleep function](http://msdn.microsoft.com/en-us/library/windows/desktop/ms686298.aspx) from the Windows system APIs.  
+ The system clock ticks at a specific rate called the clock resolution. The actual timeout might not be exactly the specified timeout, because the specified timeout will be adjusted to coincide with clock ticks. For more information on clock resolution and the waiting time, see the [Sleep function](http://msdn.microsoft.com/library/windows/desktop/ms686298.aspx) topic. This method calls the [Sleep function](http://msdn.microsoft.com/library/windows/desktop/ms686298.aspx) from the Windows system APIs.  
   
  This method does not perform standard COM and SendMessage pumping.  
   
@@ -2459,10 +2765,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void Sleep (TimeSpan timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Sleep(valuetype System.TimeSpan timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Sleep(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Sleep (timeout As TimeSpan)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Sleep(TimeSpan timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2486,9 +2795,9 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The thread will not be scheduled for execution by the operating system for the amount of time specified. This method changes the state of the thread to include <xref:System.Threading.ThreadState>.  
+ The thread will not be scheduled for execution by the operating system for the amount of time specified. This method changes the state of the thread to include <xref:System.Threading.ThreadState.WaitSleepJoin>.  
   
- You can specify <xref:System.Threading.Timeout.InfiniteTimeSpan?displayProperty=fullName> for the `timeout` parameter to suspend the thread indefinitely. However, we recommend that you use other <xref:System.Threading?displayProperty=fullName> classes such as <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.EventWaitHandle>, or <xref:System.Threading.Semaphore> instead to sychronize threads or manage resources.  
+ You can specify <xref:System.Threading.Timeout.InfiniteTimeSpan?displayProperty=nameWithType> for the `timeout` parameter to suspend the thread indefinitely. However, we recommend that you use other <xref:System.Threading?displayProperty=nameWithType> classes such as <xref:System.Threading.Mutex>, <xref:System.Threading.Monitor>, <xref:System.Threading.EventWaitHandle>, or <xref:System.Threading.Semaphore> instead to sychronize threads or manage resources.  
   
  This overload of <xref:System.Threading.Thread.Sleep%2A> uses the total number of whole milliseconds in `timeout`. Fractional milliseconds are discarded.  
   
@@ -2515,6 +2824,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static void SpinWait (int iterations);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SpinWait(int32 iterations) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.SpinWait(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SpinWait (iterations As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SpinWait(int iterations);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2524,6 +2835,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2547,7 +2862,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  Contrast this with the <xref:System.Threading.Thread.Sleep%2A> method. A thread that calls <xref:System.Threading.Thread.Sleep%2A> yields the rest of its current slice of processor time, even if the specified interval is zero. Specifying a non-zero interval for <xref:System.Threading.Thread.Sleep%2A> removes the thread from consideration by the thread scheduler until the time interval has elapsed.  
   
- <xref:System.Threading.Thread.SpinWait%2A> is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the .NET Framework; for example, call <xref:System.Threading.Monitor.Enter%2A?displayProperty=fullName> or a statement that wraps <xref:System.Threading.Monitor.Enter%2A?displayProperty=fullName> (`lock` in C# or `SyncLock` in Visual Basic).  
+ <xref:System.Threading.Thread.SpinWait%2A> is not generally useful for ordinary applications. In most cases, you should use the synchronization classes provided by the .NET Framework; for example, call <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> or a statement that wraps <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> (`lock` in C# or `SyncLock` in Visual Basic).  
   
 > [!CAUTION]
 >  In the rare case where it is advantageous to avoid a context switch, such as when you know that a state change is imminent, make a call to the <xref:System.Threading.Thread.SpinWait%2A> method in your loop. The code <xref:System.Threading.Thread.SpinWait%2A> executes is designed to prevent problems that can occur on computers with multiple processors. For example, on computers with multiple Intel processors employing Hyper-Threading technology, <xref:System.Threading.Thread.SpinWait%2A> prevents processor starvation in certain situations.  
@@ -2556,14 +2871,27 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Start">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Causes a thread to be scheduled for execution.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public void Start ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Start" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Start ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Start();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2584,7 +2912,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Once a thread is in the <xref:System.Threading.ThreadState?displayProperty=fullName> state, the operating system can schedule it for execution. The thread begins executing at the first line of the method represented by the <xref:System.Threading.ThreadStart> or <xref:System.Threading.ParameterizedThreadStart> delegate supplied to the thread constructor. Note that the call to <xref:System.Threading.Thread.Start%2A> does not block the calling thread.  
+ Once a thread is in the <xref:System.Threading.ThreadState.Running?displayProperty=nameWithType> state, the operating system can schedule it for execution. The thread begins executing at the first line of the method represented by the <xref:System.Threading.ThreadStart> or <xref:System.Threading.ParameterizedThreadStart> delegate supplied to the thread constructor. Note that the call to <xref:System.Threading.Thread.Start%2A> does not block the calling thread.  
   
 > [!NOTE]
 >  If this overload is used with a thread created using a <xref:System.Threading.ParameterizedThreadStart> delegate, `null` is passed to the method executed by the thread.  
@@ -2610,10 +2938,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public void Start (object parameter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start(object parameter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Start(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Start (parameter As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Start(System::Object ^ parameter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2637,7 +2968,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Once a thread is in the <xref:System.Threading.ThreadState?displayProperty=fullName> state, the operating system can schedule it for execution. The thread begins executing at the first line of the method represented by the <xref:System.Threading.ThreadStart> or <xref:System.Threading.ParameterizedThreadStart> delegate supplied to the thread constructor. Note that the call to <xref:System.Threading.Thread.Start%2A> does not block the calling thread.  
+ Once a thread is in the <xref:System.Threading.ThreadState.Running?displayProperty=nameWithType> state, the operating system can schedule it for execution. The thread begins executing at the first line of the method represented by the <xref:System.Threading.ThreadStart> or <xref:System.Threading.ParameterizedThreadStart> delegate supplied to the thread constructor. Note that the call to <xref:System.Threading.Thread.Start%2A> does not block the calling thread.  
   
  Once the thread terminates, it cannot be restarted with another call to `Start`.  
   
@@ -2657,12 +2988,16 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <exception cref="T:System.Threading.ThreadStateException">The thread has already been started.</exception>
         <exception cref="T:System.OutOfMemoryException">There is not enough memory available to start this thread.</exception>
         <exception cref="T:System.InvalidOperationException">This thread was created using a <see cref="T:System.Threading.ThreadStart" /> delegate instead of a <see cref="T:System.Threading.ParameterizedThreadStart" /> delegate.</exception>
+        <altmember cref="T:System.Threading.ParameterizedThreadStart" />
+        <altmember cref="T:System.AppDomain" />
       </Docs>
     </Member>
     <Member MemberName="Suspend">
       <MemberSignature Language="C#" Value="public void Suspend ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Suspend() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Suspend" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Suspend ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Suspend();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2672,6 +3007,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2698,6 +3037,7 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
   
  ]]></format>
         </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">.NET Core only: This member is not supported.</exception>
         <exception cref="T:System.Threading.ThreadStateException">The thread has not been started or is dead.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the appropriate <see cref="T:System.Security.Permissions.SecurityPermission" />.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for advanced operations on threads. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlThread" />.</permission>
@@ -2705,9 +3045,14 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Thread.GetIDsOfNames">
       <MemberSignature Language="C#" Value="void _Thread.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.GetIDsOfNames(valuetype System.Guid riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.System#Runtime#InteropServices#_Thread#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetIDsOfNames (ByRef riid As Guid, rgszNames As IntPtr, cNames As UInteger, lcid As UInteger, rgDispId As IntPtr) Implements _Thread.GetIDsOfNames" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Thread.GetIDsOfNames(Guid % riid, IntPtr rgszNames, System::UInt32 cNames, System::UInt32 lcid, IntPtr rgDispId) = System::Runtime::InteropServices::_Thread::GetIDsOfNames;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Thread.GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2744,7 +3089,12 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="void _Thread.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.System#Runtime#InteropServices#_Thread#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfo (iTInfo As UInteger, lcid As UInteger, ppTInfo As IntPtr) Implements _Thread.GetTypeInfo" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Thread.GetTypeInfo(System::UInt32 iTInfo, System::UInt32 lcid, IntPtr ppTInfo) = System::Runtime::InteropServices::_Thread::GetTypeInfo;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Thread.GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2775,9 +3125,14 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Thread.GetTypeInfoCount">
       <MemberSignature Language="C#" Value="void _Thread.GetTypeInfoCount (out uint pcTInfo);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.GetTypeInfoCount(unsigned int32 pcTInfo) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.System#Runtime#InteropServices#_Thread#GetTypeInfoCount(System.UInt32@)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfoCount (ByRef pcTInfo As UInteger) Implements _Thread.GetTypeInfoCount" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Thread.GetTypeInfoCount([Runtime::InteropServices::Out] System::UInt32 % pcTInfo) = System::Runtime::InteropServices::_Thread::GetTypeInfoCount;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Thread.GetTypeInfoCount(System.UInt32@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2804,9 +3159,14 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="System.Runtime.InteropServices._Thread.Invoke">
       <MemberSignature Language="C#" Value="void _Thread.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.Invoke(unsigned int32 dispIdMember, valuetype System.Guid riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._Thread.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.System#Runtime#InteropServices#_Thread#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub Invoke (dispIdMember As UInteger, ByRef riid As Guid, lcid As UInteger, wFlags As Short, pDispParams As IntPtr, pVarResult As IntPtr, pExcepInfo As IntPtr, puArgErr As IntPtr) Implements _Thread.Invoke" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._Thread.Invoke(System::UInt32 dispIdMember, Guid % riid, System::UInt32 lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr) = System::Runtime::InteropServices::_Thread::Invoke;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._Thread.Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -2849,10 +3209,13 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public System.Threading.ThreadState ThreadState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadState ThreadState" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Thread.ThreadState" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ThreadState As ThreadState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::ThreadState ThreadState { System::Threading::ThreadState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Thread</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2895,6 +3258,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public bool TrySetApartmentState (System.Threading.ApartmentState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TrySetApartmentState(valuetype System.Threading.ApartmentState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.TrySetApartmentState(System.Threading.ApartmentState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TrySetApartmentState (state As ApartmentState) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool TrySetApartmentState(System::Threading::ApartmentState state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2904,6 +3269,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2920,17 +3289,17 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- New threads are initialized as <xref:System.Threading.ApartmentState?displayProperty=fullName> if their apartment state has not been set before they are started. Apartment state must be set before a thread is started.  
+ New threads are initialized as <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> if their apartment state has not been set before they are started. Apartment state must be set before a thread is started.  
   
 > [!NOTE]
->  The main application thread is initialized to <xref:System.Threading.ApartmentState?displayProperty=fullName> by default. The only way to set the apartment state of the main application thread to <xref:System.Threading.ApartmentState?displayProperty=fullName> is to apply the <xref:System.STAThreadAttribute> attribute to the entry point method.  
+>  The main application thread is initialized to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> by default. The only way to set the apartment state of the main application thread to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType> is to apply the <xref:System.STAThreadAttribute> attribute to the entry point method.  
   
  The <xref:System.Threading.Thread.TrySetApartmentState%2A> method, along with the <xref:System.Threading.Thread.GetApartmentState%2A> method and the <xref:System.Threading.Thread.SetApartmentState%2A> method, replaces the <xref:System.Threading.Thread.ApartmentState%2A> property.  
   
    
   
 ## Examples  
- The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState?displayProperty=fullName> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState?displayProperty=fullName>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState?displayProperty=fullName> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
+ The following code example demonstrates the <xref:System.Threading.Thread.GetApartmentState%2A>, <xref:System.Threading.Thread.SetApartmentState%2A>, and <xref:System.Threading.Thread.TrySetApartmentState%2A> methods. The code example creates a thread. Before the thread is started, <xref:System.Threading.Thread.GetApartmentState%2A> displays the initial <xref:System.Threading.ApartmentState.Unknown?displayProperty=nameWithType> state and <xref:System.Threading.Thread.SetApartmentState%2A> changes the state to <xref:System.Threading.ApartmentState.STA?displayProperty=nameWithType>. The <xref:System.Threading.Thread.TrySetApartmentState%2A> method then returns `false` when attempting to change the state to <xref:System.Threading.ApartmentState.MTA?displayProperty=nameWithType> because the apartment state is already set. If the same operation had been attempted with <xref:System.Threading.Thread.SetApartmentState%2A>, <xref:System.InvalidOperationException> would have been thrown.  
   
  After the thread is started, the <xref:System.Threading.Thread.TrySetApartmentState%2A> method is used again. This time it throws <xref:System.Threading.ThreadStateException> because the thread has already been started.  
   
@@ -2945,10 +3314,22 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         <exception cref="T:System.Threading.ThreadStateException">The thread has already been started.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="VolatileRead">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads the value of a field. The value is the latest written by any processor in a computer, regardless of the number of processors or the state of processor cache.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static byte VolatileRead (ref byte address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8 VolatileRead(unsigned int8 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8 VolatileRead(unsigned int8&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Byte@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Byte) As Byte" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Byte VolatileRead(System::Byte % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -2958,6 +3339,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Byte</ReturnType>
@@ -2990,8 +3375,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static double VolatileRead (ref double address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 VolatileRead(float64 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 VolatileRead(float64&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Double@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Double) As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static double VolatileRead(double % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3001,6 +3388,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Double</ReturnType>
@@ -3033,8 +3424,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static short VolatileRead (ref short address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 VolatileRead(int16 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 VolatileRead(int16&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Int16@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Short) As Short" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static short VolatileRead(short % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3044,6 +3437,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int16</ReturnType>
@@ -3076,8 +3473,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static int VolatileRead (ref int address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 VolatileRead(int32 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 VolatileRead(int32&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int VolatileRead(int % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3087,6 +3486,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -3119,8 +3522,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static long VolatileRead (ref long address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 VolatileRead(int64 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 VolatileRead(int64&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Int64@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Long) As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static long VolatileRead(long % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3130,6 +3535,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -3162,8 +3571,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static IntPtr VolatileRead (ref IntPtr address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int VolatileRead(native int address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int VolatileRead(native int&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.IntPtr@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As IntPtr) As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IntPtr VolatileRead(IntPtr % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3173,6 +3584,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IntPtr</ReturnType>
@@ -3205,8 +3620,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static object VolatileRead (ref object address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object VolatileRead(object address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object VolatileRead(object&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Object@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ VolatileRead(System::Object ^ % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3216,6 +3633,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -3248,8 +3669,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static sbyte VolatileRead (ref sbyte address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 VolatileRead(int8 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 VolatileRead(int8&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.SByte@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As SByte) As SByte" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::SByte VolatileRead(System::SByte % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3259,6 +3682,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3296,8 +3723,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static float VolatileRead (ref float address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 VolatileRead(float32 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 VolatileRead(float32&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.Single@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As Single) As Single" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static float VolatileRead(float % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3307,6 +3736,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Single</ReturnType>
@@ -3339,8 +3772,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static ushort VolatileRead (ref ushort address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int16 VolatileRead(unsigned int16 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int16 VolatileRead(unsigned int16&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.UInt16@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As UShort) As UShort" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::UInt16 VolatileRead(System::UInt16 % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3350,6 +3785,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3387,8 +3826,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static uint VolatileRead (ref uint address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int32 VolatileRead(unsigned int32 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int32 VolatileRead(unsigned int32&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.UInt32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As UInteger) As UInteger" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::UInt32 VolatileRead(System::UInt32 % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3398,6 +3839,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3435,8 +3880,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static ulong VolatileRead (ref ulong address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int64 VolatileRead(unsigned int64 address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int64 VolatileRead(unsigned int64&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.UInt64@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As ULong) As ULong" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::UInt64 VolatileRead(System::UInt64 % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3446,6 +3893,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3483,8 +3934,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileRead">
       <MemberSignature Language="C#" Value="public static UIntPtr VolatileRead (ref UIntPtr address);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native unsigned int VolatileRead(native unsigned int address) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native unsigned int VolatileRead(native unsigned int&amp; address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileRead(System.UIntPtr@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function VolatileRead (ByRef address As UIntPtr) As UIntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static UIntPtr VolatileRead(UIntPtr % address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3494,6 +3947,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3529,10 +3986,22 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="VolatileWrite">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes a value to a field immediately, so that the value is visible to all processors in the computer.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref byte address, byte value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int8 address, unsigned int8 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int8&amp; address, unsigned int8 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Byte@,System.Byte)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Byte, value As Byte)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::Byte % address, System::Byte value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3542,6 +4011,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3575,8 +4048,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref double address, double value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(float64 address, float64 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(float64&amp; address, float64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Double@,System.Double)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Double, value As Double)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(double % address, double value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3586,6 +4061,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3619,8 +4098,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref short address, short value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int16 address, int16 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int16&amp; address, int16 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Int16@,System.Int16)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Short, value As Short)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(short % address, short value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3630,6 +4111,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3663,8 +4148,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref int address, int value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int32 address, int32 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int32&amp; address, int32 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Int32@,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Integer, value As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(int % address, int value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3674,6 +4161,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3707,8 +4198,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref long address, long value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int64 address, int64 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int64&amp; address, int64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Int64@,System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Long, value As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(long % address, long value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3718,6 +4211,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3751,8 +4248,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref IntPtr address, IntPtr value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(native int address, native int value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(native int&amp; address, native int value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.IntPtr@,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As IntPtr, value As IntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(IntPtr % address, IntPtr value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3762,6 +4261,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3795,8 +4298,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref object address, object value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(object address, object value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(object&amp; address, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Object@,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Object, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::Object ^ % address, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3806,6 +4311,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3839,8 +4348,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref sbyte address, sbyte value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int8 address, int8 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(int8&amp; address, int8 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.SByte@,System.SByte)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As SByte, value As SByte)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::SByte % address, System::SByte value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3850,6 +4361,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3888,8 +4403,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref float address, float value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(float32 address, float32 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(float32&amp; address, float32 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.Single@,System.Single)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As Single, value As Single)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(float % address, float value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3899,6 +4416,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3932,8 +4453,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref ushort address, ushort value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int16 address, unsigned int16 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int16&amp; address, unsigned int16 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.UInt16@,System.UInt16)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As UShort, value As UShort)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::UInt16 % address, System::UInt16 value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3943,6 +4466,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3981,8 +4508,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref uint address, uint value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int32 address, unsigned int32 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int32&amp; address, unsigned int32 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.UInt32@,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As UInteger, value As UInteger)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::UInt32 % address, System::UInt32 value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -3992,6 +4521,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4030,8 +4563,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref ulong address, ulong value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int64 address, unsigned int64 value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(unsigned int64&amp; address, unsigned int64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.UInt64@,System.UInt64)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As ULong, value As ULong)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(System::UInt64 % address, System::UInt64 value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -4041,6 +4576,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4079,8 +4618,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
     </Member>
     <Member MemberName="VolatileWrite">
       <MemberSignature Language="C#" Value="public static void VolatileWrite (ref UIntPtr address, UIntPtr value);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(native unsigned int address, native unsigned int value) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void VolatileWrite(native unsigned int&amp; address, native unsigned int value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.VolatileWrite(System.UIntPtr@,System.UIntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub VolatileWrite (ByRef address As UIntPtr, value As UIntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void VolatileWrite(UIntPtr % address, UIntPtr value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -4090,6 +4631,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4130,6 +4675,8 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <MemberSignature Language="C#" Value="public static bool Yield ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Yield() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Thread.Yield" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Yield () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool Yield();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -4139,6 +4686,10 @@ Main thread: ThreadProc.Join has returned.  Press Enter to end program.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Thread</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

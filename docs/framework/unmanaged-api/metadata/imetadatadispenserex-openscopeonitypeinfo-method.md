@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataDispenserEx::OpenScopeOnITypeInfo Method | Microsoft Docs"
+title: "IMetaDataDispenserEx::OpenScopeOnITypeInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataDispenserEx.OpenScopeOnITypeInfo"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataDispenserEx::OpenScopeOnITypeInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "OpenScopeOnITypeInfo method [.NET Framework metadata]"
   - "IMetaDataDispenserEx::OpenScopeOnITypeInfo method [.NET Framework metadata]"
 ms.assetid: 3480bbdb-c442-44a0-b7c6-333354503c52
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataDispenserEx::OpenScopeOnITypeInfo Method
 This method is not implemented. If called, it returns E_NOTIMPL.  
@@ -43,7 +46,7 @@ HRESULT OpenScopeOnITypeInfo (
   
 #### Parameters  
  `pITI`  
- [in] Pointer to an [ITypeInfo](http://msdn.microsoft.com/en-us/f3356463-3373-4279-bae1-953378aa2680) interface that provides the type information on which to open the scope.  
+ [in] Pointer to an [ITypeInfo](http://msdn.microsoft.com/library/f3356463-3373-4279-bae1-953378aa2680) interface that provides the type information on which to open the scope.  
   
  `dwOpenFlags`  
  [in] The open mode flags.  
@@ -64,5 +67,5 @@ HRESULT OpenScopeOnITypeInfo (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataDispenserEx Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)   
+ [IMetaDataDispenserEx Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
  [IMetaDataDispenser Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

@@ -1,17 +1,14 @@
 ---
-title: "Message Security Certificate | Microsoft Docs"
+title: "Message Security Certificate"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "WS Security"
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
@@ -19,6 +16,8 @@ caps.latest.revision: 51
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security Certificate
 This sample demonstrates how to implement an application that uses WS-Security with X.509 v3 certificate authentication for the client and requires server authentication using the server's X.509 v3 certificate. This sample uses default settings such that all application messages between the client and server are signed and encrypted. This sample is based on the [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) and consists of a client console program and a service library hosted by Internet Information Services (IIS). The service implements a contract that defines a request-reply communication pattern.  
@@ -44,7 +43,7 @@ public class CalculatorService : ICalculator
   
  The service exposes one endpoint for communicating with the service and one endpoint for exposing the service's WSDL document using the WS-MetadataExchange protocol, defined by using the configuration file (Web.config). The endpoint consists of an address, a binding, and a contract. The binding is configured with a standard [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element, which defaults to using message security. This sample sets the `clientCredentialType` attribute to Certificate to require client authentication.  
   
-```  
+```xml  
 <system.serviceModel>  
     <protocolMapping>  
       <add scheme="http" binding="wsHttpBinding"/>  
@@ -91,12 +90,11 @@ public class CalculatorService : ICalculator
       </serviceBehaviors>  
     </behaviors>  
   </system.serviceModel>  
-  
 ```  
   
  The behavior specifies the service's credentials that are used when the client authenticates the service. The server certificate subject name is specified in the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md) element.  
   
-```  
+```xml  
 <!--For debugging purposes, set the includeExceptionDetailInFaults attribute to true.-->  
 <behaviors>  
       <serviceBehaviors>  
@@ -125,12 +123,11 @@ public class CalculatorService : ICalculator
         </behavior>  
       </serviceBehaviors>  
     </behaviors>  
-  
 ```  
   
  The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract. The client binding is configured with the appropriate security mode and authentication mode. When running in a cross-computer scenario, ensure that the service endpoint address is changed accordingly.  
   
-```  
+```xml  
 <system.serviceModel>  
     <client>  
       <!-- Use a behavior to configure the client certificate to present to the service. -->  
@@ -152,12 +149,11 @@ public class CalculatorService : ICalculator
     </bindings>  
 ...  
 </system.serviceModel>  
-  
 ```  
   
  The client implementation can set the certificate to use, either through the configuration file or through code. The following sample shows how to set the certificate to use in the configuration file.  
   
-```  
+```xml  
 <system.serviceModel>  
   ...  
   
@@ -188,7 +184,6 @@ public class CalculatorService : ICalculator
     </behaviors>  
   
 </system.serviceModel>  
-  
 ```  
   
  The following sample shows how to call the service in your program.  
@@ -310,7 +305,7 @@ Press <ENTER> to terminate client.
   
 3.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across computers  
   
@@ -338,7 +333,7 @@ Press <ENTER> to terminate client.
   
 12. On the server, run ImportClientCert.bat in a Visual Studio command prompt with administrative privileges. This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.  
   
-13. On the client computer, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+13. On the client computer, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   

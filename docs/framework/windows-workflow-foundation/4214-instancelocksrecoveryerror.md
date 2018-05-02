@@ -1,5 +1,5 @@
 ---
-title: "4214 - InstanceLocksRecoveryError | Microsoft Docs"
+title: "4214 - InstanceLocksRecoveryError"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d28fb2d5-bf15-4648-8d20-8141ad16f04b
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4214 - InstanceLocksRecoveryError
 ## Properties  

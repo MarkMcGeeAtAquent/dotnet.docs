@@ -1,25 +1,24 @@
 ---
-title: "Windows Service Host | Microsoft Docs"
+title: "Windows Service Host"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "NT Service"
   - "NT Service Host Sample [Windows Communication Foundation]"
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
 caps.latest.revision: 40
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Service Host
 This sample demonstrates a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service hosted in a managed Windows Service. Windows Services are controlled using the Services applet in **Control Panel** and can be configured to start up automatically after a system reboot. The sample consists of a client program and an Windows Service program. The service is implemented as an .exe program and contains its own hosting code. In other hosting environments, such as Windows Process Activation Services (WAS) or Internet Information Services (IIS), it is not necessary for you to write hosting code.  
@@ -42,7 +41,7 @@ This sample demonstrates a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md
   
  The endpoint that is defined uses the base address and a [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). The following sample shows the configuration of the base address as well as the endpoint that exposes the CalculatorService.  
   
-```  
+```xml  
 <services>  
   <service name="Microsoft.ServiceModel.Samples.WcfCalculatorService"  
            behaviorConfiguration="CalculatorServiceBehavior">  
@@ -58,7 +57,6 @@ This sample demonstrates a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md
     ...  
   </service>  
 </services>  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in both the service and client console windows. Press ENTER in each console window to shut down the service and client.  

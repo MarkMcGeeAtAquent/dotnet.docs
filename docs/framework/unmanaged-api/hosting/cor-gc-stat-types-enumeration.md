@@ -1,5 +1,5 @@
 ---
-title: "COR_GC_STAT_TYPES Enumeration | Microsoft Docs"
+title: "COR_GC_STAT_TYPES Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_GC_STAT_TYPES"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_GC_STAT_TYPES"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_GC_STAT_TYPES enumeration [.NET Framework hosting]"
 ms.assetid: fc51d6db-f7f8-408b-b93d-c166fc712c99
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_GC_STAT_TYPES Enumeration
 Specifies the statistics to be recorded for a garbage collection.  
@@ -56,5 +59,5 @@ typedef enum {
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [COR_GC_STATS Structure](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)   
+ [COR_GC_STATS Structure](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

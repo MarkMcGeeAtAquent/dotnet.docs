@@ -1,24 +1,23 @@
 ---
-title: "Session | Microsoft Docs"
+title: "Session"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Sessions"
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
 caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Session
 The Session sample demonstrates how to implement a contract that requires a session. A session provides context for performing multiple operations. This allows a service to associate state with a given session, such that subsequent operations can use the state of a previous operation. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), which implements a calculator service. The `ICalculator` contract has been modified to allow a set of arithmetic operations to be performed, while keeping a running result. This functionality is defined by the `ICalculatorSession` contract. The service maintains the state for a client as multiple service operations are called to perform a calculation. The client can retrieve the current result by calling `Result()` and clear the result to zero by calling `Clear()`.  
@@ -47,10 +46,9 @@ public interface ICalculatorSession
     [OperationContract]  
     double Result();  
 }  
-  
 ```  
   
- The service uses a <xref:System.ServiceModel.InstanceContextMode> of <xref:System.ServiceModel.InstanceContextMode> to bind a given service instance context to each incoming session. This allows the service to maintain the running result for each session in a local member variable.  
+ The service uses a <xref:System.ServiceModel.InstanceContextMode> of <xref:System.ServiceModel.InstanceContextMode.PerSession> to bind a given service instance context to each incoming session. This allows the service to maintain the running result for each session in a local member variable.  
   
 ```  
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
@@ -76,7 +74,6 @@ public class CalculatorService : ICalculatorSession
     public double Result()  
     {  return result; }  
 }  
-  
 ```  
   
  When you run the sample, the client makes several requests to the server and requests the result, which it then displays in the client console window. Press ENTER in the client window to shut down the client.  

@@ -1,17 +1,19 @@
 ---
-title: "LINQ to SQL Sample | Microsoft Docs"
+title: "LINQ to SQL Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5f39db9e-0e62-42c9-8c98-bb8b54cec98c
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # LINQ to SQL Sample
 This sample demonstrates how to create an activity to use LINQ to SQL query entities from tables in SQL Server databases.  
@@ -38,14 +40,12 @@ This sample demonstrates how to create an activity to use LINQ to SQL query enti
  The following code example uses the `FindInSqlTable` custom activity to find all rows in a SQL Server table named `Employee` where the `Role` column is equal to `SDE`.  
   
 ```csharp  
-  
 new FindInSqlTable<Employee>   
 {  
     ConnectionString = @"Data Source=.\SQLExpress;Initial Catalog=LinqToSqlSample;Integrated Security=True",                          
     Predicate = new LambdaValue<Func<Employee, bool>>(c => new Func<Employee, bool>(emp => emp.Role.Equals("SDE"))),  
     Result = new OutArgument<IList<Employee>>(employees)  
 },  
-  
 ```  
   
 #### To use this sample  
@@ -95,5 +95,5 @@ new FindInSqlTable<Employee>
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Liiinq\LinqToSql`  
   
 ## See Also  
- [LINQ to SQL](http://go.microsoft.com/fwlink/?LinkId=150376)   
+ [LINQ to SQL](http://go.microsoft.com/fwlink/?LinkId=150376)  
  [Getting Started (LINQ to SQL)](http://go.microsoft.com/fwlink/?LinkId=150377)

@@ -1,52 +1,34 @@
 ---
-title: "Troubleshooting Data Types (Visual Basic) | Microsoft Docs"
+title: "Troubleshooting Data Types (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "Char data type, converting"
-  - "Decimal data type, conversions"
+  - "Char data type [Visual Basic], converting"
+  - "Decimal data type [Visual Basic], conversions"
   - "data types [Visual Basic], troubleshooting"
-  - "literals, default types"
-  - "type characters, literal"
+  - "literals [Visual Basic], default types"
+  - "type characters [Visual Basic], literal"
   - "Mod operator [Visual Basic], in floating-point operations"
   - "troubleshooting Visual Basic, data types"
-  - "troubleshooting data types"
-  - "floating-point numbers, precision"
-  - "Boolean data type, converting"
-  - "literal types"
-  - "literal type characters"
-  - "floating-point numbers, imprecision"
-  - "String data type, converting"
-  - "floating-point numbers, comparison"
+  - "troubleshooting data types [Visual Basic]"
+  - "floating-point numbers [Visual Basic], precision"
+  - "Boolean data type [Visual Basic], converting"
+  - "literal types [Visual Basic]"
+  - "literal type characters [Visual Basic]"
+  - "floating-point numbers [Visual Basic], imprecision"
+  - "String data type [Visual Basic], converting"
+  - "floating-point numbers [Visual Basic], comparison"
   - "floating-point numbers"
 ms.assetid: 90040d67-b630-4125-a6ae-37195b079042
 caps.latest.revision: 29
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Troubleshooting Data Types (Visual Basic)
 This page lists some common problems that can occur when you perform operations on intrinsic data types.  
@@ -88,7 +70,7 @@ This page lists some common problems that can occur when you perform operations 
  Note that it is not sufficient to declare `decimalRemainder` as `Decimal`. You must also force the literals to `Decimal`, or they use `Double` by default and `decimalRemainder` receives the same inaccurate value as `doubleRemainder`.  
   
 ## Boolean Type Does Not Convert to Numeric Type Accurately  
- [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) values are not stored as numbers, and the stored values are not intended to be equivalent to numbers. For compatibility with earlier versions, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] provides conversion keywords ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, and so on) to convert between `Boolean` and numeric types. However, other languages sometimes perform these conversions differently, as do the [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] methods.  
+ [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) values are not stored as numbers, and the stored values are not intended to be equivalent to numbers. For compatibility with earlier versions, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] provides conversion keywords ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), `CBool`, `CInt`, and so on) to convert between `Boolean` and numeric types. However, other languages sometimes perform these conversions differently, as do the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] methods.  
   
  You should never write code that relies on equivalent numeric values for `True` and `False`. Whenever possible, you should restrict usage of `Boolean` variables to the logical values for which they are designed. If you must mix `Boolean` and numeric values, make sure that you understand the conversion method that you select.  
   
@@ -101,7 +83,7 @@ This page lists some common problems that can occur when you perform operations 
  If you must convert a `Boolean` value to a numeric data type, be careful about which conversion method you use.  
   
 ## Character Literal Generates Compiler Error  
- In the absence of any type characters, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] assumes default data types for literals. The default type for a character literal — enclosed in quotation marks (`" "`) — is `String`.  
+ In the absence of any type characters, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] assumes default data types for literals. The default type for a character literal — enclosed in quotation marks (`" "`) — is `String`.  
   
  The `String` data type does not widen to the [Char Data Type](../../../../visual-basic/language-reference/data-types/char-data-type.md). This means that if you want to assign a literal to a `Char` variable, you must either make a narrowing conversion or force the literal to the `Char` type.  
 
@@ -118,7 +100,7 @@ This page lists some common problems that can occur when you perform operations 
 ## String Conversion Fails at Run Time  
  The [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md) participates in very few widening conversions. `String` widens only to itself and `Object`, and only `Char` and `Char()` (a `Char` array) widen to `String`. This is because `String` variables and constants can contain values that other data types cannot contain.  
   
- When the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On`, the compiler disallows all implicit narrowing conversions. This includes those involving `String`. Your code can still use conversion keywords such as `CStr` and [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), which direct the [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] to attempt the conversion.  
+ When the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On`, the compiler disallows all implicit narrowing conversions. This includes those involving `String`. Your code can still use conversion keywords such as `CStr` and [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md), which direct the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] to attempt the conversion.  
   
 > [!NOTE]
 >  The narrowing-conversion error is suppressed for conversions from the elements in a `For Each…Next` collection to the loop control variable. For more information and examples, see the "Narrowing Conversions" section in [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
@@ -129,16 +111,16 @@ This page lists some common problems that can occur when you perform operations 
  If you must convert from `String` to another data type, the safest procedure is to enclose the attempted conversion in the [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md). This lets you deal with a run-time failure.  
   
 ### Character Arrays  
- A single `Char` and an array of `Char` elements both widen to `String`. However, `String` does not widen to `Char()`. To convert a `String` value to a `Char` array, you can use the <xref:System.String.ToCharArray%2A> method of the <xref:System.String?displayProperty=fullName> class.  
+ A single `Char` and an array of `Char` elements both widen to `String`. However, `String` does not widen to `Char()`. To convert a `String` value to a `Char` array, you can use the <xref:System.String.ToCharArray%2A> method of the <xref:System.String?displayProperty=nameWithType> class.  
   
 ### Meaningless Values  
  In general, `String` values are not meaningful in other data types, and conversion is highly artificial and dangerous. Whenever possible, you should restrict usage of `String` variables to the character sequences for which they are designed. You should never write code that relies on equivalent values in other types.  
   
 ## See Also  
- [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Type Characters](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)   
- [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)   
- [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)   
+ [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [Type Characters](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+ [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
+ [Data Types](../../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Efficient Use of Data Types](../../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

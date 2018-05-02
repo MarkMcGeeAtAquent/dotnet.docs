@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_SUSPEND_REASON Enumeration | Microsoft Docs"
+title: "COR_PRF_SUSPEND_REASON Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_SUSPEND_REASON"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_SUSPEND_REASON"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_SUSPEND_REASON enumeration [.NET Framework profiling]"
 ms.assetid: 75594833-bed3-47b2-a426-b75c5fe6fbcf
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_SUSPEND_REASON Enumeration
 Indicates the reason that the runtime is suspended.  

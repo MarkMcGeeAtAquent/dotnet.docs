@@ -1,8 +1,8 @@
 ---
-title: "SAML Token Provider | Microsoft Docs"
+title: "SAML Token Provider"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SAML Token Provider
 This sample demonstrates how to implement a custom client SAML token provider. A token provider in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] is used for supplying credentials to the security infrastructure. The token provider in general examines the target and issues appropriate credentials so that the security infrastructure can secure the message. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] ships with the default Credential Manager Token Provider. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] also ships with an [!INCLUDE[infocard](../../../../includes/infocard-md.md)] token provider. Custom token providers are useful in the following cases:  
@@ -38,7 +40,7 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
  The service exposes two endpoints for communicating with the service, defined using the configuration file App.config. Each endpoint consists of an address, a binding, and a contract. The binding is configured with a standard `wsFederationHttpBinding`, which uses Message security. One endpoint expects the client to authenticate with a SAML token that uses a symmetric proof key while the other expects the client to authenticate with a SAML token that uses an asymmetric proof key. The service also configures the service certificate using `serviceCredentials` behavior. The `serviceCredentials` behavior allows you to configure a service certificate. A service certificate is used by a client to authenticate the service and provide message protection. The following configuration references the "localhost" certificate installed during the sample setup as described in the setup instructions at the end of this topic. The `serviceCredentials` behavior also allows you to configure certificates that are trusted to sign SAML tokens. The following configuration references the 'Alice' certificate installed during the sample.  
   
-```  
+```xml  
 <system.serviceModel>  
  <services>  
   <service   
@@ -232,7 +234,6 @@ This sample demonstrates how to implement a custom client SAML token provider. A
        return base.CreateSecurityTokenProvider(tokenRequirement);  
       }  
     }  
-  
     ```  
   
 3.  Write a custom client credential.  
@@ -356,7 +357,6 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
     ```  
     certmgr.exe -add -r CurrentUser -s My -c -n %USER_NAME% -r LocalMachine -s TrustedPeople  
-  
     ```  
   
 #### To set up and build the sample  
@@ -379,7 +379,7 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
 3.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To run the sample across computers  
   
@@ -401,7 +401,7 @@ This sample demonstrates how to implement a custom client SAML token provider. A
   
 9. On the client computer, launch `Client.exe` from a command prompt window.  
   
-10. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To clean up after the sample  
   

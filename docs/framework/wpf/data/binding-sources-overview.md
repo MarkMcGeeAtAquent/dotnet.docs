@@ -1,5 +1,5 @@
 ---
-title: "Binding Sources Overview | Microsoft Docs"
+title: "Binding Sources Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,14 +10,16 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "binding data, binding sources"
-  - "data binding, binding source"
-  - "binding sources"
+  - "binding data [WPF], binding sources"
+  - "data binding [WPF], binding source"
+  - "binding sources [WPF]"
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
 caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Binding Sources Overview
 In data binding, the binding source object refers to the object you obtain data from. This topic discusses the types of objects you can use as the binding source.  
@@ -34,14 +36,14 @@ In data binding, the binding source object refers to the object you obtain data 
 |dynamic objects|You can bind to available properties and indexers of an object that implements the <xref:System.Dynamic.IDynamicMetaObjectProvider> interface. If you can access the member in code, you can bind to it. For example, if a dynamic object enables you to access a member in code via `someObjet.AProperty`, you can bind to it by setting the binding path to `AProperty`.|  
 |[!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)] objects|You can bind to [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] objects, such as <xref:System.Data.DataTable>. The [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] <xref:System.Data.DataView> implements the <xref:System.ComponentModel.IBindingList> interface, which provides change notifications that the binding engine listens for.|  
 |[!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] objects|You can bind to and run `XPath` queries on an <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, or <xref:System.Xml.XmlElement>. A convenient way to access [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] data that is the binding source in markup is to use an <xref:System.Windows.Data.XmlDataProvider> object. For more information, see [Bind to XML Data Using an XMLDataProvider and XPath Queries](../../../../docs/framework/wpf/data/how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> You can also bind to an <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XDocument>, or bind to the results of queries run on objects of these types by using LINQ to XML. A convenient way to use LINQ to XML to access XML data that is the binding source in markup is to use an <xref:System.Windows.Data.ObjectDataProvider> object. For more information, see [Bind to XDocument, XElement, or LINQ for XML Query Results](../../../../docs/framework/wpf/data/how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
-|<xref:System.Windows.DependencyObject> objects|You can bind to dependency propertiesof any <xref:System.Windows.DependencyObject>. For an example, see [Bind the Properties of Two Controls](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md).|  
+|<xref:System.Windows.DependencyObject> objects|You can bind to dependency properties of any <xref:System.Windows.DependencyObject>. For an example, see [Bind the Properties of Two Controls](../../../../docs/framework/wpf/data/how-to-bind-the-properties-of-two-controls.md).|  
   
 <a name="classes"></a>   
 ## Implementing a Class for the Binding Source  
  You can create your own binding sources. This section discusses the things you need to know if you are implementing a class to serve as a binding source.  
   
 ### Providing Change Notifications  
- If you are using either <xref:System.Windows.Data.BindingMode> or <xref:System.Windows.Data.BindingMode> binding (because you want your [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] to update when the binding source properties change dynamically), you must implement a suitable property changed notification mechanism. The recommended mechanism is for the [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] or dynamic class to implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface. For more information, see [Implement Property Change Notification](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md).  
+ If you are using either <xref:System.Windows.Data.BindingMode.OneWay> or <xref:System.Windows.Data.BindingMode.TwoWay> binding (because you want your [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] to update when the binding source properties change dynamically), you must implement a suitable property changed notification mechanism. The recommended mechanism is for the [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] or dynamic class to implement the <xref:System.ComponentModel.INotifyPropertyChanged> interface. For more information, see [Implement Property Change Notification](../../../../docs/framework/wpf/data/how-to-implement-property-change-notification.md).  
   
  If you create a [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] object that does not implement <xref:System.ComponentModel.INotifyPropertyChanged>, then you must arrange for your own notification system to make sure that the data used in a binding stays current. You can provide change notifications by supporting the `PropertyChanged` pattern for each property that you want change notifications for. To support this pattern, you define a *PropertyName*Changed event for each property, where *PropertyName* is the name of the property. You raise the event every time the property changes.  
   
@@ -101,10 +103,10 @@ In data binding, the binding source object refers to the object you obtain data 
  For more information about partial-trust security, see [WPF Partial Trust Security](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
 ## See Also  
- <xref:System.Windows.Data.ObjectDataProvider>   
- <xref:System.Windows.Data.XmlDataProvider>   
- [Specify the Binding Source](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)   
- [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)   
- [How-to Topics](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)   
- [WPF Data Binding with LINQ to XML Overview](http://msdn.microsoft.com/library/3bf80845-891b-41de-a71b-4080b5bd3ea6)   
+ <xref:System.Windows.Data.ObjectDataProvider>  
+ <xref:System.Windows.Data.XmlDataProvider>  
+ [Specify the Binding Source](../../../../docs/framework/wpf/data/how-to-specify-the-binding-source.md)  
+ [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)  
+ [How-to Topics](../../../../docs/framework/wpf/data/data-binding-how-to-topics.md)  
+ [WPF Data Binding with LINQ to XML Overview](/visualstudio/designers/wpf-data-binding-with-linq-to-xml-overview)  
  [Data Binding](../../../../docs/framework/wpf/advanced/optimizing-performance-data-binding.md)

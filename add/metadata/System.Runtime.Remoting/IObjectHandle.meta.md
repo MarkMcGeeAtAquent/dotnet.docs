@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.IObjectHandle
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.IObjectHandle.Unwrap
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

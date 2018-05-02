@@ -1,5 +1,5 @@
 ---
-title: "Rules for Inferring Schema Node Types and Structure | Microsoft Docs"
+title: "Rules for Inferring Schema Node Types and Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,16 +8,14 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
 caps.latest.revision: 2
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Rules for Inferring Schema Node Types and Structure
 This topic describes how the schema inference process translates the node types in an XML document to an XML Schema definition language (XSD) structure.  
@@ -146,7 +144,7 @@ This topic describes how the schema inference process translates the node types 
 |---------------|-----------------|  
 |Processing instruction|Ignored.|  
 |Comment|Ignored.|  
-|Entity reference|The <xref:System.Xml.Schema.XmlSchemaInference> class does not handle entity references. If an XML document contains entity references, you need to use a reader that expands the entities. For example, you can pass an <xref:System.Xml.XmlTextReader> with the <xref:System.Xml.XmlTextReader.EntityHandling%2A> property set to <xref:System.Xml.EntityHandling> as a parameter. If entity references are encountered and the reader does not expand entities, an exception is throw.|  
+|Entity reference|The <xref:System.Xml.Schema.XmlSchemaInference> class does not handle entity references. If an XML document contains entity references, you need to use a reader that expands the entities. For example, you can pass an <xref:System.Xml.XmlTextReader> with the <xref:System.Xml.XmlTextReader.EntityHandling%2A> property set to <xref:System.Xml.EntityHandling.ExpandEntities> as a parameter. If entity references are encountered and the reader does not expand entities, an exception is throw.|  
 |CDATA|Any `<![CDATA[ … ]]` sections in an XML document will be inferred as `xs:string`.|  
 |Document type|Ignored.|  
 |Namespaces|Ignored.|  
@@ -154,8 +152,8 @@ This topic describes how the schema inference process translates the node types 
  For more information about the schema inference process, see [Inferring Schemas from XML Documents](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
 ## See Also  
- <xref:System.Xml.Schema.XmlSchemaInference>   
- [XML Schema Object Model (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)   
- [Inferring an XML Schema](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)   
- [Inferring Schemas from XML Documents](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)   
+ <xref:System.Xml.Schema.XmlSchemaInference>  
+ [XML Schema Object Model (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
+ [Inferring an XML Schema](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)  
+ [Inferring Schemas from XML Documents](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
  [Rules for Inferring Simple Types](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)

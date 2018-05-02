@@ -1,8 +1,8 @@
 ---
-title: "Trusted Facade Service | Microsoft Docs"
+title: "Trusted Facade Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Trusted Facade Service
 This scenario sample demonstrates how to flow caller's identity information from one service to another using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security infrastructure.  
@@ -39,7 +41,7 @@ This scenario sample demonstrates how to flow caller's identity information from
 ### Communication Path between Client and Façade Service  
  The client to the façade service communication path uses `wsHttpBinding` with a `UserName` client credential type. This means that the client uses username and password to authenticate to the façade service and the façade service uses X.509 certificate to authenticate to the client. The binding configuration looks like the following example.  
   
-```  
+```xml  
 <bindings>  
   <wsHttpBinding>  
     <binding name="Binding1">  
@@ -71,7 +73,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  The custom validator is configured to be used inside the `serviceCredentials` behavior in the façade service configuration file. This behavior is also used to configure the service's X.509 certificate.  
   
-```  
+```xml  
 <behaviors>  
   <serviceBehaviors>  
     <behavior name="FacadeServiceBehavior">  
@@ -103,7 +105,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  The following is the binding configuration for this communication path.  
   
-```  
+```xml  
 <bindings>  
   <customBinding>  
     <binding name="ClientBinding">  
@@ -157,7 +159,7 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
   
  The custom validator is configured to be used inside the `serviceCredentials` behavior in the façade service configuration file.  
   
-```  
+```xml  
 <behaviors>  
   <serviceBehaviors>  
     <behavior name="BackendServiceBehavior">  
@@ -234,7 +236,6 @@ Multiply(9,81.25) = 731.25
 Divide(22,7) = 3.14285714285714  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
  The Setup.bat batch file included with the Trusted Facade scenario sample enables you to configure the server with a relevant certificate to run the façade service that requires certificate-based security to authenticate itself to the client. See the setup procedure at the end of this topic for details.  
@@ -283,7 +284,7 @@ Press <ENTER> to terminate client.
   
 5.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-6.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+6.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To clean up after the sample  
   

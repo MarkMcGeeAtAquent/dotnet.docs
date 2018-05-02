@@ -1,8 +1,8 @@
 ---
-title: "301 - UserDefinedErrorOccurred | Microsoft Docs"
+title: "301 - UserDefinedErrorOccurred"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a0285d1c-550f-4c14-9c36-a96e97f1c4e4
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 301 - UserDefinedErrorOccurred
 ## Properties  

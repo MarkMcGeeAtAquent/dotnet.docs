@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a 3-D Scene | Microsoft Docs"
+title: "How to: Create a 3-D Scene"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,15 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "scenes, 3-D"
-  - "creating, 3-D scenes"
+  - "scenes [WPF], 3-D"
   - "3-D scenes"
 ms.assetid: adb4a598-71a2-4dd5-b677-ea3fc11b78b2
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Create a 3-D Scene
 This example shows how to create a 3-D object that looks like a flat sheet of paper which has been rotated. A <xref:System.Windows.Controls.Viewport3D> along with the following components are used to create this simple 3-D scene:  
@@ -33,7 +37,7 @@ This example shows how to create a 3-D object that looks like a flat sheet of pa
 ## Example  
  The code below shows how to create a 3-D scene in XAML.  
   
- [!code-xml[3DGallery_snip#Basic3DShapeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/Basic3DShapeExample.xaml#basic3dshapeexamplewholepage)]  
+ [!code-xaml[3DGallery_snip#Basic3DShapeExampleWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/3DGallery_snip/CS/Basic3DShapeExample.xaml#basic3dshapeexamplewholepage)]  
   
 ## Example  
  The code below shows how to create the same 3-D scene in procedural code.  

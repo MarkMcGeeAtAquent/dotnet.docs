@@ -1,12 +1,15 @@
-<Type Name="HttpClientHandler" FullName="System.Net.Http.HttpClientHandler">
+﻿<Type Name="HttpClientHandler" FullName="System.Net.Http.HttpClientHandler">
   <TypeSignature Language="C#" Value="public class HttpClientHandler : System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpClientHandler extends System.Net.Http.HttpMessageHandler" />
   <TypeSignature Language="DocId" Value="T:System.Net.Http.HttpClientHandler" />
+  <TypeSignature Language="VB.NET" Value="Public Class HttpClientHandler&#xA;Inherits HttpMessageHandler" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpClientHandler : System::Net::Http::HttpMessageHandler" />
   <AssemblyInfo>
     <AssemblyName>System.Net.Http</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
@@ -37,12 +40,15 @@
       <MemberSignature Language="C#" Value="public HttpClientHandler ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Http.HttpClientHandler.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; HttpClientHandler();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -58,12 +64,15 @@
       <MemberSignature Language="C#" Value="public bool AllowAutoRedirect { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowAutoRedirect" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.AllowAutoRedirect" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowAutoRedirect As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowAutoRedirect { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -85,6 +94,10 @@
  If <xref:System.Net.Http.HttpClientHandler.AllowAutoRedirect%2A> is set to `false`, all HTTP responses with an HTTP status code from 300 to 399 are  returned to the application.  
   
  The Authorization header is cleared on auto-redirects and the handler automatically tries to re-authenticate to the redirected location. In practice, this means that an application can't put custom authentication information into the Authorization header if it is possible to encounter redirection. Instead, the application must implement and register a custom authentication module.  
+
+> [!NOTE]
+>  With <xref:System.Net.Http.HttpClientHandler.AllowAutoRedirect%2A> set to `true`, the .NET Framework will follow redirections even when being redirected to an HTTP URI from an HTTPS URI.
+.NET Core versions 1.0, 1.1 and 2.0 will not follow a redirection from HTTPS to HTTP even if <xref:System.Net.Http.HttpClientHandler.AllowAutoRedirect%2A> is set to `true`.
   
  ]]></format>
         </remarks>
@@ -94,12 +107,15 @@
       <MemberSignature Language="C#" Value="public System.Net.DecompressionMethods AutomaticDecompression { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.DecompressionMethods AutomaticDecompression" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.AutomaticDecompression" />
+      <MemberSignature Language="VB.NET" Value="Public Property AutomaticDecompression As DecompressionMethods" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::DecompressionMethods AutomaticDecompression { System::Net::DecompressionMethods get(); void set(System::Net::DecompressionMethods value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -110,20 +126,34 @@
       </ReturnValue>
       <Docs>
         <summary>Gets or sets the type of decompression method used by the handler for automatic decompression of the HTTP content response.</summary>
-        <value>The automatic decompression method used by the handler. The default value is <see cref="F:System.Net.DecompressionMethods.None" />.</value>
-        <remarks>To be added.</remarks>
+        <value>The automatic decompression method used by the handler.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+
+## Remarks  
+For the .NET Framework 4.x `System.Net.Http` binary in the Global Assembly Cache (GAC), the default value is <xref:System.Net.DecompressionMethods.None>.
+
+When the [`System.Net.Http` NuGet package](https://www.nuget.org/packages/System.Net.Http/) v4.1.0 to v4.3.2 is used, the default is <xref:System.Net.DecompressionMethods.GZip> and <xref:System.Net.DecompressionMethods.Deflate>.
+
+After NuGet package v4.3.2, the default value of <xref:System.Net.DecompressionMethods.None> is used.
+  
+ ]]></format>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="CheckCertificateRevocationList">
       <MemberSignature Language="C#" Value="public bool CheckCertificateRevocationList { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CheckCertificateRevocationList" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.CheckCertificateRevocationList" />
+      <MemberSignature Language="VB.NET" Value="Public Property CheckCertificateRevocationList As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CheckCertificateRevocationList { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -133,8 +163,9 @@
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets or sets a value that indicates whether the certificate is checked against the certificate authority revocation list.</summary>
+        <value>
+          <see langword="true" /> if the certificate revocation list is checked; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -142,12 +173,15 @@
       <MemberSignature Language="C#" Value="public System.Net.Http.ClientCertificateOption ClientCertificateOptions { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Http.ClientCertificateOption ClientCertificateOptions" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.ClientCertificateOptions" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClientCertificateOptions As ClientCertificateOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::Http::ClientCertificateOption ClientCertificateOptions { System::Net::Http::ClientCertificateOption get(); void set(System::Net::Http::ClientCertificateOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -166,12 +200,15 @@
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.ClientCertificates" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientCertificates As X509CertificateCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Cryptography::X509Certificates::X509CertificateCollection ^ ClientCertificates { System::Security::Cryptography::X509Certificates::X509CertificateCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -181,8 +218,8 @@
         <ReturnType>System.Security.Cryptography.X509Certificates.X509CertificateCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets the maximum allowed length of the response headers.</summary>
+        <value>The length, in kilobytes (1024 bytes), of the response headers.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -190,12 +227,15 @@
       <MemberSignature Language="C#" Value="public System.Net.CookieContainer CookieContainer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieContainer CookieContainer" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.CookieContainer" />
+      <MemberSignature Language="VB.NET" Value="Public Property CookieContainer As CookieContainer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::CookieContainer ^ CookieContainer { System::Net::CookieContainer ^ get(); void set(System::Net::CookieContainer ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -223,12 +263,15 @@
       <MemberSignature Language="C#" Value="public System.Net.ICredentials Credentials { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.Credentials" />
+      <MemberSignature Language="VB.NET" Value="Public Property Credentials As ICredentials" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::ICredentials ^ Credentials { System::Net::ICredentials ^ get(); void set(System::Net::ICredentials ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -243,16 +286,39 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <Member MemberName="DangerousAcceptAnyServerCertificateValidator">
+      <MemberSignature Language="C#" Value="public static Func&lt;System.Net.Http.HttpRequestMessage,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,bool&gt; DangerousAcceptAnyServerCertificateValidator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Func`5&lt;class System.Net.Http.HttpRequestMessage, class System.Security.Cryptography.X509Certificates.X509Certificate2, class System.Security.Cryptography.X509Certificates.X509Chain, valuetype System.Net.Security.SslPolicyErrors, bool&gt; DangerousAcceptAnyServerCertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.DangerousAcceptAnyServerCertificateValidator" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property DangerousAcceptAnyServerCertificateValidator As Func(Of HttpRequestMessage, X509Certificate2, X509Chain, SslPolicyErrors, Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property Func&lt;System::Net::Http::HttpRequestMessage ^, System::Security::Cryptography::X509Certificates::X509Certificate2 ^, System::Security::Cryptography::X509Certificates::X509Chain ^, System::Net::Security::SslPolicyErrors, bool&gt; ^ DangerousAcceptAnyServerCertificateValidator { Func&lt;System::Net::Http::HttpRequestMessage ^, System::Security::Cryptography::X509Certificates::X509Certificate2 ^, System::Security::Cryptography::X509Certificates::X509Chain ^, System::Net::Security::SslPolicyErrors, bool&gt; ^ get(); };" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Http</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Net.Http.HttpRequestMessage,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
     <Member MemberName="DefaultProxyCredentials">
       <MemberSignature Language="C#" Value="public System.Net.ICredentials DefaultProxyCredentials { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials DefaultProxyCredentials" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.DefaultProxyCredentials" />
+      <MemberSignature Language="VB.NET" Value="Public Property DefaultProxyCredentials As ICredentials" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::ICredentials ^ DefaultProxyCredentials { System::Net::ICredentials ^ get(); void set(System::Net::ICredentials ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -262,8 +328,8 @@
         <ReturnType>System.Net.ICredentials</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>When the default (system) proxy is being used, gets or sets the credentials to submit to the default proxy server for authentication. The default proxy is used only when <see cref="T:System.Net.Http.HttpClientHandler.UseProxy%2A" /> is set to <see langword="true" /> and <see cref="T:System.Net.Http.HttpClientHandler.Proxy%2A" /> is set to <see langword="null" />.</summary>
+        <value>The credentials needed to authenticate a request to the default proxy server.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -271,12 +337,15 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Http.HttpClientHandler.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -308,12 +377,15 @@
       <MemberSignature Language="C#" Value="public int MaxAutomaticRedirections { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxAutomaticRedirections" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxAutomaticRedirections As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxAutomaticRedirections { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -339,12 +411,15 @@
       <MemberSignature Language="C#" Value="public int MaxConnectionsPerServer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConnectionsPerServer" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.MaxConnectionsPerServer" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxConnectionsPerServer As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxConnectionsPerServer { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -354,8 +429,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets or sets the maximum number of concurrent connections (per server endpoint) allowed when making requests using an <see cref="T:System.Net.Http.HttpClient" /> object. Note that the limit is per server endpoint, so for example a value of 256 would permit 256 concurrent connections to http://www.adatum.com/ and another 256 to http://www.adventure-works.com/.</summary>
+        <value>The maximum number of concurrent connections (per server endpoint) allowed by an <see cref="T:System.Net.Http.HttpClient" /> object.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -363,12 +438,15 @@
       <MemberSignature Language="C#" Value="public long MaxRequestContentBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 MaxRequestContentBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.MaxRequestContentBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxRequestContentBufferSize As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long MaxRequestContentBufferSize { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -394,12 +472,15 @@
       <MemberSignature Language="C#" Value="public int MaxResponseHeadersLength { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxResponseHeadersLength" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.MaxResponseHeadersLength" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxResponseHeadersLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxResponseHeadersLength { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -409,8 +490,8 @@
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets or sets the maximum length, in kilobytes (1024 bytes), of the response headers. For example, if the value is 64, then 65536 bytes are allowed for the maximum response headers' length.</summary>
+        <value>The maximum length, in kilobytes (1024 bytes), of the response headers.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -418,12 +499,15 @@
       <MemberSignature Language="C#" Value="public bool PreAuthenticate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PreAuthenticate" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.PreAuthenticate" />
+      <MemberSignature Language="VB.NET" Value="Public Property PreAuthenticate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool PreAuthenticate { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -454,12 +538,15 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Properties { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Properties" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.Properties" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Properties As IDictionary(Of String, Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ Properties { System::Collections::Generic::IDictionary&lt;System::String ^, System::Object ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -469,8 +556,8 @@
         <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets a writable dictionary (that is, a map) of custom properties for the <see cref="T:System.Net.Http.HttpClient" /> requests. The dictionary is initialized empty; you can insert and query key-value pairs for your custom handlers and special processing.</summary>
+        <value>a writable dictionary of custom properties.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -478,12 +565,15 @@
       <MemberSignature Language="C#" Value="public System.Net.IWebProxy Proxy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IWebProxy Proxy" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.Proxy" />
+      <MemberSignature Language="VB.NET" Value="Public Property Proxy As IWebProxy" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::IWebProxy ^ Proxy { System::Net::IWebProxy ^ get(); void set(System::Net::IWebProxy ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -518,15 +608,17 @@
       </Docs>
     </Member>
     <Member MemberName="SendAsync">
-      <MemberSignature Language="C#" Value="protected override System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt; SendAsync (System.Net.Http.HttpRequestMessage request, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="C#" Value="protected internal override System.Threading.Tasks.Task&lt;System.Net.Http.HttpResponseMessage&gt; SendAsync (System.Net.Http.HttpRequestMessage request, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Threading.Tasks.Task`1&lt;class System.Net.Http.HttpResponseMessage&gt; SendAsync(class System.Net.Http.HttpRequestMessage request, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Http.HttpClientHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override System::Threading::Tasks::Task&lt;System::Net::Http::HttpResponseMessage ^&gt; ^ SendAsync(System::Net::Http::HttpRequestMessage ^ request, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -567,12 +659,15 @@
       <MemberSignature Language="C#" Value="public Func&lt;System.Net.Http.HttpRequestMessage,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,bool&gt; ServerCertificateCustomValidationCallback { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Func`5&lt;class System.Net.Http.HttpRequestMessage, class System.Security.Cryptography.X509Certificates.X509Certificate2, class System.Security.Cryptography.X509Certificates.X509Chain, valuetype System.Net.Security.SslPolicyErrors, bool&gt; ServerCertificateCustomValidationCallback" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.ServerCertificateCustomValidationCallback" />
+      <MemberSignature Language="VB.NET" Value="Public Property ServerCertificateCustomValidationCallback As Func(Of HttpRequestMessage, X509Certificate2, X509Chain, SslPolicyErrors, Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Func&lt;System::Net::Http::HttpRequestMessage ^, System::Security::Cryptography::X509Certificates::X509Certificate2 ^, System::Security::Cryptography::X509Certificates::X509Chain ^, System::Net::Security::SslPolicyErrors, bool&gt; ^ ServerCertificateCustomValidationCallback { Func&lt;System::Net::Http::HttpRequestMessage ^, System::Security::Cryptography::X509Certificates::X509Certificate2 ^, System::Security::Cryptography::X509Certificates::X509Chain ^, System::Net::Security::SslPolicyErrors, bool&gt; ^ get(); void set(Func&lt;System::Net::Http::HttpRequestMessage ^, System::Security::Cryptography::X509Certificates::X509Certificate2 ^, System::Security::Cryptography::X509Certificates::X509Chain ^, System::Net::Security::SslPolicyErrors, bool&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -582,8 +677,8 @@
         <ReturnType>System.Func&lt;System.Net.Http.HttpRequestMessage,System.Security.Cryptography.X509Certificates.X509Certificate2,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors,System.Boolean&gt;</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets or sets a callback method to validate the server certificate.</summary>
+        <value>A callback method to validate the server certificate.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -591,12 +686,15 @@
       <MemberSignature Language="C#" Value="public System.Security.Authentication.SslProtocols SslProtocols { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.SslProtocols SslProtocols" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.SslProtocols" />
+      <MemberSignature Language="VB.NET" Value="Public Property SslProtocols As SslProtocols" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Authentication::SslProtocols SslProtocols { System::Security::Authentication::SslProtocols get(); void set(System::Security::Authentication::SslProtocols value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -606,8 +704,8 @@
         <ReturnType>System.Security.Authentication.SslProtocols</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>To be added.</summary>
-        <value>To be added.</value>
+        <summary>Gets or sets the TLS/SSL protocol used by the <see cref="T:System.Net.Http.HttpClient" /> objects managed by the HttpClientHandler object.</summary>
+        <value>One of the values defined in the <see cref="T:System.Security.Authentication.SslProtocols" /> enumeration.</value>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
@@ -615,12 +713,15 @@
       <MemberSignature Language="C#" Value="public virtual bool SupportsAutomaticDecompression { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAutomaticDecompression" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.SupportsAutomaticDecompression" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SupportsAutomaticDecompression As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool SupportsAutomaticDecompression { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -640,12 +741,15 @@
       <MemberSignature Language="C#" Value="public virtual bool SupportsProxy { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsProxy" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.SupportsProxy" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SupportsProxy As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool SupportsProxy { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -665,12 +769,15 @@
       <MemberSignature Language="C#" Value="public virtual bool SupportsRedirectConfiguration { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsRedirectConfiguration" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SupportsRedirectConfiguration As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool SupportsRedirectConfiguration { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -690,12 +797,15 @@
       <MemberSignature Language="C#" Value="public bool UseCookies { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseCookies" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.UseCookies" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseCookies As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseCookies { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -715,12 +825,15 @@
       <MemberSignature Language="C#" Value="public bool UseDefaultCredentials { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCredentials" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.UseDefaultCredentials" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseDefaultCredentials As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseDefaultCredentials { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
@@ -747,12 +860,15 @@
       <MemberSignature Language="C#" Value="public bool UseProxy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseProxy" />
       <MemberSignature Language="DocId" Value="P:System.Net.Http.HttpClientHandler.UseProxy" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseProxy As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseProxy { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Http</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>

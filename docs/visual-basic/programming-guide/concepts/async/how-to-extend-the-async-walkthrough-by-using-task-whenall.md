@@ -1,7 +1,7 @@
 ---
-title: "How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic) | Microsoft Docs"
+title: "How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,21 +9,13 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: c06d386d-e996-4da9-bf3d-05a3b6c0a258
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)
-You can improve the performance of the async solution in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) by using the <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName> method. This method asynchronously awaits multiple asynchronous operations, which are represented as a collection of tasks.  
+You can improve the performance of the async solution in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) by using the <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> method. This method asynchronously awaits multiple asynchronous operations, which are represented as a collection of tasks.  
   
  You might have noticed in the walkthrough that the websites download at different rates. Sometimes one of the websites is very slow, which delays all the remaining downloads. When you run the asynchronous solutions that you build in the walkthrough, you can end the program easily if you don't want to wait, but a better option would be to start all the downloads at the same time and let faster downloads continue without waiting for the one that’s delayed.  
   
@@ -146,7 +138,6 @@ You can improve the performance of the async solution in [Walkthrough: Accessing
     '    ' Update the total.   
     '    total += urlContents.Length   
     'Next  
-  
     ```  
   
 3.  Define a [query](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) that, when executed by the <xref:System.Linq.Enumerable.ToArray%2A> method, creates a collection of tasks that download the contents of each website. The tasks are started when the query is evaluated.  
@@ -434,5 +425,5 @@ End Class
 ```  
   
 ## See Also  
- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=fullName>   
+ <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>  
  [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)

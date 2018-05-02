@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ExceptionSearchFunctionEnter Method | Microsoft Docs"
+title: "ICorProfilerCallback::ExceptionSearchFunctionEnter Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ExceptionSearchFunctionEnter"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ExceptionSearchFunctionEnter"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ExceptionSearchFunctionEnter method [.NET Framework profiling]"
   - "ICorProfilerCallback::ExceptionSearchFunctionEnter method [.NET Framework profiling]"
 ms.assetid: bfd54573-b7e6-4bd1-a184-7f08a8b39fae
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ExceptionSearchFunctionEnter Method
 Notifies the profiler that the search phase of exception handling has begun searching a function to find a handler for the current exception.  
@@ -51,5 +54,5 @@ HRESULT ExceptionSearchFunctionEnter(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ExceptionSearchFunctionLeave Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionleave-method.md)

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyEmit::DefineManifestResource Method | Microsoft Docs"
+title: "IMetaDataAssemblyEmit::DefineManifestResource Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyEmit.DefineManifestResource"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyEmit::DefineManifestResource"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DefineManifestResource method [.NET Framework metadata]"
   - "IMetaDataAssemblyEmit::DefineManifestResource method [.NET Framework metadata]"
 ms.assetid: 27f6d295-0fe9-4cda-b77e-6e7d5c53df09
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyEmit::DefineManifestResource Method
 Creates a `ManifestResource` structure containing metadata for the specified manifest resource, and returns the associated metadata token.  

@@ -1,29 +1,34 @@
 ---
 uid: System.Transactions.PreparingEnlistment
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.PreparingEnlistment.ForceRollback
-manager: "ghogen"
----
-
----
-uid: System.Transactions.PreparingEnlistment.ForceRollback
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.PreparingEnlistment.Prepared
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.PreparingEnlistment.ForceRollback(System.Exception)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.PreparingEnlistment.RecoveryInformation
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

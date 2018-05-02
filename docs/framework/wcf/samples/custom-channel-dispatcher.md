@@ -1,8 +1,8 @@
 ---
-title: "Custom Channel Dispatcher | Microsoft Docs"
+title: "Custom Channel Dispatcher"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 813acf03-9661-4d57-a3c7-eeab497321c6
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Channel Dispatcher
 This sample demonstrates how to build the channel stack in a custom way by implementing <xref:System.ServiceModel.ServiceHostBase> directly and how to create a custom channel dispatcher in Web host environment. The channel dispatcher interacts with <xref:System.ServiceModel.Channels.IChannelListener> to accept channels and retrieves messages from the channel stack. This sample also provides a basic sample to show how to build a channel stack in a Web host environment by using <xref:System.ServiceModel.Activation.VirtualPathExtension>.  
@@ -48,7 +50,6 @@ Server replied: You said: Howdy. Message id: 2
 Server replied: You said: Howdy. Message id: 3  
 Server replied: You said: Howdy. Message id: 4  
 Server replied: You said: Howdy. Message id: 5  
-  
 ```  
   
  You can also browse the service from a browser so that an HTTP-GET message gets processed on the server. This gets you well-formatted HTML text back.  

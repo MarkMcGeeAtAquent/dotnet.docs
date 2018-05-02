@@ -1,9 +1,15 @@
-<Type Name="ConfigurationSection" FullName="System.Configuration.ConfigurationSection">
+﻿<Type Name="ConfigurationSection" FullName="System.Configuration.ConfigurationSection">
   <TypeSignature Language="C#" Value="public abstract class ConfigurationSection : System.Configuration.ConfigurationElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ConfigurationSection extends System.Configuration.ConfigurationElement" />
   <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ConfigurationSection&#xA;Inherits ConfigurationElement" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConfigurationSection abstract : System::Configuration::ConfigurationElement" />
   <AssemblyInfo>
     <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -35,19 +41,17 @@
   
  The following example is an excerpt of the configuration file as it applies to the previous example.  
   
- `<?xml version="1.0" encoding="utf-8"?>`  
-  
- `<configuration>`  
-  
- `<configSections>`  
-  
- `<section name="CustomSection" type="Samples.AspNet. CustomSection, CustomConfigurationSection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" />`  
-  
- `</configSections>`  
-  
- `<CustomSection fileName="default.txt" maxUsers="1000" maxIdleTime="00:15:00" />`  
-  
- `</configuration>`  
+ ```xml
+<?xml version="1.0" encoding="utf-8"?>
+  <configuration>  
+    <configSections>
+      <section name="CustomSection" type="Samples.AspNet. CustomSection, CustomConfigurationSection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" allowDefinition="Everywhere" allowExeDefinition="MachineToApplication" restartOnExternalChanges="true" />
+    </configSections>  
+
+    <CustomSection fileName="default.txt" maxUsers="1000" maxIdleTime="00:15:00" /> 
+ 
+  </configuration>
+```  
   
  ]]></format>
     </remarks>
@@ -70,12 +74,10 @@
   
      These methods provide access to the cached configuration values for the current application, which has better performance than the <see cref="T:System.Configuration.Configuration" /> class.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  If you use a static <see langword="GetSection" /> method that takes a <paramref name="path" /> parameter, the <paramref name="path" /> parameter must refer to the application in which the code is running; otherwise, the parameter is ignored and configuration information for the currently-running application is returned.  
   
-</para>  
-</block>  
+</para></block>  
   
 -   Writing. You use one of the <see cref="Overload:System.Configuration.Configuration.Save" /> methods to write configuration information. Note that the user or process that writes must have the following permissions:  
   
@@ -83,15 +85,24 @@
   
     -   Read permissions on all the configuration files.</para>
     </block>
+    <altmember cref="T:System.Configuration.Configuration" />
+    <altmember cref="T:System.Configuration.SectionInformation" />
+    <altmember cref="T:System.Configuration.ConfigurationElement" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected ConfigurationSection ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ConfigurationSection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -116,12 +127,18 @@
       </Docs>
     </Member>
     <Member MemberName="DeserializeSection">
-      <MemberSignature Language="C#" Value="protected virtual void DeserializeSection (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void DeserializeSection (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void DeserializeSection(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.DeserializeSection(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub DeserializeSection (reader As XmlReader)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void DeserializeSection(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -146,12 +163,18 @@
       </Docs>
     </Member>
     <Member MemberName="GetRuntimeObject">
-      <MemberSignature Language="C#" Value="protected virtual object GetRuntimeObject ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual object GetRuntimeObject ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance object GetRuntimeObject() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.GetRuntimeObject" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function GetRuntimeObject () As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual System::Object ^ GetRuntimeObject();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -189,12 +212,18 @@
       </Docs>
     </Member>
     <Member MemberName="IsModified">
-      <MemberSignature Language="C#" Value="protected override bool IsModified ();" />
+      <MemberSignature Language="C#" Value="protected internal override bool IsModified ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance bool IsModified() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.IsModified" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Function IsModified () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override bool IsModified();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -209,12 +238,18 @@
       </Docs>
     </Member>
     <Member MemberName="ResetModified">
-      <MemberSignature Language="C#" Value="protected override void ResetModified ();" />
+      <MemberSignature Language="C#" Value="protected internal override void ResetModified ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ResetModified() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ResetModified" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub ResetModified ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void ResetModified();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -230,9 +265,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.SectionInformation SectionInformation { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.SectionInformation SectionInformation" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationSection.SectionInformation" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SectionInformation As SectionInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::SectionInformation ^ SectionInformation { System::Configuration::SectionInformation ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -252,15 +293,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Configuration.SectionInformation" />
       </Docs>
     </Member>
     <Member MemberName="SerializeSection">
-      <MemberSignature Language="C#" Value="protected virtual string SerializeSection (System.Configuration.ConfigurationElement parentElement, string name, System.Configuration.ConfigurationSaveMode saveMode);" />
+      <MemberSignature Language="C#" Value="protected internal virtual string SerializeSection (System.Configuration.ConfigurationElement parentElement, string name, System.Configuration.ConfigurationSaveMode saveMode);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string SerializeSection(class System.Configuration.ConfigurationElement parentElement, string name, valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.SerializeSection(System.Configuration.ConfigurationElement,System.String,System.Configuration.ConfigurationSaveMode)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function SerializeSection (parentElement As ConfigurationElement, name As String, saveMode As ConfigurationSaveMode) As String" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual System::String ^ SerializeSection(System::Configuration::ConfigurationElement ^ parentElement, System::String ^ name, System::Configuration::ConfigurationSaveMode saveMode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -288,12 +336,18 @@
       </Docs>
     </Member>
     <Member MemberName="ShouldSerializeElementInTargetVersion">
-      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeElementInTargetVersion (System.Configuration.ConfigurationElement element, string elementName, System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="C#" Value="protected internal virtual bool ShouldSerializeElementInTargetVersion (System.Configuration.ConfigurationElement element, string elementName, System.Runtime.Versioning.FrameworkName targetFramework);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializeElementInTargetVersion(class System.Configuration.ConfigurationElement element, string elementName, class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializeElementInTargetVersion(System.Configuration.ConfigurationElement,System.String,System.Runtime.Versioning.FrameworkName)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function ShouldSerializeElementInTargetVersion (element As ConfigurationElement, elementName As String, targetFramework As FrameworkName) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual bool ShouldSerializeElementInTargetVersion(System::Configuration::ConfigurationElement ^ element, System::String ^ elementName, System::Runtime::Versioning::FrameworkName ^ targetFramework);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -324,12 +378,18 @@
       </Docs>
     </Member>
     <Member MemberName="ShouldSerializePropertyInTargetVersion">
-      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializePropertyInTargetVersion (System.Configuration.ConfigurationProperty property, string propertyName, System.Runtime.Versioning.FrameworkName targetFramework, System.Configuration.ConfigurationElement parentConfigurationElement);" />
+      <MemberSignature Language="C#" Value="protected internal virtual bool ShouldSerializePropertyInTargetVersion (System.Configuration.ConfigurationProperty property, string propertyName, System.Runtime.Versioning.FrameworkName targetFramework, System.Configuration.ConfigurationElement parentConfigurationElement);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializePropertyInTargetVersion(class System.Configuration.ConfigurationProperty property, string propertyName, class System.Runtime.Versioning.FrameworkName targetFramework, class System.Configuration.ConfigurationElement parentConfigurationElement) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializePropertyInTargetVersion(System.Configuration.ConfigurationProperty,System.String,System.Runtime.Versioning.FrameworkName,System.Configuration.ConfigurationElement)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function ShouldSerializePropertyInTargetVersion (property As ConfigurationProperty, propertyName As String, targetFramework As FrameworkName, parentConfigurationElement As ConfigurationElement) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual bool ShouldSerializePropertyInTargetVersion(System::Configuration::ConfigurationProperty ^ property, System::String ^ propertyName, System::Runtime::Versioning::FrameworkName ^ targetFramework, System::Configuration::ConfigurationElement ^ parentConfigurationElement);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -362,12 +422,18 @@
       </Docs>
     </Member>
     <Member MemberName="ShouldSerializeSectionInTargetVersion">
-      <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeSectionInTargetVersion (System.Runtime.Versioning.FrameworkName targetFramework);" />
+      <MemberSignature Language="C#" Value="protected internal virtual bool ShouldSerializeSectionInTargetVersion (System.Runtime.Versioning.FrameworkName targetFramework);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool ShouldSerializeSectionInTargetVersion(class System.Runtime.Versioning.FrameworkName targetFramework) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationSection.ShouldSerializeSectionInTargetVersion(System.Runtime.Versioning.FrameworkName)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function ShouldSerializeSectionInTargetVersion (targetFramework As FrameworkName) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual bool ShouldSerializeSectionInTargetVersion(System::Runtime::Versioning::FrameworkName ^ targetFramework);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

@@ -1,5 +1,5 @@
 ---
-title: "WCF Service Host (WcfSvcHost.exe) | Microsoft Docs"
+title: "WCF Service Host (WcfSvcHost.exe)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
 caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WCF Service Host (WcfSvcHost.exe)
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] Service Host (WcfSvcHost.exe) allows you to launch the [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] debugger (F5) to automatically host and test a service you have implemented. You can then test the service using [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Test Client (WcfTestClient.exe), or your own client, to find and fix any potential errors.  
@@ -88,7 +90,7 @@ manager: "erikre"
   
     -   **Service**: Lists all the services.  
   
-    -   **Status**: Lists the status of the service. Valid values are "Started”, “Stopped,” and “Error”.  
+    -   **Status**: Lists the status of the service. Valid values are "Started", "Stopped," and "Error".  
   
     -   **Metadata Address**: Displays the metadata address of the services.  
   

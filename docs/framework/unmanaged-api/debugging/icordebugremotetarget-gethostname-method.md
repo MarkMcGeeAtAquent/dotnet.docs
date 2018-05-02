@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugRemoteTarget::GetHostName Method | Microsoft Docs"
+title: "ICorDebugRemoteTarget::GetHostName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugRemoteTarget.GetHostName"
-apilocation: 
+api_location: 
   - "CorDebug.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugRemoteTarget::GetHostName"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugRemoteTarget::GetHostName method [.NET Framework debugging]"
   - "GetHostName method, ICorDebugRemoteTarget interface [.NET Framework debugging]"
 ms.assetid: 1c7276f7-7e54-470c-808c-e13745ac07a1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugRemoteTarget::GetHostName Method
 Returns the fully qualified domain name or IPv4 address of the remote debugging target machine. IPV6 is not supported at this time.  
@@ -70,5 +73,5 @@ HRESULT GetHostName (
  **.NET Framework Versions:** 3.5 SP1  
   
 ## See Also  
- [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)   
+ [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
  [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)

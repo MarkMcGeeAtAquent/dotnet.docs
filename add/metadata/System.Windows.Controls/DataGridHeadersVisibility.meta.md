@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Controls.DataGridHeadersVisibility
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

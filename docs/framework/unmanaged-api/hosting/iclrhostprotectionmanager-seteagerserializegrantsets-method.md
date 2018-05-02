@@ -1,5 +1,5 @@
 ---
-title: "ICLRHostProtectionManager::SetEagerSerializeGrantSets Method | Microsoft Docs"
+title: "ICLRHostProtectionManager::SetEagerSerializeGrantSets Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRHostProtectionManager.SetEagerSerializeGrantSets"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRHostProtectionManager::SetEagerSerializeGrantSets"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetEagerSerializeGrantSets method [.NET Framework hosting]"
   - "ICLRHostProtectionManager::SetEagerSerializeGrantSets method [.NET Framework hosting]"
 ms.assetid: d6158360-22b1-4ace-ad85-d830b9964783
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRHostProtectionManager::SetEagerSerializeGrantSets Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  
@@ -57,5 +60,5 @@ HRESULT SetEagerSerializeGrantSets ();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)   
+ [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [ICLRHostProtectionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md)

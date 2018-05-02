@@ -1,5 +1,5 @@
 ---
-title: "How-to Topics | Microsoft Docs"
+title: "How-to Topics"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How-to Topics
 The following topics show how to create [!INCLUDE[TLA#tla_wpf](../../../../includes/tlasharptla-wpf-md.md)] add-ins.  

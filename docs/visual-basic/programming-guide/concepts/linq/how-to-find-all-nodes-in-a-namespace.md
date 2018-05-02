@@ -1,7 +1,7 @@
 ---
-title: "How to: Find All Nodes in a Namespace (Visual Basic) | Microsoft Docs"
+title: "How to: Find All Nodes in a Namespace (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
 caps.latest.revision: 3
 author: dotnet-bot
@@ -49,7 +47,6 @@ Module Module1
         Next  
     End Sub  
 End Module  
-  
 ```  
   
  This code produces the following output:  
@@ -80,7 +77,6 @@ Module Module1
         Console.WriteLine(newTree)  
     End Sub  
 End Module  
-  
 ```  
   
  This code produces the following output:  

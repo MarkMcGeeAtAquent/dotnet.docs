@@ -1,8 +1,8 @@
 ---
-title: "Configuration-Based Activation | Microsoft Docs"
+title: "Configuration-Based Activation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 21bb762e-c43e-4b0c-887b-5e434d665838
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuration-Based Activation
 This sample demonstrates how to activate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services without requiring a .svc file.  
@@ -43,7 +45,6 @@ This sample demonstrates how to activate [!INCLUDE[indigo1](../../../../includes
    <add relativeAddress="Calculator.svc" service="Microsoft.ServiceModel.Samples.CalculatorService" />  
   
 <serviceActivations>  
-  
 ```  
   
  The observation to make is the configuration looks very similar to the configuration of .svc files. An additional attribute that is introduced is the `relativeAddress` that provides the address of the service. The relative address is also the virtual path for the service. The host retrieves the Web.config file of the file from the `virtualPath` location, if present; otherwise the host searches its parent folder recursively.  

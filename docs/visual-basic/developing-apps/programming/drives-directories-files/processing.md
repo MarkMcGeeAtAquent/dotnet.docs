@@ -1,16 +1,13 @@
 ---
-title: "Processing Drives, Directories, and Files (Visual Basic) | Microsoft Docs"
+title: "Processing Drives, Directories, and Files (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "drives"
   - "drives, processing"
@@ -22,24 +19,9 @@ ms.assetid: f1db14c8-a4fd-4d0b-8323-c7cb29d688c2
 caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Processing Drives, Directories, and Files (Visual Basic)
-You can use [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] to process drives, folders, and files with the `My.Computer.FileSystem` object, which provides better performance and is easier to use than traditional methods such as the `FileOpen` and `Write` functions (although they are still available). The following sections discuss these methods in detail.  
+You can use [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] to process drives, folders, and files with the `My.Computer.FileSystem` object, which provides better performance and is easier to use than traditional methods such as the `FileOpen` and `Write` functions (although they are still available). The following sections discuss these methods in detail.  
   
 ## In This Section  
  [File Access with Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)  
@@ -49,7 +31,7 @@ You can use [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq
  Provides an overview of file I/O concepts in the .NET Framework, including streams, isolated storage, file events, file attributes, and file access.  
   
  [Walkthrough: Manipulating Files by Using .NET Framework Methods](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Demonstrates how to use the [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)] to manipulate files and folders.  
+ Demonstrates how to use the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] to manipulate files and folders.  
   
  [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Demonstrates how to use the `My.Computer.FileSystem` object to manipulate files and folders.  

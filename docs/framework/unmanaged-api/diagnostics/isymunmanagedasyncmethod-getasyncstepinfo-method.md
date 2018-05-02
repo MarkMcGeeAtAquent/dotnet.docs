@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedAsyncMethod::GetAsyncStepInfo Method | Microsoft Docs"
+title: "ISymUnmanagedAsyncMethod::GetAsyncStepInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 3ef5b4b8-4ac7-4906-849b-f932c5e3db07
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedAsyncMethod::GetAsyncStepInfo Method
 See [DefineAsyncStepInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md).  

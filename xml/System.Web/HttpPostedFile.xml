@@ -1,7 +1,9 @@
-<Type Name="HttpPostedFile" FullName="System.Web.HttpPostedFile">
+﻿<Type Name="HttpPostedFile" FullName="System.Web.HttpPostedFile">
   <TypeSignature Language="C#" Value="public sealed class HttpPostedFile" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpPostedFile extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpPostedFile" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpPostedFile" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpPostedFile sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,9 +24,9 @@
   
  Files are uploaded in MIME multipart/form-data format. By default, all requests, including form fields and uploaded files, larger than 256 KB are buffered to disk, rather than held in server memory.  
   
- You can specify the maximum allowable request size by accessing the <xref:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength%2A> property or by setting the `maxRequestLength` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element within the Machine.config or Web.config file. The default is 4 MB.  
+ You can specify the maximum allowable request size by accessing the <xref:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength%2A> property or by setting the `maxRequestLength` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element within the Machine.config or Web.config file. The default is 4 MB.  
   
- The amount of data that is buffered in server memory for a request, which includes file uploads, can be specified by accessing the <xref:System.Web.Configuration.HttpRuntimeSection.RequestLengthDiskThreshold%2A> property or by setting the `requestLengthDiskThreshold` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element within the Machine.config or Web.config file.  
+ The amount of data that is buffered in server memory for a request, which includes file uploads, can be specified by accessing the <xref:System.Web.Configuration.HttpRuntimeSection.RequestLengthDiskThreshold%2A> property or by setting the `requestLengthDiskThreshold` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element within the Machine.config or Web.config file.  
   
  By adjusting the <xref:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength%2A> and <xref:System.Web.Configuration.HttpRuntimeSection.RequestLengthDiskThreshold%2A> properties, you can fine tune the performance of your server. Additionally, you should consider setting the <xref:System.Web.Configuration.HttpRuntimeSection.MaxRequestLength%2A> to prevent denial of service attacks caused by users posting large files to the server.  
   
@@ -32,12 +34,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.HtmlControls.HtmlInputFile" />
+    <altmember cref="T:System.Web.HttpFileCollection" />
   </Docs>
   <Members>
     <Member MemberName="ContentLength">
       <MemberSignature Language="C#" Value="public int ContentLength { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ContentLength" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpPostedFile.ContentLength" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ContentLength { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -50,12 +56,15 @@
         <summary>Gets the size of an uploaded file, in bytes.</summary>
         <value>The file length, in bytes.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Web.HttpPostedFile.ContentType" />
       </Docs>
     </Member>
     <Member MemberName="ContentType">
       <MemberSignature Language="C#" Value="public string ContentType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpPostedFile.ContentType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ContentType { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -78,12 +87,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpPostedFile.FileName" />
+        <altmember cref="P:System.Web.HttpPostedFile.ContentLength" />
       </Docs>
     </Member>
     <Member MemberName="FileName">
       <MemberSignature Language="C#" Value="public string FileName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpPostedFile.FileName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FileName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FileName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -106,12 +119,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.HttpPostedFile.ContentType" />
       </Docs>
     </Member>
     <Member MemberName="InputStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream InputStream { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream InputStream" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpPostedFile.InputStream" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InputStream As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::Stream ^ InputStream { System::IO::Stream ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -140,6 +156,8 @@
       <MemberSignature Language="C#" Value="public void SaveAs (string filename);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpPostedFile.SaveAs(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -158,7 +176,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The maximum size allowed for a request, which includes uploaded files, is 4 MB, by default. Maximum request size can be specified in the Machine.config or Web.config file in the `maxRequestLength` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element. The maximum request size for a specific page can be specified using the [location Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/922ef7d5-da38-4661-b1c6-5b9e5ceda1d5) element in a Web.config file.  
+ The maximum size allowed for a request, which includes uploaded files, is 4 MB, by default. Maximum request size can be specified in the Machine.config or Web.config file in the `maxRequestLength` attribute of the [httpRuntime Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/e9b81350-8aaf-47cc-9843-5f7d0c59f369) element. The maximum request size for a specific page can be specified using the [location Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/922ef7d5-da38-4661-b1c6-5b9e5ceda1d5) element in a Web.config file.  
   
    
   

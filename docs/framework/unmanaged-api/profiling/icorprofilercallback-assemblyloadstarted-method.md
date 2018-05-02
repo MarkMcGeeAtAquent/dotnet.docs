@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::AssemblyLoadStarted Method | Microsoft Docs"
+title: "ICorProfilerCallback::AssemblyLoadStarted Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.AssemblyLoadStarted"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::AssemblyLoadStarted"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::AssemblyLoadStarted method [.NET Framework profiling]"
   - "AssemblyLoadStarted method [.NET Framework profiling]"
 ms.assetid: 67e8209d-a0ca-4118-a6e6-c1ee0abc2221
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::AssemblyLoadStarted Method
 Notifies the profiler that an assembly is being loaded.  

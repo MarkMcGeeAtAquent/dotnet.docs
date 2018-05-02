@@ -1,5 +1,5 @@
 ---
-title: "Converting Strings to .NET Framework Data Types | Microsoft Docs"
+title: "Converting Strings to .NET Framework Data Types"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Converting Strings to .NET Framework Data Types
 If you want to convert a string to a .NET Framework data type, use the **XmlConvert** method that fits the application requirements. For a list of all conversion methods available in the **XmlConvert** class, see <xref:System.Xml.XmlConvert>.  
@@ -45,7 +46,6 @@ If you want to convert a string to a .NET Framework data type, use the **XmlConv
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
 Dim [date] As New DateTime(2001, 8, 4)  
 writer.WriteElementString("Date", XmlConvert.ToString([date]))  
-  
 ```  
   
 ```csharp  
@@ -64,7 +64,6 @@ writer.WriteElementString("Date", XmlConvert.ToString(date));
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
 Dim value As Int32 = 200  
 writer.WriteElementString("Number", XmlConvert.ToString(value))  
-  
 ```  
   
 ```csharp  
@@ -93,7 +92,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  **Input**  
   
-```  
+```xml  
 <Boolean>true</Boolean>  
 <Boolean>1</Boolean>   
 ```  
@@ -104,7 +103,6 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 Dim bvalue As Boolean = _  
    XmlConvert.ToBoolean(reader.ReadElementString())  
 Console.WriteLine(bvalue)  
-  
 ```  
   
 ```csharp  
@@ -133,7 +131,6 @@ Console.WriteLine(bvalue);
 ```vb  
 Dim value As Double = Double.PositiveInfinity  
 writer.WriteElementString("Infinity", XmlConvert.ToString(value))  
-  
 ```  
   
 ```csharp  
@@ -142,5 +139,5 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
 ```  
   
 ## See Also  
- [Conversion of XML Data Types](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)   
+ [Conversion of XML Data Types](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
  [Converting .NET Framework Types to Strings](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

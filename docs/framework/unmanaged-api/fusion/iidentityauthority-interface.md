@@ -1,5 +1,5 @@
 ---
-title: "IIdentityAuthority Interface | Microsoft Docs"
+title: "IIdentityAuthority Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IIdentityAuthority"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IIdentityAuthority"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IIdentityAuthority interface [.NET Framework fusion]"
 ms.assetid: 6277f914-51a8-49be-bec6-52d6d648527d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IIdentityAuthority Interface
 Manages identity keys for code objects.  

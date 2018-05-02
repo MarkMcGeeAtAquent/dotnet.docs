@@ -1,8 +1,8 @@
 ---
-title: "209 - MessageInspectorBeforeSendInvoked | Microsoft Docs"
+title: "209 - MessageInspectorBeforeSendInvoked"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7d710875-fb77-4463-978b-bc86d59d84cd
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 209 - MessageInspectorBeforeSendInvoked
 ## Properties  

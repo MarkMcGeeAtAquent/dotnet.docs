@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::ResetEnum Method | Microsoft Docs"
+title: "IMetaDataImport::ResetEnum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.ResetEnum"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::ResetEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ResetEnum method [.NET Framework metadata]"
   - "IMetaDataImport::ResetEnum method [.NET Framework metadata]"
 ms.assetid: dda867b5-1050-49ba-b01c-fcc83b7a5617
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::ResetEnum Method
 Resets the specified enumerator to the specified position.  
@@ -56,5 +59,5 @@ HRESULT ResetEnum (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

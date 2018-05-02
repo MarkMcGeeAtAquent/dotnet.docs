@@ -1,8 +1,8 @@
 ---
-title: "217 - ClientOperationPrepared | Microsoft Docs"
+title: "217 - ClientOperationPrepared"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ad207f04-b038-4f33-95e9-27a361df8ecd
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 217 - ClientOperationPrepared
 ## Properties  

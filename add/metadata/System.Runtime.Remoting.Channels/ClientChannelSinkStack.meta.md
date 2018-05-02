@@ -1,44 +1,55 @@
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.Push(System.Runtime.Remoting.Channels.IClientChannelSink,System.Object)
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.DispatchException(System.Exception)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.Pop(System.Runtime.Remoting.Channels.IClientChannelSink)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.DispatchReplyMessage(System.Runtime.Remoting.Messaging.IMessage)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.AsyncProcessResponse(System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ClientChannelSinkStack.#ctor(System.Runtime.Remoting.Messaging.IMessageSink)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

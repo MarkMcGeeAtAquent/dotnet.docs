@@ -1,8 +1,8 @@
 ---
-title: "ReadMe for Extended Protection Authentication Sample | Microsoft Docs"
+title: "ReadMe for Extended Protection Authentication Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,9 +14,11 @@ caps.latest.revision: 3
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # ReadMe for Extended Protection Authentication Sample
-Extended Protection is a security initiative to protect against man-in-the-middle (MITM) attacks, in which an attacker (the “man-in-the-middle”) intercepts a client’s credentials and uses them to access secure resources on the client’s intended server.  
+Extended Protection is a security initiative to protect against man-in-the-middle (MITM) attacks, in which an attacker (the "man-in-the-middle") intercepts a client’s credentials and uses them to access secure resources on the client’s intended server.  
   
  For more information, see [Extended Protection for Authentication Overview](../../../../docs/framework/wcf/feature-details/extended-protection-for-authentication-overview.md).  
   

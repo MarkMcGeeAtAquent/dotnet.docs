@@ -1,7 +1,9 @@
-<Type Name="PerformanceCounterCategory" FullName="System.Diagnostics.PerformanceCounterCategory">
+﻿<Type Name="PerformanceCounterCategory" FullName="System.Diagnostics.PerformanceCounterCategory">
   <TypeSignature Language="C#" Value="public sealed class PerformanceCounterCategory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PerformanceCounterCategory extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounterCategory" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PerformanceCounterCategory" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PerformanceCounterCategory sealed" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -18,7 +20,7 @@
 ## Remarks  
   
 > [!IMPORTANT]
->  Creating or deleting a performance counter requires synchronization of the underlying code by using a named mutex. If a highly privileged application locks the named mutex, attempts to create or delete a performance counter causes the application to stop responding until the lock is released. To help avoid this problem, never grant <xref:System.Security.Permissions.SecurityPermissionFlag> permission to untrusted code. In addition, <xref:System.Security.Permissions.SecurityPermissionFlag> permission potentially allows other permissions to be bypassed and should only be granted to highly trusted code.  
+>  Creating or deleting a performance counter requires synchronization of the underlying code by using a named mutex. If a highly privileged application locks the named mutex, attempts to create or delete a performance counter causes the application to stop responding until the lock is released. To help avoid this problem, never grant <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> permission to untrusted code. In addition, <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> permission potentially allows other permissions to be bypassed and should only be granted to highly trusted code.  
   
  The <xref:System.Diagnostics.PerformanceCounterCategory> instance's <xref:System.Diagnostics.PerformanceCounterCategory.CategoryName%2A> property is displayed in the Performance Object field of the Performance Viewer application's Add Counter dialog box.  
   
@@ -37,7 +39,7 @@
 >  It is strongly recommended that new performance counter categories be created during the installation of the application, not during the execution of the application. This allows time for the operating system to refresh its list of registered performance counter categories. If the list has not been refreshed, the attempt to use the category will fail.  
   
 > [!NOTE]
->  Performance counter categories installed with the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] use separate shared memory, with each performance counter category having its own memory. You can specify the size of separate shared memory by creating a DWORD named FileMappingSize in the registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<category name>*\Performance. The FileMappingSize value is set to the shared memory size of the category. The default size is 131072 decimal. If the FileMappingSize value is not present, the `fileMappingSize` attribute value for the `performanceCounters` element specified in the Machine.config file is used, causing additional overhead for configuration file processing. You can realize a performance improvement for application startup by setting the file mapping size in the registry. For more information about the file mapping size, see [\&lt;performanceCounters\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md).  
+>  Performance counter categories installed with the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] use separate shared memory, with each performance counter category having its own memory. You can specify the size of separate shared memory by creating a DWORD named FileMappingSize in the registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<category name>*\Performance. The FileMappingSize value is set to the shared memory size of the category. The default size is 131072 decimal. If the FileMappingSize value is not present, the `fileMappingSize` attribute value for the `performanceCounters` element specified in the Machine.config file is used, causing additional overhead for configuration file processing. You can realize a performance improvement for application startup by setting the file mapping size in the registry. For more information about the file mapping size, see [&lt;performanceCounters&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md).  
   
    
   
@@ -53,12 +55,26 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+    <altmember cref="T:System.Diagnostics.CounterCreationDataCollection" />
+    <altmember cref="T:System.Diagnostics.CounterSample" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.PerformanceCounterCategory" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PerformanceCounterCategory ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounterCategory();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -84,12 +100,17 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PerformanceCounterCategory (string categoryName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounterCategory(System::String ^ categoryName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -115,12 +136,17 @@
         <exception cref="T:System.ArgumentException">The <paramref name="categoryName" /> is an empty string ("").</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="categoryName" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading category information, such as the category name. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PerformanceCounterCategory (string categoryName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounterCategory(System::String ^ categoryName, System::String ^ machineName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -152,12 +178,17 @@
  The <paramref name="machineName" /> syntax is invalid.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="categoryName" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading category information, such as the computer and category name. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="CategoryHelp">
       <MemberSignature Language="C#" Value="public string CategoryHelp { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CategoryHelp" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterCategory.CategoryHelp" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CategoryHelp As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CategoryHelp { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -182,12 +213,18 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" /> property is <see langword="null" />. The category name must be set before getting the category help.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.CounterHelp" />
       </Docs>
     </Member>
     <Member MemberName="CategoryName">
       <MemberSignature Language="C#" Value="public string CategoryName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CategoryName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+      <MemberSignature Language="VB.NET" Value="Public Property CategoryName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CategoryName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -213,12 +250,16 @@
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" /> is an empty string ("").</exception>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="CategoryType">
       <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterCategoryType CategoryType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterCategoryType CategoryType" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterCategory.CategoryType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CategoryType As PerformanceCounterCategoryType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::PerformanceCounterCategoryType CategoryType { System::Diagnostics::PerformanceCounterCategoryType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -234,7 +275,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.PerformanceCounterCategory.CategoryType%2A> property indicates whether the <xref:System.Diagnostics.PerformanceCounterCategory> object can have multiple instances. The possible values are <xref:System.Diagnostics.PerformanceCounterCategoryType>, <xref:System.Diagnostics.PerformanceCounterCategoryType>, or <xref:System.Diagnostics.PerformanceCounterCategoryType>.  
+ The <xref:System.Diagnostics.PerformanceCounterCategory.CategoryType%2A> property indicates whether the <xref:System.Diagnostics.PerformanceCounterCategory> object can have multiple instances. The possible values are <xref:System.Diagnostics.PerformanceCounterCategoryType.MultiInstance>, <xref:System.Diagnostics.PerformanceCounterCategoryType.SingleInstance>, or <xref:System.Diagnostics.PerformanceCounterCategoryType.Unknown>.  
   
  There are two types of performance counter categories: single-instance and multi-instance. By default, a category is single-instance when it is created and becomes multi-instance when another instance is added. Categories are created when an application is set up, and instances are added at run time. In the .NET Framework versions 1.0 and 1.1, it is not necessary to know if a performance counter category is multi-instance or single-instance. In the [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)], the <xref:System.Diagnostics.PerformanceCounterCategoryType> enumeration is used to indicate whether a performance counter can have multiple instances.  
   
@@ -242,10 +283,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CounterExists">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether a specified counter is registered to a particular category.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CounterExists">
       <MemberSignature Language="C#" Value="public bool CounterExists (string counterName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CounterExists(string counterName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CounterExists (counterName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool CounterExists(System::String ^ counterName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -291,12 +343,18 @@
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" /> property has not been set.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="CounterExists">
       <MemberSignature Language="C#" Value="public static bool CounterExists (string counterName, string categoryName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CounterExists(string counterName, string categoryName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CounterExists (counterName As String, categoryName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool CounterExists(System::String ^ counterName, System::String ^ categoryName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -347,12 +405,17 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="CounterExists">
       <MemberSignature Language="C#" Value="public static bool CounterExists (string counterName, string categoryName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CounterExists(string counterName, string categoryName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CounterExists (counterName As String, categoryName As String, machineName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool CounterExists(System::String ^ counterName, System::String ^ categoryName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -409,12 +472,26 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Create">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers a custom performance counter category and one or more counters with the system.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory Create (string categoryName, string categoryHelp, System.Diagnostics.CounterCreationDataCollection counterData);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory Create(string categoryName, string categoryHelp, class System.Diagnostics.CounterCreationDataCollection counterData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Create(System.String,System.String,System.Diagnostics.CounterCreationDataCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (categoryName As String, categoryHelp As String, counterData As CounterCreationDataCollection) As PerformanceCounterCategory" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::PerformanceCounterCategory ^ Create(System::String ^ categoryName, System::String ^ categoryHelp, System::Diagnostics::CounterCreationDataCollection ^ counterData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -480,12 +557,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for performing administrative tasks on performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Administer" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+        <altmember cref="T:System.Diagnostics.CounterCreationDataCollection" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory Create (string categoryName, string categoryHelp, System.Diagnostics.PerformanceCounterCategoryType categoryType, System.Diagnostics.CounterCreationDataCollection counterData);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory Create(string categoryName, string categoryHelp, valuetype System.Diagnostics.PerformanceCounterCategoryType categoryType, class System.Diagnostics.CounterCreationDataCollection counterData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Create(System.String,System.String,System.Diagnostics.PerformanceCounterCategoryType,System.Diagnostics.CounterCreationDataCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (categoryName As String, categoryHelp As String, categoryType As PerformanceCounterCategoryType, counterData As CounterCreationDataCollection) As PerformanceCounterCategory" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::PerformanceCounterCategory ^ Create(System::String ^ categoryName, System::String ^ categoryHelp, System::Diagnostics::PerformanceCounterCategoryType categoryType, System::Diagnostics::CounterCreationDataCollection ^ counterData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -560,12 +643,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for performing administrative tasks on performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Administer" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+        <altmember cref="T:System.Diagnostics.CounterCreationDataCollection" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory Create (string categoryName, string categoryHelp, string counterName, string counterHelp);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory Create(string categoryName, string categoryHelp, string counterName, string counterHelp) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Create(System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (categoryName As String, categoryHelp As String, counterName As String, counterHelp As String) As PerformanceCounterCategory" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::PerformanceCounterCategory ^ Create(System::String ^ categoryName, System::String ^ categoryHelp, System::String ^ counterName, System::String ^ counterHelp);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -634,12 +723,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for performing administrative tasks on performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Administer" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.CounterHelp" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory Create (string categoryName, string categoryHelp, System.Diagnostics.PerformanceCounterCategoryType categoryType, string counterName, string counterHelp);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory Create(string categoryName, string categoryHelp, valuetype System.Diagnostics.PerformanceCounterCategoryType categoryType, string counterName, string counterHelp) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Create(System.String,System.String,System.Diagnostics.PerformanceCounterCategoryType,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (categoryName As String, categoryHelp As String, categoryType As PerformanceCounterCategoryType, counterName As String, counterHelp As String) As PerformanceCounterCategory" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::PerformanceCounterCategory ^ Create(System::String ^ categoryName, System::String ^ categoryHelp, System::Diagnostics::PerformanceCounterCategoryType categoryType, System::String ^ counterName, System::String ^ counterHelp);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -711,12 +806,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for performing administrative tasks on performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Administer" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
+        <altmember cref="T:System.Diagnostics.CounterCreationDataCollection" />
       </Docs>
     </Member>
     <Member MemberName="Delete">
       <MemberSignature Language="C#" Value="public static void Delete (string categoryName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string categoryName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Delete(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Delete (categoryName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Delete(System::String ^ categoryName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -760,12 +861,24 @@
         <exception cref="T:System.InvalidOperationException">The category cannot be deleted because it is not a custom category.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Administer" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Create(System.String,System.String,System.Diagnostics.CounterCreationDataCollection)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Exists">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the category is registered on the system.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Exists">
       <MemberSignature Language="C#" Value="public static bool Exists (string categoryName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string categoryName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Exists (categoryName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool Exists(System::String ^ categoryName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -811,12 +924,16 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Exists">
       <MemberSignature Language="C#" Value="public static bool Exists (string categoryName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string categoryName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Exists (categoryName As String, machineName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool Exists(System::String ^ categoryName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -873,12 +990,25 @@
   
  Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCategories">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves a list of the performance counter categories that are registered on a computer.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCategories">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory[] GetCategories ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory[] GetCategories() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.GetCategories" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCategories () As PerformanceCounterCategory()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::PerformanceCounterCategory ^&gt; ^ GetCategories();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -917,12 +1047,15 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="GetCategories">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.PerformanceCounterCategory[] GetCategories (string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.PerformanceCounterCategory[] GetCategories(string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.GetCategories(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCategories (machineName As String) As PerformanceCounterCategory()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::PerformanceCounterCategory ^&gt; ^ GetCategories(System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -966,12 +1099,24 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCounters">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves a list of the counters in this performance counter category.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCounters">
       <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounter[] GetCounters ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.PerformanceCounter[] GetCounters() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.GetCounters" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetCounters () As PerformanceCounter()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Diagnostics::PerformanceCounter ^&gt; ^ GetCounters();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1014,12 +1159,15 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.InvalidOperationException">The category does not have an associated instance.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="GetCounters">
       <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounter[] GetCounters (string instanceName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.PerformanceCounter[] GetCounters(string instanceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.GetCounters(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetCounters (instanceName As String) As PerformanceCounter()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Diagnostics::PerformanceCounter ^&gt; ^ GetCounters(System::String ^ instanceName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1071,12 +1219,15 @@
  The category does not contain the instance that is specified by the <paramref name="instanceName" /> parameter.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="GetInstanceNames">
       <MemberSignature Language="C#" Value="public string[] GetInstanceNames ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetInstanceNames() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.GetInstanceNames" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetInstanceNames () As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::String ^&gt; ^ GetInstanceNames();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1119,12 +1270,26 @@
  The category does not have an associated instance.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="InstanceExists">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the category contains the specified performance object instance.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InstanceExists">
       <MemberSignature Language="C#" Value="public bool InstanceExists (string instanceName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool InstanceExists(string instanceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function InstanceExists (instanceName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool InstanceExists(System::String ^ instanceName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1169,12 +1334,19 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="InstanceExists">
       <MemberSignature Language="C#" Value="public static bool InstanceExists (string instanceName, string categoryName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool InstanceExists(string instanceName, string categoryName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function InstanceExists (instanceName As String, categoryName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool InstanceExists(System::String ^ instanceName, System::String ^ categoryName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1225,12 +1397,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="InstanceExists">
       <MemberSignature Language="C#" Value="public static bool InstanceExists (string instanceName, string categoryName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool InstanceExists(string instanceName, string categoryName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.InstanceExists(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function InstanceExists (instanceName As String, categoryName As String, machineName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool InstanceExists(System::String ^ instanceName, System::String ^ categoryName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1289,12 +1467,18 @@
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.CounterExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.PerformanceCounterCategory.Exists(System.String)" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="MachineName">
       <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounterCategory.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1319,12 +1503,16 @@
         </remarks>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.MachineName" /> syntax is invalid.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading performance counter categories. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" />
+        <altmember cref="T:System.Diagnostics.PerformanceCounter" />
       </Docs>
     </Member>
     <Member MemberName="ReadCategory">
       <MemberSignature Language="C#" Value="public System.Diagnostics.InstanceDataCollectionCollection ReadCategory ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Diagnostics.InstanceDataCollectionCollection ReadCategory() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounterCategory.ReadCategory" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadCategory () As InstanceDataCollectionCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Diagnostics::InstanceDataCollectionCollection ^ ReadCategory();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1370,6 +1558,9 @@
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.PerformanceCounterCategory.CategoryName" /> property is <see langword="null" />. The property might not have been set.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A call to an underlying system API failed.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
+        <altmember cref="T:System.Diagnostics.InstanceDataCollectionCollection" />
+        <altmember cref="T:System.Diagnostics.InstanceDataCollection" />
+        <altmember cref="T:System.Diagnostics.InstanceData" />
       </Docs>
     </Member>
   </Members>

@@ -1,7 +1,8 @@
 ---
-title: "How To: Build Claims-Aware ASP.NET MVC Web Application Using WIF | Microsoft Docs"
+title: "How To: Build Claims-Aware ASP.NET MVC Web Application Using WIF"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 6
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How To: Build Claims-Aware ASP.NET MVC Web Application Using WIF
 ## Applies To  
@@ -128,7 +131,7 @@ manager: "mbaldwin"
     </system.identityModel.services>  
     ```  
   
-5.  Add reference to the [System.IdentityModel](assetId:///System.IdentityModel?qualifyHint=False&amp;autoUpgrade=True) assembly.  
+5.  Add reference to the <xref:System.IdentityModel> assembly.  
   
 6.  Compile the solution to make sure there are errors.  
   
@@ -151,7 +154,6 @@ manager: "mbaldwin"
 2.  In the **Solution Explorer** expand **Views** and then **Home** folders and open *Index.cshtml* file in the editor. Delete its contents and add the following markup:  
   
     ```html  
-  
     @{  
         ViewBag.Title = "Home Page";  
     }  
@@ -215,7 +217,6 @@ manager: "mbaldwin"
         </tr>  
     }  
     </table>  
-  
     ```  
   
 3.  Run the solution by pressing the **F5** key.  

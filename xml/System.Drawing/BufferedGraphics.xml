@@ -1,7 +1,9 @@
-<Type Name="BufferedGraphics" FullName="System.Drawing.BufferedGraphics">
+﻿<Type Name="BufferedGraphics" FullName="System.Drawing.BufferedGraphics">
   <TypeSignature Language="C#" Value="public sealed class BufferedGraphics : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BufferedGraphics extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Drawing.BufferedGraphics" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class BufferedGraphics&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class BufferedGraphics sealed : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Drawing</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,9 +27,9 @@
  Graphics that use double buffering can reduce or eliminate flicker that is caused by redrawing a display surface. When you use double buffering, updated graphics are first drawn to a buffer in memory, and the contents of this buffer are then quickly written to some or all of the displayed surface. This relatively brief overwrite of the displayed graphics typically reduces or eliminates the flicker that sometimes occurs when graphics are updated.  
   
 > [!NOTE]
->  The simplest way to use double buffering is to set the <xref:System.Windows.Forms.ControlStyles> control style flag on a control using the <xref:System.Windows.Forms.Control.SetStyle%2A> method. Setting the <xref:System.Windows.Forms.ControlStyles> flag for a control redirects all painting for the control through a default graphics buffer, without requiring any additional code. This flag is set to `true` by default.  
+>  The simplest way to use double buffering is to set the <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> control style flag on a control using the <xref:System.Windows.Forms.Control.SetStyle%2A> method. Setting the <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> flag for a control redirects all painting for the control through a default graphics buffer, without requiring any additional code. This flag is set to `true` by default.  
   
- The <xref:System.Drawing.BufferedGraphics> class has no public constructor and must be created by the <xref:System.Drawing.BufferedGraphicsContext> for an application domain using its <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> method. You can retrieve the <xref:System.Drawing.BufferedGraphicsContext> for the current application domain from the static <xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=fullName> property.  
+ The <xref:System.Drawing.BufferedGraphics> class has no public constructor and must be created by the <xref:System.Drawing.BufferedGraphicsContext> for an application domain using its <xref:System.Drawing.BufferedGraphicsContext.Allocate%2A> method. You can retrieve the <xref:System.Drawing.BufferedGraphicsContext> for the current application domain from the static <xref:System.Drawing.BufferedGraphicsManager.Current%2A?displayProperty=nameWithType> property.  
   
  The <xref:System.Drawing.BufferedGraphics.Graphics%2A> property can be used for drawing to the graphics buffer. This property provides access to the <xref:System.Drawing.Graphics> object that draws to the graphics buffer allocated for this <xref:System.Drawing.BufferedGraphics> object.  
   
@@ -42,9 +44,9 @@
   
 -   Drawing directly to the <xref:System.Windows.Forms.Control.Handle%2A> for a <xref:System.Windows.Forms.Form>.  
   
--   Drawing by overriding the <xref:System.Windows.Forms.Form.OnPaint%2A> method using the <xref:System.Windows.Forms.ControlStyles> control style.  
+-   Drawing by overriding the <xref:System.Windows.Forms.Form.OnPaint%2A> method using the <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> control style.  
   
--   Drawing by overriding the <xref:System.Windows.Forms.Form.OnPaint%2A> method for the form method without using the <xref:System.Windows.Forms.ControlStyles> control style.  
+-   Drawing by overriding the <xref:System.Windows.Forms.Form.OnPaint%2A> method for the form method without using the <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> control style.  
   
  In each mode, text is drawn that identifies the current mode and describes the behavior that occurs when each mouse button is pressed.  
   
@@ -61,7 +63,12 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -89,6 +96,8 @@
       <MemberSignature Language="C#" Value="~BufferedGraphics ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!BufferedGraphics ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -101,12 +110,15 @@
       <Docs>
         <summary>Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Object.Finalize" />
       </Docs>
     </Member>
     <Member MemberName="Graphics">
       <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
       <MemberSignature Language="DocId" Value="P:System.Drawing.BufferedGraphics.Graphics" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Graphics As Graphics" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Graphics ^ Graphics { System::Drawing::Graphics ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -126,12 +138,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Graphics" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Render">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes the contents of the graphics buffer.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Render">
       <MemberSignature Language="C#" Value="public void Render ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Render ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Render();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -157,6 +181,8 @@
       <MemberSignature Language="C#" Value="public void Render (System.Drawing.Graphics target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render(class System.Drawing.Graphics target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render(System.Drawing.Graphics)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Render (target As Graphics)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Render(System::Drawing::Graphics ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -188,12 +214,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Graphics" />
       </Docs>
     </Member>
     <Member MemberName="Render">
       <MemberSignature Language="C#" Value="public void Render (IntPtr targetDC);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Render(native int targetDC) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.BufferedGraphics.Render(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Render (targetDC As IntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Render(IntPtr targetDC);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -226,6 +255,7 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for access to unmanaged code. Related enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />.</permission>
+        <altmember cref="T:System.IntPtr" />
       </Docs>
     </Member>
   </Members>

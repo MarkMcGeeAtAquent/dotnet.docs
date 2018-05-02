@@ -1,8 +1,8 @@
 ---
-title: "Transports in Windows Communication Foundation | Microsoft Docs"
+title: "Transports in Windows Communication Foundation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ helpviewer_keywords:
   - "Windows Communication Foundation, transports"
 ms.assetid: 005c894b-af70-48aa-a1c1-c99338083c27
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Transports in Windows Communication Foundation
 The transport layer is at the lowest level of the channel stack. The main transports used in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] are HTTP, HTTPS, TCP, and named pipes. The topics in this section discuss choosing among these transports, configuring the transport, and setting tuning properties.  

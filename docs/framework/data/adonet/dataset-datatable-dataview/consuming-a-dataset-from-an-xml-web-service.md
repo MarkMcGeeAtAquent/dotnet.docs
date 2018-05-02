@@ -1,19 +1,24 @@
 ---
-title: "Consuming a DataSet from an XML Web Service | Microsoft Docs"
+title: "Consuming a DataSet from an XML Web Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Consuming a DataSet from an XML Web Service
 The <xref:System.Data.DataSet> was architected with a disconnected design, in part to facilitate the convenient transport of data over the Internet. The **DataSet** is "serializable" in that it can be specified as an input to or output from XML Web services without any additional coding required to stream the contents of the **DataSet** from an XML Web service to a client and back. The **DataSet** is implicitly converted to an XML stream using the DiffGram format, sent over the network, and then reconstructed from the XML stream as a **DataSet** on the receiving end. This gives you a very simple and flexible method for transmitting and returning relational data using XML Web services. For more information about the DiffGram format, see [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -21,7 +26,7 @@ The <xref:System.Data.DataSet> was architected with a disconnected design, in pa
  The following example shows how to create an XML Web service and client that use the **DataSet** to transport relational data (including modified data) and resolve any updates back to the original data source.  
   
 > [!NOTE]
->  We recommend that you always consider security implications when creating an XML Web service. For information on securing an XML Web service, see [Securing XML Web Services Created Using ASP.NET](http://msdn.microsoft.com/en-us/354b2ab1-2782-4542-b32a-dc560178b90c).  
+>  We recommend that you always consider security implications when creating an XML Web service. For information on securing an XML Web service, see [Securing XML Web Services Created Using ASP.NET](https://msdn.microsoft.com/library/354b2ab1-2782-4542-b32a-dc560178b90c).  
   
 ### To create an XML Web service that returns and consumes a DataSet  
   
@@ -93,7 +98,6 @@ The <xref:System.Data.DataSet> was architected with a disconnected design, in pa
         Return custDS  
       End Function  
     End Class  
-  
     ```  
   
     ```csharp  
@@ -169,26 +173,26 @@ The <xref:System.Data.DataSet> was architected with a disconnected design, in pa
   
      A proxy can be created using the Web Services Description Language Tool. For example, if the XML Web service is exposed at the URL http://myserver/data/DataSetSample.asmx, issue a command such as the following to create a Visual Basic .NET proxy with a namespace of **WebData.DSSample** and store it in the file sample.vb.  
   
-    ```  
-    wsdl /l:VB /out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl /l:VB -out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
     ```  
   
      To create a C# proxy in the file sample.cs, issue the following command.  
   
-    ```  
-    wsdl /l:CS /out:sample.cs http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
+    ```console
+    wsdl -l:CS -out:sample.cs http://myserver/data/DataSetSample.asmx -n:WebData.DSSample  
     ```  
   
      The proxy can then be compiled as a library and imported into the XML Web service client. To compile the Visual Basic .NET proxy code stored in sample.vb as sample.dll, issue the following command.  
   
-    ```  
-    vbc /t:library /out:sample.dll sample.vb /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console  
+    vbc -t:library -out:sample.dll sample.vb -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
      To compile the C# proxy code stored in sample.cs as sample.dll, issue the following command.  
   
-    ```  
-    csc /t:library /out:sample.dll sample.cs /r:System.dll /r:System.Web.Services.dll /r:System.Data.dll /r:System.Xml.dll  
+    ```console
+    csc -t:library -out:sample.dll sample.cs -r:System.dll -r:System.Web.Services.dll -r:System.Data.dll -r:System.Xml.dll  
     ```  
   
 3.  Create an XML Web service client.  
@@ -221,7 +225,6 @@ The <xref:System.Data.DataSet> was architected with a disconnected design, in pa
         customersDataSet.AcceptChanges()  
       End Sub  
     End Class  
-  
     ```  
   
     ```csharp  
@@ -254,22 +257,22 @@ The <xref:System.Data.DataSet> was architected with a disconnected design, in pa
   
      If you decide to create the proxy class yourself, you must take the following extra steps. To compile the sample, supply the proxy library that was created (sample.dll) and the related .NET libraries. To compile the Visual Basic .NET version of the sample, stored in the file client.vb, issue the following command.  
   
-    ```  
-    vbc client.vb /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    vbc client.vb -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
      To compile the C# version of the sample, stored in the file client.cs, issue the following command.  
   
-    ```  
-    csc client.cs /r:sample.dll /r:System.dll /r:System.Data.dll /r:System.Xml.dll /r:System.Web.Services.dll  
+    ```console
+    csc client.cs -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
 ## See Also  
- [ADO.NET](../../../../../docs/framework/data/adonet/index.md)   
- [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
- [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)   
- [Populating a DataSet from a DataAdapter](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)   
- [Updating Data Sources with DataAdapters](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)   
- [DataAdapter Parameters](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)   
- [Web Services Description Language Tool (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88)   
+ [ADO.NET](../../../../../docs/framework/data/adonet/index.md)  
+ [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
+ [Populating a DataSet from a DataAdapter](../../../../../docs/framework/data/adonet/populating-a-dataset-from-a-dataadapter.md)  
+ [Updating Data Sources with DataAdapters](../../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
+ [DataAdapter Parameters](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
+ [Web Services Description Language Tool (Wsdl.exe)](https://msdn.microsoft.com/library/b9210348-8bc2-4367-8c91-d1a04b403e88)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

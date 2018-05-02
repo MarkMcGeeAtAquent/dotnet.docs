@@ -1,19 +1,14 @@
 ---
-title: "&lt;system.web&gt; Element (Web Settings) | Microsoft Docs"
+title: "&lt;system.web&gt; Element (Web Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Web.config configuration file [ASP.NET]"
   - "system.Web element"
@@ -25,6 +20,8 @@ caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;system.web&gt; Element (Web Settings)
 Contains information about how the ASP.NET hosting layer manages process-wide behavior.  
@@ -34,7 +31,7 @@ Contains information about how the ASP.NET hosting layer manages process-wide be
   
 ## Syntax  
   
-```  
+```xml  
 <system.web>  
 </system.web>  
 ```  
@@ -63,7 +60,7 @@ Contains information about how the ASP.NET hosting layer manages process-wide be
 ## Example  
  The following example shows how to configure ASP.NET process-wide behavior in the aspnet.config file when ASP.NET is hosted in an IIS application pool. The example assumes that IIS is running in Integrated mode and that the application is using the [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] or a later version. This behavior does not occur in versions of the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] earlier than the [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)]. The values in the example are the default values.  
   
-```  
+```xml  
 <configuration>  
   <system.web>  
     <applicationPool   

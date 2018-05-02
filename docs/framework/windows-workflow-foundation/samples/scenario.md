@@ -1,17 +1,19 @@
 ---
-title: "Scenario1 | Microsoft Docs"
+title: "Scenario1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cb678fda-79aa-4495-833b-ef570539d4c3
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Scenario
 This section contains examples of [!INCLUDE[wf](../../../../includes/wf-md.md)] scenarios.  

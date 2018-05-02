@@ -1,13 +1,16 @@
-<Type Name="IComparable" FullName="System.IComparable">
+﻿<Type Name="IComparable" FullName="System.IComparable">
   <TypeSignature Language="C#" Value="public interface IComparable" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComparable" />
   <TypeSignature Language="DocId" Value="T:System.IComparable" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IComparable" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IComparable" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -30,7 +33,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This interface is implemented by types whose values can be ordered or sorted. It requires that implementing types define a single method, <xref:System.IComparable.CompareTo%28System.Object%29>, that indicates whether the position of the current instance in the sort order is before, after, or the same as a second object of the same type. The instance's <xref:System.IComparable> implementation is called automatically by methods such as <xref:System.Array.Sort%2A?displayProperty=fullName> and <xref:System.Collections.ArrayList.Sort%2A?displayProperty=fullName>.  
+ This interface is implemented by types whose values can be ordered or sorted. It requires that implementing types define a single method, <xref:System.IComparable.CompareTo%28System.Object%29>, that indicates whether the position of the current instance in the sort order is before, after, or the same as a second object of the same type. The instance's <xref:System.IComparable> implementation is called automatically by methods such as <xref:System.Array.Sort%2A?displayProperty=nameWithType> and <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType>.  
   
  The implementation of the <xref:System.IComparable.CompareTo%28System.Object%29> method must return an <xref:System.Int32> that has one of three values, as shown in the following table.  
   
@@ -59,6 +62,8 @@
       <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IComparable.CompareTo(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CompareTo (obj As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int CompareTo(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -66,6 +71,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -87,45 +93,28 @@
         <summary>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</summary>
         <returns>A value that indicates the relative order of the objects being compared. The return value has these meanings:  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Meaning  
+ </term><description> Meaning  
   
- </description>  
-</listheader>  
-<item>  
-<term> Less than zero  
+ </description></listheader><item><term> Less than zero  
   
- </term>  
-<description> This instance precedes <paramref name="obj" /> in the sort order.  
+ </term><description> This instance precedes <paramref name="obj" /> in the sort order.  
   
- </description>  
-</item>  
-<item>  
-<term> Zero  
+ </description></item><item><term> Zero  
   
- </term>  
-<description> This instance occurs in the same position in the sort order as <paramref name="obj" />.  
+ </term><description> This instance occurs in the same position in the sort order as <paramref name="obj" />.  
   
- </description>  
-</item>  
-<item>  
-<term> Greater than zero  
+ </description></item><item><term> Greater than zero  
   
- </term>  
-<description> This instance follows <paramref name="obj" /> in the sort order.  
+ </term><description> This instance follows <paramref name="obj" /> in the sort order.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.IComparable.CompareTo%2A> method is implemented by types whose values can be ordered or sorted. It is called automatically by methods of non-generic collection objects, such as <xref:System.Array.Sort%2A?displayProperty=fullName>, to order each member of the array. If a custom class or structure does not implement <xref:System.IComparable>, its members cannot be ordered and the sort operation can throw an <xref:System.InvalidOperationException>.  
+ The <xref:System.IComparable.CompareTo%2A> method is implemented by types whose values can be ordered or sorted. It is called automatically by methods of non-generic collection objects, such as <xref:System.Array.Sort%2A?displayProperty=nameWithType>, to order each member of the array. If a custom class or structure does not implement <xref:System.IComparable>, its members cannot be ordered and the sort operation can throw an <xref:System.InvalidOperationException>.  
   
  This method is only a definition and must be implemented by a specific class or value type to have effect. The meaning of the comparisons specified in the Return Value section ("precedes", "occurs in the same position as", and "follows") depends on the particular implementation.  
   
@@ -136,7 +125,7 @@
    
   
 ## Examples  
- The following example illustrates the use of <xref:System.IComparable.CompareTo%2A> to compare a `Temperature` object implementing <xref:System.IComparable> with another object. The `Temperature`object implements <xref:System.IComparable.CompareTo%2A> by simply wrapping a call to the <xref:System.Int32.CompareTo%2A?displayProperty=fullName> method.  
+ The following example illustrates the use of <xref:System.IComparable.CompareTo%2A> to compare a `Temperature` object implementing <xref:System.IComparable> with another object. The `Temperature` object implements <xref:System.IComparable.CompareTo%2A> by simply wrapping a call to the <xref:System.Int32.CompareTo%2A?displayProperty=nameWithType> method.  
   
  [!code-cpp[IComparable Example#1](~/samples/snippets/cpp/VS_Snippets_CLR/IComparable Example/CPP/source.cpp#1)]
  [!code-csharp[IComparable Example#1](~/samples/snippets/csharp/VS_Snippets_CLR/IComparable Example/CS/source.cs#1)]
@@ -162,6 +151,7 @@
         <block subset="none" type="usage">
           <para>Use the <see cref="M:System.IComparable.CompareTo(System.Object)" /> method to determine the ordering of instances of a class.</para>
         </block>
+        <altmember cref="T:System.Object" />
       </Docs>
     </Member>
   </Members>

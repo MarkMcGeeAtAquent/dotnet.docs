@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget3::GetExceptionThreadID Method | Microsoft Docs"
+title: "ICLRDataTarget3::GetExceptionThreadID Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "ICLRDataTarget3.GetExceptionThreadID"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "ICLRDataTarget3.GetExceptionThreadID"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 307d6ac7-4a86-45f3-999d-6b47004a68f2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget3::GetExceptionThreadID Method
 Called by the common language runtime (CLR) data access services to get the ID of the thread that threw the exception.  
@@ -28,11 +33,9 @@ Called by the common language runtime (CLR) data access services to get the ID o
 ## Syntax  
   
 ```cpp  
-  
 HRESULT GetExceptionThreadID(  
     [out] ULONG32* threadID  
 );  
-  
 ```  
   
 #### Parameters  
@@ -60,6 +63,6 @@ HRESULT GetExceptionThreadID(
  **.NET Framework Versions:** [!INCLUDE[v451_update](../../../../includes/v451-update-md.md)]  
   
 ## See Also  
- [ICLRDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)   
- [GetExceptionContextRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)   
+ [ICLRDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)  
+ [GetExceptionContextRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)  
  [GetExceptionRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)

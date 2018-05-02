@@ -1,10 +1,16 @@
-<Type Name="WebPermission" FullName="System.Net.WebPermission">
+﻿<Type Name="WebPermission" FullName="System.Net.WebPermission">
   <TypeSignature Language="C#" Value="public sealed class WebPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit WebPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
   <TypeSignature Language="DocId" Value="T:System.Net.WebPermission" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class WebPermission&#xA;Inherits CodeAccessPermission&#xA;Implements IUnrestrictedPermission" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WebPermission sealed : System::Security::CodeAccessPermission, System::Security::Permissions::IUnrestrictedPermission" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -25,18 +31,18 @@
   
  Create a <xref:System.Net.WebPermission> instance by calling its constructor using one of the following sets of parameters:  
   
--   No parameters. The default <xref:System.Security.Permissions.PermissionState> is <xref:System.Security.Permissions.PermissionState>.  
+-   No parameters. The default <xref:System.Security.Permissions.PermissionState> is <xref:System.Security.Permissions.PermissionState.None>.  
   
--   A <xref:System.Security.Permissions.PermissionState>. Specify either <xref:System.Security.Permissions.PermissionState> to allow any URI to be used in the target class, or <xref:System.Security.Permissions.PermissionState> to allow access only to URIs that you specify through the use of the <xref:System.Net.WebPermission.AddPermission%2A> method.  
+-   A <xref:System.Security.Permissions.PermissionState>. Specify either <xref:System.Security.Permissions.PermissionState.Unrestricted> to allow any URI to be used in the target class, or <xref:System.Security.Permissions.PermissionState.None> to allow access only to URIs that you specify through the use of the <xref:System.Net.WebPermission.AddPermission%2A> method.  
   
 -   A <xref:System.Net.NetworkAccess> value and a URI string. The specified URI has permissions granted by the <xref:System.Net.NetworkAccess> value.  
   
 -   A <xref:System.Net.NetworkAccess> specifier and URI regular expression.  
   
- The <xref:System.Net.WebPermission.ConnectList%2A> and <xref:System.Net.WebPermission.AcceptList%2A> hold the URIs to which you have granted access permission. To add a URI to either of these lists, use <xref:System.Net.WebPermission.AddPermission%2A>. If you pass <xref:System.Net.NetworkAccess> as the <xref:System.Net.NetworkAccess> parameter, the URI will be added to the <xref:System.Net.WebPermission.AcceptList%2A>. <xref:System.Net.WebPermission> will allow connections to your target class with URIs matching the <xref:System.Net.WebPermission.AcceptList%2A>.  
+ The <xref:System.Net.WebPermission.ConnectList%2A> and <xref:System.Net.WebPermission.AcceptList%2A> hold the URIs to which you have granted access permission. To add a URI to either of these lists, use <xref:System.Net.WebPermission.AddPermission%2A>. If you pass <xref:System.Net.NetworkAccess.Accept> as the <xref:System.Net.NetworkAccess> parameter, the URI will be added to the <xref:System.Net.WebPermission.AcceptList%2A>. <xref:System.Net.WebPermission> will allow connections to your target class with URIs matching the <xref:System.Net.WebPermission.AcceptList%2A>.  
   
 > [!CAUTION]
->  To deny access to an Internet resource, you must deny access to all the possible paths to that resource. This requires calling <xref:System.Net.WebPermission.%23ctor%2A?displayProperty=fullName> with state parameter set to <xref:System.Security.CodeAccessPermission.Deny%2A>. A better approach is to allow access to the specific resource only. For more information about this subject, refer to the [NIB: Using the Deny Method](http://msdn.microsoft.com/en-us/6b4d2e01-c504-4ac3-b50e-d6f5e7f5df25) topic.  
+>  To deny access to an Internet resource, you must deny access to all the possible paths to that resource. This requires calling <xref:System.Net.WebPermission.%23ctor%2A?displayProperty=nameWithType> with state parameter set to <xref:System.Security.CodeAccessPermission.Deny%2A>. A better approach is to allow access to the specific resource only. For more information about this subject, refer to the [NIB: Using the Deny Method](http://msdn.microsoft.com/library/6b4d2e01-c504-4ac3-b50e-d6f5e7f5df25) topic.  
   
 > [!NOTE]
 >  You need to deny access using only the resource canonical path. There is no need to use all the path's syntactical variations.  
@@ -55,16 +61,35 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Security.CodeAccessPermission" />
+    <altmember cref="T:System.Security.Permissions.PermissionState" />
+    <altmember cref="T:System.Net.NetworkAccess" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a new instance of the <see cref="T:System.Net.WebPermission" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WebPermission ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WebPermission();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -78,16 +103,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.WebPermission.IsUnrestricted" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WebPermission (System.Security.Permissions.PermissionState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (state As PermissionState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WebPermission(System::Security::Permissions::PermissionState state);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -100,7 +132,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The value of the `state` parameter is either <xref:System.Security.Permissions.PermissionState?displayProperty=fullName> or <xref:System.Security.Permissions.PermissionState?displayProperty=fullName>, respectively yielding fully restricted or fully unrestricted access to all security variables. If you specify <xref:System.Security.Permissions.PermissionState?displayProperty=fullName>, then you can give access to individual URIs using <xref:System.Net.WebPermission.AddPermission%2A>.  
+ The value of the `state` parameter is either <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType> or <xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>, respectively yielding fully restricted or fully unrestricted access to all security variables. If you specify <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>, then you can give access to individual URIs using <xref:System.Net.WebPermission.AddPermission%2A>.  
   
    
   
@@ -113,16 +145,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="F:System.Security.Permissions.PermissionState.Unrestricted" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WebPermission (System.Net.NetworkAccess access, string uriString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkAccess access, string uriString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Net.NetworkAccess,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (access As NetworkAccess, uriString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WebPermission(System::Net::NetworkAccess access, System::String ^ uriString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -152,16 +191,23 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="uriString" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Text.RegularExpressions.Regex" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WebPermission (System.Net.NetworkAccess access, System.Text.RegularExpressions.Regex uriRegex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkAccess access, class System.Text.RegularExpressions.Regex uriRegex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.#ctor(System.Net.NetworkAccess,System.Text.RegularExpressions.Regex)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (access As NetworkAccess, uriRegex As Regex)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WebPermission(System::Net::NetworkAccess access, System::Text::RegularExpressions::Regex ^ uriRegex);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -176,10 +222,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor initializes a <xref:System.Net.WebPermission> and grants its target permission to either make a remote host connection or accept a remote host connection using the URI described by the `uriRegex`parameter.  
+ This constructor initializes a <xref:System.Net.WebPermission> and grants its target permission to either make a remote host connection or accept a remote host connection using the URI described by the `uriRegex` parameter.  
   
 > [!NOTE]
->  It is recommended that you create `uriRegex` using the <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>, <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>, and <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> flags.  
+>  It is recommended that you create `uriRegex` using the <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>, <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>, and <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> flags.  
   
 > [!NOTE]
 >  A candidate URI string is checked against the list of relevant regular expressions (<xref:System.Net.WebPermission.AcceptList%2A> or <xref:System.Net.WebPermission.ConnectList%2A>) in two ways. First, the candidate URI string is checked against the appropriate list; then, if there is no match, the candidate URI string is converted into a <xref:System.Uri> and checked against the appropriate list.  
@@ -187,7 +233,7 @@
    
   
 ## Examples  
- The following example creates a new instance of <xref:System.Net.WebPermission> with connect rights for the specified <xref:System.Text.RegularExpressions.Regex?displayProperty=fullName>.  
+ The following example creates a new instance of <xref:System.Net.WebPermission> with connect rights for the specified <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>.  
   
  [!code-cpp[WebPermission_Constructor4#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_Constructor4/CPP/webpermission_constructor4.cpp#1)]
  [!code-csharp[WebPermission_Constructor4#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_Constructor4/CS/webpermission_constructor4.cs#1)]
@@ -195,16 +241,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Text.RegularExpressions.Regex" />
       </Docs>
     </Member>
     <Member MemberName="AcceptList">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator AcceptList { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator AcceptList" />
       <MemberSignature Language="DocId" Value="P:System.Net.WebPermission.AcceptList" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AcceptList As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IEnumerator ^ AcceptList { System::Collections::IEnumerator ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -236,16 +289,33 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="AddPermission">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds the specified URI with the specified access rights to the current <see cref="T:System.Net.WebPermission" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="AddPermission">
       <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkAccess access, string uriString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkAccess access, string uriString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddPermission (access As NetworkAccess, uriString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddPermission(System::Net::NetworkAccess access, System::String ^ uriString);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -263,10 +333,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If you have specified <xref:System.Security.Permissions.PermissionState> as the <xref:System.Security.Permissions.PermissionState>, use <xref:System.Net.WebPermission.AddPermission%2A> to permit the use of `uriString` in the target class. The way that `uriString` can be used by the target class is specified by `access`. Specify <xref:System.Net.NetworkAccess> as the access parameter to add the URI specified by the `uriString` parameter to the list of URI accept strings, or specify <xref:System.Net.NetworkAccess> as the access parameter to add the URI to the list of URI connect strings.  
+ If you have specified <xref:System.Security.Permissions.PermissionState.None> as the <xref:System.Security.Permissions.PermissionState>, use <xref:System.Net.WebPermission.AddPermission%2A> to permit the use of `uriString` in the target class. The way that `uriString` can be used by the target class is specified by `access`. Specify <xref:System.Net.NetworkAccess.Accept> as the access parameter to add the URI specified by the `uriString` parameter to the list of URI accept strings, or specify <xref:System.Net.NetworkAccess.Connect> as the access parameter to add the URI to the list of URI connect strings.  
   
 > [!NOTE]
->  Calling <xref:System.Net.WebPermission.AddPermission%2A> on <xref:System.Security.Permissions.PermissionState><xref:System.Net.WebPermission> will have no effect, because permission is granted to all URIs.  
+>  Calling <xref:System.Net.WebPermission.AddPermission%2A> on <xref:System.Security.Permissions.PermissionState.Unrestricted><xref:System.Net.WebPermission> will have no effect, because permission is granted to all URIs.  
   
 > [!NOTE]
 >  A candidate URI string is checked against the list of relevant regular expressions (<xref:System.Net.WebPermission.AcceptList%2A> or <xref:System.Net.WebPermission.ConnectList%2A>) in two ways. First, the candidate URI string is checked against the appropriate list; then, if there is no match, the candidate URI string is converted into a <xref:System.Uri> and checked against the appropriate list.  
@@ -284,16 +354,23 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="uriString" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Net.NetworkAccess" />
       </Docs>
     </Member>
     <Member MemberName="AddPermission">
       <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkAccess access, System.Text.RegularExpressions.Regex uriRegex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkAccess access, class System.Text.RegularExpressions.Regex uriRegex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.Text.RegularExpressions.Regex)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddPermission (access As NetworkAccess, uriRegex As Regex)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddPermission(System::Net::NetworkAccess access, System::Text::RegularExpressions::Regex ^ uriRegex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -311,13 +388,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If you have specified <xref:System.Security.Permissions.PermissionState> as the <xref:System.Security.Permissions.PermissionState>, use <xref:System.Net.WebPermission.AddPermission%2A> to allow the use of `uriRegex` in the target class. Specify <xref:System.Net.NetworkAccess> as the `access` parameter to add the URI specified by the `uriRegex` parameter to the list of URI accept strings, or specify <xref:System.Net.NetworkAccess> as the access parameter to add the URI to the list of URI connect strings.  
+ If you have specified <xref:System.Security.Permissions.PermissionState.None> as the <xref:System.Security.Permissions.PermissionState>, use <xref:System.Net.WebPermission.AddPermission%2A> to allow the use of `uriRegex` in the target class. Specify <xref:System.Net.NetworkAccess.Accept> as the `access` parameter to add the URI specified by the `uriRegex` parameter to the list of URI accept strings, or specify <xref:System.Net.NetworkAccess.Connect> as the access parameter to add the URI to the list of URI connect strings.  
   
 > [!NOTE]
->  Calling <xref:System.Net.WebPermission.AddPermission%2A> on an <xref:System.Security.Permissions.PermissionState><xref:System.Net.WebPermission> instance will have no effect as permission is granted to all URIs.  
+>  Calling <xref:System.Net.WebPermission.AddPermission%2A> on an <xref:System.Security.Permissions.PermissionState.Unrestricted><xref:System.Net.WebPermission> instance will have no effect as permission is granted to all URIs.  
   
 > [!NOTE]
->  It is recommended that you create `uriRegex` using the <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>, <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName>, and <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=fullName> flags.  
+>  It is recommended that you create `uriRegex` using the <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>, <xref:System.Text.RegularExpressions.RegexOptions.Compiled?displayProperty=nameWithType>, and <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> flags.  
   
 > [!NOTE]
 >  A candidate URI string is checked against the list of relevant regular expressions (<xref:System.Net.WebPermission.AcceptList%2A> or <xref:System.Net.WebPermission.ConnectList%2A>) in two ways. First, the candidate URI string is checked against the appropriate list; then, if there is no match, the candidate URI string is converted into a <xref:System.Uri> and checked against the appropriate list.  
@@ -334,16 +411,23 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="uriRegex" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="T:System.Net.NetworkAccess" />
       </Docs>
     </Member>
     <Member MemberName="ConnectList">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator ConnectList { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator ConnectList" />
       <MemberSignature Language="DocId" Value="P:System.Net.WebPermission.ConnectList" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConnectList As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::IEnumerator ^ ConnectList { System::Collections::IEnumerator ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -375,16 +459,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Copy">
       <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Copy" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Copy () As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::IPermission ^ Copy();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -417,10 +508,15 @@
       <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void FromXml(System::Security::SecurityElement ^ securityElement);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -443,7 +539,7 @@
    
   
 ## Examples  
- The following example creates a <xref:System.Security.SecurityElement?displayProperty=fullName>, populates its attributes, and uses <xref:System.Net.WebPermission.FromXml%2A> to transfer this information to an instance of <xref:System.Net.WebPermission>.  
+ The following example creates a <xref:System.Security.SecurityElement?displayProperty=nameWithType>, populates its attributes, and uses <xref:System.Net.WebPermission.FromXml%2A> to transfer this information to an instance of <xref:System.Net.WebPermission>.  
   
  [!code-cpp[WebPermission_FromToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_FromToXml/CPP/webpermission_fromtoxml.cpp#1)]
  [!code-csharp[WebPermission_FromToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_FromToXml/CS/webpermission_fromtoxml.cs#1)]
@@ -454,16 +550,23 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="securityElement" /> parameter is <see langword="null." /></exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="securityElement" /> is not a permission element for this type.</exception>
+        <altmember cref="M:System.Net.WebPermission.ToXml" />
       </Docs>
     </Member>
     <Member MemberName="Intersect">
       <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Intersect(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Intersect (target As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::IPermission ^ Intersect(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -503,10 +606,16 @@
       <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsSubsetOf (target As IPermission) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsSubsetOf(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -545,10 +654,16 @@
       <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.IsUnrestricted" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsUnrestricted () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsUnrestricted();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -563,23 +678,30 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If <xref:System.Net.WebPermission> is <xref:System.Security.Permissions.PermissionState>, then the target class can use all URIs. Otherwise, specific permission must be given for any URI you want to use with the target class.  
+ If <xref:System.Net.WebPermission> is <xref:System.Security.Permissions.PermissionState.Unrestricted>, then the target class can use all URIs. Otherwise, specific permission must be given for any URI you want to use with the target class.  
   
 > [!NOTE]
 >  Use <xref:System.Net.WebPermission.AddPermission%2A> to add a URI and specify its permissions.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.WebPermission.AddPermission(System.Net.NetworkAccess,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="ToXml">
       <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.ToXml" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToXml () As SecurityElement" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::SecurityElement ^ ToXml();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -598,7 +720,7 @@
    
   
 ## Examples  
- The following example demonstrates how to use <xref:System.Net.WebPermission.ToXml%2A> to create a <xref:System.Security.SecurityElement?displayProperty=fullName> and print its attributes to the console.  
+ The following example demonstrates how to use <xref:System.Net.WebPermission.ToXml%2A> to create a <xref:System.Security.SecurityElement?displayProperty=nameWithType> and print its attributes to the console.  
   
  [!code-cpp[WebPermission_FromToXml#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermission_FromToXml/CPP/webpermission_fromtoxml.cpp#1)]
  [!code-csharp[WebPermission_FromToXml#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermission_FromToXml/CS/webpermission_fromtoxml.cs#1)]
@@ -606,16 +728,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Net.WebPermission.FromXml(System.Security.SecurityElement)" />
       </Docs>
     </Member>
     <Member MemberName="Union">
       <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.WebPermission.Union(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Union (target As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::IPermission ^ Union(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -646,6 +775,7 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">target is not <see langword="null" /> or of type <see cref="T:System.Net.WebPermission" />.</exception>
+        <altmember cref="T:System.Security.Permissions.PermissionState" />
       </Docs>
     </Member>
   </Members>

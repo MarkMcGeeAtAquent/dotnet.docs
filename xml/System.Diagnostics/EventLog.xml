@@ -1,7 +1,9 @@
-<Type Name="EventLog" FullName="System.Diagnostics.EventLog">
+﻿<Type Name="EventLog" FullName="System.Diagnostics.EventLog">
   <TypeSignature Language="C#" Value="public class EventLog : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLog extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLog" />
+  <TypeSignature Language="VB.NET" Value="Public Class EventLog&#xA;Inherits Component&#xA;Implements ISupportInitialize" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EventLog : System::ComponentModel::Component, System::ComponentModel::ISupportInitialize" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -34,7 +36,7 @@
  <xref:System.Diagnostics.EventLog> lets you access or customize Windows event logs, which record information about important software or hardware events. Using <xref:System.Diagnostics.EventLog>, you can read from existing logs, write entries to logs, create or delete event sources, delete logs, and respond to log entries. You can also create new logs when creating an event source.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  In addition to providing access to individual event logs and their entries, the <xref:System.Diagnostics.EventLog> class lets you access the collection of all event logs. You can use the `static` members of <xref:System.Diagnostics.EventLog> to delete logs, get log lists, create or delete a source, or determine if a computer already contains a particular source.  
   
@@ -55,12 +57,12 @@
  This requirement is because all event logs, including Security logs, must be searched to determine whether the event source is unique. Starting with Windows Vista, users do not have permission to access the Security log; therefore, a <xref:System.Security.SecurityException> is thrown.  
   
 > [!IMPORTANT]
->  Creating or deleting an event source requires synchronization of the underlying code by using a named mutex. If a highly privileged application locks the named mutex, trying to create or delete an event source causes the application to stop responding until the lock is released. To help prevent this problem, never grant <xref:System.Security.Permissions.SecurityPermissionFlag> permission to untrusted code. In addition, <xref:System.Security.Permissions.SecurityPermissionFlag> permission potentially allows other permissions to be bypassed and should only be granted to highly trusted code.  
+>  Creating or deleting an event source requires synchronization of the underlying code by using a named mutex. If a highly privileged application locks the named mutex, trying to create or delete an event source causes the application to stop responding until the lock is released. To help prevent this problem, never grant <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> permission to untrusted code. In addition, <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> permission potentially allows other permissions to be bypassed and should only be granted to highly trusted code.  
   
  Applications and services should write to the Application log or to a custom log. Device drivers should write to the System log. If you do not explicitly set the <xref:System.Diagnostics.EventLog.Log%2A> property, the event log defaults to the Application log.  
   
 > [!NOTE]
->  There is nothing to protect an application from writing as any registered source.  If an application is granted <xref:System.Diagnostics.EventLogPermissionAccess> permission, it can write events for any valid source registered on the computer.  
+>  There is nothing to protect an application from writing as any registered source.  If an application is granted <xref:System.Diagnostics.EventLogPermissionAccess.Write> permission, it can write events for any valid source registered on the computer.  
   
  Use the <xref:System.Diagnostics.EventLog.WriteEvent%2A> and <xref:System.Diagnostics.EventLog.WriteEntry%2A> methods to write events to an event log. You must specify an event source to write events; you must create and configure the event source before writing the first entry with the source.  
   
@@ -99,12 +101,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.EventLogInstaller" />
+    <altmember cref="T:System.Diagnostics.EventLogEntry" />
+    <altmember cref="T:System.Diagnostics.EntryWrittenEventArgs" />
+    <altmember cref="T:System.ServiceProcess.ServiceBase" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.EventLog" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLog ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLog();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -142,12 +159,21 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEntry" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
+        <altmember cref="T:System.Diagnostics.EventLogEntry" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLog (string logName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (logName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLog(System::String ^ logName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -192,12 +218,21 @@
         <exception cref="T:System.ArgumentNullException">The log name is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">The log name is invalid.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEntry" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
+        <altmember cref="T:System.Diagnostics.EventLogEntry" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLog (string logName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (logName As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLog(System::String ^ logName, System::String ^ machineName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -246,12 +281,21 @@
   
  The computer name is invalid.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEntry" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
+        <altmember cref="T:System.Diagnostics.EventLogEntry" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLog (string logName, string machineName, string source);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string logName, string machineName, string source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (logName As String, machineName As String, source As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLog(System::String ^ logName, System::String ^ machineName, System::String ^ source);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -299,13 +343,25 @@
   
  The computer name is invalid.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEntry" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
+        <altmember cref="T:System.Diagnostics.EventLogEntry" />
       </Docs>
     </Member>
     <Member MemberName="BeginInit">
       <MemberSignature Language="C#" Value="public void BeginInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.BeginInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void BeginInit();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ISupportInitialize.BeginInit</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -327,12 +383,15 @@
         <exception cref="T:System.InvalidOperationException">
           <see cref="T:System.Diagnostics.EventLog" /> is already initialized.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.EndInit" />
       </Docs>
     </Member>
     <Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -374,12 +433,16 @@
         <exception cref="T:System.ArgumentException">A value is not specified for the <see cref="P:System.Diagnostics.EventLog.Log" /> property. Make sure the log name is not an empty string.</exception>
         <exception cref="T:System.InvalidOperationException">The log does not exist.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Close" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -401,12 +464,25 @@
         </remarks>
         <exception cref="T:System.ComponentModel.Win32Exception">The event log's read handle or write handle was not released successfully.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Clear" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateEventSource">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Establishes an application as able to write event information to a particular log on the system.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateEventSource">
       <MemberSignature Language="C#" Value="public static void CreateEventSource (System.Diagnostics.EventSourceCreationData sourceData);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateEventSource(class System.Diagnostics.EventSourceCreationData sourceData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.CreateEventSource(System.Diagnostics.EventSourceCreationData)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub CreateEventSource (sourceData As EventSourceCreationData)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void CreateEventSource(System::Diagnostics::EventSourceCreationData ^ sourceData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -621,12 +697,19 @@ SVC_UPDATE.EXE
         <exception cref="T:System.ArgumentNullException">
           <paramref name="sourceData" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="T:System.Diagnostics.EventSourceCreationData" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="T:System.Diagnostics.EventLogInstaller" />
       </Docs>
     </Member>
     <Member MemberName="CreateEventSource">
       <MemberSignature Language="C#" Value="public static void CreateEventSource (string source, string logName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateEventSource(string source, string logName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.CreateEventSource(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub CreateEventSource (source As String, logName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void CreateEventSource(System::String ^ source, System::String ^ logName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -723,12 +806,19 @@ SVC_UPDATE.EXE
  The source name matches an existing event log name.</exception>
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened on the local computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="CreateEventSource">
       <MemberSignature Language="C#" Value="public static void CreateEventSource (string source, string logName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateEventSource(string source, string logName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.CreateEventSource(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub CreateEventSource (source As String, logName As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void CreateEventSource(System::String ^ source, System::String ^ logName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -832,12 +922,29 @@ SVC_UPDATE.EXE
  The source name matches an existing event source name.</exception>
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened on the specified computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Delete">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes a log resource.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Delete">
       <MemberSignature Language="C#" Value="public static void Delete (string logName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string logName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Delete(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Delete (logName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Delete(System::String ^ logName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -894,12 +1001,18 @@ SVC_UPDATE.EXE
   
  The log cannot be opened. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Clear" />
+        <altmember cref="M:System.Diagnostics.EventLog.Close" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
       </Docs>
     </Member>
     <Member MemberName="Delete">
       <MemberSignature Language="C#" Value="public static void Delete (string logName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string logName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Delete(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Delete (logName As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Delete(System::String ^ logName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -967,12 +1080,28 @@ SVC_UPDATE.EXE
   
  The log cannot be opened. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Clear" />
+        <altmember cref="M:System.Diagnostics.EventLog.Close" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="DeleteEventSource">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes an application's event source registration from the event log.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DeleteEventSource">
       <MemberSignature Language="C#" Value="public static void DeleteEventSource (string source);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeleteEventSource(string source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub DeleteEventSource (source As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void DeleteEventSource(System::String ^ source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1022,12 +1151,19 @@ SVC_UPDATE.EXE
   
  You do not have write access on the registry key for the event log.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Clear" />
       </Docs>
     </Member>
     <Member MemberName="DeleteEventSource">
       <MemberSignature Language="C#" Value="public static void DeleteEventSource (string source, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeleteEventSource(string source, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.DeleteEventSource(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub DeleteEventSource (source As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void DeleteEventSource(System::String ^ source, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1090,12 +1226,20 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">
           <paramref name="source" /> cannot be deleted because in the registry, the parent registry key for <paramref name="source" /> does not contain a subkey with the same name.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Clear" />
       </Docs>
     </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1115,7 +1259,7 @@ SVC_UPDATE.EXE
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method is called by the public `Dispose()`method and the <xref:System.Object.Finalize%2A> method. `Dispose()` invokes the protected `Dispose(Boolean)` method with the `disposing` parameter set to `true`. <xref:System.Object.Finalize%2A> invokes `Dispose` with `disposing` set to `false`.  
+ This method is called by the public `Dispose()` method and the <xref:System.Object.Finalize%2A> method. `Dispose()` invokes the protected `Dispose(Boolean)` method with the `disposing` parameter set to `true`. <xref:System.Object.Finalize%2A> invokes `Dispose` with `disposing` set to `false`.  
   
  When the `disposing` parameter is true, this method releases all resources held by any managed objects that this <xref:System.Diagnostics.EventLog> references. This method invokes the `Dispose()` method of each referenced object.  
   
@@ -1123,7 +1267,7 @@ SVC_UPDATE.EXE
         </remarks>
         <block subset="none" type="overrides">
           <para>
-            <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean) " />be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement<see langword=" Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
+            <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean)" /> be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement <see langword="Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
  For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md).</para>
         </block>
@@ -1133,6 +1277,8 @@ SVC_UPDATE.EXE
       <MemberSignature Language="C#" Value="public bool EnableRaisingEvents { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableRaisingEvents" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.EnableRaisingEvents" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableRaisingEvents As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnableRaisingEvents { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1178,13 +1324,19 @@ SVC_UPDATE.EXE
         </remarks>
         <exception cref="T:System.InvalidOperationException">The event log is on a remote computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="E:System.Diagnostics.EventLog.EntryWritten" />
       </Docs>
     </Member>
     <Member MemberName="EndInit">
       <MemberSignature Language="C#" Value="public void EndInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.EndInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void EndInit();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ISupportInitialize.EndInit</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1204,12 +1356,15 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.BeginInit" />
       </Docs>
     </Member>
     <Member MemberName="Entries">
       <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogEntryCollection Entries { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.EventLogEntryCollection Entries" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.Entries" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Entries As EventLogEntryCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::EventLogEntryCollection ^ Entries { System::Diagnostics::EventLogEntryCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1259,12 +1414,20 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryCollection" />
+        <altmember cref="T:System.Diagnostics.EventLogEntry" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEntry" />
       </Docs>
     </Member>
     <Member MemberName="EntryWritten">
       <MemberSignature Language="C#" Value="public event System.Diagnostics.EntryWrittenEventHandler EntryWritten;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Diagnostics.EntryWrittenEventHandler EntryWritten" />
       <MemberSignature Language="DocId" Value="E:System.Diagnostics.EventLog.EntryWritten" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event EntryWritten As EntryWrittenEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Diagnostics::EntryWrittenEventHandler ^ EntryWritten;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1286,7 +1449,7 @@ SVC_UPDATE.EXE
 ## Remarks  
  To get event notifications, you must set <xref:System.Diagnostics.EventLog.EnableRaisingEvents%2A> to `true`. You can only receive event notifications when entries are written on the local computer. You cannot receive notifications for entries written on remote computers.  
   
- When you create an <xref:System.Diagnostics.EventLog.EntryWritten> delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, until you remove the delegate. For more information about handling events with delegates, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ When you create an <xref:System.Diagnostics.EventLog.EntryWritten> delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, until you remove the delegate. For more information about handling events with delegates, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The system responds to <xref:System.Diagnostics.EventLog.WriteEntry%2A> only if the last write event occurred at least six seconds previously. This implies you will only receive one <xref:System.Diagnostics.EventLog.EntryWritten> event notification within a six-second interval, even if more than one event log change occurs. If you insert a sufficiently long sleep interval (around 10 seconds) between calls to <xref:System.Diagnostics.EventLog.WriteEntry%2A>, you are less likely to miss an event. However, if write events occur more frequently, you might not recieve the event notification until the next interval. Typically, missed event notifications are not lost, but delayed.  
   
@@ -1302,12 +1465,24 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.EnableRaisingEvents" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Exists">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the specified log exists.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Exists">
       <MemberSignature Language="C#" Value="public static bool Exists (string logName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string logName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Exists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Exists (logName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool Exists(System::String ^ logName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1347,12 +1522,18 @@ SVC_UPDATE.EXE
         </remarks>
         <exception cref="T:System.ArgumentException">The logName is <see langword="null" /> or the value is empty.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
       </Docs>
     </Member>
     <Member MemberName="Exists">
       <MemberSignature Language="C#" Value="public static bool Exists (string logName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string logName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.Exists(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Exists (logName As String, machineName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool Exists(System::String ^ logName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1396,12 +1577,28 @@ SVC_UPDATE.EXE
   
  The <paramref name="logName" /> is <see langword="null" /> or the value is empty.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetEventLogs">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an array of the event logs.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetEventLogs">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.EventLog[] GetEventLogs ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.EventLog[] GetEventLogs() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.GetEventLogs" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetEventLogs () As EventLog()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::EventLog ^&gt; ^ GetEventLogs();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1439,12 +1636,16 @@ SVC_UPDATE.EXE
   
  There is no event log service on the computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
       </Docs>
     </Member>
     <Member MemberName="GetEventLogs">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.EventLog[] GetEventLogs (string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.EventLog[] GetEventLogs(string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.GetEventLogs(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetEventLogs (machineName As String) As EventLog()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::EventLog ^&gt; ^ GetEventLogs(System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1493,12 +1694,17 @@ SVC_UPDATE.EXE
   
  There is no event log service on the computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
       </Docs>
     </Member>
     <Member MemberName="Log">
       <MemberSignature Language="C#" Value="public string Log { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Log" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.Log" />
+      <MemberSignature Language="VB.NET" Value="Public Property Log As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Log { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1566,12 +1772,21 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="T:System.Diagnostics.EventLogEntryCollection" />
       </Docs>
     </Member>
     <Member MemberName="LogDisplayName">
       <MemberSignature Language="C#" Value="public string LogDisplayName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string LogDisplayName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.LogDisplayName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LogDisplayName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ LogDisplayName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1613,12 +1828,15 @@ SVC_UPDATE.EXE
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
         <permission cref="T:System.Security.Permissions.RegistryPermission">for the ability to read the specified registry key. Associated enumeration: <see cref="F:System.Security.Permissions.RegistryPermissionAccess.Read" /></permission>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for the ability to access the specified registry key if it is a remote key. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="M:System.Diagnostics.EventLog.RegisterDisplayName(System.String,System.Int64)" />
       </Docs>
     </Member>
     <Member MemberName="LogNameFromSourceName">
       <MemberSignature Language="C#" Value="public static string LogNameFromSourceName (string source, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string LogNameFromSourceName(string source, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.LogNameFromSourceName(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function LogNameFromSourceName (source As String, machineName As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ LogNameFromSourceName(System::String ^ source, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1664,12 +1882,18 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="MachineName">
       <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1721,12 +1945,22 @@ SVC_UPDATE.EXE
         </remarks>
         <exception cref="T:System.ArgumentException">The computer name is invalid.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Delete(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.GetEventLogs" />
       </Docs>
     </Member>
     <Member MemberName="MaximumKilobytes">
       <MemberSignature Language="C#" Value="public long MaximumKilobytes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumKilobytes" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.MaximumKilobytes" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaximumKilobytes As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long MaximumKilobytes { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1779,12 +2013,16 @@ SVC_UPDATE.EXE
   
  The registry key for the event log could not be opened on the target computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.OverflowAction" />
+        <altmember cref="M:System.Diagnostics.EventLog.ModifyOverflowPolicy(System.Diagnostics.OverflowAction,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="MinimumRetentionDays">
       <MemberSignature Language="C#" Value="public int MinimumRetentionDays { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumRetentionDays" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.MinimumRetentionDays" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MinimumRetentionDays As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MinimumRetentionDays { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1813,9 +2051,9 @@ SVC_UPDATE.EXE
 ## Remarks  
  Use the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> property to examine the current setting for an event log. Use <xref:System.Diagnostics.EventLog.ModifyOverflowPolicy%2A> to change the minimum number of days that each entry in the event log must be retained.  
   
- The <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value depends on the configured overflow behavior of the event log. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is 0. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is -1. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is greater than zero, and represents the number of days to retain event log entries when the event log is full.  
+ The <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value depends on the configured overflow behavior of the event log. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction.OverwriteAsNeeded>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is 0. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction.DoNotOverwrite>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is -1. If the <xref:System.Diagnostics.OverflowAction> property for an event log is set to <xref:System.Diagnostics.OverflowAction.OverwriteOlder>, then the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> value is greater than zero, and represents the number of days to retain event log entries when the event log is full.  
   
- The overflow behavior only occurs when an event log reaches its size limit. When an <xref:System.Diagnostics.EventLog> has its <xref:System.Diagnostics.EventLog.OverflowAction%2A> set to <xref:System.Diagnostics.OverflowAction>, and the event log reaches its maximum size, then new entries are written only if they can replace entries whose age exceeds the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> period. Retaining event entries for a minimum period is appropriate when the event log is archived regularly. Otherwise, you risk losing new entries when the event log reaches its limit. To avoid losing new event information, set the minimum retention days for events based on your archive schedule for a particular event log.  
+ The overflow behavior only occurs when an event log reaches its size limit. When an <xref:System.Diagnostics.EventLog> has its <xref:System.Diagnostics.EventLog.OverflowAction%2A> set to <xref:System.Diagnostics.OverflowAction.OverwriteOlder>, and the event log reaches its maximum size, then new entries are written only if they can replace entries whose age exceeds the <xref:System.Diagnostics.EventLog.MinimumRetentionDays%2A> period. Retaining event entries for a minimum period is appropriate when the event log is archived regularly. Otherwise, you risk losing new entries when the event log reaches its limit. To avoid losing new event information, set the minimum retention days for events based on your archive schedule for a particular event log.  
   
    
   
@@ -1829,12 +2067,17 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.MaximumKilobytes" />
+        <altmember cref="M:System.Diagnostics.EventLog.ModifyOverflowPolicy(System.Diagnostics.OverflowAction,System.Int32)" />
+        <altmember cref="P:System.Diagnostics.EventLog.OverflowAction" />
       </Docs>
     </Member>
     <Member MemberName="ModifyOverflowPolicy">
       <MemberSignature Language="C#" Value="public void ModifyOverflowPolicy (System.Diagnostics.OverflowAction action, int retentionDays);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ModifyOverflowPolicy(valuetype System.Diagnostics.OverflowAction action, int32 retentionDays) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.ModifyOverflowPolicy(System.Diagnostics.OverflowAction,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ModifyOverflowPolicy (action As OverflowAction, retentionDays As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ModifyOverflowPolicy(System::Diagnostics::OverflowAction action, int retentionDays);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1873,14 +2116,14 @@ SVC_UPDATE.EXE
 > [!NOTE]
 >  This property represents a configuration setting for the event log represented by this instance. When the event log reaches its maximum size, this property specifies how the operating system handles new entries written by all event sources registered for the event log.  
   
- Set the `action` parameter to <xref:System.Diagnostics.OverflowAction> to indicate that a new entry overwrites the oldest entry when the <xref:System.Diagnostics.EventLog> reaches its maximum size. If the `action` parameter is set to <xref:System.Diagnostics.OverflowAction>, the `retentionDays` parameter value is ignored.  
+ Set the `action` parameter to <xref:System.Diagnostics.OverflowAction.OverwriteAsNeeded> to indicate that a new entry overwrites the oldest entry when the <xref:System.Diagnostics.EventLog> reaches its maximum size. If the `action` parameter is set to <xref:System.Diagnostics.OverflowAction.OverwriteAsNeeded>, the `retentionDays` parameter value is ignored.  
   
- Set the `action` parameter to <xref:System.Diagnostics.OverflowAction> to indicate that each new entry overwrites older entries when the <xref:System.Diagnostics.EventLog> reaches its maximum size. Specify the number of days that events must be retained in the log using the `retentionDays` parameter. Events written within the retention range are not overwritten by new entries.  
+ Set the `action` parameter to <xref:System.Diagnostics.OverflowAction.OverwriteOlder> to indicate that each new entry overwrites older entries when the <xref:System.Diagnostics.EventLog> reaches its maximum size. Specify the number of days that events must be retained in the log using the `retentionDays` parameter. Events written within the retention range are not overwritten by new entries.  
   
- Set the `action` parameter to <xref:System.Diagnostics.OverflowAction> to discard new events when the maximum log size is reached. If the `action` parameter is set to <xref:System.Diagnostics.OverflowAction>, the `retentionDays` parameter value is ignored.  
+ Set the `action` parameter to <xref:System.Diagnostics.OverflowAction.DoNotOverwrite> to discard new events when the maximum log size is reached. If the `action` parameter is set to <xref:System.Diagnostics.OverflowAction.DoNotOverwrite>, the `retentionDays` parameter value is ignored.  
   
 > [!CAUTION]
->  Setting the overflow policy to <xref:System.Diagnostics.OverflowAction> specifies that new entries are discarded when the event log is full. If you use this setting, ensure the event log is regularly archived and cleared to avoid reaching its maximum size limit.  
+>  Setting the overflow policy to <xref:System.Diagnostics.OverflowAction.DoNotOverwrite> specifies that new entries are discarded when the event log is full. If you use this setting, ensure the event log is regularly archived and cleared to avoid reaching its maximum size limit.  
   
    
   
@@ -1903,12 +2146,18 @@ SVC_UPDATE.EXE
   
  The registry key for the event log could not be opened on the target computer.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="T:System.Diagnostics.OverflowAction" />
+        <altmember cref="P:System.Diagnostics.EventLog.MaximumKilobytes" />
+        <altmember cref="P:System.Diagnostics.EventLog.OverflowAction" />
+        <altmember cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" />
       </Docs>
     </Member>
     <Member MemberName="OverflowAction">
       <MemberSignature Language="C#" Value="public System.Diagnostics.OverflowAction OverflowAction { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.OverflowAction OverflowAction" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.OverflowAction" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OverflowAction As OverflowAction" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::OverflowAction OverflowAction { System::Diagnostics::OverflowAction get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1954,12 +2203,18 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="T:System.Diagnostics.OverflowAction" />
+        <altmember cref="P:System.Diagnostics.EventLog.MaximumKilobytes" />
+        <altmember cref="M:System.Diagnostics.EventLog.ModifyOverflowPolicy(System.Diagnostics.OverflowAction,System.Int32)" />
+        <altmember cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" />
       </Docs>
     </Member>
     <Member MemberName="RegisterDisplayName">
       <MemberSignature Language="C#" Value="public void RegisterDisplayName (string resourceFile, long resourceId);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterDisplayName(string resourceFile, int64 resourceId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.RegisterDisplayName(System.String,System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterDisplayName (resourceFile As String, resourceId As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterDisplayName(System::String ^ resourceFile, long resourceId);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2127,14 +2382,17 @@ SVC_UPDATE.EXE
   
  The registry key for the event log could not be opened on the target computer.</exception>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="resourceFile " />is <see langword="null" />.</exception>
+          <paramref name="resourceFile" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for administering event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Administer" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.LogDisplayName" />
       </Docs>
     </Member>
     <Member MemberName="Source">
       <MemberSignature Language="C#" Value="public string Source { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Source" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.Source" />
+      <MemberSignature Language="VB.NET" Value="Public Property Source As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Source { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2204,12 +2462,28 @@ SVC_UPDATE.EXE
         </remarks>
         <exception cref="T:System.ArgumentException">The source name results in a registry key path longer than 254 characters.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="SourceExists">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Searches a computer's registry for a given event source.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SourceExists">
       <MemberSignature Language="C#" Value="public static bool SourceExists (string source);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SourceExists(string source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SourceExists (source As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool SourceExists(System::String ^ source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2242,7 +2516,7 @@ SVC_UPDATE.EXE
 >  Starting with Windows Vista, User Account Control (UAC) determines the privileges of a user. If you are a member of the Built-in Administrators group, you are assigned two run-time access tokens: a standard user access token and an administrator access token. By default, you are in the standard user role. To execute the code that accesses performance counters, you must first elevate your privileges from standard user to administrator. You can do this when you start an application by right-clicking the application icon and indicating that you want to run as an administrator.  
   
 > [!NOTE]
->  A service that is executing under the <xref:System.ServiceProcess.ServiceAccount> account does not have the privileges required to execute this method. The solution is to check whether the event source exists in the <xref:System.ServiceProcess.ServiceInstaller>, and if it does not exist, to create the source in the installer.  
+>  A service that is executing under the <xref:System.ServiceProcess.ServiceAccount.LocalSystem> account does not have the privileges required to execute this method. The solution is to check whether the event source exists in the <xref:System.ServiceProcess.ServiceInstaller>, and if it does not exist, to create the source in the installer.  
   
  Because you cannot give a new source the name of an existing source on the same computer, use this method before attempting to call <xref:System.Diagnostics.EventLog.CreateEventSource%2A> to ensure that a source with the name specified by `source` does not already exist on the local computer. The `source` parameter is not case-sensitive.  
   
@@ -2260,12 +2534,18 @@ SVC_UPDATE.EXE
         <exception cref="T:System.Security.SecurityException">
           <paramref name="source" /> was not found, but some or all of the event logs could not be searched.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
       </Docs>
     </Member>
     <Member MemberName="SourceExists">
       <MemberSignature Language="C#" Value="public static bool SourceExists (string source, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SourceExists(string source, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.SourceExists(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SourceExists (source As String, machineName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool SourceExists(System::String ^ source, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2305,7 +2585,7 @@ SVC_UPDATE.EXE
 >  Starting with Windows Vista, User Account Control (UAC) determines the privileges of a user. If you are a member of the Built-in Administrators group, you are assigned two run-time access tokens: a standard user access token and an administrator access token. By default, you are in the standard user role. To execute the code that accesses performance counters, you must first elevate your privileges from standard user to administrator. You can do this when you start an application by right-clicking the application icon and indicating that you want to run as an administrator.  
   
 > [!NOTE]
->  A service that is executing under the <xref:System.ServiceProcess.ServiceAccount> account does not have the privileges required to execute this method. The solution is to check whether the event source exists in the <xref:System.ServiceProcess.ServiceInstaller>, and if it does not exist, to create the source in the installer.  
+>  A service that is executing under the <xref:System.ServiceProcess.ServiceAccount.LocalSystem> account does not have the privileges required to execute this method. The solution is to check whether the event source exists in the <xref:System.ServiceProcess.ServiceInstaller>, and if it does not exist, to create the source in the installer.  
   
  Because you cannot give a new source the name of an existing source on the same computer, use this method before attempting to call <xref:System.Diagnostics.EventLog.CreateEventSource%2A> to ensure that a source with the name specified by `source` does not already exist on the computer. The `source` and `machineName` parameters are not case sensitive.  
   
@@ -2327,12 +2607,19 @@ SVC_UPDATE.EXE
         <exception cref="T:System.Security.SecurityException">
           <paramref name="source" /> was not found, but some or all of the event logs could not be searched.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.Exists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.MachineName" />
       </Docs>
     </Member>
     <Member MemberName="SynchronizingObject">
       <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLog.SynchronizingObject" />
+      <MemberSignature Language="VB.NET" Value="Public Property SynchronizingObject As ISynchronizeInvoke" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ComponentModel::ISynchronizeInvoke ^ SynchronizingObject { System::ComponentModel::ISynchronizeInvoke ^ get(); void set(System::ComponentModel::ISynchronizeInvoke ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2368,12 +2655,25 @@ SVC_UPDATE.EXE
  ]]></format>
         </remarks>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="E:System.Diagnostics.EventLog.EntryWritten" />
+        <altmember cref="T:System.Threading.ThreadPool" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteEntry">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes an entry in the event log.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public void WriteEntry (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEntry(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEntry (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEntry(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2452,12 +2752,19 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.EventLogEntryType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEntry(string message, valuetype System.Diagnostics.EventLogEntryType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEntry (message As String, type As EventLogEntryType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEntry(System::String ^ message, System::Diagnostics::EventLogEntryType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2540,12 +2847,20 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public static void WriteEntry (string source, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEntry(string source, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEntry (source As String, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEntry(System::String ^ source, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2606,12 +2921,19 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.EventLogEntryType type, int eventID);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEntry(string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEntry (message As String, type As EventLogEntryType, eventID As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEntry(System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2700,12 +3022,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public static void WriteEntry (string source, string message, System.Diagnostics.EventLogEntryType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEntry(string source, string message, valuetype System.Diagnostics.EventLogEntryType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEntry (source As String, message As String, type As EventLogEntryType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEntry(System::String ^ source, System::String ^ message, System::Diagnostics::EventLogEntryType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2771,12 +3101,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.EventLogEntryType type, int eventID, short category);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEntry(string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID, int16 category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEntry (message As String, type As EventLogEntryType, eventID As Integer, category As Short)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEntry(System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID, short category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2874,12 +3212,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public static void WriteEntry (string source, string message, System.Diagnostics.EventLogEntryType type, int eventID);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEntry(string source, string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEntry (source As String, message As String, type As EventLogEntryType, eventID As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEntry(System::String ^ source, System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2951,12 +3297,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.EventLogEntryType type, int eventID, short category, byte[] rawData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEntry(string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID, int16 category, unsigned int8[] rawData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16,System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEntry (message As String, type As EventLogEntryType, eventID As Integer, category As Short, rawData As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEntry(System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID, short category, cli::array &lt;System::Byte&gt; ^ rawData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3058,12 +3412,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public static void WriteEntry (string source, string message, System.Diagnostics.EventLogEntryType type, int eventID, short category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEntry(string source, string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID, int16 category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEntry (source As String, message As String, type As EventLogEntryType, eventID As Integer, category As Short)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEntry(System::String ^ source, System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID, short category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3143,12 +3505,20 @@ SVC_UPDATE.EXE
           <paramref name="type" /> is not a valid <see cref="T:System.Diagnostics.EventLogEntryType" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
     <Member MemberName="WriteEntry">
       <MemberSignature Language="C#" Value="public static void WriteEntry (string source, string message, System.Diagnostics.EventLogEntryType type, int eventID, short category, byte[] rawData);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEntry(string source, string message, valuetype System.Diagnostics.EventLogEntryType type, int32 eventID, int16 category, unsigned int8[] rawData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEntry(System.String,System.String,System.Diagnostics.EventLogEntryType,System.Int32,System.Int16,System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEntry (source As String, message As String, type As EventLogEntryType, eventID As Integer, category As Short, rawData As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEntry(System::String ^ source, System::String ^ message, System::Diagnostics::EventLogEntryType type, int eventID, short category, cli::array &lt;System::Byte&gt; ^ rawData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3232,12 +3602,29 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.Diagnostics.EventLogEntryType" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="M:System.Diagnostics.EventLog.DeleteEventSource(System.String)" />
+        <altmember cref="M:System.Diagnostics.EventLog.SourceExists(System.String)" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteEvent">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes a localized event entry to the event log.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteEvent">
-      <MemberSignature Language="C#" Value="public void WriteEvent (System.Diagnostics.EventInstance instance, object[] values);" />
+      <MemberSignature Language="C#" Value="public void WriteEvent (System.Diagnostics.EventInstance instance, params object[] values);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEvent(class System.Diagnostics.EventInstance instance, object[] values) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEvent(System.Diagnostics.EventInstance,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEvent (instance As EventInstance, ParamArray values As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEvent(System::Diagnostics::EventInstance ^ instance, ... cli::array &lt;System::Object ^&gt; ^ values);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3438,12 +3825,18 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="T:System.Diagnostics.EventInstance" />
       </Docs>
     </Member>
     <Member MemberName="WriteEvent">
-      <MemberSignature Language="C#" Value="public void WriteEvent (System.Diagnostics.EventInstance instance, byte[] data, object[] values);" />
+      <MemberSignature Language="C#" Value="public void WriteEvent (System.Diagnostics.EventInstance instance, byte[] data, params object[] values);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteEvent(class System.Diagnostics.EventInstance instance, unsigned int8[] data, object[] values) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEvent(System.Diagnostics.EventInstance,System.Byte[],System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteEvent (instance As EventInstance, data As Byte(), ParamArray values As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteEvent(System::Diagnostics::EventInstance ^ instance, cli::array &lt;System::Byte&gt; ^ data, ... cli::array &lt;System::Object ^&gt; ^ values);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3651,12 +4044,18 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="T:System.Diagnostics.EventInstance" />
       </Docs>
     </Member>
     <Member MemberName="WriteEvent">
-      <MemberSignature Language="C#" Value="public static void WriteEvent (string source, System.Diagnostics.EventInstance instance, object[] values);" />
+      <MemberSignature Language="C#" Value="public static void WriteEvent (string source, System.Diagnostics.EventInstance instance, params object[] values);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEvent(string source, class System.Diagnostics.EventInstance instance, object[] values) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEvent(System.String,System.Diagnostics.EventInstance,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEvent (source As String, instance As EventInstance, ParamArray values As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEvent(System::String ^ source, System::Diagnostics::EventInstance ^ instance, ... cli::array &lt;System::Object ^&gt; ^ values);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3847,12 +4246,18 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="T:System.Diagnostics.EventInstance" />
       </Docs>
     </Member>
     <Member MemberName="WriteEvent">
-      <MemberSignature Language="C#" Value="public static void WriteEvent (string source, System.Diagnostics.EventInstance instance, byte[] data, object[] values);" />
+      <MemberSignature Language="C#" Value="public static void WriteEvent (string source, System.Diagnostics.EventInstance instance, byte[] data, params object[] values);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteEvent(string source, class System.Diagnostics.EventInstance instance, unsigned int8[] data, object[] values) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLog.WriteEvent(System.String,System.Diagnostics.EventInstance,System.Byte[],System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteEvent (source As String, instance As EventInstance, data As Byte(), ParamArray values As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteEvent(System::String ^ source, System::Diagnostics::EventInstance ^ instance, cli::array &lt;System::Byte&gt; ^ data, ... cli::array &lt;System::Object ^&gt; ^ values);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4047,6 +4452,10 @@ SVC_UPDATE.EXE
         <exception cref="T:System.InvalidOperationException">The registry key for the event log could not be opened.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.</exception>
         <permission cref="T:System.Diagnostics.EventLogPermission">for writing the event log information on the computer. Associated enumeration: <see cref="F:System.Diagnostics.EventLogPermissionAccess.Write" /></permission>
+        <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="P:System.Diagnostics.EventLog.Entries" />
+        <altmember cref="T:System.Diagnostics.EventInstance" />
       </Docs>
     </Member>
   </Members>

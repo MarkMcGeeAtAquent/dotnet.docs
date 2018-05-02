@@ -1,7 +1,9 @@
-<Type Name="VisualStyleRenderer" FullName="System.Windows.Forms.VisualStyles.VisualStyleRenderer">
+﻿<Type Name="VisualStyleRenderer" FullName="System.Windows.Forms.VisualStyles.VisualStyleRenderer">
   <TypeSignature Language="C#" Value="public sealed class VisualStyleRenderer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed VisualStyleRenderer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class VisualStyleRenderer" />
+  <TypeSignature Language="C++ CLI" Value="public ref class VisualStyleRenderer sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,7 +18,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.VisualStyles?displayProperty=fullName> namespace exposes <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> objects that represent all of the controls and user interface (UI) elements that are supported by visual styles. To draw or get information about a particular element, you must set a <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> to the element you are interested in. A <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> is automatically set to a specified <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> in the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.%23ctor%2A> constructor, but you can also set an existing <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> to a different element by calling the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters%2A> method.  
+ The <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> namespace exposes <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> objects that represent all of the controls and user interface (UI) elements that are supported by visual styles. To draw or get information about a particular element, you must set a <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> to the element you are interested in. A <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> is automatically set to a specified <xref:System.Windows.Forms.VisualStyles.VisualStyleElement> in the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.%23ctor%2A> constructor, but you can also set an existing <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> to a different element by calling the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters%2A> method.  
   
  To draw an element, use the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A> method. The <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> class also includes methods, such as <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetColor%2A> and <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A>, that provide information about how an element is defined by the current visual style.  
   
@@ -35,12 +37,25 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.VisualStyles.VisualStyleElement" />
+    <altmember cref="T:System.Windows.Forms.VisualStyles.VisualStyleInformation" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public VisualStyleRenderer (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.#ctor(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (element As VisualStyleElement)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; VisualStyleRenderer(System::Windows::Forms::VisualStyles::VisualStyleElement ^ element);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -56,7 +71,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor uses the <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName%2A?displayProperty=fullName>, <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Part%2A?displayProperty=fullName>, and <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.State%2A?displayProperty=fullName> properties of the `element` parameter to initialize the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>, <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>, and <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A> properties.  
+ This constructor uses the <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.ClassName%2A?displayProperty=nameWithType>, <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Part%2A?displayProperty=nameWithType>, and <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.State%2A?displayProperty=nameWithType> properties of the `element` parameter to initialize the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A>, <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part%2A>, and <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State%2A> properties.  
   
  Before using this constructor, you should call the `static`<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined%2A> method to verify whether the current visual style provides a definition for the element specified by the `element` parameter.  
   
@@ -88,6 +103,8 @@
       <MemberSignature Language="C#" Value="public VisualStyleRenderer (string className, int part, int state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string className, int32 part, int32 state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.#ctor(System.String,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (className As String, part As Integer, state As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; VisualStyleRenderer(System::String ^ className, int part, int state);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -129,6 +146,8 @@
       <MemberSignature Language="C#" Value="public string Class { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Class" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Class As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Class { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -150,10 +169,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="DrawBackground">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Draws the background image of the current visual style element.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DrawBackground">
       <MemberSignature Language="C#" Value="public void DrawBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawBackground (dc As IDeviceContext, bounds As Rectangle)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawBackground(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -178,7 +208,7 @@
   
  If the <xref:System.Drawing.Rectangle.Width%2A> or <xref:System.Drawing.Rectangle.Height%2A> of the rectangle specified by the `bounds` parameter is less than 0, the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A> method will return without drawing the background.  
   
- The background of a visual style element can be a bitmap file or a filled border. To determine the background type, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=fullName>. To determine whether the element background will scale to fit the specified bounds, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=fullName>.  
+ The background of a visual style element can be a bitmap file or a filled border. To determine the background type, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty.BackgroundType?displayProperty=nameWithType>. To determine whether the element background will scale to fit the specified bounds, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty.SizingType?displayProperty=nameWithType>.  
   
    
   
@@ -199,6 +229,8 @@
       <MemberSignature Language="C#" Value="public void DrawBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Drawing.Rectangle clipRectangle);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Rectangle clipRectangle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Drawing.Rectangle)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawBackground (dc As IDeviceContext, bounds As Rectangle, clipRectangle As Rectangle)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawBackground(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::Drawing::Rectangle clipRectangle);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -225,7 +257,7 @@
   
  If the <xref:System.Drawing.Rectangle.Width%2A> or <xref:System.Drawing.Rectangle.Height%2A> of the rectangle specified by either the `bounds` or `clipRectangle` parameters is less than 0, the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawBackground%2A> method will return without drawing the background.  
   
- The background of a visual style element can be a bitmap file or a filled border. To determine the background type, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=fullName>. To determine whether the element background will scale to fit the specified bounds, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty?displayProperty=fullName>.  
+ The background of a visual style element can be a bitmap file or a filled border. To determine the background type, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty.BackgroundType?displayProperty=nameWithType>. To determine whether the element background will scale to fit the specified bounds, call the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue%2A> method with an argument value of <xref:System.Windows.Forms.VisualStyles.EnumProperty.SizingType?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -237,6 +269,7 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle DrawEdge (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.Edges edges, System.Windows.Forms.VisualStyles.EdgeStyle style, System.Windows.Forms.VisualStyles.EdgeEffects effects);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle DrawEdge(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.Edges edges, valuetype System.Windows.Forms.VisualStyles.EdgeStyle style, valuetype System.Windows.Forms.VisualStyles.EdgeEffects effects) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawEdge(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.Edges,System.Windows.Forms.VisualStyles.EdgeStyle,System.Windows.Forms.VisualStyles.EdgeEffects)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Rectangle DrawEdge(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::Windows::Forms::VisualStyles::Edges edges, System::Windows::Forms::VisualStyles::EdgeStyle style, System::Windows::Forms::VisualStyles::EdgeEffects effects);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -265,10 +298,20 @@
           <paramref name="dc" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="DrawImage">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Draws the specified image within the specified bounding rectangle.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DrawImage">
       <MemberSignature Language="C#" Value="public void DrawImage (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Drawing.Image image);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImage(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Drawing.Image image) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Image)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawImage(System::Drawing::Graphics ^ g, System::Drawing::Rectangle bounds, System::Drawing::Image ^ image);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -291,7 +334,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the visual style applies one of the effects specified by the <xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=fullName> values to the current element, this method will apply the effect to the drawn image.  
+ If the visual style applies one of the effects specified by the <xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=nameWithType> values to the current element, this method will apply the effect to the drawn image.  
   
  ]]></format>
         </remarks>
@@ -303,6 +346,7 @@
       <MemberSignature Language="C#" Value="public void DrawImage (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.ImageList imageList, int imageIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImage(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.ImageList imageList, int32 imageIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawImage(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.ImageList,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawImage(System::Drawing::Graphics ^ g, System::Drawing::Rectangle bounds, System::Windows::Forms::ImageList ^ imageList, int imageIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -327,20 +371,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the visual style applies one of the effects specified by the <xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=fullName> values to the current element, this method will apply the effect to the drawn image.  
+ If the visual style applies one of the effects specified by the <xref:System.Windows.Forms.VisualStyles.IconEffect?displayProperty=nameWithType> values to the current element, this method will apply the effect to the drawn image.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="g" /> or <paramref name="image" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
-          <paramref name="imageIndex" /> is less than 0, or greater than or equal to the number of images in<paramref name=" imageList" />.</exception>
+          <paramref name="imageIndex" /> is less than 0, or greater than or equal to the number of images in <paramref name="imageList" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="DrawParentBackground">
       <MemberSignature Language="C#" Value="public void DrawParentBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.Control childControl);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawParentBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, class System.Windows.Forms.Control childControl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawParentBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.Control)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawParentBackground (dc As IDeviceContext, bounds As Rectangle, childControl As Control)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawParentBackground(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::Windows::Forms::Control ^ childControl);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -364,10 +410,21 @@
           <paramref name="dc" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="DrawText">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Draws text in the specified bounds.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DrawText">
       <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawText (dc As IDeviceContext, bounds As Rectangle, textToDraw As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawText(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::String ^ textToDraw);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -395,6 +452,8 @@
       <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawText (dc As IDeviceContext, bounds As Rectangle, textToDraw As String, drawDisabled As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawText(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::String ^ textToDraw, bool drawDisabled);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -425,6 +484,8 @@
       <MemberSignature Language="C#" Value="public void DrawText (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled, System.Windows.Forms.TextFormatFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawText(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, bool drawDisabled, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.DrawText(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Boolean,System.Windows.Forms.TextFormatFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawText (dc As IDeviceContext, bounds As Rectangle, textToDraw As String, drawDisabled As Boolean, flags As TextFormatFlags)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawText(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::String ^ textToDraw, bool drawDisabled, System::Windows::Forms::TextFormatFlags flags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -457,6 +518,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBackgroundContentRectangle (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBackgroundContentRectangle(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundContentRectangle(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBackgroundContentRectangle (dc As IDeviceContext, bounds As Rectangle) As Rectangle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Rectangle GetBackgroundContentRectangle(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -490,6 +553,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBackgroundExtent (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle contentBounds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBackgroundExtent(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle contentBounds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundExtent(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBackgroundExtent (dc As IDeviceContext, contentBounds As Rectangle) As Rectangle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Rectangle GetBackgroundExtent(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle contentBounds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -523,6 +588,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Region GetBackgroundRegion (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Region GetBackgroundRegion(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion(System.Drawing.IDeviceContext,System.Drawing.Rectangle)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBackgroundRegion (dc As IDeviceContext, bounds As Rectangle) As Region" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Region ^ GetBackgroundRegion(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -554,7 +621,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to use the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A> method in a custom control. This example uses <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A> to get the <xref:System.Drawing.Region> of the window title bar element returned by the <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Window.Caption.Active%2A?displayProperty=fullName> property. This <xref:System.Drawing.Region> is used to set the <xref:System.Windows.Forms.Control.Region%2A?displayProperty=fullName> property of the control, so that the window title bar will appear with the rounded corners defined by the standard Windows XP visual style. This code example is part of a larger example provided for the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> class overview.  
+ The following code example demonstrates how to use the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A> method in a custom control. This example uses <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBackgroundRegion%2A> to get the <xref:System.Drawing.Region> of the window title bar element returned by the <xref:System.Windows.Forms.VisualStyles.VisualStyleElement.Window.Caption.Active%2A?displayProperty=nameWithType> property. This <xref:System.Drawing.Region> is used to set the <xref:System.Windows.Forms.Control.Region%2A?displayProperty=nameWithType> property of the control, so that the window title bar will appear with the rounded corners defined by the standard Windows XP visual style. This code example is part of a larger example provided for the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> class overview.  
   
  [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#30](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/cpp/form1.cpp#30)]
  [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleRenderer#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleRenderer/CS/form1.cs#30)]
@@ -570,6 +637,8 @@
       <MemberSignature Language="C#" Value="public bool GetBoolean (System.Windows.Forms.VisualStyles.BooleanProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetBoolean(valuetype System.Windows.Forms.VisualStyles.BooleanProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetBoolean(System.Windows.Forms.VisualStyles.BooleanProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetBoolean (prop As BooleanProperty) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetBoolean(System::Windows::Forms::VisualStyles::BooleanProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -602,6 +671,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Color GetColor (System.Windows.Forms.VisualStyles.ColorProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Color GetColor(valuetype System.Windows.Forms.VisualStyles.ColorProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetColor(System.Windows.Forms.VisualStyles.ColorProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetColor (prop As ColorProperty) As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Color GetColor(System::Windows::Forms::VisualStyles::ColorProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -633,6 +704,8 @@
       <MemberSignature Language="C#" Value="public int GetEnumValue (System.Windows.Forms.VisualStyles.EnumProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetEnumValue(valuetype System.Windows.Forms.VisualStyles.EnumProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetEnumValue(System.Windows.Forms.VisualStyles.EnumProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumValue (prop As EnumProperty) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int GetEnumValue(System::Windows::Forms::VisualStyles::EnumProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -664,6 +737,8 @@
       <MemberSignature Language="C#" Value="public string GetFilename (System.Windows.Forms.VisualStyles.FilenameProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetFilename(valuetype System.Windows.Forms.VisualStyles.FilenameProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetFilename(System.Windows.Forms.VisualStyles.FilenameProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetFilename (prop As FilenameProperty) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetFilename(System::Windows::Forms::VisualStyles::FilenameProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -695,6 +770,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Font GetFont (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.FontProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Font GetFont(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.FontProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetFont(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.FontProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetFont (dc As IDeviceContext, prop As FontProperty) As Font" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Font ^ GetFont(System::Drawing::IDeviceContext ^ dc, System::Windows::Forms::VisualStyles::FontProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -730,6 +807,8 @@
       <MemberSignature Language="C#" Value="public int GetInteger (System.Windows.Forms.VisualStyles.IntegerProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetInteger(valuetype System.Windows.Forms.VisualStyles.IntegerProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetInteger(System.Windows.Forms.VisualStyles.IntegerProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetInteger (prop As IntegerProperty) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int GetInteger(System::Windows::Forms::VisualStyles::IntegerProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -761,6 +840,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding GetMargins (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.MarginProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.Padding GetMargins(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.MarginProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetMargins(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.MarginProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetMargins (dc As IDeviceContext, prop As MarginProperty) As Padding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::Padding GetMargins(System::Drawing::IDeviceContext ^ dc, System::Windows::Forms::VisualStyles::MarginProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -792,10 +873,21 @@
           <paramref name="prop" /> is not one of the <see cref="T:System.Windows.Forms.VisualStyles.MarginProperty" /> values.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetPartSize">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns the value of the specified size property of the current visual style part.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetPartSize">
       <MemberSignature Language="C#" Value="public System.Drawing.Size GetPartSize (System.Drawing.IDeviceContext dc, System.Windows.Forms.VisualStyles.ThemeSizeType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size GetPartSize(class System.Drawing.IDeviceContext dc, valuetype System.Windows.Forms.VisualStyles.ThemeSizeType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPartSize(System.Drawing.IDeviceContext,System.Windows.Forms.VisualStyles.ThemeSizeType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPartSize (dc As IDeviceContext, type As ThemeSizeType) As Size" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Size GetPartSize(System::Drawing::IDeviceContext ^ dc, System::Windows::Forms::VisualStyles::ThemeSizeType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -817,7 +909,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Typically, only the <xref:System.Windows.Forms.VisualStyles.ThemeSizeType> and <xref:System.Windows.Forms.VisualStyles.ThemeSizeType> values should be used for the `type` parameter of this method.  
+ Typically, only the <xref:System.Windows.Forms.VisualStyles.ThemeSizeType.True> and <xref:System.Windows.Forms.VisualStyles.ThemeSizeType.Minimum> values should be used for the `type` parameter of this method.  
   
    
   
@@ -840,6 +932,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Size GetPartSize (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.ThemeSizeType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Size GetPartSize(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.ThemeSizeType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPartSize(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.ThemeSizeType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPartSize (dc As IDeviceContext, bounds As Rectangle, type As ThemeSizeType) As Size" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Size GetPartSize(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::Windows::Forms::VisualStyles::ThemeSizeType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -870,6 +964,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Point GetPoint (System.Windows.Forms.VisualStyles.PointProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Point GetPoint(valuetype System.Windows.Forms.VisualStyles.PointProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetPoint(System.Windows.Forms.VisualStyles.PointProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPoint (prop As PointProperty) As Point" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Point GetPoint(System::Windows::Forms::VisualStyles::PointProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -910,6 +1006,8 @@
       <MemberSignature Language="C#" Value="public string GetString (System.Windows.Forms.VisualStyles.StringProperty prop);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetString(valuetype System.Windows.Forms.VisualStyles.StringProperty prop) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetString(System.Windows.Forms.VisualStyles.StringProperty)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetString (prop As StringProperty) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetString(System::Windows::Forms::VisualStyles::StringProperty prop);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -937,10 +1035,21 @@
           <paramref name="prop" /> is not one of the <see cref="T:System.Windows.Forms.VisualStyles.StringProperty" /> values.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetTextExtent">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns the size and location of the specified string when drawn with the font of the current visual style element.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetTextExtent">
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetTextExtent (System.Drawing.IDeviceContext dc, string textToDraw, System.Windows.Forms.TextFormatFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetTextExtent(class System.Drawing.IDeviceContext dc, string textToDraw, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextExtent(System.Drawing.IDeviceContext,System.String,System.Windows.Forms.TextFormatFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTextExtent (dc As IDeviceContext, textToDraw As String, flags As TextFormatFlags) As Rectangle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Rectangle GetTextExtent(System::Drawing::IDeviceContext ^ dc, System::String ^ textToDraw, System::Windows::Forms::TextFormatFlags flags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -969,6 +1078,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetTextExtent (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle bounds, string textToDraw, System.Windows.Forms.TextFormatFlags flags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetTextExtent(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle bounds, string textToDraw, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextExtent(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.String,System.Windows.Forms.TextFormatFlags)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTextExtent (dc As IDeviceContext, bounds As Rectangle, textToDraw As String, flags As TextFormatFlags) As Rectangle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Rectangle GetTextExtent(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle bounds, System::String ^ textToDraw, System::Windows::Forms::TextFormatFlags flags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -999,6 +1110,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.TextMetrics GetTextMetrics (System.Drawing.IDeviceContext dc);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.TextMetrics GetTextMetrics(class System.Drawing.IDeviceContext dc) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.GetTextMetrics(System.Drawing.IDeviceContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTextMetrics (dc As IDeviceContext) As TextMetrics" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::VisualStyles::TextMetrics GetTextMetrics(System::Drawing::IDeviceContext ^ dc);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1023,6 +1136,8 @@
       <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Handle" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Handle As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr Handle { IntPtr get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1038,9 +1153,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property is used internally by the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> methods. If the class of elements specified by the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A> property is not defined by the current visual style, then this property returns <xref:System.IntPtr.Zero?displayProperty=fullName>.  
+ This property is used internally by the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer> methods. If the class of elements specified by the <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Class%2A> property is not defined by the current visual style, then this property returns <xref:System.IntPtr.Zero?displayProperty=nameWithType>.  
   
- This property value is invalidated when the visual style of the operating system changes, or when the user disables visual styles. If you access this property directly, your code should query this property again to get a new handle when the <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged?displayProperty=fullName> event is raised with the <xref:Microsoft.Win32.UserPreferenceChangedEventArgs.Category%2A?displayProperty=fullName> property value of <xref:Microsoft.Win32.UserPreferenceCategory?displayProperty=fullName>.  
+ This property value is invalidated when the visual style of the operating system changes, or when the user disables visual styles. If you access this property directly, your code should query this property again to get a new handle when the <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged?displayProperty=nameWithType> event is raised with the <xref:Microsoft.Win32.UserPreferenceChangedEventArgs.Category%2A?displayProperty=nameWithType> property value of <xref:Microsoft.Win32.UserPreferenceCategory.VisualStyle?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
@@ -1055,10 +1170,21 @@
  Visual styles are not applied to the client area of application windows.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="HitTestBackground">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether a point is contained in the background of the current visual style element.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="HitTestBackground">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle backgroundRectangle, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle backgroundRectangle, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HitTestBackground (dc As IDeviceContext, backgroundRectangle As Rectangle, pt As Point, options As HitTestOptions) As HitTestCode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::VisualStyles::HitTestCode HitTestBackground(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle backgroundRectangle, System::Drawing::Point pt, System::Windows::Forms::VisualStyles::HitTestOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1089,6 +1215,7 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.Graphics g, System.Drawing.Rectangle backgroundRectangle, System.Drawing.Region region, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle backgroundRectangle, class System.Drawing.Region region, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Region,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::VisualStyles::HitTestCode HitTestBackground(System::Drawing::Graphics ^ g, System::Drawing::Rectangle backgroundRectangle, System::Drawing::Region ^ region, System::Drawing::Point pt, System::Windows::Forms::VisualStyles::HitTestOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1121,6 +1248,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground (System.Drawing.IDeviceContext dc, System.Drawing.Rectangle backgroundRectangle, IntPtr hRgn, System.Drawing.Point pt, System.Windows.Forms.VisualStyles.HitTestOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.VisualStyles.HitTestCode HitTestBackground(class System.Drawing.IDeviceContext dc, valuetype System.Drawing.Rectangle backgroundRectangle, native int hRgn, valuetype System.Drawing.Point pt, valuetype System.Windows.Forms.VisualStyles.HitTestOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.HitTestBackground(System.Drawing.IDeviceContext,System.Drawing.Rectangle,System.IntPtr,System.Drawing.Point,System.Windows.Forms.VisualStyles.HitTestOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HitTestBackground (dc As IDeviceContext, backgroundRectangle As Rectangle, hRgn As IntPtr, pt As Point, options As HitTestOptions) As HitTestCode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::VisualStyles::HitTestCode HitTestBackground(System::Drawing::IDeviceContext ^ dc, System::Drawing::Rectangle backgroundRectangle, IntPtr hRgn, System::Drawing::Point pt, System::Windows::Forms::VisualStyles::HitTestOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1153,6 +1282,8 @@
       <MemberSignature Language="C#" Value="public bool IsBackgroundPartiallyTransparent ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBackgroundPartiallyTransparent() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsBackgroundPartiallyTransparent" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsBackgroundPartiallyTransparent () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsBackgroundPartiallyTransparent();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1173,6 +1304,8 @@
       <MemberSignature Language="C#" Value="public static bool IsElementDefined (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsElementDefined(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsElementDefined(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsElementDefined (element As VisualStyleElement) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsElementDefined(System::Windows::Forms::VisualStyles::VisualStyleElement ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1221,6 +1354,8 @@
       <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
       <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.IsSupported" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property IsSupported As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property bool IsSupported { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1243,7 +1378,7 @@
 |---------------|---------------------------------|  
 |The operating system supports visual styles.|Verify that the <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS%2A> property of the <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> class is `true`.|  
 |The user has enabled visual styles in the operating system.|Verify that the <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A> property of the <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> class is `true`.|  
-|Visual styles are being used to draw the client area of application windows.|Verify that the <xref:System.Windows.Forms.Application.VisualStyleState%2A> property of the <xref:System.Windows.Forms.Application> class has the value <xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=fullName> or <xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=fullName>.|  
+|Visual styles are being used to draw the client area of application windows.|Verify that the <xref:System.Windows.Forms.Application.VisualStyleState%2A> property of the <xref:System.Windows.Forms.Application> class has the value <xref:System.Windows.Forms.VisualStyles.VisualStyleState.ClientAreaEnabled?displayProperty=nameWithType> or <xref:System.Windows.Forms.VisualStyles.VisualStyleState.ClientAndNonClientAreasEnabled?displayProperty=nameWithType>.|  
   
  ]]></format>
         </remarks>
@@ -1253,6 +1388,8 @@
       <MemberSignature Language="C#" Value="public int LastHResult { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 LastHResult" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.LastHResult" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LastHResult As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int LastHResult { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1278,6 +1415,8 @@
       <MemberSignature Language="C#" Value="public int Part { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Part" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.Part" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Part As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Part { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1299,10 +1438,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetParameters">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the current visual style element of this <see cref="T:System.Windows.Forms.VisualStyles.VisualStyleRenderer" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetParameters">
       <MemberSignature Language="C#" Value="public void SetParameters (System.Windows.Forms.VisualStyles.VisualStyleElement element);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(class System.Windows.Forms.VisualStyles.VisualStyleElement element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters(System.Windows.Forms.VisualStyles.VisualStyleElement)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetParameters (element As VisualStyleElement)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetParameters(System::Windows::Forms::VisualStyles::VisualStyleElement ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1351,6 +1501,8 @@
       <MemberSignature Language="C#" Value="public void SetParameters (string className, int part, int state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(string className, int32 part, int32 state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.VisualStyles.VisualStyleRenderer.SetParameters(System.String,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetParameters (className As String, part As Integer, state As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetParameters(System::String ^ className, int part, int state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1393,6 +1545,8 @@
       <MemberSignature Language="C#" Value="public int State { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 State" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.VisualStyles.VisualStyleRenderer.State" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property State As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int State { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>

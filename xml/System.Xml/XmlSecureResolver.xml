@@ -1,7 +1,9 @@
-<Type Name="XmlSecureResolver" FullName="System.Xml.XmlSecureResolver">
+﻿<Type Name="XmlSecureResolver" FullName="System.Xml.XmlSecureResolver">
   <TypeSignature Language="C#" Value="public class XmlSecureResolver : System.Xml.XmlResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSecureResolver extends System.Xml.XmlResolver" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlSecureResolver" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlSecureResolver&#xA;Inherits XmlResolver" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlSecureResolver : System::Xml::XmlResolver" />
   <AssemblyInfo>
     <AssemblyName>System.Xml</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Xml.XmlResolver</BaseTypeName>
@@ -27,7 +33,7 @@
   
  <xref:System.Xml.XmlSecureResolver> wraps around a concrete implementation of <xref:System.Xml.XmlResolver> and restricts the resources that the underlying <xref:System.Xml.XmlResolver> has access to. For example, <xref:System.Xml.XmlSecureResolver> has the ability to prohibit cross-domain redirection, which occurs from an embedded Uniform Resource Identifier (URI) reference.  
   
- When you construct an <xref:System.Xml.XmlSecureResolver> object, you provide a valid <xref:System.Xml.XmlResolver> implementation along with a URL, an instance of an evidence object, or a permission set, which is used by the <xref:System.Xml.XmlSecureResolver> to determine security. Either a <xref:System.Security.PermissionSet?displayProperty=fullName> is generated or the existing one is used and <xref:System.Security.PermissionSet.PermitOnly%2A?displayProperty=fullName> is called on it to help secure the underlying <xref:System.Xml.XmlResolver>.  
+ When you construct an <xref:System.Xml.XmlSecureResolver> object, you provide a valid <xref:System.Xml.XmlResolver> implementation along with a URL, an instance of an evidence object, or a permission set, which is used by the <xref:System.Xml.XmlSecureResolver> to determine security. Either a <xref:System.Security.PermissionSet?displayProperty=nameWithType> is generated or the existing one is used and <xref:System.Security.PermissionSet.PermitOnly%2A?displayProperty=nameWithType> is called on it to help secure the underlying <xref:System.Xml.XmlResolver>.  
   
 > [!IMPORTANT]
 >  <xref:System.Xml.XmlSecureResolver> objects can contain sensitive information such as user credentials. You should be careful when caching <xref:System.Xml.XmlSecureResolver> objects and should not pass the <xref:System.Xml.XmlSecureResolver> object to an untrusted component.  
@@ -118,10 +124,37 @@
     </block>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.XmlSecureResolver" /> class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The three constructors provide three types of access restrictions:  
+  
+-   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.String%29> constructor restricts access by using a URL.  
+  
+-   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.Security.PermissionSet%29> constructor restricts access by using a permission set.  
+  
+-   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.Security.Policy.Evidence%29> constructor restricts access by using evidence.  
+  
+ See the constructor reference topics for examples of these types of restrictions.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlSecureResolver (System.Xml.XmlResolver resolver, System.Security.PermissionSet permissionSet);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver resolver, class System.Security.PermissionSet permissionSet) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.#ctor(System.Xml.XmlResolver,System.Security.PermissionSet)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlSecureResolver(System::Xml::XmlResolver ^ resolver, System::Security::PermissionSet ^ permissionSet);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -148,12 +181,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Xml.XmlSecureResolver.CreateEvidenceForUrl(System.String)" />
+        <altmember cref="T:System.Security.Policy.Evidence" />
+        <altmember cref="T:System.Net.WebPermission" />
+        <altmember cref="T:System.Security.SecurityManager" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlSecureResolver (System.Xml.XmlResolver resolver, System.Security.Policy.Evidence evidence);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver resolver, class System.Security.Policy.Evidence evidence) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.#ctor(System.Xml.XmlResolver,System.Security.Policy.Evidence)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlSecureResolver(System::Xml::XmlResolver ^ resolver, System::Security::Policy::Evidence ^ evidence);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -200,6 +238,8 @@
       <MemberSignature Language="C#" Value="public XmlSecureResolver (System.Xml.XmlResolver resolver, string securityUrl);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlResolver resolver, string securityUrl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.#ctor(System.Xml.XmlResolver,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (resolver As XmlResolver, securityUrl As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlSecureResolver(System::Xml::XmlResolver ^ resolver, System::String ^ securityUrl);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -209,6 +249,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="resolver" Type="System.Xml.XmlResolver" />
@@ -242,6 +286,8 @@
       <MemberSignature Language="C#" Value="public static System.Security.Policy.Evidence CreateEvidenceForUrl (string securityUrl);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.Evidence CreateEvidenceForUrl(string securityUrl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.CreateEvidenceForUrl(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateEvidenceForUrl (securityUrl As String) As Evidence" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Security::Policy::Evidence ^ CreateEvidenceForUrl(System::String ^ securityUrl);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -274,6 +320,8 @@
       <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlSecureResolver.Credentials" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Credentials As ICredentials" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Net::ICredentials ^ Credentials {  void set(System::Net::ICredentials ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -283,6 +331,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.ICredentials</ReturnType>
@@ -302,12 +354,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.NetworkCredential" />
+        <altmember cref="T:System.Net.CredentialCache" />
+        <altmember cref="P:System.Net.CredentialCache.DefaultCredentials" />
       </Docs>
     </Member>
     <Member MemberName="GetEntity">
       <MemberSignature Language="C#" Value="public override object GetEntity (Uri absoluteUri, string role, Type ofObjectToReturn);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetEntity(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.GetEntity(System.Uri,System.String,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEntity (absoluteUri As Uri, role As String, ofObjectToReturn As Type) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ GetEntity(Uri ^ absoluteUri, System::String ^ role, Type ^ ofObjectToReturn);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -317,6 +374,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -354,6 +415,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;object&gt; GetEntityAsync (Uri absoluteUri, string role, Type ofObjectToReturn);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;object&gt; GetEntityAsync(class System.Uri absoluteUri, string role, class System.Type ofObjectToReturn) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.GetEntityAsync(System.Uri,System.String,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetEntityAsync (absoluteUri As Uri, role As String, ofObjectToReturn As Type) As Task(Of Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;System::Object ^&gt; ^ GetEntityAsync(Uri ^ absoluteUri, System::String ^ role, Type ^ ofObjectToReturn);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -363,6 +426,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Object&gt;</ReturnType>
@@ -385,6 +452,8 @@
       <MemberSignature Language="C#" Value="public override Uri ResolveUri (Uri baseUri, string relativeUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Uri ResolveUri(class System.Uri baseUri, string relativeUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlSecureResolver.ResolveUri(System.Uri,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ResolveUri (baseUri As Uri, relativeUri As String) As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override Uri ^ ResolveUri(Uri ^ baseUri, System::String ^ relativeUri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -394,6 +463,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -412,31 +485,5 @@
           <paramref name="relativeUri" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Xml.XmlSecureResolver" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The three constructors provide three types of access restrictions:  
-  
--   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.String%29> constructor restricts access by using a URL.  
-  
--   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.Security.PermissionSet%29> constructor restricts access by using a permission set.  
-  
--   The <xref:System.Xml.XmlSecureResolver.%23ctor%28System.Xml.XmlResolver%2CSystem.Security.Policy.Evidence%29> constructor restricts access by using evidence.  
-  
- See the constructor reference topics for examples of these types of restrictions.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

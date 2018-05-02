@@ -1,5 +1,5 @@
 ---
-title: "Common Schema Collections | Microsoft Docs"
+title: "Common Schema Collections"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 50127ced-2ac8-4d7a-9cd1-5c98c655ff03
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Common Schema Collections
 The common schema collections are the schema collections that are implemented by each of the .NET Framework managed providers. You can query a .NET Framework managed provider to determine the list of supported schema collections by calling the **GetSchema** method with no arguments, or with the schema collection name "MetaDataCollections". This will return a <xref:System.Data.DataTable> with a list of the supported schema collections, the number of restrictions that they each support, and the number of identifier parts that they use. These collections describe all of the required columns. Providers are free to add additional columns if they wish. For example, `SqlClient` and `OracleClient` add ParameterName to the restrictions collection.  
@@ -28,7 +30,7 @@ The common schema collections are the schema collections that are implemented by
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |CollectionName|string|The name of the collection to pass to the **GetSchema** method to return the collection.|  
-|NumberOfRestriction|int|The number of restrictions that may be specified for the collection.|  
+|NumberOfRestrictions|int|The number of restrictions that may be specified for the collection.|  
 |NumberOfIdentifierParts|int|The number of parts in the composite identifier/database object name. For example, in SQL Server, this would be 3 for tables and 4 for columns. In Oracle, it would be 2 for tables and 3 for columns.|  
   
 ## DataSourceInformation  
@@ -78,9 +80,9 @@ The common schema collections are the schema collections that are implemented by
 |MaximumScale|short|If the type indicator is a numeric type, this is the maximum number of digits allowed to the right of the decimal point. Otherwise, this is DBNull.Value.|  
 |MinimumScale|short|If the type indicator is a numeric type, this is the minimum number of digits allowed to the right of the decimal point. Otherwise, this is DBNull.Value.|  
 |IsConcurrencyType|bool|true – the data type is updated by the database every time the row is changed and the value of the column is different from all previous values<br /><br /> false – the data type is note updated by the database every time the row is changed<br /><br /> DBNull.Value – the database does not support this type of data type|  
-|IsLiteralsSupported|bool|true – the data type can be expressed as a literal<br /><br /> false – the data type can not be expressed as a literal|  
+|IsLiteralSupported|bool|true – the data type can be expressed as a literal<br /><br /> false – the data type can not be expressed as a literal|  
 |LiteralPrefix|string|The prefix applied to a given literal.|  
-|LitteralSuffix|string|The suffix applied to a given literal.|  
+|LiteralSuffix|string|The suffix applied to a given literal.|  
 |NativeDataType|String|NativeDataType is an OLE DB specific column for exposing the OLE DB type of the data type .|  
   
 ## Restrictions  
@@ -98,9 +100,9 @@ The common schema collections are the schema collections that are implemented by
   
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
-|ReservedWords|string|Provider specific reserved words.|  
+|ReservedWord|string|Provider specific reserved word.|  
   
 ## See Also  
- [Retrieving Database Schema Information](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)   
- [GetSchema and Schema Collections](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)   
+ [Retrieving Database Schema Information](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
+ [GetSchema and Schema Collections](../../../../docs/framework/data/adonet/getschema-and-schema-collections.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

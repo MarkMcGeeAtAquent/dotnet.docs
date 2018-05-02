@@ -1,5 +1,5 @@
 ---
-title: "CreateVersionStringFromModule Function | Microsoft Docs"
+title: "CreateVersionStringFromModule Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CreateVersionStringFromModule"
-apilocation: 
+api_location: 
   - "dbgshim.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CreateVersionStringFromModule"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "debugging API [Silverlight]"
   - "Silverlight, debugging"
   - "CreateVersionStringFromModule function"
 ms.assetid: 3d2fe9bd-75ef-4364-84a6-da1e1994ac1a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CreateVersionStringFromModule Function
 Creates a version string from a common language runtime (CLR) path in a target process.  

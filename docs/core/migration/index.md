@@ -1,14 +1,16 @@
 ---
-title: .NET Core migration to the csproj format | Microsoft Docs
+title: .NET Core migration to the csproj format
 description: .NET Core project.json to csproj migration
 keywords: .NET, .NET Core, .NET Core migration
 author: blackdwarf
 ms.author: mairaw
-ms.date: 03/13/2017
+ms.date: 07/19/2017
 ms.topic: article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 1feadf3d-3cfc-41dd-abb5-a4fc303a7b53
+ms.workload: 
+  - dotnetcore
 ---
 
 # Migrating .NET Core projects to the .csproj format
@@ -34,7 +36,7 @@ If you open a solution file, all the projects specified in the solution file wil
 
 ![One-way upgrade dialog showing the list of projects to be migrated](media/one-way-upgrade.jpg)
 
-Visual Studio will migrate the projects chosen automatically. When migrating a solution, if you don't choose all projects, the same dialog will appear asking you to upgrade the remaining projects from that solution.
+Visual Studio will migrate the projects chosen automatically. When migrating a solution, if you don't choose all projects, the same dialog will appear asking you to upgrade the remaining projects from that solution. After the project is migrated, you can see and modify its contents by right-clicking the project in the **Solution Explorer** window and selecting **Edit \<project name>.csproj**.
 
 Files that were migrated (*project.json*, *global.json*, *.xproj* and solution file) will be moved to a *Backup* folder. The solution file that is migrated will be upgraded to Visual Studio 2017 and you won't be able to open that solution file in previous versions of Visual Studio. 
 A file named *UpgradeLog.htm* is also saved and automatically opened that contains a migration report.
@@ -50,14 +52,14 @@ When you migrate a project, the project and all its dependencies are migrated.
 Files that were migrated (*project.json*, *global.json* and *.xproj*) will be moved to a *backup* folder.
 
 > [!NOTE]
-> If you are using VS Code, the `dotnet migrate` command will not modify VS Code-specific files such as `tasks.json`. These files need to be changed manually. 
+> If you are using Visual Studio Code, the `dotnet migrate` command will not modify Visual Studio Code-specific files such as `tasks.json`. These files need to be changed manually. 
 > This is also true if you are using Project Ryder or any editor or Integrated Development Environment (IDE) other than Visual Studio. 
 
 See [A mapping between project.json and csproj properties](../tools/project-json-to-csproj.md) for a comparison of project.json and csproj formats.
 
 ### Common issues
 
-- If you get an error: “No executable found matching command dotnet-migrate":
+- If you get an error: "No executable found matching command dotnet-migrate":
 
 Run `dotnet --version` to see which version you are using. [`dotnet migrate`](../tools/dotnet-migrate.md) requires .NET Core CLI RC3 or higher.
 You’ll get this error if you have a *global.json* file in the current or parent directory and the `sdk` version is set to an older version.
@@ -85,3 +87,6 @@ The .NET Core csproj format has been changing and evolving with each new pre-rel
 After these steps your project should be fully compatible with the RTM .NET Core csproj format. 
 
 For examples of before and after the migration from old csproj format to the new one, see the [Updating Visual Studio 2017 RC – .NET Core Tooling improvements](https://blogs.msdn.microsoft.com/dotnet/2016/12/12/updating-visual-studio-2017-rc-net-core-tooling-improvements/) article on the .NET blog.
+
+## See also
+[Port, Migrate, and Upgrade Visual Studio Projects](/visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects)

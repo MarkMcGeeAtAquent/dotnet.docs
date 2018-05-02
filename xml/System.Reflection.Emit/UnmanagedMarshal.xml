@@ -1,7 +1,9 @@
-<Type Name="UnmanagedMarshal" FullName="System.Reflection.Emit.UnmanagedMarshal">
+﻿<Type Name="UnmanagedMarshal" FullName="System.Reflection.Emit.UnmanagedMarshal">
   <TypeSignature Language="C#" Value="public sealed class UnmanagedMarshal" />
   <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit UnmanagedMarshal extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.UnmanagedMarshal" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class UnmanagedMarshal" />
+  <TypeSignature Language="C++ CLI" Value="public ref class UnmanagedMarshal sealed" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -32,7 +34,7 @@
    
   
 ## Examples  
- The following code example shows replacement code for the obsolete <xref:System.Reflection.Emit.UnmanagedMarshal> type. The example emits a single-module assembly named `EmitMarshalAs.dll`, containing a type named `Sample`. The type has a method named `Test`, with one parameter of type <xref:System.String>. The code example applies the <xref:System.Runtime.InteropServices.MarshalAsAttribute> with <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName> to the parameter.  
+ The following code example shows replacement code for the obsolete <xref:System.Reflection.Emit.UnmanagedMarshal> type. The example emits a single-module assembly named `EmitMarshalAs.dll`, containing a type named `Sample`. The type has a method named `Test`, with one parameter of type <xref:System.String>. The code example applies the <xref:System.Runtime.InteropServices.MarshalAsAttribute> with <xref:System.Runtime.InteropServices.UnmanagedType.BStr?displayProperty=nameWithType> to the parameter.  
   
  You can use the [Ildasm.exe (IL Disassembler)](~/docs/framework/tools/ildasm-exe-il-disassembler.md) to examine the emitted assembly and observe that the parameter is marked `marshal(bstr)`.  
   
@@ -42,12 +44,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Type" />
+    <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
+    <altmember cref="T:System.Guid" />
   </Docs>
   <Members>
     <Member MemberName="BaseType">
       <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.UnmanagedType BaseType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.UnmanagedType BaseType" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.BaseType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BaseType As UnmanagedType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::InteropServices::UnmanagedType BaseType { System::Runtime::InteropServices::UnmanagedType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -62,12 +69,15 @@
         <value>An <see langword="UnmanagedType" /> object.</value>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">The unmanaged type is not an <see langword="LPArray" /> or a <see langword="SafeArray" />.</exception>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="DefineByValArray">
       <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineByValArray (int elemCount);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineByValArray(int32 elemCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineByValArray(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DefineByValArray (elemCount As Integer) As UnmanagedMarshal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::Emit::UnmanagedMarshal ^ DefineByValArray(int elemCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -97,12 +107,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a simple native type.</exception>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="DefineByValTStr">
       <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineByValTStr (int elemCount);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineByValTStr(int32 elemCount) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineByValTStr(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DefineByValTStr (elemCount As Integer) As UnmanagedMarshal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::Emit::UnmanagedMarshal ^ DefineByValTStr(int elemCount);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -132,12 +145,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a simple native type.</exception>
+        <altmember cref="T:System.Int32" />
+        <altmember cref="T:System.Array" />
+        <altmember cref="T:System.String" />
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="DefineLPArray">
       <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineLPArray (System.Runtime.InteropServices.UnmanagedType elemType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineLPArray(valuetype System.Runtime.InteropServices.UnmanagedType elemType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineLPArray(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DefineLPArray (elemType As UnmanagedType) As UnmanagedMarshal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::Emit::UnmanagedMarshal ^ DefineLPArray(System::Runtime::InteropServices::UnmanagedType elemType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -167,12 +186,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a simple native type.</exception>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="DefineSafeArray">
       <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineSafeArray (System.Runtime.InteropServices.UnmanagedType elemType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineSafeArray(valuetype System.Runtime.InteropServices.UnmanagedType elemType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineSafeArray(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DefineSafeArray (elemType As UnmanagedType) As UnmanagedMarshal" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::Emit::UnmanagedMarshal ^ DefineSafeArray(System::Runtime::InteropServices::UnmanagedType elemType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -202,12 +224,14 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a simple native type.</exception>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="DefineUnmanagedMarshal">
       <MemberSignature Language="C#" Value="public static System.Reflection.Emit.UnmanagedMarshal DefineUnmanagedMarshal (System.Runtime.InteropServices.UnmanagedType unmanagedType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.Emit.UnmanagedMarshal DefineUnmanagedMarshal(valuetype System.Runtime.InteropServices.UnmanagedType unmanagedType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.UnmanagedMarshal.DefineUnmanagedMarshal(System.Runtime.InteropServices.UnmanagedType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::Emit::UnmanagedMarshal ^ DefineUnmanagedMarshal(System::Runtime::InteropServices::UnmanagedType unmanagedType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -228,19 +252,22 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Runtime.InteropServices.UnmanagedType> passed to this method must be a simple native type. None of the following values may be used: <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName>, <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName>, <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName>, <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName>, or <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName>.  
+ The <xref:System.Runtime.InteropServices.UnmanagedType> passed to this method must be a simple native type. None of the following values may be used: <xref:System.Runtime.InteropServices.UnmanagedType.ByValTStr?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType>, <xref:System.Runtime.InteropServices.UnmanagedType.LPArray?displayProperty=nameWithType>, or <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=nameWithType>.  
   
  Only unmanaged marshal constructs can be made using this method.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a simple native type.</exception>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="ElementCount">
       <MemberSignature Language="C#" Value="public int ElementCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ElementCount" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.ElementCount" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ElementCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ElementCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -268,6 +295,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.UnmanagedType GetUnmanagedType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.UnmanagedType GetUnmanagedType" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.GetUnmanagedType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property GetUnmanagedType As UnmanagedType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::InteropServices::UnmanagedType GetUnmanagedType { System::Runtime::InteropServices::UnmanagedType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -288,12 +317,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.InteropServices.UnmanagedType" />
       </Docs>
     </Member>
     <Member MemberName="IIDGuid">
       <MemberSignature Language="C#" Value="public Guid IIDGuid { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid IIDGuid" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.UnmanagedMarshal.IIDGuid" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IIDGuid As Guid" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Guid IIDGuid { Guid get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -315,6 +347,8 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The argument is not a custom marshaler.</exception>
+        <altmember cref="T:System.Int32" />
+        <altmember cref="T:System.Guid" />
       </Docs>
     </Member>
   </Members>

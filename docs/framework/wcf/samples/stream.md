@@ -1,8 +1,8 @@
 ---
-title: "Stream | Microsoft Docs"
+title: "Stream"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Stream
 The Stream sample demonstrates the use of streaming transfer mode communication. The service exposes several operations that send and receive streams. This sample is self-hosted. Both the client and service are console programs.  
@@ -51,7 +53,7 @@ public interface IStreamingSample
   
  The following configuration code from the sample shows setting the `TransferMode` property to streaming on the `basicHttpBinding` and a custom HTTP binding:  
   
-```  
+```xml  
 <!-- An example basicHttpBinding using streaming. -->  
 <basicHttpBinding>  
   <binding name="HttpStreaming" maxReceivedMessageSize="67108864"  
@@ -65,7 +67,6 @@ public interface IStreamingSample
                    maxReceivedMessageSize="67108864"/>  
   </binding>  
 </customBinding>  
-  
 ```  
   
  In addition to setting the `transferMode` to `Streamed`, the previous configuration code sets the `maxReceivedMessageSize` to 64MB. As a defense mechanism, `maxReceivedMessageSize` places a cap on the maximum allowable size of messages on receive. The default `maxReceivedMessageSize` is 64 KB, which is usually too low for streaming scenarios.  

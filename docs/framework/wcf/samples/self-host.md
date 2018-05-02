@@ -1,25 +1,24 @@
 ---
-title: "Self-Host | Microsoft Docs"
+title: "Self-Host"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Self hosted service"
   - "Self Host Sample [Windows Communication Foundation]"
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
 caps.latest.revision: 38
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Self-Host
 This sample demonstrates how to implement a self-hosted service in a console application. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md). The service configuration file has been renamed from Web.config to App.config and modified to configure a base address, which the host uses. The service source code has been modified to implement a static `Main` function that creates and opens a service host that provides the configured base address. The service implementation has been modified to write output to the console for each operation. The client has been unmodified, except for configuring the correct endpoint address of the service.  
@@ -48,12 +47,11 @@ public static void Main()
         Console.ReadLine();  
     }  
 }  
-  
 ```  
   
  When a service is hosted in Internet Information Services (IIS) or Windows Process Activation Service (WAS), the base address of the service is provided by the hosting environment. In the self-hosted case, you must specify the base address yourself. This is done using the `add` element, child of [\<baseAddresses>](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md), child of [\<host>](../../../../docs/framework/configure-apps/file-schema/wcf/host.md), child of [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) as demonstrated in the following sample configuration.  
   
-```  
+```xml  
 <service   
     name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">  

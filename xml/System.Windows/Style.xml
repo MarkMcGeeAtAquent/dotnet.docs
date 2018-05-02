@@ -1,7 +1,9 @@
-<Type Name="Style" FullName="System.Windows.Style">
-  <TypeSignature Language="C#" Value="public class Style : System.Windows.Threading.DispatcherObject, System.Windows.Markup.IAddChild, System.Windows.Markup.INameScope, System.Windows.Markup.IQueryAmbient" />
-  <TypeSignature Language="ILAsm" Value=".class public auto ansi Style extends System.Windows.Threading.DispatcherObject implements class System.Windows.Markup.IAddChild, class System.Windows.Markup.INameScope, class System.Windows.Markup.IQueryAmbient" />
+﻿<Type Name="Style" FullName="System.Windows.Style">
+  <TypeSignature Language="C#" Value="public class Style : System.Windows.Threading.DispatcherObject, System.Windows.ISealable, System.Windows.Markup.IAddChild, System.Windows.Markup.INameScope, System.Windows.Markup.IQueryAmbient" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Style extends System.Windows.Threading.DispatcherObject implements class System.Windows.ISealable, class System.Windows.Markup.IAddChild, class System.Windows.Markup.INameScope, class System.Windows.Markup.IQueryAmbient" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Style" />
+  <TypeSignature Language="VB.NET" Value="Public Class Style&#xA;Inherits DispatcherObject&#xA;Implements IAddChild, INameScope, IQueryAmbient, ISealable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Style : System::Windows::Threading::DispatcherObject, System::Windows::ISealable, System::Windows::Markup::IAddChild, System::Windows::Markup::INameScope, System::Windows::Markup::IQueryAmbient" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -10,6 +12,9 @@
     <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
   </Base>
   <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.ISealable</InterfaceName>
+    </Interface>
     <Interface>
       <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
     </Interface>
@@ -61,18 +66,15 @@
 ## Examples  
  The following example shows a style declaration that will affect the <xref:System.Windows.Controls.Control.Background%2A> property of a <xref:System.Windows.Controls.Control>.  
   
- [!code-xml[StyleOvw01#StyleSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimple)]
- <!-- TODO: review snippet reference [!code-xml[StyleOvw01#StyleSimple](~/samples/snippets/xaml/VS_Snippets_Wpf/StyleOvw01/XAML/Page1.xaml#stylesimple)]  -->  
+ [!code-xaml[StyleOvw01#StyleSimple](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimple)]   
   
  To apply the above style, do the following:  
   
- [!code-xml[StyleOvw01#StyleSimpleApplied](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimpleapplied)]
- <!-- TODO: review snippet reference [!code-xml[StyleOvw01#StyleSimpleApplied](~/samples/snippets/xaml/VS_Snippets_Wpf/StyleOvw01/XAML/Page1.xaml#stylesimpleapplied)]  -->  
+ [!code-xaml[StyleOvw01#StyleSimpleApplied](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#stylesimpleapplied)]
   
  You can also apply styles to all elements of a given type by using the <xref:System.Windows.Style.TargetType%2A> property. Adding the target type to the style means that you no longer have to fully qualify the property you are setting with the `ClassName.PropertyName` syntax. The following example defines a style that will be applied to every <xref:System.Windows.Controls.TextBlock> element.  
   
- [!code-xml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]
- <!-- TODO: review snippet reference [!code-xml[PhotoStoreDemoStyled#1](~/samples/snippets/xaml/VS_Snippets_Wpf/PhotoStoreDemoStyled/xaml/window1.xaml#1)]  -->  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
   
 > [!NOTE]
 >  Many [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] controls consist of a combination of other [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] controls, so creating a style that applies to all controls of a type can have broad impact. For instance, if you create a style that targets the <xref:System.Windows.Controls.TextBlock> controls in a <xref:System.Windows.Controls.Canvas>, the style is applied to all <xref:System.Windows.Controls.TextBlock> controls in the canvas, even if the <xref:System.Windows.Controls.TextBlock> is part of another control, such as a <xref:System.Windows.Controls.ListBox>.  
@@ -83,10 +85,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Style" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Style ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Style();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -109,6 +122,8 @@
       <MemberSignature Language="C#" Value="public Style (Type targetType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor(System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (targetType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Style(Type ^ targetType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -127,6 +142,8 @@
       <MemberSignature Language="C#" Value="public Style (Type targetType, System.Windows.Style basedOn);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType, class System.Windows.Style basedOn) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.#ctor(System.Type,System.Windows.Style)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (targetType As Type, basedOn As Style)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Style(Type ^ targetType, System::Windows::Style ^ basedOn);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -147,6 +164,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Style BasedOn { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style BasedOn" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.BasedOn" />
+      <MemberSignature Language="VB.NET" Value="Public Property BasedOn As Style" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Style ^ BasedOn { System::Windows::Style ^ get(); void set(System::Windows::Style ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -187,23 +206,20 @@
    
   
 ## Examples  
- There are several ways that styles in [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] can be extended or inherited. Styles can be based on other styles through this property. When you use this property, the new style will inherit the values of the original style that are not explicitly redefined in the new style. In the following example, `Style2` inherits the <xref:System.Windows.Controls.Control.Background%2A?displayProperty=fullName>value of `Yellow`, and adds a <xref:System.Windows.Controls.Control.Foreground%2A?displayProperty=fullName>value of `Blue`.  
+ There are several ways that styles in [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] can be extended or inherited. Styles can be based on other styles through this property. When you use this property, the new style will inherit the values of the original style that are not explicitly redefined in the new style. In the following example, `Style2` inherits the <xref:System.Windows.Controls.Control.Background%2A?displayProperty=nameWithType> value of `Yellow`, and adds a <xref:System.Windows.Controls.Control.Foreground%2A?displayProperty=nameWithType> value of `Blue`.  
   
- [!code-xml[StyleOvw01#ExtendingStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyle)]
- <!-- TODO: review snippet reference [!code-xml[StyleOvw01#ExtendingStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/StyleOvw01/XAML/Page1.xaml#extendingstyle)]  -->  
+ [!code-xaml[StyleOvw01#ExtendingStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyle)]   
   
  Similarly, styles can be based on the style of an existing [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] element, as in the following example where the new style is based on the style of a <xref:System.Windows.Controls.TextBlock> element.  
   
- [!code-xml[PhotoStoreDemoStyled#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#2)]
- <!-- TODO: review snippet reference [!code-xml[PhotoStoreDemoStyled#2](~/samples/snippets/xaml/VS_Snippets_Wpf/PhotoStoreDemoStyled/xaml/window1.xaml#2)]  -->  
+ [!code-xaml[PhotoStoreDemoStyled#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#2)]   
   
 > [!NOTE]
 >  If you create a style with a <xref:System.Windows.Style.TargetType%2A> property and base it on another style that also defines a <xref:System.Windows.Style.TargetType%2A> property, the target type of the derived style must be the same as or be derived from the type of the base style.  
   
  Styles defined for specific types can also be based on other styles, as in the following example.  
   
- [!code-xml[StyleOvw01#ExtendingStyleTargetType](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyletargettype)]
- <!-- TODO: review snippet reference [!code-xml[StyleOvw01#ExtendingStyleTargetType](~/samples/snippets/xaml/VS_Snippets_Wpf/StyleOvw01/XAML/Page1.xaml#extendingstyletargettype)]  -->  
+ [!code-xaml[StyleOvw01#ExtendingStyleTargetType](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleOvw01/CS/Page1.xaml#extendingstyletargettype)]   
   
  ]]></format>
         </remarks>
@@ -213,6 +229,8 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -232,6 +250,8 @@
       <MemberSignature Language="C#" Value="public bool IsSealed { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSealed" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.IsSealed" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSealed As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSealed { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -252,13 +272,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Style.BasedOn" />
       </Docs>
     </Member>
     <Member MemberName="RegisterName">
       <MemberSignature Language="C#" Value="public void RegisterName (string name, object scopedElement);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RegisterName(string name, object scopedElement) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.RegisterName(System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterName (name As String, scopedElement As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void RegisterName(System::String ^ name, System::Object ^ scopedElement);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.INameScope.RegisterName(System.String,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -281,7 +307,12 @@
       <MemberSignature Language="C#" Value="public System.Windows.ResourceDictionary Resources { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ResourceDictionary Resources" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.Resources" />
+      <MemberSignature Language="VB.NET" Value="Public Property Resources As ResourceDictionary" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::ResourceDictionary ^ Resources { System::Windows::ResourceDictionary ^ get(); void set(System::Windows::ResourceDictionary ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Markup.IHaveResources.Resources</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -335,6 +366,8 @@
       <MemberSignature Language="C#" Value="public void Seal ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seal() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.Seal" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Seal ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Seal();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -353,6 +386,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.Setters" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Setters As SetterBaseCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::SetterBaseCollection ^ Setters { System::Windows::SetterBaseCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -360,7 +395,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -409,17 +444,84 @@
   
  Adding a <xref:System.Windows.SetterBase> child to a <xref:System.Windows.Style> object implicitly adds it to the <xref:System.Windows.SetterBaseCollection> for the <xref:System.Windows.Style> object. The following <xref:System.Windows.EventSetter> is implicitly added to the <xref:System.Windows.SetterBaseCollection> of the style:  
   
- [!code-xml[eventovwsupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
+ [!code-xaml[eventovwsupport#XAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/page2.xaml#xaml2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Setter" />
+        <altmember cref="T:System.Windows.EventSetter" />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.ISealable.CanSeal">
+      <MemberSignature Language="C#" Value="bool System.Windows.ISealable.CanSeal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Windows.ISealable.CanSeal" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.System#Windows#ISealable#CanSeal" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property CanSeal As Boolean Implements ISealable.CanSeal" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Windows.ISealable.CanSeal { bool get(); };" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.ISealable.IsSealed">
+      <MemberSignature Language="C#" Value="bool System.Windows.ISealable.IsSealed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Windows.ISealable.IsSealed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Style.System#Windows#ISealable#IsSealed" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsSealed As Boolean Implements ISealable.IsSealed" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Windows.ISealable.IsSealed { bool get(); };" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.ISealable.Seal">
+      <MemberSignature Language="C#" Value="void ISealable.Seal ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.ISealable.Seal() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#ISealable#Seal" />
+      <MemberSignature Language="VB.NET" Value="Sub Seal () Implements ISealable.Seal" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Windows.ISealable.Seal() = System::Windows::ISealable::Seal;" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
       <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub AddChild (value As Object) Implements IAddChild.AddChild" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Windows.Markup.IAddChild.AddChild(System::Object ^ value) = System::Windows::Markup::IAddChild::AddChild;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.IAddChild.AddChild(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -447,7 +549,12 @@
       <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Sub AddText (text As String) Implements IAddChild.AddText" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Windows.Markup.IAddChild.AddText(System::String ^ text) = System::Windows::Markup::IAddChild::AddText;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.IAddChild.AddText(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -475,7 +582,12 @@
       <MemberSignature Language="C#" Value="object INameScope.FindName (string name);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Windows.Markup.INameScope.FindName(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#INameScope#FindName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Function FindName (name As String) As Object Implements INameScope.FindName" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Object ^ System.Windows.Markup.INameScope.FindName(System::String ^ name) = System::Windows::Markup::INameScope::FindName;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.INameScope.FindName(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -504,7 +616,12 @@
       <MemberSignature Language="C#" Value="bool IQueryAmbient.IsAmbientPropertyAvailable (string propertyName);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(string propertyName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.System#Windows#Markup#IQueryAmbient#IsAmbientPropertyAvailable(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Function IsAmbientPropertyAvailable (propertyName As String) As Boolean Implements IQueryAmbient.IsAmbientPropertyAvailable" />
+      <MemberSignature Language="C++ CLI" Value=" virtual bool System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(System::String ^ propertyName) = System::Windows::Markup::IQueryAmbient::IsAmbientPropertyAvailable;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.IQueryAmbient.IsAmbientPropertyAvailable(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -521,12 +638,15 @@
         <returns>
           <see langword="true" /> if the requested ambient property is available; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Windows.Markup.IQueryAmbient" />
       </Docs>
     </Member>
     <Member MemberName="TargetType">
       <MemberSignature Language="C#" Value="public Type TargetType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.TargetType" />
+      <MemberSignature Language="VB.NET" Value="Public Property TargetType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ TargetType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -576,8 +696,7 @@
 ## Examples  
  The following example defines a style that will be applied to all instances of the <xref:System.Windows.Controls.TextBlock> element.  
   
- [!code-xml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]
- <!-- TODO: review snippet reference [!code-xml[PhotoStoreDemoStyled#1](~/samples/snippets/xaml/VS_Snippets_Wpf/PhotoStoreDemoStyled/xaml/window1.xaml#1)]  -->  
+ [!code-xaml[PhotoStoreDemoStyled#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PhotoStoreDemoStyled/CS/window1.xaml#1)]   
   
  Setting the <xref:System.Windows.Style.TargetType%2A> property to the <xref:System.Windows.Controls.TextBlock> type without setting an `x:Key` implicitly sets the `x:Key` to `{x:Type TextBlock}`. This also means that if you give the above <xref:System.Windows.Style> an `x:Key` value of anything other than `{x:Type TextBlock}`, the <xref:System.Windows.Style> would not be applied to all <xref:System.Windows.Controls.TextBlock> elements automatically. Instead, you need to apply the style to the <xref:System.Windows.Controls.TextBlock> elements explicitly.  
   
@@ -591,6 +710,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.TriggerCollection Triggers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerCollection Triggers" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Style.Triggers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Triggers As TriggerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::TriggerCollection ^ Triggers { System::Windows::TriggerCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -598,7 +719,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -634,17 +755,24 @@
 ## Examples  
  The following example shows a named <xref:System.Windows.Style> available to <xref:System.Windows.Controls.Button> controls. The <xref:System.Windows.Style> defines a <xref:System.Windows.Trigger> element that changes the <xref:System.Windows.Controls.Control.Foreground%2A> property of a button when the <xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A> property is `true`.  
   
- [!code-xml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.DataTrigger" />
+        <altmember cref="T:System.Windows.EventTrigger" />
       </Docs>
     </Member>
     <Member MemberName="UnregisterName">
       <MemberSignature Language="C#" Value="public void UnregisterName (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnregisterName(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Style.UnregisterName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UnregisterName (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void UnregisterName(System::String ^ name);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.INameScope.UnregisterName(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>

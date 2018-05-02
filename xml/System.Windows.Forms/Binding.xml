@@ -1,7 +1,9 @@
-<Type Name="Binding" FullName="System.Windows.Forms.Binding">
+﻿<Type Name="Binding" FullName="System.Windows.Forms.Binding">
   <TypeSignature Language="C#" Value="public class Binding" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Binding extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Binding" />
+  <TypeSignature Language="VB.NET" Value="Public Class Binding" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Binding" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -76,7 +78,7 @@
   
  Controls that can be simple-bound feature a collection of <xref:System.Windows.Forms.Binding> objects in a <xref:System.Windows.Forms.ControlBindingsCollection>, which you can access through the control's <xref:System.Windows.Forms.Control.DataBindings%2A> property. You add a <xref:System.Windows.Forms.Binding> to the collection by calling the <xref:System.Windows.Forms.ControlBindingsCollection.Add%2A> method, thereby binding a property of the control to a property of an object (or to a property of the current object in a list).  
   
- You can simple-bind to any object that derives from the <xref:System.Windows.Forms.Control?displayProperty=fullName> class, for example, the following Windows controls:  
+ You can simple-bind to any object that derives from the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> class, for example, the following Windows controls:  
   
 -   <xref:System.Windows.Forms.Button>  
   
@@ -142,12 +144,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.BindingContext" />
+    <altmember cref="T:System.Windows.Forms.BindingManagerBase" />
+    <altmember cref="T:System.Windows.Forms.ComboBox" />
+    <altmember cref="T:System.Windows.Forms.DataGrid" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Forms.Binding" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (propertyName As String, dataSource As Object, dataMember As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -187,11 +204,11 @@
   
  When you create a binding to a control's property, the new <xref:System.Windows.Forms.Binding> inspects the events exposed by the bound control and attaches to two particular events:  
   
--   <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
   
--   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=fullName>)  
+-   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
   
- If you attempt to bind to a property that does not exist, an <xref:System.ArgumentException> will be thrown when the <xref:System.Windows.Forms.Binding> is added to the control's <xref:System.Windows.Forms.Control.DataBindings%2A?displayProperty=fullName> collection.  
+ If you attempt to bind to a property that does not exist, an <xref:System.ArgumentException> will be thrown when the <xref:System.Windows.Forms.Binding> is added to the control's <xref:System.Windows.Forms.Control.DataBindings%2A?displayProperty=nameWithType> collection.  
   
    
   
@@ -207,12 +224,16 @@
         <exception cref="T:System.Exception">
           <paramref name="propertyName" /> is neither a valid property of a control nor an empty string ("").</exception>
         <exception cref="T:System.ArgumentException">The property given by <paramref name="propertyName" /> does not exist on the control.</exception>
+        <altmember cref="T:System.Windows.Forms.BindingsCollection" />
+        <altmember cref="T:System.Windows.Forms.CurrencyManager" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (propertyName As String, dataSource As Object, dataMember As String, formattingEnabled As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember, bool formattingEnabled);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -244,6 +265,7 @@
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember, bool formattingEnabled, System::Windows::Forms::DataSourceUpdateMode dataSourceUpdateMode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -288,9 +310,9 @@
   
  When you create a binding to a control's property, the new <xref:System.Windows.Forms.Binding> inspects the events exposed by the bound control and attaches to two particular events:  
   
--   <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>.  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>.  
   
--   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=fullName>)  
+-   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
   
  ]]></format>
         </remarks>
@@ -305,6 +327,7 @@
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember, bool formattingEnabled, System::Windows::Forms::DataSourceUpdateMode dataSourceUpdateMode, System::Object ^ nullValue);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -351,9 +374,9 @@
   
  When you create a binding to a control's property, the new <xref:System.Windows.Forms.Binding> inspects the events exposed by the bound control and attaches to two particular events:  
   
--   <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
   
--   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=fullName>)  
+-   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
   
  ]]></format>
         </remarks>
@@ -368,6 +391,7 @@
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember, bool formattingEnabled, System::Windows::Forms::DataSourceUpdateMode dataSourceUpdateMode, System::Object ^ nullValue, System::String ^ formatString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -416,9 +440,9 @@
   
  When you create a binding to a control's property, the new <xref:System.Windows.Forms.Binding> inspects the events exposed by the bound control and attaches to two particular events:  
   
--   <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
   
--   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=fullName>)  
+-   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
   
  ]]></format>
         </remarks>
@@ -433,6 +457,7 @@
       <MemberSignature Language="C#" Value="public Binding (string propertyName, object dataSource, string dataMember, bool formattingEnabled, System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString, IFormatProvider formatInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string propertyName, object dataSource, string dataMember, bool formattingEnabled, valuetype System.Windows.Forms.DataSourceUpdateMode dataSourceUpdateMode, object nullValue, string formatString, class System.IFormatProvider formatInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.#ctor(System.String,System.Object,System.String,System.Boolean,System.Windows.Forms.DataSourceUpdateMode,System.Object,System.String,System.IFormatProvider)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Binding(System::String ^ propertyName, System::Object ^ dataSource, System::String ^ dataMember, bool formattingEnabled, System::Windows::Forms::DataSourceUpdateMode dataSourceUpdateMode, System::Object ^ nullValue, System::String ^ formatString, IFormatProvider ^ formatInfo);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -483,9 +508,9 @@
   
  When you create a binding to a control's property, the new <xref:System.Windows.Forms.Binding> inspects the events exposed by the bound control and attaches to two particular events:  
   
--   <xref:System.Windows.Forms.Control.Validating?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.Control.Validating?displayProperty=nameWithType>  
   
--   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=fullName>)  
+-   An event named *PropertyName*`Changed` (for example, <xref:System.Windows.Forms.Control.BackColorChanged?displayProperty=nameWithType>)  
   
  ]]></format>
         </remarks>
@@ -500,6 +525,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.IBindableComponent BindableComponent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IBindableComponent BindableComponent" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindableComponent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BindableComponent As IBindableComponent" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::IBindableComponent ^ BindableComponent { System::Windows::Forms::IBindableComponent ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -523,6 +550,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.BindingCompleteEventHandler BindingComplete;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.BindingCompleteEventHandler BindingComplete" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.BindingComplete" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event BindingComplete As BindingCompleteEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::BindingCompleteEventHandler ^ BindingComplete;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -558,12 +587,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.Binding.FormattingEnabled" />
+        <altmember cref="M:System.Windows.Forms.Binding.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="BindingManagerBase">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingManagerBase BindingManagerBase { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingManagerBase BindingManagerBase" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindingManagerBase" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BindingManagerBase As BindingManagerBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::BindingManagerBase ^ BindingManagerBase { System::Windows::Forms::BindingManagerBase ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -598,6 +631,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingMemberInfo BindingMemberInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BindingMemberInfo BindingMemberInfo" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.BindingMemberInfo" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BindingMemberInfo As BindingMemberInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::BindingMemberInfo BindingMemberInfo { System::Windows::Forms::BindingMemberInfo get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -626,12 +661,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.BindingsCollection" />
       </Docs>
     </Member>
     <Member MemberName="Control">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.Control Control { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control Control" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.Control" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Control As Control" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::Control ^ Control { System::Windows::Forms::Control ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -666,6 +704,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.ControlUpdateMode ControlUpdateMode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ControlUpdateMode ControlUpdateMode" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.ControlUpdateMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property ControlUpdateMode As ControlUpdateMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::ControlUpdateMode ControlUpdateMode { System::Windows::Forms::ControlUpdateMode get(); void set(System::Windows::Forms::ControlUpdateMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -689,6 +729,8 @@
       <MemberSignature Language="C#" Value="public object DataSource { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSource" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DataSource As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ DataSource { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -735,6 +777,8 @@
       <MemberSignature Language="C#" Value="public object DataSourceNullValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object DataSourceNullValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSourceNullValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSourceNullValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ DataSourceNullValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -754,12 +798,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.Binding.NullValue" />
       </Docs>
     </Member>
     <Member MemberName="DataSourceUpdateMode">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.DataSourceUpdateMode DataSourceUpdateMode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataSourceUpdateMode DataSourceUpdateMode" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.DataSourceUpdateMode" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSourceUpdateMode As DataSourceUpdateMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::DataSourceUpdateMode DataSourceUpdateMode { System::Windows::Forms::DataSourceUpdateMode get(); void set(System::Windows::Forms::DataSourceUpdateMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -780,7 +827,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Note that even if this property is set to <xref:System.Windows.Forms.DataSourceUpdateMode>, the binding will update at least one time, when it is first established.  
+ Note that even if this property is set to <xref:System.Windows.Forms.DataSourceUpdateMode.Never>, the binding will update at least one time, when it is first established.  
   
  ]]></format>
         </remarks>
@@ -790,6 +837,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ConvertEventHandler Format;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ConvertEventHandler Format" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.Format" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Format As ConvertEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ConvertEventHandler ^ Format;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -833,12 +882,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Forms.Binding.Parse" />
+        <altmember cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="FormatInfo">
       <MemberSignature Language="C#" Value="public IFormatProvider FormatInfo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IFormatProvider FormatInfo" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormatInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormatInfo As IFormatProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IFormatProvider ^ FormatInfo { IFormatProvider ^ get(); void set(IFormatProvider ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -859,7 +912,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Setting this property will override the default formatting behavior, which uses the <xref:System.Windows.Forms.Application.CurrentCulture%2A?displayProperty=fullName> property setting.  
+ Setting this property will override the default formatting behavior, which uses the <xref:System.Windows.Forms.Application.CurrentCulture%2A?displayProperty=nameWithType> property setting.  
   
  ]]></format>
         </remarks>
@@ -869,6 +922,8 @@
       <MemberSignature Language="C#" Value="public string FormatString { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FormatString" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormatString" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormatString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FormatString { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -894,6 +949,8 @@
       <MemberSignature Language="C#" Value="public bool FormattingEnabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool FormattingEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.FormattingEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property FormattingEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool FormattingEnabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -919,12 +976,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Forms.Binding.BindingComplete" />
+        <altmember cref="T:System.Windows.Forms.BindingCompleteEventArgs" />
       </Docs>
     </Member>
     <Member MemberName="IsBinding">
       <MemberSignature Language="C#" Value="public bool IsBinding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsBinding" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.IsBinding" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsBinding As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsBinding { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -966,6 +1027,8 @@
       <MemberSignature Language="C#" Value="public object NullValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object NullValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.NullValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property NullValue As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ NullValue { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -993,6 +1056,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnBindingComplete (System.Windows.Forms.BindingCompleteEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBindingComplete(class System.Windows.Forms.BindingCompleteEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnBindingComplete (e As BindingCompleteEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnBindingComplete(System::Windows::Forms::BindingCompleteEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1026,6 +1091,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnFormat (System.Windows.Forms.ConvertEventArgs cevent);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFormat(class System.Windows.Forms.ConvertEventArgs cevent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnFormat (cevent As ConvertEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnFormat(System::Windows::Forms::ConvertEventArgs ^ cevent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1053,12 +1120,17 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Windows.Forms.Binding.Format" />
+        <altmember cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Binding.Parse" />
       </Docs>
     </Member>
     <Member MemberName="OnParse">
       <MemberSignature Language="C#" Value="protected virtual void OnParse (System.Windows.Forms.ConvertEventArgs cevent);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnParse(class System.Windows.Forms.ConvertEventArgs cevent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnParse (cevent As ConvertEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnParse(System::Windows::Forms::ConvertEventArgs ^ cevent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1086,12 +1158,17 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" /> in a derived class, be sure to call the base class's <see cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" /> method so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Windows.Forms.Binding.Format" />
+        <altmember cref="M:System.Windows.Forms.Binding.OnFormat(System.Windows.Forms.ConvertEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.Binding.Parse" />
       </Docs>
     </Member>
     <Member MemberName="Parse">
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ConvertEventHandler Parse;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ConvertEventHandler Parse" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Binding.Parse" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Parse As ConvertEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ConvertEventHandler ^ Parse;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1129,12 +1206,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Windows.Forms.Binding.Format" />
+        <altmember cref="M:System.Windows.Forms.Binding.OnParse(System.Windows.Forms.ConvertEventArgs)" />
+        <altmember cref="E:System.Windows.Forms.BindingManagerBase.PositionChanged" />
+        <altmember cref="E:System.Windows.Forms.BindingManagerBase.CurrentChanged" />
       </Docs>
     </Member>
     <Member MemberName="PropertyName">
       <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Binding.PropertyName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PropertyName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PropertyName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1174,6 +1257,8 @@
       <MemberSignature Language="C#" Value="public void ReadValue ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadValue() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.ReadValue" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReadValue ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReadValue();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1192,6 +1277,8 @@
       <MemberSignature Language="C#" Value="public void WriteValue ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteValue() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Binding.WriteValue" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteValue ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteValue();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>

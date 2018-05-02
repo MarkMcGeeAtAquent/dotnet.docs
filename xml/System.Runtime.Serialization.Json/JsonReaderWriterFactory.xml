@@ -1,7 +1,9 @@
-<Type Name="JsonReaderWriterFactory" FullName="System.Runtime.Serialization.Json.JsonReaderWriterFactory">
+﻿<Type Name="JsonReaderWriterFactory" FullName="System.Runtime.Serialization.Json.JsonReaderWriterFactory">
   <TypeSignature Language="C#" Value="public static class JsonReaderWriterFactory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit JsonReaderWriterFactory extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Json.JsonReaderWriterFactory" />
+  <TypeSignature Language="VB.NET" Value="Public Class JsonReaderWriterFactory" />
+  <TypeSignature Language="C++ CLI" Value="public ref class JsonReaderWriterFactory abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Serialization</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+    <AssemblyVersion>4.0.4.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,10 +38,30 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName="CreateJsonReader">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an <see cref="T:System.Xml.XmlDictionaryReader" /> that can map - streams or buffers encoded with JavaScript Object Notation (JSON) to an XML Infoset.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Each of the overloads uses a <xref:System.Xml.XmlDictionaryReaderQuotas> to prevent Denial of Service (DoS) attacks when reading untrusted data. [!INCLUDE[crabout](~/includes/crabout-md.md)] using <xref:System.Xml.XmlDictionaryReaderQuotas> to prevent Denial of Service attacks when reading untrusted data, see [Security Considerations for Data](~/docs/framework/wcf/feature-details/security-considerations-for-data.md).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateJsonReader">
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, System.Xml.XmlDictionaryReaderQuotas quotas);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateJsonReader (buffer As Byte(), quotas As XmlDictionaryReaderQuotas) As XmlDictionaryReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryReader ^ CreateJsonReader(cli::array &lt;System::Byte&gt; ^ buffer, System::Xml::XmlDictionaryReaderQuotas ^ quotas);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -45,6 +71,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
@@ -74,6 +104,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (System.IO.Stream stream, System.Xml.XmlDictionaryReaderQuotas quotas);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(class System.IO.Stream stream, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryReader ^ CreateJsonReader(System::IO::Stream ^ stream, System::Xml::XmlDictionaryReaderQuotas ^ quotas);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -83,6 +114,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
@@ -112,6 +147,8 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, int offset, int count, System.Xml.XmlDictionaryReaderQuotas quotas);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, int32 offset, int32 count, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateJsonReader (buffer As Byte(), offset As Integer, count As Integer, quotas As XmlDictionaryReaderQuotas) As XmlDictionaryReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryReader ^ CreateJsonReader(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, System::Xml::XmlDictionaryReaderQuotas ^ quotas);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -121,6 +158,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
@@ -154,6 +195,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (System.IO.Stream stream, System.Text.Encoding encoding, System.Xml.XmlDictionaryReaderQuotas quotas, System.Xml.OnXmlDictionaryReaderClose onClose);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(class System.IO.Stream stream, class System.Text.Encoding encoding, class System.Xml.XmlDictionaryReaderQuotas quotas, class System.Xml.OnXmlDictionaryReaderClose onClose) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.IO.Stream,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryReader ^ CreateJsonReader(System::IO::Stream ^ stream, System::Text::Encoding ^ encoding, System::Xml::XmlDictionaryReaderQuotas ^ quotas, System::Xml::OnXmlDictionaryReaderClose ^ onClose);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -163,6 +205,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
@@ -194,6 +240,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, int offset, int count, System.Text.Encoding encoding, System.Xml.XmlDictionaryReaderQuotas quotas, System.Xml.OnXmlDictionaryReaderClose onClose);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, int32 offset, int32 count, class System.Text.Encoding encoding, class System.Xml.XmlDictionaryReaderQuotas quotas, class System.Xml.OnXmlDictionaryReaderClose onClose) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Int32,System.Int32,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryReader ^ CreateJsonReader(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, System::Text::Encoding ^ encoding, System::Xml::XmlDictionaryReaderQuotas ^ quotas, System::Xml::OnXmlDictionaryReaderClose ^ onClose);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -203,6 +250,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
@@ -234,10 +285,29 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateJsonWriter">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an <see cref="T:System.Xml.XmlDictionaryWriter" /> that writes data encoded with JSON to a stream.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter%2A> static method returns an instance of an <xref:System.Xml.XmlDictionaryWriter> that can map an XML Infoset to a JSON stream. The <xref:System.Xml.XmlDictionaryWriter> is not guaranteed to produce valid JSON. If it is used in a way not supported by the JSON-XML mapping, it may either throw an exception or write an invalid JSON document.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateJsonWriter">
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryWriter ^ CreateJsonWriter(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -247,6 +317,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
@@ -272,6 +346,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryWriter ^ CreateJsonWriter(System::IO::Stream ^ stream, System::Text::Encoding ^ encoding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -281,6 +356,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
@@ -308,6 +387,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryWriter ^ CreateJsonWriter(System::IO::Stream ^ stream, System::Text::Encoding ^ encoding, bool ownsStream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -317,6 +397,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
@@ -339,6 +423,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream, bool indent);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream, bool indent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryWriter ^ CreateJsonWriter(System::IO::Stream ^ stream, System::Text::Encoding ^ encoding, bool ownsStream, bool indent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -348,6 +433,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
@@ -372,6 +461,7 @@
       <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream, bool indent, string indentChars);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream, bool indent, string indentChars) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Boolean,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::XmlDictionaryWriter ^ CreateJsonWriter(System::IO::Stream ^ stream, System::Text::Encoding ^ encoding, bool ownsStream, bool indent, System::String ^ indentChars);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Serialization</AssemblyName>
@@ -381,6 +471,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
@@ -403,41 +497,5 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="CreateJsonReader">
-      <AssemblyInfo>
-        <AssemblyName>System.Runtime.Serialization</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Creates an <see cref="T:System.Xml.XmlDictionaryReader" /> that can map - streams or buffers encoded with JavaScript Object Notation (JSON) to an XML Infoset.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Each of the overloads uses a <xref:System.Xml.XmlDictionaryReaderQuotas> to prevent Denial of Service (DoS) attacks when reading untrusted data. [!INCLUDE[crabout](~/includes/crabout-md.md)] using <xref:System.Xml.XmlDictionaryReaderQuotas> to prevent Denial of Service attacks when reading untrusted data, see [Security Considerations for Data](~/docs/framework/wcf/feature-details/security-considerations-for-data.md).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="CreateJsonWriter">
-      <AssemblyInfo>
-        <AssemblyName>System.Runtime.Serialization</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Creates an <see cref="T:System.Xml.XmlDictionaryWriter" /> that writes data encoded with JSON to a stream.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter%2A> static method returns an instance of an <xref:System.Xml.XmlDictionaryWriter> that can map an XML Infoset to a JSON stream. The <xref:System.Xml.XmlDictionaryWriter> is not guaranteed to produce valid JSON. If it is used in a way not supported by the JSON-XML mapping, it may either throw an exception or write an invalid JSON document.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

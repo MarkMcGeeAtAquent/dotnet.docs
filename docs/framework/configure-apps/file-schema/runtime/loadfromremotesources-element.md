@@ -1,19 +1,14 @@
 ---
-title: "&lt;loadFromRemoteSources&gt; Element | Microsoft Docs"
+title: "&lt;loadFromRemoteSources&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "loadFromRemoteSources element"
   - "<loadFromRemoteSources> element"
@@ -22,12 +17,14 @@ caps.latest.revision: 31
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;loadFromRemoteSources&gt; Element
 Specifies whether assemblies from remote sources should be granted full trust.  
   
 > [!NOTE]
->  If you were directed to this topic because of an error message in the Visual Studio project error list or a build error, see [How to: Use an Assembly from the Web in Visual Studio](http://msdn.microsoft.com/en-us/d8635b63-89a0-41aa-90f4-f351b2111070).  
+>  If you were directed to this topic because of an error message in the Visual Studio project error list or a build error, see [How to: Use an Assembly from the Web in Visual Studio](http://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070).  
   
  \<configuration>  
 \<runtime>  
@@ -35,7 +32,7 @@ Specifies whether assemblies from remote sources should be granted full trust.
   
 ## Syntax  
   
-```  
+```xml  
 <loadFromRemoteSources    
    enabled="true|false"/>  
 ```  
@@ -99,7 +96,7 @@ Specifies whether assemblies from remote sources should be granted full trust.
 ## Example  
  The following example shows how to grant full trust to applications from remote sources.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <loadFromRemoteSources enabled="true"/>  
@@ -108,7 +105,7 @@ Specifies whether assemblies from remote sources should be granted full trust.
 ```  
   
 ## See Also  
- [More Implicit Uses of CAS Policy: loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)   
- [How to: Run Partially Trusted Code in a Sandbox](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)   
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+ [More Implicit Uses of CAS Policy: loadFromRemoteSources](http://go.microsoft.com/fwlink/p/?LinkId=266839)  
+ [How to: Run Partially Trusted Code in a Sandbox](../../../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md)  
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)

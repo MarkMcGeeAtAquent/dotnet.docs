@@ -1,7 +1,9 @@
-<Type Name="ConnectionConsumerAttribute" FullName="System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute">
+﻿<Type Name="ConnectionConsumerAttribute" FullName="System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute">
   <TypeSignature Language="C#" Value="public class ConnectionConsumerAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectionConsumerAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class ConnectionConsumerAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConnectionConsumerAttribute : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -54,17 +56,40 @@
   
  The final example shows the ASP.NET page that contains the two controls.  
   
- <!-- TODO: review snippet reference [!code-csharp[UI.WebControls.WebParts.Connection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UI.WebControls.WebParts.Connection/CS/defaultcs.aspx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[UI.WebControls.WebParts.Connection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UI.WebControls.WebParts.Connection/VB/defaultvb.aspx#3)]  -->  
+ [!code-aspx-csharp[UI.WebControls.WebParts.Connection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/UI.WebControls.WebParts.Connection/CS/defaultcs.aspx#3)]
+ [!code-aspx-vb[UI.WebControls.WebParts.Connection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/UI.WebControls.WebParts.Connection/VB/defaultvb.aspx#3)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartConnection" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionPoint" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.ConnectionProviderAttribute" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" /> class, specifying a value to use for the connection point display name, and optionally specifying values to use for the connection point's ID, the connection point type, or both.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A consumer control can have multiple methods marked with the `ConnectionConsumerAttribute` metadata element. In this case, the consumer would have multiple connection points, and each instance of the `ConnectionConsumerAttribute` element should specify a unique ID value for the associated connection point, so that the consumer's connection points can be distinguished.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectionConsumerAttribute (string displayName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (displayName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConnectionConsumerAttribute(System::String ^ displayName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -96,12 +121,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="displayName" /> is <see langword="null" />.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectionConsumerAttribute (string displayName, string id);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string id) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (displayName As String, id As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConnectionConsumerAttribute(System::String ^ displayName, System::String ^ id);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -127,12 +155,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="displayName" /> or <paramref name="id" /> is <see langword="null" />.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ID" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectionConsumerAttribute (string displayName, Type connectionPointType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, class System.Type connectionPointType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.#ctor(System.String,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (displayName As String, connectionPointType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConnectionConsumerAttribute(System::String ^ displayName, Type ^ connectionPointType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -157,15 +189,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="displayName" /> or<paramref name=" connectionPointType" /> is <see langword="null" />.</exception>
+          <paramref name="displayName" /> or <paramref name="connectionPointType" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="connectionPointType" /> is not valid.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ConnectionPointType" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ConnectionConsumerAttribute (string displayName, string id, Type connectionPointType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string displayName, string id, class System.Type connectionPointType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.#ctor(System.String,System.String,System.Type)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (displayName As String, id As String, connectionPointType As Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ConnectionConsumerAttribute(System::String ^ displayName, System::String ^ id, Type ^ connectionPointType);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -194,15 +230,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="displayName" />, <paramref name="id" />, or<paramref name=" connectionPointType" /> is <see langword="null" />.</exception>
+          <paramref name="displayName" />, <paramref name="id" />, or <paramref name="connectionPointType" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="connectionPointType" /> is not valid.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ConnectionPointType" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ID" />
       </Docs>
     </Member>
     <Member MemberName="AllowsMultipleConnections">
       <MemberSignature Language="C#" Value="public bool AllowsMultipleConnections { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowsMultipleConnections" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowsMultipleConnections As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowsMultipleConnections { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -223,12 +264,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.AllowsMultipleConnections" />
       </Docs>
     </Member>
     <Member MemberName="ConnectionPointType">
       <MemberSignature Language="C#" Value="public Type ConnectionPointType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ConnectionPointType" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ConnectionPointType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConnectionPointType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ConnectionPointType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -255,6 +299,8 @@
       <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property DisplayName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DisplayName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -286,12 +332,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.DisplayName" />
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayNameValue" />
       </Docs>
     </Member>
     <Member MemberName="DisplayNameValue">
       <MemberSignature Language="C#" Value="protected string DisplayNameValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DisplayNameValue" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayNameValue" />
+      <MemberSignature Language="VB.NET" Value="Protected Property DisplayNameValue As String" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::String ^ DisplayNameValue { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -311,12 +361,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.DisplayName" />
       </Docs>
     </Member>
     <Member MemberName="ID">
       <MemberSignature Language="C#" Value="public string ID { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ID" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.ID" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ID As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ID { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -338,22 +391,5 @@
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute" /> class, specifying a value to use for the connection point display name, and optionally specifying values to use for the connection point's ID, the connection point type, or both.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- A consumer control can have multiple methods marked with the `ConnectionConsumerAttribute` metadata element. In this case, the consumer would have multiple connection points, and each instance of the `ConnectionConsumerAttribute` element should specify a unique ID value for the associated connection point, so that the consumer's connection points can be distinguished.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

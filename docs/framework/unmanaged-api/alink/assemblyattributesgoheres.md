@@ -1,5 +1,5 @@
 ---
-title: "AssemblyAttributesGoHereS | Microsoft Docs"
+title: "AssemblyAttributesGoHereS"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "AssemblyAttributesGoHereS"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "AssemblyAttributesGoHereS"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "AssemblyAttributesGoHereS type"
   - "Alink API, AssemblyAttributesGoHereS type"
 ms.assetid: 4e817f35-a2bc-4403-9e6f-f731e6b9fe23
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # AssemblyAttributesGoHereS
 Used by ALink as a placeholder to store information about custom attributes.  
@@ -47,6 +50,6 @@ AssemblyAttributesGoHereS
  mscorlib.dll  
   
 ## See Also  
- [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)   
- [AssemblyAttributesGoHereM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoherem.md)   
+ [AssemblyAttributesGoHere](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgohere.md)  
+ [AssemblyAttributesGoHereM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoherem.md)  
  [AssemblyAttributesGoHereSM](../../../../docs/framework/unmanaged-api/alink/assemblyattributesgoheresm.md)

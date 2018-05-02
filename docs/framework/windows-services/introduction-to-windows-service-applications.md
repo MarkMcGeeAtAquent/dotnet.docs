@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Windows Service Applications | Microsoft Docs"
+title: "Introduction to Windows Service Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -33,9 +33,11 @@ caps.latest.revision: 17
 author: "ghogen"
 ms.author: "ghogen"
 manager: "douge"
+ms.workload: 
+  - "dotnet"
 ---
 # Introduction to Windows Service Applications
-Microsoft Windows services, formerly known as NT services, enable you to create long-running executable applications that run in their own Windows sessions. These services can be automatically started when the computer boots, can be paused and restarted, and do not show any user interface. These features make services ideal for use on a server or whenever you need long-running functionality that does not interfere with other users who are working on the same computer. You can also run services in the security context of a specific user account that is different from the logged-on user or the default computer account. For more information about services and Windows sessions, see the Windows SDK documentation in the MSDN Library.  
+Microsoft Windows services, formerly known as NT services, enable you to create long-running executable applications that run in their own Windows sessions. These services can be automatically started when the computer boots, can be paused and restarted, and do not show any user interface. These features make services ideal for use on a server or whenever you need long-running functionality that does not interfere with other users who are working on the same computer. You can also run services in the security context of a specific user account that is different from the logged-on user or the default computer account. For more information about services and Windows sessions, see the Windows SDK documentation.  
   
  You can easily create services by creating an application that is installed as a service. For example, suppose you want to monitor performance counter data and react to threshold values. You could write a Windows Service application that listens to the performance counter data, deploy the application, and begin collecting and analyzing data.  
   
@@ -65,12 +67,12 @@ Microsoft Windows services, formerly known as NT services, enable you to create 
   
  After the service has been loaded, it must be started. Starting the service allows it to begin functioning. You can start a service from the **Services Control Manager**, from **Server Explorer**, or from code by calling the <xref:System.ServiceProcess.ServiceController.Start%2A> method. The <xref:System.ServiceProcess.ServiceController.Start%2A> method passes processing to the application's <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method and processes any code you have defined there.  
   
- A running service can exist in this state indefinitely until it is either stopped or paused or until the computer shuts down. A service can exist in one of three basic states: <xref:System.ServiceProcess.ServiceControllerStatus>, <xref:System.ServiceProcess.ServiceControllerStatus>, or <xref:System.ServiceProcess.ServiceControllerStatus>. The service can also report the state of a pending command: <xref:System.ServiceProcess.ServiceControllerStatus>, <xref:System.ServiceProcess.ServiceControllerStatus>, <xref:System.ServiceProcess.ServiceControllerStatus>, or <xref:System.ServiceProcess.ServiceControllerStatus>. These statuses indicate that a command has been issued, such as a command to pause a running service, but has not been carried out yet. You can query the <xref:System.ServiceProcess.ServiceController.Status%2A> to determine what state a service is in, or use the <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A> to carry out an action when any of these states occurs.  
+ A running service can exist in this state indefinitely until it is either stopped or paused or until the computer shuts down. A service can exist in one of three basic states: <xref:System.ServiceProcess.ServiceControllerStatus.Running>, <xref:System.ServiceProcess.ServiceControllerStatus.Paused>, or <xref:System.ServiceProcess.ServiceControllerStatus.Stopped>. The service can also report the state of a pending command: <xref:System.ServiceProcess.ServiceControllerStatus.ContinuePending>, <xref:System.ServiceProcess.ServiceControllerStatus.PausePending>, <xref:System.ServiceProcess.ServiceControllerStatus.StartPending>, or <xref:System.ServiceProcess.ServiceControllerStatus.StopPending>. These statuses indicate that a command has been issued, such as a command to pause a running service, but has not been carried out yet. You can query the <xref:System.ServiceProcess.ServiceController.Status%2A> to determine what state a service is in, or use the <xref:System.ServiceProcess.ServiceController.WaitForStatus%2A> to carry out an action when any of these states occurs.  
   
  You can pause, stop, or resume a service from the **Services Control Manager**, from **Server Explorer**, or by calling methods in code. Each of these actions can call an associated procedure in the service (<xref:System.ServiceProcess.ServiceBase.OnStop%2A>, <xref:System.ServiceProcess.ServiceBase.OnPause%2A>, or <xref:System.ServiceProcess.ServiceBase.OnContinue%2A>), in which you can define additional processing to be performed when the service changes state.  
   
 ## Types of Services  
- There are two types of services you can create in Visual Studio using the .NET Framework. Services that are the only service in a process are assigned the type <xref:System.ServiceProcess.ServiceType>. Services that share a process with another service are assigned the type <xref:System.ServiceProcess.ServiceType>. You can retrieve the service type by querying the <xref:System.ServiceProcess.ServiceController.ServiceType%2A> property.  
+ There are two types of services you can create in Visual Studio using the .NET Framework. Services that are the only service in a process are assigned the type <xref:System.ServiceProcess.ServiceType.Win32OwnProcess>. Services that share a process with another service are assigned the type <xref:System.ServiceProcess.ServiceType.Win32ShareProcess>. You can retrieve the service type by querying the <xref:System.ServiceProcess.ServiceController.ServiceType%2A> property.  
   
  You might occasionally see other service types if you query existing services that were not created in Visual Studio. For more information on these, see the <xref:System.ServiceProcess.ServiceType>.  
   
@@ -86,11 +88,11 @@ Microsoft Windows services, formerly known as NT services, enable you to create 
 -   Projects containing Windows services must have installation components for the project and its services. This can be easily accomplished from the **Properties** window. For more information, see [How to: Add Installers to Your Service Application](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
 ## See Also  
- [Windows Service Applications](../../../docs/framework/windows-services/index.md)   
- [Service Application Programming Architecture](../../../docs/framework/windows-services/service-application-programming-architecture.md)   
- [How to: Create Windows Services](../../../docs/framework/windows-services/how-to-create-windows-services.md)   
- [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)   
- [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md)   
- [How to: Debug Windows Service Applications](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)   
- [Walkthrough: Creating a Windows Service Application in the Component Designer](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)   
+ [Windows Service Applications](../../../docs/framework/windows-services/index.md)  
+ [Service Application Programming Architecture](../../../docs/framework/windows-services/service-application-programming-architecture.md)  
+ [How to: Create Windows Services](../../../docs/framework/windows-services/how-to-create-windows-services.md)  
+ [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md)  
+ [How to: Debug Windows Service Applications](../../../docs/framework/windows-services/how-to-debug-windows-service-applications.md)  
+ [Walkthrough: Creating a Windows Service Application in the Component Designer](../../../docs/framework/windows-services/walkthrough-creating-a-windows-service-application-in-the-component-designer.md)  
  [How to: Add Installers to Your Service Application](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md)

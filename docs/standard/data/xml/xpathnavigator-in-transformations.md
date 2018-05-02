@@ -1,5 +1,5 @@
 ---
-title: "XPathNavigator in Transformations | Microsoft Docs"
+title: "XPathNavigator in Transformations"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
 caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # XPathNavigator in Transformations
 The <xref:System.Xml.XPath.XPathNavigator> class provides read-only random access to data and is designed for use as an input to Extensible Stylesheet Language for Transformations (XSLT). It is implemented on the <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, and <xref:System.Xml.XmlDocument>. The <xref:System.Xml.XPath.XPathNavigator> is based upon the World Wide Web Consortium (W3C) Data Model as described in section 5 of the XML Path Language (XPath) recommendation.  
@@ -30,7 +31,7 @@ The <xref:System.Xml.XPath.XPathNavigator> class provides read-only random acces
   
 ## test.xsl  
   
-```  
+```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
                 xmlns:msxsl ="urn:schemas-microsoft-com:xslt"  
                 xmlns:user="http://www.adventure-works.com"  
@@ -59,12 +60,11 @@ The <xref:System.Xml.XPath.XPathNavigator> class provides read-only random acces
 </xsl:template>  
   
 </xsl:stylesheet>  
-  
 ```  
   
 ## test.xml  
   
-```  
+```xml  
 <root>Some text</root>  
 ```  
   
@@ -89,7 +89,6 @@ Public Class sample
         xslt.Transform(xd, Nothing, strmTemp, Nothing)  
     End Sub 'Main  
 End Class 'sample  
-  
 ```  
   
 ```csharp  
@@ -118,9 +117,8 @@ public class sample
 ## Output  
  The result of the transformation is found in the file **out.xml**:  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>Joe  
-  
 ```  
   
 ## See Also  

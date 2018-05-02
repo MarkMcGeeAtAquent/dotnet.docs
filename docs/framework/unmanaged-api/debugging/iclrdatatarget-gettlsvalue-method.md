@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::GetTLSValue Method | Microsoft Docs"
+title: "ICLRDataTarget::GetTLSValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.GetTLSValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::GetTLSValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTLSValue method [.NET Framework debugging]"
   - "ICLRDataTarget::GetTLSValue method [.NET Framework debugging]"
 ms.assetid: 0d8a7730-edc9-4728-898f-41b219cf5a28
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::GetTLSValue Method
 Gets a value from the thread local storage (TLS) of the specified thread in the target process. This method is called by the common language runtime (CLR) data access services.  

@@ -1,5 +1,5 @@
 ---
-title: "ListBox | Microsoft Docs"
+title: "ListBox"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -19,6 +19,8 @@ caps.latest.revision: 64
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ListBox
 A <xref:System.Windows.Controls.ListBox> control provides users with a list of selectable items.  

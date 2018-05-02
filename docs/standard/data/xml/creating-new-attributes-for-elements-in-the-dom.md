@@ -1,5 +1,5 @@
 ---
-title: "Creating New Attributes for Elements in the DOM | Microsoft Docs"
+title: "Creating New Attributes for Elements in the DOM"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Creating New Attributes for Elements in the DOM
 Creating new attributes is different than creating other node types, because attributes are not nodes, but are properties of an element node and are contained in an **XmlAttributeCollection** associated with the element. There are multiple ways to create an attribute and attach it to an element:  
@@ -38,7 +39,7 @@ public class Sample
   public shared sub Main()  
   
   Dim doc as XmlDocument = new XmlDocument()  
-  doc.LoadXml("\<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" & _  
+  doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" & _  
               "<title>Pride And Prejudice</title>" & _  
               "</book>")  
   Dim root as XmlElement = doc.DocumentElement  
@@ -63,7 +64,7 @@ public class Sample
   public static void Main()  
   {  
     XmlDocument doc = new XmlDocument();  
-    doc.LoadXml("\<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" +  
+    doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" +  
                 "<title>Pride And Prejudice</title>" +  
                 "</book>");  
     XmlElement root = doc.DocumentElement;  
@@ -80,8 +81,8 @@ public class Sample
   
  Given the following XML:  
   
-```  
-\<book genre='novel' ISBN='1-861001-57-5'>  
+```xml  
+<book genre='novel' ISBN='1-861001-57-5'>  
 <title>Pride And Prejudice</title>  
 </book>  
 ```  
@@ -110,7 +111,7 @@ doc.DocumentElement.SetAttributeNode(attr);
   
  **Output**  
   
-```  
+```xml  
 <book genre="novel" ISBN="1-861001-57-5" publisher="WorldWide Publishing">  
 <title>Pride And Prejudice</title>  
 </book>  

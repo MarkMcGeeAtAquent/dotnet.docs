@@ -1,5 +1,5 @@
 ---
-title: "How to: Choose the Printers Attached to a User&#39;s Computer in Windows Forms | Microsoft Docs"
+title: "How to: Choose the Printers Attached to a User&#39;s Computer in Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,15 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "printing [Windows Forms], choosing printers"
-  - "printers, choosing"
+  - "printers [Windows Forms], choosing"
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Choose the Printers Attached to a User&#39;s Computer in Windows Forms
 Often, users want to choose a printer other than the default printer to print to. You can enable users to choose a printer from among those currently installed by using the <xref:System.Windows.Forms.PrintDialog> component. Through the <xref:System.Windows.Forms.PrintDialog> component, the <xref:System.Windows.Forms.DialogResult> of the <xref:System.Windows.Forms.PrintDialog> component is captured and used to select the printer.  
@@ -27,11 +31,11 @@ Often, users want to choose a printer other than the default printer to print to
   
 ### To choose a printer and then print a file  
   
-1.  Select the printer to be used using the <xref:System.Windows.Forms.PrintDialog>component.  
+1.  Select the printer to be used using the <xref:System.Windows.Forms.PrintDialog> component.  
   
-     In the following code example, there are two events being handled. In the first, a <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event, the <xref:System.Windows.Forms.PrintDialog>class is instantiated and the printer selected by the user is captured in the <xref:System.Windows.Forms.DialogResult>property.  
+     In the following code example, there are two events being handled. In the first, a <xref:System.Windows.Forms.Button> control's <xref:System.Windows.Forms.Control.Click> event, the <xref:System.Windows.Forms.PrintDialog> class is instantiated and the printer selected by the user is captured in the <xref:System.Windows.Forms.DialogResult> property.  
   
-     In the second event, the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event of the <xref:System.Drawing.Printing.PrintDocument>component, a sample document is printed to the printer specified.  
+     In the second event, the <xref:System.Drawing.Printing.PrintDocument.PrintPage> event of the <xref:System.Drawing.Printing.PrintDocument> component, a sample document is printed to the printer specified.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -48,7 +52,6 @@ Often, users want to choose a printer other than the default printer to print to
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
        e.Graphics.FillRectangle(Brushes.Red, New Rectangle(500, 500, 500, 500))          
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -69,7 +72,6 @@ Often, users want to choose a printer other than the default printer to print to
        e.Graphics.FillRectangle(Brushes.Red,   
          new Rectangle(500, 500, 500, 500));  
     }  
-  
     ```  
   
     ```cpp  
@@ -102,7 +104,6 @@ Often, users want to choose a printer other than the default printer to print to
        System.Drawing.Printing.PrintPageEventHandler  
        (this.printDocument1_PrintPage);  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
-  
     ```  
   
     ```cpp  

@@ -1,8 +1,8 @@
 ---
-title: "715 - ClientChannelOpenStart | Microsoft Docs"
+title: "715 - ClientChannelOpenStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 62be7826-9c4e-4fec-b958-185ddfaed976
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 715 - ClientChannelOpenStart
 ## Properties  

@@ -1,6 +1,6 @@
 ---
 title: "Walkthrough: Accessing a SQL Database by Using Type Providers (F#)"
-description: "Walkthrough: Accessing a SQL Database by Using Type Providers (F#)"
+description: Learn how to use the SqlDataConnection (LINQ to SQL) type provider in F# 3.0 to generate types for a SQL database when you have a live database connection.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -15,7 +15,7 @@ ms.assetid: 1c413eb0-16a5-4c1a-9a4e-ad6877e645d6
 # Walkthrough: Accessing a SQL Database by Using Type Providers
 
 > [!NOTE]
-This guide was written for F# 3.0 and will be updated.  See [FSharp.Data](http://fsharp.github.io/FSharp.Data/) for up-to-date, cross-platform type providers.
+This guide was written for F# 3.0 and will be updated.  See [FSharp.Data](https://fsharp.github.io/FSharp.Data/) for up-to-date, cross-platform type providers.
 
 > [!NOTE]
 The API reference links will take you to MSDN.  The docs.microsoft.com API reference is not complete.
@@ -53,7 +53,7 @@ On a server that's running SQL Server, create a database for testing purposes. Y
 
 #### To prepare a test database
 
-To run the MyDatabase Create Script, open the **View** menu, and then choose **SQL Server Object Explorer** or choose the Ctrl+\, Ctrl+S keys. In **SQL Server Object Explorer** window, open the shortcut menu for the appropriate instance, choose **New Query**, copy the script at the bottom of this page, and then paste the script into the editor. To run the SQL script, choose the toolbar icon with the triangular symbol, or choose the Ctrl+Q keys. For more information about **SQL Server Object Explorer**, see [Connected Database Development](http://go.microsoft.com/fwlink/?LinkId=237128).
+To run the MyDatabase Create Script, open the **View** menu, and then choose **SQL Server Object Explorer** or choose the Ctrl+\, Ctrl+S keys. In **SQL Server Object Explorer** window, open the shortcut menu for the appropriate instance, choose **New Query**, copy the script at the bottom of this page, and then paste the script into the editor. To run the SQL script, choose the toolbar icon with the triangular symbol, or choose the Ctrl+Q keys. For more information about **SQL Server Object Explorer**, see [Connected Database Development](https://msdn.microsoft.com/library/hh272679(VS.103).aspx).
 
 
 ## Creating the project
@@ -387,28 +387,28 @@ GO
 
 -- Create the Table1 table.
 CREATE TABLE [dbo].[Table1] (
-  [Id]        INT        NOT NULL,
-  [TestData1] INT        NOT NULL,
+  [Id]        INT        NOT NULL,
+  [TestData1] INT        NOT NULL,
   [TestData2] FLOAT (53) NOT NULL,
-  [Name]      NTEXT      NOT NULL,
+  [Name]      NTEXT      NOT NULL,
   PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 -- Create the Table2 table.
 CREATE TABLE [dbo].[Table2] (
-  [Id]        INT        NOT NULL,
-  [TestData1] INT        NULL,
+  [Id]        INT        NOT NULL,
+  [TestData1] INT        NULL,
   [TestData2] FLOAT (53) NULL,
-  [Name]      NTEXT      NOT NULL,
+  [Name]      NTEXT      NOT NULL,
   PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 
 -- Create the Table3 table.
 CREATE TABLE [dbo].[Table3] (
-  [Id]   INT           NOT NULL,
+  [Id]   INT           NOT NULL,
   [Name] NVARCHAR (50) NOT NULL,
-  [Data] INT           NOT NULL,
+  [Data] INT           NOT NULL,
   PRIMARY KEY CLUSTERED ([Id] ASC)
   );
 GO
@@ -454,6 +454,6 @@ INSERT INTO Table3 (Id, Name, Data)
 
 [Query Expressions](../../language-reference/query-expressions.md)
 
-[LINQ to SQL](https://msdn.microsoft.com/library/bb386976)
+[LINQ to SQL](../../../../docs/framework/data/adonet/sql/linq/index.md)
 
 [SqlMetal.exe &#40;Code Generation Tool&#41;](https://msdn.microsoft.com/library/bb386987)

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback2::FinalizeableObjectQueued Method | Microsoft Docs"
+title: "ICorProfilerCallback2::FinalizeableObjectQueued Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback2.FinalizeableObjectQueued"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback2::FinalizeableObjectQueued"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FinalizeableObjectQueued method [.NET Framework profiling]"
   - "ICorProfilerCallback2::FinalizeableObjectQueued method [.NET Framework profiling]"
 ms.assetid: 92d76893-683c-475d-9996-5bff03cdb10f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback2::FinalizeableObjectQueued Method
 Notifies the code profiler that an object with a finalizer has been queued to the finalizer thread for execution of its `Finalize` method.  
@@ -55,5 +58,5 @@ HRESULT FinalizeableObjectQueued(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)

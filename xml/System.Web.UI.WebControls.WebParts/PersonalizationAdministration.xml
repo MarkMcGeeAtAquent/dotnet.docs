@@ -1,7 +1,9 @@
-<Type Name="PersonalizationAdministration" FullName="System.Web.UI.WebControls.WebParts.PersonalizationAdministration">
+﻿<Type Name="PersonalizationAdministration" FullName="System.Web.UI.WebControls.WebParts.PersonalizationAdministration">
   <TypeSignature Language="C#" Value="public static class PersonalizationAdministration" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit PersonalizationAdministration extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationAdministration" />
+  <TypeSignature Language="VB.NET" Value="Public Class PersonalizationAdministration" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PersonalizationAdministration abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -18,30 +20,33 @@
 ## Remarks  
  This class provides several static methods and properties that expose management and administrative functionality for Web Parts personalization. These methods apply to the default personalization provider configured in the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control for a Web Parts control. If you need to administer several data stores that are acting as personalization providers, you should use the methods on the individual personalization provider classes directly. Note that the collection of configured personalization providers for a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control is available from the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers%2A> static property.  
   
- It is important to be aware that personalization will fail if your Web application does not run at the default trust level of <xref:System.Web.AspNetHostingPermissionLevel> or higher (you can set custom trust levels in a Web.config file using the `<trust level="" />` element). The <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration> and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> classes both check for a trust level of <xref:System.Web.AspNetHostingPermissionLevel> when they are initialized. If you configure your application to run at a trust level of <xref:System.Web.AspNetHostingPermissionLevel>, and you use the default <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> provider to manage the personalization data for your application, the first time that the application tries to access personalization data, it will fail because an ASP.NET worker process running in <xref:System.Web.AspNetHostingPermissionLevel> trust does not have the permissions necessary to call into the various classes in the <xref:System.Data.SqlClient> namespace.  
+ It is important to be aware that personalization will fail if your Web application does not run at the default trust level of <xref:System.Web.AspNetHostingPermissionLevel.Medium> or higher (you can set custom trust levels in a Web.config file using the `<trust level="" />` element). The <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration> and <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> classes both check for a trust level of <xref:System.Web.AspNetHostingPermissionLevel.Low> when they are initialized. If you configure your application to run at a trust level of <xref:System.Web.AspNetHostingPermissionLevel.Low>, and you use the default <xref:System.Web.UI.WebControls.WebParts.SqlPersonalizationProvider> provider to manage the personalization data for your application, the first time that the application tries to access personalization data, it will fail because an ASP.NET worker process running in <xref:System.Web.AspNetHostingPermissionLevel.Low> trust does not have the permissions necessary to call into the various classes in the <xref:System.Data.SqlClient> namespace.  
   
    
   
 ## Examples  
  The following code example demonstrates how to use several methods in the <xref:System.Web.UI.WebControls.WebParts.PersonalizationAdministration> class. This example consists of an .aspx page that references a Web Parts user control named `Persadmin.ascx`. The following code provides the .aspx file for the example.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_PersAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/defaultcs.aspx#7)]  -->  
+ [!code-aspx-csharp[WebParts_PersAdmin#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/defaultcs.aspx#7)]  
   
  This code provides the `Persadmin.ascx` control.  
   
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_PersAdmin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#1)]  -->  
+ [!code-aspx-csharp[WebParts_PersAdmin#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_PersAdmin/CS/PersAdmin.ascx#1)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
   </Docs>
   <Members>
     <Member MemberName="ApplicationName">
       <MemberSignature Language="C#" Value="public static string ApplicationName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property string ApplicationName" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ApplicationName" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property ApplicationName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::String ^ ApplicationName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -70,12 +75,25 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindInactiveUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of per-user personalization state information for inactive users, based on the specified parameters.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindInactiveUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState (string pathToMatch, string usernameToMatch, DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState(string pathToMatch, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindInactiveUserState(System.String,System.String,System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindInactiveUserState (pathToMatch As String, usernameToMatch As String, userInactiveSinceDate As DateTime) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindInactiveUserState(System::String ^ pathToMatch, System::String ^ usernameToMatch, DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -130,12 +148,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="FindInactiveUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState (string pathToMatch, string usernameToMatch, DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState(string pathToMatch, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, int32 totalRecords) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindInactiveUserState(string pathToMatch, string usernameToMatch, valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindInactiveUserState(System.String,System.String,System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindInactiveUserState (pathToMatch As String, usernameToMatch As String, userInactiveSinceDate As DateTime, pageIndex As Integer, pageSize As Integer, ByRef totalRecords As Integer) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindInactiveUserState(System::String ^ pathToMatch, System::String ^ usernameToMatch, DateTime userInactiveSinceDate, int pageIndex, int pageSize, [Runtime::InteropServices::Out] int % totalRecords);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -210,12 +231,25 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindSharedState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of shared personalization state information based on the specified parameters.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindSharedState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState (string pathToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState(string pathToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindSharedState(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindSharedState (pathToMatch As String) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindSharedState(System::String ^ pathToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -262,12 +296,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="FindSharedState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState (string pathToMatch, int pageIndex, int pageSize, out int totalRecords);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState(string pathToMatch, int32 pageIndex, int32 pageSize, int32 totalRecords) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindSharedState(string pathToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindSharedState(System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindSharedState (pathToMatch As String, pageIndex As Integer, pageSize As Integer, ByRef totalRecords As Integer) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindSharedState(System::String ^ pathToMatch, int pageIndex, int pageSize, [Runtime::InteropServices::Out] int % totalRecords);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -334,12 +371,25 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="FindUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of per-user personalization state information based on the specified parameters.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FindUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState (string pathToMatch, string usernameToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState(string pathToMatch, string usernameToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindUserState (pathToMatch As String, usernameToMatch As String) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindUserState(System::String ^ pathToMatch, System::String ^ usernameToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -400,12 +450,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="FindUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState (string pathToMatch, string usernameToMatch, int pageIndex, int pageSize, out int totalRecords);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState(string pathToMatch, string usernameToMatch, int32 pageIndex, int32 pageSize, int32 totalRecords) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection FindUserState(string pathToMatch, string usernameToMatch, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.FindUserState(System.String,System.String,System.Int32,System.Int32,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FindUserState (pathToMatch As String, usernameToMatch As String, pageIndex As Integer, pageSize As Integer, ByRef totalRecords As Integer) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ FindUserState(System::String ^ pathToMatch, System::String ^ usernameToMatch, int pageIndex, int pageSize, [Runtime::InteropServices::Out] int % totalRecords);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -486,12 +539,25 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetAllInactiveUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of all per-user personalization state information associated with inactive users.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetAllInactiveUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState (DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllInactiveUserState(System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetAllInactiveUserState (userInactiveSinceDate As DateTime) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ GetAllInactiveUserState(DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -523,12 +589,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="GetAllInactiveUserState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState (DateTime userInactiveSinceDate, int pageIndex, int pageSize, out int totalRecords);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState(valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, int32 totalRecords) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllInactiveUserState(valuetype System.DateTime userInactiveSinceDate, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllInactiveUserState(System.DateTime,System.Int32,System.Int32,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetAllInactiveUserState (userInactiveSinceDate As DateTime, pageIndex As Integer, pageSize As Integer, ByRef totalRecords As Integer) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ GetAllInactiveUserState(DateTime userInactiveSinceDate, int pageIndex, int pageSize, [Runtime::InteropServices::Out] int % totalRecords);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -581,12 +650,24 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetAllState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of all personalization state information from the underlying data store for the requested personalization scope and other specified parameters.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetAllState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetAllState (scope As PersonalizationScope) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ GetAllState(System::Web::UI::WebControls::WebParts::PersonalizationScope scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -618,12 +699,15 @@
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="scope" /> is not a valid member of the <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> enumeration.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="GetAllState">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, int pageIndex, int pageSize, out int totalRecords);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, int32 pageIndex, int32 pageSize, int32 totalRecords) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection GetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, int32 pageIndex, int32 pageSize, [out] int32&amp; totalRecords) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.Int32,System.Int32,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetAllState (scope As PersonalizationScope, pageIndex As Integer, pageSize As Integer, ByRef totalRecords As Integer) As PersonalizationStateInfoCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ GetAllState(System::Web::UI::WebControls::WebParts::PersonalizationScope scope, int pageIndex, int pageSize, [Runtime::InteropServices::Out] int % totalRecords);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -678,12 +762,25 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCountOfInactiveUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a count of the per-user personalization items in the underlying data store for inactive users.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCountOfInactiveUserState">
       <MemberSignature Language="C#" Value="public static int GetCountOfInactiveUserState (DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfInactiveUserState(System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCountOfInactiveUserState (userInactiveSinceDate As DateTime) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetCountOfInactiveUserState(DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -718,12 +815,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="GetCountOfInactiveUserState">
       <MemberSignature Language="C#" Value="public static int GetCountOfInactiveUserState (string pathToMatch, DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfInactiveUserState(string pathToMatch, valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfInactiveUserState(System.String,System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCountOfInactiveUserState (pathToMatch As String, userInactiveSinceDate As DateTime) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetCountOfInactiveUserState(System::String ^ pathToMatch, DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -771,12 +871,25 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetCountOfState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a count of the personalization state items in the underlying data store that exist for the specified scope and additional parameters.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCountOfState">
       <MemberSignature Language="C#" Value="public static int GetCountOfState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCountOfState (scope As PersonalizationScope) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetCountOfState(System::Web::UI::WebControls::WebParts::PersonalizationScope scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -820,12 +933,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="GetCountOfState">
       <MemberSignature Language="C#" Value="public static int GetCountOfState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string pathToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope, string pathToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfState(System.Web.UI.WebControls.WebParts.PersonalizationScope,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCountOfState (scope As PersonalizationScope, pathToMatch As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetCountOfState(System::Web::UI::WebControls::WebParts::PersonalizationScope scope, System::String ^ pathToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -868,12 +984,15 @@
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="scope" /> is not a valid member of the <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> enumeration.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="GetCountOfUserState">
       <MemberSignature Language="C#" Value="public static int GetCountOfUserState (string usernameToMatch);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetCountOfUserState(string usernameToMatch) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.GetCountOfUserState(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCountOfUserState (usernameToMatch As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int GetCountOfUserState(System::String ^ usernameToMatch);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -919,12 +1038,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="Provider">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationProvider Provider { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.WebControls.WebParts.PersonalizationProvider Provider" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Provider" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Provider As PersonalizationProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Web::UI::WebControls::WebParts::PersonalizationProvider ^ Provider { System::Web::UI::WebControls::WebParts::PersonalizationProvider ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -957,12 +1079,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="Providers">
       <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection Providers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Web.UI.WebControls.WebParts.PersonalizationProviderCollection Providers" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.Providers" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Providers As PersonalizationProviderCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Web::UI::WebControls::WebParts::PersonalizationProviderCollection ^ Providers { System::Web::UI::WebControls::WebParts::PersonalizationProviderCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -990,12 +1115,15 @@
  \- or -  
   
  The default personalization provider defined in configuration could not be found.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetAllState">
       <MemberSignature Language="C#" Value="public static int ResetAllState (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetAllState(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetAllState(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetAllState (scope As PersonalizationScope) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetAllState(System::Web::UI::WebControls::WebParts::PersonalizationScope scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1028,12 +1156,25 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count of affected rows.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ResetInactiveUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Resets per-user personalization state information by deleting the associated rows in the underlying data store.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ResetInactiveUserState">
       <MemberSignature Language="C#" Value="public static int ResetInactiveUserState (DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetInactiveUserState(valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetInactiveUserState(System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetInactiveUserState (userInactiveSinceDate As DateTime) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetInactiveUserState(DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1070,12 +1211,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetInactiveUserState">
       <MemberSignature Language="C#" Value="public static int ResetInactiveUserState (string path, DateTime userInactiveSinceDate);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetInactiveUserState(string path, valuetype System.DateTime userInactiveSinceDate) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetInactiveUserState(System.String,System.DateTime)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetInactiveUserState (path As String, userInactiveSinceDate As DateTime) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetInactiveUserState(System::String ^ path, DateTime userInactiveSinceDate);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1125,12 +1269,25 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider returned a negative number for the count.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ResetSharedState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Resets shared state in the underlying data store for the specified path or paths.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ResetSharedState">
       <MemberSignature Language="C#" Value="public static bool ResetSharedState (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ResetSharedState(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetSharedState(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetSharedState (path As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool ResetSharedState(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1173,12 +1330,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was either a negative number or was greater than one.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetSharedState">
       <MemberSignature Language="C#" Value="public static int ResetSharedState (string[] paths);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetSharedState(string[] paths) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetSharedState(System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetSharedState (paths As String()) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetSharedState(cli::array &lt;System::String ^&gt; ^ paths);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1224,12 +1384,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetState">
       <MemberSignature Language="C#" Value="public static int ResetState (System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection data);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetState(class System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection data) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetState(System.Web.UI.WebControls.WebParts.PersonalizationStateInfoCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetState (data As PersonalizationStateInfoCollection) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetState(System::Web::UI::WebControls::WebParts::PersonalizationStateInfoCollection ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1288,12 +1451,25 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ResetUserState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Resets all per-user state in the underlying data store for the specified parameters.</summary>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ResetUserState">
       <MemberSignature Language="C#" Value="public static int ResetUserState (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetUserState (path As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetUserState(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1335,12 +1511,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetUserState">
       <MemberSignature Language="C#" Value="public static int ResetUserState (string[] usernames);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string[] usernames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetUserState (usernames As String()) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetUserState(cli::array &lt;System::String ^&gt; ^ usernames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1388,12 +1567,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetUserState">
       <MemberSignature Language="C#" Value="public static bool ResetUserState (string path, string username);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ResetUserState(string path, string username) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetUserState (path As String, username As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool ResetUserState(System::String ^ path, System::String ^ username);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1441,12 +1623,15 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ResetUserState">
       <MemberSignature Language="C#" Value="public static int ResetUserState (string path, string[] usernames);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ResetUserState(string path, string[] usernames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationAdministration.ResetUserState(System.String,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function ResetUserState (path As String, usernames As String()) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int ResetUserState(System::String ^ path, cli::array &lt;System::String ^&gt; ^ usernames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1500,6 +1685,7 @@
   
  The default personalization provider defined in configuration could not be found.</exception>
         <exception cref="T:System.Web.HttpException">The default provider indicated that the number of deleted rows was a negative number.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
   </Members>

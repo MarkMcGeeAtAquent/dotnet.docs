@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a Publisher Policy | Microsoft Docs"
+title: "How to: Create a Publisher Policy"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "publisher policy assembly"
   - "publisher policy files"
@@ -24,6 +19,8 @@ caps.latest.revision: 15
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Publisher Policy
 Vendors of assemblies can state that applications should use a newer version of an assembly by including a publisher policy file with the upgraded assembly. The publisher policy file specifies assembly redirection and code base settings, and uses the same format as an application configuration file. The publisher policy file is compiled into an assembly and placed in the global assembly cache.  
@@ -38,7 +35,7 @@ Vendors of assemblies can state that applications should use a newer version of 
   
  The schema for publisher policy is described in [Redirecting Assembly Versions](../../../docs/framework/configure-apps/redirect-assembly-versions.md). The following example shows a publisher policy file that redirects one version of `myAssembly` to another.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -87,7 +84,7 @@ Vendors of assemblies can state that applications should use a newer version of 
     al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86  
     ```  
   
-     The publisher policy assembly must match the processor architecture of the assembly that it applies to. Thus, if your assembly has a <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> value of <xref:System.Reflection.ProcessorArchitecture>, the publisher policy assembly for that assembly must be created with `/platform:anycpu`. You must provide a separate publisher policy assembly for each processor-specific assembly.  
+     The publisher policy assembly must match the processor architecture of the assembly that it applies to. Thus, if your assembly has a <xref:System.Reflection.AssemblyName.ProcessorArchitecture%2A> value of <xref:System.Reflection.ProcessorArchitecture.MSIL>, the publisher policy assembly for that assembly must be created with `/platform:anycpu`. You must provide a separate publisher policy assembly for each processor-specific assembly.  
   
      A consequence of this rule is that in order to change the processor architecture for an assembly, you must change the major or minor component of the version number, so that you can supply a new publisher policy assembly with the correct processor architecture. The old publisher policy assembly cannot service your assembly once your assembly has a different processor architecture.  
   
@@ -112,10 +109,10 @@ Vendors of assemblies can state that applications should use a newer version of 
     >  The publisher policy assembly cannot be added to the global assembly cache unless the original publisher policy file is located in the same directory as the assembly.  
   
 ## See Also  
- [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)   
- [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [Configuring Apps](../../../docs/framework/configure-apps/index.md)   
- [Configuring .NET Framework Apps](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)   
- [Runtime Settings Schema](../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ [Configuring Apps](../../../docs/framework/configure-apps/index.md)  
+ [Configuring .NET Framework Apps](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Runtime Settings Schema](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirecting Assembly Versions](../../../docs/framework/configure-apps/redirect-assembly-versions.md)

@@ -1,19 +1,14 @@
 ---
-title: "Compiler and Language Provider Settings Schema | Microsoft Docs"
+title: "Compiler and Language Provider Settings Schema"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "configuration settings [.NET Framework], compilers"
   - "compiler configuration elements, schema"
@@ -28,11 +23,13 @@ caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Compiler and Language Provider Settings Schema
 Compiler and language provider settings specify compiler configuration elements for available language providers. Each compiler configuration element specifies the code provider type name, compiler parameters, supported language names, and supported file extensions.  
   
- The .NET Framework defines the initial compiler settings in the machine configuration file (Machine.config). Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider> implementation. Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=fullName> method to programmatically enumerate language provider and compiler configuration settings on a computer.  
+ The .NET Framework defines the initial compiler settings in the machine configuration file (Machine.config). Developers and compiler vendors can add configuration settings for a new <xref:System.CodeDom.Compiler.CodeDomProvider> implementation. Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> method to programmatically enumerate language provider and compiler configuration settings on a computer.  
   
  [\<configuration> Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
@@ -51,7 +48,7 @@ Compiler and language provider settings specify compiler configuration elements 
 ## Example  
  The following example illustrates a typical compiler configuration element.  
   
-```  
+```xml  
 <configuration>  
    <system.codedom>  
      <compilers>  
@@ -68,7 +65,7 @@ Compiler and language provider settings specify compiler configuration elements 
 ```  
   
 ## See Also  
- <xref:System.CodeDom.Compiler.CompilerInfo>   
- <xref:System.CodeDom.Compiler.CodeDomProvider>   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ <xref:System.CodeDom.Compiler.CompilerInfo>  
+ <xref:System.CodeDom.Compiler.CodeDomProvider>  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [\<compiler> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)

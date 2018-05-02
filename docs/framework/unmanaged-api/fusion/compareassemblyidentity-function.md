@@ -1,5 +1,5 @@
 ---
-title: "CompareAssemblyIdentity Function | Microsoft Docs"
+title: "CompareAssemblyIdentity Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CompareAssemblyIdentity"
-apilocation: 
+api_location: 
   - "fusion.dll"
   - "clr.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CompareAssemblyIdentity"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CompareAssemblyIdentity function [.NET Framework fusion]"
 ms.assetid: 8b364ae1-8efa-4744-a7da-81fd093d84d6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CompareAssemblyIdentity Function
 Compares two assembly identities to determine whether they are equivalent.  
@@ -88,5 +91,5 @@ STDAPI CompareAssemblyIdentity (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Fusion Global Static Functions](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)   
+ [Fusion Global Static Functions](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
  [AssemblyComparisonResult Enumeration](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)

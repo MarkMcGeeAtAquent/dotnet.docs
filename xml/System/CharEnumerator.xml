@@ -1,7 +1,9 @@
-<Type Name="CharEnumerator" FullName="System.CharEnumerator">
+﻿<Type Name="CharEnumerator" FullName="System.CharEnumerator">
   <TypeSignature Language="C#" Value="public sealed class CharEnumerator : ICloneable, System.Collections.Generic.IEnumerator&lt;char&gt;" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CharEnumerator extends System.Object implements class System.Collections.Generic.IEnumerator`1&lt;char&gt;, class System.Collections.IEnumerator, class System.ICloneable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.CharEnumerator" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class CharEnumerator&#xA;Implements ICloneable, IEnumerator(Of Char)" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CharEnumerator sealed : ICloneable, System::Collections::Generic::IEnumerator&lt;char&gt;" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -47,7 +53,7 @@
    
   
 ## Examples  
- The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=fullName> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
+ The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=nameWithType> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
   
  [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
  [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
@@ -61,13 +67,22 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.String" />
+    <altmember cref="T:System.Collections.IEnumerator" />
+    <altmember cref="T:System.Collections.IEnumerable" />
+    <altmember cref="T:System.Collections.ICollection" />
   </Docs>
   <Members>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public object Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone () As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ Clone();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ICloneable.Clone</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -76,6 +91,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -105,7 +124,12 @@
       <MemberSignature Language="C#" Value="public char Current { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance char Current" />
       <MemberSignature Language="DocId" Value="P:System.CharEnumerator.Current" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Current As Char" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property char Current { char get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.Generic.IEnumerator`1.Current</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -114,6 +138,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>
@@ -127,14 +155,14 @@
 ## Remarks  
  The <xref:System.CharEnumerator> class maintains an internal index to the enumerated string, and the <xref:System.CharEnumerator.Current%2A> property returns the character that is currently referenced by the index. This property should be invoked only when the index is valid; otherwise, an exception is thrown.  
   
- The index is always invalid for an empty string (""). The index is also invalid after the <xref:System.String.GetEnumerator%2A?displayProperty=fullName> or <xref:System.CharEnumerator.Reset%2A> method is called. After either of these methods is called, invoke the <xref:System.CharEnumerator.MoveNext%2A> method to adjust the index to the first character in the enumerated string. The index is valid whenever the <xref:System.CharEnumerator.MoveNext%2A> method returns `true`.  
+ The index is always invalid for an empty string (""). The index is also invalid after the <xref:System.String.GetEnumerator%2A?displayProperty=nameWithType> or <xref:System.CharEnumerator.Reset%2A> method is called. After either of these methods is called, invoke the <xref:System.CharEnumerator.MoveNext%2A> method to adjust the index to the first character in the enumerated string. The index is valid whenever the <xref:System.CharEnumerator.MoveNext%2A> method returns `true`.  
   
- <xref:System.CharEnumerator.Current%2A> does not move the index, and consecutive calls to <xref:System.CharEnumerator.Current%2A> return the same character until <xref:System.CharEnumerator.MoveNext%2A>, <xref:System.CharEnumerator.Reset%2A>, or <xref:System.String.GetEnumerator%2A?displayProperty=fullName> is called.  
+ <xref:System.CharEnumerator.Current%2A> does not move the index, and consecutive calls to <xref:System.CharEnumerator.Current%2A> return the same character until <xref:System.CharEnumerator.MoveNext%2A>, <xref:System.CharEnumerator.Reset%2A>, or <xref:System.String.GetEnumerator%2A?displayProperty=nameWithType> is called.  
   
    
   
 ## Examples  
- The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=fullName> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
+ The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=nameWithType> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
   
  [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
  [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
@@ -155,7 +183,12 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -164,6 +197,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -190,7 +227,12 @@
       <MemberSignature Language="C#" Value="public bool MoveNext ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CharEnumerator.MoveNext" />
+      <MemberSignature Language="VB.NET" Value="Public Function MoveNext () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveNext();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerator.MoveNext</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -199,6 +241,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -221,7 +267,7 @@
    
   
 ## Examples  
- The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=fullName> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
+ The following example uses the <xref:System.CharEnumerator> class to enumerate the individual characters in a string. It instantiates a <xref:System.CharEnumerator> object by calling the <xref:System.String.GetEnumerator%2A?displayProperty=nameWithType> method, moves from one character to the next by calling the <xref:System.CharEnumerator.MoveNext%2A> method, and displays the current character by retrieving the value of the <xref:System.CharEnumerator.Current%2A> property.  
   
  [!code-cpp[System.CharEnumerator.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cpp/charenumerator1.cpp#1)]
  [!code-csharp[System.CharEnumerator.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.CharEnumerator.Class/cs/CharEnumerator1.cs#1)]
@@ -241,7 +287,12 @@
       <MemberSignature Language="C#" Value="public void Reset ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CharEnumerator.Reset" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Reset ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Reset();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerator.Reset</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -250,6 +301,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -271,7 +326,12 @@
       <MemberSignature Language="C#" Value="object System.Collections.IEnumerator.Current { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IEnumerator.Current" />
       <MemberSignature Language="DocId" Value="P:System.CharEnumerator.System#Collections#IEnumerator#Current" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property Current As Object Implements IEnumerator.Current" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.IEnumerator.Current { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IEnumerator.Current</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -280,6 +340,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>

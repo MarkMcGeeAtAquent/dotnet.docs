@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugType::EnumerateTypeParameters Method | Microsoft Docs"
+title: "ICorDebugType::EnumerateTypeParameters Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugType.EnumerateTypeParameters"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugType::EnumerateTypeParameters"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateTypeParameters method, ICorDebugType interface [.NET Framework debugging]"
   - "ICorDebugType::EnumerateTypeParameters method [.NET Framework debugging]"
 ms.assetid: 1ee1f6e6-1bd7-4ebb-83b8-ff9a08ca03de
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugType::EnumerateTypeParameters Method
 Gets an interface pointer to an ICorDebugTypeEnum that contains the <xref:System.Type> parameters of the class referenced by this ICorDebugType.  

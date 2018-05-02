@@ -1,8 +1,8 @@
 ---
-title: "Hosting Workflow Services | Microsoft Docs"
+title: "Hosting Workflow Services"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hosting Workflow Services
 A workflow service must be hosted for it to respond to incoming messages. Workflow services use the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] messaging infrastructure and are therefore hosted in similar ways. Like [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services, workflow services can be hosted in any managed application, under Internet Information Services (IIS), or under Windows Process Activation Services (WAS). In addition workflow services can be hosted under Windows Server App Fabric. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] Windows Server App Fabric see [Windows Server App Fabric documentation](http://go.microsoft.com/fwlink/?LinkId=193037), [AppFabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=196494), and [AppFabric Hosting Concepts](http://go.microsoft.com/fwlink/?LinkId=196495). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] the various ways to host [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services see [Hosting Services](../../../../docs/framework/wcf/hosting-services.md).  
@@ -28,7 +30,7 @@ A workflow service must be hosted for it to respond to incoming messages. Workfl
   
 -   Place a .xamlx file that defines the workflow service in an IIS/WAS virtual directory. The .xamlx file specifies the endpoints to expose. Endpoints are specified in a `WorkflowService.Endpoints` element as shown in the following example.  
   
-    ```  
+    ```xml  
     <WorkflowService xmlns="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"  xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">  
       <WorkflowService.Endpoints>  
         <Endpoint ServiceContractName="IWorkFlowEchoService" AddressUri="">  
@@ -39,7 +41,6 @@ A workflow service must be hosted for it to respond to incoming messages. Workfl
       </WorkflowService.Endpoints>  
     <!-- ... -->  
     </WorkflowService>  
-  
     ```  
   
     > [!NOTE]
@@ -58,8 +59,8 @@ A workflow service must be hosted for it to respond to incoming messages. Workfl
  References to custom activities must be added to the <`Assemblies`> section under <`System.Web.Compilation`> so that they are loaded into the Application Domain and the XAML deserializer is able to locate the types. These settings can be made at the application level or in the root Web.config if the settings should be applied to all applications on the machine.  
   
 ## Deployment  
- The Web Deployment tool has been created to make the job of deployment easier. The tool allows you to migrate applications between IIS 6.0 and IIS 7.0, synchronize server farms, and package, archive and deploy Web applications. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][MS Deployment Tool](http://go.microsoft.com/fwlink/?LinkId=178690)  
+ The Web Deployment tool has been created to make the job of deployment easier. The tool allows you to migrate applications between IIS 6.0 and IIS 7.0, synchronize server farms, and package, archive and deploy Web applications. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [MS Deployment Tool](http://go.microsoft.com/fwlink/?LinkId=178690)  
   
 ## See Also  
- [Workflow Service Host Internals](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)   
+ [Workflow Service Host Internals](../../../../docs/framework/wcf/feature-details/workflow-service-host-internals.md)  
  [Configuring WorkflowServiceHost](../../../../docs/framework/wcf/feature-details/configuring-workflowservicehost.md)

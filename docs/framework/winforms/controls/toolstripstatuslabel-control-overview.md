@@ -1,8 +1,8 @@
 ---
-title: "ToolStripStatusLabel Control Overview | Microsoft Docs"
+title: "ToolStripStatusLabel Control Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,8 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "ToolStripStatusLabel"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "ToolStripStatusLabel control [Windows Forms], aboutToolStripStatusLabel control"
   - "status bars"
@@ -21,6 +19,8 @@ caps.latest.revision: 4
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ToolStripStatusLabel Control Overview
 The <xref:System.Windows.Forms.ToolStripStatusLabel> is a label for a <xref:System.Windows.Forms.StatusStrip>. Like the <xref:System.Windows.Forms.Label> or <xref:System.Windows.Forms.ToolStripLabel>, the <xref:System.Windows.Forms.ToolStripStatusLabel> provides a non-clickable display area for text, images, or both. The <xref:System.Windows.Forms.ToolStripStatusLabel> is hosted by a <xref:System.Windows.Forms.StatusStrip>.  

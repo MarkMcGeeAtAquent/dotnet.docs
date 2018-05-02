@@ -1,6 +1,6 @@
 ---
 title: Implicitly typed lambda expressions
-description: Implicitly typed lambda expressions
+description: Learn why you can't use an implicitly-typed variable declaration to declare a lambda expression.
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn

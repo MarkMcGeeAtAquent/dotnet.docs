@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetAssemblyInfo Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetAssemblyInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetAssemblyInfo"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetAssemblyInfo Method"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAssemblyInfo method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetAssemblyInfo method [.NET Framework profiling]"
 ms.assetid: 7a3c97c3-1e31-47b1-bf23-386785c509c4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 20
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetAssemblyInfo Method
 Accepts an assembly ID, and returns the assembly's name and the ID of its manifest module.  
@@ -77,6 +80,6 @@ HRESULT GetAssemblyInfo(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

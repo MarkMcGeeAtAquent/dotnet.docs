@@ -1,8 +1,8 @@
 ---
-title: "Service Description | Microsoft Docs"
+title: "Service Description"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service Description
 The Service Description sample demonstrates how a service can retrieve its service description information at runtime. The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), with an additional service operation defined to return descriptive information about the service. The information that is returned lists the base addresses and endpoints for the service. The service provides this information using the <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost>, and <xref:System.ServiceModel.Description.ServiceDescription> classes.  
@@ -40,7 +42,6 @@ public interface IServiceDescriptionCalculator
     [OperationContract]  
     string GetServiceDescriptionInfo();  
 }  
-  
 ```  
   
  The implementation code for `GetServiceDescriptionInfo` uses the <xref:System.ServiceModel.Description.ServiceDescription> to list the service endpoints. Because service endpoints can have relative addresses, it first lists the base addresses for the service. To get all of this information, the code obtains its operation context using <xref:System.ServiceModel.OperationContext.Current%2A>. The <xref:System.ServiceModel.ServiceHost> and its <xref:System.ServiceModel.Description.ServiceDescription> object are retrieved from the operation context. To list the base endpoints for the service, the code iterates through the service host's <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A> collection. To list the service endpoints for the service, the code iterates through the service description's endpoints collection.  
@@ -68,7 +69,6 @@ public string GetServiceDescriptionInfo()
     }  
      return info;  
 }  
-  
 ```  
   
  When you run the sample, you see the calculator operations and then the service information returned by the `GetServiceDescriptionInfo` operation. Press ENTER in the client window to shut down the client.  

@@ -1,8 +1,8 @@
 ---
-title: "3395 - MessageWrittenAsynchronouslyByEncoder | Microsoft Docs"
+title: "3395 - MessageWrittenAsynchronouslyByEncoder"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f2b015b3-dafe-4468-a3ac-5b547ff413e6
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3395 - MessageWrittenAsynchronouslyByEncoder
 ## Properties  

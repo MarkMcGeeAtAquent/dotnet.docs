@@ -1,7 +1,9 @@
-<Type Name="ChannelServices" FullName="System.Runtime.Remoting.Channels.ChannelServices">
+﻿<Type Name="ChannelServices" FullName="System.Runtime.Remoting.Channels.ChannelServices">
   <TypeSignature Language="C#" Value="public sealed class ChannelServices" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChannelServices extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.ChannelServices" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ChannelServices" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ChannelServices sealed" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -24,7 +26,7 @@
 ## Remarks  
  Channels transport messages between applications across such remoting boundaries as application domains, processes, and computers. These crossings can be inbound and outbound. A channel can listen on an endpoint for inbound messages, send to an endpoint for outbound messages, or both. This provides an extensibility point in the runtime to plug in a wide range of protocols, even though the runtime might not be at the other end of the channel. Run-time objects can be used to expose a wide range of semantics and entities. The channel provides the extensibility point to convert the messages to and from the specific protocols.  
   
- Channels must expose the <xref:System.Runtime.Remoting.Channels.IChannel> interface, which provides informational properties such as the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> and <xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>. Channels are registered using the <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=fullName> method. Channels can also be loaded from the remoting configuration. (See [\<channel> Element (Template)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce) for details.)  
+ Channels must expose the <xref:System.Runtime.Remoting.Channels.IChannel> interface, which provides informational properties such as the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> and <xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>. Channels are registered using the <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=nameWithType> method. Channels can also be loaded from the remoting configuration. (See [\<channel> Element (Template)](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce) for details.)  
   
  On the client side, messages are handed off to the client channel sink chain after they traverse the client <xref:System.Runtime.Remoting.Contexts.Context> chain. The first channel sink is typically a <xref:System.Runtime.Remoting.Channels.IClientFormatterSink>, which serializes the message into a stream that is passed down the channel sink chain to the client transport sink. The client transport sink then writes this stream out to the wire.  
   
@@ -38,6 +40,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMessageCtrl AsyncDispatchMessage (System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Messaging.IMessageSink replySink);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMessageCtrl AsyncDispatchMessage(class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Messaging.IMessageSink replySink) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.AsyncDispatchMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function AsyncDispatchMessage (msg As IMessage, replySink As IMessageSink) As IMessageCtrl" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::Remoting::Messaging::IMessageCtrl ^ AsyncDispatchMessage(System::Runtime::Remoting::Messaging::IMessage ^ msg, System::Runtime::Remoting::Messaging::IMessageSink ^ replySink);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -73,6 +77,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IServerChannelSink CreateServerChannelSinkChain (System.Runtime.Remoting.Channels.IServerChannelSinkProvider provider, System.Runtime.Remoting.Channels.IChannelReceiver channel);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Channels.IServerChannelSink CreateServerChannelSinkChain(class System.Runtime.Remoting.Channels.IServerChannelSinkProvider provider, class System.Runtime.Remoting.Channels.IChannelReceiver channel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.CreateServerChannelSinkChain(System.Runtime.Remoting.Channels.IServerChannelSinkProvider,System.Runtime.Remoting.Channels.IChannelReceiver)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateServerChannelSinkChain (provider As IServerChannelSinkProvider, channel As IChannelReceiver) As IServerChannelSink" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::Remoting::Channels::IServerChannelSink ^ CreateServerChannelSinkChain(System::Runtime::Remoting::Channels::IServerChannelSinkProvider ^ provider, System::Runtime::Remoting::Channels::IChannelReceiver ^ channel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -98,8 +104,10 @@
     </Member>
     <Member MemberName="DispatchMessage">
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.ServerProcessing DispatchMessage (System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, System.Runtime.Remoting.Messaging.IMessage msg, out System.Runtime.Remoting.Messaging.IMessage replyMsg);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.Remoting.Channels.ServerProcessing DispatchMessage(class System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Messaging.IMessage replyMsg) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.Remoting.Channels.ServerProcessing DispatchMessage(class System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, class System.Runtime.Remoting.Messaging.IMessage msg, [out] class System.Runtime.Remoting.Messaging.IMessage&amp; replyMsg) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessage@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function DispatchMessage (sinkStack As IServerChannelSinkStack, msg As IMessage, ByRef replyMsg As IMessage) As ServerProcessing" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::Remoting::Channels::ServerProcessing DispatchMessage(System::Runtime::Remoting::Channels::IServerChannelSinkStack ^ sinkStack, System::Runtime::Remoting::Messaging::IMessage ^ msg, [Runtime::InteropServices::Out] System::Runtime::Remoting::Messaging::IMessage ^ % replyMsg);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -137,6 +145,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IChannel GetChannel (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Channels.IChannel GetChannel(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetChannel(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetChannel (name As String) As IChannel" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::Remoting::Channels::IChannel ^ GetChannel(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -171,6 +181,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.IDictionary GetChannelSinkProperties (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IDictionary GetChannelSinkProperties(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetChannelSinkProperties(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetChannelSinkProperties (obj As Object) As IDictionary" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::IDictionary ^ GetChannelSinkProperties(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -205,6 +217,8 @@
       <MemberSignature Language="C#" Value="public static string[] GetUrlsForObject (MarshalByRefObject obj);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetUrlsForObject(class System.MarshalByRefObject obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetUrlsForObject(System.MarshalByRefObject)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetUrlsForObject (obj As MarshalByRefObject) As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::String ^&gt; ^ GetUrlsForObject(MarshalByRefObject ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -239,6 +253,8 @@
       <MemberSignature Language="C#" Value="public static void RegisterChannel (System.Runtime.Remoting.Channels.IChannel chnl);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RegisterChannel (chnl As IChannel)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RegisterChannel(System::Runtime::Remoting::Channels::IChannel ^ chnl);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -267,11 +283,11 @@
 > [!NOTE]
 >  <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%29> is obsolete. Please use <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%2CSystem.Boolean%29> instead.  
   
- The <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A> method takes in the <xref:System.Runtime.Remoting.Channels.IChannel> interface from a channel object. The channel's <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> must be unique, or the channel must be anonymous. A channel is anonymous if the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=fullName> is set to either `null` or <xref:System.String.Empty> by using the `name` configuration property.  
+ The <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A> method takes in the <xref:System.Runtime.Remoting.Channels.IChannel> interface from a channel object. The channel's <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> must be unique, or the channel must be anonymous. A channel is anonymous if the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=nameWithType> is set to either `null` or <xref:System.String.Empty> by using the `name` configuration property.  
   
  You cannot register two channels with the same name in a <xref:System.AppDomain>. By default, the name of a <xref:System.Runtime.Remoting.Channels.Http.HttpChannel> is "http" and the name of a <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> is "tcp." Therefore, if you want to register two channels of the same type, you must specify a different name for one of them through configuration properties.  
   
- For more information about channel configuration properties, see <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>, and [\<channel> Element (Template)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
+ For more information about channel configuration properties, see <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>, and [\<channel> Element (Template)](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
   
    
   
@@ -292,6 +308,8 @@
       <MemberSignature Language="C#" Value="public static void RegisterChannel (System.Runtime.Remoting.Channels.IChannel chnl, bool ensureSecurity);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl, bool ensureSecurity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RegisterChannel (chnl As IChannel, ensureSecurity As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RegisterChannel(System::Runtime::Remoting::Channels::IChannel ^ chnl, bool ensureSecurity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -314,11 +332,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%2CSystem.Boolean%29> method receives the <xref:System.Runtime.Remoting.Channels.IChannel> interface from a channel object. The channel's <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> must be unique, or the channel must be anonymous. A channel is anonymous if the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=fullName> is set to either `null` or <xref:System.String.Empty> by using the `name` configuration property.  
+ The <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%2CSystem.Boolean%29> method receives the <xref:System.Runtime.Remoting.Channels.IChannel> interface from a channel object. The channel's <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A> must be unique, or the channel must be anonymous. A channel is anonymous if the <xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=nameWithType> is set to either `null` or <xref:System.String.Empty> by using the `name` configuration property.  
   
  You cannot register two channels with the same name in a <xref:System.AppDomain>. By default, the name of a <xref:System.Runtime.Remoting.Channels.Http.HttpChannel> is "http" and the name of a <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> is "tcp". Therefore, if you want to register two channels of the same type, you must specify a different name for one of them through configuration properties.  
   
- For more information about channel configuration properties, see [Channel and Formatter Configuration Properties](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe) and [\<channel> Element (Template)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
+ For more information about channel configuration properties, see [Channel and Formatter Configuration Properties](http://msdn.microsoft.com/library/226ecf74-ebbd-4ea0-a701-dcf4441deefe) and [\<channel> Element (Template)](http://msdn.microsoft.com/library/73399d48-f0fd-46e9-828b-6cdafde5ffce).  
   
  If the `ensureSecurity` parameter is set to `true`, the remoting system determines whether the channel implements <xref:System.Runtime.Remoting.Channels.ISecurableChannel>, and if so, enables encryption and digital signatures. An exception is thrown if the channel does not implement <xref:System.Runtime.Remoting.Channels.ISecurableChannel>.  
   
@@ -338,6 +356,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IChannel[] RegisteredChannels { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Remoting.Channels.IChannel[] RegisteredChannels" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.ChannelServices.RegisteredChannels" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property RegisteredChannels As IChannel()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property cli::array &lt;System::Runtime::Remoting::Channels::IChannel ^&gt; ^ RegisteredChannels { cli::array &lt;System::Runtime::Remoting::Channels::IChannel ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -368,6 +388,8 @@
       <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMessage SyncDispatchMessage (System.Runtime.Remoting.Messaging.IMessage msg);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMessage SyncDispatchMessage(class System.Runtime.Remoting.Messaging.IMessage msg) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.SyncDispatchMessage(System.Runtime.Remoting.Messaging.IMessage)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SyncDispatchMessage (msg As IMessage) As IMessage" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Runtime::Remoting::Messaging::IMessage ^ SyncDispatchMessage(System::Runtime::Remoting::Messaging::IMessage ^ msg);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -403,6 +425,8 @@
       <MemberSignature Language="C#" Value="public static void UnregisterChannel (System.Runtime.Remoting.Channels.IChannel chnl);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.UnregisterChannel(System.Runtime.Remoting.Channels.IChannel)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub UnregisterChannel (chnl As IChannel)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void UnregisterChannel(System::Runtime::Remoting::Channels::IChannel ^ chnl);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

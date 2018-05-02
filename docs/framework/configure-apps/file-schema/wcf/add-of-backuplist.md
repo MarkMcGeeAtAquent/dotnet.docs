@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;backupList&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;backupList&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bc5939fc-314a-4ea4-a533-c96958da7173
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;backupList&gt;
 Represents a configuration element that defines a backup endpoint element.  
@@ -26,12 +28,11 @@ Represents a configuration element that defines a backup endpoint element.
   
 ## Syntax  
   
-```vb  
-   <routing>  <backupLists>    <backupList name="String">      <add endpointName="String" />    </backupList>    </backupLists></routing>  
+```xml  
+   <routing>  <backupLists>    <backupList name="String">      <add endpointName="String" />    </backupList>    </backupLists></routing>  
 ```  
   
 ```csharp  
-  
 ```  
   
 ## Attributes and Elements  
@@ -53,4 +54,4 @@ Represents a configuration element that defines a backup endpoint element.
 |[\<routing>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Contains a list of endpoints that you would like the Routing Service to use in case the primary endpoint can't be reached.|  
   
 ## See Also  
- [System.ServiceModel.Routing.Configuration.BackupEndpointElement](assetId:///System.ServiceModel.Routing.Configuration.BackupEndpointElement?qualifyHint=False&amp;autoUpgrade=True)
+ <xref:System.ServiceModel.Routing.Configuration.BackupEndpointElement?displayProperty=nameWithType> 

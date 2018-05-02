@@ -1,5 +1,5 @@
 ---
-title: "How to: Resize Windows Forms | Microsoft Docs"
+title: "How to: Resize Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,7 +10,9 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "resizing Windows Forms"
   - "Windows Forms, resizing"
@@ -19,6 +21,8 @@ caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Resize Windows Forms
 You can specify the size of your Windows Form in several ways. You can change both the height and the width of the form programmatically by setting a new value for the <xref:System.Windows.Forms.Form.Size%2A> property, or adjust the <xref:System.Windows.Forms.Control.Height%2A> or <xref:System.Windows.Forms.Control.Width%2A> properties individually. If you are using [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)], you can change the size using the Windows Forms Designer. Also see [How to: Resize Windows Forms Using the Designer](http://msdn.microsoft.com/library/37k2zkwx\(v=vs.110\)).  
@@ -31,12 +35,10 @@ You can specify the size of your Windows Form in several ways. You can change bo
   
     ```vb  
     Form1.Size = New System.Drawing.Size(100, 100)  
-  
     ```  
   
     ```csharp  
     Form1.Size = new System.Drawing.Size(100, 100);  
-  
     ```  
   
     ```cpp  
@@ -51,12 +53,10 @@ You can specify the size of your Windows Form in several ways. You can change bo
   
     ```vb  
     Form1.Width = 300  
-  
     ```  
   
     ```csharp  
     Form1.Width = 300;  
-  
     ```  
   
     ```cpp  
@@ -71,12 +71,10 @@ You can specify the size of your Windows Form in several ways. You can change bo
   
     ```vb  
     Form1.Size = New Size(300, Form1.Size.Height)  
-  
     ```  
   
     ```csharp  
     Form1.Size = new Size(300, Form1.Size.Height);  
-  
     ```  
   
     ```cpp  
@@ -91,12 +89,10 @@ You can specify the size of your Windows Form in several ways. You can change bo
   
     ```vb  
     Form1.Width += 200  
-  
     ```  
   
     ```csharp  
     Form1.Width += 200;  
-  
     ```  
   
     ```cpp  
@@ -110,14 +106,12 @@ You can specify the size of your Windows Form in several ways. You can change bo
     ' NOTE: CODE WILL NOT COMPILE  
     Dim f As New Form()  
     f.Size.Width += 100  
-  
     ```  
   
     ```csharp  
     // NOTE: CODE WILL NOT COMPILE  
     Form f = new Form();  
     f.Size.Width += 100;  
-  
     ```  
   
     ```cpp  
@@ -127,5 +121,5 @@ You can specify the size of your Windows Form in several ways. You can change bo
     ```  
   
 ## See Also  
- [Getting Started with Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)   
+ [Getting Started with Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)  
  [Enhancing Windows Forms Applications](../../../docs/framework/winforms/advanced/index.md)

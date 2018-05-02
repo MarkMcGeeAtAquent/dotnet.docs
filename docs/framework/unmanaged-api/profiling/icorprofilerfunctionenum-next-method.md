@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerFunctionEnum::Next Method | Microsoft Docs"
+title: "ICorProfilerFunctionEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerFunctionEnum.Next Method"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerFunctionEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerFunctionEnum::Next method [.NET Framework profiling]"
   - "Next method, ICorProfilerFunctionEnum interface [.NET Framework profiling]"
 ms.assetid: 5ed4aa83-ce56-4b9f-9237-5da7587787fe
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerFunctionEnum::Next Method
 Gets the specified number of contiguous functions from a sequential collection of functions, starting at the enumerator's current position in the sequence.  
@@ -67,5 +70,5 @@ HRESULT Next([in]  ULONG      celt,
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)   
+ [ICorProfilerFunctionEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

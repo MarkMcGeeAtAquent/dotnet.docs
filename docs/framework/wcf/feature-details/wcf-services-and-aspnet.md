@@ -1,8 +1,8 @@
 ---
-title: "WCF Services and ASP.NET | Microsoft Docs"
+title: "WCF Services and ASP.NET"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WCF Services and ASP.NET
 This topic discusses hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services side-by-side with ASP.NET and hosting them in ASP.NET compatibility mode.  
@@ -41,7 +43,7 @@ This topic discusses hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.
   
     -   HttpModule extensibility: The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] hosting infrastructure intercepts [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requests when the <xref:System.Web.HttpApplication.PostAuthenticateRequest> event is raised and does not return processing to the ASP.NET HTTP pipeline. Modules that are coded to intercept requests at later stages of the pipeline do not intercept [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requests.  
   
-    -   ASP.NET impersonation: By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requests always runs as the IIS process identity, even if ASP.NET is set to enable impersonation using System.Web’s \<identity impersonate=”true” /> configuration option.  
+    -   ASP.NET impersonation: By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] requests always runs as the IIS process identity, even if ASP.NET is set to enable impersonation using System.Web’s \<identity impersonate="true" /> configuration option.  
   
  These restrictions apply only to [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services hosted in IIS application. The behavior of ASP.NET content is not affected by the presence of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
@@ -74,15 +76,15 @@ This topic discusses hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]’s ASP.NET compatibility mode is enabled at the application level through the following configuration (located in the application’s Web.config file):  
   
-```  
+```xml  
 <system.serviceModel>  
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />  
 </system.serviceModel>  
 ```  
   
- This value defaults to “`true`” if not specified. Setting this value to “`false`” indicates that all [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running in the application will not run in ASP.NET Compatibility Mode.  
+ This value defaults to "`true`" if not specified. Setting this value to "`false`" indicates that all [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running in the application will not run in ASP.NET Compatibility Mode.  
   
- Because ASP.NET Compatibility Mode implies request processing semantics that are fundamentally different from the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] default, individual service implementations have the ability to control whether they run inside of an application for which ASP.NET Compatibility Mode has been enabled. Services can use the <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> to indicate whether they support ASP.NET Compatibility Mode. The default value for this attribute is <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>.  
+ Because ASP.NET Compatibility Mode implies request processing semantics that are fundamentally different from the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] default, individual service implementations have the ability to control whether they run inside of an application for which ASP.NET Compatibility Mode has been enabled. Services can use the <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> to indicate whether they support ASP.NET Compatibility Mode. The default value for this attribute is <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>.  
   
  `[AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]`  
   
@@ -94,12 +96,12 @@ This topic discusses hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.
   
 |Application-wide Compatibility Mode setting|[AspNetCompatibilityRequirementsMode]<br /><br /> Setting|Observed Result|  
 |--------------------------------------------------|---------------------------------------------------------|---------------------|  
-|aspNetCompatibilityEnabled = “`true`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|Service activates successfully.|  
-|aspNetCompatibilityEnabled = “`true`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|Service activates successfully.|  
-|aspNetCompatibilityEnabled = “`true`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|An activation error occurs when the service receives a message.|  
-|aspNetCompatibilityEnabled = “`false`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|An activation error occurs when the service receives a message.|  
-|aspNetCompatibilityEnabled = “`false`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|Service activates successfully.|  
-|aspNetCompatibilityEnabled = “`false`”|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode>|Service activates successfully.|  
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|Service activates successfully.|  
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Service activates successfully.|  
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|An activation error occurs when the service receives a message.|  
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|An activation error occurs when the service receives a message.|  
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Service activates successfully.|  
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|Service activates successfully.|  
   
 > [!NOTE]
 >  IIS 7.0 and WAS allows [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services to communicate over protocols other than HTTP. However, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services running in applications that have enabled ASP.NET compatibility mode are not permitted to expose non-HTTP endpoints. Such a configuration generates an activation exception when the service receives its first message.  
@@ -107,5 +109,5 @@ This topic discusses hosting [!INCLUDE[indigo1](../../../../includes/indigo1-md.
  For more information about enabling ASP.NET compatibility mode for [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services, see <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> and the [ASP.NET Compatibility](../../../../docs/framework/wcf/samples/aspnet-compatibility.md) sample.  
   
 ## See Also  
- <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>   
+ <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>  
  [Windows Server App Fabric Hosting Features](http://go.microsoft.com/fwlink/?LinkId=201276)

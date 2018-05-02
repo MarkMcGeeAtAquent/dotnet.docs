@@ -1,8 +1,8 @@
 ---
-title: "&lt;cryptoNameMapping&gt; Element | Microsoft Docs"
+title: "&lt;cryptoNameMapping&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#cryptoNameMapping"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/cryptoNameMapping"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<cryptoNameMapping> element"
   - "cryptoNameMapping element"
@@ -25,6 +20,8 @@ caps.latest.revision: 12
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;cryptoNameMapping&gt; Element
 Contains mappings of classes to friendly names.  
@@ -36,9 +33,8 @@ Contains mappings of classes to friendly names.
   
 ## Syntax  
   
-```  
-  
-      <cryptoNameMapping>   
+```xml  
+      <cryptoNameMapping>   
 </cryptoNameMapping>  
 ```  
   
@@ -65,9 +61,9 @@ Contains mappings of classes to friendly names.
 |`mscorlib`|Contains the \<cryptographySettings> element.|  
   
 ## Example  
- The following example shows how to use the **\<cryptoNameMapping>** element to reference a cryptography class and to configure the runtime. You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=fullName> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.  
+ The following example shows how to use the **\<cryptoNameMapping>** element to reference a cryptography class and to configure the runtime. You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.  
   
-```  
+```xml  
 <configuration>  
    <mscorlib>  
       <cryptographySettings>  
@@ -87,7 +83,7 @@ Contains mappings of classes to friendly names.
 ```  
   
 ## See Also  
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Cryptography Settings Schema](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)   
- [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)   
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Cryptography Settings Schema](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+ [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)  
  [Configuring Cryptography Classes](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

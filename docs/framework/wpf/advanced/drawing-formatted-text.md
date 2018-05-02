@@ -1,5 +1,5 @@
 ---
-title: "Drawing Formatted Text | Microsoft Docs"
+title: "Drawing Formatted Text"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,21 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "text [WPF]"
-  - "typography, drawing formatted text"
+  - "typography [WPF], drawing formatted text"
   - "formatted text [WPF]"
-  - "drawing, formatted text"
+  - "drawing [WPF], formatted text"
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Drawing Formatted Text
 This topic provides an overview of the features of the <xref:System.Windows.Media.FormattedText> object. This object provides low-level control for drawing text in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.  
@@ -88,7 +93,7 @@ Example of an image brush applied to the stroke and highlight
  ![Sphere following the path geometry of text](../../../../docs/framework/wpf/advanced/media/textpathgeometry01.gif "TextPathGeometry01")  
 Sphere following the path geometry of text  
   
- For more information, see [How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67).  
+ For more information, see [How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67).  
   
  You can create other interesting uses for formatted text once it has been converted to a <xref:System.Windows.Media.PathGeometry> object. For example, you can clip video to display inside it.  
   
@@ -103,32 +108,32 @@ Video displaying in the path geometry of text
 |-------------------|--------------------|-----------|  
 |DT_BOTTOM|<xref:System.Windows.Media.FormattedText.Height%2A>|Use the <xref:System.Windows.Media.FormattedText.Height%2A> property to compute an appropriate [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText 'y' position.|  
 |DT_CALCRECT|<xref:System.Windows.Media.FormattedText.Height%2A>, <xref:System.Windows.Media.FormattedText.Width%2A>|Use the <xref:System.Windows.Media.FormattedText.Height%2A> and <xref:System.Windows.Media.FormattedText.Width%2A> properties to calculate the output rectangle.|  
-|DT_CENTER|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment>.|  
+|DT_CENTER|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment.Center>.|  
 |DT_EDITCONTROL|None|Not required. Space width and last line rendering are the same as in the framework edit control.|  
-|DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming>.<br /><br /> Use <xref:System.Windows.TextTrimming> to get [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DT_END_ELLIPSIS with DT_WORD_ELIPSIS end ellipsis—in this case, character ellipsis only occurs on words that do not fit on a single line.|  
+|DT_END_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming.CharacterEllipsis>.<br /><br /> Use <xref:System.Windows.TextTrimming.WordEllipsis> to get [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DT_END_ELLIPSIS with DT_WORD_ELIPSIS end ellipsis—in this case, character ellipsis only occurs on words that do not fit on a single line.|  
 |DT_EXPAND_TABS|None|Not required. Tabs are automatically expanded to stops every 4 ems, which is approximately the width of 8 language-independent characters.|  
 |DT_EXTERNALLEADING|None|Not required. External leading is always included in line spacing. Use the <xref:System.Windows.Media.FormattedText.LineHeight%2A> property to create user-defined line spacing.|  
 |DT_HIDEPREFIX|None|Not supported. Remove the '&' from the string before constructing the <xref:System.Windows.Media.FormattedText> object.|  
-|DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|This is the default text alignment. Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment>. (WPF only)|  
+|DT_LEFT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|This is the default text alignment. Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment.Left>. (WPF only)|  
 |DT_MODIFYSTRING|None|Not supported.|  
 |DT_NOCLIP|<xref:System.Windows.Media.Visual.VisualClip%2A>|Clipping does not happen automatically. If you want to clip text, use the <xref:System.Windows.Media.Visual.VisualClip%2A> property.|  
 |DT_NOFULLWIDTHCHARBREAK|None|Not supported.|  
 |DT_NOPREFIX|None|Not required. The '&' character in strings is always treated as a normal character.|  
-|DT_PATHELLIPSIS|None|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming>.|  
+|DT_PATHELLIPSIS|None|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming.WordEllipsis>.|  
 |DT_PREFIX|None|Not supported. If you want to use underscores for text, such as an accelerator key or link, use the <xref:System.Windows.Media.FormattedText.SetTextDecorations%2A> method.|  
 |DT_PREFIXONLY|None|Not supported.|  
-|DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment>. (WPF only)|  
-|DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Set the <xref:System.Windows.Media.FormattedText.FlowDirection%2A> property to <xref:System.Windows.FlowDirection>.|  
+|DT_RIGHT|<xref:System.Windows.Media.FormattedText.TextAlignment%2A>|Use the <xref:System.Windows.Media.FormattedText.TextAlignment%2A> property with the value set to <xref:System.Windows.TextAlignment.Right>. (WPF only)|  
+|DT_RTLREADING|<xref:System.Windows.Media.FormattedText.FlowDirection%2A>|Set the <xref:System.Windows.Media.FormattedText.FlowDirection%2A> property to <xref:System.Windows.FlowDirection.RightToLeft>.|  
 |DT_SINGLELINE|None|Not required. <xref:System.Windows.Media.FormattedText> objects behave as a single line control, unless either the <xref:System.Windows.Media.FormattedText.MaxTextWidth%2A> property is set or the text contains a carriage return/line feed (CR/LF).|  
 |DT_TABSTOP|None|No support for user-defined tab stop positions.|  
 |DT_TOP|<xref:System.Windows.Media.FormattedText.Height%2A>|Not required. Top justification is the default. Other vertical positioning values can be defined by using the <xref:System.Windows.Media.FormattedText.Height%2A> property to compute an appropriate [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText 'y' position.|  
 |DT_VCENTER|<xref:System.Windows.Media.FormattedText.Height%2A>|Use the <xref:System.Windows.Media.FormattedText.Height%2A> property to compute an appropriate [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] DrawText 'y' position.|  
 |DT_WORDBREAK|None|Not required. Word breaking happens automatically with <xref:System.Windows.Media.FormattedText> objects. You cannot disable it.|  
-|DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming>.|  
+|DT_WORD_ELLIPSIS|<xref:System.Windows.Media.FormattedText.Trimming%2A>|Use the <xref:System.Windows.Media.FormattedText.Trimming%2A> property with the value <xref:System.Windows.TextTrimming.WordEllipsis>.|  
   
 ## See Also  
- <xref:System.Windows.Media.FormattedText>   
- [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
- [Typography in WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)   
- [Create Outlined Text](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)   
- [How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/en-us/29f8051e-798a-463f-a926-a099a99e9c67)
+ <xref:System.Windows.Media.FormattedText>  
+ [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
+ [Typography in WPF](../../../../docs/framework/wpf/advanced/typography-in-wpf.md)  
+ [Create Outlined Text](../../../../docs/framework/wpf/advanced/how-to-create-outlined-text.md)  
+ [How to: Create a PathGeometry Animation for Text](http://msdn.microsoft.com/library/29f8051e-798a-463f-a926-a099a99e9c67)

@@ -1,7 +1,9 @@
-<Type Name="DrawItemEventArgs" FullName="System.Windows.Forms.DrawItemEventArgs">
+﻿<Type Name="DrawItemEventArgs" FullName="System.Windows.Forms.DrawItemEventArgs">
   <TypeSignature Language="C#" Value="public class DrawItemEventArgs : EventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DrawItemEventArgs extends System.EventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DrawItemEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class DrawItemEventArgs&#xA;Inherits EventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DrawItemEventArgs : EventArgs" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -28,12 +30,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.DrawItemEventHandler" />
+    <altmember cref="T:System.Windows.Forms.ComboBox" />
+    <altmember cref="T:System.Windows.Forms.ListBox" />
+    <altmember cref="T:System.Windows.Forms.MenuItem" />
+    <altmember cref="T:System.Windows.Forms.TabControl" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Forms.DrawItemEventArgs" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DrawItemEventArgs (System.Drawing.Graphics graphics, System.Drawing.Font font, System.Drawing.Rectangle rect, int index, System.Windows.Forms.DrawItemState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, class System.Drawing.Font font, valuetype System.Drawing.Rectangle rect, int32 index, valuetype System.Windows.Forms.DrawItemState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawItemEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Font,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DrawItemState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DrawItemEventArgs(System::Drawing::Graphics ^ graphics, System::Drawing::Font ^ font, System::Drawing::Rectangle rect, int index, System::Windows::Forms::DrawItemState state);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -60,6 +77,7 @@
       <MemberSignature Language="C#" Value="public DrawItemEventArgs (System.Drawing.Graphics graphics, System.Drawing.Font font, System.Drawing.Rectangle rect, int index, System.Windows.Forms.DrawItemState state, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics graphics, class System.Drawing.Font font, valuetype System.Drawing.Rectangle rect, int32 index, valuetype System.Windows.Forms.DrawItemState state, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawItemEventArgs.#ctor(System.Drawing.Graphics,System.Drawing.Font,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DrawItemState,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DrawItemEventArgs(System::Drawing::Graphics ^ graphics, System::Drawing::Font ^ font, System::Drawing::Rectangle rect, int index, System::Windows::Forms::DrawItemState state, System::Drawing::Color foreColor, System::Drawing::Color backColor);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -90,6 +108,8 @@
       <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.BackColor" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BackColor As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Color BackColor { System::Drawing::Color get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -105,26 +125,29 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the item's state is <xref:System.Windows.Forms.DrawItemState?displayProperty=fullName>, the <xref:System.Windows.Forms.DrawItemEventArgs.BackColor%2A> is set to <xref:System.Drawing.SystemColors.HighlightText%2A?displayProperty=fullName>. If the item's state is not <xref:System.Windows.Forms.DrawItemState>, the <xref:System.Windows.Forms.DrawItemEventArgs.BackColor%2A> property is set to <xref:System.Drawing.SystemColors.Window%2A?displayProperty=fullName>.  
+ If the item's state is <xref:System.Windows.Forms.DrawItemState.Selected?displayProperty=nameWithType>, the <xref:System.Windows.Forms.DrawItemEventArgs.BackColor%2A> is set to <xref:System.Drawing.SystemColors.HighlightText%2A?displayProperty=nameWithType>. If the item's state is not <xref:System.Windows.Forms.DrawItemState.Selected>, the <xref:System.Windows.Forms.DrawItemEventArgs.BackColor%2A> property is set to <xref:System.Drawing.SystemColors.Window%2A?displayProperty=nameWithType>.  
   
    
   
 ## Examples  
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event. This report helps you learn when the event occurs and can assist you in debugging.  
+ The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event. This report helps you learn when the event occurs and can assist you in debugging.  
   
- To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event.  
+ To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event.  
   
  [!code-csharp[System.Windows.Forms.EventExamples#153](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#153)]
  [!code-vb[System.Windows.Forms.EventExamples#153](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#153)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Color" />
       </Docs>
     </Member>
     <Member MemberName="Bounds">
       <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.Bounds" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Bounds As Rectangle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Rectangle Bounds { System::Drawing::Rectangle get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -147,12 +170,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.DrawItemEventArgs.Graphics" />
       </Docs>
     </Member>
     <Member MemberName="DrawBackground">
       <MemberSignature Language="C#" Value="public virtual void DrawBackground ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawBackground() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawItemEventArgs.DrawBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub DrawBackground ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DrawBackground();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -168,7 +194,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the item being drawn is <xref:System.Windows.Forms.DrawItemState>, the background is drawn with the text highlighted.  
+ If the item being drawn is <xref:System.Windows.Forms.DrawItemState.Selected>, the background is drawn with the text highlighted.  
   
    
   
@@ -183,12 +209,15 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.DrawItemEventArgs.DrawBackground" /> in a derived class, make sure to call the <see cref="M:System.Windows.Forms.DrawItemEventArgs.DrawBackground" /> method of the base class.</para>
         </block>
+        <altmember cref="T:System.Windows.Forms.DrawItemState" />
       </Docs>
     </Member>
     <Member MemberName="DrawFocusRectangle">
       <MemberSignature Language="C#" Value="public virtual void DrawFocusRectangle ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DrawFocusRectangle() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DrawItemEventArgs.DrawFocusRectangle" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub DrawFocusRectangle ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DrawFocusRectangle();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -204,7 +233,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the item being drawn has <xref:System.Windows.Forms.DrawItemState>, the focus rectangle is drawn.  
+ If the item being drawn has <xref:System.Windows.Forms.DrawItemState.Focus>, the focus rectangle is drawn.  
   
    
   
@@ -219,12 +248,15 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.DrawItemEventArgs.DrawFocusRectangle" /> in a derived class, make sure to call the <see cref="M:System.Windows.Forms.DrawItemEventArgs.DrawFocusRectangle" /> method of the base class.</para>
         </block>
+        <altmember cref="T:System.Windows.Forms.DrawItemState" />
       </Docs>
     </Member>
     <Member MemberName="Font">
       <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.Font" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Font As Font" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Font ^ Font { System::Drawing::Font ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -252,12 +284,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Font" />
+        <altmember cref="P:System.Windows.Forms.Control.Font" />
       </Docs>
     </Member>
     <Member MemberName="ForeColor">
       <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.ForeColor" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ForeColor As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Color ForeColor { System::Drawing::Color get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -273,26 +309,29 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the item's state is <xref:System.Windows.Forms.DrawItemState?displayProperty=fullName>, the <xref:System.Windows.Forms.DrawItemEventArgs.ForeColor%2A> is set to <xref:System.Drawing.SystemColors.HighlightText%2A?displayProperty=fullName>. If the item's state is not <xref:System.Windows.Forms.DrawItemState>, the <xref:System.Windows.Forms.DrawItemEventArgs.ForeColor%2A> property is set to <xref:System.Drawing.SystemColors.WindowText%2A?displayProperty=fullName>.  
+ If the item's state is <xref:System.Windows.Forms.DrawItemState.Selected?displayProperty=nameWithType>, the <xref:System.Windows.Forms.DrawItemEventArgs.ForeColor%2A> is set to <xref:System.Drawing.SystemColors.HighlightText%2A?displayProperty=nameWithType>. If the item's state is not <xref:System.Windows.Forms.DrawItemState.Selected>, the <xref:System.Windows.Forms.DrawItemEventArgs.ForeColor%2A> property is set to <xref:System.Drawing.SystemColors.WindowText%2A?displayProperty=nameWithType>.  
   
    
   
 ## Examples  
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event. This report helps you learn when the event occurs and can assist you in debugging.  
+ The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event. This report helps you learn when the event occurs and can assist you in debugging.  
   
- To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event.  
+ To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event.  
   
  [!code-csharp[System.Windows.Forms.EventExamples#153](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#153)]
  [!code-vb[System.Windows.Forms.EventExamples#153](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#153)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Color" />
       </Docs>
     </Member>
     <Member MemberName="Graphics">
       <MemberSignature Language="C#" Value="public System.Drawing.Graphics Graphics { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Graphics Graphics" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.Graphics" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Graphics As Graphics" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Graphics ^ Graphics { System::Drawing::Graphics ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -315,12 +354,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.DrawItemEventArgs.Bounds" />
       </Docs>
     </Member>
     <Member MemberName="Index">
       <MemberSignature Language="C#" Value="public int Index { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.Index" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Index As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Index { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -336,7 +378,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property returns the <xref:System.Windows.Forms.Control.ControlCollection.Item%2A> value of the item being drawn in the <xref:System.Windows.Forms.Control.ControlCollection?displayProperty=fullName>. This property can return -1 if itemswere removed from the list.  
+ This property returns the <xref:System.Windows.Forms.Control.ControlCollection.Item%2A> value of the item being drawn in the <xref:System.Windows.Forms.Control.ControlCollection?displayProperty=nameWithType>. This property can return -1 if itemswere removed from the list.  
   
    
   
@@ -348,12 +390,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Forms.Control.ControlCollection.Item(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="State">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.DrawItemState State { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DrawItemState State" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DrawItemEventArgs.State" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property State As DrawItemState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::DrawItemState State { System::Windows::Forms::DrawItemState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -374,15 +419,16 @@
    
   
 ## Examples  
- The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event. This report helps you learn when the event occurs and can assist you in debugging.  
+ The following code example demonstrates the use of this member. In the example, an event handler reports on the occurrence of the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event. This report helps you learn when the event occurs and can assist you in debugging.  
   
- To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName> event.  
+ To run the example code, paste it into a project that contains an instance of type <xref:System.Windows.Forms.ListBox> that is named `ListBox1`. Then make sure that the event handler is associated with the <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType> event.  
   
  [!code-csharp[System.Windows.Forms.EventExamples#153](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#153)]
  [!code-vb[System.Windows.Forms.EventExamples#153](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#153)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DrawItemState" />
       </Docs>
     </Member>
   </Members>

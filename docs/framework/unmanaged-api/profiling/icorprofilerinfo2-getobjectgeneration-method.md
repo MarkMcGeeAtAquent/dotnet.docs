@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::GetObjectGeneration Method | Microsoft Docs"
+title: "ICorProfilerInfo2::GetObjectGeneration Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.GetObjectGeneration"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::GetObjectGeneration"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetObjectGeneration method [.NET Framework profiling]"
   - "ICorProfilerInfo2::GetObjectGeneration method [.NET Framework profiling]"
 ms.assetid: b0d25f76-0bd5-4aa6-96cf-bfec0e1de28b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::GetObjectGeneration Method
 Gets the segment of the heap that contains the specified object.  
@@ -58,5 +61,5 @@ HRESULT GetObjectGeneration(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

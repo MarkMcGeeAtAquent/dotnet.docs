@@ -1,31 +1,34 @@
 ---
-title: "StackTrace_SimpleContext Structure | Microsoft Docs"
+title: "StackTrace_SimpleContext Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StackTrace_SimpleContext"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SimpleContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SimpleContext structure [.NET Framework debugging]"
   - "StackTrace_SimpleContext structure [.NET Framework debugging]"
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StackTrace_SimpleContext Structure
 Provides a simple context that can be used in place of a full `CONTEXT` structure.  
@@ -60,5 +63,5 @@ struct StackTrace_SimpleContext
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

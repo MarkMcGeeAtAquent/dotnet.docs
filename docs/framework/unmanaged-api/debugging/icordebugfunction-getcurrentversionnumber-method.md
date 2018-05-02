@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunction::GetCurrentVersionNumber Method | Microsoft Docs"
+title: "ICorDebugFunction::GetCurrentVersionNumber Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunction.GetCurrentVersionNumber"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunction::GetCurrentVersionNumber"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCurrentVersionNumber method [.NET Framework debugging]"
   - "ICorDebugFunction::GetCurrentVersionNumber method [.NET Framework debugging]"
 ms.assetid: c3af1575-cbe6-457a-bc08-c53460edcbc8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunction::GetCurrentVersionNumber Method
 Gets the version number of the latest edit made to the function represented by this ICorDebugFunction object.  

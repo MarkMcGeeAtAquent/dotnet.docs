@@ -1,23 +1,25 @@
 ---
-title: "Using AsyncOperationContext in an Activity Sample | Microsoft Docs"
+title: "Using AsyncOperationContext in an Activity Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0888a0bd-d227-4c00-ad6a-b654a01740e8
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using AsyncOperationContext in an Activity Sample
-This sample demonstrates how to develop a custom <xref:System.Activities.CodeActivity> that uses <!--zz <xref:System.Activities.AsyncOperationContext>--> `System.Activities.AsyncOperationContext` to perform work asynchronously outside of the workflow.  
+This sample demonstrates how to develop a custom <xref:System.Activities.CodeActivity> that uses <xref:System.Activities.AsyncCodeActivityContext> to perform work asynchronously outside of the workflow.  
   
 ## Sample Details  
- The sample activity uses the <!--zz <xref:System.IO.FileStream.BeginWrite>--> ` xref:System.IO.FileStream.BeginWrite` and <!--zz <xref:System.IO.FileStream.EndWrite> --> `xref:System.IO.FileStream.EndWrite` methods on the <xref:System.IO.FileStream> class to asynchronously write data to a file. The pattern introduced here can be adapted for use with other asynchronous methods. While the asynchronous operation is executing, other activities in the workflow can execute, but the workflow cannot be persisted.  
+ The sample activity uses the <xref:System.IO.FileStream.BeginWrite%2A> and <xref:System.IO.FileStream.EndWrite%2A> methods on the <xref:System.IO.FileStream> class to asynchronously write data to a file. The pattern introduced here can be adapted for use with other asynchronous methods. While the asynchronous operation is executing, other activities in the workflow can execute, but the workflow cannot be persisted.  
   
 #### To set up, build, and run the sample  
   
@@ -32,6 +34,4 @@ This sample demonstrates how to develop a custom <xref:System.Activities.CodeAct
 >   
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\Code-Bodied\Async`  
-  
-## See Also
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\Code-Bodied\Async`

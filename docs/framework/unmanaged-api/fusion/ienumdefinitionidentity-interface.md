@@ -1,5 +1,5 @@
 ---
-title: "IEnumDefinitionIdentity Interface | Microsoft Docs"
+title: "IEnumDefinitionIdentity Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IEnumDefinitionIdentity"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IEnumDefinitionIdentity"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IEnumDefinitionIdentity interface [.NET Framework fusion]"
 ms.assetid: 8263e75d-251b-4abc-8a1a-c62884142232
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IEnumDefinitionIdentity Interface
 Serves as the enumerator for a collection of `IDefinitionIdentity` objects.  
@@ -71,5 +74,5 @@ IEnumDefinitionIdentity : IUnknown {
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Fusion Interfaces](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)   
+ [Fusion Interfaces](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
  [IDefinitionIdentity Interface](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)

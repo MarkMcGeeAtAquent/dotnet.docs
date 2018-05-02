@@ -1,7 +1,8 @@
 ---
-title: "Mitigation: Pointer-based Touch and Stylus Support | Microsoft Docs"
+title: "Mitigation: Pointer-based Touch and Stylus Support"
 ms.custom: ""
 ms.date: "04/07/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
@@ -16,6 +17,8 @@ caps.latest.revision: 2
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Mitigation: Pointer-based Touch and Stylus Support
 

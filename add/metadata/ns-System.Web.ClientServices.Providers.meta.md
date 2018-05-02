@@ -1,6 +1,8 @@
 ---
 uid: System.Web.ClientServices.Providers
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

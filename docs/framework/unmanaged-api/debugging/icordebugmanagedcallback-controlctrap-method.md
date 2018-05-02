@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::ControlCTrap Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::ControlCTrap Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.ControlCTrap"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::ControlCTrap"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugManagedCallback::ControlCTrap method [.NET Framework debugging]"
   - "ControlCTrap method [.NET Framework debugging]"
 ms.assetid: 0500854e-2121-43d9-a028-64312da35258
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::ControlCTrap Method
 Notifies the debugger that a CTRL+C is trapped in the process that is being debugged.  

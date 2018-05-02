@@ -1,5 +1,5 @@
 ---
-title: "ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList Method | Microsoft Docs"
+title: "ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRAssemblyIdentityManager.GetCLRAssemblyReferenceList"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetClrAssemblyReferenceList method [.NET Framework hosting]"
   - "ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList method [.NET Framework hosting]"
 ms.assetid: cb5ffae5-287b-4a87-9ca8-7ce3ae0601b7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList Method
 Gets an interface pointer to an [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) instance from the supplied list of partial assembly identities.  
@@ -71,5 +74,5 @@ HRESULT  GetCLRAssemblyReferenceList (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)   
+ [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
  [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "How to: Debug CLR Activation Issues | Microsoft Docs"
+title: "How to: Debug CLR Activation Issues"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "CLR activation, debugging issues"
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
@@ -21,6 +16,8 @@ caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Debug CLR Activation Issues
 If you encounter problems in getting your application to run with the correct version of the common language runtime (CLR), you can view and debug CLR activation logs. These logs can be very useful in determining the root cause of an activation issue, when your application either loads a different CLR version than expected or doesn't load the CLR at all. The [.NET Framework Initialization Errors: Managing the User Experience](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) discusses the experience when no CLR is found for an application.  
@@ -99,7 +96,6 @@ If you encounter problems in getting your application to run with the correct ve
 532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3   
 532,205950.398,FunctionCall: RealDllMain. Reason: 0   
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0  
-  
 ```  
   
 -   **CLR Loading log** provides the path to the executable that started the process that loaded managed code. Note that this could be a native host.  
@@ -127,5 +123,5 @@ If you encounter problems in getting your application to run with the correct ve
     ```  
   
 ## See Also  
- [Deployment](../../../docs/framework/deployment/index.md)   
+ [Deployment](../../../docs/framework/deployment/index.md)  
  [How to: Configure an App to Support .NET Framework 4 or 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetGuid Method | Microsoft Docs"
+title: "IMetaDataTables::GetGuid Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetGuid"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetGuid"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetGuid method [.NET Framework metadata]"
   - "IMetaDataTables::GetGuid method [.NET Framework metadata]"
 ms.assetid: a3546316-e24d-417f-9909-e45d42c9d471
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetGuid Method
 Gets a GUID from the row at the specified index.  
@@ -59,5 +62,5 @@ HRESULT GetGuid (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

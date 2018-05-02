@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.Metadata.W3cXsd2001.ISoapXsd
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Metadata.W3cXsd2001.ISoapXsd.GetXsdType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

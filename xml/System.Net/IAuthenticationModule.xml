@@ -1,7 +1,9 @@
-<Type Name="IAuthenticationModule" FullName="System.Net.IAuthenticationModule">
+﻿<Type Name="IAuthenticationModule" FullName="System.Net.IAuthenticationModule">
   <TypeSignature Language="C#" Value="public interface IAuthenticationModule" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAuthenticationModule" />
   <TypeSignature Language="DocId" Value="T:System.Net.IAuthenticationModule" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IAuthenticationModule" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IAuthenticationModule" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -22,7 +28,7 @@
   
  Authentication modules conduct the entire authentication process with a server, responding to an authentication challenge as appropriate. This process may consist of requests to an authentication server separate from the resource server, as well as any other activities required to properly authenticate a request for a URI.  
   
- Custom authentication modules should implement the <xref:System.Net.IAuthenticationModule> interface and then register with the <xref:System.Net.AuthenticationManager.Register%2A?displayProperty=fullName> method. Authentication modules are also registered at program initialization by reading the configuration file.  
+ Custom authentication modules should implement the <xref:System.Net.IAuthenticationModule> interface and then register with the <xref:System.Net.AuthenticationManager.Register%2A?displayProperty=nameWithType> method. Authentication modules are also registered at program initialization by reading the configuration file.  
   
    
   
@@ -35,12 +41,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Net.AuthenticationManager" />
   </Docs>
   <Members>
     <Member MemberName="Authenticate">
       <MemberSignature Language="C#" Value="public System.Net.Authorization Authenticate (string challenge, System.Net.WebRequest request, System.Net.ICredentials credentials);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.Authorization Authenticate(string challenge, class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.IAuthenticationModule.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Authenticate (challenge As String, request As WebRequest, credentials As ICredentials) As Authorization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Net::Authorization ^ Authenticate(System::String ^ challenge, System::Net::WebRequest ^ request, System::Net::ICredentials ^ credentials);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -50,6 +59,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Authorization</ReturnType>
@@ -91,6 +104,8 @@
       <MemberSignature Language="C#" Value="public string AuthenticationType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
       <MemberSignature Language="DocId" Value="P:System.Net.IAuthenticationModule.AuthenticationType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AuthenticationType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AuthenticationType { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -100,6 +115,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -111,7 +130,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.IAuthenticationModule.AuthenticationType%2A> property identifies the authentication type implemented by this authentication module. The <xref:System.Net.IAuthenticationModule.AuthenticationType%2A> property is used by the <xref:System.Net.AuthenticationManager.Register%2A?displayProperty=fullName> method to determine if the authentication module has been registered, and by the <xref:System.Net.AuthenticationManager.Unregister%2A?displayProperty=fullName> method to remove a registered authentication module.  
+ The <xref:System.Net.IAuthenticationModule.AuthenticationType%2A> property identifies the authentication type implemented by this authentication module. The <xref:System.Net.IAuthenticationModule.AuthenticationType%2A> property is used by the <xref:System.Net.AuthenticationManager.Register%2A?displayProperty=nameWithType> method to determine if the authentication module has been registered, and by the <xref:System.Net.AuthenticationManager.Unregister%2A?displayProperty=nameWithType> method to remove a registered authentication module.  
   
    
   
@@ -130,6 +149,8 @@
       <MemberSignature Language="C#" Value="public bool CanPreAuthenticate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanPreAuthenticate" />
       <MemberSignature Language="DocId" Value="P:System.Net.IAuthenticationModule.CanPreAuthenticate" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanPreAuthenticate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanPreAuthenticate { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -139,6 +160,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -173,6 +198,8 @@
       <MemberSignature Language="C#" Value="public System.Net.Authorization PreAuthenticate (System.Net.WebRequest request, System.Net.ICredentials credentials);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.Authorization PreAuthenticate(class System.Net.WebRequest request, class System.Net.ICredentials credentials) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.IAuthenticationModule.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)" />
+      <MemberSignature Language="VB.NET" Value="Public Function PreAuthenticate (request As WebRequest, credentials As ICredentials) As Authorization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Net::Authorization ^ PreAuthenticate(System::Net::WebRequest ^ request, System::Net::ICredentials ^ credentials);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -182,6 +209,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Authorization</ReturnType>

@@ -1,5 +1,5 @@
 ---
-title: "IDebuggerThreadControl::ThreadIsBlockingForDebugger Method | Microsoft Docs"
+title: "IDebuggerThreadControl::ThreadIsBlockingForDebugger Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IDebuggerThreadControl.ThreadIsBlockingForDebugger"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ThreadIsBlockingForDebugger"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ThreadIsBlockingForDebugger method [.NET Framework hosting]"
   - "IDebuggerThreadControl::ThreadIsBlockingForDebugger method [.NET Framework hosting]"
 ms.assetid: d4d7cb2d-69da-48b3-879a-1a8a68c9bfa8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IDebuggerThreadControl::ThreadIsBlockingForDebugger Method
 Notifies the host that the thread that is sending this callback is about to block within the debugging services.  

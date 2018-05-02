@@ -1,7 +1,7 @@
 ---
-title: "How to: Project an Object Graph (Visual Basic) | Microsoft Docs"
+title: "How to: Project an Object Graph (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
 caps.latest.revision: 3
 author: dotnet-bot
@@ -302,10 +300,9 @@ Sub Main()
     }  
     Console.WriteLine(purchOrder)  
 End Sub  
-  
 ```  
   
- In this example, the result of the [!INCLUDE[vbteclinq](../../../../csharp/includes/vbteclinq_md.md)] query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`. The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`. The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.  
+ In this example, the result of the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`. The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`. The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.  
   
  The example produces the following output:  
   
@@ -347,6 +344,6 @@ ShipDate: 5/21/1999
 ```  
   
 ## See Also  
- <xref:System.Linq.Enumerable.Select%2A>   
- <xref:System.Linq.Enumerable.ToList%2A>   
+ <xref:System.Linq.Enumerable.Select%2A>  
+ <xref:System.Linq.Enumerable.ToList%2A>  
  [Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

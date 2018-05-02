@@ -1,5 +1,5 @@
 ---
-title: "&lt;Method&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;Method&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 22
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;Method&gt; Element (.NET Native)
 Applies runtime reflection policy to a constructor or method.  
@@ -21,12 +23,10 @@ Applies runtime reflection policy to a constructor or method.
 ## Syntax  
   
 ```xml  
-  
 <Method Name="method_name"  
         Signature="method_signature"  
         Browse="policy_type"  
         Dynamic="policy_type" />  
-  
 ```  
   
 ## Attributes and Elements  
@@ -83,7 +83,7 @@ Applies runtime reflection policy to a constructor or method.
  You cannot define the runtime reflection policy for a constructor by using the `<Method>` element. Instead, use the `Activate` attribute of the  [\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md), [\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md), [\<Type>](../../../docs/framework/net-native/type-element-net-native.md), or [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) element.  
   
 ## Example  
- The `Stringify` method in the following example is a general-purpose formatting method that uses reflection to convert an object to its string representation. In addition to calling the object's default `ToString` method, the method can produce a formatted result string by passing an object's `ToString` method a format string, an <xref:System.IFormatProvider> implementation, or both. It can also call one of the <xref:System.Convert.ToString%2A?displayProperty=fullName> overloads that converts a number to its binary, hexadecimal, or octal representation.  
+ The `Stringify` method in the following example is a general-purpose formatting method that uses reflection to convert an object to its string representation. In addition to calling the object's default `ToString` method, the method can produce a formatted result string by passing an object's `ToString` method a format string, an <xref:System.IFormatProvider> implementation, or both. It can also call one of the <xref:System.Convert.ToString%2A?displayProperty=nameWithType> overloads that converts a number to its binary, hexadecimal, or octal representation.  
   
  [!code-csharp[ProjectN_Reflection#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/method1.cs#7)]  
   
@@ -96,7 +96,6 @@ Applies runtime reflection policy to a constructor or method.
  These exceptions can all be eliminated by using the [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) element to define the types whose metadata must be present, and by adding `<Method>` elements to ensure that the implementation of method overloads that can be called dynamically is also present. The following is the default.rd.xml file that eliminates these exceptions and allows the example to execute without error.  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
   <Application>  
      <Assembly Name="*Application*" Dynamic="Required All" />  
@@ -150,11 +149,10 @@ Applies runtime reflection policy to a constructor or method.
      </Namespace>  
   </Application>  
 </Directives>  
-  
 ```  
   
 ## See Also  
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
  [\<MethodInstantiation> Element](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)

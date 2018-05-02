@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DeleteFieldMarshal Method | Microsoft Docs"
+title: "IMetaDataEmit::DeleteFieldMarshal Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DeleteFieldMarshal"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DeleteFieldMarshal"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit::DeleteFieldMarshal method [.NET Framework metadata]"
   - "DeleteFieldMarshal method [.NET Framework metadata]"
 ms.assetid: 7c75aef9-c742-4b33-a14b-56ff94b0f725
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DeleteFieldMarshal Method
 Destroys the PInvoke marshaling metadata signature for the object referenced by the specified token.  
@@ -52,5 +55,5 @@ HRESULT DeleteFieldMarshal (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

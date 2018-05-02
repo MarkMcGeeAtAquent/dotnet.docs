@@ -1,5 +1,5 @@
 ---
-title: "Expander | Microsoft Docs"
+title: "Expander"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -22,6 +22,8 @@ caps.latest.revision: 64
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Expander
 An <xref:System.Windows.Controls.Expander> allows a user to view a header and expand that header to see further details, or to collapse a section up to a header.  

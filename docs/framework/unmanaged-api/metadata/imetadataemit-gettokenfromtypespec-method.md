@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::GetTokenFromTypeSpec Method | Microsoft Docs"
+title: "IMetaDataEmit::GetTokenFromTypeSpec Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.GetTokenFromTypeSpec"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::GetTokenFromTypeSpec"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTokenFromTypeSpec method [.NET Framework metadata]"
   - "IMetaDataEmit::GetTokenFromTypeSpec method [.NET Framework metadata]"
 ms.assetid: 7de6447a-a751-49d8-87e2-951cee77b536
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::GetTokenFromTypeSpec Method
 Gets a metadata token for the type with the specified metadata signature.  
@@ -60,5 +63,5 @@ HRESULT GetTokenFromTypeSpec (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

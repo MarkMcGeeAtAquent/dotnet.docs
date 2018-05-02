@@ -1,8 +1,8 @@
 ---
-title: "Impersonating the Client | Microsoft Docs"
+title: "Impersonating the Client"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -15,9 +15,11 @@ helpviewer_keywords:
   - "impersonation, Windows Communication Foundation sample"
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
 caps.latest.revision: 25
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Impersonating the Client
 The Impersonation sample demonstrates how to impersonate the caller application at the service so that the service can access system resources on behalf of the caller.  
@@ -39,7 +41,6 @@ public double Add(double n1, double n2)
     DisplayIdentityInformation();  
     return result;  
 }  
-  
 ```  
   
  As a result, the security context of the executing thread is switched to impersonate the caller before entering the `Add` method and reverted on exiting the method.  
@@ -57,7 +58,6 @@ static void DisplayIdentityInformation()
          WindowsIdentity.GetCurrent().Token.ToString());  
     return;  
 }  
-  
 ```  
   
  The `Subtract` method on the service impersonates the caller using imperative calls as shown in the following sample code.  
@@ -98,7 +98,7 @@ DisplayIdentityInformation();
   
  The other methods do not impersonate the caller.  
   
- The client code has been modified to set the impersonation level to <xref:System.Security.Principal.TokenImpersonationLevel>. The client specifies the impersonation level to be used by the service, by using the <xref:System.Security.Principal.TokenImpersonationLevel> enumeration. The enumeration supports the following values: <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel>, <xref:System.Security.Principal.TokenImpersonationLevel> and <xref:System.Security.Principal.TokenImpersonationLevel>. To perform an access check when accessing a system resource on the local machine that is protected using Windows ACLs, the impersonation level must be set to <xref:System.Security.Principal.TokenImpersonationLevel>, as shown in the following sample code.  
+ The client code has been modified to set the impersonation level to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>. The client specifies the impersonation level to be used by the service, by using the <xref:System.Security.Principal.TokenImpersonationLevel> enumeration. The enumeration supports the following values: <xref:System.Security.Principal.TokenImpersonationLevel.None>, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> and <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. To perform an access check when accessing a system resource on the local machine that is protected using Windows ACLs, the impersonation level must be set to <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, as shown in the following sample code.  
   
 ```  
 // Create a client with given client endpoint configuration  

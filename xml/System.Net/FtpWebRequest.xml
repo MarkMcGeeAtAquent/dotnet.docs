@@ -1,7 +1,9 @@
-<Type Name="FtpWebRequest" FullName="System.Net.FtpWebRequest">
+﻿<Type Name="FtpWebRequest" FullName="System.Net.FtpWebRequest">
   <TypeSignature Language="C#" Value="public sealed class FtpWebRequest : System.Net.WebRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FtpWebRequest extends System.Net.WebRequest" />
   <TypeSignature Language="DocId" Value="T:System.Net.FtpWebRequest" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FtpWebRequest&#xA;Inherits WebRequest" />
+  <TypeSignature Language="C++ CLI" Value="public ref class FtpWebRequest sealed : System::Net::WebRequest" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Net.WebRequest</BaseTypeName>
@@ -38,7 +44,7 @@
   
  Requests are sent to the server by calling the <xref:System.Net.FtpWebRequest.GetResponse%2A> method or its asynchronous counterparts, the <xref:System.Net.FtpWebRequest.BeginGetResponse%2A> and <xref:System.Net.FtpWebRequest.EndGetResponse%2A> methods. When the requested operation completes, an <xref:System.Net.FtpWebResponse> object is returned. The <xref:System.Net.FtpWebResponse> object provides the status of the operation and any data downloaded from the server.  
   
- You can set a time-out value for reading or writing to the server by using the <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> property. If the time-out period is exceeded, the calling method throws a <xref:System.Net.WebException> with <xref:System.Net.WebExceptionStatus> set to <xref:System.Net.WebExceptionStatus>.  
+ You can set a time-out value for reading or writing to the server by using the <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> property. If the time-out period is exceeded, the calling method throws a <xref:System.Net.WebException> with <xref:System.Net.WebExceptionStatus> set to <xref:System.Net.WebExceptionStatus.Timeout>.  
   
  When downloading a file from an FTP server, if the command was successful, the contents of the requested file are available in the response object's stream. You can access this stream by calling the <xref:System.Net.FtpWebResponse.GetResponseStream%2A> method. For more information, see <xref:System.Net.FtpWebResponse>.  
   
@@ -71,12 +77,20 @@
  ]]></format>
     </remarks>
     <permission cref="T:System.Net.WebPermission">for accessing the resource referenced by this request. Associated enumeration: <see cref="F:System.Net.NetworkAccess.Connect" />.</permission>
+    <altmember cref="T:System.Net.FtpWebResponse" />
+    <altmember cref="T:System.Net.FtpStatusCode" />
+    <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+    <altmember cref="T:System.Net.WebRequest" />
+    <altmember cref="T:System.Net.WebResponse" />
+    <altmember cref="T:System.Net.WebClient" />
   </Docs>
   <Members>
     <Member MemberName="Abort">
       <MemberSignature Language="C#" Value="public override void Abort ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Abort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.Abort" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Abort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Abort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -86,6 +100,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -112,12 +130,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="BeginGetRequestStream">
       <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetRequestStream (AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetRequestStream(class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginGetRequestStream (callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginGetRequestStream(AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -127,6 +153,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -169,12 +199,20 @@
         <block subset="none" type="usage">
           <para>This method generates network traffic.</para>
         </block>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="BeginGetResponse">
       <MemberSignature Language="C#" Value="public override IAsyncResult BeginGetResponse (AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginGetResponse(class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginGetResponse (callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginGetResponse(AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -184,6 +222,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -229,12 +271,20 @@
         <block subset="none" type="usage">
           <para>This method generates network traffic.</para>
         </block>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="ClientCertificates">
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509CertificateCollection ClientCertificates" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ClientCertificates" />
+      <MemberSignature Language="VB.NET" Value="Public Property ClientCertificates As X509CertificateCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Cryptography::X509Certificates::X509CertificateCollection ^ ClientCertificates { System::Security::Cryptography::X509Certificates::X509CertificateCollection ^ get(); void set(System::Security::Cryptography::X509Certificates::X509CertificateCollection ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -244,6 +294,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -268,12 +322,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The value specified for a set operation is <see langword="null" />.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="ConnectionGroupName">
       <MemberSignature Language="C#" Value="public override string ConnectionGroupName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectionGroupName" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ConnectionGroupName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ConnectionGroupName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ConnectionGroupName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -283,6 +345,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -316,12 +382,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="ContentLength">
       <MemberSignature Language="C#" Value="public override long ContentLength { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentLength" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ContentLength As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property long ContentLength { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -331,6 +405,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -352,6 +430,8 @@
       <MemberSignature Language="C#" Value="public long ContentOffset { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 ContentOffset" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentOffset" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContentOffset As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long ContentOffset { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -361,6 +441,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -390,12 +474,20 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The value specified for this property is less than zero.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="ContentType">
       <MemberSignature Language="C#" Value="public override string ContentType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ContentType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ContentType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ContentType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -405,6 +497,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -427,6 +523,8 @@
       <MemberSignature Language="C#" Value="public override System.Net.ICredentials Credentials { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Credentials" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Credentials As ICredentials" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Net::ICredentials ^ Credentials { System::Net::ICredentials ^ get(); void set(System::Net::ICredentials ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -436,6 +534,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.ICredentials</ReturnType>
@@ -467,12 +569,20 @@
         <exception cref="T:System.ArgumentNullException">The value specified for a set operation is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">An <see cref="T:System.Net.ICredentials" /> of a type other than <see cref="T:System.Net.NetworkCredential" /> was specified for a set operation.</exception>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="DefaultCachePolicy">
       <MemberSignature Language="C#" Value="public static System.Net.Cache.RequestCachePolicy DefaultCachePolicy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Net.Cache.RequestCachePolicy DefaultCachePolicy" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.DefaultCachePolicy" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property DefaultCachePolicy As RequestCachePolicy" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Net::Cache::RequestCachePolicy ^ DefaultCachePolicy { System::Net::Cache::RequestCachePolicy ^ get(); void set(System::Net::Cache::RequestCachePolicy ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -481,6 +591,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -503,13 +617,13 @@
   
 |Policy|Effect|  
 |------------|------------|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Returns the resource from the server.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Returns the cached resource if the content length is present and matches the entry size; otherwise, throws a <xref:System.Net.WebException>.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Returns the cached resource if the content length is provided and matches the entry size; otherwise, the resource is downloaded from the server and is returned to the caller.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Returns the cached resource if the timestamp of the cached resource is the same as the time stamp of the resource on the server; otherwise, the resource is downloaded from the server, stored in the cache, and returned to the caller.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.|  
-|<xref:System.Net.Cache.RequestCacheLevel>|If a cached resource exists, it is deleted. The resource is downloaded from the server and is returned to the caller.|  
+|<xref:System.Net.Cache.RequestCacheLevel.Default>|Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.|  
+|<xref:System.Net.Cache.RequestCacheLevel.BypassCache>|Returns the resource from the server.|  
+|<xref:System.Net.Cache.RequestCacheLevel.CacheOnly>|Returns the cached resource if the content length is present and matches the entry size; otherwise, throws a <xref:System.Net.WebException>.|  
+|<xref:System.Net.Cache.RequestCacheLevel.CacheIfAvailable>|Returns the cached resource if the content length is provided and matches the entry size; otherwise, the resource is downloaded from the server and is returned to the caller.|  
+|<xref:System.Net.Cache.RequestCacheLevel.Revalidate>|Returns the cached resource if the timestamp of the cached resource is the same as the time stamp of the resource on the server; otherwise, the resource is downloaded from the server, stored in the cache, and returned to the caller.|  
+|<xref:System.Net.Cache.RequestCacheLevel.Reload>|Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.|  
+|<xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore>|If a cached resource exists, it is deleted. The resource is downloaded from the server and is returned to the caller.|  
   
 > [!NOTE]
 >  Setting <xref:System.Net.FtpWebRequest.DefaultCachePolicy%2A> overrides any configuration setting.  
@@ -523,6 +637,8 @@
       <MemberSignature Language="C#" Value="public bool EnableSsl { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableSsl" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.EnableSsl" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableSsl As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnableSsl { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -532,6 +648,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -561,12 +681,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The connection to the FTP server has already been established.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="EndGetRequestStream">
       <MemberSignature Language="C#" Value="public override System.IO.Stream EndGetRequestStream (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream EndGetRequestStream(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.EndGetRequestStream(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function EndGetRequestStream (asyncResult As IAsyncResult) As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::IO::Stream ^ EndGetRequestStream(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -576,6 +704,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
@@ -613,12 +745,20 @@
         <exception cref="T:System.ArgumentException">
           <paramref name="asyncResult" /> was not obtained by calling <see cref="M:System.Net.FtpWebRequest.BeginGetRequestStream(System.AsyncCallback,System.Object)" />.</exception>
         <exception cref="T:System.InvalidOperationException">This method was already called for the operation identified by <paramref name="asyncResult" />.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="EndGetResponse">
       <MemberSignature Language="C#" Value="public override System.Net.WebResponse EndGetResponse (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse EndGetResponse(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.EndGetResponse(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function EndGetResponse (asyncResult As IAsyncResult) As WebResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Net::WebResponse ^ EndGetResponse(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -628,6 +768,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.WebResponse</ReturnType>
@@ -669,12 +813,21 @@
         <block subset="none" type="usage">
           <para>This method generates network traffic.</para>
         </block>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
+        <altmember cref="M:System.Net.FtpWebRequest.GetResponse" />
       </Docs>
     </Member>
     <Member MemberName="GetRequestStream">
       <MemberSignature Language="C#" Value="public override System.IO.Stream GetRequestStream ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IO.Stream GetRequestStream() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.GetRequestStream" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetRequestStream () As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::IO::Stream ^ GetRequestStream();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -684,6 +837,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
@@ -726,12 +883,20 @@
         <block subset="none" type="usage">
           <para>This method generates network traffic.</para>
         </block>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="GetResponse">
       <MemberSignature Language="C#" Value="public override System.Net.WebResponse GetResponse ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.WebResponse GetResponse() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.FtpWebRequest.GetResponse" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetResponse () As WebResponse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Net::WebResponse ^ GetResponse();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -741,6 +906,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.WebResponse</ReturnType>
@@ -791,12 +960,20 @@
         <block subset="none" type="usage">
           <para>This method generates network traffic.</para>
         </block>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="Headers">
       <MemberSignature Language="C#" Value="public override System.Net.WebHeaderCollection Headers { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebHeaderCollection Headers" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Headers" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Headers As WebHeaderCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Net::WebHeaderCollection ^ Headers { System::Net::WebHeaderCollection ^ get(); void set(System::Net::WebHeaderCollection ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -806,6 +983,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -832,6 +1013,8 @@
       <MemberSignature Language="C#" Value="public bool KeepAlive { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.KeepAlive" />
+      <MemberSignature Language="VB.NET" Value="Public Property KeepAlive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool KeepAlive { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -841,6 +1024,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -873,12 +1060,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="Method">
       <MemberSignature Language="C#" Value="public override string Method { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Method" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Method" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Method As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Method { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -888,6 +1083,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -927,12 +1126,20 @@
  \- or -  
   
  Multiple methods were specified.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="PreAuthenticate">
       <MemberSignature Language="C#" Value="public override bool PreAuthenticate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PreAuthenticate" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.PreAuthenticate" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property PreAuthenticate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool PreAuthenticate { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -942,6 +1149,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -964,6 +1175,8 @@
       <MemberSignature Language="C#" Value="public override System.Net.IWebProxy Proxy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IWebProxy Proxy" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Proxy" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Proxy As IWebProxy" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Net::IWebProxy ^ Proxy { System::Net::IWebProxy ^ get(); void set(System::Net::IWebProxy ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -973,6 +1186,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.IWebProxy</ReturnType>
@@ -984,7 +1201,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.FtpWebRequest.Proxy%2A> property identifies the <xref:System.Net.IWebProxy> instance that communicates with the FTP server. The proxy is set by the system by using configuration files and the Internet Explorer Local Area Network settings. To specify that no proxy should be used, set <xref:System.Net.FtpWebRequest.Proxy%2A> to the proxy instance returned by the <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=fullName> method. For more information about automatic proxy detection, see [Automatic Proxy Detection](~/docs/framework/network-programming/automatic-proxy-detection.md).  
+ The <xref:System.Net.FtpWebRequest.Proxy%2A> property identifies the <xref:System.Net.IWebProxy> instance that communicates with the FTP server. The proxy is set by the system by using configuration files and the Internet Explorer Local Area Network settings. To specify that no proxy should be used, set <xref:System.Net.FtpWebRequest.Proxy%2A> to the proxy instance returned by the <xref:System.Net.GlobalProxySelection.GetEmptyWebProxy%2A?displayProperty=nameWithType> method. For more information about automatic proxy detection, see [Automatic Proxy Detection](~/docs/framework/network-programming/automatic-proxy-detection.md).  
   
  You must set <xref:System.Net.FtpWebRequest.Proxy%2A> before writing data to the request's stream or getting the response. Changing <xref:System.Net.FtpWebRequest.Proxy%2A> after calling the <xref:System.Net.FtpWebRequest.GetRequestStream%2A>, <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>, <xref:System.Net.FtpWebRequest.GetResponse%2A>, or <xref:System.Net.FtpWebRequest.BeginGetResponse%2A> method causes an <xref:System.InvalidOperationException> exception.  
   
@@ -1004,12 +1221,22 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">This property cannot be set to <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
+        <altmember cref="T:System.Net.WebProxy" />
+        <altmember cref="T:System.Net.GlobalProxySelection" />
       </Docs>
     </Member>
     <Member MemberName="ReadWriteTimeout">
       <MemberSignature Language="C#" Value="public int ReadWriteTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReadWriteTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ReadWriteTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReadWriteTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ReadWriteTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1019,6 +1246,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1032,7 +1263,7 @@
 ## Remarks  
  The <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> is used when writing to the stream returned by the <xref:System.Net.FtpWebRequest.GetRequestStream%2A> method or reading from the stream returned by the <xref:System.Net.FtpWebResponse.GetResponseStream%2A> method.  
   
- Specifically, the <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> property controls the time-out for the <xref:System.IO.Stream.Read%2A> method, which is used to read the stream returned by the <xref:System.Net.FtpWebResponse.GetResponseStream%2A> method, and for the <xref:System.IO.Stream.Write%2A> method, which is used to write to the stream returned by the <xref:System.Net.FtpWebRequest.GetRequestStream%2A> method. If the time-out period is exceeded, the calling method throws a <xref:System.Net.WebException> with <xref:System.Net.WebExceptionStatus> set to <xref:System.Net.WebExceptionStatus>.  
+ Specifically, the <xref:System.Net.FtpWebRequest.ReadWriteTimeout%2A> property controls the time-out for the <xref:System.IO.Stream.Read%2A> method, which is used to read the stream returned by the <xref:System.Net.FtpWebResponse.GetResponseStream%2A> method, and for the <xref:System.IO.Stream.Write%2A> method, which is used to write to the stream returned by the <xref:System.Net.FtpWebRequest.GetRequestStream%2A> method. If the time-out period is exceeded, the calling method throws a <xref:System.Net.WebException> with <xref:System.Net.WebExceptionStatus> set to <xref:System.Net.WebExceptionStatus.Timeout>.  
   
  To specify the amount of time to wait for the request to complete, use the <xref:System.Net.FtpWebRequest.Timeout%2A> property.  
   
@@ -1046,6 +1277,8 @@
       <MemberSignature Language="C#" Value="public string RenameTo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RenameTo" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.RenameTo" />
+      <MemberSignature Language="VB.NET" Value="Public Property RenameTo As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RenameTo { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1055,6 +1288,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1071,6 +1308,8 @@
       <MemberSignature Language="C#" Value="public override Uri RequestUri { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RequestUri" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.RequestUri" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property RequestUri As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Uri ^ RequestUri { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1080,6 +1319,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -1103,12 +1346,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="ServicePoint">
       <MemberSignature Language="C#" Value="public System.Net.ServicePoint ServicePoint { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ServicePoint ServicePoint" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.ServicePoint" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ServicePoint As ServicePoint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::ServicePoint ^ ServicePoint { System::Net::ServicePoint ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1118,6 +1369,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.ServicePoint</ReturnType>
@@ -1141,12 +1396,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="Timeout">
       <MemberSignature Language="C#" Value="public override int Timeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.Timeout" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Timeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int Timeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1156,6 +1419,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1169,7 +1436,7 @@
 ## Remarks  
  To specify an infinite value, set the <xref:System.Net.FtpWebRequest.Timeout%2A> property to <xref:System.Threading.Timeout.Infinite> (-1). This is the default value.  
   
- <xref:System.Net.FtpWebRequest.Timeout%2A> is the number of milliseconds that a synchronous request made with the <xref:System.Net.FtpWebRequest.GetResponse%2A> method waits for a response and that the <xref:System.Net.FtpWebRequest.GetRequestStream%2A> method waits for a stream. If a resource does not respond within the time-out period, the request throws a <xref:System.Net.WebException> with the <xref:System.Net.WebException.Status%2A> property set to <xref:System.Net.WebExceptionStatus>.  
+ <xref:System.Net.FtpWebRequest.Timeout%2A> is the number of milliseconds that a synchronous request made with the <xref:System.Net.FtpWebRequest.GetResponse%2A> method waits for a response and that the <xref:System.Net.FtpWebRequest.GetRequestStream%2A> method waits for a stream. If a resource does not respond within the time-out period, the request throws a <xref:System.Net.WebException> with the <xref:System.Net.WebException.Status%2A> property set to <xref:System.Net.WebExceptionStatus.Timeout>.  
   
  Changing <xref:System.Net.FtpWebRequest.Timeout%2A> after calling the <xref:System.Net.FtpWebRequest.GetRequestStream%2A>, <xref:System.Net.FtpWebRequest.BeginGetRequestStream%2A>, <xref:System.Net.FtpWebRequest.GetResponse%2A>, or <xref:System.Net.FtpWebRequest.BeginGetResponse%2A> method causes an <xref:System.InvalidOperationException> exception.  
   
@@ -1187,12 +1454,20 @@
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than zero and is not <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="UseBinary">
       <MemberSignature Language="C#" Value="public bool UseBinary { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseBinary" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UseBinary" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseBinary As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseBinary { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1202,6 +1477,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1229,12 +1508,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
     <Member MemberName="UseDefaultCredentials">
       <MemberSignature Language="C#" Value="public override bool UseDefaultCredentials { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCredentials" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UseDefaultCredentials" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property UseDefaultCredentials As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool UseDefaultCredentials { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1244,6 +1531,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1271,6 +1562,8 @@
       <MemberSignature Language="C#" Value="public bool UsePassive { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UsePassive" />
       <MemberSignature Language="DocId" Value="P:System.Net.FtpWebRequest.UsePassive" />
+      <MemberSignature Language="VB.NET" Value="Public Property UsePassive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UsePassive { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1280,6 +1573,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1311,6 +1608,12 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">A new value was specified for this property for a request that is already in progress.</exception>
+        <altmember cref="T:System.Net.FtpWebResponse" />
+        <altmember cref="T:System.Net.FtpStatusCode" />
+        <altmember cref="T:System.Net.WebRequestMethods.Ftp" />
+        <altmember cref="T:System.Net.WebRequest" />
+        <altmember cref="T:System.Net.WebResponse" />
+        <altmember cref="T:System.Net.WebClient" />
       </Docs>
     </Member>
   </Members>

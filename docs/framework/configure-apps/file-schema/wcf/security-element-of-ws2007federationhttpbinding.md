@@ -1,8 +1,8 @@
 ---
-title: "&lt;security&gt; element of &lt;ws2007FederationHttpBinding&gt; | Microsoft Docs"
+title: "&lt;security&gt; element of &lt;ws2007FederationHttpBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 10
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;security&gt; element of &lt;ws2007FederationHttpBinding&gt;
 Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) element.  
@@ -26,8 +28,7 @@ Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <ws2007FederationBinding>  
     <binding >  
         <security mode="None/Message/TransportWithMessageCredential">  
@@ -72,14 +73,14 @@ Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../.
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
   
 ## See Also  
- <xref:System.ServiceModel.WSFederationHttpSecurity>   
- <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>   
- <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>   
- [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Selecting a Credential Type](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.WSFederationHttpSecurity>  
+ <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>  
+ <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>  
+ [How to: Create a WSFederationHttpBinding](../../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Selecting a Credential Type](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

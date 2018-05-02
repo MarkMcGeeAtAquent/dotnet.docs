@@ -1,5 +1,5 @@
 ---
-title: "CorGenericParamAttr Enumeration | Microsoft Docs"
+title: "CorGenericParamAttr Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorGenericParamAttr"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorGenericParamAttr"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorGenericParamAttr enumeration [.NET Framework metadata]"
 ms.assetid: 36c76266-71d8-48dc-bd89-54943fa659c1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorGenericParamAttr Enumeration
 Contains values that describe the <xref:System.Type> parameters for generic types, as used in calls to [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).  

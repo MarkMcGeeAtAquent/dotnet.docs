@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode Interface1 | Microsoft Docs"
+title: "ICorDebugCode Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugCode interface [.NET Framework debugging]"
 ms.assetid: 7bd14fb6-8b54-4484-a891-e3c21859c019
+topic_type: 
+  - "apiref"
 caps.latest.revision: 22
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode Interface1
 Represents a segment of either Microsoft intermediate language (MSIL) code or native code.  
@@ -60,5 +63,5 @@ Represents a segment of either Microsoft intermediate language (MSIL) code or na
   
 ## See Also  
     
- [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)   
+ [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

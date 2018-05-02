@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetCodeInfo Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetCodeInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetCodeInfo"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetCodeInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCodeInfo method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetCodeInfo method [.NET Framework profiling]"
 ms.assetid: 90140b0f-a926-4a7e-b6fa-23e05f703cce
+topic_type: 
+  - "apiref"
 caps.latest.revision: 18
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetCodeInfo Method
 Gets the extent of native code associated with the specified function ID.  
@@ -66,6 +69,6 @@ HRESULT GetCodeInfo(
  **.NET Framework Versions:** 1.0  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

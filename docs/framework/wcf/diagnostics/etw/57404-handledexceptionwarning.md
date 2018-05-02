@@ -1,8 +1,8 @@
 ---
-title: "57404 - HandledExceptionWarning | Microsoft Docs"
+title: "57404 - HandledExceptionWarning"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 81fc404c-6341-4fa0-a58e-c32875471c12
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 57404 - HandledExceptionWarning
 ## Properties  

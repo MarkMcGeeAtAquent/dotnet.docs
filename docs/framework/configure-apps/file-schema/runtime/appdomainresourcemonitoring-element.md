@@ -1,19 +1,14 @@
 ---
-title: "&lt;appDomainResourceMonitoring&gt; Element | Microsoft Docs"
+title: "&lt;appDomainResourceMonitoring&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "appDomainResourceMonitoring element"
   - "<appDomainResourceMonitoring> element"
@@ -22,6 +17,8 @@ caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;appDomainResourceMonitoring&gt; Element
 Instructs the runtime to collect statistics on all application domains in the process for the life of the process.  
@@ -32,7 +29,7 @@ Instructs the runtime to collect statistics on all application domains in the pr
   
 ## Syntax  
   
-```  
+```xml  
 <appDomainResourceMonitoring    
    enabled="true|false"/>  
 ```  
@@ -73,7 +70,7 @@ Instructs the runtime to collect statistics on all application domains in the pr
 ## Example  
  The following example shows how to enable application domain resource monitoring.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <appDomainResourceMonitoring enabled="true"/>  
@@ -82,6 +79,6 @@ Instructs the runtime to collect statistics on all application domains in the pr
 ```  
   
 ## See Also  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=fullName>   
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+ <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)

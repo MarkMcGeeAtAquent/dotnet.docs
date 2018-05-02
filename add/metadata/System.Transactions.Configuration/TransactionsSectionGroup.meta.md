@@ -1,24 +1,34 @@
 ---
 uid: System.Transactions.Configuration.TransactionsSectionGroup
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.TransactionsSectionGroup.DefaultSettings
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.TransactionsSectionGroup.MachineSettings
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.TransactionsSectionGroup.GetSectionGroup(System.Configuration.Configuration)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.TransactionsSectionGroup.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

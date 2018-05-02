@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedENCUpdate::GetLocalVariables Method | Microsoft Docs"
+title: "ISymUnmanagedENCUpdate::GetLocalVariables Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedENCUpdate.GetLocalVariables"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedENCUpdate::GetLocalVariables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedENCUpdate::GetLocalVariables method [.NET Framework debugging]"
   - "GetLocalVariables method [.NET Framework debugging]"
 ms.assetid: 5c8840be-ffea-447f-9c8d-178f1eaf8d06
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedENCUpdate::GetLocalVariables Method
 Gets the local variables.  

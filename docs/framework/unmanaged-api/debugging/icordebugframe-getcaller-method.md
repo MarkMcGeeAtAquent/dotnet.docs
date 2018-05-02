@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrame::GetCaller Method | Microsoft Docs"
+title: "ICorDebugFrame::GetCaller Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrame.GetCaller"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrame::GetCaller"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCaller method, ICorDebugFrame interface [.NET Framework debugging]"
   - "ICorDebugFrame::GetCaller method [.NET Framework debugging]"
 ms.assetid: bfdc946b-8238-4eb9-8a85-884049fb0fd4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrame::GetCaller Method
 Gets a pointer to the ICorDebugFrame object in the current chain that called this frame.  

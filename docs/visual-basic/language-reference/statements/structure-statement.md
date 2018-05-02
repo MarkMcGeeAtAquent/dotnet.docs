@@ -1,45 +1,26 @@
 ---
-title: "Structure Statement | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Structure Statement"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Structure"
   - "Structure"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "user-defined types, Structure statement"
-  - "compound data types"
-  - "Structure keyword"
-  - "Structure statement"
+  - "user-defined types [Visual Basic], Structure statement"
+  - "compound data types [Visual Basic]"
+  - "Structure keyword [Visual Basic]"
+  - "Structure statement [Visual Basic]"
   - "UDT (user-defined types)"
   - "types [Visual Basic], user-defined"
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
 caps.latest.revision: 28
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Structure Statement
 Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that the structure comprises.  
@@ -47,11 +28,11 @@ Declares the name of a structure and introduces the definition of the variables,
 ## Syntax  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Partial ] _  
-Structure name [ ( Of typelist ) ]  
-    [ Implements interfacenames ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Partial ] _  
+Structure name [ ( Of typelist ) ]  
+    [ Implements interfacenames ]  
     [ datamemberdeclarations ]  
-    [ methodmemberdeclarations ]  
+    [ methodmemberdeclarations ]  
 End Structure  
 ```  
   
@@ -60,7 +41,7 @@ End Structure
 |Term|Definition|  
 |---|---|  
 |`attributelist`|Optional. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Optional. Can be one of the following:<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> See [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`accessmodifier`|Optional. Can be one of the following:<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
 |`Shadows`|Optional. See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
 |`Partial`|Optional. Indicates a partial definition of the structure. See [Partial](../../../visual-basic/language-reference/modifiers/partial.md).|  
 |`name`|Required. Name of this structure. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
@@ -79,7 +60,7 @@ End Structure
   
  You can use `Structure` only at namespace or module level. This means the *declaration context* for a structure must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Structures default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Structures default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## Rules  
   
@@ -127,13 +108,13 @@ End Structure
  [!code-vb[VbVbalrStatements#57](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/structure-statement_1.vb)]  
   
 ## See Also  
- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)   
- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)   
- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)   
- [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)   
- [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)   
- [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)   
- [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)   
- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)   
- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)   
+ [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
  [Structures and Classes](../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)

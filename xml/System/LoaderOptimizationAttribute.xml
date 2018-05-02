@@ -1,7 +1,9 @@
-<Type Name="LoaderOptimizationAttribute" FullName="System.LoaderOptimizationAttribute">
+﻿<Type Name="LoaderOptimizationAttribute" FullName="System.LoaderOptimizationAttribute">
   <TypeSignature Language="C#" Value="public sealed class LoaderOptimizationAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LoaderOptimizationAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.LoaderOptimizationAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class LoaderOptimizationAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class LoaderOptimizationAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
@@ -36,16 +42,29 @@
  This attribute is only a hint to the loader and does not affect program behavior.  
   
 > [!NOTE]
->  If custom code access security policy is set for the <xref:System.AppDomain>, by using the <xref:System.AppDomain.SetAppDomainPolicy%2A> property, and the <xref:System.AppDomain> is created using the <xref:System.LoaderOptimization> flag, the effect is the same as specifying the <xref:System.LoaderOptimization> flag; that is, only assemblies in the GAC are shared. When this occurs, the loader does not throw an exception and the application does not experience the performance gains associated with the <xref:System.LoaderOptimization> flag.  
+>  If custom code access security policy is set for the <xref:System.AppDomain>, by using the <xref:System.AppDomain.SetAppDomainPolicy%2A> property, and the <xref:System.AppDomain> is created using the <xref:System.LoaderOptimization.MultiDomain> flag, the effect is the same as specifying the <xref:System.LoaderOptimization.MultiDomainHost> flag; that is, only assemblies in the GAC are shared. When this occurs, the loader does not throw an exception and the application does not experience the performance gains associated with the <xref:System.LoaderOptimization.MultiDomain> flag.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.LoaderOptimization" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.LoaderOptimizationAttribute" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public LoaderOptimizationAttribute (byte value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.LoaderOptimizationAttribute.#ctor(System.Byte)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (value As Byte)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; LoaderOptimizationAttribute(System::Byte value);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -55,6 +74,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.Byte" />
@@ -69,6 +92,8 @@
       <MemberSignature Language="C#" Value="public LoaderOptimizationAttribute (LoaderOptimization value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.LoaderOptimization value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.LoaderOptimizationAttribute.#ctor(System.LoaderOptimization)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (value As LoaderOptimization)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; LoaderOptimizationAttribute(LoaderOptimization value);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -78,6 +103,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="value" Type="System.LoaderOptimization" />
@@ -92,6 +121,8 @@
       <MemberSignature Language="C#" Value="public LoaderOptimization Value { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.LoaderOptimization Value" />
       <MemberSignature Language="DocId" Value="P:System.LoaderOptimizationAttribute.Value" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Value As LoaderOptimization" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property LoaderOptimization Value { LoaderOptimization get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -101,6 +132,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.LoaderOptimization</ReturnType>

@@ -1,4 +1,6 @@
 ---
 uid: System.ServiceModel.Discovery.VersionApril2005
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,7 +1,8 @@
 ---
-title: "WIF How-To&#39;s Index | Microsoft Docs"
+title: "WIF How-To&#39;s Index"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # WIF How-To&#39;s Index
 -   [How To: Build Claims-Aware ASP.NET MVC Web Application Using WIF](../../../docs/framework/security/how-to-build-claims-aware-aspnet-mvc-web-app-using-wif.md)  

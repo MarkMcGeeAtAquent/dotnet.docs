@@ -1,7 +1,7 @@
 ---
-title: "How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic) | Microsoft Docs"
+title: "How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: adb46c98-a650-42e2-b62d-835920fe8421
 caps.latest.revision: 3
 author: dotnet-bot
@@ -18,7 +16,7 @@ ms.author: dotnetcontent
 
 ---
 # How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)
-This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.  
+This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.  
   
  The XPath expression is `DeliveryNotes`.  
   
@@ -45,7 +43,6 @@ Else
     Console.WriteLine("Results differ")  
 End If  
 Console.WriteLine(el1)  
-  
 ```  
   
  This example produces the following output:  

@@ -1,7 +1,9 @@
-<Type Name="XmlSchemaInference" FullName="System.Xml.Schema.XmlSchemaInference">
+﻿<Type Name="XmlSchemaInference" FullName="System.Xml.Schema.XmlSchemaInference">
   <TypeSignature Language="C#" Value="public sealed class XmlSchemaInference" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaInference extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaInference" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class XmlSchemaInference" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlSchemaInference sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Xml</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -27,7 +33,7 @@
 > -   XML schemas (including inline schemas) are inherently vulnerable to denial of service attacks; do not accept them in untrusted scenarios.  
 > -   Schema validation error messages and exceptions may expose sensitive information about the content model or URI paths to the schema file. Be careful not to expose this information to untrusted callers.  
   
- The <xref:System.Xml.Schema.XmlSchemaInference> class in the <xref:System.Xml.Schema?displayProperty=fullName> namespace allows you to infer an XML Schema Definition Language (XSD) schema from the structure of an XML document. The <xref:System.Xml.Schema.XmlSchemaInference> class outputs an XML schema that can validate the XML document.  
+ The <xref:System.Xml.Schema.XmlSchemaInference> class in the <xref:System.Xml.Schema?displayProperty=nameWithType> namespace allows you to infer an XML Schema Definition Language (XSD) schema from the structure of an XML document. The <xref:System.Xml.Schema.XmlSchemaInference> class outputs an XML schema that can validate the XML document.  
   
  The <xref:System.Xml.Schema.XmlSchemaInference> class supports the W3C XML and XML Schemas standards. It can be used to infer a new schema or to refine an existing schema.  
   
@@ -56,6 +62,8 @@
       <MemberSignature Language="C#" Value="public XmlSchemaInference ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlSchemaInference();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -66,16 +74,32 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.Xml.Schema.XmlSchemaInference" /> class.</summary>
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="InferSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Infers an XML Schema Definition Language (XSD) schema from the XML document specified.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InferSchema">
       <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet InferSchema (System.Xml.XmlReader instanceDocument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaSet InferSchema(class System.Xml.XmlReader instanceDocument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.InferSchema(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Function InferSchema (instanceDocument As XmlReader) As XmlSchemaSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Xml::Schema::XmlSchemaSet ^ InferSchema(System::Xml::XmlReader ^ instanceDocument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -85,6 +109,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
@@ -108,7 +136,7 @@
   
 -   If the <xref:System.Xml.XmlReader> object is typed, the type information it contains is ignored.  
   
--   If the <xref:System.Xml.XmlReader> object is positioned on an element that is not the root element of the XML document, a schema is inferred for only that element. If the <xref:System.Xml.XmlReader> object is not positioned on an element, the <xref:System.Xml.XmlReader.Read%2A> method is called on the <xref:System.Xml.XmlReader> parameter until an element is encountered (for example, when <xref:System.Xml.XmlReader.NodeType%2A> is <xref:System.Xml.XmlNodeType>). At this point, the inference process starts from that element. If no element is encountered until the end of the document, an <xref:System.ArgumentException> is thrown.  
+-   If the <xref:System.Xml.XmlReader> object is positioned on an element that is not the root element of the XML document, a schema is inferred for only that element. If the <xref:System.Xml.XmlReader> object is not positioned on an element, the <xref:System.Xml.XmlReader.Read%2A> method is called on the <xref:System.Xml.XmlReader> parameter until an element is encountered (for example, when <xref:System.Xml.XmlReader.NodeType%2A> is <xref:System.Xml.XmlNodeType.Element>). At this point, the inference process starts from that element. If no element is encountered until the end of the document, an <xref:System.ArgumentException> is thrown.  
   
    
   
@@ -137,6 +165,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet InferSchema (System.Xml.XmlReader instanceDocument, System.Xml.Schema.XmlSchemaSet schemas);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Schema.XmlSchemaSet InferSchema(class System.Xml.XmlReader instanceDocument, class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaInference.InferSchema(System.Xml.XmlReader,System.Xml.Schema.XmlSchemaSet)" />
+      <MemberSignature Language="VB.NET" Value="Public Function InferSchema (instanceDocument As XmlReader, schemas As XmlSchemaSet) As XmlSchemaSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Xml::Schema::XmlSchemaSet ^ InferSchema(System::Xml::XmlReader ^ instanceDocument, System::Xml::Schema::XmlSchemaSet ^ schemas);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -146,6 +176,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
@@ -171,7 +205,7 @@
   
 -   If the <xref:System.Xml.XmlReader> object is typed, the type information it contains is ignored.  
   
--   If the <xref:System.Xml.XmlReader> object is positioned on an element that is not the root element of the XML document, a schema is inferred for only that element. If the <xref:System.Xml.XmlReader> object is not positioned on an element, the <xref:System.Xml.XmlReader.Read%2A> method is called on the <xref:System.Xml.XmlReader> parameter until an element is encountered (for example, when <xref:System.Xml.XmlReader.NodeType%2A> is <xref:System.Xml.XmlNodeType>). At this point, the inference process starts from that element. If no element is encountered until the end of the document, an <xref:System.ArgumentException> is thrown.  
+-   If the <xref:System.Xml.XmlReader> object is positioned on an element that is not the root element of the XML document, a schema is inferred for only that element. If the <xref:System.Xml.XmlReader> object is not positioned on an element, the <xref:System.Xml.XmlReader.Read%2A> method is called on the <xref:System.Xml.XmlReader> parameter until an element is encountered (for example, when <xref:System.Xml.XmlReader.NodeType%2A> is <xref:System.Xml.XmlNodeType.Element>). At this point, the inference process starts from that element. If no element is encountered until the end of the document, an <xref:System.ArgumentException> is thrown.  
   
 -   If an <xref:System.Xml.Schema.XmlSchemaSet> object is passed as a parameter and the element upon which the <xref:System.Xml.XmlReader> object is positioned is defined in one of the schemas in the <xref:System.Xml.Schema.XmlSchemaSet>, the inferred schema is used to refine an existing schema in the <xref:System.Xml.Schema.XmlSchemaSet> parameter with the same target namespace; otherwise, a new schema is inferred for the namespace.  
   
@@ -212,6 +246,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaInference.InferenceOption Occurrence { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaInference/InferenceOption Occurrence" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaInference.Occurrence" />
+      <MemberSignature Language="VB.NET" Value="Public Property Occurrence As XmlSchemaInference.InferenceOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::Schema::XmlSchemaInference::InferenceOption Occurrence { System::Xml::Schema::XmlSchemaInference::InferenceOption get(); void set(System::Xml::Schema::XmlSchemaInference::InferenceOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -221,6 +257,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaInference+InferenceOption</ReturnType>
@@ -232,11 +272,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the first time elements are encountered in the XML document, the schema declaration is inferred as `minOccurs="1"`. When attributes are encountered, the schema declaration is inferred as `use="required"`.  
+ If the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>, the first time elements are encountered in the XML document, the schema declaration is inferred as `minOccurs="1"`. When attributes are encountered, the schema declaration is inferred as `use="required"`.  
   
- If the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, element schema declarations are inferred as `minOccurs="0"`, and attribute schema declarations are inferred as `use="optional"`.  
+ If the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, element schema declarations are inferred as `minOccurs="0"`, and attribute schema declarations are inferred as `use="optional"`.  
   
- The default value of the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>.  
+ The default value of the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property is <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>.  
   
    
   
@@ -251,11 +291,11 @@
  [!code-csharp[XmlSchemaInferenceExamples#2](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#2)]
  [!code-vb[XmlSchemaInferenceExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#2)]  
   
- Because the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property was set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the following schema was generated.  
+ Because the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property was set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, the following schema was generated.  
   
  [!code-xml[XmlSchemaInferenceExamples#8](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/Occurrence2.xml#8)]  
   
- In the example code above, if the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property was not set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the <xref:System.Xml.Schema.XmlSchemaInference> class would have defaulted to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption> and generated the following schema.  
+ In the example code above, if the <xref:System.Xml.Schema.XmlSchemaInference.Occurrence%2A> property was not set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, the <xref:System.Xml.Schema.XmlSchemaInference> class would have defaulted to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted> and generated the following schema.  
   
  [!code-xml[XmlSchemaInferenceExamples#9](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/Occurrence3.xml#9)]  
   
@@ -267,6 +307,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaInference.InferenceOption TypeInference { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.Schema.XmlSchemaInference/InferenceOption TypeInference" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaInference.TypeInference" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeInference As XmlSchemaInference.InferenceOption" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::Schema::XmlSchemaInference::InferenceOption TypeInference { System::Xml::Schema::XmlSchemaInference::InferenceOption get(); void set(System::Xml::Schema::XmlSchemaInference::InferenceOption value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -276,6 +318,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaInference+InferenceOption</ReturnType>
@@ -287,9 +333,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the inferred type of elements and attributes in the XML document with simple content is always `xs:string`. If the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, more specific types are inferred, such as `xs:date`, `xs:decimal`, `xs:unsignedByte`, and so on.  
+ If the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, the inferred type of elements and attributes in the XML document with simple content is always `xs:string`. If the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>, more specific types are inferred, such as `xs:date`, `xs:decimal`, `xs:unsignedByte`, and so on.  
   
- The default value of the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>.  
+ The default value of the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property is <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted>.  
   
    
   
@@ -304,11 +350,11 @@
  [!code-csharp[XmlSchemaInferenceExamples#3](~/samples/snippets/csharp/VS_Snippets_Data/XmlSchemaInferenceExamples/CS/XmlSchemaInferenceExamples.cs#3)]
  [!code-vb[XmlSchemaInferenceExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Data/XmlSchemaInferenceExamples/VB/XmlSchemaInferenceExamples.vb#3)]  
   
- Because the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property was set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the following schema was generated.  
+ Because the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property was set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, the following schema was generated.  
   
  [!code-xml[XmlSchemaInferenceExamples#11](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/TypeInference2.xml#11)]  
   
- In the example code above, if the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property was not set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption>, the <xref:System.Xml.Schema.XmlSchemaInference> class would have defaulted to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption> and generated the following schema.  
+ In the example code above, if the <xref:System.Xml.Schema.XmlSchemaInference.TypeInference%2A> property was not set to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Relaxed>, the <xref:System.Xml.Schema.XmlSchemaInference> class would have defaulted to <xref:System.Xml.Schema.XmlSchemaInference.InferenceOption.Restricted> and generated the following schema.  
   
  [!code-xml[XmlSchemaInferenceExamples#12](~/samples/snippets/xml/VS_Snippets_Data/XmlSchemaInferenceExamples/XML/TypeInference3.xml#12)]  
   

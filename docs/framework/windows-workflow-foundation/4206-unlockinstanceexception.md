@@ -1,5 +1,5 @@
 ---
-title: "4206 - UnlockInstanceException | Microsoft Docs"
+title: "4206 - UnlockInstanceException"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5a46dc5f-d517-4135-8905-25a42f01206b
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4206 - UnlockInstanceException
 ## Properties  

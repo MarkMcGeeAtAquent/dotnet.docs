@@ -1,7 +1,9 @@
-<Type Name="ILease" FullName="System.Runtime.Remoting.Lifetime.ILease">
+﻿<Type Name="ILease" FullName="System.Runtime.Remoting.Lifetime.ILease">
   <TypeSignature Language="C#" Value="public interface ILease" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ILease" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Lifetime.ILease" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ILease" />
+  <TypeSignature Language="C++ CLI" Value="public interface class ILease" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -27,7 +29,7 @@
   
  A lease contains properties that determine its policies, and methods that renew the lease time. The lease exposes the <xref:System.Runtime.Remoting.Lifetime.ILease> interface.  
   
- For an example showing how to use the <xref:System.Runtime.Remoting.Lifetime.ILease> interface see [Lifetimes](http://msdn.microsoft.com/en-us/334a30e5-33cb-4f0f-a38a-ed4abc5560fa).  
+ For an example showing how to use the <xref:System.Runtime.Remoting.Lifetime.ILease> interface see [Lifetimes](http://msdn.microsoft.com/library/334a30e5-33cb-4f0f-a38a-ed4abc5560fa).  
   
  ]]></format>
     </remarks>
@@ -37,6 +39,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan CurrentLeaseTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CurrentLeaseTime" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.CurrentLeaseTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentLeaseTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan CurrentLeaseTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -58,6 +62,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Lifetime.LeaseState CurrentState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Remoting.Lifetime.LeaseState CurrentState" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.CurrentState" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentState As LeaseState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Remoting::Lifetime::LeaseState CurrentState { System::Runtime::Remoting::Lifetime::LeaseState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -73,12 +79,15 @@
         <remarks>To be added.</remarks>
         <exception cref="T:System.Security.SecurityException">The immediate caller makes the call through a reference to the interface and does not have infrastructure permission.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with infrastructure code. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />; Permission value: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+        <altmember cref="T:System.Runtime.Remoting.Lifetime.LeaseState" />
       </Docs>
     </Member>
     <Member MemberName="InitialLeaseTime">
       <MemberSignature Language="C#" Value="public TimeSpan InitialLeaseTime { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan InitialLeaseTime" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime" />
+      <MemberSignature Language="VB.NET" Value="Public Property InitialLeaseTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan InitialLeaseTime { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -95,7 +104,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime%2A> property is set to <xref:System.TimeSpan?displayProperty=fullName>, then the lease will never time out and the object associated with it will have an infinite lifetime.  
+ If the <xref:System.Runtime.Remoting.Lifetime.ILease.InitialLeaseTime%2A> property is set to <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then the lease will never time out and the object associated with it will have an infinite lifetime.  
   
  ]]></format>
         </remarks>
@@ -103,10 +112,22 @@
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with infrastructure code. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />; Permission value: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Register">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers a sponsor for the lease.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Register">
       <MemberSignature Language="C#" Value="public void Register (System.Runtime.Remoting.Lifetime.ISponsor obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Register(class System.Runtime.Remoting.Lifetime.ISponsor obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Register(System.Runtime.Remoting.Lifetime.ISponsor)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Register (obj As ISponsor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Register(System::Runtime::Remoting::Lifetime::ISponsor ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -138,6 +159,8 @@
       <MemberSignature Language="C#" Value="public void Register (System.Runtime.Remoting.Lifetime.ISponsor obj, TimeSpan renewalTime);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Register(class System.Runtime.Remoting.Lifetime.ISponsor obj, valuetype System.TimeSpan renewalTime) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Register(System.Runtime.Remoting.Lifetime.ISponsor,System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Register (obj As ISponsor, renewalTime As TimeSpan)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Register(System::Runtime::Remoting::Lifetime::ISponsor ^ obj, TimeSpan renewalTime);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -164,6 +187,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan Renew (TimeSpan renewalTime);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TimeSpan Renew(valuetype System.TimeSpan renewalTime) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Renew(System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Renew (renewalTime As TimeSpan) As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TimeSpan Renew(TimeSpan renewalTime);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -196,6 +221,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan RenewOnCallTime { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RenewOnCallTime" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.RenewOnCallTime" />
+      <MemberSignature Language="VB.NET" Value="Public Property RenewOnCallTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan RenewOnCallTime { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -224,6 +251,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan SponsorshipTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SponsorshipTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property SponsorshipTimeout As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan SponsorshipTimeout { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -240,7 +269,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout%2A> is <xref:System.TimeSpan?displayProperty=fullName>, then this lease will not take sponsors.  
+ If the <xref:System.Runtime.Remoting.Lifetime.ILease.SponsorshipTimeout%2A> is <xref:System.TimeSpan.Zero?displayProperty=nameWithType>, then this lease will not take sponsors.  
   
  If a sponsor does not respond to a call to renew a lease within the time-out period, it is assumed to be dead and is removed from the list of sponsors for the current lease.  
   
@@ -254,6 +283,8 @@
       <MemberSignature Language="C#" Value="public void Unregister (System.Runtime.Remoting.Lifetime.ISponsor obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unregister(class System.Runtime.Remoting.Lifetime.ISponsor obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Lifetime.ILease.Unregister(System.Runtime.Remoting.Lifetime.ISponsor)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Unregister (obj As ISponsor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Unregister(System::Runtime::Remoting::Lifetime::ISponsor ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

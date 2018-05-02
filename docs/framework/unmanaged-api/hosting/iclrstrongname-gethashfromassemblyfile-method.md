@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::GetHashFromAssemblyFile Method | Microsoft Docs"
+title: "ICLRStrongName::GetHashFromAssemblyFile Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.GetHashFromAssemblyFile"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::GetHashFromAssemblyFile"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::GetHashFromAssemblyFile method [.NET Framework hosting]"
   - "GetHashFromAssemblyFile method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: 0b67ea03-d474-4605-acaa-57455790250c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::GetHashFromAssemblyFile Method
 Gets a hash of the specified assembly file, using the specified hash algorithm.  
@@ -71,5 +74,5 @@ HRESULT GetHashFromAssemblyFile (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [GetHashFromAssemblyFileW Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)   
+ [GetHashFromAssemblyFileW Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

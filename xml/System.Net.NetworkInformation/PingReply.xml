@@ -1,10 +1,13 @@
-<Type Name="PingReply" FullName="System.Net.NetworkInformation.PingReply">
+﻿<Type Name="PingReply" FullName="System.Net.NetworkInformation.PingReply">
   <TypeSignature Language="C#" Value="public class PingReply" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PingReply extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.PingReply" />
+  <TypeSignature Language="VB.NET" Value="Public Class PingReply" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PingReply" />
   <AssemblyInfo>
     <AssemblyName>System.Net.Ping</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -29,7 +32,7 @@
   
  The <xref:System.Net.NetworkInformation.Ping.Send%2A> methods return instances of the <xref:System.Net.NetworkInformation.PingReply> class directly. The <xref:System.Net.NetworkInformation.Ping.SendAsync%2A> methods return a <xref:System.Net.NetworkInformation.PingReply> in the <xref:System.Net.NetworkInformation.PingCompletedEventHandler> method's <xref:System.Net.NetworkInformation.PingCompletedEventArgs> parameter. The <xref:System.Net.NetworkInformation.PingReply> is accessed through the <xref:System.Net.NetworkInformation.PingCompletedEventArgs.Reply%2A> property.  
   
- If the value of <xref:System.Net.NetworkInformation.PingReply.Status%2A> is not <xref:System.Net.NetworkInformation.IPStatus>, you should not use the values returned by the <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>, <xref:System.Net.NetworkInformation.PingReply.Options%2A> or <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties. The <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A> property will return zero, the <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> property will return an empty array, and the <xref:System.Net.NetworkInformation.PingReply.Options%2A> property will return `null`.  
+ If the value of <xref:System.Net.NetworkInformation.PingReply.Status%2A> is not <xref:System.Net.NetworkInformation.IPStatus.Success>, you should not use the values returned by the <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>, <xref:System.Net.NetworkInformation.PingReply.Options%2A> or <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties. The <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A> property will return zero, the <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> property will return an empty array, and the <xref:System.Net.NetworkInformation.PingReply.Options%2A> property will return `null`.  
   
    
   
@@ -47,10 +50,13 @@
       <MemberSignature Language="C#" Value="public System.Net.IPAddress Address { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Address" />
       <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Address" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Address As IPAddress" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::IPAddress ^ Address { System::Net::IPAddress ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Ping</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -89,10 +95,13 @@
       <MemberSignature Language="C#" Value="public byte[] Buffer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Buffer" />
       <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Buffer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Buffer As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ Buffer { cli::array &lt;System::Byte&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Ping</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -133,10 +142,13 @@
       <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.PingOptions Options { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.PingOptions Options" />
       <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Options" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Options As PingOptions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::NetworkInformation::PingOptions ^ Options { System::Net::NetworkInformation::PingOptions ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Ping</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -159,7 +171,7 @@
 ## Remarks  
  The TTL defines the number of times nodes can forward a packet as it travels between its source and destination. If the number of forwards, also known as hops, exceeds the value specified for the TTL, the packet is deemed undeliverable and is discarded.  
   
- The <xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> value specified in the ICMP echo request controls packet fragmentation. If <xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> is `true` and the packet size exceeds the maximum transmission unit of the network path taken by the packet, the packet is discarded and the <xref:System.Net.NetworkInformation.IPStatus> error is returned.  
+ The <xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> value specified in the ICMP echo request controls packet fragmentation. If <xref:System.Net.NetworkInformation.PingOptions.DontFragment%2A> is `true` and the packet size exceeds the maximum transmission unit of the network path taken by the packet, the packet is discarded and the <xref:System.Net.NetworkInformation.IPStatus.PacketTooBig> error is returned.  
   
    
   
@@ -177,10 +189,13 @@
       <MemberSignature Language="C#" Value="public long RoundtripTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 RoundtripTime" />
       <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.RoundtripTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RoundtripTime As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long RoundtripTime { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Ping</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -219,10 +234,13 @@
       <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.IPStatus Status { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.IPStatus Status" />
       <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.PingReply.Status" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Status As IPStatus" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::NetworkInformation::IPStatus Status { System::Net::NetworkInformation::IPStatus get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Ping</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -243,7 +261,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the value of <xref:System.Net.NetworkInformation.PingReply.Status%2A> is not <xref:System.Net.NetworkInformation.IPStatus>, you should not use the values returned by the <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>, <xref:System.Net.NetworkInformation.PingReply.Options%2A> or <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties. The <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A> and <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties will return zero, and the <xref:System.Net.NetworkInformation.PingReply.Options%2A> property will return `null`.  
+ If the value of <xref:System.Net.NetworkInformation.PingReply.Status%2A> is not <xref:System.Net.NetworkInformation.IPStatus.Success>, you should not use the values returned by the <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A>, <xref:System.Net.NetworkInformation.PingReply.Options%2A> or <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties. The <xref:System.Net.NetworkInformation.PingReply.RoundtripTime%2A> and <xref:System.Net.NetworkInformation.PingReply.Buffer%2A> properties will return zero, and the <xref:System.Net.NetworkInformation.PingReply.Options%2A> property will return `null`.  
   
    
   

@@ -1,5 +1,5 @@
 ---
-title: "IHostMAlloc::DebugAlloc Method | Microsoft Docs"
+title: "IHostMAlloc::DebugAlloc Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMAlloc.DebugAlloc"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMAlloc::DebugAlloc"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DebugAlloc method [.NET Framework hosting]"
   - "IHostMAlloc::DebugAlloc method [.NET Framework hosting]"
 ms.assetid: 0bfbc527-bea2-43ce-b041-69186f4440dd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMAlloc::DebugAlloc Method
 Requests that the host allocate the specified amount of memory from the heap, and additionally track where the memory was allocated.  
@@ -83,5 +86,5 @@ HRESULT DebugAlloc (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)   
+ [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
  [IHostMalloc Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)

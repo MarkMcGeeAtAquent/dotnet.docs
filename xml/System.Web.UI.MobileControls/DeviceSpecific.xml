@@ -1,7 +1,9 @@
-<Type Name="DeviceSpecific" FullName="System.Web.UI.MobileControls.DeviceSpecific">
+﻿<Type Name="DeviceSpecific" FullName="System.Web.UI.MobileControls.DeviceSpecific">
   <TypeSignature Language="C#" Value="public class DeviceSpecific : System.Web.UI.Control" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DeviceSpecific extends System.Web.UI.Control" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.DeviceSpecific" />
+  <TypeSignature Language="VB.NET" Value="Public Class DeviceSpecific&#xA;Inherits Control" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DeviceSpecific : System::Web::UI::Control" />
   <AssemblyInfo>
     <AssemblyName>System.Web.Mobile</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -18,7 +20,7 @@
       <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Web.UI")</AttributeName>
     </Attribute>
     <Attribute>
-      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Web.UI.MobileControls", System.ComponentModel.ToolboxItemFilterType.Require)</AttributeName>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter</AttributeName>
     </Attribute>
     <Attribute>
       <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
@@ -40,12 +42,12 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Provides a construct for specifying a choice among multiple content alternatives in the [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/en-us/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
+    <summary>Provides a construct for specifying a choice among multiple content alternatives in the [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/library/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Within a [\<DeviceSpecific>](http://msdn.microsoft.com/en-us/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element, you typically specify one or more [\<Choice>](http://msdn.microsoft.com/en-us/c81bee77-bb45-4211-be0f-e13a040b3c2d) elements, each containing attributes that specify how to evaluate the choice against target device capabilities. At run time, each choice is evaluated in order, and the first choice that is successfully evaluated is used. The DeviceSpecific/Choice construct is used to specify template sets and override properties; for example, it can be used to specify device-specific images for the <xref:System.Web.UI.MobileControls.Image> control.  
+ Within a [\<DeviceSpecific>](http://msdn.microsoft.com/library/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element, you typically specify one or more [\<Choice>](http://msdn.microsoft.com/library/c81bee77-bb45-4211-be0f-e13a040b3c2d) elements, each containing attributes that specify how to evaluate the choice against target device capabilities. At run time, each choice is evaluated in order, and the first choice that is successfully evaluated is used. The DeviceSpecific/Choice construct is used to specify template sets and override properties; for example, it can be used to specify device-specific images for the <xref:System.Web.UI.MobileControls.Image> control.  
   
 > [!NOTE]
 >  Even though the <xref:System.Web.UI.MobileControls.DeviceSpecific> class inherits from the Web Forms `System.Web.UI.Control` namespace, this is only an implementation detail. A `<Choice>` element does not behave like a control.  
@@ -58,8 +60,8 @@
 > [!NOTE]
 >  The following code sample uses the single-file code model and may not work correctly if copied directly into a code-behind file. This code sample must be copied into an empty text file that has an .aspx extension. For more information, see [ASP.NET Web Forms Page Code Model](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417).  
   
- <!-- TODO: review snippet reference [!code-csharp[MobileTemplateContainerSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileTemplateContainerSample/cs/Default.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[MobileTemplateContainerSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileTemplateContainerSample/vb/Default.aspx#1)]  -->  
+ [!code-aspx-csharp[MobileTemplateContainerSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileTemplateContainerSample/cs/Default.aspx#1)]
+ [!code-aspx-vb[MobileTemplateContainerSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileTemplateContainerSample/vb/Default.aspx#1)]  
   
  All of the code above can be replaced declaratively with the following markup:  
   
@@ -72,12 +74,15 @@
  ]]></format>
     </remarks>
     <permission cref="T:System.Web.AspNetHostingPermission">for operating in a hosted environment. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />; Permission value: <see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />.</permission>
+    <altmember cref="P:System.Web.UI.MobileControls.DeviceSpecific.Choices" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DeviceSpecific ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.DeviceSpecific.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DeviceSpecific();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -93,6 +98,8 @@
       <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.DeviceSpecific.AddParsedSubObject(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub AddParsedSubObject (obj As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void AddParsedSubObject(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -114,6 +121,8 @@
       <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.DeviceSpecificChoiceCollection Choices { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MobileControls.DeviceSpecificChoiceCollection Choices" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.Choices" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Choices As DeviceSpecificChoiceCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UI::MobileControls::DeviceSpecificChoiceCollection ^ Choices { System::Web::UI::MobileControls::DeviceSpecificChoiceCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -124,20 +133,20 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+          <AttributeName>System.Web.UI.PersistenceMode</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Web.UI.MobileControls.DeviceSpecificChoiceCollection</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Retrieves the collection of choices in a [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/en-us/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element. This API is obsolete. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
+        <summary>Retrieves the collection of choices in a [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/library/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element. This API is obsolete. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
         <value>The collection of choices in a <see langword="&lt;DeviceSpecific&gt;" /> element.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- At run time, the choices in the collection are evaluated in the order that they are stored. For more information about choice and device-specific concepts, see the [\<Choice>](http://msdn.microsoft.com/en-us/c81bee77-bb45-4211-be0f-e13a040b3c2d) element.  
+ At run time, the choices in the collection are evaluated in the order that they are stored. For more information about choice and device-specific concepts, see the [\<Choice>](http://msdn.microsoft.com/library/c81bee77-bb45-4211-be0f-e13a040b3c2d) element.  
   
    
   
@@ -158,6 +167,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler DataBinding;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataBinding" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.DataBinding" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event DataBinding As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ DataBinding;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -180,6 +191,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler Disposed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposed" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.Disposed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Disposed As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Disposed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -202,6 +215,8 @@
       <MemberSignature Language="C#" Value="public override bool EnableViewState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableViewState" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.EnableViewState" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property EnableViewState As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool EnableViewState { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -215,7 +230,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -233,12 +248,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.Control.EnableViewState" />
       </Docs>
     </Member>
     <Member MemberName="GetTemplate">
       <MemberSignature Language="C#" Value="public System.Web.UI.ITemplate GetTemplate (string templateName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.ITemplate GetTemplate(string templateName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.DeviceSpecific.GetTemplate(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetTemplate (templateName As String) As ITemplate" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Web::UI::ITemplate ^ GetTemplate(System::String ^ templateName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -268,6 +286,8 @@
       <MemberSignature Language="C#" Value="public bool HasTemplates { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasTemplates" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.HasTemplates" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasTemplates As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasTemplates { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -278,14 +298,14 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets a value indicating that the currently selected choice in the [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/en-us/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element has templates defined within it. This API is obsolete. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
+        <summary>Gets a value indicating that the currently selected choice in the [&lt;DeviceSpecific&gt;](http://msdn.microsoft.com/library/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element has templates defined within it. This API is obsolete. For information about how to develop ASP.NET mobile applications, see the [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web site.</summary>
         <value>
           <see langword="true" /> if the currently selected choice has templates defined within it; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
@@ -295,6 +315,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler Init;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Init" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.Init" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Init As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Init;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -317,6 +339,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler Load;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Load" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.Load" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Load As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Load;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -339,6 +363,8 @@
       <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.MobilePage MobilePage { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MobileControls.MobilePage MobilePage" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.MobilePage" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MobilePage As MobilePage" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UI::MobileControls::MobilePage ^ MobilePage { System::Web::UI::MobileControls::MobilePage ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -349,7 +375,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -366,12 +392,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.MobileControls.MobilePage" />
       </Docs>
     </Member>
     <Member MemberName="Owner">
       <MemberSignature Language="C#" Value="public object Owner { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Owner" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.Owner" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Owner As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Owner { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -382,7 +411,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -398,6 +427,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler PreRender;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PreRender" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.PreRender" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event PreRender As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ PreRender;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -420,6 +451,8 @@
       <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.DeviceSpecificChoice SelectedChoice { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MobileControls.DeviceSpecificChoice SelectedChoice" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.SelectedChoice" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SelectedChoice As DeviceSpecificChoice" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UI::MobileControls::DeviceSpecificChoice ^ SelectedChoice { System::Web::UI::MobileControls::DeviceSpecificChoice ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -430,7 +463,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -443,7 +476,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can use a DeviceSpecific/Choice construct to specify device-specific content, such as property overrides or templates, for a control or style. To select a choice from the choices in a [\<DeviceSpecific>](http://msdn.microsoft.com/en-us/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element, ASP.NET evaluates each choice in sequential order against the capabilities of the target device. The first matching choice is made the selected choice, and is used for device-specific content.  
+ You can use a DeviceSpecific/Choice construct to specify device-specific content, such as property overrides or templates, for a control or style. To select a choice from the choices in a [\<DeviceSpecific>](http://msdn.microsoft.com/library/5984e67a-91cf-4f32-8815-7e7fab3d3b5b) element, ASP.NET evaluates each choice in sequential order against the capabilities of the target device. The first matching choice is made the selected choice, and is used for device-specific content.  
   
    
   
@@ -461,6 +494,8 @@
       <MemberSignature Language="C#" Value="public event EventHandler Unload;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Unload" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.DeviceSpecific.Unload" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Unload As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Unload;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -483,6 +518,8 @@
       <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.DeviceSpecific.Visible" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Visible As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool Visible { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Mobile</AssemblyName>
@@ -496,7 +533,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>

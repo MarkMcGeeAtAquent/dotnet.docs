@@ -1,5 +1,5 @@
 ---
-title: "1019 - CompleteCancelActivityWorkItem | Microsoft Docs"
+title: "1019 - CompleteCancelActivityWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 75a4a1ab-e5a3-4f4e-88e4-d19806e671d7
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1019 - CompleteCancelActivityWorkItem
 ## Properties  

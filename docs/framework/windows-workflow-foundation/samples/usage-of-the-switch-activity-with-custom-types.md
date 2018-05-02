@@ -1,20 +1,22 @@
 ---
-title: "Usage of the Switch Activity with Custom Types | Microsoft Docs"
+title: "Usage of the Switch Activity with Custom Types"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 482a48c4-eb83-40c3-a4e2-2f9a8af88b75
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Usage of the Switch Activity with Custom Types
-This sample describes how to enable a <!--zz <xref:System.Activities.>--> `xref:System.Activities` Statements.Switch`1?qualifyHint=False&autoUpgrade=True activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `switch` statement operates on an expression that can be statically evaluated. For example, in C# this means that only primitive types, such as <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, and enumeration types are supported.  
+This sample describes how to enable a <xref:System.Activities.Statements.Switch%601> activity to evaluate a user-defined complex type at runtime. In most traditional procedural programming languages, a [switch](http://go.microsoft.com/fwlink/?LinkId=180521) statement selects an execution logic based on the conditional evaluation of a variable. Traditionally, a `switch` statement operates on an expression that can be statically evaluated. For example, in C# this means that only primitive types, such as <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, and enumeration types are supported.  
   
  To enable switching on a custom class, logic must be implemented to evaluate values of the custom complex type at runtime. This sample demonstrates how to enable switching on a custom complex type named `Person`.  
   
@@ -27,7 +29,6 @@ This sample describes how to enable a <!--zz <xref:System.Activities.>--> `xref:
        public string Name { get; set; }  
        public int Age { get; set; }  
     ...  
-  
     ```  
   
 -   In the custom class `Person`, the <xref:System.Object.Equals%2A> and <xref:System.Object.GetHashCode%2A> classes are overridden.  
@@ -54,7 +55,6 @@ This sample describes how to enable a <!--zz <xref:System.Activities.>--> `xref:
   
         return 0;  
     }  
-  
     ```  
   
 -   A custom <xref:System.ComponentModel.TypeConverter> class is implemented that performs the conversion of an instance of the custom class to a string and a string to an instance of a custom class.  

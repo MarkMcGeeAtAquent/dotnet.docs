@@ -1,5 +1,5 @@
 ---
-title: "ICorDebug::DebugActiveProcess Method | Microsoft Docs"
+title: "ICorDebug::DebugActiveProcess Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebug.DebugActiveProcess"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebug::DebugActiveProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DebugActiveProcess method [.NET Framework debugging]"
   - "ICorDebug::DebugActiveProcess method [.NET Framework debugging]"
 ms.assetid: fdab0ade-7f56-4fa2-b3ef-f7a1d2852bba
+topic_type: 
+  - "apiref"
 caps.latest.revision: 21
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebug::DebugActiveProcess Method
 Attaches the debugger to an existing process.  

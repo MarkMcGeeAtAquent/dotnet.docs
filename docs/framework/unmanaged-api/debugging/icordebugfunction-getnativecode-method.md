@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunction::GetNativeCode Method | Microsoft Docs"
+title: "ICorDebugFunction::GetNativeCode Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunction.GetNativeCode"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunction::GetNativeCode"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetNativeCode method [.NET Framework debugging]"
   - "ICorDebugFunction::GetNativeCode method [.NET Framework debugging]"
 ms.assetid: c8a34916-0eef-4987-8d29-c8bcb4be9cf6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunction::GetNativeCode Method
 Gets the native code for the function that is represented by this ICorDebugFunction instance.  

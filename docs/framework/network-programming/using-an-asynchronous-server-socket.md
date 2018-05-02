@@ -1,5 +1,5 @@
 ---
-title: "Using an Asynchronous Server Socket | Microsoft Docs"
+title: "Using an Asynchronous Server Socket"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "application protocols, sockets"
   - "sending data, sockets"
@@ -29,6 +27,8 @@ caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Using an Asynchronous Server Socket
 Asynchronous server sockets use the .NET Framework asynchronous programming model to process network service requests. The <xref:System.Net.Sockets.Socket> class follows the standard .NET Framework asynchronous naming pattern; for example, the synchronous <xref:System.Net.Sockets.Socket.Accept%2A> method corresponds to the asynchronous <xref:System.Net.Sockets.Socket.BeginAccept%2A> and <xref:System.Net.Sockets.Socket.EndAccept%2A> methods.  
@@ -63,7 +63,7 @@ listener.BeginAccept(
     listener);  
 ```  
   
- Asynchronous sockets use threads from the system thread pool to process incoming connections. One thread is responsible for accepting connections, another thread is used to handle each incoming connection, and another thread is responsible for receiving data from the connection. These could be the same thread, depending on which thread is assigned by the thread pool. In the following example, the <xref:System.Threading.ManualResetEvent?displayProperty=fullName> class suspends execution of the main thread and signals when execution can continue.  
+ Asynchronous sockets use threads from the system thread pool to process incoming connections. One thread is responsible for accepting connections, another thread is used to handle each incoming connection, and another thread is responsible for receiving data from the connection. These could be the same thread, depending on which thread is assigned by the thread pool. In the following example, the <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> class suspends execution of the main thread and signals when execution can continue.  
   
  The following example shows an asynchronous method that creates an asynchronous TCP/IP socket on the local computer and begins accepting connections. It assumes that there is a global **ManualResetEvent** named `allDone`, that the method is a member of a class named `SocketListener`, and that a callback method named `acceptCallback` is defined.  
   
@@ -96,7 +96,6 @@ Public Sub StartListening()
     End Try  
     Console.WriteLine("Closing the listener...")  
 End Sub 'StartListening  
-  
 ```  
   
 ```csharp  
@@ -194,7 +193,6 @@ Public Shared Sub acceptCallback(ar As IAsyncResult)
     handler.BeginReceive(state.buffer, 0, state.BufferSize, 0, _  
         AddressOf AsynchronousSocketListener.readCallback, state)  
 End Sub 'acceptCallback  
-  
 ```  
   
 ```csharp  
@@ -241,7 +239,6 @@ Public Shared Sub readCallback(ar As IAsyncResult)
         End If  
     End If  
 End Sub 'readCallback  
-  
 ```  
   
 ```csharp  
@@ -271,7 +268,7 @@ public static void readCallback(IAsyncResult ar) {
 ```  
   
 ## See Also  
- [Using a Synchronous Server Socket](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)   
- [Asynchronous Server Socket Example](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)   
- [Threading](../../../docs/standard/threading/index.md)   
+ [Using a Synchronous Server Socket](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [Asynchronous Server Socket Example](../../../docs/framework/network-programming/asynchronous-server-socket-example.md)  
+ [Threading](../../../docs/standard/threading/index.md)  
  [Listening with Sockets](../../../docs/framework/network-programming/listening-with-sockets.md)

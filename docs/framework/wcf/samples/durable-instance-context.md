@@ -1,8 +1,8 @@
 ---
-title: "Durable Instance Context | Microsoft Docs"
+title: "Durable Instance Context"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Durable Instance Context
 This sample demonstrates how to customize the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] runtime to enable durable instance contexts. It uses SQL Server 2005 as its backing store (SQL Server 2005 Express in this case). However, it also provides a way to access custom storage mechanisms.  
@@ -399,7 +401,7 @@ public class ShoppingCart : IShoppingCart
   
  Client applications must add the DurableInstanceContextChannel into the channel stack using a custom binding. To configure the channel declaratively in the configuration file, the binding element section has to be added to the binding element extensions collection.  
   
-```  
+```xml  
 <system.serviceModel>  
  <extensions>  
    <bindingElementExtensions>  
@@ -411,7 +413,7 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
   
  Now the binding element can be used with a custom binding just like other standard binding elements:  
   
-```  
+```xml  
 <bindings>  
  <customBinding>  
    <binding name="TextOverHttp">  

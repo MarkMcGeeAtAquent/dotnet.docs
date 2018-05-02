@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ExceptionCatcherEnter Method | Microsoft Docs"
+title: "ICorProfilerCallback::ExceptionCatcherEnter Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ExceptionCatcherEnter"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ExceptionCatcherEnter"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::ExceptionCatcherEnter method [.NET Framework profiling]"
   - "ExceptionCatcherEnter method [.NET Framework profiling]"
 ms.assetid: 41462329-a648-46f0-ae6d-728b94c31aa9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ExceptionCatcherEnter Method
 Notifies the profiler that control is being passed to the appropriate `catch` block.  
@@ -62,5 +65,5 @@ HRESULT ExceptionCatcherEnter(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ExceptionCatcherLeave Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)

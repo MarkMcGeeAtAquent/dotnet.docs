@@ -1,31 +1,34 @@
 ---
-title: "StrongNameGetPublicKeyEx Method | Microsoft Docs"
+title: "StrongNameGetPublicKeyEx Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName2.StrongNameGetPublicKeyEx"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "StrongNameGetPublicKeyEx"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameGetPublicKeyEx method, ICLRStrongName2 interface [.NET Framework hosting]"
   - "ICLRStrongName2::StrongNameGetPublicKeyEx method [.NET Framework hosting]"
 ms.assetid: 63d8260c-fb32-4f8f-a357-768afd570f68
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameGetPublicKeyEx Method
 Gets the public key from a public/private key pair, and specifies a hash algorithm and a signature algorithm.  
@@ -33,7 +36,7 @@ Gets the public key from a public/private key pair, and specifies a hash algorit
 ## Syntax  
   
 ```  
-HRESULT StrongNameGetPublicKey (   
+HRESULT StrongNameGetPublicKey (   
     [in]  LPCWSTR   pwzKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
     [in]  ULONG     cbKeyBlob,  
@@ -97,7 +100,7 @@ HRESULT StrongNameGetPublicKey ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [StrongNameTokenFromPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)   
- [PublicKeyBlob Structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)   
- [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)   
+ [StrongNameTokenFromPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfrompublickey-method.md)  
+ [PublicKeyBlob Structure](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md)  
+ [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)  
  [StrongNameGetPublicKey Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetpublickey-method.md)

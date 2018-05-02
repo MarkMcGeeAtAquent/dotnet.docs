@@ -1,5 +1,5 @@
 ---
-title: "ICLRDebugging::CanUnloadNow Method | Microsoft Docs"
+title: "ICLRDebugging::CanUnloadNow Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDebugging.CanUnloadNow Method"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDebugging::CanUnloadNow"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CanUnloadNow method [.NET Framework debugging]"
   - "ICLRDebugging::CanUnloadNow method [.NET Framework debugging]"
 ms.assetid: 62e0630c-8cb7-45d2-b622-5a472abfd8cf
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDebugging::CanUnloadNow Method
 Determines whether a library that was provided by an [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) interface is still in use or can be unloaded.  
@@ -64,5 +67,5 @@ HRESULT CanUnloadNow(HMODULE hModule);
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

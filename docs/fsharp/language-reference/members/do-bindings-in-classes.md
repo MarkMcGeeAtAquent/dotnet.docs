@@ -1,6 +1,6 @@
 ---
 title: do Bindings in Classes (F#)
-description: do Bindings in Classes (F#)
+description: Learn how to use an F# 'do' binding in a class definition, which performs actions when the object is constructed or when the type is first used.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -42,7 +42,7 @@ In the following code, a class has a static `do` binding and a non-static `do` b
 
 The output is as follows.
 
-```text
+```console
 Initializing MyType.
 Initializing object 1 2 2 4 8 16
 ```

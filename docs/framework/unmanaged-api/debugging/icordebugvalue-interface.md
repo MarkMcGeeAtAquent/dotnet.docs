@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugValue Interface1 | Microsoft Docs"
+title: "ICorDebugValue Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugValue interface [.NET Framework debugging]"
 ms.assetid: b2f7007f-c446-4b18-aed1-a25cff8aee31
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugValue Interface1
 Represents a value in the process being debugged. The value can be a read or a write value.  
@@ -60,5 +63,5 @@ Represents a value in the process being debugged. The value can be a read or a w
     
     
     
- [ICorDebugValue3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)   
+ [ICorDebugValue3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

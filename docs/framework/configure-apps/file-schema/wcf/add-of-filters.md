@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;filters&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;filters&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;filters&gt;
 A XPath filter that specifies the kind of message to be logged.  
@@ -26,8 +28,7 @@ A XPath filter that specifies the kind of message to be logged.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <filters>  
    <add filter="String"/>  
 </filters>  
@@ -63,10 +64,10 @@ A XPath filter that specifies the kind of message to be logged.
 ## Example  
  The following is an example of how to configure a filter that records only messages that have a SOAP Header section.  
   
-```  
+```xml  
 <messageLogging logEntireMessage="true"  
      logMalformedMessages="true" logMessagesAtServiceLevel="true"  
-     logMessagesAtTransportLevel="true" maxMessagesToLog="420”>  
+     logMessagesAtTransportLevel="true" maxMessagesToLog="420">  
      <filters>  
         <add xmlns:soap="http://www.w3.org/2003/05/soap-envelope">  
                         /soap:Envelope/soap:Headers  
@@ -76,13 +77,13 @@ A XPath filter that specifies the kind of message to be logged.
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement.Filters%2A>   
- <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>   
- <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>   
- [Configuring Message Logging](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)   
- [Configuring Message Logging](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)   
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement.Filters%2A>  
+ <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>  
+ <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>  
+ [Configuring Message Logging](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
+ [Configuring Message Logging](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)  
  [\<messageLogging>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)

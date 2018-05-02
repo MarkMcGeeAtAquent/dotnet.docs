@@ -1,5 +1,5 @@
 ---
-title: "Passing Structures | Microsoft Docs"
+title: "Passing Structures"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "platform invoke, calling unmanaged functions"
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
@@ -21,6 +19,8 @@ caps.latest.revision: 16
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Passing Structures
 Many unmanaged functions expect you to pass, as a parameter to the function, members of structures (user-defined types in Visual Basic) or members of classes that are defined in managed code. When passing structures or classes to unmanaged code using platform invoke, you must provide additional information to preserve the original layout and alignment. This topic introduces the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute, which you use to define formatted types. For managed structures and classes, you can select from several predictable layout behaviors supplied by the **LayoutKind** enumeration.  
@@ -53,23 +53,22 @@ BOOL PtInRect(const RECT *lprc, POINT pt);
 ```vb  
 Imports System.Runtime.InteropServices  
   
-\<StructLayout(LayoutKind.Sequential)> Public Structure Point  
+<StructLayout(LayoutKind.Sequential)> Public Structure Point  
     Public x As Integer  
     Public y As Integer  
 End Structure  
   
-Public Structure \<StructLayout(LayoutKind.Explicit)> Rect  
-    \<FieldOffset(0)> Public left As Integer  
-    \<FieldOffset(4)> Public top As Integer  
-    \<FieldOffset(8)> Public right As Integer  
-    \<FieldOffset(12)> Public bottom As Integer  
+Public Structure <StructLayout(LayoutKind.Explicit)> Rect  
+    <FieldOffset(0)> Public left As Integer  
+    <FieldOffset(4)> Public top As Integer  
+    <FieldOffset(8)> Public right As Integer  
+    <FieldOffset(12)> Public bottom As Integer  
 End Structure  
   
 Class Win32API      
     Declare Auto Function PtInRect Lib "user32.dll" _  
     (ByRef r As Rect, p As Point) As Boolean  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -109,7 +108,7 @@ Imports System
 Imports System.Runtime.InteropServices  
 Imports Microsoft.VisualBasic  
   
-\<StructLayout(LayoutKind.Sequential)> Public Class MySystemTime  
+<StructLayout(LayoutKind.Sequential)> Public Class MySystemTime  
     Public wYear As Short  
     Public wMonth As Short  
     Public wDayOfWeek As Short   
@@ -141,7 +140,6 @@ Public Class TestPlatformInvoke
         Win32.MessageBox(IntPtr.Zero, dt, "Platform Invoke Sample", 0)        
     End Sub  
 End Class  
-  
 ```  
   
 ```csharp  
@@ -184,7 +182,7 @@ public class TestPlatformInvoke
 ```  
   
 ## See Also  
- [Calling a DLL Function](../../../docs/framework/interop/calling-a-dll-function.md)   
- <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
- <xref:System.Runtime.InteropServices.StructLayoutAttribute>   
+ [Calling a DLL Function](../../../docs/framework/interop/calling-a-dll-function.md)  
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
+ <xref:System.Runtime.InteropServices.StructLayoutAttribute>  
  <xref:System.Runtime.InteropServices.FieldOffsetAttribute>

@@ -1,5 +1,5 @@
 ---
-title: "PropertyPath XAML Syntax | Microsoft Docs"
+title: "PropertyPath XAML Syntax"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,13 +10,15 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "PropertyPath object"
-  - "XAML, PropertyPath object"
+  - "PropertyPath object [WPF]"
+  - "XAML [WPF], PropertyPath object"
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
 caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # PropertyPath XAML Syntax
 The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] syntax for setting various properties that take the <xref:System.Windows.PropertyPath> type as their value. This topic documents the <xref:System.Windows.PropertyPath> syntax as applied to binding and animation syntaxes.  
@@ -28,7 +30,7 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
   
  Primarily, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] uses <xref:System.Windows.PropertyPath> to describe object-model paths for traversing the properties of an object data source, and to describe the target path for targeted animations.  
   
- Some style and template properties such as <xref:System.Windows.Setter.Property%2A?displayProperty=fullName> take a qualified property name that superficially resembles a <xref:System.Windows.PropertyPath>. But this is not a true <xref:System.Windows.PropertyPath>; instead it is a qualified *owner.property* string format usage that is enabled by the WPF [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor in combination with the type converter for <xref:System.Windows.DependencyProperty>.  
+ Some style and template properties such as <xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType> take a qualified property name that superficially resembles a <xref:System.Windows.PropertyPath>. But this is not a true <xref:System.Windows.PropertyPath>; instead it is a qualified *owner.property* string format usage that is enabled by the WPF [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor in combination with the type converter for <xref:System.Windows.DependencyProperty>.  
   
 <a name="databinding_s"></a>   
 ## PropertyPath for Objects in Data Binding  
@@ -41,8 +43,8 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
 <a name="singlecurrent"></a>   
 ### Single Property on the Immediate Object as Data Context  
   
-```  
-<Binding Path="propertyName" .../>  
+```xml  
+<Binding Path="propertyName" .../>  
 ```  
   
  *propertyName* must resolve to be the name of a property that is in the current <xref:System.Windows.FrameworkElement.DataContext%2A> for a <xref:System.Windows.Data.Binding.Path%2A> usage. If your binding updates the source, that property must be read/write and the source object must be mutable.  
@@ -50,19 +52,19 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
 <a name="singleindex"></a>   
 ### Single Indexer on the Immediate Object as Data Context  
   
-```  
-<Binding Path="[key]" .../>  
+```xml  
+<Binding Path="[key]" .../>  
 ```  
   
  `key` must be either the typed index to a dictionary or hash table, or the integer index of an array. Also, the value of the key must be a type that is directly bindable to the property where it is applied. For instance, a hash table that contains string keys and string values can be used this way to bind to Text for a <xref:System.Windows.Controls.TextBox>. Or, if the key points to a collection or subindex, you could use this syntax to bind to a target collection property. Otherwise, you need to reference a specific property, through a syntax such as `<Binding Path="[``key``].``propertyName``" .../>`.  
   
- You can specify the type of the index if necessary. For details on this aspect of an indexed property path, see <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName>.  
+ You can specify the type of the index if necessary. For details on this aspect of an indexed property path, see <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>.  
   
 <a name="multipleindirect"></a>   
 ### Multiple Property (Indirect Property Targeting)  
   
-```  
-<Binding Path="propertyName.propertyName2" .../>  
+```xml  
+<Binding Path="propertyName.propertyName2" .../>  
 ```  
   
  `propertyName` must resolve to be the name of a property that is the current <xref:System.Windows.FrameworkElement.DataContext%2A>. The path properties `propertyName` and `propertyName2` can be any properties that exist in a relationship, where `propertyName2` is a property that exists on the type that is the value of `propertyName`.  
@@ -70,8 +72,8 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
 <a name="singleattached"></a>   
 ### Single Property, Attached or Otherwise Type-Qualified  
   
-```  
-<object property="(ownerType.propertyName)" .../>  
+```xml  
+<object property="(ownerType.propertyName)" .../>  
 ```  
   
  The parentheses indicate that this property in a <xref:System.Windows.PropertyPath> should be constructed using a partial qualification. It can use an XML namespace to find the type with an appropriate mapping. The `ownerType` searches types that a [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] processor has access to, through the <xref:System.Windows.Markup.XmlnsDefinitionAttribute> declarations in each assembly. Most applications have the default XML namespace mapped to the [!INCLUDE[TLA#tla_wpfxmlnsv1](../../../../includes/tlasharptla-wpfxmlnsv1-md.md)] namespace, so a prefix is usually only necessary for custom types or types otherwise outside that namespace.  `propertyName` must resolve to be the name of a property existing on the `ownerType`. This syntax is generally used for one of the following cases:  
@@ -87,8 +89,8 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
 <a name="sourcetraversal"></a>   
 ### Source Traversal (Binding to Hierarchies of Collections)  
   
-```  
-<object Path="propertyName/propertyNameX" .../>  
+```xml  
+<object Path="propertyName/propertyNameX" .../>  
 ```  
   
  The / in this syntax is used to navigate within a hierarchical data source object, and multiple steps into the hierarchy with successive / characters are supported. The source traversal accounts for the current record pointer position, which is determined by synchronizing the data with the UI of its view. For details on binding with hierarchical data source objects, and the concept of current record pointer in data binding, see [Use the Master-Detail Pattern with Hierarchical Data](../../../../docs/framework/wpf/data/how-to-use-the-master-detail-pattern-with-hierarchical-data.md) or [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
@@ -105,21 +107,21 @@ The <xref:System.Windows.PropertyPath> object supports a complex inline [!INCLUD
 ### Multiple Indexers  
   
 ```  
-\<object Path="[index1,index2...]" .../>  
+<object Path="[index1,index2...]" .../>  
 or  
-\<object Path="propertyName[index,index2...]" .../>  
+<object Path="propertyName[index,index2...]" .../>  
 ```  
   
  If a given object supports multiple indexers, those indexers can be specified in order, similar to an array referencing syntax. The object in question can be either the current context or the value of a property that contains a multiple index object.  
   
- By default, the indexer values are typed by using the characteristics of the underlying object. You can specify the type of the index if necessary. For details on typing the indexers, see <xref:System.Windows.Data.Binding.Path%2A?displayProperty=fullName>.  
+ By default, the indexer values are typed by using the characteristics of the underlying object. You can specify the type of the index if necessary. For details on typing the indexers, see <xref:System.Windows.Data.Binding.Path%2A?displayProperty=nameWithType>.  
   
 <a name="mixing"></a>   
 ### Mixing Syntaxes  
  Each of the syntaxes shown above can be interspersed. For instance, the following is an example that creates a property path to the color at a particular x,y of a `ColorGrid` property that contains a pixel grid array of <xref:System.Windows.Media.SolidColorBrush> objects:  
   
-```  
-<Rectangle Fill="{Binding ColorGrid[20,30].SolidColorBrushResult}" .../>  
+```xml  
+<Rectangle Fill="{Binding ColorGrid[20,30].SolidColorBrushResult}" .../>  
 ```  
   
 ### Escapes for Property Path Strings  
@@ -157,8 +159,8 @@ or
 <a name="singlestepanim"></a>   
 ### Single Property on the Target Object  
   
-```  
-<animation Storyboard.TargetProperty="propertyName" .../>  
+```xml  
+<animation Storyboard.TargetProperty="propertyName" .../>  
 ```  
   
  `propertyName` must resolve to be the name of a dependency property that exists on the specified <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> type.  
@@ -166,8 +168,8 @@ or
 <a name="indirectanim"></a>   
 ### Indirect Property Targeting  
   
-```  
-<animation Storyboard.TargetProperty="propertyName.propertyName2" .../>  
+```xml  
+<animation Storyboard.TargetProperty="propertyName.propertyName2" .../>  
 ```  
   
  `propertyName` must be a property that is either a <xref:System.Windows.Freezable> value type or a primitive, which exists on the specified <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> type.  
@@ -181,7 +183,7 @@ or
 <a name="attachedanim"></a>   
 ### Attached Properties  
   
-```  
+```xml  
 <animation Storyboard.TargetProperty="(ownerType.propertyName)" .../>  
 ```  
   
@@ -190,8 +192,8 @@ or
 <a name="indexanim"></a>   
 ### Indexers  
   
-```  
-<animation Storyboard.TargetProperty="propertyName.propertyName2[index].propertyName3" .../>  
+```xml  
+<animation Storyboard.TargetProperty="propertyName.propertyName2[index].propertyName3" .../>  
 ```  
   
  Most dependency properties or <xref:System.Windows.Freezable> types do not support an indexer. Therefore, the only usage for an indexer in an animation path is at an intermediate position between the property that starts the chain on the named target and the eventual animated property. In the provided syntax, that is `propertyName2`. For instance, an indexer usage might be necessary if the intermediate property is a collection such as <xref:System.Windows.Media.TransformGroup>, in a property path such as `RenderTransform.Children[1].Angle`.  
@@ -203,6 +205,6 @@ or
  In general, <xref:System.Windows.PropertyPath> is designed to use two different constructors, one for the binding usages and simplest animation usages, and one for the complex animation usages. Use the <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> signature for binding usages, where the object is a string. Use the <xref:System.Windows.PropertyPath.%23ctor%28System.Object%29> signature for one-step animation paths, where the object is a <xref:System.Windows.DependencyProperty>. Use the <xref:System.Windows.PropertyPath.%23ctor%28System.String%2CSystem.Object%5B%5D%29> signature for complex animations. This latter constructor uses a token string for the first parameter and an array of objects that fill positions in the token string to define a property path relationship.  
   
 ## See Also  
- <xref:System.Windows.PropertyPath>   
- [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)   
+ <xref:System.Windows.PropertyPath>  
+ [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md)  
  [Storyboards Overview](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md)

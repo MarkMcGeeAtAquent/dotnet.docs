@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::CloseIoCompletionPort Method | Microsoft Docs"
+title: "IHostIoCompletionManager::CloseIoCompletionPort Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.CloseIoCompletionPort"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::CloseIoCompletionPort"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager::CloseIoCompletionPort method [.NET Framework hosting]"
   - "CloseIoCompletionPort method [.NET Framework hosting]"
 ms.assetid: e86ad7be-3758-498a-a972-5522d69dfbb3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::CloseIoCompletionPort Method
 Requests that the host close a port that was opened through an earlier call to [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  
@@ -67,5 +70,5 @@ HRESULT CloseIoCompletionPort (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)   
+ [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "WPF XAML Browser Applications Overview | Microsoft Docs"
+title: "WPF XAML Browser Applications Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,11 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "XBAP, XAML browser application"
+  - "XBAP [WPF], XAML browser application"
   - "WPF XAML browser applications (XBAP)"
   - "XAML browser applications (XBAP)"
   - "browser-hosted applications [WPF]"
@@ -19,9 +22,12 @@ caps.latest.revision: 47
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # WPF XAML Browser Applications Overview
-<a name="introduction"></a> [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] combines features of both Web applications and rich-client applications. Like Web applications, XBAPs can be deployed to a Web server and started from Internet Explorer or Firefox. Like rich-client applications, XBAPs can take advantage of the capabilities of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Developing XBAPs is also similar to rich-client development. This topic provides a simple, high-level introduction to XBAP development and describes where XBAP development differs from standard rich-client development.  
+<a name="introduction"></a>
+[!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] combines features of both Web applications and rich-client applications. Like Web applications, XBAPs can be deployed to a Web server and started from Internet Explorer or Firefox. Like rich-client applications, XBAPs can take advantage of the capabilities of [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Developing XBAPs is also similar to rich-client development. This topic provides a simple, high-level introduction to XBAP development and describes where XBAP development differs from standard rich-client development.  
   
  This topic contains the following sections:  
   
@@ -37,7 +43,7 @@ manager: "wpickett"
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## Creating a New XAML Browser Application (XBAP)  
- The simplest way to create a new XBAP project is with [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. When creating a new project, select **WPF Browser Application** from the list of templates. For more information, see [How to: Create a New WPF Browser Application Project](http://msdn.microsoft.com/en-us/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
+ The simplest way to create a new XBAP project is with [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)]. When creating a new project, select **WPF Browser Application** from the list of templates. For more information, see [How to: Create a New WPF Browser Application Project](http://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f).  
   
  When you run the XBAP project, it opens in a browser window instead of a stand-alone window. When you debug the XBAP from [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], the application runs with Internet zone permission and will therefore throw security exceptions if those permissions are exceeded. For more information, see [Security](../../../../docs/framework/wpf/security-wpf.md) and [WPF Partial Trust Security](../../../../docs/framework/wpf/wpf-partial-trust-security.md).  
   
@@ -58,25 +64,26 @@ manager: "wpickett"
   
  To prepare your XBAP for deployment, copy the .exe and the associated manifests to the Web server. Create an HTML page that contains a hyperlink to open the deployment manifest, which is the file that has the .xbap extension. When the user clicks the link to the .xbap file, [!INCLUDE[TLA2#tla_clickonce](../../../../includes/tla2sharptla-clickonce-md.md)] automatically handles the mechanics of downloading and starting the application. The following example code shows an HTML page that contains a hyperlink that points to an XBAP.  
   
-```  
+```html
 <html>   
-  <head></head>  
-  <body>   
-    <a href="XbapEx.xbap">Click this link to launch the application</a>  
-  </body>   
+    <head></head>  
+    <body>   
+        <a href="XbapEx.xbap">Click this link to launch the application</a>  
+    </body>   
 </html>  
-  
 ```  
   
  You can also host an XBAP in the frame of a Web page. Create a Web page with one or more frames. Set the source property of a frame to the deployment manifest file. If you want to use the built-in mechanism to communicate between the hosting Web page and the XBAP, you must host the application in a frame. The following example code shows an HTML page with two frames, the source for the second frame is set to an XBAP.  
   
-```  
+```html
 <html>   
-  <head>A page with frames.</head>  
+    <head>
+        <title>A page with frames</title>
+    </head>  
     <frameset cols="50%,50%">   
-      <frame src="introduction.htm" >   
-      <frame src="XbapEx.xbap" >   
-  </frameset>   
+        <frame src="introduction.htm">   
+        <frame src="XbapEx.xbap">   
+    </frameset>   
 </html>  
 ```  
   
@@ -85,7 +92,9 @@ manager: "wpickett"
   
  In these situations, you can remove the cached version by using the **Mage** command (installed with Visual Studio or the [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)]) at the command prompt. The following command clears the application cache.  
   
- `Mage.exe -cc`  
+ ```console
+ Mage.exe -cc
+ ```
   
  This command guarantees that the latest version of your XBAP is started. When you debug your application in [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], the latest version of your XBAP should be started. In general, you should update your deployment version number with each build. For more information about Mage, see [Mage.exe (Manifest Generation and Editing Tool)](../../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
   
@@ -155,13 +164,12 @@ manager: "wpickett"
   
 -   In the application manifest (app.manifest), an `Unrestricted="true"` attribute is added to the `PermissionSet` element.  
   
-    ```  
+    ```xml
     <PermissionSet class="System.Security.PermissionSet"   
-        version="1"   
-        ID="Custom"   
-        SameSite="site"   
-        Unrestricted="true"   
-    />  
+                   version="1"   
+                   ID="Custom"   
+                   SameSite="site"   
+                   Unrestricted="true" />  
     ```  
   
 ### Deploying a Full-Trust XBAP  
@@ -176,7 +184,7 @@ manager: "wpickett"
 > [!NOTE]
 >  The behavior described in the previous table is for full-trust XBAPs that do not follow the ClickOnce Trusted Deployment model.  
   
- It is recommended that you use the ClickOnce Trusted Deployment model for deploying a full-trust XBAP. This model allows your XBAP to be granted full trust automatically, regardless of the security zone, so that the user is not prompted. As part of this model, you must sign your application with a certificate from a trusted publisher. For more information, see [Trusted Application Deployment Overview](http://msdn.microsoft.com/library/b24a1702-8fbe-45b1-87a0-9618a0708f1d) and [Introduction to Code Signing](http://go.microsoft.com/fwlink/?LinkId=166327).  
+ It is recommended that you use the ClickOnce Trusted Deployment model for deploying a full-trust XBAP. This model allows your XBAP to be granted full trust automatically, regardless of the security zone, so that the user is not prompted. As part of this model, you must sign your application with a certificate from a trusted publisher. For more information, see [Trusted Application Deployment Overview](/visualstudio/deployment/trusted-application-deployment-overview) and [Introduction to Code Signing](http://go.microsoft.com/fwlink/?LinkId=166327).  
   
 <a name="xbap_start_time_performance_considerations"></a>   
 ## XBAP Start Time Performance Considerations  
@@ -187,5 +195,5 @@ manager: "wpickett"
  In addition, improved concurrency of the [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] download sequence improves the start time by up to ten percent. After [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] downloads and validates manifests, the application download starts, and the progress bar starts to update.  
   
 ## See Also  
- [Configure Visual Studio to Debug a XAML Browser Application to Call a Web Service](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)   
+ [Configure Visual Studio to Debug a XAML Browser Application to Call a Web Service](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
  [Deploying a WPF Application](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)

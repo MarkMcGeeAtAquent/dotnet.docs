@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain::IsAttached Method | Microsoft Docs"
+title: "ICorDebugAppDomain::IsAttached Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain.IsAttached"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain::IsAttached"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IsAttached method [.NET Framework debugging]"
   - "ICorDebugAppDomain::IsAttached method [.NET Framework debugging]"
 ms.assetid: af0c67c7-f53e-47c9-b84b-be50bd04903e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain::IsAttached Method
 Gets a value that indicates whether the debugger is attached to the application domain.  

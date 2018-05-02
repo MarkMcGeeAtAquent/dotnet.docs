@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugGuidToTypeEnum::Next Method | Microsoft Docs"
+title: "ICorDebugGuidToTypeEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugGuidToTypeEnum.Next"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugGuidToTypeEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugGuidToTypeEnum::Next method [.NET Framework debugging]"
   - "Next method, ICorDebugGuidToTypeEnum interface [.NET Framework debugging]"
 ms.assetid: c9937666-8e18-484d-9fe0-b9ac95199530
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugGuidToTypeEnum::Next Method
 Gets the specified number of [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instances that map GUIDs to type information.  
@@ -62,5 +65,5 @@ HRESULT Next(
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorDebugGuidToTypeEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)   
+ [ICorDebugGuidToTypeEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugguidtotypeenum-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

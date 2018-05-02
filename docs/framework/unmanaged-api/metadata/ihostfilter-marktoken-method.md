@@ -1,5 +1,5 @@
 ---
-title: "IHostFilter::MarkToken Method | Microsoft Docs"
+title: "IHostFilter::MarkToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostFilter.MarkToken"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostFilter::MarkToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "MarkToken method, IHostFilter interface [.NET Framework metadata]"
   - "IHostFilter::MarkToken method [.NET Framework metadata]"
 ms.assetid: d7061343-d0a3-4fd5-b312-61974f98bd62
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostFilter::MarkToken Method
 Indicates that the specified metadata token will be processed.  
@@ -55,5 +58,5 @@ HRESULT MarkToken (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)   
+ [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IHostFilter Interface](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-interface.md)

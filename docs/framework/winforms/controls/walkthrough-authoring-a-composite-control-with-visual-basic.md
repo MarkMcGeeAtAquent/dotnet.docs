@@ -1,8 +1,8 @@
 ---
-title: "Walkthrough: Authoring a Composite Control with Visual Basic | Microsoft Docs"
+title: "Walkthrough: Authoring a Composite Control with Visual Basic"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,26 +10,29 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "custom controls [Visual Basic]"
   - "user controls [Visual Basic]"
-  - "UserControl class, walkthroughs"
+  - "UserControl class [Windows Forms], walkthroughs"
   - "user controls [Windows Forms], creating with Visual Basic"
   - "controls [Windows Forms], composite controls"
-  - "composite controls, creating"
+  - "composite controls [Windows Forms], creating"
   - "custom controls [Windows Forms], creating"
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
 caps.latest.revision: 21
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Authoring a Composite Control with Visual Basic
 Composite controls provide a means by which custom graphical interfaces can be created and reused. A composite control is essentially a component with a visual representation. As such, it might consist of one or more Windows Forms controls, components, or blocks of code that can extend functionality by validating user input, modifying display properties, or performing other tasks required by the author. Composite controls can be placed on Windows Forms in the same manner as other controls. In the first part of this walkthrough, you create a simple composite control called `ctlClock`. In the second part of the walkthrough, you extend the functionality of `ctlClock` through inheritance.  
   
 > [!NOTE]
->  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## Creating the Project  
  When you create a new project, you specify its name to set the root namespace, assembly name, and project name, and ensure that the default component will be in the correct namespace.  
@@ -81,9 +84,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 7.  Modify the code so that it resembles the following code sample. Be sure to change the access modifier from `Private` to `Protected`.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Protected Sub Timer1_Tick(ByVal sender As Object, ByVal e As _  
         System.EventArgs) Handles Timer1.Tick  
         ' Causes the label to display the current time.    
@@ -95,9 +96,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 8.  Modify the method to be overridable. For more information, see the "Inheriting from a User Control" section below.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Protected Overridable Sub Timer1_Tick(ByVal sender As Object, ByVal _  
         e As System.EventArgs) Handles Timer1.Tick  
     ```  
@@ -115,9 +114,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 2.  Locate the `Public Class ctlClock` statement. Beneath it, type the following code.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private colFColor as Color  
     Private colBColor as Color  
     ```  
@@ -126,9 +123,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 3.  Insert the following code beneath the variable declarations from step 2.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     ' Declares the name and type of the property.  
     Property ClockBackColor() as Color  
         ' Retrieves the value of the private variable colBColor.  
@@ -211,9 +206,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 2.  Locate the class declaration for the ctlAlarmClock control, which appears as `Public Class ctlAlarmClock`.  In the class declaration, insert the following code.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private dteAlarmTime As Date  
     Private blnAlarmSet As Boolean  
     ' These properties will be declared as Public to allow future   
@@ -273,17 +266,13 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 2.  Locate the `Private blnAlarmSet As Boolean` statement. Immediately beneath it, add the following statement.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Dim blnColorTicker as Boolean  
     ```  
   
 3.  Locate the `End Class` statement at the bottom of the page. Just before the `End Class` statement, add the following code.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Protected Overrides Sub Timer1_Tick(ByVal sender As Object, ByVal e _  
         As System.EventArgs)  
         ' Calls the Timer1_Tick method of ctlClock.  
@@ -332,9 +321,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 3.  Modify this method so that it resembles the following code.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private Sub lblAlarm_Click(ByVal sender As Object, ByVal e As _  
      System.EventArgs) Handles lblAlarm.Click  
         ' Turns off the alarm.  
@@ -382,7 +369,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
     |`label1`|**Text**|`(blank space)`|  
     ||**Name**|`lblTest`|  
     |`dateTimePicker1`|**Name**|`dtpTest`|  
-    ||**Format**|<xref:System.Windows.Forms.DateTimePickerFormat>|  
+    ||**Format**|<xref:System.Windows.Forms.DateTimePickerFormat.Time>|  
   
 12. In the designer, double-click **dtpTest**.  
   
@@ -390,9 +377,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
   
 13. Modify the code so that it resembles the following.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     Private Sub dtpTest_ValueChanged(ByVal sender As Object, ByVal e As _  
         System.EventArgs) Handles dtpTest.ValueChanged  
         ctlAlarmClock1.AlarmTime = dtpTest.Value  
@@ -419,7 +404,7 @@ Composite controls provide a means by which custom graphical interfaces can be c
      This walkthrough has covered a number of key concepts. You have learned to create a composite control by combining controls and components into a composite control container. You have learned to add properties to your control, and to write code to implement custom functionality. In the last section, you learned to extend the functionality of a given composite control through inheritance, and to alter the functionality of host methods by overriding those methods.  
   
 ## See Also  
- [Varieties of Custom Controls](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)   
- [How to: Author Composite Controls](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)   
- [How to: Display a Control in the Choose Toolbox Items Dialog Box](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)   
+ [Varieties of Custom Controls](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md)  
+ [How to: Author Composite Controls](../../../../docs/framework/winforms/controls/how-to-author-composite-controls.md)  
+ [How to: Display a Control in the Choose Toolbox Items Dialog Box](../../../../docs/framework/winforms/controls/how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)  
  [Component Authoring Walkthroughs](http://msdn.microsoft.com/library/c414cca9-2489-4208-8b38-954586d91c13)

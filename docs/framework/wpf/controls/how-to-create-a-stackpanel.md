@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a StackPanel | Microsoft Docs"
+title: "How to: Create a StackPanel"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,12 +10,14 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "StackPanel control, creating"
+  - "StackPanel control [WPF], creating"
 ms.assetid: e7ce65cb-720a-4bb6-95b6-286b74488a58
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Create a StackPanel
 This example shows how to create a <xref:System.Windows.Controls.StackPanel>.  
@@ -28,7 +30,6 @@ This example shows how to create a <xref:System.Windows.Controls.StackPanel>.
  The default stack direction in a <xref:System.Windows.Controls.StackPanel> is vertical. To control content flow in a <xref:System.Windows.Controls.StackPanel>, use the <xref:System.Windows.Controls.StackPanel.Orientation%2A> property. You can control horizontal alignment by using the <xref:System.Windows.FrameworkElement.HorizontalAlignment%2A> property.  
   
 ```xaml  
-  
 <Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowTitle="StackPanel Sample">  
   <StackPanel>  
     <Border Background="SkyBlue" BorderBrush="Black" BorderThickness="1">  
@@ -48,10 +49,9 @@ This example shows how to create a <xref:System.Windows.Controls.StackPanel>.
     </Border>  
   </StackPanel>  
 </Page>  
-  
 ```  
   
 ## See Also  
- <xref:System.Windows.Controls.StackPanel>   
- [Panels Overview](../../../../docs/framework/wpf/controls/panels-overview.md)   
+ <xref:System.Windows.Controls.StackPanel>  
+ [Panels Overview](../../../../docs/framework/wpf/controls/panels-overview.md)  
  [How-to Topics](../../../../docs/framework/wpf/controls/stackpanel-how-to-topics.md)

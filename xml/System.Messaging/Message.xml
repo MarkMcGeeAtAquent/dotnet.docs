@@ -1,7 +1,9 @@
-<Type Name="Message" FullName="System.Messaging.Message">
+﻿<Type Name="Message" FullName="System.Messaging.Message">
   <TypeSignature Language="C#" Value="public class Message : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Message extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Messaging.Message" />
+  <TypeSignature Language="VB.NET" Value="Public Class Message&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Message : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System.Messaging</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -23,7 +25,7 @@
 ## Remarks  
  Use the <xref:System.Messaging.Message> class to peek or receive messages from a queue, or to have fine control over message properties when sending a message to a queue.  
   
- <xref:System.Messaging.MessageQueue> uses the <xref:System.Messaging.Message> class when it peeks or receives messages from queues, because both the <xref:System.Messaging.MessageQueue.Peek%2A?displayProperty=fullName> and <xref:System.Messaging.MessageQueue.Receive%2A?displayProperty=fullName> methods create a new instance of the <xref:System.Messaging.Message> class and set the instance's properties. The <xref:System.Messaging.Message> class's read-only properties apply to retrieving messages from a queue, while the read/write properties apply to sending and retrieving messages. When <xref:System.Messaging.MessageQueue> peeks or receives a message from a queue, its <xref:System.Messaging.MessageQueue.MessageReadPropertyFilter%2A> property determines which of the message's properties are retrieved.  
+ <xref:System.Messaging.MessageQueue> uses the <xref:System.Messaging.Message> class when it peeks or receives messages from queues, because both the <xref:System.Messaging.MessageQueue.Peek%2A?displayProperty=nameWithType> and <xref:System.Messaging.MessageQueue.Receive%2A?displayProperty=nameWithType> methods create a new instance of the <xref:System.Messaging.Message> class and set the instance's properties. The <xref:System.Messaging.Message> class's read-only properties apply to retrieving messages from a queue, while the read/write properties apply to sending and retrieving messages. When <xref:System.Messaging.MessageQueue> peeks or receives a message from a queue, its <xref:System.Messaging.MessageQueue.MessageReadPropertyFilter%2A> property determines which of the message's properties are retrieved.  
   
  The <xref:System.Messaging.MessageQueue> class's <xref:System.Messaging.MessageQueue.Send%2A> method allows you to specify any object type for a message being sent to that queue. You can use the <xref:System.Messaging.MessageQueue> instance's <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> property to specify settings for generic messages sent to the queue. The types of settings include formatter, label, encryption, and authentication. You can also specify values for the appropriate <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> members when you coordinate your messaging application to respond to acknowledgment and report messages. Using a <xref:System.Messaging.Message> instance to send a message to the queue gives you the flexibility to access and modify many of these properties—either for a single message or on a message-by-message basis. <xref:System.Messaging.Message> properties take precedence over <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A>.  
   
@@ -31,7 +33,7 @@
   
  The contents of the <xref:System.Messaging.Message.Body%2A> property are serialized when the message is sent, using the <xref:System.Messaging.Message.Formatter%2A> property you specify. The serialized contents are found in the <xref:System.Messaging.Message.BodyStream%2A> property. You can also set the <xref:System.Messaging.Message.BodyStream%2A> property directly, for example, to send a file as the data content of a message. You can change the <xref:System.Messaging.Message.Body%2A> or <xref:System.Messaging.Message.Formatter%2A> properties at any time before sending the message, and the data will be serialized appropriately when you call <xref:System.Messaging.MessageQueue.Send%2A>.  
   
- The properties defined by the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=fullName> property apply only to messages that are not of type <xref:System.Messaging.Message>. If you specify the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> property for a <xref:System.Messaging.MessageQueue>, the identically named properties in a <xref:System.Messaging.Message> instance sent to that queue cause these default properties to be ignored.  
+ The properties defined by the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A?displayProperty=nameWithType> property apply only to messages that are not of type <xref:System.Messaging.Message>. If you specify the <xref:System.Messaging.MessageQueue.DefaultPropertiesToSend%2A> property for a <xref:System.Messaging.MessageQueue>, the identically named properties in a <xref:System.Messaging.Message> instance sent to that queue cause these default properties to be ignored.  
   
  For a list of initial property values for an instance of <xref:System.Messaging.Message>, see the <xref:System.Messaging.Message.%23ctor%2A> constructor.  
   
@@ -52,12 +54,28 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Messaging.MessageQueue" />
+    <altmember cref="T:System.Messaging.DefaultPropertiesToSend" />
+    <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
+    <altmember cref="M:System.Messaging.MessageQueue.Receive" />
+    <altmember cref="M:System.Messaging.MessageQueue.Peek" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Messaging.Message" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Message ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Messaging.Message.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Message();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -124,12 +142,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Messaging.XmlMessageFormatter" />
+        <altmember cref="P:System.Messaging.Message.Body" />
+        <altmember cref="T:System.Messaging.DefaultPropertiesToSend" />
+        <altmember cref="T:System.Messaging.MessageQueue" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
+        <altmember cref="M:System.Messaging.MessageQueue.Peek" />
+        <altmember cref="M:System.Messaging.MessageQueue.Receive" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Message (object body);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object body) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Messaging.Message.#ctor(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (body As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Message(System::Object ^ body);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -195,12 +222,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Messaging.XmlMessageFormatter" />
+        <altmember cref="T:System.Messaging.DefaultPropertiesToSend" />
+        <altmember cref="T:System.Messaging.MessageQueue" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
+        <altmember cref="M:System.Messaging.MessageQueue.Peek" />
+        <altmember cref="M:System.Messaging.MessageQueue.Receive" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Message (object body, System.Messaging.IMessageFormatter formatter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object body, class System.Messaging.IMessageFormatter formatter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Messaging.Message.#ctor(System.Object,System.Messaging.IMessageFormatter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (body As Object, formatter As IMessageFormatter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Message(System::Object ^ body, System::Messaging::IMessageFormatter ^ formatter);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -266,12 +301,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Messaging.XmlMessageFormatter" />
+        <altmember cref="T:System.Messaging.BinaryMessageFormatter" />
+        <altmember cref="T:System.Messaging.ActiveXMessageFormatter" />
+        <altmember cref="T:System.Messaging.DefaultPropertiesToSend" />
+        <altmember cref="T:System.Messaging.MessageQueue" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
+        <altmember cref="M:System.Messaging.MessageQueue.Peek" />
+        <altmember cref="M:System.Messaging.MessageQueue.Receive" />
       </Docs>
     </Member>
     <Member MemberName="AcknowledgeType">
       <MemberSignature Language="C#" Value="public System.Messaging.AcknowledgeTypes AcknowledgeType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.AcknowledgeTypes AcknowledgeType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AcknowledgeType" />
+      <MemberSignature Language="VB.NET" Value="Public Property AcknowledgeType As AcknowledgeTypes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::AcknowledgeTypes AcknowledgeType { System::Messaging::AcknowledgeTypes get(); void set(System::Messaging::AcknowledgeTypes value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -279,7 +324,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -314,12 +359,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message is filtered to ignore the <see cref="P:System.Messaging.Message.AcknowledgeType" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.AdministrationQueue" />
+        <altmember cref="P:System.Messaging.Message.Acknowledgment" />
       </Docs>
     </Member>
     <Member MemberName="Acknowledgment">
       <MemberSignature Language="C#" Value="public System.Messaging.Acknowledgment Acknowledgment { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.Acknowledgment Acknowledgment" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Acknowledgment" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Acknowledgment As Acknowledgment" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::Acknowledgment Acknowledgment { System::Messaging::Acknowledgment get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -327,7 +376,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -361,12 +410,21 @@
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.MessagePropertyFilter.Acknowledgment" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.AdministrationQueue" />
+        <altmember cref="P:System.Messaging.Message.CorrelationId" />
+        <altmember cref="M:System.Messaging.MessageQueue.PeekById(System.String)" />
+        <altmember cref="M:System.Messaging.MessageQueue.PeekByCorrelationId(System.String)" />
+        <altmember cref="M:System.Messaging.MessageQueue.ReceiveById(System.String)" />
+        <altmember cref="M:System.Messaging.MessageQueue.ReceiveByCorrelationId(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="AdministrationQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue AdministrationQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue AdministrationQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AdministrationQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property AdministrationQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ AdministrationQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -374,7 +432,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -409,12 +467,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.AdministrationQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.Acknowledgment" />
       </Docs>
     </Member>
     <Member MemberName="AppSpecific">
       <MemberSignature Language="C#" Value="public int AppSpecific { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 AppSpecific" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AppSpecific" />
+      <MemberSignature Language="VB.NET" Value="Public Property AppSpecific As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int AppSpecific { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -422,7 +484,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -450,12 +512,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.AppSpecific" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.Extension" />
+        <altmember cref="P:System.Messaging.Message.Body" />
       </Docs>
     </Member>
     <Member MemberName="ArrivedTime">
       <MemberSignature Language="C#" Value="public DateTime ArrivedTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ArrivedTime" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.ArrivedTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ArrivedTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime ArrivedTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -463,7 +529,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgArrivedTime")</AttributeName>
@@ -495,12 +561,15 @@
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.ArrivedTime" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.TimeToBeReceived" />
       </Docs>
     </Member>
     <Member MemberName="AttachSenderId">
       <MemberSignature Language="C#" Value="public bool AttachSenderId { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AttachSenderId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AttachSenderId" />
+      <MemberSignature Language="VB.NET" Value="Public Property AttachSenderId As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AttachSenderId { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -508,7 +577,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -545,12 +614,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.AttachSenderId" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.SenderId" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
+        <altmember cref="P:System.Messaging.Message.HashAlgorithm" />
+        <altmember cref="P:System.Messaging.Message.SenderCertificate" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
       </Docs>
     </Member>
     <Member MemberName="Authenticated">
       <MemberSignature Language="C#" Value="public bool Authenticated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Authenticated" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Authenticated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Authenticated As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Authenticated { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -558,7 +636,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgAuthenticated")</AttributeName>
@@ -593,12 +671,18 @@
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Authenticated" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
       </Docs>
     </Member>
     <Member MemberName="AuthenticationProviderName">
       <MemberSignature Language="C#" Value="public string AuthenticationProviderName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationProviderName" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AuthenticationProviderName" />
+      <MemberSignature Language="VB.NET" Value="Public Property AuthenticationProviderName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AuthenticationProviderName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -606,7 +690,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -639,12 +723,19 @@
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.AuthenticationProviderName" /> property.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.AuthenticationProviderName" /> was set to <see langword="null" />.</exception>
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderType" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
       </Docs>
     </Member>
     <Member MemberName="AuthenticationProviderType">
       <MemberSignature Language="C#" Value="public System.Messaging.CryptographicProviderType AuthenticationProviderType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.CryptographicProviderType AuthenticationProviderType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.AuthenticationProviderType" />
+      <MemberSignature Language="VB.NET" Value="Public Property AuthenticationProviderType As CryptographicProviderType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::CryptographicProviderType AuthenticationProviderType { System::Messaging::CryptographicProviderType get(); void set(System::Messaging::CryptographicProviderType value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -652,7 +743,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -684,12 +775,20 @@
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.AuthenticationProviderType" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderName" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="T:System.Messaging.CryptographicProviderType" />
       </Docs>
     </Member>
     <Member MemberName="Body">
       <MemberSignature Language="C#" Value="public object Body { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Body" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Body" />
+      <MemberSignature Language="VB.NET" Value="Public Property Body As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Body { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -700,7 +799,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -715,7 +814,7 @@
 ## Remarks  
  The message's <xref:System.Messaging.Message.Body%2A> property usually contains the data associated with the message. Although you can also send application-specific data in the <xref:System.Messaging.Message.AppSpecific%2A> and <xref:System.Messaging.Message.Extension%2A> properties, you should include message data in the <xref:System.Messaging.Message.Body%2A> of the message whenever possible. Only the <xref:System.Messaging.Message.Body%2A> property contents are serialized or encrypted.  
   
- The <xref:System.Messaging.Message.Body%2A> property can contain any object whose size does not exceed 4 MB. If you use <xref:System.Messaging.MessageQueue.Send%2A?displayProperty=fullName> to send any object that is not of type <xref:System.Messaging.Message> to the <xref:System.Messaging.MessageQueue>, that object will be located in the <xref:System.Messaging.Message.Body%2A> property of the <xref:System.Messaging.Message> instance returned by <xref:System.Messaging.MessageQueue.Peek%2A> or <xref:System.Messaging.MessageQueue.Receive%2A>.  
+ The <xref:System.Messaging.Message.Body%2A> property can contain any object whose size does not exceed 4 MB. If you use <xref:System.Messaging.MessageQueue.Send%2A?displayProperty=nameWithType> to send any object that is not of type <xref:System.Messaging.Message> to the <xref:System.Messaging.MessageQueue>, that object will be located in the <xref:System.Messaging.Message.Body%2A> property of the <xref:System.Messaging.Message> instance returned by <xref:System.Messaging.MessageQueue.Peek%2A> or <xref:System.Messaging.MessageQueue.Receive%2A>.  
   
  The string argument in `MessageQueue.Send("hello.")` is an example of such a generic object.  
   
@@ -744,12 +843,22 @@
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Body" /> property.</exception>
+        <altmember cref="T:System.Messaging.Message" />
+        <altmember cref="P:System.Messaging.Message.BodyStream" />
+        <altmember cref="P:System.Messaging.Message.BodyType" />
+        <altmember cref="P:System.Messaging.Message.Formatter" />
+        <altmember cref="P:System.Messaging.Message.AppSpecific" />
+        <altmember cref="P:System.Messaging.Message.Extension" />
+        <altmember cref="P:System.Messaging.Message.UseEncryption" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="BodyStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream BodyStream { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream BodyStream" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.BodyStream" />
+      <MemberSignature Language="VB.NET" Value="Public Property BodyStream As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::Stream ^ BodyStream { System::IO::Stream ^ get(); void set(System::IO::Stream ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -757,7 +866,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.Editor("System.ComponentModel.Design.BinaryEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
@@ -790,12 +899,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Body" /> property.</exception>
+        <altmember cref="T:System.Messaging.Message" />
+        <altmember cref="P:System.Messaging.Message.Body" />
+        <altmember cref="P:System.Messaging.Message.BodyType" />
+        <altmember cref="P:System.Messaging.Message.Formatter" />
+        <altmember cref="P:System.Messaging.Message.AppSpecific" />
+        <altmember cref="P:System.Messaging.Message.Extension" />
+        <altmember cref="P:System.Messaging.Message.UseEncryption" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="BodyType">
       <MemberSignature Language="C#" Value="public int BodyType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BodyType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.BodyType" />
+      <MemberSignature Language="VB.NET" Value="Public Property BodyType As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BodyType { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -803,7 +922,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -849,12 +968,19 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Body" /> property.</exception>
+        <altmember cref="T:System.Messaging.Message" />
+        <altmember cref="P:System.Messaging.Message.Body" />
+        <altmember cref="P:System.Messaging.Message.BodyStream" />
+        <altmember cref="P:System.Messaging.Message.Formatter" />
+        <altmember cref="M:System.Messaging.MessageQueue.Send(System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="ConnectorType">
       <MemberSignature Language="C#" Value="public Guid ConnectorType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid ConnectorType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.ConnectorType" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectorType As Guid" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Guid ConnectorType { Guid get(); void set(Guid value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -862,7 +988,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -904,12 +1030,20 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.ConnectorType" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderName" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderType" />
+        <altmember cref="P:System.Messaging.Message.DestinationSymmetricKey" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
+        <altmember cref="P:System.Messaging.Message.MessageType" />
+        <altmember cref="P:System.Messaging.Message.SenderId" />
       </Docs>
     </Member>
     <Member MemberName="CorrelationId">
       <MemberSignature Language="C#" Value="public string CorrelationId { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CorrelationId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.CorrelationId" />
+      <MemberSignature Language="VB.NET" Value="Public Property CorrelationId As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CorrelationId { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -917,7 +1051,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -957,12 +1091,20 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.CorrelationId" /> property.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.CorrelationId" /> is <see langword="null" />.</exception>
+        <altmember cref="P:System.Messaging.Message.Id" />
+        <altmember cref="P:System.Messaging.MessagePropertyFilter.Acknowledgment" />
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.ResponseQueue" />
+        <altmember cref="M:System.Messaging.MessageQueue.PeekByCorrelationId(System.String)" />
+        <altmember cref="M:System.Messaging.MessageQueue.ReceiveByCorrelationId(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="DestinationQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue DestinationQueue { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue DestinationQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.DestinationQueue" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DestinationQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ DestinationQueue { System::Messaging::MessageQueue ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -970,7 +1112,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgDestinationQueue")</AttributeName>
@@ -1002,12 +1144,17 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.DestinationQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseDeadLetterQueue" />
+        <altmember cref="P:System.Messaging.Message.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.Message.ResponseQueue" />
       </Docs>
     </Member>
     <Member MemberName="DestinationSymmetricKey">
       <MemberSignature Language="C#" Value="public byte[] DestinationSymmetricKey { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] DestinationSymmetricKey" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.DestinationSymmetricKey" />
+      <MemberSignature Language="VB.NET" Value="Public Property DestinationSymmetricKey As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ DestinationSymmetricKey { cli::array &lt;System::Byte&gt; ^ get(); void set(cli::array &lt;System::Byte&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1015,7 +1162,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1048,12 +1195,16 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.DestinationSymmetricKey" /> property.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.DestinationSymmetricKey" /> is <see langword="null" />.</exception>
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.UseEncryption" />
       </Docs>
     </Member>
     <Member MemberName="DigitalSignature">
       <MemberSignature Language="C#" Value="public byte[] DigitalSignature { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] DigitalSignature" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.DigitalSignature" />
+      <MemberSignature Language="VB.NET" Value="Public Property DigitalSignature As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ DigitalSignature { cli::array &lt;System::Byte&gt; ^ get(); void set(cli::array &lt;System::Byte&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1061,7 +1212,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1094,12 +1245,18 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.DigitalSignature" /> property.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.DigitalSignature" /> property is <see langword="null" />.</exception>
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.SenderCertificate" />
+        <altmember cref="P:System.Messaging.Message.HashAlgorithm" />
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
       </Docs>
     </Member>
     <Member MemberName="EncryptionAlgorithm">
       <MemberSignature Language="C#" Value="public System.Messaging.EncryptionAlgorithm EncryptionAlgorithm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.EncryptionAlgorithm EncryptionAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.EncryptionAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Property EncryptionAlgorithm As EncryptionAlgorithm" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::EncryptionAlgorithm EncryptionAlgorithm { System::Messaging::EncryptionAlgorithm get(); void set(System::Messaging::EncryptionAlgorithm value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1107,7 +1264,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1133,12 +1290,18 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.EncryptionAlgorithm" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseEncryption" />
+        <altmember cref="P:System.Messaging.MessageQueue.EncryptionRequired" />
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="T:System.Messaging.EncryptionRequired" />
       </Docs>
     </Member>
     <Member MemberName="Extension">
       <MemberSignature Language="C#" Value="public byte[] Extension { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Extension" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Extension" />
+      <MemberSignature Language="VB.NET" Value="Public Property Extension As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ Extension { cli::array &lt;System::Byte&gt; ^ get(); void set(cli::array &lt;System::Byte&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1146,7 +1309,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1177,12 +1340,16 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Extension" /> property.</exception>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.Extension" /> property is <see langword="null" />.</exception>
+        <altmember cref="P:System.Messaging.Message.AppSpecific" />
+        <altmember cref="P:System.Messaging.Message.Body" />
       </Docs>
     </Member>
     <Member MemberName="Formatter">
       <MemberSignature Language="C#" Value="public System.Messaging.IMessageFormatter Formatter { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.IMessageFormatter Formatter" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Formatter" />
+      <MemberSignature Language="VB.NET" Value="Public Property Formatter As IMessageFormatter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::IMessageFormatter ^ Formatter { System::Messaging::IMessageFormatter ^ get(); void set(System::Messaging::IMessageFormatter ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1193,7 +1360,7 @@ if (myObject is float) {
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -1230,12 +1397,19 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The <see cref="P:System.Messaging.Message.Formatter" /> property is <see langword="null" />.</exception>
+        <altmember cref="M:System.Messaging.IMessageFormatter.CanRead(System.Messaging.Message)" />
+        <altmember cref="T:System.Messaging.XmlMessageFormatter" />
+        <altmember cref="T:System.Messaging.ActiveXMessageFormatter" />
+        <altmember cref="T:System.Messaging.BinaryMessageFormatter" />
+        <altmember cref="P:System.Messaging.MessageQueue.Formatter" />
       </Docs>
     </Member>
     <Member MemberName="HashAlgorithm">
       <MemberSignature Language="C#" Value="public System.Messaging.HashAlgorithm HashAlgorithm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.HashAlgorithm HashAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.HashAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Property HashAlgorithm As HashAlgorithm" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::HashAlgorithm HashAlgorithm { System::Messaging::HashAlgorithm get(); void set(System::Messaging::HashAlgorithm value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1243,7 +1417,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1267,12 +1441,19 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.HashAlgorithm" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.AttachSenderId" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
+        <altmember cref="T:System.Messaging.HashAlgorithm" />
       </Docs>
     </Member>
     <Member MemberName="Id">
       <MemberSignature Language="C#" Value="public string Id { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Id" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Id" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Id As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Id { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1280,7 +1461,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1321,12 +1502,15 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Id" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.CorrelationId" />
       </Docs>
     </Member>
     <Member MemberName="InfiniteTimeout">
       <MemberSignature Language="C#" Value="public static readonly TimeSpan InfiniteTimeout;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan InfiniteTimeout" />
       <MemberSignature Language="DocId" Value="F:System.Messaging.Message.InfiniteTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly InfiniteTimeout As TimeSpan " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly TimeSpan InfiniteTimeout;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1352,12 +1536,16 @@ if (myObject is float) {
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Messaging.Message.TimeToBeReceived" />
+        <altmember cref="P:System.Messaging.Message.TimeToReachQueue" />
       </Docs>
     </Member>
     <Member MemberName="IsFirstInTransaction">
       <MemberSignature Language="C#" Value="public bool IsFirstInTransaction { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstInTransaction" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.IsFirstInTransaction" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFirstInTransaction As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFirstInTransaction { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1365,7 +1553,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgIsFirstInTransaction")</AttributeName>
@@ -1404,12 +1592,17 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.IsFirstInTransaction" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.IsLastInTransaction" />
+        <altmember cref="P:System.Messaging.Message.TransactionId" />
+        <altmember cref="P:System.Messaging.MessageQueue.Transactional" />
       </Docs>
     </Member>
     <Member MemberName="IsLastInTransaction">
       <MemberSignature Language="C#" Value="public bool IsLastInTransaction { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLastInTransaction" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.IsLastInTransaction" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLastInTransaction As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLastInTransaction { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1417,7 +1610,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgIsLastInTransaction")</AttributeName>
@@ -1456,12 +1649,17 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.IsLastInTransaction" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.IsFirstInTransaction" />
+        <altmember cref="P:System.Messaging.Message.TransactionId" />
+        <altmember cref="P:System.Messaging.MessageQueue.Transactional" />
       </Docs>
     </Member>
     <Member MemberName="Label">
       <MemberSignature Language="C#" Value="public string Label { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Label" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Label" />
+      <MemberSignature Language="VB.NET" Value="Public Property Label As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Label { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1469,7 +1667,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1502,12 +1700,15 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Label" /> property.</exception>
+        <altmember cref="P:System.Messaging.MessageQueue.Label" />
       </Docs>
     </Member>
     <Member MemberName="LookupId">
       <MemberSignature Language="C#" Value="public long LookupId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 LookupId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.LookupId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LookupId As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long LookupId { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1543,12 +1744,16 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.LookupId" /> property.</exception>
+        <altmember cref="M:System.Messaging.MessageQueue.PeekByLookupId" />
+        <altmember cref="M:System.Messaging.MessageQueue.ReceiveByLookupId" />
       </Docs>
     </Member>
     <Member MemberName="MessageType">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageType MessageType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessageType MessageType" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.MessageType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MessageType As MessageType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageType MessageType { System::Messaging::MessageType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1556,7 +1761,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgMessageType")</AttributeName>
@@ -1594,12 +1799,18 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.MessageType" /> property.</exception>
+        <altmember cref="T:System.Messaging.MessageType" />
+        <altmember cref="P:System.Messaging.MessagePropertyFilter.Acknowledgment" />
+        <altmember cref="P:System.Messaging.Message.AcknowledgeType" />
+        <altmember cref="P:System.Messaging.Message.ResponseQueue" />
       </Docs>
     </Member>
     <Member MemberName="Priority">
       <MemberSignature Language="C#" Value="public System.Messaging.MessagePriority Priority { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessagePriority Priority" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Priority" />
+      <MemberSignature Language="VB.NET" Value="Public Property Priority As MessagePriority" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessagePriority Priority { System::Messaging::MessagePriority get(); void set(System::Messaging::MessagePriority value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1607,7 +1818,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1642,12 +1853,17 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Priority" /> property.</exception>
+        <altmember cref="T:System.Messaging.MessagePriority" />
+        <altmember cref="P:System.Messaging.Message.MessageType" />
+        <altmember cref="P:System.Messaging.MessageQueue.BasePriority" />
       </Docs>
     </Member>
     <Member MemberName="Recoverable">
       <MemberSignature Language="C#" Value="public bool Recoverable { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Recoverable" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.Recoverable" />
+      <MemberSignature Language="VB.NET" Value="Public Property Recoverable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Recoverable { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1655,7 +1871,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1691,12 +1907,15 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.Recoverable" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseTracing" />
       </Docs>
     </Member>
     <Member MemberName="ResponseQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue ResponseQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue ResponseQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.ResponseQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ ResponseQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1704,7 +1923,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1737,12 +1956,17 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.ResponseQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.AdministrationQueue" />
+        <altmember cref="P:System.Messaging.Message.DestinationQueue" />
+        <altmember cref="P:System.Messaging.Message.TransactionStatusQueue" />
       </Docs>
     </Member>
     <Member MemberName="SecurityContext">
       <MemberSignature Language="C#" Value="public System.Messaging.SecurityContext SecurityContext { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.SecurityContext SecurityContext" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SecurityContext" />
+      <MemberSignature Language="VB.NET" Value="Public Property SecurityContext As SecurityContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::SecurityContext ^ SecurityContext { System::Messaging::SecurityContext ^ get(); void set(System::Messaging::SecurityContext ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1750,7 +1974,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1769,6 +1993,8 @@ if (myObject is float) {
       <MemberSignature Language="C#" Value="public byte[] SenderCertificate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] SenderCertificate" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SenderCertificate" />
+      <MemberSignature Language="VB.NET" Value="Public Property SenderCertificate As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ SenderCertificate { cli::array &lt;System::Byte&gt; ^ get(); void set(cli::array &lt;System::Byte&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1776,7 +2002,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1804,12 +2030,17 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.SenderCertificate" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseAuthentication" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
       </Docs>
     </Member>
     <Member MemberName="SenderId">
       <MemberSignature Language="C#" Value="public byte[] SenderId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] SenderId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SenderId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SenderId As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Byte&gt; ^ SenderId { cli::array &lt;System::Byte&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1817,7 +2048,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgSenderId")</AttributeName>
@@ -1844,12 +2075,19 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.SenderId" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
+        <altmember cref="P:System.Messaging.Message.AttachSenderId" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderName" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderType" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
       </Docs>
     </Member>
     <Member MemberName="SenderVersion">
       <MemberSignature Language="C#" Value="public long SenderVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 SenderVersion" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SenderVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SenderVersion As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long SenderVersion { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1857,7 +2095,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1894,12 +2132,19 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.SenderVersion" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.TransactionId" />
+        <altmember cref="P:System.Messaging.Message.IsFirstInTransaction" />
+        <altmember cref="P:System.Messaging.Message.IsLastInTransaction" />
+        <altmember cref="P:System.Messaging.Message.TransactionStatusQueue" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
       </Docs>
     </Member>
     <Member MemberName="SentTime">
       <MemberSignature Language="C#" Value="public DateTime SentTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime SentTime" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SentTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SentTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime SentTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1907,7 +2152,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -1948,6 +2193,8 @@ if (myObject is float) {
       <MemberSignature Language="C#" Value="public string SourceMachine { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SourceMachine" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.SourceMachine" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SourceMachine As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ SourceMachine { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -1955,7 +2202,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgSourceMachine")</AttributeName>
@@ -1988,12 +2235,15 @@ if (myObject is float) {
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.SourceMachine" /> property.</exception>
         <exception cref="T:System.Messaging.MessageQueueException">The computer information or directory service could not be accessed.</exception>
+        <altmember cref="P:System.Messaging.MessageQueue.MachineName" />
       </Docs>
     </Member>
     <Member MemberName="TimeToBeReceived">
       <MemberSignature Language="C#" Value="public TimeSpan TimeToBeReceived { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToBeReceived" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.TimeToBeReceived" />
+      <MemberSignature Language="VB.NET" Value="Public Property TimeToBeReceived As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TimeToBeReceived { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2001,7 +2251,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2047,12 +2297,16 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.TimeToBeReceived" /> property.</exception>
         <exception cref="T:System.ArgumentException">The value specified for <see cref="P:System.Messaging.Message.TimeToBeReceived" /> is invalid.</exception>
+        <altmember cref="P:System.Messaging.Message.TimeToReachQueue" />
+        <altmember cref="F:System.Messaging.Message.InfiniteTimeout" />
       </Docs>
     </Member>
     <Member MemberName="TimeToReachQueue">
       <MemberSignature Language="C#" Value="public TimeSpan TimeToReachQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeToReachQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.TimeToReachQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property TimeToReachQueue As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TimeToReachQueue { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2060,7 +2314,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2103,12 +2357,16 @@ if (myObject is float) {
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.TimeToReachQueue" /> property.</exception>
         <exception cref="T:System.ArgumentException">The value specified for <see cref="P:System.Messaging.Message.TimeToReachQueue" /> is invalid. It might represent a negative number.</exception>
+        <altmember cref="P:System.Messaging.Message.TimeToBeReceived" />
+        <altmember cref="F:System.Messaging.Message.InfiniteTimeout" />
       </Docs>
     </Member>
     <Member MemberName="TransactionId">
       <MemberSignature Language="C#" Value="public string TransactionId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TransactionId" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.TransactionId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TransactionId As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ TransactionId { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2116,7 +2374,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.Messaging.MessagingDescription("MsgTransactionId")</AttributeName>
@@ -2154,12 +2412,17 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.TransactionId" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.IsFirstInTransaction" />
+        <altmember cref="P:System.Messaging.Message.IsLastInTransaction" />
+        <altmember cref="P:System.Messaging.MessageQueue.Transactional" />
       </Docs>
     </Member>
     <Member MemberName="TransactionStatusQueue">
       <MemberSignature Language="C#" Value="public System.Messaging.MessageQueue TransactionStatusQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.MessageQueue TransactionStatusQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.TransactionStatusQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property TransactionStatusQueue As MessageQueue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Messaging::MessageQueue ^ TransactionStatusQueue { System::Messaging::MessageQueue ^ get(); void set(System::Messaging::MessageQueue ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2167,7 +2430,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2206,12 +2469,20 @@ if (myObject is float) {
  -or-  
   
  The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.TransactionStatusQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.TransactionId" />
+        <altmember cref="P:System.Messaging.Message.AdministrationQueue" />
+        <altmember cref="P:System.Messaging.Message.DestinationQueue" />
+        <altmember cref="P:System.Messaging.Message.ResponseQueue" />
+        <altmember cref="P:System.Messaging.MessageQueue.Transactional" />
+        <altmember cref="T:System.Messaging.AcknowledgeTypes" />
       </Docs>
     </Member>
     <Member MemberName="UseAuthentication">
       <MemberSignature Language="C#" Value="public bool UseAuthentication { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseAuthentication" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.UseAuthentication" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseAuthentication As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseAuthentication { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2219,7 +2490,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2248,12 +2519,22 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.UseAuthentication" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.Authenticated" />
+        <altmember cref="P:System.Messaging.Message.ConnectorType" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderName" />
+        <altmember cref="P:System.Messaging.Message.AuthenticationProviderType" />
+        <altmember cref="P:System.Messaging.Message.DigitalSignature" />
+        <altmember cref="P:System.Messaging.MessageQueue.Authenticate" />
+        <altmember cref="T:System.Messaging.AcknowledgeTypes" />
+        <altmember cref="P:System.Messaging.Message.AttachSenderId" />
       </Docs>
     </Member>
     <Member MemberName="UseDeadLetterQueue">
       <MemberSignature Language="C#" Value="public bool UseDeadLetterQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseDeadLetterQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.UseDeadLetterQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseDeadLetterQueue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseDeadLetterQueue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2261,7 +2542,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2299,12 +2580,16 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.UseDeadLetterQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.Message.UseTracing" />
       </Docs>
     </Member>
     <Member MemberName="UseEncryption">
       <MemberSignature Language="C#" Value="public bool UseEncryption { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseEncryption" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.UseEncryption" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseEncryption As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseEncryption { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2312,7 +2597,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2346,12 +2631,16 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.UseEncryption" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.EncryptionAlgorithm" />
+        <altmember cref="P:System.Messaging.MessageQueue.EncryptionRequired" />
       </Docs>
     </Member>
     <Member MemberName="UseJournalQueue">
       <MemberSignature Language="C#" Value="public bool UseJournalQueue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseJournalQueue" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.UseJournalQueue" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseJournalQueue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseJournalQueue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2359,7 +2648,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2397,12 +2686,18 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.UseJournalQueue" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseDeadLetterQueue" />
+        <altmember cref="P:System.Messaging.Message.UseTracing" />
+        <altmember cref="P:System.Messaging.MessageQueue.UseJournalQueue" />
+        <altmember cref="P:System.Messaging.MessageQueue.MaximumJournalSize" />
       </Docs>
     </Member>
     <Member MemberName="UseTracing">
       <MemberSignature Language="C#" Value="public bool UseTracing { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseTracing" />
       <MemberSignature Language="DocId" Value="P:System.Messaging.Message.UseTracing" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseTracing As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseTracing { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Messaging</AssemblyName>
@@ -2410,7 +2705,7 @@ if (myObject is float) {
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.ReadOnly(true)</AttributeName>
@@ -2444,6 +2739,8 @@ if (myObject is float) {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The message queue is filtered to ignore the <see cref="P:System.Messaging.Message.UseTracing" /> property.</exception>
+        <altmember cref="P:System.Messaging.Message.UseDeadLetterQueue" />
+        <altmember cref="P:System.Messaging.Message.UseJournalQueue" />
       </Docs>
     </Member>
   </Members>

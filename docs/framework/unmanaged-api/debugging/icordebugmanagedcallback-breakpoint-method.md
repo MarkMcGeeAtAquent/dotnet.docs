@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::Breakpoint Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::Breakpoint Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.Breakpoint"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::Breakpoint"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugManagedCallback::Breakpoint method [.NET Framework debugging]"
   - "Breakpoint method [.NET Framework debugging]"
 ms.assetid: 60b279b0-a726-46d2-8c53-76986a007ebb
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::Breakpoint Method
 Notifies the debugger when a breakpoint is encountered.  

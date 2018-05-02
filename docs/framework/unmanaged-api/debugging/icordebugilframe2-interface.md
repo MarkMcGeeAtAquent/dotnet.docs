@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILFrame2 Interface1 | Microsoft Docs"
+title: "ICorDebugILFrame2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugILFrame2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugILFrame2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugILFrame2 interface [.NET Framework debugging]"
 ms.assetid: f94b9d53-d8f8-4424-a95e-53a1bfd26e4a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILFrame2 Interface1
 A logical extension of the ICorDebugILFrame interface.  

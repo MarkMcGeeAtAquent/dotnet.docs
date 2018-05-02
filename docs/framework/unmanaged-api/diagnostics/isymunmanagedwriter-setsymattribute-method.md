@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::SetSymAttribute Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::SetSymAttribute Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.SetSymAttribute"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::SetSymAttribute"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetSymAttribute method [.NET Framework debugging]"
   - "ISymUnmanagedWriter::SetSymAttribute method [.NET Framework debugging]"
 ms.assetid: 64d9b80e-b883-4539-89c7-03573185a1eb
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::SetSymAttribute Method
 Defines a custom attribute based upon its name. These attributes are held in the symbol store, unlike metadata custom attributes.  

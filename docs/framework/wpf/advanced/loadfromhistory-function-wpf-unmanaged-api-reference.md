@@ -1,5 +1,5 @@
 ---
-title: "LoadFromHistory Function (WPF Unmanaged API Reference) | Microsoft Docs"
+title: "LoadFromHistory Function (WPF Unmanaged API Reference)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,15 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "LoadFromHistory"
-apilocation: 
+api_location: 
   - "PresentationHost_v0400.dll"
 ms.assetid: d037c062-a911-4949-b251-ccd3e48b1d17
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # LoadFromHistory Function (WPF Unmanaged API Reference)
 This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.  
@@ -27,12 +31,10 @@ This API supports the Windows Presentation Foundation (WPF) infrastructure and i
 ## Syntax  
   
 ```cpp  
-  
 HRESULT LoadFromHistory_export(  
         IStream* pHistoryStream,   
         IBindCtx* pBindCtx  
 )  
-  
 ```  
   
 #### Parameters  

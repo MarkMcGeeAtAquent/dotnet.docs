@@ -1,21 +1,21 @@
 ---
-title: "ICorDebugSymbolProvider::GetMethodParameterSymbols Method | Microsoft Docs"
+title: "ICorDebugSymbolProvider::GetMethodParameterSymbols Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 58b7c0b9-f6ad-4b49-b92d-0e421cfd0ec6
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugSymbolProvider::GetMethodParameterSymbols Method
 Gets a method's parameter symbols given the relative virtual address (RVA) of that method.  
@@ -23,14 +23,12 @@ Gets a method's parameter symbols given the relative virtual address (RVA) of th
 ## Syntax  
   
 ```  
-  
 HRESULT GetMethodParameterSymbols(  
    [in] ULONG32 nativeRVA,  
    [in] ULONG32 cRequestedSymbols,  
    [out] ULONG32 *pcFetchedSymbols,  
    [out, size_is(cRequestedSymbols), length_is(*pcFetchedSymbols)] ICorDebugVariableSymbol *pSymbols[]  
 );  
-  
 ```  
   
 #### Parameters  
@@ -61,6 +59,6 @@ HRESULT GetMethodParameterSymbols(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [GetMethodLocalSymbols Method](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodlocalsymbols-method.md)   
- [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)   
+ [GetMethodLocalSymbols Method](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodlocalsymbols-method.md)  
+ [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

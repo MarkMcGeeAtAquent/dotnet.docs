@@ -1,8 +1,8 @@
 ---
-title: "Service: Calls Failed Per Second | Microsoft Docs"
+title: "Service: Calls Failed Per Second"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5a2c7939-107d-4f0c-b43c-e02e079e8a9d
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service: Calls Failed Per Second
 Counter Name: Calls Failed Per Second.  

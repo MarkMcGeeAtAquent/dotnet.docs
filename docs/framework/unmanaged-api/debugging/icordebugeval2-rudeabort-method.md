@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEval2::RudeAbort Method | Microsoft Docs"
+title: "ICorDebugEval2::RudeAbort Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEval2.RudeAbort"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEval2::RudeAbort"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugEval2::RudeAbort method [.NET Framework debugging]"
   - "RudeAbort method, ICorDebugEval2 interface [.NET Framework debugging]"
 ms.assetid: 02468edf-d32b-4cb3-aaa8-3dd2abfc8b25
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEval2::RudeAbort Method
 Aborts the computation that this `ICorDebugEval2` is currently performing.  

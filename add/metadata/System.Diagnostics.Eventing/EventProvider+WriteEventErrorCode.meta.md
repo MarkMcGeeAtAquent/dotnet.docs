@@ -1,5 +1,7 @@
 ---
 uid: System.Diagnostics.Eventing.EventProvider.WriteEventErrorCode
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

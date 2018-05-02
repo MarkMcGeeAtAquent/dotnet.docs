@@ -1,8 +1,8 @@
 ---
-title: "Chunking Channel | Microsoft Docs"
+title: "Chunking Channel"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Chunking Channel
 When sending large messages using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], it is often desirable to limit the amount of memory used to buffer those messages. One possible solution is to stream the message body (assuming the bulk of the data is in the body). However some protocols require buffering of the entire message. Reliable messaging and security are two such examples. Another possible solution is to divide up the large message into smaller messages called chunks, send those chunks one chunk at a time, and reconstitute the large message on the receiving side. The application itself could do this chunking and de-chunking or it could use a custom channel to do it. The chunking channel sample shows how a custom protocol or layered channel can be used to do chunking and de-chunking of arbitrarily large messages.  
@@ -37,7 +39,7 @@ When sending large messages using [!INCLUDE[indigo1](../../../../includes/indigo
 ### Message Structure  
  The chunking channel assumes the following message structure for messages to be chunked:  
   
-```  
+```xml  
 <soap:Envelope ...>  
   <!-- headers -->  
   <soap:Body>  
@@ -76,7 +78,7 @@ interface ITestService
   
 ### Start Message  
   
-```  
+```xml  
 <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing"   
             xmlns:s="http://www.w3.org/2003/05/soap-envelope">  
   <s:Header>  
@@ -122,7 +124,7 @@ the data to be chunked.
   
 ### Chunk Message  
   
-```  
+```xml  
 <s:Envelope   
   xmlns:a="http://www.w3.org/2005/08/addressing"   
   xmlns:s="http://www.w3.org/2003/05/soap-envelope">  
@@ -160,12 +162,11 @@ kfSr2QcBlkHTvQ==
     </chunk>  
   </s:Body>  
 </s:Envelope>  
-  
 ```  
   
 ### End Message  
   
-```  
+```xml  
 <s:Envelope xmlns:a="http://www.w3.org/2005/08/addressing"   
             xmlns:s="http://www.w3.org/2003/05/soap-envelope">  
   <s:Header>  
@@ -236,7 +237,6 @@ interface ITestService
     void UploadStream(Stream stream);  
   
 }  
-  
 ```  
   
  From this programming model, the `ChunkingBindingElement` compiles a list of action URIs that identify messages to be chunked. The action of each outgoing message is compared against this list to determine if the message should be chunked or sent directly.  
@@ -321,7 +321,6 @@ interface ITestService
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  

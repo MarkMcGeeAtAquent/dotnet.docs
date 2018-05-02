@@ -1,8 +1,8 @@
 ---
-title: "Partial Trust Feature Compatibility | Microsoft Docs"
+title: "Partial Trust Feature Compatibility"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
 caps.latest.revision: 75
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Partial Trust Feature Compatibility
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] supports a limited subset of functionality when running in a partially-trusted environment. The features supported in partial trust are designed around a specific set of scenarios as described in the [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) topic.  
@@ -80,7 +82,7 @@ manager: "erikre"
  See the Serialization section in [Partial Trust Best Practices](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md) for more information about security when using <xref:System.Runtime.Serialization.DataContractSerializer> safely in a partially-trusted application.  
   
 ### Collection Types  
- Some collection types implement both <xref:System.Collections.Generic.IEnumerable%601> and <xref:System.Collections.IEnumerable>. Examples include types that implement <xref:System.Collections.Generic.ICollection%601>. Such types can implement a `public` implementation of `GetEnumerator()`, and an explicit implementation of `GetEnumerator()`. In this case, <xref:System.Runtime.Serialization.DataContractSerializer> invokes the `public` implementation of `GetEnumerator()`, and not the explicit implementation of `GetEnumerator()`. If none of the `GetEnumerator()` implementations are `public` and all are explicit implementations, then <xref:System.Runtime.Serialization.DataContractSerializer>invokes `IEnumerable.GetEnumerator()`.  
+ Some collection types implement both <xref:System.Collections.Generic.IEnumerable%601> and <xref:System.Collections.IEnumerable>. Examples include types that implement <xref:System.Collections.Generic.ICollection%601>. Such types can implement a `public` implementation of `GetEnumerator()`, and an explicit implementation of `GetEnumerator()`. In this case, <xref:System.Runtime.Serialization.DataContractSerializer> invokes the `public` implementation of `GetEnumerator()`, and not the explicit implementation of `GetEnumerator()`. If none of the `GetEnumerator()` implementations are `public` and all are explicit implementations, then <xref:System.Runtime.Serialization.DataContractSerializer> invokes `IEnumerable.GetEnumerator()`.  
   
  For collection types when [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] is running in a partial trust environment, if none of the `GetEnumerator()` implementations are `public`, or none of them are explicit interface implementations, then a security exception is thrown.  
   
@@ -132,14 +134,14 @@ manager: "erikre"
 -   CardSpace  
   
 -   <xref:System.IO.Log>  
-  
--   <xref:System.ServiceModel.Internal.TransactionBridge>  
+
+-   [System.ServiceModel.Internal.TransactionBridge](https://msdn.microsoft.com/library/system.servicemodel.internal.transactionbridge.aspx)]
   
  The following members of the <xref:System.Diagnostics.TraceOptions> enumeration should not be specified:  
   
--   <xref:System.Diagnostics.TraceOptions>  
+-   <xref:System.Diagnostics.TraceOptions.Callstack?displayProperty=nameWithType>  
   
--   <xref:System.Diagnostics.TraceOptions.ProcessID>  
+-   <xref:System.Diagnostics.TraceOptions.ProcessId?displayProperty=nameWithType>  
   
  When using tracing in a partial trust environment, ensure that the application has sufficient permissions to store the output of the trace listener. For example, when using the <xref:System.Diagnostics.TextWriterTraceListener> to write trace output to a text file, ensure that the application has the necessary FileIOPermission required to successfully write to the trace file.  
   
@@ -166,9 +168,9 @@ manager: "erikre"
  The best way to discover that a piece of information or action is unavailable when running in a partial trust environment is to try to access the resource or do the action inside of a `try` block, and then `catch` the failure. To avoid flooding the trace files with duplicate errors, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] disables tracing of the resource or action after the first security failure. There is one exception trace for each failed resource access, the first time an attempt is made to access the resource or perform the action.  
   
 ## See Also  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement>   
- <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>   
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>   
- [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)   
+ <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+ <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>  
+ [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)  
  [Partial Trust Best Practices](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICorThreadpool::CorBindIoCompletionCallback Method | Microsoft Docs"
+title: "ICorThreadpool::CorBindIoCompletionCallback Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorThreadpool.CorBindIoCompletionCallback"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorBindIoCompletionCallback"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorBindIoCompletionCallback method [.NET Framework hosting]"
   - "ICorThreadpool::CorBindIoCompletionCallback method [.NET Framework hosting]"
 ms.assetid: 2b159225-f09c-42f1-aa7c-44087e121249
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorThreadpool::CorBindIoCompletionCallback Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

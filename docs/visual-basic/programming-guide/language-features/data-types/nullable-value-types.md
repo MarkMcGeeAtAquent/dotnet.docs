@@ -1,43 +1,25 @@
 ---
-title: "Nullable Value Types (Visual Basic) | Microsoft Docs"
+title: "Nullable Value Types (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Nullable"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "nullable types [Visual Basic]"
   - "? [Visual Basic]"
   - "types [Visual Basic], nullable"
-  - "nullable types"
+  - "nullable types [Visual Basic]"
   - "data types [Visual Basic], nullable"
 ms.assetid: 9ac3b602-6f96-4e6d-96f7-cd4e81c468a6
 caps.latest.revision: 23
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Nullable Value Types (Visual Basic)
 Sometimes you work with a value type that does not have a defined value in certain circumstances. For example, a field in a database might have to distinguish between having an assigned value that is meaningful and not having an assigned value. Value types can be extended to take either their normal values or a null value. Such an extension is called a *nullable type*.  
@@ -75,7 +57,7 @@ Sometimes you work with a value type that does not have a defined value in certa
 >  Although you can assign `Nothing` to a variable of a nullable type, you cannot test it for `Nothing` by using the equal sign. Comparison that uses the equal sign, `someVar = Nothing`, always evaluates to `Nothing`. You can test the variable's <xref:System.Nullable%601.HasValue%2A> property for `False`, or test by using the `Is` or `IsNot` operator.  
   
 ### Retrieving Values  
- To retrieve the value of a variable of a nullable type, you should first test its <xref:System.Nullable%601.HasValue%2A> property to confirm that it has a value. If you try to read the value when <xref:System.Nullable%601.HasValue%2A> is `False`, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] throws an <xref:System.InvalidOperationException> exception. The following example shows the recommended way to read the variable `numberOfChildren` of the previous examples.  
+ To retrieve the value of a variable of a nullable type, you should first test its <xref:System.Nullable%601.HasValue%2A> property to confirm that it has a value. If you try to read the value when <xref:System.Nullable%601.HasValue%2A> is `False`, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] throws an <xref:System.InvalidOperationException> exception. The following example shows the recommended way to read the variable `numberOfChildren` of the previous examples.  
   
  [!code-vb[VbVbalrNullableValue#5](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_5.vb)]  
   
@@ -117,17 +99,17 @@ Sometimes you work with a value type that does not have a defined value in certa
  [!code-vb[VbVbalrNullableValue#8](../../../../visual-basic/programming-guide/language-features/data-types/codesnippet/VisualBasic/nullable-value-types_8.vb)]  
   
 ## Using Nullable Types with Data  
- A database is one of the most important places to use nullable types. Not all database objects currently support nullable types, but the designer-generated table adapters do. See "TableAdapter Support for Nullable Types" in [TableAdapter Overview](https://docs.microsoft.com/visualstudio/data-tools/tableadapter-overview).  
+ A database is one of the most important places to use nullable types. Not all database objects currently support nullable types, but the designer-generated table adapters do. See "TableAdapter Support for Nullable Types" in [TableAdapter Overview](/visualstudio/data-tools/tableadapter-overview).  
   
 ## See Also  
- <xref:System.InvalidOperationException>   
- <xref:System.Nullable%601.HasValue%2A>   
- [Using Nullable Types](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)   
- [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)   
- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
- [TableAdapter Overview](https://docs.microsoft.com/visualstudio/data-tools/tableadapter-overview)   
- [If Operator](../../../../visual-basic/language-reference/operators/if-operator.md)   
- [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)   
- [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)   
+ <xref:System.InvalidOperationException>  
+ <xref:System.Nullable%601.HasValue%2A>  
+ [Using Nullable Types](../../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
+ [Data Types](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+ [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+ [TableAdapter Overview](/visualstudio/data-tools/tableadapter-overview)  
+ [If Operator](../../../../visual-basic/language-reference/operators/if-operator.md)  
+ [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+ [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)  
  [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)

@@ -1,5 +1,5 @@
 ---
-title: "IGCHost::GetThreadStats Method | Microsoft Docs"
+title: "IGCHost::GetThreadStats Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IGCHost.GetThreadStats"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetThreadStats"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IGCHost::GetThreadStats method [.NET Framework hosting]"
   - "GetThreadStats method [.NET Framework hosting]"
 ms.assetid: 826baa9b-9218-4736-a509-7ab193b125a0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IGCHost::GetThreadStats Method
 Gets the per-thread statistics for garbage collection.  

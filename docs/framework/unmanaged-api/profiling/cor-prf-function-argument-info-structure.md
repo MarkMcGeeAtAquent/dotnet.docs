@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_FUNCTION_ARGUMENT_INFO Structure | Microsoft Docs"
+title: "COR_PRF_FUNCTION_ARGUMENT_INFO Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_FUNCTION_ARGUMENT_INFO"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_FUNCTION_ARGUMENT_INFO"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_FUNCTION_ARGUMENT_INFO structure [.NET Framework profiling]"
 ms.assetid: 07cf3bab-e193-4991-8205-3f41cf2d67b3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_FUNCTION_ARGUMENT_INFO Structure
 Represents a function's arguments, in left-to-right order.  

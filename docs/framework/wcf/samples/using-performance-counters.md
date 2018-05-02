@@ -1,8 +1,8 @@
 ---
-title: "Using Performance Counters | Microsoft Docs"
+title: "Using Performance Counters"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
 caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using Performance Counters
 This sample demonstrates how to access [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] performance counters and how to create user-defined performance counters. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -25,7 +27,7 @@ This sample demonstrates how to access [!INCLUDE[indigo1](../../../../includes/i
   
  Performance counters are enabled in the diagnostics section of the Web.config file for the service, as shown in the following sample configuration.  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <diagnostics performanceCounters="All" />   

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::AppDomainShutdownStarted Method | Microsoft Docs"
+title: "ICorProfilerCallback::AppDomainShutdownStarted Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.AppDomainShutdownStarted"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::AppDomainShutdownStarted"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "AppDomainShutdownStarted method [.NET Framework profiling]"
   - "ICorProfilerCallback::AppDomainShutdownStarted method [.NET Framework profiling]"
 ms.assetid: d23a3408-b525-4aec-a186-2ac7ca65d7a4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::AppDomainShutdownStarted Method
 Notifies the profiler that an application domain is being unloaded from a process.  

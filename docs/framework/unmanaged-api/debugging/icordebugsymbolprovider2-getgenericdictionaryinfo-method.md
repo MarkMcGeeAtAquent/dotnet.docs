@@ -1,21 +1,21 @@
 ---
-title: "ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method | Microsoft Docs"
+title: "ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugSymbolProvider2::GetGenericDictionaryInfo Method
 Retrieves a generic dictionary map.  
@@ -23,11 +23,9 @@ Retrieves a generic dictionary map.
 ## Syntax  
   
 ```  
-  
 HRESULT GetGenericDictionaryInfo(  
    [out] ICorDebugMemoryBuffer** ppMemoryBuffer  
 );  
-  
 ```  
   
 #### Parameters  
@@ -89,5 +87,5 @@ Heap Size = Stream.Length – (Directory Size + 4)
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugSymbolProvider2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)   
+ [ICorDebugSymbolProvider2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -1,10 +1,13 @@
-<Type Name="StringLengthAttribute" FullName="System.ComponentModel.DataAnnotations.StringLengthAttribute">
+﻿<Type Name="StringLengthAttribute" FullName="System.ComponentModel.DataAnnotations.StringLengthAttribute">
   <TypeSignature Language="C#" Value="public class StringLengthAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StringLengthAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.StringLengthAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class StringLengthAttribute&#xA;Inherits ValidationAttribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class StringLengthAttribute : System::ComponentModel::DataAnnotations::ValidationAttribute" />
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
@@ -17,7 +20,7 @@
   <Interfaces />
   <Attributes>
     <Attribute>
-      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property, AllowMultiple=false)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -32,25 +35,7 @@
   
 ## Examples  
  The following example shows how to limit the number of characters in a field. This example works with the ThumbnailPhotoFileName field in the Products table in the AdventureWorksLT database. The field is limited 4 characters by applying the <xref:System.ComponentModel.DataAnnotations.StringLengthAttribute> attribute to the partial class that represents the Product entity.  
-  
-<!-- TODO: review snippet reference  [!CODE [System.ComponentModel.DataAnnotations.StringLengthAttribute#1](System.ComponentModel.DataAnnotations.StringLengthAttribute#1)]  -->  
-  
-```vb  
-<MetadataType(GetType(ProductMetadata))> _   
-Public Partial Class Product   
-  
-End Class   
-  
-Public Class ProductMetadata   
-  
-    <ScaffoldColumn(True)> _   
-    <StringLength(4, ErrorMessage := "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")> _   
-    Public ThumbnailPhotoFileName As Object   
-  
-End Class  
-  
-```  
-  
+
 ```csharp  
 [MetadataType(typeof(ProductMetadata))]  
 public partial class Product  
@@ -68,6 +53,21 @@ public class ProductMetadata
 }  
 ```  
   
+```vb  
+<MetadataType(GetType(ProductMetadata))> _   
+Public Partial Class Product   
+  
+End Class   
+  
+Public Class ProductMetadata   
+  
+    <ScaffoldColumn(True)> _   
+    <StringLength(4, ErrorMessage := "The ThumbnailPhotoFileName value cannot exceed 4 characters. ")> _   
+    Public ThumbnailPhotoFileName As Object   
+  
+End Class  
+```  
+  
  ]]></format>
     </remarks>
   </Docs>
@@ -76,10 +76,13 @@ public class ProductMetadata
       <MemberSignature Language="C#" Value="public StringLengthAttribute (int maximumLength);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 maximumLength) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (maximumLength As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringLengthAttribute(int maximumLength);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
@@ -99,10 +102,13 @@ public class ProductMetadata
       <MemberSignature Language="C#" Value="public override string FormatErrorMessage (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string FormatErrorMessage(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.FormatErrorMessage(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function FormatErrorMessage (name As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ FormatErrorMessage(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
@@ -132,10 +138,13 @@ public class ProductMetadata
       <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.StringLengthAttribute.IsValid(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsValid (value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsValid(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
@@ -173,10 +182,13 @@ public class ProductMetadata
       <MemberSignature Language="C#" Value="public int MaximumLength { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumLength" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MaximumLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaximumLength { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
@@ -196,10 +208,13 @@ public class ProductMetadata
       <MemberSignature Language="C#" Value="public int MinimumLength { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumLength" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.StringLengthAttribute.MinimumLength" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinimumLength As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MinimumLength { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>

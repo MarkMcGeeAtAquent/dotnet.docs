@@ -1,5 +1,5 @@
 ---
-title: "GridSplitter | Microsoft Docs"
+title: "GridSplitter"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 61
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # GridSplitter
 The <xref:System.Windows.Controls.GridSplitter> redistributes space between columns or rows of a <xref:System.Windows.Controls.Grid> control.  

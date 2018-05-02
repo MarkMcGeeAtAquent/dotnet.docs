@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataConverter Interface | Microsoft Docs"
+title: "IMetaDataConverter Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataConverter"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataConverter"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataConverter interface [.NET Framework metadata]"
 ms.assetid: 9caea662-0167-4267-b14a-2fa42c3be4ea
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataConverter Interface
 Provides methods to map type libraries to their metadata signatures, and to convert from one to the other.  
@@ -47,5 +50,5 @@ Provides methods to map type libraries to their metadata signatures, and to conv
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)   
+ [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

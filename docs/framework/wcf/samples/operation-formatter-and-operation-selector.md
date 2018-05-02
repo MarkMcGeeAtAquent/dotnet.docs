@@ -1,8 +1,8 @@
 ---
-title: "Operation Formatter and Operation Selector | Microsoft Docs"
+title: "Operation Formatter and Operation Selector"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Operation Formatter and Operation Selector
 This sample demonstrates how [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] extensibility points can be used to allow message data in a different format from what [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] expects. By default, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] formatters expect method parameters to be included under the `soap:body` element. The sample shows how to implement a custom operation formatter that parses parameter data from an HTTP GET query string instead and invokes methods using that data.  
@@ -71,7 +73,7 @@ This sample demonstrates how [!INCLUDE[indigo1](../../../../includes/indigo1-md.
 ### Installing operation formatters  
  Operation behaviors that specify formatters are unique. One such behavior is always implemented by default for every operation to create the necessary operation formatter. However, these behaviors look like just another operation behavior; they are not identifiable by any other attribute. To install a replacement behavior, the implementation must look for specific formatter behaviors that are installed by the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] type loader by default and either replace it or add a compatible behavior to run after the default behavior.  
   
- These operation formatters behaviors can be set up programmatically prior to calling <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=fullName> or by specifying an operation behavior that is executed after the default one. However, it cannot easily be set up by an endpoint behavior (and therefore by configuration) because the behavior model does not allow a behavior to replace other behaviors or otherwise modify the description tree.  
+ These operation formatters behaviors can be set up programmatically prior to calling <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> or by specifying an operation behavior that is executed after the default one. However, it cannot easily be set up by an endpoint behavior (and therefore by configuration) because the behavior model does not allow a behavior to replace other behaviors or otherwise modify the description tree.  
   
  On the client:  
   
@@ -111,7 +113,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 -   The App.config for the service must use a custom POX binding that sets the `messageVersion` attribute of the `textMessageEncoding` element to `None`.  
   
-    ```  
+    ```xml  
     <bindings>  
       <customBinding>  
         <binding name="poxBinding">  
@@ -124,7 +126,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 -   The App.config for the service also must specify the custom `EnableHttpGetRequestsBehavior` by adding it to the behavior extensions section and using it.  
   
-    ```  
+    ```xml  
     <behaviors>  
       <endpointBehaviors>  
         <behavior name="enableHttpGetRequestsBehavior">  
@@ -150,7 +152,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
 -   The App.config for the client must use a custom POX binding that sets the `messageVersion` attribute of the `textMessageEncoding` element to `None`. One difference from the service is that the client must enable manual addressing so that the outgoing To address can be modified.  
   
-    ```  
+    ```xml  
     <bindings>  
       <customBinding>  
         <binding name="poxBinding">  

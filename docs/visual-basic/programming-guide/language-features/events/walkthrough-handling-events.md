@@ -1,47 +1,29 @@
 ---
-title: "Handling Events (Visual Basic) | Microsoft Docs"
+title: "Handling Events (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "event handling [Visual Basic], walkthroughs"
   - "walkthroughs [Visual Basic], event handling"
   - "variables [Visual Basic], WithEvents"
   - "events [Visual Basic], walkthroughs"
-  - "WithEvents keyword, walkthroughs"
+  - "WithEvents keyword [Visual Basic], walkthroughs"
   - "event handlers [Visual Basic], walkthroughs"
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Walkthrough: Handling Events (Visual Basic)
 This is the second of two topics that demonstrate how to work with events. The first topic, [Walkthrough: Declaring and Raising Events](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), shows how to declare and raise events. This section uses the form and class from that walkthrough to show how to handle events when they take place.  
   
- The `Widget` class example uses traditional event-handling statements. [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] provides other techniques for working with events. As an exercise, you can modify this example to use the `AddHandler` and `Handles` statements.  
+ The `Widget` class example uses traditional event-handling statements. [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] provides other techniques for working with events. As an exercise, you can modify this example to use the `AddHandler` and `Handles` statements.  
   
 ### To handle the PercentDone event of the Widget class  
   
@@ -94,7 +76,7 @@ This is the second of two topics that demonstrate how to work with events. The f
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_4.vb)]  
   
- When this code executes, [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] creates a `Widget` object and connects its events to the event procedures associated with `mWidget`. From that point on, whenever the `Widget` raises its `PercentDone` event, the `mWidget_PercentDone` event procedure is executed.  
+ When this code executes, [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] creates a `Widget` object and connects its events to the event procedures associated with `mWidget`. From that point on, whenever the `Widget` raises its `PercentDone` event, the `mWidget_PercentDone` event procedure is executed.  
   
 #### To call the LongTask method  
   
@@ -139,5 +121,5 @@ This is the second of two topics that demonstrate how to work with events. The f
 >  You can declare as many `WithEvents` variables as you need, but arrays of `WithEvents` variables are not supported.  
   
 ## See Also  
- [Walkthrough: Declaring and Raising Events](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)   
+ [Walkthrough: Declaring and Raising Events](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  
  [Events](../../../../visual-basic/programming-guide/language-features/events/index.md)

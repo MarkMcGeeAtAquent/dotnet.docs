@@ -1,5 +1,5 @@
 ---
-title: "Collection Types in Data Contracts | Microsoft Docs"
+title: "Collection Types in Data Contracts"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,15 +9,20 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "collection types [WCF], data contracts"
   - "data contracts [WCF], collection types"
   - "collection types [WCF]"
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Collection Types in Data Contracts
 A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], such lists can be represented using arrays or a variety of other types (Generic List, Generic <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, or <xref:System.Collections.ArrayList>). For example, a collection may hold a list of Addresses for a given Customer. These collections are called *list collections*, regardless of their actual type.  
@@ -30,7 +35,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  Additional requirements on collection types, such as having a method called `Add` and a default constructor, are discussed in detail in the following sections. This ensures that collection types can be both serialized and deserialized. This means that some collections are not directly supported, such as the Generic <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> (because it has no default constructor). However, for information about circumventing these restrictions, see the section "Using Collection Interface Types and Read-Only Collections" later in this topic.  
   
- The types contained in collections must be data contract types, or be otherwise serializable. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+ The types contained in collections must be data contract types, or be otherwise serializable. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
  [!INCLUDE[crabout](../../../../includes/crabout-md.md)] what is and what is not considered a valid collection, as well as about how collections are serialized, see the information about serializing collections in the "Advanced Collection Rules" section of this topic.  
   
@@ -42,7 +47,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  Both data contracts result in XML similar to the following code.  
   
-```  
+```xml  
 <PurchaseOrder>  
     <customerName>...</customerName>  
     <items>  
@@ -97,7 +102,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  Both types’ data contract name is "ArrayOfstring" and not "CustomerList1" or "StringList1". This means that serializing any one of these types at the root level yields XML similar to the following code.  
   
-```  
+```xml  
 <ArrayOfstring>  
     <string>...</string>  
     <string>...</string>  
@@ -115,7 +120,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  When serialized, the resulting XML is similar to the following.  
   
-```  
+```xml  
 <CustomerList2>  
     <string>...</string>  
     <string>...</string>  
@@ -133,7 +138,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  The resulting XML is similar to the following.  
   
-```  
+```xml  
 <cust_list>  
     <string>...</string>  
     <string>...</string>  
@@ -156,9 +161,9 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  The resulting XML is similar to the following.  
   
-```  
+```xml  
 <CustomerList4>  
-    <customer>...</ customer>  
+    <customer>...</customer>  
     <customer>...</customer>  
     <customer>...</customer>  
     ...  
@@ -179,7 +184,7 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
  When serialized, the resulting XML is similar to the following.  
   
-```  
+```xml  
 <CountriesOrRegionsWithCapitals>  
     <entry>  
         <countryorregion>USA</countryorregion>  
@@ -254,7 +259,6 @@ A *collection* is a list of items of a certain type. In the [!INCLUDE[dnprdnshor
   
 ```  
 svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\System.dll /ct:System.Collections.Generic.List`1  
-  
 ```  
   
  When importing any collection, this list of referenced collection types is scanned, and the best-matching collection is used if one is found, either as a data member type (for non-customized collections) or as a base type to derive from (for customized collections). Dictionaries are only matched against dictionaries, while lists are matched against lists.  
@@ -291,10 +295,10 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 |Referenced type|Interface implemented by referenced type|Example|Type treated as|  
 |---------------------|----------------------------------------------|-------------|---------------------|  
 |Non-generic or closed generic (any number of parameters)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> or<br /><br /> `MyType<T> : IDictionary` where T=`int`|Closed generic `IDictionary<object,object>`|  
-|Closed generic (any number of parameters)|<xref:System.Collections.Generic.IDictionary%602>, closed|`MyType<T> : IDictionary\<string, bool>` where T=`int`|Closed generic (for example, `IDIctionary\<string,bool>`)|  
-|Closed generic (any number of parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, one of either key or value is closed, the other is open and uses one of type’s parameters|`MyType\<T,U,V> : IDictionary\<string,V>` where T=`int`, U=`float`,V=`bool`<br /><br /> or<br /><br /> `MyType<Z> : IDictionary\<Z,bool>` where Z=`string`|Closed generic (For example, `IDictionary\<string,bool>`)|  
-|Closed generic (any number of parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, both key and value are open and each uses one of the type’s parameters|`MyType\<T,U,V> : IDictionary\<V,U>` where T=`int`, U=`bool`, V=`string`|Closed generic (for example, `IDictionary\<string,bool>`)|  
-|Open generic (two parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, open, uses both of the type’s generic parameters in the order they appear|`MyType\<K,V> : IDictionary\<K,V>`, K and V both open|Open generic (for example, `IDictionary\<K,V>`)|  
+|Closed generic (any number of parameters)|<xref:System.Collections.Generic.IDictionary%602>, closed|`MyType<T> : IDictionary<string, bool>` where T=`int`|Closed generic (for example, `IDIctionary<string,bool>`)|  
+|Closed generic (any number of parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, one of either key or value is closed, the other is open and uses one of type’s parameters|`MyType<T,U,V> : IDictionary<string,V>` where T=`int`, U=`float`,V=`bool`<br /><br /> or<br /><br /> `MyType<Z> : IDictionary<Z,bool>` where Z=`string`|Closed generic (For example, `IDictionary<string,bool>`)|  
+|Closed generic (any number of parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, both key and value are open and each uses one of the type’s parameters|`MyType<T,U,V> : IDictionary<V,U>` where T=`int`, U=`bool`, V=`string`|Closed generic (for example, `IDictionary<string,bool>`)|  
+|Open generic (two parameters)|Generic <xref:System.Collections.Generic.IDictionary%602>, open, uses both of the type’s generic parameters in the order they appear|`MyType<K,V> : IDictionary<K,V>`, K and V both open|Open generic (for example, `IDictionary<K,V>`)|  
   
  If the type implements both <xref:System.Collections.IDictionary> and Generic <xref:System.Collections.Generic.IDictionary%602>, only Generic <xref:System.Collections.Generic.IDictionary%602> is considered.  
   

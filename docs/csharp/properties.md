@@ -1,6 +1,6 @@
 ---
 title: Properties
-description: Properties
+description: Learn about C# properties, which include features for validation, computed values, lazy evaluation, and property changed notifications. 
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -87,6 +87,25 @@ public class Person
 }
 ```
 
+When a property implementation is a single expression, you can
+use *expression bodied members* for the getter or setter:
+
+```csharp
+public class Person
+{
+    public string FirstName
+    {
+        get => firstName;
+        set => firstName = value;
+    }
+    private string firstName;
+    // remaining implementation removed from listing
+}
+```
+
+This simplified syntax will be used where applicable throughout this
+topic.
+
 The property definition shown above is a read-write property. Notice
 the keyword `value` in the set accessor. The `set` accessor always has
 a single parameter named `value`. The `get` accessor must return a value
@@ -114,7 +133,7 @@ public class Person
 {
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -166,7 +185,7 @@ You can add any restrictive access modifier to either the set or get accessors. 
 you place on the individual accessor must be more limited than the access modifier on the property
 definition. The above is legal because the `FirstName` property is `public`, but the set accessor is
 `private`. You could not declare a `private` property with a `public` accessor. Property declarations
-can also be declared `protected`, `internal`, `protected internal` or even `private`.   
+can also be declared `protected`, `internal`, `protected internal`, `private protected` or even `private`.   
 
 It is also legal to place the more restrictive modifier on the `get` accessor. For example, you could
 have a `public` property, but restrict the `get` accessor to `private`. That scenario is rarely done
@@ -276,7 +295,7 @@ public class Person
     private string firstName;
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             firstName = value;
@@ -287,7 +306,7 @@ public class Person
     private string lastName;
     public string LastName
     {
-        get { return lastName; }
+        get => lastName;
         set
         {
             lastName = value;
@@ -331,7 +350,7 @@ public class Person : INotifyPropertyChanged
 {
     public string FirstName
     {
-        get { return firstName; }
+        get => firstName;
         set
         {
             if (string.IsNullOrWhiteSpace(value))

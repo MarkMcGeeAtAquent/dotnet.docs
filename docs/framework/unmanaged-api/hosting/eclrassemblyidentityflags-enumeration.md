@@ -1,5 +1,5 @@
 ---
-title: "ECLRAssemblyIdentityFlags Enumeration | Microsoft Docs"
+title: "ECLRAssemblyIdentityFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ECLRAssemblyIdentityFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ECLRAssemblyIdentityFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ECLRAssemblyIdentityFlags enumeration [.NET Framework hosting]"
 ms.assetid: d1e0b654-ccaf-4fa2-9aa3-8e007813c84d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ECLRAssemblyIdentityFlags Enumeration
 Indicates the type of an assembly's identity.  

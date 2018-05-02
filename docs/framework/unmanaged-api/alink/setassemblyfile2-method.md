@@ -1,5 +1,5 @@
 ---
-title: "SetAssemblyFile2 Method | Microsoft Docs"
+title: "SetAssemblyFile2 Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IALink2.SetAssemblyFile2"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SetAssemblyFile2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetAssemblyFile2 method"
 ms.assetid: eedb9125-1ef1-4000-abfc-7de86e5a1f17
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SetAssemblyFile2 Method
 Sets the name of and options for a new assembly. Do not call this method when you produce unbound modules.  
@@ -60,6 +63,6 @@ HRESULT SetAssemblyFile2(
  Requires alink.h.  
   
 ## See Also  
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

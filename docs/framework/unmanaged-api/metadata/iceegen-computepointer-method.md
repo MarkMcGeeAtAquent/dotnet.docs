@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::ComputePointer Method | Microsoft Docs"
+title: "ICeeGen::ComputePointer Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.ComputePointer"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::ComputePointer"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICeeGen::ComputePointer method [.NET Framework metadata]"
   - "ComputePointer method [.NET Framework metadata]"
 ms.assetid: b6b95c04-0f2c-4fcc-a8bc-3b1dcbdba731
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::ComputePointer Method
 Determines the buffer for the specified code section.  

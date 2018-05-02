@@ -1,5 +1,5 @@
 ---
-title: "Configuring WS-Atomic Transaction Support | Microsoft Docs"
+title: "Configuring WS-Atomic Transaction Support"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "WS-AT protocol [WCF], configuring WS-Atomic Transaction"
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
 caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring WS-Atomic Transaction Support
 This topic describes how you can configure WS-AtomicTransaction (WS-AT) support by using the WS-AT Configuration Utility.  
@@ -83,9 +85,9 @@ This topic describes how you can configure WS-AtomicTransaction (WS-AT) support 
   
  You can configure this by using the MMC WS-AT snap-in. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] this tool, see the [WS-AtomicTransaction Configuration MMC Snap-in](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) topic. The following steps describe how to establish trust between two computers running MSDTC.  
   
-1.  Configure machine A's settings. For “Endpoint Certificate”, select certA. For "Authorized Certificates”, select the certB.  
+1.  Configure machine A's settings. For "Endpoint Certificate", select certA. For "Authorized Certificates", select the certB.  
   
-2.  Configure machine B's settings. For “Endpoint Certificate”, select certB. For "Authorized Certificates”, select the certA.  
+2.  Configure machine B's settings. For "Endpoint Certificate", select certB. For "Authorized Certificates", select the certA.  
   
 > [!NOTE]
 >  When one machine sends a message to the other machine, the sender attempts to verify that the subject name of the recipient’s certificate and the name of the recipient’s machine match. If they do not match, certificate verification fails and the two machines cannot communicate.  
@@ -125,5 +127,5 @@ This topic describes how you can configure WS-AtomicTransaction (WS-AT) support 
 -   31: verbose  
   
 ## See Also  
- [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)   
+ [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)  
  [WS-AtomicTransaction Configuration MMC Snap-in](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)

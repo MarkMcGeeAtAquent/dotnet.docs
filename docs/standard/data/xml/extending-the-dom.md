@@ -1,5 +1,5 @@
 ---
-title: "Extending the DOM | Microsoft Docs"
+title: "Extending the DOM"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
 caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Extending the DOM
 The Microsoft .NET Framework includes a base set of classes that provides an implementation of the XML Document Object Model (DOM). The <xref:System.Xml.XmlNode>, and its derived classes, provides methods and properties that allow you to navigate, query, and modify the content and structure of an XML document.  
@@ -162,7 +163,7 @@ Class LineInfoElement
       CType(doc, LineInfoDocument).IncrementElementCount()  
    End Sub 'New  
 End Class 'LineInfoElement  
- _ 'End LineInfoElement class.   
+ _ 'End LineInfoElement class.  
   
 Public Class Test  
   
@@ -226,9 +227,9 @@ public class Test {
 ##### Input  
  book.xml  
   
-```  
-\<!--sample XML fragment-->  
-\<book genre='novel' ISBN='1-861001-57-5' misc='sale-item'>  
+```xml  
+<!--sample XML fragment-->  
+<book genre='novel' ISBN='1-861001-57-5' misc='sale-item'>  
   <title>The Handmaid's Tale</title>  
   <price>14.95</price>  
 </book>  

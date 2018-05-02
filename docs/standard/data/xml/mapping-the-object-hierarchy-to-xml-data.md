@@ -1,5 +1,5 @@
 ---
-title: "Mapping the Object Hierarchy to XML Data | Microsoft Docs"
+title: "Mapping the Object Hierarchy to XML Data"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Mapping the Object Hierarchy to XML Data
 When an XML document is in memory, the conceptual representation is a tree. For programming, you have an object hierarchy to access the nodes of the tree. The following example shows you how the XML content becomes nodes.  
@@ -28,7 +29,7 @@ When an XML document is in memory, the conceptual representation is a tree. For 
   
  **Input**  
   
-```  
+```xml  
 <book>  
     <title>The Handmaid's Tale</title>  
 </book>  
@@ -45,16 +46,16 @@ Book and title node tree representation
   
  **Input**  
   
-```  
-\<?xml version="1.0"?>  
-\<!-- This is a sample XML document -->  
-<!DOCTYPE Items [\<!ENTITY number "123">]>  
+```xml  
+<?xml version="1.0"?>  
+<!-- This is a sample XML document -->  
+<!DOCTYPE Items [<!ENTITY number "123">]>  
 <Items>  
   <Item>Test with an entity: &number;</Item>  
   <Item>test with a child element <more/> stuff</Item>  
-  <Item>test with a CDATA section <![CDATA[\<456>]]> def</Item>  
+  <Item>test with a CDATA section <![CDATA[<456>]]> def</Item>  
   <Item>Test with a char entity: A</Item>  
-  \<!-- Fourteen chars in this element.-->  
+  <!-- Fourteen chars in this element.-->  
   <Item>1234567890ABCD</Item>  
 </Items>  
 ```  
@@ -83,24 +84,24 @@ Public Class Sample
             While reader.Read()  
                 Select Case reader.NodeType  
                     Case XmlNodeType.Element  
-                        Console.Write("\<{0}>", reader.Name)  
+                        Console.Write("<{0}>", reader.Name)  
                     Case XmlNodeType.Text  
                         Console.Write(reader.Value)  
                     Case XmlNodeType.CDATA  
-                        Console.Write("\<![CDATA[{0}]]>", reader.Value)  
+                        Console.Write("<![CDATA[{0}]]>", reader.Value)  
                     Case XmlNodeType.ProcessingInstruction  
-                        Console.Write("\<?{0} {1}?>", reader.Name, reader.Value)  
+                        Console.Write("<?{0} {1}?>", reader.Name, reader.Value)  
                     Case XmlNodeType.Comment  
-                        Console.Write("\<!--{0}-->", reader.Value)  
+                        Console.Write("<!--{0}-->", reader.Value)  
                     Case XmlNodeType.XmlDeclaration  
-                        Console.Write("\<?xml version='1.0'?>")  
+                        Console.Write("<?xml version='1.0'?>")  
                     Case XmlNodeType.Document  
                     Case XmlNodeType.DocumentType  
                         Console.Write("<!DOCTYPE {0} [{1}]", reader.Name, reader.Value)  
                     Case XmlNodeType.EntityReference  
                         Console.Write(reader.Name)  
                     Case XmlNodeType.EndElement  
-                        Console.Write("\</{0}>", reader.Name)  
+                        Console.Write("</{0}>", reader.Name)  
                 End Select  
             End While  
   
@@ -139,22 +140,22 @@ public class Sample
                 switch (reader.NodeType)  
                 {  
                     case XmlNodeType.Element:  
-                        Console.Write("\<{0}>", reader.Name);  
+                        Console.Write("<{0}>", reader.Name);  
                         break;  
                     case XmlNodeType.Text:  
                         Console.Write(reader.Value);  
                         break;  
                     case XmlNodeType.CDATA:  
-                        Console.Write("\<![CDATA[{0}]]>", reader.Value);  
+                        Console.Write("<![CDATA[{0}]]>", reader.Value);  
                         break;  
                     case XmlNodeType.ProcessingInstruction:  
-                        Console.Write("\<?{0} {1}?>", reader.Name, reader.Value);  
+                        Console.Write("<?{0} {1}?>", reader.Name, reader.Value);  
                         break;  
                     case XmlNodeType.Comment:  
-                        Console.Write("\<!--{0}-->", reader.Value);  
+                        Console.Write("<!--{0}-->", reader.Value);  
                         break;  
                     case XmlNodeType.XmlDeclaration:  
-                        Console.Write("\<?xml version='1.0'?>");  
+                        Console.Write("<?xml version='1.0'?>");  
                         break;  
                     case XmlNodeType.Document:  
                         break;  
@@ -165,7 +166,7 @@ public class Sample
                         Console.Write(reader.Name);  
                         break;  
                     case XmlNodeType.EndElement:  
-                        Console.Write("\</{0}>", reader.Name);  
+                        Console.Write("</{0}>", reader.Name);  
                         break;  
                 }  
             }  
@@ -184,8 +185,7 @@ public class Sample
   
  **Output**  
   
-```  
-  
+```xml  
 <?xml version='1.0'?><!--This is a sample XML document --><!DOCTYPE Items [<!ENTITY number "123">]<Items><Item>Test with an entity: 123</Item><Item>test with a child element <more> stuff</Item><Item>test with a CDATA section <![CDATA[<456>]]> def</Item><Item>Test with a char entity: A</Item><--Fourteen chars in this element.--><Item>1234567890ABCD</Item></Items>  
 ```  
   

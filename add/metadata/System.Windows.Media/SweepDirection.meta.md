@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Media.SweepDirection
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

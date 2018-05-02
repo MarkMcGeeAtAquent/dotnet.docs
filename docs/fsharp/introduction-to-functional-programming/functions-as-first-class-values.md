@@ -1,6 +1,6 @@
 ---
 title: Functions as First-Class Values (F#)
-description: Functions as First-Class Values (F#)
+description: Learn how functions are elevated to first-class status in the F# programming language.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -171,7 +171,6 @@ To take it one step further, substitute the value that `applyIt` is bound to for
 The examples in the previous sections demonstrate that functions in F# satisfy the criteria for being first-class values in F#:
 
 - You can bind an identifier to a function definition.
-
 [!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet21.fs)]
 
 - You can store a function in a data structure.

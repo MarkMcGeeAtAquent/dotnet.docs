@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyImport::GetFileProps Method | Microsoft Docs"
+title: "IMetaDataAssemblyImport::GetFileProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyImport.GetFileProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyImport::GetFileProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetFileProps method [.NET Framework metadata]"
   - "IMetaDataAssemblyImport::GetFileProps method [.NET Framework metadata]"
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyImport::GetFileProps Method
 Gets the properties of the file with the specified metadata signature.  

@@ -1,5 +1,5 @@
 ---
-title: "COR_TYPEID Structure | Microsoft Docs"
+title: "COR_TYPEID Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_TYPEID"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_TYPEID"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_TYPEID structure [.NET Framework debugging]"
 ms.assetid: 1e172b14-ee22-4943-b3b8-3740e7bdcd2e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_TYPEID Structure
 Contains a type identifier.  
@@ -60,5 +63,5 @@ typedef struct COR_TYPEID{
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

@@ -1,5 +1,5 @@
 ---
-title: "IGCHost::Collect Method | Microsoft Docs"
+title: "IGCHost::Collect Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IGCHost.Collect"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "Collect"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Collect method, IGCHost interface [.NET Framework hosting]"
   - "IGCHost::Collect method [.NET Framework hosting]"
 ms.assetid: fc7d9448-3186-494d-9f0d-ea39717e9a82
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IGCHost::Collect Method
 Forces a collection to occur for the given generation, regardless of the state of the current garbage collection.  

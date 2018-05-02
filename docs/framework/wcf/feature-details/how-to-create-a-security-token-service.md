@@ -1,14 +1,17 @@
 ---
-title: "How to: Create a Security Token Service | Microsoft Docs"
+title: "How to: Create a Security Token Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, federation"
   - "federation"
@@ -17,6 +20,8 @@ caps.latest.revision: 12
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Security Token Service
 A security token service implements the protocol defined in the WS-Trust specification. This protocol defines message formats and message exchange patterns for issuing, renewing, canceling, and validating security tokens. A given security token service provides one or more of these capabilities. This topic looks at the most common scenario: implementing token issuance.  
@@ -127,11 +132,11 @@ A security token service implements the protocol defined in the WS-Trust specifi
  For full code for a security token service, see [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
 ## See Also  
- <xref:System.IdentityModel.Tokens.SigningCredentials>   
- <xref:System.IdentityModel.Tokens.SecurityKey>   
- <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>   
- <xref:System.IdentityModel.Tokens.SamlSecurityToken>   
- <xref:System.IdentityModel.Tokens.SamlAssertion>   
- <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>   
- <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>   
+ <xref:System.IdentityModel.Tokens.SigningCredentials>  
+ <xref:System.IdentityModel.Tokens.SecurityKey>  
+ <xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken>  
+ <xref:System.IdentityModel.Tokens.SamlAssertion>  
+ <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>  
+ <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>  
  [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md)

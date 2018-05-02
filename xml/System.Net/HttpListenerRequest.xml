@@ -1,7 +1,9 @@
-<Type Name="HttpListenerRequest" FullName="System.Net.HttpListenerRequest">
+﻿<Type Name="HttpListenerRequest" FullName="System.Net.HttpListenerRequest">
   <TypeSignature Language="C#" Value="public sealed class HttpListenerRequest" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListenerRequest extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListenerRequest" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListenerRequest" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpListenerRequest sealed" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -21,7 +27,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When a client makes a request to a Uniform Resource Identifier (URI) handled by an <xref:System.Net.HttpListener> object, the <xref:System.Net.HttpListener> provides a <xref:System.Net.HttpListenerContext> object that contains information about the sender, the request, and the response that is sent to the client. The <xref:System.Net.HttpListenerContext.Request%2A?displayProperty=fullName> property returns the <xref:System.Net.HttpListenerRequest> object that describes the request.  
+ When a client makes a request to a Uniform Resource Identifier (URI) handled by an <xref:System.Net.HttpListener> object, the <xref:System.Net.HttpListener> provides a <xref:System.Net.HttpListenerContext> object that contains information about the sender, the request, and the response that is sent to the client. The <xref:System.Net.HttpListenerContext.Request%2A?displayProperty=nameWithType> property returns the <xref:System.Net.HttpListenerRequest> object that describes the request.  
   
  The <xref:System.Net.HttpListenerRequest> object contains information about the request, such as the request <xref:System.Net.HttpListenerRequest.HttpMethod%2A> string, <xref:System.Net.HttpListenerRequest.UserAgent%2A> string, and request body data (see the <xref:System.Net.HttpListenerRequest.InputStream%2A> property).  
   
@@ -36,12 +42,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Net.HttpListener" />
+    <altmember cref="T:System.Net.HttpListenerContext" />
+    <altmember cref="T:System.Net.HttpListenerResponse" />
   </Docs>
   <Members>
     <Member MemberName="AcceptTypes">
       <MemberSignature Language="C#" Value="public string[] AcceptTypes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] AcceptTypes" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.AcceptTypes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AcceptTypes As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ AcceptTypes { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -51,6 +62,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String[]</ReturnType>
@@ -75,12 +90,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="BeginGetClientCertificate">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginGetClientCertificate (AsyncCallback requestCallback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetClientCertificate(class System.AsyncCallback requestCallback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.BeginGetClientCertificate(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginGetClientCertificate (requestCallback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginGetClientCertificate(AsyncCallback ^ requestCallback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -90,6 +110,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -110,6 +134,8 @@
       <MemberSignature Language="C#" Value="public int ClientCertificateError { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ClientCertificateError" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ClientCertificateError" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientCertificateError As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ClientCertificateError { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -119,6 +145,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -147,12 +177,17 @@
  -or -  
   
  The operation is still in progress.</exception>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="ContentEncoding">
       <MemberSignature Language="C#" Value="public System.Text.Encoding ContentEncoding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding ContentEncoding" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentEncoding" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentEncoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Text::Encoding ^ ContentEncoding { System::Text::Encoding ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -162,6 +197,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Text.Encoding</ReturnType>
@@ -173,7 +212,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- An <xref:System.Text.Encoding> object can be used to convert byte sequences into character sets (code pages) and characters into byte sequences. This property uses the charset value from the `Content-Type` header to determine the encoding. If that information is not available, this property returns <xref:System.Text.Encoding.Default%2A?displayProperty=fullName>.  
+ An <xref:System.Text.Encoding> object can be used to convert byte sequences into character sets (code pages) and characters into byte sequences. This property uses the charset value from the `Content-Type` header to determine the encoding. If that information is not available, this property returns <xref:System.Text.Encoding.Default%2A?displayProperty=nameWithType>.  
   
    
   
@@ -184,12 +223,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="ContentLength64">
       <MemberSignature Language="C#" Value="public long ContentLength64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 ContentLength64" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentLength64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentLength64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long ContentLength64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -199,6 +243,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int64</ReturnType>
@@ -223,12 +271,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="ContentType">
       <MemberSignature Language="C#" Value="public string ContentType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ContentType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContentType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ContentType { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -238,6 +291,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -264,12 +321,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="Cookies">
       <MemberSignature Language="C#" Value="public System.Net.CookieCollection Cookies { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.CookieCollection Cookies" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Cookies" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Cookies As CookieCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::CookieCollection ^ Cookies { System::Net::CookieCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -279,6 +341,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.CookieCollection</ReturnType>
@@ -301,12 +367,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="EndGetClientCertificate">
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 EndGetClientCertificate (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2 EndGetClientCertificate(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.EndGetClientCertificate(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndGetClientCertificate (asyncResult As IAsyncResult) As X509Certificate2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::Cryptography::X509Certificates::X509Certificate2 ^ EndGetClientCertificate(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -316,6 +387,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
@@ -339,6 +414,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 GetClientCertificate ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.X509Certificates.X509Certificate2 GetClientCertificate() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.GetClientCertificate" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetClientCertificate () As X509Certificate2" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::Cryptography::X509Certificates::X509Certificate2 ^ GetClientCertificate();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -348,6 +425,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
@@ -365,12 +446,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">A call to this method to retrieve the client's X.509 v.3 certificate is in progress and therefore another call to this method cannot be made.</exception>
+        <altmember cref="N:System.Security.Cryptography.X509Certificates" />
       </Docs>
     </Member>
     <Member MemberName="GetClientCertificateAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Security.Cryptography.X509Certificates.X509Certificate2&gt; GetClientCertificateAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Security.Cryptography.X509Certificates.X509Certificate2&gt; GetClientCertificateAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListenerRequest.GetClientCertificateAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetClientCertificateAsync () As Task(Of X509Certificate2)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task&lt;System::Security::Cryptography::X509Certificates::X509Certificate2 ^&gt; ^ GetClientCertificateAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -380,6 +464,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Security.Cryptography.X509Certificates.X509Certificate2&gt;</ReturnType>
@@ -400,12 +488,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="N:System.Security.Cryptography.X509Certificates" />
       </Docs>
     </Member>
     <Member MemberName="HasEntityBody">
       <MemberSignature Language="C#" Value="public bool HasEntityBody { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasEntityBody" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.HasEntityBody" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasEntityBody As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasEntityBody { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -415,6 +506,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -438,12 +533,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="Headers">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Headers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Headers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Headers As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ Headers { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -453,6 +553,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
@@ -477,12 +581,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="HttpMethod">
       <MemberSignature Language="C#" Value="public string HttpMethod { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string HttpMethod" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.HttpMethod" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HttpMethod As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ HttpMethod { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -492,6 +601,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -514,12 +627,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="InputStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream InputStream { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream InputStream" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.InputStream" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InputStream As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::Stream ^ InputStream { System::IO::Stream ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -529,6 +647,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IO.Stream</ReturnType>
@@ -557,12 +679,17 @@
         <block subset="none" type="usage">
           <para>This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
         </block>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="IsAuthenticated">
       <MemberSignature Language="C#" Value="public bool IsAuthenticated { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsAuthenticated" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAuthenticated As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAuthenticated { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -572,6 +699,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -602,12 +733,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="IsLocal">
       <MemberSignature Language="C#" Value="public bool IsLocal { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLocal" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsLocal" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLocal As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLocal { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -617,6 +753,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -640,12 +780,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="IsSecureConnection">
       <MemberSignature Language="C#" Value="public bool IsSecureConnection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSecureConnection" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsSecureConnection" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSecureConnection As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSecureConnection { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -655,6 +800,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -678,12 +827,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="IsWebSocketRequest">
       <MemberSignature Language="C#" Value="public bool IsWebSocketRequest { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsWebSocketRequest" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.IsWebSocketRequest" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsWebSocketRequest As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsWebSocketRequest { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -693,6 +847,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -714,6 +872,8 @@
       <MemberSignature Language="C#" Value="public bool KeepAlive { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.KeepAlive" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property KeepAlive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool KeepAlive { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -723,6 +883,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -746,12 +910,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="LocalEndPoint">
       <MemberSignature Language="C#" Value="public System.Net.IPEndPoint LocalEndPoint { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPoint LocalEndPoint" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.LocalEndPoint" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LocalEndPoint As IPEndPoint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::IPEndPoint ^ LocalEndPoint { System::Net::IPEndPoint ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -761,6 +930,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.IPEndPoint</ReturnType>
@@ -783,12 +956,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="ProtocolVersion">
       <MemberSignature Language="C#" Value="public Version ProtocolVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ProtocolVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ProtocolVersion As Version" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Version ^ ProtocolVersion { Version ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -798,6 +976,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Version</ReturnType>
@@ -820,12 +1002,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="QueryString">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection QueryString { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryString" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.QueryString" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property QueryString As NameValueCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Specialized::NameValueCollection ^ QueryString { System::Collections::Specialized::NameValueCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -835,6 +1022,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
@@ -860,12 +1051,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="RawUrl">
       <MemberSignature Language="C#" Value="public string RawUrl { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RawUrl" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RawUrl" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RawUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RawUrl { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -875,6 +1071,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -899,12 +1099,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="RemoteEndPoint">
       <MemberSignature Language="C#" Value="public System.Net.IPEndPoint RemoteEndPoint { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPEndPoint RemoteEndPoint" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RemoteEndPoint" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RemoteEndPoint As IPEndPoint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::IPEndPoint ^ RemoteEndPoint { System::Net::IPEndPoint ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -914,6 +1119,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.IPEndPoint</ReturnType>
@@ -931,12 +1140,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="RequestTraceIdentifier">
       <MemberSignature Language="C#" Value="public Guid RequestTraceIdentifier { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid RequestTraceIdentifier" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.RequestTraceIdentifier" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RequestTraceIdentifier As Guid" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Guid RequestTraceIdentifier { Guid get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -946,6 +1160,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -965,6 +1183,8 @@
       <MemberSignature Language="C#" Value="public string ServiceName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ServiceName" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.ServiceName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ServiceName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ServiceName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -974,6 +1194,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -994,12 +1218,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.HttpListener.DefaultServiceNames" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+        <altmember cref="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+        <altmember cref="P:System.Net.HttpListenerRequest.TransportContext" />
+        <altmember cref="N:System.Security.Authentication.ExtendedProtection" />
+        <altmember cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
       </Docs>
     </Member>
     <Member MemberName="TransportContext">
       <MemberSignature Language="C#" Value="public System.Net.TransportContext TransportContext { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.TransportContext TransportContext" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.TransportContext" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TransportContext As TransportContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::TransportContext ^ TransportContext { System::Net::TransportContext ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1009,6 +1242,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.TransportContext</ReturnType>
@@ -1024,16 +1261,25 @@
   
  An application could use the <xref:System.Net.TransportContext> property to perform custom authentication using calls to the native Win32 [AcceptSecurityContext](http://go.microsoft.com/fwlink/?LinkId=147021) function.  
   
- If an application attempts to retrieve the channel binding token (CBT) from this <xref:System.Net.HttpListenerRequest.TransportContext%2A> property using the <xref:System.Net.TransportContext.GetChannelBinding%2A> method and the <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind> is not <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind>, then the <xref:System.Net.HttpListenerRequest> will throw <xref:System.NotSupportedException>. The <xref:System.Net.HttpListenerRequest> overrides the <xref:System.Net.TransportContext.GetChannelBinding%2A> method with an internal implementation.  
+ If an application attempts to retrieve the channel binding token (CBT) from this <xref:System.Net.HttpListenerRequest.TransportContext%2A> property using the <xref:System.Net.TransportContext.GetChannelBinding%2A> method and the <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind> is not <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint>, then the <xref:System.Net.HttpListenerRequest> will throw <xref:System.NotSupportedException>. The <xref:System.Net.HttpListenerRequest> overrides the <xref:System.Net.TransportContext.GetChannelBinding%2A> method with an internal implementation.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.HttpListener.DefaultServiceNames" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+        <altmember cref="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+        <altmember cref="P:System.Net.HttpListenerRequest.ServiceName" />
+        <altmember cref="N:System.Security.Authentication.ExtendedProtection" />
+        <altmember cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
       </Docs>
     </Member>
     <Member MemberName="Url">
       <MemberSignature Language="C#" Value="public Uri Url { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.Url" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Url As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Url { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1043,6 +1289,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -1060,7 +1310,7 @@
   
  The <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A> property indicates if <xref:System.Net.HttpListener> uses the raw unescaped URI instead of the converted URI where any percent-encoded values are converted and other normalization steps are taken.  
   
- When a <xref:System.Net.HttpListener> instance receives a request through the `http.sys` service, it creates an instance of the URI string provided by `http.sys`, and exposes it as the <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=fullName> property.  
+ When a <xref:System.Net.HttpListener> instance receives a request through the `http.sys` service, it creates an instance of the URI string provided by `http.sys`, and exposes it as the <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> property.  
   
  The `http.sys` service exposes two request URI strings:  
   
@@ -1068,7 +1318,7 @@
   
 -   Converted URI  
   
- The raw URI is the <xref:System.Uri?displayProperty=fullName> provided in the request line of a HTTP request:  
+ The raw URI is the <xref:System.Uri?displayProperty=nameWithType> provided in the request line of a HTTP request:  
   
  `GET /path/`  
   
@@ -1080,7 +1330,7 @@
   
  `http://www.contoso.com/path/`  
   
- The `http.sys` service combines the <xref:System.Uri.Host%2A?displayProperty=fullName> property value and the string in the request line to create a converted URI. In addition, `http.sys` and the <xref:System.Uri?displayProperty=fullName> class also do the following:  
+ The `http.sys` service combines the <xref:System.Uri.Host%2A?displayProperty=nameWithType> property value and the string in the request line to create a converted URI. In addition, `http.sys` and the <xref:System.Uri?displayProperty=nameWithType> class also do the following:  
   
 -   Un-escapes all percent encoded values.  
   
@@ -1128,12 +1378,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.Configuration.HttpListenerElement" />
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="UrlReferrer">
       <MemberSignature Language="C#" Value="public Uri UrlReferrer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri UrlReferrer" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UrlReferrer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UrlReferrer As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ UrlReferrer { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1143,6 +1399,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -1156,7 +1416,7 @@
 ## Remarks  
  If a client has followed a hyperlink to the requested URI, its request might contain a `Referrer` header that identifies the URI of the resource that contained the hyperlink.  
   
- Clients can falsify or choose not to present a <xref:System.Net.HttpRequestHeader> header. Therefore, while the <xref:System.Net.HttpListenerRequest.UrlReferrer%2A> property can be useful for identifying basic trends in Web traffic; you should not use it as part of an authorization scheme to control access to data.  
+ Clients can falsify or choose not to present a <xref:System.Net.HttpRequestHeader.Referer> header. Therefore, while the <xref:System.Net.HttpListenerRequest.UrlReferrer%2A> property can be useful for identifying basic trends in Web traffic; you should not use it as part of an authorization scheme to control access to data.  
   
  For a complete list of request headers, see the <xref:System.Net.HttpRequestHeader> enumeration.  
   
@@ -1171,12 +1431,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="UserAgent">
       <MemberSignature Language="C#" Value="public string UserAgent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserAgent" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserAgent" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserAgent As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserAgent { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1186,6 +1451,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1212,12 +1481,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="UserHostAddress">
       <MemberSignature Language="C#" Value="public string UserHostAddress { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserHostAddress" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserHostAddress" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserHostAddress As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserHostAddress { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1227,6 +1501,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1249,12 +1527,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="UserHostName">
       <MemberSignature Language="C#" Value="public string UserHostName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserHostName" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserHostName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserHostName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserHostName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1264,6 +1547,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1290,12 +1577,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
     <Member MemberName="UserLanguages">
       <MemberSignature Language="C#" Value="public string[] UserLanguages { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] UserLanguages" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListenerRequest.UserLanguages" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserLanguages As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ UserLanguages { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1305,6 +1597,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String[]</ReturnType>
@@ -1329,6 +1625,9 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListener" />
+        <altmember cref="T:System.Net.HttpListenerContext" />
+        <altmember cref="T:System.Net.HttpListenerResponse" />
       </Docs>
     </Member>
   </Members>

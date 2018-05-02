@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit2::DefineMethodSpec Method | Microsoft Docs"
+title: "IMetaDataEmit2::DefineMethodSpec Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit2.DefineMethodSpec"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit2::DefineMethodSpec"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DefineMethodSpec method [.NET Framework metadata]"
   - "IMetaDataEmit2::DefineMethodSpec method [.NET Framework metadata]"
 ms.assetid: 3c24e552-fc69-4971-b65a-a3e4b5f7f1e8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit2::DefineMethodSpec Method
 Creates a generic instance of a method, and gets a token to the definition.  
@@ -64,5 +67,5 @@ HRESULT DefineMethodSpec (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)   
+ [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

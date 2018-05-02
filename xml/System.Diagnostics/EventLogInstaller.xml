@@ -1,7 +1,9 @@
-<Type Name="EventLogInstaller" FullName="System.Diagnostics.EventLogInstaller">
+﻿<Type Name="EventLogInstaller" FullName="System.Diagnostics.EventLogInstaller">
   <TypeSignature Language="C#" Value="public class EventLogInstaller : System.Configuration.Install.ComponentInstaller" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventLogInstaller extends System.Configuration.Install.ComponentInstaller" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogInstaller" />
+  <TypeSignature Language="VB.NET" Value="Public Class EventLogInstaller&#xA;Inherits ComponentInstaller" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EventLogInstaller : System::Configuration::Install::ComponentInstaller" />
   <AssemblyInfo>
     <AssemblyName>System.Configuration.Install</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -56,12 +58,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.EventLog" />
+    <altmember cref="Overload:System.Diagnostics.EventLog.CreateEventSource" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLogInstaller ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLogInstaller();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -77,6 +83,8 @@
       <MemberSignature Language="C#" Value="public int CategoryCount { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CategoryCount" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.CategoryCount" />
+      <MemberSignature Language="VB.NET" Value="Public Property CategoryCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int CategoryCount { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -227,12 +235,17 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogInstaller.CategoryResourceFile" />
+        <altmember cref="P:System.Diagnostics.EventSourceCreationData.CategoryCount" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
       </Docs>
     </Member>
     <Member MemberName="CategoryResourceFile">
       <MemberSignature Language="C#" Value="public string CategoryResourceFile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CategoryResourceFile" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.CategoryResourceFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property CategoryResourceFile As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CategoryResourceFile { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -389,12 +402,17 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLogInstaller.CategoryCount" />
+        <altmember cref="P:System.Diagnostics.EventSourceCreationData.CategoryResourceFile" />
+        <altmember cref="Overload:System.Diagnostics.EventLog.WriteEvent" />
       </Docs>
     </Member>
     <Member MemberName="CopyFromComponent">
       <MemberSignature Language="C#" Value="public override void CopyFromComponent (System.ComponentModel.IComponent component);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFromComponent(class System.ComponentModel.IComponent component) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub CopyFromComponent (component As IComponent)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void CopyFromComponent(System::ComponentModel::IComponent ^ component);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -432,6 +450,8 @@ SVC_UPDATE.EXE
       <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary stateSaver);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary stateSaver) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.Install(System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Install (stateSaver As IDictionary)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Install(System::Collections::IDictionary ^ stateSaver);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -456,18 +476,23 @@ SVC_UPDATE.EXE
   
  Use <xref:System.Diagnostics.EventLogInstaller> to register a new source for a new or existing event log; do not use <xref:System.Diagnostics.EventLogInstaller> to change an existing source. The <xref:System.Diagnostics.EventLogInstaller> class does not modify the configuration properties of an existing source to match the specified installation properties. The <xref:System.Diagnostics.EventLogInstaller.Install%2A> method throws an exception if the <xref:System.Diagnostics.EventLogInstaller.Source%2A> property matches a source name that is registered for a different event log on the computer. The <xref:System.Diagnostics.EventLogInstaller.Install%2A> method skips registering the source if the <xref:System.Diagnostics.EventLogInstaller.Source%2A> property matches a source name that is already registered for the same event log specified in the <xref:System.Diagnostics.EventLogInstaller.Log%2A> property.  
   
- An application's install routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=fullName> property to automatically maintain information about the components that have already been installed. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Install%2A> as the `stateSaver` parameter, is continuously updated as the tool installs each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
+ An application's install routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType> property to automatically maintain information about the components that have already been installed. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Install%2A> as the `stateSaver` parameter, is continuously updated as the tool installs each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform the installer is trying to use is not Windows NT 4.0 or later.</exception>
         <exception cref="T:System.ArgumentException">The name specified in the <see cref="P:System.Diagnostics.EventLogInstaller.Source" /> property is already registered for a different event log.</exception>
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.Rollback(System.Collections.IDictionary)" />
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.Uninstall(System.Collections.IDictionary)" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
     <Member MemberName="IsEquivalentInstaller">
       <MemberSignature Language="C#" Value="public override bool IsEquivalentInstaller (System.Configuration.Install.ComponentInstaller otherInstaller);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsEquivalentInstaller(class System.Configuration.Install.ComponentInstaller otherInstaller) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.IsEquivalentInstaller(System.Configuration.Install.ComponentInstaller)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsEquivalentInstaller (otherInstaller As ComponentInstaller) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsEquivalentInstaller(System::Configuration::Install::ComponentInstaller ^ otherInstaller);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -492,12 +517,15 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
     <Member MemberName="Log">
       <MemberSignature Language="C#" Value="public string Log { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Log" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.Log" />
+      <MemberSignature Language="VB.NET" Value="Public Property Log As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Log { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -530,12 +558,16 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLog.Log" />
+        <altmember cref="T:System.Diagnostics.EventLog" />
       </Docs>
     </Member>
     <Member MemberName="MessageResourceFile">
       <MemberSignature Language="C#" Value="public string MessageResourceFile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MessageResourceFile" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.MessageResourceFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property MessageResourceFile As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MessageResourceFile { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -698,12 +730,15 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventSourceCreationData.MessageResourceFile" />
       </Docs>
     </Member>
     <Member MemberName="ParameterResourceFile">
       <MemberSignature Language="C#" Value="public string ParameterResourceFile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ParameterResourceFile" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.ParameterResourceFile" />
+      <MemberSignature Language="VB.NET" Value="Public Property ParameterResourceFile As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ParameterResourceFile { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -887,12 +922,15 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventSourceCreationData.ParameterResourceFile" />
       </Docs>
     </Member>
     <Member MemberName="Rollback">
       <MemberSignature Language="C#" Value="public override void Rollback (System.Collections.IDictionary savedState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback(class System.Collections.IDictionary savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.Rollback(System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Rollback (savedState As IDictionary)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Rollback(System::Collections::IDictionary ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -915,16 +953,21 @@ SVC_UPDATE.EXE
   
  Typically, you do not call the methods of the <xref:System.Diagnostics.EventLogInstaller> from within your code; they are generally called only by the [Installutil.exe (Installer Tool)](~/docs/framework/tools/installutil-exe-installer-tool.md). The tool calls the <xref:System.Diagnostics.EventLogInstaller.Rollback%2A> method, when this or another component has failed to install, to undo any changes that the installation process has already made.  
   
- An application's install routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=fullName> property to automatically maintain information about the components that have already been installed. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Rollback%2A> as the `savedState` parameter, is continuously updated as the tool rolls back each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
+ An application's install routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType> property to automatically maintain information about the components that have already been installed. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Rollback%2A> as the `savedState` parameter, is continuously updated as the tool rolls back each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.Install(System.Collections.IDictionary)" />
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.Uninstall(System.Collections.IDictionary)" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
     <Member MemberName="Source">
       <MemberSignature Language="C#" Value="public string Source { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Source" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.Source" />
+      <MemberSignature Language="VB.NET" Value="Public Property Source As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Source { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -957,12 +1000,16 @@ SVC_UPDATE.EXE
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.EventLog.Source" />
+        <altmember cref="T:System.Diagnostics.EventLog" />
       </Docs>
     </Member>
     <Member MemberName="Uninstall">
       <MemberSignature Language="C#" Value="public override void Uninstall (System.Collections.IDictionary savedState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Uninstall(class System.Collections.IDictionary savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogInstaller.Uninstall(System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Uninstall (savedState As IDictionary)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Uninstall(System::Collections::IDictionary ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>
@@ -985,16 +1032,20 @@ SVC_UPDATE.EXE
   
  Typically, you do not call the methods of the <xref:System.Diagnostics.EventLogInstaller> from within your code; they are generally called only by the [Installutil.exe (Installer Tool)](~/docs/framework/tools/installutil-exe-installer-tool.md) in uninstall mode. The tool automatically calls the <xref:System.Diagnostics.EventLogInstaller.Uninstall%2A> method to restore the parts of the system that were affected by the installation to their pre-installation states. This includes deleting registry information that is associated with the event log being uninstalled.  
   
- An application's uninstall routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=fullName> property to automatically maintain information about the components that have already been uninstalled. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Uninstall%2A> as the `savedState` parameter, is continuously updated as the tool uninstalls each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
+ An application's uninstall routine uses the project installer's <xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType> property to automatically maintain information about the components that have already been uninstalled. This state information, which is passed to <xref:System.Diagnostics.EventLogInstaller.Uninstall%2A> as the `savedState` parameter, is continuously updated as the tool uninstalls each <xref:System.Diagnostics.EventLogInstaller>. Usually, it is not necessary for your code to explicitly modify this state information.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.EventLogInstaller.Install(System.Collections.IDictionary)" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
     <Member MemberName="UninstallAction">
       <MemberSignature Language="C#" Value="public System.Configuration.Install.UninstallAction UninstallAction { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.Install.UninstallAction UninstallAction" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogInstaller.UninstallAction" />
+      <MemberSignature Language="VB.NET" Value="Public Property UninstallAction As UninstallAction" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::Install::UninstallAction UninstallAction { System::Configuration::Install::UninstallAction get(); void set(System::Configuration::Install::UninstallAction value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration.Install</AssemblyName>

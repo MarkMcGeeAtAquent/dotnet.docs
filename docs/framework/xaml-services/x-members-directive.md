@@ -1,5 +1,5 @@
 ---
-title: "x:Members Directive | Microsoft Docs"
+title: "x:Members Directive"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 5
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # x:Members Directive
 Holds a set of members that are defined in markup, which apply to the x:Class of the parent element.  
@@ -21,7 +23,6 @@ Holds a set of members that are defined in markup, which apply to the x:Class of
 ## XAML Attribute Usage  
   
 ```  
-  
 <object x:Class="className">  
   <x:Members>  
     oneOrMoreMembers  

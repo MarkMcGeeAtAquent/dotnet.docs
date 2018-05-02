@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::ReplaceSymbolStore Method | Microsoft Docs"
+title: "ISymUnmanagedReader::ReplaceSymbolStore Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.ReplaceSymbolStore"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::ReplaceSymbolStore"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ReplaceSymbolStore method [.NET Framework debugging]"
   - "ISymUnmanagedReader::ReplaceSymbolStore method [.NET Framework debugging]"
 ms.assetid: 43257761-8cb1-4eaf-8fb5-1f3980cb66cd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::ReplaceSymbolStore Method
 Replaces the existing symbol store with a delta symbol store. This method is similar to the [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) method, except that the given delta acts as a complete replacement rather than an update.  

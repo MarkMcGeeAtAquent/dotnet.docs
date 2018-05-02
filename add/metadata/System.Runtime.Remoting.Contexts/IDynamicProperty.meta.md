@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.Contexts.IDynamicProperty
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Contexts.IDynamicProperty.Name
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

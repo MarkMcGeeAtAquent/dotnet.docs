@@ -1,5 +1,5 @@
 ---
-title: "Runtime Directive Elements | Microsoft Docs"
+title: "Runtime Directive Elements"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Runtime Directive Elements
 The runtime directives (rd.xml) file format supports the following runtime directive elements. See [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) for a hierarchical representation.  

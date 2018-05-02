@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ThreadDestroyed Method | Microsoft Docs"
+title: "ICorProfilerCallback::ThreadDestroyed Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ThreadDestroyed"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ThreadDestroyed"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ThreadDestroyed method [.NET Framework profiling]"
   - "ICorProfilerCallback::ThreadDestroyed method [.NET Framework profiling]"
 ms.assetid: 4c2b66fd-0595-40a3-8931-f9c4fff97ac8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ThreadDestroyed Method
 Notifies the profiler that a thread has been destroyed.  
@@ -54,5 +57,5 @@ HRESULT ThreadDestroyed(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ThreadCreated Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadcreated-method.md)

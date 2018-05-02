@@ -1,5 +1,5 @@
 ---
-title: "BulletDecorator | Microsoft Docs"
+title: "BulletDecorator"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -19,6 +19,8 @@ caps.latest.revision: 67
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # BulletDecorator
 <xref:System.Windows.Controls.Primitives.BulletDecorator> has two content properties: <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> and <xref:System.Windows.Controls.Decorator.Child%2A>. The <xref:System.Windows.Controls.Primitives.BulletDecorator.Bullet%2A> property defines the <xref:System.Windows.UIElement> to use as a bullet. The <xref:System.Windows.Controls.Decorator.Child%2A> property defines a <xref:System.Windows.UIElement> that visually aligns with the bullet.  

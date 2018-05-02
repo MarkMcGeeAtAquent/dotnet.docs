@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugModule::IsInMemory Method | Microsoft Docs"
+title: "ICorDebugModule::IsInMemory Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModule.IsInMemory"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModule::IsInMemory"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IsInMemory method [.NET Framework debugging]"
   - "ICorDebugModule::IsInMemory method [.NET Framework debugging]"
 ms.assetid: 89940711-98e7-4aa6-bffc-5e39e91e1b7d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModule::IsInMemory Method
 Gets a value that indicates whether this module exists only in memory.  

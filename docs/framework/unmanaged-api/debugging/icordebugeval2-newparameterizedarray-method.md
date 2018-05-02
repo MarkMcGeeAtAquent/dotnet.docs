@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugEval2::NewParameterizedArray Method | Microsoft Docs"
+title: "ICorDebugEval2::NewParameterizedArray Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugEval2.NewParameterizedArray"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugEval2::NewParameterizedArray"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugEval2::NewParameterizedArray method [.NET Framework debugging]"
   - "NewParameterizedArray method [.NET Framework debugging]"
 ms.assetid: 45efb8ba-c4de-4109-945f-e734d376b43c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugEval2::NewParameterizedArray Method
 Allocates a new array of the specified element type and dimensions.  

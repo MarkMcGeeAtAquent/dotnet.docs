@@ -1,7 +1,9 @@
-<Type Name="ValuePattern" FullName="System.Windows.Automation.ValuePattern">
+﻿<Type Name="ValuePattern" FullName="System.Windows.Automation.ValuePattern">
   <TypeSignature Language="C#" Value="public class ValuePattern : System.Windows.Automation.BasePattern" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValuePattern extends System.Windows.Automation.BasePattern" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ValuePattern" />
+  <TypeSignature Language="VB.NET" Value="Public Class ValuePattern&#xA;Inherits BasePattern" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ValuePattern : System::Windows::Automation::BasePattern" />
   <AssemblyInfo>
     <AssemblyName>UIAutomationClient</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -13,12 +15,15 @@
   <Docs>
     <summary>Represents a control that has an intrinsic value that does not span a range and can be represented as a string. This string may or may not be editable depending on the control and its settings.</summary>
     <remarks>To be added.</remarks>
+    <altmember cref="T:System.Windows.Automation.Provider.IValueProvider" />
   </Docs>
   <Members>
     <Member MemberName="Cached">
       <MemberSignature Language="C#" Value="public System.Windows.Automation.ValuePattern.ValuePatternInformation Cached { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ValuePattern/ValuePatternInformation Cached" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ValuePattern.Cached" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Cached As ValuePattern.ValuePatternInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Automation::ValuePattern::ValuePatternInformation Cached { System::Windows::Automation::ValuePattern::ValuePatternInformation get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -47,6 +52,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Automation.ValuePattern.ValuePatternInformation Current { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ValuePattern/ValuePatternInformation Current" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ValuePattern.Current" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Current As ValuePattern.ValuePatternInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Automation::ValuePattern::ValuePatternInformation Current { System::Windows::Automation::ValuePattern::ValuePatternInformation get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -62,7 +69,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This pattern must be from an <xref:System.Windows.Automation.AutomationElement> with an <xref:System.Windows.Automation.AutomationElementMode> reference in order to get current values. If the <xref:System.Windows.Automation.AutomationElement> was obtained using <xref:System.Windows.Automation.AutomationElementMode>, it contains only cached data, and attempting to get the current value of any property raises an exception. Use <xref:System.Windows.Automation.ValuePattern.Cached%2A> to get the cached value of a property that was previously specified using a <xref:System.Windows.Automation.CacheRequest>.  
+ This pattern must be from an <xref:System.Windows.Automation.AutomationElement> with an <xref:System.Windows.Automation.AutomationElementMode.Full> reference in order to get current values. If the <xref:System.Windows.Automation.AutomationElement> was obtained using <xref:System.Windows.Automation.AutomationElementMode.None>, it contains only cached data, and attempting to get the current value of any property raises an exception. Use <xref:System.Windows.Automation.ValuePattern.Cached%2A> to get the cached value of a property that was previously specified using a <xref:System.Windows.Automation.CacheRequest>.  
   
  For information on the properties available and their use, see <xref:System.Windows.Automation.ValuePattern.ValuePatternInformation>.  
   
@@ -74,6 +81,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsReadOnlyProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsReadOnlyProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ValuePattern.IsReadOnlyProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly IsReadOnlyProperty As AutomationProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::Automation::AutomationProperty ^ IsReadOnlyProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -108,6 +117,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ValuePattern.Pattern" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Pattern As AutomationPattern " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::Automation::AutomationPattern ^ Pattern;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -142,6 +153,8 @@
       <MemberSignature Language="C#" Value="public void SetValue (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ValuePattern.SetValue(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetValue (value As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetValue(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -160,12 +173,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Single-line edit controls support programmatic access to their contents through <xref:System.Windows.Automation.ValuePattern>. However, multi-line edit controls do not support the <xref:System.Windows.Automation.ValuePattern>; instead they provide access to their content through the <xref:System.Windows.Automation.TextPattern>control pattern.  
+ Single-line edit controls support programmatic access to their contents through <xref:System.Windows.Automation.ValuePattern>. However, multi-line edit controls do not support the <xref:System.Windows.Automation.ValuePattern>; instead they provide access to their content through the <xref:System.Windows.Automation.TextPattern> control pattern.  
   
    
   
 ## Examples  
- In the following example, an <xref:System.Windows.Automation.AutomationElement> that supports the <xref:System.Windows.Automation.ValuePattern>control pattern has its <xref:System.Windows.Automation.ValuePattern.ValueProperty> set to a user-specified value.  
+ In the following example, an <xref:System.Windows.Automation.AutomationElement> that supports the <xref:System.Windows.Automation.ValuePattern> control pattern has its <xref:System.Windows.Automation.ValuePattern.ValueProperty> set to a user-specified value.  
   
  [!code-csharp[UIAValuePattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAValuePattern_snip/CSharp/UIAValuePattern_snippets.cs#103)]
  [!code-vb[UIAValuePattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAValuePattern_snip/VisualBasic/UIAValuePattern_snippets.vb#103)]  
@@ -180,6 +193,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ValueProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ValueProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ValuePattern.ValueProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ValueProperty As AutomationProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::Automation::AutomationProperty ^ ValueProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>

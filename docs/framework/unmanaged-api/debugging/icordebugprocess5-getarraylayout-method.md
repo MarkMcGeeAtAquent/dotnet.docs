@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugProcess5::GetArrayLayout Method | Microsoft Docs"
+title: "ICorDebugProcess5::GetArrayLayout Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess5.GetArrayLayout"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess5::GetArrayLayout"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugProcess5::GetArrayLayout method [.NET Framework debugging]"
   - "GetArrayLayout method, ICorDebugProcess5 interface [.NET Framework debugging]"
 ms.assetid: 9a7393b9-9735-43c6-8616-afb103c432fd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess5::GetArrayLayout Method
 Provides information about the layout of array types.  
@@ -55,5 +58,5 @@ HRESULT GetArrayLayout(    [in] COR_TYPEID id,     [out] COR_ARRAY_LAYOUT *pLayo
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorDebugProcess5 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)   
+ [ICorDebugProcess5 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

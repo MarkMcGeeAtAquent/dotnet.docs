@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain::EnumerateSteppers Method | Microsoft Docs"
+title: "ICorDebugAppDomain::EnumerateSteppers Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain.EnumerateSteppers"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain::EnumerateSteppers"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAppDomain::EnumerateSteppers method [.NET Framework debugging]"
   - "EnumerateSteppers method [.NET Framework debugging]"
 ms.assetid: 3f3c4503-570e-44c1-ae6a-a3c6b840c732
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain::EnumerateSteppers Method
 Gets an enumerator for all active steppers in the application domain.  

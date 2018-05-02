@@ -1,8 +1,7 @@
 ---
-title: "/subsystemversion (Visual Basic) | Microsoft Docs"
-ms.date: "2015-07-20"
+title: "-subsystemversion (Visual Basic)"
+ms.date: 03/13/2018
 ms.prod: .net
-ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
@@ -12,34 +11,19 @@ helpviewer_keywords:
   - "-subsystemversion compiler option [Visual Basic]"
   - "subsystemversion compiler option [Visual Basic]"
 ms.assetid: 08be22b2-f447-4cd3-8203-120b1b920b54
-caps.latest.revision: 9
-author: dotnet-bot
-ms.author: dotnetcontent
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: rpetrusha
+ms.author: ronpet
 ---
-# /subsystemversion (Visual Basic)
+# -subsystemversion (Visual Basic)
 Specifies the minimum version of the subsystem on which the generated executable file can run, thereby determining the versions of Windows on which the executable file can run. Most commonly, this option ensures that the executable file can leverage particular security features that aren’t available with older versions of Windows.  
   
 > [!NOTE]
->  To specify the subsystem itself, use the [/target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) compiler option.  
+>  To specify the subsystem itself, use the [-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) compiler option.  
   
 ## Syntax  
   
 ```vb  
-/subsystemversion:major.minor  
+-subsystemversion:major.minor  
 ```  
   
 #### Parameters  
@@ -59,29 +43,29 @@ Specifies the minimum version of the subsystem on which the generated executable
 |Windows Vista|6.00|  
 |Windows 7|6.01|  
 |Windows Server 2008|6.01|  
-|[!INCLUDE[win8](../../../csharp/language-reference/compiler-options/includes/win8_md.md)]|6.02|  
+|[!INCLUDE[win8](~/includes/win8-md.md)]|6.02|  
   
 ## Default values  
- The default value of the **/subsystemversion** compiler option depends on the conditions in the following list:  
+ The default value of the **-subsystemversion** compiler option depends on the conditions in the following list:  
   
 -   The default value is 6.02 if any compiler option in the following list is set:  
   
-    -   [/target:appcontainerexe](../../../visual-basic/reference/command-line-compiler/target.md)  
+    -   [-target:appcontainerexe](../../../visual-basic/reference/command-line-compiler/target.md)  
   
-    -   [/target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)  
+    -   [-target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)  
   
-    -   [/platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)  
+    -   [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)  
   
--   The default value is 6.00 if you're using MSBuild, you're targeting [!INCLUDE[net_v45](../../../csharp/language-reference/compiler-options/includes/net_v45_md.md)], and you haven't set any of the compiler options that were specified earlier in this list.  
+-   The default value is 6.00 if you're using MSBuild, you're targeting [!INCLUDE[net_v45](~/includes/net-v45-md.md)], and you haven't set any of the compiler options that were specified earlier in this list.  
   
 -   The default value is 4.00 if none of the previous conditions is true.  
   
 ## Setting this option  
- To set the **/subsystemversion** compiler option in Visual Studio, you must open the .vbproj file and specify a value for the `SubsystemVersion` property in the MSBuild XML. You can't set this option in the Visual Studio IDE. For more information, see "Default values" earlier in this topic or [Common MSBuild Project Properties](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-properties).  
+ To set the **-subsystemversion** compiler option in Visual Studio, you must open the .vbproj file and specify a value for the `SubsystemVersion` property in the MSBuild XML. You can't set this option in the Visual Studio IDE. For more information, see "Default values" earlier in this topic or [Common MSBuild Project Properties](/visualstudio/msbuild/common-msbuild-project-properties).  
   
 
   
 ## See Also  
 [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 
-[MSBuild Properties](https://docs.microsoft.com/visualstudio/msbuild/msbuild-properties)
+[MSBuild Properties](/visualstudio/msbuild/msbuild-properties)

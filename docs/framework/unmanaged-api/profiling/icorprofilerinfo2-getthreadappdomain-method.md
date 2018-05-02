@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::GetThreadAppDomain Method | Microsoft Docs"
+title: "ICorProfilerInfo2::GetThreadAppDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.GetThreadAppDomain"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::GetThreadAppDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo2::GetThreadAppDomain method [.NET Framework profiling]"
   - "GetThreadAppDomain method [.NET Framework profiling]"
 ms.assetid: 4a11b264-8540-4732-aa35-bc2d95b95b8e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::GetThreadAppDomain Method
 Gets the ID of the application domain in which the specified thread is currently executing code.  
@@ -55,5 +58,5 @@ HRESULT GetThreadAppDomain(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

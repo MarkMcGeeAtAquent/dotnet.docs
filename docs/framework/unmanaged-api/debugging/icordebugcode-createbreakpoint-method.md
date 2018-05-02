@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode::CreateBreakpoint Method | Microsoft Docs"
+title: "ICorDebugCode::CreateBreakpoint Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode.CreateBreakpoint"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode::CreateBreakpoint"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugCode::CreateBreakpoint method [.NET Framework debugging]"
   - "CreateBreakpoint method, ICorDebugCode interface [.NET Framework debugging]"
 ms.assetid: 46842618-0fe4-480b-871c-82fba82d23d9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode::CreateBreakpoint Method
 Creates a breakpoint in this code segment at the specified offset.  

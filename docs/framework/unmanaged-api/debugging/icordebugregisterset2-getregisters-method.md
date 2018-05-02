@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugRegisterSet2::GetRegisters Method | Microsoft Docs"
+title: "ICorDebugRegisterSet2::GetRegisters Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugRegisterSet2.GetRegisters"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugRegisterSet2::GetRegisters"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetRegisters method, ICorDebugRegisterSet2 interface [.NET Framework debugging]"
   - "ICorDebugRegisterSet2::GetRegisters method [.NET Framework debugging]"
 ms.assetid: dbc498a8-ba3f-42f2-bdd9-b623c77a1019
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugRegisterSet2::GetRegisters Method
 Gets the value of each register (for the platform on which code is currently executing) that is specified by the given bit mask.  
@@ -73,5 +76,5 @@ HRESULT GetRegisters (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorDebugRegisterSet2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)   
+ [ICorDebugRegisterSet2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)  
  [ICorDebugRegisterSet Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)

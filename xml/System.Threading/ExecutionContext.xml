@@ -1,10 +1,13 @@
-<Type Name="ExecutionContext" FullName="System.Threading.ExecutionContext">
+﻿<Type Name="ExecutionContext" FullName="System.Threading.ExecutionContext">
   <TypeSignature Language="C#" Value="public sealed class ExecutionContext : IDisposable, System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit ExecutionContext extends System.Object implements class System.IDisposable, class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Threading.ExecutionContext" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ExecutionContext&#xA;Implements IDisposable, ISerializable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ExecutionContext sealed : IDisposable, System::Runtime::Serialization::ISerializable" />
   <AssemblyInfo>
     <AssemblyName>System.Threading</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -36,7 +39,7 @@
   
  The <xref:System.Threading.ExecutionContext> class provides the functionality for user code to capture and transfer this context across user-defined asynchronous points. The common language runtime ensures that the <xref:System.Threading.ExecutionContext> is consistently transferred across runtime-defined asynchronous points within the managed process.  
   
- An execution context is the managed equivalent of a COM apartment. Within an application domain, the entire execution context must be transferred whenever a thread is transferred. This situation occurs during transfers made by the <xref:System.Threading.Thread.Start%2A?displayProperty=fullName> method, most thread pool operations, and Windows Forms thread marshaling through the Windows message pump. It does not occur in unsafe thread pool operations (such as the <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A> method), which do not transfer the compressed stack. Wherever the compressed stack flows, the managed principal, synchronization, locale, and user context also flow. The <xref:System.Threading.ExecutionContext> class provides the <xref:System.Threading.ExecutionContext.Capture%2A> and <xref:System.Threading.ExecutionContext.CreateCopy%2A> methods to get the execution context and the <xref:System.Threading.ExecutionContext.Run%2A> method to set the execution context for the current thread.  
+ An execution context is the managed equivalent of a COM apartment. Within an application domain, the entire execution context must be transferred whenever a thread is transferred. This situation occurs during transfers made by the <xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType> method, most thread pool operations, and Windows Forms thread marshaling through the Windows message pump. It does not occur in unsafe thread pool operations (such as the <xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A> method), which do not transfer the compressed stack. Wherever the compressed stack flows, the managed principal, synchronization, locale, and user context also flow. The <xref:System.Threading.ExecutionContext> class provides the <xref:System.Threading.ExecutionContext.Capture%2A> and <xref:System.Threading.ExecutionContext.CreateCopy%2A> methods to get the execution context and the <xref:System.Threading.ExecutionContext.Run%2A> method to set the execution context for the current thread.  
   
  An <xref:System.Threading.ExecutionContext> that is associated with a thread cannot be set on another thread. Attempting to do so will result in an exception being thrown. To propagate the <xref:System.Threading.ExecutionContext> from one thread to another, make a copy of the <xref:System.Threading.ExecutionContext>.  
   
@@ -50,10 +53,13 @@
       <MemberSignature Language="C#" Value="public static System.Threading.ExecutionContext Capture ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.ExecutionContext Capture() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.Capture" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Capture () As ExecutionContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::ExecutionContext ^ Capture();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -90,6 +96,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.ExecutionContext CreateCopy ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.ExecutionContext CreateCopy() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.CreateCopy" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateCopy () As ExecutionContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::ExecutionContext ^ CreateCopy();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -99,6 +107,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -127,7 +139,12 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -136,6 +153,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -162,7 +183,12 @@
       <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -171,6 +197,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -201,12 +231,15 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="info" /> is <see langword="null" />.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Runtime.Serialization.SerializationInfo" />
       </Docs>
     </Member>
     <Member MemberName="IsFlowSuppressed">
       <MemberSignature Language="C#" Value="public static bool IsFlowSuppressed ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsFlowSuppressed() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.IsFlowSuppressed" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsFlowSuppressed () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsFlowSuppressed();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -216,6 +249,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -239,6 +276,8 @@
       <MemberSignature Language="C#" Value="public static void RestoreFlow ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RestoreFlow() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.RestoreFlow" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RestoreFlow ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RestoreFlow();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -248,6 +287,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -277,10 +320,12 @@
       <MemberSignature Language="C#" Value="public static void Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class System.Threading.ExecutionContext executionContext, class System.Threading.ContextCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.Run(System.Threading.ExecutionContext,System.Threading.ContextCallback,System.Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Run(System::Threading::ExecutionContext ^ executionContext, System::Threading::ContextCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -334,6 +379,8 @@
       <MemberSignature Language="C#" Value="public static System.Threading.AsyncFlowControl SuppressFlow ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.AsyncFlowControl SuppressFlow() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.ExecutionContext.SuppressFlow" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function SuppressFlow () As AsyncFlowControl" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Threading::AsyncFlowControl SuppressFlow();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -343,6 +390,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -364,12 +415,13 @@
   
  You must use the <xref:System.Threading.AsyncFlowControl.Undo%2A> method on the returned <xref:System.Threading.AsyncFlowControl> structure to restore the flow of the <xref:System.Threading.ExecutionContext>.  
   
- This method is protected with a <xref:System.Security.Permissions.SecurityAction?displayProperty=fullName> for <xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=fullName> permission. A fully trusted component can call this method to suppress the flow of the <xref:System.Threading.ExecutionContext> during asynchronous calls. While the flow is suppressed, the <xref:System.Security.SecurityContext.Capture%2A> method returns `null`.  
+ This method is protected with a <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> for <xref:System.Security.Permissions.SecurityPermissionFlag.Infrastructure?displayProperty=nameWithType> permission. A fully trusted component can call this method to suppress the flow of the <xref:System.Threading.ExecutionContext> during asynchronous calls. While the flow is suppressed, the <xref:System.Security.SecurityContext.Capture%2A> method returns `null`.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The context flow is already suppressed.</exception>
         <permission cref="T:System.Security.SecurityCriticalAttribute">Requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="T:System.Threading.AsyncFlowControl" />
       </Docs>
     </Member>
   </Members>

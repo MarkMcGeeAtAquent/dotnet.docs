@@ -1,7 +1,9 @@
-<Type Name="CanExecuteRoutedEventArgs" FullName="System.Windows.Input.CanExecuteRoutedEventArgs">
+﻿<Type Name="CanExecuteRoutedEventArgs" FullName="System.Windows.Input.CanExecuteRoutedEventArgs">
   <TypeSignature Language="C#" Value="public sealed class CanExecuteRoutedEventArgs : System.Windows.RoutedEventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CanExecuteRoutedEventArgs extends System.Windows.RoutedEventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Input.CanExecuteRoutedEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class CanExecuteRoutedEventArgs&#xA;Inherits RoutedEventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CanExecuteRoutedEventArgs sealed : System::Windows::RoutedEventArgs" />
   <AssemblyInfo>
     <AssemblyName>PresentationCore</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -30,12 +32,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />
+    <altmember cref="T:System.Windows.Input.CommandBinding" />
+    <altmember cref="T:System.Windows.Input.CommandManager" />
   </Docs>
   <Members>
     <Member MemberName="CanExecute">
       <MemberSignature Language="C#" Value="public bool CanExecute { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanExecute" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute" />
+      <MemberSignature Language="VB.NET" Value="Public Property CanExecute As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanExecute { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -64,12 +71,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />
+        <altmember cref="T:System.Windows.Input.CommandBinding" />
+        <altmember cref="T:System.Windows.Input.CommandManager" />
       </Docs>
     </Member>
     <Member MemberName="Command">
       <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.Command" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Command As ICommand" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Input::ICommand ^ Command { System::Windows::Input::ICommand ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -97,12 +109,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />
+        <altmember cref="T:System.Windows.Input.CommandBinding" />
+        <altmember cref="T:System.Windows.Input.CommandManager" />
       </Docs>
     </Member>
     <Member MemberName="ContinueRouting">
       <MemberSignature Language="C#" Value="public bool ContinueRouting { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ContinueRouting" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.ContinueRouting" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContinueRouting As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ContinueRouting { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -122,6 +139,8 @@
       <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object target);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Input.CanExecuteRoutedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub InvokeEventHandler (genericHandler As Delegate, target As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void InvokeEventHandler(Delegate ^ genericHandler, System::Object ^ target);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -145,6 +164,8 @@
       <MemberSignature Language="C#" Value="public object Parameter { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Parameter" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Input.CanExecuteRoutedEventArgs.Parameter" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Parameter As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Parameter { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -167,12 +188,15 @@
    
   
 ## Examples  
- The following example shows up to use a <xref:System.Windows.Controls.Button> as the command source for a custom command.  The <xref:System.Windows.Input.ICommandSource.Command%2A> property of the <xref:System.Windows.Controls.Button> is set to the custom <xref:System.Windows.Input.RoutedCommand> called `customComand`and the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> is used to pass the value of the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property of a <xref:System.Windows.Controls.Slider> control.  This is accomplishment by using databinding to bind the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> to the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property.  The converter in the binding expression is a custom <xref:System.Windows.Data.IValueConverter> which converts <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> into an <xref:System.Int32> before binding it to the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>.  
+ The following example shows up to use a <xref:System.Windows.Controls.Button> as the command source for a custom command.  The <xref:System.Windows.Input.ICommandSource.Command%2A> property of the <xref:System.Windows.Controls.Button> is set to the custom <xref:System.Windows.Input.RoutedCommand> called `customComand` and the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> is used to pass the value of the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property of a <xref:System.Windows.Controls.Slider> control.  This is accomplishment by using databinding to bind the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A> to the <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> property.  The converter in the binding expression is a custom <xref:System.Windows.Data.IValueConverter> which converts <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A> into an <xref:System.Int32> before binding it to the <xref:System.Windows.Input.ICommandSource.CommandParameter%2A>.  
   
- [!code-xml[invalidaterequerywithdispatchertimer#InvalidateSampleSliderCommandParameter](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithDispatcherTimer/CSharp/Window1.xaml#invalidatesampleslidercommandparameter)]  
+ [!code-xaml[invalidaterequerywithdispatchertimer#InvalidateSampleSliderCommandParameter](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithDispatcherTimer/CSharp/Window1.xaml#invalidatesampleslidercommandparameter)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />
+        <altmember cref="T:System.Windows.Input.CommandBinding" />
+        <altmember cref="T:System.Windows.Input.CommandManager" />
       </Docs>
     </Member>
   </Members>

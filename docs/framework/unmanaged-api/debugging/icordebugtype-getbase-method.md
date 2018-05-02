@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugType::GetBase Method | Microsoft Docs"
+title: "ICorDebugType::GetBase Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugType.GetBase"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugType::GetBase"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugType::GetBase method [.NET Framework debugging]"
   - "GetBase method [.NET Framework debugging]"
 ms.assetid: f24e1af9-c220-4f79-ae62-4153ec17ea81
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugType::GetBase Method
 Gets an interface pointer to an ICorDebugType that represents the base type, if one exists, of the type represented by this `ICorDebugType`.  

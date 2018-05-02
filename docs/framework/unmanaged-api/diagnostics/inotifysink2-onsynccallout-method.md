@@ -1,5 +1,5 @@
 ---
-title: "INotifySink2::OnSyncCallOut Method | Microsoft Docs"
+title: "INotifySink2::OnSyncCallOut Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "INotifySink2.OnSyncCallOut"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "INotifySink2::OnSyncCallOut"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "INotifySink2::OnSyncCallOut method [.NET Framework debugging]"
   - "OnSyncCallOut method [.NET Framework debugging]"
 ms.assetid: 97f15656-8677-4079-8553-a1d8603355d6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # INotifySink2::OnSyncCallOut Method
 Gets invoked when a call is out.  
@@ -58,6 +61,6 @@ HRESULT OnSyncCallOut
  **Header:** ProtocolNotify2.idl  
   
 ## See Also  
- [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)   
- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)   
+ [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
+ [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
  [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

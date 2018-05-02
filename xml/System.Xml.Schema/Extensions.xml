@@ -1,7 +1,9 @@
-<Type Name="Extensions" FullName="System.Xml.Schema.Extensions">
+﻿<Type Name="Extensions" FullName="System.Xml.Schema.Extensions">
   <TypeSignature Language="C#" Value="public static class Extensions" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Extensions extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Schema.Extensions" />
+  <TypeSignature Language="VB.NET" Value="Public Module Extensions" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Extensions abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.Linq</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -11,19 +13,23 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XDocument</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
   </Base>
   <Interfaces />
   <Docs>
-    <summary>This class contains the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] extension methods for XSD validation.</summary>
+    <summary>This class contains the LINQ to XML extension methods for XSD validation.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
  This class also contains methods to get the post-schema-validation infoset (PSVI) of a validated XML node.  
   
- When you validate an <xref:System.Xml.Linq.XDocument>, <xref:System.Xml.Linq.XElement>, or <xref:System.Xml.Linq.XAttribute>, you can also optionally populate the XML tree with the post-schema-validation infoset. PSVI information is added as an annotation of type <xref:System.Xml.Schema.XmlSchemaInfo?displayProperty=fullName>.  
+ When you validate an <xref:System.Xml.Linq.XDocument>, <xref:System.Xml.Linq.XElement>, or <xref:System.Xml.Linq.XAttribute>, you can also optionally populate the XML tree with the post-schema-validation infoset. PSVI information is added as an annotation of type <xref:System.Xml.Schema.XmlSchemaInfo?displayProperty=nameWithType>.  
   
    
   
@@ -104,10 +110,32 @@ custOrd did not validate
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName="GetSchemaInfo">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the post-schema-validation infoset (PSVI) of a validated node.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ After you have validated an <xref:System.Xml.Linq.XDocument>, you can retrieve the post-schema-validation infoset for an <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> that is contained in the document.  
+  
+ After retrieving the <xref:System.Xml.Schema.IXmlSchemaInfo> object, you can use the <xref:System.Xml.Schema.IXmlSchemaInfo.SchemaAttribute%2A> or <xref:System.Xml.Schema.IXmlSchemaInfo.SchemaElement%2A> properties to get a partial validation type (<xref:System.Xml.Schema.XmlSchemaElement> or <xref:System.Xml.Schema.XmlSchemaAttribute>). You can use the partial validation types to validate an attribute or a sub-tree.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetSchemaInfo">
       <MemberSignature Language="C#" Value="public static System.Xml.Schema.IXmlSchemaInfo GetSchemaInfo (this System.Xml.Linq.XAttribute source);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.IXmlSchemaInfo GetSchemaInfo(class System.Xml.Linq.XAttribute source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.GetSchemaInfo(System.Xml.Linq.XAttribute)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetSchemaInfo (source As XAttribute) As IXmlSchemaInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static System::Xml::Schema::IXmlSchemaInfo ^ GetSchemaInfo(System::Xml::Linq::XAttribute ^ source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -117,6 +145,10 @@ custOrd did not validate
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.IXmlSchemaInfo</ReturnType>
@@ -146,6 +178,8 @@ custOrd did not validate
       <MemberSignature Language="C#" Value="public static System.Xml.Schema.IXmlSchemaInfo GetSchemaInfo (this System.Xml.Linq.XElement source);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.IXmlSchemaInfo GetSchemaInfo(class System.Xml.Linq.XElement source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.GetSchemaInfo(System.Xml.Linq.XElement)" />
+      <MemberSignature Language="VB.NET" Value="&lt;Extension()&gt;&#xA;Public Function GetSchemaInfo (source As XElement) As IXmlSchemaInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static System::Xml::Schema::IXmlSchemaInfo ^ GetSchemaInfo(System::Xml::Linq::XElement ^ source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -155,6 +189,10 @@ custOrd did not validate
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.IXmlSchemaInfo</ReturnType>
@@ -356,10 +394,33 @@ Invalid Element /Root/Child1/GrandChild3
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Validate">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.Linq</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Validates that an <see cref="T:System.Xml.Linq.XDocument" />, an <see cref="T:System.Xml.Linq.XElement" />, or an <see cref="T:System.Xml.Linq.XAttribute" /> conforms to an XSD in an <see cref="T:System.Xml.Schema.XmlSchemaSet" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ These methods use an underlying <xref:System.Xml.XmlReader> to validate the XML tree against an XSD.  
+  
+ Validation error and warning messages are handled using the <xref:System.Xml.Schema.ValidationEventHandler> delegate. If no event handler is provided to these methods, validation errors are exposed as an <xref:System.Xml.Schema.XmlSchemaValidationException>. Validation warnings do not cause an <xref:System.Xml.Schema.XmlSchemaValidationException> to be thrown.  
+  
+ Some of these extension methods optionally allow population of the post-schema-validation infoset (PSVI).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Validate">
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XDocument source, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XDocument source, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XDocument,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XDocument ^ source, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -369,6 +430,10 @@ Invalid Element /Root/Child1/GrandChild3
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -517,6 +582,7 @@ doc2 did not validate
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XAttribute source, System.Xml.Schema.XmlSchemaObject partialValidationType, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XAttribute source, class System.Xml.Schema.XmlSchemaObject partialValidationType, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XAttribute,System.Xml.Schema.XmlSchemaObject,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XAttribute ^ source, System::Xml::Schema::XmlSchemaObject ^ partialValidationType, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -526,6 +592,10 @@ doc2 did not validate
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -720,6 +790,7 @@ lang did not validate
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XDocument source, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XDocument source, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XDocument,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XDocument ^ source, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler, bool addSchemaInfo);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -729,6 +800,10 @@ lang did not validate
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -755,7 +830,7 @@ lang did not validate
   
  There are two steps to populating the XML tree with the PSVI.  
   
-1.  First, an annotation is added to all nodes in the tree to enable you to call <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=fullName> or <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=fullName> on an element or attribute in the tree.  
+1.  First, an annotation is added to all nodes in the tree to enable you to call <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=nameWithType> or <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=nameWithType> on an element or attribute in the tree.  
   
 2.  Second, default elements and attributes defined in the XSD are added to the XML tree. By calling one of the <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A> methods, you can determine if a specific element or attribute was added from the XSD as a default element or attribute.  
   
@@ -1100,6 +1175,7 @@ Invalid Element /Root/Child1/GrandChild3
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XElement source, System.Xml.Schema.XmlSchemaObject partialValidationType, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XElement source, class System.Xml.Schema.XmlSchemaObject partialValidationType, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XElement,System.Xml.Schema.XmlSchemaObject,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XElement ^ source, System::Xml::Schema::XmlSchemaObject ^ partialValidationType, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1109,6 +1185,10 @@ Invalid Element /Root/Child1/GrandChild3
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1303,6 +1383,7 @@ child1 did not validate
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XAttribute source, System.Xml.Schema.XmlSchemaObject partialValidationType, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XAttribute source, class System.Xml.Schema.XmlSchemaObject partialValidationType, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XAttribute,System.Xml.Schema.XmlSchemaObject,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XAttribute ^ source, System::Xml::Schema::XmlSchemaObject ^ partialValidationType, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler, bool addSchemaInfo);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1312,6 +1393,10 @@ child1 did not validate
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1336,7 +1421,7 @@ child1 did not validate
 ## Remarks  
  You can use this method to validate that an <xref:System.Xml.Linq.XAttribute> conforms to a schema. You typically use this method when you have modified an attribute, and you want to make sure that it still conforms to its schema. You could validate the entire document, but it takes less processing time to validate just the attribute.  
   
- If `addSchemaInfo` is `true`, this method populates the attribute with the post-schema-validation infoset (PSVI). After you have populated the XML tree with the PSVI, you can call <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=fullName> on the validated attribute. This is useful if you are writing code that relies on data returned by <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A>.  
+ If `addSchemaInfo` is `true`, this method populates the attribute with the post-schema-validation infoset (PSVI). After you have populated the XML tree with the PSVI, you can call <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A?displayProperty=nameWithType> on the validated attribute. This is useful if you are writing code that relies on data returned by <xref:System.Xml.Schema.Extensions.GetSchemaInfo%2A>.  
   
  If you pass `null` for `validationEventHandler`, then this method raises an exception upon validation errors. Validation warnings will not raise an exception.  
   
@@ -1568,6 +1653,7 @@ Invalid Attribute /Root/@Lang
       <MemberSignature Language="C#" Value="public static void Validate (this System.Xml.Linq.XElement source, System.Xml.Schema.XmlSchemaObject partialValidationType, System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Validate(class System.Xml.Linq.XElement source, class System.Xml.Schema.XmlSchemaObject partialValidationType, class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.ValidationEventHandler validationEventHandler, bool addSchemaInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Schema.Extensions.Validate(System.Xml.Linq.XElement,System.Xml.Schema.XmlSchemaObject,System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.ValidationEventHandler,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;[System::Runtime::CompilerServices::Extension]&#xA; static void Validate(System::Xml::Linq::XElement ^ source, System::Xml::Schema::XmlSchemaObject ^ partialValidationType, System::Xml::Schema::XmlSchemaSet ^ schemas, System::Xml::Schema::ValidationEventHandler ^ validationEventHandler, bool addSchemaInfo);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1577,6 +1663,10 @@ Invalid Attribute /Root/@Lang
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1791,47 +1881,5 @@ Contents of doc2:
         <exception cref="T:System.Xml.Schema.XmlSchemaValidationException">Thrown for XML Schema Definition Language (XSD) validation errors.</exception>
       </Docs>
     </Member>
-    <MemberGroup MemberName="GetSchemaInfo">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml.Linq</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Gets the post-schema-validation infoset (PSVI) of a validated node.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- After you have validated an <xref:System.Xml.Linq.XDocument>, you can retrieve the post-schema-validation infoset for an <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> that is contained in the document.  
-  
- After retrieving the <xref:System.Xml.Schema.IXmlSchemaInfo> object, you can use the <xref:System.Xml.Schema.IXmlSchemaInfo.SchemaAttribute%2A> or <xref:System.Xml.Schema.IXmlSchemaInfo.SchemaElement%2A> properties to get a partial validation type (<xref:System.Xml.Schema.XmlSchemaElement> or <xref:System.Xml.Schema.XmlSchemaAttribute>). You can use the partial validation types to validate an attribute or a sub-tree.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Validate">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml.Linq</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Validates that an <see cref="T:System.Xml.Linq.XDocument" />, an <see cref="T:System.Xml.Linq.XElement" />, or an <see cref="T:System.Xml.Linq.XAttribute" /> conforms to an XSD in an <see cref="T:System.Xml.Schema.XmlSchemaSet" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- These methods use an underlying <xref:System.Xml.XmlReader> to validate the XML tree against an XSD.  
-  
- Validation error and warning messages are handled using the <xref:System.Xml.Schema.ValidationEventHandler> delegate. If no event handler is provided to these methods, validation errors are exposed as an <xref:System.Xml.Schema.XmlSchemaValidationException>. Validation warnings do not cause an <xref:System.Xml.Schema.XmlSchemaValidationException> to be thrown.  
-  
- Some of these extension methods optionally allow population of the post-schema-validation infoset (PSVI).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

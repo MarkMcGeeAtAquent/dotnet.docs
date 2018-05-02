@@ -1,8 +1,8 @@
 ---
-title: "How to: Append a MenuStrip to an MDI Parent Window (Windows Forms) | Microsoft Docs"
+title: "How to: Append a MenuStrip to an MDI Parent Window (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,16 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "MenuStrip control [Windows Forms], merging"
   - "MenuStrip control [Windows Forms], appending"
-  - "MDI, merging menu items"
+  - "MDI [Windows Forms], merging menu items"
 ms.assetid: ab70c936-b452-4653-b417-17be57bb795b
 caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Append a MenuStrip to an MDI Parent Window (Windows Forms)
 In some applications, the kind of a multiple-document interface (MDI) child window can be different from the MDI parent window. For example, the MDI parent might be a spreadsheet, and the MDI child might be a chart. In that case, you want to update the contents of the MDI parent's menu with the contents of the MDI child's menu as MDI child windows of different kinds are activated.  
@@ -46,7 +49,7 @@ In some applications, the kind of a multiple-document interface (MDI) child wind
   
 8.  Add two submenu items to the `&Special` menu item and set their <xref:System.Windows.Forms.Form.Text%2A> properties to `Command&1` and `Command&2`, respectively.  
   
-9. Set the <xref:System.Windows.Forms.MergeAction> property of the `&Special`, `Command&1`, and `Command&2` menu items to <xref:System.Windows.Forms.MergeAction>.  
+9. Set the <xref:System.Windows.Forms.MergeAction> property of the `&Special`, `Command&1`, and `Command&2` menu items to <xref:System.Windows.Forms.MergeAction.Append>.  
   
 10. Create an event handler for the <xref:System.Windows.Forms.Control.Click> event of the `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
@@ -60,12 +63,9 @@ In some applications, the kind of a multiple-document interface (MDI) child wind
         'Display the new form.  
             NewMDIChild.Show()  
     End Sub  
-  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     private void openToolStripMenuItem_Click(object sender, EventArgs e)  
     {  
         Form2 newMDIChild = new Form2();  
@@ -74,7 +74,6 @@ In some applications, the kind of a multiple-document interface (MDI) child wind
         // Display the new form.  
             newMDIChild.Show();  
     }  
-  
     ```  
   
 12. Place code similar to the following code example in the `&Open`<xref:System.Windows.Forms.ToolStripMenuItem> to register the event handler.  
@@ -82,12 +81,10 @@ In some applications, the kind of a multiple-document interface (MDI) child wind
     ```vb  
     Private Sub openToolStripMenuItem_Click(sender As Object, e As _  
     EventArgs) Handles openToolStripMenuItem.Click  
-  
     ```  
   
     ```csharp  
     this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);  
-  
     ```  
   
 ## Compiling the Code  
@@ -97,4 +94,4 @@ In some applications, the kind of a multiple-document interface (MDI) child wind
   
 -   A <xref:System.Windows.Forms.MenuStrip> control on `Form1` named `menuStrip1`, and a <xref:System.Windows.Forms.MenuStrip> control on `Form2` named `menuStrip2`.  
   
--   References to the <xref:System?displayProperty=fullName> and <xref:System.Windows.Forms?displayProperty=fullName> assemblies.
+-   References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.

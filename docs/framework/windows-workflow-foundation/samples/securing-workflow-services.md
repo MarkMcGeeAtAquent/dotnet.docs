@@ -1,17 +1,19 @@
 ---
-title: "Securing Workflow Services | Microsoft Docs"
+title: "Securing Workflow Services"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 53f84ad5-1ed1-4114-8d0d-b12e8a021c6e
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing Workflow Services
 The Secured Workflow Service sample shows the following procedures:  

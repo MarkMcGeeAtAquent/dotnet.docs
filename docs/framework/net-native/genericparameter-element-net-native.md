@@ -1,5 +1,5 @@
 ---
-title: "&lt;GenericParameter&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;GenericParameter&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;GenericParameter&gt; Element (.NET Native)
 Applies policy to the parameter type of a generic type or method.  
@@ -21,7 +23,6 @@ Applies policy to the parameter type of a generic type or method.
 ## Syntax  
   
 ```xml  
-  
 <GenericParameter Name="generic_parameter_name"  
                   Activate="policy_type"  
                   Browse="policy_type"  
@@ -33,7 +34,6 @@ Applies policy to the parameter type of a generic type or method.
                   MarshalObject="policy_type"  
                   MarshalDelegate="policy_type"  
                   MarshalStructure="policy_type"  
-  
 ```  
   
 ## Attributes and Elements  
@@ -48,9 +48,9 @@ Applies policy to the parameter type of a generic type or method.
 |`Browse`|Reflection|Optional attribute. Controls querying for information about program elements, but does not enable any runtime access.|  
 |`Dynamic`|Reflection|Optional attribute. Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.|  
 |`Serialize`|Serialization|Optional attribute. Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer.|  
-|`DataContractSerializer`|Serialization|Optional attribute. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=fullName> class.|  
-|`DataContractJsonSerializer`|Serialization|Optional attribute. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> class.|  
-|`XmlSerializer`|Serialization|Optional attribute. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=fullName> class.|  
+|`DataContractSerializer`|Serialization|Optional attribute. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.|  
+|`DataContractJsonSerializer`|Serialization|Optional attribute. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> class.|  
+|`XmlSerializer`|Serialization|Optional attribute. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.|  
 |`MarshalObject`|Interop|Optional attribute. Controls policy for marshaling reference types to Windows Runtime and COM.|  
 |`MarshalDelegate`|Interop|Optional attribute. Controls policy for marshaling delegate types as function pointers to native code.|  
 |`MarshalStructure`|Interop|Optional attribute. Controls policy for marshaling value types to native code.|  
@@ -83,7 +83,6 @@ Applies policy to the parameter type of a generic type or method.
  The `<GenericParameter>` element is most useful when used with serializers. The following example uses the `<GenericParameter>` element to apply policy to the type `T` in calls to the NewtonSoft JSON serializer's [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) method overloads.  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Type Name="Newtonsoft.Json.JsonConvert" >  
       <Method Name="DeserializeObject{T}">  
@@ -91,12 +90,11 @@ Applies policy to the parameter type of a generic type or method.
       </Method>  
    </Type>  
 </Directives>  
-  
 ```  
   
 ## See Also  
- [\<Method> Element](../../../docs/framework/net-native/method-element-net-native.md)   
- [\<Type> Element](../../../docs/framework/net-native/type-element-net-native.md)   
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
+ [\<Method> Element](../../../docs/framework/net-native/method-element-net-native.md)  
+ [\<Type> Element](../../../docs/framework/net-native/type-element-net-native.md)  
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
  [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)

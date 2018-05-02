@@ -1,5 +1,5 @@
 ---
-title: "ICLRIoCompletionManager Interface | Microsoft Docs"
+title: "ICLRIoCompletionManager Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRIoCompletionManager"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRIoCompletionManager"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRIoCompletionManager interface [.NET Framework hosting]"
 ms.assetid: c6c3ace6-e5e7-4450-8cc5-a9a48208c493
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRIoCompletionManager Interface
 Implements a callback method that allows the host to notify the common language runtime (CLR) of the status of specified I/O requests.  
@@ -48,6 +51,6 @@ Implements a callback method that allows the host to notify the common language 
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)   
- [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)   
+ [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)  
+ [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

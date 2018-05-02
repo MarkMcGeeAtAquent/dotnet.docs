@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::OpenNamespace Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::OpenNamespace Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.OpenNamespace"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::OpenNamespace"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedWriter::OpenNamespace method [.NET Framework debugging]"
   - "OpenNamespace method [.NET Framework debugging]"
 ms.assetid: 426f4e4f-e60d-4ad1-b546-a10e3c55c283
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::OpenNamespace Method
 Opens a new namespace. Call this method before defining methods or variables that occupy a namespace. Namespaces can be nested.  
@@ -48,5 +51,5 @@ HRESULT OpenNamespace(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)   
+ [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
  [CloseNamespace Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closenamespace-method.md)

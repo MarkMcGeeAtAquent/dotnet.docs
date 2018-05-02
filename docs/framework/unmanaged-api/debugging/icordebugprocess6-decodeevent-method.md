@@ -1,21 +1,21 @@
 ---
-title: "ICorDebugProcess6::DecodeEvent Method | Microsoft Docs"
+title: "ICorDebugProcess6::DecodeEvent Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 1453bc0c-6e0d-4d5a-b176-22607f8a3e6c
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess6::DecodeEvent Method
 Decodes managed debug events that have been encapsulated in the payload of specially crafted native exception debug events.  
@@ -23,7 +23,6 @@ Decodes managed debug events that have been encapsulated in the payload of speci
 ## Syntax  
   
 ```  
-  
 HRESULT DecodeEvent(  
         [in, length_is(countBytes), size_is(countBytes)]  const BYTE pRecord[],  
         [in] DWORD countBytes,  
@@ -32,7 +31,6 @@ HRESULT DecodeEvent(
         [in] DWORD dwThreadId,   
         [out] ICorDebugDebugEvent **ppEvent  
 );  
-  
 ```  
   
 #### Parameters  
@@ -69,5 +67,5 @@ HRESULT DecodeEvent(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugProcess6 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)   
+ [ICorDebugProcess6 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

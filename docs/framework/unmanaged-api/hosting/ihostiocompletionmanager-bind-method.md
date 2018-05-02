@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::Bind Method | Microsoft Docs"
+title: "IHostIoCompletionManager::Bind Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.Bind"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::Bind"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager::Bind method [.NET Framework hosting]"
   - "Bind method [.NET Framework hosting]"
 ms.assetid: acd74cb5-7e22-4a07-83c3-82288e1abd9f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::Bind Method
 Binds the specified handle to an I/O completion port that has been created by an earlier call to [CreateIoCompletionPort](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-createiocompletionport-method.md).  

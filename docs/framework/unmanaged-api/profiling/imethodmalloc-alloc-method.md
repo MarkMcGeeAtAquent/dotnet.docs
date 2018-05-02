@@ -1,5 +1,5 @@
 ---
-title: "IMethodMalloc::Alloc Method | Microsoft Docs"
+title: "IMethodMalloc::Alloc Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMethodMalloc.Alloc"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMethodMalloc::Alloc"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMethodMalloc::Alloc method [.NET Framework profiling]"
   - "Alloc method, IMethodMalloc interface [.NET Framework profiling]"
 ms.assetid: 8653bd4c-2290-43d2-a3e1-cbbd50033f4f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMethodMalloc::Alloc Method
 Attempts to allocate a specified amount of memory for a new Microsoft intermediate language (MSIL) function body.  

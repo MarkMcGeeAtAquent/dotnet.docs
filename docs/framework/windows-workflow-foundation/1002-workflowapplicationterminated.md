@@ -1,5 +1,5 @@
 ---
-title: "1002 - WorkflowApplicationTerminated | Microsoft Docs"
+title: "1002 - WorkflowApplicationTerminated"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4e8b111f-79dc-4898-bb4a-e9b36f69420f
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1002 - WorkflowApplicationTerminated
 ## Properties  

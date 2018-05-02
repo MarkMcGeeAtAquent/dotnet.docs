@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::CountEnum Method | Microsoft Docs"
+title: "IMetaDataImport::CountEnum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.CountEnum"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::CountEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CountEnum method [.NET Framework metadata]"
   - "IMetaDataImport::CountEnum method [.NET Framework metadata]"
 ms.assetid: d1de53ad-9435-4b5f-9df7-07f21210e5b5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::CountEnum Method
 Gets the number of elements in the enumeration that was retrieved by the specified enumerator.  
@@ -59,5 +62,5 @@ HRESULT CountEnum (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

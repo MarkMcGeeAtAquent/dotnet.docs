@@ -1,7 +1,9 @@
-<Type Name="DataTrigger" FullName="System.Windows.DataTrigger">
+﻿<Type Name="DataTrigger" FullName="System.Windows.DataTrigger">
   <TypeSignature Language="C#" Value="public class DataTrigger : System.Windows.TriggerBase, System.Windows.Markup.IAddChild" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataTrigger extends System.Windows.TriggerBase implements class System.Windows.Markup.IAddChild" />
   <TypeSignature Language="DocId" Value="T:System.Windows.DataTrigger" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataTrigger&#xA;Inherits TriggerBase&#xA;Implements IAddChild" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataTrigger : System::Windows::TriggerBase, System::Windows::Markup::IAddChild" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -32,7 +34,7 @@
   
  Note that you must specify both the <xref:System.Windows.DataTrigger.Binding%2A> and <xref:System.Windows.DataTrigger.Value%2A> properties on a <xref:System.Windows.DataTrigger> for the data trigger to be meaningful. If one or both of the properties are not specified, an exception is thrown.  
   
- The <xref:System.Windows.DataTrigger.Setters%2A> property of a <xref:System.Windows.DataTrigger> object can only consist of <xref:System.Windows.Setter> objects. Adding a <xref:System.Windows.Setter> child to a <xref:System.Windows.DataTrigger> object implicitly adds it to the <xref:System.Windows.SetterBaseCollection> for the <xref:System.Windows.DataTrigger> object. <xref:System.Windows.EventSetter> objects are not supported; only <xref:System.Windows.Style.Setters%2A?displayProperty=fullName> supports <xref:System.Windows.EventSetter> objects.  
+ The <xref:System.Windows.DataTrigger.Setters%2A> property of a <xref:System.Windows.DataTrigger> object can only consist of <xref:System.Windows.Setter> objects. Adding a <xref:System.Windows.Setter> child to a <xref:System.Windows.DataTrigger> object implicitly adds it to the <xref:System.Windows.SetterBaseCollection> for the <xref:System.Windows.DataTrigger> object. <xref:System.Windows.EventSetter> objects are not supported; only <xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType> supports <xref:System.Windows.EventSetter> objects.  
   
    
   
@@ -43,20 +45,24 @@
   
  The <xref:System.Windows.DataTrigger> is specified such that if the *State* of the *Place* data item is "WA" then the foreground of the corresponding <xref:System.Windows.Controls.ListBoxItem> is set to Red.  
   
- [!code-xml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
   
  The following example shows how to use a <xref:System.Windows.DataTrigger>, a <xref:System.Windows.Media.Animation.BeginStoryboard> action, and a <xref:System.Windows.Media.Animation.Storyboard> to animate a property when bound data meets a specified condition. The example displays inventory information in a <xref:System.Windows.Controls.ListBox> control. It uses a <xref:System.Windows.DataTrigger> to animate the <xref:System.Windows.UIElement.Opacity%2A> of every <xref:System.Windows.Controls.ListBoxItem> that contains an out-of-stock book.  
   
- [!code-xml[AnimatePropertyStoryboards#GraphicsMMDataTriggerStoryboardWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/AnimatePropertyStoryboards/XAML/DataTriggerStoryboardExample.xaml#graphicsmmdatatriggerstoryboardwholepage)]  
+ [!code-xaml[AnimatePropertyStoryboards#GraphicsMMDataTriggerStoryboardWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/AnimatePropertyStoryboards/XAML/DataTriggerStoryboardExample.xaml#graphicsmmdatatriggerstoryboardwholepage)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Trigger" />
+    <altmember cref="T:System.Windows.MultiDataTrigger" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataTrigger ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataTrigger();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -72,6 +78,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Data.BindingBase Binding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingBase Binding" />
       <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Binding" />
+      <MemberSignature Language="VB.NET" Value="Public Property Binding As BindingBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Data::BindingBase ^ Binding { System::Windows::Data::BindingBase ^ get(); void set(System::Windows::Data::BindingBase ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -126,20 +134,23 @@
 ## Examples  
  In the following example, the <xref:System.Windows.DataTrigger> sets the <xref:System.Windows.Controls.Border.BorderBrush%2A> of the element named `border` to `Yellow` if the `TaskType` property is `TaskType.Home`.  
   
- [!code-xml[DataTemplatingIntro#DT](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#dt)]  
-[!code-xml[DataTemplatingIntro#DataTrigger](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#datatrigger)]  
-[!code-xml[DataTemplatingIntro#AddingMore2](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore2)]  
+ [!code-xaml[DataTemplatingIntro#DT](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#dt)]  
+[!code-xaml[DataTemplatingIntro#DataTrigger](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#datatrigger)]  
+[!code-xaml[DataTemplatingIntro#AddingMore2](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore2)]  
   
  For a detailed discussion of this example, see [Data Templating Overview](~/docs/framework/wpf/data/data-templating-overview.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.DataTrigger.Value" />
       </Docs>
     </Member>
     <Member MemberName="ReceiveMarkupExtension">
       <MemberSignature Language="C#" Value="public static void ReceiveMarkupExtension (object targetObject, System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveMarkupExtension(object targetObject, class System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.ReceiveMarkupExtension(System.Object,System.Windows.Markup.XamlSetMarkupExtensionEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub ReceiveMarkupExtension (targetObject As Object, eventArgs As XamlSetMarkupExtensionEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void ReceiveMarkupExtension(System::Object ^ targetObject, System::Windows::Markup::XamlSetMarkupExtensionEventArgs ^ eventArgs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -160,16 +171,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This is the method referenced by an applied <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute> attribute at the class level, which means that this method processes all attempts to set values of<xref:System.Windows.DataTrigger> with a markup extension. You do not typically call this method directly.  
+ This is the method referenced by an applied <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute> attribute at the class level, which means that this method processes all attempts to set values of <xref:System.Windows.DataTrigger> with a markup extension. You do not typically call this method directly.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Markup.XamlSetMarkupExtensionAttribute" />
+        <altmember cref="T:System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />
       </Docs>
     </Member>
     <Member MemberName="Setters">
       <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
       <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Setters" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Setters As SetterBaseCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::SetterBaseCollection ^ Setters { System::Windows::SetterBaseCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -177,7 +192,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -211,7 +226,7 @@
   
  If there is more than one setter setting the same property in the same setter collection, the setter that is declared last is used.  
   
- The <xref:System.Windows.DataTrigger.Setters%2A> property of a <xref:System.Windows.DataTrigger> object can only consist of <xref:System.Windows.Setter> objects. Adding a <xref:System.Windows.Setter> child to a <xref:System.Windows.DataTrigger> object implicitly adds it to the <xref:System.Windows.SetterBaseCollection> for the <xref:System.Windows.DataTrigger> object. <xref:System.Windows.EventSetter> objects are not supported; only <xref:System.Windows.Style.Setters%2A?displayProperty=fullName> supports <xref:System.Windows.EventSetter> objects.  
+ The <xref:System.Windows.DataTrigger.Setters%2A> property of a <xref:System.Windows.DataTrigger> object can only consist of <xref:System.Windows.Setter> objects. Adding a <xref:System.Windows.Setter> child to a <xref:System.Windows.DataTrigger> object implicitly adds it to the <xref:System.Windows.SetterBaseCollection> for the <xref:System.Windows.DataTrigger> object. <xref:System.Windows.EventSetter> objects are not supported; only <xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType> supports <xref:System.Windows.EventSetter> objects.  
   
    
   
@@ -222,7 +237,7 @@
   
  For the complete sample, see [Data Binding Demo](http://go.microsoft.com/fwlink/?LinkID=163703).  
   
- [!code-xml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
+ [!code-xaml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
   
  ]]></format>
         </remarks>
@@ -232,7 +247,12 @@
       <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub AddChild (value As Object) Implements IAddChild.AddChild" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Windows.Markup.IAddChild.AddChild(System::Object ^ value) = System::Windows::Markup::IAddChild::AddChild;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.IAddChild.AddChild(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -260,7 +280,12 @@
       <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Sub AddText (text As String) Implements IAddChild.AddText" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Windows.Markup.IAddChild.AddText(System::String ^ text) = System::Windows::Markup::IAddChild::AddText;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Windows.Markup.IAddChild.AddText(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -288,6 +313,8 @@
       <MemberSignature Language="C#" Value="public object Value { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Value" />
       <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Value" />
+      <MemberSignature Language="VB.NET" Value="Public Property Value As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ Value { System::Object ^ get(); void set(System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -336,17 +363,19 @@
   
  The <xref:System.Windows.DataTrigger> is specified such that if the *State* of the *Place* data item is "WA" then the foreground of the corresponding <xref:System.Windows.Controls.ListBoxItem> is set to Red.  
   
- [!code-xml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
   
  The following example shows two <xref:System.Windows.DataTrigger>s that are defined in a <xref:System.Windows.DataTemplate>. The <xref:System.Windows.DataTemplate> is applied to *AuctionItem* data objects (not shown in this example), which have the property *SpecialFeatures*. See [Data Binding Demo](http://go.microsoft.com/fwlink/?LinkID=163703) for the complete example.  
   
  The first <xref:System.Windows.DataTrigger> is specified such that if the data object has a *SpecialFeatures* value of *Color*, then the item is displayed with a DodgerBlue background with Navy titles. If the data object has a *SpecialFeatures* value of *Highlight*, then the second <xref:System.Windows.DataTrigger> will be active, causing the item to be displayed with an Orange border with a star.  
   
- [!code-xml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
+ [!code-xaml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">Expressions are not supported. Bindings are not supported.</exception>
+        <altmember cref="P:System.Windows.DataTrigger.Binding" />
+        <altmember cref="P:System.Windows.DataTrigger.Setters" />
       </Docs>
     </Member>
   </Members>

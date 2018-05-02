@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedScope::GetStartOffset Method | Microsoft Docs"
+title: "ISymUnmanagedScope::GetStartOffset Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedScope.GetStartOffset"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedScope::GetStartOffset"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStartOffset method, ISymUnmanagedScope interface [.NET Framework debugging]"
   - "ISymUnmanagedScope::GetStartOffset method [.NET Framework debugging]"
 ms.assetid: da6bbc75-94d1-4354-9722-0d455b4428fb
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedScope::GetStartOffset Method
 Gets the start offset for this scope.  
@@ -48,5 +51,5 @@ HRESULT GetStartOffset(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedScope Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)   
+ [ISymUnmanagedScope Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)  
  [GetEndOffset Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getendoffset-method.md)

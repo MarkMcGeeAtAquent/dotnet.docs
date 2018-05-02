@@ -1,5 +1,5 @@
 ---
-title: "Hosting Structures | Microsoft Docs"
+title: "Hosting Structures"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "hosting structures [.NET Framework]"
   - "unmanaged structures [.NET Framework], hosting"
@@ -20,6 +18,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hosting Structures
 This section describes the unmanaged structures that the hosting API uses.  

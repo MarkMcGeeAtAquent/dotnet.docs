@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugBreakpointEnum Interface1 | Microsoft Docs"
+title: "ICorDebugBreakpointEnum Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugBreakpointEnum"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugBreakpointEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugBreakpointEnum interface [.NET Framework debugging]"
 ms.assetid: 4c6f4f6e-52cc-402e-881b-7b8526544c90
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugBreakpointEnum Interface1
 Implements ICorDebugEnum methods, and enumerates ICorDebugBreakpoint arrays.  

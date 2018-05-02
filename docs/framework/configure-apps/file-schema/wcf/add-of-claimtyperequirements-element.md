@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;claimTypeRequirements&gt; element | Microsoft Docs"
+title: "&lt;add&gt; of &lt;claimTypeRequirements&gt; element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3234cd45-1478-468e-8b19-5c50815c4786
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;claimTypeRequirements&gt; element
 Specifies the types of required and optional claims expected to appear in the federated credential. For example, services state the requirements on incoming credentials, which must possess a certain set of claim types.  
@@ -28,8 +30,7 @@ Specifies the types of required and optional claims expected to appear in the fe
   
 ## Syntax  
   
-```  
-  
+```xml  
 <claimTypeRequirements>  
       <add claimType="URI"  
         isOptional="Boolean" />  
@@ -61,7 +62,7 @@ Specifies the types of required and optional claims expected to appear in the fe
 ## Example  
  The following configuration adds two claim type requirements to a security binding.  
   
-```  
+```xml  
 <bindings>  
     <wsFederationHttpBinding>  
       <binding name="myFederatedBinding">  
@@ -82,8 +83,8 @@ optional="true" />
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>   
- <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>   
- <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>   
+ <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Security.Tokens.ClaimTypeRequirement>  
+ <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.ClaimTypeRequirements%2A>  
+ <xref:System.ServiceModel.Configuration.ClaimTypeElementCollection>  
  <xref:System.ServiceModel.Configuration.ClaimTypeElement>

@@ -1,10 +1,13 @@
-<Type Name="ReadOnlyAttribute" FullName="System.ComponentModel.ReadOnlyAttribute">
+﻿<Type Name="ReadOnlyAttribute" FullName="System.ComponentModel.ReadOnlyAttribute">
   <TypeSignature Language="C#" Value="public sealed class ReadOnlyAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReadOnlyAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.ReadOnlyAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ReadOnlyAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ReadOnlyAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -33,9 +36,9 @@
  Members that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true` or that do not have a `Set` method cannot be changed. Members that do not have this attribute or that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false` are read/write, and they can be changed. The default is <xref:System.ComponentModel.ReadOnlyAttribute.No>.  
   
 > [!IMPORTANT]
->  The <xref:System.ComponentModel.PropertyDescriptor> class enforces the <xref:System.ComponentModel.ReadOnlyAttribute> in the design environment and at run time. When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. For a property marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value is <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check the value of this attribute in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=fullName> or <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=fullName>.  
+>  The <xref:System.ComponentModel.PropertyDescriptor> class enforces the <xref:System.ComponentModel.ReadOnlyAttribute> in the design environment and at run time. When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. For a property marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value is <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check the value of this attribute in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType> or <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>.  
   
- For more information, see [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87).  
+ For more information, see [Attributes](~/docs/standard/attributes/index.md).  
   
    
   
@@ -62,16 +65,23 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Attribute" />
+    <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+    <altmember cref="T:System.ComponentModel.AttributeCollection" />
+    <altmember cref="T:System.ComponentModel.PropertyDescriptorCollection" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ReadOnlyAttribute (bool isReadOnly);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isReadOnly) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.#ctor(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (isReadOnly As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ReadOnlyAttribute(bool isReadOnly);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -93,15 +103,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Members that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true` or that do not have a `Set` method cannot be changed. Members that do not have this attribute or that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false` are read/write, and they can be changed. The default is <xref:System.ComponentModel.ReadOnlyAttribute>.  
+ Members that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true` or that do not have a `Set` method cannot be changed. Members that do not have this attribute or that are marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false` are read/write, and they can be changed. The default is <xref:System.ComponentModel.ReadOnlyAttribute.No>.  
   
 > [!NOTE]
->  When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. For a property marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value is <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check the value of this attribute in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=fullName> or <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=fullName>.  
+>  When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. For a property marked with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value is <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check the value of this attribute in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType> or <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>.  
   
    
   
 ## Examples  
- The following code example marks a property as read-only. This code creates a new <xref:System.ComponentModel.ReadOnlyAttribute>, sets its value to <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=fullName>, and binds it to the property.  
+ The following code example marks a property as read-only. This code creates a new <xref:System.ComponentModel.ReadOnlyAttribute>, sets its value to <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>, and binds it to the property.  
   
  [!code-cpp[Classic ReadOnlyAttribute.ReadOnlyAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.ReadOnlyAttribute Example/CPP/source.cpp#1)]
  [!code-csharp[Classic ReadOnlyAttribute.ReadOnlyAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ReadOnlyAttribute.ReadOnlyAttribute Example/CS/source.cs#1)]
@@ -109,16 +119,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ReadOnlyAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Default">
       <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute Default;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute Default" />
       <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.Default" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Default As ReadOnlyAttribute " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::ComponentModel::ReadOnlyAttribute ^ Default;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -138,20 +152,26 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When you mark a property with this value, this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=fullName>.  
+ When you mark a property with this value, this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ReadOnlyAttribute" />
+        <altmember cref="F:System.ComponentModel.ReadOnlyAttribute.Yes" />
+        <altmember cref="F:System.ComponentModel.ReadOnlyAttribute.No" />
       </Docs>
     </Member>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -180,10 +200,13 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -208,6 +231,8 @@
       <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ReadOnlyAttribute.IsDefaultAttribute" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsDefaultAttribute () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsDefaultAttribute();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -217,6 +242,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -233,10 +262,13 @@
       <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.ReadOnlyAttribute.IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -274,16 +306,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ReadOnlyAttribute" />
+        <altmember cref="T:System.Attribute" />
+        <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+        <altmember cref="T:System.ComponentModel.AttributeCollection" />
+        <altmember cref="T:System.ComponentModel.PropertyDescriptorCollection" />
       </Docs>
     </Member>
     <Member MemberName="No">
       <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute No;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute No" />
       <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.No" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly No As ReadOnlyAttribute " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::ComponentModel::ReadOnlyAttribute ^ No;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -305,20 +345,25 @@
 ## Remarks  
  This field is the default setting for this attribute.  
   
- When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=fullName>.  
+ When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `false`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.No>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.No?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ReadOnlyAttribute" />
+        <altmember cref="F:System.ComponentModel.ReadOnlyAttribute.Yes" />
       </Docs>
     </Member>
     <Member MemberName="Yes">
       <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.ReadOnlyAttribute Yes;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.ReadOnlyAttribute Yes" />
       <MemberSignature Language="DocId" Value="F:System.ComponentModel.ReadOnlyAttribute.Yes" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Yes As ReadOnlyAttribute " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::ComponentModel::ReadOnlyAttribute ^ Yes;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -338,10 +383,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=fullName>.  
+ When you mark a property with the <xref:System.ComponentModel.ReadOnlyAttribute> set to `true`, the value of this attribute is set to the constant member <xref:System.ComponentModel.ReadOnlyAttribute.Yes>. Therefore, when you want to check whether the attribute is set to this value in your code, you must specify the attribute as <xref:System.ComponentModel.ReadOnlyAttribute.Yes?displayProperty=nameWithType>.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ReadOnlyAttribute" />
+        <altmember cref="F:System.ComponentModel.ReadOnlyAttribute.No" />
       </Docs>
     </Member>
   </Members>

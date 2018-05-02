@@ -1,13 +1,17 @@
 ---
 uid: System.Runtime.Caching.Hosting.IApplicationIdentifier
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Hosting.IApplicationIdentifier.GetApplicationId
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

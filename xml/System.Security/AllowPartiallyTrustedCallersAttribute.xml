@@ -1,13 +1,16 @@
-<Type Name="AllowPartiallyTrustedCallersAttribute" FullName="System.Security.AllowPartiallyTrustedCallersAttribute">
+﻿<Type Name="AllowPartiallyTrustedCallersAttribute" FullName="System.Security.AllowPartiallyTrustedCallersAttribute">
   <TypeSignature Language="C#" Value="public sealed class AllowPartiallyTrustedCallersAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AllowPartiallyTrustedCallersAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Security.AllowPartiallyTrustedCallersAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AllowPartiallyTrustedCallersAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class AllowPartiallyTrustedCallersAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -38,18 +41,18 @@
 ## Remarks  
   
 > [!NOTE]
->  The [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] introduces new security rules that affect the behavior of the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> attribute (see [Security-Transparent Code, Level 2](../Topic/Security-Transparent%20Code,%20Level%202.md)). In the [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], all code defaults to security-transparent, that is, partially trusted. However, you can annotate individual types and members to assign them other transparency attributes. For this and other security changes, see [Security Changes](~/docs/framework/security/security-changes.md).  
+>  The [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)] introduces new security rules that affect the behavior of the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> attribute (see [Security-Transparent Code, Level 2](~/docs/framework/misc/security-transparent-code-level-2.md)). In the [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], all code defaults to security-transparent, that is, partially trusted. However, you can annotate individual types and members to assign them other transparency attributes. For this and other security changes, see [Security Changes](~/docs/framework/security/security-changes.md).  
   
  .NET Framework version 2.0 () assemblies must be strong-named to effectively use the <xref:System.Security.AllowPartiallyTrustedCallersAttribute> (APTCA) attribute. [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] () assemblies do not have to be strong-named for the APTCA attribute to be effective, and they can contain transparent, security-critical and security-safe-critical code. For more information about applying attributes at the assembly level, see [Applying Attributes](~/docs/standard/attributes/applying-attributes.md).  
   
- By default, if a strong-named,  assembly does not explicitly apply this attribute at the assembly level, it can be called only by other assemblies that are granted full trust. This restriction is enforced by placing a <xref:System.Security.Permissions.SecurityAction> for `FullTrust` on every public or protected method on every publicly accessible class in the assembly. Assemblies that are intended to be called by partially trusted code can declare their intent through the use of <xref:System.Security.AllowPartiallyTrustedCallersAttribute>. An example of the declaration in C# is `[assembly:AllowPartiallyTrustedCallers]`; an example in Visual Basic is `<assembly:AllowPartiallyTrustedCallers>`.  
+ By default, if a strong-named,  assembly does not explicitly apply this attribute at the assembly level, it can be called only by other assemblies that are granted full trust. This restriction is enforced by placing a <xref:System.Security.Permissions.SecurityAction.LinkDemand> for `FullTrust` on every public or protected method on every publicly accessible class in the assembly. Assemblies that are intended to be called by partially trusted code can declare their intent through the use of <xref:System.Security.AllowPartiallyTrustedCallersAttribute>. An example of the declaration in C# is `[assembly:AllowPartiallyTrustedCallers]`; an example in Visual Basic is `<assembly:AllowPartiallyTrustedCallers>`.  
   
 > [!CAUTION]
->  The presence of this assembly-level attribute prevents the default behavior of placing `FullTrust`<xref:System.Security.Permissions.SecurityAction> security checks, and makes the assembly callable from any other (partially or fully trusted) assembly.  
+>  The presence of this assembly-level attribute prevents the default behavior of placing `FullTrust`<xref:System.Security.Permissions.SecurityAction.LinkDemand> security checks, and makes the assembly callable from any other (partially or fully trusted) assembly.  
   
  When the APTCA attribute is present, all other security checks function as intended, including any class-level or method-level declarative security attributes that are present. This attribute blocks only the implicit, fully trusted caller demand.  
   
- This is not a declarative security attribute, but a regular attribute (it derives from <xref:System.Attribute?displayProperty=fullName>, not from <xref:System.Security.Permissions.SecurityAttribute?displayProperty=fullName>).  
+ This is not a declarative security attribute, but a regular attribute (it derives from <xref:System.Attribute?displayProperty=nameWithType>, not from <xref:System.Security.Permissions.SecurityAttribute?displayProperty=nameWithType>).  
   
  For more information, see [Using Libraries from Partially Trusted Code](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md).  
   
@@ -70,6 +73,8 @@
       <MemberSignature Language="C#" Value="public AllowPartiallyTrustedCallersAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.AllowPartiallyTrustedCallersAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; AllowPartiallyTrustedCallersAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -77,6 +82,7 @@
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -109,6 +115,8 @@
       <MemberSignature Language="C#" Value="public System.Security.PartialTrustVisibilityLevel PartialTrustVisibilityLevel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.PartialTrustVisibilityLevel PartialTrustVisibilityLevel" />
       <MemberSignature Language="DocId" Value="P:System.Security.AllowPartiallyTrustedCallersAttribute.PartialTrustVisibilityLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property PartialTrustVisibilityLevel As PartialTrustVisibilityLevel" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::PartialTrustVisibilityLevel PartialTrustVisibilityLevel { System::Security::PartialTrustVisibilityLevel get(); void set(System::Security::PartialTrustVisibilityLevel value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -118,6 +126,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.PartialTrustVisibilityLevel</ReturnType>
@@ -137,7 +149,7 @@
     [assembly: AllowPartiallyTrustedCallers]  
     ```  
   
-     Defaults to <xref:System.Security.PartialTrustVisibilityLevel>.  
+     Defaults to <xref:System.Security.PartialTrustVisibilityLevel.VisibleToAllHosts>.  
   
 -   Explicit, unconditional APTCA:  
   
@@ -153,7 +165,7 @@
     [assembly: AllowPartiallyTrustedCallers(PartialTrustVisibilityLevel=NotVisibleByDefault)]  
     ```  
   
-     The assembly has been audited for partial trust, but it is not visible to partial-trust code by default. To make the assembly visible to partial-trust code, add it to the <xref:System.AppDomainSetup.PartialTrustVisibleAssemblies%2A?displayProperty=fullName> property.  
+     The assembly has been audited for partial trust, but it is not visible to partial-trust code by default. To make the assembly visible to partial-trust code, add it to the <xref:System.AppDomainSetup.PartialTrustVisibleAssemblies%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>

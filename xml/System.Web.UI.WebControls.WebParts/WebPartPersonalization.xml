@@ -1,7 +1,9 @@
-<Type Name="WebPartPersonalization" FullName="System.Web.UI.WebControls.WebParts.WebPartPersonalization">
+﻿<Type Name="WebPartPersonalization" FullName="System.Web.UI.WebControls.WebParts.WebPartPersonalization">
   <TypeSignature Language="C#" Value="public class WebPartPersonalization" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartPersonalization extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
+  <TypeSignature Language="VB.NET" Value="Public Class WebPartPersonalization" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WebPartPersonalization" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -42,34 +44,34 @@
   
  The following code creates an aspx page  with a <xref:System.Web.UI.WebControls.WebParts.WebPartManager> and two Web Part zones and displays the `Color.ascx` and `Persmode.ascx` controls. The page loads a login page that is used to get the current user information. Use the ASP.NET Web Site Administration Tool in [!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)] to create users to access the page. See the Web.config file for an example of a user granted authorization in the configuration file to change scope and modify state information.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartPersonalization#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/Defaultcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartPersonalization#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/Defaultvb.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/Defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/Defaultvb.aspx#1)]  
   
  The following example code creates a login page. After a successful login, it redirects to the main aspx page.  
   
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartPersonalization#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/login.aspx#5)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartPersonalization#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/login.aspx#5)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/login.aspx#5)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/login.aspx#5)]  
   
  The following example code is a portion of the Web.config file for this application. This section shows how to set authorization for a user, in this case "user2", to enter shared personalization scope and to modify personalization state information. It also shows an example of a role, in this case "admin", that can be used to allow users in the "admin" role to enter shared personalization scope and to modify personalization state information.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartPersonalization#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/web.config#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartPersonalization#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/web.config#2)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/web.config#2)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/web.config#2)]
   
  The following example code creates a user control, called `Color.ascx`, that allows the user to change a personalized property, in this case the background color of two text boxes, based on the current personalization scope and the authorization rights of the user.  
   
 > [!IMPORTANT]
 >  This example has a text box that accepts user input, which is a potential security threat. By default, ASP.NET Web pages validate that user input does not include script or HTML elements. For more information, see [Script Exploits Overview](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07).  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartPersonalization#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/color.ascx#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartPersonalization#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/color.ascx#3)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/color.ascx#3)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/color.ascx#3)]  
   
  The following example code creates a user control, called `Persmode.ascx`, that shows the current personalization scope and the user rights to modify state and to enter shared scope. It also has a reset button for resetting the current personalization state.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartPersonalization#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartPersonalization#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#4)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartPersonalization#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartPersonalization/CS/persMode.ascx#4)]
+ [!code-aspx-vb[WebParts_WebPartPersonalization#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartPersonalization/VB/persMode.ascx#4)]  
   
  ]]></format>
     </remarks>
@@ -84,6 +86,8 @@
       <MemberSignature Language="C#" Value="public WebPartPersonalization (System.Web.UI.WebControls.WebParts.WebPartManager owner);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPartManager owner) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.#ctor(System.Web.UI.WebControls.WebParts.WebPartManager)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (owner As WebPartManager)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WebPartPersonalization(System::Web::UI::WebControls::WebParts::WebPartManager ^ owner);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -107,10 +111,21 @@
           <paramref name="owner" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ApplyPersonalizationState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Applies personalization data to either a <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> control associated with the <see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" /> instance, or to a specific <see cref="T:System.Web.UI.WebControls.WebParts.WebPart" /> instance.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ApplyPersonalizationState">
-      <MemberSignature Language="C#" Value="protected virtual void ApplyPersonalizationState ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual void ApplyPersonalizationState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ApplyPersonalizationState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ApplyPersonalizationState" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub ApplyPersonalizationState ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void ApplyPersonalizationState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -135,12 +150,14 @@
  \- or -  
   
  The personalization state returned from the data store was <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="ApplyPersonalizationState">
-      <MemberSignature Language="C#" Value="protected virtual void ApplyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void ApplyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ApplyPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ApplyPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void ApplyPersonalizationState(System::Web::UI::WebControls::WebParts::WebPart ^ webPart);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -177,12 +194,15 @@
  \- or -  
   
  An attempt was made to apply personalization data more than once to the same Web Parts control.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="CanEnterSharedScope">
       <MemberSignature Language="C#" Value="public bool CanEnterSharedScope { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanEnterSharedScope" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CanEnterSharedScope" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CanEnterSharedScope As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CanEnterSharedScope { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -193,7 +213,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -207,9 +227,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property returns `true` if the user is authorized in the <xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability> to enter <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope> scope.  
+ This property returns `true` if the user is authorized in the <xref:System.Web.UI.WebControls.WebParts.WebPartUserCapability> to enter <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope.  
   
- The first time the property is called, it determines the user's right to enter <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope> scope and caches the information. If the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities%2A> dictionary is modified after the first time this property is called, changes are not shown on subsequent calls to this property.  
+ The first time the property is called, it determines the user's right to enter <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared> scope and caches the information. If the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities%2A> dictionary is modified after the first time this property is called, changes are not shown on subsequent calls to this property.  
   
    
   
@@ -227,6 +247,8 @@
       <MemberSignature Language="C#" Value="protected virtual void ChangeScope (System.Web.UI.WebControls.WebParts.PersonalizationScope scope);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ChangeScope(valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope scope) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ChangeScope(System.Web.UI.WebControls.WebParts.PersonalizationScope)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub ChangeScope (scope As PersonalizationScope)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void ChangeScope(System::Web::UI::WebControls::WebParts::PersonalizationScope scope);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -254,12 +276,15 @@
         <exception cref="T:System.InvalidOperationException">If attempting to switch from <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.User" /> scope to <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> scope, the current user does not have the user capability to enter <see cref="F:System.Web.UI.WebControls.WebParts.PersonalizationScope.Shared" /> scope.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="scope" /> is not a valid member of the <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> enumeration.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="CopyPersonalizationState">
-      <MemberSignature Language="C#" Value="protected virtual void CopyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPartA, System.Web.UI.WebControls.WebParts.WebPart webPartB);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void CopyPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPartA, System.Web.UI.WebControls.WebParts.WebPart webPartB);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void CopyPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPartA, class System.Web.UI.WebControls.WebParts.WebPart webPartB) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.CopyPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub CopyPersonalizationState (webPartA As WebPart, webPartB As WebPart)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void CopyPersonalizationState(System::Web::UI::WebControls::WebParts::WebPart ^ webPartA, System::Web::UI::WebControls::WebParts::WebPart ^ webPartB);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -297,12 +322,15 @@
  \- or -  
   
  <paramref name="webPartA" /> and <paramref name="webPartB" /> are <see cref="T:System.Web.UI.WebControls.WebParts.GenericWebPart" /> controls, but their child controls are not of the same <see cref="T:System.Type" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="Enabled">
       <MemberSignature Language="C#" Value="public virtual bool Enabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Enabled" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Enabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool Enabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -340,6 +368,8 @@
       <MemberSignature Language="C#" Value="public void EnsureEnabled (bool ensureModifiable);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnsureEnabled(bool ensureModifiable) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.EnsureEnabled(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EnsureEnabled (ensureModifiable As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EnsureEnabled(bool ensureModifiable);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -385,12 +415,15 @@
  \- or -  
   
  <see cref="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled" /> returned <see langword="false" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="EnterSharedScopeUserCapability">
       <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebPartUserCapability EnterSharedScopeUserCapability;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebPartUserCapability EnterSharedScopeUserCapability" />
       <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartPersonalization.EnterSharedScopeUserCapability" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly EnterSharedScopeUserCapability As WebPartUserCapability " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Web::UI::WebControls::WebParts::WebPartUserCapability ^ EnterSharedScopeUserCapability;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -409,12 +442,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ExtractPersonalizationState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Extracts personalization data from the parent <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> control.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ExtractPersonalizationState">
-      <MemberSignature Language="C#" Value="protected virtual void ExtractPersonalizationState ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual void ExtractPersonalizationState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ExtractPersonalizationState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ExtractPersonalizationState" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub ExtractPersonalizationState ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void ExtractPersonalizationState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -449,12 +494,14 @@
  \- or -  
   
  The personalization state returned from the data store was <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="ExtractPersonalizationState">
-      <MemberSignature Language="C#" Value="protected virtual void ExtractPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void ExtractPersonalizationState (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void ExtractPersonalizationState(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ExtractPersonalizationState(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void ExtractPersonalizationState(System::Web::UI::WebControls::WebParts::WebPart ^ webPart);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -491,12 +538,15 @@
  \- or -  
   
  The personalization state returned from the data store was <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="GetAuthorizationFilter">
-      <MemberSignature Language="C#" Value="protected virtual string GetAuthorizationFilter (string webPartID);" />
+      <MemberSignature Language="C#" Value="protected internal virtual string GetAuthorizationFilter (string webPartID);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetAuthorizationFilter(string webPartID) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.GetAuthorizationFilter(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function GetAuthorizationFilter (webPartID As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual System::String ^ GetAuthorizationFilter(System::String ^ webPartID);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -531,12 +581,15 @@
  The personalization state returned from the data store was <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="webPartID" /> is <see langword="null" /> or an empty string ("").</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="HasPersonalizationState">
       <MemberSignature Language="C#" Value="public virtual bool HasPersonalizationState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasPersonalizationState" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.HasPersonalizationState" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property HasPersonalizationState As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool HasPersonalizationState { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -547,7 +600,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -580,6 +633,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WebParts.PersonalizationScope InitialScope { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope InitialScope" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property InitialScope As PersonalizationScope" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::WebControls::WebParts::PersonalizationScope InitialScope { System::Web::UI::WebControls::WebParts::PersonalizationScope get(); void set(System::Web::UI::WebControls::WebParts::PersonalizationScope value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -603,7 +658,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property represents the default personalization scope that should be used for the parent <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control in the absence of previous knowledge about the proper scope. If this property is not explicitly set, it defaults to returning <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope> scope.  
+ This property represents the default personalization scope that should be used for the parent <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control in the absence of previous knowledge about the proper scope. If this property is not explicitly set, it defaults to returning <xref:System.Web.UI.WebControls.WebParts.PersonalizationScope.User> scope.  
   
  This property can only be set prior to the completion of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control's <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A> method. In practice, this means <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.InitialScope%2A> must be set in the page markup on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> element. Alternatively, this property can be set during the `PreInit` phase of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control.  
   
@@ -617,6 +672,8 @@
       <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsEnabled { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -627,7 +684,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -653,6 +710,8 @@
       <MemberSignature Language="C#" Value="protected bool IsInitialized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsInitialized" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property IsInitialized As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool IsInitialized { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -663,7 +722,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -687,6 +746,8 @@
       <MemberSignature Language="C#" Value="public bool IsModifiable { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsModifiable" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.IsModifiable" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsModifiable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsModifiable { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -697,7 +758,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -729,6 +790,8 @@
       <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.WebParts.PersonalizationScope Load ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Load() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Load" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function Load () As PersonalizationScope" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Web::UI::WebControls::WebParts::PersonalizationScope Load();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -784,12 +847,15 @@
   
  An error occurred in the definition of a personalization provider in the configuration file.</exception>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">The underlying personalization providers failed to initialize because a default provider could not be found or because a failure occurred while attempting to initialize a personalization provider.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ModifyStateUserCapability">
       <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.WebParts.WebPartUserCapability ModifyStateUserCapability;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.WebControls.WebParts.WebPartUserCapability ModifyStateUserCapability" />
       <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ModifyStateUserCapability" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ModifyStateUserCapability As WebPartUserCapability " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Web::UI::WebControls::WebParts::WebPartUserCapability ^ ModifyStateUserCapability;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -808,12 +874,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ProviderName">
       <MemberSignature Language="C#" Value="public virtual string ProviderName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property ProviderName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ ProviderName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -837,7 +906,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property returns the value set for this property in the page declaration. If this property was not set, it returns <xref:System.String>. In this case, the page uses the default personalization provider specified in the configuration file.  
+ This property returns the value set for this property in the page declaration. If this property was not set, it returns <xref:System.String.Empty>. In this case, the page uses the default personalization provider specified in the configuration file.  
   
  This property can only be set prior to the completion of the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> control's <xref:System.Web.UI.WebControls.WebParts.WebPartManager.OnInit%2A> method. This means the <xref:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ProviderName%2A> property must be set in the page declaration on the <xref:System.Web.UI.WebControls.WebParts.WebPartManager> element.  Alternatively, this property can be set during the `PreInit` phase.  
   
@@ -850,6 +919,8 @@
       <MemberSignature Language="C#" Value="public virtual void ResetPersonalizationState ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetPersonalizationState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ResetPersonalizationState" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ResetPersonalizationState ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ResetPersonalizationState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -872,12 +943,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" /> instance cannot reference a valid personalization provider.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="Save">
       <MemberSignature Language="C#" Value="protected virtual void Save ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Save() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Save" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Save ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Save();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -920,12 +994,15 @@
  \- or -  
   
  The value of the <see cref="P:System.Web.UI.Page.Request" /> property on the <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> control's associated <see cref="T:System.Web.UI.Page" /> instance is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="Scope">
       <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.PersonalizationScope Scope { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WebParts.PersonalizationScope Scope" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.Scope" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Scope As PersonalizationScope" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::UI::WebControls::WebParts::PersonalizationScope Scope { System::Web::UI::WebControls::WebParts::PersonalizationScope get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -936,7 +1013,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -957,10 +1034,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetDirty">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Marks the parent <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> control as having personalization data that has changed (is "dirty").</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetDirty">
-      <MemberSignature Language="C#" Value="protected virtual void SetDirty ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual void SetDirty ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetDirty() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.SetDirty" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub SetDirty ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void SetDirty();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -983,12 +1071,14 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">No personalization data has been loaded.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="SetDirty">
-      <MemberSignature Language="C#" Value="protected virtual void SetDirty (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void SetDirty (System.Web.UI.WebControls.WebParts.WebPart webPart);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void SetDirty(class System.Web.UI.WebControls.WebParts.WebPart webPart) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.SetDirty(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void SetDirty(System::Web::UI::WebControls::WebParts::WebPart ^ webPart);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1013,12 +1103,15 @@
         </remarks>
         <exception cref="T:System.ArgumentException">Attempted to mark as "dirty" a Web Parts control that is not managed by the parent <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />.</exception>
         <exception cref="T:System.InvalidOperationException">No personalization data has been loaded.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="ShouldResetPersonalizationState">
       <MemberSignature Language="C#" Value="protected bool ShouldResetPersonalizationState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ShouldResetPersonalizationState" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ShouldResetPersonalizationState" />
+      <MemberSignature Language="VB.NET" Value="Protected Property ShouldResetPersonalizationState As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool ShouldResetPersonalizationState { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1047,6 +1140,8 @@
       <MemberSignature Language="C#" Value="public virtual void ToggleScope ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ToggleScope() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartPersonalization.ToggleScope" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub ToggleScope ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void ToggleScope();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1092,12 +1187,15 @@
   
  The value of the <see cref="P:System.Web.UI.Page.Request" /> property on the <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> control's associated <see cref="T:System.Web.UI.Page" /> instance is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">An attempt was made to toggle to a scope that is not defined in the <see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationScope" /> enumeration. Technically, this situation should never occur.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartPersonalization" />
       </Docs>
     </Member>
     <Member MemberName="UserCapabilities">
       <MemberSignature Language="C#" Value="protected virtual System.Collections.IDictionary UserCapabilities { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserCapabilities" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.UserCapabilities" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable ReadOnly Property UserCapabilities As IDictionary" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Collections::IDictionary ^ UserCapabilities { System::Collections::IDictionary ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1117,12 +1215,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
     <Member MemberName="WebPartManager">
       <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartPersonalization.WebPartManager" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property WebPartManager As WebPartManager" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::Web::UI::WebControls::WebParts::WebPartManager ^ WebPartManager { System::Web::UI::WebControls::WebParts::WebPartManager ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1142,6 +1243,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />
       </Docs>
     </Member>
   </Members>

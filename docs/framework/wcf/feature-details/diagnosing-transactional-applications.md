@@ -1,8 +1,8 @@
 ---
-title: "Diagnosing Transactional Applications | Microsoft Docs"
+title: "Diagnosing Transactional Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,15 +11,17 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4a993492-1088-4d10-871b-0c09916af05f
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Diagnosing Transactional Applications
 This topic describes how to use the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] management and diagnostics feature to troubleshoot a transactional application.  
   
 ## Performance Counters  
- [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides a standard set of performance counters for you to measure your transactional application's performance. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Performance Counters](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
+ [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides a standard set of performance counters for you to measure your transactional application's performance. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Performance Counters](../../../../docs/framework/wcf/diagnostics/performance-counters/index.md).  
   
  Performance counters are scoped to three different levels: service, endpoint, and operation, as described in the following tables.  
   
@@ -95,7 +97,7 @@ This topic describes how to use the [!INCLUDE[indigo1](../../../../includes/indi
   
 -   Standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tracing  
   
-     This type of tracing is the same as tracing any [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
+     This type of tracing is the same as tracing any [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).  
   
 -   WS-AtomicTransaction tracing  
   
@@ -105,7 +107,7 @@ This topic describes how to use the [!INCLUDE[indigo1](../../../../includes/indi
   
      When using the OleTransactions protocol, protocol messages cannot be traced. The tracing support the <xref:System.Transactions> infrastructure provides (which uses OleTransactions) allows users to view events that occurred to the transactions. To enable tracing for a <xref:System.Transactions> application, include the following code in the `App.config` configuration file.  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.diagnostics>  
          <sources>  
@@ -127,6 +129,6 @@ This topic describes how to use the [!INCLUDE[indigo1](../../../../includes/indi
      This also enables [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tracing, as [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] also utilizes the <xref:System.Transactions> infrastructure.  
   
 ## See Also  
- [Administration and Diagnostics](../../../../docs/framework/wcf/diagnostics/index.md)   
- [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)   
+ [Administration and Diagnostics](../../../../docs/framework/wcf/diagnostics/index.md)  
+ [Configuring Tracing](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
  [WS-AtomicTransaction Configuration Utility (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)

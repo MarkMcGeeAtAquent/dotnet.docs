@@ -1,19 +1,24 @@
 ---
-title: "How the WCF Syndication Object Model Maps to Atom and RSS | Microsoft Docs"
+title: "How the WCF Syndication Object Model Maps to Atom and RSS"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How the WCF Syndication Object Model Maps to Atom and RSS
 When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndication service, you create feeds and items using the following classes:  
@@ -58,7 +63,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to Atom 1.0.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <feed xml:lang="EN-US" xmlns="http://www.w3.org/2005/Atom">  
   <title type="text">My Feed Title</title>  
@@ -107,7 +112,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationFeed> is serialized to RSS 2.0.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">  
   <channel>  
@@ -155,7 +160,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to Atom 1.0.  
   
-```  
+```xml  
 <entry xmlns="http://www.w3.org/2005/Atom">  
   <id>ItemID</id>  
   <title type="text">Item Title</title>  
@@ -197,7 +202,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationItem> is serialized to RSS 2.0.  
   
-```  
+```xml  
 <item>  
   <guid isPermaLink="false">ItemID</guid>  
   <link>http://myitemuri/</link>  
@@ -241,7 +246,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> is serialized to Atom 1.0.  
   
-```  
+```xml  
   <author>  
     <name>Jesper Aaberg</name>  
     <uri>http://Contoso/Aaberg</uri>  
@@ -256,7 +261,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if only one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.  
   
-```  
+```xml  
 <author>Jesper.Aaberg@contoso.com</author>  
 <a10:contributor>  
     <a10:name>Lene Aaling</a10:name>  
@@ -267,7 +272,7 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
   
  The following XML shows how the <xref:System.ServiceModel.Syndication.SyndicationPerson> class is serialized to RSS 2.0 if more than one <xref:System.ServiceModel.Syndication.SyndicationPerson> exists in the `Authors` or `Contributors` collections, respectively.  
   
-```  
+```xml  
 <a10:author>  
     <a10:name>Jesper Aaberg</a10:name>  
     <a10:uri>http://Contoso/Aaberg</a10:uri>  
@@ -401,8 +406,8 @@ When developing a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] syndic
  `</content>`  
   
 ## See Also  
- [WCF Syndication Overview](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)   
- [Architecture of Syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)   
- [How to: Create a Basic RSS Feed](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)   
- [How to: Create a Basic Atom Feed](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)   
+ [WCF Syndication Overview](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)  
+ [Architecture of Syndication](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)  
+ [How to: Create a Basic RSS Feed](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)  
+ [How to: Create a Basic Atom Feed](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)  
  [How to: Expose a Feed as Both Atom and RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)

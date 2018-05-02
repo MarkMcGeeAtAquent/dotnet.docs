@@ -1,8 +1,8 @@
 ---
-title: "Multiple Contracts | Microsoft Docs"
+title: "Multiple Contracts"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2bef319b-fe9c-4d49-ac6c-dfb23eb35099
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Multiple Contracts
 The Multiple Contracts sample demonstrates how to implement more than one contract on a service and how to configure endpoints for communicating with each of the implemented contracts. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md). The service has been modified to define two contracts, the `ICalculator` contract and the `ICalculatorSession` contract.  
@@ -21,11 +23,11 @@ The Multiple Contracts sample demonstrates how to implement more than one contra
 > [!NOTE]
 >  The setup procedure and build instructions for this sample are located at the end of this topic.  
   
- The service class implements both the `ICalculator` and `ICalculatorSession` contracts. Because one of the contracts requires a session, the service uses the <xref:System.ServiceModel.InstanceContextMode> instance mode to maintain the state over the lifetime of the session.  
+ The service class implements both the `ICalculator` and `ICalculatorSession` contracts. Because one of the contracts requires a session, the service uses the <xref:System.ServiceModel.InstanceContextMode.PerSession> instance mode to maintain the state over the lifetime of the session.  
   
  The service configuration has been modified to define two endpoints to expose each contract. The `ICalculator` endpoint is exposed at the base address using a `basicHttpBinding`. The `ICalculatorSession` endpoint is exposed at the baseaddress/session using a `wsHttpBinding` with the `bindingConfiguration` attribute set to `BindingWithSession`, as shown in the following sample configuration.  
   
-```  
+```xml  
 <service   
     name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">  
@@ -44,7 +46,6 @@ The Multiple Contracts sample demonstrates how to implement more than one contra
            contract="Microsoft.ServiceModel.Samples.ICalculatorSession" />  
   ...  
 </service>  
-  
 ```  
   
  The generated client code now includes a client class for both the original `ICalculator` contract and the new `ICalculatorSession` contract. The client configuration and code have been modified to communicate with each contract at the appropriate service endpoint.  

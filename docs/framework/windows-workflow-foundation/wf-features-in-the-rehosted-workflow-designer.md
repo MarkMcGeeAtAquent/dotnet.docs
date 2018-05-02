@@ -1,5 +1,5 @@
 ---
-title: "Support for New Workflow Foundation 4.5 Features in the Rehosted Workflow Designer | Microsoft Docs"
+title: "Support for New Workflow Foundation 4.5 Features in the Rehosted Workflow Designer"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Support for New Workflow Foundation 4.5 Features in the Rehosted Workflow Designer
 [!INCLUDE[wf](../../../includes/wf-md.md)] in [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] introduced many new features, including several enhancements to the workflow designer experience. This topic details which of these features are supported in the rehosted designer, and which ones are currently not supported.  
@@ -99,7 +101,7 @@ manager: "erikre"
  Designer annotations are supported in the rehosted designer.  
   
 ### Define and consume ActivityDelegate objects in the designer  
- Activities in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] used <xref:System.Activities.ActivityDelegate> objects to expose execution points where other parts of the workflow could interact with a workflow's execution, but using these execution points usually required a fair amount of code. In this release, developers can define and consume activity delegates using the workflow designer. For more information, see [How to: Define and consume activity delegates in the Workflow Designer](http://msdn.microsoft.com/library/c68e42ad-3ec0-4c2d-b104-fe36c6d83b5e).  
+ Activities in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] used <xref:System.Activities.ActivityDelegate> objects to expose execution points where other parts of the workflow could interact with a workflow's execution, but using these execution points usually required a fair amount of code. In this release, developers can define and consume activity delegates using the workflow designer. For more information, see [How to: Define and consume activity delegates in the Workflow Designer](/visualstudio/workflow-designer/how-to-define-and-consume-activity-delegates-in-the-workflow-designer).  
   
  Activity delegates are supported in the rehosted designer.  
   

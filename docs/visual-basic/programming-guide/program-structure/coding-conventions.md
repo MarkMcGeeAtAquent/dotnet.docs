@@ -1,39 +1,21 @@
 ---
-title: "Visual Basic Coding Conventions | Microsoft Docs"
+title: "Visual Basic Coding Conventions"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "coding conventions, Visual Basic"
+  - "coding conventions [Visual Basic], Visual Basic"
   - "examples [Visual Basic], coding conventions"
   - "Visual Basic code, conventions"
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
 caps.latest.revision: 48
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Visual Basic Coding Conventions
 Microsoft develops samples and documentation that follow the guidelines in this topic. If you follow the same coding conventions, you may gain the following benefits:  
@@ -48,7 +30,7 @@ Microsoft develops samples and documentation that follow the guidelines in this 
   
 ## Naming Conventions  
   
--   For information about naming guidelines, see [Naming Guidelines](http://msdn.microsoft.com/library/fc076d66-9b5f-42d3-aa65-61d970c794a3) topic.  
+-   For information about naming guidelines, see [Naming Guidelines](../../../standard/design-guidelines/naming-guidelines.md) topic.  
   
 -   Do not use "My" or "my" as part of a variable name. This practice creates confusion with the `My` objects.  
   
@@ -58,7 +40,7 @@ Microsoft develops samples and documentation that follow the guidelines in this 
   
 -   Insert tabs as spaces, and use smart indenting with four-space indents.  
   
--   Use **Pretty listing (reformatting) of code** to reformat your code in the code editor. For more information, see [Options, Text Editor, Basic (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
+-   Use **Pretty listing (reformatting) of code** to reformat your code in the code editor. For more information, see [Options, Text Editor, Basic (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
   
 -   Use only one statement per line. Don't use the Visual Basic line separator character (:).  
   
@@ -228,4 +210,4 @@ Microsoft develops samples and documentation that follow the guidelines in this 
      [!code-vb[VbVbalrGuidelines#34](../../../visual-basic/programming-guide/program-structure/codesnippet/VisualBasic/coding-conventions_26.vb)]  
   
 ## See Also  
- [Secure Coding Guidelines](http://msdn.microsoft.com/library/4f882d94-262b-4494-b0a6-ba9ba1f5f177)
+ [Secure Coding Guidelines](../../../standard/security/secure-coding-guidelines.md)

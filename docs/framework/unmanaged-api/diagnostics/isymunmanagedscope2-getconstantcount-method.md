@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedScope2::GetConstantCount Method | Microsoft Docs"
+title: "ISymUnmanagedScope2::GetConstantCount Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedScope2.GetConstantCount"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedScope2::GetConstantCount"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedScope2::GetConstantCount method [.NET Framework debugging]"
   - "GetConstantCount method [.NET Framework debugging]"
 ms.assetid: 1e1f0be6-c4e8-4d6c-98cd-d5fa9f686e87
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedScope2::GetConstantCount Method
 Gets a count of the constants defined within this scope.  

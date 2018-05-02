@@ -1,7 +1,7 @@
 ---
-title: "Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic) | Microsoft Docs"
+title: "Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
 caps.latest.revision: 3
 author: dotnet-bot
@@ -70,7 +68,6 @@ xmlTree.Add( _
 ' will not throw an exception, and nothing will be added to xmlTree.  
 xmlTree.Add(srcTree.Element("Child9"))  
 Console.WriteLine(xmlTree)  
-  
 ```  
   
 ### Comments  

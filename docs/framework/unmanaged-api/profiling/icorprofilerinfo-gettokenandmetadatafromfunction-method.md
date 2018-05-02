@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetTokenAndMetadataFromFunction Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetTokenAndMetadataFromFunction Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetTokenAndMetadataFromFunction"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetTokenAndMetadataFromFunction"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo::GetTokenAndMetadataFromFunction method [.NET Framework profiling]"
   - "GetTokenAndMetadataFromFunction method [.NET Framework profiling]"
 ms.assetid: e525aa16-c923-4b16-833b-36f1f0dd70fc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetTokenAndMetadataFromFunction Method
 Gets the metadata token and a metadata interface instance that can be used against the token for the specified function.  

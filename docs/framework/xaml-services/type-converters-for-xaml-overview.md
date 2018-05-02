@@ -1,5 +1,5 @@
 ---
-title: "Type Converters for XAML Overview | Microsoft Docs"
+title: "Type Converters for XAML Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,6 +18,8 @@ caps.latest.revision: 14
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Type Converters for XAML Overview
 Type converters supply logic for an object writer that converts from a string in XAML markup into particular objects in an object graph. In .NET Framework XAML Services, the type converter must be a class that derives from <xref:System.ComponentModel.TypeConverter>. Some converters also support the XAML save path and can be used to serialize an object into a string form in serialization markup. This topic describes how and when type converters in XAML are invoked, and provides implementation advice for the method overrides of <xref:System.ComponentModel.TypeConverter>.  
@@ -38,7 +40,7 @@ Type converters supply logic for an object writer that converts from a string in
  Markup extension usages must be handled by a XAML processor before it checks for property type and other considerations. For example, if a property being set as an attribute normally has a type conversion, but in a particular case is set by a markup extension usage, then the markup extension behavior processes first. One common situation where a markup extension is necessary is to make a reference to an object that already exists. For this scenario, a stateless type converter can only generate a new instance, which might not be desirable. For more information about markup extensions, see [Markup Extensions for XAML Overview](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
   
 ### Native Type Converters  
- In the WPF and .NET XAML services implementations, there are certain CLR types that have native type conversion handling, however, hose CLR types are not conventionally thought of as primitives. An example of such a type is <xref:System.DateTime>. One reason for this is how the .NET Framework architecture works: the type <xref:System.DateTime> is defined in mscorlib, the most basic library in .NET. <xref:System.DateTime> is not permitted to be attributed with an attribute that comes from another assembly that introduces a dependency (<xref:System.ComponentModel.TypeConverterAttribute> is from System); therefore, the usual type converter discovery mechanism by attributing cannot be supported. Instead, the XAML parser has a list of types that need native processing, and it processes these types similar to how the true primitives are processed. In the case of <xref:System.DateTime>, this processing involves a call to <xref:System.DateTime.Parse%2A>.  
+ In the WPF and .NET XAML services implementations, there are certain CLR types that have native type conversion handling, however, those CLR types are not conventionally thought of as primitives. An example of such a type is <xref:System.DateTime>. One reason for this is how the .NET Framework architecture works: the type <xref:System.DateTime> is defined in mscorlib, the most basic library in .NET. <xref:System.DateTime> is not permitted to be attributed with an attribute that comes from another assembly that introduces a dependency (<xref:System.ComponentModel.TypeConverterAttribute> is from System); therefore, the usual type converter discovery mechanism by attributing cannot be supported. Instead, the XAML parser has a list of types that need native processing, and it processes these types similar to how the true primitives are processed. In the case of <xref:System.DateTime>, this processing involves a call to <xref:System.DateTime.Parse%2A>.  
   
 <a name="Implementing_a_Type_Converter"></a>   
 ## Implementing a Type Converter  
@@ -111,9 +113,9 @@ Type converters supply logic for an object writer that converts from a string in
   
 <a name="type_converters_in_the_xaml_node_stream"></a>   
 ## Type Converters in the XAML Node Stream  
- If you are working with a XAML node stream, the action or end result of a type converter is not yet executed. In a load path, the attribute string that eventually needs to be type-converted in order to load remains as a text value within a start member and end member. The type converter that is eventually needed for this operation can be determined by using the <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=fullName> property. However, obtaining a valid value from <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=fullName> relies on having a XAML schema context, which can access such information through the underlying member, or the type of the object value that the member uses. Invoking the type conversion behavior also requires the XAML schema context because that requires type-mapping and creating a converter instance.  
+ If you are working with a XAML node stream, the action or end result of a type converter is not yet executed. In a load path, the attribute string that eventually needs to be type-converted in order to load remains as a text value within a start member and end member. The type converter that is eventually needed for this operation can be determined by using the <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> property. However, obtaining a valid value from <xref:System.Xaml.XamlMember.TypeConverter%2A?displayProperty=nameWithType> relies on having a XAML schema context, which can access such information through the underlying member, or the type of the object value that the member uses. Invoking the type conversion behavior also requires the XAML schema context because that requires type-mapping and creating a converter instance.  
   
 ## See Also  
- <xref:System.ComponentModel.TypeConverterAttribute>   
- [Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)   
+ <xref:System.ComponentModel.TypeConverterAttribute>  
+ [Type Converters and Markup Extensions for XAML](../../../docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)  
  [XAML Overview (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md)

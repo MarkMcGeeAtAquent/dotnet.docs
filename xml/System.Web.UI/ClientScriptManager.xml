@@ -1,7 +1,9 @@
-<Type Name="ClientScriptManager" FullName="System.Web.UI.ClientScriptManager">
+﻿<Type Name="ClientScriptManager" FullName="System.Web.UI.ClientScriptManager">
   <TypeSignature Language="C#" Value="public sealed class ClientScriptManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientScriptManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.ClientScriptManager" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ClientScriptManager" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClientScriptManager sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -39,17 +41,30 @@
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A> method of the <xref:System.Web.UI.ClientScriptManager> class. Two client scripts are defined in the page: `PopupScript`, which displays an alert message when the page is loaded, and `ButtonClickScript`, which defines a client handler for an HTML button's `onClick` event.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.UI.Page" />
+    <altmember cref="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsCallback" />
+    <altmember cref="P:System.Web.Configuration.HttpCapabilitiesBase.SupportsXmlHttp" />
   </Docs>
   <Members>
+    <MemberGroup MemberName="GetCallbackEventReference">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Obtains a reference to a client function that, when invoked, initiates a client call back to a server event.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetCallbackEventReference">
       <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetCallbackEventReference(System::Web::UI::Control ^ control, System::String ^ argument, System::String ^ clientCallback, System::String ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -100,19 +115,21 @@
   
  Two callback mechanisms are shown; the difference between them is the use of the `context` parameter. A `ReceiveServerData1` client callback function is provided using the `context` parameter. In contrast, the `ReceiveServerData2` client callback function is defined in a `<script>` block on the page. A <xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A> method is the server handler that increments the value that is passed to it and the <xref:System.Web.UI.ICallbackEventHandler.GetCallbackResult%2A> method returns the incremented value as a string. If the <xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A> method returns an error, then the `ProcessCallBackError` client function is called.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="T:System.Web.UI.Control" /> specified is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Web.UI.Control" /> specified does not implement the <see cref="T:System.Web.UI.ICallbackEventHandler" /> interface.</exception>
+        <altmember cref="T:System.Web.UI.ICallbackEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="GetCallbackEventReference">
       <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context, bool useAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context, bool useAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetCallbackEventReference(System::Web::UI::Control ^ control, System::String ^ argument, System::String ^ clientCallback, System::String ^ context, bool useAsync);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -151,12 +168,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="T:System.Web.UI.Control" /> specified is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Web.UI.Control" /> specified does not implement the <see cref="T:System.Web.UI.ICallbackEventHandler" /> interface.</exception>
+        <altmember cref="T:System.Web.UI.ICallbackEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="GetCallbackEventReference">
       <MemberSignature Language="C#" Value="public string GetCallbackEventReference (string target, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(string target, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.String,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetCallbackEventReference (target As String, argument As String, clientCallback As String, context As String, clientErrorCallback As String, useAsync As Boolean) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetCallbackEventReference(System::String ^ target, System::String ^ argument, System::String ^ clientCallback, System::String ^ context, System::String ^ clientErrorCallback, bool useAsync);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -182,7 +202,7 @@
         <param name="context">The client script that is evaluated on the client prior to initiating the callback. The result of the script is passed back to the client event handler.</param>
         <param name="clientErrorCallback">The name of the client event handler that receives the result when an error occurs in the server event handler.</param>
         <param name="useAsync">
-          <see langword="true " /> to perform the callback asynchronously; <see langword="false" /> to perform the callback synchronously.</param>
+          <see langword="true" /> to perform the callback asynchronously; <see langword="false" /> to perform the callback synchronously.</param>
         <summary>Obtains a reference to a client function that, when invoked, initiates a client call back to server events. The client function for this overloaded method includes a specified target, argument, client script, context, error handler, and Boolean value.</summary>
         <returns>The name of a client function that invokes the client callback.</returns>
         <remarks>
@@ -202,17 +222,20 @@
   
  Two callback mechanisms are shown; the difference between them is the use of the `context` parameter. A `ReceiveServerData1` client callback function is provided using the `context` parameter. In contrast, the `ReceiveServerData2` client callback function is defined in a `<script>` block on the page. A <xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A> method is the server handler that increments the value that is passed to it and the <xref:System.Web.UI.ICallbackEventHandler.GetCallbackResult%2A> method returns the incremented value as a string. If the <xref:System.Web.UI.ICallbackEventHandler.RaiseCallbackEvent%2A> method returns an error, then the client function `ProcessCallBackError` is called.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/cs/getcallbackeventreference.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager7#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager7/vb/getcallbackeventreference.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.ICallbackEventHandler" />
+        <altmember cref="P:System.Web.UI.Control.UniqueID" />
       </Docs>
     </Member>
     <Member MemberName="GetCallbackEventReference">
       <MemberSignature Language="C#" Value="public string GetCallbackEventReference (System.Web.UI.Control control, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCallbackEventReference(class System.Web.UI.Control control, string argument, string clientCallback, string context, string clientErrorCallback, bool useAsync) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetCallbackEventReference(System.Web.UI.Control,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetCallbackEventReference(System::Web::UI::Control ^ control, System::String ^ argument, System::String ^ clientCallback, System::String ^ context, System::String ^ clientErrorCallback, bool useAsync);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -236,7 +259,7 @@
         <param name="context">The client script that is evaluated on the client prior to initiating the callback. The result of the script is passed back to the client event handler.</param>
         <param name="clientErrorCallback">The name of the client event handler that receives the result when an error occurs in the server event handler.</param>
         <param name="useAsync">
-          <see langword="true " />to perform the callback asynchronously; <see langword="false" /> to perform the callback synchronously.</param>
+          <see langword="true" /> to perform the callback asynchronously; <see langword="false" /> to perform the callback synchronously.</param>
         <summary>Obtains a reference to a client function that, when invoked, initiates a client call back to server events. The client function for this overloaded method includes a specified control, argument, client script, context, error handler, and Boolean value.</summary>
         <returns>The name of a client function that invokes the client callback.</returns>
         <remarks>
@@ -251,12 +274,23 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="T:System.Web.UI.Control" /> specified is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Web.UI.Control" /> specified does not implement the <see cref="T:System.Web.UI.ICallbackEventHandler" /> interface.</exception>
+        <altmember cref="T:System.Web.UI.ICallbackEventHandler" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetPostBackClientHyperlink">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a reference, with <see langword="javascript:" /> appended to the beginning of it, that can be used in a client event to post back to the server.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetPostBackClientHyperlink">
       <MemberSignature Language="C#" Value="public string GetPostBackClientHyperlink (System.Web.UI.Control control, string argument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackClientHyperlink(class System.Web.UI.Control control, string argument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackClientHyperlink(System::Web::UI::Control ^ control, System::String ^ argument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -285,22 +319,25 @@
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink%2A> method. The custom control, `MyControl`, implements the <xref:System.Web.UI.IPostBackEventHandler> interface. When the HTML anchor element on the page is clicked, the <xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A> method of the custom control is invoked.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  
   
  The following code example has the same functionality as the preceding one, except that instead of a custom control, the <xref:System.Web.UI.Page> class implements the <xref:System.Web.UI.IPostBackEventHandler> interface.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.GetPostBackEventReference" />
+        <altmember cref="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="GetPostBackClientHyperlink">
       <MemberSignature Language="C#" Value="public string GetPostBackClientHyperlink (System.Web.UI.Control control, string argument, bool registerForEventValidation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackClientHyperlink(class System.Web.UI.Control control, string argument, bool registerForEventValidation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackClientHyperlink(System::Web::UI::Control ^ control, System::String ^ argument, bool registerForEventValidation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -329,12 +366,25 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.GetPostBackEventReference" />
+        <altmember cref="M:System.Web.UI.ClientScriptManager.GetPostBackClientHyperlink(System.Web.UI.Control,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetPostBackEventReference">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a string that can be used in a client event to cause postback to the server.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetPostBackEventReference">
       <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.PostBackOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.PostBackOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.PostBackOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPostBackEventReference (options As PostBackOptions) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackEventReference(System::Web::UI::PostBackOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -361,12 +411,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="T:System.Web.UI.PostBackOptions" /> parameter is <see langword="null" /></exception>
+        <altmember cref="T:System.Web.UI.PostBackOptions" />
+        <altmember cref="T:System.Web.UI.IPostBackEventHandler" />
+        <altmember cref="T:System.Web.UI.WebControls.Button" />
       </Docs>
     </Member>
     <Member MemberName="GetPostBackEventReference">
       <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.Control control, string argument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.Control control, string argument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.Control,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackEventReference(System::Web::UI::Control ^ control, System::String ^ argument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -397,23 +451,27 @@
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A> method. The custom control, `MyControl`, implements the <xref:System.Web.UI.IPostBackEventHandler> interface. When the button on the page is clicked, the <xref:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent%2A> method of the custom control is invoked.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreferencecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreferencevb.aspx#1)]  
   
  The following code example has the same functionality as the preceding one, except that instead of a custom control, the <xref:System.Web.UI.Page> class implements the <xref:System.Web.UI.IPostBackEventHandler> interface.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/cs/getpostbackeventreference2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager8#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager8/vb/getpostbackeventreference2vb.aspx#2)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The specified <see cref="T:System.Web.UI.Control" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.PostBackOptions" />
+        <altmember cref="T:System.Web.UI.IPostBackEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="GetPostBackEventReference">
       <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.PostBackOptions options, bool registerForEventValidation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.PostBackOptions options, bool registerForEventValidation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.PostBackOptions,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPostBackEventReference (options As PostBackOptions, registerForEventValidation As Boolean) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackEventReference(System::Web::UI::PostBackOptions ^ options, bool registerForEventValidation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -445,12 +503,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="T:System.Web.UI.PostBackOptions" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.PostBackOptions" />
+        <altmember cref="T:System.Web.UI.IPostBackEventHandler" />
+        <altmember cref="T:System.Web.UI.WebControls.Button" />
       </Docs>
     </Member>
     <Member MemberName="GetPostBackEventReference">
       <MemberSignature Language="C#" Value="public string GetPostBackEventReference (System.Web.UI.Control control, string argument, bool registerForEventValidation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetPostBackEventReference(class System.Web.UI.Control control, string argument, bool registerForEventValidation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetPostBackEventReference(System.Web.UI.Control,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetPostBackEventReference(System::Web::UI::Control ^ control, System::String ^ argument, bool registerForEventValidation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -484,12 +546,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The specified <see cref="T:System.Web.UI.Control" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.PostBackOptions" />
+        <altmember cref="T:System.Web.UI.IPostBackEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="GetWebResourceUrl">
       <MemberSignature Language="C#" Value="public string GetWebResourceUrl (Type type, string resourceName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetWebResourceUrl(class System.Type type, string resourceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.GetWebResourceUrl(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetWebResourceUrl(Type ^ type, System::String ^ resourceName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -522,8 +587,8 @@
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.GetWebResourceUrl%2A> method. The *type* parameter in this example is set to the type of class in the assembly containing the resource. The `resourceName` parameter is specified with the fully qualified path to the resource, which includes the default namespace.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  
   
  The following code example demonstrates how to programmatically apply the <xref:System.Web.UI.WebResourceAttribute> metadata attribute to mark the assembly for the resources that will be served. Compile the following class in a class library with a default namespace set to `Samples.AspNet.CS.Controls` or `Samples.AspNet.VB.Controls`, depending on what language you are using.  
   
@@ -543,12 +608,26 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
  \- or -  
   
  The web resource name has a length of zero.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterClientScriptResource(System.Type,System.String)" />
+        <altmember cref="T:System.Web.UI.WebResourceAttribute" />
+        <altmember cref="T:System.Web.Handlers.AssemblyResourceLoader" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsClientScriptBlockRegistered">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the client script block is registered with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsClientScriptBlockRegistered">
       <MemberSignature Language="C#" Value="public bool IsClientScriptBlockRegistered (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptBlockRegistered(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsClientScriptBlockRegistered (key As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsClientScriptBlockRegistered(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -578,17 +657,20 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
    
   
 ## Examples  
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs2.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb2.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs2.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb2.aspx#2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.Type,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock" />
       </Docs>
     </Member>
     <Member MemberName="IsClientScriptBlockRegistered">
       <MemberSignature Language="C#" Value="public bool IsClientScriptBlockRegistered (Type type, string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptBlockRegistered(class System.Type type, string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsClientScriptBlockRegistered(Type ^ type, System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -620,18 +702,31 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered%2A> method. Note that, if the logic to check for the existing client script block were removed, there would not be two duplicate client scripts in the HTML source code of the rendered page because the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A> method checks for duplicates. The benefit of checking is to reduce unnecessary computation.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The client script type is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsClientScriptBlockRegistered(System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsClientScriptIncludeRegistered">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the client script include is registered with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsClientScriptIncludeRegistered">
       <MemberSignature Language="C#" Value="public bool IsClientScriptIncludeRegistered (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptIncludeRegistered(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsClientScriptIncludeRegistered (key As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsClientScriptIncludeRegistered(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -660,12 +755,15 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.Type,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude" />
       </Docs>
     </Member>
     <Member MemberName="IsClientScriptIncludeRegistered">
       <MemberSignature Language="C#" Value="public bool IsClientScriptIncludeRegistered (Type type, string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsClientScriptIncludeRegistered(class System.Type type, string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsClientScriptIncludeRegistered(Type ^ type, System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -697,8 +795,8 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered%2A> method. Note that, if the logic to check for the existing client script include were removed, there would not be two duplicate client scripts in the HTML source code of the rendered page because the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A> method checks for duplicates. The benefit of checking is to reduce unnecessary computation.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  
   
  This example requires a JavaScript file named `Script_include.js`, with the following contents:  
   
@@ -709,12 +807,25 @@ function DoClick() {Form1.Message.value='Text from include script.'}
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The client script include type is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered(System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsOnSubmitStatementRegistered">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the OnSubmit statement is registered with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsOnSubmitStatementRegistered">
       <MemberSignature Language="C#" Value="public bool IsOnSubmitStatementRegistered (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOnSubmitStatementRegistered(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsOnSubmitStatementRegistered (key As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsOnSubmitStatementRegistered(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -743,12 +854,15 @@ function DoClick() {Form1.Message.value='Text from include script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.Type,System.String)" />
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement(System.Type,System.String,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="IsOnSubmitStatementRegistered">
       <MemberSignature Language="C#" Value="public bool IsOnSubmitStatementRegistered (Type type, string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsOnSubmitStatementRegistered(class System.Type type, string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsOnSubmitStatementRegistered(Type ^ type, System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -780,18 +894,31 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered%2A> method. A script named `OnSubmitScript` is registered with the <xref:System.Web.UI.Page> so that when the page's form is submitted the script is invoked.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The OnSubmit statement type is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered(System.String)" />
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement(System.Type,System.String,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsStartupScriptRegistered">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the startup script is registered with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsStartupScriptRegistered">
       <MemberSignature Language="C#" Value="public bool IsStartupScriptRegistered (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStartupScriptRegistered(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsStartupScriptRegistered (key As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsStartupScriptRegistered(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -820,12 +947,15 @@ function DoClick() {Form1.Message.value='Text from include script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.Type,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterStartupScript" />
       </Docs>
     </Member>
     <Member MemberName="IsStartupScriptRegistered">
       <MemberSignature Language="C#" Value="public bool IsStartupScriptRegistered (Type type, string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStartupScriptRegistered(class System.Type type, string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsStartupScriptRegistered(Type ^ type, System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -857,18 +987,22 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered%2A> method. Note that, if the logic to check for the existing startup script block were removed, there would not be two duplicate startup scripts in the HTML source code of the rendered page because the <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A> method checks for duplicates. The benefit of checking is to reduce unnecessary computation.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The startup script type is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.IsStartupScriptRegistered(System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterStartupScript" />
       </Docs>
     </Member>
     <Member MemberName="RegisterArrayDeclaration">
       <MemberSignature Language="C#" Value="public void RegisterArrayDeclaration (string arrayName, string arrayValue);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterArrayDeclaration(string arrayName, string arrayValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterArrayDeclaration (arrayName As String, arrayValue As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterArrayDeclaration(System::String ^ arrayName, System::String ^ arrayValue);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -898,19 +1032,30 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A> and <xref:System.Web.UI.ClientScriptManager.RegisterHiddenField%2A> methods. The example registers an array and a hidden value and defines the `OnClick` event of an `<input>` button to calculate the sum of two values of the array and the hidden value.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="arrayName" /> is <see langword="null" />.</exception>
+        <altmember cref="Overload:System.String.Split" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="RegisterClientScriptBlock">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers the client script with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RegisterClientScriptBlock">
       <MemberSignature Language="C#" Value="public void RegisterClientScriptBlock (Type type, string key, string script);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptBlock(class System.Type type, string key, string script) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterClientScriptBlock(Type ^ type, System::String ^ key, System::String ^ script);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -946,17 +1091,19 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/cs/default.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/vb/default.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager12#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager12/vb/default.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="RegisterClientScriptBlock">
       <MemberSignature Language="C#" Value="public void RegisterClientScriptBlock (Type type, string key, string script, bool addScriptTags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptBlock(class System.Type type, string key, string script, bool addScriptTags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterClientScriptBlock(Type ^ type, System::String ^ key, System::String ^ script, bool addScriptTags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -994,18 +1141,30 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock%2A> method. Note that the `addScriptTags` parameter is set to `true` so the beginning and closing script tags are not included with the `script` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The client script block type is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterClientScriptBlock(System.Type,System.String,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="RegisterClientScriptInclude">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers the client script include with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RegisterClientScriptInclude">
       <MemberSignature Language="C#" Value="public void RegisterClientScriptInclude (string key, string url);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptInclude(string key, string url) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterClientScriptInclude (key As String, url As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterClientScriptInclude(System::String ^ key, System::String ^ url);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1044,12 +1203,15 @@ function DoClick() {Form1.Message.value='Text from include script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.Type,System.String,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered" />
       </Docs>
     </Member>
     <Member MemberName="RegisterClientScriptInclude">
       <MemberSignature Language="C#" Value="public void RegisterClientScriptInclude (Type type, string key, string url);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptInclude(class System.Type type, string key, string url) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.Type,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterClientScriptInclude(Type ^ type, System::String ^ key, System::String ^ url);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1084,8 +1246,8 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A> method. Note that if the logic to check for the existing client script include were removed, there would still not be duplicate client scripts in the rendered page because the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude%2A> method checks for duplicates. The benefit of checking is to reduce unnecessary computation.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/cs/clientscriptincludes.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager2/vb/clientscriptincludes.aspx#1)]  
   
  This example requires a JavaScript file named Script_include.js with the following contents:  
   
@@ -1101,12 +1263,15 @@ function DoClick() {Form1.Message.value='Text from include script.'}
  \- or -  
   
  The URL is empty.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude(System.String,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.IsClientScriptIncludeRegistered" />
       </Docs>
     </Member>
     <Member MemberName="RegisterClientScriptResource">
       <MemberSignature Language="C#" Value="public void RegisterClientScriptResource (Type type, string resourceName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterClientScriptResource(class System.Type type, string resourceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterClientScriptResource(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterClientScriptResource(Type ^ type, System::String ^ resourceName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1134,8 +1299,8 @@ function DoClick() {Form1.Message.value='Text from include script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterClientScriptResource%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/cs/clientscriptwebresource.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager4/vb/clientscriptwebresource.aspx#1)]  
   
  The following code example demonstrates how to programmatically apply the <xref:System.Web.UI.WebResourceAttribute> metadata attribute to mark the assembly for the resources that will be served.  
   
@@ -1157,12 +1322,27 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
  \- or -  
   
  The client resource name has a length of zero.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.GetWebResourceUrl(System.Type,System.String)" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.RegisterClientScriptInclude" />
+        <altmember cref="T:System.Web.Handlers.AssemblyResourceLoader" />
+        <altmember cref="T:System.Web.UI.WebResourceAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="RegisterExpandoAttribute">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers a name/value pair as a custom (expando) attribute of the specified control.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RegisterExpandoAttribute">
       <MemberSignature Language="C#" Value="public void RegisterExpandoAttribute (string controlId, string attributeName, string attributeValue);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterExpandoAttribute(string controlId, string attributeName, string attributeValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterExpandoAttribute (controlId As String, attributeName As String, attributeValue As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterExpandoAttribute(System::String ^ controlId, System::String ^ attributeName, System::String ^ attributeValue);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1191,12 +1371,15 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.JScript.Expando" />
       </Docs>
     </Member>
     <Member MemberName="RegisterExpandoAttribute">
       <MemberSignature Language="C#" Value="public void RegisterExpandoAttribute (string controlId, string attributeName, string attributeValue, bool encode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterExpandoAttribute(string controlId, string attributeName, string attributeValue, bool encode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute(System.String,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterExpandoAttribute (controlId As String, attributeName As String, attributeValue As String, encode As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterExpandoAttribute(System::String ^ controlId, System::String ^ attributeName, System::String ^ attributeValue, bool encode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1230,17 +1413,29 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates how to use the <xref:System.Web.UI.ClientScriptManager.RegisterExpandoAttribute%2A> method of the <xref:System.Web.UI.ClientScriptManager> class. The client script in the rendered page sets the `title` attribute of a `<span>` element.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/cs/clientscriptexpando.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/vb/clientscriptexpando.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/cs/clientscriptexpando.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager6#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager6/vb/clientscriptexpando.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.JScript.Expando" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="RegisterForEventValidation">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers an event reference for validation.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RegisterForEventValidation">
       <MemberSignature Language="C#" Value="public void RegisterForEventValidation (string uniqueId);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(string uniqueId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterForEventValidation (uniqueId As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterForEventValidation(System::String ^ uniqueId);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1266,17 +1461,20 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following example shows how to use the <xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A> method and the <xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A> method in order to register a callback for validation, and how to validate that the callback originated from the page.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/eventvalidation2cs.aspx#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/eventvalidation2vb.aspx#2)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/eventvalidation2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/eventvalidation2vb.aspx#2)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="RegisterForEventValidation">
       <MemberSignature Language="C#" Value="public void RegisterForEventValidation (System.Web.UI.PostBackOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(class System.Web.UI.PostBackOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.Web.UI.PostBackOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterForEventValidation (options As PostBackOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterForEventValidation(System::Web::UI::PostBackOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1299,12 +1497,15 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.ValidateEvent" />
       </Docs>
     </Member>
     <Member MemberName="RegisterForEventValidation">
       <MemberSignature Language="C#" Value="public void RegisterForEventValidation (string uniqueId, string argument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterForEventValidation(string uniqueId, string argument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterForEventValidation (uniqueId As String, argument As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterForEventValidation(System::String ^ uniqueId, System::String ^ argument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1327,23 +1528,26 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates using the <xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A> method and the <xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A> method to register a callback for validation and to validate that the callback originated from the page. To improve on the validation shown in the example, you could modify the validation `argument` parameter to contain information specific to the user such as an identity or role  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  
   
  The following code example demonstrates using the <xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A> method to register a callback for validation.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/cs/default.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/vb/default.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager10/vb/default.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The method is called prior to the <see cref="M:System.Web.UI.Page.Render(System.Web.UI.HtmlTextWriter)" /> method.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="RegisterHiddenField">
       <MemberSignature Language="C#" Value="public void RegisterHiddenField (string hiddenFieldName, string hiddenFieldInitialValue);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterHiddenField(string hiddenFieldName, string hiddenFieldInitialValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterHiddenField(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RegisterHiddenField (hiddenFieldName As String, hiddenFieldInitialValue As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterHiddenField(System::String ^ hiddenFieldName, System::String ^ hiddenFieldInitialValue);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1371,19 +1575,21 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterArrayDeclaration%2A> and <xref:System.Web.UI.ClientScriptManager.RegisterHiddenField%2A> methods. The example registers an array and a hidden value and defines the `OnClick` event of an `<input>` button to calculate the sum of two values of the array and the hidden value.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/cs/clientscriptregisterarray.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager5/vb/clientscriptregisterarray.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="hiddenFieldName" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.WebControls.HiddenField" />
       </Docs>
     </Member>
     <Member MemberName="RegisterOnSubmitStatement">
       <MemberSignature Language="C#" Value="public void RegisterOnSubmitStatement (Type type, string key, string script);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterOnSubmitStatement(class System.Type type, string key, string script) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement(System.Type,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterOnSubmitStatement(Type ^ type, System::String ^ key, System::String ^ script);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1421,19 +1627,31 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterOnSubmitStatement%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/cs/clientscriptonsubmit.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager3/vb/clientscriptonsubmit.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.UI.HtmlControls.HtmlForm" />
+        <altmember cref="Overload:System.Web.UI.ClientScriptManager.IsOnSubmitStatementRegistered" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="RegisterStartupScript">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Registers the startup script with the <see cref="T:System.Web.UI.Page" /> object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="RegisterStartupScript">
       <MemberSignature Language="C#" Value="public void RegisterStartupScript (Type type, string key, string script);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterStartupScript(class System.Type type, string key, string script) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterStartupScript(Type ^ type, System::String ^ key, System::String ^ script);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1469,17 +1687,19 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A> method. Note that the beginning and closing script tags are included within the `script` parameter. To have the script tags added based on an additional parameter setting, see the <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/cs/default.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/vb/default.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/cs/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager11#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.ui.clientscriptmanager11/vb/default.aspx#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="RegisterStartupScript">
       <MemberSignature Language="C#" Value="public void RegisterStartupScript (Type type, string key, string script, bool addScriptTags);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterStartupScript(class System.Type type, string key, string script, bool addScriptTags) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RegisterStartupScript(Type ^ type, System::String ^ key, System::String ^ script, bool addScriptTags);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1517,19 +1737,32 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates the use of the <xref:System.Web.UI.ClientScriptManager.RegisterStartupScript%2A> method. Note that the `addScriptTags` parameter is set to `false` so the beginning and closing script tags are included with the `script` parameter.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/cs/page_registerstartupscriptcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager1/vb/page_registerstartupscriptvb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="type" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterStartupScript(System.Type,System.String,System.String)" />
+        <altmember cref="F:System.Web.UI.HtmlTextWriterTag.Script" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ValidateEvent">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Validates a client event.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ValidateEvent">
       <MemberSignature Language="C#" Value="public void ValidateEvent (string uniqueId);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateEvent(string uniqueId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ValidateEvent (uniqueId As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ValidateEvent(System::String ^ uniqueId);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1545,12 +1778,15 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
         <param name="uniqueId">A unique ID representing the client control generating the event.</param>
         <summary>Validates a client event that was registered for event validation using the <see cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" /> method.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="ValidateEvent">
       <MemberSignature Language="C#" Value="public void ValidateEvent (string uniqueId, string argument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ValidateEvent(string uniqueId, string argument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.ClientScriptManager.ValidateEvent(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ValidateEvent (uniqueId As String, argument As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ValidateEvent(System::String ^ uniqueId, System::String ^ argument);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1573,13 +1809,14 @@ function DoClick() {Form1.Message.value='Text from resource script.'}
 ## Examples  
  The following code example demonstrates using the <xref:System.Web.UI.ClientScriptManager.RegisterForEventValidation%2A> method and the <xref:System.Web.UI.ClientScriptManager.ValidateEvent%2A> method to register a callback for validation and to validate that the callback originated from the page. To improve on the validation shown here, you could modify the validation `argument` parameter to contain information specific to the user such as an identity or role  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/cs/EventValidationCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ClientScriptManager9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ClientScriptManager9/vb/EventValidationVB.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="uniqueId" /> is <see langword="null" /> or an empty string ("").</exception>
+        <altmember cref="M:System.Web.UI.ClientScriptManager.RegisterForEventValidation(System.String,System.String)" />
       </Docs>
     </Member>
   </Members>

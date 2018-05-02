@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::RuntimeThreadSuspended Method | Microsoft Docs"
+title: "ICorProfilerCallback::RuntimeThreadSuspended Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.RuntimeThreadSuspended"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::RuntimeThreadSuspended"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RuntimeThreadSuspended method [.NET Framework profiling]"
   - "ICorProfilerCallback::RuntimeThreadSuspended method [.NET Framework profiling]"
 ms.assetid: de830a8b-6ee1-4900-ace3-4237108f6b12
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::RuntimeThreadSuspended Method
 Notifies the profiler that the specified thread has been suspended or is about to be suspended.  
@@ -56,5 +59,5 @@ HRESULT RuntimeThreadSuspended(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [RuntimeThreadResumed Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md)

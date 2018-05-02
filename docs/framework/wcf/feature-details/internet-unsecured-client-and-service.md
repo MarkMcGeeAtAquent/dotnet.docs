@@ -1,19 +1,24 @@
 ---
-title: "Internet Unsecured Client and Service | Microsoft Docs"
+title: "Internet Unsecured Client and Service"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
 caps.latest.revision: 17
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Internet Unsecured Client and Service
 The following illustration shows an example of a public, unsecured [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service.  
@@ -38,7 +43,7 @@ The following illustration shows an example of a public, unsecured [!INCLUDE[ind
 -   Create a service using the supplied configuration, but do not define any endpoints.  
   
 ### Code  
- The following code shows how to create an endpoint with no security. By default, the <xref:System.ServiceModel.BasicHttpBinding> has the security mode set to <xref:System.ServiceModel.BasicHttpSecurityMode>.  
+ The following code shows how to create an endpoint with no security. By default, the <xref:System.ServiceModel.BasicHttpBinding> has the security mode set to <xref:System.ServiceModel.BasicHttpSecurityMode.None>.  
   
  [!code-csharp[C_UnsecuredService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#1)]
  [!code-vb[C_UnsecuredService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#1)]  
@@ -46,7 +51,7 @@ The following illustration shows an example of a public, unsecured [!INCLUDE[ind
 ### Service Configuration  
  The following code sets up the same endpoint using configuration.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -89,7 +94,7 @@ The following illustration shows an example of a public, unsecured [!INCLUDE[ind
 ### Client Configuration  
  The following code configures the client.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -113,6 +118,6 @@ The following illustration shows an example of a public, unsecured [!INCLUDE[ind
 ```  
   
 ## See Also  
- [Common Security Scenarios](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)   
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
+ [Common Security Scenarios](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

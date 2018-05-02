@@ -1,11 +1,14 @@
-<Type Name="AutoResetEvent" FullName="System.Threading.AutoResetEvent">
+﻿<Type Name="AutoResetEvent" FullName="System.Threading.AutoResetEvent">
   <TypeSignature Language="C#" Value="public sealed class AutoResetEvent : System.Threading.EventWaitHandle" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AutoResetEvent extends System.Threading.EventWaitHandle" />
   <TypeSignature Language="DocId" Value="T:System.Threading.AutoResetEvent" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class AutoResetEvent&#xA;Inherits EventWaitHandle" />
+  <TypeSignature Language="C++ CLI" Value="public ref class AutoResetEvent sealed : System::Threading::EventWaitHandle" />
   <AssemblyInfo>
     <AssemblyName>System.Threading</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -34,7 +37,7 @@
  `AutoResetEvent` allows threads to communicate with each other by signaling. Typically, you use this class when threads need exclusive access to a resource.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  A thread waits for a signal by calling <xref:System.Threading.WaitHandle.WaitOne%2A> on the `AutoResetEvent`. If the `AutoResetEvent` is in the non-signaled state, the thread blocks, waiting for the thread that currently controls the resource to signal that the resource is available by calling <xref:System.Threading.EventWaitHandle.Set%2A>.  
   
@@ -51,7 +54,7 @@
   
  For more information about thread synchronization mechanisms, see [AutoResetEvent](~/docs/standard/threading/autoresetevent.md) in the conceptual documentation.  
   
- Beginning with the .NET Framework version 2.0, <xref:System.Threading.AutoResetEvent> derives from the new <xref:System.Threading.EventWaitHandle> class. An <xref:System.Threading.AutoResetEvent> is functionally equivalent to an <xref:System.Threading.EventWaitHandle> created with <xref:System.Threading.EventResetMode?displayProperty=fullName>.  
+ Beginning with the .NET Framework version 2.0, <xref:System.Threading.AutoResetEvent> derives from the new <xref:System.Threading.EventWaitHandle> class. An <xref:System.Threading.AutoResetEvent> is functionally equivalent to an <xref:System.Threading.EventWaitHandle> created with <xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>.  
   
 > [!NOTE]
 >  Unlike the <xref:System.Threading.AutoResetEvent> class, the <xref:System.Threading.EventWaitHandle> class provides access to named system synchronization events.  
@@ -70,17 +73,21 @@
  ]]></format>
     </remarks>
     <threadsafe>This class is thread safe.</threadsafe>
+    <altmember cref="T:System.Threading.WaitHandle" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public AutoResetEvent (bool initialState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.AutoResetEvent.#ctor(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (initialState As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; AutoResetEvent(bool initialState);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -108,7 +115,7 @@
   
  The program logic guarantees that the `ThreadProc` method will never read the same value two times. It does not guarantee that the `ThreadProc` method will read every value written by `Main`. That guarantee would require a second <xref:System.Threading.AutoResetEvent> lock.  
   
- After each write operation, `Main` yields by calling the <xref:System.Threading.Thread.Sleep%2A?displayProperty=fullName> method, to give the second thread a chance to execute. Otherwise, on a single-processor computer `Main` would write many values between any two read operations.  
+ After each write operation, `Main` yields by calling the <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> method, to give the second thread a chance to execute. Otherwise, on a single-processor computer `Main` would write many values between any two read operations.  
   
  [!code-cpp[System.Threading.AutoResetEvent#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CPP/class1.cpp#1)]
  [!code-csharp[System.Threading.AutoResetEvent#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.AutoResetEvent/CS/class1.cs#1)]
@@ -116,6 +123,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Threading.WaitHandle" />
       </Docs>
     </Member>
   </Members>

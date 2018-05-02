@@ -1,7 +1,9 @@
-<Type Name="WebFailureAuditEvent" FullName="System.Web.Management.WebFailureAuditEvent">
+﻿<Type Name="WebFailureAuditEvent" FullName="System.Web.Management.WebFailureAuditEvent">
   <TypeSignature Language="C#" Value="public class WebFailureAuditEvent : System.Web.Management.WebAuditEvent" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebFailureAuditEvent extends System.Web.Management.WebAuditEvent" />
   <TypeSignature Language="DocId" Value="T:System.Web.Management.WebFailureAuditEvent" />
+  <TypeSignature Language="VB.NET" Value="Public Class WebFailureAuditEvent&#xA;Inherits WebAuditEvent" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WebFailureAuditEvent : System::Web::Management::WebAuditEvent" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,7 +18,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- ASP.NET health monitoring allows production and operations staff to manage deployed Web applications. The <xref:System.Web.Management?displayProperty=fullName> namespace contains the health event types responsible for packaging application health-status data and the provider types responsible for processing this data. It also contains supporting types that help during the management of health events.  
+ ASP.NET health monitoring allows production and operations staff to manage deployed Web applications. The <xref:System.Web.Management?displayProperty=nameWithType> namespace contains the health event types responsible for packaging application health-status data and the provider types responsible for processing this data. It also contains supporting types that help during the management of health events.  
   
  The <xref:System.Web.Management.WebFailureAuditEvent> class is used when a security operation fails. An example of this is a failed URL authorization for a Web request.  
   
@@ -91,12 +93,26 @@ profile="Default"/>
     <block subset="none" type="overrides">
       <para>When formatting your custom event information for display, override the <see cref="M:System.Web.Management.WebBaseEvent.FormatCustomEventDetails(System.Web.Management.WebEventFormatter)" /> method rather than the <see cref="Overload:System.Web.Management.WebBaseEvent.ToString" /> method. This will avoid overwriting or tampering with sensitive system information.</para>
     </block>
+    <altmember cref="T:System.Web.Management.WebAuditEvent" />
+    <altmember cref="T:System.Web.Management.WebSuccessAuditEvent" />
+    <altmember cref="T:System.Web.Management.WebEventCodes" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Web.Management.WebFailureAuditEvent" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected WebFailureAuditEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="C#" Value="protected internal WebFailureAuditEvent (string message, object eventSource, int eventCode);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub New (message As String, eventSource As Object, eventCode As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; WebFailureAuditEvent(System::String ^ message, System::Object ^ eventSource, int eventCode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -131,9 +147,11 @@ profile="Default"/>
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected WebFailureAuditEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="C#" Value="protected internal WebFailureAuditEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub New (message As String, eventSource As Object, eventCode As Integer, eventDetailCode As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; WebFailureAuditEvent(System::String ^ message, System::Object ^ eventSource, int eventCode, int eventDetailCode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -170,9 +188,11 @@ profile="Default"/>
       </Docs>
     </Member>
     <Member MemberName="IncrementPerfCounters">
-      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="C#" Value="protected internal override void IncrementPerfCounters ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.WebFailureAuditEvent.IncrementPerfCounters" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overrides Sub IncrementPerfCounters ()" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; override void IncrementPerfCounters();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

@@ -1,19 +1,24 @@
 ---
-title: "Customizing Operations by Using Stored Procedures Exclusively | Microsoft Docs"
+title: "Customizing Operations by Using Stored Procedures Exclusively"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 441e8ef3-998c-4d12-8825-ce66a178f90f
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Customizing Operations by Using Stored Procedures Exclusively
 Access to data by using only stored procedures is a common scenario.  

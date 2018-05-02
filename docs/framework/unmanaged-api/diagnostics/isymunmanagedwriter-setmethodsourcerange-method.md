@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::SetMethodSourceRange Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::SetMethodSourceRange Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.SetMethodSourceRange"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::SetMethodSourceRange"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetMethodSourceRange method [.NET Framework debugging]"
   - "ISymUnmanagedWriter::SetMethodSourceRange method [.NET Framework debugging]"
 ms.assetid: c698b86e-ace7-4b21-9549-f52d6a034959
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::SetMethodSourceRange Method
 Specifies the true start and end of a method within a source file. Use this method to specify the extent of a method independently of the sequence points that exist within the method.  

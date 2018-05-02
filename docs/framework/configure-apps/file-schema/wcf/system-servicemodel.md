@@ -1,8 +1,8 @@
 ---
-title: "&lt;system.serviceModel&gt; | Microsoft Docs"
+title: "&lt;system.serviceModel&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,45 +12,48 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#system.ServiceModel"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.ServiceModel"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "<system.serviceModel> element"
   - "system.serviceModel element"
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;system.serviceModel&gt;
 This configuration section contains all the [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] ServiceModel configuration elements.  
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
-    <behaviors>  
-    </behaviors>  
-    <bindings>  
-    </bindings>  
-    <client>  
-    </client>  
-    <comContracts>  
-    </comContracts>  
-    <commonBehaviors>  
-    </commonBehaviors>  
-    <diagnostics>  
-    </diagnostics>  
-    <extensions>  
-    </extensions>    <protocolMapping>    </protocolMapping>    <routing>    </routing>  
-    <serviceHostingEnvironment>  
-    </serviceHostingEnvironment>  
-    <services>  
-    </services>    <standardEndpoints>  
-    </standardEndpoints>  
+  <behaviors>  
+  </behaviors>  
+  <bindings>  
+  </bindings>  
+  <client>  
+  </client>  
+  <comContracts>  
+  </comContracts>  
+  <commonBehaviors>  
+  </commonBehaviors>  
+  <diagnostics>  
+  </diagnostics>  
+  <extensions>  
+  </extensions>
+  <protocolMapping>
+  </protocolMapping>
+  <routing>
+  </routing>  
+  <serviceHostingEnvironment>  
+  </serviceHostingEnvironment>  
+  <services>  
+  </services>
+  <standardEndpoints>  
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
@@ -99,7 +102,7 @@ This configuration section contains all the [!INCLUDE[indigo1](../../../../../in
 ## Example  
  This is an example of a WCF configuration file.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  

@@ -1,19 +1,23 @@
 ---
-title: "The Load Method | Microsoft Docs"
+title: "The Load Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "vb"
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # The Load Method
 You can use the <xref:System.Data.DataTable.Load%2A> method to load a <xref:System.Data.DataTable> with rows from a data source. This is an overloaded method which, in its simplest form, accepts a single parameter, a **DataReader**. In this form, it simply loads the **DataTable** with rows. Optionally, you can specify the **LoadOption** parameter to control how data is added to the **DataTable**.  
@@ -30,9 +34,7 @@ You can use the <xref:System.Data.DataTable.Load%2A> method to load a <xref:Syst
   
  The following sample uses the **Load** method to display a list of birthdays for the employees in the **Northwind** database.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
     ' Assumes that connectionString is a valid connection string  
     ' to the Northwind database on SQL Server.  
@@ -75,5 +77,5 @@ End Sub
 ```  
   
 ## See Also  
- [Manipulating Data in a DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)   
+ [Manipulating Data in a DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

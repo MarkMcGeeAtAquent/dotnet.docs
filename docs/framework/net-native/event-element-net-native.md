@@ -1,5 +1,5 @@
 ---
-title: "&lt;Event&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;Event&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;Event&gt; Element (.NET Native)
 Applies runtime reflection policy to an event.  
@@ -21,11 +23,9 @@ Applies runtime reflection policy to an event.
 ## Syntax  
   
 ```xml  
-  
 <Event Name="event_name"   
        Browse="policy_type"   
        Dynamic="policy_type" />  
-  
 ```  
   
 ## Attributes and Elements  
@@ -65,6 +65,6 @@ Applies runtime reflection policy to an event.
  If an event's policy is not explicitly defined, it inherits the runtime policy of its parent element.  
   
 ## See Also  
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)   
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)  
  [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)

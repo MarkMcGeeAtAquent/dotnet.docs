@@ -1,7 +1,8 @@
 ---
-title: "How To: Debug Claims-Aware Applications And Services Using WIF Tracing | Microsoft Docs"
+title: "How To: Debug Claims-Aware Applications And Services Using WIF Tracing"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 7
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How To: Debug Claims-Aware Applications And Services Using WIF Tracing
 ## Applies To  

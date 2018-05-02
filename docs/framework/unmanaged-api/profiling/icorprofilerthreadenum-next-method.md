@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerThreadEnum::Next Method | Microsoft Docs"
+title: "ICorProfilerThreadEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerThreadEnum.Next"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerThreadEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerThreadEnum::Next method [.NET Framework profiling]"
   - "Next method, ICorProfilerThreadEnum interface [.NET Framework profiling]"
 ms.assetid: f3535279-3c63-41a2-ab0e-a129dc5a01e8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerThreadEnum::Next Method
 Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.  
@@ -68,5 +71,5 @@ HRESULT Next (    [in]  ULONG      celt,
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)   
+ [ICorProfilerThreadEnum Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)  
  [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)

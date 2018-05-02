@@ -1,7 +1,9 @@
-<Type Name="ITypeDescriptorFilterService" FullName="System.ComponentModel.Design.ITypeDescriptorFilterService">
+﻿<Type Name="ITypeDescriptorFilterService" FullName="System.ComponentModel.Design.ITypeDescriptorFilterService">
   <TypeSignature Language="C#" Value="public interface ITypeDescriptorFilterService" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITypeDescriptorFilterService" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ITypeDescriptorFilterService" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ITypeDescriptorFilterService" />
+  <TypeSignature Language="C++ CLI" Value="public interface class ITypeDescriptorFilterService" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -50,12 +56,19 @@
     <block subset="none" type="overrides">
       <para>To filter the member descriptors exposed by a <see cref="T:System.ComponentModel.TypeDescriptor" />, implement this interface on a component and override the <see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes(System.ComponentModel.IComponent,System.Collections.IDictionary)" />, <see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterEvents(System.ComponentModel.IComponent,System.Collections.IDictionary)" />, or <see cref="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties(System.ComponentModel.IComponent,System.Collections.IDictionary)" /> methods of this class to filter attributes, events, or properties, respectively.</para>
     </block>
+    <altmember cref="T:System.ComponentModel.TypeDescriptor" />
+    <altmember cref="T:System.ComponentModel.EventDescriptor" />
+    <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+    <altmember cref="T:System.Attribute" />
+    <altmember cref="T:System.Collections.IDictionary" />
   </Docs>
   <Members>
     <Member MemberName="FilterAttributes">
       <MemberSignature Language="C#" Value="public bool FilterAttributes (System.ComponentModel.IComponent component, System.Collections.IDictionary attributes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterAttributes(class System.ComponentModel.IComponent component, class System.Collections.IDictionary attributes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterAttributes(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FilterAttributes (component As IComponent, attributes As IDictionary) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool FilterAttributes(System::ComponentModel::IComponent ^ component, System::Collections::IDictionary ^ attributes);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -65,6 +78,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -90,12 +107,17 @@
         <block subset="none" type="overrides">
           <para>Return <see langword="false" /> only when necessary, because repeated queries to the type descriptor filter service can decrease performance.</para>
         </block>
+        <altmember cref="T:System.Attribute" />
+        <altmember cref="P:System.Attribute.TypeId" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
     <Member MemberName="FilterEvents">
       <MemberSignature Language="C#" Value="public bool FilterEvents (System.ComponentModel.IComponent component, System.Collections.IDictionary events);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterEvents(class System.ComponentModel.IComponent component, class System.Collections.IDictionary events) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterEvents(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FilterEvents (component As IComponent, events As IDictionary) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool FilterEvents(System::ComponentModel::IComponent ^ component, System::Collections::IDictionary ^ events);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -105,6 +127,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -130,12 +156,16 @@
         <block subset="none" type="overrides">
           <para>Return <see langword="false" /> only when necessary, because repeated queries to the type descriptor filter service can decrease performance.</para>
         </block>
+        <altmember cref="T:System.ComponentModel.EventDescriptor" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
     <Member MemberName="FilterProperties">
       <MemberSignature Language="C#" Value="public bool FilterProperties (System.ComponentModel.IComponent component, System.Collections.IDictionary properties);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterProperties(class System.ComponentModel.IComponent component, class System.Collections.IDictionary properties) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ITypeDescriptorFilterService.FilterProperties(System.ComponentModel.IComponent,System.Collections.IDictionary)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FilterProperties (component As IComponent, properties As IDictionary) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool FilterProperties(System::ComponentModel::IComponent ^ component, System::Collections::IDictionary ^ properties);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -145,6 +175,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -170,6 +204,8 @@
         <block subset="none" type="overrides">
           <para>Return <see langword="false" /> only when necessary, because repeated queries to the type descriptor filter service can decrease performance.</para>
         </block>
+        <altmember cref="T:System.ComponentModel.PropertyDescriptor" />
+        <altmember cref="T:System.Collections.IDictionary" />
       </Docs>
     </Member>
   </Members>

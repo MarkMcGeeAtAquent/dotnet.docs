@@ -1,7 +1,9 @@
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
@@ -12,21 +14,27 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.System#Windows#Automation#Provider#ITableProvider#GetRowHeaders
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.System#Windows#Automation#Provider#IGridProvider#GetItem(System.Int32,System.Int32)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.System#Windows#Automation#Provider#ISelectionProvider#GetSelection
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
@@ -43,15 +51,19 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.#ctor(System.Windows.Controls.DataGrid)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.System#Windows#Automation#Provider#ITableProvider#GetColumnHeaders
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
@@ -62,8 +74,10 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.DataGridAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 

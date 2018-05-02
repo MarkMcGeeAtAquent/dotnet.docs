@@ -1,7 +1,9 @@
-<Type Name="CriticalHandle" FullName="System.Runtime.InteropServices.CriticalHandle">
+﻿<Type Name="CriticalHandle" FullName="System.Runtime.InteropServices.CriticalHandle">
   <TypeSignature Language="C#" Value="public abstract class CriticalHandle : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CriticalHandle extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.CriticalHandle" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CriticalHandle&#xA;Inherits CriticalFinalizerObject&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CriticalHandle abstract : System::Runtime::ConstrainedExecution::CriticalFinalizerObject, IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Handles</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -19,6 +21,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -42,18 +48,22 @@
 ## Remarks  
  The <xref:System.Runtime.InteropServices.CriticalHandle> class is similar to the <xref:System.Runtime.InteropServices.SafeHandle> class, except that <xref:System.Runtime.InteropServices.SafeHandle> implements reference counting. You can use <xref:System.Runtime.InteropServices.CriticalHandle> instead of <xref:System.Runtime.InteropServices.SafeHandle> to address performance considerations when you can provide the necessary synchronization more efficiently yourself.  
   
- Because the <xref:System.Runtime.InteropServices.CriticalHandle> class does not perform reference counting, it does not provide protection from handle recycling security attacks. Because the reference counting algorithm implicitly serializes operations, a certain amount of thread safety is also lost. If you call the <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> or <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> method while an operation that is using the handle is outstanding on another thread, or if you call <xref:System.IDisposable.Dispose%2A?displayProperty=fullName> or <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> from two threads at the same time, the results are non-deterministic. The <xref:System.Runtime.InteropServices.CriticalHandle> class still provides the guaranteed critical finalization provided by the <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> class.  
+ Because the <xref:System.Runtime.InteropServices.CriticalHandle> class does not perform reference counting, it does not provide protection from handle recycling security attacks. Because the reference counting algorithm implicitly serializes operations, a certain amount of thread safety is also lost. If you call the <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> or <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> method while an operation that is using the handle is outstanding on another thread, or if you call <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> or <xref:System.Runtime.InteropServices.SafeHandle.Close%2A> from two threads at the same time, the results are non-deterministic. The <xref:System.Runtime.InteropServices.CriticalHandle> class still provides the guaranteed critical finalization provided by the <xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject> class.  
   
  ]]></format>
     </remarks>
     <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">for full trust for inheritors. This member cannot be inherited by partially trusted code.</permission>
     <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This class cannot be used by partially trusted or transparent code.</permission>
+    <altmember cref="T:System.Runtime.InteropServices.SafeHandle" />
+    <altmember cref="N:Microsoft.Win32.SafeHandles" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected CriticalHandle (IntPtr invalidHandleValue);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(native int invalidHandleValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.#ctor(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (invalidHandleValue As IntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; CriticalHandle(IntPtr invalidHandleValue);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -73,6 +83,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
@@ -88,12 +102,15 @@
         <exception cref="T:System.TypeLoadException">The derived class resides in an assembly without unmanaged code access permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">for full trust for inheritors. This member cannot be inherited by partially trusted code.</permission>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This class cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Runtime.InteropServices.SafeHandle.#ctor(System.IntPtr,System.Boolean)" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -103,6 +120,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -132,11 +153,25 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Marks the handle for releasing and freeing resources.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -154,6 +189,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -187,6 +226,8 @@
       <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -205,6 +246,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -238,6 +283,8 @@
       <MemberSignature Language="C#" Value="~CriticalHandle ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!CriticalHandle ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -256,6 +303,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -279,12 +330,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Runtime.InteropServices.CriticalHandle.Dispose" />
       </Docs>
     </Member>
     <Member MemberName="handle">
       <MemberSignature Language="C#" Value="protected IntPtr handle;" />
       <MemberSignature Language="ILAsm" Value=".field family native int handle" />
       <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CriticalHandle.handle" />
+      <MemberSignature Language="VB.NET" Value="Protected handle As IntPtr " />
+      <MemberSignature Language="C++ CLI" Value="protected: IntPtr handle;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -303,6 +357,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IntPtr</ReturnType>
@@ -323,6 +381,8 @@
       <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.CriticalHandle.IsClosed" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsClosed As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsClosed { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -341,6 +401,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -366,12 +430,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" />
       </Docs>
     </Member>
     <Member MemberName="IsInvalid">
       <MemberSignature Language="C#" Value="public abstract bool IsInvalid { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInvalid" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.CriticalHandle.IsInvalid" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property IsInvalid As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract property bool IsInvalid { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -390,6 +457,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -413,12 +484,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" />
       </Docs>
     </Member>
     <Member MemberName="ReleaseHandle">
       <MemberSignature Language="C#" Value="protected abstract bool ReleaseHandle ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReleaseHandle() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle" />
+      <MemberSignature Language="VB.NET" Value="Protected MustOverride Function ReleaseHandle () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; abstract bool ReleaseHandle();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -438,6 +512,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
@@ -450,7 +528,7 @@
       <Docs>
         <summary>When overridden in a derived class, executes the code required to free the handle.</summary>
         <returns>
-          <see langword="true" /> if the handle is released successfully; otherwise, in the event of a catastrophic failure,<see langword=" false" />. In this case, it generates a [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md) Managed Debugging Assistant.</returns>
+          <see langword="true" /> if the handle is released successfully; otherwise, in the event of a catastrophic failure, <see langword="false" />. In this case, it generates a [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md) Managed Debugging Assistant.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -471,6 +549,8 @@
       <MemberSignature Language="C#" Value="protected void SetHandle (IntPtr handle);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetHandle(native int handle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.SetHandle(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub SetHandle (handle As IntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void SetHandle(IntPtr handle);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -489,6 +569,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -518,6 +602,8 @@
       <MemberSignature Language="C#" Value="public void SetHandleAsInvalid ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHandleAsInvalid() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.SetHandleAsInvalid" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetHandleAsInvalid ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetHandleAsInvalid();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Handles</AssemblyName>
@@ -536,6 +622,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

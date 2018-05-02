@@ -1,14 +1,20 @@
 ---
 uid: System.Transactions.Configuration.MachineSettingsSection
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.MachineSettingsSection.MaxTimeout
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.Configuration.MachineSettingsSection.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

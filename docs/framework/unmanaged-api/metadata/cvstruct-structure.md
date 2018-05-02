@@ -1,5 +1,5 @@
 ---
-title: "CVStruct Structure | Microsoft Docs"
+title: "CVStruct Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CVStruct"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CVStruct"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CVStruct structure [.NET Framework metadata]"
 ms.assetid: e9e4e497-d5fb-464b-991c-3bdd824664fd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CVStruct Structure
 Contains information that is used when installing a module or a composite image.  

@@ -1,16 +1,14 @@
 ---
-title: "How to: Create a Lookup Table with the Windows Forms BindingSource Component | Microsoft Docs"
+title: "How to: Create a Lookup Table with the Windows Forms BindingSource Component"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "lookup tables"
   - "tables [Windows Forms], creating lookup tables"
@@ -21,6 +19,8 @@ caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Create a Lookup Table with the Windows Forms BindingSource Component
 A lookup table is a table of data that has a column that displays data from records in a related table. In the following procedures, a <xref:System.Windows.Forms.ComboBox> control is used to display the field with the foreign-key relationship from the parent to the child table.  
@@ -100,7 +100,7 @@ A lookup table is a table of data that has a column that displays data from reco
 8.  Bind the controls other than the <xref:System.Windows.Forms.ComboBox> and <xref:System.Windows.Forms.BindingNavigator> control to the details fields from the child table's <xref:System.Windows.Forms.BindingSource> (for example, `OrdersBindingSource`) that you want to display.  
   
 ## See Also  
- <xref:System.Windows.Forms.BindingSource>   
- [BindingSource Component](../../../../docs/framework/winforms/controls/bindingsource-component.md)   
- [ComboBox Control](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)   
- [Bind controls to data in Visual Studio](http://msdn.microsoft.com/library/be8b6623-86a6-493e-ab7a-050de4661fd6)
+ <xref:System.Windows.Forms.BindingSource>  
+ [BindingSource Component](../../../../docs/framework/winforms/controls/bindingsource-component.md)  
+ [ComboBox Control](../../../../docs/framework/winforms/controls/combobox-control-windows-forms.md)  
+ [Bind controls to data in Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

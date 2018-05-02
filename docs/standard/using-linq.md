@@ -1,6 +1,6 @@
 ---
 title: LINQ (Language Integrated Query)
-description: LINQ (Language Integrated Query)
+description: Learn how LINQ provides language-level querying capabilities and an API to C# and VB as a way to write expressive, declarative code.
 keywords: .NET, .NET Core
 author: cartermp
 ms.author: wiwagn
@@ -10,6 +10,9 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 
 # LINQ (Language Integrated Query)
@@ -24,7 +27,6 @@ Language-level query syntax:
 var linqExperts = from p in programmers
                   where p.IsNewToLINQ
                   select new LINQExpert(p);
-
 ```
 
 Same example using the `IEnumerable<T>` API:
@@ -32,7 +34,6 @@ Same example using the `IEnumerable<T>` API:
 ```csharp
 var linqExperts = programmers.Where(p => IsNewToLINQ)
                              .Select(p => new LINQExpert(p));
-
 ```
 
 ## LINQ is Expressive
@@ -48,7 +49,6 @@ foreach (var pet in pets)
 {
     petLookup.Add(pet.RFID, pet);
 }
-
 ```
 
 The intention behind the code is not to create a new `Dictionary<int, Pet>` and add to it via a loop, it is to convert an existing list into a dictionary! LINQ preserves the intention whereas the imperative code does not.
@@ -57,7 +57,6 @@ Equivalent LINQ expression:
 
 ```csharp
 var petLookup = pets.ToDictionary(pet => pet.RFID);
-
 ```
 
 The code using LINQ is valuable because it evens the playing field between intent and code when reasoning as a programmer. Another bonus is code brevity. Imagine reducing large portions of a codebase by 1/3 as done above. Pretty sweet deal, right?
@@ -76,12 +75,11 @@ public static IEnumerable<XElement> FindAllElementsWithAttribute(XElement docume
            where (string)el.Element(attributeName) == value
            select el;
 }
-
 ```
 
 Writing code to manually traverse the XML document to perform this task would be far more challenging.
 
-Interacting with XML isn’t the only thing you can do with LINQ Providers. [Linq to SQL](https://msdn.microsoft.com/library/bb386976.aspx) is a fairly bare-bones Object-Relational Mapper (ORM) for an MSSQL Server Database. The [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) library provides efficient JSON Document traversal via LINQ. Furthermore, if there isn’t a library which does what you need, you can also [write your own LINQ Provider](https://msdn.microsoft.com/library/Bb546158.aspx)!
+Interacting with XML isn’t the only thing you can do with LINQ Providers. [Linq to SQL](../../docs/framework/data/adonet/sql/linq/index.md) is a fairly bare-bones Object-Relational Mapper (ORM) for an MSSQL Server Database. The [JSON.NET](http://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) library provides efficient JSON Document traversal via LINQ. Furthermore, if there isn’t a library which does what you need, you can also [write your own LINQ Provider](https://msdn.microsoft.com/library/Bb546158.aspx)!
 
 ## Why Use the Query Syntax?
 
@@ -89,7 +87,6 @@ This is a question which often comes up. After all, this,
 
 ```csharp
 var filteredItems = myItems.Where(item => item.Foo);
-
 ```
 
 is a lot more concise than this:
@@ -98,7 +95,6 @@ is a lot more concise than this:
 var filteredItems = from item in myItems
                     where item.Foo
                     select item;
-
 ```
 
 Isn’t the API syntax just a more concise way to do the query syntax?
@@ -146,7 +142,6 @@ var queryCats = from dog in dogs
 // Summing then lengths of a set of strings
 int seed = 0;
 int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
-
 ```
 
 *   Flattening a list of lists:
@@ -154,7 +149,6 @@ int sumOfStrings = strings.Aggregate(seed, (s1, s2) => s1.Length + s2.Length);
 ```csharp
 // Transforms the list of kennels into a list of all their dogs.
 var allDogsFromKennels = kennels.SelectMany(kennel => kennel.Dogs);
-
 ```
 
 *   Union between two sets (with custom comparator):
@@ -190,7 +184,6 @@ public class DogHairLengthComparer : IEqualityComparer<Dog>
 
 // Gets all the short-haired dogs between two different kennels
 var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthComparer());
-
 ```
 
 *   Intersection between two sets:
@@ -199,7 +192,6 @@ var allShortHairedDogs = kennel1.Dogs.Union(kennel2.Dogs, new DogHairLengthCompa
 // Gets the volunteers who spend share time with two humane societies.
 var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
                                                      new VolunteerTimeComparer());
-
 ```
 
 *   Ordering:
@@ -209,7 +201,6 @@ var volunteers = humaneSociety1.Volunteers.Intersect(humaneSociety2.Volunteers,
 var results = DirectionsProcessor.GetDirections(start, end)
               .OrderBy(direction => direction.HasNoTolls)
               .ThenBy(direction => direction.EstimatedTime);
-
 ```
 
 *   Finally, a more advanced sample: determining if the values of the properties of two instances of the same type are equal (Borrowed and modified from [this StackOverflow post](http://stackoverflow.com/a/844855)):
@@ -234,7 +225,6 @@ public static bool PublicInstancePropertiesEqual<T>(this T self, T to, params st
 
     return self == to;
 }
-
 ```
 
 ## PLINQ
@@ -255,7 +245,6 @@ public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> fa
     return facebookUsers.AsParallel()
                         .Aggregate(seed, threadAccumulator, threadResultAccumulator, resultSelector);
 }
-
 ```
 
 This code will partition `facebookUsers` across system threads as necessary, sum up the total likes on each thread in parallel, sum the results computed by each thread, and project that result into a nice string.
@@ -264,7 +253,7 @@ In diagram form:
 
 ![PLINQ diagram](./media/using-linq/plinq-diagram.png)
 
-Parallelizable CPU-bound jobs which can be easily expressed via LINQ (in other words, are pure functions and have no side effects) are a great candidate for PLINQ. For jobs which _do_ have a side effect, consider using the [Task Parallel Library](https://msdn.microsoft.com/library/dd460717.aspx).
+Parallelizable CPU-bound jobs which can be easily expressed via LINQ (in other words, are pure functions and have no side effects) are a great candidate for PLINQ. For jobs which _do_ have a side effect, consider using the [Task Parallel Library](./parallel-programming/task-parallel-library-tpl.md).
 
 ## Further Resources:
 

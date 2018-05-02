@@ -1,5 +1,5 @@
 ---
-title: "Handling and Raising Events | Microsoft Docs"
+title: "Handling and Raising Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "delegate model for events"
   - "application development [.NET Framework], events"
@@ -17,6 +20,9 @@ caps.latest.revision: 23
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Handling and Raising Events
 Events in the .NET Framework are based on the delegate model. The delegate model follows the observer design pattern, which enables a subscriber to register with, and receive notifications from, a provider. An event sender pushes a notification that an event has happened, and an event receiver receives that notification and defines a response to it. This article describes the major components of the delegate model, how to consume events in applications, and how to implement events in your code.  
@@ -50,9 +56,9 @@ Events in the .NET Framework are based on the delegate model. The delegate model
  [!code-vb[EventsOverview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
 ## Event Data  
- Data that is associated with an event can be provided through an event data class. The .NET Framework provides many event data classes that you can use in your applications. For example, the <xref:System.IO.Ports.SerialDataReceivedEventArgs> class is the event data class for the <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=fullName> event. The .NET Framework follows a naming pattern of ending all event data classes with `EventArgs`. You determine which event data class is associated with an event by looking at the delegate for the event. For example, the <xref:System.IO.Ports.SerialDataReceivedEventHandler> delegate includes the <xref:System.IO.Ports.SerialDataReceivedEventArgs> class as one of its parameters.  
+ Data that is associated with an event can be provided through an event data class. The .NET Framework provides many event data classes that you can use in your applications. For example, the <xref:System.IO.Ports.SerialDataReceivedEventArgs> class is the event data class for the <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType> event. The .NET Framework follows a naming pattern of ending all event data classes with `EventArgs`. You determine which event data class is associated with an event by looking at the delegate for the event. For example, the <xref:System.IO.Ports.SerialDataReceivedEventHandler> delegate includes the <xref:System.IO.Ports.SerialDataReceivedEventArgs> class as one of its parameters.  
   
- The <xref:System.EventArgs> class is the base type for all event data classes. <xref:System.EventArgs> is also the class you use when an event does not have any data associated with it. When you create an event that is only meant to notify other classes that something happened and does not need to pass any data, include the <xref:System.EventArgs> class as the second parameter in the delegate. You can pass the <xref:System.EventArgs.Empty?displayProperty=fullName> value when no data is provided. The <xref:System.EventHandler> delegate includes the <xref:System.EventArgs> class as a parameter.  
+ The <xref:System.EventArgs> class is the base type for all event data classes. <xref:System.EventArgs> is also the class you use when an event does not have any data associated with it. When you create an event that is only meant to notify other classes that something happened and does not need to pass any data, include the <xref:System.EventArgs> class as the second parameter in the delegate. You can pass the <xref:System.EventArgs.Empty?displayProperty=nameWithType> value when no data is provided. The <xref:System.EventHandler> delegate includes the <xref:System.EventArgs> class as a parameter.  
   
  When you want to create a customized event data class, create a class that derives from <xref:System.EventArgs>, and then provide any members needed to pass data that is related to the event. Typically, you should use the same naming pattern as the .NET Framework and end your event data class name with `EventArgs`.  
   
@@ -70,7 +76,7 @@ Events in the .NET Framework are based on the delegate model. The delegate model
  [!code-vb[EventsOverview#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## Static and Dynamic Event Handlers  
- The .NET Framework allows subscribers to register for event notifications either statically or dynamically. Static event handlers are in effect for the entire life of the class whose events they handle. Dynamic event handlers are explicitly activated and deactivated during program execution, usually in response to some conditional program logic. For example, they can be used if event notifications are needed only under certain conditions or if an application provides multiple event handlers and run-time conditions define the appropriate one to use. The example in the previous section shows how to dynamically add an event handler. For more information, see [Events](http://msdn.microsoft.com/library/8fb0353a-e41b-4e23-b78f-da65db832f70) and [Events](http://msdn.microsoft.com/library/a8e51b22-d294-44fb-9539-0072f06c4cb3).  
+ The .NET Framework allows subscribers to register for event notifications either statically or dynamically. Static event handlers are in effect for the entire life of the class whose events they handle. Dynamic event handlers are explicitly activated and deactivated during program execution, usually in response to some conditional program logic. For example, they can be used if event notifications are needed only under certain conditions or if an application provides multiple event handlers and run-time conditions define the appropriate one to use. The example in the previous section shows how to dynamically add an event handler. For more information, see [Events](../../visual-basic/programming-guide/language-features/events/index.md) and [Events](../../csharp/programming-guide/events/index.md).  
   
 ## Raising Multiple Events  
  If your class raises multiple events, the compiler generates one field per event delegate instance. If the number of events is large, the storage cost of one field per delegate may not be acceptable. For those situations, the .NET Framework provides event properties that you can use with another data structure of your choice to store event delegates.  
@@ -87,10 +93,10 @@ Events in the .NET Framework are based on the delegate model. The delegate model
 |[How to: Consume Events in a Web Forms Application](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Shows how to handle an event that is raised by a Web Forms control.|  
   
 ## See Also  
- <xref:System.EventHandler>   
- <xref:System.EventHandler%601>   
- <xref:System.EventArgs>   
- <xref:System.Delegate>   
- [Events and routed events overview (Windows store apps)](http://go.microsoft.com/fwlink/?LinkId=261485)   
- [Events](http://msdn.microsoft.com/library/8fb0353a-e41b-4e23-b78f-da65db832f70)   
- [Events](http://msdn.microsoft.com/library/a8e51b22-d294-44fb-9539-0072f06c4cb3)
+ <xref:System.EventHandler>  
+ <xref:System.EventHandler%601>  
+ <xref:System.EventArgs>  
+ <xref:System.Delegate>  
+ [Events and routed events overview (UWP apps)](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
+ [Events (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
+ [Events (C# Programming Guide)](../../csharp/programming-guide/events/index.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICatalogServices::NotAutodone Method | Microsoft Docs"
+title: "ICatalogServices::NotAutodone Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICatalogServices.NotAutodone"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "NotAutodone"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICatalogServices::NotAutodone method [.NET Framework hosting]"
   - "NotAutodone method [.NET Framework hosting]"
 ms.assetid: 86a09871-33e4-412c-aeb8-4d18f924595b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICatalogServices::NotAutodone Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

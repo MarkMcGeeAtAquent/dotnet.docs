@@ -1,5 +1,5 @@
 ---
-title: "How to: Perform an XSLT Transformation by Using an Assembly | Microsoft Docs"
+title: "How to: Perform an XSLT Transformation by Using an Assembly"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,24 +9,25 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 caps.latest.revision: 2
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Perform an XSLT Transformation by Using an Assembly
-The XSLT compiler (xsltc.exe) compiles XSLT style sheets and generates an assembly. The assembly can be passed directly into the <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=fullName> method.  
+The XSLT compiler (xsltc.exe) compiles XSLT style sheets and generates an assembly. The assembly can be passed directly into the <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> method.  
   
 ### To copy the XML and XSLT files to your local computer  
   
 -   Copy the XSLT file to your local computer and name it Transform.xsl.  
   
-    ```  
+    ```xml  
     <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
       xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
       xmlns:user="urn:my-scripts">  
@@ -93,7 +94,7 @@ The XSLT compiler (xsltc.exe) compiles XSLT style sheets and generates an assemb
   
 -   Copy the XML file to your local computer and name it `books.xml`.  
   
-    ```  
+    ```xml  
     <?xml version="1.0"?>  
     <catalog>  
        <book id="bk101">  
@@ -186,7 +187,7 @@ xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))
  in the example above. For more information on the Assembly.Load method, see <xref:System.Reflection.Assembly.Load%2A>  
   
 ## See Also  
- <xref:System.Xml.Xsl.XslCompiledTransform>   
- [XSLT Compiler (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)   
- [XSLT Transformations](../../../../docs/standard/data/xml/xslt-transformations.md)   
+ <xref:System.Xml.Xsl.XslCompiledTransform>  
+ [XSLT Compiler (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [XSLT Transformations](../../../../docs/standard/data/xml/xslt-transformations.md)  
  [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

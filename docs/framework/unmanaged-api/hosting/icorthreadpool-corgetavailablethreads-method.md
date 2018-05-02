@@ -1,5 +1,5 @@
 ---
-title: "ICorThreadpool::CorGetAvailableThreads Method | Microsoft Docs"
+title: "ICorThreadpool::CorGetAvailableThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorThreadpool.CorGetAvailableThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorGetAvailableThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorGetAvailableThreads method [.NET Framework hosting]"
   - "ICorThreadpool::CorGetAvailableThreads method [.NET Framework hosting]"
 ms.assetid: 0b09b750-0b86-4ba4-9621-041857cfe8ba
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorThreadpool::CorGetAvailableThreads Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

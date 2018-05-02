@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugThread::GetActiveChain Method | Microsoft Docs"
+title: "ICorDebugThread::GetActiveChain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugThread.GetActiveChain"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugThread::GetActiveChain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugThread::GetActiveChain method [.NET Framework debugging]"
   - "GetActiveChain method [.NET Framework debugging]"
 ms.assetid: f50de1f7-40ef-4949-b542-1d9a61f7bfef
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugThread::GetActiveChain Method
 Gets an interface pointer to the active (most recent) stack chain on this ICorDebugThread object.  

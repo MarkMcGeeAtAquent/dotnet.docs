@@ -1,43 +1,25 @@
 ---
-title: "Lifetime in Visual Basic | Microsoft Docs"
+title: "Lifetime in Visual Basic"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "static variables, lifetime"
-  - "static variables, Visual Basic"
-  - "declared elements, lifetime"
-  - "Shared variable lifetime"
-  - "lifetime, declared elements"
-  - "lifetime, Visual Basic"
-  - "lifetime"
+  - "static variables [Visual Basic], lifetime"
+  - "static variables [Visual Basic], Visual Basic"
+  - "declared elements [Visual Basic], lifetime"
+  - "Shared variable lifetime [Visual Basic]"
+  - "lifetime [Visual Basic], declared elements"
+  - "lifetime [Visual Basic], Visual Basic"
+  - "lifetime [Visual Basic]"
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Lifetime in Visual Basic
 The *lifetime* of a declared element is the period of time during which it is available for use. Variables are the only elements that have lifetime. For this purpose, the compiler treats procedure parameters and function returns as special cases of variables. The lifetime of a variable represents the period of time during which it can hold a value. Its value can change over its lifetime, but it always holds some value.  
@@ -55,7 +37,7 @@ The *lifetime* of a declared element is the period of time during which it is av
  Variables declared within a block inside a procedure (such as a `For` loop) are initialized on entry to the procedure. These initializations take effect whether or not your code ever executes the block.  
   
 ## End of Lifetime  
- When a procedure terminates, the values of its local variables are not preserved, and [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] reclaims their memory. The next time you call the procedure, all its local variables are created afresh and reinitialized.  
+ When a procedure terminates, the values of its local variables are not preserved, and [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] reclaims their memory. The next time you call the procedure, all its local variables are created afresh and reinitialized.  
   
  When an instance of a class or structure terminates, its nonshared variables lose their memory and their values. Each new instance of the class or structure creates and reinitializes its nonshared variables. However, `Shared` variables are preserved until your application stops running.  
   
@@ -69,7 +51,7 @@ The *lifetime* of a declared element is the period of time during which it is av
 |In an instance of a class, not `Shared` (procedure is an instance member)|The first time the procedure is called on the specific instance|When the instance is released for garbage collection (GC)|  
   
 ## Static Variables of the Same Name  
- You can declare static variables with the same name in more than one procedure. If you do this, the [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler considers each such variable to be a separate element. The initialization of one of these variables does not affect the values of the others. The same applies if you define a procedure with a set of overloads and declare a static variable with the same name in each overload.  
+ You can declare static variables with the same name in more than one procedure. If you do this, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler considers each such variable to be a separate element. The initialization of one of these variables does not affect the values of the others. The same applies if you define a procedure with a set of overloads and declare a static variable with the same name in each overload.  
   
 ## Containing Elements for Static Variables  
  You can declare a static local variable within a class, that is, inside a procedure in that class. However, you cannot declare a static local variable within a structure, either as a structure member or as a local variable of a procedure within that structure.  
@@ -94,13 +76,13 @@ The *lifetime* of a declared element is the period of time during which it is av
  In the preceding example, you can produce the same lifetime by declaring `applesSold` at module level. If you changed the scope of a variable this way, however, the procedure would no longer have exclusive access to it. Because other procedures could access `applesSold` and change its value, the running total could be unreliable and the code could be more difficult to maintain.  
   
 ## See Also  
- [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)   
- [Nothing](../../../../visual-basic/language-reference/nothing.md)   
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)   
- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)   
- [Access Levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)   
- [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)   
- [Variable Declaration](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)   
- [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)   
+ [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)  
+ [Nothing](../../../../visual-basic/language-reference/nothing.md)  
+ [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
+ [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)  
+ [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)  
+ [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
+ [Variable Declaration](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)  
+ [Troubleshooting Data Types](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
  [Static](../../../../visual-basic/language-reference/modifiers/static.md)

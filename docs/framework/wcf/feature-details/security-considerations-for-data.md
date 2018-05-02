@@ -1,19 +1,24 @@
 ---
-title: "Security Considerations for Data | Microsoft Docs"
+title: "Security Considerations for Data"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
 caps.latest.revision: 23
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Security Considerations for Data
 When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], you must consider a number of threat categories. The following table lists the most important threat classes that relate to data processing. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides tools to mitigate these threats.  
@@ -36,7 +41,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
   
  You should ensure that no malicious code is plugged in to the various extensibility points. This is especially relevant when running under partial trust, dealing with types from partially-trusted assemblies, or creating components usable by partially-trusted code. For more information, see "Partial Trust Threats" in a later section.  
   
- Note that when running in partial trust, the data contract serialization infrastructure supports only a limited subset of the data contract programming model - for example, private data members or types using the <xref:System.SerializableAttribute> attribute are not supported. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Partial Trust](../../../../docs/framework/wcf/feature-details/partial-trust.md).  
+ Note that when running in partial trust, the data contract serialization infrastructure supports only a limited subset of the data contract programming model - for example, private data members or types using the <xref:System.SerializableAttribute> attribute are not supported. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Partial Trust](../../../../docs/framework/wcf/feature-details/partial-trust.md).  
   
 ## Avoiding Unintentional Information Disclosure  
  When designing serializable types with security in mind, information disclosure is a possible concern.  
@@ -87,7 +92,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
  The MTOM message encoder also has a `MaxBufferSize` setting. When using standard bindings, this is set automatically to the transport-level `MaxBufferSize` value. However, when using the MTOM message encoder binding element to construct a custom binding, it is important to set the `MaxBufferSize` property to a safe value when streaming is used.  
   
 ## XML-Based Streaming Attacks  
- `MaxBufferSize` alone is not enough to ensure that [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] cannot be forced into buffering when streaming is expected. For example, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] XML readers always buffer the entire XML element start tag when starting to read a new element. This is done so that namespaces and attributes are properly processed. If `MaxReceivedMessageSize` is configured to be large (for example, to enable a direct-to-disk large file streaming scenario), a malicious message may be constructed where the entire message body is a large XML element start tag. An attempt to read it results in an <xref:System.OutOfMemoryException>. This is one of many possible XML-based denial-of-service attacks that can all be mitigated using XML reader quotas, discussed in the “Using XML Safely” section later in this topic. When streaming, it is especially important to set all of these quotas.  
+ `MaxBufferSize` alone is not enough to ensure that [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] cannot be forced into buffering when streaming is expected. For example, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] XML readers always buffer the entire XML element start tag when starting to read a new element. This is done so that namespaces and attributes are properly processed. If `MaxReceivedMessageSize` is configured to be large (for example, to enable a direct-to-disk large file streaming scenario), a malicious message may be constructed where the entire message body is a large XML element start tag. An attempt to read it results in an <xref:System.OutOfMemoryException>. This is one of many possible XML-based denial-of-service attacks that can all be mitigated using XML reader quotas, discussed in the "Using XML Safely" section later in this topic. When streaming, it is especially important to set all of these quotas.  
   
 ### Mixing Streaming and Buffering Programming Models  
  Many possible attacks arise from mixing streaming and non-streaming programming models in the same service. Suppose there is a service contract with two operations: one takes a <xref:System.IO.Stream> and another takes an array of some custom type. Suppose also that `MaxReceivedMessageSize` is set to a large value to enable the first operation to process large streams. Unfortunately, this means that large messages can now be sent to the second operation as well, and the deserializer buffers data in memory as an array before the operation is called. This is a potential denial-of-service attack: the `MaxBufferSize` quota does not limit the size of the message body, which is what the deserializer works with.  
@@ -113,7 +118,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
 ### Slow Stream Attacks  
  A class of streaming denial-of-service attacks does not involve memory consumption. Instead, the attack involves a slow sender or receiver of data. While waiting for the data to be sent or received, resources such as threads and available connections are exhausted. This situation could arise either as a result of a malicious attack or from a legitimate sender/receiver on a slow network connection.  
   
- To mitigate these attacks, set the transport time-outs correctly. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Transport Quotas](../../../../docs/framework/wcf/feature-details/transport-quotas.md). Secondly, never use synchronous `Read` or `Write` operations when working with streams in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
+ To mitigate these attacks, set the transport time-outs correctly. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Transport Quotas](../../../../docs/framework/wcf/feature-details/transport-quotas.md). Secondly, never use synchronous `Read` or `Write` operations when working with streams in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)].  
   
 ## Using XML Safely  
   
@@ -138,7 +143,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
 -   Having too many XML attributes may use up disproportionate processing time because attribute names have to be checked for uniqueness. `MaxBytesPerRead` mitigates this threat.  
   
 #### MaxDepth  
- This quota limits the maximum nesting depth of XML elements. For example, the document “\<A>\<B>\<C/>\</B>\</A>” has a nesting depth of three. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> is important for the following reasons:  
+ This quota limits the maximum nesting depth of XML elements. For example, the document "\<A>\<B>\<C/>\</B>\</A>" has a nesting depth of three. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> is important for the following reasons:  
   
 -   `MaxDepth` interacts with `MaxBytesPerRead`: the reader always keeps data in memory for the current element and all of its ancestors, so the maximum memory consumption of the reader is proportional to the product of these two settings.  
   
@@ -169,7 +174,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
   
  The <xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>, `MaxStringContentLength`, and `MaxArrayLength` properties only limit memory consumption. They are normally not required to mitigate any threats in the non-streamed usage because memory usage is already limited by `MaxReceivedMessageSize`. However, `MaxReceivedMessageSize` counts pre-expansion bytes. When binary encoding is in use, memory consumption could potentially go beyond `MaxReceivedMessageSize`, limited only by a factor of <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize%2A>. For this reason, it is important to always set all of the reader quotas (especially <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>) when using the binary encoding.  
   
- When using binary encoding together with the <xref:System.Runtime.Serialization.DataContractSerializer>, the `IExtensibleDataObject` interface can be misused to mount a dictionary expansion attack. This interface essentially provides unlimited storage for arbitrary data that is not a part of the contract. If quotas cannot be set low enough such that `MaxSessionSize` multiplied by `MaxReceivedMessageSize` does not pose a problem, disable the `IExtensibleDataObject` feature when using the binary encoding. Set the `IgnoreExtensionDataObject` property to `true` on the `ServiceBehaviorAttribute` attribute. Alternatively, do not implement the `IExtensibleDataObject` interface. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+ When using binary encoding together with the <xref:System.Runtime.Serialization.DataContractSerializer>, the `IExtensibleDataObject` interface can be misused to mount a dictionary expansion attack. This interface essentially provides unlimited storage for arbitrary data that is not a part of the contract. If quotas cannot be set low enough such that `MaxSessionSize` multiplied by `MaxReceivedMessageSize` does not pose a problem, disable the `IExtensibleDataObject` feature when using the binary encoding. Set the `IgnoreExtensionDataObject` property to `true` on the `ServiceBehaviorAttribute` attribute. Alternatively, do not implement the `IExtensibleDataObject` interface. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 ### Quotas Summary  
  The following table summarizes the guidance about quotas.  
@@ -240,7 +245,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
   
  An attacker may send a malicious message like this, getting around the constraints and getting the object into an invalid state, which may have unintended and unpredictable consequences.  
   
-```  
+```xml  
 <SpaceStationAirlock>  
     <innerDoorOpen>true</innerDoorOpen>  
     <outerDoorOpen>true</outerDoorOpen>  
@@ -251,7 +256,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
   
 -   When the <xref:System.Runtime.Serialization.DataContractSerializer> deserializes most classes, constructors do not run. Therefore, do not rely on any state management done in the constructor.  
   
--   Use callbacks to ensure that the object is in a valid state. The callback marked with the <xref:System.Runtime.Serialization.OnDeserializedAttribute> attribute is especially useful because it runs after deserialization is complete and has a chance to examine and correct the overall state. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Version-Tolerant Serialization Callbacks](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
+-   Use callbacks to ensure that the object is in a valid state. The callback marked with the <xref:System.Runtime.Serialization.OnDeserializedAttribute> attribute is especially useful because it runs after deserialization is complete and has a chance to examine and correct the overall state. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Version-Tolerant Serialization Callbacks](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md).  
   
 -   Do not design data contract types to rely on any particular order in which property setters must be called.  
   
@@ -259,14 +264,14 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
   
 -   Do not rely on the <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> property of the `DataMemberAttribute` attribute to guarantee presence of data as far as state safety is concerned. Data could always be `null`, `zero`, or `invalid`.  
   
--   Never trust an object graph deserialized from an untrusted data source without validating it first. Each individual object may be in a consistent state, but the object graph as a whole may not be. Furthermore, even if the object graph preservation mode is disabled, the deserialized graph may have multiple references to the same object or have circular references. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Serialization and Deserialization](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
+-   Never trust an object graph deserialized from an untrusted data source without validating it first. Each individual object may be in a consistent state, but the object graph as a whole may not be. Furthermore, even if the object graph preservation mode is disabled, the deserialized graph may have multiple references to the same object or have circular references. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Serialization and Deserialization](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
 ### Using the NetDataContractSerializer Securely  
  The <xref:System.Runtime.Serialization.NetDataContractSerializer> is a serialization engine that uses tight coupling to types. This is similar to the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> and the <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. That is, it determines which type to instantiate by reading the [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] assembly and type name from the incoming data. Although it is a part of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], there is no supplied way of plugging in this serialization engine; custom code must be written. The `NetDataContractSerializer` is provided primarily to ease migration from [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] remoting to [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] the relevant section in [Serialization and Deserialization](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md).  
   
  Because the message itself may indicate any type can be loaded, the <xref:System.Runtime.Serialization.NetDataContractSerializer> mechanism is inherently insecure and should be used only with trusted data. It is possible to make it secure by writing a secure, type-limiting type binder that allows only safe types to load (using the <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> property).  
   
- Even when used with trusted data, the incoming data may insufficiently specify the type to load, especially if the <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> property is set to <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle>. Anyone with access to the application’s directory or to the global assembly cache can substitute a malicious type in place of the one that is supposed to load. Always ensure the security of your application’s directory and of the global assembly cache by correctly setting permissions.  
+ Even when used with trusted data, the incoming data may insufficiently specify the type to load, especially if the <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> property is set to <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple>. Anyone with access to the application’s directory or to the global assembly cache can substitute a malicious type in place of the one that is supposed to load. Always ensure the security of your application’s directory and of the global assembly cache by correctly setting permissions.  
   
  In general, if you allow partially trusted code access to your `NetDataContractSerializer` instance or otherwise control the surrogate selector (<xref:System.Runtime.Serialization.ISurrogateSelector>) or the serialization binder (<xref:System.Runtime.Serialization.SerializationBinder>), the code may exercise a great deal of control over the serialization/deserialization process. For example, it may inject arbitrary types, lead to information disclosure, tamper with the resulting object graph or serialized data, or overflow the resultant serialized stream.  
   
@@ -357,7 +362,7 @@ When dealing with data in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)
 -   In general, when using any component that accepts a quota, understand its security implications and set it to a safe value.  
   
 ## See Also  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.Xml.XmlDictionaryReader>   
- <xref:System.Xml.Serialization.XmlSerializer>   
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.Xml.XmlDictionaryReader>  
+ <xref:System.Xml.Serialization.XmlSerializer>  
  [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)

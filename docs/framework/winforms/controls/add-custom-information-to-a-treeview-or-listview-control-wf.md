@@ -1,5 +1,5 @@
 ---
-title: "How to: Add Custom Information to a TreeView or ListView Control (Windows Forms) | Microsoft Docs"
+title: "How to: Add Custom Information to a TreeView or ListView Control (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,14 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
+  - "cpp"
 f1_keywords: 
   - "ListItem"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "examples [Windows Forms], TreeView control"
-  - "Tag property"
   - "examples [Windows Forms], ListView control"
   - "ListView control [Windows Forms], adding custom information"
   - "TreeView control [Windows Forms], adding custom information"
@@ -24,6 +25,8 @@ caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add Custom Information to a TreeView or ListView Control (Windows Forms)
 You can create a derived node in a Windows Forms <xref:System.Windows.Forms.TreeView> control or a derived item in a <xref:System.Windows.Forms.ListView> control. Derivation allows you to add any fields you require, as well as custom methods and constructors for handling them. One use of this feature is to attach a Customer object to each tree node or list item. The examples here are for a <xref:System.Windows.Forms.TreeView> control, but the same approach can be used for a <xref:System.Windows.Forms.ListView> control.  
@@ -44,7 +47,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
           Me.Text = fp.Substring(fp.LastIndexOf("\"))  
        End Sub  
     End Class  
-  
     ```  
   
     ```csharp  
@@ -58,7 +60,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
           this.Text = fp.Substring(fp.LastIndexOf("\\"));  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -87,7 +88,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
     TreeView1.Nodes.Add(New myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        & "\ TextFile.txt ") )  
-  
     ```  
   
     ```csharp  
@@ -97,7 +97,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
     treeView1.Nodes.Add(new myTreeNode (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.Personal) _  
        + @"\TextFile.txt") );  
-  
     ```  
   
     ```cpp  
@@ -109,7 +108,7 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
        "\\TextFile.txt")));  
     ```  
   
-2.  If you are passed the tree node and it is typed as a <xref:System.Windows.Forms.TreeNode> class, then you will need to cast to your derived class. Casting is an explicit conversion from one type of object to another. For more information on casting, see [Implicit and Explicit Conversions](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), [() Operator](~/docs/csharp/language-reference/operators/invocation-operator.md) ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]), or [Cast Operator: ()](http://msdn.microsoft.com/library/4c99eb92-1b19-4a5d-9840-5d8c29b8453e) ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]).  
+2.  If you are passed the tree node and it is typed as a <xref:System.Windows.Forms.TreeNode> class, then you will need to cast to your derived class. Casting is an explicit conversion from one type of object to another. For more information on casting, see [Implicit and Explicit Conversions](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) ([!INCLUDE[vbprvb](../../../../includes/vbprvb-md.md)]), [() Operator](~/docs/csharp/language-reference/operators/invocation-operator.md) ([!INCLUDE[csprcs](../../../../includes/csprcs-md.md)]), or [Cast Operator: ()](/cpp/cpp/cast-operator-parens) ([!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]).  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  
@@ -117,7 +116,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
        mynode = CType(e.node, myTreeNode)  
        MessageBox.Show("Node selected is " & mynode.filepath)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -127,7 +125,6 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
        myTreeNode myNode = (myTreeNode)e.Node;  
        MessageBox.Show("Node selected is " + myNode.FilePath);  
     }  
-  
     ```  
   
     ```cpp  
@@ -142,5 +139,5 @@ You can create a derived node in a Windows Forms <xref:System.Windows.Forms.Tree
     ```  
   
 ## See Also  
- [TreeView Control](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)   
+ [TreeView Control](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
  [ListView Control](../../../../docs/framework/winforms/controls/listview-control-windows-forms.md)

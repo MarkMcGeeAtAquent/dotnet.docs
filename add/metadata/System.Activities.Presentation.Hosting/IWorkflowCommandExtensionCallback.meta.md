@@ -1,13 +1,17 @@
 ---
 uid: System.Activities.Presentation.Hosting.IWorkflowCommandExtensionCallback
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Activities.Presentation.Hosting.IWorkflowCommandExtensionCallback.OnWorkflowCommandLoaded(System.Activities.Presentation.Hosting.CommandInfo)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

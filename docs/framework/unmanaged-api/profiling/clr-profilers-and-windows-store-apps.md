@@ -1,5 +1,5 @@
 ---
-title: "CLR Profilers and Windows Store Apps | Microsoft Docs"
+title: "CLR Profilers and Windows Store Apps"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,8 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
 applies_to: 
   - "Windows 10"
   - "Windows 8"
@@ -22,14 +24,16 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CLR Profilers and Windows Store Apps
 This topic discusses what you need to think about when writing diagnostic tools that analyze managed code running inside a Windows Store app.  It also provides guidelines to modify your existing development tools so they continue to work when you run them against Windows Store apps.  To understand this information, it’s best if you're  familiar with the Common Language Runtime Profiling API, you’ve already used this API in a diagnostic tool that runs correctly against Windows desktop applications, and you’re now interested in modifying the tool to run correctly against Windows Store apps.  
   
  This topic consists of the following sections:  
   
- [Introduction](#Intro)   
- [Architecture and terminology](#Arch)   
+ [Introduction](#Intro)  
+ [Architecture and terminology](#Arch)  
  [Windows RT devices](#RT)  
 [Consuming Windows Runtime APIs](#Consuming)  
 [Loading the Profiler DLL](#Loading)  
@@ -73,7 +77,7 @@ This topic discusses what you need to think about when writing diagnostic tools 
   
 <a name="Arch"></a>   
 ## Architecture and terminology  
- Typically, a diagnostic tool has an architecture like the one shown in the following illustration. It uses the term “profiler,” but many such tools go well beyond typical performance or memory profiling into areas such as code coverage, mock object frameworks, time-travel debugging, application monitoring, and so on.  For simplicity, this topic will continue to refer to all these tools as profilers.  
+ Typically, a diagnostic tool has an architecture like the one shown in the following illustration. It uses the term "profiler," but many such tools go well beyond typical performance or memory profiling into areas such as code coverage, mock object frameworks, time-travel debugging, application monitoring, and so on.  For simplicity, this topic will continue to refer to all these tools as profilers.  
   
  The following terminology is used throughout this topic:  
   
@@ -81,10 +85,10 @@ This topic discusses what you need to think about when writing diagnostic tools 
  This is the application that the profiler is analyzing.  Typically, the developer of this application is now using the profiler to help diagnose issues with the application.  Traditionally, this application would be a Windows desktop application, but in this topic, we’re looking at Windows Store apps.  
   
  Profiler DLL  
- This is the component that loads into the process space of the application being analyzed.  This component, also known as the profiler “agent,” implements the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)[ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)(2,3,etc.) interfaces and consumes the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)(2,3,etc.) interfaces to collect data about the analyzed application and potentially modify aspects of the application’s behavior.  
+ This is the component that loads into the process space of the application being analyzed.  This component, also known as the profiler "agent," implements the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)[ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)(2,3,etc.) interfaces and consumes the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)(2,3,etc.) interfaces to collect data about the analyzed application and potentially modify aspects of the application’s behavior.  
   
  Profiler UI  
- This is a desktop application that the profiler user interacts with.  It’s responsible for displaying application status to the user and giving the user the means to control the behavior of the analyzed application.  This component always runs in its own process space, separate from the process space of the application being profiled.  The Profiler UI can also act as the “attach trigger,” which is the process that calls the [ICLRProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method, to cause the analyzed application to load the Profiler DLL in those cases where the profiler DLL did not load on startup.  
+ This is a desktop application that the profiler user interacts with.  It’s responsible for displaying application status to the user and giving the user the means to control the behavior of the analyzed application.  This component always runs in its own process space, separate from the process space of the application being profiled.  The Profiler UI can also act as the "attach trigger," which is the process that calls the [ICLRProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method, to cause the analyzed application to load the Profiler DLL in those cases where the profiler DLL did not load on startup.  
   
 > [!IMPORTANT]
 >  Your Profiler UI should remain a Windows desktop application, even when it is used to control and report on a Windows Store app.  Don’t expect to be able to package and ship your diagnostics tool in the Windows Store.  Your tool needs to do things that Windows Store apps cannot do, and many of those things reside inside your Profiler UI.  
@@ -150,12 +154,10 @@ NET Runtime version 4.0.30319.17929 - Loading profiler failed during CoCreateIns
  The following ode example from a hypothetical Profiler UI written as a desktop app in C# yses the `PackageManager` to generate a list of Windows apps:  
   
 ```csharp  
-  
 string currentUserSID = WindowsIdentity.GetCurrent().User.ToString();  
 IAppxFactory appxFactory = (IAppxFactory) new AppxFactory();  
 PackageManager packageManager = new PackageManager();  
 IEnumerable<Package> packages = packageManager.FindPackagesForUser(currentUserSID);  
-  
 ```  
   
  **Specifying the custom environment block**  
@@ -164,11 +166,9 @@ IEnumerable<Package> packages = packageManager.FindPackagesForUser(currentUserSI
  Consider the following code snippet:  
   
 ```csharp  
-  
 IPackageDebugSettings pkgDebugSettings = new PackageDebugSettings();  
 pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,   
                                                                  (IntPtr)fixedEnvironmentPzz);  
-  
 ```  
   
  There are a couple of items you'll need to get right:  
@@ -186,7 +186,6 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
      Here’s some example C++ code to do this (be sure to add error checking!):  
   
     ```cpp  
-  
     int wmain(int argc, wchar_t* argv[])  
     {      
         // …  
@@ -199,7 +198,6 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
         CloseHandle(hThread);  
         return 0;  
     }  
-  
     ```  
   
      You’ll need to deploy this dummy debugger as part of your diagnostics tool installation, and then specify the path to this debugger in the `debuggerCommandLine` parameter.  
@@ -207,10 +205,9 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
  **Launching the Windows Store app**  
  The moment to launch the Windows Store app has finally arrived. If you’ve already already tried doing this yourself, you may have noticed that [CreateProcess](https://msdn.microsoft.com/library/windows/desktop/ms682425\(v=vs.85\).aspx) is not how you create a Windows Store app process.  Instead, you’ll need to use the [IApplicationActivationManager::ActivateApplication](https://msdn.microsoft.com/library/windows/desktop/Hh706903\(v=vs.85\).aspx) method.  To do that, you’ll need to get the App User Model ID of the Windows Store app that you’re launching.  And that means you’ll need to do a little digging through the manifest.  
   
- While iterating over your packages (see “Choosing a Windows Store App to Profile” in the [Startup load](#Startup) section earlier), you’ll want to grab the set of applications contained in the current package’s manifest:  
+ While iterating over your packages (see "Choosing a Windows Store App to Profile" in the [Startup load](#Startup) section earlier), you’ll want to grab the set of applications contained in the current package’s manifest:  
   
 ```csharp  
-  
 string manifestPath = package.InstalledLocation.Path + "\\AppxManifest.xml";  
   
 AppxPackaging.IStream manifestStream;  
@@ -225,28 +222,23 @@ SHCreateStreamOnFileEx(
 IAppxManifestReader manifestReader = appxFactory.CreateManifestReader(manifestStream);  
   
 IAppxManifestApplicationsEnumerator appsEnum = manifestReader.GetApplications();  
-  
 ```  
   
  Yes, one package can have multiple applications, and each application has its own Application User Model ID.  So you’ll want to ask your user which application to profile, and grab the Application User Model ID from that particular application:  
   
 ```csharp  
-  
 while (appsEnum.GetHasCurrent() != 0)  
 {  
     IAppxManifestApplication app = appsEnum.GetCurrent();  
     string appUserModelId = app.GetAppUserModelId();  
 …  
-  
 ```  
   
  Finally, you now have what you need to launch the Windows Store app:  
   
 ```csharp  
-  
 IApplicationActivationManager appActivationMgr = new ApplicationActivationManager();  
 appActivationMgr.ActivateApplication(appUserModelId, appArgs, ACTIVATEOPTIONS.AO_NONE, out pid);  
-  
 ```  
   
  **Remember to call DisableDebugging**  
@@ -262,11 +254,9 @@ appActivationMgr.ActivateApplication(appUserModelId, appArgs, ACTIVATEOPTIONS.AO
  So you’ll want to do something like this:  
   
 ```csharp  
-  
 IPackageDebugSettings pkgDebugSettings = new PackageDebugSettings();  
 pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */,   
                                                                  IntPtr.Zero /* environment */);  
-  
 ```  
   
  This is the same call you’d make for the startup load case, except you don’t specify a debugger command line or an environment block.  
@@ -280,7 +270,7 @@ pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */,
   
 <a name="APIs"></a>   
 ### Stick to the Windows Store app APIs  
- As you browse the Windows API in the MSDN library, you’ll notice that every API is documented as being applicable to desktop apps, Windows Store apps, or both.  For example, the **Requirements** section of the documentation for the [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476\(v=vs.85\).aspx) function indicates that the function applies to desktop apps only. In contrast, the [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477\(v=vs.85\).aspx) function is available for both desktop apps and Windows Store apps.  
+ As you browse the Windows API, you’ll notice that every API is documented as being applicable to desktop apps, Windows Store apps, or both.  For example, the **Requirements** section of the documentation for the [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476\(v=vs.85\).aspx) function indicates that the function applies to desktop apps only. In contrast, the [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477\(v=vs.85\).aspx) function is available for both desktop apps and Windows Store apps.  
   
  When developing your Profiler DLL, treat it as if it’s a Windows Store app and only use APIs that are documented as available to Windows Store apps.  Analyze your dependencies (for example, you can run `link /dump /imports` against your Profiler DLL to audit), and then search the docs to see which of your dependencies are ok and which aren’t.  In most cases, your violations can be fixed by simply replacing them with a newer form of the API that is documented as safe (for example, replacing [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476\(v=vs.85\).aspx) with [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477\(v=vs.85\).aspx)).  
   
@@ -318,14 +308,12 @@ pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */,
  Both your Profiler UI and Profiler DLL can determine this path independently.  Your Profiler UI, when it iterates through all packages installed for the current user (see the sample code earlier), gets access to the `PackageId` class, from which the Temporary Folder path can be derived with code similar to this snippet.  (As always, error checking is omitted for brevity.)  
   
 ```csharp  
-  
 // C# code for the Profiler UI.  
 ApplicationData appData =  
     ApplicationDataManager.CreateForPackageFamily(  
         packageId.FamilyName);  
   
 tempDir = appData.TemporaryFolder.Path;  
-  
 ```  
   
  Meanwhile, your Profiler DLL can do basically the same thing, though it can more easily get to the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class by using the [ApplicationData.Current](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.current.aspx) property.  
@@ -336,14 +324,12 @@ tempDir = appData.TemporaryFolder.Path;
  From your Profiler DLL, you can simply call the [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx) function to create a named event with any name you like.  For example:  
   
 ```cpp  
-  
 // Profiler DLL in Windows Store app (C++).  
 CreateEventEx(   
     NULL,  // Not inherited  
     "MyNamedEvent"  
     CREATE_EVENT_MANUAL_RESET, /* explicit ResetEvent() required; leave initial state unsignaled */  
     EVENT_ALL_ACCESS);  
-  
 ```  
   
  Your Profiler UI then needs to find that named event under the Windows Store app’s namespace.  For example, your Profiler UI could call [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx), specifying the event name as  
@@ -353,7 +339,6 @@ CreateEventEx(
  `<acSid>` is the Windows Store app’s AppContainer SID.  An earlier section of this topic showed how to iterate over the packages installed for the current user.  From that sample code, you can obtain the packageId.  And from the packageId, you can obtain the `<acSid>` with code similar to the following:  
   
 ```csharp  
-  
 IntPtr acPSID;  
 DeriveAppContainerSidFromAppContainerName(packageId.FamilyName, out acPSID);  
   
@@ -362,7 +347,6 @@ ConvertSidToStringSid(acPSID, out acSid);
   
 string acDir;  
 GetAppContainerFolderPath(acSid, out acDir);  
-  
 ```  
   
 <a name="Shutdown"></a>   
@@ -423,7 +407,7 @@ GetAppContainerFolderPath(acSid, out acDir);
   
 <a name="WeakTable"></a>   
 ### ConditionalWeakTableReferences  
- Starting with the .NET Framework 4.5, there is a new GC callback, [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md), which gives the profiler more complete information about *dependent handles*. These handles effectively add a reference from a source object to a target object for the purpose of GC lifetime management.  Dependent handles are nothing new, and developers who program in managed code have been able to create their own dependent handles by using the <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602?displayProperty=fullName> class even before Windows 8 and the .NET Framework 4.5.  
+ Starting with the .NET Framework 4.5, there is a new GC callback, [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md), which gives the profiler more complete information about *dependent handles*. These handles effectively add a reference from a source object to a target object for the purpose of GC lifetime management.  Dependent handles are nothing new, and developers who program in managed code have been able to create their own dependent handles by using the <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602?displayProperty=nameWithType> class even before Windows 8 and the .NET Framework 4.5.  
   
  However, managed XAML Windows Store apps now make heavy use of dependent handles.  In particular, the CLR uses them to aid with managing reference cycles between managed objects and unmanaged Windows Runtime objects.  This means that it’s more important now than ever for memory profilers to be informed of these dependent handles so that they can be visualized along with the rest of the edges in the heap graph.  Your Profiler DLL should use [RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md), [ObjectReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectreferences-method.md), and [ConditionalWeakTableElementReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback5-conditionalweaktableelementreferences-method.md) together to form a complete view of the heap graph.  
   

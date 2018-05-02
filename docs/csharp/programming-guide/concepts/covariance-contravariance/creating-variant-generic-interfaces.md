@@ -1,26 +1,17 @@
 ---
-title: "Creating Variant Generic Interfaces (C#) | Microsoft Docs"
+title: "Creating Variant Generic Interfaces (C#)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Creating Variant Generic Interfaces (C#)
 You can declare generic type parameters in interfaces as covariant or contravariant. *Covariance* allows interface methods to have more derived return types than that defined by the generic type parameters. *Contravariance* allows interface methods to have argument types that are less derived than that specified by the generic parameters. A generic interface that has covariant or contravariant generic type parameters is called *variant*.  
@@ -32,7 +23,7 @@ You can declare generic type parameters in interfaces as covariant or contravari
  You can declare variant generic interfaces by using the `in` and `out` keywords for generic type parameters.  
   
 > [!IMPORTANT]
->  `ref` and `out` parameters in C# cannot be variant. Value types also do not support variance.  
+>  `ref`, `in`, and `out` parameters in C# cannot be variant. Value types also do not support variance.  
   
  You can declare a generic type parameter covariant by using the `out` keyword. The covariant type must satisfy the following conditions:  
   
@@ -128,7 +119,7 @@ SampleImplementation<Button> button = new SampleImplementation<Button>();
  When you extend a variant generic interface, you have to use the `in` and `out` keywords to explicitly specify whether the derived interface supports variance. The compiler does not infer the variance from the interface that is being extended. For example, consider the following interfaces.  
   
 ```csharp  
-nterface ICovariant<out T> { }  
+interface ICovariant<out T> { }  
 interface IInvariant<T> : ICovariant<T> { }  
 interface IExtCovariant<out T> : ICovariant<T> { }  
 ```  
@@ -199,5 +190,5 @@ class Program
  In this example, it is unspecified how the `pets.GetEnumerator` method chooses between `Cat` and `Dog`. This could cause problems in your code.  
   
 ## See Also  
- [Variance in Generic Interfaces (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)   
+ [Variance in Generic Interfaces (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
  [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

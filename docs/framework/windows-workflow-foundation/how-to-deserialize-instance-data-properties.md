@@ -1,5 +1,5 @@
 ---
-title: "How to: Deserialize Instance Data Properties | Microsoft Docs"
+title: "How to: Deserialize Instance Data Properties"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b13a3508-1b97-4359-b336-03d85fa23bc4
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Deserialize Instance Data Properties
 There may be situations when a user or workflow administrator may want to manually inspect the state of a persisted workflow instance. <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> provides a view on the Instances table that exposes the following four columns:  
@@ -24,7 +26,7 @@ There may be situations when a user or workflow administrator may want to manual
   
 -   WriteOnlyComplexDataProperties  
   
- Primitive data properties refer to properties whose .NET Framework types are considered to be “common” (for example, Int32 and String), while complex data properties refer to all other types. An exact enumeration of primitive types is found later in this code example.  
+ Primitive data properties refer to properties whose .NET Framework types are considered to be "common" (for example, Int32 and String), while complex data properties refer to all other types. An exact enumeration of primitive types is found later in this code example.  
   
  Read/write properties refer to properties that are returned back to the Workflow Runtime when an instance is loaded. WriteOnly properties are written to the database and then never read again.  
   
@@ -33,7 +35,6 @@ There may be situations when a user or workflow administrator may want to manual
  This example does not demonstrate how to deserialize complex data properties because this is currently not a supported operation.  
   
 ```  
-  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -251,5 +252,4 @@ namespace PropertyReader
         }  
     }  
 }  
-  
 ```

@@ -1,5 +1,5 @@
 ---
-title: "_AxlGetIssuerPublicKeyHash Function | Microsoft Docs"
+title: "_AxlGetIssuerPublicKeyHash Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "_AxlGetIssuerPublicKeyHash"
-apilocation: 
+api_location: 
   - "clr.dll"
-apitype: "DLLExport"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "DLLExport"
 ms.assetid: fb626b41-b888-4625-84c3-2c02b5e3866f
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # _AxlGetIssuerPublicKeyHash Function
 Retrieves the SHA-1 hash of the public key associated with the private key that is used to sign the specified certificate.  

@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameCompareAssemblies Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameCompareAssemblies Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameCompareAssemblies"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameCompareAssemblies"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::StrongNameCompareAssemblies method [.NET Framework hosting]"
   - "StrongNameCompareAssemblies method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: b1fb356c-72cf-4aa4-8376-f291a6d97c01
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameCompareAssemblies Method
 Determines whether two assemblies differ only by their strong name signatures.  

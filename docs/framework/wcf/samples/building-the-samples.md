@@ -1,8 +1,8 @@
 ---
-title: "Building the Windows Communication Foundation Samples | Microsoft Docs"
+title: "Building the Windows Communication Foundation Samples"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
 caps.latest.revision: 33
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Building the Windows Communication Foundation Samples
 The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples can be built using Visual Studio 2010 or using the **msbuild** command from the command line. Both procedures are described in this topic.  
@@ -75,7 +77,6 @@ The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples can be built
   
     ```  
     svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb  
-  
     ```  
   
      If the service is a self-hosted type, use the following command.  
@@ -88,5 +89,5 @@ The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] samples can be built
     >  To skip the generation of client configuration add the **/noConfig** option.  
   
 ## See Also  
- [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md)   
+ [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md)  
  [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)

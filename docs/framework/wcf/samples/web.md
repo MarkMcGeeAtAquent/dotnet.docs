@@ -1,8 +1,8 @@
 ---
-title: "Web | Microsoft Docs"
+title: "Web"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 88794df1-8e2d-431e-b377-2fd3dc7942ab
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Web
 This section contains Web-hosted samples.  
@@ -26,7 +28,7 @@ This section contains Web-hosted samples.
  Demonstrates how to enable automatic format selection (XML or JSON) with the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model, as well as how to explicitly set the format in the operation code.  
   
  [Basic HTTP Service](../../../../docs/framework/wcf/samples/basic-http-service.md)  
- Demonstrates how to implement an HTTP-based, RPC-based service - popularly referred to as “POX” (Plain Old XML) service – using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  
+ Demonstrates how to implement an HTTP-based, RPC-based service - popularly referred to as "POX" (Plain Old XML) service – using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  
   
  [Basic Resource Service](../../../../docs/framework/wcf/samples/basic-resource-service.md)  
  Demonstrates how to implement a HTTP-based service using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model that exposes a collection of customers that supports the retrieve, add, delete and replace operations.  
@@ -38,7 +40,7 @@ This section contains Web-hosted samples.
  Demonstrates how to use the new conditional retrieve and update APIs for the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  
   
  [SOAP and HTTP Endpoints](../../../../docs/framework/wcf/samples/soap-and-http-endpoints.md)  
- Demonstrates how to implement an RPC-based service and expose it in the SOAP format and the “Plain Old XML” (POX) format using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  
+ Demonstrates how to implement an RPC-based service and expose it in the SOAP format and the "Plain Old XML" (POX) format using the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  
   
  [ASP.NET Caching Integration](../../../../docs/framework/wcf/samples/aspnet-caching-integration.md)  
  Demonstrates how to utilize the ASP.NET output cache with the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP programming model.  

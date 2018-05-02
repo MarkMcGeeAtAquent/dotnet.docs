@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget3::GetExceptionContextRecord Method | Microsoft Docs"
+title: "ICLRDataTarget3::GetExceptionContextRecord Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "ICLRDataTarget3.GetContextRecord"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "ICLRDataTarget3.GetContextRecord"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 66076ed5-f05c-4114-9788-94cb143abb8a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget3::GetExceptionContextRecord Method
 Called by the common language runtime (CLR) data access services to retrieve the context record associated with the target process. For example, for a dump target, this would be equivalent to the context record passed in via the `ExceptionParam` argument to the [MiniDumpWriteDump](http://msdn.microsoft.com/library/windows/desktop/ms680360\(v=vs.85\).aspx) function in the Windows Debug Help Library (DbgHelp).  
@@ -28,13 +33,11 @@ Called by the common language runtime (CLR) data access services to retrieve the
 ## Syntax  
   
 ```cpp  
-  
 HRESULT GetExceptionContextRecord(  
     [in] ULONG32 bufferSize,  
     [out] ULONG32* bufferUsed,  
     [out, size_is(bufferSize)] BYTE* buffer  
 );  
-  
 ```  
   
 #### Parameters  
@@ -71,6 +74,6 @@ HRESULT GetExceptionContextRecord(
  **.NET Framework Versions:** [!INCLUDE[v451_update](../../../../includes/v451-update-md.md)]  
   
 ## See Also  
- [ICLRDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)   
- [GetExceptionRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)   
+ [ICLRDataTarget3 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)  
+ [GetExceptionRecord Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)  
  [GetExceptionThreadID Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionthreadid-method.md)

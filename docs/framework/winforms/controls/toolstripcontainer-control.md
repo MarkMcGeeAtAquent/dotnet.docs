@@ -1,16 +1,14 @@
 ---
-title: "ToolStripContainer Control | Microsoft Docs"
+title: "ToolStripContainer Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "toolbars [Windows Forms], built-in rafting"
   - "ToolStripContainer control [Windows Forms]"
@@ -20,6 +18,8 @@ caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ToolStripContainer Control
 <xref:System.Windows.Forms.ToolStrip> controls feature built-in rafting (sharing of horizontal or vertical space within the tool area when docked) by using the <xref:System.Windows.Forms.ToolStripContainer>.  

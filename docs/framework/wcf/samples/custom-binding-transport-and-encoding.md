@@ -1,19 +1,24 @@
 ---
-title: "Custom Binding Transport and Encoding | Microsoft Docs"
+title: "Custom Binding Transport and Encoding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 6c0b353d-79ee-4e61-b348-be49ad0e9a16
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Binding Transport and Encoding
 A custom binding is defined by an ordered list of discrete binding elements. This sample demonstrates how to configure a custom binding with various transport and message encoding elements.  
@@ -27,7 +32,7 @@ A custom binding is defined by an ordered list of discrete binding elements. Thi
   
  The service configuration defines the custom bindings as follows:  
   
-```  
+```xml  
 <bindings>  
     <customBinding>  
         <binding name="HttpBinding" >  
@@ -45,7 +50,6 @@ A custom binding is defined by an ordered list of discrete binding elements. Thi
         </binding>  
     </customBinding>  
 </bindings>  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in both the service and client console window. The client communicates with each of the three endpoints, accessing first HTTP, then TCP, and finally NamedPipe. Press ENTER in each console window to shut down the service and client.  

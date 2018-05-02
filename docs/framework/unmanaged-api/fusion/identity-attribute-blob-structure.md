@@ -1,5 +1,5 @@
 ---
-title: "IDENTITY_ATTRIBUTE_BLOB Structure | Microsoft Docs"
+title: "IDENTITY_ATTRIBUTE_BLOB Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "IDENTITY_ATTRIBUTE_BLOB"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IDENTITY_ATTRIBUTE_BLOB"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IDENTITY_ATTRIBUTE_BLOB structure [.NET Framework fusion]"
 ms.assetid: af14ae5f-d226-47dd-ba90-8fc6e6605d4d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IDENTITY_ATTRIBUTE_BLOB Structure
 Contains information about a single attribute in an assembly, and consists of three `DWORD`s. Each `DWORD` is an offset into a character buffer produced by the `CurrentIntoBuffer` method of the [IEnumIDENTITY_ATTRIBUTE](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md) interface  
@@ -244,7 +249,7 @@ Exit:
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IReferenceIdentity Interface](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)   
- [IEnumIDENTITY_ATTRIBUTE Interface](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)   
- [IDENTITY_ATTRIBUTE Structure](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)   
+ [IReferenceIdentity Interface](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md)  
+ [IEnumIDENTITY_ATTRIBUTE Interface](../../../../docs/framework/unmanaged-api/fusion/ienumidentity-attribute-interface.md)  
+ [IDENTITY_ATTRIBUTE Structure](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-structure.md)  
  [Fusion Structures](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)

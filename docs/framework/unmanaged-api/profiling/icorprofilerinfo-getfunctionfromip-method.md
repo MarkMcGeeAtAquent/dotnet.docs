@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::GetFunctionFromIP Method | Microsoft Docs"
+title: "ICorProfilerInfo::GetFunctionFromIP Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.GetFunctionFromIP"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::GetFunctionFromIP"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetFunctionFromIP method [.NET Framework profiling]"
   - "ICorProfilerInfo::GetFunctionFromIP method [.NET Framework profiling]"
 ms.assetid: f069802a-198f-46dd-9f09-4f77adffc9ba
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::GetFunctionFromIP Method
 Maps a managed code instruction pointer to a `FunctionID`.  

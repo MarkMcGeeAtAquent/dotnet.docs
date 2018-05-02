@@ -1,8 +1,8 @@
 ---
-title: "&lt;exposedMethod&gt; | Microsoft Docs"
+title: "&lt;exposedMethod&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 61c938cd-4ee9-4b06-ab28-922ef491ab11
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;exposedMethod&gt;
 Represents a COM+ method that is exposed when the interface on a COM+ component is exposed as a Web service.  
@@ -25,8 +27,7 @@ Represents a COM+ method that is exposed when the interface on a COM+ component 
   
 ## Syntax  
   
-```  
-  
+```xml  
 <comContracts>  
   <comContract>  
       <exposedMethods>  
@@ -63,7 +64,7 @@ Represents a COM+ method that is exposed when the interface on a COM+ component 
   
  When you also run the ComSvcConfig.exe, it then generates the following service contract listing the previously mentioned methods as [\<exposedMethod>](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elements.  
   
-```  
+```xml  
 <comContract contractType="{C551FBA9-E3AA-4272-8C2A-84BD8D290AC7}" name="IFinances" namespace="http://contoso.com/services/financial">  
     <exposedMethod name="TransferFunds"/>  
     <exposedMethod name="AddFunds"/>  
@@ -74,8 +75,8 @@ Represents a COM+ method that is exposed when the interface on a COM+ component 
  At service initialization time, the runtime attempts to generate a service contract by reflecting over and adding only the methods included in the list of [\<exposedMethod>](../../../../../docs/framework/configure-apps/file-schema/wcf/exposedmethod.md) elements. A trace is produced for every interface method that is not included on the service contract.  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ComMethodElementCollection>   
- <xref:System.ServiceModel.Configuration.ComMethodElement>   
- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)   
- [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)   
+ <xref:System.ServiceModel.Configuration.ComMethodElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComMethodElement>  
+ [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
+ [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [How to: Configure COM+ Service Settings](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

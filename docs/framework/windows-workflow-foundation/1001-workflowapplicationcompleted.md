@@ -1,5 +1,5 @@
 ---
-title: "1001 - WorkflowApplicationCompleted | Microsoft Docs"
+title: "1001 - WorkflowApplicationCompleted"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7a2ab59a-cf66-437a-b01e-f8f7268a3f7a
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1001 - WorkflowApplicationCompleted
 ## Properties  

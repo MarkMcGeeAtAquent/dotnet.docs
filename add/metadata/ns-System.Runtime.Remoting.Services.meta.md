@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Services
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataInfo Interface | Microsoft Docs"
+title: "IMetaDataInfo Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataInfo"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataInfo interface [.NET Framework metadata]"
 ms.assetid: 137cb264-64de-46ac-bc6e-2a7db97e8abe
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataInfo Interface
 Provides a method that gets information about the mapping of metadata from an on-disk file into memory.  
@@ -45,5 +48,5 @@ Provides a method that gets information about the mapping of metadata from an on
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)   
+ [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [CorFileMapping Enumeration](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)

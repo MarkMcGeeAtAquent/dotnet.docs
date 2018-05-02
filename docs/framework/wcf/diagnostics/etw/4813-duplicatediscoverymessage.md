@@ -1,8 +1,8 @@
 ---
-title: "4813 - DuplicateDiscoveryMessage | Microsoft Docs"
+title: "4813 - DuplicateDiscoveryMessage"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c49417d1-1f21-4a85-88a5-cbfe108ac8a1
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4813 - DuplicateDiscoveryMessage
 ## Properties  

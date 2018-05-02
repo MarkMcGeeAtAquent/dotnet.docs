@@ -1,5 +1,5 @@
 ---
-title: "_AxlPublicKeyBlobToPublicKeyToken Function | Microsoft Docs"
+title: "_AxlPublicKeyBlobToPublicKeyToken Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "_AxlPublicKeyBlobToPublicKeyToken"
-apilocation: 
+api_location: 
   - "clr.dll"
-apitype: "DLLExport"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "DLLExport"
 ms.assetid: 2d92a746-d68c-4f53-a16e-727f071a2d80
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # _AxlPublicKeyBlobToPublicKeyToken Function
 Computes the strong name public key token from a CSP PUBLICKEYBLOB format.  

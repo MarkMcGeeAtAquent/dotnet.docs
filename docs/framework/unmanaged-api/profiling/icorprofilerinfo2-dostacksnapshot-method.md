@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::DoStackSnapshot Method | Microsoft Docs"
+title: "ICorProfilerInfo2::DoStackSnapshot Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.DoStackSnapshot"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::DoStackSnapshot"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo2::DoStackSnapshot method [.NET Framework profiling]"
   - "DoStackSnapshot method [.NET Framework profiling]"
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 25
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::DoStackSnapshot Method
 Walks the managed frames on the stack for the specified thread, and sends information to the profiler through a callback.  
@@ -76,7 +79,7 @@ HRESULT DoStackSnapshot(
   
  The order in which the stack is walked is the reverse of how the frames were pushed onto the stack: leaf (last-pushed) frame first, main (first-pushed) frame last.  
   
- For more information about how to program the profiler to walk managed stacks, see [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](http://go.microsoft.com/fwlink/?LinkId=73638) in the MSDN Library.  
+ For more information about how to program the profiler to walk managed stacks, see [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](http://go.microsoft.com/fwlink/?LinkId=73638).  
   
  A stack walk can be synchronous or asynchronous, as explained in the following sections.  
   
@@ -112,5 +115,5 @@ HRESULT DoStackSnapshot(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

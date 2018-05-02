@@ -1,5 +1,5 @@
 ---
-title: "1023 - CompleteBookmarkWorkItem | Microsoft Docs"
+title: "1023 - CompleteBookmarkWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fc5dac57-b3eb-4826-b505-c6d269e4774d
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1023 - CompleteBookmarkWorkItem
 ## Properties  

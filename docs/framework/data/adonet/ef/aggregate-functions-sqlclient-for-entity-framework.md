@@ -1,23 +1,21 @@
 ---
-title: "Aggregate Functions (SqlClient for Entity Framework) | Microsoft Docs"
+title: "Aggregate Functions (SqlClient for Entity Framework)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 03303f01-b591-4efc-9875-f9c608edff0b
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Aggregate Functions (SqlClient for Entity Framework)
 The .NET Framework Data Provider for SQL Server (SqlClient) provides aggregate functions. Aggregate functions perform calculations on a set of input values and return a value. These functions are in the SqlServer namespace, which is available when you use SqlClient. A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.  
@@ -56,5 +54,5 @@ The .NET Framework Data Provider for SQL Server (SqlClient) provides aggregate f
 |[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115906)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkID=115903)|[Aggregate Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115907)|  
   
 ## See Also  
- [Entity SQL Language](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)   
+ [Entity SQL Language](../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-language.md)  
  [Aggregate Canonical Functions](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)

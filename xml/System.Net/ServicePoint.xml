@@ -1,7 +1,9 @@
-<Type Name="ServicePoint" FullName="System.Net.ServicePoint">
+﻿<Type Name="ServicePoint" FullName="System.Net.ServicePoint">
   <TypeSignature Language="C#" Value="public class ServicePoint" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServicePoint extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.ServicePoint" />
+  <TypeSignature Language="VB.NET" Value="Public Class ServicePoint" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ServicePoint" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.ServicePoint</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -23,9 +29,9 @@
 ## Remarks  
  The <xref:System.Net.ServicePoint> class handles connections to an Internet resource based on the host information passed in the resource's Uniform Resource Identifier (URI). The initial connection to the resource determines the information that the <xref:System.Net.ServicePoint> object maintains, which is then shared by all subsequent requests to that resource.  
   
- <xref:System.Net.ServicePoint> objects are managed by the <xref:System.Net.ServicePointManager> class and are created, if necessary, by the <xref:System.Net.ServicePointManager.FindServicePoint%2A?displayProperty=fullName> method. <xref:System.Net.ServicePoint> objects are never created directly but are always created and managed by the <xref:System.Net.ServicePointManager> class. The maximum number of <xref:System.Net.ServicePoint> objects that can be created is set by the <xref:System.Net.ServicePointManager.MaxServicePoints%2A?displayProperty=fullName> property.  
+ <xref:System.Net.ServicePoint> objects are managed by the <xref:System.Net.ServicePointManager> class and are created, if necessary, by the <xref:System.Net.ServicePointManager.FindServicePoint%2A?displayProperty=nameWithType> method. <xref:System.Net.ServicePoint> objects are never created directly but are always created and managed by the <xref:System.Net.ServicePointManager> class. The maximum number of <xref:System.Net.ServicePoint> objects that can be created is set by the <xref:System.Net.ServicePointManager.MaxServicePoints%2A?displayProperty=nameWithType> property.  
   
- Each <xref:System.Net.ServicePoint> object maintains its connection to an Internet resource until it has been idle longer than the time specified in the <xref:System.Net.ServicePoint.MaxIdleTime%2A> property. When a <xref:System.Net.ServicePoint> exceeds the <xref:System.Net.ServicePoint.MaxIdleTime%2A> value, it can be recycled to another connection. The default value of <xref:System.Net.ServicePoint.MaxIdleTime%2A> is set by the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=fullName> property.  
+ Each <xref:System.Net.ServicePoint> object maintains its connection to an Internet resource until it has been idle longer than the time specified in the <xref:System.Net.ServicePoint.MaxIdleTime%2A> property. When a <xref:System.Net.ServicePoint> exceeds the <xref:System.Net.ServicePoint.MaxIdleTime%2A> value, it can be recycled to another connection. The default value of <xref:System.Net.ServicePoint.MaxIdleTime%2A> is set by the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType> property.  
   
  When the <xref:System.Net.ServicePoint.ConnectionLeaseTimeout%2A> property is set to a value other than -1, and after the specified time elapses, an active <xref:System.Net.ServicePoint> connection is closed after it services the next request. This is useful for applications that do not require active connections that are opened indefinitely, as they are by default.  
   
@@ -49,6 +55,8 @@
       <MemberSignature Language="C#" Value="public Uri Address { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Address" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Address" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Address As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Address { Uri ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -58,6 +66,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Uri</ReturnType>
@@ -85,6 +97,8 @@
       <MemberSignature Language="C#" Value="public System.Net.BindIPEndPoint BindIPEndPointDelegate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.BindIPEndPoint BindIPEndPointDelegate" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.BindIPEndPointDelegate" />
+      <MemberSignature Language="VB.NET" Value="Public Property BindIPEndPointDelegate As BindIPEndPoint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::BindIPEndPoint ^ BindIPEndPointDelegate { System::Net::BindIPEndPoint ^ get(); void set(System::Net::BindIPEndPoint ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -94,6 +108,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.BindIPEndPoint</ReturnType>
@@ -105,7 +123,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Some load balancing techniques require a client to use a specific local IP address and port number, rather than <xref:System.Net.IPAddress.Any?displayProperty=fullName> (or <xref:System.Net.IPAddress.IPv6Any?displayProperty=fullName> for Internet Protocol Version 6) and an ephemeral port. Your <xref:System.Net.ServicePoint.BindIPEndPointDelegate%2A> can satisfy this requirement.  
+ Some load balancing techniques require a client to use a specific local IP address and port number, rather than <xref:System.Net.IPAddress.Any?displayProperty=nameWithType> (or <xref:System.Net.IPAddress.IPv6Any?displayProperty=nameWithType> for Internet Protocol Version 6) and an ephemeral port. Your <xref:System.Net.ServicePoint.BindIPEndPointDelegate%2A> can satisfy this requirement.  
   
  ]]></format>
         </remarks>
@@ -116,6 +134,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate Certificate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate Certificate" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Certificate" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Certificate As X509Certificate" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Cryptography::X509Certificates::X509Certificate ^ Certificate { System::Security::Cryptography::X509Certificates::X509Certificate ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -125,6 +145,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
@@ -155,6 +179,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate ClientCertificate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate ClientCertificate" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ClientCertificate" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ClientCertificate As X509Certificate" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Cryptography::X509Certificates::X509Certificate ^ ClientCertificate { System::Security::Cryptography::X509Certificates::X509Certificate ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -164,6 +190,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
@@ -189,6 +219,8 @@
       <MemberSignature Language="C#" Value="public bool CloseConnectionGroup (string connectionGroupName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CloseConnectionGroup(string connectionGroupName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.ServicePoint.CloseConnectionGroup(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CloseConnectionGroup (connectionGroupName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool CloseConnectionGroup(System::String ^ connectionGroupName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -198,6 +230,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -223,6 +259,8 @@
       <MemberSignature Language="C#" Value="public int ConnectionLeaseTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionLeaseTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionLeaseTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionLeaseTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ConnectionLeaseTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -232,6 +270,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -268,12 +310,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentOutOfRangeException">The value specified for a set operation is a negative number less than -1.</exception>
+        <altmember cref="P:System.Net.HttpWebRequest.KeepAlive" />
+        <altmember cref="P:System.Net.FtpWebRequest.KeepAlive" />
+        <altmember cref="P:System.Net.HttpListenerRequest.KeepAlive" />
       </Docs>
     </Member>
     <Member MemberName="ConnectionLimit">
       <MemberSignature Language="C#" Value="public int ConnectionLimit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionLimit" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionLimit" />
+      <MemberSignature Language="VB.NET" Value="Public Property ConnectionLimit As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ConnectionLimit { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -283,6 +330,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -294,7 +345,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.ServicePoint.ConnectionLimit%2A> property sets the maximum number of connections that the <xref:System.Net.ServicePoint> object can make to an Internet resource. The value of the <xref:System.Net.ServicePoint.ConnectionLimit%2A> property is set to the value of the <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A?displayProperty=fullName> property when the <xref:System.Net.ServicePoint> object is created; subsequent changes to <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> have no effect on existing <xref:System.Net.ServicePoint> objects.  
+ The <xref:System.Net.ServicePoint.ConnectionLimit%2A> property sets the maximum number of connections that the <xref:System.Net.ServicePoint> object can make to an Internet resource. The value of the <xref:System.Net.ServicePoint.ConnectionLimit%2A> property is set to the value of the <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A?displayProperty=nameWithType> property when the <xref:System.Net.ServicePoint> object is created; subsequent changes to <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> have no effect on existing <xref:System.Net.ServicePoint> objects.  
   
    
   
@@ -314,6 +365,8 @@
       <MemberSignature Language="C#" Value="public string ConnectionName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ConnectionName" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ConnectionName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConnectionName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ConnectionName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -323,6 +376,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -353,6 +410,8 @@
       <MemberSignature Language="C#" Value="public int CurrentConnections { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentConnections" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.CurrentConnections" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentConnections As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int CurrentConnections { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -362,6 +421,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -392,6 +455,8 @@
       <MemberSignature Language="C#" Value="public bool Expect100Continue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Expect100Continue" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.Expect100Continue" />
+      <MemberSignature Language="VB.NET" Value="Public Property Expect100Continue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Expect100Continue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -401,6 +466,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -440,6 +509,8 @@
       <MemberSignature Language="C#" Value="public DateTime IdleSince { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime IdleSince" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.IdleSince" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IdleSince As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime IdleSince { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -449,6 +520,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.DateTime</ReturnType>
@@ -479,6 +554,8 @@
       <MemberSignature Language="C#" Value="public int MaxIdleTime { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MaxIdleTime" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.MaxIdleTime" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxIdleTime As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MaxIdleTime { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -488,6 +565,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -499,9 +580,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can set <xref:System.Net.ServicePoint.MaxIdleTime%2A> to <xref:System.Threading.Timeout.Infinite?displayProperty=fullName> to indicate that a connection associated with the <xref:System.Net.ServicePoint> object should never time out.  
+ You can set <xref:System.Net.ServicePoint.MaxIdleTime%2A> to <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> to indicate that a connection associated with the <xref:System.Net.ServicePoint> object should never time out.  
   
- The default value of the <xref:System.Net.ServicePoint.MaxIdleTime%2A> property is the value of the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=fullName> property when the <xref:System.Net.ServicePoint> object is created. Subsequent changes to the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> property have no effect on existing <xref:System.Net.ServicePoint> objects.  
+ The default value of the <xref:System.Net.ServicePoint.MaxIdleTime%2A> property is the value of the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType> property when the <xref:System.Net.ServicePoint> object is created. Subsequent changes to the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A> property have no effect on existing <xref:System.Net.ServicePoint> objects.  
   
  When the <xref:System.Net.ServicePoint.MaxIdleTime%2A> for a connection associated with a <xref:System.Net.ServicePoint> is exceeded, the connection remains open until the application tries to use the connection. At that time, the Framework closes the connection and creates a new connection to the remote host.  
   
@@ -524,6 +605,8 @@
       <MemberSignature Language="C#" Value="public virtual Version ProtocolVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Version ProtocolVersion" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ProtocolVersion" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property ProtocolVersion As Version" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Version ^ ProtocolVersion { Version ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -533,6 +616,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Version</ReturnType>
@@ -563,6 +650,8 @@
       <MemberSignature Language="C#" Value="public int ReceiveBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.ReceiveBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReceiveBufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ReceiveBufferSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -572,6 +661,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -608,6 +701,8 @@
       <MemberSignature Language="C#" Value="public void SetTcpKeepAlive (bool enabled, int keepAliveTime, int keepAliveInterval);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetTcpKeepAlive(bool enabled, int32 keepAliveTime, int32 keepAliveInterval) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.ServicePoint.SetTcpKeepAlive(System.Boolean,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetTcpKeepAlive (enabled As Boolean, keepAliveTime As Integer, keepAliveInterval As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetTcpKeepAlive(bool enabled, int keepAliveTime, int keepAliveInterval);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -617,6 +712,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -647,7 +746,7 @@
   
  The default settings when a TCP socket is initialized sets the keep-alive timeout to 2 hours and the keep-alive interval to 1 second. The `keepAliveTime` parameter specifies the timeout, in milliseconds, with no activity until the first keep-alive packet is sent. The `keepAliveInterval` parameter specifies the interval, in milliseconds, between when successive keep-alive packets are sent if no acknowledgement is received. The number of keep-alive probes cannot be changed and is set to 10.  
   
- If a TCP connection is dropped as the result of keep-alives, a <xref:System.Net.Sockets.SocketError> of <xref:System.Net.Sockets.SocketError> is returned to any calls in progress on the socket, and any subsequent calls will fail with a <xref:System.Net.Sockets.SocketError> of <xref:System.Net.Sockets.SocketError>.  
+ If a TCP connection is dropped as the result of keep-alives, a <xref:System.Net.Sockets.SocketError> of <xref:System.Net.Sockets.SocketError.NetworkReset> is returned to any calls in progress on the socket, and any subsequent calls will fail with a <xref:System.Net.Sockets.SocketError> of <xref:System.Net.Sockets.SocketError.NotConnected>.  
   
  ]]></format>
         </remarks>
@@ -658,6 +757,8 @@
       <MemberSignature Language="C#" Value="public bool SupportsPipelining { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsPipelining" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.SupportsPipelining" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SupportsPipelining As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SupportsPipelining { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -667,6 +768,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -700,6 +805,8 @@
       <MemberSignature Language="C#" Value="public bool UseNagleAlgorithm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseNagleAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Net.ServicePoint.UseNagleAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseNagleAlgorithm As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseNagleAlgorithm { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -709,6 +816,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

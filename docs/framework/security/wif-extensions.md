@@ -1,7 +1,8 @@
 ---
-title: "WIF Extensions | Microsoft Docs"
+title: "WIF Extensions"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 3
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WIF Extensions
 This section describes the extensions for Windows Identity Foundation.  

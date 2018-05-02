@@ -1,7 +1,9 @@
-<Type Name="XmlDataProvider" FullName="System.Windows.Data.XmlDataProvider">
+﻿<Type Name="XmlDataProvider" FullName="System.Windows.Data.XmlDataProvider">
   <TypeSignature Language="C#" Value="public class XmlDataProvider : System.Windows.Data.DataSourceProvider, System.Windows.Markup.IUriContext" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDataProvider extends System.Windows.Data.DataSourceProvider implements class System.Windows.Markup.IUriContext" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.XmlDataProvider" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlDataProvider&#xA;Inherits DataSourceProvider&#xA;Implements IUriContext" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlDataProvider : System::Windows::Data::DataSourceProvider, System::Windows::Markup::IUriContext" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -23,7 +25,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Enables declarative access to [!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)] data for data binding.</summary>
+    <summary>Enables declarative access to XML data for data binding.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -40,18 +42,21 @@
   
 -   You can set the <xref:System.Windows.Data.XmlDataProvider.Document%2A> property to an <xref:System.Xml.XmlDocument>.  
   
- <xref:System.Windows.Data.XmlDataProvider> performs a full refresh of all bindings when a <xref:System.Xml.XmlDocument.NodeChanged?displayProperty=fullName> event occurs. There are no optimizations for specific nodes.  
+ <xref:System.Windows.Data.XmlDataProvider> performs a full refresh of all bindings when a <xref:System.Xml.XmlDocument.NodeChanged?displayProperty=nameWithType> event occurs. There are no optimizations for specific nodes.  
   
- The <xref:System.Windows.Data.XmlDataProvider.IsAsynchronous%2A?displayProperty=fullName> property is set to `true` by default, which means that the <xref:System.Windows.Data.XmlDataProvider> retrieves data and produces the collection of [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] nodes asynchronously by default.  
+ The <xref:System.Windows.Data.XmlDataProvider.IsAsynchronous%2A?displayProperty=nameWithType> property is set to `true` by default, which means that the <xref:System.Windows.Data.XmlDataProvider> retrieves data and produces the collection of [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] nodes asynchronously by default.  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Data.ObjectDataProvider" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlDataProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlDataProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -67,7 +72,12 @@
       <MemberSignature Language="C#" Value="protected virtual Uri BaseUri { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.BaseUri" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Property BaseUri As Uri" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property Uri ^ BaseUri { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Markup.IUriContext.BaseUri</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -85,6 +95,8 @@
       <MemberSignature Language="C#" Value="protected override void BeginQuery ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void BeginQuery() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.BeginQuery" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub BeginQuery ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void BeginQuery();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -112,6 +124,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.XmlDocument Document { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDocument Document" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.Document" />
+      <MemberSignature Language="VB.NET" Value="Public Property Document As XmlDocument" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlDocument ^ Document { System::Xml::XmlDocument ^ get(); void set(System::Xml::XmlDocument ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -119,7 +133,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -140,7 +154,7 @@
   
 -   You can set this property to an <xref:System.Xml.XmlDocument>.  
   
- <xref:System.Windows.Data.XmlDataProvider> performs a full refresh of all bindings on when a <xref:System.Xml.XmlDocument.NodeChanged?displayProperty=fullName> event occurs. There are no optimizations for specific nodes.  
+ <xref:System.Windows.Data.XmlDataProvider> performs a full refresh of all bindings on when a <xref:System.Xml.XmlDocument.NodeChanged?displayProperty=nameWithType> event occurs. There are no optimizations for specific nodes.  
   
  If the <xref:System.Windows.Data.XmlDataProvider.Source%2A> property is set, then any inline [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] data is discarded. If the <xref:System.Windows.Data.XmlDataProvider.Document%2A> property is set, then the <xref:System.Windows.Data.XmlDataProvider.Source%2A> property is cleared and any inline [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] data is discarded.  
   
@@ -154,6 +168,8 @@
       <MemberSignature Language="C#" Value="protected override void EndInit ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EndInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.EndInit" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub EndInit ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void EndInit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -172,6 +188,8 @@
       <MemberSignature Language="C#" Value="public bool IsAsynchronous { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAsynchronous" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.IsAsynchronous" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsAsynchronous As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAsynchronous { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -190,12 +208,16 @@
         <value>
           <see langword="true" /> to perform node collection creation in a worker thread; otherwise, <see langword="false" />. The default value is <see langword="true" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="P:System.Windows.Data.Binding.IsAsync" />
+        <altmember cref="P:System.Windows.Data.XmlDataProvider.IsAsynchronous" />
       </Docs>
     </Member>
     <Member MemberName="ShouldSerializeSource">
       <MemberSignature Language="C#" Value="public bool ShouldSerializeSource ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeSource() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeSource" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeSource () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeSource();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -228,6 +250,8 @@
       <MemberSignature Language="C#" Value="public bool ShouldSerializeXmlSerializer ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeXmlSerializer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeXmlSerializer" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeXmlSerializer () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeXmlSerializer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -260,6 +284,8 @@
       <MemberSignature Language="C#" Value="public bool ShouldSerializeXPath ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeXPath() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.XmlDataProvider.ShouldSerializeXPath" />
+      <MemberSignature Language="VB.NET" Value="Public Function ShouldSerializeXPath () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ShouldSerializeXPath();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -292,6 +318,8 @@
       <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.Source" />
+      <MemberSignature Language="VB.NET" Value="Public Property Source As Uri" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Uri ^ Source { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -324,7 +352,7 @@
 ## Examples  
  In some applications, embedding the [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] inline within the [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] page can be inconvenient because the exact content of the data must be known at compile time. Therefore, you can obtain the data from an external [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] file, as in the following example.  
   
- [!code-xml[XMLDataSource2#XmlFileExample](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
+ [!code-xaml[XMLDataSource2#XmlFileExample](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource2/CS/Window1.xaml#xmlfileexample)]  
   
  If the [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] data resides in a remote [!INCLUDE[TLA2#tla_xml](~/includes/tla2sharptla-xml-md.md)] file, you define access to the data by assigning an appropriate [!INCLUDE[TLA2#tla_url](~/includes/tla2sharptla-url-md.md)] to the <xref:System.Windows.Data.XmlDataProvider.Source%2A> attribute as follows:  
   
@@ -340,7 +368,12 @@
       <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberSignature Language="VB.NET" Value=" Property BaseUri As Uri Implements IUriContext.BaseUri" />
+      <MemberSignature Language="C++ CLI" Value="property Uri ^ System.Windows.Markup.IUriContext.BaseUri { Uri ^ get(); void set(Uri ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Windows.Markup.IUriContext.BaseUri</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -358,6 +391,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.XmlNamespaceManager XmlNamespaceManager { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNamespaceManager XmlNamespaceManager" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XmlNamespaceManager" />
+      <MemberSignature Language="VB.NET" Value="Public Property XmlNamespaceManager As XmlNamespaceManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::XmlNamespaceManager ^ XmlNamespaceManager { System::Xml::XmlNamespaceManager ^ get(); void set(System::Xml::XmlNamespaceManager ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -397,17 +432,20 @@
 ## Examples  
  The following example demonstrates how to use this property.  
   
- <!-- TODO: review snippet reference [!code-xml[XmlnsBind#XmlNamespaceMapping](~/samples/snippets/xaml/VS_Snippets_Wpf/XmlnsBind/XAML/Window1.xaml#xmlnamespacemapping)]  -->
- <!-- TODO: review snippet reference [!code-xml[XmlnsBind#XmlNamespaceMapping](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlnsBind/CS/Window1.xaml#xmlnamespacemapping)]  -->  
+ [!code-xaml[XmlnsBindSnippet#XmlNamespaceMapping](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlnsBindSnippet/CS/Window1.xaml#xmlnamespacemapping)]   
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Data.XmlNamespaceMappingCollection" />
+        <altmember cref="P:System.Windows.Data.Binding.XmlNamespaceManager" />
       </Docs>
     </Member>
     <Member MemberName="XmlSerializer">
       <MemberSignature Language="C#" Value="public System.Xml.Serialization.IXmlSerializable XmlSerializer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.IXmlSerializable XmlSerializer" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XmlSerializer" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property XmlSerializer As IXmlSerializable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::Serialization::IXmlSerializable ^ XmlSerializer { System::Xml::Serialization::IXmlSerializable ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -415,7 +453,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
         <Attribute>
           <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
@@ -472,6 +510,8 @@
       <MemberSignature Language="C#" Value="public string XPath { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string XPath" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.XmlDataProvider.XPath" />
+      <MemberSignature Language="VB.NET" Value="Public Property XPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ XPath { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -479,7 +519,7 @@
       </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.Windows.Markup.DesignerSerializationOptions(System.Windows.Markup.DesignerSerializationOptions.SerializeAsAttribute)</AttributeName>
+          <AttributeName>System.Windows.Markup.DesignerSerializationOptions</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -492,7 +532,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Xml.XmlNode.SelectNodes%2A?displayProperty=fullName> method handles the `XPath` expressions from the <xref:System.Windows.Data.Binding.XPath%2A> property. `XPath` functions are not supported. For `XPath` expression information, see the <xref:System.Xml.XmlNode.SelectNodes%2A> documentation and some examples provided in the Example section.  
+ The <xref:System.Xml.XmlNode.SelectNodes%2A?displayProperty=nameWithType> method handles the `XPath` expressions from the <xref:System.Windows.Data.Binding.XPath%2A> property. `XPath` functions are not supported. For `XPath` expression information, see the <xref:System.Xml.XmlNode.SelectNodes%2A> documentation and some examples provided in the Example section.  
   
  Setting the following properties will implicitly cause this <xref:System.Windows.Data.XmlDataProvider> object to refresh: <xref:System.Windows.Data.XmlDataProvider.Source%2A>, <xref:System.Windows.Data.XmlDataProvider.Document%2A>, <xref:System.Windows.Data.XmlDataProvider.XmlNamespaceManager%2A>, and <xref:System.Windows.Data.XmlDataProvider.XPath%2A>. When changing multiple refresh-causing properties, the use of <xref:System.Windows.Data.DataSourceProvider.DeferRefresh%2A> is recommended.  
   

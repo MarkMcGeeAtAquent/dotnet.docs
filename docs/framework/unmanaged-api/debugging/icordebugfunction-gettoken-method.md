@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunction::GetToken Method | Microsoft Docs"
+title: "ICorDebugFunction::GetToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunction.GetToken"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunction::GetToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFunction::GetToken method [.NET Framework debugging]"
   - "GetToken method, ICorDebugFunction interface [.NET Framework debugging]"
 ms.assetid: c6bbf479-062e-48e9-9c70-0f92e293e36a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunction::GetToken Method
 Gets the metadata token for this function.  

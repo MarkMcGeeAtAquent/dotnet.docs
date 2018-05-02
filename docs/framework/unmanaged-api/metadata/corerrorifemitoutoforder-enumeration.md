@@ -1,5 +1,5 @@
 ---
-title: "CorErrorIfEmitOutOfOrder Enumeration | Microsoft Docs"
+title: "CorErrorIfEmitOutOfOrder Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorErrorIfEmitOutOfOrder"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorErrorIfEmitOutOfOrder"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorErrorIfEmitOutOfOrder enumeration [.NET Framework metadata]"
 ms.assetid: 6d758aad-29a7-44fe-9481-bbff5b799a32
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorErrorIfEmitOutOfOrder Enumeration
 Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.  

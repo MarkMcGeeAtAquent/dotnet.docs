@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedScope::GetParent Method | Microsoft Docs"
+title: "ISymUnmanagedScope::GetParent Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedScope.GetParent"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedScope::GetParent"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetParent method [.NET Framework debugging]"
   - "ISymUnmanagedScope::GetParent method [.NET Framework debugging]"
 ms.assetid: c7963c87-6ec5-49b3-a5cd-e0fe0c43f9b4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedScope::GetParent Method
 Gets the parent scope of this scope.  
@@ -48,5 +51,5 @@ HRESULT GetParent(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedScope Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)   
+ [ISymUnmanagedScope Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)  
  [GetChildren Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-getchildren-method.md)

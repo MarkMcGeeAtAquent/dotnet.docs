@@ -1,7 +1,9 @@
-<Type Name="DataSet" FullName="System.Data.DataSet">
-  <TypeSignature Language="C#" Value="public class DataSet : System.ComponentModel.MarshalByValueComponent, System.ComponentModel.IListSource, System.ComponentModel.ISupportInitializeNotification, System.Runtime.Serialization.ISerializable, System.Xml.Serialization.IXmlSerializable" />
+﻿<Type Name="DataSet" FullName="System.Data.DataSet">
+  <TypeSignature Language="C#" Value="public class DataSet : System.ComponentModel.MarshalByValueComponent, System.ComponentModel.IListSource, System.ComponentModel.ISupportInitialize, System.ComponentModel.ISupportInitializeNotification, System.Runtime.Serialization.ISerializable, System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit DataSet extends System.ComponentModel.MarshalByValueComponent implements class System.ComponentModel.IListSource, class System.ComponentModel.ISupportInitialize, class System.ComponentModel.ISupportInitializeNotification, class System.Runtime.Serialization.ISerializable, class System.Xml.Serialization.IXmlSerializable" />
   <TypeSignature Language="DocId" Value="T:System.Data.DataSet" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataSet&#xA;Inherits MarshalByValueComponent&#xA;Implements IListSource, ISerializable, ISupportInitialize, ISupportInitializeNotification, IXmlSerializable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataSet : System::ComponentModel::MarshalByValueComponent, System::ComponentModel::IListSource, System::ComponentModel::ISupportInitialize, System::ComponentModel::ISupportInitializeNotification, System::Runtime::Serialization::ISerializable, System::Xml::Serialization::IXmlSerializable" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -11,12 +13,19 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.ComponentModel.MarshalByValueComponent</BaseTypeName>
   </Base>
   <Interfaces>
     <Interface>
       <InterfaceName>System.ComponentModel.IListSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
     </Interface>
     <Interface>
       <InterfaceName>System.ComponentModel.ISupportInitializeNotification</InterfaceName>
@@ -51,7 +60,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Data.DataSet>, which is an in-memory cache of data retrieved from a data source, is a major component of the ADO.NET architecture. The <xref:System.Data.DataSet> consists of a collection of <xref:System.Data.DataTable> objects that you can relate to each other with <xref:System.Data.DataRelation> objects. You can also enforce data integrity in the <xref:System.Data.DataSet> by using the <xref:System.Data.UniqueConstraint> and <xref:System.Data.ForeignKeyConstraint> objects. For further details about working with <xref:System.Data.DataSet> objects, see [DataSets, DataTables, and DataViews](../Topic/DataSets,%20DataTables,%20and%20DataViews.md).  
+ The <xref:System.Data.DataSet>, which is an in-memory cache of data retrieved from a data source, is a major component of the ADO.NET architecture. The <xref:System.Data.DataSet> consists of a collection of <xref:System.Data.DataTable> objects that you can relate to each other with <xref:System.Data.DataRelation> objects. You can also enforce data integrity in the <xref:System.Data.DataSet> by using the <xref:System.Data.UniqueConstraint> and <xref:System.Data.ForeignKeyConstraint> objects. For further details about working with <xref:System.Data.DataSet> objects, see [DataSets, DataTables, and DataViews](~/docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
   
  Whereas <xref:System.Data.DataTable> objects contain the data, the <xref:System.Data.DataRelationCollection> allows you to navigate though the table hierarchy. The tables are contained in a <xref:System.Data.DataTableCollection> accessed through the <xref:System.Data.DataSet.Tables%2A> property. When accessing <xref:System.Data.DataTable> objects, note that they are conditionally case sensitive. For example, if one <xref:System.Data.DataTable> is named "mydatatable" and another is named "Mydatatable", a string used to search for one of the tables is regarded as case sensitive. However, if "mydatatable" exists and "Mydatatable" does not, the search string is regarded as case insensitive. For more information about working with <xref:System.Data.DataTable> objects, see [Creating a DataTable](~/docs/framework/data/adonet/dataset-datatable-dataview/creating-a-datatable.md).  
   
@@ -90,10 +99,22 @@
     <threadsafe>This type is safe for multithreaded read operations. You must synchronize any write operations.</threadsafe>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Data.DataSet" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataSet ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataSet();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -103,6 +124,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -124,12 +149,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Data.DataTableCollection" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataSet (string dataSetName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dataSetName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dataSetName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataSet(System::String ^ dataSetName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -139,6 +167,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="dataSetName" Type="System.String" />
@@ -161,12 +193,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.DataSet.DataSetName" />
+        <altmember cref="T:System.Data.DataTableCollection" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected DataSet (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; DataSet(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -176,6 +212,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -192,6 +232,8 @@
       <MemberSignature Language="C#" Value="protected DataSet (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context, bool ConstructSchema);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context, bool ConstructSchema) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext, ConstructSchema As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; DataSet(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context, bool ConstructSchema);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -201,6 +243,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -219,6 +265,8 @@
       <MemberSignature Language="C#" Value="public void AcceptChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcceptChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.AcceptChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AcceptChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AcceptChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -228,6 +276,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -266,6 +318,8 @@
       <MemberSignature Language="C#" Value="public void BeginInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.BeginInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void BeginInit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -275,6 +329,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -296,6 +354,8 @@
       <MemberSignature Language="C#" Value="public bool CaseSensitive { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CaseSensitive" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.CaseSensitive" />
+      <MemberSignature Language="VB.NET" Value="Public Property CaseSensitive As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CaseSensitive { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -305,6 +365,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -341,6 +405,8 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -350,6 +416,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -361,7 +431,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Data.DataSet> is bound to an <xref:System.Xml.XmlDataDocument>, calling <xref:System.Data.DataSet.Clear%2A?displayProperty=fullName> or <xref:System.Data.DataTable.Clear%2A?displayProperty=fullName> raises the <xref:System.NotSupportedException>. To avoid this situation, traverse each table, removing each row one at a time.  
+ If the <xref:System.Data.DataSet> is bound to an <xref:System.Xml.XmlDataDocument>, calling <xref:System.Data.DataSet.Clear%2A?displayProperty=nameWithType> or <xref:System.Data.DataTable.Clear%2A?displayProperty=nameWithType> raises the <xref:System.NotSupportedException>. To avoid this situation, traverse each table, removing each row one at a time.  
   
    
   
@@ -379,6 +449,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Data.DataSet Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.DataSet Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Clone () As DataSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Data::DataSet ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -388,6 +460,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataSet</ReturnType>
@@ -414,12 +490,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataSet.Copy" />
       </Docs>
     </Member>
     <Member MemberName="Copy">
       <MemberSignature Language="C#" Value="public System.Data.DataSet Copy ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet Copy() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Copy" />
+      <MemberSignature Language="VB.NET" Value="Public Function Copy () As DataSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataSet ^ Copy();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -430,6 +509,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataSet</ReturnType>
       </ReturnValue>
@@ -438,12 +521,10 @@
         <summary>Copies both the structure and data for this <see cref="T:System.Data.DataSet" />.</summary>
         <returns>A new <see cref="T:System.Data.DataSet" /> with the same structure (table schemas, relations, and constraints) and data as this <see cref="T:System.Data.DataSet" />.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  If these classes have been subclassed, the copy will also be of the same subclasses.  
   
-</para>  
-</block></returns>
+</para></block></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -455,12 +536,46 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataSet.Clone" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateDataReader">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a <see cref="T:System.Data.DataTableReader" /> with one result set per <see cref="T:System.Data.DataTable" />, in the same sequence as the tables appear in the <see cref="P:System.Data.DataSet.Tables" /> collection.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ In order to ensure the order of the result sets within the returned <xref:System.Data.DataTableReader>, if a <xref:System.Data.DataTable> within the <xref:System.Data.DataSet> is empty, it will be represented by an empty result set within the returned `DataTableReader`.  
+  
+   
+  
+## Examples  
+ This example, a Console application, creates three <xref:System.Data.DataTable> instances and adds each to a <xref:System.Data.DataSet>. The example calls the <xref:System.Data.DataSet.CreateDataReader%2A> method and displays the contents of the returned <xref:System.Data.DataTableReader>. Note that the order of the result sets in the `DataTableReader` is controlled by the order of the `DataTable` instances passed as parameters.  
+  
+> [!NOTE]
+>  This example shows how to use one of the overloaded versions of `CreateDataReader`. For other examples that might be available, see the individual overload topics.  
+  
+ [!code-csharp[DataWorks DataSet.CreateDataReader#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.CreateDataReader/CS/source.cs#1)]
+ [!code-vb[DataWorks DataSet.CreateDataReader#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.CreateDataReader/VB/source.vb#1)]  
+  
+ The example displays the following code in the Console window:  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateDataReader">
       <MemberSignature Language="C#" Value="public System.Data.DataTableReader CreateDataReader ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTableReader CreateDataReader() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.CreateDataReader" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateDataReader () As DataTableReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataTableReader ^ CreateDataReader();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -470,6 +585,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTableReader</ReturnType>
@@ -497,9 +616,11 @@
       </Docs>
     </Member>
     <Member MemberName="CreateDataReader">
-      <MemberSignature Language="C#" Value="public System.Data.DataTableReader CreateDataReader (System.Data.DataTable[] dataTables);" />
+      <MemberSignature Language="C#" Value="public System.Data.DataTableReader CreateDataReader (params System.Data.DataTable[] dataTables);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataTableReader CreateDataReader(class System.Data.DataTable[] dataTables) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.CreateDataReader(System.Data.DataTable[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateDataReader (ParamArray dataTables As DataTable()) As DataTableReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataTableReader ^ CreateDataReader(... cli::array &lt;System::Data::DataTable ^&gt; ^ dataTables);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -509,6 +630,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTableReader</ReturnType>
@@ -548,6 +673,8 @@
       <MemberSignature Language="C#" Value="public string DataSetName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataSetName" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.DataSetName" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataSetName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DataSetName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -557,6 +684,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -586,6 +717,8 @@
       <MemberSignature Language="C#" Value="public System.Data.DataViewManager DefaultViewManager { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataViewManager DefaultViewManager" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.DefaultViewManager" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DefaultViewManager As DataViewManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataViewManager ^ DefaultViewManager { System::Data::DataViewManager ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -595,6 +728,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -626,10 +763,30 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="DetermineSchemaSerializationMode">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines the <see cref="P:System.Data.DataSet.SchemaSerializationMode" /> for a <see cref="T:System.Data.DataSet" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method can be called when deserializing a typed <xref:System.Data.DataSet> to determine its <xref:System.Data.DataSet.SchemaSerializationMode%2A>.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DetermineSchemaSerializationMode">
       <MemberSignature Language="C#" Value="protected System.Data.SchemaSerializationMode DetermineSchemaSerializationMode (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Data.SchemaSerializationMode DetermineSchemaSerializationMode(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.DetermineSchemaSerializationMode(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function DetermineSchemaSerializationMode (reader As XmlReader) As SchemaSerializationMode" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; System::Data::SchemaSerializationMode DetermineSchemaSerializationMode(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -639,6 +796,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.SchemaSerializationMode</ReturnType>
@@ -664,6 +825,8 @@
       <MemberSignature Language="C#" Value="protected System.Data.SchemaSerializationMode DetermineSchemaSerializationMode (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance valuetype System.Data.SchemaSerializationMode DetermineSchemaSerializationMode(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.DetermineSchemaSerializationMode(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function DetermineSchemaSerializationMode (info As SerializationInfo, context As StreamingContext) As SchemaSerializationMode" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; System::Data::SchemaSerializationMode DetermineSchemaSerializationMode(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -673,6 +836,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.SchemaSerializationMode</ReturnType>
@@ -700,6 +867,8 @@
       <MemberSignature Language="C#" Value="public void EndInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.EndInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void EndInit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -709,6 +878,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -730,6 +903,8 @@
       <MemberSignature Language="C#" Value="public bool EnforceConstraints { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnforceConstraints" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.EnforceConstraints" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnforceConstraints As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnforceConstraints { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -739,6 +914,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -775,6 +954,8 @@
       <MemberSignature Language="C#" Value="public System.Data.PropertyCollection ExtendedProperties { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.PropertyCollection ExtendedProperties" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.ExtendedProperties" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExtendedProperties As PropertyCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::PropertyCollection ^ ExtendedProperties { System::Data::PropertyCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -784,6 +965,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -816,10 +1001,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetChanges">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a copy of the <see cref="T:System.Data.DataSet" /> containing all changes made to it since it was last loaded, or since <see cref="M:System.Data.DataSet.AcceptChanges" /> was called.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetChanges">
       <MemberSignature Language="C#" Value="public System.Data.DataSet GetChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet GetChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChanges () As DataSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataSet ^ GetChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -829,6 +1026,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataSet</ReturnType>
@@ -853,12 +1054,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataSet.HasChanges" />
       </Docs>
     </Member>
     <Member MemberName="GetChanges">
       <MemberSignature Language="C#" Value="public System.Data.DataSet GetChanges (System.Data.DataRowState rowStates);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataSet GetChanges(valuetype System.Data.DataRowState rowStates) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetChanges(System.Data.DataRowState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChanges (rowStates As DataRowState) As DataSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataSet ^ GetChanges(System::Data::DataRowState rowStates);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -868,6 +1072,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataSet</ReturnType>
@@ -903,6 +1111,8 @@
       <MemberSignature Language="C#" Value="public static System.Xml.Schema.XmlSchemaComplexType GetDataSetSchema (System.Xml.Schema.XmlSchemaSet schemaSet);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.Schema.XmlSchemaComplexType GetDataSetSchema(class System.Xml.Schema.XmlSchemaSet schemaSet) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetDataSetSchema(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetDataSetSchema (schemaSet As XmlSchemaSet) As XmlSchemaComplexType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xml::Schema::XmlSchemaComplexType ^ GetDataSetSchema(System::Xml::Schema::XmlSchemaSet ^ schemaSet);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -912,6 +1122,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchemaComplexType</ReturnType>
@@ -930,7 +1144,12 @@
       <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GetObjectData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -939,6 +1158,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -959,6 +1182,8 @@
       <MemberSignature Language="C#" Value="protected virtual System.Xml.Schema.XmlSchema GetSchemaSerializable ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchemaSerializable() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetSchemaSerializable" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetSchemaSerializable () As XmlSchema" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Xml::Schema::XmlSchema ^ GetSchemaSerializable();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -968,6 +1193,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
@@ -983,6 +1212,8 @@
       <MemberSignature Language="C#" Value="protected void GetSerializationData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void GetSerializationData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetSerializationData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub GetSerializationData (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void GetSerializationData(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -992,6 +1223,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1011,6 +1246,8 @@
       <MemberSignature Language="C#" Value="public string GetXml ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetXml() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetXml" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetXml () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetXml();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1020,6 +1257,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1032,7 +1273,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Calling this method is identical to calling <xref:System.Data.DataSet.WriteXml%2A> with <xref:System.Data.XmlWriteMode> set to <xref:System.Data.XmlWriteMode>.  
+ Calling this method is identical to calling <xref:System.Data.DataSet.WriteXml%2A> with <xref:System.Data.XmlWriteMode> set to <xref:System.Data.XmlWriteMode.IgnoreSchema>.  
   
  <xref:System.Data.DataSet.GetXml%2A> returns XML as a string, and therefore requires more overhead than <xref:System.Data.DataSet.WriteXml%2A> to write XML to a file.  
   
@@ -1375,6 +1616,8 @@ class Program {
       <MemberSignature Language="C#" Value="public string GetXmlSchema ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetXmlSchema() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.GetXmlSchema" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetXmlSchema () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetXmlSchema();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1384,6 +1627,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1414,10 +1661,22 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="HasChanges">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a value indicating whether the <see cref="T:System.Data.DataSet" /> has changes, including new, deleted, or modified rows.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="HasChanges">
       <MemberSignature Language="C#" Value="public bool HasChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.HasChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Function HasChanges () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool HasChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1427,6 +1686,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1453,6 +1716,8 @@ class Program {
       <MemberSignature Language="C#" Value="public bool HasChanges (System.Data.DataRowState rowStates);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasChanges(valuetype System.Data.DataRowState rowStates) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.HasChanges(System.Data.DataRowState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HasChanges (rowStates As DataRowState) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool HasChanges(System::Data::DataRowState rowStates);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1462,6 +1727,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1496,6 +1765,8 @@ class Program {
       <MemberSignature Language="C#" Value="public bool HasErrors { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasErrors" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.HasErrors" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasErrors As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasErrors { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1505,6 +1776,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1536,10 +1811,21 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="InferXmlSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Applies XML schema to the <see cref="T:System.Data.DataSet" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InferXmlSchema">
       <MemberSignature Language="C#" Value="public void InferXmlSchema (System.IO.Stream stream, string[] nsArray);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InferXmlSchema(class System.IO.Stream stream, string[] nsArray) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.InferXmlSchema(System.IO.Stream,System.String[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InferXmlSchema(System::IO::Stream ^ stream, cli::array &lt;System::String ^&gt; ^ nsArray);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1549,6 +1835,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1568,6 +1858,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void InferXmlSchema (System.IO.TextReader reader, string[] nsArray);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InferXmlSchema(class System.IO.TextReader reader, string[] nsArray) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.InferXmlSchema(System.IO.TextReader,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InferXmlSchema (reader As TextReader, nsArray As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InferXmlSchema(System::IO::TextReader ^ reader, cli::array &lt;System::String ^&gt; ^ nsArray);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1577,6 +1869,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1596,6 +1892,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void InferXmlSchema (string fileName, string[] nsArray);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InferXmlSchema(string fileName, string[] nsArray) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.InferXmlSchema(System.String,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InferXmlSchema (fileName As String, nsArray As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InferXmlSchema(System::String ^ fileName, cli::array &lt;System::String ^&gt; ^ nsArray);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1605,6 +1903,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1627,6 +1929,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void InferXmlSchema (System.Xml.XmlReader reader, string[] nsArray);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InferXmlSchema(class System.Xml.XmlReader reader, string[] nsArray) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.InferXmlSchema(System.Xml.XmlReader,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub InferXmlSchema (reader As XmlReader, nsArray As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void InferXmlSchema(System::Xml::XmlReader ^ reader, cli::array &lt;System::String ^&gt; ^ nsArray);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1636,6 +1940,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1655,6 +1963,8 @@ class Program {
       <MemberSignature Language="C#" Value="public event EventHandler Initialized;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Initialized" />
       <MemberSignature Language="DocId" Value="E:System.Data.DataSet.Initialized" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Initialized As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ Initialized;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1664,6 +1974,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.EventHandler</ReturnType>
@@ -1684,6 +1998,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual void InitializeDerivedDataSet ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeDerivedDataSet() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.InitializeDerivedDataSet" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub InitializeDerivedDataSet ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void InitializeDerivedDataSet();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1693,6 +2009,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1707,6 +2027,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected bool IsBinarySerialized (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool IsBinarySerialized(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.IsBinarySerialized(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Function IsBinarySerialized (info As SerializationInfo, context As StreamingContext) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; bool IsBinarySerialized(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1716,6 +2038,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1744,6 +2070,8 @@ class Program {
       <MemberSignature Language="C#" Value="public bool IsInitialized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInitialized" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.IsInitialized" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsInitialized As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsInitialized { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1753,6 +2081,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1776,10 +2108,53 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Fills a <see cref="T:System.Data.DataSet" /> with values from a data source using the supplied <see cref="T:System.Data.IDataReader" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Data.DataTable.Load%2A> method provides a technique for filling a single <xref:System.Data.DataTable> with data, retrieved from an <xref:System.Data.IDataReader> instance. This method provides the same functionality, but allows you to load multiple result sets from an `IDataReader` into multiple tables within a `DataSet`.  
+  
+ If the `DataSet` already contains rows, the incoming data from the data source is merged with the existing rows.  
+  
+ The `Load` method can be used in several common scenarios, all centered around getting data from a specified data source and adding it to the current data container (in this case, a `DataSet`). These scenarios describe standard usage for a `DataSet`, describing its update and merge behavior.  
+  
+ A `DataSet` synchronizes or updates with a single primary data source. The `DataSet` tracks changes, allowing synchronization with the primary data source. In addition, a `DataSet` can accept incremental data from one or more secondary data sources. The `DataSet` isn't responsible for tracking changes in order to allow synchronization with the secondary data source.  
+  
+ Given these two hypothetical data sources, a user is likely to require one of the following behaviors:  
+  
+-   Initialize `DataSet` from a primary data source. In this scenario, the user wants to initialize an empty `DataSet` with values from the primary data source. One or more DataTable's contents are modified. Later the user intends to propagate changes back to the primary data source.  
+  
+-   Preserve changes and re-synchronize from the primary data source. In this scenario, the user wants to take the `DataSet` filled in the previous scenario and perform an incremental synchronization with the primary data source, preserving modifications made in the `DataSet`.  
+  
+-   Incremental data feed from secondary data sources. In this scenario, the user wants to merge changes from one or more secondary data sources, and propagate those changes back to the primary data source.  
+  
+ The `Load` method makes all these scenarios possible. This method allows you to specify a load option parameter, indicating how rows already in a <xref:System.Data.DataTable> combine with rows being loaded. The following table describes the three load options provided by the <xref:System.Data.LoadOption> enumeration. In each case, the description indicates the behavior when the primary key of a row in the incoming data matches the primary key of an existing row.  
+  
+|Load Option|Description|  
+|-----------------|-----------------|  
+|`PreserveChanges` (default)|Updates the original version of the row with the value of the incoming row.|  
+|`OverwriteChanges`|Updates the current and original versions of the row with the value of the incoming row.|  
+|`Upsert`|Updates the current version of the row with the value of the incoming row.|  
+  
+ In general, the `PreserveChanges` and `OverwriteChanges` options are intended for scenarios in which the user needs to synchronize the `DataSet` and its changes with the primary data source. The `Upsert` option facilitates aggregating changes from one or more secondary data sources.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Load">
-      <MemberSignature Language="C#" Value="public void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, System.Data.DataTable[] tables);" />
+      <MemberSignature Language="C#" Value="public void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, params System.Data.DataTable[] tables);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Data.IDataReader reader, valuetype System.Data.LoadOption loadOption, class System.Data.DataTable[] tables) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Load(System.Data.IDataReader,System.Data.LoadOption,System.Data.DataTable[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Load(System::Data::IDataReader ^ reader, System::Data::LoadOption loadOption, ... cli::array &lt;System::Data::DataTable ^&gt; ^ tables);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1789,6 +2164,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1820,7 +2199,7 @@ class Program {
   
  The `loadOption` parameter allows you to specify how you want the imported data to interact with existing data, and can be any of the values from the <xref:System.Data.LoadOption> enumeration. See the documentation for the <xref:System.Data.DataTable><xref:System.Data.DataTable.Load%2A> method for more information on using this parameter.  
   
- The `tables` parameter allows you to specify an array of <xref:System.Data.DataTable> instances, indicating the order of the tables corresponding to each result set loaded from the reader. The <xref:System.Data.DataSet.Load%2A>method fills each supplied <xref:System.Data.DataTable> instance with data from a single result set from the source data reader. After each result set, the <xref:System.Data.DataSet.Load%2A>method moves on to the next result set within the reader, until there are no more result sets.  
+ The `tables` parameter allows you to specify an array of <xref:System.Data.DataTable> instances, indicating the order of the tables corresponding to each result set loaded from the reader. The <xref:System.Data.DataSet.Load%2A> method fills each supplied <xref:System.Data.DataTable> instance with data from a single result set from the source data reader. After each result set, the <xref:System.Data.DataSet.Load%2A> method moves on to the next result set within the reader, until there are no more result sets.  
   
  The name resolution scheme for this method is the same as that followed by the <xref:System.Data.Common.DbDataAdapter.Fill%2A> method of the <xref:System.Data.Common.DbDataAdapter> class.  
   
@@ -1837,9 +2216,10 @@ class Program {
       </Docs>
     </Member>
     <Member MemberName="Load">
-      <MemberSignature Language="C#" Value="public void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, string[] tables);" />
+      <MemberSignature Language="C#" Value="public void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, params string[] tables);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Data.IDataReader reader, valuetype System.Data.LoadOption loadOption, string[] tables) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Load(System.Data.IDataReader,System.Data.LoadOption,System.String[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Load(System::Data::IDataReader ^ reader, System::Data::LoadOption loadOption, ... cli::array &lt;System::String ^&gt; ^ tables);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1849,6 +2229,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1897,9 +2281,10 @@ class Program {
       </Docs>
     </Member>
     <Member MemberName="Load">
-      <MemberSignature Language="C#" Value="public virtual void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, System.Data.FillErrorEventHandler errorHandler, System.Data.DataTable[] tables);" />
+      <MemberSignature Language="C#" Value="public virtual void Load (System.Data.IDataReader reader, System.Data.LoadOption loadOption, System.Data.FillErrorEventHandler errorHandler, params System.Data.DataTable[] tables);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Load(class System.Data.IDataReader reader, valuetype System.Data.LoadOption loadOption, class System.Data.FillErrorEventHandler errorHandler, class System.Data.DataTable[] tables) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Load(System.Data.IDataReader,System.Data.LoadOption,System.Data.FillErrorEventHandler,System.Data.DataTable[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Load(System::Data::IDataReader ^ reader, System::Data::LoadOption loadOption, System::Data::FillErrorEventHandler ^ errorHandler, ... cli::array &lt;System::Data::DataTable ^&gt; ^ tables);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1909,6 +2294,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1944,7 +2333,7 @@ class Program {
   
  The `errorHandler` parameter is a <xref:System.Data.FillErrorEventHandler> delegate that refers to a procedure that is called when an error occurs while loading data. The <xref:System.Data.FillErrorEventArgs> parameter passed to the procedure provides properties that allow you to retrieve information about the error that occurred, the current row of data, and the <xref:System.Data.DataTable> being filled. Using this delegate mechanism, rather than a simpler try/catch block, allows you to determine the error, handle the situation, and continue processing if you like. The <xref:System.Data.FillErrorEventArgs> parameter supplies a <xref:System.Data.FillErrorEventArgs.Continue%2A> property: set this property to `true` to indicate that you have handled the error and wish to continue processing; set the property to `false` to indicate that you wish to halt processing. Be aware that setting the property to `false` causes the code that triggered the problem to throw an exception.  
   
- The `tables` parameter allows you to specify an array of <xref:System.Data.DataTable> instances, indicating the order of the tables corresponding to each result set loaded from the reader. The <xref:System.Data.DataSet.Load%2A>method fills each supplied <xref:System.Data.DataTable> instance with data from a single result set from the source data reader. After each result set, the <xref:System.Data.DataSet.Load%2A>method moves on to the next result set within the reader, until there are no more result sets.  
+ The `tables` parameter allows you to specify an array of <xref:System.Data.DataTable> instances, indicating the order of the tables corresponding to each result set loaded from the reader. The <xref:System.Data.DataSet.Load%2A> method fills each supplied <xref:System.Data.DataTable> instance with data from a single result set from the source data reader. After each result set, the <xref:System.Data.DataSet.Load%2A> method moves on to the next result set within the reader, until there are no more result sets.  
   
  The name resolution scheme for this method is the same as that followed by the <xref:System.Data.Common.DbDataAdapter.Fill%2A> method of the <xref:System.Data.Common.DbDataAdapter> class.  
   
@@ -1964,6 +2353,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Locale { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Locale" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Locale" />
+      <MemberSignature Language="VB.NET" Value="Public Property Locale As CultureInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Globalization::CultureInfo ^ Locale { System::Globalization::CultureInfo ^ get(); void set(System::Globalization::CultureInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1973,6 +2364,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Globalization.CultureInfo</ReturnType>
@@ -1989,7 +2384,7 @@ class Program {
  By default, setting the <xref:System.Data.DataSet.Locale%2A> for a <xref:System.Data.DataSet> also sets the <xref:System.Data.DataSet.Locale%2A> for each <xref:System.Data.DataTable> object in that `DataSet` to the same value.  
   
 > [!NOTE]
->  In columns that contain expressions, the <xref:System.StringComparison> is used. The <xref:System.StringComparison> is ignored.  
+>  In columns that contain expressions, the <xref:System.StringComparison.InvariantCulture> is used. The <xref:System.StringComparison.CurrentCulture> is ignored.  
   
    
   
@@ -2002,10 +2397,22 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Merge">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Merges a specified <see cref="T:System.Data.DataSet" />, <see cref="T:System.Data.DataTable" />, or array of <see cref="T:System.Data.DataRow" /> objects into the current <see langword="DataSet" /> or <see langword="DataTable" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Merge">
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataRow[] rows);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataRow[] rows) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataRow[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Merge (rows As DataRow())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(cli::array &lt;System::Data::DataRow ^&gt; ^ rows);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2015,6 +2422,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2051,6 +2462,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataSet dataSet);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataSet dataSet) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataSet)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(System::Data::DataSet ^ dataSet);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2060,6 +2472,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2100,12 +2516,17 @@ class Program {
         </remarks>
         <exception cref="T:System.Data.ConstraintException">One or more constraints cannot be enabled.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="dataSet" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Data.ForeignKeyConstraint" />
+        <altmember cref="M:System.Data.DataSet.GetChanges" />
+        <altmember cref="T:System.Data.UniqueConstraint" />
       </Docs>
     </Member>
     <Member MemberName="Merge">
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataTable table);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataTable table) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataTable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Merge (table As DataTable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(System::Data::DataTable ^ table);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2115,6 +2536,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2160,6 +2585,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataSet dataSet, bool preserveChanges);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataSet dataSet, bool preserveChanges) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataSet,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(System::Data::DataSet ^ dataSet, bool preserveChanges);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2169,6 +2595,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2210,12 +2640,15 @@ class Program {
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Data.ForeignKeyConstraint" />
+        <altmember cref="T:System.Data.UniqueConstraint" />
       </Docs>
     </Member>
     <Member MemberName="Merge">
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataRow[] rows, bool preserveChanges, System.Data.MissingSchemaAction missingSchemaAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataRow[] rows, bool preserveChanges, valuetype System.Data.MissingSchemaAction missingSchemaAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataRow[],System.Boolean,System.Data.MissingSchemaAction)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(cli::array &lt;System::Data::DataRow ^&gt; ^ rows, bool preserveChanges, System::Data::MissingSchemaAction missingSchemaAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2225,6 +2658,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2268,6 +2705,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataSet dataSet, bool preserveChanges, System.Data.MissingSchemaAction missingSchemaAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataSet dataSet, bool preserveChanges, valuetype System.Data.MissingSchemaAction missingSchemaAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataSet,System.Boolean,System.Data.MissingSchemaAction)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(System::Data::DataSet ^ dataSet, bool preserveChanges, System::Data::MissingSchemaAction missingSchemaAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2277,6 +2715,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2329,6 +2771,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void Merge (System.Data.DataTable table, bool preserveChanges, System.Data.MissingSchemaAction missingSchemaAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Merge(class System.Data.DataTable table, bool preserveChanges, valuetype System.Data.MissingSchemaAction missingSchemaAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Merge(System.Data.DataTable,System.Boolean,System.Data.MissingSchemaAction)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Merge(System::Data::DataTable ^ table, bool preserveChanges, System::Data::MissingSchemaAction missingSchemaAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2338,6 +2781,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2388,6 +2835,8 @@ class Program {
       <MemberSignature Language="C#" Value="public event System.Data.MergeFailedEventHandler MergeFailed;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Data.MergeFailedEventHandler MergeFailed" />
       <MemberSignature Language="DocId" Value="E:System.Data.DataSet.MergeFailed" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event MergeFailed As MergeFailedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Data::MergeFailedEventHandler ^ MergeFailed;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2398,6 +2847,10 @@ class Program {
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.MergeFailedEventHandler</ReturnType>
       </ReturnValue>
@@ -2407,7 +2860,7 @@ class Program {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
@@ -2425,6 +2878,8 @@ class Program {
       <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Namespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property Namespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Namespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2434,6 +2889,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2471,6 +2930,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanging (System.ComponentModel.PropertyChangedEventArgs pcevent);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanging(class System.ComponentModel.PropertyChangedEventArgs pcevent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.OnPropertyChanging(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnPropertyChanging (pcevent As PropertyChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnPropertyChanging(System::ComponentModel::PropertyChangedEventArgs ^ pcevent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2480,6 +2941,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2494,7 +2959,7 @@ class Program {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For an overview, see [NIB: Raising an Event](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2).  
+ Raising an event invokes the event handler through a delegate. For an overview, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  ]]></format>
         </remarks>
@@ -2507,6 +2972,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual void OnRemoveRelation (System.Data.DataRelation relation);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemoveRelation(class System.Data.DataRelation relation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.OnRemoveRelation(System.Data.DataRelation)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRemoveRelation (relation As DataRelation)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRemoveRelation(System::Data::DataRelation ^ relation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2516,6 +2983,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2537,9 +3008,11 @@ class Program {
       </Docs>
     </Member>
     <Member MemberName="OnRemoveTable">
-      <MemberSignature Language="C#" Value="protected virtual void OnRemoveTable (System.Data.DataTable table);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void OnRemoveTable (System.Data.DataTable table);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnRemoveTable(class System.Data.DataTable table) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.OnRemoveTable(System.Data.DataTable)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub OnRemoveTable (table As DataTable)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void OnRemoveTable(System::Data::DataTable ^ table);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2549,6 +3022,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2581,6 +3058,8 @@ class Program {
       <MemberSignature Language="C#" Value="public string Prefix { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Prefix" />
+      <MemberSignature Language="VB.NET" Value="Public Property Prefix As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Prefix { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2590,6 +3069,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2621,9 +3104,11 @@ class Program {
       </Docs>
     </Member>
     <Member MemberName="RaisePropertyChanging">
-      <MemberSignature Language="C#" Value="protected void RaisePropertyChanging (string name);" />
+      <MemberSignature Language="C#" Value="protected internal void RaisePropertyChanging (string name);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void RaisePropertyChanging(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.RaisePropertyChanging(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub RaisePropertyChanging (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; void RaisePropertyChanging(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2633,6 +3118,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2646,10 +3135,21 @@ class Program {
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ReadXml">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads XML schema and data into the <see cref="T:System.Data.DataSet" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ReadXml">
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2659,6 +3159,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -2713,12 +3217,17 @@ class Program {
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataSet.ReadXmlSchema(System.Xml.XmlReader)" />
+        <altmember cref="M:System.Data.DataSet.WriteXml(System.IO.Stream)" />
+        <altmember cref="M:System.Data.DataSet.WriteXmlSchema(System.IO.Stream)" />
       </Docs>
     </Member>
     <Member MemberName="ReadXml">
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.IO.TextReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.IO.TextReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.IO.TextReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (reader As TextReader) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::IO::TextReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2728,6 +3237,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -2790,6 +3303,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (fileName As String) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2799,6 +3314,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -2862,6 +3381,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (reader As XmlReader) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2871,6 +3392,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -2912,7 +3437,7 @@ class Program {
 </xsd:schema>  
 ```  
   
- <xref:System.Xml.XmlTextReader?displayProperty=fullName> inherits from <xref:System.Xml.XmlReader>.  
+ <xref:System.Xml.XmlTextReader?displayProperty=nameWithType> inherits from <xref:System.Xml.XmlReader>.  
   
 > [!NOTE]
 >  If the schema for your <xref:System.Data.DataSet> contains elements of the same name, but different type, in the same namespace, an exception is thrown when you attempt to read the schema into the <xref:System.Data.DataSet> with <xref:System.Data.DataSet.ReadXml%2A> by specifying `XmlReadMode.ReadSchema`. This exception does not occur if you are using .NET Framework version 1.0.  
@@ -2933,6 +3458,7 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.IO.Stream stream, System.Data.XmlReadMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.IO.Stream stream, valuetype System.Data.XmlReadMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.IO.Stream,System.Data.XmlReadMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::IO::Stream ^ stream, System::Data::XmlReadMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2942,6 +3468,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -2999,6 +3529,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.IO.TextReader reader, System.Data.XmlReadMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.IO.TextReader reader, valuetype System.Data.XmlReadMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.IO.TextReader,System.Data.XmlReadMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (reader As TextReader, mode As XmlReadMode) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::IO::TextReader ^ reader, System::Data::XmlReadMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3008,6 +3540,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -3062,6 +3598,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (string fileName, System.Data.XmlReadMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(string fileName, valuetype System.Data.XmlReadMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.String,System.Data.XmlReadMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (fileName As String, mode As XmlReadMode) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::String ^ fileName, System::Data::XmlReadMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3071,6 +3609,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -3128,6 +3670,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.XmlReadMode ReadXml (System.Xml.XmlReader reader, System.Data.XmlReadMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Data.XmlReadMode ReadXml(class System.Xml.XmlReader reader, valuetype System.Data.XmlReadMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXml(System.Xml.XmlReader,System.Data.XmlReadMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ReadXml (reader As XmlReader, mode As XmlReadMode) As XmlReadMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::XmlReadMode ReadXml(System::Xml::XmlReader ^ reader, System::Data::XmlReadMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3137,6 +3681,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.XmlReadMode</ReturnType>
@@ -3187,10 +3735,21 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ReadXmlSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads an XML schema into the <see cref="T:System.Data.DataSet" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ReadXmlSchema">
       <MemberSignature Language="C#" Value="public void ReadXmlSchema (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadXmlSchema(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXmlSchema(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReadXmlSchema(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3200,6 +3759,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3244,6 +3807,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void ReadXmlSchema (System.IO.TextReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadXmlSchema(class System.IO.TextReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXmlSchema(System.IO.TextReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReadXmlSchema (reader As TextReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReadXmlSchema(System::IO::TextReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3253,6 +3818,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3297,6 +3866,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void ReadXmlSchema (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadXmlSchema(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXmlSchema(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReadXmlSchema (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReadXmlSchema(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3306,6 +3877,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3349,6 +3924,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void ReadXmlSchema (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadXmlSchema(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXmlSchema(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReadXmlSchema (reader As XmlReader)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReadXmlSchema(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3358,6 +3935,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3381,7 +3962,7 @@ class Program {
   
  The <xref:System.Data.DataSet.ReadXmlSchema%2A> method is generally invoked before invoking the <xref:System.Data.DataSet.ReadXml%2A> method which is used to fill the <xref:System.Data.DataSet>.  
   
- The <xref:System.Xml.XmlReader?displayProperty=fullName> class is abstract. A class that inherits from the `XmlReader` is the <xref:System.Xml.XmlTextReader?displayProperty=fullName> class.  
+ The <xref:System.Xml.XmlReader?displayProperty=nameWithType> class is abstract. A class that inherits from the `XmlReader` is the <xref:System.Xml.XmlTextReader?displayProperty=nameWithType> class.  
   
 > [!NOTE]
 >  If the schema for your <xref:System.Data.DataSet> contains elements of the same name, but different type, in the same namespace, an exception is be thrown when you attempt to read the schema into the <xref:System.Data.DataSet> with <xref:System.Data.DataSet.ReadXmlSchema%2A>. This exception does not occur if you are using .NET Framework version 1.0.  
@@ -3389,7 +3970,7 @@ class Program {
    
   
 ## Examples  
- The following example creates a new <xref:System.Data.DataSet> and <xref:System.IO.FileStream?displayProperty=fullName> object. The <xref:System.IO.FileStream> object, created with a file path and file name, is used to create an <xref:System.Xml.XmlTextReader?displayProperty=fullName> that is passed as an argument to the <xref:System.Data.DataSet.ReadXmlSchema%2A> method.  
+ The following example creates a new <xref:System.Data.DataSet> and <xref:System.IO.FileStream?displayProperty=nameWithType> object. The <xref:System.IO.FileStream> object, created with a file path and file name, is used to create an <xref:System.Xml.XmlTextReader?displayProperty=nameWithType> that is passed as an argument to the <xref:System.Data.DataSet.ReadXmlSchema%2A> method.  
   
  [!code-csharp[Classic WebData DataSet.ReadXmlSchema Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataSet.ReadXmlSchema Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataSet.ReadXmlSchema Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataSet.ReadXmlSchema Example/VB/source.vb#1)]  
@@ -3402,6 +3983,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual void ReadXmlSerializable (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ReadXmlSerializable(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ReadXmlSerializable(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub ReadXmlSerializable (reader As XmlReader)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void ReadXmlSerializable(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3411,6 +3994,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3428,6 +4015,8 @@ class Program {
       <MemberSignature Language="C#" Value="public virtual void RejectChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RejectChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.RejectChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub RejectChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void RejectChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3437,6 +4026,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3448,11 +4041,11 @@ class Program {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Invoke the <xref:System.Data.DataSet.RejectChanges%2A?displayProperty=fullName> to call the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=fullName> method on all <xref:System.Data.DataTable> objects contained by the <xref:System.Data.DataSet>.  
+ Invoke the <xref:System.Data.DataSet.RejectChanges%2A?displayProperty=nameWithType> to call the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=nameWithType> method on all <xref:System.Data.DataTable> objects contained by the <xref:System.Data.DataSet>.  
   
- <xref:System.Data.DataRow> objects contained by the <xref:System.Data.DataSet> can each be set into edit mode by invoking the <xref:System.Data.DataRow.BeginEdit%2A?displayProperty=fullName> method. After invoking the <xref:System.Data.DataRow.EndEdit%2A?displayProperty=fullName> method, changes can be rejected by calling the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=fullName> on the <xref:System.Data.DataTable> to which the <xref:System.Data.DataRow> objects belong.  
+ <xref:System.Data.DataRow> objects contained by the <xref:System.Data.DataSet> can each be set into edit mode by invoking the <xref:System.Data.DataRow.BeginEdit%2A?displayProperty=nameWithType> method. After invoking the <xref:System.Data.DataRow.EndEdit%2A?displayProperty=nameWithType> method, changes can be rejected by calling the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=nameWithType> on the <xref:System.Data.DataTable> to which the <xref:System.Data.DataRow> objects belong.  
   
- When the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=fullName> method is called, any rows still in edit-mode cancel their edits. New rows are removed. Modified and deleted rows return back to their original state (`DataRowState.Unchanged`).  
+ When the <xref:System.Data.DataTable.RejectChanges%2A?displayProperty=nameWithType> method is called, any rows still in edit-mode cancel their edits. New rows are removed. Modified and deleted rows return back to their original state (`DataRowState.Unchanged`).  
   
  AcceptChanges and RejectChanges only apply to <xref:System.Data.DataRow> related changes (that is, `Add`, `Remove`, `Delete`, and `Modify`). They are not applicable to schema or structural changes.  
   
@@ -3472,6 +4065,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.DataRelationCollection Relations { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataRelationCollection Relations" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Relations" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Relations As DataRelationCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataRelationCollection ^ Relations { System::Data::DataRelationCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3482,9 +4077,13 @@ class Program {
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3509,6 +4108,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.SerializationFormat RemotingFormat { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SerializationFormat RemotingFormat" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.RemotingFormat" />
+      <MemberSignature Language="VB.NET" Value="Public Property RemotingFormat As SerializationFormat" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::SerializationFormat RemotingFormat { System::Data::SerializationFormat get(); void set(System::Data::SerializationFormat value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3518,6 +4119,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3537,6 +4142,8 @@ class Program {
       <MemberSignature Language="C#" Value="public virtual void Reset ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.Reset" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Reset ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Reset();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3546,6 +4153,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3560,6 +4171,8 @@ class Program {
       <MemberSignature Language="C#" Value="public virtual System.Data.SchemaSerializationMode SchemaSerializationMode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.SchemaSerializationMode SchemaSerializationMode" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.SchemaSerializationMode" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property SchemaSerializationMode As SchemaSerializationMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Data::SchemaSerializationMode SchemaSerializationMode { System::Data::SchemaSerializationMode get(); void set(System::Data::SchemaSerializationMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3570,12 +4183,16 @@ class Program {
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3588,15 +4205,15 @@ class Program {
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A <xref:System.Data.DataSet> serializes its schema and instance data by default in Web services and remoting scenarios. Setting the <xref:System.Data.DataSet.SchemaSerializationMode%2A> property of a typed `DataSet` to <xref:System.Data.SchemaSerializationMode> causes schema information to be excluded from the serialization payload.  
+ A <xref:System.Data.DataSet> serializes its schema and instance data by default in Web services and remoting scenarios. Setting the <xref:System.Data.DataSet.SchemaSerializationMode%2A> property of a typed `DataSet` to <xref:System.Data.SchemaSerializationMode.ExcludeSchema> causes schema information to be excluded from the serialization payload.  
   
- <xref:System.Data.SchemaSerializationMode> is supported only for a typed `DataSet`. For an un-typed `DataSet` this property can only be set to <xref:System.Data.SchemaSerializationMode>.  
+ <xref:System.Data.SchemaSerializationMode.ExcludeSchema> is supported only for a typed `DataSet`. For an un-typed `DataSet` this property can only be set to <xref:System.Data.SchemaSerializationMode.IncludeSchema>.  
   
- <xref:System.Data.SchemaSerializationMode> should only be used in cases where the schema information of the underlying typed `DataTables`, `DataRelations` and `Constraints` has not been modified. If modifications have occurred, complete schema information should be serialized with <xref:System.Data.SchemaSerializationMode>.  
+ <xref:System.Data.SchemaSerializationMode.ExcludeSchema> should only be used in cases where the schema information of the underlying typed `DataTables`, `DataRelations` and `Constraints` has not been modified. If modifications have occurred, complete schema information should be serialized with <xref:System.Data.SchemaSerializationMode.IncludeSchema>.  
   
- <xref:System.Data.SchemaSerializationMode> is supported in version 2.0 of the .NET Framework or later.  
+ <xref:System.Data.SchemaSerializationMode.ExcludeSchema> is supported in version 2.0 of the .NET Framework or later.  
   
- When <xref:System.Data.SchemaSerializationMode> is set, only the top level runtime properties present on the <xref:System.Data.DataSet> are serialized. In addition, they are serialized only if they happen to be different from the default values. None of the `Tables`, `Relations` or `Constraints` are serialized. The serialized runtime properties include <xref:System.Data.DataSet.DataSetName%2A>, <xref:System.Data.DataSet.Namespace%2A>, <xref:System.Data.DataSet.Prefix%2A>, <xref:System.Data.DataSet.Locale%2A>, <xref:System.Data.DataSet.EnforceConstraints%2A>, and <xref:System.Data.DataSet.CaseSensitive%2A>. These properties are serialized to make sure that overall runtime data integrity is preserved.  
+ When <xref:System.Data.SchemaSerializationMode.ExcludeSchema> is set, only the top level runtime properties present on the <xref:System.Data.DataSet> are serialized. In addition, they are serialized only if they happen to be different from the default values. None of the `Tables`, `Relations` or `Constraints` are serialized. The serialized runtime properties include <xref:System.Data.DataSet.DataSetName%2A>, <xref:System.Data.DataSet.Namespace%2A>, <xref:System.Data.DataSet.Prefix%2A>, <xref:System.Data.DataSet.Locale%2A>, <xref:System.Data.DataSet.EnforceConstraints%2A>, and <xref:System.Data.DataSet.CaseSensitive%2A>. These properties are serialized to make sure that overall runtime data integrity is preserved.  
   
  ]]></format>
         </remarks>
@@ -3606,6 +4223,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeRelations ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ShouldSerializeRelations() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ShouldSerializeRelations" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function ShouldSerializeRelations () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool ShouldSerializeRelations();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3615,6 +4234,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -3646,6 +4269,8 @@ class Program {
       <MemberSignature Language="C#" Value="protected virtual bool ShouldSerializeTables ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ShouldSerializeTables() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.ShouldSerializeTables" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function ShouldSerializeTables () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool ShouldSerializeTables();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3655,6 +4280,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -3686,6 +4315,8 @@ class Program {
       <MemberSignature Language="C#" Value="public override System.ComponentModel.ISite Site { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Site" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Site As ISite" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::ComponentModel::ISite ^ Site { System::ComponentModel::ISite ^ get(); void set(System::ComponentModel::ISite ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3696,12 +4327,16 @@ class Program {
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3724,6 +4359,8 @@ class Program {
       <MemberSignature Language="C#" Value="bool System.ComponentModel.IListSource.ContainsListCollection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IListSource.ContainsListCollection" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.System#ComponentModel#IListSource#ContainsListCollection" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property ContainsListCollection As Boolean Implements IListSource.ContainsListCollection" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.ComponentModel.IListSource.ContainsListCollection { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3733,6 +4370,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -3754,6 +4395,8 @@ class Program {
       <MemberSignature Language="C#" Value="System.Collections.IList IListSource.GetList ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IList System.ComponentModel.IListSource.GetList() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.System#ComponentModel#IListSource#GetList" />
+      <MemberSignature Language="VB.NET" Value="Function GetList () As IList Implements IListSource.GetList" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IList ^ System.ComponentModel.IListSource.GetList() = System::ComponentModel::IListSource::GetList;" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3763,6 +4406,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IList</ReturnType>
@@ -3785,7 +4432,12 @@ class Program {
       <MemberSignature Language="C#" Value="System.Xml.Schema.XmlSchema IXmlSerializable.GetSchema ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema System.Xml.Serialization.IXmlSerializable.GetSchema() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.System#Xml#Serialization#IXmlSerializable#GetSchema" />
+      <MemberSignature Language="VB.NET" Value="Function GetSchema () As XmlSchema Implements IXmlSerializable.GetSchema" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Xml::Schema::XmlSchema ^ System.Xml.Serialization.IXmlSerializable.GetSchema() = System::Xml::Serialization::IXmlSerializable::GetSchema;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.Serialization.IXmlSerializable.GetSchema</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3794,6 +4446,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
@@ -3816,7 +4472,12 @@ class Program {
       <MemberSignature Language="C#" Value="void IXmlSerializable.ReadXml (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Xml.Serialization.IXmlSerializable.ReadXml(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Sub ReadXml (reader As XmlReader) Implements IXmlSerializable.ReadXml" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Xml.Serialization.IXmlSerializable.ReadXml(System::Xml::XmlReader ^ reader) = System::Xml::Serialization::IXmlSerializable::ReadXml;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3825,6 +4486,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3849,7 +4514,12 @@ class Program {
       <MemberSignature Language="C#" Value="void IXmlSerializable.WriteXml (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Xml.Serialization.IXmlSerializable.WriteXml(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Sub WriteXml (writer As XmlWriter) Implements IXmlSerializable.WriteXml" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Xml.Serialization.IXmlSerializable.WriteXml(System::Xml::XmlWriter ^ writer) = System::Xml::Serialization::IXmlSerializable::WriteXml;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3858,6 +4528,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3882,6 +4556,8 @@ class Program {
       <MemberSignature Language="C#" Value="public System.Data.DataTableCollection Tables { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTableCollection Tables" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataSet.Tables" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Tables As DataTableCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataTableCollection ^ Tables { System::Data::DataTableCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3892,9 +4568,13 @@ class Program {
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Attributes>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -3921,10 +4601,21 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteXml">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes XML data, and optionally the schema, from the <see cref="T:System.Data.DataSet" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteXml">
       <MemberSignature Language="C#" Value="public void WriteXml (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3934,6 +4625,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3958,7 +4653,7 @@ class Program {
    
   
 ## Examples  
- The following example creates a <xref:System.IO.FileStream?displayProperty=fullName> object. The object is then used with the <xref:System.Data.DataSet.WriteXml%2A> method to write an XML document.  
+ The following example creates a <xref:System.IO.FileStream?displayProperty=nameWithType> object. The object is then used with the <xref:System.Data.DataSet.WriteXml%2A> method to write an XML document.  
   
  [!code-csharp[Classic WebData DataSet.WriteXml Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXml Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataSet.WriteXml Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXml Example/VB/source.vb#1)]  
@@ -3971,6 +4666,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (System.IO.TextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.IO.TextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (writer As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::IO::TextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -3980,6 +4677,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4009,6 +4710,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4018,6 +4721,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4050,7 +4757,12 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (writer As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::Xml::XmlWriter ^ writer);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -4059,6 +4771,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4088,6 +4804,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (System.IO.Stream stream, System.Data.XmlWriteMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.IO.Stream stream, valuetype System.Data.XmlWriteMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.IO.Stream,System.Data.XmlWriteMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::IO::Stream ^ stream, System::Data::XmlWriteMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4097,6 +4814,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4128,6 +4849,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (System.IO.TextWriter writer, System.Data.XmlWriteMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.IO.TextWriter writer, valuetype System.Data.XmlWriteMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.IO.TextWriter,System.Data.XmlWriteMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (writer As TextWriter, mode As XmlWriteMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::IO::TextWriter ^ writer, System::Data::XmlWriteMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4137,6 +4860,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4176,6 +4903,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (string fileName, System.Data.XmlWriteMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(string fileName, valuetype System.Data.XmlWriteMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.String,System.Data.XmlWriteMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (fileName As String, mode As XmlWriteMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::String ^ fileName, System::Data::XmlWriteMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4185,6 +4914,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4227,6 +4960,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer, System.Data.XmlWriteMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXml(class System.Xml.XmlWriter writer, valuetype System.Data.XmlWriteMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXml(System.Xml.XmlWriter,System.Data.XmlWriteMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXml (writer As XmlWriter, mode As XmlWriteMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXml(System::Xml::XmlWriter ^ writer, System::Data::XmlWriteMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4236,6 +4971,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4262,7 +5001,7 @@ class Program {
    
   
 ## Examples  
- The following example creates a <xref:System.IO.FileStream?displayProperty=fullName> object that is used to create a new <xref:System.Xml.XmlTextWriter?displayProperty=fullName>. The <xref:System.Xml.XmlTextWriter> object is used with the <xref:System.Data.DataSet.WriteXml%2A> method to write an XML document.  
+ The following example creates a <xref:System.IO.FileStream?displayProperty=nameWithType> object that is used to create a new <xref:System.Xml.XmlTextWriter>. The <xref:System.Xml.XmlTextWriter> object is used with the <xref:System.Data.DataSet.WriteXml%2A> method to write an XML document.  
   
  [!code-csharp[Classic WebData DataSet.WriteXml6 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXml6 Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataSet.WriteXml6 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXml6 Example/VB/source.vb#1)]  
@@ -4271,10 +5010,21 @@ class Program {
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteXmlSchema">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes the <see cref="T:System.Data.DataSet" /> structure as an XML schema.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteXmlSchema">
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4284,6 +5034,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4322,6 +5076,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.IO.TextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.IO.TextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (writer As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::IO::TextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4331,6 +5087,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4351,12 +5111,12 @@ class Program {
   
  To write the data to an XML document, use the <xref:System.Data.DataSet.WriteXml%2A> method.  
   
- Classes the derive from the <xref:System.IO.TextWriter?displayProperty=fullName> class include the <xref:System.Web.HttpWriter?displayProperty=fullName>, <xref:System.CodeDom.Compiler.IndentedTextWriter?displayProperty=fullName>, <xref:System.Web.UI.HtmlTextWriter?displayProperty=fullName>, <xref:System.IO.StreamWriter?displayProperty=fullName>, and <xref:System.IO.StringWriter?displayProperty=fullName>.  
+ Classes the derive from the <xref:System.IO.TextWriter?displayProperty=nameWithType> class include the <xref:System.Web.HttpWriter?displayProperty=nameWithType>, <xref:System.CodeDom.Compiler.IndentedTextWriter?displayProperty=nameWithType>, <xref:System.Web.UI.HtmlTextWriter?displayProperty=nameWithType>, <xref:System.IO.StreamWriter?displayProperty=nameWithType>, and <xref:System.IO.StringWriter?displayProperty=nameWithType>.  
   
    
   
 ## Examples  
- The following example creates a <xref:System.Text.StringBuilder?displayProperty=fullName> object to that is used to create a new <xref:System.IO.StringWriter?displayProperty=fullName>. The <xref:System.IO.StringWriter> is passed to the <xref:System.Data.DataSet.WriteXmlSchema%2A> method, and the resulting string is printed to the console window.  
+ The following example creates a <xref:System.Text.StringBuilder?displayProperty=nameWithType> object to that is used to create a new <xref:System.IO.StringWriter?displayProperty=nameWithType>. The <xref:System.IO.StringWriter> is passed to the <xref:System.Data.DataSet.WriteXmlSchema%2A> method, and the resulting string is printed to the console window.  
   
  [!code-csharp[Classic WebData DataSet.WriteXmlSchema1 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXmlSchema1 Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataSet.WriteXmlSchema1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXmlSchema1 Example/VB/source.vb#1)]  
@@ -4369,6 +5129,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4378,6 +5140,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4415,6 +5181,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (writer As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::Xml::XmlWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4424,6 +5192,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4444,12 +5216,12 @@ class Program {
   
  To write the data to an XML document, use the <xref:System.Data.DataSet.WriteXml%2A> method.  
   
- One class that inherits from the <xref:System.Xml.XmlWriter?displayProperty=fullName> class is the <xref:System.Xml.XmlTextWriter?displayProperty=fullName> class.  
+ One class that inherits from the <xref:System.Xml.XmlWriter?displayProperty=nameWithType> class is the <xref:System.Xml.XmlTextWriter> class.  
   
    
   
 ## Examples  
- The following example creates a new <xref:System.IO.FileStream?displayProperty=fullName> object with the specified path. The <xref:System.IO.FileStream> object is used to create an <xref:System.Xml.XMLTextWriter?displayProperty=fullName> object. The <xref:System.Data.DataSet.WriteXmlSchema%2A> method is then invoked with the <xref:System.Xml.XmlTextWriter> object to write the schema to the disk.  
+ The following example creates a new <xref:System.IO.FileStream?displayProperty=nameWithType> object with the specified path. The <xref:System.IO.FileStream> object is used to create an <xref:System.Xml.XmlTextWriter> object. The <xref:System.Data.DataSet.WriteXmlSchema%2A> method is then invoked with the <xref:System.Xml.XmlTextWriter> object to write the schema to the disk.  
   
  [!code-csharp[Classic WebData DataSet.WriteXmlSchema2 Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXmlSchema2 Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataSet.WriteXmlSchema2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataSet.WriteXmlSchema2 Example/VB/source.vb#1)]  
@@ -4462,6 +5234,7 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.IO.Stream stream, Converter&lt;Type,string&gt; multipleTargetConverter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.IO.Stream stream, class System.Converter`2&lt;class System.Type, string&gt; multipleTargetConverter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.IO.Stream,System.Converter{System.Type,System.String})" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::IO::Stream ^ stream, Converter&lt;Type ^, System::String ^&gt; ^ multipleTargetConverter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4471,6 +5244,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4490,6 +5267,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.IO.TextWriter writer, Converter&lt;Type,string&gt; multipleTargetConverter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.IO.TextWriter writer, class System.Converter`2&lt;class System.Type, string&gt; multipleTargetConverter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.IO.TextWriter,System.Converter{System.Type,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (writer As TextWriter, multipleTargetConverter As Converter(Of Type, String))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::IO::TextWriter ^ writer, Converter&lt;Type ^, System::String ^&gt; ^ multipleTargetConverter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4499,6 +5278,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4518,6 +5301,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (string fileName, Converter&lt;Type,string&gt; multipleTargetConverter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(string fileName, class System.Converter`2&lt;class System.Type, string&gt; multipleTargetConverter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.String,System.Converter{System.Type,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (fileName As String, multipleTargetConverter As Converter(Of Type, String))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::String ^ fileName, Converter&lt;Type ^, System::String ^&gt; ^ multipleTargetConverter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4527,6 +5312,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4546,6 +5335,8 @@ class Program {
       <MemberSignature Language="C#" Value="public void WriteXmlSchema (System.Xml.XmlWriter writer, Converter&lt;Type,string&gt; multipleTargetConverter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteXmlSchema(class System.Xml.XmlWriter writer, class System.Converter`2&lt;class System.Type, string&gt; multipleTargetConverter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataSet.WriteXmlSchema(System.Xml.XmlWriter,System.Converter{System.Type,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteXmlSchema (writer As XmlWriter, multipleTargetConverter As Converter(Of Type, String))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteXmlSchema(System::Xml::XmlWriter ^ writer, Converter&lt;Type ^, System::String ^&gt; ^ multipleTargetConverter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -4555,6 +5346,10 @@ class Program {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -4570,96 +5365,5 @@ class Program {
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="CreateDataReader">
-      <AssemblyInfo>
-        <AssemblyName>System.Data</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Returns a <see cref="T:System.Data.DataTableReader" /> with one result set per <see cref="T:System.Data.DataTable" />, in the same sequence as the tables appear in the <see cref="P:System.Data.DataSet.Tables" /> collection.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- In order to ensure the order of the result sets within the returned <xref:System.Data.DataTableReader>, if a <xref:System.Data.DataTable> within the <xref:System.Data.DataSet> is empty, it will be represented by an empty result set within the returned `DataTableReader`.  
-  
-   
-  
-## Examples  
- This example, a Console application, creates three <xref:System.Data.DataTable> instances and adds each to a <xref:System.Data.DataSet>. The example calls the <xref:System.Data.DataSet.CreateDataReader%2A> method and displays the contents of the returned <xref:System.Data.DataTableReader>. Note that the order of the result sets in the `DataTableReader` is controlled by the order of the `DataTable` instances passed as parameters.  
-  
-> [!NOTE]
->  This example shows how to use one of the overloaded versions of `CreateDataReader`. For other examples that might be available, see the individual overload topics.  
-  
- [!code-csharp[DataWorks DataSet.CreateDataReader#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.CreateDataReader/CS/source.cs#1)]
- [!code-vb[DataWorks DataSet.CreateDataReader#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.CreateDataReader/VB/source.vb#1)]  
-  
- The example displays the following code in the Console window:  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="DetermineSchemaSerializationMode">
-      <AssemblyInfo>
-        <AssemblyName>System.Data</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Determines the <see cref="P:System.Data.DataSet.SchemaSerializationMode" /> for a <see cref="T:System.Data.DataSet" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- This method can be called when deserializing a typed <xref:System.Data.DataSet> to determine its <xref:System.Data.DataSet.SchemaSerializationMode%2A>.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Load">
-      <AssemblyInfo>
-        <AssemblyName>System.Data</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Fills a <see cref="T:System.Data.DataSet" /> with values from a data source using the supplied <see cref="T:System.Data.IDataReader" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The <xref:System.Data.DataTable.Load%2A> method provides a technique for filling a single <xref:System.Data.DataTable> with data, retrieved from an <xref:System.Data.IDataReader> instance. This method provides the same functionality, but allows you to load multiple result sets from an `IDataReader` into multiple tables within a `DataSet`.  
-  
- If the `DataSet` already contains rows, the incoming data from the data source is merged with the existing rows.  
-  
- The `Load` method can be used in several common scenarios, all centered around getting data from a specified data source and adding it to the current data container (in this case, a `DataSet`). These scenarios describe standard usage for a `DataSet`, describing its update and merge behavior.  
-  
- A `DataSet` synchronizes or updates with a single primary data source. The `DataSet` tracks changes, allowing synchronization with the primary data source. In addition, a `DataSet` can accept incremental data from one or more secondary data sources. The `DataSet` isn't responsible for tracking changes in order to allow synchronization with the secondary data source.  
-  
- Given these two hypothetical data sources, a user is likely to require one of the following behaviors:  
-  
--   Initialize `DataSet` from a primary data source. In this scenario, the user wants to initialize an empty `DataSet` with values from the primary data source. One or more DataTable's contents are modified. Later the user intends to propagate changes back to the primary data source.  
-  
--   Preserve changes and re-synchronize from the primary data source. In this scenario, the user wants to take the `DataSet` filled in the previous scenario and perform an incremental synchronization with the primary data source, preserving modifications made in the `DataSet`.  
-  
--   Incremental data feed from secondary data sources. In this scenario, the user wants to merge changes from one or more secondary data sources, and propagate those changes back to the primary data source.  
-  
- The `Load` method makes all these scenarios possible. This method allows you to specify a load option parameter, indicating how rows already in a <xref:System.Data.DataTable> combine with rows being loaded. The following table describes the three load options provided by the <xref:System.Data.LoadOption> enumeration. In each case, the description indicates the behavior when the primary key of a row in the incoming data matches the primary key of an existing row.  
-  
-|Load Option|Description|  
-|-----------------|-----------------|  
-|`PreserveChanges` (default)|Updates the original version of the row with the value of the incoming row.|  
-|`OverwriteChanges`|Updates the current and original versions of the row with the value of the incoming row.|  
-|`Upsert`|Updates the current version of the row with the value of the incoming row.|  
-  
- In general, the `PreserveChanges` and `OverwriteChanges` options are intended for scenarios in which the user needs to synchronize the `DataSet` and its changes with the primary data source. The `Upsert` option facilitates aggregating changes from one or more secondary data sources.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

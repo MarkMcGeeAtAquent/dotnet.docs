@@ -1,41 +1,53 @@
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement.PollingInterval
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement.PhysicalMemoryLimitPercentage
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement.#ctor(System.String)
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement.CacheMemoryLimitMegabytes
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Caching.Configuration.MemoryCacheElement.Name
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapEnum::Next Method | Microsoft Docs"
+title: "ICorDebugHeapEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHeapEnum.Next"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHeapEnum::Next method [.NET Framework debugging]"
   - "Next method, ICorDebugHeapEnum interface [.NET Framework debugging]"
 ms.assetid: 2221fd06-9e27-4113-972e-2530db8c3594
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapEnum::Next Method
 Gets the specified number of [COR_HEAPOBJECT](../../../../docs/framework/unmanaged-api/debugging/cor-heapobject-structure.md) instances that contain information about objects on the managed heap.  
@@ -62,5 +65,5 @@ HRESULT Next(
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## See Also  
- [ICorDebugHeapEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)   
+ [ICorDebugHeapEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugheapenum-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

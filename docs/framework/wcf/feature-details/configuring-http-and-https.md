@@ -1,5 +1,5 @@
 ---
-title: "Configuring HTTP and HTTPS | Microsoft Docs"
+title: "Configuring HTTP and HTTPS"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "configuring HTTP [WCF]"
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
 caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring HTTP and HTTPS
 WCF services and clients can communicate over HTTP and HTTPS. The HTTP/HTTPS settings are configured by using Internet Information Services (IIS) or through the use of a command-line tool. When a WCF service is hosted under IIS HTTP or HTTPS settings can be configured within IIS (using the inetmgr.exe tool). If a WCF service is self-hosted, HTTP or HTTPS settings are configured by using a command-line tool.  
@@ -24,7 +26,7 @@ WCF services and clients can communicate over HTTP and HTTPS. The HTTP/HTTPS set
   
  The tool used to configure HTTP settings depends on the operating system the computer is running.  
   
- When running [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] or [!INCLUDE[wxp](../../../../includes/wxp-md.md)], use the HttpCfg.exe tool. [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] automatically installs this tool. When running [!INCLUDE[wxp](../../../../includes/wxp-md.md)], you can download the tool at [Windows XP Service Pack 2 Support Tools](http://go.microsoft.com/fwlink/?LinkId=88606). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Httpcfg Overview](http://go.microsoft.com/fwlink/?LinkId=88605).  
+ When running [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] or [!INCLUDE[wxp](../../../../includes/wxp-md.md)], use the HttpCfg.exe tool. [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] automatically installs this tool. When running [!INCLUDE[wxp](../../../../includes/wxp-md.md)], you can download the tool at [Windows XP Service Pack 2 Support Tools](http://go.microsoft.com/fwlink/?LinkId=88606). [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Httpcfg Overview](http://go.microsoft.com/fwlink/?LinkId=88605).  
   
  When running [!INCLUDE[wv](../../../../includes/wv-md.md)]or Windows 7, you configure these settings with the Netsh.exe tool.  
   
@@ -59,7 +61,7 @@ httpcfg.exe set urlacl /u http://myhost:8000/ /a "O:AOG:DAD:(A;;RPWPCCDCLCSWRCWD
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user  
 ```  
   
- This command adds an URL reservation for the specified URL namespace for the DOMAIN\user account.  For more information on using the netsh command type “netsh http add urlacl” in a command-prompt and press enter.  
+ This command adds an URL reservation for the specified URL namespace for the DOMAIN\user account.  For more information on using the netsh command type "netsh http add urlacl" in a command-prompt and press enter.  
   
 ## Configuring a Firewall Exception  
  When self-hosting a WCF service that communicates over HTTP, an exception must be added to the firewall configuration to allow inbound connections using a particular URL. For more information, see [Open a port in Windows Firewall (Windows 7)](http://go.microsoft.com/fwlink/?LinkId=239961)  
@@ -97,5 +99,5 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
  IIS does not support port sharing on [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. If IIS is running and a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service attempts to use a namespace with the same port, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service fails to start. IIS and [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] both default to using port 80. Either change the port assignment for one of the services or use the IP Listen List to assign the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service to a network adapter not used by IIS. IIS 6.0 and later have been redesigned to use the HTTP Server APIs.  
   
 ## See Also  
- <xref:System.ServiceModel.WSDualHttpBinding>   
+ <xref:System.ServiceModel.WSDualHttpBinding>  
  [How to: Configure a Port with an SSL Certificate](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)

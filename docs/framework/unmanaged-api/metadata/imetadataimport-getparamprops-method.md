@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetParamProps Method | Microsoft Docs"
+title: "IMetaDataImport::GetParamProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetParamProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetParamProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataImport::GetParamProps method [.NET Framework metadata]"
   - "GetParamProps method [.NET Framework metadata]"
 ms.assetid: 4d5e5f00-bcab-4f41-b191-176511a186a7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetParamProps Method
 Gets metadata values for the parameter referenced by the specified ParamDef token.  
@@ -88,5 +91,5 @@ HRESULT GetParamProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

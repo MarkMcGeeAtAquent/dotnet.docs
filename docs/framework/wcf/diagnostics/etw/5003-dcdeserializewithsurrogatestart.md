@@ -1,8 +1,8 @@
 ---
-title: "5003 - DCDeserializeWithSurrogateStart | Microsoft Docs"
+title: "5003 - DCDeserializeWithSurrogateStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 497a78ca-d4d6-4b9d-9b35-bc2db33d6e9c
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 5003 - DCDeserializeWithSurrogateStart
 ## Properties  

@@ -1,48 +1,62 @@
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.GetChildrenCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.System#Windows#Automation#Provider#IMultipleViewProvider#GetViewName(System.Int32)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.GetClassNameCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.System#Windows#Automation#Provider#IMultipleViewProvider#SetCurrentView(System.Int32)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.#ctor(System.Windows.Controls.FlowDocumentReader)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
@@ -53,7 +67,9 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.FlowDocumentReaderAutomationPeer.System#Windows#Automation#Provider#IMultipleViewProvider#GetSupportedViews
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

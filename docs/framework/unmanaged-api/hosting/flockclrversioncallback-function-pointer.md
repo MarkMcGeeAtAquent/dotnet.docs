@@ -1,5 +1,5 @@
 ---
-title: "FLockClrVersionCallback Function Pointer | Microsoft Docs"
+title: "FLockClrVersionCallback Function Pointer"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "FLockClrVersionCallback"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "FLockClrVersionCallback"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FLockClrVersionCallback function pointer [.NET Framework hosting]"
 ms.assetid: 98a4762d-9ad2-45bd-9d03-39064a028b44
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # FLockClrVersionCallback Function Pointer
 Points to a function that the common language runtime (CLR) calls to indicate that initialization has either started or completed.  
@@ -50,5 +53,5 @@ typedef HRESULT (__stdcall *FLockClrVersionCallback) ( );
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [LockClrVersion Function](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)   
+ [LockClrVersion Function](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md)  
  [Deprecated CLR Hosting Functions](../../../../docs/framework/unmanaged-api/hosting/deprecated-clr-hosting-functions.md)

@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_JIT_CACHE Enumeration | Microsoft Docs"
+title: "COR_PRF_JIT_CACHE Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_JIT_CACHE"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_JIT_CACHE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_JIT_CACHE enumeration [.NET Framework profiling]"
 ms.assetid: e7b8f6b4-95bc-4ba5-b9eb-f5590a7326a4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_JIT_CACHE Enumeration
 Indicates the result of a cached function search.  

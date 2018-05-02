@@ -1,5 +1,5 @@
 ---
-title: "CorDebugInterfaceVersion Enumeration | Microsoft Docs"
+title: "CorDebugInterfaceVersion Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugInterfaceVersion"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugInterfaceVersion"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugInterfaceVersion enumeration [.NET Framework debugging]"
 ms.assetid: 7d1e6cd9-2a15-41c6-9b68-008705a4ed90
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugInterfaceVersion Enumeration
 Specifies an interface, a version of the .NET Framework, or a version of the .NET Framework in which an interface was introduced.  

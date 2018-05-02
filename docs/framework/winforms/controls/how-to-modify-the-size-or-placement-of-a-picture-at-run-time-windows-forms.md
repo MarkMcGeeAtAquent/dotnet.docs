@@ -1,8 +1,8 @@
 ---
-title: "How to: Modify the Size or Placement of a Picture at Run Time (Windows Forms) | Microsoft Docs"
+title: "How to: Modify the Size or Placement of a Picture at Run Time (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,17 +10,21 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "images [Windows Forms], controlling placement in PictureBox control [Windows Forms]"
   - "examples [Windows Forms], PictureBox control"
   - "PictureBox control [Windows Forms], picture size and alignment"
-  - "pictures, controlling placement in PictureBox control [Windows Forms]"
+  - "pictures [Windows Forms], controlling placement in PictureBox control [Windows Forms]"
 ms.assetid: d0b332a3-fae2-4891-957c-dc3e17743326
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Modify the Size or Placement of a Picture at Run Time (Windows Forms)
 If you use the Windows Forms <xref:System.Windows.Forms.PictureBox> control on a form, you can set the <xref:System.Windows.Forms.PictureBox.SizeMode%2A> property on it to:  
@@ -37,7 +41,7 @@ If you use the Windows Forms <xref:System.Windows.Forms.PictureBox> control on a
   
 ### To set the SizeMode property at run time  
   
-1.  Set <xref:System.Windows.Forms.PictureBox.SizeMode%2A> to <xref:System.Windows.Forms.PictureBoxSizeMode> (the default), <xref:System.Windows.Forms.PictureBoxSizeMode>, <xref:System.Windows.Forms.PictureBoxSizeMode>, or <xref:System.Windows.Forms.PictureBoxSizeMode>. <xref:System.Windows.Forms.PictureBoxSizeMode> means that the image is placed in the control's upper-left corner; if the image is larger than the control, its lower and right edges are clipped. <xref:System.Windows.Forms.PictureBoxSizeMode> means that the image is centered within the control; if the image is larger than the control, the picture's outside edges are clipped. <xref:System.Windows.Forms.PictureBoxSizeMode> means that the size of the control is adjusted to the size of the image. <xref:System.Windows.Forms.PictureBoxSizeMode> is the reverse, and means that the size of the image is adjusted to the size of the control.  
+1.  Set <xref:System.Windows.Forms.PictureBox.SizeMode%2A> to <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> (the default), <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize>, <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage>, or <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage>. <xref:System.Windows.Forms.PictureBoxSizeMode.Normal> means that the image is placed in the control's upper-left corner; if the image is larger than the control, its lower and right edges are clipped. <xref:System.Windows.Forms.PictureBoxSizeMode.CenterImage> means that the image is centered within the control; if the image is larger than the control, the picture's outside edges are clipped. <xref:System.Windows.Forms.PictureBoxSizeMode.AutoSize> means that the size of the control is adjusted to the size of the image. <xref:System.Windows.Forms.PictureBoxSizeMode.StretchImage> is the reverse, and means that the size of the image is adjusted to the size of the control.  
   
      In the example below, the path set for the location of the image is the My Documents folder. This is done, because you can assume that most computers running the Windows operating system will include this directory. This also allows users with minimal system access levels to safely run the application. The example below assumes a form with a <xref:System.Windows.Forms.PictureBox> control already added.  
   
@@ -53,7 +57,6 @@ If you use the Windows Forms <xref:System.Windows.Forms.PictureBox> control on a
        (System.Environment.SpecialFolder.Personal) _  
        & "\Image.gif")  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -69,7 +72,6 @@ If you use the Windows Forms <xref:System.Windows.Forms.PictureBox> control on a
        (System.Environment.SpecialFolder.Personal) _  
        + @"\Image.gif")  
     }  
-  
     ```  
   
     ```cpp  
@@ -89,8 +91,8 @@ If you use the Windows Forms <xref:System.Windows.Forms.PictureBox> control on a
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.PictureBox>   
- [How to: Load a Picture Using the Designer](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)   
- [PictureBox Control Overview](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)   
- [How to: Set Pictures at Run Time](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)   
+ <xref:System.Windows.Forms.PictureBox>  
+ [How to: Load a Picture Using the Designer](../../../../docs/framework/winforms/controls/how-to-load-a-picture-using-the-designer-windows-forms.md)  
+ [PictureBox Control Overview](../../../../docs/framework/winforms/controls/picturebox-control-overview-windows-forms.md)  
+ [How to: Set Pictures at Run Time](../../../../docs/framework/winforms/controls/how-to-set-pictures-at-run-time-windows-forms.md)  
  [PictureBox Control](../../../../docs/framework/winforms/controls/picturebox-control-windows-forms.md)

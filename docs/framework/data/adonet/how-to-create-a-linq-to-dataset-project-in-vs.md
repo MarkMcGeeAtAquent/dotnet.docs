@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a LINQ to DataSet Project In Visual Studio | Microsoft Docs"
+title: "How to: Create a LINQ to DataSet Project In Visual Studio"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a LINQ to DataSet Project In Visual Studio
 The different types of [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] projects require certain imported namespaces (Visual Basic) or `using` directives (C#) and references. The minimum requirement is a reference to System.Core.dll and a `using` directive for <xref:System.Linq>. By default, these are supplied if you create a new [!INCLUDE[csharp_orcas_long](../../../../includes/csharp-orcas-long-md.md)] project. [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] also requires a reference to System.Data.dll and System.Data.DataSetExtensions.dll and an `Imports` (Visual Basic) or `using` (C#) directive.  
@@ -39,7 +41,7 @@ The different types of [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md
   
 5.  Add a `using` directive or imported namespace for <xref:System.Linq> to your source code file or project.  
   
-     For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](http://msdn.microsoft.com/library/44cebec3-0ea0-47c2-8406-4edeab6a997e).  
+     For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
   
 ### To enable LINQ to DataSet functionality  
   
@@ -49,12 +51,12 @@ The different types of [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md
   
 3.  In the **Add Reference** dialog box, click the **.NET** tab if it is not on top. Scroll down to **System.Data** and **System.Data.DataSetExtensions** and click on them. Click the **OK** button.  
   
-4.  Add a `using` directive or imported namespace for <xref:System.Data> to your source code file or project. For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](http://msdn.microsoft.com/library/44cebec3-0ea0-47c2-8406-4edeab6a997e).  
+4.  Add a `using` directive or imported namespace for <xref:System.Data> to your source code file or project. For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
   
 5.  Add a reference to System.Data.DataSetExtensions.dll for LINQ to Dataset functionality. Add a reference to System.Data.dll if it does not already exist.  
   
 6.  Optionally, add a `using` directive or imported namespace for `System.Data.Common` or `System.Data.SqlClient`, depending on how you connect to the database.  
   
 ## See Also  
- [Getting Started](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)   
- [Getting Started with LINQ](http://msdn.microsoft.com/en-us/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)
+ [Getting Started](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)  
+ [Getting Started with LINQ](http://msdn.microsoft.com/library/6cc9af04-950a-4cc3-83d4-2aeb4abe4de9)

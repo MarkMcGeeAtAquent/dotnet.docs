@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedVariable::GetAttributes Method | Microsoft Docs"
+title: "ISymUnmanagedVariable::GetAttributes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedVariable.GetAttributes"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedVariable::GetAttributes"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAttributes method [.NET Framework debugging]"
   - "ISymUnmanagedVariable::GetAttributes method [.NET Framework debugging]"
 ms.assetid: 80f168af-a6a6-4c8f-b9e6-8a82dc834ed5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedVariable::GetAttributes Method
 Gets the attribute flags for this variable.  

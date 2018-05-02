@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::Exception Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::Exception Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.Exception"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::Exception"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Exception method, ICorDebugManagedCallback interface [.NET Framework debugging]"
   - "ICorDebugManagedCallback::Exception method [.NET Framework debugging]"
 ms.assetid: ab18a509-dff3-4930-b585-bd15e0414176
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::Exception Method
 Notifies the debugger that an exception has been thrown from managed code.  

@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Forms.ToolStripContentPanelRenderEventHandler
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

@@ -1,8 +1,8 @@
 ---
-title: "&lt;secureConversationAuthentication&gt; of &lt;serviceCredential&gt; | Microsoft Docs"
+title: "&lt;secureConversationAuthentication&gt; of &lt;serviceCredential&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 7
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;secureConversationAuthentication&gt; of &lt;serviceCredential&gt;
 Specifies the settings for a secure conversation service.  
@@ -27,8 +29,7 @@ Specifies the settings for a secure conversation service.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <secureConversationAuthentication securityStateEncoderType="String" />  
 ```  
   
@@ -54,7 +55,7 @@ Specifies the settings for a secure conversation service.
  Use this configuration element to specify a list of known claim types for the Security Context Token (SCT) cookies serialization, as well as an encoder to encode and secure cookies information. For more information on SCT, see <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>   
- <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.SecureConversationAuthentication%2A>   
- <xref:System.ServiceModel.Description.ServiceCredentials.SecureConversationAuthentication%2A>   
+ <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>  
+ <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.SecureConversationAuthentication%2A>  
+ <xref:System.ServiceModel.Description.ServiceCredentials.SecureConversationAuthentication%2A>  
  <xref:System.ServiceModel.Security.SecureConversationServiceCredential>

@@ -1,19 +1,24 @@
 ---
-title: "Message Security with Mutual Certificates | Microsoft Docs"
+title: "Message Security with Mutual Certificates"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
 caps.latest.revision: 18
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security with Mutual Certificates
 The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service and client secured using message security mode. The client and the service are authenticated with certificates.  
@@ -51,7 +56,7 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ### Configuration  
  The following configuration can be used instead of the code to create the same service.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -112,7 +117,7 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ### Configuration  
  The following configures the client. A client certificate must be specified using the [\<clientCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). Also, the service certificate is specified using the [\<defaultCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -162,6 +167,6 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ```  
   
 ## See Also  
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)   
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
  [How to: Create and Install Temporary Certificates in WCF for Transport Security During Development](http://go.microsoft.com/fwlink/?LinkId=244264)

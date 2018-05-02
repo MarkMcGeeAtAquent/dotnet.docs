@@ -1,7 +1,9 @@
-<Type Name="IObjectReference" FullName="System.Runtime.Serialization.IObjectReference">
+﻿<Type Name="IObjectReference" FullName="System.Runtime.Serialization.IObjectReference">
   <TypeSignature Language="C#" Value="public interface IObjectReference" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IObjectReference" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.IObjectReference" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IObjectReference" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IObjectReference" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
@@ -38,6 +44,8 @@
       <MemberSignature Language="C#" Value="public object GetRealObject (System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetRealObject(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.IObjectReference.GetRealObject(System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetRealObject (context As StreamingContext) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ GetRealObject(System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -47,6 +55,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -71,7 +83,7 @@
   
  For example, consider how <xref:System.Type> objects are serialized. Instead of transmitting the data from the <xref:System.Type> object, the system transmits a holder object with the name of the type object and information on the assembly where it is found in an object implementing <xref:System.Runtime.Serialization.IObjectReference>. When both the type name and assembly name are available, the deserialization infrastructure calls <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%2A> on the holder object that has been transmitted. This holder returns the <xref:System.Type> object that is inserted into the graph.  
   
- This method is protected by a <xref:System.Security.Permissions.SecurityAction?displayProperty=fullName> for the <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=fullName> specified.  
+ This method is protected by a <xref:System.Security.Permissions.SecurityAction.LinkDemand?displayProperty=nameWithType> for the <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter?displayProperty=nameWithType> specified.  
   
    
   

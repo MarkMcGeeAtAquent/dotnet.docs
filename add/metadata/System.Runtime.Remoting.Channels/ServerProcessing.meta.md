@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Channels.ServerProcessing
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

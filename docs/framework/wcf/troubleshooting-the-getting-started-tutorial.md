@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting the Getting Started Tutorial | Microsoft Docs"
+title: "Troubleshooting the Getting Started Tutorial"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 69a21511-0871-4c41-9a53-93110e84d7fd
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Troubleshooting the Getting Started Tutorial
 This topic lists the most common problems encountered when working through the Getting Started Tutorial and how to resolve them.  
@@ -67,16 +69,15 @@ This topic lists the most common problems encountered when working through the G
 ```  
 // Step 3 of the hosting procedure: Add a service endpoint  
 selfhost.AddServiceEndpoint(typeof(ICalculator), new WSHttpBinding(SecurityMode.None), "CalculatorService");  
-  
 ```  
   
  For the client, change the **\<security>** element under the **\<binding>** element to be the following:  
   
-```  
+```xml  
 <security mode="Node" />  
 ```  
   
 ## See Also  
- [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md)   
- [WCF Troubleshooting Quickstart](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)   
+ [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [WCF Troubleshooting Quickstart](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
  [Troubleshooting Setup Issues](../../../docs/framework/wcf/troubleshooting-setup-issues.md)

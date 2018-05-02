@@ -1,7 +1,9 @@
-<Type Name="XmlDataSource" FullName="System.Web.UI.WebControls.XmlDataSource">
+﻿<Type Name="XmlDataSource" FullName="System.Web.UI.WebControls.XmlDataSource">
   <TypeSignature Language="C#" Value="public class XmlDataSource : System.Web.UI.HierarchicalDataSourceControl, System.ComponentModel.IListSource, System.Web.UI.IDataSource" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDataSource extends System.Web.UI.HierarchicalDataSourceControl implements class System.ComponentModel.IListSource, class System.Web.UI.IDataSource" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.XmlDataSource" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlDataSource&#xA;Inherits HierarchicalDataSourceControl&#xA;Implements IDataSource, IListSource" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlDataSource : System::Web::UI::HierarchicalDataSourceControl, System::ComponentModel::IListSource, System::Web::UI::IDataSource" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -115,7 +117,7 @@
 |Updating|Supported by manipulating the <xref:System.Xml.XmlDataDocument> directly and then calling the <xref:System.Web.UI.WebControls.XmlDataSource.Save%2A> method.|  
 |Deleting|Supported by manipulating the <xref:System.Xml.XmlDataDocument> directly and then calling the <xref:System.Web.UI.WebControls.XmlDataSource.Save%2A> method.|  
 |Inserting|Supported by manipulating the <xref:System.Xml.XmlDataDocument> directly and then calling the <xref:System.Web.UI.WebControls.XmlDataSource.Save%2A> method.|  
-|Caching|Enabled by default, with the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> property set to 0 (infinite) and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> property set to <xref:System.Web.UI.DataSourceCacheExpiry>.|  
+|Caching|Enabled by default, with the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> property set to 0 (infinite) and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> property set to <xref:System.Web.UI.DataSourceCacheExpiry.Absolute>.|  
   
 <a name="data_view_object"></a>   
 ## Data View Object  
@@ -160,8 +162,8 @@
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a <xref:System.Web.UI.WebControls.TreeView> control to display XML data. The <xref:System.Web.UI.WebControls.XmlDataSource> loads XML data from the XML file identified by the <xref:System.Web.UI.WebControls.XmlDataSource.DataFile%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/CS/xmlds1cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/VB/xmlds1vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/CS/xmlds1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/VB/xmlds1vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -180,8 +182,8 @@
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a templated <xref:System.Web.UI.WebControls.Repeater> control to display XML data. The <xref:System.Web.UI.WebControls.Repeater> control uses an XPath data-binding expression to bind to data items within the XML document that the <xref:System.Web.UI.WebControls.XmlDataSource> represents. For more information about `XPath` and `XPathSelect` data-binding syntax, see the <xref:System.Web.UI.XPathBinder> class.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/CS/xmlds14cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/VB/xmlds14vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/CS/xmlds14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/VB/xmlds14vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -212,12 +214,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="M:System.Web.UI.IDataSource.GetViewNames" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlDataSource ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlDataSource();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -233,6 +238,8 @@
       <MemberSignature Language="C#" Value="public virtual int CacheDuration { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CacheDuration" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.CacheDuration" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property CacheDuration As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int CacheDuration { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -266,15 +273,15 @@
   
  By default, the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> property is set to 0, which indicates an indefinite cache, and the data source will cache data until the XML file that it depends on is changed.  
   
- The behavior of the cache is governed by a combination of the duration and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> setting. If <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry>, the <xref:System.Web.UI.WebControls.XmlDataSource> control caches data on the first data retrieval operation, holds it in memory for the amount of time specified by <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A>, and invalidates it after the time has lapsed. The cache is then refreshed upon the next operation. If <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry>, the data source control caches data on the first data retrieval operation, but resets the time window that it holds the cache for upon each subsequent operation. The cache will only expire if there is no activity for a time equal to the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> since the last data retrieval.  
+ The behavior of the cache is governed by a combination of the duration and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> setting. If <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry.Absolute>, the <xref:System.Web.UI.WebControls.XmlDataSource> control caches data on the first data retrieval operation, holds it in memory for the amount of time specified by <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A>, and invalidates it after the time has lapsed. The cache is then refreshed upon the next operation. If <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry.Sliding>, the data source control caches data on the first data retrieval operation, but resets the time window that it holds the cache for upon each subsequent operation. The cache will only expire if there is no activity for a time equal to the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> since the last data retrieval.  
   
    
   
 ## Examples  
  The following code example demonstrates how to enable caching when using the <xref:System.Web.UI.WebControls.XmlDataSource> control to display data contained in an XML file. Caching is enabled when the <xref:System.Web.UI.WebControls.XmlDataSource.EnableCaching%2A> property is set to `true` and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> is set to the number of seconds that the data is cached by the data source control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -293,12 +300,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.EnableCaching" />
       </Docs>
     </Member>
     <Member MemberName="CacheExpirationPolicy">
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataSourceCacheExpiry CacheExpirationPolicy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceCacheExpiry CacheExpirationPolicy" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property CacheExpirationPolicy As DataSourceCacheExpiry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Web::UI::DataSourceCacheExpiry CacheExpirationPolicy { System::Web::UI::DataSourceCacheExpiry get(); void set(System::Web::UI::DataSourceCacheExpiry value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -319,15 +331,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The behavior of the cache is governed by a combination of the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> and <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> settings. If the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry>, the <xref:System.Web.UI.WebControls.XmlDataSource> caches data on the first data retrieval operation, holds it in memory for the amount of time specified by <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A>, and invalidates it after the time has lapsed. The cache is then refreshed upon the next operation. If the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry>, the data source control caches data on the first data retrieval operation, but resets the time window that it holds the cache for upon each subsequent operation. The cache will expire only if there is no activity for a time equal to the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> since the last data retrieval.  
+ The behavior of the cache is governed by a combination of the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> and <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> settings. If the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry.Absolute>, the <xref:System.Web.UI.WebControls.XmlDataSource> caches data on the first data retrieval operation, holds it in memory for the amount of time specified by <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A>, and invalidates it after the time has lapsed. The cache is then refreshed upon the next operation. If the <xref:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy%2A> is set to <xref:System.Web.UI.DataSourceCacheExpiry.Sliding>, the data source control caches data on the first data retrieval operation, but resets the time window that it holds the cache for upon each subsequent operation. The cache will expire only if there is no activity for a time equal to the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> since the last data retrieval.  
   
    
   
 ## Examples  
  The following code example demonstrates how to enable caching when using the <xref:System.Web.UI.WebControls.XmlDataSource> control to display data contained in an XML file. Caching is enabled when the <xref:System.Web.UI.WebControls.XmlDataSource.EnableCaching%2A> property is set to `true` and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> is set to the number of seconds that the data is cached by the data source control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -346,12 +358,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheDuration" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.EnableCaching" />
       </Docs>
     </Member>
     <Member MemberName="CacheKeyContext">
       <MemberSignature Language="C#" Value="public virtual string CacheKeyContext { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CacheKeyContext" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyContext" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property CacheKeyContext As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ CacheKeyContext { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -382,6 +399,8 @@
       <MemberSignature Language="C#" Value="public virtual string CacheKeyDependency { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CacheKeyDependency" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property CacheKeyDependency As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ CacheKeyDependency { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -410,12 +429,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.EnableCaching" />
       </Docs>
     </Member>
     <Member MemberName="Data">
       <MemberSignature Language="C#" Value="public virtual string Data { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Data" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.Data" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Data As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Data { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -456,18 +478,22 @@
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control to display inline XML data contained by the <xref:System.Web.UI.WebControls.XmlDataSource.Data%2A> property with a <xref:System.Web.UI.WebControls.TreeView> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_10/CS/xmlds10cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_10/VB/xmlds10vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_10/CS/xmlds10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_10/VB/xmlds10vb.aspx#1)]  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The document is loading.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.DataFile" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
       </Docs>
     </Member>
     <Member MemberName="DataFile">
       <MemberSignature Language="C#" Value="public virtual string DataFile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataFile" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.DataFile" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property DataFile As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ DataFile { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -500,8 +526,8 @@
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control to display XML data contained in a file with a <xref:System.Web.UI.WebControls.TreeView> control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/CS/xmlds1cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/VB/xmlds1vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/CS/xmlds1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_1/VB/xmlds1vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -521,12 +547,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The document is loading.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.Data" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
       </Docs>
     </Member>
     <Member MemberName="EnableCaching">
       <MemberSignature Language="C#" Value="public virtual bool EnableCaching { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableCaching" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.EnableCaching" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property EnableCaching As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool EnableCaching { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -557,8 +587,8 @@
 ## Examples  
  The following code example demonstrates how to enable caching when using the <xref:System.Web.UI.WebControls.XmlDataSource> control to display data contained in an XML file. Caching is enabled when the <xref:System.Web.UI.WebControls.XmlDataSource.EnableCaching%2A> property is set to `true` and the <xref:System.Web.UI.WebControls.XmlDataSource.CacheDuration%2A> is set to the number of seconds that the data is cached by the data source control.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/CS/xmlds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_16/VB/xmlds16vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -577,12 +607,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheDuration" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheExpirationPolicy" />
       </Docs>
     </Member>
     <Member MemberName="GetHierarchicalView">
       <MemberSignature Language="C#" Value="protected override System.Web.UI.HierarchicalDataSourceView GetHierarchicalView (string viewPath);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.HierarchicalDataSourceView GetHierarchicalView(string viewPath) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.GetHierarchicalView(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetHierarchicalView (viewPath As String) As HierarchicalDataSourceView" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Web::UI::HierarchicalDataSourceView ^ GetHierarchicalView(System::String ^ viewPath);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -602,7 +636,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can call the <xref:System.Web.UI.WebControls.XmlDataSource.GetHierarchicalView%2A> method to retrieve a <xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView> object associated with the <xref:System.Web.UI.WebControls.XmlDataSource> control. If you specify `viewPath` value, the <xref:System.Web.UI.WebControls.XmlDataSource> control returns a data source view object that represents the view on the node identified by `viewPath`, along with all its child nodes. If you set `viewPath` to <xref:System.String.Empty?displayProperty=fullName>, the <xref:System.Web.UI.WebControls.XmlDataSource> control checks the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property to determine the root node from which to build the data source view. If the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property is set, the <xref:System.Web.UI.WebControls.XmlDataSource> control uses it to return a data source view in the same way the `viewPath` expression is used. If the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property is not set, the <xref:System.Web.UI.WebControls.XmlDataSource> control returns a view of all the data nodes in the XML data.  
+ You can call the <xref:System.Web.UI.WebControls.XmlDataSource.GetHierarchicalView%2A> method to retrieve a <xref:System.Web.UI.WebControls.XmlHierarchicalDataSourceView> object associated with the <xref:System.Web.UI.WebControls.XmlDataSource> control. If you specify `viewPath` value, the <xref:System.Web.UI.WebControls.XmlDataSource> control returns a data source view object that represents the view on the node identified by `viewPath`, along with all its child nodes. If you set `viewPath` to <xref:System.String.Empty?displayProperty=nameWithType>, the <xref:System.Web.UI.WebControls.XmlDataSource> control checks the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property to determine the root node from which to build the data source view. If the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property is set, the <xref:System.Web.UI.WebControls.XmlDataSource> control uses it to return a data source view in the same way the `viewPath` expression is used. If the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property is not set, the <xref:System.Web.UI.WebControls.XmlDataSource> control returns a view of all the data nodes in the XML data.  
   
  ]]></format>
         </remarks>
@@ -612,6 +646,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.XmlDocument GetXmlDocument ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDocument GetXmlDocument() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetXmlDocument () As XmlDocument" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Xml::XmlDocument ^ GetXmlDocument();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -639,13 +675,13 @@
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a <xref:System.Web.UI.WebControls.TreeView> control to display and edit XML data contained in an XML file. The data is manipulated in memory using the <xref:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument%2A> method every time you select a <xref:System.Web.UI.WebControls.TreeView> node, and is then saved to the XML file. Finally, <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A> is called on the <xref:System.Web.UI.WebControls.TreeView> control to refresh the data that it displays.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/CS/xmlds17cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/VB/xmlds17vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/CS/xmlds17cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/VB/xmlds17vb.aspx#1)]  
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a templated <xref:System.Web.UI.WebControls.Repeater> control to display and edit XML data contained in an XML file. As with the previous example, the data is manipulated in memory using the <xref:System.Xml.XmlDataDocument> retrieved by the <xref:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument%2A> method. Finally, <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A> is called on the <xref:System.Web.UI.WebControls.TreeView> control to refresh the data that it displays.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/CS/xmlds18cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/VB/xmlds18vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/CS/xmlds18cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/VB/xmlds18vb.aspx#1)]  
   
  The XML file in the code examples has the following data:  
   
@@ -684,12 +720,16 @@
   
  Both caching and client impersonation are enabled. The <see cref="T:System.Web.UI.WebControls.XmlDataSource" /> control does not support caching when client impersonation is enabled.</exception>
         <exception cref="T:System.Web.HttpException">Access is denied to the path specified for the <see cref="P:System.Web.UI.WebControls.XmlDataSource.DataFile" /> property.</exception>
+        <altmember cref="M:System.Web.UI.WebControls.XmlDataSource.Save" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.DataFile" />
       </Docs>
     </Member>
     <Member MemberName="OnTransforming">
       <MemberSignature Language="C#" Value="protected virtual void OnTransforming (EventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTransforming(class System.EventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.OnTransforming(System.EventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnTransforming (e As EventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnTransforming(EventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -708,7 +748,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ Raising an event invokes the event handler through a delegate. For more information, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  The <xref:System.Web.UI.WebControls.XmlDataSource.OnTransforming%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -717,8 +757,8 @@
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a <xref:System.Web.UI.WebControls.TreeView> control to display transformed XML data. The XML transformation is performed using the style sheet indicated by the <xref:System.Web.UI.WebControls.XmlDataSource.TransformFile%2A> property. Additionally, the style sheet uses transform arguments that are passed to the data source control in an <xref:System.Xml.Xsl.XsltArgumentList> object at runtime. The code example demonstrates how to pass the <xref:System.Xml.Xsl.XsltArgumentList> object to the data source control by handling the <xref:System.Web.UI.WebControls.XmlDataSource.Transforming> event with a custom event handler, which is identified by name of the method set for the <xref:System.Web.UI.WebControls.XmlDataSource.OnTransforming%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -799,12 +839,17 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Web.UI.WebControls.XmlDataSource.OnTransforming(System.EventArgs)" /> in a derived class, be sure to call the <see cref="M:System.Web.UI.WebControls.XmlDataSource.OnTransforming(System.EventArgs)" /> method of the base class so that registered delegates receive the event.</para>
         </block>
+        <altmember cref="E:System.Web.UI.WebControls.XmlDataSource.Transforming" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.Transform" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.TransformFile" />
       </Docs>
     </Member>
     <Member MemberName="Save">
       <MemberSignature Language="C#" Value="public void Save ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.Save" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -835,13 +880,13 @@
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a <xref:System.Web.UI.WebControls.TreeView> control to display and edit XML data contained in an XML file. The data is manipulated in memory using the <xref:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument%2A> method every time you select a <xref:System.Web.UI.WebControls.TreeView> node, and is then saved to the XML file. Finally, <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A> is called on the <xref:System.Web.UI.WebControls.TreeView> control to refresh the data that it displays.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/CS/xmlds17cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/VB/xmlds17vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/CS/xmlds17cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_17#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_17/VB/xmlds17vb.aspx#1)]  
   
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a templated <xref:System.Web.UI.WebControls.Repeater> control to display and edit XML data contained in an XML file. As with the previous example, the data is manipulated in memory using the <xref:System.Xml.XmlDataDocument> object retrieved by the <xref:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument%2A> method. Finally, <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A> is called on the <xref:System.Web.UI.WebControls.TreeView> control to refresh the data that it displays.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/CS/xmlds18cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/VB/xmlds18vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/CS/xmlds18cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_18#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_18/VB/xmlds18vb.aspx#1)]  
   
  The XML file in the code examples has the following data:  
   
@@ -881,12 +926,15 @@
   
  A design-time relative path was not mapped correctly by the designer before using the <see cref="T:System.Web.UI.WebControls.XmlDataSource" /> control.</exception>
         <exception cref="T:System.Web.HttpException">Access is denied to the path specified for the <see cref="P:System.Web.UI.WebControls.XmlDataSource.DataFile" /> property.</exception>
+        <altmember cref="M:System.Web.UI.WebControls.XmlDataSource.GetXmlDocument" />
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.IListSource.ContainsListCollection">
       <MemberSignature Language="C#" Value="bool System.ComponentModel.IListSource.ContainsListCollection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IListSource.ContainsListCollection" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.System#ComponentModel#IListSource#ContainsListCollection" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property ContainsListCollection As Boolean Implements IListSource.ContainsListCollection" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.ComponentModel.IListSource.ContainsListCollection { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -907,12 +955,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.IListSource" />
       </Docs>
     </Member>
     <Member MemberName="System.ComponentModel.IListSource.GetList">
       <MemberSignature Language="C#" Value="System.Collections.IList IListSource.GetList ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IList System.ComponentModel.IListSource.GetList() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.System#ComponentModel#IListSource#GetList" />
+      <MemberSignature Language="VB.NET" Value="Function GetList () As IList Implements IListSource.GetList" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IList ^ System.ComponentModel.IListSource.GetList() = System::ComponentModel::IListSource::GetList;" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -933,13 +984,40 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.IListSource" />
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSource.DataSourceChanged">
+      <MemberSignature Language="C#" Value="event EventHandler System.Web.UI.IDataSource.DataSourceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler System.Web.UI.IDataSource.DataSourceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.XmlDataSource.System#Web#UI#IDataSource#DataSourceChanged" />
+      <MemberSignature Language="VB.NET" Value="Custom Event DataSourceChanged As EventHandler Implements System.Web.UI.IDataSource" />
+      <MemberType>Event</MemberType>
+      <Implements>
+        <InterfaceMember>E:System.Web.UI.IDataSource.DataSourceChanged</InterfaceMember>
+      </Implements>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IDataSource.GetView">
       <MemberSignature Language="C#" Value="System.Web.UI.DataSourceView IDataSource.GetView (string viewName);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Web.UI.DataSourceView System.Web.UI.IDataSource.GetView(string viewName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.System#Web#UI#IDataSource#GetView(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Function GetView (viewName As String) As DataSourceView Implements IDataSource.GetView" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Web::UI::DataSourceView ^ System.Web.UI.IDataSource.GetView(System::String ^ viewName) = System::Web::UI::IDataSource::GetView;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Web.UI.IDataSource.GetView(System.String)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -955,13 +1033,19 @@
         <summary>Gets the named data source view associated with the data source control.</summary>
         <returns>Returns the named <see cref="T:System.Web.UI.WebControls.XmlDataSourceView" /> object associated with the <see cref="T:System.Web.UI.WebControls.XmlDataSource" /> control.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Web.UI.IDataSource.GetViewNames" />
       </Docs>
     </Member>
     <Member MemberName="System.Web.UI.IDataSource.GetViewNames">
       <MemberSignature Language="C#" Value="System.Collections.ICollection IDataSource.GetViewNames ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.ICollection System.Web.UI.IDataSource.GetViewNames() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.XmlDataSource.System#Web#UI#IDataSource#GetViewNames" />
+      <MemberSignature Language="VB.NET" Value="Function GetViewNames () As ICollection Implements IDataSource.GetViewNames" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::ICollection ^ System.Web.UI.IDataSource.GetViewNames() = System::Web::UI::IDataSource::GetViewNames;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Web.UI.IDataSource.GetViewNames</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -981,12 +1065,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.UI.IDataSource" />
       </Docs>
     </Member>
     <Member MemberName="Transform">
       <MemberSignature Language="C#" Value="public virtual string Transform { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Transform" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.Transform" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Transform As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Transform { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1062,12 +1149,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The document is loading.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.TransformFile" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
       </Docs>
     </Member>
     <Member MemberName="TransformArgumentList">
       <MemberSignature Language="C#" Value="public virtual System.Xml.Xsl.XsltArgumentList TransformArgumentList { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Xsl.XsltArgumentList TransformArgumentList" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.TransformArgumentList" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property TransformArgumentList As XsltArgumentList" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::Xsl::XsltArgumentList ^ TransformArgumentList { System::Xml::Xsl::XsltArgumentList ^ get(); void set(System::Xml::Xsl::XsltArgumentList ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1097,8 +1188,8 @@
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> with a <xref:System.Web.UI.WebControls.TreeView> control to display transformed XML data. The XML transformation is performed using the style sheet indicated by the <xref:System.Web.UI.WebControls.XmlDataSource.TransformFile%2A> property. Additionally, the style sheet uses transform arguments that are passed to the data source control in an <xref:System.Xml.Xsl.XsltArgumentList> object at run time. The code example demonstrates how to pass the <xref:System.Xml.Xsl.XsltArgumentList> to the data source control by handling the <xref:System.Web.UI.WebControls.XmlDataSource.Transforming> event with a custom event handler.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -1176,12 +1267,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="E:System.Web.UI.WebControls.XmlDataSource.Transforming" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.Transform" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.TransformFile" />
       </Docs>
     </Member>
     <Member MemberName="TransformFile">
       <MemberSignature Language="C#" Value="public virtual string TransformFile { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string TransformFile" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.TransformFile" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property TransformFile As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ TransformFile { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1217,8 +1313,8 @@
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control and a <xref:System.Web.UI.WebControls.TreeView> control to display transformed XML data on a Web form. The transformation is performed using the style sheet indicated by the <xref:System.Web.UI.WebControls.XmlDataSource.TransformFile%2A> property. You can optionally supply transformation arguments for the style sheet using an <xref:System.Xml.Xsl.XsltArgumentList>. For more information, see the <xref:System.Web.UI.WebControls.XmlDataSource.TransformArgumentList%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_5/CS/xmlds5cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_5/VB/xmlds5vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_5/CS/xmlds5cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_5/VB/xmlds5vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -1297,12 +1393,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The document is loading.</exception>
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.Transform" />
+        <altmember cref="P:System.Web.UI.WebControls.XmlDataSource.CacheKeyDependency" />
       </Docs>
     </Member>
     <Member MemberName="Transforming">
       <MemberSignature Language="C#" Value="public event EventHandler Transforming;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Transforming" />
       <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.XmlDataSource.Transforming" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Transforming As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Transforming;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1319,15 +1419,15 @@
 ## Remarks  
  Handle the <xref:System.Web.UI.WebControls.XmlDataSource.Transforming> event to set the <xref:System.Web.UI.WebControls.XmlDataSource.TransformArgumentList%2A> property with an <xref:System.Xml.Xsl.XsltArgumentList> object before the <xref:System.Web.UI.WebControls.XmlDataSource> control performs an XML transformation.  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a <xref:System.Web.UI.WebControls.TreeView> control to display transformed XML data. The XML transformation is performed using the style sheet indicated by the <xref:System.Web.UI.WebControls.XmlDataSource.TransformFile%2A> property. Additionally, the style sheet uses transform arguments that are passed to the data source control in an <xref:System.Xml.Xsl.XsltArgumentList> at run time. The code example demonstrates how to pass the <xref:System.Xml.Xsl.XsltArgumentList> object to the data source control by handling the <xref:System.Web.UI.WebControls.XmlDataSource.Transforming> event with a custom event handler.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/CS/xmlds9cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_9#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_9/VB/xmlds9vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   
@@ -1405,12 +1505,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.UI.WebControls.XmlDataSource.OnTransforming(System.EventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="XPath">
       <MemberSignature Language="C#" Value="public virtual string XPath { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string XPath" />
       <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.XmlDataSource.XPath" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property XPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ XPath { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1431,15 +1534,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information on XPath data-binding expressions, see [Binding a Tabular Control to the XmlDataSource Control](http://msdn.microsoft.com/en-us/d6bf202f-6454-45fd-9424-e17f6c7eafe8).  
+ For more information on XPath data-binding expressions, see [Binding a Tabular Control to the XmlDataSource Control](http://msdn.microsoft.com/library/d6bf202f-6454-45fd-9424-e17f6c7eafe8).  
   
    
   
 ## Examples  
  The following code example demonstrates how to use an <xref:System.Web.UI.WebControls.XmlDataSource> control with a templated <xref:System.Web.UI.WebControls.Repeater> control to display XML data that has been filtered using an XPath expression. In this example, XPath syntax is used to filter the XML data when the <xref:System.Web.UI.WebControls.XmlDataSource.XPath%2A> property of the data source control is set, and also binds elements of the <xref:System.Web.UI.WebControls.Repeater> control template to the XML data.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.UI.WebControls.XmlDataSource_8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_8/CS/xmlds8cs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.UI.WebControls.XmlDataSource_8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_8/VB/xmlds8vb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_8#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_8/CS/xmlds8cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_8#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_8/VB/xmlds8vb.aspx#1)]  
   
  The XML file in the code example has the following data:  
   

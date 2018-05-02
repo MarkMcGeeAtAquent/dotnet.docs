@@ -1,22 +1,27 @@
 ---
-title: "How to: Create a Federated Client | Microsoft Docs"
+title: "How to: Create a Federated Client"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, federation"
   - "federation"
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Federated Client
 In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client for a *federated service* consists of three main steps:  
@@ -28,7 +33,7 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client fo
 3.  Set the properties of the <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>, which allows certificates needed to communicate securely with given endpoints, such as security token services.  
   
 > [!NOTE]
->  A <xref:System.Security.Cryptography.CryptographicException> might be thrown when a client uses impersonated credentials, the <xref:System.ServiceModel.WSFederationHttpBinding> binding or a custom-issued token, and asymmetric keys. Asymmetric keys are used with the <xref:System.ServiceModel.WSFederationHttpBinding> binding and custom-issued tokens when the <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> and <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> properties, respectively, are set to <xref:System.IdentityModel.Tokens.SecurityKeyType>. The <xref:System.Security.Cryptography.CryptographicException> is thrown when the client attempts to send a message and a user profile doesn’t exist for the identity that the client is impersonating. To mitigate this issue, log on to the client computer or call `LoadUserProfile` before sending the message.  
+>  A <xref:System.Security.Cryptography.CryptographicException> might be thrown when a client uses impersonated credentials, the <xref:System.ServiceModel.WSFederationHttpBinding> binding or a custom-issued token, and asymmetric keys. Asymmetric keys are used with the <xref:System.ServiceModel.WSFederationHttpBinding> binding and custom-issued tokens when the <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuedKeyType%2A> and <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> properties, respectively, are set to <xref:System.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey>. The <xref:System.Security.Cryptography.CryptographicException> is thrown when the client attempts to send a message and a user profile doesn’t exist for the identity that the client is impersonating. To mitigate this issue, log on to the client computer or call `LoadUserProfile` before sending the message.  
   
  This topic provides detailed information about these procedures. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] creating an appropriate binding, see [How to: Create a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md). [!INCLUDE[crabout](../../../../includes/crabout-md.md)] how a federated service works, see [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
   
@@ -68,7 +73,7 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client fo
   
      The renewal interval determined by the token validity period and the `IssuedTokenRenewalThresholdPercentage` value is overridden by the `MaxIssuedTokenCachingTime` value in cases where the caching time is shorter than the renewal threshold time. For example, if the product of `IssuedTokenRenewalThresholdPercentage` and the token's duration is eight hours, and the `MaxIssuedTokenCachingTime` value is 10 minutes, the client contacts the security token service for an updated token every 10 minutes.  
   
-5.  If a key entropy mode other than <xref:System.ServiceModel.Security.SecurityKeyEntropyMode> is needed on a binding that does not use message security or transport security with message credentials (for example. the binding does not have a <xref:System.ServiceModel.Channels.SecurityBindingElement>), set the <xref:System.ServiceModel.Security.IssuedTokenClientCredential.DefaultKeyEntropyMode%2A> property to an appropriate value. The *entropy* mode determines whether symmetric keys can be controlled using the <xref:System.ServiceModel.Security.IssuedTokenClientCredential.DefaultKeyEntropyMode%2A> property. This default is <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>, where both the client and the token issuer provide data that is combined to produce the actual key. Other values are <xref:System.ServiceModel.Security.SecurityKeyEntropyMode> and <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>, which means the entire key is specified by the client or the server, respectively. The following example sets the property to use only the server data for the key.  
+5.  If a key entropy mode other than <xref:System.ServiceModel.Security.SecurityKeyEntropyMode.CombinedEntropy> is needed on a binding that does not use message security or transport security with message credentials (for example. the binding does not have a <xref:System.ServiceModel.Channels.SecurityBindingElement>), set the <xref:System.ServiceModel.Security.IssuedTokenClientCredential.DefaultKeyEntropyMode%2A> property to an appropriate value. The *entropy* mode determines whether symmetric keys can be controlled using the <xref:System.ServiceModel.Security.IssuedTokenClientCredential.DefaultKeyEntropyMode%2A> property. This default is <xref:System.ServiceModel.Security.SecurityKeyEntropyMode.CombinedEntropy>, where both the client and the token issuer provide data that is combined to produce the actual key. Other values are <xref:System.ServiceModel.Security.SecurityKeyEntropyMode.ClientEntropy> and <xref:System.ServiceModel.Security.SecurityKeyEntropyMode.ServerEntropy>, which means the entire key is specified by the client or the server, respectively. The following example sets the property to use only the server data for the key.  
   
      [!code-csharp[c_CreateSTS#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#17)]
      [!code-vb[c_CreateSTS#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#17)]  
@@ -92,19 +97,19 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client fo
   
 4.  If a value other than the default is preferred, set the `issuedTokenRenewalThresholdPercentage` attribute on the <`issuedToken`> element to an appropriate value, for example:  
   
-    ```  
+    ```xml  
     <issuedToken issuedTokenRenewalThresholdPercentage = "80" />  
     ```  
   
 5.  If a key entropy mode other than `CombinedEntropy` is on a binding that does not use message security or transport security with message credentials (for example, the binding does not have a `SecurityBindingElement`), set the `defaultKeyEntropyMode` attribute on the `<issuedToken>` element to a either `ServerEntropy` or `ClientEntropy` as required.  
   
-    ```  
+    ```xml  
     <issuedToken defaultKeyEntropyMode = "ServerEntropy" />  
     ```  
   
 6.  Optional. Configure any issuer-specific custom endpoint behavior by creating an <`issuerChannelBehaviors`> element as a child of the <`issuedToken`> element. For each behavior, create an <`add`> element as a child of the <`issuerChannelBehaviors`> element. Specify the issuer address of the behavior by setting the `issuerAddress` attribute on the <`add`> element. Specify the behavior itself by setting the `behaviorConfiguration` attribute on the <`add`> element.  
   
-    ```  
+    ```xml  
     <issuerChannelBehaviors>  
     <add issuerAddress="http://fabrikam.org/sts" behaviorConfiguration="FabrikamSTS" />  
     </issuerChannelBehaviors>  
@@ -133,7 +138,7 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client fo
   
 2.  Create an `<add>` element as a child of the `<scopedCertificates>` element. Specify values for the `storeLocation`, `storeName`, `x509FindType`, and `findValue` attributes to refer to the appropriate certificate. Set the `targetUri` attribute to a value that provides the address of the endpoint that the certificate is to be used for, as shown in the following example.  
   
-    ```  
+    ```xml  
     <scopedCertificates>  
      <add targetUri="http://fabrikam.com/sts"   
           storeLocation="CurrentUser"  
@@ -161,13 +166,13 @@ In [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], creating a client fo
  If service certificates must be specified for communicating with any of the security token services, typically because certificate negotiation is not being used, they can be specified using the <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> property of the <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential> class. The <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetDefaultCertificate%2A> method takes a <xref:System.Uri> and an <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> as parameters. The specified certificate is used when communicating with endpoints at the specified URI. Alternatively, you can use the <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.SetScopedCertificate%2A> method to add a certificate to the collection returned by the <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A> property.  
   
 > [!NOTE]
->  The client idea of certificates that are scoped to a given URI applies only to applications that are making outbound calls to services that expose endpoints at those URIs. It does not apply to certificates that are used to sign issued tokens, such as those configured on the server in the collection returned by the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A>of the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> class. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][How to: Configure Credentials on a Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+>  The client idea of certificates that are scoped to a given URI applies only to applications that are making outbound calls to services that expose endpoints at those URIs. It does not apply to certificates that are used to sign issued tokens, such as those configured on the server in the collection returned by the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> of the <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> class. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [How to: Configure Credentials on a Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
   
 ## See Also  
- [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md)   
- [How to: Disable Secure Sessions on a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)   
- [How to: Create a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)   
- [How to: Configure Credentials on a Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)   
- [How to: Configure a Local Issuer](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)   
- [Security Considerations with Metadata](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)   
+ [Federation Sample](../../../../docs/framework/wcf/samples/federation-sample.md)  
+ [How to: Disable Secure Sessions on a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-disable-secure-sessions-on-a-wsfederationhttpbinding.md)  
+ [How to: Create a WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)  
+ [How to: Configure Credentials on a Federation Service](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)  
+ [How to: Configure a Local Issuer](../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md)  
+ [Security Considerations with Metadata](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)  
  [How to: Secure Metadata Endpoints](../../../../docs/framework/wcf/feature-details/how-to-secure-metadata-endpoints.md)

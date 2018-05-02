@@ -1,26 +1,17 @@
 ---
-title: "How to: Read and Write an Encoded Document (C#) | Microsoft Docs"
+title: "How to: Read and Write an Encoded Document (C#)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: 84f64e71-39a6-42c6-ad68-f052bb158a03
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # How to: Read and Write an Encoded Document (C#)
 To create an encoded XML document, you add an <xref:System.Xml.Linq.XDeclaration> to the XML tree, setting the encoding to the desired code page name.  
@@ -29,7 +20,7 @@ To create an encoded XML document, you add an <xref:System.Xml.Linq.XDeclaration
   
  If you read an encoded document, the <xref:System.Xml.Linq.XDeclaration.Encoding%2A> property will be set to the code page name.  
   
- If you set <xref:System.Xml.Linq.XDeclaration.Encoding%2A> to a valid code page name, [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] will serialize with the specified encoding.  
+ If you set <xref:System.Xml.Linq.XDeclaration.Encoding%2A> to a valid code page name, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will serialize with the specified encoding.  
   
 ## Example  
  The following example creates two documents, one with utf-8 encoding, and one with utf-16 encoding. It then loads the documents and prints the encoding to the console.  
@@ -90,5 +81,5 @@ Encoding of loaded document is:utf-16
 ```  
   
 ## See Also  
- <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=fullName>   
+ <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>  
  [Advanced LINQ to XML Programming (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

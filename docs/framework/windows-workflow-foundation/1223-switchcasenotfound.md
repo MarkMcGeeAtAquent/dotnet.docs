@@ -1,5 +1,5 @@
 ---
-title: "1223 - SwitchCaseNotFound | Microsoft Docs"
+title: "1223 - SwitchCaseNotFound"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 332ace82-2d9e-4fd9-a9a8-f077f43b4a08
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1223 - SwitchCaseNotFound
 ## Properties  

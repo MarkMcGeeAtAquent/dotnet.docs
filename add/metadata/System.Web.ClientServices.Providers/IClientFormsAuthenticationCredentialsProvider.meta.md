@@ -1,13 +1,17 @@
 ---
 uid: System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

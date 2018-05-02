@@ -1,22 +1,21 @@
 ---
-title: "&lt;endpoint&gt; element | Microsoft Docs"
+title: "&lt;endpoint&gt; element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
 caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;endpoint&gt; element
 Specifies binding, contract, and address properties for a service endpoint, which is used to expose services.  
@@ -27,8 +26,7 @@ Specifies binding, contract, and address properties for a service endpoint, whic
   
 ## Syntax  
   
-```  
-  
+```xml  
 <endpoint address="String"  
    behaviorConfiguration="String"  
    binding="String"  
@@ -36,7 +34,7 @@ Specifies binding, contract, and address properties for a service endpoint, whic
    bindingName="String"  
    bindingNamespace="String"  
    contract="String"  
-   endpointConfiguration=”String”   isSystemEndpoint=”Boolean”   kind=”String”   listenUriMode="Explicit/Unique"  
+   endpointConfiguration="String"   isSystemEndpoint="Boolean"   kind="String"   listenUriMode="Explicit/Unique"  
    listenUri="Uri"  
 </endpoint>  
 ```  
@@ -78,7 +76,7 @@ Specifies binding, contract, and address properties for a service endpoint, whic
 ## Example  
  This is an example of a service endpoint configuration.  
   
-```  
+```xml  
 <endpoint   
     address="/HelloWorld/"  
     bindingConfiguration="usingDefaults"  
@@ -93,8 +91,8 @@ Specifies binding, contract, and address properties for a service endpoint, whic
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ServiceEndpointElement>   
- <xref:System.ServiceModel.EndpointAddress>   
- <xref:System.ServiceModel.Description.ServiceEndpoint>   
- [Endpoints: Addresses, Bindings, and Contracts](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)   
+ <xref:System.ServiceModel.Configuration.ServiceEndpointElement>  
+ <xref:System.ServiceModel.EndpointAddress>  
+ <xref:System.ServiceModel.Description.ServiceEndpoint>  
+ [Endpoints: Addresses, Bindings, and Contracts](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)  
  [How to: Create a Service Endpoint in Configuration](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

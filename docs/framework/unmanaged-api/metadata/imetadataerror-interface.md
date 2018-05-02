@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataError Interface | Microsoft Docs"
+title: "IMetaDataError Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataError"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataError"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataError interface [.NET Framework metadata]"
 ms.assetid: 0020b62c-ea88-40c7-a9ee-16b064f81624
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataError Interface
 Provides a callback mechanism for reporting errors during the metadata merge.  

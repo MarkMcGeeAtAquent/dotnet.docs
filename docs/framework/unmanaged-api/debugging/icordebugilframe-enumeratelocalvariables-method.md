@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILFrame::EnumerateLocalVariables Method | Microsoft Docs"
+title: "ICorDebugILFrame::EnumerateLocalVariables Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugILFrame.EnumerateLocalVariables"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugILFrame::EnumerateLocalVariables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumerateLocalVariables method [.NET Framework debugging]"
   - "ICorDebugILFrame::EnumerateLocalVariables method [.NET Framework debugging]"
 ms.assetid: 1a67fa1b-2419-4cd0-aad4-6f46a0719b4b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILFrame::EnumerateLocalVariables Method
 Gets an enumerator for the local variables in this frame.  

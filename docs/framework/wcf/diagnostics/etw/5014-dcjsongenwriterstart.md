@@ -1,8 +1,8 @@
 ---
-title: "5014 - DCJsonGenWriterStart | Microsoft Docs"
+title: "5014 - DCJsonGenWriterStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 038ccc90-63f8-42c2-aa17-94a16fde6566
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 5014 - DCJsonGenWriterStart
 ## Properties  

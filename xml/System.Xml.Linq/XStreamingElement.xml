@@ -1,11 +1,14 @@
-<Type Name="XStreamingElement" FullName="System.Xml.Linq.XStreamingElement">
+﻿<Type Name="XStreamingElement" FullName="System.Xml.Linq.XStreamingElement">
   <TypeSignature Language="C#" Value="public class XStreamingElement" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XStreamingElement extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Linq.XStreamingElement" />
+  <TypeSignature Language="VB.NET" Value="Public Class XStreamingElement" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XStreamingElement" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XDocument</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -40,8 +43,7 @@
  The following example first creates a source XML tree. It then creates a transform of the source XML tree using <xref:System.Xml.Linq.XElement>. This transform creates a new tree in memory. It then creates a transform of the source XML tree using <xref:System.Xml.Linq.XStreamingElement>. This transform doesn't execute the query until the transformed tree is serialized to the console. Its memory usage is less.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -67,8 +69,7 @@ Console.WriteLine(dstTree2);
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
         <Root>  
             <Child>1</Child>  
             <Child>2</Child>  
@@ -98,8 +99,7 @@ Console.WriteLine(dstTree2)
  This example produces the following output:  
   
 ```  
-  
-                <NewRoot>  
+<NewRoot>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
   <DifferentChild>5</DifferentChild>  
@@ -117,8 +117,7 @@ Console.WriteLine(dstTree2)
  The following text file, People.txt, is the source for this example.  
   
 ```  
-  
-                #This is a comment  
+#This is a comment  
 1,Tai,Yee,Writer  
 2,Nikolay,Grachev,Programmer  
 3,David,Wright,Inventor  
@@ -127,8 +126,7 @@ Console.WriteLine(dstTree2)
  The following code contains an extension method that streams the lines of the text file in a deferred fashion.  
   
 ```csharp  
-  
-                public static class StreamReaderSequence  
+public static class StreamReaderSequence  
 {  
     public static IEnumerable<string> Lines(this StreamReader source)  
     {  
@@ -201,8 +199,7 @@ End Module
  This example produces the following output:  
   
 ```xml  
-  
-                <Root>  
+<Root>  
   <Person ID="1">  
     <First>Tai</First>  
     <Last>Yee</Last>  
@@ -236,8 +233,7 @@ End Module
  The following is the source document, Source.xml:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-8" ?>   
+<?xml version="1.0" encoding="utf-8" ?>   
 <Root>  
   <Customer>  
     <Name>A. Datum Corporation</Name>  
@@ -284,8 +280,7 @@ End Module
  The following code contains a method that uses an <xref:System.Xml.XmlReader> to stream the source XML. It uses <xref:System.Xml.Linq.XStreamingElement> to stream the new XML.  
   
 ```csharp  
-  
-                static IEnumerable<XElement> StreamCustomerItem(string uri)  
+static IEnumerable<XElement> StreamCustomerItem(string uri)  
 {  
     using (XmlReader reader = XmlReader.Create(uri))  
     {  
@@ -406,14 +401,12 @@ Sub Main()
     root.Save("c:\trash\Test.xml")  
     Console.WriteLine(System.IO.File.ReadAllText("c:\trash\Test.xml"))  
 End Sub  
-  
 ```  
   
  This example produces the following output:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-8"?>  
+<?xml version="1.0" encoding="utf-8"?>  
 <Root>  
   <Item>  
     <Customer>A. Datum Corporation</Customer>  
@@ -462,15 +455,38 @@ End Sub
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.Linq.XStreamingElement" /> class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Queries are not iterated until the <xref:System.Xml.Linq.XStreamingElement> is serialized. This is in contrast to using queries for content for an <xref:System.Xml.Linq.XElement>, where queries are iterated at the time of construction of the new <xref:System.Xml.Linq.XElement>.  
+  
+ For details about the valid content that can be passed to this constructor, see [Valid Content of XElement and XDocument Objects](http://msdn.microsoft.com/library/aee2d319-5c5f-4b99-9bb4-2f58232577ae).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XStreamingElement (System.Xml.Linq.XName name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XName name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.#ctor(System.Xml.Linq.XName)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As XName)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XStreamingElement(System::Xml::Linq::XName ^ name);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -500,8 +516,7 @@ End Sub
 ## Examples  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -519,8 +534,7 @@ Console.WriteLine(dstTree);
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
         <Root>  
             <Child>1</Child>  
             <Child>2</Child>  
@@ -541,8 +555,7 @@ Console.WriteLine(dstTree)
  This example produces the following output:  
   
 ```  
-  
-                <NewRoot>  
+<NewRoot>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
   <DifferentChild>5</DifferentChild>  
@@ -557,11 +570,14 @@ Console.WriteLine(dstTree)
       <MemberSignature Language="C#" Value="public XStreamingElement (System.Xml.Linq.XName name, object content);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XName name, object content) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.#ctor(System.Xml.Linq.XName,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As XName, content As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XStreamingElement(System::Xml::Linq::XName ^ name, System::Object ^ content);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -598,8 +614,7 @@ Console.WriteLine(dstTree)
  This example uses the following XML file, named Source.xml:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-8" ?>   
+<?xml version="1.0" encoding="utf-8" ?>   
 <Root>  
   <Child Key="01">  
     <GrandChild>aaa</GrandChild>  
@@ -618,14 +633,17 @@ Console.WriteLine(dstTree)
       </Docs>
     </Member>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="public XStreamingElement (System.Xml.Linq.XName name, object[] content);" />
+      <MemberSignature Language="C#" Value="public XStreamingElement (System.Xml.Linq.XName name, params object[] content);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Linq.XName name, object[] content) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.#ctor(System.Xml.Linq.XName,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As XName, ParamArray content As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XStreamingElement(System::Xml::Linq::XName ^ name, ... cli::array &lt;System::Object ^&gt; ^ content);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -668,8 +686,7 @@ Console.WriteLine(dstTree)
  This example uses the following XML file, named Source.xml:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-8" ?>   
+<?xml version="1.0" encoding="utf-8" ?>   
 <Root>  
   <Child Key="01">  
     <GrandChild>aaa</GrandChild>  
@@ -687,15 +704,29 @@ Console.WriteLine(dstTree)
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds the specified content as children to this <see cref="T:System.Xml.Linq.XStreamingElement" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public void Add (object content);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(object content) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (content As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::Object ^ content);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -731,8 +762,7 @@ Console.WriteLine(dstTree)
  The following example creates a new <xref:System.Xml.Linq.XStreamingElement>. It then adds two queries to the streaming element. The queries are not iterated until the streaming element is serialized.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -758,8 +788,7 @@ Console.WriteLine(dstTree);
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -788,8 +817,7 @@ Console.WriteLine(dstTree)
  This example produces the following output:  
   
 ```xml  
-  
-                <NewRoot>  
+<NewRoot>  
   <Child>1</Child>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
@@ -802,14 +830,17 @@ Console.WriteLine(dstTree)
       </Docs>
     </Member>
     <Member MemberName="Add">
-      <MemberSignature Language="C#" Value="public void Add (object[] content);" />
+      <MemberSignature Language="C#" Value="public void Add (params object[] content);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(object[] content) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Add(System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (ParamArray content As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(... cli::array &lt;System::Object ^&gt; ^ content);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -851,8 +882,7 @@ Console.WriteLine(dstTree)
  The following example creates a new <xref:System.Xml.Linq.XStreamingElement>. It then adds two queries to the streaming element. The queries are not iterated until the streaming element is serialized.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -878,8 +908,7 @@ Console.WriteLine(dstTree);
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -908,8 +937,7 @@ Console.WriteLine(dstTree)
  This example produces the following output:  
   
 ```xml  
-  
-                <NewRoot>  
+<NewRoot>  
   <Child>1</Child>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
@@ -925,11 +953,14 @@ Console.WriteLine(dstTree)
       <MemberSignature Language="C#" Value="public System.Xml.Linq.XName Name { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XName Name" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Linq.XStreamingElement.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Property Name As XName" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::Linq::XName ^ Name { System::Xml::Linq::XName ^ get(); void set(System::Xml::Linq::XName ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -953,8 +984,7 @@ Console.WriteLine(dstTree)
  This example creates a new streaming element, and then prints the name of the element.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -972,8 +1002,7 @@ Console.WriteLine(dstTree.Name);
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
         <Root>  
             <Child>1</Child>  
             <Child>2</Child>  
@@ -994,7 +1023,6 @@ Console.WriteLine(dstTree.Name)
  This example produces the following output:  
   
 ```  
-  
 NewRoot  
 ```  
   
@@ -1002,15 +1030,28 @@ NewRoot
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Save">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Serialize this streaming element. The output can be saved to a file, an <see cref="T:System.Xml.XmlTextWriter" />, a <see cref="T:System.IO.TextWriter" />, or an <see cref="T:System.Xml.XmlWriter" />. Optionally, formatting (indenting) can be disabled.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Save">
       <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1036,9 +1077,9 @@ NewRoot
 ## Remarks  
  The serialized XML will be indented. All insignificant white space will be removed, and additional white space will be added so that the XML will be properly indented. The behavior of this method is that insignificant white space will not be preserved.  
   
- If you want to control white space, use the overload of <xref:System.Xml.Linq.XStreamingElement.Save%2A> that takes <xref:System.Xml.Linq.SaveOptions> as a parameter. Use the <xref:System.Xml.Linq.SaveOptions> option to save unindented XML. This will cause the writer to write all white spaces exactly as represented in the XML tree.  
+ If you want to control white space, use the overload of <xref:System.Xml.Linq.XStreamingElement.Save%2A> that takes <xref:System.Xml.Linq.SaveOptions> as a parameter. Use the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> option to save unindented XML. This will cause the writer to write all white spaces exactly as represented in the XML tree.  
   
- Use <xref:System.Xml.Linq.SaveOptions> option if you want to remove duplicate namespace declarations.  
+ Use <xref:System.Xml.Linq.SaveOptions.OmitDuplicateNamespaces> option if you want to remove duplicate namespace declarations.  
   
  ]]></format>
         </remarks>
@@ -1048,11 +1089,13 @@ NewRoot
       <MemberSignature Language="C#" Value="public void Save (System.IO.TextWriter textWriter);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.TextWriter textWriter) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::IO::TextWriter ^ textWriter);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1086,8 +1129,7 @@ NewRoot
  The following example creates a source XML tree, then instantiates an <xref:System.Xml.Linq.XStreamingElement> using a query on the source XML tree. It then writes the streaming element to a <xref:System.IO.StringWriter>.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1107,8 +1149,7 @@ Console.WriteLine(sb.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1131,8 +1172,7 @@ Console.WriteLine(sb.ToString())
  This example produces the following output:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-16"?>  
+<?xml version="1.0" encoding="utf-16"?>  
 <NewRoot>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
@@ -1148,6 +1188,8 @@ Console.WriteLine(sb.ToString())
       <MemberSignature Language="C#" Value="public void Save (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1157,6 +1199,10 @@ Console.WriteLine(sb.ToString())
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1181,8 +1227,7 @@ Console.WriteLine(sb.ToString())
  The following example creates a streaming XML tree. It then serializes the streaming XML tree to a file.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1201,8 +1246,7 @@ Console.WriteLine(File.ReadAllText("Test.xml"));
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1224,8 +1268,7 @@ Console.WriteLine(File.ReadAllText("Test.xml"))
  This example produces the following output:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-8"?>  
+<?xml version="1.0" encoding="utf-8"?>  
 <NewRoot>  
   <DifferentChild>3</DifferentChild>  
   <DifferentChild>4</DifferentChild>  
@@ -1241,11 +1284,14 @@ Console.WriteLine(File.ReadAllText("Test.xml"))
       <MemberSignature Language="C#" Value="public void Save (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (writer As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::Xml::XmlWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1272,8 +1318,7 @@ Console.WriteLine(File.ReadAllText("Test.xml"))
  The following example creates an <xref:System.Xml.Linq.XStreamingElement> and writes it to an <xref:System.Xml.XmlWriter>.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1298,8 +1343,7 @@ Console.WriteLine(sb.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1325,7 +1369,6 @@ Console.WriteLine(sb.ToString())
  This example produces the following output:  
   
 ```xml  
-  
 <NewRoot><DifferentChild>5</DifferentChild></NewRoot>  
 ```  
   
@@ -1337,11 +1380,13 @@ Console.WriteLine(sb.ToString())
       <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, System.Xml.Linq.SaveOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, valuetype System.Xml.Linq.SaveOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::IO::Stream ^ stream, System::Xml::Linq::SaveOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1367,11 +1412,11 @@ Console.WriteLine(sb.ToString())
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- By default the `options` are set to <xref:System.Xml.Linq.SaveOptions>. This option will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented.  
+ By default the `options` are set to <xref:System.Xml.Linq.SaveOptions.None>. This option will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented.  
   
- If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions> flag for `options`. This will cause the writer to write all white spaces exactly as represented in the XML tree.  
+ If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> flag for `options`. This will cause the writer to write all white spaces exactly as represented in the XML tree.  
   
- Use <xref:System.Xml.Linq.SaveOptions> option if you want to remove duplicate namespace declarations.  
+ Use <xref:System.Xml.Linq.SaveOptions.OmitDuplicateNamespaces> option if you want to remove duplicate namespace declarations.  
   
  ]]></format>
         </remarks>
@@ -1381,11 +1426,13 @@ Console.WriteLine(sb.ToString())
       <MemberSignature Language="C#" Value="public void Save (System.IO.TextWriter textWriter, System.Xml.Linq.SaveOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.TextWriter textWriter, valuetype System.Xml.Linq.SaveOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::IO::TextWriter ^ textWriter, System::Xml::Linq::SaveOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1411,9 +1458,9 @@ Console.WriteLine(sb.ToString())
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions> flag for `options`. This will cause the writer to write all white space exactly as represented in the XML tree.  
+ If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> flag for `options`. This will cause the writer to write all white space exactly as represented in the XML tree.  
   
- If you want to save indented XML, do not specify the <xref:System.Xml.Linq.SaveOptions> flag for `options`. This will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented. This is the default behavior, and the behavior of the overloads of the <xref:System.Xml.Linq.XElement.Save%2A> methods that do not take `options` as a parameter.  
+ If you want to save indented XML, do not specify the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> flag for `options`. This will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented. This is the default behavior, and the behavior of the overloads of the <xref:System.Xml.Linq.XElement.Save%2A> methods that do not take `options` as a parameter.  
   
  For more information, see [Preserving White Space while Loading or Parsing XML](http://msdn.microsoft.com/library/093a7169-a04e-4638-b08c-d1cb98aa650d) and [Preserving White Space While Serializing](http://msdn.microsoft.com/library/fb146217-0a49-4efc-ac84-7265b91d3939).  
   
@@ -1423,8 +1470,7 @@ Console.WriteLine(sb.ToString())
  The following example shows two uses of this method. The first use preserves white space. The second one serializes the <xref:System.Xml.Linq.XStreamingElement> with formatting.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1448,8 +1494,7 @@ Console.WriteLine(sb.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1476,8 +1521,7 @@ Console.WriteLine(sb.ToString())
  This example produces the following output:  
   
 ```xml  
-  
-                <?xml version="1.0" encoding="utf-16"?><NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
+<?xml version="1.0" encoding="utf-16"?><NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
 ------  
 <?xml version="1.0" encoding="utf-16"?>  
 <NewRoot>  
@@ -1493,6 +1537,8 @@ Console.WriteLine(sb.ToString())
       <MemberSignature Language="C#" Value="public void Save (string fileName, System.Xml.Linq.SaveOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string fileName, valuetype System.Xml.Linq.SaveOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.Save(System.String,System.Xml.Linq.SaveOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (fileName As String, options As SaveOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::String ^ fileName, System::Xml::Linq::SaveOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1502,6 +1548,10 @@ Console.WriteLine(sb.ToString())
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1518,9 +1568,9 @@ Console.WriteLine(sb.ToString())
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions> flag for `options`. This will cause the writer to write all white space exactly as represented in the XML tree.  
+ If you want to save unindented XML, specify the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> flag for `options`. This will cause the writer to write all white space exactly as represented in the XML tree.  
   
- If you want to save indented XML, do not specify the <xref:System.Xml.Linq.SaveOptions> flag for `options`. This will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented. This is the default behavior, and the behavior of the overloads of the <xref:System.Xml.Linq.XElement.Save%2A> methods that do not take `options` as a parameter.  
+ If you want to save indented XML, do not specify the <xref:System.Xml.Linq.SaveOptions.DisableFormatting> flag for `options`. This will remove all extraneous insignificant white space, and add appropriate insignificant white space so that the XML is properly indented. This is the default behavior, and the behavior of the overloads of the <xref:System.Xml.Linq.XElement.Save%2A> methods that do not take `options` as a parameter.  
   
  For more information, see [Preserving White Space while Loading or Parsing XML](http://msdn.microsoft.com/library/093a7169-a04e-4638-b08c-d1cb98aa650d) and [Preserving White Space While Serializing](http://msdn.microsoft.com/library/fb146217-0a49-4efc-ac84-7265b91d3939).  
   
@@ -1530,8 +1580,7 @@ Console.WriteLine(sb.ToString())
  The following example shows two uses of this method. The first use preserves white space. The second one serializes the <xref:System.Xml.Linq.XStreamingElement> with formatting.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1553,8 +1602,7 @@ Console.WriteLine(File.ReadAllText("Test2.xml"));
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1574,14 +1622,12 @@ dstTree.Save("Test2.xml", SaveOptions.None)
 Console.WriteLine(File.ReadAllText("Test1.xml"))  
 Console.WriteLine("------")  
 Console.WriteLine(File.ReadAllText("Test2.xml"))  
-  
 ```  
   
  This example produces the following output:  
   
 ```  
-  
-                <?xml version="1.0" encoding="utf-8"?><NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
+<?xml version="1.0" encoding="utf-8"?><NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
 ------  
 <?xml version="1.0" encoding="utf-8"?>  
 <NewRoot>  
@@ -1593,15 +1639,36 @@ Console.WriteLine(File.ReadAllText("Test2.xml"))
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ToString">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XDocument</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns the XML for this streaming element, optionally disabling formatting.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Note that when debugging a program that uses <xref:System.Xml.Linq.XStreamingElement>, displaying the value of an object causes its <xref:System.Xml.Linq.XStreamingElement.ToString%2A> method to be called. This causes the XML to be serialized. If the semantics of your streaming element query are such that the streaming element can only be streamed once, this may cause undesirable behavior in your debugging experience.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1631,8 +1698,7 @@ Console.WriteLine(File.ReadAllText("Test2.xml"))
  The following example shows two uses of <xref:System.Xml.Linq.XStreamingElement.ToString%2A>. The first use preserves white space. The second one serializes the <xref:System.Xml.Linq.XStreamingElement> with formatting.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1652,8 +1718,7 @@ Console.WriteLine(dstTree.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1676,8 +1741,7 @@ Console.WriteLine(dstTree.ToString())
  This example produces the following output:  
   
 ```  
-  
-                <NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
+<NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
 ------  
 <NewRoot>  
   <DifferentChild>3</DifferentChild>  
@@ -1692,11 +1756,14 @@ Console.WriteLine(dstTree.ToString())
       <MemberSignature Language="C#" Value="public string ToString (System.Xml.Linq.SaveOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(valuetype System.Xml.Linq.SaveOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.ToString(System.Xml.Linq.SaveOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ToString (options As SaveOptions) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ ToString(System::Xml::Linq::SaveOptions options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1729,8 +1796,7 @@ Console.WriteLine(dstTree.ToString())
  The following example shows two uses of <xref:System.Xml.Linq.XStreamingElement.ToString%2A>. The first use preserves white space. The second one serializes the <xref:System.Xml.Linq.XStreamingElement> with formatting.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1750,8 +1816,7 @@ Console.WriteLine(dstTree.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1774,8 +1839,7 @@ Console.WriteLine(dstTree.ToString())
  This example produces the following output:  
   
 ```  
-  
-                <NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
+<NewRoot><DifferentChild>3</DifferentChild></NewRoot>  
 ------  
 <NewRoot>  
   <DifferentChild>3</DifferentChild>  
@@ -1790,11 +1854,14 @@ Console.WriteLine(dstTree.ToString())
       <MemberSignature Language="C#" Value="public void WriteTo (System.Xml.XmlWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.Xml.XmlWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Linq.XStreamingElement.WriteTo(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteTo (writer As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WriteTo(System::Xml::XmlWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XDocument</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Xml.Linq</AssemblyName>
@@ -1821,8 +1888,7 @@ Console.WriteLine(dstTree.ToString())
  The following example creates an XML tree using <xref:System.Xml.Linq.XStreamingElement>. It then writes the streaming element to an <xref:System.Xml.XmlWriter>.  
   
 ```csharp  
-  
-                XElement srcTree = new XElement("Root",  
+XElement srcTree = new XElement("Root",  
                        new XElement("Child", 1),  
                        new XElement("Child", 2),  
                        new XElement("Child", 3),  
@@ -1849,8 +1915,7 @@ Console.WriteLine(sb.ToString());
 ```  
   
 ```vb  
-  
-                Dim srcTree As XElement = _  
+Dim srcTree As XElement = _  
     <Root>  
         <Child>1</Child>  
         <Child>2</Child>  
@@ -1879,8 +1944,7 @@ Console.WriteLine(sb.ToString())
  This example produces the following output:  
   
 ```xml  
-  
-                <NewRoot>  
+<NewRoot>  
   <DifferentChild>3</DifferentChild>  
 </NewRoot>  
 ```  
@@ -1889,43 +1953,5 @@ Console.WriteLine(sb.ToString())
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="ToString">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml.XDocument</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <AssemblyVersion>4.0.10.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Returns the XML for this streaming element, optionally disabling formatting.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Note that when debugging a program that uses <xref:System.Xml.Linq.XStreamingElement>, displaying the value of an object causes its <xref:System.Xml.Linq.XStreamingElement.ToString%2A> method to be called. This causes the XML to be serialized. If the semantics of your streaming element query are such that the streaming element can only be streamed once, this may cause undesirable behavior in your debugging experience.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Xml.XDocument</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <AssemblyVersion>4.0.10.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Xml.Linq.XStreamingElement" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Queries are not iterated until the <xref:System.Xml.Linq.XStreamingElement> is serialized. This is in contrast to using queries for content for an <xref:System.Xml.Linq.XElement>, where queries are iterated at the time of construction of the new <xref:System.Xml.Linq.XElement>.  
-  
- For details about the valid content that can be passed to this constructor, see [Valid Content of XElement and XDocument Objects](http://msdn.microsoft.com/library/aee2d319-5c5f-4b99-9bb4-2f58232577ae).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

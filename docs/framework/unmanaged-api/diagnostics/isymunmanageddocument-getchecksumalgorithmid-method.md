@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::GetCheckSumAlgorithmId Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::GetCheckSumAlgorithmId Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.GetCheckSumAlgorithmId"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::GetCheckSumAlgorithmId"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocument::GetCheckSumAlgorithmId method [.NET Framework debugging]"
   - "GetCheckSumAlgorithmId method [.NET Framework debugging]"
 ms.assetid: c7f941cd-e25b-4b85-b1ce-5f77c9208fa9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::GetCheckSumAlgorithmId Method
 Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.  

@@ -1,5 +1,5 @@
 ---
-title: "ICorRuntimeHost::CloseEnum Method | Microsoft Docs"
+title: "ICorRuntimeHost::CloseEnum Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorRuntimeHost.CloseEnum"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorRuntimeHost::CloseEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CloseEnum method, ICorRuntimeHost interface [.NET Framework hosting]"
   - "ICorRuntimeHost::CloseEnum method [.NET Framework hosting]"
 ms.assetid: f7ce7e8c-0a3e-4587-a180-063e2b85940e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorRuntimeHost::CloseEnum Method
 Resets a domain enumerator back to the beginning of the domain list.  
@@ -61,5 +64,5 @@ HRESULT CloseEnum (
  **.NET Framework Versions:** 1.0, 1.1  
   
 ## See Also  
- [CorBindToRuntimeEx Function](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)   
+ [CorBindToRuntimeEx Function](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)  
  [ICorRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

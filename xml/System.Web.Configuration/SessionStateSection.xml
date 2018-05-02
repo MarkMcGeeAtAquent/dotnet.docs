@@ -1,7 +1,9 @@
-<Type Name="SessionStateSection" FullName="System.Web.Configuration.SessionStateSection">
+﻿<Type Name="SessionStateSection" FullName="System.Web.Configuration.SessionStateSection">
   <TypeSignature Language="C#" Value="public sealed class SessionStateSection : System.Configuration.ConfigurationSection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateSection extends System.Configuration.ConfigurationSection" />
   <TypeSignature Language="DocId" Value="T:System.Web.Configuration.SessionStateSection" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SessionStateSection&#xA;Inherits ConfigurationSection" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SessionStateSection sealed : System::Configuration::ConfigurationSection" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -61,12 +63,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.HttpContext" />
+    <altmember cref="T:System.Web.SessionState.HttpSessionState" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SessionStateSection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SessionStateSection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SessionStateSection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -89,6 +95,8 @@
       <MemberSignature Language="C#" Value="public bool AllowCustomSqlDatabase { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowCustomSqlDatabase" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.AllowCustomSqlDatabase" />
+      <MemberSignature Language="VB.NET" Value="Public Property AllowCustomSqlDatabase As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowCustomSqlDatabase { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -123,6 +131,8 @@
       <MemberSignature Language="C#" Value="public bool CompressionEnabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CompressionEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.CompressionEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property CompressionEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool CompressionEnabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -154,6 +164,8 @@
       <MemberSignature Language="C#" Value="public System.Web.HttpCookieMode Cookieless { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.HttpCookieMode Cookieless" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.Cookieless" />
+      <MemberSignature Language="VB.NET" Value="Public Property Cookieless As HttpCookieMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::HttpCookieMode Cookieless { System::Web::HttpCookieMode get(); void set(System::Web::HttpCookieMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -181,12 +193,12 @@
   
  You are encouraged to use the cookieless mode only if you need to support clients that lack cookie support.  
   
- Session state also supports two additional options: <xref:System.Web.HttpCookieMode> and <xref:System.Web.HttpCookieMode>. The former enables the session-state module to determine what mode (cookie or cookieless) is used on a per-client basis based on the browser capabilities.  The <xref:System.Web.HttpCookieMode> option performs a handshake with the browser to verify whether a cookie may be stored, and therefore requires an additional request to make the determination. If you need to support cookieless clients, strongly consider using <xref:System.Web.HttpCookieMode> to generate cookieless URLs only for clients that require them.  
+ Session state also supports two additional options: <xref:System.Web.HttpCookieMode.UseDeviceProfile> and <xref:System.Web.HttpCookieMode.AutoDetect>. The former enables the session-state module to determine what mode (cookie or cookieless) is used on a per-client basis based on the browser capabilities.  The <xref:System.Web.HttpCookieMode.AutoDetect> option performs a handshake with the browser to verify whether a cookie may be stored, and therefore requires an additional request to make the determination. If you need to support cookieless clients, strongly consider using <xref:System.Web.HttpCookieMode.UseDeviceProfile> to generate cookieless URLs only for clients that require them.  
   
 > [!NOTE]
 >  With UP.Browser 4.1 or UP.Browser 3.2, <xref:System.Web.HttpResponse.Redirect%2A> always behaves as if the value of the <xref:System.Web.Configuration.HttpCapabilitiesBase.SupportsRedirectWithCookie%2A> property of the <xref:System.Web.HttpBrowserCapabilities> object is `false`, unless the <xref:System.Web.Configuration.SessionStateSection.Cookieless%2A> property in the <xref:System.Web.Configuration.SystemWebSectionGroup.SessionState%2A> section of Web.config has been explicitly set to `true`.  
 >   
->  In ASP.NET version 1.1, the options for this setting were `true` or `false`, but with ASP.NET 2.0, the choices are expanded, and <xref:System.Web.HttpCookieMode> is now the default setting. If your Web application has the <xref:System.Web.Configuration.SessionStateSection.Cookieless%2A> property set to a Boolean value, then <xref:System.Web.HttpResponse.Redirect%2A> should work as expected for these browsers.  
+>  In ASP.NET version 1.1, the options for this setting were `true` or `false`, but with ASP.NET 2.0, the choices are expanded, and <xref:System.Web.HttpCookieMode.AutoDetect> is now the default setting. If your Web application has the <xref:System.Web.Configuration.SessionStateSection.Cookieless%2A> property set to a Boolean value, then <xref:System.Web.HttpResponse.Redirect%2A> should work as expected for these browsers.  
   
    
   
@@ -198,12 +210,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.HttpCookieMode" />
       </Docs>
     </Member>
     <Member MemberName="CookieName">
       <MemberSignature Language="C#" Value="public string CookieName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CookieName" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.CookieName" />
+      <MemberSignature Language="VB.NET" Value="Public Property CookieName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CookieName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -242,6 +257,8 @@
       <MemberSignature Language="C#" Value="public string CustomProvider { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CustomProvider" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.CustomProvider" />
+      <MemberSignature Language="VB.NET" Value="Public Property CustomProvider As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CustomProvider { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -262,7 +279,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The provider is only used when the session-state mode is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ The provider is only used when the session-state mode is set to <xref:System.Web.SessionState.SessionStateMode.Custom>.  
   
    
   
@@ -274,12 +291,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.SessionState.SessionStateMode" />
       </Docs>
     </Member>
     <Member MemberName="ElementProperty">
       <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.ElementProperty" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property ElementProperty As ConfigurationElementProperty" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Configuration::ConfigurationElementProperty ^ ElementProperty { System::Configuration::ConfigurationElementProperty ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -298,6 +318,8 @@
       <MemberSignature Language="C#" Value="public System.Web.SessionState.SessionStateMode Mode { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.SessionState.SessionStateMode Mode" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.Mode" />
+      <MemberSignature Language="VB.NET" Value="Public Property Mode As SessionStateMode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::SessionState::SessionStateMode Mode { System::Web::SessionState::SessionStateMode get(); void set(System::Web::SessionState::SessionStateMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -336,6 +358,8 @@
       <MemberSignature Language="C#" Value="public string PartitionResolverType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PartitionResolverType" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.PartitionResolverType" />
+      <MemberSignature Language="VB.NET" Value="Public Property PartitionResolverType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PartitionResolverType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -356,7 +380,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> property is specified, the <xref:System.Web.Configuration.SessionStateSection.SqlConnectionString%2A> property and <xref:System.Web.Configuration.SessionStateSection.StateConnectionString%2A> property are ignored.  The <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> can be locked via the <xref:System.Configuration.ConfigurationElement.LockAttributes%2A> property like other properties within the [sessionState Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) element. The connection string returned by the <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> will be used on every request to connect to the appropriate server location for the remainder of the request.  If the connection string is invalid, ASP.NET will throw the same exception that is thrown when the configured connection string to the server is invalid.  
+ If the <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> property is specified, the <xref:System.Web.Configuration.SessionStateSection.SqlConnectionString%2A> property and <xref:System.Web.Configuration.SessionStateSection.StateConnectionString%2A> property are ignored.  The <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> can be locked via the <xref:System.Configuration.ConfigurationElement.LockAttributes%2A> property like other properties within the [sessionState Element (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/bda6fb8c-0076-43e3-9ce2-8cf1f8bdaa7d) element. The connection string returned by the <xref:System.Web.Configuration.SessionStateSection.PartitionResolverType%2A> will be used on every request to connect to the appropriate server location for the remainder of the request.  If the connection string is invalid, ASP.NET will throw the same exception that is thrown when the configured connection string to the server is invalid.  
   
  This property is used to partition session-state data across multiple backend nodes when in SQL or state-server mode.  
   
@@ -368,6 +392,8 @@
       <MemberSignature Language="C#" Value="protected override void PostDeserialize ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostDeserialize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SessionStateSection.PostDeserialize" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub PostDeserialize ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void PostDeserialize();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -386,6 +412,8 @@
       <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.Properties" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property Properties As ConfigurationPropertyCollection" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Configuration::ConfigurationPropertyCollection ^ Properties { System::Configuration::ConfigurationPropertyCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -404,6 +432,8 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.Providers" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Providers As ProviderSettingsCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ProviderSettingsCollection ^ Providers { System::Configuration::ProviderSettingsCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -442,6 +472,8 @@
       <MemberSignature Language="C#" Value="public bool RegenerateExpiredSessionId { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool RegenerateExpiredSessionId" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.RegenerateExpiredSessionId" />
+      <MemberSignature Language="VB.NET" Value="Public Property RegenerateExpiredSessionId As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool RegenerateExpiredSessionId { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -481,6 +513,8 @@
       <MemberSignature Language="C#" Value="public string SessionIDManagerType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SessionIDManagerType" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.SessionIDManagerType" />
+      <MemberSignature Language="VB.NET" Value="Public Property SessionIDManagerType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ SessionIDManagerType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -511,6 +545,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan SqlCommandTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SqlCommandTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.SqlCommandTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property SqlCommandTimeout As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan SqlCommandTimeout { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -547,6 +583,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan SqlConnectionRetryInterval { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SqlConnectionRetryInterval" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.SqlConnectionRetryInterval" />
+      <MemberSignature Language="VB.NET" Value="Public Property SqlConnectionRetryInterval As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan SqlConnectionRetryInterval { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -580,6 +618,8 @@
       <MemberSignature Language="C#" Value="public string SqlConnectionString { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SqlConnectionString" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.SqlConnectionString" />
+      <MemberSignature Language="VB.NET" Value="Public Property SqlConnectionString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ SqlConnectionString { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -600,10 +640,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This `sqlConnectionString` attribute is required when <xref:System.Web.Configuration.SessionStateSection.Mode%2A> is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ This `sqlConnectionString` attribute is required when <xref:System.Web.Configuration.SessionStateSection.Mode%2A> is set to <xref:System.Web.SessionState.SessionStateMode.SQLServer>.  
   
 > [!NOTE]
->  To use the <xref:System.Web.SessionState.SessionStateMode> session state mode, you must run the InstallSqlState.sql SQL script (which is installed in [*drive*:]\WINDOWS\Microsoft.NET\Framework\\*VersionNumber* as part of the default .NET Framework installation) on the computer running SQL Server that will store the session state. This creates a database called ASPState with new stored procedures and creates new ASPStateTempApplications and ASPStateTempSessions tables in the TempDB database.  
+>  To use the <xref:System.Web.SessionState.SessionStateMode.SQLServer> session state mode, you must run the InstallSqlState.sql SQL script (which is installed in [*drive*:]\WINDOWS\Microsoft.NET\Framework\\*VersionNumber* as part of the default .NET Framework installation) on the computer running SQL Server that will store the session state. This creates a database called ASPState with new stored procedures and creates new ASPStateTempApplications and ASPStateTempSessions tables in the TempDB database.  
   
    
   
@@ -621,6 +661,8 @@
       <MemberSignature Language="C#" Value="public string StateConnectionString { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string StateConnectionString" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.StateConnectionString" />
+      <MemberSignature Language="VB.NET" Value="Public Property StateConnectionString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ StateConnectionString { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -641,7 +683,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This property specifies the server name and the port when the session state is stored remotely. The `stateConnectionString` attribute is required when the <xref:System.Web.Configuration.SessionStateSection.Mode%2A> is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ This property specifies the server name and the port when the session state is stored remotely. The `stateConnectionString` attribute is required when the <xref:System.Web.Configuration.SessionStateSection.Mode%2A> is set to <xref:System.Web.SessionState.SessionStateMode.StateServer>.  
   
 > [!NOTE]
 >  Make sure the ASP.NET state service is running on the remote server that stores the session-state information. This service is installed with ASP.NET and is located by default at [*drive*:]\WINDOWS\Microsoft.NET\Framework\\*VersionNumber*\aspnet_state.exe.  
@@ -662,6 +704,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan StateNetworkTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan StateNetworkTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.StateNetworkTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property StateNetworkTimeout As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan StateNetworkTimeout { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -685,7 +729,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This `sessionStateSection` attribute is required when the <xref:System.Web.Configuration.SessionStateSection.Mode%2A> property is set to <xref:System.Web.SessionState.SessionStateMode>.  
+ This `sessionStateSection` attribute is required when the <xref:System.Web.Configuration.SessionStateSection.Mode%2A> property is set to <xref:System.Web.SessionState.SessionStateMode.StateServer>.  
   
    
   
@@ -703,6 +747,8 @@
       <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.Timeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property Timeout As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan Timeout { TimeSpan get(); void set(TimeSpan value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -747,6 +793,8 @@
       <MemberSignature Language="C#" Value="public bool UseHostingIdentity { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseHostingIdentity" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionStateSection.UseHostingIdentity" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseHostingIdentity As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseHostingIdentity { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

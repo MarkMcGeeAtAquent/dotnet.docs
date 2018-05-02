@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugNativeFrame::GetLocalRegisterMemoryValue Method | Microsoft Docs"
+title: "ICorDebugNativeFrame::GetLocalRegisterMemoryValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugNativeFrame.GetLocalRegisterMemoryValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugNativeFrame::GetLocalRegisterMemoryValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugNativeFrame::GetLocalRegisterMemoryValue method [.NET Framework debugging]"
   - "GetLocalRegisterMemoryValue method [.NET Framework debugging]"
 ms.assetid: d350f69d-9aff-4f5a-8301-daea22dee2da
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugNativeFrame::GetLocalRegisterMemoryValue Method
 Gets the value of an argument or local variable, of which the low word and high word are stored in the memory location and specified register, respectively, for this native frame.  

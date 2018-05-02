@@ -1,30 +1,33 @@
 ---
-title: "VariableLocationType Enumeration | Microsoft Docs"
+title: "VariableLocationType Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "VariableLocationType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "VariableLocationType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "VariableLocationType enumeration [.NET Framework debugging]"
 ms.assetid: 8635ee3a-c84b-4626-876c-416bee54f787
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # VariableLocationType Enumeration
 Indicates the native location type of a variable.  
@@ -32,14 +35,12 @@ Indicates the native location type of a variable.
 ## Syntax  
   
 ```  
-  
 typedef enum VariableLocationType  
 {  
     VLT_REGISTER,               
     VLT_REGISTER_RELATIVE,      
     VLT_INVALID  
 } VariableLocationType;  
-  
 ```  
   
 ## Members  

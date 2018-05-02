@@ -1,5 +1,5 @@
 ---
-title: "CLSID_RESOLUTION_FLAGS Enumeration | Microsoft Docs"
+title: "CLSID_RESOLUTION_FLAGS Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CLSID_RESOLUTION_FLAGS"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CLSID_RESOLUTION_FLAGS"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CLSID_RESOLUTION_FLAGS enumeration [.NET Framework hosting]"
 ms.assetid: cd8b9879-962a-4811-aa46-2e2b6bae0d84
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CLSID_RESOLUTION_FLAGS Enumeration
 Contains values that indicate how the common language runtime (CLR) should resolve a `CLSID`.  

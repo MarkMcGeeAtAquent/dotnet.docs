@@ -1,5 +1,5 @@
 ---
-title: "Windows Workflow Foundation | Microsoft Docs"
+title: "Windows Workflow Foundation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -12,9 +12,11 @@ helpviewer_keywords:
   - "Windows Workflow Foundation [WF]"
 ms.assetid: 9a23ea6b-d600-483e-89cd-8889cfec5f66
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Workflow Foundation
 This section describes the programming model, samples, and tools of the [!INCLUDE[wf](../../../includes/wf-md.md)].  

@@ -1,35 +1,47 @@
 ---
 uid: System.UriTemplateEquivalenceComparer
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.UriTemplateEquivalenceComparer.GetHashCode(System.UriTemplate)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.UriTemplateEquivalenceComparer.#ctor
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.UriTemplateEquivalenceComparer.Equals
+ms.technology: 
+  - "dotnet-standard"
 ---
 
 ---
 uid: System.UriTemplateEquivalenceComparer.GetHashCode
+ms.technology: 
+  - "dotnet-standard"
 ---
 
 ---
 uid: System.UriTemplateEquivalenceComparer.Equals(System.UriTemplate,System.UriTemplate)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

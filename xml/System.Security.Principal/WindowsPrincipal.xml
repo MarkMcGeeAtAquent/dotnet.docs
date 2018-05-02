@@ -1,10 +1,13 @@
-<Type Name="WindowsPrincipal" FullName="System.Security.Principal.WindowsPrincipal">
+﻿<Type Name="WindowsPrincipal" FullName="System.Security.Principal.WindowsPrincipal">
   <TypeSignature Language="C#" Value="public class WindowsPrincipal : System.Security.Claims.ClaimsPrincipal" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WindowsPrincipal extends System.Security.Claims.ClaimsPrincipal" />
   <TypeSignature Language="DocId" Value="T:System.Security.Principal.WindowsPrincipal" />
+  <TypeSignature Language="VB.NET" Value="Public Class WindowsPrincipal&#xA;Inherits ClaimsPrincipal" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WindowsPrincipal : System::Security::Claims::ClaimsPrincipal" />
   <AssemblyInfo>
     <AssemblyName>System.Security.Principal.Windows</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -26,7 +29,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Security.Principal.WindowsPrincipal> class is primarily used to check the role of a Windows user. The <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=fullName> method overloads let you check the user role by using different role contexts.  
+ The <xref:System.Security.Principal.WindowsPrincipal> class is primarily used to check the role of a Windows user. The <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> method overloads let you check the user role by using different role contexts.  
   
    
   
@@ -45,10 +48,13 @@
       <MemberSignature Language="C#" Value="public WindowsPrincipal (System.Security.Principal.WindowsIdentity ntIdentity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.WindowsIdentity ntIdentity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.#ctor(System.Security.Principal.WindowsIdentity)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (ntIdentity As WindowsIdentity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WindowsPrincipal(System::Security::Principal::WindowsIdentity ^ ntIdentity);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -81,6 +87,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; DeviceClaims { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; DeviceClaims" />
       <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.DeviceClaims" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property DeviceClaims As IEnumerable(Of Claim)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ DeviceClaims { System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -104,10 +112,13 @@
       <MemberSignature Language="C#" Value="public override System.Security.Principal.IIdentity Identity { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IIdentity Identity" />
       <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.Identity" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Identity As IIdentity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Security::Principal::IIdentity ^ Identity { System::Security::Principal::IIdentity ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -134,14 +145,37 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsInRole">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines whether the current principal belongs to a specified Windows user group.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ There are four overloads for this method. For performance reasons, the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29> overload is strongly recommended.  
+  
+> [!IMPORTANT]
+>  The <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A> method is not supported on Windows 98 or Windows Millennium Edition.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsInRole">
       <MemberSignature Language="C#" Value="public virtual bool IsInRole (int rid);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(int32 rid) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsInRole (rid As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsInRole(int rid);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -215,10 +249,13 @@
       <MemberSignature Language="C#" Value="public virtual bool IsInRole (System.Security.Principal.SecurityIdentifier sid);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(class System.Security.Principal.SecurityIdentifier sid) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Security.Principal.SecurityIdentifier)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsInRole (sid As SecurityIdentifier) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsInRole(System::Security::Principal::SecurityIdentifier ^ sid);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -255,7 +292,7 @@
    
   
 ## Examples  
- The following code example demonstrates the use of the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29?displayProperty=fullName> method. The <xref:System.Security.Principal.WellKnownSidType> enumeration value is used to determine whether the current principal is an administrator. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=fullName> method.  
+ The following code example demonstrates the use of the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29?displayProperty=nameWithType> method. The <xref:System.Security.Principal.WellKnownSidType.BuiltinAdministratorsSid> enumeration value is used to determine whether the current principal is an administrator. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#5)]
  [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#5)]  
@@ -271,10 +308,13 @@
       <MemberSignature Language="C#" Value="public virtual bool IsInRole (System.Security.Principal.WindowsBuiltInRole role);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsInRole(valuetype System.Security.Principal.WindowsBuiltInRole role) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.Security.Principal.WindowsBuiltInRole)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsInRole (role As WindowsBuiltInRole) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsInRole(System::Security::Principal::WindowsBuiltInRole role);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -306,7 +346,7 @@
    
   
 ## Examples  
- The following example uses the <xref:System.Security.Principal.WindowsBuiltInRole> enumeration is used to determine whether the current principal is an <xref:System.Security.Principal.WindowsBuiltInRole>. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=fullName> method.  
+ The following example uses the <xref:System.Security.Principal.WindowsBuiltInRole> enumeration is used to determine whether the current principal is an <xref:System.Security.Principal.WindowsBuiltInRole.Administrator>. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#4)]
  [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#4)]  
@@ -321,10 +361,13 @@
       <MemberSignature Language="C#" Value="public override bool IsInRole (string role);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsInRole(string role) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Principal.WindowsPrincipal.IsInRole(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function IsInRole (role As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool IsInRole(System::String ^ role);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Principal.Windows</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -379,9 +422,9 @@
    
   
 ## Examples  
- The following code example demonstrates the use of the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=fullName> method.  
+ The following code example demonstrates the use of the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> method.  
   
- The strings `BUILTIN\Administrators` and `BUILTIN\Users` are used to determine whether the current principal is an administrator or a user. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=fullName> method.  
+ The strings `BUILTIN\Administrators` and `BUILTIN\Users` are used to determine whether the current principal is an administrator or a user. For the full code example, see the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Int32%29?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#3)]
  [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#3)]  
@@ -389,12 +432,15 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for the ability to manipulate the principal object. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" /></permission>
+        <altmember cref="T:System.Security.Principal.WindowsBuiltInRole" />
       </Docs>
     </Member>
     <Member MemberName="UserClaims">
       <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Claims.Claim&gt; UserClaims { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Claims.Claim&gt; UserClaims" />
       <MemberSignature Language="DocId" Value="P:System.Security.Principal.WindowsPrincipal.UserClaims" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property UserClaims As IEnumerable(Of Claim)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ UserClaims { System::Collections::Generic::IEnumerable&lt;System::Security::Claims::Claim ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -414,25 +460,5 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="IsInRole">
-      <AssemblyInfo>
-        <AssemblyName>System.Security.Principal.Windows</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Determines whether the current principal belongs to a specified Windows user group.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- There are four overloads for this method. For performance reasons, the <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.Security.Principal.SecurityIdentifier%29> overload is strongly recommended.  
-  
-> [!IMPORTANT]
->  The <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A> method is not supported on Windows 98 or Windows Millennium Edition.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

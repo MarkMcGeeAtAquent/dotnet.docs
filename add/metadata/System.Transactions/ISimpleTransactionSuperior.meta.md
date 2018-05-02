@@ -1,9 +1,13 @@
 ---
 uid: System.Transactions.ISimpleTransactionSuperior
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.ISimpleTransactionSuperior.Rollback
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

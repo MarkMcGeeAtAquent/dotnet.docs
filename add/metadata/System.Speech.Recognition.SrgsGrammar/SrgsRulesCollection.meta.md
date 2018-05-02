@@ -1,22 +1,30 @@
 ---
 uid: System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "kbridge"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add(System.Speech.Recognition.SrgsGrammar.SrgsRule[])
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "kbridge"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.#ctor
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "kbridge"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Speech.Recognition.SrgsGrammar.SrgsRulesCollection.Add
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

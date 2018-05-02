@@ -1,10 +1,13 @@
-<Type Name="Registry" FullName="Microsoft.Win32.Registry">
+﻿<Type Name="Registry" FullName="Microsoft.Win32.Registry">
   <TypeSignature Language="C#" Value="public static class Registry" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Registry extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.Win32.Registry" />
+  <TypeSignature Language="VB.NET" Value="Public Class Registry" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Registry abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -83,16 +86,21 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:Microsoft.Win32.RegistryHive" />
+    <altmember cref="T:Microsoft.Win32.RegistryKey" />
   </Docs>
   <Members>
     <Member MemberName="ClassesRoot">
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey ClassesRoot;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey ClassesRoot" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.ClassesRoot" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ClassesRoot As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ ClassesRoot;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -127,10 +135,13 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey CurrentConfig;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey CurrentConfig" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.CurrentConfig" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CurrentConfig As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ CurrentConfig;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -167,10 +178,13 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey CurrentUser;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey CurrentUser" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.CurrentUser" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly CurrentUser As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ CurrentUser;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -205,6 +219,8 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey DynData;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey DynData" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.DynData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly DynData As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ DynData;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -250,10 +266,13 @@
       <MemberSignature Language="C#" Value="public static object GetValue (string keyName, string valueName, object defaultValue);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetValue(string keyName, string valueName, object defaultValue) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.GetValue(System.String,System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetValue (keyName As String, valueName As String, defaultValue As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ GetValue(System::String ^ keyName, System::String ^ valueName, System::Object ^ defaultValue);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -286,10 +305,10 @@
   
  Valid root names are HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, and HKEY_DYN_DATA. For example, in Visual Basic the string "HKEY_CURRENT_USER\MyTestKey" accesses key/value pairs for the subkey "MyTestKey" in the HKEY_CURRENT_USER root.  
   
- When the <xref:Microsoft.Win32.RegistryKey.GetValue%2A> method retrieves expandable string values (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>), it expands environment strings using data from the local environment. If a value containing expandable references to environment variables has been stored as a string (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>), rather than as an expandable string (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>), <xref:Microsoft.Win32.RegistryKey.GetValue%2A> does not expand it. You can expand such a string after it has been retrieved by calling the <xref:System.Environment.ExpandEnvironmentVariables%2A?displayProperty=fullName> method.  
+ When the <xref:Microsoft.Win32.RegistryKey.GetValue%2A> method retrieves expandable string values (<xref:Microsoft.Win32.RegistryValueKind.ExpandString?displayProperty=nameWithType>), it expands environment strings using data from the local environment. If a value containing expandable references to environment variables has been stored as a string (<xref:Microsoft.Win32.RegistryValueKind.String?displayProperty=nameWithType>), rather than as an expandable string (<xref:Microsoft.Win32.RegistryValueKind.ExpandString?displayProperty=nameWithType>), <xref:Microsoft.Win32.RegistryKey.GetValue%2A> does not expand it. You can expand such a string after it has been retrieved by calling the <xref:System.Environment.ExpandEnvironmentVariables%2A?displayProperty=nameWithType> method.  
   
 > [!NOTE]
->  The recommended way to retrieve data from HKEY_PERFORMANCE_DATA is to use the <xref:System.Diagnostics.PerformanceCounter> class rather than the <xref:Microsoft.Win32.RegistryKey.GetValue%2A?displayProperty=fullName> method.  
+>  The recommended way to retrieve data from HKEY_PERFORMANCE_DATA is to use the <xref:System.Diagnostics.PerformanceCounter> class rather than the <xref:Microsoft.Win32.RegistryKey.GetValue%2A?displayProperty=nameWithType> method.  
   
  The <xref:Microsoft.Win32.Registry.GetValue%2A> and <xref:Microsoft.Win32.Registry.SetValue%2A> methods open and close registry keys each time they are used, so they do not perform as well as the methods of the <xref:Microsoft.Win32.RegistryKey> class if you access a large number of values.  
   
@@ -318,10 +337,13 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey LocalMachine;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey LocalMachine" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.LocalMachine" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly LocalMachine As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ LocalMachine;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -373,10 +395,13 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey PerformanceData;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey PerformanceData" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.PerformanceData" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly PerformanceData As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ PerformanceData;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -416,14 +441,38 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetValue">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the value of a name/value pair in a registry key.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following code example stores values of several data types in an example key, creating the key as it does so, and then retrieves and displays the values. The example demonstrates storing and retrieving the default (nameless) name/value pair, and the use of `defaultValue` when a name/value pair does not exist.  
+  
+ [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
+ [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
+ [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetValue">
       <MemberSignature Language="C#" Value="public static void SetValue (string keyName, string valueName, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValue(string keyName, string valueName, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SetValue (keyName As String, valueName As String, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SetValue(System::String ^ keyName, System::String ^ valueName, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -461,13 +510,13 @@
  Valid root names include HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, and HKEY_DYN_DATA.  
   
 > [!NOTE]
->  The <xref:Microsoft.Win32.Registry.SetValue%2A> method opens a registry key, sets the value, and closes the key each time it is called. If you need to modify a large number of values, the <xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=fullName> method might provide better performance. The <xref:Microsoft.Win32.RegistryKey> class also provides methods that allow you to add an access control list (ACL) to a registry key, to test the data type of a value before retrieving it, and to delete keys.  
+>  The <xref:Microsoft.Win32.Registry.SetValue%2A> method opens a registry key, sets the value, and closes the key each time it is called. If you need to modify a large number of values, the <xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=nameWithType> method might provide better performance. The <xref:Microsoft.Win32.RegistryKey> class also provides methods that allow you to add an access control list (ACL) to a registry key, to test the data type of a value before retrieving it, and to delete keys.  
   
- This overload of <xref:Microsoft.Win32.Registry.SetValue%2A> stores 64-bit integers as strings (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>). To store 64-bit numbers as <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName> values, use the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload.  
+ This overload of <xref:Microsoft.Win32.Registry.SetValue%2A> stores 64-bit integers as strings (<xref:Microsoft.Win32.RegistryValueKind.String?displayProperty=nameWithType>). To store 64-bit numbers as <xref:Microsoft.Win32.RegistryValueKind.QWord?displayProperty=nameWithType> values, use the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload.  
   
- This overload of <xref:Microsoft.Win32.Registry.SetValue%2A> stores all string values as <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName> objects, even if they contain expandable references to environment variables. To save string values as expandable strings (<xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>), use the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload.  
+ This overload of <xref:Microsoft.Win32.Registry.SetValue%2A> stores all string values as <xref:Microsoft.Win32.RegistryValueKind.String?displayProperty=nameWithType> objects, even if they contain expandable references to environment variables. To save string values as expandable strings (<xref:Microsoft.Win32.RegistryValueKind.ExpandString?displayProperty=nameWithType>), use the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload.  
   
- This overload is equivalent to calling the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload with <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>.  
+ This overload is equivalent to calling the <xref:Microsoft.Win32.Registry.SetValue%28System.String%2CSystem.String%2CSystem.Object%2CMicrosoft.Win32.RegistryValueKind%29> method overload with <xref:Microsoft.Win32.RegistryValueKind.Unknown?displayProperty=nameWithType>.  
   
 > [!NOTE]
 >  On Windows 98 and Windows Millennium Edition (Windows Me), the registry is not Unicode, and not all Unicode characters are valid for all code pages. A Unicode character that is invalid for the current code page is replaced by the best available match. No exception is thrown.  
@@ -500,10 +549,13 @@
       <MemberSignature Language="C#" Value="public static void SetValue (string keyName, string valueName, object value, Microsoft.Win32.RegistryValueKind valueKind);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetValue(string keyName, string valueName, object value, valuetype Microsoft.Win32.RegistryValueKind valueKind) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.Win32.Registry.SetValue(System.String,System.String,System.Object,Microsoft.Win32.RegistryValueKind)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub SetValue (keyName As String, valueName As String, value As Object, valueKind As RegistryValueKind)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void SetValue(System::String ^ keyName, System::String ^ valueName, System::Object ^ value, Microsoft::Win32::RegistryValueKind valueKind);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -543,12 +595,12 @@
  Valid root names include HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS, HKEY_PERFORMANCE_DATA, HKEY_CURRENT_CONFIG, and HKEY_DYN_DATA.  
   
 > [!NOTE]
->  The <xref:Microsoft.Win32.Registry.SetValue%2A> method opens a registry key, sets the value, and closes the key each time it is called. If you need to modify a large number of values, the <xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=fullName> method might provide better performance. The <xref:Microsoft.Win32.RegistryKey> class also provides methods that allow you to add an access control list (ACL) to a registry key, to test the data type of a value before retrieving it, and to delete keys.  
+>  The <xref:Microsoft.Win32.Registry.SetValue%2A> method opens a registry key, sets the value, and closes the key each time it is called. If you need to modify a large number of values, the <xref:Microsoft.Win32.RegistryKey.SetValue%2A?displayProperty=nameWithType> method might provide better performance. The <xref:Microsoft.Win32.RegistryKey> class also provides methods that allow you to add an access control list (ACL) to a registry key, to test the data type of a value before retrieving it, and to delete keys.  
   
- If the type of the specified `value` does not match the specified `valueKind`, and the data cannot be converted, <xref:System.ArgumentException> is thrown. For example, you can store a <xref:System.Int64?displayProperty=fullName> as a <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>, but only if its value is less than the maximum value of a <xref:System.Int32?displayProperty=fullName>. You cannot store a single string value as a <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>.  
+ If the type of the specified `value` does not match the specified `valueKind`, and the data cannot be converted, <xref:System.ArgumentException> is thrown. For example, you can store a <xref:System.Int64?displayProperty=nameWithType> as a <xref:Microsoft.Win32.RegistryValueKind.DWord?displayProperty=nameWithType>, but only if its value is less than the maximum value of a <xref:System.Int32?displayProperty=nameWithType>. You cannot store a single string value as a <xref:Microsoft.Win32.RegistryValueKind.MultiString?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  If boxed values are passed for <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName> or <xref:Microsoft.Win32.RegistryValueKind?displayProperty=fullName>, the conversion is done using the invariant culture.  
+>  If boxed values are passed for <xref:Microsoft.Win32.RegistryValueKind.DWord?displayProperty=nameWithType> or <xref:Microsoft.Win32.RegistryValueKind.QWord?displayProperty=nameWithType>, the conversion is done using the invariant culture.  
   
 > [!NOTE]
 >  On Windows 98 and Windows Millennium Edition (Windows Me), the registry is not Unicode, and not all Unicode characters are valid for all code pages. A Unicode character that is invalid for the current code page is replaced by the best available match. No exception is thrown.  
@@ -585,10 +637,13 @@
       <MemberSignature Language="C#" Value="public static readonly Microsoft.Win32.RegistryKey Users;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class Microsoft.Win32.RegistryKey Users" />
       <MemberSignature Language="DocId" Value="F:Microsoft.Win32.Registry.Users" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Users As RegistryKey " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly Microsoft::Win32::RegistryKey ^ Users;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -619,26 +674,5 @@
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="SetValue">
-      <AssemblyInfo>
-        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Sets the value of a name/value pair in a registry key.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Examples  
- The following code example stores values of several data types in an example key, creating the key as it does so, and then retrieves and displays the values. The example demonstrates storing and retrieving the default (nameless) name/value pair, and the use of `defaultValue` when a name/value pair does not exist.  
-  
- [!code-cpp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/cpp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CPP/source.cpp#1)]
- [!code-csharp[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/csharp/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/CS/source.cs#1)]
- [!code-vb[Microsoft.Win32.Registry.GetSet#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Microsoft.Win32.Registry.GetSet/VB/source.vb#1)]  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

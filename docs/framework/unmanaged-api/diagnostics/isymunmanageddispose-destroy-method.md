@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDispose::Destroy Method | Microsoft Docs"
+title: "ISymUnmanagedDispose::Destroy Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDispose.Destroy"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDispose::Destroy"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDispose::Destroy method [.NET Framework debugging]"
   - "Destroy method [.NET Framework debugging]"
 ms.assetid: a854ab9f-d2ba-470e-867f-808c1e7bd07a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDispose::Destroy Method
 Causes the underlying object to release all internal references and return failure on any subsequent method calls.  

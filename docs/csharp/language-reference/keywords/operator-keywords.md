@@ -1,12 +1,10 @@
 ---
-title: "Operator Keywords (C# Reference) | Microsoft Docs"
-ms.date: "2015-07-20"
+title: "Operator Keywords (C# Reference)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.technology: 
   - "devlang-csharp"
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 helpviewer_keywords: 
   - "keywords [C#], operators"
   - "operators [C#], keywords"
@@ -14,20 +12,6 @@ ms.assetid: f745c81f-f8d8-4673-86a1-0f3a85cc63c3
 caps.latest.revision: 10
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Operator Keywords (C# Reference)
 Used to perform miscellaneous actions such as creating objects, checking the run-time type of an object, obtaining the size of a type, and other actions. This section introduces the following keywords:  
@@ -46,6 +30,8 @@ Used to perform miscellaneous actions such as creating objects, checking the run
   
     -   [new Constraint](../../../csharp/language-reference/keywords/new-constraint.md) Qualifies a type parameter.  
   
+-   [nameof](nameof.md) Obtains the simple (unqualified) string name of a variable, type, or member.
+ 
 -   [sizeof](../../../csharp/language-reference/keywords/sizeof.md) Obtains the size of a type.  
   
 -   [typeof](../../../csharp/language-reference/keywords/typeof.md) Obtains the **System.Type** object for a type.  
@@ -71,7 +57,7 @@ Used to perform miscellaneous actions such as creating objects, checking the run
 -   [unchecked](../../../csharp/language-reference/keywords/unchecked.md) Specifies unchecked context.  
   
 ## See Also  
- [C# Reference](../../../csharp/language-reference/index.md)   
- [C# Programming Guide](../../../csharp/programming-guide/index.md)   
- [C# Keywords](../../../csharp/language-reference/keywords/index.md)   
+ [C# Reference](../../../csharp/language-reference/index.md)  
+ [C# Programming Guide](../../../csharp/programming-guide/index.md)  
+ [C# Keywords](../../../csharp/language-reference/keywords/index.md)  
  [C# Operators](../../../csharp/language-reference/operators/index.md)

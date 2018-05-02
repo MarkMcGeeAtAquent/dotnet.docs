@@ -1,5 +1,5 @@
 ---
-title: "Non-Persisted Workflow Instances | Microsoft Docs"
+title: "Non-Persisted Workflow Instances"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5e01af77-6b14-4964-91a5-7dfd143449c0
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Non-Persisted Workflow Instances
 When a new instance of a workflow is created that persists its state in the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, the service host creates an entry for that service in the instance store. Subsequently, when the workflow instance is persisted for the first time, the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> stores the current instance state. If the workflow is hosted in the Windows Process Activation Service, the service deployment data is also written to the instance store when the instance is persisted for the first time.  
@@ -25,9 +27,9 @@ When a new instance of a workflow is created that persists its state in the <xre
   
 -   The workflow instance experiences an exception before it is persisted for the first time. Depending on the <xref:System.Activities.UnhandledExceptionAction> returned, the following scenarios occur:  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction>: When an exception occurs, service deployment information is written to the instance store, and the workflow instance is unloaded from memory. The workflow instance remains in a non-persisted state and cannot be reloaded.  
+    -   <xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction.Abort>: When an exception occurs, service deployment information is written to the instance store, and the workflow instance is unloaded from memory. The workflow instance remains in a non-persisted state and cannot be reloaded.  
   
-    -   <xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction> or <xref:System.Activities.UnhandledExceptionAction>: When an exception occurs, service deployment information is written to the instance store, and the activity instance state is set to <xref:System.Activities.ActivityInstanceState>.  
+    -   <xref:System.Activities.UnhandledExceptionAction> is set to <xref:System.Activities.UnhandledExceptionAction.Cancel> or <xref:System.Activities.UnhandledExceptionAction.Terminate>: When an exception occurs, service deployment information is written to the instance store, and the activity instance state is set to <xref:System.Activities.ActivityInstanceState.Closed>.  
   
  To minimize the risk of encountering unloaded non-persisted workflow instances, we recommend persisting the workflow early in its life cycle.  
   
@@ -69,7 +71,6 @@ When a new instance of a workflow is created that persists its state in the <xre
 ```sql  
 delete [System.Activities.DurableInstancing].[Instances]   
     where InstanceId=’078a9bc4-ada5-4f9e-8cce-b0eb0009995f’  
-  
 ```  
   
 > [!WARNING]

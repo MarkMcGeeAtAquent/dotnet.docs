@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugILFrame4::GetLocalVariableEx Method | Microsoft Docs"
+title: "ICorDebugILFrame4::GetLocalVariableEx Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,23 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
-  - "ICorDebugILFrame4.GetCodeEx"
-apilocation: 
-  - "mscordbi.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "ICorDebugILFrame4.GetCodeEx"
+api_location: 
+  - "mscordbi.dll"
+api_type: 
+  - "COM"
 ms.assetid: 0c8676f8-ca0d-4998-b64d-fefac7e38912
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugILFrame4::GetLocalVariableEx Method
 [Supported in the .NET Framework 4.5.2 and later versions]  
@@ -29,14 +34,12 @@ manager: "wpickett"
   
 ## Syntax  
   
-```vb  
-  
+```cpp
 HRESULT GetLocalVariableEx(  
    [in] ILCodeKind flags,   
    [in] DWORD dwIndex,   
    [out] ICorDebugValue **ppValue  
 );  
-  
 ```  
   
 #### Parameters  
@@ -62,6 +65,6 @@ HRESULT GetLocalVariableEx(
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## See Also  
- [ICorDebugILFrame4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)   
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [ICorDebugILFrame4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)  
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [ReJIT: A How-To Guide](http://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)

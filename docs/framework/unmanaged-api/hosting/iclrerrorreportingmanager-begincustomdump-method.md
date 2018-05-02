@@ -1,5 +1,5 @@
 ---
-title: "ICLRErrorReportingManager::BeginCustomDump Method | Microsoft Docs"
+title: "ICLRErrorReportingManager::BeginCustomDump Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRErrorReportingManager.BeginCustomDump"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRErrorReportingManager::BeginCustomDump"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRErrorReportingManager::BeginCustomDump method [.NET Framework hosting]"
   - "BeginCustomDump method"
 ms.assetid: 93424a87-ba13-4fa1-b4dc-69d44437b7ae
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRErrorReportingManager::BeginCustomDump Method
 Specifies the configuration of custom heap dumps for error reporting.  
@@ -81,6 +84,6 @@ HRESULT BeginCustomDump (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [CustomDumpItem Structure](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md)   
- [ECustomDumpFlavor Enumeration](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md)   
+ [CustomDumpItem Structure](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md)  
+ [ECustomDumpFlavor Enumeration](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md)  
  [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)

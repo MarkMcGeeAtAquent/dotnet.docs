@@ -1,5 +1,5 @@
 ---
-title: "Security-Transparent Code | Microsoft Docs"
+title: "Security-Transparent Code"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "transparent code"
   - "security-transparent code"
@@ -22,9 +17,12 @@ caps.latest.revision: 24
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Security-Transparent Code
-<a name="top"></a> [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
+<a name="top"></a>
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Security involves three interacting pieces: sandboxing, permissions, and enforcement. Sandboxing refers to the practice of creating isolated domains where some code is treated as fully trusted and other code is restricted to the permissions in the grant set for the sandbox. The application code that runs within the grant set of the sandbox is considered to be transparent; that is, it cannot perform any operations that can affect security. The grant set for the sandbox is determined by evidence (<xref:System.Security.Policy.Evidence> class). Evidence identifies what specific permissions are required by sandboxes, and what kinds of sandboxes can be created. Enforcement refers to allowing transparent code to execute only within its grant set.  
   
@@ -51,7 +49,7 @@ manager: "wpickett"
  Transparency was introduced in the .NET Framework version 2.0 to simplify the security model, and to make it easier to write and deploy secure libraries and applications. Transparent code is also used in Microsoft Silverlight, to simplify the development of partially trusted applications.  
   
 > [!NOTE]
->  When you develop a partially trusted application, you have to be aware of the permission requirements for your target hosts. You can develop an application that uses resources that are not allowed by some hosts. This application will compile without error, but will fail when it is loaded into the hosted environment. If you have developed your application using Visual Studio, you can enable debugging in partial trust or in a restricted permission set from the development environment. For more information, see [How to: Debug a ClickOnce Application with Restricted Permissions](http://msdn.microsoft.com/library/6991ea91-5253-451b-923d-22273a3d38b1). The Calculate Permissions feature provided for ClickOnce applications is also available for any partially trusted application.  
+>  When you develop a partially trusted application, you have to be aware of the permission requirements for your target hosts. You can develop an application that uses resources that are not allowed by some hosts. This application will compile without error, but will fail when it is loaded into the hosted environment. If you have developed your application using Visual Studio, you can enable debugging in partial trust or in a restricted permission set from the development environment. For more information, see [How to: Debug a ClickOnce Application with Restricted Permissions](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). The Calculate Permissions feature provided for ClickOnce applications is also available for any partially trusted application.  
   
  [Back to top](#top)  
   
@@ -61,9 +59,9 @@ manager: "wpickett"
   
  The levels are as follows:  
   
--   Level 2 (<xref:System.Security.SecurityRuleSet>) – the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] transparency rules.  
+-   Level 2 (<xref:System.Security.SecurityRuleSet.Level2>) – the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] transparency rules.  
   
--   Level 1 (<xref:System.Security.SecurityRuleSet>) – the .NET Framework 2.0 transparency rules.  
+-   Level 1 (<xref:System.Security.SecurityRuleSet.Level1>) – the .NET Framework 2.0 transparency rules.  
   
  The primary difference between the two transparency levels is that level 1 does not enforce transparency rules for calls from outside the assembly and is intended only for compatibility.  
   
@@ -83,7 +81,7 @@ manager: "wpickett"
   
     -   Call native code or code that has the <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> attribute.  
   
-    -   Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction>.  
+    -   Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
   
     -   Inherit from critical types.  
   
@@ -115,5 +113,5 @@ manager: "wpickett"
  Transparency rules are not enforced until transparency is calculated. At that time, an <xref:System.InvalidOperationException> is thrown if a transparency rule is violated. The time that transparency is calculated depends on multiple factors and cannot be predicted. It is calculated as late as possible. In the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], assembly-level transparency calculation occurs sooner than it does in the .NET Framework 2.0. The only guarantee is that transparency calculation will occur by the time it is needed. This is similar to how the just-in-time (JIT) compiler can change the point when a method is compiled and any errors in that method are detected. Transparency calculation is invisible if your code does not have any transparency errors.  
   
 ## See Also  
- [Security-Transparent Code, Level 1](../../../docs/framework/misc/security-transparent-code-level-1.md)   
+ [Security-Transparent Code, Level 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
  [Security-Transparent Code, Level 2](../../../docs/framework/misc/security-transparent-code-level-2.md)

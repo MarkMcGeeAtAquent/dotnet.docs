@@ -1,5 +1,5 @@
 ---
-title: "How to: Customize a Time-Based Cache Policy | Microsoft Docs"
+title: "How to: Customize a Time-Based Cache Policy"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "time-based cache policies"
   - "customizing time-based cache policies"
@@ -21,6 +19,8 @@ caps.latest.revision: 15
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Customize a Time-Based Cache Policy
 When creating a time-based cache policy, you can customize caching behavior by specifying values for maximum age, minimum freshness, maximum staleness, or cache synchronization date. The <xref:System.Net.Cache.HttpRequestCachePolicy> object provides several constructors that allow you to specify valid combinations of these values.  
@@ -58,7 +58,7 @@ Level:Default CacheSyncDate:1/14/2004 8:07:30 AM
   
 ### To create a time-based cache policy that is based on minimum freshness  
   
--   Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
+-   Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
@@ -86,12 +86,11 @@ CreateMinFreshPolicy(new TimeSpan(1,0,0));
   
 ```  
 Level:Default MinFresh:3600  
-  
 ```  
   
 ### To create a time-based cache policy that is based on minimum freshness and maximum age  
   
--   Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.  
+-   Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  
@@ -122,8 +121,8 @@ Level:Default MaxAge:36000 MinFresh:18000
 ```  
   
 ## See Also  
- [Cache Management for Network Applications](../../../docs/framework/network-programming/cache-management-for-network-applications.md)   
- [Cache Policy](../../../docs/framework/network-programming/cache-policy.md)   
- [Location-Based Cache Policies](../../../docs/framework/network-programming/location-based-cache-policies.md)   
- [Time-Based Cache Policies](../../../docs/framework/network-programming/time-based-cache-policies.md)   
+ [Cache Management for Network Applications](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [Cache Policy](../../../docs/framework/network-programming/cache-policy.md)  
+ [Location-Based Cache Policies](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [Time-Based Cache Policies](../../../docs/framework/network-programming/time-based-cache-policies.md)  
  [\<requestCaching> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

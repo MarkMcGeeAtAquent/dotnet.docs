@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugThread::CreateStepper Method | Microsoft Docs"
+title: "ICorDebugThread::CreateStepper Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugThread.CreateStepper"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugThread::CreateStepper"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugThread::CreateStepper method [.NET Framework debugging]"
   - "CreateStepper method, ICorDebugThread interface [.NET Framework debugging]"
 ms.assetid: 4657443f-dd12-431b-a648-175c23f13c83
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugThread::CreateStepper Method
 Creates an ICorDebugStepper object that allows stepping through the active frame of this ICorDebugThread.  

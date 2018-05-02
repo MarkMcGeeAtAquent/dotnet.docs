@@ -1,7 +1,9 @@
-<Type Name="ResourceReader" FullName="System.Resources.ResourceReader">
+﻿<Type Name="ResourceReader" FullName="System.Resources.ResourceReader">
   <TypeSignature Language="C#" Value="public sealed class ResourceReader : System.Resources.IResourceReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ResourceReader extends System.Object implements class System.Collections.IEnumerable, class System.IDisposable, class System.Resources.IResourceReader" />
   <TypeSignature Language="DocId" Value="T:System.Resources.ResourceReader" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ResourceReader&#xA;Implements IResourceReader" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ResourceReader sealed : System::Resources::IResourceReader" />
   <AssemblyInfo>
     <AssemblyName>System.Resources.Reader</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -15,6 +17,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -40,7 +46,7 @@
  The <xref:System.Resources.ResourceReader> class provides a standard implementation of the <xref:System.Resources.IResourceReader> interface. A <xref:System.Resources.ResourceReader> instance represents either a standalone .resources file or a .resources file that is embedded in an assembly. It is used to enumerate the resources in a .resources file and retrieve its name/value pairs. It differs from the <xref:System.Resources.ResourceManager> class, which is used to retrieve specified named resources from a .resources file that is embedded in an assembly. The <xref:System.Resources.ResourceManager> class is used to retrieve resources whose names are known in advance, whereas the <xref:System.Resources.ResourceReader> class is useful for retrieving resources whose number or precise names are not known at compile time. For example, an application may use a resources file to store configuration information that is organized into sections and items in a section, where the number of sections or items in a section is not known in advance. Resources can then be named generically (such as `Section1`, `Section1Item1`, `Section1Item2`, and so on) and retrieved by using a <xref:System.Resources.ResourceReader> object.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  For more information about using the <xref:System.Resources.ResourceReader> class, see the following sections:  
   
@@ -61,29 +67,29 @@
  [!code-csharp[System.Resources.ResourceReader.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/ctor1.cs#2)]
  [!code-vb[System.Resources.ResourceReader.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/ctor1.vb#2)]  
   
- To create a <xref:System.Resources.ResourceReader> object that represents an embedded .resources file, instantiate an <xref:System.Reflection.Assembly> object from the assembly in which the .resources file is embedded. Its <xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=fullName> method returns a <xref:System.IO.Stream> object that can be passed to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor. The following example instantiates a <xref:System.Resources.ResourceReader> object that represents an embedded .resources file.  
+ To create a <xref:System.Resources.ResourceReader> object that represents an embedded .resources file, instantiate an <xref:System.Reflection.Assembly> object from the assembly in which the .resources file is embedded. Its <xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=nameWithType> method returns a <xref:System.IO.Stream> object that can be passed to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor. The following example instantiates a <xref:System.Resources.ResourceReader> object that represents an embedded .resources file.  
   
  [!code-csharp[System.Resources.ResourceReader.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/ctor1.cs#3)]
  [!code-vb[System.Resources.ResourceReader.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/ctor1.vb#3)]  
   
 <a name="enumerate"></a>   
 ## Enumerating a ResourceReader Object's Resources  
- To enumerate the resources in a .resources file, you call the <xref:System.Resources.ResourceReader.GetEnumerator%2A> method, which returns an <xref:System.Collections.IDictionaryEnumerator?displayProperty=fullName> object. You call the `IDictionaryEnumerator.MoveNext` method to move from one resource to the next. The method returns `false` when all the resources in the .resources file have been enumerated.  
+ To enumerate the resources in a .resources file, you call the <xref:System.Resources.ResourceReader.GetEnumerator%2A> method, which returns an <xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType> object. You call the `IDictionaryEnumerator.MoveNext` method to move from one resource to the next. The method returns `false` when all the resources in the .resources file have been enumerated.  
   
 > [!NOTE]
->  Although the <xref:System.Resources.ResourceReader> class implements the <xref:System.Collections.IEnumerable> interface and the <xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=fullName> method, the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=fullName> method does not provide the <xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=fullName> implementation. Instead, the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=fullName> method  returns an <xref:System.Collections.IDictionaryEnumerator> interface object that provides access to each resource's name/value pair.  
+>  Although the <xref:System.Resources.ResourceReader> class implements the <xref:System.Collections.IEnumerable> interface and the <xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=nameWithType> method, the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType> method does not provide the <xref:System.Collections.IEnumerable.GetEnumerator%2A?displayProperty=nameWithType> implementation. Instead, the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType> method  returns an <xref:System.Collections.IDictionaryEnumerator> interface object that provides access to each resource's name/value pair.  
   
  You can retrieve the individual resources in the collection in two ways:  
   
--   You can iterate each resource in the <xref:System.Collections.IDictionaryEnumerator?displayProperty=fullName> collection and use <xref:System.Collections.IDictionaryEnumerator?displayProperty=fullName> properties to retrieve the resource name and value. We recommend this technique when all the resources are of the same type, or you know the data type of each resource.  
+-   You can iterate each resource in the <xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType> collection and use <xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType> properties to retrieve the resource name and value. We recommend this technique when all the resources are of the same type, or you know the data type of each resource.  
   
--   You can retrieve the name of each resource when you iterate the <xref:System.Collections.IDictionaryEnumerator?displayProperty=fullName> collection and call the <xref:System.Resources.ResourceReader.GetResourceData%2A> method to retrieve the resource's data. We recommend this approach when you do not know the data type of each resource or if the previous approach throws exceptions.  
+-   You can retrieve the name of each resource when you iterate the <xref:System.Collections.IDictionaryEnumerator?displayProperty=nameWithType> collection and call the <xref:System.Resources.ResourceReader.GetResourceData%2A> method to retrieve the resource's data. We recommend this approach when you do not know the data type of each resource or if the previous approach throws exceptions.  
   
 <a name="idictionaryenumerator"></a>   
 ### Retrieving Resources by Using IDictionaryEnumerator Properties  
- The first method of enumerating the resources in a .resources file involves directly retrieving each resource's name/value pair. After you call the `IDictionaryEnumerator.MoveNext` method to move to each resource in the collection, you can retrieve the resource name from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=fullName> property and the resource data from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> property.  
+ The first method of enumerating the resources in a .resources file involves directly retrieving each resource's name/value pair. After you call the `IDictionaryEnumerator.MoveNext` method to move to each resource in the collection, you can retrieve the resource name from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType> property and the resource data from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> property.  
   
- The following example shows how to retrieve the name and value of each resource in a .resources file by using the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=fullName> and <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> properties. To run the example, create the following text file named ApplicationResources.txt to define string resources.  
+ The following example shows how to retrieve the name and value of each resource in a .resources file by using the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType> and <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> properties. To run the example, create the following text file named ApplicationResources.txt to define string resources.  
   
 ```  
 Title="Contact Information"  
@@ -113,7 +119,7 @@ Label15="Alternate Email Address:"
  [!code-csharp[System.Resources.ResourceReader.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcereader.class/cs/class1.cs#1)]
  [!code-vb[System.Resources.ResourceReader.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcereader.class/vb/class1.vb#1)]  
   
- The attempt to retrieve resource data from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> property can throw the following exceptions:  
+ The attempt to retrieve resource data from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> property can throw the following exceptions:  
   
 -   A <xref:System.FormatException> if the data is not in the expected format.  
   
@@ -121,13 +127,13 @@ Label15="Alternate Email Address:"
   
 -   A <xref:System.TypeLoadException> if the type to which the data belongs cannot be cannot be found.  
   
- Typically, these exceptions are thrown if the .resources file has been modified manually, if the assembly in which a type is defined has either not been included with an application or has been inadvertently deleted, or if the assembly is an older version that predates a type. If one of these exceptions is thrown, you can retrieve resources by enumerating each resource and calling the <xref:System.Resources.ResourceReader.GetResourceData%2A> method, as the following section shows. This approach provides you with some information about the data type that the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> property attempted to return.  
+ Typically, these exceptions are thrown if the .resources file has been modified manually, if the assembly in which a type is defined has either not been included with an application or has been inadvertently deleted, or if the assembly is an older version that predates a type. If one of these exceptions is thrown, you can retrieve resources by enumerating each resource and calling the <xref:System.Resources.ResourceReader.GetResourceData%2A> method, as the following section shows. This approach provides you with some information about the data type that the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> property attempted to return.  
   
 <a name="getresourcedata"></a>   
 ### Retrieving Resources by Name with GetResourceData  
- The second approach to enumerating resources in a .resources file also involves navigating through the resources in the file by calling the `IDictionaryEnumerator.MoveNext` method. For each resource, you retrieve the resource's name from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=fullName> property, which is then passed to the <xref:System.Resources.ResourceReader.GetResourceData%28System.String%2CSystem.String%40%2CSystem.Byte%5B%5D%40%29> method to retrieve the resource's data. This is returned as a byte array in the `resourceData` argument.  
+ The second approach to enumerating resources in a .resources file also involves navigating through the resources in the file by calling the `IDictionaryEnumerator.MoveNext` method. For each resource, you retrieve the resource's name from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType> property, which is then passed to the <xref:System.Resources.ResourceReader.GetResourceData%28System.String%2CSystem.String%40%2CSystem.Byte%5B%5D%40%29> method to retrieve the resource's data. This is returned as a byte array in the `resourceData` argument.  
   
- This approach is more awkward than retrieving the resource name and value from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=fullName> and <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> properties, because it returns the actual bytes that form the resource value. However, if the attempt to retrieve the resource throws an exception, the <xref:System.Resources.ResourceReader.GetResourceData%2A> method can help identify the source of the exception by supplying information about the resource's data type. For more information about the string that indicates the resource's data type, see <xref:System.Resources.ResourceReader.GetResourceData%2A>.  
+ This approach is more awkward than retrieving the resource name and value from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType> and <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> properties, because it returns the actual bytes that form the resource value. However, if the attempt to retrieve the resource throws an exception, the <xref:System.Resources.ResourceReader.GetResourceData%2A> method can help identify the source of the exception by supplying information about the resource's data type. For more information about the string that indicates the resource's data type, see <xref:System.Resources.ResourceReader.GetResourceData%2A>.  
   
  The following example illustrates how to use this approach to retrieve resources and to handle any exceptions that are thrown. It programmatically creates a binary .resources file that contains four strings, one Boolean, one integer, one bitmap, and one custom `DateTimeTZI` object. To run the example, do the following:  
   
@@ -176,10 +182,31 @@ Label15="Alternate Email Address:"
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Reader</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Resources.ResourceReader" /> class.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ResourceReader (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.#ctor(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ResourceReader(System::IO::Stream ^ stream);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Resources.Reader</AssemblyName>
@@ -194,6 +221,10 @@ Label15="Alternate Email Address:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -210,10 +241,10 @@ Label15="Alternate Email Address:"
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor instantiates a <xref:System.Resources.ResourceReader> object that retrieves resources either from a standalone .resources file or from a .resources file that is embedded in an assembly. To read from a standalone .resources file, instantiate a <xref:System.IO.Stream> object and pass it to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor. To read from an embedded .resources file, call the <xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=fullName> method with the case-sensitive name of the .resources file, and pass the returned <xref:System.IO.Stream> object to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor.  
+ The <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor instantiates a <xref:System.Resources.ResourceReader> object that retrieves resources either from a standalone .resources file or from a .resources file that is embedded in an assembly. To read from a standalone .resources file, instantiate a <xref:System.IO.Stream> object and pass it to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor. To read from an embedded .resources file, call the <xref:System.Reflection.Assembly.GetManifestResourceStream%2A?displayProperty=nameWithType> method with the case-sensitive name of the .resources file, and pass the returned <xref:System.IO.Stream> object to the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor.  
   
 > [!IMPORTANT]
->  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
    
   
@@ -261,12 +292,15 @@ Label11="Mobile Phone:"
         <exception cref="T:System.IO.IOException">An I/O error has occurred while accessing <paramref name="stream" />.</exception>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for providing serialization services. Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" /></permission>
         <permission cref="T:System.Security.SecurityCriticalAttribute">requires full trust for the immediate caller. This member cannot be used by partially trusted or transparent code.</permission>
+        <altmember cref="M:System.Reflection.Assembly.GetManifestResourceStream(System.String)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ResourceReader (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ResourceReader(System::String ^ fileName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -276,6 +310,10 @@ Label11="Mobile Phone:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -295,7 +333,7 @@ Label11="Mobile Phone:"
  The <xref:System.Resources.ResourceReader.%23ctor%28System.String%29> constructor instantiates a <xref:System.Resources.ResourceReader> object that retrieves resources from a standalone .resources file. To retrieve resources from an embedded .resources file, use the <xref:System.Resources.ResourceReader.%23ctor%28System.IO.Stream%29> constructor.  
   
 > [!IMPORTANT]
->  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
+>  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Data Validation](https://www.owasp.org/index.php/Data_Validation).  
   
    
   
@@ -340,7 +378,12 @@ Label11="Mobile Phone:"
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Close();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Resources.IResourceReader.Close</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -349,6 +392,10 @@ Label11="Mobile Phone:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -379,7 +426,12 @@ Label11="Mobile Phone:"
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Resources.Reader</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -393,6 +445,10 @@ Label11="Mobile Phone:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -416,7 +472,12 @@ Label11="Mobile Phone:"
       <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IDictionaryEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IDictionaryEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Resources.IResourceReader.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Resources.Reader</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -431,6 +492,10 @@ Label11="Mobile Phone:"
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
       </ReturnValue>
@@ -442,9 +507,9 @@ Label11="Mobile Phone:"
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Typically, you enumerate resources by calling the <xref:System.Resources.ResourceReader.GetEnumerator%2A> method and then repeatedly calling the <xref:System.Collections.IEnumerator.MoveNext%2A> method on the returned <xref:System.Collections.IDictionaryEnumerator> object until the method returns `false`. The resource name is available from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=fullName> property; its value from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> property. The example illustrates how to enumerate resources in this way.  
+ Typically, you enumerate resources by calling the <xref:System.Resources.ResourceReader.GetEnumerator%2A> method and then repeatedly calling the <xref:System.Collections.IEnumerator.MoveNext%2A> method on the returned <xref:System.Collections.IDictionaryEnumerator> object until the method returns `false`. The resource name is available from the <xref:System.Collections.IDictionaryEnumerator.Key%2A?displayProperty=nameWithType> property; its value from the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> property. The example illustrates how to enumerate resources in this way.  
   
- The implementation of the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=fullName> property by the <xref:System.Resources.ResourceReader> class can throw the following exceptions:  
+ The implementation of the <xref:System.Collections.IDictionaryEnumerator.Value%2A?displayProperty=nameWithType> property by the <xref:System.Resources.ResourceReader> class can throw the following exceptions:  
   
 -   <xref:System.IO.FileNotFoundException>  
   
@@ -497,12 +562,16 @@ Label11="Mobile Phone:"
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The reader has been closed or disposed, and cannot be accessed.</exception>
+        <altmember cref="T:System.Collections.IDictionary" />
+        <altmember cref="T:System.Collections.IDictionaryEnumerator" />
       </Docs>
     </Member>
     <Member MemberName="GetResourceData">
       <MemberSignature Language="C#" Value="public void GetResourceData (string resourceName, out string resourceType, out byte[] resourceData);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetResourceData(string resourceName, string resourceType, unsigned int8[] resourceData) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetResourceData(string resourceName, [out] string&amp; resourceType, [out] unsigned int8[]&amp; resourceData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.GetResourceData(System.String,System.String@,System.Byte[]@)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub GetResourceData (resourceName As String, ByRef resourceType As String, ByRef resourceData As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void GetResourceData(System::String ^ resourceName, [Runtime::InteropServices::Out] System::String ^ % resourceType, [Runtime::InteropServices::Out] cli::array &lt;System::Byte&gt; ^ % resourceData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -512,6 +581,10 @@ Label11="Mobile Phone:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -523,7 +596,7 @@ Label11="Mobile Phone:"
       </Parameters>
       <Docs>
         <param name="resourceName">The name of a resource.</param>
-        <param name="resourceType">When this method returns, contains a string that represents the type name of the retrieved resource (see the Remarks section for details). This parameter is passed uninitialized.</param>
+        <param name="resourceType">When this method returns, contains a string that represents the type name of the retrieved resource. This parameter is passed uninitialized.</param>
         <param name="resourceData">When this method returns, contains a byte array that is the binary representation of the retrieved type. This parameter is passed uninitialized.</param>
         <summary>Retrieves the type name and data of a named resource from an open resource file or stream.</summary>
         <remarks>
@@ -538,9 +611,9 @@ Label11="Mobile Phone:"
   
     |ResourceTypeCode value|Description|  
     |----------------------------|-----------------|  
-    |`ResourceTypeCode.ByteArray`|The data is a byte array. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Byte%5B%5D%29?displayProperty=fullName> method.|  
-    |`ResourceTypeCode.Null`|The data is a null reference. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Object%29?displayProperty=fullName> method with an object whose value is `null`.|  
-    |`ResourceTypeCode.Stream`|The data is stored in a stream. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%29?displayProperty=fullName> or <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%2CSystem.Boolean%29?displayProperty=fullName> method.|  
+    |`ResourceTypeCode.ByteArray`|The data is a byte array. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Byte%5B%5D%29?displayProperty=nameWithType> method.|  
+    |`ResourceTypeCode.Null`|The data is a null reference. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Object%29?displayProperty=nameWithType> method with an object whose value is `null`.|  
+    |`ResourceTypeCode.Stream`|The data is stored in a stream. This data type commonly results from the call to the <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%29?displayProperty=nameWithType> or <xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%2CSystem.Boolean%29?displayProperty=nameWithType> method.|  
   
      Assuming that `resourceData` has not been corrupted, it can usually be converted from a byte array back to its original value by calling a <xref:System.BitConverter> or <xref:System.IO.BinaryReader> method.  
   
@@ -548,9 +621,9 @@ Label11="Mobile Phone:"
   
      `Extensions.Person, Utility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`  
   
-     Assuming that `resourceData` has not been corrupted and that the source type is available, `resourceData` can be converted from a byte array back to its original value by converting the byte array to a <xref:System.IO.Stream> object and passing the stream to the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=fullName> method.  
+     Assuming that `resourceData` has not been corrupted and that the source type is available, `resourceData` can be converted from a byte array back to its original value by converting the byte array to a <xref:System.IO.Stream> object and passing the stream to the <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=nameWithType> method.  
   
--   The string used to describe the data type in the <xref:System.Resources.ResourceWriter.AddResourceData%2A?displayProperty=fullName> method call.  
+-   The string used to describe the data type in the <xref:System.Resources.ResourceWriter.AddResourceData%2A?displayProperty=nameWithType> method call.  
   
  ]]></format>
         </remarks>
@@ -562,13 +635,19 @@ Label11="Mobile Phone:"
           <paramref name="resourceName" /> has an invalid type.</exception>
         <exception cref="T:System.FormatException">The retrieved resource data is corrupt.</exception>
         <exception cref="T:System.InvalidOperationException">The current <see cref="T:System.Resources.ResourceReader" /> object is not initialized, probably because it is closed.</exception>
+        <altmember cref="M:System.Resources.ResourceWriter.AddResourceData(System.String,System.String,System.Byte[])" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
       <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Resources.ResourceReader.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerator ^ System.Collections.IEnumerable.GetEnumerator() = System::Collections::IEnumerable::GetEnumerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -577,6 +656,10 @@ Label11="Mobile Phone:"
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.ResourceManager</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.IEnumerator</ReturnType>
@@ -589,32 +672,14 @@ Label11="Mobile Phone:"
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Resources.ResourceReader.System%23Collections%23IEnumerable%23GetEnumerator%2A?displayProperty=fullName> is an explicit interface implementation. It can be used only when the <xref:System.Resources.ResourceReader> instance is cast to an <xref:System.Collections.IEnumerable> interface. The recommended approach to enumerating the resources in a .resources file is to call the <xref:System.Collections.IEnumerator.MoveNext%2A> method of the <xref:System.Collections.IDictionaryEnumerator> object returned by the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=fullName> method.  
+ <xref:System.Resources.ResourceReader.System%23Collections%23IEnumerable%23GetEnumerator%2A?displayProperty=nameWithType> is an explicit interface implementation. It can be used only when the <xref:System.Resources.ResourceReader> instance is cast to an <xref:System.Collections.IEnumerable> interface. The recommended approach to enumerating the resources in a .resources file is to call the <xref:System.Collections.IEnumerator.MoveNext%2A> method of the <xref:System.Collections.IDictionaryEnumerator> object returned by the <xref:System.Resources.ResourceReader.GetEnumerator%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The reader has already been closed and cannot be accessed.</exception>
+        <altmember cref="T:System.Collections.IDictionary" />
+        <altmember cref="T:System.Collections.IDictionaryEnumerator" />
       </Docs>
     </Member>
-    <MemberGroup MemberName=".ctor">
-      <AssemblyInfo>
-        <AssemblyName>System.Resources.Reader</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <AssemblyVersion>4.0.1.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Initializes a new instance of the <see cref="T:System.Resources.ResourceReader" /> class.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
-  
-> [!IMPORTANT]
->  Using an instance of this object with untrusted data is a security risk. Use this object only with trusted data. For more information, see [Untrusted Data Security Risks](http://go.microsoft.com/fwlink/?LinkId=330378).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

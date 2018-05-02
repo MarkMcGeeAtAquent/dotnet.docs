@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeInfo::GetDefaultStartupFlags Method | Microsoft Docs"
+title: "ICLRRuntimeInfo::GetDefaultStartupFlags Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeInfo.GetDefaultStartupFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeInfo::GetDefaultStartupFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeInfo::GetDefaultStartupFlags method [.NET Framework hosting]"
   - "GetDefaultStartupFlags method [.NET Framework hosting]"
 ms.assetid: 35c2173e-3b0b-4b2a-950d-e0a01c6df052
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeInfo::GetDefaultStartupFlags Method
 Gets the startup flags and host configuration file that will be used to start the runtime.  
@@ -69,6 +72,6 @@ HRESULT GetDefaultStartupFlags(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)   
- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)   
+ [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
+ [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

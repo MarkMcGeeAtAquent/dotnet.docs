@@ -1,13 +1,17 @@
 ---
 uid: System.ServiceModel.Dispatcher.IInstanceContextInitializer
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Dispatcher.IInstanceContextInitializer.Initialize(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Message)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a Custom Security Token Authenticator | Microsoft Docs"
+title: "How to: Create a Custom Security Token Authenticator"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, authentication"
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
@@ -16,11 +19,13 @@ caps.latest.revision: 12
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Custom Security Token Authenticator
 This topic shows how to create a custom security token authenticator and how to integrate it with a custom security token manager. A security token authenticator validates the content of a security token provided with an incoming message. If the validation succeeds, the authenticator returns a collection of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instances that, when evaluated, returns a set of claims.  
   
- To use a custom security token authenticator in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], you must first create custom credentials and security token manager implementations. For more information about creating custom credentials and a security token manager, see [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). For more information about credentials, security token manager, and provider and authenticator classes, see [Security Architecture](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f).  
+ To use a custom security token authenticator in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], you must first create custom credentials and security token manager implementations. For more information about creating custom credentials and a security token manager, see [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md). For more information about credentials, security token manager, and provider and authenticator classes, see [Security Architecture](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f).  
   
 ## Procedures  
   
@@ -56,16 +61,16 @@ This topic shows how to create a custom security token authenticator and how to 
   
 1.  Override the <xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%2A> method in your custom security token manager implementation.  
   
-2.  Add logic to the method to enable it to return your custom security token authenticator based on the <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parameter. The following example returns a custom security token authenticator if the token requirements token type is a user name (represented by the <xref:System.IdentityModel.Tokens.SecurityTokenTypes.UserName%2A> property) and the message direction for which the security token authenticator is being requested is input (represented by the <xref:System.ServiceModel.Description.MessageDirection> field).  
+2.  Add logic to the method to enable it to return your custom security token authenticator based on the <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> parameter. The following example returns a custom security token authenticator if the token requirements token type is a user name (represented by the <xref:System.IdentityModel.Tokens.SecurityTokenTypes.UserName%2A> property) and the message direction for which the security token authenticator is being requested is input (represented by the <xref:System.ServiceModel.Description.MessageDirection.Input> field).  
   
      [!code-csharp[c_CustomTokenAuthenticator#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtokenauthenticator/cs/source.cs#3)]
      [!code-vb[c_CustomTokenAuthenticator#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtokenauthenticator/vb/source.vb#3)]  
   
 ## See Also  
- <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>   
- <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>   
- <xref:System.IdentityModel.Selectors.SecurityTokenManager>   
- <xref:System.IdentityModel.Tokens.UserNameSecurityToken>   
- [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)   
- [How to: Create a Custom Security Token Provider](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)   
- [Security Architecture](http://msdn.microsoft.com/en-us/16593476-d36a-408d-808c-ae6fd483e28f)
+ <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenRequirement>  
+ <xref:System.IdentityModel.Selectors.SecurityTokenManager>  
+ <xref:System.IdentityModel.Tokens.UserNameSecurityToken>  
+ [Walkthrough: Creating Custom Client and Service Credentials](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)  
+ [How to: Create a Custom Security Token Provider](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)  
+ [Security Architecture](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

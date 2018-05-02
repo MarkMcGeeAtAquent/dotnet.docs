@@ -1,5 +1,5 @@
 ---
-title: "Hosting Coclasses | Microsoft Docs"
+title: "Hosting Coclasses"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "hosting coclasses [.NET Framework]"
   - "unmanaged coclasses [.NET Framework], hosting"
@@ -20,6 +18,8 @@ caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Hosting Coclasses
 This section describes the unmanaged API coclasses that the hosting API uses.  

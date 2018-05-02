@@ -1,8 +1,8 @@
 ---
-title: "Messaging Protocols | Microsoft Docs"
+title: "Messaging Protocols"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Messaging Protocols
 The [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] channel stack employs encoding and transport channels to transform internal message representation into its wire format and send it by using a particular transport. The most common transport used for Web services interoperability is HTTP, and the most common encodings used by Web services are XML-based SOAP 1.1, SOAP 1.2, and Message Transmission Optimization Mechanism (MTOM).  
@@ -138,7 +140,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  Consider a scenario where a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service requires authentication using a Security Assertions Markup Language (SAML) token issued by the token issuer at http://sts.fabrikam123.com. The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint describes this authentication requirement by using `sp:IssuedToken` assertion with a nested `sp:Issuer` assertion pointing to the token issuer. Client applications that access the `sp:Issuer` assertion need to know how to communicate with the token issuer endpoint. The client needs to know metadata about the token issuer. Using the endpoint reference metadata extensions defined in MEX, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] provides a reference to the token issuer metadata.  
   
-```  
+```xml  
 <sp:IssuedToken>  
   <sp:Issuer>  
     <wsa10:Address>  
@@ -157,7 +159,6 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
     </wsa10:Metadata>  
   </sp:Issuer>  
 </sp:IssuedToken>  
-  
 ```  
   
 ### Message Addressing Headers  
@@ -232,7 +233,7 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  The following policy assertion has Endpoint Policy Subject [WS-PA] and indicates messages sent and received from the endpoint must use WS-Addressing 2004/08.  
   
-```  
+```xml  
 <wsap:UsingAddressing />  
 ```  
   
@@ -240,13 +241,13 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
   
  The following policy assertion this indicates that messages sent/received must use WS-Addressing 1.0.  
   
-```vb  
-<wsam:Addressing/>   
+```xml
+<wsam:Addressing/>   
 ```  
   
  The following policy assertion has an Endpoint Policy Subject [WS-PA] and indicates that messages sent and received from the endpoint must use WS-Addressing 2004/08.  
   
-```  
+```xml  
 <wsaw10:UsingAddressing />  
 ```  
   
@@ -265,8 +266,8 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ```xml  
 <wsam:Addressing>  
     <wsp:Policy>  
-        <wsam:AnonymousResponses />   
-    </wsp:Policy>  
+        <wsam:AnonymousResponses />   
+    </wsp:Policy>  
 </wsam:Addressing>  
 ```  
   
@@ -285,14 +286,14 @@ dp|http://schemas.microsoft.com/net/2006/06/duplex|
 ```xml  
 <wsam:Addressing>  
     <wsp:Policy>  
-      <wsam:NonAnonymousResponses />   
-   </wsp:Policy>  
-  </wsam:Addressing>  
+      <wsam:NonAnonymousResponses />   
+   </wsp:Policy>  
+  </wsam:Addressing>  
 ```  
   
  Use of the following assertion that has Endpoint Policy Subject [WS-PA] on endpoints that use WSDL 1.1 SOAP 1.x HTTP bindings requires two separate converse HTTP connections to be used for messages flowing from requester to responder and responder to requester, respectively.  
   
-```  
+```xml  
 <cdp:CompositeDuplex/>  
 ```  
   
@@ -422,7 +423,7 @@ Content-Length: 0
   
     5.  Generate a new binary MIME part with content formed by binary data decoded from the replaced characters processed as base64, Content-ID header from 4b, Content- Transfer-Encoding header from 4c, Content-Type header if generated in step 4d.  
   
-    6.  Add an `href` attribute to the `xop:Include` element with the value cid: uri derived from Content-ID header value generated in step 4b. Remove the enclosing “\<” and “>” characters, URL-escape the remaining string, and add the prefix `cid:`. The following minimum character set is required to be escaped by RFC1738 and RFC2396. Other characters can be escaped.  
+    6.  Add an `href` attribute to the `xop:Include` element with the value cid: uri derived from Content-ID header value generated in step 4b. Remove the enclosing "\<" and ">" characters, URL-escape the remaining string, and add the prefix `cid:`. The following minimum character set is required to be escaped by RFC1738 and RFC2396. Other characters can be escaped.  
   
         ```  
         Hexadecimal 00-1F , 7F, 20, "<" | ">" | "#" | "%" | <">  
@@ -444,7 +445,7 @@ Content-Length: 0
   
 3.  For each element information item in the constructed SOAP Envelope, which has, as the sole member of its [children] property, an `xop:Include` element information item:  
   
-    1.  Remove the `cid:` prefix and unescape all URI-escape sequences (RFC 2396) in the value of the `@href` attribute of the `xop:Include` element. Enclose the result string in “\<”, “>”.  
+    1.  Remove the `cid:` prefix and unescape all URI-escape sequences (RFC 2396) in the value of the `@href` attribute of the `xop:Include` element. Enclose the result string in "\<", ">".  
   
     2.  Locate the MIME part with the Content-ID header value that matches the string derived in step 3a.  
   
@@ -459,7 +460,7 @@ Content-Length: 0
   
 -   R4132: An HTTP Content-Type header must have a type parameter with the value `application/xop+xml` enclosed in double quotation marks.  
   
- While the requirement to use double quotation marks is not explicit in RFC 2387, the text observes that all of the multipart/related media type parameters most likely contain reserved characters like “@” or “/” and therefore need double quotation marks.  
+ While the requirement to use double quotation marks is not explicit in RFC 2387, the text observes that all of the multipart/related media type parameters most likely contain reserved characters like "@" or "/" and therefore need double quotation marks.  
   
 -   R4133: An HTTP Content-Type header should have a start parameter with the value of the Content-ID header of the MIME part that contains the SOAP 1.x Envelope, enclosed in double quotation marks. If the start parameter is omitted, the first MIME part must contain the SOAP 1.x Envelope.  
   
@@ -482,14 +483,12 @@ Content-Length: 0
   
     ```  
     Content-Type: multipart/related; type="application/xop+xml";start=" <part0@tempuri.org>";boundary="uuid:0ca0e16e-feb1-426c-97d8-c4508ada5e82+id=1";start-info="text/xml"  
-  
     ```  
   
      CORRECT  
   
     ```  
     Content-Type: Multipart/Related; type="application/xop+xml";start-info="text/xml";boundary="uuid:0ca0e16e-feb1-426c-97d8-c4508ada5e82+id=1"  
-  
     ```  
   
      INCORRECT  
@@ -514,14 +513,14 @@ Content-Length: 0
  where `msg-id` is defined in RFC 2822 (that supersedes RFC 822, referenced in RFC 2045) as:  
   
 ```  
-msg-id    =       [CFWS] "<" id-left "@" id-right ">" [CFWS]  
+msg-id    =       [CFWS] "<" id-left "@" id-right ">" [CFWS]  
 ```  
   
- and is effectively an e-mail address enclosed within “\<” and  “>”. The `[CFWS]` prefix and suffix were added in RFC 2822 to carry comments and should not be used to preserve interoperability.  
+ and is effectively an email address enclosed within "\<" and  ">". The `[CFWS]` prefix and suffix were added in RFC 2822 to carry comments and should not be used to preserve interoperability.  
   
  R4143: The value of the Content-ID header for the Infoset MIME part must follow `msg-id` production from RFC 2822 with the `[CFWS]` prefix and suffix parts omitted.  
   
- A number of MIME implementations relaxed requirements for the value enclosed within “\<” and “>” to be an e-mail address and used `absoluteURI` enclosed in “\<” , “>” in addition to the e-mail address. This version of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses values of the Content-ID MIME header of the form:  
+ A number of MIME implementations relaxed requirements for the value enclosed within "\<" and ">" to be an email address and used `absoluteURI` enclosed in "\<" , ">" in addition to the email address. This version of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses values of the Content-ID MIME header of the form:  
   
 ```  
 Content-ID: <http://tempuri.org/0>   
@@ -530,7 +529,7 @@ Content-ID: <http://tempuri.org/0>
  R4144: MTOM processors should accept Content-ID header values that match the following relaxed `msg-id`.  
   
 ```  
-msg-id-relaxed =     [CFWS] "<" (absoluteURI | mail-address) ">" [CFWS]  
+msg-id-relaxed =     [CFWS] "<" (absoluteURI | mail-address) ">" [CFWS]  
 mail-address   =     id-left "@" id-right  
 ```  
   
@@ -544,14 +543,14 @@ mail-address   =     id-left "@" id-right
   
 -   According to [XOP] section 5,  
   
--   R4148: SOAP1.1 Infoset part must contain Content-Type header with media type application/xop+xml and parameters type=”text/xml” and charset  
+-   R4148: SOAP1.1 Infoset part must contain Content-Type header with media type application/xop+xml and parameters type="text/xml" and charset  
   
     ```  
     Content-Type: application/xop+xml;  
                   charset=utf-8;type="text/xml"  
     ```  
   
--   R4149: The SOAP 1.2 Infoset part must contain the Content-Type header with media type `application/xop+xml` and parameters type=”`application/soap+xml`” and `charset`.  
+-   R4149: The SOAP 1.2 Infoset part must contain the Content-Type header with media type `application/xop+xml` and parameters type="`application/soap+xml`" and `charset`.  
   
     ```  
     Content-Type: application/xop+xml;  
@@ -574,7 +573,7 @@ mail-address   =     id-left "@" id-right
 ### WS-Policy Assertion for MTOM  
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] uses the following policy assertion to indicate MTOM usage by endpoint:  
   
-```  
+```xml  
 <wsoma:OptimizedMimeSerialization ... />  
 ```  
   

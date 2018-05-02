@@ -1,5 +1,5 @@
 ---
-title: "ICLRHostProtectionManager::SetProtectedCategories Method | Microsoft Docs"
+title: "ICLRHostProtectionManager::SetProtectedCategories Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRHostProtectionManager.SetProtectedCategories"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRHostProtectionManager::SetProtectedCategories"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetProtectedCategories method [.NET Framework hosting]"
   - "ICLRHostProtectionManager::SetProtectedCategories method [.NET Framework hosting]"
 ms.assetid: fa21dc7b-5da7-440b-b59e-9180e5181f9d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRHostProtectionManager::SetProtectedCategories Method
 Specifies which categories of managed types and members should be blocked from running in partially trusted code.  
@@ -66,8 +69,8 @@ HRESULT SetProtectedCategories (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Security.Permissions.HostProtectionAttribute>   
- <xref:System.Security.Permissions.HostProtectionResource>   
- [EApiCategories Enumeration](../../../../docs/framework/unmanaged-api/hosting/eapicategories-enumeration.md)   
- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)   
+ <xref:System.Security.Permissions.HostProtectionAttribute>  
+ <xref:System.Security.Permissions.HostProtectionResource>  
+ [EApiCategories Enumeration](../../../../docs/framework/unmanaged-api/hosting/eapicategories-enumeration.md)  
+ [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [ICLRHostProtectionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostprotectionmanager-interface.md)

@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugModule::GetEditAndContinueSnapshot Method | Microsoft Docs"
+title: "ICorDebugModule::GetEditAndContinueSnapshot Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModule.GetEditAndContinueSnapshot"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModule::GetEditAndContinueSnapshot"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugModule::GetEditAndContinueSnapshot method [.NET Framework debugging]"
   - "GetEditAndContinueSnapshot method [.NET Framework debugging]"
 ms.assetid: fad94e1e-78be-440f-aa43-e0c66e0b102e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModule::GetEditAndContinueSnapshot Method
 Deprecated.  

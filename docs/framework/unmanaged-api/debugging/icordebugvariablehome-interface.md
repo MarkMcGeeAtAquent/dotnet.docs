@@ -1,30 +1,35 @@
 ---
-title: "ICorDebugVariableHome Interface | Microsoft Docs"
+title: "ICorDebugVariableHome Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "ICorDebugVariableHome"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugVariableHome"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugVariableHome interface [.NET Framework debugging]"
 ms.assetid: 76f2bf3b-759f-4eed-bce7-119415b25915
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugVariableHome Interface
 Represents a local variable or argument of a function.  
@@ -45,7 +50,6 @@ Represents a local variable or argument of a function.
  The following code fragment uses the [ICorDebugCode4](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md) object named `pCode4`.  
   
 ```cpp  
-  
 ICorDebugCode4 *pCode4 = NULL;  
 pCode->QueryInterface(IID_ICorDebugCode4, &pCode4);  
   
@@ -82,7 +86,6 @@ for (int i = 0; i < celtFetched; i++)
         break;  
     }  
 }  
-  
 ```  
   
 ## Requirements  
@@ -95,5 +98,5 @@ for (int i = 0; i < celtFetched; i++)
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [ICorDebugVariableHomeEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)

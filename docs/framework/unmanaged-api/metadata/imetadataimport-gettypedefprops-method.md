@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetTypeDefProps Method | Microsoft Docs"
+title: "IMetaDataImport::GetTypeDefProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetTypeDefProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetTypeDefProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetTypeDefProps method [.NET Framework metadata]"
   - "IMetaDataImport::GetTypeDefProps method [.NET Framework metadata]"
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetTypeDefProps Method
 Returns metadata information for the <xref:System.Type> represented by the specified TypeDef token.  
@@ -72,5 +75,5 @@ HRESULT GetTypeDefProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode::GetVersionNumber Method | Microsoft Docs"
+title: "ICorDebugCode::GetVersionNumber Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode.GetVersionNumber"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode::GetVersionNumber"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetVersionNumber method, ICorDebugCode interface [.NET Framework debugging]"
   - "ICorDebugCode::GetVersionNumber method [.NET Framework debugging]"
 ms.assetid: c8e02518-679f-4e9f-8a28-ba4a89a3876f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode::GetVersionNumber Method
 Gets the one-based number that identifies the version of the code that this "ICorDebugCode" represents.  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunctionBreakpoint Interface1 | Microsoft Docs"
+title: "ICorDebugFunctionBreakpoint Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunctionBreakpoint"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunctionBreakpoint"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFunctionBreakpoint interface [.NET Framework debugging]"
 ms.assetid: 9c149303-14b1-4138-83d7-e8c3e0fcd332
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunctionBreakpoint Interface1
 Extends the ICorDebugBreakpoint interface to support breakpoints within functions.  

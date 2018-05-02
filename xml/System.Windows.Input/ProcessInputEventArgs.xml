@@ -1,7 +1,9 @@
-<Type Name="ProcessInputEventArgs" FullName="System.Windows.Input.ProcessInputEventArgs">
+﻿<Type Name="ProcessInputEventArgs" FullName="System.Windows.Input.ProcessInputEventArgs">
   <TypeSignature Language="C#" Value="public class ProcessInputEventArgs : System.Windows.Input.NotifyInputEventArgs" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessInputEventArgs extends System.Windows.Input.NotifyInputEventArgs" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Input.ProcessInputEventArgs" />
+  <TypeSignature Language="VB.NET" Value="Public Class ProcessInputEventArgs&#xA;Inherits NotifyInputEventArgs" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ProcessInputEventArgs : System::Windows::Input::NotifyInputEventArgs" />
   <AssemblyInfo>
     <AssemblyName>PresentationCore</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -36,12 +38,19 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="E:System.Windows.Input.InputManager.PreProcessInput" />
+    <altmember cref="T:System.Windows.Input.InputManager" />
+    <altmember cref="T:System.Windows.Input.PreProcessInputEventArgs" />
+    <altmember cref="T:System.Windows.Input.NotifyInputEventArgs" />
+    <altmember cref="T:System.Windows.Input.StagingAreaInputItem" />
   </Docs>
   <Members>
     <Member MemberName="PeekInput">
       <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PeekInput ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PeekInput() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+      <MemberSignature Language="VB.NET" Value="Public Function PeekInput () As StagingAreaInputItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Input::StagingAreaInputItem ^ PeekInput();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -68,12 +77,16 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for getting the top input.  Associated enumerations:  <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
+        <altmember cref="Overload:System.Windows.Input.ProcessInputEventArgs.PushInput" />
       </Docs>
     </Member>
     <Member MemberName="PopInput">
       <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PopInput ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PopInput() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
+      <MemberSignature Language="VB.NET" Value="Public Function PopInput () As StagingAreaInputItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Input::StagingAreaInputItem ^ PopInput();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -93,12 +106,35 @@
         <returns>The input event that was on the top of the staging area stack. This will be <see langword="null" /> if the staging area is empty.</returns>
         <remarks>To be added.</remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for popping an input event.  Associated enumerations:  <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+        <altmember cref="Overload:System.Windows.Input.ProcessInputEventArgs.PushInput" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="PushInput">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Puts an input event onto the top of the staging area stack.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The input to place on the staging area cannot be `null` and it cannot already exist in the staging area.  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="PushInput">
       <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PushInput (System.Windows.Input.StagingAreaInputItem input);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PushInput(class System.Windows.Input.StagingAreaInputItem input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PushInput(System.Windows.Input.StagingAreaInputItem)" />
+      <MemberSignature Language="VB.NET" Value="Public Function PushInput (input As StagingAreaInputItem) As StagingAreaInputItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Input::StagingAreaInputItem ^ PushInput(System::Windows::Input::StagingAreaInputItem ^ input);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -128,12 +164,16 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for pushing an input event.  Associated enumerations:  <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
       </Docs>
     </Member>
     <Member MemberName="PushInput">
       <MemberSignature Language="C#" Value="public System.Windows.Input.StagingAreaInputItem PushInput (System.Windows.Input.InputEventArgs input, System.Windows.Input.StagingAreaInputItem promote);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Input.StagingAreaInputItem PushInput(class System.Windows.Input.InputEventArgs input, class System.Windows.Input.StagingAreaInputItem promote) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Input.ProcessInputEventArgs.PushInput(System.Windows.Input.InputEventArgs,System.Windows.Input.StagingAreaInputItem)" />
+      <MemberSignature Language="VB.NET" Value="Public Function PushInput (input As InputEventArgs, promote As StagingAreaInputItem) As StagingAreaInputItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Input::StagingAreaInputItem ^ PushInput(System::Windows::Input::InputEventArgs ^ input, System::Windows::Input::StagingAreaInputItem ^ promote);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -165,24 +205,9 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">for pushing an input event. Associated enumerations:  <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PeekInput" />
+        <altmember cref="M:System.Windows.Input.ProcessInputEventArgs.PopInput" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="PushInput">
-      <AssemblyInfo>
-        <AssemblyName>PresentationCore</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Puts an input event onto the top of the staging area stack.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The input to place on the staging area cannot be `null` and it cannot already exist in the staging area.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

@@ -1,7 +1,9 @@
-<Type Name="SqlServices" FullName="System.Web.Management.SqlServices">
+﻿<Type Name="SqlServices" FullName="System.Web.Management.SqlServices">
   <TypeSignature Language="C#" Value="public static class SqlServices" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SqlServices extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Management.SqlServices" />
+  <TypeSignature Language="VB.NET" Value="Public Class SqlServices" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SqlServices abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -37,6 +39,8 @@
       <MemberSignature Language="C#" Value="public static string GenerateApplicationServicesScripts (bool install, System.Web.Management.SqlFeatures features, string database);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateApplicationServicesScripts(bool install, valuetype System.Web.Management.SqlFeatures features, string database) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.GenerateApplicationServicesScripts(System.Boolean,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GenerateApplicationServicesScripts (install As Boolean, features As SqlFeatures, database As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ GenerateApplicationServicesScripts(bool install, System::Web::Management::SqlFeatures features, System::String ^ database);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -58,12 +62,15 @@
         <summary>Generates the SQL scripts for the selected features. The scripts will reference the database indicated by the database parameter.</summary>
         <returns>Returns the generated script code.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
     <Member MemberName="GenerateSessionStateScripts">
       <MemberSignature Language="C#" Value="public static string GenerateSessionStateScripts (bool install, System.Web.Management.SessionStateType type, string customDatabase);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateSessionStateScripts(bool install, valuetype System.Web.Management.SessionStateType type, string customDatabase) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.GenerateSessionStateScripts(System.Boolean,System.Web.Management.SessionStateType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GenerateSessionStateScripts (install As Boolean, type As SessionStateType, customDatabase As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ GenerateSessionStateScripts(bool install, System::Web::Management::SessionStateType type, System::String ^ customDatabase);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -86,12 +93,25 @@
         <returns>Returns the generated script code.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Install">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Installs components for specified ASP.NET features on a SQL Server database.</summary>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Install">
       <MemberSignature Language="C#" Value="public static void Install (string server, string database, System.Web.Management.SqlFeatures features);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string server, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Install (server As String, database As String, features As SqlFeatures)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Install(System::String ^ server, System::String ^ database, System::Web::Management::SqlFeatures features);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -132,12 +152,15 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contains one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
     <Member MemberName="Install">
       <MemberSignature Language="C#" Value="public static void Install (string database, System.Web.Management.SqlFeatures features, string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string database, valuetype System.Web.Management.SqlFeatures features, string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Install (database As String, features As SqlFeatures, connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Install(System::String ^ database, System::Web::Management::SqlFeatures features, System::String ^ connectionString);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -175,12 +198,15 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contains one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
     <Member MemberName="Install">
       <MemberSignature Language="C#" Value="public static void Install (string server, string user, string password, string database, System.Web.Management.SqlFeatures features);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string server, string user, string password, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.String,System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Install (server As String, user As String, password As String, database As String, features As SqlFeatures)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Install(System::String ^ server, System::String ^ user, System::String ^ password, System::String ^ database, System::Web::Management::SqlFeatures features);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -217,12 +243,25 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contains one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="InstallSessionState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Installs components for ASP.NET session state on a SQL Server database.</summary>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="InstallSessionState">
       <MemberSignature Language="C#" Value="public static void InstallSessionState (string server, string customDatabase, System.Web.Management.SessionStateType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string server, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub InstallSessionState (server As String, customDatabase As String, type As SessionStateType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void InstallSessionState(System::String ^ server, System::String ^ customDatabase, System::Web::Management::SessionStateType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -263,12 +302,15 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
     <Member MemberName="InstallSessionState">
       <MemberSignature Language="C#" Value="public static void InstallSessionState (string customDatabase, System.Web.Management.SessionStateType type, string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string customDatabase, valuetype System.Web.Management.SessionStateType type, string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.Web.Management.SessionStateType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub InstallSessionState (customDatabase As String, type As SessionStateType, connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void InstallSessionState(System::String ^ customDatabase, System::Web::Management::SessionStateType type, System::String ^ connectionString);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -301,12 +343,15 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
     <Member MemberName="InstallSessionState">
       <MemberSignature Language="C#" Value="public static void InstallSessionState (string server, string user, string password, string customDatabase, System.Web.Management.SessionStateType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string server, string user, string password, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.String,System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub InstallSessionState (server As String, user As String, password As String, customDatabase As String, type As SessionStateType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void InstallSessionState(System::String ^ server, System::String ^ user, System::String ^ password, System::String ^ customDatabase, System::Web::Management::SessionStateType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -351,12 +396,25 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Uninstall">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes components for selected ASP.NET features from a SQL Server database.</summary>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Uninstall">
       <MemberSignature Language="C#" Value="public static void Uninstall (string server, string database, System.Web.Management.SqlFeatures features);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string server, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Uninstall (server As String, database As String, features As SqlFeatures)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Uninstall(System::String ^ server, System::String ^ database, System::Web::Management::SqlFeatures features);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -397,12 +455,15 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contained one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation, an attempt was made to uninstall from a nonexistent database, or one or more tables for the features in the specified database contained data.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
     <Member MemberName="Uninstall">
       <MemberSignature Language="C#" Value="public static void Uninstall (string database, System.Web.Management.SqlFeatures features, string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string database, valuetype System.Web.Management.SqlFeatures features, string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Uninstall (database As String, features As SqlFeatures, connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Uninstall(System::String ^ database, System::Web::Management::SqlFeatures features, System::String ^ connectionString);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -443,12 +504,15 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contained one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation, an attempt was made to uninstall from a nonexistent database, or one or more tables for the features in the specified database contained data.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
     <Member MemberName="Uninstall">
       <MemberSignature Language="C#" Value="public static void Uninstall (string server, string user, string password, string database, System.Web.Management.SqlFeatures features);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string server, string user, string password, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.String,System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Uninstall (server As String, user As String, password As String, database As String, features As SqlFeatures)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Uninstall(System::String ^ server, System::String ^ user, System::String ^ password, System::String ^ database, System::Web::Management::SqlFeatures features);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -485,12 +549,25 @@
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="features" /> value contained one or more invalid flags.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation, an attempt was made to uninstall from a nonexistent database, or one or more tables for the features in the specified database contained data.</exception>
+        <altmember cref="T:System.Web.Management.SqlFeatures" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="UninstallSessionState">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes components for ASP.NET session state from a SQL Server database.</summary>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
+      </Docs>
+    </MemberGroup>
     <Member MemberName="UninstallSessionState">
       <MemberSignature Language="C#" Value="public static void UninstallSessionState (string server, string customDatabase, System.Web.Management.SessionStateType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string server, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub UninstallSessionState (server As String, customDatabase As String, type As SessionStateType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void UninstallSessionState(System::String ^ server, System::String ^ customDatabase, System::Web::Management::SessionStateType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -530,12 +607,15 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
     <Member MemberName="UninstallSessionState">
       <MemberSignature Language="C#" Value="public static void UninstallSessionState (string customDatabase, System.Web.Management.SessionStateType type, string connectionString);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string customDatabase, valuetype System.Web.Management.SessionStateType type, string connectionString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.Web.Management.SessionStateType,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub UninstallSessionState (customDatabase As String, type As SessionStateType, connectionString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void UninstallSessionState(System::String ^ customDatabase, System::Web::Management::SessionStateType type, System::String ^ connectionString);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -568,12 +648,15 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
     <Member MemberName="UninstallSessionState">
       <MemberSignature Language="C#" Value="public static void UninstallSessionState (string server, string user, string password, string customDatabase, System.Web.Management.SessionStateType type);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string server, string user, string password, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.String,System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub UninstallSessionState (server As String, user As String, password As String, customDatabase As String, type As SessionStateType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void UninstallSessionState(System::String ^ server, System::String ^ user, System::String ^ password, System::String ^ customDatabase, System::Web::Management::SessionStateType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -617,6 +700,7 @@
         <exception cref="T:System.ArgumentException">The type is <see langword="Custom" /> and the <paramref name="customDatabase" /> value is not supplied, or the type is either <see langword="Temporary" /> or <see langword="Persisted" /> and the <paramref name="customDatabase" /> value is not null.</exception>
         <exception cref="T:System.Web.HttpException">Unable to connect to the specified database server.</exception>
         <exception cref="T:System.Web.Management.SqlExecutionException">An exception occurred while processing the SQL statements required for the operation.</exception>
+        <altmember cref="T:System.Web.Management.SessionStateType" />
       </Docs>
     </Member>
   </Members>

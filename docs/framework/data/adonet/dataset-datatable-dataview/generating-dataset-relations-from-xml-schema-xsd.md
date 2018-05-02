@@ -1,8 +1,8 @@
 ---
-title: "Generating DataSet Relations from XML Schema (XSD) | Microsoft Docs"
+title: "Generating DataSet Relations from XML Schema (XSD)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Generating DataSet Relations from XML Schema (XSD)
 In a <xref:System.Data.DataSet>, you form an association between two or more columns by creating a parent-child relation. There are three ways to represent a **DataSet** relation within an XML Schema definition language (XSD) schema:  
@@ -27,7 +29,7 @@ In a <xref:System.Data.DataSet>, you form an association between two or more col
 ## Nested Complex Types  
  Nested complex type definitions in a schema indicate the parent-child relationships of the elements. The following XML Schema fragment shows that **OrderDetail** is a child element of the **Order** element.  
   
-```  
+```xml  
 <xs:element name="Order">  
   <xs:complexType>  
      <xs:sequence>          
@@ -44,12 +46,11 @@ In a <xref:System.Data.DataSet>, you form an association between two or more col
 ## msdata:Relationship Annotation  
  The **msdata:Relationship** annotation allows you to explicitly specify parent-child relationships between elements in the schema that are not nested. The following example shows the structure of the **Relationship** element.  
   
-```  
-  
-<msdata:Relationship name="CustOrderRelationship"    
-msdata:parent=""    
-msdata:child=""    
-msdata:parentkey=""    
+```xml  
+<msdata:Relationship name="CustOrderRelationship"    
+msdata:parent=""    
+msdata:child=""    
+msdata:parentkey=""    
 msdata:childkey="" />  
 ```  
   
@@ -57,7 +58,7 @@ msdata:childkey="" />
   
  For example, the following schema fragment specifies **Order** and **OrderDetail** elements at the same level (not nested). The schema specifies an **msdata:Relationship** annotation, which specifies the parent-child relationship between these two elements. In this case, an explicit relationship must be specified using the **msdata:Relationship** annotation.  
   
-```  
+```xml  
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
   <xs:complexType>  
     <xs:choice maxOccurs="unbounded">  
@@ -83,7 +84,6 @@ msdata:childkey="" />
           msdata:childkey="OrderNo"/>  
      </xs:appinfo>  
   </xs:annotation>  
-  
 ```  
   
  The mapping process uses the **Relationship** element to create a parent-child relationship between the **OrderNumber** column in the **Order** table and the **OrderNo** column in the **OrderDetail** table in the **DataSet**. The mapping process only specifies the relationship; it does not automatically specify any constraints on the values in these columns, as do the primary key/foreign key constraints in relational databases.  

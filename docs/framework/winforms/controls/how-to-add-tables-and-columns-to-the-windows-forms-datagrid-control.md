@@ -1,8 +1,8 @@
 ---
-title: "How to: Add Tables and Columns to the Windows Forms DataGrid Control | Microsoft Docs"
+title: "How to: Add Tables and Columns to the Windows Forms DataGrid Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,9 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "columns [Windows Forms], adding to DataGrid control"
   - "tables [Windows Forms], adding to DataGrid control"
@@ -20,6 +22,8 @@ caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add Tables and Columns to the Windows Forms DataGrid Control
 > [!NOTE]
@@ -39,13 +43,11 @@ manager: "wpickett"
     ```vb  
     Dim ts1 As New DataGridTableStyle()  
     ts1.MappingName = "Customers"  
-  
     ```  
   
     ```csharp  
     DataGridTableStyle ts1 = new DataGridTableStyle();  
     ts1.MappingName = "Customers";  
-  
     ```  
   
     ```cpp  
@@ -59,14 +61,12 @@ manager: "wpickett"
     Dim myDataCol As New DataGridBoolColumn()  
     myDataCol.HeaderText = "My New Column"  
     myDataCol.MappingName = "Current"  
-  
     ```  
   
     ```csharp  
     DataGridBoolColumn myDataCol = new DataGridBoolColumn();  
     myDataCol.HeaderText = "My New Column";  
     myDataCol.MappingName = "Current";  
-  
     ```  
   
     ```cpp  
@@ -79,12 +79,10 @@ manager: "wpickett"
   
     ```vb  
     ts1.GridColumnStyles.Add(myDataCol)  
-  
     ```  
   
     ```csharp  
     ts1.GridColumnStyles.Add(myDataCol);  
-  
     ```  
   
     ```cpp  
@@ -95,12 +93,10 @@ manager: "wpickett"
   
     ```vb  
     DataGrid1.TableStyles.Add(ts1)  
-  
     ```  
   
     ```csharp  
     dataGrid1.TableStyles.Add(ts1);  
-  
     ```  
   
     ```cpp  
@@ -108,5 +104,5 @@ manager: "wpickett"
     ```  
   
 ## See Also  
- [DataGrid Control](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)   
+ [DataGrid Control](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  
  [How to: Delete or Hide Columns in the Windows Forms DataGrid Control](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)

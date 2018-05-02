@@ -1,10 +1,13 @@
-<Type Name="Trace" FullName="System.Diagnostics.Trace">
+﻿<Type Name="Trace" FullName="System.Diagnostics.Trace">
   <TypeSignature Language="C#" Value="public sealed class Trace" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Trace extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Trace" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Trace" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Trace sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -29,7 +32,7 @@
   
  This class provides methods to display an <xref:System.Diagnostics.Trace.Assert%2A> dialog box, and to emit an assertion that will always <xref:System.Diagnostics.Trace.Fail%2A>. This class provides write methods in the following variations: <xref:System.Diagnostics.Trace.Write%2A>, <xref:System.Diagnostics.Trace.WriteLine%2A>, <xref:System.Diagnostics.Trace.WriteIf%2A>, and <xref:System.Diagnostics.Trace.WriteLineIf%2A>.  
   
- The <xref:System.Diagnostics.BooleanSwitch> and <xref:System.Diagnostics.TraceSwitch> classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the <xref:System.Diagnostics.Switch> class and the [How to: Create, Initialize and Configure Trace Switches](../Topic/How%20to:%20Create,%20Initialize%20and%20Configure%20Trace%20Switches.md) topic.  
+ The <xref:System.Diagnostics.BooleanSwitch> and <xref:System.Diagnostics.TraceSwitch> classes provide means to dynamically control the tracing output. You can modify the values of these switches without recompiling your application. For information on using the configuration file to set a switch, see the <xref:System.Diagnostics.Switch> class and the [How to: Create, Initialize and Configure Trace Switches](~/docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md) topic.  
   
  You can customize the tracing output's target by adding <xref:System.Diagnostics.TraceListener> instances to or removing instances from the <xref:System.Diagnostics.Trace.Listeners%2A> collection. The <xref:System.Diagnostics.Trace.Listeners%2A> collection is shared by both the <xref:System.Diagnostics.Debug> and the <xref:System.Diagnostics.Trace> classes; adding a trace listener to either class adds the listener to both. By default, trace output is emitted using the <xref:System.Diagnostics.DefaultTraceListener> class.  
   
@@ -37,7 +40,7 @@
 >  Adding a trace listener to the <xref:System.Diagnostics.Trace.Listeners%2A> collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the <xref:System.Diagnostics.Trace> methods in `try`/`catch` blocks to detect and handle any exceptions from trace listeners.  
   
 > [!NOTE]
->  If you add trace listeners to partially trusted code, you will get a <xref:System.Security.SecurityException> exception, because adding trace listeners requires <xref:System.Security.Permissions.SecurityPermissionFlag> permission. To trace partially trusted code that is running in a sandbox in Visual Studio, do not add trace listeners. Instead, view the <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> messages in the **Output** window.  
+>  If you add trace listeners to partially trusted code, you will get a <xref:System.Security.SecurityException> exception, because adding trace listeners requires <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> permission. To trace partially trusted code that is running in a sandbox in Visual Studio, do not add trace listeners. Instead, view the <xref:System.Diagnostics.Trace> and <xref:System.Diagnostics.Debug> messages in the **Output** window.  
   
  The <xref:System.Diagnostics.Trace> class provides properties to get or set the level of <xref:System.Diagnostics.Trace.Indent%2A>, the <xref:System.Diagnostics.Trace.IndentSize%2A>, and whether to <xref:System.Diagnostics.Trace.AutoFlush%2A> after each write.  
   
@@ -63,7 +66,7 @@
    
   
 ## Examples  
- The following example uses <xref:System.Diagnostics.Trace> to indicate the beginning and the end of a program's execution. The example also uses the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=fullName> and <xref:System.Diagnostics.Trace.Unindent%2A?displayProperty=fullName> methods to distinguish the tracing output. For a more complete example of the use of <xref:System.Diagnostics.Trace>, see [How to: Add Trace Statements to Application Code](~/docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
+ The following example uses <xref:System.Diagnostics.Trace> to indicate the beginning and the end of a program's execution. The example also uses the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> and <xref:System.Diagnostics.Trace.Unindent%2A?displayProperty=nameWithType> methods to distinguish the tracing output. For a more complete example of the use of <xref:System.Diagnostics.Trace>, see [How to: Add Trace Statements to Application Code](~/docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
   
  [!code-cpp[Classic Trace Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Trace Example/CPP/source.cpp#1)]
  [!code-csharp[Classic Trace Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Trace Example/CS/source.cs#1)]
@@ -73,16 +76,38 @@
     </remarks>
     <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
     <threadsafe>This type is thread safe.</threadsafe>
+    <altmember cref="T:System.Diagnostics.Debug" />
+    <altmember cref="T:System.Diagnostics.Switch" />
+    <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+    <altmember cref="T:System.Diagnostics.TraceSwitch" />
+    <altmember cref="T:System.Diagnostics.TraceListener" />
+    <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+    <altmember cref="T:System.Diagnostics.EventLogTraceListener" />
+    <altmember cref="T:System.Diagnostics.TraceListenerCollection" />
+    <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
   </Docs>
   <Members>
+    <MemberGroup MemberName="Assert">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Checks for a condition; if the condition is <see langword="false" />, outputs messages and displays a message box that shows the call stack.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Assert">
       <MemberSignature Language="C#" Value="public static void Assert (bool condition);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Assert (condition As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Assert(bool condition);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -111,16 +136,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=fullName> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName> method works only in debug builds. For more information, see [Assertions in Managed Code](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1).  
+ Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method works only in debug builds. For more information, see [Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code).  
   
  Typically, the <xref:System.Diagnostics.Trace.Assert%28System.Boolean%29> method is used to identify logic errors during program development. <xref:System.Diagnostics.Trace.Assert%28System.Boolean%29> evaluates the condition. If the result is `false`, it sends a failure message to the <xref:System.Diagnostics.Trace.Listeners%2A> collection. You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or removing one from, the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
  When the application runs in user-interface mode, it displays a message box that shows the call stack with file and line numbers. The message box contains three buttons: **Abort**, **Retry**, and **Ignore**. Clicking the **Abort** button terminates the application. Clicking **Retry** sends you to the code in the debugger if your application is running in a debugger, or offers to open a debugger if it is not. Clicking **Ignore** continues with the next instruction in the code.  
   
 > [!NOTE]
->  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [\&lt;clear\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [\&lt;remove\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
+>  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [&lt;clear&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [&lt;remove&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
- You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=fullName> property. The configuration file should be formatted as follows:  
+ You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType> property. The configuration file should be formatted as follows:  
   
 ```  
 <configuration>  
@@ -145,16 +170,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Assert">
       <MemberSignature Language="C#" Value="public static void Assert (bool condition, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Assert (condition As Boolean, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Assert(bool condition, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -185,16 +220,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=fullName> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName> method works only in debug builds. For more information, see [Assertions in Managed Code](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1).  
+ Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method works only in debug builds. For more information, see [Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code).  
   
  Typically, the <xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%29> method is used to identify logic errors during program development. <xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%29> evaluates the condition. If the result is `false`, it sends the specified diagnostic message to the <xref:System.Diagnostics.Trace.Listeners%2A> collection. You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or removing one from, the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
  When the application runs in user-interface mode, it displays a message box that shows the call stack with file and line numbers. The message box contains three buttons: **Abort**, **Retry**, and **Ignore**. Clicking the **Abort** button terminates the application. Clicking **Retry** sends you to the code in the debugger if your application is running in a debugger, or offers to open a debugger if it is not. Clicking **Ignore** continues with the next instruction in the code.  
   
 > [!NOTE]
->  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [\&lt;clear\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [\&lt;remove\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
+>  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [&lt;clear&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [&lt;remove&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
- You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=fullName> property. The configuration file should be formatted as follows:  
+ You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType> property. The configuration file should be formatted as follows:  
   
 ```  
 <configuration>  
@@ -219,16 +254,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Assert">
       <MemberSignature Language="C#" Value="public static void Assert (bool condition, string message, string detailMessage);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Assert(bool condition, string message, string detailMessage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Assert(System.Boolean,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Assert (condition As Boolean, message As String, detailMessage As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Assert(bool condition, System::String ^ message, System::String ^ detailMessage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -261,16 +306,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=fullName> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName> method works only in debug builds. For more information, see [Assertions in Managed Code](http://msdn.microsoft.com/library/70ab2522-6486-4076-a1a9-e0f11cd0f3a1).  
+ Use the <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> method if you want to do assertions in release builds. The <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method works only in debug builds. For more information, see [Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code).  
   
  Typically, the <xref:System.Diagnostics.Trace.Assert%28System.Boolean%2CSystem.String%2CSystem.String%29> method is used to identify logic errors during program development. <xref:System.Diagnostics.Trace.Assert%2A> evaluates the condition. If the result is `false`, it sends the specified diagnostic message and detailed message to the <xref:System.Diagnostics.Trace.Listeners%2A> collection. You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or removing one from, the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
  When the application runs in user-interface mode, it displays a message box that shows the call stack with file and line numbers. The message box contains three buttons: **Abort**, **Retry**, and **Ignore**. Clicking the **Abort** button terminates the application. Clicking **Retry** sends you to the code in the debugger if your application is running in a debugger, or offers to open a debugger if it is not. Clicking **Ignore** continues with the next instruction in the code.  
   
 > [!NOTE]
->  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [\&lt;clear\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [\&lt;remove\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
+>  The display of the message box depends on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [&lt;clear&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [&lt;remove&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
- You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=fullName> property. The configuration file should be formatted as follows:  
+ You can change the behavior of the <xref:System.Diagnostics.DefaultTraceListener> in the configuration file that corresponds to the name of your application. In this file, you can enable and disable the assert message box or set the <xref:System.Diagnostics.DefaultTraceListener.LogFileName%2A?displayProperty=nameWithType> property. The configuration file should be formatted as follows:  
   
 ```  
 <configuration>  
@@ -295,16 +340,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="AutoFlush">
       <MemberSignature Language="C#" Value="public static bool AutoFlush { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property bool AutoFlush" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.AutoFlush" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property AutoFlush As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property bool AutoFlush { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -343,16 +398,26 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public static void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -394,12 +459,21 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="CorrelationManager">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.CorrelationManager CorrelationManager { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.CorrelationManager CorrelationManager" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.CorrelationManager" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property CorrelationManager As CorrelationManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Diagnostics::CorrelationManager ^ CorrelationManager { System::Diagnostics::CorrelationManager ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -409,6 +483,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.CorrelationManager</ReturnType>
@@ -429,16 +507,30 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="T:System.Diagnostics.CorrelationManager" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Fail">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Emits an error message.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Fail">
       <MemberSignature Language="C#" Value="public static void Fail (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Fail(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Fail(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Fail (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Fail(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -470,7 +562,7 @@
  The default behavior for the default trace listener is to output the `message` parameter to a message box when the application runs in user-interface mode, and to the <xref:System.Diagnostics.TraceListener> instances in the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
 > [!NOTE]
->  The display of the message box is dependent on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [\&lt;clear\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [\&lt;remove\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
+>  The display of the message box is dependent on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [&lt;clear&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [&lt;remove&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
  You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or by removing one from, the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
@@ -491,16 +583,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Fail">
       <MemberSignature Language="C#" Value="public static void Fail (string message, string detailMessage);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Fail(string message, string detailMessage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Fail(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Fail (message As String, detailMessage As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Fail(System::String ^ message, System::String ^ detailMessage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -534,7 +636,7 @@
  The default behavior is for the default trace listener to output the `message` parameter and the `detailedMessage` parameter to a message box when the application runs in user-interface mode, and to the <xref:System.Diagnostics.TraceListener> instances in the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
 > [!NOTE]
->  The display of the message box is dependent on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [\&lt;clear\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [\&lt;remove\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
+>  The display of the message box is dependent on the presence of the <xref:System.Diagnostics.DefaultTraceListener>. If the <xref:System.Diagnostics.DefaultTraceListener> is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection, the message box is not displayed. The <xref:System.Diagnostics.DefaultTraceListener> can be removed by the [&lt;clear&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-trace.md), the [&lt;remove&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/remove-element-for-listeners-for-trace.md), or by calling the <xref:System.Diagnostics.TraceListenerCollection.Clear%2A> method on the <xref:System.Diagnostics.Trace.Listeners%2A> property (`System.Diagnostics.Trace.Listeners.Clear()`).  
   
  You can customize this behavior by adding a <xref:System.Diagnostics.TraceListener> to, or by removing one from, the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
@@ -555,16 +657,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Flush">
       <MemberSignature Language="C#" Value="public static void Flush ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Flush() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Flush" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Flush ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Flush();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -603,16 +715,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Indent">
       <MemberSignature Language="C#" Value="public static void Indent ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Indent() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Indent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Indent ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Indent();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -655,16 +777,22 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.Trace.Unindent" />
+        <altmember cref="P:System.Diagnostics.Trace.IndentLevel" />
+        <altmember cref="P:System.Diagnostics.Trace.IndentSize" />
       </Docs>
     </Member>
     <Member MemberName="IndentLevel">
       <MemberSignature Language="C#" Value="public static int IndentLevel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property int32 IndentLevel" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.IndentLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property IndentLevel As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property int IndentLevel { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -709,16 +837,27 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.Trace.IndentSize" />
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="IndentSize">
       <MemberSignature Language="C#" Value="public static int IndentSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property int32 IndentSize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.IndentSize" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property IndentSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property int IndentSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -755,16 +894,27 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.Trace.IndentLevel" />
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Listeners">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.TraceListenerCollection Listeners { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Diagnostics.TraceListenerCollection Listeners" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.Listeners" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Listeners As TraceListenerCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Diagnostics::TraceListenerCollection ^ Listeners { System::Diagnostics::TraceListenerCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -802,16 +952,26 @@ End of list of errors
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Refresh">
       <MemberSignature Language="C#" Value="public static void Refresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Refresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Refresh ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Refresh();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -838,14 +998,27 @@ End of list of errors
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceError">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes error information to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceError">
       <MemberSignature Language="C#" Value="public static void TraceError (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceError(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceError(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceError (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceError(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -874,20 +1047,30 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceError%2A> calls the `TraceEvent` method for each trace listener, with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the informative message as the message string.  
+ <xref:System.Diagnostics.Trace.TraceError%2A> calls the `TraceEvent` method for each trace listener, with the trace event type <xref:System.Diagnostics.TraceEventType.Error>, passing the informative message as the message string.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="TraceError">
-      <MemberSignature Language="C#" Value="public static void TraceError (string format, object[] args);" />
+      <MemberSignature Language="C#" Value="public static void TraceError (string format, params object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceError(string format, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceError(System.String,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceError (format As String, ParamArray args As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceError(System::String ^ format, ... cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -924,20 +1107,40 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceError%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
+ <xref:System.Diagnostics.Trace.TraceError%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType.Error>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceInformation">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes an informational message to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceInformation">
       <MemberSignature Language="C#" Value="public static void TraceInformation (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceInformation(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceInformation(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceInformation (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceInformation(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -966,20 +1169,30 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceInformation%2A> calls the `TraceEvent` method for each trace listener, with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the informative message as the message string.  
+ <xref:System.Diagnostics.Trace.TraceInformation%2A> calls the `TraceEvent` method for each trace listener, with the trace event type <xref:System.Diagnostics.TraceEventType.Information>, passing the informative message as the message string.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="TraceInformation">
-      <MemberSignature Language="C#" Value="public static void TraceInformation (string format, object[] args);" />
+      <MemberSignature Language="C#" Value="public static void TraceInformation (string format, params object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceInformation(string format, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceInformation(System.String,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceInformation (format As String, ParamArray args As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceInformation(System::String ^ format, ... cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1016,20 +1229,40 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceInformation%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
+ <xref:System.Diagnostics.Trace.TraceInformation%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType.Information>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="TraceWarning">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes warning information to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TraceWarning">
       <MemberSignature Language="C#" Value="public static void TraceWarning (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceWarning(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceWarning(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceWarning (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceWarning(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1058,20 +1291,30 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceWarning%2A> calls the `TraceEvent` method for each trace listener with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the informative message as the message string.  
+ <xref:System.Diagnostics.Trace.TraceWarning%2A> calls the `TraceEvent` method for each trace listener with the trace event type <xref:System.Diagnostics.TraceEventType.Warning>, passing the informative message as the message string.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="TraceWarning">
-      <MemberSignature Language="C#" Value="public static void TraceWarning (string format, object[] args);" />
+      <MemberSignature Language="C#" Value="public static void TraceWarning (string format, params object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void TraceWarning(string format, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.TraceWarning(System.String,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub TraceWarning (format As String, ParamArray args As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void TraceWarning(System::String ^ format, ... cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1108,20 +1351,30 @@ End of list of errors
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- <xref:System.Diagnostics.Trace.TraceWarning%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
+ <xref:System.Diagnostics.Trace.TraceWarning%2A> calls the `TraceEvent` methods in the trace listeners with the trace event type <xref:System.Diagnostics.TraceEventType.Warning>, passing the message content as an object array with formatting information. See the <xref:System.String.Format%2A> method for more information about the `format` and `args` parameters.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Unindent">
       <MemberSignature Language="C#" Value="public static void Unindent ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Unindent() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Unindent" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Unindent ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Unindent();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1166,16 +1419,22 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Diagnostics.Trace.Indent" />
+        <altmember cref="P:System.Diagnostics.Trace.IndentLevel" />
+        <altmember cref="P:System.Diagnostics.Trace.IndentSize" />
       </Docs>
     </Member>
     <Member MemberName="UseGlobalLock">
       <MemberSignature Language="C#" Value="public static bool UseGlobalLock { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property bool UseGlobalLock" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Trace.UseGlobalLock" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Property UseGlobalLock As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property bool UseGlobalLock { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1214,14 +1473,27 @@ End of list of errors
         <permission cref="T:System.Security.Permissions.SecurityPermission">for operating with unmanaged code. Security action: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />. Associated enumeration:  <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Write">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes information about the trace to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public static void Write (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Write (value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Write(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1255,9 +1527,9 @@ End of list of errors
  This method calls the <xref:System.Diagnostics.TraceListener.Write%2A> method of the trace listener.  
   
 > [!NOTE]
->  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property.  
+>  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property.  
   
- By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property. To use the <xref:System.Diagnostics.Trace?displayProperty=fullName> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
+ By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
   
    
   
@@ -1274,16 +1546,26 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public static void Write (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Write (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Write(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1317,9 +1599,9 @@ End of list of errors
  This method calls the <xref:System.Diagnostics.TraceListener.Write%2A> method of the trace listener.  
   
 > [!NOTE]
->  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property.  
+>  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property.  
   
- By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property. To use the <xref:System.Diagnostics.Trace?displayProperty=fullName> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
+ By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
   
    
   
@@ -1336,16 +1618,26 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public static void Write (object value, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(object value, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Write (value As Object, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Write(System::Object ^ value, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1383,9 +1675,9 @@ End of list of errors
  This method calls the <xref:System.Diagnostics.TraceListener.Write%2A> method of the trace listener.  
   
 > [!NOTE]
->  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property.  
+>  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property.  
   
- By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property. To use the <xref:System.Diagnostics.Trace?displayProperty=fullName> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
+ By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
   
    
   
@@ -1402,16 +1694,26 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public static void Write (string message, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Write(string message, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.Write(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub Write (message As String, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void Write(System::String ^ message, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1449,9 +1751,9 @@ End of list of errors
  This method calls the <xref:System.Diagnostics.TraceListener.Write%2A> method of the trace listener.  
   
 > [!NOTE]
->  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property.  
+>  ASP.NET supplies tracing functionality tailored for Web pages. To write trace messages in ASP.NET pages, use the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property.  
   
- By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=fullName> property. To use the <xref:System.Diagnostics.Trace?displayProperty=fullName> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
+ By default, in code associated with an ASP.NET Web page, the statement `Trace.Write("...")` is a call to the <xref:System.Web.TraceContext.Write%2A> method of the <xref:System.Web.UI.Page.Trace%2A?displayProperty=nameWithType> property. To use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType> class in Web pages, you must include the namespace, for example, `System.Diagnostics.Trace.Write("...")`.  
   
    
   
@@ -1468,16 +1770,36 @@ End of list of errors
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteIf">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes information about the trace to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection if a condition is <see langword="true" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteIf">
       <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteIf (condition As Boolean, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteIf(bool condition, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1544,16 +1866,26 @@ if(mySwitch.TraceError)
 Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteIf">
       <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteIf (condition As Boolean, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteIf(bool condition, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1620,16 +1952,26 @@ if(mySwitch.TraceError)
 Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteIf">
       <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, object value, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, object value, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteIf (condition As Boolean, value As Object, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteIf(bool condition, System::Object ^ value, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1700,16 +2042,26 @@ if(mySwitch.TraceError)
 Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteIf">
       <MemberSignature Language="C#" Value="public static void WriteIf (bool condition, string message, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteIf(bool condition, string message, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteIf(System.Boolean,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteIf (condition As Boolean, message As String, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteIf(bool condition, System::String ^ message, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1780,16 +2132,36 @@ if(mySwitch.TraceError)
 Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteLine">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes information about the trace to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public static void WriteLine (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLine (value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLine(System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1837,16 +2209,26 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public static void WriteLine (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLine (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLine(System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1894,16 +2276,26 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public static void WriteLine (object value, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(object value, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLine (value As Object, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLine(System::Object ^ value, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1955,16 +2347,26 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLine">
       <MemberSignature Language="C#" Value="public static void WriteLine (string message, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLine(string message, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLine(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLine (message As String, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLine(System::String ^ message, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2016,16 +2418,36 @@ Trace.WriteIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteLineIf">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes information about the trace to the trace listeners in the <see cref="P:System.Diagnostics.Trace.Listeners" /> collection if a condition is <see langword="true" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteLineIf">
       <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLineIf (condition As Boolean, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLineIf(bool condition, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2092,16 +2514,26 @@ if(mySwitch.TraceError)
 Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLineIf">
       <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, string message);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLineIf (condition As Boolean, message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLineIf(bool condition, System::String ^ message);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2168,16 +2600,26 @@ if(mySwitch.TraceError)
 Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLineIf">
       <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, object value, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, object value, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.Object,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLineIf (condition As Boolean, value As Object, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLineIf(bool condition, System::Object ^ value, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2248,16 +2690,26 @@ if(mySwitch.TraceError)
 Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
     <Member MemberName="WriteLineIf">
       <MemberSignature Language="C#" Value="public static void WriteLineIf (bool condition, string message, string category);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WriteLineIf(bool condition, string message, string category) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Trace.WriteLineIf(System.Boolean,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub WriteLineIf (condition As Boolean, message As String, category As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void WriteLineIf(bool condition, System::String ^ message, System::String ^ category);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.TraceSource</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2328,6 +2780,13 @@ if(mySwitch.TraceError)
 Trace.WriteLineIf(mySwitch.TraceError, "aNumber = " + aNumber + " out of range");  
 ```</para>
         </block>
+        <altmember cref="T:System.Diagnostics.Debug" />
+        <altmember cref="T:System.Diagnostics.Trace" />
+        <altmember cref="T:System.Diagnostics.BooleanSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceSwitch" />
+        <altmember cref="T:System.Diagnostics.TraceListener" />
+        <altmember cref="T:System.Diagnostics.DefaultTraceListener" />
+        <altmember cref="T:System.Diagnostics.ConditionalAttribute" />
       </Docs>
     </Member>
   </Members>

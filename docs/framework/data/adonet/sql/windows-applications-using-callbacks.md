@@ -1,19 +1,24 @@
 ---
-title: "Windows Applications Using Callbacks | Microsoft Docs"
+title: "Windows Applications Using Callbacks"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Applications Using Callbacks
 In most asynchronous processing scenarios, you want to start a database operation and continue running other processes without waiting for the database operation to complete. However, many scenarios require doing something once the database operation has ended. In a Windows application, for example, you may want to delegate the long-running operation to a background thread while allowing the user interface thread to remain responsive. However, when the database operation is complete, you want to use the results to populate the form. This type of scenario is best implemented with a callback.  
@@ -27,9 +32,7 @@ In most asynchronous processing scenarios, you want to start a database operatio
   
  To set up this example, create a new Windows application. Place a <xref:System.Windows.Forms.Button> control and two <xref:System.Windows.Forms.Label> controls on the form (accepting the default name for each control). Add the following code to the form's class, modifying the connection string as necessary for your environment.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 ' Add these to the top of the class:  
 Imports System  
 Imports System.Data  
@@ -384,5 +387,5 @@ private void Form1_Load(object sender, System.EventArgs e)
 ```  
   
 ## See Also  
- [Asynchronous Operations](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)   
+ [Asynchronous Operations](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,7 +1,9 @@
-<Type Name="TaskFactory" FullName="System.Threading.Tasks.TaskFactory">
+﻿<Type Name="TaskFactory" FullName="System.Threading.Tasks.TaskFactory">
   <TypeSignature Language="C#" Value="public class TaskFactory" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TaskFactory extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskFactory" />
+  <TypeSignature Language="VB.NET" Value="Public Class TaskFactory" />
+  <TypeSignature Language="C++ CLI" Value="public ref class TaskFactory" />
   <AssemblyInfo>
     <AssemblyName>System.Threading.Tasks</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -15,6 +17,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -31,7 +37,7 @@
 -   The <xref:System.Threading.Tasks.TaskFactory> class, which creates <xref:System.Threading.Tasks.Task> and <xref:System.Threading.Tasks.Task%601> objects. You can call the overloads of this method to create and execute a task that requires non-default arguments.  
   
     > [!WARNING]
-    >  Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method provides the easiest way to create a task with default configuration values and start it immediately.  
+    >  Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method provides the easiest way to create a task with default configuration values and start it immediately.  
   
 -   The <xref:System.Threading.Tasks.TaskFactory%601> class, which creates <xref:System.Threading.Tasks.Task%601> objects.  
   
@@ -40,23 +46,23 @@
 -   Create a task and start it immediately by calling the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> method.  
   
     > [!WARNING]
-    >  Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method provides the easiest way to create a task with default configuration values and start it immediately.  
+    >  Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method provides the easiest way to create a task with default configuration values and start it immediately.  
   
 -   Create a task that starts when any one of the tasks in an array has completed by calling the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> method.  
   
 -   Create a task that starts when all the tasks in an array have completed by calling the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> method.  
   
- The static <xref:System.Threading.Tasks.Task%601.Factory%2A?displayProperty=fullName> property returns a default <xref:System.Threading.Tasks.TaskFactory%601> object. You can also call one of the <xref:System.Threading.Tasks.TaskFactory> class constructors to configure the <xref:System.Threading.Tasks.Task> objects that  the <xref:System.Threading.Tasks.TaskFactory> class creates. The following example configures a new <xref:System.Threading.Tasks.TaskFactory> object to create tasks that have a specified cancellation token, task creation options, continuation options, and a customized task scheduler.  
+ The static <xref:System.Threading.Tasks.Task%601.Factory%2A?displayProperty=nameWithType> property returns a default <xref:System.Threading.Tasks.TaskFactory%601> object. You can also call one of the <xref:System.Threading.Tasks.TaskFactory> class constructors to configure the <xref:System.Threading.Tasks.Task> objects that  the <xref:System.Threading.Tasks.TaskFactory> class creates. The following example configures a new <xref:System.Threading.Tasks.TaskFactory> object to create tasks that have a specified cancellation token, task creation options, continuation options, and a customized task scheduler.  
   
  [!code-csharp[TPL_Factories#1](~/samples/snippets/csharp/VS_Snippets_Misc/tpl_factories/cs/program.cs#1)]
  [!code-vb[TPL_Factories#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpl_factories/vb/factories_vb.vb#1)]  
   
- In most cases, you do not have to instantiate a new <xref:System.Threading.Tasks.TaskFactory> instance. Instead, you can use the <xref:System.Threading.Tasks.Task.Factory%2A?displayProperty=fullName> property, which returns a factory object that uses default values. You can then call its methods to start new tasks or define task continuations. For an illustration, see the example.  
+ In most cases, you do not have to instantiate a new <xref:System.Threading.Tasks.TaskFactory> instance. Instead, you can use the <xref:System.Threading.Tasks.Task.Factory%2A?displayProperty=nameWithType> property, which returns a factory object that uses default values. You can then call its methods to start new tasks or define task continuations. For an illustration, see the example.  
   
    
   
 ## Examples  
- The following example uses the static <xref:System.Threading.Tasks.Task.Factory%2A> property to make two calls to the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=fullName> method. The first populates an array with the names of files in the user's MyDocuments directory, while the second populates an array with the names of subdirectories of the user's MyDocuments directory. It then calls the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%28System.Threading.Tasks.Task%5B%5D%2CSystem.Action%7BSystem.Threading.Tasks.Task%5B%5D%7D%29?displayProperty=fullName> method, which displays information about the number of files and directories in the two arrays after the first two tasks have completed execution.  
+ The following example uses the static <xref:System.Threading.Tasks.Task.Factory%2A> property to make two calls to the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> method. The first populates an array with the names of files in the user's MyDocuments directory, while the second populates an array with the names of subdirectories of the user's MyDocuments directory. It then calls the <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%28System.Threading.Tasks.Task%5B%5D%2CSystem.Action%7BSystem.Threading.Tasks.Task%5B%5D%7D%29?displayProperty=nameWithType> method, which displays information about the number of files and directories in the two arrays after the first two tasks have completed execution.  
   
  [!code-csharp[System.Threading.Tasks.Task.Factory#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task.factory/cs/factory1.cs#1)]
  [!code-vb[System.Threading.Tasks.Task.Factory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task.factory/vb/factory1.vb#1)]  
@@ -66,10 +72,22 @@
     <threadsafe>All public and protected members of <see cref="T:System.Threading.Tasks.TaskFactory" /> are thread-safe and may be used concurrently from multiple threads.</threadsafe>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Threading.Tasks.TaskFactory" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public TaskFactory ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TaskFactory();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -85,6 +103,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a <see cref="T:System.Threading.Tasks.TaskFactory" /> instance with the default configuration.</summary>
@@ -92,7 +114,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor creates a <xref:System.Threading.Tasks.TaskFactory> instance with a default configuration. The <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
+ This constructor creates a <xref:System.Threading.Tasks.TaskFactory> instance with a default configuration. The <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions.None>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions.None>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
   
  ]]></format>
         </remarks>
@@ -102,6 +124,7 @@
       <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.#ctor(System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TaskFactory(System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -116,6 +139,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
@@ -127,7 +154,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This constructor creates a <xref:System.Threading.Tasks.TaskFactory> instance with a default configuration. The <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
+ This constructor creates a <xref:System.Threading.Tasks.TaskFactory> instance with a default configuration. The <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions.None>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions.None>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
   
  ]]></format>
         </remarks>
@@ -137,6 +164,8 @@
       <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.#ctor(System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (scheduler As TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TaskFactory(System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -151,6 +180,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="scheduler" Type="System.Threading.Tasks.TaskScheduler" />
@@ -162,7 +195,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- With this constructor, the <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to `scheduler`, unless it's null, in which case the property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
+ With this constructor, the <xref:System.Threading.Tasks.TaskCreationOptions> property is initialized to <xref:System.Threading.Tasks.TaskCreationOptions.None>, the <xref:System.Threading.Tasks.TaskContinuationOptions> property is initialized to <xref:System.Threading.Tasks.TaskContinuationOptions.None>, and the <xref:System.Threading.Tasks.TaskScheduler> property is initialized to `scheduler`, unless it's null, in which case the property is initialized to the current scheduler (see <xref:System.Threading.Tasks.TaskScheduler.Current%2A>).  
   
  ]]></format>
         </remarks>
@@ -172,6 +205,8 @@
       <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.#ctor(System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (creationOptions As TaskCreationOptions, continuationOptions As TaskContinuationOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TaskFactory(System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -186,6 +221,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="creationOptions" Type="System.Threading.Tasks.TaskCreationOptions" />
@@ -214,6 +253,7 @@
       <MemberSignature Language="C#" Value="public TaskFactory (System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.#ctor(System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; TaskFactory(System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -228,6 +268,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
@@ -260,6 +304,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.CancellationToken CancellationToken { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken CancellationToken" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory.CancellationToken" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CancellationToken As CancellationToken" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::CancellationToken CancellationToken { System::Threading::CancellationToken get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -274,6 +320,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.CancellationToken</ReturnType>
@@ -295,6 +345,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskContinuationOptions ContinuationOptions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.Tasks.TaskContinuationOptions ContinuationOptions" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory.ContinuationOptions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ContinuationOptions As TaskContinuationOptions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::Tasks::TaskContinuationOptions ContinuationOptions { System::Threading::Tasks::TaskContinuationOptions get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -309,6 +361,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.TaskContinuationOptions</ReturnType>
@@ -326,10 +382,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ContinueWhenAll">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a continuation task that starts when a set of specified tasks has completed.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ContinueWhenAll">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task[]&gt; continuationAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task[]&gt; continuationAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task[]})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll (tasks As Task(), continuationAction As Action(Of Task())) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^&gt; ^ continuationAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -344,6 +412,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -363,7 +435,7 @@
 ## Remarks  
  The <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> method executes the `continuationAction` delegate when all tasks in the `tasks` array have completed, regardless of their completion status.  
   
- Exceptions thrown by tasks in the `tasks` array are not available to the continuation task through structured exception handling. You can determine which exceptions were thrown by examining the <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=fullName> property of each task in the `tasks` array. To use structured exception handling to handle exceptions thrown by tasks in the `tasks` array, call the <xref:System.Threading.Tasks.Task.WaitAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=fullName> method.  
+ Exceptions thrown by tasks in the `tasks` array are not available to the continuation task through structured exception handling. You can determine which exceptions were thrown by examining the <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> property of each task in the `tasks` array. To use structured exception handling to handle exceptions thrown by tasks in the `tasks` array, call the <xref:System.Threading.Tasks.Task.WaitAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> method.  
   
    
   
@@ -373,7 +445,7 @@
  [!code-csharp[System.Threading.Tasks.Task.ContinueWhenAll#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.task.continuewhenall/cs/continuewhenall1.cs#1)]
  [!code-vb[System.Threading.Tasks.Task.ContinueWhenAll#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.task.continuewhenall/vb/continuewhenall1.vb#1)]  
   
- The call to the continuation task's <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=fullName> method does not allow it to handle exceptions thrown by the antecedent tasks, so the example examines the <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=fullName> property of each antecedent task to determine whether the task succeeded.  
+ The call to the continuation task's <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> method does not allow it to handle exceptions thrown by the antecedent tasks, so the example examines the <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> property of each antecedent task to determine whether the task succeeded.  
   
  ]]></format>
         </remarks>
@@ -390,6 +462,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task[]&gt; continuationAction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task[]&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task[]},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -404,6 +477,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -452,6 +529,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task[]&gt; continuationAction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task[]&gt; continuationAction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task[]},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll (tasks As Task(), continuationAction As Action(Of Task()), continuationOptions As TaskContinuationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^&gt; ^ continuationAction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -466,6 +545,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -496,6 +579,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task[]&gt; continuationAction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task[]&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task[]},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -510,6 +594,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -546,6 +634,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]&gt; continuationAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[]&gt; continuationAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}[]})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TAntecedentResult) (tasks As Task(Of TAntecedentResult)(), continuationAction As Action(Of Task(Of TAntecedentResult)())) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^&gt; ^ continuationAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -560,6 +650,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -591,6 +685,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]&gt; continuationAction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[]&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}[]},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -605,6 +700,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -642,6 +741,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]&gt; continuationAction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[]&gt; continuationAction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}[]},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TAntecedentResult) (tasks As Task(Of TAntecedentResult)(), continuationAction As Action(Of Task(Of TAntecedentResult)()), continuationOptions As TaskContinuationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^&gt; ^ continuationAction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -656,6 +757,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -690,6 +795,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[]&gt; continuationAction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAll&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[]&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}[]},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -704,6 +810,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -744,6 +854,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !!TResult&gt; continuationFunction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TResult) (tasks As Task(), continuationFunction As Func(Of Task(), TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^, TResult&gt; ^ continuationFunction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -758,6 +870,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -789,6 +905,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],``0},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -803,6 +920,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -840,6 +961,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !!TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],``0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TResult) (tasks As Task(), continuationFunction As Func(Of Task(), TResult), continuationOptions As TaskContinuationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -854,6 +977,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -888,6 +1015,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task[], !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task[],``0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -902,6 +1030,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -942,6 +1074,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !!TResult&gt; continuationFunction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TAntecedentResult, TResult) (tasks As Task(Of TAntecedentResult)(), continuationFunction As Func(Of Task(Of TAntecedentResult)(), TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^, TResult&gt; ^ continuationFunction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -956,6 +1090,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -989,6 +1127,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],``1},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1003,6 +1142,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1029,7 +1172,7 @@
   
  -or-  
   
- The <see cref="T:System.Threading.CancellationTokenSource" /> that created<paramref name=" cancellationToken" /> has already been disposed.</exception>
+ The <see cref="T:System.Threading.CancellationTokenSource" /> that created <paramref name="cancellationToken" /> has already been disposed.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="tasks" /> array is <see langword="null" />.  
   
  -or-  
@@ -1042,6 +1185,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !!TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],``1},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAll(Of TAntecedentResult, TResult) (tasks As Task(Of TAntecedentResult)(), continuationFunction As Func(Of Task(Of TAntecedentResult)(), TResult), continuationOptions As TaskContinuationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1056,6 +1201,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1092,6 +1241,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAll&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[],TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAll&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[], !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAll``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0}[],``1},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAll(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1106,6 +1256,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1150,10 +1304,22 @@
  The <see cref="T:System.Threading.CancellationTokenSource" /> that created <paramref name="cancellationToken" /> has already been disposed.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ContinueWhenAny">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a continuation <see cref="T:System.Threading.Tasks.Task" /> that will be started upon the completion of any Task in the provided set.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ContinueWhenAny">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task&gt; continuationAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task&gt; continuationAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny (tasks As Task(), continuationAction As Action(Of Task)) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task ^&gt; ^ continuationAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1168,6 +1334,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1209,6 +1379,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task&gt; continuationAction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1223,6 +1394,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1260,6 +1435,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task&gt; continuationAction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task&gt; continuationAction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny (tasks As Task(), continuationAction As Action(Of Task), continuationOptions As TaskContinuationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task ^&gt; ^ continuationAction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1274,6 +1451,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1315,6 +1496,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny (System.Threading.Tasks.Task[] tasks, Action&lt;System.Threading.Tasks.Task&gt; continuationAction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny(class System.Threading.Tasks.Task[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny(System.Threading.Tasks.Task[],System.Action{System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1329,6 +1511,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1369,6 +1555,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;&gt; continuationAction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;&gt; continuationAction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TAntecedentResult) (tasks As Task(Of TAntecedentResult)(), continuationAction As Action(Of Task(Of TAntecedentResult))) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ continuationAction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1383,6 +1571,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1418,6 +1610,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;&gt; continuationAction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1432,6 +1625,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1473,6 +1670,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;&gt; continuationAction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;&gt; continuationAction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TAntecedentResult) (tasks As Task(Of TAntecedentResult)(), continuationAction As Action(Of Task(Of TAntecedentResult)), continuationOptions As TaskContinuationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ continuationAction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1487,6 +1686,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1532,6 +1735,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Action&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;&gt; continuationAction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task ContinueWhenAny&lt;TAntecedentResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Action`1&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;&gt; continuationAction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task{``0}[],System.Action{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult&gt;&#xA; System::Threading::Tasks::Task ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Action&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ continuationAction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1546,6 +1750,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1597,6 +1805,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !!TResult&gt; continuationFunction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TResult) (tasks As Task(), continuationFunction As Func(Of Task, TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task ^, TResult&gt; ^ continuationFunction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1611,6 +1821,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1646,6 +1860,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,``0},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1660,6 +1875,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1701,6 +1920,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !!TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,``0},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TResult) (tasks As Task(), continuationFunction As Func(Of Task, TResult), continuationOptions As TaskContinuationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task ^, TResult&gt; ^ continuationFunction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1715,6 +1936,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1760,6 +1985,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TResult&gt; (System.Threading.Tasks.Task[] tasks, Func&lt;System.Threading.Tasks.Task,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TResult&gt;(class System.Threading.Tasks.Task[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task, !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``1(System.Threading.Tasks.Task[],System.Func{System.Threading.Tasks.Task,``0},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1774,6 +2000,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1825,6 +2055,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !!TResult&gt; continuationFunction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},``1})" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TAntecedentResult, TResult) (tasks As Task(Of TAntecedentResult)(), continuationFunction As Func(Of Task(Of TAntecedentResult), TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^, TResult&gt; ^ continuationFunction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1839,6 +2071,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1876,6 +2112,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},``1},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1890,6 +2127,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1933,6 +2174,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.Tasks.TaskContinuationOptions continuationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !!TResult&gt; continuationFunction, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},``1},System.Threading.Tasks.TaskContinuationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContinueWhenAny(Of TAntecedentResult, TResult) (tasks As Task(Of TAntecedentResult)(), continuationFunction As Func(Of Task(Of TAntecedentResult), TResult), continuationOptions As TaskContinuationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::Tasks::TaskContinuationOptions continuationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -1947,6 +2190,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -1994,6 +2241,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; ContinueWhenAny&lt;TAntecedentResult,TResult&gt; (System.Threading.Tasks.Task&lt;TAntecedentResult&gt;[] tasks, Func&lt;System.Threading.Tasks.Task&lt;TAntecedentResult&gt;,TResult&gt; continuationFunction, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskContinuationOptions continuationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; ContinueWhenAny&lt;TAntecedentResult, TResult&gt;(class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;[] tasks, class System.Func`2&lt;class System.Threading.Tasks.Task`1&lt;!!TAntecedentResult&gt;, !!TResult&gt; continuationFunction, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskContinuationOptions continuationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.ContinueWhenAny``2(System.Threading.Tasks.Task{``0}[],System.Func{System.Threading.Tasks.Task{``0},``1},System.Threading.CancellationToken,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TAntecedentResult, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ ContinueWhenAny(cli::array &lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^&gt; ^ tasks, Func&lt;System::Threading::Tasks::Task&lt;TAntecedentResult&gt; ^, TResult&gt; ^ continuationFunction, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskContinuationOptions continuationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2008,6 +2256,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2061,6 +2313,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskCreationOptions CreationOptions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.Tasks.TaskCreationOptions CreationOptions" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory.CreationOptions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CreationOptions As TaskCreationOptions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::Tasks::TaskCreationOptions CreationOptions { System::Threading::Tasks::TaskCreationOptions get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2075,6 +2329,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
@@ -2092,10 +2350,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="FromAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a <see cref="T:System.Threading.Tasks.Task" /> that represents a pair of begin and end methods that conform to the Asynchronous Programming Model pattern.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="FromAsync">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync (IAsyncResult asyncResult, Action&lt;IAsyncResult&gt; endMethod);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync(class System.IAsyncResult asyncResult, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult})" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync (asyncResult As IAsyncResult, endMethod As Action(Of IAsyncResult)) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ FromAsync(IAsyncResult ^ asyncResult, Action&lt;IAsyncResult ^&gt; ^ endMethod);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2110,6 +2380,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2144,6 +2418,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync (beginMethod As Func(Of AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), state As Object) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2158,6 +2434,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2192,6 +2472,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync (IAsyncResult asyncResult, Action&lt;IAsyncResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync(class System.IAsyncResult asyncResult, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult},System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync (asyncResult As IAsyncResult, endMethod As Action(Of IAsyncResult), creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ FromAsync(IAsyncResult ^ asyncResult, Action&lt;IAsyncResult ^&gt; ^ endMethod, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2206,6 +2488,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2243,6 +2529,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync (beginMethod As Func(Of AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), state As Object, creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2257,6 +2545,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2278,7 +2570,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `beginMethod` delegate is started on the thread that <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> is running on. This method throws any exceptions thrown by the `beginMethod`. The <xref:System.Threading.Tasks.TaskCreationOptions> values <xref:System.Threading.Tasks.TaskCreationOptions>, <xref:System.Threading.Tasks.TaskCreationOptions> and <xref:System.Threading.Tasks.TaskCreationOptions> are all mutually exclusive. In the FromAsync methods, either `LongRunning` or `AttachedToParent` by themselves will cause an <xref:System.ArgumentOutOfRangeException> to be thrown.  
+ The `beginMethod` delegate is started on the thread that <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> is running on. This method throws any exceptions thrown by the `beginMethod`. The <xref:System.Threading.Tasks.TaskCreationOptions> values <xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>, <xref:System.Threading.Tasks.TaskCreationOptions.LongRunning> and <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> are all mutually exclusive. In the FromAsync methods, either `LongRunning` or `AttachedToParent` by themselves will cause an <xref:System.ArgumentOutOfRangeException> to be thrown.  
   
  ]]></format>
         </remarks>
@@ -2294,6 +2586,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync (IAsyncResult asyncResult, Action&lt;IAsyncResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync(class System.IAsyncResult asyncResult, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync(System.IAsyncResult,System.Action{System.IAsyncResult},System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync (asyncResult As IAsyncResult, endMethod As Action(Of IAsyncResult), creationOptions As TaskCreationOptions, scheduler As TaskScheduler) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ FromAsync(IAsyncResult ^ asyncResult, Action&lt;IAsyncResult ^&gt; ^ endMethod, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2308,6 +2602,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2351,6 +2649,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1) (beginMethod As Func(Of TArg1, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, state As Object) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2365,6 +2665,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2405,6 +2709,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1) (beginMethod As Func(Of TArg1, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, state As Object, creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2419,6 +2725,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2462,6 +2772,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TResult&gt; (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TResult&gt;(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.IAsyncResult,System.Func{System.IAsyncResult,``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TResult) (asyncResult As IAsyncResult, endMethod As Func(Of IAsyncResult, TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(IAsyncResult ^ asyncResult, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2476,6 +2788,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2514,6 +2830,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TResult&gt; (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TResult&gt;(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``0},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TResult) (beginMethod As Func(Of AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), state As Object) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2528,6 +2846,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2566,6 +2888,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TResult&gt; (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TResult&gt;(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.IAsyncResult,System.Func{System.IAsyncResult,``0},System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TResult) (asyncResult As IAsyncResult, endMethod As Func(Of IAsyncResult, TResult), creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(IAsyncResult ^ asyncResult, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2580,6 +2904,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2621,6 +2949,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TResult&gt; (Func&lt;AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TResult&gt;(class System.Func`3&lt;class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``0},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TResult) (beginMethod As Func(Of AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), state As Object, creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2635,6 +2965,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2676,6 +3010,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TResult&gt; (IAsyncResult asyncResult, Func&lt;IAsyncResult,TResult&gt; endMethod, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TResult&gt;(class System.IAsyncResult asyncResult, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``1(System.IAsyncResult,System.Func{System.IAsyncResult,``0},System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TResult) (asyncResult As IAsyncResult, endMethod As Func(Of IAsyncResult, TResult), creationOptions As TaskCreationOptions, scheduler As TaskScheduler) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(IAsyncResult ^ asyncResult, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2690,6 +3026,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2737,6 +3077,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1,TArg2&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1, TArg2&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``2(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,``1,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2) (beginMethod As Func(Of TArg1, TArg2, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, arg2 As TArg2, state As Object) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, TArg2, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2751,6 +3093,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2795,6 +3141,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1,TArg2&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1, TArg2&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``2(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,``1,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2) (beginMethod As Func(Of TArg1, TArg2, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, arg2 As TArg2, state As Object, creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, TArg2, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2809,6 +3157,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -2856,6 +3208,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TResult&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TResult&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``2(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``1},``0,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TResult) (beginMethod As Func(Of TArg1, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, state As Object) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2870,6 +3224,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2912,6 +3270,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TResult&gt; (Func&lt;TArg1,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TResult&gt;(class System.Func`4&lt;!!TArg1, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``2(System.Func{``0,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``1},``0,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TResult) (beginMethod As Func(Of TArg1, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, state As Object, creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2926,6 +3286,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -2971,6 +3335,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1,TArg2,TArg3&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1, TArg2, TArg3&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``3(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,``1,``2,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TArg3) (beginMethod As Func(Of TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, arg2 As TArg2, arg3 As TArg3, state As Object) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TArg3&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, TArg2, TArg3, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -2985,6 +3351,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3033,6 +3403,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FromAsync&lt;TArg1,TArg2,TArg3&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Action&lt;IAsyncResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FromAsync&lt;TArg1, TArg2, TArg3&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Action`1&lt;class System.IAsyncResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``3(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},``0,``1,``2,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TArg3) (beginMethod As Func(Of TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult), endMethod As Action(Of IAsyncResult), arg1 As TArg1, arg2 As TArg2, arg3 As TArg3, state As Object, creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TArg3&gt;&#xA; System::Threading::Tasks::Task ^ FromAsync(Func&lt;TArg1, TArg2, TArg3, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Action&lt;IAsyncResult ^&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3047,6 +3419,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3098,6 +3474,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TResult&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TArg2, TResult&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``3(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``2},``0,``1,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TResult) (beginMethod As Func(Of TArg1, TArg2, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, arg2 As TArg2, state As Object) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, TArg2, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3112,6 +3490,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3158,6 +3540,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TResult&gt; (Func&lt;TArg1,TArg2,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TArg2, TResult&gt;(class System.Func`5&lt;!!TArg1, !!TArg2, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``3(System.Func{``0,``1,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``2},``0,``1,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TResult) (beginMethod As Func(Of TArg1, TArg2, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, arg2 As TArg2, state As Object, creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, TArg2, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3172,6 +3556,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3221,6 +3609,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TArg3,TResult&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TArg2, TArg3, TResult&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``4(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``3},``0,``1,``2,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TArg3, TResult) (beginMethod As Func(Of TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, arg2 As TArg2, arg3 As TArg3, state As Object) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TArg3, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, TArg2, TArg3, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3235,6 +3625,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3285,6 +3679,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; FromAsync&lt;TArg1,TArg2,TArg3,TResult&gt; (Func&lt;TArg1,TArg2,TArg3,AsyncCallback,object,IAsyncResult&gt; beginMethod, Func&lt;IAsyncResult,TResult&gt; endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; FromAsync&lt;TArg1, TArg2, TArg3, TResult&gt;(class System.Func`6&lt;!!TArg1, !!TArg2, !!TArg3, class System.AsyncCallback, object, class System.IAsyncResult&gt; beginMethod, class System.Func`2&lt;class System.IAsyncResult, !!TResult&gt; endMethod, !!TArg1 arg1, !!TArg2 arg2, !!TArg3 arg3, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.FromAsync``4(System.Func{``0,``1,``2,System.AsyncCallback,System.Object,System.IAsyncResult},System.Func{System.IAsyncResult,``3},``0,``1,``2,System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function FromAsync(Of TArg1, TArg2, TArg3, TResult) (beginMethod As Func(Of TArg1, TArg2, TArg3, AsyncCallback, Object, IAsyncResult), endMethod As Func(Of IAsyncResult, TResult), arg1 As TArg1, arg2 As TArg2, arg3 As TArg3, state As Object, creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TArg1, typename TArg2, typename TArg3, typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ FromAsync(Func&lt;TArg1, TArg2, TArg3, AsyncCallback ^, System::Object ^, IAsyncResult ^&gt; ^ beginMethod, Func&lt;IAsyncResult ^, TResult&gt; ^ endMethod, TArg1 arg1, TArg2 arg2, TArg3 arg3, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3299,6 +3695,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3352,6 +3752,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskScheduler Scheduler { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.TaskScheduler Scheduler" />
       <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskFactory.Scheduler" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Scheduler As TaskScheduler" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Threading::Tasks::TaskScheduler ^ Scheduler { System::Threading::Tasks::TaskScheduler ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3366,6 +3768,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
@@ -3385,10 +3791,35 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="StartNew">
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates and starts a <see cref="T:System.Threading.Tasks.Task" />.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method is the recommended way to launch a compute-bound task. Use the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> method only when you require fine-grained control for a long-running, compute-bound task. This includes scenarios in which you want to control the following:  
+  
+-   Task creation options. Tasks created by the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method by default are created with the <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> option. To override this behavior, or to provide other <xref:System.Threading.Tasks.TaskCreationOptions> options, call a <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> overload.  
+  
+-   Parameter passing. The overloads of the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method do not allow you to pass a parameter to the task delegate. Overloads of the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> method do.  
+  
+-   The task scheduler. The overloads of the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> method use the default task scheduler. To control the task scheduler, call a <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> overload with a `scheduler` parameter. For more information, see .  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="StartNew">
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action action);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action action) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action ^ action);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3404,6 +3835,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
       </ReturnValue>
@@ -3418,9 +3853,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Calling <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> is functionally equivalent to creating a task by using one of its constructors, and then calling the <xref:System.Threading.Tasks.Task.Start%2A?displayProperty=fullName> method to schedule the task for execution.  
+ Calling <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> is functionally equivalent to creating a task by using one of its constructors, and then calling the <xref:System.Threading.Tasks.Task.Start%2A?displayProperty=nameWithType> method to schedule the task for execution.  
   
- Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=fullName> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=fullName> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=fullName> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
+ Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%28System.Action%29?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%29> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
   
    
   
@@ -3439,6 +3874,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action action, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action action, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action ^ action, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3453,6 +3889,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3472,12 +3912,12 @@
 ## Remarks  
  Calling `StartNew` is functionally equivalent to creating a Task using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start%2A> to schedule it for execution.  
   
- Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%28System.Action%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%28System.Action%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=fullName> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
+ Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%28System.Action%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> method as  a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%28System.Action%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> does. For more information and code examples, see [Task.Run vs Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
   
    
   
 ## Examples  
- The following example calls the <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> method to create a task that iterates the files in the C:\Windows\System32 directory. The lambda expression calls the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> method to add information about each  file to a <xref:System.Collections.Generic.List%601> object. Each detached nested task invoked by the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=fullName> loop checks the state of the cancellation token and, if cancellation is requested, calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=fullName> method. The <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=fullName> method throws an <xref:System.OperationCanceledException> exception that is handled in a `catch` block when the calling thread calls the <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=fullName> method.  
+ The following example calls the <xref:System.Threading.Tasks.TaskFactory.StartNew%28System.Action%2CSystem.Threading.CancellationToken%29> method to create a task that iterates the files in the C:\Windows\System32 directory. The lambda expression calls the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> method to add information about each  file to a <xref:System.Collections.Generic.List%601> object. Each detached nested task invoked by the <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> loop checks the state of the cancellation token and, if cancellation is requested, calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType> method. The <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType> method throws an <xref:System.OperationCanceledException> exception that is handled in a `catch` block when the calling thread calls the <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[System.Threading.Tasks.TaskFactory.StartNew#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.taskfactory.startnew/cs/startnew2.cs#2)]
  [!code-vb[System.Threading.Tasks.TaskFactory.StartNew#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.taskfactory.startnew/vb/startnew2.vb#2)]  
@@ -3492,6 +3932,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action action, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action action, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action ^ action, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3506,6 +3947,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3537,6 +3982,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action&lt;object&gt; action, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action`1&lt;object&gt; action, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action{System.Object},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew (action As Action(Of Object), state As Object) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action&lt;System::Object ^&gt; ^ action, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3551,6 +3998,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3591,6 +4042,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action&lt;object&gt; action, object state, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action`1&lt;object&gt; action, object state, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action{System.Object},System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action&lt;System::Object ^&gt; ^ action, System::Object ^ state, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3605,6 +4057,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3636,7 +4092,7 @@
  [!code-csharp[System.Threading.Tasks.TaskFactory.StartNew#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.taskfactory.startnew/cs/startnew4.cs#4)]
  [!code-vb[System.Threading.Tasks.TaskFactory.StartNew#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.taskfactory.startnew/vb/startnew4.vb#4)]  
   
- Note that the example initializes a single random number generator, which is protected by a lock. For the need of a lock, see "The System.Random class and thread safety" in the <xref:System.Random> class topic. To handle the possibility of corruption of the random number generator, a cancellation token is passed to task. If two random numbers equal zero, the method assumes that the random number generator is corrupted and sets the cancellation token. Before sorting the `chars` array that contains the six characters in a word, the method calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=fullName> method to throw an <xref:System.OperationCanceledException> if the token has been canceled.  
+ Note that the example initializes a single random number generator, which is protected by a lock. For the need of a lock, see "The System.Random class and thread safety" in the <xref:System.Random> class topic. To handle the possibility of corruption of the random number generator, a cancellation token is passed to task. If two random numbers equal zero, the method assumes that the random number generator is corrupted and sets the cancellation token. Before sorting the `chars` array that contains the six characters in a word, the method calls the <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A?displayProperty=nameWithType> method to throw an <xref:System.OperationCanceledException> if the token has been canceled.  
   
  ]]></format>
         </remarks>
@@ -3648,6 +4104,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action&lt;object&gt; action, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action`1&lt;object&gt; action, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action{System.Object},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew (action As Action(Of Object), state As Object, creationOptions As TaskCreationOptions) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action&lt;System::Object ^&gt; ^ action, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3662,6 +4120,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3695,6 +4157,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action action, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action action, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action,System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action ^ action, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3709,6 +4172,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3749,6 +4216,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task StartNew (Action&lt;object&gt; action, object state, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task StartNew(class System.Action`1&lt;object&gt; action, object state, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew(System.Action{System.Object},System.Object,System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task ^ StartNew(Action&lt;System::Object ^&gt; ^ action, System::Object ^ state, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3763,6 +4231,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -3805,6 +4277,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;TResult&gt; function);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; function) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0})" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew(Of TResult) (function As Func(Of TResult)) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;TResult&gt; ^ function);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3819,6 +4293,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3840,7 +4318,7 @@
 ## Remarks  
  Calling <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> is functionally equivalent to creating a <xref:System.Threading.Tasks.Task%601> using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start%2A> to schedule it for execution.  
   
- Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can call the <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=fullName> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=fullName> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=fullName> option to attach to the current <xref:System.Threading.Tasks.Task%601> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
+ Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can call the <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task%601> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
   
    
   
@@ -3859,6 +4337,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;object,TResult&gt; function, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`2&lt;object, !!TResult&gt; function, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{System.Object,``0},System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew(Of TResult) (function As Func(Of Object, TResult), state As Object) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;System::Object ^, TResult&gt; ^ function, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3873,6 +4353,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3907,6 +4391,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;TResult&gt; function, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; function, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0},System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;TResult&gt; ^ function, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3921,6 +4406,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -3944,7 +4433,7 @@
 ## Remarks  
  Calling <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> is functionally equivalent to creating a <xref:System.Threading.Tasks.Task%601> using one of its constructors and then calling <xref:System.Threading.Tasks.Task.Start%2A> to schedule it for execution.  
   
- Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29?displayProperty=fullName> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=fullName> option to attach to the current <xref:System.Threading.Tasks.Task%601> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
+ Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], you can use the <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> method as a quick way to call <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29> with default parameters. Note, however, that there is a difference in behavior between the two methods regarding : <xref:System.Threading.Tasks.Task.Run%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> by default does not allow child tasks started with the <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent?displayProperty=nameWithType> option to attach to the current <xref:System.Threading.Tasks.Task%601> instance, whereas <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%2CSystem.Threading.CancellationToken%29> does. For more information and code examples, see the entry [Task.Run vs. Task.Factory.StartNew](http://blogs.msdn.com/b/pfxteam/archive/2011/10/24/10229468.aspx) in the Parallel Programming with .NET blog.  
   
    
   
@@ -3964,6 +4453,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;TResult&gt; function, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; function, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0},System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew(Of TResult) (function As Func(Of TResult), creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;TResult&gt; ^ function, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -3978,6 +4469,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -4013,6 +4508,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;object,TResult&gt; function, object state, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`2&lt;object, !!TResult&gt; function, object state, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{System.Object,``0},System.Object,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;System::Object ^, TResult&gt; ^ function, System::Object ^ state, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -4027,6 +4523,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -4064,6 +4564,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;object,TResult&gt; function, object state, System.Threading.Tasks.TaskCreationOptions creationOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`2&lt;object, !!TResult&gt; function, object state, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{System.Object,``0},System.Object,System.Threading.Tasks.TaskCreationOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Function StartNew(Of TResult) (function As Func(Of Object, TResult), state As Object, creationOptions As TaskCreationOptions) As Task(Of TResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;System::Object ^, TResult&gt; ^ function, System::Object ^ state, System::Threading::Tasks::TaskCreationOptions creationOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -4078,6 +4580,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -4115,6 +4621,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;TResult&gt; function, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`1&lt;!!TResult&gt; function, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{``0},System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;TResult&gt; ^ function, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -4129,6 +4636,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -4173,6 +4684,7 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;TResult&gt; StartNew&lt;TResult&gt; (Func&lt;object,TResult&gt; function, object state, System.Threading.CancellationToken cancellationToken, System.Threading.Tasks.TaskCreationOptions creationOptions, System.Threading.Tasks.TaskScheduler scheduler);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;!!TResult&gt; StartNew&lt;TResult&gt;(class System.Func`2&lt;object, !!TResult&gt; function, object state, valuetype System.Threading.CancellationToken cancellationToken, valuetype System.Threading.Tasks.TaskCreationOptions creationOptions, class System.Threading.Tasks.TaskScheduler scheduler) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskFactory.StartNew``1(System.Func{System.Object,``0},System.Object,System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskScheduler)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TResult&gt;&#xA; System::Threading::Tasks::Task&lt;TResult&gt; ^ StartNew(Func&lt;System::Object ^, TResult&gt; ^ function, System::Object ^ state, System::Threading::CancellationToken cancellationToken, System::Threading::Tasks::TaskCreationOptions creationOptions, System::Threading::Tasks::TaskScheduler ^ scheduler);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Threading.Tasks</AssemblyName>
@@ -4187,6 +4699,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
@@ -4229,29 +4745,5 @@
         <exception cref="T:System.ArgumentOutOfRangeException">The exception that is thrown when the <paramref name="creationOptions" /> argument specifies an invalid TaskCreationOptions value. The exception that is thrown when the <paramref name="creationOptions" /> argument specifies an invalid TaskCreationOptions value. For more information, see the Remarks for <see cref="M:System.Threading.Tasks.TaskFactory.FromAsync(System.Func{System.AsyncCallback,System.Object,System.IAsyncResult},System.Action{System.IAsyncResult},System.Object,System.Threading.Tasks.TaskCreationOptions)" /></exception>
       </Docs>
     </Member>
-    <MemberGroup MemberName="StartNew">
-      <AssemblyInfo>
-        <AssemblyName>System.Threading.Tasks</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <AssemblyVersion>4.0.10.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Creates and starts a <see cref="T:System.Threading.Tasks.Task" />.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Starting with the [!INCLUDE[net_v45](~/includes/net-v45-md.md)], the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method is the recommended way to launch a compute-bound task. Use the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> method only when you require fine-grained control for a long-running, compute-bound task. This includes scenarios in which you want to control the following:  
-  
--   Task creation options. Tasks created by the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method by default are created with the <xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=fullName> option. To override this behavior, or to provide other <xref:System.Threading.Tasks.TaskCreationOptions> options, call a <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> overload.  
-  
--   Parameter passing. The overloads of the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method do not allow you to pass a parameter to the task delegate. Overloads of the <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> method do.  
-  
--   The task scheduler. The overloads of the <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=fullName> method use the default task scheduler. To control the task scheduler, call a <xref:System.Threading.Tasks.TaskFactory.StartNew%2A> overload with a `scheduler` parameter. For more information, see .  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

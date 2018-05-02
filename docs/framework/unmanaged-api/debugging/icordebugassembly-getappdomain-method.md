@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAssembly::GetAppDomain Method | Microsoft Docs"
+title: "ICorDebugAssembly::GetAppDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAssembly.GetAppDomain"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAssembly::GetAppDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAssembly::GetAppDomain method [.NET Framework debugging]"
   - "GetAppDomain method, ICorDebugAssembly interface [.NET Framework debugging]"
 ms.assetid: 14e18510-23ac-4cba-9f96-c86147a2df9d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAssembly::GetAppDomain Method
 Gets an interface pointer to the application domain that contains this `ICorDebugAssembly` instance.  

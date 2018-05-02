@@ -1,5 +1,5 @@
 ---
-title: "CorLinkerOptions Enumeration | Microsoft Docs"
+title: "CorLinkerOptions Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorLinkerOptions"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorLinkerOptions"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorLinkerOptions enumeration [.NET Framework metadata]"
 ms.assetid: a656aad6-cc7e-4994-8251-004a6a45e18f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorLinkerOptions Enumeration
 Specifies flags to select options for the metadata linker.  

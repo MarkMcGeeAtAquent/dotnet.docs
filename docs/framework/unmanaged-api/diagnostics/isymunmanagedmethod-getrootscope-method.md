@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedMethod::GetRootScope Method | Microsoft Docs"
+title: "ISymUnmanagedMethod::GetRootScope Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedMethod.GetRootScope"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedMethod::GetRootScope"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedMethod::GetRootScope method [.NET Framework debugging]"
   - "GetRootScope method [.NET Framework debugging]"
 ms.assetid: 7d58caac-2e75-4dfa-9249-32d8a624b247
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedMethod::GetRootScope Method
 Gets the root lexical scope within this method. This scope encloses the entire method.  

@@ -1,19 +1,14 @@
 ---
-title: "&lt;etwEnable&gt; Element | Microsoft Docs"
+title: "&lt;etwEnable&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "etwEnable element"
   - "<etwEnable> element"
@@ -22,6 +17,8 @@ caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;etwEnable&gt; Element
 Specifies whether to enable event tracing for Windows (ETW) for common language runtime events.  
@@ -32,7 +29,7 @@ Specifies whether to enable event tracing for Windows (ETW) for common language 
   
 ## Syntax  
   
-```  
+```xml  
 <etwEnable enabled="true|false"/>  
 ```  
   
@@ -71,7 +68,7 @@ Specifies whether to enable event tracing for Windows (ETW) for common language 
 ## Example  
  The following example shows how to enable ETW tracing for an application.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <etwEnable enabled="true" />  
@@ -80,6 +77,6 @@ Specifies whether to enable event tracing for Windows (ETW) for common language 
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Controlling .NET Framework Logging](../../../../../docs/framework/performance/controlling-logging.md)

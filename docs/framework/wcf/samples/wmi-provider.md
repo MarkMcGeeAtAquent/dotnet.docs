@@ -1,8 +1,8 @@
 ---
-title: "WMI Provider | Microsoft Docs"
+title: "WMI Provider"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,26 +11,27 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
 caps.latest.revision: 35
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WMI Provider
 This sample demonstrates how to gather data from [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services at runtime by using the Windows Management Instrumentation (WMI) provider that is built into [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)]. Also, this sample demonstrates how to add a user-defined WMI object to a service. The sample activates the WMI provider for the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and demonstrates how to gather data from the `ICalculator` service at runtime.  
   
- WMI is Microsoft's implementation of the Web-Based Enterprise Management (WBEM) standard. For more information about the WMI SDK, see the MSDN Library. (http://msdn.microsoft.com/library/default.asp?url=/library/wmisdk/wmi/wmi_start_page.asp). WBEM is an industry standard for how applications expose management instrumentation to external management tools.  
+ WMI is Microsoft's implementation of the Web-Based Enterprise Management (WBEM) standard. For more information about the WMI SDK, see [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM is an industry standard for how applications expose management instrumentation to external management tools.  
   
  [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] implements a WMI provider, a component that exposes instrumentation at runtime through a WBEM-compatible interface. Management tools can connect to the services through the interface at runtime. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] exposes attributes of services such as addresses, bindings, behaviors, and listeners.  
   
  The built-in WMI provider is activated in the configuration file of the application. This is done through the `wmiProviderEnabled` attribute of the [\<diagnostics>](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) in the [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) section, as shown in the following sample configuration:  
   
-```  
+```xml  
 <system.serviceModel>  
     ...  
     <diagnostics wmiProviderEnabled="true" />  
     ...  
 </system.serviceModel>  
-  
 ```  
   
  This configuration entry exposes a WMI interface. Management applications can now connect through this interface and access the management instrumentation of the application.  
@@ -47,7 +48,6 @@ This sample demonstrates how to gather data from [!INCLUDE[indigo1](../../../../
   
 ```  
 cscript EnumerateServices.js  
-  
 ```  
   
  The script accesses the instrumentation contained in the service and produces the following output:  
@@ -117,12 +117,10 @@ cscript EnumerateCustomObjects.js
  The script accesses the user-defined instrumentation contained in the services and produces the following output:  
   
 ```  
-  
 1 WMIObject(s) found.  
 |-PID:           30285bfd-9d66-4c4e-9be2-310499c5cef5  
 |-InstanceId:    3839  
 |-WMIInfo:       User Defined WMI Information.  
-  
 ```  
   
  The output shows that there is a single service running on the computer. The service exposes one endpoint that implements the `ICalculator` contract. The settings of the behavior and binding that are implemented by the endpoint are listed as the sum of individual elements of the messaging stack.  

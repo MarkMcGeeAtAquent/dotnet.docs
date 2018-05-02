@@ -1,8 +1,8 @@
 ---
-title: "Windows Communication Foundation Security | Microsoft Docs"
+title: "Windows Communication Foundation Security"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,6 +18,8 @@ caps.latest.revision: 21
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Communication Foundation Security
 The topics in this section describe [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security features and how to use them to help secure messages.  

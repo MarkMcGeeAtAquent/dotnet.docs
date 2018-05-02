@@ -1,6 +1,6 @@
 ---
 title: Expression Trees Summary
-description: Expression Trees Summary
+description: Recaps how you can use expression trees to create dynamic programs that interpret code as data and build new functionality based on that code.
 keywords: .NET, .NET Core
 author: BillWagner
 ms.author: wiwagn
@@ -41,7 +41,7 @@ still work the same when new language features are introduced.
 
 Even with these limitations, expression trees do enable you to
 create dynamic algorithms that rely on interpreting and modifying
-code that is represetned as a data structure. It's a powerful
+code that is represented as a data structure. It's a powerful
 tool, and it's one of the features of the .NET ecosystem that
 enables rich libraries such as Entity Framework to accomplish
 what they do.

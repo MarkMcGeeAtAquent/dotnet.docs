@@ -1,5 +1,5 @@
 ---
-title: "_AxlRSAKeyValueToPublicKeyToken Function | Microsoft Docs"
+title: "_AxlRSAKeyValueToPublicKeyToken Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "_AxlRSAKeyValueToPublicKeyToken"
-apilocation: 
+api_location: 
   - "clr.dll"
-apitype: "DLLExport"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "DLLExport"
 ms.assetid: d60f19fe-7bec-47ba-b60e-ba9ce66abf8c
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # _AxlRSAKeyValueToPublicKeyToken Function
 Converts a Modulus and Exponent to a strong name public key token.  

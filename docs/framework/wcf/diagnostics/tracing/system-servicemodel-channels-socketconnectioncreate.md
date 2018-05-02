@@ -1,8 +1,8 @@
 ---
-title: "System.ServiceModel.Channels.SocketConnectionCreate | Microsoft Docs"
+title: "System.ServiceModel.Channels.SocketConnectionCreate"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 707015f1-a41f-4a42-b74e-a19677e2517b
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # System.ServiceModel.Channels.SocketConnectionCreate
 System.ServiceModel.Channels.SocketConnectionCreate  
@@ -22,6 +24,6 @@ System.ServiceModel.Channels.SocketConnectionCreate
  This trace is emitted in the first Process Action activity performed by the client, and in the Receive Bytes activity on the service. It provides the local and remote IP addresses. It is emitted at Information level.  
   
 ## See Also  
- [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
- [Using Tracing to Troubleshoot Your Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)   
+ [Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
+ [Using Tracing to Troubleshoot Your Application](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
  [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)

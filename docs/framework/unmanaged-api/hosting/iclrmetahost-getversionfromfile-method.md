@@ -1,5 +1,5 @@
 ---
-title: "ICLRMetaHost::GetVersionFromFile Method | Microsoft Docs"
+title: "ICLRMetaHost::GetVersionFromFile Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRMetaHost.GetVersionFromFile"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRMetaHost::GetVersionFromFile"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRMetaHost::GetVersionFromFile method [.NET Framework hosting]"
   - "GetVersionFromFile method [.NET Framework hosting]"
 ms.assetid: 55bb3eb4-f665-42fc-973c-465567570e82
+topic_type: 
+  - "apiref"
 caps.latest.revision: 20
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRMetaHost::GetVersionFromFile Method
 Gets an assembly's original .NET Framework compilation version (stored in the metadata), given its file path. This method supersedes the [GetFileVersion](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) function.  
@@ -74,5 +77,5 @@ HRESULT GetVersionFromFile (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)   
+ [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

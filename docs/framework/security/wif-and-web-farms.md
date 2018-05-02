@@ -1,7 +1,8 @@
 ---
-title: "WIF and Web Farms | Microsoft Docs"
+title: "WIF and Web Farms"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 9
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # WIF and Web Farms
 When you use Windows Identity Foundation (WIF) to secure the resources of a relying party (RP) application that is deployed in a web farm, you must take specific steps to ensure that WIF can process tokens from instances of the RP application running on different computers in the farm. This processing includes validating session token signatures, encrypting and decrypting session tokens, caching session tokens, and detecting replayed security tokens.  
@@ -44,7 +47,7 @@ When you use Windows Identity Foundation (WIF) to secure the resources of a rely
     </securityTokenHandlers>  
     ```  
   
--   Derive from <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> and implement distributed caching, that is, a cache that is accessible from all computers in the farm on which the RP might run. Configure the RP to use your distributed cache by specifying the [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element in the configuration file. You can override the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=fullName> method in your derived class to implement child elements of the `<sessionSecurityTokenCache>` element if they are required.  
+-   Derive from <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> and implement distributed caching, that is, a cache that is accessible from all computers in the farm on which the RP might run. Configure the RP to use your distributed cache by specifying the [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element in the configuration file. You can override the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> method in your derived class to implement child elements of the `<sessionSecurityTokenCache>` element if they are required.  
   
     ```xml  
     <caches>  
@@ -143,7 +146,7 @@ namespace WcfSessionSecurityTokenCacheService
 ## The WCF Caching Client  
  This section shows the implementation of a class that derives from <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> and that delegates calls to the caching service. You configure the RP application to use this class through the [\<sessionSecurityTokenCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element as in the following XML  
   
-```  
+```xml  
 <caches>  
   <sessionSecurityTokenCache type="CacheLibrary.SharedSessionSecurityTokenCache, CacheLibrary">  
     <!--cacheServiceAddress points to the centralized session security token cache service running in the web farm.-->  
@@ -255,7 +258,7 @@ namespace CacheLibrary
 ```  
   
 ## See Also  
- <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>   
- <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>   
- <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>   
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>  
+ <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>  
  [WIF Session Management](../../../docs/framework/security/wif-session-management.md)

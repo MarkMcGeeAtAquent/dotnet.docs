@@ -1,8 +1,8 @@
 ---
-title: "Large Data and Streaming | Microsoft Docs"
+title: "Large Data and Streaming"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
 caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Large Data and Streaming
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] is an XML-based communications infrastructure. Because XML data is commonly encoded in the standard text format defined in the [XML 1.0 specification](http://go.microsoft.com/fwlink/?LinkId=94838), connected systems developers and architects are typically concerned about the wire footprint (or size) of messages sent across the network, and the text-based encoding of XML poses special challenges for the efficient transfer of binary data.  
@@ -41,7 +43,7 @@ manager: "erikre"
   
  In a Base64-encoded string, each character represents 6-bits of the original 8-bit data, which results in a 4:3 encoding-overhead ratio for Base64, not counting extra formatting characters (carriage return/line feed) that are commonly added by convention. While the significance of the differences between XML and binary encodings typically depends on the scenario, a size gain of more than 33% when transmitting a 500-MB payload is usually not acceptable.  
   
- To avoid this encoding overhead, the Message Transmission Optimization Mechanism (MTOM) standard allows for externalizing large data elements that are contained in a message and carrying them with the message as binary data without any special encoding. With MTOM, messages are exchanged in a similar fashion to Simple Mail Transfer Protocol (SMTP) e-mail messages with attachments or embedded content (pictures and other embedded content); MTOM messages are packaged as multipart/related MIME sequences with the root part being the actual SOAP message.  
+ To avoid this encoding overhead, the Message Transmission Optimization Mechanism (MTOM) standard allows for externalizing large data elements that are contained in a message and carrying them with the message as binary data without any special encoding. With MTOM, messages are exchanged in a similar fashion to Simple Mail Transfer Protocol (SMTP) email messages with attachments or embedded content (pictures and other embedded content); MTOM messages are packaged as multipart/related MIME sequences with the root part being the actual SOAP message.  
   
  An MTOM SOAP message is modified from its un-encoded version so that special element tags that refer to the respective MIME parts take the place of the original elements in the message that contained binary data. As a result, the SOAP message refers to binary content by pointing to the MIME parts sent with it, but otherwise just carries XML text data. Because this model is closely aligned with the well-established SMTP model, there is broad tooling support to encode and decode MTOM messages on many platforms, which makes it an extremely interoperable choice.  
   
@@ -62,7 +64,7 @@ manager: "erikre"
   
  For data that does not have these constraints, it is typically better to send sequences of messages within the scope of a session than one large message. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] the "Streaming Data" section later in this topic.  
   
- When sending large amounts of data you will need to set the maxAllowedContentLength IIS setting (for more information see [Configuring IIS Request Limits](http://go.microsoft.com/fwlink/?LinkId=253165)) and the maxReceivedMessageSize binding setting (for example <xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize%2A> or <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). The maxAllowedContentLength property defaults to 28.6 M and the maxReceivedMessageSize property defaults to 64KB.  
+ When sending large amounts of data you will need to set the `maxAllowedContentLength` IIS setting (for more information see [Configuring IIS Request Limits](http://go.microsoft.com/fwlink/?LinkId=253165)) and the `maxReceivedMessageSize` binding setting (for example [System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) or <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). The `maxAllowedContentLength` property defaults to 28.6 M and the `maxReceivedMessageSize` property defaults to 64KB.  
   
 ## Encodings  
  An *encoding* defines a set of rules about how to present messages on the wire. An *encoder* implements such an encoding and is responsible, on the sender side, for turning a <xref:System.ServiceModel.Channels.Message> in-memory message into a byte stream or byte buffer that can be sent across the network. On the receiver side, the encoder turns a sequence of bytes into an in-memory message.  
@@ -82,9 +84,9 @@ manager: "erikre"
  If your solution does not require interoperability, but you still want to use HTTP transport, you can compose the <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> into a custom binding that uses the <xref:System.ServiceModel.Channels.HttpTransportBindingElement> class for the transport. If a number of clients on your service require interoperability, it is recommended that you expose parallel endpoints that each has the appropriate transport and encoding choices for the respective clients enabled.  
   
 ### Enabling MTOM  
- When interoperability is a requirement and large binary data must be sent, then MTOM message encoding is the alternative encoding strategy that you can enable on the standard <xref:System.ServiceModel.BasicHttpBinding> or <xref:System.ServiceModel.WSHttpBinding> bindings by setting the respective `MessageEncoding` property to <xref:System.ServiceModel.WSMessageEncoding> or by composing the <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> into a <xref:System.ServiceModel.Channels.CustomBinding>. The following example code, extracted from the [MTOM Encoding](../../../../docs/framework/wcf/samples/mtom-encoding.md) sample demonstrates how to enable MTOM in configuration.  
+ When interoperability is a requirement and large binary data must be sent, then MTOM message encoding is the alternative encoding strategy that you can enable on the standard <xref:System.ServiceModel.BasicHttpBinding> or <xref:System.ServiceModel.WSHttpBinding> bindings by setting the respective `MessageEncoding` property to <xref:System.ServiceModel.WSMessageEncoding.Mtom> or by composing the <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> into a <xref:System.ServiceModel.Channels.CustomBinding>. The following example code, extracted from the [MTOM Encoding](../../../../docs/framework/wcf/samples/mtom-encoding.md) sample demonstrates how to enable MTOM in configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
      …  
     <bindings>  
@@ -125,7 +127,7 @@ class MyData
  The effect on the MTOM encoding is the same whether you use an explicit data contract, as shown in the preceding example, use a parameter list in an operation, have nested data contracts, or transfer a data contract object inside a collection. Byte arrays are always candidates for optimization and are optimized if the optimization thresholds are being met.  
   
 > [!NOTE]
->  You should not be using <xref:System.IO.Stream?displayProperty=fullName> derived types inside of data contracts. Stream data should be communicated using the streaming model, explained in the following "Streaming Data" section.  
+>  You should not be using <xref:System.IO.Stream?displayProperty=nameWithType> derived types inside of data contracts. Stream data should be communicated using the streaming model, explained in the following "Streaming Data" section.  
   
 ## Streaming Data  
  When you have a large amount of data to transfer, the streaming transfer mode in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] is a feasible alternative to the default behavior of buffering and processing messages in memory in their entirety.  
@@ -166,15 +168,15 @@ class MyData
 ### Enabling Streaming  
  You can enable streaming in the following ways:  
   
--   Send and accept requests in streaming mode, and accept and return responses in buffered mode (<xref:System.ServiceModel.TransferMode>).  
+-   Send and accept requests in streaming mode, and accept and return responses in buffered mode (<xref:System.ServiceModel.TransferMode.StreamedRequest>).  
   
--   Send and accept requests in buffered mode, and accept and return responses in streamed mode (<xref:System.ServiceModel.TransferMode>).  
+-   Send and accept requests in buffered mode, and accept and return responses in streamed mode (<xref:System.ServiceModel.TransferMode.StreamedResponse>).  
   
--   Send and receive requests and responses in streamed mode in both directions. (<xref:System.ServiceModel.TransferMode>).  
+-   Send and receive requests and responses in streamed mode in both directions. (<xref:System.ServiceModel.TransferMode.Streamed>).  
   
- You can disable streaming by setting the transfer mode to <xref:System.ServiceModel.TransferMode>, which is the default setting on all bindings. The following code shows how to set the transfer mode in configuration.  
+ You can disable streaming by setting the transfer mode to <xref:System.ServiceModel.TransferMode.Buffered>, which is the default setting on all bindings. The following code shows how to set the transfer mode in configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
      …  
     <bindings>  
@@ -209,7 +211,7 @@ public interface IStreamedService
 }  
 ```  
   
- The operation `Echo` in the preceding example receives and returns a stream and should therefore be used on a binding with <xref:System.ServiceModel.TransferMode>. For the operation `RequestInfo`, <xref:System.ServiceModel.TransferMode> is best suited, because it only returns a <xref:System.IO.Stream>. The one-way operation is best suited for <xref:System.ServiceModel.TransferMode>.  
+ The operation `Echo` in the preceding example receives and returns a stream and should therefore be used on a binding with <xref:System.ServiceModel.TransferMode.Streamed>. For the operation `RequestInfo`, <xref:System.ServiceModel.TransferMode.StreamedResponse> is best suited, because it only returns a <xref:System.IO.Stream>. The one-way operation is best suited for <xref:System.ServiceModel.TransferMode.StreamedRequest>.  
   
  Note that adding a second parameter to the following `Echo` or `ProvideInfo` operations causes the service model to revert back to a buffered strategy and use the run-time serialization representation of the stream. Only operations with a single input stream parameter are compatible with end-to-end request streaming.  
   
@@ -233,7 +235,7 @@ public class UploadStreamMessage
  Transport-level streaming also works with any other message contract type (parameter lists, data contract arguments, and explicit message contract), but because the serialization and deserialization of such typed messages requires buffering by the serializer, using such contract variants is not advisable.  
   
 ### Special Security Considerations for Large Data  
- All bindings allow you to constrain the size of incoming messages to prevent denial-of-service attacks. The <xref:System.ServiceModel.BasicHttpBinding>, for example, exposes a <xref:System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize%2A> property that bounds the size of the incoming message, and so also bounds the maximum amount of memory that is accessed when processing the message. This unit is set in bytes with a default value of 65,536 bytes.  
+ All bindings allow you to constrain the size of incoming messages to prevent denial-of-service attacks. The <xref:System.ServiceModel.BasicHttpBinding>, for example, exposes a [System.ServiceModel.BasicHttpBinding.MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) property that bounds the size of the incoming message, and so also bounds the maximum amount of memory that is accessed when processing the message. This unit is set in bytes with a default value of 65,536 bytes.  
   
  A security threat that is specific to the large data streaming scenario provokes a denial of service by causing data to be buffered when the receiver expects it to be streamed. For example, [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] always buffers the SOAP headers of a message, and so an attacker may construct a large malicious message that consists entirely of headers to force the data to be buffered. When streaming is enabled, the `MaxReceivedMessageSize` may be set to an extremely large value, because the receiver never expects the entire message to be buffered in memory at once. If [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] is forced to buffer the message, a memory overflow occurs.  
   

@@ -1,7 +1,9 @@
-<Type Name="SoapDocumentMethodAttribute" FullName="System.Web.Services.Protocols.SoapDocumentMethodAttribute">
+﻿<Type Name="SoapDocumentMethodAttribute" FullName="System.Web.Services.Protocols.SoapDocumentMethodAttribute">
   <TypeSignature Language="C#" Value="public sealed class SoapDocumentMethodAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapDocumentMethodAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class SoapDocumentMethodAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SoapDocumentMethodAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Web.Services</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -24,7 +26,7 @@
 ## Remarks  
  Web Services Description Language (WSDL) defines two styles for how an XML Web service method, which it calls an operation, can be formatted in a SOAP message: `RPC` and `Document`. `Document` refers to formatting the XML Web service method according to an XSD schema. The `Document` style refers to formatting the `Body` element as a series of one or more message parts following the `Body` element. Exactly how the individual message parts is determined by the <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use%2A> and <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> properties. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use%2A> property determines whether parameters are formatted `Encoded` or `Literal`. The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> determines whether the parameters are encapsulated within a single message part following the `Body` element or whether each parameter is an individual message part.  
   
- For more details, see [&#91;\<topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients>&#93;](http://msdn.microsoft.com/en-us/1d777288-c0d9-4e6a-b638-f010da031952)  
+ For more details, see [&#91;\<topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients>&#93;](http://msdn.microsoft.com/library/1d777288-c0d9-4e6a-b638-f010da031952)  
   
  This attribute can be applied to both an XML Web service method on the server and a method of the proxy class on the client.  
   
@@ -37,12 +39,29 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.Services.Protocols.SoapDocumentServiceAttribute" />
+    <altmember cref="T:System.Web.Services.Protocols.SoapRpcMethodAttribute" />
+    <altmember cref="T:System.Web.Services.Protocols.SoapRpcServiceAttribute" />
+    <altmember cref="T:System.Web.Services.Description.SoapBindingUse" />
+    <altmember cref="T:System.Web.Services.Protocols.SoapParameterStyle" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Web.Services.Protocols.SoapDocumentMethodAttribute" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SoapDocumentMethodAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapDocumentMethodAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SoapDocumentMethodAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -59,6 +78,8 @@
       <MemberSignature Language="C#" Value="public SoapDocumentMethodAttribute (string action);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapDocumentMethodAttribute.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (action As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SoapDocumentMethodAttribute(System::String ^ action);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -78,6 +99,8 @@
       <MemberSignature Language="C#" Value="public string Action { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Action" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action" />
+      <MemberSignature Language="VB.NET" Value="Public Property Action As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Action { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -113,6 +136,8 @@
       <MemberSignature Language="C#" Value="public string Binding { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Binding" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Binding" />
+      <MemberSignature Language="VB.NET" Value="Public Property Binding As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Binding { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -137,12 +162,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Services.WebServiceBindingAttribute" />
       </Docs>
     </Member>
     <Member MemberName="OneWay">
       <MemberSignature Language="C#" Value="public bool OneWay { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool OneWay" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.OneWay" />
+      <MemberSignature Language="VB.NET" Value="Public Property OneWay As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool OneWay { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -175,12 +203,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Services.Protocols.SoapServerMessage" />
       </Docs>
     </Member>
     <Member MemberName="ParameterStyle">
       <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapParameterStyle ParameterStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapParameterStyle ParameterStyle" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Property ParameterStyle As SoapParameterStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Services::Protocols::SoapParameterStyle ParameterStyle { System::Web::Services::Protocols::SoapParameterStyle get(); void set(System::Web::Services::Protocols::SoapParameterStyle value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -203,12 +234,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Services.Protocols.SoapParameterStyle" />
       </Docs>
     </Member>
     <Member MemberName="RequestElementName">
       <MemberSignature Language="C#" Value="public string RequestElementName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RequestElementName" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestElementName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RequestElementName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -225,7 +259,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName%2A> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP request when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> is <xref:System.Web.Services.Protocols.SoapParameterStyle>. This is reflected in the XSD schema representing the SOAP request to the XML Web service method within the service description for an XML Web service.  
+ The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestElementName%2A> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP request when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP request to the XML Web service method within the service description for an XML Web service.  
   
    
   
@@ -242,6 +276,8 @@
       <MemberSignature Language="C#" Value="public string RequestNamespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RequestNamespace" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestNamespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property RequestNamespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RequestNamespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -275,6 +311,8 @@
       <MemberSignature Language="C#" Value="public string ResponseElementName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ResponseElementName" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseElementName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ResponseElementName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -291,7 +329,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName%2A> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP response when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> is <xref:System.Web.Services.Protocols.SoapParameterStyle>. This is reflected in the XSD schema representing the SOAP response to the XML Web service method within the XML Web service's service description.  
+ The <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseElementName%2A> defines the XML element used to wrap the parameters beneath the `Body` element of the SOAP response when <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ParameterStyle%2A> is <xref:System.Web.Services.Protocols.SoapParameterStyle.Wrapped>. This is reflected in the XSD schema representing the SOAP response to the XML Web service method within the XML Web service's service description.  
   
    
   
@@ -308,6 +346,8 @@
       <MemberSignature Language="C#" Value="public string ResponseNamespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ResponseNamespace" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property ResponseNamespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ResponseNamespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -341,6 +381,8 @@
       <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapBindingUse Use { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Description.SoapBindingUse Use" />
       <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Use" />
+      <MemberSignature Language="VB.NET" Value="Public Property Use As SoapBindingUse" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Services::Description::SoapBindingUse Use { System::Web::Services::Description::SoapBindingUse get(); void set(System::Web::Services::Description::SoapBindingUse value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web.Services</AssemblyName>
@@ -357,9 +399,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The Web Services Description Language (WSDL) defines two methods for formatting parameters: <xref:System.Web.Services.Description.SoapBindingUse> and <xref:System.Web.Services.Description.SoapBindingUse>. <xref:System.Web.Services.Description.SoapBindingUse> refers to formatting parameters using SOAP encoding, as outlined in the SOAP specification in section 5. <xref:System.Web.Services.Description.SoapBindingUse> refers to formatting the parameters using a pre-defined XSD schema for each parameter.  
+ The Web Services Description Language (WSDL) defines two methods for formatting parameters: <xref:System.Web.Services.Description.SoapBindingUse.Encoded> and <xref:System.Web.Services.Description.SoapBindingUse.Literal>. <xref:System.Web.Services.Description.SoapBindingUse.Encoded> refers to formatting parameters using SOAP encoding, as outlined in the SOAP specification in section 5. <xref:System.Web.Services.Description.SoapBindingUse.Literal> refers to formatting the parameters using a pre-defined XSD schema for each parameter.  
   
- For more details, see [&#91;\<topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients>&#93;](http://msdn.microsoft.com/en-us/1d777288-c0d9-4e6a-b638-f010da031952).  
+ For more details, see [&#91;\<topic://cpconCustomizingSOAPInASPNETWebServicesWebServiceClients>&#93;](http://msdn.microsoft.com/library/1d777288-c0d9-4e6a-b638-f010da031952).  
   
    
   
@@ -370,6 +412,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Services.Description.SoapBindingUse" />
       </Docs>
     </Member>
   </Members>

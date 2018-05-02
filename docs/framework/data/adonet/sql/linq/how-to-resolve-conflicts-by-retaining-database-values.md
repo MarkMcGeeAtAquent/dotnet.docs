@@ -1,22 +1,27 @@
 ---
-title: "How to: Resolve Conflicts by Retaining Database Values | Microsoft Docs"
+title: "How to: Resolve Conflicts by Retaining Database Values"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: b475cf72-9e64-4f6e-99c1-af7737bc85ef
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Resolve Conflicts by Retaining Database Values
-To reconcile differences between expected and actual database values before you try to resubmit your changes, you can use <xref:System.Data.Linq.RefreshMode> to retain the values found in the database. The current values in the object model are then overwritten. For more information, see [Optimistic Concurrency: Overview](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
+To reconcile differences between expected and actual database values before you try to resubmit your changes, you can use <xref:System.Data.Linq.RefreshMode.OverwriteCurrentValues> to retain the values found in the database. The current values in the object model are then overwritten. For more information, see [Optimistic Concurrency: Overview](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md).  
   
 > [!NOTE]
 >  In all cases, the record on the client is first refreshed by retrieving the updated data from the database. This action makes sure that the next update try will not fail on the same concurrency checks.  
@@ -32,7 +37,7 @@ To reconcile differences between expected and actual database values before you 
   
  User1 decides to resolve this conflict by having the newer database values overwrite the current values in the object model.  
   
- When User1 resolves the conflict by using <xref:System.Data.Linq.RefreshMode>, the result in the database is as follows in the table:  
+ When User1 resolves the conflict by using <xref:System.Data.Linq.RefreshMode.OverwriteCurrentValues>, the result in the database is as follows in the table:  
   
 ||Manager|Assistant|Department|  
 |------|-------------|---------------|----------------|  

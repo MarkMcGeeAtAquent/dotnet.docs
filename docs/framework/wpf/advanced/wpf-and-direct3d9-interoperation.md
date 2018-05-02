@@ -1,22 +1,26 @@
 ---
-title: "WPF and Direct3D9 Interoperation | Microsoft Docs"
+title: "WPF and Direct3D9 Interoperation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "cpp"
 helpviewer_keywords: 
-  - "WPF, creating Direct3D9 content"
+  - "WPF [WPF], creating Direct3D9 content"
   - "Direct3D9 [WPF interoperability], creating Direct3D9 content"
 ms.assetid: 1b14b823-69c4-4e8d-99e4-f6dade58f89a
 caps.latest.revision: 25
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # WPF and Direct3D9 Interoperation
 You can include Direct3D9 content in a Windows Presentation Foundation (WPF) application. This topic describes how to create Direct3D9 content so that it efficiently interoperates with WPF.  
@@ -95,7 +99,7 @@ You can include Direct3D9 content in a Windows Presentation Foundation (WPF) app
  Call the `Reset` method to recover from an invalid device only if you implement multi-adapter support. Otherwise, release all Direct3D9 interfaces and re-create them completely. If the adapter layout has changed, Direct3D9 objects created before the change are not updated.  
   
 ## Handling Resizing  
- If a <xref:System.Windows.Interop.D3DImage> is displayed at a resolution other than its native size, it is scaled according to the current <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>, except that <xref:System.Windows.Media.Effects.SamplingMode> is substituted for <xref:System.Windows.Media.BitmapScalingMode>.  
+ If a <xref:System.Windows.Interop.D3DImage> is displayed at a resolution other than its native size, it is scaled according to the current <xref:System.Windows.Media.RenderOptions.BitmapScalingMode%2A>, except that <xref:System.Windows.Media.Effects.SamplingMode.Bilinear> is substituted for <xref:System.Windows.Media.BitmapScalingMode.Fant>.  
   
  If you require higher fidelity, you must create a new surface when the container of the <xref:System.Windows.Interop.D3DImage> changes size.  
   
@@ -152,7 +156,7 @@ You can include Direct3D9 content in a Windows Presentation Foundation (WPF) app
 >  If WPF is rendering completely in software, <xref:System.Windows.Interop.D3DImage> is not shown because WPF does not have a front buffer.  
   
 ## See Also  
- <xref:System.Windows.Interop.D3DImage>   
- [Performance Considerations for Direct3D9 and WPF Interoperability](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)   
- [Walkthrough: Creating Direct3D9 Content for Hosting in WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)   
+ <xref:System.Windows.Interop.D3DImage>  
+ [Performance Considerations for Direct3D9 and WPF Interoperability](../../../../docs/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability.md)  
+ [Walkthrough: Creating Direct3D9 Content for Hosting in WPF](../../../../docs/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf.md)  
  [Walkthrough: Hosting Direct3D9 Content in WPF](../../../../docs/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf.md)

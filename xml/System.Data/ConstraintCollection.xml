@@ -1,7 +1,9 @@
-<Type Name="ConstraintCollection" FullName="System.Data.ConstraintCollection">
+﻿<Type Name="ConstraintCollection" FullName="System.Data.ConstraintCollection">
   <TypeSignature Language="C#" Value="public sealed class ConstraintCollection : System.Data.InternalDataCollectionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConstraintCollection extends System.Data.InternalDataCollectionBase" />
   <TypeSignature Language="DocId" Value="T:System.Data.ConstraintCollection" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ConstraintCollection&#xA;Inherits InternalDataCollectionBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ConstraintCollection sealed : System::Data::InternalDataCollectionBase" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Data.InternalDataCollectionBase</BaseTypeName>
@@ -29,7 +35,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Data.ConstraintCollection> is accessed through the <xref:System.Data.DataTable.Constraints%2A?displayProperty=fullName> property.  
+ The <xref:System.Data.ConstraintCollection> is accessed through the <xref:System.Data.DataTable.Constraints%2A?displayProperty=nameWithType> property.  
   
  The <xref:System.Data.ConstraintCollection> can contain both <xref:System.Data.UniqueConstraint> and <xref:System.Data.ForeignKeyConstraint> objects for the <xref:System.Data.DataTable>. A <xref:System.Data.UniqueConstraint> object makes sure that data in a specific column is always unique to preserve the data integrity. The <xref:System.Data.ForeignKeyConstraint> determines what will occur in related tables when data in the <xref:System.Data.DataTable> is either updated or deleted. For example, if a row is deleted, the <xref:System.Data.ForeignKeyConstraint> will determine whether the related rows are also deleted (a cascade), or some other course of action.  
   
@@ -53,12 +59,26 @@
  ]]></format>
     </remarks>
     <threadsafe>This type is safe for multithreaded read operations. You must synchronize any write operations.</threadsafe>
+    <altmember cref="T:System.Data.ForeignKeyConstraint" />
+    <altmember cref="T:System.Data.UniqueConstraint" />
+    <altmember cref="T:System.Data.DataRelation" />
   </Docs>
   <Members>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds a <see cref="T:System.Data.Constraint" /> object to the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public void Add (System.Data.Constraint constraint);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Data.Constraint constraint) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.Data.Constraint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::Data::Constraint ^ constraint);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -68,6 +88,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -97,12 +121,16 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="constraint" /> argument is null.</exception>
         <exception cref="T:System.ArgumentException">The constraint already belongs to this collection, or belongs to another collection.</exception>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a constraint with the same name. (The comparison is not case-sensitive.)</exception>
+        <altmember cref="T:System.Data.UniqueConstraint" />
+        <altmember cref="T:System.Data.ForeignKeyConstraint" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn column, bool primaryKey);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn column, bool primaryKey) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (name As String, column As DataColumn, primaryKey As Boolean) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Constraint ^ Add(System::String ^ name, System::Data::DataColumn ^ column, bool primaryKey);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -112,6 +140,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -149,12 +181,15 @@
   
  The constraint belongs to another collection.</exception>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a constraint with the specified name. (The comparison is not case-sensitive.)</exception>
+        <altmember cref="T:System.Data.UniqueConstraint" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn primaryKeyColumn, System.Data.DataColumn foreignKeyColumn);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn primaryKeyColumn, class System.Data.DataColumn foreignKeyColumn) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn,System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (name As String, primaryKeyColumn As DataColumn, foreignKeyColumn As DataColumn) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Constraint ^ Add(System::String ^ name, System::Data::DataColumn ^ primaryKeyColumn, System::Data::DataColumn ^ foreignKeyColumn);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -164,6 +199,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -201,6 +240,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn[] columns, bool primaryKey);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn[] columns, bool primaryKey) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn[],System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (name As String, columns As DataColumn(), primaryKey As Boolean) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Constraint ^ Add(System::String ^ name, cli::array &lt;System::Data::DataColumn ^&gt; ^ columns, bool primaryKey);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -210,6 +251,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -247,12 +292,15 @@
   
  The constraint belongs to another collection.</exception>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a constraint with the specified name. (The comparison is not case-sensitive.)</exception>
+        <altmember cref="T:System.Data.UniqueConstraint" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.Constraint Add (string name, System.Data.DataColumn[] primaryKeyColumns, System.Data.DataColumn[] foreignKeyColumns);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Constraint Add(string name, class System.Data.DataColumn[] primaryKeyColumns, class System.Data.DataColumn[] foreignKeyColumns) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Add(System.String,System.Data.DataColumn[],System.Data.DataColumn[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (name As String, primaryKeyColumns As DataColumn(), foreignKeyColumns As DataColumn()) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Constraint ^ Add(System::String ^ name, cli::array &lt;System::Data::DataColumn ^&gt; ^ primaryKeyColumns, cli::array &lt;System::Data::DataColumn ^&gt; ^ foreignKeyColumns);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -262,6 +310,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -299,6 +351,8 @@
       <MemberSignature Language="C#" Value="public void AddRange (System.Data.Constraint[] constraints);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.Constraint[] constraints) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.AddRange(System.Data.Constraint[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddRange (constraints As Constraint())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddRange(cli::array &lt;System::Data::Constraint ^&gt; ^ constraints);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -308,6 +362,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -340,6 +398,7 @@
       <MemberSignature Language="C#" Value="public bool CanRemove (System.Data.Constraint constraint);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanRemove(class System.Data.Constraint constraint) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool CanRemove(System::Data::Constraint ^ constraint);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -349,6 +408,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -383,6 +446,8 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -392,6 +457,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -421,6 +490,8 @@
       <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
       <MemberSignature Language="DocId" Value="E:System.Data.ConstraintCollection.CollectionChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event CollectionChanged As CollectionChangeEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::CollectionChangeEventHandler ^ CollectionChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -431,6 +502,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
       </ReturnValue>
@@ -440,7 +515,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
    
   
@@ -458,6 +533,8 @@
       <MemberSignature Language="C#" Value="public bool Contains (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Contains(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Contains (name As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Contains(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -467,6 +544,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -495,12 +576,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.ConstraintCollection.Remove(System.Data.Constraint)" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (System.Data.Constraint[] array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.Constraint[] array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.CopyTo(System.Data.Constraint[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CopyTo (array As Constraint(), index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CopyTo(cli::array &lt;System::Data::Constraint ^&gt; ^ array, int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -510,6 +594,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -525,10 +613,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IndexOf">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the index of the specified <see cref="T:System.Data.Constraint" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IndexOf">
       <MemberSignature Language="C#" Value="public int IndexOf (System.Data.Constraint constraint);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.Constraint constraint) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.IndexOf(System.Data.Constraint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int IndexOf(System::Data::Constraint ^ constraint);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -538,6 +637,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -565,12 +668,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.ConstraintCollection.Remove(System.Data.Constraint)" />
+        <altmember cref="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
       </Docs>
     </Member>
     <Member MemberName="IndexOf">
       <MemberSignature Language="C#" Value="public int IndexOf (string constraintName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string constraintName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.IndexOf(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IndexOf (constraintName As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int IndexOf(System::String ^ constraintName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -580,6 +688,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -607,12 +719,27 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.ConstraintCollection.Remove(System.Data.Constraint)" />
+        <altmember cref="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the specified <see cref="T:System.Data.Constraint" /> from the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Data.Constraint this[int index] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Constraint Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(index As Integer) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Constraint ^ default[int] { System::Data::Constraint ^ get(int index); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -622,6 +749,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -650,12 +781,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.IndexOutOfRangeException">The index value is greater than the number of items in the collection.</exception>
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Data.Constraint this[string name] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Constraint Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(name As String) As Constraint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Constraint ^ default[System::String ^] { System::Data::Constraint ^ get(System::String ^ name); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -665,6 +799,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.Constraint</ReturnType>
@@ -698,6 +836,8 @@
       <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
       <MemberSignature Language="DocId" Value="P:System.Data.ConstraintCollection.List" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property List As ArrayList" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Collections::ArrayList ^ List { System::Collections::ArrayList ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -708,6 +848,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ArrayList</ReturnType>
       </ReturnValue>
@@ -717,10 +861,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes a <see cref="T:System.Data.Constraint" /> from the <see cref="T:System.Data.ConstraintCollection" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.Data.Constraint constraint);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.Constraint constraint) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Remove(System.Data.Constraint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::Data::Constraint ^ constraint);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -730,6 +885,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -758,12 +917,17 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="constraint" /> argument is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">The constraint does not belong to the collection.</exception>
+        <altmember cref="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.ConstraintCollection.IndexOf(System.Data.Constraint)" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -773,6 +937,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -801,12 +969,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.ConstraintCollection.IndexOf(System.Data.Constraint)" />
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.ConstraintCollection.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -816,6 +989,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -847,6 +1024,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.IndexOutOfRangeException">The collection does not have a constraint at this index.</exception>
+        <altmember cref="M:System.Data.ConstraintCollection.CanRemove(System.Data.Constraint)" />
+        <altmember cref="M:System.Data.ConstraintCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.ConstraintCollection.IndexOf(System.Data.Constraint)" />
       </Docs>
     </Member>
   </Members>

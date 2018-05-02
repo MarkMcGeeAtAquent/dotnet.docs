@@ -1,8 +1,8 @@
 ---
-title: "NamedPipe Activation | Microsoft Docs"
+title: "NamedPipe Activation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # NamedPipe Activation
 This sample demonstrates hosting a service that uses Windows Process Activation Service (WAS) to activate a service that communicates over names pipes. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and requires [!INCLUDE[wv](../../../../includes/wv-md.md)] to run.  
@@ -73,14 +75,13 @@ public class CalculatorService : ICalculator
         return n1 / n2;  
     }  
 }  
-  
 ```  
   
  The sample uses a modified `netNamedPipeBinding` binding with no security. The binding is specified in the configuration files for the client and service. The binding type for the service is specified in the endpoint element’s `binding` attribute as shown in the following sample configuration.  
   
  If you want use a secured named pipe binding, change the server's security mode to the desired security setting and run svcutil.exe again on the client to obtain an updated client configuration file.  
   
-```  
+```xml  
 <system.serviceModel>  
         <services>  
             <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -121,7 +122,7 @@ public class CalculatorService : ICalculator
   
  The client’s endpoint information is configured as shown in the following sample code.  
   
-```  
+```xml  
 <system.serviceModel>  
   
     <client>  

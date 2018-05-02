@@ -1,5 +1,5 @@
 ---
-title: "GetRequestedRuntimeVersionForCLSID Function | Microsoft Docs"
+title: "GetRequestedRuntimeVersionForCLSID Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "GetRequestedRuntimeVersionForCLSID"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "GetRequestedRuntimeVersionForCLSID"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetRequestedRuntimeVersionForCLSID function [.NET Framework hosting]"
 ms.assetid: 5bb12f9a-0612-434b-b4ed-2db636a20bec
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # GetRequestedRuntimeVersionForCLSID Function
 Gets the appropriate common language runtime (CLR) version information for the class with the specified `CLSID`.  

@@ -1,8 +1,8 @@
 ---
-title: "Security Extensibility | Microsoft Docs"
+title: "Security Extensibility"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 7
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Security Extensibility
 This section contains samples that demonstrate custom security in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

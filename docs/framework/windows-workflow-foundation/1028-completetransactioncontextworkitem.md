@@ -1,5 +1,5 @@
 ---
-title: "1028 - CompleteTransactionContextWorkItem | Microsoft Docs"
+title: "1028 - CompleteTransactionContextWorkItem"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 95423f9d-d29a-460e-bcd8-096e80af5bd0
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1028 - CompleteTransactionContextWorkItem
 ## Properties  

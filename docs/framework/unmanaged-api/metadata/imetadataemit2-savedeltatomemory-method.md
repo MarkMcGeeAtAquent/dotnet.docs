@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit2::SaveDeltaToMemory Method | Microsoft Docs"
+title: "IMetaDataEmit2::SaveDeltaToMemory Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit2.SaveDeltaToMemory"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit2::SaveDeltaToMemory"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SaveDeltaToMemory method [.NET Framework metadata]"
   - "IMetaDataEmit2::SaveDeltaToMemory method [.NET Framework metadata]"
 ms.assetid: e2146726-0084-4c9e-a2d2-e8d461b13b21
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit2::SaveDeltaToMemory Method
 Saves changes from the current edit-and-continue session to memory.  
@@ -56,5 +59,5 @@ HRESULT SaveDeltaToMemory (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)   
+ [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

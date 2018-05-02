@@ -1,6 +1,6 @@
 ---
-title: "in (C# Reference) | Microsoft Docs"
-ms.date: "2015-07-20"
+title: "in (C# Reference)"
+ms.date: 02/06/2018
 ms.prod: .net
 ms.technology: 
   - "devlang-csharp"
@@ -8,37 +8,21 @@ ms.topic: "article"
 f1_keywords: 
   - "in"
   - "in_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
 helpviewer_keywords: 
   - "in keyword [C#]"
-ms.assetid: 52032838-0a38-476e-b4d5-94b59141952f
-caps.latest.revision: 9
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
+
 # in (C# Reference)
-The `in` contextual keyword is used in three contexts:  
+
+The `in` contextual keyword is used in four contexts:  
   
--   [foreach](../../../csharp/language-reference/keywords/foreach-in.md) statements  
-  
--   [join clauses](../../../csharp/language-reference/keywords/join-clause.md) in query expressions  
-  
--   [generic type parameters](../../../csharp/language-reference/keywords/in-generic-modifier.md) in generic interfaces and delegates.  
+-   [generic type parameters](in-generic-modifier.md) in generic interfaces and delegates.
+-   As a [parameter modifier](in-parameter-modifier.md), which lets you pass an argument to a method by reference rather than by value.
+-   [foreach](foreach-in.md) statements.
+-   [join clauses](join-clause.md) in LINQ query expressions.
   
 ## See Also  
- [C# Reference](../../../csharp/language-reference/index.md)
+ [C# Keywords](index.md)  
+ [C# Reference](../index.md)

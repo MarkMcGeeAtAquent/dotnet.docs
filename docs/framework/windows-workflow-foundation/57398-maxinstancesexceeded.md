@@ -1,5 +1,5 @@
 ---
-title: "57398 - MaxInstancesExceeded | Microsoft Docs"
+title: "57398 - MaxInstancesExceeded"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f943d209-dfeb-43e5-b572-c9a06217936e
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 57398 - MaxInstancesExceeded
 ## Properties  

@@ -1,5 +1,5 @@
 ---
-title: "EHostBindingPolicyModifyFlags Enumeration | Microsoft Docs"
+title: "EHostBindingPolicyModifyFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "EHostBindingPolicyModifyFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "EHostBindingPolicyModifyFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EHostBindingPolicyModifyFlags enumeration [.NET Framework hosting]"
 ms.assetid: 0339af16-ee1d-48ec-837d-a79d9a9c89f8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # EHostBindingPolicyModifyFlags Enumeration
 Allows the host to specify the type of redirection the common language runtime (CLR) should perform when applying policy modifications from a source assembly to a target assembly.  
@@ -62,5 +65,5 @@ typedef enum _hostBindingPolicyModifyFlags {
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRHostBindingPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)   
+ [ICLRHostBindingPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

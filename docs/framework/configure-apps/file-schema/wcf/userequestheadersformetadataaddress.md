@@ -1,8 +1,8 @@
 ---
-title: "&lt;useRequestHeadersForMetadataAddress&gt; | Microsoft Docs"
+title: "&lt;useRequestHeadersForMetadataAddress&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,14 +11,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 679f0eae-f353-44d1-b42d-a9e247509774
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;useRequestHeadersForMetadataAddress&gt;
 Enables the retrieval of metadata address information from the request message headers.  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
 \<behavior>  
@@ -26,9 +28,12 @@ Enables the retrieval of metadata address information from the request message h
   
 ## Syntax  
   
-```  
-  
-<useRequestHeadersForMetadataAddress>   <defaultPorts>      <add scheme="http" port="integer" />   </defaultPorts></useRequestHeadersForMetadataAddress>  
+```xml  
+<useRequestHeadersForMetadataAddress>
+  <defaultPorts>
+    <add scheme="http" port="integer" />
+  </defaultPorts>
+</useRequestHeadersForMetadataAddress>  
 ```  
   
 ## Attributes and Elements  

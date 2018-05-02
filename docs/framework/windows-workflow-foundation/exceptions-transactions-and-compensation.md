@@ -1,5 +1,5 @@
 ---
-title: "Exceptions, Transactions, and Compensation | Microsoft Docs"
+title: "Exceptions, Transactions, and Compensation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ helpviewer_keywords:
   - "programming [WF], error handling"
 ms.assetid: 694db4f9-7387-4b13-8f9f-b923b18c7490
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Exceptions, Transactions, and Compensation
 [!INCLUDE[wf1](../../../includes/wf1-md.md)] provides several different mechanisms for handling run-time error conditions in workflows. Workflows can use a combination of exception handlers, transactions, cancellation, and compensation to handle and recover gracefully from error conditions.  

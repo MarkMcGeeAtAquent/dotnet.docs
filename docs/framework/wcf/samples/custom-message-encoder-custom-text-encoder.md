@@ -1,8 +1,8 @@
 ---
-title: "Custom Message Encoder: Custom Text Encoder | Microsoft Docs"
+title: "Custom Message Encoder: Custom Text Encoder"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 68ff5c74-3d33-4b44-bcae-e1d2f5dea0de
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Message Encoder: Custom Text Encoder
 This sample demonstrates how to implement a custom text message encoder using [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -45,7 +47,6 @@ This sample demonstrates how to implement a custom text message encoder using [!
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
@@ -60,7 +61,6 @@ This sample demonstrates how to implement a custom text message encoder using [!
  The following code example shows the CustomTextMessageEncoder.  
   
 ```csharp  
-  
 public class CustomTextMessageEncoder : MessageEncoder  
 {  
     private CustomTextMessageEncoderFactory factory;  
@@ -228,16 +228,15 @@ CustomBinding binding = new CustomBinding(bindingElements);
   
  This configuration handler maps to the following representation in the App.config or Web.config for the service or client.  
   
-```  
+```xml  
 <customTextMessageEncoding encoding="utf-8" contentType="text/xml" messageVersion="Soap11Addressing1" />  
-  
 ```  
   
  The sample uses the ISO-8859-1 encoding.  
   
  To use this configuration handler it must be registered using the following configuration element.  
   
-```  
+```xml  
 <extensions>  
     <bindingElementExtensions>  
         <add name="customTextMessageEncoding" type="   
@@ -245,7 +244,6 @@ Microsoft.ServiceModel.Samples.CustomTextMessageEncodingBindingSection,
                   CustomTextMessageEncoder" />  
     </bindingElementExtensions>  
 </extensions>  
-  
 ```  
   
 ## See Also

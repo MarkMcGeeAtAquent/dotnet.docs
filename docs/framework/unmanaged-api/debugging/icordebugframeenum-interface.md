@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrameEnum Interface1 | Microsoft Docs"
+title: "ICorDebugFrameEnum Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrameEnum"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrameEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFrameEnum interface [.NET Framework debugging]"
 ms.assetid: ee3f85d3-044e-46b8-945c-93ebfa5d9e91
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrameEnum Interface1
 Implements ICorDebugEnum methods, and enumerates ICorDebugFrame arrays.  

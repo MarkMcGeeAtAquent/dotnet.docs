@@ -1,8 +1,8 @@
 ---
-title: "Service Interoperability | Microsoft Docs"
+title: "Service Interoperability"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3628557f-b8b3-47fc-8fdc-0c7d2e4268bd
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service Interoperability
 This section contains samples that demonstrate interaction between [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and other service technologies.  

@@ -1,5 +1,5 @@
 ---
-title: "CorNotificationForTokenMovement Enumeration | Microsoft Docs"
+title: "CorNotificationForTokenMovement Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorNotificationForTokenMovement"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorNotificationForTokenMovement"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorNotificationForTokenMovement enumeration [.NET Framework metadata]"
 ms.assetid: 1edd1670-976a-4fc8-bef7-7c41e60ad989
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorNotificationForTokenMovement Enumeration
 Specifies the notifications that will be sent to the metadata API client when a token remap occurs.  

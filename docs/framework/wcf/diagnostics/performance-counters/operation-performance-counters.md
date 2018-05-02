@@ -1,8 +1,8 @@
 ---
-title: "Operation Performance Counters | Microsoft Docs"
+title: "Operation Performance Counters"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 333a51e0-f56e-4e1a-b359-5c91ff390568
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Operation Performance Counters
 Operation performance counters are found under the `ServiceModelOperation 4.0.0.0` performance object when viewing with the Performance Monitor (Perfmon.exe). Each operation has an individual instance. That is, if a given contract has 10 operations, 10 operation counter instances are associated with that contract. The object instances are named using the following pattern:  

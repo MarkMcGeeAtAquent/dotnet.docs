@@ -1,64 +1,83 @@
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.ShouldSerializeDelayLowerBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.DelayLowerBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.DelayUpperBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.#ctor(System.Int32,System.Int32,System.TimeSpan,System.TimeSpan,System.TimeSpan)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.#ctor(System.Int32,System.Int32)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.MaxMulticastRetransmitCount
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.MaxDelayPerRetransmission
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.MaxUnicastRetransmitCount
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.ShouldSerializeDelayUpperBound
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.UdpRetransmissionSettings.ShouldSerializeMaxDelayPerRetransmission
-manager: "ghogen"
----
-
----
-uid: System.ServiceModel.Channels.UdpRetransmissionSettings.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

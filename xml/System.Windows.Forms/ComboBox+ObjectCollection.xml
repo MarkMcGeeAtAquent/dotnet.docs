@@ -1,7 +1,9 @@
-<Type Name="ComboBox+ObjectCollection" FullName="System.Windows.Forms.ComboBox+ObjectCollection">
+﻿<Type Name="ComboBox+ObjectCollection" FullName="System.Windows.Forms.ComboBox+ObjectCollection">
   <TypeSignature Language="C#" Value="public class ComboBox.ObjectCollection : System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit ComboBox/ObjectCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ComboBox.ObjectCollection" />
+  <TypeSignature Language="VB.NET" Value="Public Class ComboBox.ObjectCollection&#xA;Implements IList" />
+  <TypeSignature Language="C++ CLI" Value="public: ref class ComboBox::ObjectCollection : System::Collections::IList" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,11 +27,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ComboBox.ObjectCollection?displayProperty=fullName> class encapsulates the items in the <xref:System.Windows.Forms.ComboBox>. The object collection of a combo box can be used to manage many types of objects, including strings, images, and custom business objects.  
+ The <xref:System.Windows.Forms.ComboBox.ObjectCollection?displayProperty=nameWithType> class encapsulates the items in the <xref:System.Windows.Forms.ComboBox>. The object collection of a combo box can be used to manage many types of objects, including strings, images, and custom business objects.  
   
  You can add items to the collection in several ways. The <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A> method adds one object to the collection. To add a number of objects to the collection, it is best to create an array of items and assign with the <xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A> method. To insert an object at a specific location within the collection, you can use the <xref:System.Windows.Forms.ComboBox.ObjectCollection.Insert%2A> method. To remove items at a known index in the collection you can use either the <xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A> method or the <xref:System.Windows.Forms.ComboBox.ObjectCollection.RemoveAt%2A> method. The <xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A> method removes all the items from the collection.  
   
- In addition to methods and properties for adding and removing items, the <xref:System.Windows.Forms.ComboBox.ObjectCollection?displayProperty=fullName> also provides methods to find items within the collection. The <xref:System.Windows.Forms.ComboBox.ObjectCollection.Contains%2A> method enables you to determine if an object is a member of the collection. Once you know that the item is located within the collection, you can use the <xref:System.Windows.Forms.ComboBox.ObjectCollection.IndexOf%2A> method to determine where the item is located within the collection.  
+ In addition to methods and properties for adding and removing items, the <xref:System.Windows.Forms.ComboBox.ObjectCollection?displayProperty=nameWithType> also provides methods to find items within the collection. The <xref:System.Windows.Forms.ComboBox.ObjectCollection.Contains%2A> method enables you to determine if an object is a member of the collection. Once you know that the item is located within the collection, you can use the <xref:System.Windows.Forms.ComboBox.ObjectCollection.IndexOf%2A> method to determine where the item is located within the collection.  
   
  ]]></format>
     </remarks>
@@ -39,6 +41,8 @@
       <MemberSignature Language="C#" Value="public ObjectCollection (System.Windows.Forms.ComboBox owner);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ComboBox owner) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.#ctor(System.Windows.Forms.ComboBox)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (owner As ComboBox)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ObjectCollection(System::Windows::Forms::ComboBox ^ owner);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -64,7 +68,12 @@
       <MemberSignature Language="C#" Value="public int Add (object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (item As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Add(System::Object ^ item);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Add(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -90,12 +99,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="item" /> parameter was <see langword="null" />.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="AddRange">
       <MemberSignature Language="C#" Value="public void AddRange (object[] items);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(object[] items) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.AddRange(System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddRange (items As Object())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddRange(cli::array &lt;System::Object ^&gt; ^ items);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -134,7 +146,12 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Clear();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Clear</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -153,13 +170,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="Contains">
       <MemberSignature Language="C#" Value="public bool Contains (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.Contains(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Contains (value As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Contains(System::Object ^ value);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Contains(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -183,12 +206,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (object[] destination, int arrayIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(object[] destination, int32 arrayIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.CopyTo(System.Object[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CopyTo (destination As Object(), arrayIndex As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CopyTo(cli::array &lt;System::Object ^&gt; ^ destination, int arrayIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -213,13 +239,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="Count">
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -238,13 +270,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -263,7 +301,12 @@
       <MemberSignature Language="C#" Value="public int IndexOf (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.IndexOf(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IndexOf (value As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual int IndexOf(System::Object ^ value);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.IndexOf(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -287,13 +330,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="value" /> parameter was <see langword="null" />.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (int index, object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.Insert(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (index As Integer, item As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Insert(int index, System::Object ^ item);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Insert(System.Int32,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -323,13 +372,19 @@
  -or-  
   
  The <paramref name="index" /> was greater than the count of items in the collection.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="IsReadOnly">
       <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsReadOnly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -341,13 +396,19 @@
         <summary>Gets a value indicating whether this collection can be modified.</summary>
         <value>Always <see langword="false" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public virtual object this[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Overridable Property Item(index As Integer) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ default[int] { System::Object ^ get(int index); void set(int index, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.Item(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -357,7 +418,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -383,13 +444,19 @@
  -or-  
   
  The <paramref name="index" /> was greater of equal to the count of items in the collection.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.Remove(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Remove(System::Object ^ value);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Remove(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -411,13 +478,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.RemoveAt(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -448,13 +521,19 @@
  -or-  
   
  The <paramref name="value" /> parameter was greater than or equal to the count of items in the collection.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.ICollection.CopyTo">
       <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array destination, int index);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array destination, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Sub CopyTo (destination As Array, index As Integer) Implements ICollection.CopyTo" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.ICollection.CopyTo(Array ^ destination, int index) = System::Collections::ICollection::CopyTo;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -478,13 +557,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.ICollection.IsSynchronized">
       <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsSynchronized As Boolean Implements ICollection.IsSynchronized" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.ICollection.IsSynchronized { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.IsSynchronized</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -504,13 +589,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.ICollection.SyncRoot">
       <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property SyncRoot As Object Implements ICollection.SyncRoot" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.ICollection.SyncRoot { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.SyncRoot</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -529,13 +620,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.ICollection" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.Add">
       <MemberSignature Language="C#" Value="int IList.Add (object item);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ObjectCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Add (item As Object) As Integer Implements IList.Add" />
+      <MemberSignature Language="C++ CLI" Value=" virtual int System.Collections.IList.Add(System::Object ^ item) = System::Collections::IList::Add;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Add(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -564,13 +661,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="item" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.SystemException">There is insufficient space available to store the new item.</exception>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IList.IsFixedSize">
       <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ObjectCollection.System#Collections#IList#IsFixedSize" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFixedSize As Boolean Implements IList.IsFixedSize" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.IList.IsFixedSize { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsFixedSize</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -590,6 +693,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Collections.IList" />
       </Docs>
     </Member>
   </Members>

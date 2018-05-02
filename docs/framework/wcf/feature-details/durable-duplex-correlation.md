@@ -1,8 +1,8 @@
 ---
-title: "Durable Duplex Correlation | Microsoft Docs"
+title: "Durable Duplex Correlation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Durable Duplex Correlation
 Durable duplex correlation, also known as callback correlation, is useful when a workflow service has a requirement to send a callback to the initial caller. Unlike WCF duplex, the callback can happen at any time in the future and is not tied to the same channel or the channel lifetime; the only requirement is that the caller have an active endpoint listening for the callback message. This allows two workflow services to communicate in a long-running conversation. This topic provides an overview of durable duplex correlation.  
@@ -202,7 +204,6 @@ WF1 - Request Submitted
 WF2 - Sending items  
 WF2 - Items sent  
 WF1 - Items Received  
-  
 ```  
   
  In this example, both workflows explicitly manage correlation using a <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Because there was only a single correlation in these sample workflows, the default <xref:System.ServiceModel.Activities.CorrelationHandle> management would have been sufficient.  

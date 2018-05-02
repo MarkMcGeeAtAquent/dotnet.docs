@@ -1,5 +1,5 @@
 ---
-title: "INotifySource2::SetNotifyFilter Method | Microsoft Docs"
+title: "INotifySource2::SetNotifyFilter Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "INotifySource2.SetNotifyFilter"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "INotifySource2::SetNotifyFilter"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "INotifySource2::SetNotifyFilter method [.NET Framework debugging]"
   - "SetNotifyFilter method [.NET Framework debugging]"
 ms.assetid: 6351fc92-b126-4af6-9bf3-0a8ce92845fc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # INotifySource2::SetNotifyFilter Method
 Assigns a notification filter for use with this source.  
@@ -54,6 +57,6 @@ HRESULT SetNotifyFilter
  **Header:** ProtocolNotify2.idl  
   
 ## See Also  
- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)   
- [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)   
+ [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
+ [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
  [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)

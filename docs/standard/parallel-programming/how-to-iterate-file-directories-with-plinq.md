@@ -1,5 +1,5 @@
 ---
-title: "How to: Iterate File Directories with PLINQ | Microsoft Docs"
+title: "How to: Iterate File Directories with PLINQ"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -15,6 +15,9 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Iterate File Directories with PLINQ
 This example shows two simple ways to parallelize operations on file directories. The first query uses the <xref:System.IO.Directory.GetFiles%2A> method to populate an array of file names in a directory and all subdirectories. This method does not return until the entire array is populated, and therefore it can introduce latency at the beginning of the operation. However, after the array is populated, PLINQ can process it in parallel very quickly.  

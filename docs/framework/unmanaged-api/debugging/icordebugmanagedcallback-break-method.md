@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::Break Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::Break Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.Break"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::Break"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Break method [.NET Framework debugging]"
   - "ICorDebugManagedCallback::Break method [.NET Framework debugging]"
 ms.assetid: 7d78a301-82b3-43b2-9d65-3cda3285ae97
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::Break Method
 Notifies the debugger when a <xref:System.Reflection.Emit.OpCodes.Break> instruction in the code stream is executed.  

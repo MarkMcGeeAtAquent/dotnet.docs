@@ -1,32 +1,35 @@
 ---
-title: "ICoreClrDebugTarget Interface | Microsoft Docs"
+title: "ICoreClrDebugTarget Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICoreClrDebugTarget"
-apilocation: 
+api_location: 
   - "mscordbi_macx86.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICoreClrDebugTarget"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "remote debugging API [Silverlight]"
   - "ICorClrDebugTarget interface"
   - "Silverlight, remote debugging"
 ms.assetid: 7cfaee76-e284-4a66-a431-8e33f0f60038
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICoreClrDebugTarget Interface
 Provides methods that control reference counts, enumerate processes, and free the memory associated with a debugger that is attached to a remote Macintosh Silverlight target.  
@@ -73,7 +76,7 @@ class ICoreClrDebugTarget {
  **.NET Framework Versions:** 3.5 SP1  
   
 ## See Also  
- [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)   
- [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)   
+ [ICorDebugRemoteTarget Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
+ [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
     
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

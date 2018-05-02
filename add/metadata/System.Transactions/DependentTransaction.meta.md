@@ -1,9 +1,13 @@
 ---
 uid: System.Transactions.DependentTransaction
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.DependentTransaction.Complete
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

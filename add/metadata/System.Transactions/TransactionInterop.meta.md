@@ -1,45 +1,63 @@
 ---
 uid: System.Transactions.TransactionInterop
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetWhereabouts
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetExportCookie(System.Transactions.Transaction,System.Byte[])
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetTransmitterPropagationToken(System.Transactions.Transaction)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetTransactionFromExportCookie(System.Byte[])
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.PromoterTypeDtc
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "sdanie"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetDtcTransaction(System.Transactions.Transaction)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.TransactionInterop.GetTransactionFromDtcTransaction(System.Transactions.IDtcTransaction)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

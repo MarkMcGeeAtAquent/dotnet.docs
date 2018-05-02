@@ -1,5 +1,5 @@
 ---
-title: "ICLRMemoryNotificationCallback::OnMemoryNotification Method | Microsoft Docs"
+title: "ICLRMemoryNotificationCallback::OnMemoryNotification Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRMemoryNotificationCallback.OnMemoryNotification"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRMemoryNotificationCallback::OnMemoryNotification"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRMemoryNotificationCallback::OnMemoryNotification method [.NET Framework hosting]"
   - "OnMemoryNotification method [.NET Framework hosting]"
 ms.assetid: 5612a44d-56cc-4f34-af31-8c9809ba9431
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRMemoryNotificationCallback::OnMemoryNotification Method
 Notifies the common language runtime (CLR) of the memory load on the computer.  
@@ -69,6 +72,6 @@ HRESULT OnMemoryNotification (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)   
- [RegisterMemoryNotificationCallback Method](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)   
+ [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
+ [RegisterMemoryNotificationCallback Method](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)  
  [ICLRMemoryNotificationCallback Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmemorynotificationcallback-interface.md)

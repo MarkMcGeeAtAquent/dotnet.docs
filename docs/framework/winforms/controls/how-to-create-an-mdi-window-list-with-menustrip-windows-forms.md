@@ -1,8 +1,8 @@
 ---
-title: "How to: Create an MDI Window List with MenuStrip (Windows Forms) | Microsoft Docs"
+title: "How to: Create an MDI Window List with MenuStrip (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,15 +10,18 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "MDI, creating window lists"
+  - "MDI [Windows Forms], creating window lists"
   - "MenuStrip control [Windows Forms], creating window lists"
 ms.assetid: 04fb414b-811f-4a83-aab6-b4a24646dec5
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Create an MDI Window List with MenuStrip (Windows Forms)
 Use the multiple-document interface (MDI) to create applications that can open several documents at the same time and copy and paste content from one document to the other.  
@@ -53,12 +56,9 @@ Use the multiple-document interface (MDI) to create applications that can open s
         'Display the new form.  
             NewMDIChild.Show()  
     End Sub  
-  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     private void newToolStripMenuItem_Click(object sender, EventArgs e)  
     {  
         Form2 newMDIChild = new Form2();  
@@ -67,7 +67,6 @@ Use the multiple-document interface (MDI) to create applications that can open s
         // Display the new form.  
             newMDIChild.Show();  
     }  
-  
     ```  
   
 9. Place code like the following in the `&New`<xref:System.Windows.Forms.ToolStripMenuItem> to register the event handler.  
@@ -75,12 +74,10 @@ Use the multiple-document interface (MDI) to create applications that can open s
     ```vb  
     Private Sub newToolStripMenuItem_Click(sender As Object, e As _  
     EventArgs) Handles newToolStripMenuItem.Click  
-  
     ```  
   
     ```csharp  
     this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);  
-  
     ```  
   
 ## Compiling the Code  
@@ -90,9 +87,9 @@ Use the multiple-document interface (MDI) to create applications that can open s
   
 -   A <xref:System.Windows.Forms.MenuStrip> control on `Form1` named `menuStrip1`, and a <xref:System.Windows.Forms.MenuStrip> control on `Form2` named `menuStrip2`.  
   
--   References to the <xref:System?displayProperty=fullName> and <xref:System.Windows.Forms?displayProperty=fullName> assemblies.  
+-   References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.  
   
 ## See Also  
- [How to: Create MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)   
- [How to: Create MDI Child Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)   
+ [How to: Create MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  
+ [How to: Create MDI Child Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-child-forms.md)  
  [MenuStrip Control](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)

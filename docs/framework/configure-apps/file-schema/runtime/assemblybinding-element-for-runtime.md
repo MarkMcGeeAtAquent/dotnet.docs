@@ -1,8 +1,8 @@
 ---
-title: "&lt;assemblyBinding&gt; Element for &lt;runtime&gt; | Microsoft Docs"
+title: "&lt;assemblyBinding&gt; Element for &lt;runtime&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<assemblyBinding> element"
   - "assemblyBinding element"
@@ -25,6 +20,8 @@ caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;assemblyBinding&gt; Element for &lt;runtime&gt;
 Contains information about assembly version redirection and the locations of assemblies.  
@@ -35,9 +32,8 @@ Contains information about assembly version redirection and the locations of ass
   
 ## Syntax  
   
-```  
-  
-      <assemblyBinding    
+```xml  
+      <assemblyBinding    
    xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
 </assemblyBinding>  
 ```  
@@ -71,7 +67,7 @@ Contains information about assembly version redirection and the locations of ass
 ## Example  
  The following example shows how to redirect one assembly version to another and provide a codebase.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -91,7 +87,7 @@ Contains information about assembly version redirection and the locations of ass
   
  The following example shows how to use the **appliesTo** attribute to redirect binding of a .NET Framework assembly.  
   
-```  
+```xml  
 <runtime>  
    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
       <dependentAssembly>   
@@ -103,6 +99,6 @@ Contains information about assembly version redirection and the locations of ass
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Redirecting Assembly Versions](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)

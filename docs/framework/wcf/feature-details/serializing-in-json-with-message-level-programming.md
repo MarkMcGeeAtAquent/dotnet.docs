@@ -1,8 +1,8 @@
 ---
-title: "Serializing in Json with Message Level Programming | Microsoft Docs"
+title: "Serializing in Json with Message Level Programming"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5f940ba2-57ee-4c49-a779-957c5e7e71fa
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Serializing in Json with Message Level Programming
 WCF supports serializing data in JSON format. This topic describes how to tell WCF to serialize your types using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
@@ -28,17 +30,16 @@ WCF supports serializing data in JSON format. This topic describes how to tell W
  When working directly with untyped Message objects, you must explicitly set the properties on the untyped message to serialize it as JSON. The following code snippet shows how to do this.  
   
 ```  
- Message response = Message.CreateMessage(  
+ Message response = Message.CreateMessage(  
                   MessageVersion.None,    // No SOAP message version  
-                             "*",                     // SOAP action, ignored since this is JSON  
-                             "Response string: JSON format specified", // Message body  
-                             new DataContractJsonSerializer(typeof(string))); // Specify DataContractJsonSerializer  
+                             "*",                     // SOAP action, ignored since this is JSON  
+                             "Response string: JSON format specified", // Message body  
+                             new DataContractJsonSerializer(typeof(string))); // Specify DataContractJsonSerializer  
       response.Properties.Add( WebBodyFormatMessageProperty.Name,   
-                    new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
-  
+                    new WebBodyFormatMessageProperty(WebContentFormat.Json)); // Use JSON format  
 ```  
   
 ## See Also  
- [AJAX Integration and JSON Support](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)   
- [Stand-Alone JSON Serialization](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)   
+ [AJAX Integration and JSON Support](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)  
+ [Stand-Alone JSON Serialization](../../../../docs/framework/wcf/feature-details/stand-alone-json-serialization.md)  
  [JSON Serialization](../../../../docs/framework/wcf/samples/json-serialization.md)

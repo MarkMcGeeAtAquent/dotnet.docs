@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode::GetCode Method | Microsoft Docs"
+title: "ICorDebugCode::GetCode Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode.GetCode"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode::GetCode"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugCode::GetCode method [.NET Framework debugging]"
   - "GetCode method, ICorDebugCode interface [.NET Framework debugging]"
 ms.assetid: 7137e3d1-1dad-48d8-8c37-16ac816534d3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode::GetCode Method
 Gets all the code for the specified function, formatted for disassembly. This method has been deprecated in the .NET Framework version 2.0. Use [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) instead.  
@@ -72,5 +75,5 @@ HRESULT GetCode (
  **.NET Framework Versions:** 1.1, 1.0  
   
 ## See Also  
- [GetCodeChunks Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)   
+ [GetCodeChunks Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md)  
  

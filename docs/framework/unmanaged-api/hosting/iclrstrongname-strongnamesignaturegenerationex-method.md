@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameSignatureGenerationEx Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameSignatureGenerationEx Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameSignatureGenerationEx"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameSignatureGenerationEx"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::StrongNameSignatureGenerationEx method [.NET Framework hosting]"
   - "StrongNameSignatureGenerationEx method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: c3f34584-c6e2-41fd-bb44-e44da8546309
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameSignatureGenerationEx Method
 Generates a strong name signature for the specified assembly, according to the specified flags.  
@@ -98,5 +101,5 @@ HRESULT StrongNameSignatureGenerationEx (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureGeneration Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)   
+ [StrongNameSignatureGeneration Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

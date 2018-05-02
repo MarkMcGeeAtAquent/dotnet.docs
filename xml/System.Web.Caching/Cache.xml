@@ -1,7 +1,9 @@
-<Type Name="Cache" FullName="System.Web.Caching.Cache">
+﻿<Type Name="Cache" FullName="System.Web.Caching.Cache">
   <TypeSignature Language="C#" Value="public sealed class Cache : System.Collections.IEnumerable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cache extends System.Object implements class System.Collections.IEnumerable" />
   <TypeSignature Language="DocId" Value="T:System.Web.Caching.Cache" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Cache&#xA;Implements IEnumerable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Cache sealed : System::Collections::IEnumerable" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -28,23 +30,28 @@
    
   
 ## Examples  
- The following example is a page that shows users the value assigned to an item in the cache, and then notifies them when the item is removed from the cache. It creates a `RemovedCallback` method, which has the signature of the `CacheItemRemovedCallback` delegate, to notify users when the cache item is removed, and it uses the <xref:System.Web.Caching.CacheItemRemovedReason> enumeration to tell them why it was removed. In addition, it uses the <xref:System.Web.Caching.Cache.Item%2A?displayProperty=fullName> property to add objects to the cache and retrieve the value of those objects. In the `AddItemToCache` method, it uses the <xref:System.Web.Caching.Cache.Add%2A?displayProperty=fullName> method to add an item to the cache. To use the `CacheItemRemovedCallback` delegate, you must add an item to the cache with this method or the <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=fullName> method, so that that ASP.NET can automatically make the proper method calls when the item is removed. The custom `RemoveItemFromCache` method uses the <xref:System.Web.Caching.Cache.Remove%2A?displayProperty=fullName> method to explicitly delete the item from the cache, causing the `RemovedCallback` method to be invoked.  
+ The following example is a page that shows users the value assigned to an item in the cache, and then notifies them when the item is removed from the cache. It creates a `RemovedCallback` method, which has the signature of the `CacheItemRemovedCallback` delegate, to notify users when the cache item is removed, and it uses the <xref:System.Web.Caching.CacheItemRemovedReason> enumeration to tell them why it was removed. In addition, it uses the <xref:System.Web.Caching.Cache.Item%2A?displayProperty=nameWithType> property to add objects to the cache and retrieve the value of those objects. In the `AddItemToCache` method, it uses the <xref:System.Web.Caching.Cache.Add%2A?displayProperty=nameWithType> method to add an item to the cache. To use the `CacheItemRemovedCallback` delegate, you must add an item to the cache with this method or the <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType> method, so that that ASP.NET can automatically make the proper method calls when the item is removed. The custom `RemoveItemFromCache` method uses the <xref:System.Web.Caching.Cache.Remove%2A?displayProperty=nameWithType> method to explicitly delete the item from the cache, causing the `RemovedCallback` method to be invoked.  
   
 > [!NOTE]
 >  The instance of Cache that is accessed by the snippet below is a member of the <xref:System.Web.UI.Page> object that this sample inherits.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Caching Examples#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Caching Examples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.Caching Examples#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Caching Examples#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#1)]
   
  ]]></format>
     </remarks>
     <threadsafe>This type is thread safe.</threadsafe>
+    <altmember cref="T:System.Web.HttpContext" />
+    <altmember cref="T:System.Web.Caching.CacheDependency" />
+    <altmember cref="T:System.Web.Caching.CacheItemRemovedCallback" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Cache ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Cache();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -60,6 +67,8 @@
       <MemberSignature Language="C#" Value="public object Add (string key, object value, System.Web.Caching.CacheDependency dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System.Web.Caching.CacheItemPriority priority, System.Web.Caching.CacheItemRemovedCallback onRemoveCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Add(string key, object value, class System.Web.Caching.CacheDependency dependencies, valuetype System.DateTime absoluteExpiration, valuetype System.TimeSpan slidingExpiration, valuetype System.Web.Caching.CacheItemPriority priority, class System.Web.Caching.CacheItemRemovedCallback onRemoveCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Add(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemPriority,System.Web.Caching.CacheItemRemovedCallback)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (key As String, value As Object, dependencies As CacheDependency, absoluteExpiration As DateTime, slidingExpiration As TimeSpan, priority As CacheItemPriority, onRemoveCallback As CacheItemRemovedCallback) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ Add(System::String ^ key, System::Object ^ value, System::Web::Caching::CacheDependency ^ dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System::Web::Caching::CacheItemPriority priority, System::Web::Caching::CacheItemRemovedCallback ^ onRemoveCallback);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -113,12 +122,17 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="key" /> or <paramref name="value" /> parameter is set to <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="slidingExpiration" /> parameter is set to less than <see langword="TimeSpan.Zero" /> or more than one year.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="absoluteExpiration" /> and <paramref name="slidingExpiration" /> parameters are both set for the item you are trying to add to the <see langword="Cache" />.</exception>
+        <altmember cref="T:System.Web.Caching.CacheDependency" />
+        <altmember cref="T:System.Web.Caching.CacheItemPriority" />
+        <altmember cref="T:System.Web.Caching.CacheItemRemovedCallback" />
       </Docs>
     </Member>
     <Member MemberName="Count">
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Web.Caching.Cache.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -152,6 +166,8 @@
       <MemberSignature Language="C#" Value="public long EffectivePercentagePhysicalMemoryLimit { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 EffectivePercentagePhysicalMemoryLimit" />
       <MemberSignature Language="DocId" Value="P:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EffectivePercentagePhysicalMemoryLimit As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long EffectivePercentagePhysicalMemoryLimit { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -169,18 +185,21 @@
 ## Remarks  
  The <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> property returns the percentage of physical memory that is available to the application. When the available percentage becomes low, the cache algorithm begins removing items from the cache.  
   
- The <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> property can be set with the `percentagePhysicalMemoryUsedLimit` attribute of the [cache Element for caching (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/68fa0040-5abf-4c73-93fc-17e3c6af3299) element in the application's configuration file. If the `percentagePhysicalMemoryUsedLimit` attribute is not set, the cache algorithm determines the maximum size of the cache, and the <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> property is calculated.  
+ The <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> property can be set with the `percentagePhysicalMemoryUsedLimit` attribute of the [cache Element for caching (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) element in the application's configuration file. If the `percentagePhysicalMemoryUsedLimit` attribute is not set, the cache algorithm determines the maximum size of the cache, and the <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> property is calculated.  
   
  <xref:System.Web.Caching.Cache.EffectivePercentagePhysicalMemoryLimit%2A> is introduced in the .NET Framework version 3.5.  For more information, see [Versions and Dependencies](~/docs/framework/migration-guide/versions-and-dependencies.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Web.Caching.Cache.EffectivePrivateBytesLimit" />
       </Docs>
     </Member>
     <Member MemberName="EffectivePrivateBytesLimit">
       <MemberSignature Language="C#" Value="public long EffectivePrivateBytesLimit { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 EffectivePrivateBytesLimit" />
       <MemberSignature Language="DocId" Value="P:System.Web.Caching.Cache.EffectivePrivateBytesLimit" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EffectivePrivateBytesLimit As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long EffectivePrivateBytesLimit { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -198,7 +217,7 @@
 ## Remarks  
  The <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> property returns the number of bytes that can be used by the application process. Once this limit is reached, the cache algorithm begins aggressively scavenging the cache.  
   
- The <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> property can be set with the `privateBytesLimit` attribute of the [cache Element for caching (ASP.NET Settings Schema)](http://msdn.microsoft.com/en-us/68fa0040-5abf-4c73-93fc-17e3c6af3299) element in the application's configuration file. When the `privateBytesLimit` attribute is not set, the cache algorithm determines the maximum size of the cache, and the <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> property contains the size chosen by the algorithm.  
+ The <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> property can be set with the `privateBytesLimit` attribute of the [cache Element for caching (ASP.NET Settings Schema)](http://msdn.microsoft.com/library/68fa0040-5abf-4c73-93fc-17e3c6af3299) element in the application's configuration file. When the `privateBytesLimit` attribute is not set, the cache algorithm determines the maximum size of the cache, and the <xref:System.Web.Caching.Cache.EffectivePrivateBytesLimit%2A> property contains the size chosen by the algorithm.  
   
    
   
@@ -213,6 +232,8 @@
       <MemberSignature Language="C#" Value="public object Get (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Get(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Get(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Get (key As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ Get(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -245,6 +266,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.IDictionaryEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IDictionaryEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IDictionaryEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::IDictionaryEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -275,10 +298,21 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Insert">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Inserts an item into the <see cref="T:System.Web.Caching.Cache" /> object. Use one of the versions of this method to overwrite an existing <see langword="Cache" /> item with the same <paramref name="key" /> parameter.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (string key, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(string key, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Insert(System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (key As String, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(System::String ^ key, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -299,7 +333,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with no file or cache dependencies, a priority of <xref:System.Web.Caching.CacheItemPriority>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
+ This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with no file or cache dependencies, a priority of <xref:System.Web.Caching.CacheItemPriority.Default>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
   
    
   
@@ -318,6 +352,8 @@
       <MemberSignature Language="C#" Value="public void Insert (string key, object value, System.Web.Caching.CacheDependency dependencies);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(string key, object value, class System.Web.Caching.CacheDependency dependencies) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Insert(System.String,System.Object,System.Web.Caching.CacheDependency)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (key As String, value As Object, dependencies As CacheDependency)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(System::String ^ key, System::Object ^ value, System::Web::Caching::CacheDependency ^ dependencies);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -340,7 +376,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with no file or cache dependencies, a priority of <xref:System.Web.Caching.CacheItemPriority>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
+ This method will overwrite an existing cache item whose key matches the `key` parameter. The object added to the cache using this overload of the `Insert` method is inserted with no file or cache dependencies, a priority of <xref:System.Web.Caching.CacheItemPriority.Default>, a sliding expiration value of <xref:System.Web.Caching.Cache.NoSlidingExpiration>, and an absolute expiration value of <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
   
    
   
@@ -353,12 +389,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <paramref name="key" /> or <paramref name="value" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="T:System.Web.Caching.CacheDependency" />
       </Docs>
     </Member>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (string key, object value, System.Web.Caching.CacheDependency dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(string key, object value, class System.Web.Caching.CacheDependency dependencies, valuetype System.DateTime absoluteExpiration, valuetype System.TimeSpan slidingExpiration) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Insert(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (key As String, value As Object, dependencies As CacheDependency, absoluteExpiration As DateTime, slidingExpiration As TimeSpan)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(System::String ^ key, System::Object ^ value, System::Web::Caching::CacheDependency ^ dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -387,7 +426,7 @@
 ## Remarks  
  This method will overwrite an existing `Cache` item with the same `key` parameter.  
   
- If the `slidingExpiration` parameter is set to <xref:System.Web.Caching.Cache>, sliding expiration is disabled. If you set the `slidingExpiration` parameter to greater than <xref:System.TimeSpan>, the `absoluteExpiration` parameter is set to <xref:System.DateTime.Now%2A> plus the value contained in the `slidingExpiration` parameter. If the item is requested from the cache before the amount of time specified by the `absoluteExpiration` parameter, the item will be placed in the cache again, and `absoluteExpiration` will again be set to `DateTime.Now` plus the value contained in the `slidingExpiration` parameter. If the item is not requested from the cache before the date in the `absoluteExpiration` parameter, the item is removed from the cache. . The item added to the cache using this overload of the insert method is inserted with a priority of <xref:System.Web.Caching.CacheItemPriority>.  
+ If the `slidingExpiration` parameter is set to <xref:System.Web.Caching.Cache.NoSlidingExpiration>, sliding expiration is disabled. If you set the `slidingExpiration` parameter to greater than <xref:System.TimeSpan.Zero>, the `absoluteExpiration` parameter is set to <xref:System.DateTime.Now%2A> plus the value contained in the `slidingExpiration` parameter. If the item is requested from the cache before the amount of time specified by the `absoluteExpiration` parameter, the item will be placed in the cache again, and `absoluteExpiration` will again be set to `DateTime.Now` plus the value contained in the `slidingExpiration` parameter. If the item is not requested from the cache before the date in the `absoluteExpiration` parameter, the item is removed from the cache. . The item added to the cache using this overload of the insert method is inserted with a priority of <xref:System.Web.Caching.CacheItemPriority.Default>.  
   
    
   
@@ -410,12 +449,16 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="key" /> or <paramref name="value" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">You set the <paramref name="slidingExpiration" /> parameter to less than <see langword="TimeSpan.Zero" /> or the equivalent of more than one year.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="absoluteExpiration" /> and <paramref name="slidingExpiration" /> parameters are both set for the item you are trying to add to the <see langword="Cache" />.</exception>
+        <altmember cref="T:System.DateTime" />
+        <altmember cref="T:System.TimeSpan" />
       </Docs>
     </Member>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (string key, object value, System.Web.Caching.CacheDependency dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System.Web.Caching.CacheItemUpdateCallback onUpdateCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(string key, object value, class System.Web.Caching.CacheDependency dependencies, valuetype System.DateTime absoluteExpiration, valuetype System.TimeSpan slidingExpiration, class System.Web.Caching.CacheItemUpdateCallback onUpdateCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Insert(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemUpdateCallback)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (key As String, value As Object, dependencies As CacheDependency, absoluteExpiration As DateTime, slidingExpiration As TimeSpan, onUpdateCallback As CacheItemUpdateCallback)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(System::String ^ key, System::Object ^ value, System::Web::Caching::CacheDependency ^ dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System::Web::Caching::CacheItemUpdateCallback ^ onUpdateCallback);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -448,7 +491,7 @@
   
  This method will overwrite an existing `Cache` item with the same `key` parameter.  
   
- You cannot set both the `absoluteExpiration` and `slidingExpiration` parameters. If you intend the cache item to expire at a specific time, you set the `absoluteExpiration` parameter to the specific time, and the `slidingExpiration` parameter to <xref:System.Web.Caching.Cache>.  
+ You cannot set both the `absoluteExpiration` and `slidingExpiration` parameters. If you intend the cache item to expire at a specific time, you set the `absoluteExpiration` parameter to the specific time, and the `slidingExpiration` parameter to <xref:System.Web.Caching.Cache.NoSlidingExpiration>.  
   
  If you intend the cache item to expire after a set period of time since the item was last accessed, you set the `slidingExpiration` parameter to the expiration interval, and you set the `absoluteExpiration` parameter to <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
   
@@ -461,12 +504,15 @@
  -or-  
   
  The <paramref name="dependencies" /> parameter is <see langword="null" />, and the <paramref name="absoluteExpiration" /> parameter is set to <see cref="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />, and the <paramref name="slidingExpiration" /> parameter is set to <see cref="F:System.Web.Caching.Cache.NoSlidingExpiration" />.</exception>
+        <altmember cref="T:System.Web.Caching.CacheItemUpdateCallback" />
       </Docs>
     </Member>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (string key, object value, System.Web.Caching.CacheDependency dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System.Web.Caching.CacheItemPriority priority, System.Web.Caching.CacheItemRemovedCallback onRemoveCallback);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(string key, object value, class System.Web.Caching.CacheDependency dependencies, valuetype System.DateTime absoluteExpiration, valuetype System.TimeSpan slidingExpiration, valuetype System.Web.Caching.CacheItemPriority priority, class System.Web.Caching.CacheItemRemovedCallback onRemoveCallback) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Insert(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan,System.Web.Caching.CacheItemPriority,System.Web.Caching.CacheItemRemovedCallback)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (key As String, value As Object, dependencies As CacheDependency, absoluteExpiration As DateTime, slidingExpiration As TimeSpan, priority As CacheItemPriority, onRemoveCallback As CacheItemRemovedCallback)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(System::String ^ key, System::Object ^ value, System::Web::Caching::CacheDependency ^ dependencies, DateTime absoluteExpiration, TimeSpan slidingExpiration, System::Web::Caching::CacheItemPriority priority, System::Web::Caching::CacheItemRemovedCallback ^ onRemoveCallback);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -499,7 +545,7 @@
 ## Remarks  
  This method will overwrite an existing `Cache` item with the same `key` parameter.  
   
- You cannot set both the `absoluteExpiration` and `slidingExpiration` parameters. If you intend the cache item to expire at a specific time, you set the `absoluteExpiration` parameter to the specific time, and the `slidingExpiration` parameter to <xref:System.Web.Caching.Cache>.  
+ You cannot set both the `absoluteExpiration` and `slidingExpiration` parameters. If you intend the cache item to expire at a specific time, you set the `absoluteExpiration` parameter to the specific time, and the `slidingExpiration` parameter to <xref:System.Web.Caching.Cache.NoSlidingExpiration>.  
   
  If you intend the cache item to expire after a certain amount of time has passed since the last access to the item, you set the `slidingExpiration` parameter to the expiration interval, and the `absoluteExpiration` parameter to <xref:System.Web.Caching.Cache.NoAbsoluteExpiration>.  
   
@@ -519,12 +565,18 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="key" /> or <paramref name="value" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentOutOfRangeException">You set the <paramref name="slidingExpiration" /> parameter to less than <see langword="TimeSpan.Zero" /> or the equivalent of more than one year.</exception>
         <exception cref="T:System.ArgumentException">The <paramref name="absoluteExpiration" /> and <paramref name="slidingExpiration" /> parameters are both set for the item you are trying to add to the <see langword="Cache" />.</exception>
+        <altmember cref="T:System.DateTime" />
+        <altmember cref="T:System.TimeSpan" />
+        <altmember cref="T:System.Web.Caching.CacheItemPriority" />
+        <altmember cref="T:System.Web.Caching.CacheItemRemovedCallback" />
       </Docs>
     </Member>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public object this[string key] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Web.Caching.Cache.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(key As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::String ^] { System::Object ^ get(System::String ^ key); void set(System::String ^ key, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -544,12 +596,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You can use this property to retrieve the value of a specified cache item, or to add an item and a key for it to the cache. Adding a cache item using the <xref:System.Web.Caching.Cache.Item%2A> property is equivalent to calling the <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=fullName> method.  
+ You can use this property to retrieve the value of a specified cache item, or to add an item and a key for it to the cache. Adding a cache item using the <xref:System.Web.Caching.Cache.Item%2A> property is equivalent to calling the <xref:System.Web.Caching.Cache.Insert%2A?displayProperty=nameWithType> method.  
   
    
   
 ## Examples  
- The following example uses the `Item` property to retrieve the value of a cached object associated with the `Key1` key. It then uses the <xref:System.Web.HttpResponse.Write%2A?displayProperty=fullName> method to write the value and introductory text and the B HTML element to a Web Forms page.  
+ The following example uses the `Item` property to retrieve the value of a cached object associated with the `Key1` key. It then uses the <xref:System.Web.HttpResponse.Write%2A?displayProperty=nameWithType> method to write the value and introductory text and the B HTML element to a Web Forms page.  
   
  [!code-csharp[System.Web.Caching Examples#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#5)]
  [!code-vb[System.Web.Caching Examples#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#5)]  
@@ -567,6 +619,8 @@
       <MemberSignature Language="C#" Value="public static readonly DateTime NoAbsoluteExpiration;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.DateTime NoAbsoluteExpiration" />
       <MemberSignature Language="DocId" Value="F:System.Web.Caching.Cache.NoAbsoluteExpiration" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly NoAbsoluteExpiration As DateTime " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly DateTime NoAbsoluteExpiration;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -581,7 +635,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When used, this field sets the `absoluteExpiration` parameter equal to <xref:System.DateTime>, which is a constant representing the largest possible `DateTime` value, 12/31/9999 11:59:59 PM.  
+ When used, this field sets the `absoluteExpiration` parameter equal to <xref:System.DateTime.MaxValue>, which is a constant representing the largest possible `DateTime` value, 12/31/9999 11:59:59 PM.  
   
    
   
@@ -593,12 +647,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.DateTime" />
+        <altmember cref="M:System.Web.Caching.Cache.Insert(System.String,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="NoSlidingExpiration">
       <MemberSignature Language="C#" Value="public static readonly TimeSpan NoSlidingExpiration;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.TimeSpan NoSlidingExpiration" />
       <MemberSignature Language="DocId" Value="F:System.Web.Caching.Cache.NoSlidingExpiration" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly NoSlidingExpiration As TimeSpan " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly TimeSpan NoSlidingExpiration;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -613,7 +671,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When used, this field sets the `slidingExpiration` parameter to the <xref:System.TimeSpan?displayProperty=fullName> field, which has a constant value of zero. The cached item expires in accordance with the `absoluteExpiration` parameter associated with the `Insert` or `Add` method call.  
+ When used, this field sets the `slidingExpiration` parameter to the <xref:System.TimeSpan.Zero?displayProperty=nameWithType> field, which has a constant value of zero. The cached item expires in accordance with the `absoluteExpiration` parameter associated with the `Insert` or `Add` method call.  
   
    
   
@@ -625,12 +683,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="F:System.TimeSpan.Zero" />
+        <altmember cref="M:System.Web.Caching.Cache.Insert(System.String,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public object Remove (string key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Remove(string key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Remove (key As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ Remove(System::String ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -663,7 +725,12 @@
       <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Caching.Cache.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerator ^ System.Collections.IEnumerable.GetEnumerator() = System::Collections::IEnumerable::GetEnumerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>

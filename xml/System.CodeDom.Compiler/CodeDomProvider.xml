@@ -1,9 +1,15 @@
-<Type Name="CodeDomProvider" FullName="System.CodeDom.Compiler.CodeDomProvider">
+﻿<Type Name="CodeDomProvider" FullName="System.CodeDom.Compiler.CodeDomProvider">
   <TypeSignature Language="C#" Value="public abstract class CodeDomProvider : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeDomProvider extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.CodeDom.Compiler.CodeDomProvider" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CodeDomProvider&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CodeDomProvider abstract : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -31,14 +37,14 @@
   
  A <xref:System.CodeDom.Compiler.CodeDomProvider> implementation typically provides code generation and/or code compilation interfaces for generating code and managing compilation for a single programming language. Several languages are supported by <xref:System.CodeDom.Compiler.CodeDomProvider> implementations that ship with the [!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]. These languages include C#, Visual Basic, C++, and JScript. Developers or compiler vendors can implement the <xref:System.CodeDom.Compiler.ICodeGenerator> and <xref:System.CodeDom.Compiler.ICodeCompiler> interfaces and provide a <xref:System.CodeDom.Compiler.CodeDomProvider> that extends CodeDOM support to other programming languages.  
   
- The [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) provides a mechanism for developers and compiler vendors to add configuration settings for additional <xref:System.CodeDom.Compiler.CodeDomProvider> implementations.  
+ The [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) provides a mechanism for developers and compiler vendors to add configuration settings for additional <xref:System.CodeDom.Compiler.CodeDomProvider> implementations.  
   
  The <xref:System.CodeDom.Compiler.CodeDomProvider> class provides static methods to discover and enumerate the <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> method returns the settings for all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A> method returns the settings for a specific <xref:System.CodeDom.Compiler.CodeDomProvider> implementation, based on the programming language name. The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method returns an instance of a <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for a specific language.  
   
  For more details on language provider settings in the configuration file, see [Compiler and Language Provider Settings Schema](http://msdn.microsoft.com/library/c020b139-8699-4f0d-9ac9-70d0c5b2a8c8).  
   
 > [!NOTE]
->  This class makes a link demand and an inheritance demand at the class level. A <xref:System.Security.SecurityException> is thrown if either the immediate caller or the derived class does not have full trust permission. For details about security demands, see [Link Demands](~/docs/framework/misc/link-demands.md) and [Inheritance Demands](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9).  
+>  This class makes a link demand and an inheritance demand at the class level. A <xref:System.Security.SecurityException> is thrown if either the immediate caller or the derived class does not have full trust permission. For details about security demands, see [Link Demands](~/docs/framework/misc/link-demands.md) and [Inheritance Demands](http://msdn.microsoft.com/library/28b9adbb-8f08-4f10-b856-dbf59eb932d9).  
   
    
   
@@ -56,15 +62,25 @@
     <block subset="none" type="overrides">
       <para>In the .NET Framework versions 1.0 and 1.1, code providers consist of implementations of <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />, <see cref="T:System.CodeDom.Compiler.ICodeGenerator" />, <see cref="T:System.CodeDom.Compiler.ICodeParser" />, and <see cref="T:System.CodeDom.Compiler.ICodeCompiler" />. In the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)], the <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />, <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />, and <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> methods are obsolete, and the methods of <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> and <see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> are directly available in the <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> class. You should override those methods in your code provider implementation and not call the base methods.</para>
     </block>
+    <altmember cref="T:System.CodeDom.Compiler.CompilerInfo" />
+    <altmember cref="T:Microsoft.CSharp.CSharpCodeProvider" />
+    <altmember cref="T:Microsoft.VisualBasic.VBCodeProvider" />
+    <altmember cref="T:Microsoft.JScript.JScriptCodeProvider" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected CodeDomProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; CodeDomProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -75,12 +91,18 @@
       </Docs>
     </Member>
     <Member MemberName="CompileAssemblyFromDom">
-      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom (System.CodeDom.Compiler.CompilerParameters options, System.CodeDom.CodeCompileUnit[] compilationUnits);" />
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom (System.CodeDom.Compiler.CompilerParameters options, params System.CodeDom.CodeCompileUnit[] compilationUnits);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromDom(class System.CodeDom.Compiler.CompilerParameters options, class System.CodeDom.CodeCompileUnit[] compilationUnits) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom(System.CodeDom.Compiler.CompilerParameters,System.CodeDom.CodeCompileUnit[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CompileAssemblyFromDom (options As CompilerParameters, ParamArray compilationUnits As CodeCompileUnit()) As CompilerResults" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::CompilerResults ^ CompileAssemblyFromDom(System::CodeDom::Compiler::CompilerParameters ^ options, ... cli::array &lt;System::CodeDom::CodeCompileUnit ^&gt; ^ compilationUnits);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -115,15 +137,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> method for compatibility with preexisting providers that use code compilers. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code compiler.</para>
         </block>
+        <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
+        <altmember cref="T:System.CodeDom.CodeCompileUnit" />
+        <altmember cref="T:System.CodeDom.Compiler.CompilerResults" />
       </Docs>
     </Member>
     <Member MemberName="CompileAssemblyFromFile">
-      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile (System.CodeDom.Compiler.CompilerParameters options, string[] fileNames);" />
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile (System.CodeDom.Compiler.CompilerParameters options, params string[] fileNames);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromFile(class System.CodeDom.Compiler.CompilerParameters options, string[] fileNames) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CompileAssemblyFromFile (options As CompilerParameters, ParamArray fileNames As String()) As CompilerResults" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::CompilerResults ^ CompileAssemblyFromFile(System::CodeDom::Compiler::CompilerParameters ^ options, ... cli::array &lt;System::String ^&gt; ^ fileNames);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -158,15 +189,23 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> method for compatibility with preexisting providers that use code compilers. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code compiler.</para>
         </block>
+        <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
+        <altmember cref="T:System.CodeDom.Compiler.CompilerResults" />
       </Docs>
     </Member>
     <Member MemberName="CompileAssemblyFromSource">
-      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, string[] sources);" />
+      <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource (System.CodeDom.Compiler.CompilerParameters options, params string[] sources);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.CompilerResults CompileAssemblyFromSource(class System.CodeDom.Compiler.CompilerParameters options, string[] sources) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromSource(System.CodeDom.Compiler.CompilerParameters,System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CompileAssemblyFromSource (options As CompilerParameters, ParamArray sources As String()) As CompilerResults" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::CompilerResults ^ CompileAssemblyFromSource(System::CodeDom::Compiler::CompilerParameters ^ options, ... cli::array &lt;System::String ^&gt; ^ sources);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -201,15 +240,23 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" /> method for compatibility with preexisting providers that use code compilers. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeCompiler" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code compiler.</para>
         </block>
+        <altmember cref="T:System.CodeDom.Compiler.CompilerParameters" />
+        <altmember cref="T:System.CodeDom.Compiler.CompilerResults" />
       </Docs>
     </Member>
     <Member MemberName="CreateCompiler">
       <MemberSignature Language="C#" Value="public abstract System.CodeDom.Compiler.ICodeCompiler CreateCompiler ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeCompiler CreateCompiler() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateCompiler () As ICodeCompiler" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::CodeDom::Compiler::ICodeCompiler ^ CreateCompiler();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -241,9 +288,15 @@
       <MemberSignature Language="C#" Value="public virtual string CreateEscapedIdentifier (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateEscapedIdentifier(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateEscapedIdentifier(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateEscapedIdentifier (value As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::String ^ CreateEscapedIdentifier(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -273,13 +326,28 @@
         </block>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateGenerator">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>When overridden in a derived class, creates a new code generator.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateGenerator">
       <MemberSignature Language="C#" Value="public abstract System.CodeDom.Compiler.ICodeGenerator CreateGenerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateGenerator () As ICodeGenerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::CodeDom::Compiler::ICodeGenerator ^ CreateGenerator();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -311,9 +379,15 @@
       <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeGenerator CreateGenerator (System.IO.TextWriter output);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator(class System.IO.TextWriter output) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator(System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateGenerator (output As TextWriter) As ICodeGenerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::ICodeGenerator ^ CreateGenerator(System::IO::TextWriter ^ output);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -337,15 +411,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.IO.TextWriter" />
       </Docs>
     </Member>
     <Member MemberName="CreateGenerator">
       <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeGenerator CreateGenerator (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeGenerator CreateGenerator(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateGenerator (fileName As String) As ICodeGenerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::ICodeGenerator ^ CreateGenerator(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -375,9 +456,15 @@
       <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.ICodeParser CreateParser ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.Compiler.ICodeParser CreateParser() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateParser () As ICodeParser" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::Compiler::ICodeParser ^ CreateParser();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -395,13 +482,28 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateProvider">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> instance for the specified language.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateProvider">
       <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CodeDomProvider CreateProvider (string language);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CodeDomProvider CreateProvider(string language) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateProvider (language As String) As CodeDomProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::CodeDom::Compiler::CodeDomProvider ^ CreateProvider(System::String ^ language);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -427,15 +529,15 @@
 > [!NOTE]
 >  This method is most commonly used to create an instance of a code provider in an application that may optionally use one of several providers. <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> allows you to specify at run time the code provider you wish to instantiate. If you know at design time which code provider is to be used, you should create an instance of that code provider rather than use the <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method.  
   
- The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method returns a <xref:System.CodeDom.Compiler.CodeDomProvider> instance for a specific language name; it is similar to calling the <xref:System.Activator.CreateInstance%2A?displayProperty=fullName> method with the language provider type. Use <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> when you want to dynamically find a configured provider implementation for a language name.  
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method returns a <xref:System.CodeDom.Compiler.CodeDomProvider> instance for a specific language name; it is similar to calling the <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> method with the language provider type. Use <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> when you want to dynamically find a configured provider implementation for a language name.  
   
  If more than one provider implementation is configured for the language name, <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> returns a provider instance for the last matching configuration element.  
   
- Use the <xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=fullName> method overload when you want a specific language provider implementation. For example, use the <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method to get a provider instance that supports the language name `"CSharp"`; use the <xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=fullName> method overload to get a provider instance specifically for the <xref:Microsoft.CSharp.CSharpCodeProvider?displayProperty=fullName> implementation. You should use the [\], CultureInfo, Object\<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%2CSystem.Object%5B%5D%29?displayProperty=fullName> method if you have multiple code providers for a language and you desire to instantiate a specific code provider.  
+ Use the <xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> method overload when you want a specific language provider implementation. For example, use the <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method to get a provider instance that supports the language name `"CSharp"`; use the <xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29?displayProperty=nameWithType> method overload to get a provider instance specifically for the <xref:Microsoft.CSharp.CSharpCodeProvider?displayProperty=nameWithType> implementation. You should use the [\], CultureInfo, Object\<xref:System.Activator.CreateInstance%28System.Type%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> method if you have multiple code providers for a language and you desire to instantiate a specific code provider.  
   
- The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>. If you pass an unsupported language name to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> a <xref:System.Configuration.ConfigurationException?displayProperty=fullName> is thrown.  
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A>. If you pass an unsupported language name to <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> is thrown.  
   
- The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> method can be used to determine all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer, including additional implementations provided by developers and compiler vendors that are identified in the [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config).  
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> method can be used to determine all <xref:System.CodeDom.Compiler.CodeDomProvider> implementations on a computer, including additional implementations provided by developers and compiler vendors that are identified in the [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config).  
   
  The <xref:System.CodeDom.Compiler.CodeDomProvider.CreateProvider%2A> method returns an instance of a <xref:System.CodeDom.Compiler.CodeDomProvider> implementation for a specific language.  
   
@@ -456,15 +558,22 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="language" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="CreateProvider">
       <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CodeDomProvider CreateProvider (string language, System.Collections.Generic.IDictionary&lt;string,string&gt; providerOptions);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CodeDomProvider CreateProvider(string language, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; providerOptions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateProvider (language As String, providerOptions As IDictionary(Of String, String)) As CodeDomProvider" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::CodeDom::Compiler::CodeDomProvider ^ CreateProvider(System::String ^ language, System::Collections::Generic::IDictionary&lt;System::String ^, System::String ^&gt; ^ providerOptions);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -512,9 +621,15 @@
       <MemberSignature Language="C#" Value="public virtual string CreateValidIdentifier (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string CreateValidIdentifier(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.CreateValidIdentifier(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateValidIdentifier (value As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::String ^ CreateValidIdentifier(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -548,9 +663,15 @@
       <MemberSignature Language="C#" Value="public virtual string FileExtension { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FileExtension" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeDomProvider.FileExtension" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property FileExtension As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ FileExtension { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -568,7 +689,7 @@
    
   
 ## Examples  
- The following code example creates an instance of <xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=fullName>. The example displays the provider name, hash code and default file name extension for the new provider instance.  
+ The following code example creates an instance of <xref:Microsoft.VisualBasic.VBCodeProvider?displayProperty=nameWithType>. The example displays the provider name, hash code and default file name extension for the new provider instance.  
   
  [!code-cpp[CodeDom_CompilerInfo#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDom_CompilerInfo/CPP/source.cpp#3)]
  [!code-csharp[CodeDom_CompilerInfo#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDom_CompilerInfo/CS/source.cs#3)]
@@ -582,9 +703,15 @@
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromCompileUnit (System.CodeDom.CodeCompileUnit compileUnit, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromCompileUnit(class System.CodeDom.CodeCompileUnit compileUnit, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromCompileUnit(System.CodeDom.CodeCompileUnit,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GenerateCodeFromCompileUnit (compileUnit As CodeCompileUnit, writer As TextWriter, options As CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromCompileUnit(System::CodeDom::CodeCompileUnit ^ compileUnit, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -623,15 +750,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeExpression" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GenerateCodeFromExpression">
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromExpression (System.CodeDom.CodeExpression expression, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromExpression(class System.CodeDom.CodeExpression expression, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromExpression(System.CodeDom.CodeExpression,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GenerateCodeFromExpression (expression As CodeExpression, writer As TextWriter, options As CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromExpression(System::CodeDom::CodeExpression ^ expression, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -661,15 +797,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeExpression" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GenerateCodeFromMember">
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromMember (System.CodeDom.CodeTypeMember member, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromMember(class System.CodeDom.CodeTypeMember member, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromMember(System.CodeDom.CodeTypeMember,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GenerateCodeFromMember (member As CodeTypeMember, writer As TextWriter, options As CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromMember(System::CodeDom::CodeTypeMember ^ member, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -689,7 +834,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The base class implementation throws a <xref:System.NotImplementedException>. See <xref:Microsoft.CSharp.CSharpCodeProvider.GenerateCodeFromMember%2A?displayProperty=fullName> for documentation describing an implementation of this method.  
+ The base class implementation throws a <xref:System.NotImplementedException>. See <xref:Microsoft.CSharp.CSharpCodeProvider.GenerateCodeFromMember%2A?displayProperty=nameWithType> for documentation describing an implementation of this method.  
   
    
   
@@ -702,15 +847,23 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotImplementedException">This method is not overridden in a derived class.</exception>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeTypeMember" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GenerateCodeFromNamespace">
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromNamespace (System.CodeDom.CodeNamespace codeNamespace, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromNamespace(class System.CodeDom.CodeNamespace codeNamespace, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromNamespace(System.CodeDom.CodeNamespace,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromNamespace(System::CodeDom::CodeNamespace ^ codeNamespace, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -740,15 +893,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeNamespace" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GenerateCodeFromStatement">
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromStatement (System.CodeDom.CodeStatement statement, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromStatement(class System.CodeDom.CodeStatement statement, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromStatement(System.CodeDom.CodeStatement,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GenerateCodeFromStatement (statement As CodeStatement, writer As TextWriter, options As CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromStatement(System::CodeDom::CodeStatement ^ statement, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -778,15 +940,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeStatement" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GenerateCodeFromType">
       <MemberSignature Language="C#" Value="public virtual void GenerateCodeFromType (System.CodeDom.CodeTypeDeclaration codeType, System.IO.TextWriter writer, System.CodeDom.Compiler.CodeGeneratorOptions options);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateCodeFromType(class System.CodeDom.CodeTypeDeclaration codeType, class System.IO.TextWriter writer, class System.CodeDom.Compiler.CodeGeneratorOptions options) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GenerateCodeFromType(System.CodeDom.CodeTypeDeclaration,System.IO.TextWriter,System.CodeDom.Compiler.CodeGeneratorOptions)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub GenerateCodeFromType (codeType As CodeTypeDeclaration, writer As TextWriter, options As CodeGeneratorOptions)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void GenerateCodeFromType(System::CodeDom::CodeTypeDeclaration ^ codeType, System::IO::TextWriter ^ writer, System::CodeDom::Compiler::CodeGeneratorOptions ^ options);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -816,15 +987,24 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.IO.TextWriter" />
+        <altmember cref="T:System.CodeDom.CodeTypeDeclaration" />
+        <altmember cref="T:System.CodeDom.Compiler.CodeGeneratorOptions" />
       </Docs>
     </Member>
     <Member MemberName="GetAllCompilerInfo">
       <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CompilerInfo[] GetAllCompilerInfo ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CompilerInfo[] GetAllCompilerInfo() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetAllCompilerInfo () As CompilerInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::CodeDom::Compiler::CompilerInfo ^&gt; ^ GetAllCompilerInfo();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -846,7 +1026,7 @@
  Use the <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A> method to enumerate the language provider settings on a computer.  
   
 > [!NOTE]
->  In the [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)], the default language providers supplied by the .NET Framework are not specified in the [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) compiler configuration section and cannot be removed, so this method returns information about the default providers and any specified in the configuration file.  
+>  In the [!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)], the default language providers supplied by the .NET Framework are not specified in the [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) compiler configuration section and cannot be removed, so this method returns information about the default providers and any specified in the configuration file.  
   
    
   
@@ -861,15 +1041,22 @@
         </remarks>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="T:System.CodeDom.Compiler.CompilerInfo" />
       </Docs>
     </Member>
     <Member MemberName="GetCompilerInfo">
       <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CompilerInfo GetCompilerInfo (string language);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CompilerInfo GetCompilerInfo(string language) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCompilerInfo (language As String) As CompilerInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::CodeDom::Compiler::CompilerInfo ^ GetCompilerInfo(System::String ^ language);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -891,9 +1078,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. For information about machine configuration files, see the Machine Configuration Files section in [Configuring Apps](http://msdn.microsoft.com/library/86bd26d3-737e-4484-9782-19b17f34cd1f). The <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A> method searches each provider configuration element for the specified language name. The returned <xref:System.CodeDom.Compiler.CompilerInfo> instance contains the configured language provider and compiler settings.  
+ The [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. For information about machine configuration files, see the Machine Configuration Files section in [Configuring Apps](http://msdn.microsoft.com/library/86bd26d3-737e-4484-9782-19b17f34cd1f). The <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A> method searches each provider configuration element for the specified language name. The returned <xref:System.CodeDom.Compiler.CompilerInfo> instance contains the configured language provider and compiler settings.  
   
- The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>. This prevents throwing a <xref:System.Configuration.ConfigurationException?displayProperty=fullName> when you access the <xref:System.CodeDom.Compiler.CompilerInfo> instance for an unsupported language name.  
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method checks whether at least one provider implementation supports a specific language. You can validate a language name using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A>. This prevents throwing a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> when you access the <xref:System.CodeDom.Compiler.CompilerInfo> instance for an unsupported language name.  
   
  If more than one provider implementation is configured for the input language name, <xref:System.CodeDom.Compiler.CodeDomProvider.GetCompilerInfo%2A> returns the settings from the last matching provider configuration element.  
   
@@ -914,15 +1101,22 @@
         <exception cref="T:System.Configuration.ConfigurationErrorsException">The <paramref name="language" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="T:System.CodeDom.Compiler.CompilerInfo" />
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetConverter">
       <MemberSignature Language="C#" Value="public virtual System.ComponentModel.TypeConverter GetConverter (Type type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.TypeConverter GetConverter(class System.Type type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetConverter(System.Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::ComponentModel::TypeConverter ^ GetConverter(Type ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -943,15 +1137,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.TypeConverter" />
       </Docs>
     </Member>
     <Member MemberName="GetLanguageFromExtension">
       <MemberSignature Language="C#" Value="public static string GetLanguageFromExtension (string extension);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetLanguageFromExtension(string extension) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetLanguageFromExtension (extension As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ GetLanguageFromExtension(System::String ^ extension);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -973,9 +1174,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> method searches each provider configuration element for the specified file name extension.  
+ The [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> method searches each provider configuration element for the specified file name extension.  
   
- The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> method checks whether at least one provider implementation supports a specific file name extension. You can validate a file name extension using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>. This prevents <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> from throwing a <xref:System.Configuration.ConfigurationException?displayProperty=fullName> for an unsupported file name extension.  
+ The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> method checks whether at least one provider implementation supports a specific file name extension. You can validate a file name extension using <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> before passing it to <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A>. This prevents <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> from throwing a <xref:System.Configuration.ConfigurationException?displayProperty=nameWithType> for an unsupported file name extension.  
   
  If a provider implementation supports the input file name extension, and there are multiple supported languages configured for that provider, then <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> returns the first language name for that provider. If more than one provider implementation is configured for the input file name extension, <xref:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension%2A> returns the language name from the last matching provider configuration element.  
   
@@ -996,15 +1197,23 @@
         <exception cref="T:System.Configuration.ConfigurationErrorsException">The <paramref name="extension" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension(System.String)" />
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetTypeOutput">
       <MemberSignature Language="C#" Value="public virtual string GetTypeOutput (System.CodeDom.CodeTypeReference type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetTypeOutput(class System.CodeDom.CodeTypeReference type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.GetTypeOutput(System.CodeDom.CodeTypeReference)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetTypeOutput (type As CodeTypeReference) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::String ^ GetTypeOutput(System::CodeDom::CodeTypeReference ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1037,9 +1246,15 @@
       <MemberSignature Language="C#" Value="public static bool IsDefinedExtension (string extension);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefinedExtension(string extension) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefinedExtension (extension As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefinedExtension(System::String ^ extension);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1062,7 +1277,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> method searches the provider configuration elements for the specified file name extension.  
+ The [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedExtension%2A> method searches the provider configuration elements for the specified file name extension.  
   
  File name extensions are case-insensitive.  
   
@@ -1080,15 +1295,23 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="extension" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.GetLanguageFromExtension(System.String)" />
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="IsDefinedLanguage">
       <MemberSignature Language="C#" Value="public static bool IsDefinedLanguage (string language);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefinedLanguage(string language) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsDefinedLanguage (language As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsDefinedLanguage(System::String ^ language);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1111,7 +1334,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The [\&lt;system.codedom\&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method searches the provider configuration elements for the specified language name.  
+ The [&lt;system.codedom&gt; Element](~/docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md) in the machine configuration file (Machine.config) contains the language provider and compiler configuration settings for each <xref:System.CodeDom.Compiler.CodeDomProvider> implementation on the computer. The <xref:System.CodeDom.Compiler.CodeDomProvider.IsDefinedLanguage%2A> method searches the provider configuration elements for the specified language name.  
   
  Language names are case-insensitive.  
   
@@ -1129,15 +1352,22 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="language" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateProvider(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="IsValidIdentifier">
       <MemberSignature Language="C#" Value="public virtual bool IsValidIdentifier (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsValidIdentifier(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.IsValidIdentifier(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IsValidIdentifier (value As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool IsValidIdentifier(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1174,9 +1404,15 @@
       <MemberSignature Language="C#" Value="public virtual System.CodeDom.Compiler.LanguageOptions LanguageOptions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.Compiler.LanguageOptions LanguageOptions" />
       <MemberSignature Language="DocId" Value="P:System.CodeDom.Compiler.CodeDomProvider.LanguageOptions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property LanguageOptions As LanguageOptions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::CodeDom::Compiler::LanguageOptions LanguageOptions { System::CodeDom::Compiler::LanguageOptions get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1192,9 +1428,15 @@
       <MemberSignature Language="C#" Value="public virtual System.CodeDom.CodeCompileUnit Parse (System.IO.TextReader codeStream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeCompileUnit Parse(class System.IO.TextReader codeStream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Parse(System.IO.TextReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Parse (codeStream As TextReader) As CodeCompileUnit" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::CodeDom::CodeCompileUnit ^ Parse(System::IO::TextReader ^ codeStream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1221,22 +1463,35 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a parser in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateParser" /> method for compatibility with preexisting providers that use code parsers. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeParser" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code parser.</para>
         </block>
+        <altmember cref="T:System.CodeDom.CodeCompileUnit" />
+        <altmember cref="T:System.IO.TextReader" />
       </Docs>
     </Member>
     <Member MemberName="Supports">
-      <MemberSignature Language="C#" Value="public virtual bool Supports (System.CodeDom.Compiler.GeneratorSupport supports);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Supports(valuetype System.CodeDom.Compiler.GeneratorSupport supports) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" />
+      <MemberSignature Language="C#" Value="public virtual bool Supports (System.CodeDom.Compiler.GeneratorSupport generatorSupport);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Supports(valuetype System.CodeDom.Compiler.GeneratorSupport generatorSupport) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Supports(System::CodeDom::Compiler::GeneratorSupport generatorSupport);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public virtual bool Supports (System.CodeDom.Compiler.GeneratorSupport supports);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Supports(valuetype System.CodeDom.Compiler.GeneratorSupport supports) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.Compiler.CodeDomProvider.Supports(System.CodeDom.Compiler.GeneratorSupport)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Supports (supports As GeneratorSupport) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Supports(System::CodeDom::Compiler::GeneratorSupport supports);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="generatorSupport" Type="System.CodeDom.Compiler.GeneratorSupport" />
+        <Parameter Name="generatorSupport" Type="System.CodeDom.Compiler.GeneratorSupport" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="supports" Type="System.CodeDom.Compiler.GeneratorSupport" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="supports">To be added.</param>
@@ -1258,6 +1513,7 @@
         <block subset="none" type="overrides">
           <para>If you override this method, you must not call the corresponding method of the base class. The base-class method creates a generator in the derived class using the obsolete <see cref="M:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator" /> method for compatibility with preexisting providers that use code generators. The base-class method then calls the equivalent method in the <see cref="T:System.CodeDom.Compiler.ICodeGenerator" /> implementation to perform this function. You will get a <see cref="T:System.NotImplementedException" /> if you call the base-class method from a code provider that does not use a code generator.</para>
         </block>
+        <altmember cref="T:System.CodeDom.Compiler.GeneratorSupport" />
       </Docs>
     </Member>
   </Members>

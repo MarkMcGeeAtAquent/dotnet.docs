@@ -1,5 +1,5 @@
 ---
-title: "How to: Programmatically Print XPS Files | Microsoft Docs"
+title: "How to: Programmatically Print XPS Files"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,21 +9,26 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "printing XPS files programmatically"
-  - "XPS files, printing programmatically"
+  - "printing XPS files programmatically [WPF]"
+  - "XPS files [WPF], printing programmatically"
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
 caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Programmatically Print XPS Files
 You can use one overload of the <xref:System.Printing.PrintQueue.AddJob%2A> method to print [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] files without opening a <xref:System.Windows.Controls.PrintDialog> or, in principle, any [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] at all.  
   
- You can also print [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] files using the many <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> and <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> methods of the <xref:System.Windows.Xps.XpsDocumentWriter>. For more about this, [Printing an XPS Document](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c).  
+ You can also print [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] files using the many <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> and <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> methods of the <xref:System.Windows.Xps.XpsDocumentWriter>. For more about this, [Printing an XPS Document](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c).  
   
- Another way of printing [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] is to use the<xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> or <xref:System.Windows.Controls.PrintDialog.PrintVisual%2A> methods of the <xref:System.Windows.Controls.PrintDialog> control. See [Invoke a Print Dialog](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md).  
+ Another way of printing [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] is to use the <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> or <xref:System.Windows.Controls.PrintDialog.PrintVisual%2A> methods of the <xref:System.Windows.Controls.PrintDialog> control. See [Invoke a Print Dialog](../../../../docs/framework/wpf/advanced/how-to-invoke-a-print-dialog.md).  
   
 ## Example  
  The main steps to using the three-parameter <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> method are as follows. The example below gives details.  
@@ -40,7 +45,7 @@ You can use one overload of the <xref:System.Printing.PrintQueue.AddJob%2A> meth
   
  The three-parameter <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> overload of <xref:System.Printing.PrintQueue.AddJob%2A> must run in a single thread apartment whenever the <xref:System.Boolean> parameter is `false`, which it must be when a non-XPSDrv printer is being used. However, the default apartment state for [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] is multiple thread. This default must be reversed since the example assumes a non-XPSDrv printer.  
   
- There are two ways to change the default. One way is to simply add the <xref:System.STAThreadAttribute> (that is, "`[System.STAThreadAttribute()]`") just above the first line of the application's `Main` method (usually "`static void Main(string[] args)`"). However, many applications require that the `Main` method have a multi-threaded apartment state, so there is a second method: put the call to <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> in a separate thread whose apartment state is set to <xref:System.Threading.ApartmentState> with <xref:System.Threading.Thread.SetApartmentState%2A>. The example below uses this second technique.  
+ There are two ways to change the default. One way is to simply add the <xref:System.STAThreadAttribute> (that is, "`[System.STAThreadAttribute()]`") just above the first line of the application's `Main` method (usually "`static void Main(string[] args)`"). However, many applications require that the `Main` method have a multi-threaded apartment state, so there is a second method: put the call to <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> in a separate thread whose apartment state is set to <xref:System.Threading.ApartmentState.STA> with <xref:System.Threading.Thread.SetApartmentState%2A>. The example below uses this second technique.  
   
  Accordingly, the example begins by instantiating a <xref:System.Threading.Thread> object and passing it a **PrintXPS** method as the <xref:System.Threading.ThreadStart> parameter. (The **PrintXPS** method is defined later in the example.) Next the thread is set to a single thread apartment. The only remaining code of the `Main` method starts the new thread.  
   
@@ -62,13 +67,13 @@ You can use one overload of the <xref:System.Printing.PrintQueue.AddJob%2A> meth
  **Note** For simplicity, the example above uses the presence of an *.xps extension as its test that a file is [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]. However, [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] files do not have to have this extension. The [isXPS.exe (isXPS Conformance Tool)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3) is one way of testing a file for [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] validity.  
   
 ## See Also  
- <xref:System.Printing.PrintQueue>   
- <xref:System.Printing.PrintQueue.AddJob%2A>   
- <xref:System.Threading.ApartmentState>   
- <xref:System.STAThreadAttribute>   
- [XPS](http://www.microsoft.com/xps)   
- [Printing an XPS Document](http://msdn.microsoft.com/en-us/849555c8-0c4e-48c0-86bc-a5494c69b36c)   
- [Managed and Unmanaged Threading](http://msdn.microsoft.com/en-us/db425c20-4b2f-4433-bf96-76071c7881e5)   
- [isXPS.exe (isXPS Conformance Tool)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)   
- [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)   
+ <xref:System.Printing.PrintQueue>  
+ <xref:System.Printing.PrintQueue.AddJob%2A>  
+ <xref:System.Threading.ApartmentState>  
+ <xref:System.STAThreadAttribute>  
+ [XPS](http://www.microsoft.com/xps)  
+ [Printing an XPS Document](http://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c)  
+ [Managed and Unmanaged Threading](http://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5)  
+ [isXPS.exe (isXPS Conformance Tool)](http://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3)  
+ [Documents in WPF](../../../../docs/framework/wpf/advanced/documents-in-wpf.md)  
  [Printing Overview](../../../../docs/framework/wpf/advanced/printing-overview.md)

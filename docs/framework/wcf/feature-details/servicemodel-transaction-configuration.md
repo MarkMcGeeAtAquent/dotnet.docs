@@ -1,8 +1,8 @@
 ---
-title: "ServiceModel Transaction Configuration | Microsoft Docs"
+title: "ServiceModel Transaction Configuration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "transactions [WCF], ServiceModel configuration"
 ms.assetid: 5636067a-7fbd-4485-aaa2-8141c502acf3
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ServiceModel Transaction Configuration
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides three attributes for configuring transactions for a service: `transactionFlow`, `transactionProtocol`, and `transactionTimeout`.  
@@ -30,7 +32,7 @@ manager: "erikre"
   
  The following is an example of a configuration section that configures the specified binding to support transaction flow, as well as a use the WS-AtomicTransaction protocol.  
   
-```  
+```xml  
 <netNamedPipeBinding>  
    <binding name="test"  
       closeTimeout="00:00:10"  
@@ -50,7 +52,7 @@ manager: "erikre"
 ## Configuring transactionTimeout  
  You can configure the `transactionTimeout` attribute for your [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service in the `behavior` element of the configuration file. The following code demonstrates how to do this.  
   
-```  
+```xml  
 <configuration>  
    <system.serviceModel>  
       <behaviors>  
@@ -69,5 +71,5 @@ manager: "erikre"
  Note that the time-out value used is the smaller value between this `transactionTimeout` configuration setting and any <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> property.  
   
 ## See Also  
- [\<binding>](../../../../docs/framework/misc/binding.md)   
+ [\<binding>](../../../../docs/framework/misc/binding.md)  
  [WCF Configuration Schema](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)

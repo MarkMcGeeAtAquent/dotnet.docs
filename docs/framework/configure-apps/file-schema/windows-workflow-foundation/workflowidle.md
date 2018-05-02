@@ -1,22 +1,24 @@
 ---
-title: "&lt;workflowIdle&gt; | Microsoft Docs"
+title: "&lt;workflowIdle&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;workflowIdle&gt;
 A service behavior that controls when idle workflow instances are unloaded and persisted.  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
 \<behavior>  
@@ -24,8 +26,15 @@ A service behavior that controls when idle workflow instances are unloaded and p
   
 ## Syntax  
   
-```  
-<behaviors>  <serviceBehaviors>    <behavior name=String">      <workflowIdle timeToPersist=”TimeSpan”          timeToUnload=”TimeSpan” />    </behavior>  </serviceBehaviors></behaviors>  
+```xml  
+<behaviors>
+  <serviceBehaviors>
+    <behavior name="String">
+      <workflowIdle timeToPersist="TimeSpan" 
+                    timeToUnload="TimeSpan" />
+    </behavior>
+  </serviceBehaviors>
+</behaviors>  
 ```  
   
 ## Attributes and Elements  
@@ -48,5 +57,5 @@ A service behavior that controls when idle workflow instances are unloaded and p
 |[\<behavior> of \<serviceBehaviors>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Specifies a behavior element.|  
   
 ## See Also  
- <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>   
+ <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>  
  <xref:System.ServiceModel.Activities.Configuration.WorkflowIdleElement>

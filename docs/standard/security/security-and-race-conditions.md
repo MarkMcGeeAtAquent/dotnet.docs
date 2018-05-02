@@ -1,5 +1,5 @@
 ---
-title: "Security and Race Conditions | Microsoft Docs"
+title: "Security and Race Conditions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,10 +9,8 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "security [.NET Framework], race conditions"
   - "race conditions"
@@ -23,6 +21,9 @@ caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Security and Race Conditions
 Another area of concern is the potential for security holes exploited by race conditions. There are several ways in which this might happen. The subtopics that follow outline some of the major pitfalls that the developer must avoid.  
@@ -37,7 +38,6 @@ Sub Dispose()
        myObj = Nothing  
     End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -76,7 +76,6 @@ Sub DoOtherWork()
         DoSomethingTrusted()  
     End If  
 End Sub  
-  
 ```  
   
 ```csharp  

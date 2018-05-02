@@ -13,7 +13,7 @@ ms.assetid: 617310e7-336b-4864-8dab-7e2021512929
 
 # Samples and tutorials
 
-The .NET documentation contains a set of samples and tutorials that teach you about .NET. This topic describes how to find, view, and download .NET Core, ASP.NET Core, and C# samples and tutorials. Find resources to learn the F# programming language on the [F# Foundation's site](http://fsharp.org/learn.html). If you're interested in exploring C# using an online code editor, try these [interactive tutorials](http://go.microsoft.com/fwlink/p/?LinkId=817234). For instructions on how to view and download sample code, see the [Viewing and downloading samples](#viewing-and-downloading-samples) section.
+The .NET documentation contains a set of samples and tutorials that teach you about .NET. This topic describes how to find, view, and download .NET Core, ASP.NET Core, and C# samples and tutorials. Find resources to learn the F# programming language on the [F# Foundation's site](http://fsharp.org/learn.html). If you're interested in exploring C# using an online code editor, start with [this interactive tutorial](https://www.microsoft.com/net/learn/in-browser-tutorial/1) and continue with [C# interactive quickstarts](../csharp/quick-starts/index.md). For instructions on how to view and download sample code, see the [Viewing and downloading samples](#viewing-and-downloading-samples) section.
 
 ## .NET Core
 
@@ -35,7 +35,7 @@ This sample covers how to write libraries for .NET using cross-platform CLI tool
 
 ## ASP.NET Core
 
-See the [ASP.NET Core tutorials](https://docs.microsoft.com/aspnet/core/tutorials/). Many articles in the ASP.NET Core documentation have links to samples written for them.
+See the [ASP.NET Core tutorials](/aspnet/core/tutorials/). Many articles in the ASP.NET Core documentation have links to samples written for them.
 
 ## C# language
 

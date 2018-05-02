@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo7::ReadInMemorySymbols | Microsoft Docs"
+title: "ICorProfilerInfo7::ReadInMemorySymbols"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,20 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "ICorProfilerInfo7.ReadInMemorySymbols"
-apilocation: 
+api_location: 
   - "CorProf.idl"
   - "CorProf.h"
   - "CorGuids.lib"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
 caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo7::ReadInMemorySymbols
 [Supported in the [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)] and later versions]  
@@ -32,7 +33,6 @@ manager: "wpickett"
 ## Syntax  
   
 ```  
-  
 HRESULT ReadInMemorySymbols(  
         [in] ModuleID moduleId,  
         [in] DWORD symbolsReadOffset,  
@@ -40,7 +40,6 @@ HRESULT ReadInMemorySymbols(
         [in] DWORD countSymbolBytes,  
         [out] DWORD* pCountSymbolBytesRead  
 );  
-  
 ```  
   
 #### Parameters  

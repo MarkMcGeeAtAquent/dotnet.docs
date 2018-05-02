@@ -1,26 +1,17 @@
 ---
-title: "How to: Control Namespace Prefixes (C#) (LINQ to XML) | Microsoft Docs"
+title: "How to: Control Namespace Prefixes (C#) (LINQ to XML)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # How to: Control Namespace Prefixes (C#) (LINQ to XML)
 This topic describes how you can control namespace prefixes when serializing an XML tree.  
@@ -33,7 +24,7 @@ This topic describes how you can control namespace prefixes when serializing an 
   
  Another common reason for controlling namespace prefixes is that you want users to edit the XML document manually, and you want to create namespace prefixes that are convenient for the user to type. For example, you might be generating an XSD document. Conventions for schemas suggest that you use either `xs` or `xsd` as the prefix for the schema namespace.  
   
- To control namespace prefixes, you insert attributes that declare namespaces. If you declare the namespaces with specific prefixes, [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] will attempt to honor the namespace prefixes when serializing.  
+ To control namespace prefixes, you insert attributes that declare namespaces. If you declare the namespaces with specific prefixes, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] will attempt to honor the namespace prefixes when serializing.  
   
  To create an attribute that declares a namespace with a prefix, you create an attribute where the namespace of the name of the attribute is <xref:System.Xml.Linq.XNamespace.Xmlns%2A>, and the name of the attribute is the namespace prefix. The value of the attribute is the URI of the namespace.  
   

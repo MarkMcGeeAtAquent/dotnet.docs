@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyEmit::DefineAssembly Method | Microsoft Docs"
+title: "IMetaDataAssemblyEmit::DefineAssembly Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyEmit.DefineAssembly"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyEmit::DefineAssembly"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataAssemblyEmit::DefineAssembly method [.NET Framework metadata]"
   - "DefineAssembly method [.NET Framework metadata]"
 ms.assetid: a0637d66-74bf-4f2d-8137-9ff838bccece
+topic_type: 
+  - "apiref"
 caps.latest.revision: 18
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyEmit::DefineAssembly Method
 Creates an `Assembly` structure containing metadata for the specified assembly and returns the associated metadata token.  

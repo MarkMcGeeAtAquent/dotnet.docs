@@ -1,7 +1,9 @@
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -13,8 +15,10 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.GetClassNameCore
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -26,14 +30,18 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Move(System.Double,System.Double)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -45,21 +53,27 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.#ctor(System.Windows.Controls.GridSplitter)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Rotate(System.Double)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.GridSplitterAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Resize(System.Double,System.Double)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

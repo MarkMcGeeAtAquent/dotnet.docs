@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugModule2::ResolveAssembly Method | Microsoft Docs"
+title: "ICorDebugModule2::ResolveAssembly Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModule2.ResolveAssembly"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModule2::ResolveAssembly"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugModule2::ResolveAssembly method [.NET Framework debugging]"
   - "ResolveAssembly method [.NET Framework debugging]"
 ms.assetid: ddf9085c-7161-44bd-9609-cd2732b9009f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModule2::ResolveAssembly Method
 Resolves the assembly referenced by the specified metadata token.  

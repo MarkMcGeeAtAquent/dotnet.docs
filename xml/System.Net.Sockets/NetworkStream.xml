@@ -1,10 +1,13 @@
-<Type Name="NetworkStream" FullName="System.Net.Sockets.NetworkStream">
+﻿<Type Name="NetworkStream" FullName="System.Net.Sockets.NetworkStream">
   <TypeSignature Language="C#" Value="public class NetworkStream : System.IO.Stream" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NetworkStream extends System.IO.Stream" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.NetworkStream" />
+  <TypeSignature Language="VB.NET" Value="Public Class NetworkStream&#xA;Inherits Stream" />
+  <TypeSignature Language="C++ CLI" Value="public ref class NetworkStream : System::IO::Stream" />
   <AssemblyInfo>
     <AssemblyName>System.Net.Sockets</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -25,7 +28,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.Sockets.NetworkStream> class provides methods for sending and receiving data over <xref:System.Net.Sockets.SocketType> sockets in blocking mode. For more information about blocking versus nonblocking <xref:System.Net.Sockets.Socket>s, see [Using an Asynchronous Client Socket](~/docs/framework/network-programming/using-an-asynchronous-client-socket.md). You can use the <xref:System.Net.Sockets.NetworkStream> class for both synchronous and asynchronous data transfer. For more information about synchronous and asynchronous communication, see [Sockets](~/docs/framework/network-programming/sockets.md).  
+ The <xref:System.Net.Sockets.NetworkStream> class provides methods for sending and receiving data over <xref:System.Net.Sockets.SocketType.Stream> sockets in blocking mode. For more information about blocking versus nonblocking <xref:System.Net.Sockets.Socket>s, see [Using an Asynchronous Client Socket](~/docs/framework/network-programming/using-an-asynchronous-client-socket.md). You can use the <xref:System.Net.Sockets.NetworkStream> class for both synchronous and asynchronous data transfer. For more information about synchronous and asynchronous communication, see [Sockets](~/docs/framework/network-programming/sockets.md).  
   
  To create a <xref:System.Net.Sockets.NetworkStream>, you must provide a connected <xref:System.Net.Sockets.Socket>. You can also specify what <xref:System.IO.FileAccess> permission the <xref:System.Net.Sockets.NetworkStream> has over the provided <xref:System.Net.Sockets.Socket>. By default, closing the <xref:System.Net.Sockets.NetworkStream> does not close the provided <xref:System.Net.Sockets.Socket>. If you want the <xref:System.Net.Sockets.NetworkStream> to have permission to close the provided <xref:System.Net.Sockets.Socket>, you must specify `true` for the value of the `ownsSocket` parameter.  
   
@@ -38,7 +41,7 @@
    
   
 ## Examples  
- The following code example demonstrates how to create a <xref:System.Net.Sockets.NetworkStream> from a connected <xref:System.Net.Sockets.SocketType><xref:System.Net.Sockets.Socket> and perform basic synchronous blocking I/O.  
+ The following code example demonstrates how to create a <xref:System.Net.Sockets.NetworkStream> from a connected <xref:System.Net.Sockets.SocketType.Stream><xref:System.Net.Sockets.Socket> and perform basic synchronous blocking I/O.  
   
  [!code-cpp[NetworkStream_Synch_SendAndReceive#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NetworkStream_Synch_SendAndReceive/CPP/source.cpp#2)]
  [!code-csharp[NetworkStream_Synch_SendAndReceive#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NetworkStream_Synch_SendAndReceive/CS/source.cs#2)]
@@ -46,16 +49,29 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Net.Sockets.TcpClient" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a new instance of the <see cref="T:System.Net.Sockets.NetworkStream" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public NetworkStream (System.Net.Sockets.Socket socket);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Sockets.Socket socket) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.#ctor(System.Net.Sockets.Socket)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NetworkStream(System::Net::Sockets::Socket ^ socket);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -99,16 +115,19 @@
  -or-  
   
  The <paramref name="socket" /> parameter is in a nonblocking state.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public NetworkStream (System.Net.Sockets.Socket socket, bool ownsSocket);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Sockets.Socket socket, bool ownsSocket) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.#ctor(System.Net.Sockets.Socket,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NetworkStream(System::Net::Sockets::Socket ^ socket, bool ownsSocket);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -154,12 +173,14 @@
  -or-  
   
  the <paramref name="socket" /> parameter is in a nonblocking state.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public NetworkStream (System.Net.Sockets.Socket socket, System.IO.FileAccess access);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Sockets.Socket socket, valuetype System.IO.FileAccess access) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.#ctor(System.Net.Sockets.Socket,System.IO.FileAccess)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NetworkStream(System::Net::Sockets::Socket ^ socket, System::IO::FileAccess access);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -169,6 +190,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="socket" Type="System.Net.Sockets.Socket" />
@@ -184,7 +209,7 @@
 ## Remarks  
  The <xref:System.Net.Sockets.NetworkStream> is created with the specified access to the specified <xref:System.Net.Sockets.Socket>. With this constructor, the <xref:System.Net.Sockets.NetworkStream> does not own the underlying <xref:System.Net.Sockets.Socket>, so calling the <xref:System.Net.Sockets.NetworkStream.Close%2A> method does not close the underlying <xref:System.Net.Sockets.Socket>.  
   
- The `access` parameter sets the <xref:System.Net.Sockets.NetworkStream.CanRead%2A> and <xref:System.Net.Sockets.NetworkStream.CanWrite%2A> properties of the <xref:System.Net.Sockets.NetworkStream>. If you specify <xref:System.IO.FileAccess>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Write%2A> method. If you specify <xref:System.IO.FileAccess>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Read%2A> method. If you specify <xref:System.IO.FileAccess>, both method calls are allowed.  
+ The `access` parameter sets the <xref:System.Net.Sockets.NetworkStream.CanRead%2A> and <xref:System.Net.Sockets.NetworkStream.CanWrite%2A> properties of the <xref:System.Net.Sockets.NetworkStream>. If you specify <xref:System.IO.FileAccess.Write>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Write%2A> method. If you specify <xref:System.IO.FileAccess.Read>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Read%2A> method. If you specify <xref:System.IO.FileAccess.ReadWrite>, both method calls are allowed.  
   
    
   
@@ -207,12 +232,19 @@
  -or-  
   
  the <paramref name="socket" /> parameter is in a nonblocking state.</exception>
+        <altmember cref="T:System.IO.FileAccess" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanRead" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanWrite" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public NetworkStream (System.Net.Sockets.Socket socket, System.IO.FileAccess access, bool ownsSocket);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Sockets.Socket socket, valuetype System.IO.FileAccess access, bool ownsSocket) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.#ctor(System.Net.Sockets.Socket,System.IO.FileAccess,System.Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; NetworkStream(System::Net::Sockets::Socket ^ socket, System::IO::FileAccess access, bool ownsSocket);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -222,6 +254,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="socket" Type="System.Net.Sockets.Socket" />
@@ -239,7 +275,7 @@
 ## Remarks  
  The <xref:System.Net.Sockets.NetworkStream> is created with read/write access to the specified <xref:System.Net.Sockets.Socket>. If the value of the `ownsSocket` parameter is `true`, the <xref:System.Net.Sockets.NetworkStream> takes ownership of the underlying <xref:System.Net.Sockets.Socket>, and calling the <xref:System.Net.Sockets.NetworkStream.Close%2A> method also closes the underlying <xref:System.Net.Sockets.Socket>.  
   
- The `access` parameter sets the <xref:System.Net.Sockets.NetworkStream.CanRead%2A> and <xref:System.Net.Sockets.NetworkStream.CanWrite%2A> properties of the <xref:System.Net.Sockets.NetworkStream>. If you specify <xref:System.IO.FileAccess>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Write%2A> method. If you specify <xref:System.IO.FileAccess>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Read%2A> method. If you specify <xref:System.IO.FileAccess>, both method calls are allowed.  
+ The `access` parameter sets the <xref:System.Net.Sockets.NetworkStream.CanRead%2A> and <xref:System.Net.Sockets.NetworkStream.CanWrite%2A> properties of the <xref:System.Net.Sockets.NetworkStream>. If you specify <xref:System.IO.FileAccess.Write>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Write%2A> method. If you specify <xref:System.IO.FileAccess.Read>, then the <xref:System.Net.Sockets.NetworkStream> allows calls to the <xref:System.Net.Sockets.NetworkStream.Read%2A> method. If you specify <xref:System.IO.FileAccess.ReadWrite>, both method calls are allowed.  
   
    
   
@@ -262,12 +298,20 @@
  -or-  
   
  The <paramref name="socket" /> parameter is in a nonblocking state.</exception>
+        <altmember cref="T:System.IO.FileAccess" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanRead" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanWrite" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="BeginRead">
       <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int size, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 size, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginRead (buffer As Byte(), offset As Integer, size As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginRead(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -277,6 +321,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -346,14 +394,17 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.EndRead(System.IAsyncResult)" />
       </Docs>
     </Member>
     <Member MemberName="BeginWrite">
       <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int size, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 size, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function BeginWrite (buffer As Byte(), offset As Integer, size As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override IAsyncResult ^ BeginWrite(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -363,6 +414,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -430,18 +485,22 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.EndWrite(System.IAsyncResult)" />
       </Docs>
     </Member>
     <Member MemberName="CanRead">
       <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.CanRead" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanRead As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanRead { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -476,16 +535,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.NetworkStream.Readable" />
+        <altmember cref="T:System.IO.FileAccess" />
       </Docs>
     </Member>
     <Member MemberName="CanSeek">
       <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.CanSeek" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanSeek As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanSeek { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -510,10 +574,13 @@
       <MemberSignature Language="C#" Value="public override bool CanTimeout { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.CanTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanTimeout As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanTimeout { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -545,10 +612,13 @@
       <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.CanWrite" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property CanWrite As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanWrite { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -583,12 +653,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.NetworkStream.Writeable" />
+        <altmember cref="T:System.IO.FileAccess" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close (int timeout);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close(int32 timeout) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Close(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close (timeout As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close(int timeout);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -598,6 +672,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -625,10 +703,13 @@
       <MemberSignature Language="C#" Value="public virtual bool DataAvailable { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool DataAvailable" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.DataAvailable" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property DataAvailable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool DataAvailable { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -666,16 +747,20 @@
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.</exception>
         <exception cref="T:System.IO.IOException">The underlying <see cref="T:System.Net.Sockets.Socket" /> is closed.</exception>
         <exception cref="T:System.Net.Sockets.SocketException">Use the <see cref="P:System.Net.Sockets.SocketException.ErrorCode" /> property to obtain the specific error code, and refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -710,7 +795,7 @@
           <para>
             <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean)" />, be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement <see langword="Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
- For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
+ For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
         </block>
       </Docs>
     </Member>
@@ -718,6 +803,8 @@
       <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.EndRead(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function EndRead (asyncResult As IAsyncResult) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int EndRead(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -727,6 +814,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -771,14 +862,17 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="EndWrite">
       <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.EndWrite(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub EndWrite (asyncResult As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void EndWrite(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -788,6 +882,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -833,18 +931,22 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.</exception>
+        <altmember cref="M:System.Net.Sockets.NetworkStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Finalize">
       <MemberSignature Language="C#" Value="~NetworkStream ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!NetworkStream ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -865,9 +967,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.Object.Finalize%2A?displayProperty=fullName>. Application code should not call this method; an object's <xref:System.Object.Finalize%2A> method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize%2A?displayProperty=fullName> method.  
+ This method overrides <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. Application code should not call this method; an object's <xref:System.Object.Finalize%2A> method is automatically invoked during garbage collection, unless finalization by the garbage collector has been disabled by a call to the <xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType> method.  
   
- For more information about using the Finalize method, see [Finalize Methods and Destructors](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
+ For more information about using the Finalize method, see [Finalize Methods and Destructors](http://msdn.microsoft.com/library/fd376774-1643-499b-869e-9546a3aeea70), [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md), and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).  
   
  ]]></format>
         </remarks>
@@ -877,10 +979,13 @@
       <MemberSignature Language="C#" Value="public override void Flush ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Flush" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Flush ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Flush();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -901,7 +1006,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.Sockets.NetworkStream.Flush%2A> method implements the <xref:System.IO.Stream.Flush%2A?displayProperty=fullName> method; however, because <xref:System.Net.Sockets.NetworkStream> is not buffered, it has no affect on network streams. Calling the <xref:System.Net.Sockets.NetworkStream.Flush%2A> method does not throw an exception.  
+ The <xref:System.Net.Sockets.NetworkStream.Flush%2A> method implements the <xref:System.IO.Stream.Flush%2A?displayProperty=nameWithType> method; however, because <xref:System.Net.Sockets.NetworkStream> is not buffered, it has no affect on network streams. Calling the <xref:System.Net.Sockets.NetworkStream.Flush%2A> method does not throw an exception.  
   
  ]]></format>
         </remarks>
@@ -911,10 +1016,12 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ FlushAsync(System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -951,10 +1058,13 @@
       <MemberSignature Language="C#" Value="public override long Length { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.Length" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Length As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property long Length { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -979,10 +1089,13 @@
       <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.Position" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Position As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property long Position { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1005,12 +1118,15 @@
     </Member>
     <Member MemberName="Read">
       <MemberSignature Language="C#" Value="public override int Read (byte[] buffer, int offset, int size);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(unsigned int8[] buffer, int32 offset, int32 size) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read([out] unsigned int8[] buffer, int32 offset, int32 size) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Read (buffer As Byte(), offset As Integer, size As Integer) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int Read(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1034,12 +1150,12 @@
         <param name="offset">The location in <c>buffer</c> to begin storing the data to.</param>
         <param name="size">The number of bytes to read from the <see cref="T:System.Net.Sockets.NetworkStream" />.</param>
         <summary>Reads data from the <see cref="T:System.Net.Sockets.NetworkStream" />.</summary>
-        <returns>The number of bytes read from the <see cref="T:System.Net.Sockets.NetworkStream" />.</returns>
+        <returns>The number of bytes read from the <see cref="T:System.Net.Sockets.NetworkStream" />, or 0 if the socket is closed.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method reads data into the `buffer` parameter and returns the number of bytes successfully read. If no data is available for reading, the <xref:System.Net.Sockets.NetworkStream.Read%2A> method returns 0. The <xref:System.Net.Sockets.NetworkStream.Read%2A> operation reads as much data as is available, up to the number of bytes specified by the `size` parameter. If the remote host shuts down the connection, and all available data has been received, the <xref:System.Net.Sockets.NetworkStream.Read%2A> method completes immediately and return zero bytes.  
+ This method reads data into the `buffer` parameter and returns the number of bytes successfully read. If the socket is closed, the <xref:System.Net.Sockets.NetworkStream.Read%2A> method returns 0. The <xref:System.Net.Sockets.NetworkStream.Read%2A> operation reads as much data as is available, up to the number of bytes specified by the `size` parameter. If the remote host shuts down the connection, and all available data has been received, the <xref:System.Net.Sockets.NetworkStream.Read%2A> method completes immediately and return zero bytes.  
   
 > [!NOTE]
 >  Check to see if the <xref:System.Net.Sockets.NetworkStream> is readable by calling the <xref:System.Net.Sockets.NetworkStream.CanRead%2A> property. If you attempt to read from a <xref:System.Net.Sockets.NetworkStream> that is not readable, you will get an <xref:System.IO.IOException>.  
@@ -1075,19 +1191,24 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.IO.IOException">The underlying <see cref="T:System.Net.Sockets.Socket" /> is closed.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.  
   
  -or-  
   
  There is a failure reading from the network.</exception>
+        <altmember cref="M:System.Net.Sockets.Socket.Receive(System.Byte[],System.Int32,System.Net.Sockets.SocketFlags)" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.DataAvailable" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanRead" />
       </Docs>
     </Member>
     <Member MemberName="Readable">
       <MemberSignature Language="C#" Value="protected bool Readable { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Readable" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.Readable" />
+      <MemberSignature Language="VB.NET" Value="Protected Property Readable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool Readable { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1097,6 +1218,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1124,16 +1249,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanRead" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanWrite" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.Writeable" />
       </Docs>
     </Member>
     <Member MemberName="ReadAsync">
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task&lt;int&gt; ReadAsync (byte[] buffer, int offset, int size, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(unsigned int8[] buffer, int32 offset, int32 size, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task&lt;int&gt; ^ ReadAsync(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
@@ -1158,10 +1288,13 @@
       <MemberSignature Language="C#" Value="public override int ReadTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReadTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.ReadTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property ReadTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int ReadTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1203,10 +1336,13 @@
       <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Seek (offset As Long, origin As SeekOrigin) As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override long Seek(long offset, System::IO::SeekOrigin origin);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1237,10 +1373,13 @@
       <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.SetLength(System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub SetLength (value As Long)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void SetLength(long value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1268,6 +1407,8 @@
       <MemberSignature Language="C#" Value="protected System.Net.Sockets.Socket Socket { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.Socket Socket" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.Socket" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property Socket As Socket" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::Net::Sockets::Socket ^ Socket { System::Net::Sockets::Socket ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1277,6 +1418,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.Sockets.Socket</ReturnType>
@@ -1310,10 +1455,13 @@
       <MemberSignature Language="C#" Value="public override void Write (byte[] buffer, int offset, int size);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 size) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (buffer As Byte(), offset As Integer, size As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1341,7 +1489,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.Sockets.NetworkStream.Write%2A> method starts at the specified `offset` and sends `size` bytes from the contents of `buffer` to the network. The <xref:System.Net.Sockets.NetworkStream.Write%2A> method blocks until the requested number of bytes is sent or a <xref:System.Net.Sockets.SocketException> is thrown. If you receive a <xref:System.Net.Sockets.SocketException>, use the <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=fullName> property to obtain the specific error code, and refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
+ The <xref:System.Net.Sockets.NetworkStream.Write%2A> method starts at the specified `offset` and sends `size` bytes from the contents of `buffer` to the network. The <xref:System.Net.Sockets.NetworkStream.Write%2A> method blocks until the requested number of bytes is sent or a <xref:System.Net.Sockets.SocketException> is thrown. If you receive a <xref:System.Net.Sockets.SocketException>, use the <xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType> property to obtain the specific error code, and refer to the Windows Sockets version 2 API error code documentation in MSDN for a detailed description of the error.  
   
 > [!NOTE]
 >  Check to see if the <xref:System.Net.Sockets.NetworkStream> is writable by accessing the <xref:System.Net.Sockets.NetworkStream.CanWrite%2A> property. If you attempt to write to a <xref:System.Net.Sockets.NetworkStream> that is not writable, you will get an <xref:System.IO.IOException>. If you receive an <xref:System.IO.IOException>, check the <xref:System.Exception.InnerException%2A> property to determine if it was caused by a <xref:System.Net.Sockets.SocketException>.  
@@ -1375,18 +1523,22 @@
   
  -or-  
   
- An error occurred when accessing the socket. See the Remarks section for more information.</exception>
+ An error occurred when accessing the socket.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.NetworkStream" /> is closed.  
   
  -or-  
   
  There was a failure reading from the network.</exception>
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanWrite" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.Writeable" />
       </Docs>
     </Member>
     <Member MemberName="Writeable">
       <MemberSignature Language="C#" Value="protected bool Writeable { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Writeable" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.Writeable" />
+      <MemberSignature Language="VB.NET" Value="Protected Property Writeable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool Writeable { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1396,6 +1548,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1423,16 +1579,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.Sockets.NetworkStream.CanWrite" />
+        <altmember cref="P:System.Net.Sockets.NetworkStream.Readable" />
       </Docs>
     </Member>
     <Member MemberName="WriteAsync">
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (byte[] buffer, int offset, int size, System.Threading.CancellationToken cancellationToken);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(unsigned int8[] buffer, int32 offset, int32 size, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.NetworkStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteAsync(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int size, System::Threading::CancellationToken cancellationToken);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task</ReturnType>
@@ -1457,10 +1617,13 @@
       <MemberSignature Language="C#" Value="public override int WriteTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 WriteTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.NetworkStream.WriteTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property WriteTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int WriteTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net.Sockets</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>

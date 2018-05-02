@@ -1,7 +1,9 @@
-<Type Name="ContextExchangeMechanism" FullName="System.ServiceModel.Channels.ContextExchangeMechanism">
+﻿<Type Name="ContextExchangeMechanism" FullName="System.ServiceModel.Channels.ContextExchangeMechanism">
   <TypeSignature Language="C#" Value="public enum ContextExchangeMechanism" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ContextExchangeMechanism extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ContextExchangeMechanism" />
+  <TypeSignature Language="VB.NET" Value="Public Enum ContextExchangeMechanism" />
+  <TypeSignature Language="C++ CLI" Value="public enum class ContextExchangeMechanism" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -27,15 +29,15 @@
 -   For HttpCookie, the following assertion is generated:  
   
     ```  
-    <HttpUseCookie xmlns=”http://schemas.xmlsoap.org/soap/http”/>  
+    <HttpUseCookie xmlns="http://schemas.xmlsoap.org/soap/http"/>  
     ```  
   
 -   For ContextSoapHeader, the following assertion is generated:  
   
     ```  
     <IncludeContext   
-    xmlns=”http://schemas.microsoft.com/ws/2006/05/context”  
-    protectionLevel=”Sign” />  
+    xmlns="http://schemas.microsoft.com/ws/2006/05/context"  
+    protectionLevel="Sign" />  
     ```  
   
  The HttpCookie enumeration is implemented at the transport layer. This can be used in the case of simplex communication, where the client makes an initial request and the context is provided by the service on the corresponding reply. All subsequent messages between the service and client for the lifetime of that conversation contain the context. For service endpoints that use an HTTP transport and clients that agree to allow the use of HTTP cookies, the HttpCookie enumeration can be utilized to exchange the application context. When HTTP cookies are used to propagate context, they should be protected using transport security. This mechanism cannot be used with non-HTTP transports.  
@@ -52,6 +54,8 @@
       <MemberSignature Language="C#" Value="ContextSoapHeader" />
       <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.ContextExchangeMechanism ContextSoapHeader = int32(0)" />
       <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.ContextExchangeMechanism.ContextSoapHeader" />
+      <MemberSignature Language="VB.NET" Value="ContextSoapHeader" />
+      <MemberSignature Language="C++ CLI" Value="ContextSoapHeader" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -60,6 +64,7 @@
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.ContextExchangeMechanism</ReturnType>
       </ReturnValue>
+      <MemberValue>0</MemberValue>
       <Docs>
         <summary>A SOAP header is used to exchange context. This is the default exchange mechanism.</summary>
       </Docs>
@@ -68,6 +73,8 @@
       <MemberSignature Language="C#" Value="HttpCookie" />
       <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.ContextExchangeMechanism HttpCookie = int32(1)" />
       <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.ContextExchangeMechanism.HttpCookie" />
+      <MemberSignature Language="VB.NET" Value="HttpCookie" />
+      <MemberSignature Language="C++ CLI" Value="HttpCookie" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -76,6 +83,7 @@
       <ReturnValue>
         <ReturnType>System.ServiceModel.Channels.ContextExchangeMechanism</ReturnType>
       </ReturnValue>
+      <MemberValue>1</MemberValue>
       <Docs>
         <summary>An HTTP cookie is used to exchange context.</summary>
       </Docs>

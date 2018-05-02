@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;scopedCertificates&gt; Element | Microsoft Docs"
+title: "&lt;add&gt; of &lt;scopedCertificates&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e21c1ef8-d6d6-4bca-ac5a-6fbf4bd77412
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;scopedCertificates&gt; Element
 Adds an X.509 certificate to the collection of scoped certificates.  
@@ -29,8 +31,7 @@ endpointBehaviors section
   
 ## Syntax  
   
-```  
-  
+```xml  
 <add findValue="String"  
           storeLocation="CurrentUser/LocalMachine"  
           storeName=" CurrentUser/LocalMachine"  
@@ -95,7 +96,7 @@ endpointBehaviors section
 ## Example  
  The following example adds an X.509 certificate the collection.  
   
-```  
+```xml  
 <behaviors>  
  <endpointBehaviors>  
   <behavior name="MyEndpointBehavior">  
@@ -116,12 +117,12 @@ endpointBehaviors section
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>   
- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>   
- <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>   
- <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>   
- [How to: Create a Federated Client](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)   
- [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)   
+ <xref:System.ServiceModel.Configuration.X509RecipientCertificateClientElement.ScopedCertificates%2A>  
+ <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElementCollection>  
+ <xref:System.ServiceModel.Configuration.X509ScopedServiceCertificateElement>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  
+ <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential.ScopedCertificates%2A>  
+ [How to: Create a Federated Client](../../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)  
+ [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [Securing Clients](../../../../../docs/framework/wcf/securing-clients.md)  
  [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

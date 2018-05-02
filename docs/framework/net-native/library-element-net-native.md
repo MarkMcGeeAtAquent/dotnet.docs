@@ -1,5 +1,5 @@
 ---
-title: "&lt;Library&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;Library&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;Library&gt; Element (.NET Native)
 Defines the assembly that contains types and type members whose metadata is available for reflection at run time.  
@@ -40,7 +42,7 @@ Defines the assembly that contains types and type members whose metadata is avai
   
 |Value|Description|  
 |-----------|-----------------|  
-|*assembly_name*|The simple name of the assembly, without its file extension. This attribute corresponds to the <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=fullName> property. For example, the name of an assembly named Extensions.dll is "Extensions". See the Remarks section for a special form of *assembly_name* that supports conditional inclusion of metadata from the assembly.|  
+|*assembly_name*|The simple name of the assembly, without its file extension. This attribute corresponds to the <xref:System.Reflection.AssemblyName.Name%2A?displayProperty=nameWithType> property. For example, the name of an assembly named Extensions.dll is "Extensions". See the Remarks section for a special form of *assembly_name* that supports conditional inclusion of metadata from the assembly.|  
   
 ### Child Elements  
   
@@ -65,17 +67,15 @@ Defines the assembly that contains types and type members whose metadata is avai
  `<Library>` directives may be conditionally utilized. If the name of the `<Library>` element starts and ends with an asterisk (*), the `<Library>` directive has an effect only if the assembly specified between the asterisks is referenced by the app. For example, the following runtime directive applies only if the Utillities.dll assembly is referenced by the app.  
   
 ```xml  
-  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
-  <Library Name=”*Utilities*”>  
-   ...  
-  </Library>  
+  <Library Name="*Utilities*">  
+   ...  
+  </Library>  
 </Directives>  
-  
 ```  
   
 ## See Also  
- [\<Application> Element](../../../docs/framework/net-native/application-element-net-native.md)   
- [\<Directives> Element](../../../docs/framework/net-native/directives-element-net-native.md)   
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
+ [\<Application> Element](../../../docs/framework/net-native/application-element-net-native.md)  
+ [\<Directives> Element](../../../docs/framework/net-native/directives-element-net-native.md)  
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
  [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)

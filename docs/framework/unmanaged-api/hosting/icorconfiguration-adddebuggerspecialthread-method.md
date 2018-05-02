@@ -1,5 +1,5 @@
 ---
-title: "ICorConfiguration::AddDebuggerSpecialThread Method | Microsoft Docs"
+title: "ICorConfiguration::AddDebuggerSpecialThread Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorConfiguration.AddDebuggerSpecialThread"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "AddDebuggerSpecialThread"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "AddDebuggerSpecialThread method [.NET Framework hosting]"
   - "ICorConfiguration::AddDebuggerSpecialThread method [.NET Framework hosting]"
 ms.assetid: 1f1e3239-438e-4be9-a3bb-7d0722d3a76d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorConfiguration::AddDebuggerSpecialThread Method
 Indicates to the debugging services that a particular thread should be allowed to continue executing while the debugger has an application stopped during managed or unmanaged debugging scenarios.  

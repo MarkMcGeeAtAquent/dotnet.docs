@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback2::GarbageCollectionFinished Method | Microsoft Docs"
+title: "ICorProfilerCallback2::GarbageCollectionFinished Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback2.GarbageCollectionFinished"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback2::GarbageCollectionFinished"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback2::GarbageCollectionFinished method [.NET Framework profiling]"
   - "GarbageCollectionFinished method [.NET Framework profiling]"
 ms.assetid: 1a5758ea-2354-43c0-92a3-32c9909d64e1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback2::GarbageCollectionFinished Method
 Notifies the profiler that garbage collection has completed and all garbage collection callbacks have been issued for it.  
@@ -49,5 +52,5 @@ HRESULT GarbageCollectionFinished();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ICorProfilerCallback2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)

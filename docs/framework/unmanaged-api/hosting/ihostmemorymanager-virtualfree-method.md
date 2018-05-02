@@ -1,5 +1,5 @@
 ---
-title: "IHostMemoryManager::VirtualFree Method | Microsoft Docs"
+title: "IHostMemoryManager::VirtualFree Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMemoryManager.VirtualFree"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMemoryManager::VirtualFree"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostMemoryManager::VirtualFree method [.NET Framework hosting]"
   - "VirtualFree method [.NET Framework hosting]"
 ms.assetid: 1a436e89-eb28-4d15-bcf1-a072f86dbd99
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMemoryManager::VirtualFree Method
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualFree` releases, decommits, or releases and decommits a region of pages within the virtual address space of the calling process.  
@@ -77,5 +80,5 @@ HRESULT VirtualFree (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)   
+ [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
  [IHostMalloc Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)

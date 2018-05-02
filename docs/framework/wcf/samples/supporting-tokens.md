@@ -1,8 +1,8 @@
 ---
-title: "Supporting Tokens | Microsoft Docs"
+title: "Supporting Tokens"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 65a8905d-92cc-4ab0-b6ed-1f710e40784e
 caps.latest.revision: 29
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Supporting Tokens
 The Supporting Tokens sample demonstrates how to add additional tokens to a message that uses WS-Security. The example adds an X.509 binary security token in addition to a username security token. The token is passed in a WS-Security message header from the client to the service and part of the message is signed with the private key associated with the X.509 security token to prove the possession of the X.509 certificate to the receiver. This is useful in the case when there is a requirement to have multiple claims associated with a message to authenticate or authorize the sender. The service implements a contract that defines a request-reply communication pattern.  
@@ -57,7 +59,6 @@ public static Binding CreateMultiFactorAuthenticationBinding()
     // Create a CustomBinding based on the constructed security binding element.  
     return new CustomBinding(messageSecurity, httpTransport);  
 }  
-  
 ```  
   
  The behavior specifies the service credentials that are to be used for client authentication and also information about the service X.509 certificate. The sample uses `CN=localhost` as a subject name in the service X.509 certificate.  
@@ -437,7 +438,7 @@ iisreset
   
 2.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-3.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ##### To run the sample across machines  
   
@@ -449,13 +450,13 @@ iisreset
   
 4.  Copy the client program files to the client directory on the client machine. Also copy the Setup.bat, Cleanup.bat, and ImportServiceCert.bat files to the client.  
   
-5.  On the server, run `setup.bat service` in a Visual Studio command prompt opened with administrator privileges. Running `setup.bat`with the `service` argument creates a service certificate with the fully-qualified domain name of the machine and exports the service certificate to a file named Service.cer.  
+5.  On the server, run `setup.bat service` in a Visual Studio command prompt opened with administrator privileges. Running `setup.bat` with the `service` argument creates a service certificate with the fully-qualified domain name of the machine and exports the service certificate to a file named Service.cer.  
   
 6.  Edit Web.config to reflect the new certificate name (in the `findValue` attribute in the [\<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)) which is the same as the fully-qualified domain name of the machine.  
   
 7.  Copy the Service.cer file from the service directory to the client directory on the client machine.  
   
-8.  On the client, run `setup.bat client` in a Visual Studio command prompt opened with administrator privileges. Running `setup.bat`with the `client` argument creates a client certificate named client.com and exports the client certificate to a file named Client.cer.  
+8.  On the client, run `setup.bat client` in a Visual Studio command prompt opened with administrator privileges. Running `setup.bat` with the `client` argument creates a client certificate named client.com and exports the client certificate to a file named Client.cer.  
   
 9. In the Client.exe.config file on the client machine, change the address value of the endpoint to match the new address of your service. Do this by replacing localhost with the fully-qualified domain name of the server.  
   
@@ -465,7 +466,7 @@ iisreset
   
 12. On the server, run ImportClientCert.bat, This imports the client certificate from the Client.cer file into the LocalMachine - TrustedPeople store.  
   
-13. On the client machine, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+13. On the client machine, launch Client.exe from a command prompt window. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ##### To clean up after the sample  
   

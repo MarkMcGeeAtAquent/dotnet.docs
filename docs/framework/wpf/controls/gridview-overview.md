@@ -1,5 +1,5 @@
 ---
-title: "GridView Overview | Microsoft Docs"
+title: "GridView Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,14 +10,16 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "GridView view mode"
-  - "ListView controls, GridView view mode"
-  - "controls, ListView"
+  - "GridView view mode [WPF]"
+  - "ListView controls [WPF], GridView view mode"
+  - "controls [WPF], ListView"
 ms.assetid: b2d02267-32b3-40ce-8e9f-06972d8749d9
 caps.latest.revision: 26
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # GridView Overview
 <xref:System.Windows.Controls.GridView> view mode is one of the view modes for a <xref:System.Windows.Controls.ListView> control. The <xref:System.Windows.Controls.GridView> class and its supporting classes enable you and your users to view item collections in a table that typically uses buttons as interactive column headers. This topic introduces the <xref:System.Windows.Controls.GridView> class and outlines its use.  
@@ -41,7 +43,7 @@ manager: "wpickett"
   
  The following example shows how to define a <xref:System.Windows.Controls.GridView> that displays employee data. In this example, <xref:System.Windows.Controls.ListView> defines the `EmployeeInfoDataSource` as the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>. The property definitions of <xref:System.Windows.Controls.GridViewColumn.DisplayMemberBinding%2A> bind <xref:System.Windows.Controls.GridViewColumn> content to `EmployeeInfoDataSource` data categories.  
   
- [!code-xml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
+ [!code-xaml[ListViewCode#ListViewEmployee](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ListViewCode/CSharp/Window1.xaml#listviewemployee)]  
   
  The following illustration shows the table that the previous example creates.  
   
@@ -89,7 +91,7 @@ manager: "wpickett"
   
      Users can reorder columns in a <xref:System.Windows.Controls.GridView> by pressing the left mouse button while it is over a column header and then dragging that column to a new position. While the user drags the column header, a floating version of the header is displayed as well as a solid black line that shows where to insert the column.  
   
-     If you want to modify the default style for the floating version of a header, specify a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.GridViewColumnHeader> type that is triggered when the <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> property is set to <xref:System.Windows.Controls.GridViewColumnHeaderRole>. For more information, see [Create a Style for a Dragged GridView Column Header](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md).  
+     If you want to modify the default style for the floating version of a header, specify a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.GridViewColumnHeader> type that is triggered when the <xref:System.Windows.Controls.GridViewColumnHeader.Role%2A> property is set to <xref:System.Windows.Controls.GridViewColumnHeaderRole.Floating>. For more information, see [Create a Style for a Dragged GridView Column Header](../../../../docs/framework/wpf/controls/how-to-create-a-style-for-a-dragged-gridview-column-header.md).  
   
 -   **Resize a column to its content.**  
   
@@ -135,13 +137,13 @@ manager: "wpickett"
 -   <xref:System.Windows.Controls.GridViewColumnHeaderRole>  
   
 ## See Also  
- <xref:System.Windows.Controls.ListView>   
- <xref:System.Windows.Controls.ListViewItem>   
- <xref:System.Windows.Controls.GridViewColumn>   
- <xref:System.Windows.Controls.GridViewColumnHeader>   
- <xref:System.Windows.Controls.GridViewRowPresenter>   
- <xref:System.Windows.Controls.GridViewHeaderRowPresenter>   
- <xref:System.Windows.Controls.ViewBase>   
- [ListView Overview](../../../../docs/framework/wpf/controls/listview-overview.md)   
- [Sort a GridView Column When a Header Is Clicked](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)   
+ <xref:System.Windows.Controls.ListView>  
+ <xref:System.Windows.Controls.ListViewItem>  
+ <xref:System.Windows.Controls.GridViewColumn>  
+ <xref:System.Windows.Controls.GridViewColumnHeader>  
+ <xref:System.Windows.Controls.GridViewRowPresenter>  
+ <xref:System.Windows.Controls.GridViewHeaderRowPresenter>  
+ <xref:System.Windows.Controls.ViewBase>  
+ [ListView Overview](../../../../docs/framework/wpf/controls/listview-overview.md)  
+ [Sort a GridView Column When a Header Is Clicked](../../../../docs/framework/wpf/controls/how-to-sort-a-gridview-column-when-a-header-is-clicked.md)  
  [How-to Topics](../../../../docs/framework/wpf/controls/listview-how-to-topics.md)

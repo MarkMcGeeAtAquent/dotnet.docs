@@ -1,5 +1,5 @@
 ---
-title: "2029 - CompileVbExpressionStop | Microsoft Docs"
+title: "2029 - CompileVbExpressionStop"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f0752c88-61f9-4579-81a1-d804fbc000a9
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 2029 - CompileVbExpressionStop
 ## Properties  

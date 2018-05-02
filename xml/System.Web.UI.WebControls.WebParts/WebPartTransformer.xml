@@ -1,7 +1,9 @@
-<Type Name="WebPartTransformer" FullName="System.Web.UI.WebControls.WebParts.WebPartTransformer">
+﻿<Type Name="WebPartTransformer" FullName="System.Web.UI.WebControls.WebParts.WebPartTransformer">
   <TypeSignature Language="C#" Value="public abstract class WebPartTransformer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebPartTransformer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class WebPartTransformer" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WebPartTransformer abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -41,14 +43,12 @@
   
  The second section of the code example shows how to include the transformer within the declarative syntax for a <xref:System.Web.UI.WebControls.WebParts.WebPartConnection> object.  
   
- <!-- TODO: review snippet reference [!code-csharp[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/Transformer.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/Transformer.aspx#1)]  -->  
+ [!code-aspx-csharp[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/Transformer.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/Transformer.aspx#1)]  
   
  A customized transformer must be specified in the `<transformers>` section of the Web.config file to be available for use in a Web page. The third section of the code example shows how to add the customized transformer to the Web.config file.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 <webParts enableExport="true">  
     <transformers>  
        <add name="RowToStringTransformer"  
@@ -57,9 +57,7 @@
 </webParts>  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 <webParts enableExport="true">  
     <transformers>  
        <add name="RowToStringTransformer"  
@@ -81,6 +79,8 @@
       <MemberSignature Language="C#" Value="protected WebPartTransformer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; WebPartTransformer();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -96,6 +96,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Web.UI.Control CreateConfigurationControl ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Control CreateConfigurationControl() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.CreateConfigurationControl" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateConfigurationControl () As Control" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Web::UI::Control ^ CreateConfigurationControl();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -119,9 +121,11 @@
       </Docs>
     </Member>
     <Member MemberName="LoadConfigurationState">
-      <MemberSignature Language="C#" Value="protected virtual void LoadConfigurationState (object savedState);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void LoadConfigurationState (object savedState);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void LoadConfigurationState(object savedState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.LoadConfigurationState(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub LoadConfigurationState (savedState As Object)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void LoadConfigurationState(System::Object ^ savedState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -147,9 +151,11 @@
       </Docs>
     </Member>
     <Member MemberName="SaveConfigurationState">
-      <MemberSignature Language="C#" Value="protected virtual object SaveConfigurationState ();" />
+      <MemberSignature Language="C#" Value="protected internal virtual object SaveConfigurationState ();" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance object SaveConfigurationState() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.SaveConfigurationState" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Function SaveConfigurationState () As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual System::Object ^ SaveConfigurationState();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -176,6 +182,8 @@
       <MemberSignature Language="C#" Value="public abstract object Transform (object providerData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Transform(object providerData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.Transform(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Transform (providerData As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Object ^ Transform(System::Object ^ providerData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>

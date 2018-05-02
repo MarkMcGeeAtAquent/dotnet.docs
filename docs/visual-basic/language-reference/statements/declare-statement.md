@@ -1,60 +1,41 @@
 ---
-title: "Declare Statement | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Declare Statement"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Declare"
   - "vb.Lib"
   - "vb.Any"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "Lib keyword"
-  - "declaring procedures, Declare statement"
+  - "Lib keyword [Visual Basic]"
+  - "declaring procedures [Visual Basic], Declare statement"
   - "functions [Visual Basic], function procedures"
-  - "declarations, procedures"
-  - "procedures, declaration"
-  - "procedures, external"
-  - "Alias keyword"
-  - "external references, Visual Basic"
+  - "declarations [Visual Basic], procedures"
+  - "procedures [Visual Basic], declaration"
+  - "procedures [Visual Basic], external"
+  - "Alias keyword [Visual Basic]"
+  - "external references [Visual Basic], Visual Basic"
   - "DLLs, declaring procedures"
-  - "Declare statement"
-  - "declarations, external"
+  - "Declare statement [Visual Basic]"
+  - "declarations [Visual Basic], external"
   - "Visual Basic code, Function procedures"
-  - "As keyword, in Declare statement"
+  - "As keyword [Visual Basic], in Declare statement"
   - "resources [Visual Basic], declaring"
-  - "Public keyword, Declare statement"
+  - "Public keyword [Visual Basic], Declare statement"
   - "platform invoke, Visual Basic external references"
-  - "Sub procedures, declarations"
+  - "Sub procedures [Visual Basic], declarations"
   - "APIs, declaring API functions"
   - "Visual Basic code, Sub procedures"
-  - "Function procedures, declaring"
+  - "Function procedures [Visual Basic], declaring"
 ms.assetid: d3f21fb0-b804-4c99-97ed-583b23894cf1
 caps.latest.revision: 30
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Declare Statement
 Declares a reference to a procedure implemented in an external file.  
@@ -62,13 +43,13 @@ Declares a reference to a procedure implemented in an external file.
 ## Syntax  
   
 ```  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
-Declare [ charsetmodifier ] [ Sub ] name Lib "libname" _  
-[ Alias "aliasname" ] [ ([ parameterlist ]) ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
+Declare [ charsetmodifier ] [ Sub ] name Lib "libname" _  
+[ Alias "aliasname" ] [ ([ parameterlist ]) ]  
 ' -or-  
-[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
-Declare [ charsetmodifier ] [ Function ] name Lib "libname" _  
-[ Alias "aliasname" ] [ ([ parameterlist ]) ] [ As returntype ]  
+[ <attributelist> ] [ accessmodifier ] [ Shadows ] [ Overloads ] _  
+Declare [ charsetmodifier ] [ Function ] name Lib "libname" _  
+[ Alias "aliasname" ] [ ([ parameterlist ]) ] [ As returntype ]  
 ```  
   
 ## Parts  
@@ -76,7 +57,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 |Term|Definition|  
 |---|---|  
 |`attributelist`|Optional. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Optional. Can be one of the following:<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> See [Access Levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`accessmodifier`|Optional. Can be one of the following:<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
 |`Shadows`|Optional. See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
 |`charsetmodifier`|Optional. Specifies character set and file search information. Can be one of the following:<br /><br /> -   [Ansi](../../../visual-basic/language-reference/modifiers/ansi.md) (default)<br />-   [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)<br />-   [Auto](../../../visual-basic/language-reference/modifiers/auto.md)|  
 |`Sub`|Optional, but either `Sub` or `Function` must appear. Indicates that the external procedure does not return a value.|  
@@ -149,7 +130,7 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
 -   **Mechanism.** Visual Basic uses the .NET Framework *platform invoke* (PInvoke) mechanism to resolve and access external procedures. The `Declare` statement and the <xref:System.Runtime.InteropServices.DllImportAttribute> class both use this mechanism automatically, and you do not need any knowledge of PInvoke. For more information, see [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).  
   
 > [!IMPORTANT]
->  If the external procedure runs outside the common language runtime (CLR), it is *unmanaged code*. When you call such a procedure, for example a Win32 API function or a COM method, you might expose your application to security risks. For more information, see [Secure Coding Guidelines for Unmanaged Code](http://msdn.microsoft.com/library/a8d15139-d368-4c9c-a747-ba757781117c).  
+>  If the external procedure runs outside the common language runtime (CLR), it is *unmanaged code*. When you call such a procedure, for example a Win32 API function or a COM method, you might expose your application to security risks. For more information, see [Secure Coding Guidelines for Unmanaged Code](../../../framework/security/secure-coding-guidelines-for-unmanaged-code.md).  
   
 ## Example  
  The following example declares an external reference to a `Function` procedure that returns the current user name. It then calls the external procedure `GetUserNameA` as part of the `getUser` procedure.  
@@ -164,11 +145,11 @@ Declare [ charsetmodifier ] [ Function ] name Lib "libname" _
  [!code-vb[VbVbalrStatements#1](../../../visual-basic/language-reference/error-messages/codesnippet/VisualBasic/declare-statement_3.vb)]  
   
 ## See Also  
- <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>   
- [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)   
- [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)   
- [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)   
- [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)   
- [Call Statement](../../../visual-basic/language-reference/statements/call-statement.md)   
+ <xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>  
+ [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md)  
+ [Call Statement](../../../visual-basic/language-reference/statements/call-statement.md)  
  [Walkthrough: Calling Windows APIs](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

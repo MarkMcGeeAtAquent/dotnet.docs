@@ -1,7 +1,9 @@
-<Type Name="SafeBuffer" FullName="System.Runtime.InteropServices.SafeBuffer">
+﻿<Type Name="SafeBuffer" FullName="System.Runtime.InteropServices.SafeBuffer">
   <TypeSignature Language="C#" Value="public abstract class SafeBuffer : Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SafeBuffer extends Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.SafeBuffer" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class SafeBuffer&#xA;Inherits SafeHandleZeroOrMinusOneIsInvalid" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SafeBuffer abstract : Microsoft::Win32::SafeHandles::SafeHandleZeroOrMinusOneIsInvalid" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.InteropServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -9,6 +11,7 @@
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -30,11 +33,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- You must call the <xref:System.Runtime.InteropServices.SafeBuffer.Initialize%2A?displayProperty=fullName> method before you use any instance of <xref:System.Runtime.InteropServices.SafeBuffer>. To avoid races when you store an instance of a <xref:System.Runtime.InteropServices.SafeBuffer> object in a static variable, you should use one of the following approaches:  
+ You must call the <xref:System.Runtime.InteropServices.SafeBuffer.Initialize%2A?displayProperty=nameWithType> method before you use any instance of <xref:System.Runtime.InteropServices.SafeBuffer>. To avoid races when you store an instance of a <xref:System.Runtime.InteropServices.SafeBuffer> object in a static variable, you should use one of the following approaches:  
   
 -   Create a lock when publishing the <xref:System.Runtime.InteropServices.SafeBuffer>.  
   
--   Create a local variable, initialize the <xref:System.Runtime.InteropServices.SafeBuffer>, and then assign the <xref:System.Runtime.InteropServices.SafeBuffer> to the static variable, for example, by using the <xref:System.Threading.Interlocked.CompareExchange%2A?displayProperty=fullName> method.  
+-   Create a local variable, initialize the <xref:System.Runtime.InteropServices.SafeBuffer>, and then assign the <xref:System.Runtime.InteropServices.SafeBuffer> to the static variable, for example, by using the <xref:System.Threading.Interlocked.CompareExchange%2A?displayProperty=nameWithType> method.  
   
 > [!NOTE]
 >  Assignments in a static class constructor are implicitly locked.  
@@ -48,6 +51,8 @@
       <MemberSignature Language="C#" Value="protected SafeBuffer (bool ownsHandle);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool ownsHandle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.#ctor(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (ownsHandle As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SafeBuffer(bool ownsHandle);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -56,6 +61,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -79,8 +85,9 @@
     </Member>
     <Member MemberName="AcquirePointer">
       <MemberSignature Language="C#" Value="public void AcquirePointer (ref byte* pointer);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcquirePointer(unsigned int8* pointer) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcquirePointer(unsigned int8*&amp; pointer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.AcquirePointer(System.Byte*@)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AcquirePointer(System::Byte* % pointer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -89,6 +96,7 @@
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -120,9 +128,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When <xref:System.Runtime.InteropServices.SafeBuffer.AcquirePointer%2A> returns, you should perform bounds checking by verifying that the `pointer` parameter is `null`. If it is not `null`, you must call the <xref:System.Runtime.InteropServices.SafeBuffer.ReleasePointer%2A?displayProperty=fullName> method in a constrained execution region (CER).  
+ When <xref:System.Runtime.InteropServices.SafeBuffer.AcquirePointer%2A> returns, you should perform bounds checking by verifying that the `pointer` parameter is `null`. If it is not `null`, you must call the <xref:System.Runtime.InteropServices.SafeBuffer.ReleasePointer%2A?displayProperty=nameWithType> method in a constrained execution region (CER).  
   
- <xref:System.Runtime.InteropServices.SafeBuffer.AcquirePointer%2A> calls the <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A?displayProperty=fullName> method and exposes the pointer. Unlike the <xref:System.Runtime.InteropServices.SafeBuffer.Read%2A> method, it does not change the current position of the pointer.  
+ <xref:System.Runtime.InteropServices.SafeBuffer.AcquirePointer%2A> calls the <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A?displayProperty=nameWithType> method and exposes the pointer. Unlike the <xref:System.Runtime.InteropServices.SafeBuffer.Read%2A> method, it does not change the current position of the pointer.  
   
  The following exampledemonstrates how to use the <xref:System.Runtime.InteropServices.SafeBuffer.AcquirePointer%2A> method:  
   
@@ -152,6 +160,8 @@ finally {
       <MemberSignature Language="C#" Value="public ulong ByteLength { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 ByteLength" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.SafeBuffer.ByteLength" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ByteLength As ULong" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::UInt64 ByteLength { System::UInt64 get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -160,6 +170,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -185,10 +196,26 @@ finally {
         <exception cref="T:System.InvalidOperationException">The <see cref="Overload:System.Runtime.InteropServices.SafeBuffer.Initialize" /> method has not been called.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Initialize">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Specifies the size of the memory buffer to allocate. You must call this method before you use the <see cref="T:System.Runtime.InteropServices.SafeBuffer" /> instance.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Initialize">
       <MemberSignature Language="C#" Value="public void Initialize (ulong numBytes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Initialize(unsigned int64 numBytes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.Initialize(System.UInt64)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Initialize (numBytes As ULong)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Initialize(System::UInt64 numBytes);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -197,6 +224,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -234,6 +262,8 @@ finally {
       <MemberSignature Language="C#" Value="public void Initialize (uint numElements, uint sizeOfEachElement);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Initialize(unsigned int32 numElements, unsigned int32 sizeOfEachElement) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.Initialize(System.UInt32,System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Initialize (numElements As UInteger, sizeOfEachElement As UInteger)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Initialize(System::UInt32 numElements, System::UInt32 sizeOfEachElement);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -242,6 +272,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -292,6 +323,8 @@ finally {
       <MemberSignature Language="C#" Value="public void Initialize&lt;T&gt; (uint numElements) where T : struct;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Initialize&lt;struct .ctor (class System.ValueType) T&gt;(unsigned int32 numElements) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.Initialize``1(System.UInt32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Initialize(Of T As Structure) (numElements As UInteger)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename T&gt;&#xA; where T : value class void Initialize(System::UInt32 numElements);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -300,6 +333,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -347,6 +381,8 @@ finally {
       <MemberSignature Language="C#" Value="public override bool IsInvalid { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInvalid" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.SafeBuffer.IsInvalid" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property IsInvalid As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsInvalid { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -369,6 +405,8 @@ finally {
       <MemberSignature Language="C#" Value="public T Read&lt;T&gt; (ulong byteOffset) where T : struct;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Read&lt;struct .ctor (class System.ValueType) T&gt;(unsigned int64 byteOffset) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.Read``1(System.UInt64)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Read(Of T As Structure) (byteOffset As ULong) As T" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename T&gt;&#xA; where T : value class T Read(System::UInt64 byteOffset);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -377,6 +415,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -417,12 +456,15 @@ finally {
         <returns>The value type that was read from memory.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="Overload:System.Runtime.InteropServices.SafeBuffer.Initialize" /> method has not been called.</exception>
+        <altmember cref="M:System.Runtime.InteropServices.SafeBuffer.Write``1(System.UInt64,``0)" />
       </Docs>
     </Member>
     <Member MemberName="ReadArray&lt;T&gt;">
       <MemberSignature Language="C#" Value="public void ReadArray&lt;T&gt; (ulong byteOffset, T[] array, int index, int count) where T : struct;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadArray&lt;struct .ctor (class System.ValueType) T&gt;(unsigned int64 byteOffset, !!T[] array, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.ReadArray``1(System.UInt64,``0[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReadArray(Of T As Structure) (byteOffset As ULong, array As T(), index As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename T&gt;&#xA; where T : value class void ReadArray(System::UInt64 byteOffset, cli::array &lt;T&gt; ^ array, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -431,6 +473,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -485,12 +528,15 @@ finally {
           <paramref name="array" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">The length of the array minus the index is less than <paramref name="count" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="Overload:System.Runtime.InteropServices.SafeBuffer.Initialize" /> method has not been called.</exception>
+        <altmember cref="M:System.Runtime.InteropServices.SafeBuffer.WriteArray``1(System.UInt64,``0[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="ReleasePointer">
       <MemberSignature Language="C#" Value="public void ReleasePointer ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReleasePointer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.ReleasePointer" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ReleasePointer ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ReleasePointer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -499,6 +545,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -535,6 +582,8 @@ finally {
       <MemberSignature Language="C#" Value="public void Write&lt;T&gt; (ulong byteOffset, T value) where T : struct;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write&lt;struct .ctor (class System.ValueType) T&gt;(unsigned int64 byteOffset, !!T value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.Write``1(System.UInt64,``0)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Write(Of T As Structure) (byteOffset As ULong, value As T)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename T&gt;&#xA; where T : value class void Write(System::UInt64 byteOffset, T value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -543,6 +592,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -595,12 +645,15 @@ finally {
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="Overload:System.Runtime.InteropServices.SafeBuffer.Initialize" /> method has not been called.</exception>
+        <altmember cref="M:System.Runtime.InteropServices.SafeBuffer.Read``1(System.UInt64)" />
       </Docs>
     </Member>
     <Member MemberName="WriteArray&lt;T&gt;">
       <MemberSignature Language="C#" Value="public void WriteArray&lt;T&gt; (ulong byteOffset, T[] array, int index, int count) where T : struct;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteArray&lt;struct .ctor (class System.ValueType) T&gt;(unsigned int64 byteOffset, !!T[] array, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeBuffer.WriteArray``1(System.UInt64,``0[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WriteArray(Of T As Structure) (byteOffset As ULong, array As T(), index As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename T&gt;&#xA; where T : value class void WriteArray(System::UInt64 byteOffset, cli::array &lt;T&gt; ^ array, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -609,6 +662,7 @@ finally {
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -666,6 +720,7 @@ finally {
           <paramref name="index" /> or <paramref name="count" /> is less than zero.</exception>
         <exception cref="T:System.ArgumentException">The length of the input array minus <paramref name="index" /> is less than <paramref name="count" />.</exception>
         <exception cref="T:System.InvalidOperationException">The <see cref="Overload:System.Runtime.InteropServices.SafeBuffer.Initialize" /> method has not been called.</exception>
+        <altmember cref="M:System.Runtime.InteropServices.SafeBuffer.ReadArray``1(System.UInt64,``0[],System.Int32,System.Int32)" />
       </Docs>
     </Member>
   </Members>

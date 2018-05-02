@@ -1,5 +1,5 @@
 ---
-title: "ICLRMetaHost::RequestRuntimeLoadedNotification Method | Microsoft Docs"
+title: "ICLRMetaHost::RequestRuntimeLoadedNotification Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRMetaHost.RequestRuntimeLoadedNotification"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRMetaHost::RequestRuntimeLoadedNotification"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RequestRuntimeLoadedNotification method [.NET Framework hosting]"
   - "ICLRMetaHost::RequestRuntimeLoadedNotification method [.NET Framework hosting]"
 ms.assetid: 0d5ccc4d-0193-41f5-af54-45d7b70d5321
+topic_type: 
+  - "apiref"
 caps.latest.revision: 21
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRMetaHost::RequestRuntimeLoadedNotification Method
 Provides a callback function that is guaranteed to be called when a common language runtime (CLR) version is first loaded, but not yet started. This method supersedes the [LockClrVersion](../../../../docs/framework/unmanaged-api/hosting/lockclrversion-function.md) function.  
@@ -102,5 +105,5 @@ typedef void (__stdcall *RuntimeLoadedCallbackFnPtr)(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)   
+ [ICLRMetaHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

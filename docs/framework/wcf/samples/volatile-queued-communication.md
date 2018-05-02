@@ -1,8 +1,8 @@
 ---
-title: "Volatile Queued Communication | Microsoft Docs"
+title: "Volatile Queued Communication"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
 caps.latest.revision: 28
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Volatile Queued Communication
 This sample demonstrates how to perform volatile queued communication over the Message Queuing (MSMQ) transport. This sample uses <xref:System.ServiceModel.NetMsmqBinding>. The service in this case is a self-hosted console application to enable you to observe the service receiving queued messages.  
@@ -39,7 +41,6 @@ public interface IStockTicker
     [OperationContract(IsOneWay = true)]  
     void StockTick(string symbol, float price);  
 }  
-  
 ```  
   
  The service operation displays the stock ticker symbol and price, as shown in the following sample code:  
@@ -53,7 +54,6 @@ public class StockTickerService : IStockTicker
      }  
      …  
 }  
-  
 ```  
   
  The service is self hosted. When using the MSMQ transport, the queue used must be created in advance. This can be done manually or through code. In this sample, the service contains code to check for the existence of the queue and create it if required. The queue name is read from the configuration file. The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy for the service.  
@@ -85,7 +85,6 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-  
 ```  
   
  The MSMQ queue name is specified in the appSettings section of the configuration file. The endpoint for the service is defined in the system.serviceModel section of the configuration file and specifies the `netMsmqBinding` binding.  
@@ -95,7 +94,7 @@ public static void Main()
   
  The assurances and durability or volatility of messages are also specified in the configuration.  
   
-```  
+```xml  
 <appSettings>  
   <!-- use appSetting to configure MSMQ queue name -->  
   <add key="queueName" value=".\private$\ServiceModelSamplesVolatile" />  
@@ -124,7 +123,6 @@ public static void Main()
   </bindings>  
   ...  
 </system.serviceModel>  
-  
 ```  
   
  Because the sample sends queued messages by using a non-transactional queue, transacted messages cannot be sent to the queue.  
@@ -144,7 +142,6 @@ for (int i = 0; i < 10; i++)
   
 //Closing the client gracefully cleans up resources.  
 client.Close();  
-  
 ```  
   
  When you run the sample, the client and service activities are displayed in both the service and client console windows. You can see the service receive messages from the client. Press ENTER in each console window to shut down the service and client. Note that because queuing is in use, the client and service do not have to be up and running at the same time. You can run the client, shut it down, and then start up the service and it still receives its messages.  
@@ -179,7 +176,7 @@ Stock Tick zzz9:43.3
   
 1.  If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration code:  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
         <services>  
           <service name="Microsoft.ServiceModel.Samples.StockTickerService"  
@@ -222,7 +219,6 @@ Stock Tick zzz9:43.3
         </behaviors>  
   
       </system.serviceModel>  
-  
     ```  
   
 2.  Ensure that you change the configuration on both the server and the client before you run the sample.  

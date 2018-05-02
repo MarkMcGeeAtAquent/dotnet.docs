@@ -1,5 +1,5 @@
 ---
-title: "Hosting Win32 Content in WPF | Microsoft Docs"
+title: "Hosting Win32 Content in WPF"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,13 +11,15 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
   - "interoperability [WPF], tutorials"
-  - "Win32 code, WPF interoperation"
+  - "Win32 code [WPF], WPF interoperation"
   - "interoperability [WPF], Win32"
 ms.assetid: 3cc8644a-34f3-4082-9ddc-77623e4df2d8
 caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Hosting Win32 Content in WPF
 ## Prerequisites  
@@ -137,14 +139,12 @@ bool initialized = false;
         LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);  
         LoadString(hInstance, IDC_TYPICALWIN32DIALOG, szWindowClass, MAX_LOADSTRING);  
         MyRegisterClass(hInstance);  
-  
 ```  
   
 ### Override TranslateAccelerator Method to Handle Dialog Keys  
  If you ran this sample now, you would get a dialog control that displays, but it would ignore all of the keyboard processing that makes a dialog box a functional dialog box.  You should now override the `TranslateAccelerator` implementation (which comes from `IKeyboardInputSink`, an interface that <xref:System.Windows.Interop.HwndHost> implements).  This method gets called when the application receives WM_KEYDOWN and WM_SYSKEYDOWN.  
   
 ```  
-  
 #undef TranslateAccelerator  
         virtual bool TranslateAccelerator(System::Windows::Interop::MSG% msg,   
             ModifierKeys modifiers) override   
@@ -206,7 +206,6 @@ bool initialized = false;
  Similarly, there is both the unmanaged winuser.h MSG and the managed `Microsoft::Win32::MSG` struct.  You can disambiguate between the two using the [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] `::` operator.  
   
 ```  
-  
 virtual bool TranslateAccelerator(System::Windows::Interop::MSG% msg,   
     ModifierKeys modifiers) override   
 {  
@@ -283,7 +282,6 @@ if (msg.message == WM_SYSKEYDOWN || msg.message == WM_KEYDOWN) {
  Now that you have implemented `TranslateAccelerator`, a user can tab around inside the dialog box and tab out of it into the greater [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application.  But a user cannot tab back into the dialog box.  To solve that, you override `TabInto`:  
   
 ```  
-  
 public:   
     virtual bool TabInto(TraversalRequest^ request) override {  
         if (request->FocusNavigationDirection == FocusNavigationDirection::Last) {  
@@ -296,7 +294,6 @@ public:
         }  
         return true;  
     }  
-  
 ```  
   
  The `TraversalRequest` parameter tells you whether the tab action is a tab or shift tab.  

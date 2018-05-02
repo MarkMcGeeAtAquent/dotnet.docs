@@ -1,7 +1,8 @@
 ---
-title: "&lt;samlSecurityTokenRequirement&gt; | Microsoft Docs"
+title: "&lt;samlSecurityTokenRequirement&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;samlSecurityTokenRequirement&gt;
 Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> class, the <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> class, or a derived class of either of these classes. Represented by the <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> class.  
@@ -25,23 +28,23 @@ Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTok
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add>  
-        <samlSecurityTokenRequirement   
-            issuerCertificateValidationMode="None||ChainTrust||PeerTrust||PeerOrChainTrust||Custom"  
-            issuerCertificateRevocationMode="NoCheck||Offline||Online"  
-            issuerCertificateTrustedStoreLocation="CurrentLocation||LocalMachine"  
-            issuerCertificateValidator="Namespace.Class Assembly"  
-            mapToWindows=xs:boolean  
-          <nameClaimType value=xs:string />  
-          <roleClaimType value=xs:string />  
-        </samlSecurityTokenRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add>  
+        <samlSecurityTokenRequirement   
+            issuerCertificateValidationMode="None||ChainTrust||PeerTrust||PeerOrChainTrust||Custom"  
+            issuerCertificateRevocationMode="NoCheck||Offline||Online"  
+            issuerCertificateTrustedStoreLocation="CurrentLocation||LocalMachine"  
+            issuerCertificateValidator="Namespace.Class Assembly"  
+            mapToWindows=xs:boolean  
+          <nameClaimType value=xs:string />  
+          <roleClaimType value=xs:string />  
+        </samlSecurityTokenRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
@@ -52,10 +55,10 @@ Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTok
   
 |Attribute|Description|  
 |---------------|-----------------|  
-|mapToWindows|Specifies whether the token handler should map the validating token to a Windows account by using the incoming UPN claim. The default is “false”.|  
-|issuerCertificateRevocationMode|An <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> value that specifies the revocation mode to use for the X.509 certificate. The default value is “Online”.|  
-|issuerCertificateValidationMode|An <xref:System.ServiceModel.Security.X509CertificateValidationMode> value that specifies the validation mode to use for the X.509 certificate. The default value is “PeerOrChainTrust”.|  
-|issuerCertificateTrustedStoreLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> value that specifies the X.509 certificate store. The default value is “LocalMachine”.|  
+|mapToWindows|Specifies whether the token handler should map the validating token to a Windows account by using the incoming UPN claim. The default is "false".|  
+|issuerCertificateRevocationMode|An <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> value that specifies the revocation mode to use for the X.509 certificate. The default value is "Online".|  
+|issuerCertificateValidationMode|An <xref:System.ServiceModel.Security.X509CertificateValidationMode> value that specifies the validation mode to use for the X.509 certificate. The default value is "PeerOrChainTrust".|  
+|issuerCertificateTrustedStoreLocation|A <xref:System.Security.Cryptography.X509Certificates.StoreLocation> value that specifies the X.509 certificate store. The default value is "LocalMachine".|  
 |issuerCertificateValidator|A custom type that derives from <xref:System.IdentityModel.Selectors.X509CertificateValidator>. If the `issuerCertificateValidationMode` attribute is "Custom", an instance of this type is used for issuer certificate validation.|  
   
 ### Child Elements  
@@ -76,7 +79,7 @@ Provides configuration for the <xref:System.IdentityModel.Tokens.SamlSecurityTok
   
 ## Example  
   
-```  
+```xml  
 <add type="System.IdentityModel.Tokens.SamlSecurityTokenHandler, System.IdentityModel">  
     <samlSecurityTokenRequirement issuerCertificateValidationMode="PeerOrChainTrust"  
                                   issuerCertificateRevocationMode="Online"  

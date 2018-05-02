@@ -1,8 +1,8 @@
 ---
-title: "How to: Put Quotation Marks in a String (Windows Forms) | Microsoft Docs"
+title: "How to: Put Quotation Marks in a String (Windows Forms)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,16 +10,20 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "quotation marks"
   - "TextBox control [Windows Forms], displaying quotation marks"
-  - "quotation marks, adding to strings in text boxes"
+  - "quotation marks [Windows Forms], adding to strings in text boxes"
 ms.assetid: 68bdc3f3-4177-4eab-99cd-cac17a82b515
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Put Quotation Marks in a String (Windows Forms)
 Sometimes you might want to place quotation marks (" ") in a string of text. For example:  
@@ -36,14 +40,12 @@ Sometimes you might want to place quotation marks (" ") in a string of text. For
     Private Sub InsertQuote()  
        TextBox1.Text = "She said, ""You deserve a treat!"" "  
     End Sub  
-  
     ```  
   
     ```csharp  
     private void InsertQuote(){  
        textBox1.Text = "She said, \"You deserve a treat!\" ";  
     }  
-  
     ```  
   
     ```cpp  
@@ -62,7 +64,6 @@ Sometimes you might want to place quotation marks (" ") in a string of text. For
     Private Sub InsertAscii()  
        TextBox1.Text = "She said, " & Chr(34) & "You deserve a treat!" & Chr(34)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -72,7 +73,7 @@ Sometimes you might want to place quotation marks (" ") in a string of text. For
     ```  
   
     > [!NOTE]
-    >  In this example, you cannot use \u0022 because you cannot use a universal character name that designates a character in the basic character set. Otherwise, you produce C3851. For more information, see [Compiler Error C3851](http://msdn.microsoft.com/library/da30c21c-33aa-4439-8fb3-2f5021ea4985).  
+    >  In this example, you cannot use \u0022 because you cannot use a universal character name that designates a character in the basic character set. Otherwise, you produce C3851. For more information, see [Compiler Error C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).  
   
      -or-  
   
@@ -81,13 +82,11 @@ Sometimes you might want to place quotation marks (" ") in a string of text. For
     ```vb  
     Const quote As String = """"  
     TextBox1.Text = "She said, " & quote & "You deserve a treat!" & quote  
-  
     ```  
   
     ```csharp  
     const string quote = "\"";  
     textBox1.Text = "She said, " + quote +  "You deserve a treat!"+ quote ;  
-  
     ```  
   
     ```cpp  
@@ -98,12 +97,12 @@ Sometimes you might want to place quotation marks (" ") in a string of text. For
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.TextBox>   
- <xref:Microsoft.VisualBasic.ControlChars.Quote>   
- [TextBox Control Overview](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)   
- [How to: Control the Insertion Point in a Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)   
- [How to: Create a Password Text Box with the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)   
- [How to: Create a Read-Only Text Box](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)   
- [How to: Select Text in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)   
- [How to: View Multiple Lines in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)   
+ <xref:System.Windows.Forms.TextBox>  
+ <xref:Microsoft.VisualBasic.ControlChars.Quote>  
+ [TextBox Control Overview](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
+ [How to: Control the Insertion Point in a Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
+ [How to: Create a Password Text Box with the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
+ [How to: Create a Read-Only Text Box](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
+ [How to: Select Text in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-select-text-in-the-windows-forms-textbox-control.md)  
+ [How to: View Multiple Lines in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  [TextBox Control](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

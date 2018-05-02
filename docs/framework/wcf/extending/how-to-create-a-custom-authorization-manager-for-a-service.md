@@ -1,5 +1,5 @@
 ---
-title: "How to: Create a Custom Authorization Manager for a Service | Microsoft Docs"
+title: "How to: Create a Custom Authorization Manager for a Service"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Windows Communication Foundation, extending"
   - "OperationRequirement class"
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Custom Authorization Manager for a Service
 The Identity Model infrastructure in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] supports an extensible claims-based authorization model. Claims are extracted from tokens and optionally processed by custom authorization policies and then placed into an <xref:System.IdentityModel.Policy.AuthorizationContext>. An authorization manager examines the claims in the <xref:System.IdentityModel.Policy.AuthorizationContext> to make authorization decisions.  
@@ -74,7 +79,7 @@ The Identity Model infrastructure in [!INCLUDE[indigo1](../../../../includes/ind
   
      The following code example registers the custom authorization manager `Samples.MyServiceAuthorizationManager`.  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <services>  
@@ -121,6 +126,6 @@ The Identity Model infrastructure in [!INCLUDE[indigo1](../../../../includes/ind
  [!code-vb[c_CustomAuthMgr#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#2)]  
   
 ## See Also  
- <xref:System.ServiceModel.ServiceAuthorizationManager>   
- [Authorization Policy](../../../../docs/framework/wcf/samples/authorization-policy.md)   
+ <xref:System.ServiceModel.ServiceAuthorizationManager>  
+ [Authorization Policy](../../../../docs/framework/wcf/samples/authorization-policy.md)  
  [Authorization Policy](../../../../docs/framework/wcf/samples/authorization-policy.md)

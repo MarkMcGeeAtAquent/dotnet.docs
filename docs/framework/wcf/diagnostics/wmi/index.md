@@ -1,8 +1,8 @@
 ---
-title: "Using Windows Management Instrumentation for Diagnostics | Microsoft Docs"
+title: "Using Windows Management Instrumentation for Diagnostics"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,27 +11,28 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Using Windows Management Instrumentation for Diagnostics
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] exposes inspection data of a service at runtime through a [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] Windows Management Instrumentation (WMI) provider.  
   
 ## Enabling WMI  
- WMI is Microsoft's implementation of the Web-Based Enterprise Management (WBEM) standard. [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] the WMI SDK, see the MSDN Library. (http://msdn.microsoft.com/library/default.asp?url=/library/wmisdk/wmi/wmi_start_page.asp). WBEM is an industry standard for how applications expose management instrumentation to external management tools.  
+ WMI is Microsoft's implementation of the Web-Based Enterprise Management (WBEM) standard. [!INCLUDE[crabout](../../../../../includes/crabout-md.md)] the WMI SDK, see [Windows Management Instrumentation](https://msdn.microsoft.com/library/aa394582.aspx). WBEM is an industry standard for how applications expose management instrumentation to external management tools.  
   
  A WMI provider is a component that exposes instrumentation at runtime through a WBEM-compatible interface. It consists of a set of WMI objects that have attribute/value pairs. Pairs can be of a number of simple types. Management tools can connect to the services through the interface at runtime. [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] exposes attributes of services such as addresses, bindings, behaviors, and listeners.  
   
  The built-in WMI provider can be activated in the configuration file of the application. This is done through the `wmiProviderEnabled` attribute of the [\<diagnostics>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) in the [\<system.serviceModel>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) section, as shown in the following sample configuration.  
   
-```  
+```xml  
 <system.serviceModel>  
     …  
     <diagnostics wmiProviderEnabled="true" />  
     …  
 </system.serviceModel>  
-  
 ```  
   
  This configuration entry exposes a WMI interface. Management applications can now connect through this interface and access the management instrumentation of the application.  
@@ -72,7 +73,7 @@ manager: "erikre"
 4.  Select the specific group or user that you want to control access and use the **Allow** or **Deny** checkbox to configure permissions.  
   
 ## Granting WCF WMI Registration Permissions to Additional Users  
- WCF exposes management data to WMI. It does so by hosting an in-process WMI provider, sometimes called a “decoupled provider”. For the management data to be exposed, the account that registers this provider must have the appropriate permissions. In Windows, only a small set of privileged accounts can register decoupled providers by default. This is a problem because users commonly want to expose WMI data from a WCF service running under an account that is not in the default set.  
+ WCF exposes management data to WMI. It does so by hosting an in-process WMI provider, sometimes called a "decoupled provider". For the management data to be exposed, the account that registers this provider must have the appropriate permissions. In Windows, only a small set of privileged accounts can register decoupled providers by default. This is a problem because users commonly want to expose WMI data from a WCF service running under an account that is not in the default set.  
   
  To provide this access, an administrator must grant the following permissions to the additional account in the following order:  
   
@@ -85,9 +86,9 @@ manager: "erikre"
 1.  Run the following PowerShell script.  
   
     ```powershell  
-    write-host “”  
-    write-host “Granting Access to root/servicemodel WMI namespace to built in users group”  
-    write-host “”  
+    write-host ""  
+    write-host "Granting Access to root/servicemodel WMI namespace to built in users group"  
+    write-host ""  
   
     # Create the binary representation of the permissions to grant in SDDL  
     $newPermissions = "O:BAG:BAD:P(A;CI;CCDCLCSWRPWPRCWD;;;BA)(A;CI;CC;;;NS)(A;CI;CC;;;LS)(A;CI;CC;;;BU)"  
@@ -114,11 +115,10 @@ manager: "erikre"
   
     $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
     write-host "New ACL:      "$outsddl.SDDL  
-    write-host “”  
-  
+    write-host ""  
     ```  
   
-     This PowerShell script uses Security Descriptor Definition Language (SDDL) to grant the Built-In Users group access to the “root/servicemodel” WMI namespace. It specifies the following ACLs:  
+     This PowerShell script uses Security Descriptor Definition Language (SDDL) to grant the Built-In Users group access to the "root/servicemodel" WMI namespace. It specifies the following ACLs:  
   
     -   Built-In Administrator (BA) - Already Had Access.  
   
@@ -133,9 +133,9 @@ manager: "erikre"
 1.  Run the following PowerShell script.  
   
     ```powershell  
-    write-host “”  
-    write-host “Granting WCF provider registration access to built in users group”  
-    write-host “”  
+    write-host ""  
+    write-host "Granting WCF provider registration access to built in users group"  
+    write-host ""  
     # Set security on ServiceModel provider  
     $provider = get-WmiObject -namespace "root\servicemodel" __Win32Provider  
   
@@ -145,8 +145,7 @@ manager: "erikre"
     # Commit the changes and display it to the console  
     $result = $provider.Put()  
     write-host "New ACL:      "$provider.SecurityDescriptor  
-    write-host “”  
-  
+    write-host ""  
     ```  
   
 ### Granting Access to Arbitrary Users or Groups  
@@ -156,7 +155,7 @@ manager: "erikre"
 Whoami /user  
 ```  
   
- This provides the SID of the current user, but this method cannot be used to get the SID on any arbitrary user. Another method to get the SID is to use the [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) tool from the [Windows 2000 Resource Kit Tools for administrative tasks](http://go.microsoft.com/fwlink/?LinkId=178660). This tool compares the SID of two users (local or domain), and as a side effect prints the two SIDs to the command line. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)][Well Known SIDs](http://go.microsoft.com/fwlink/?LinkId=186468).  
+ This provides the SID of the current user, but this method cannot be used to get the SID on any arbitrary user. Another method to get the SID is to use the [getsid.exe](http://go.microsoft.com/fwlink/?LinkId=186467) tool from the [Windows 2000 Resource Kit Tools for administrative tasks](http://go.microsoft.com/fwlink/?LinkId=178660). This tool compares the SID of two users (local or domain), and as a side effect prints the two SIDs to the command line. [!INCLUDE[crdefault](../../../../../includes/crdefault-md.md)] [Well Known SIDs](http://go.microsoft.com/fwlink/?LinkId=186468).  
   
 ## Accessing Remote WMI Object Instances  
  If you need to access [!INCLUDE[indigo2](../../../../../includes/indigo2-md.md)] WMI instances on a remote machine, you must enable packet privacy on the tools that you use for access. The following section describes how to achieve these using the WMI CIM Studio, Windows Management Instrumentation Tester, as well as .NET SDK 2.0.  

@@ -1,5 +1,5 @@
 ---
-title: "ProcessUnhandledException Function (WPF Unmanaged API Reference) | Microsoft Docs"
+title: "ProcessUnhandledException Function (WPF Unmanaged API Reference)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,15 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "ProcessUnhandledException"
-apilocation: 
+api_location: 
   - "PresentationHost_v0400.dll"
 ms.assetid: 495ce5f6-bb4d-4b30-807a-c3c35f1ca95c
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ProcessUnhandledException Function (WPF Unmanaged API Reference)
 This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.  
@@ -27,7 +31,6 @@ This API supports the Windows Presentation Foundation (WPF) infrastructure and i
 ## Syntax  
   
 ```cpp  
-  
 void __stdcall ProcessUnhandledException(  
    __in_ecount(1) BSTR errorMsg  
 )  

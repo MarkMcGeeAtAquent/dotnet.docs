@@ -1,37 +1,17 @@
 ---
-title: "How My Depends on Project Type (Visual Basic) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "How My Depends on Project Type (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "_MYTYPE"
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # How My Depends on Project Type (Visual Basic)
 `My` exposes only those objects required by a particular project type. For example, the `My.Forms` object is available in a Windows Forms application but not available in a console application. This topic describes which `My` objects are available in different project types.  
@@ -63,7 +43,7 @@ translation.priority.ht:
 |`My.User`|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>7</sup>|**Yes** <sup>6</sup>|No|**Yes** <sup>7</sup>|  
 |`My.WebServices`|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|No|No|  
   
- <sup>1</sup> Windows Forms version of `My.Application`. Derives from the console version (see Note 3); adds support for interacting with the application's windows and provides the [!INCLUDE[vbprvb](../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] Application model.  
+ <sup>1</sup> Windows Forms version of `My.Application`. Derives from the console version (see Note 3); adds support for interacting with the application's windows and provides the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] Application model.  
   
  <sup>2</sup> Library version of `My.Application`. Provides the basic functionality needed by an application: provides members for writing to the application log and accessing application information.  
   
@@ -78,14 +58,14 @@ translation.priority.ht:
  <sup>7</sup> Web version of `My.User`. This object is associated with the user identity of the application's current HTTP request.  
   
 ## See Also  
- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>   
- <xref:Microsoft.VisualBasic.Devices.Computer>   
- <xref:Microsoft.VisualBasic.Logging.Log>   
- <xref:Microsoft.VisualBasic.ApplicationServices.User>   
- [Customizing Which Objects are Available in My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)   
- [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)   
- [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)   
- [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)   
- [My.Request Object](../../../visual-basic/language-reference/objects/my-request-object.md)   
- [My.Response Object](../../../visual-basic/language-reference/objects/my-response-object.md)   
+ <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
+ <xref:Microsoft.VisualBasic.Devices.Computer>  
+ <xref:Microsoft.VisualBasic.Logging.Log>  
+ <xref:Microsoft.VisualBasic.ApplicationServices.User>  
+ [Customizing Which Objects are Available in My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)  
+ [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  
+ [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)  
+ [My.Forms Object](../../../visual-basic/language-reference/objects/my-forms-object.md)  
+ [My.Request Object](../../../visual-basic/language-reference/objects/my-request-object.md)  
+ [My.Response Object](../../../visual-basic/language-reference/objects/my-response-object.md)  
  [My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)

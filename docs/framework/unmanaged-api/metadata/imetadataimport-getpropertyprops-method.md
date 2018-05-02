@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::GetPropertyProps Method | Microsoft Docs"
+title: "IMetaDataImport::GetPropertyProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.GetPropertyProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::GetPropertyProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetPropertyProps method [.NET Framework metadata]"
   - "IMetaDataImport::GetPropertyProps method [.NET Framework metadata]"
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::GetPropertyProps Method
 Gets the metadata for the property represented by the specified token.  
@@ -112,5 +115,5 @@ HRESULT GetPropertyProps (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

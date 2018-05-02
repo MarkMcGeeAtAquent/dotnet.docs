@@ -1,5 +1,5 @@
 ---
-title: "Performance Counters in ADO.NET | Microsoft Docs"
+title: "Performance Counters in ADO.NET"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,16 @@ ms.technology:
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
 caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Performance Counters in ADO.NET
 ADO.NET 2.0 introduced expanded support for performance counters that includes support for both <xref:System.Data.SqlClient> and <xref:System.Data.OracleClient>. The <xref:System.Data.SqlClient> performance counters available in previous versions of ADO.NET have been deprecated and replaced with the new performance counters discussed in this topic. You can use ADO.NET performance counters to monitor the status of your application and the connection resources that it uses. Performance counters can be monitored by using Windows Performance Monitor or can be accessed programmatically using the <xref:System.Diagnostics.PerformanceCounter> class in the <xref:System.Diagnostics> namespace.  
@@ -45,7 +50,7 @@ ADO.NET 2.0 introduced expanded support for performance counters that includes s
 ### Activating Off-By-Default Counters  
  The performance counters `NumberOfFreeConnections`, `NumberOfActiveConnections`, `SoftDisconnectsPerSecond`, and `SoftConnectsPerSecond` are off by default. Add the following information to the application's configuration file to enable them:  
   
-```  
+```xml  
 <system.diagnostics>  
   <switches>  
     <add name="ConnectionPoolPerformanceCounterDetail"  
@@ -398,9 +403,9 @@ class Program
 ```  
   
 ## See Also  
- [Connecting to a Data Source](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)   
- [OLE DB, ODBC, and Oracle Connection Pooling](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)   
- [Performance Counters for ASP.NET](http://msdn.microsoft.com/library/1e122fcb-05c0-4f9f-bef1-f47023fa1ac6)   
- [Runtime Profiling](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)   
- [Introduction to Monitoring Performance Thresholds](http://msdn.microsoft.com/en-us/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)   
+ [Connecting to a Data Source](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
+ [OLE DB, ODBC, and Oracle Connection Pooling](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)  
+ [Performance Counters for ASP.NET](http://msdn.microsoft.com/library/1e122fcb-05c0-4f9f-bef1-f47023fa1ac6)  
+ [Runtime Profiling](../../../../docs/framework/debug-trace-profile/runtime-profiling.md)  
+ [Introduction to Monitoring Performance Thresholds](http://msdn.microsoft.com/library/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

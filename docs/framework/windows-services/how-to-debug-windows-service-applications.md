@@ -1,5 +1,5 @@
 ---
-title: "How to: Debug Windows Service Applications | Microsoft Docs"
+title: "How to: Debug Windows Service Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 16
 author: "ghogen"
 ms.author: "ghogen"
 manager: "douge"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Debug Windows Service Applications
 A service must be run from within the context of the Services Control Manager rather than from within Visual Studio. For this reason, debugging a service is not as straightforward as debugging other Visual Studio application types. To debug a service, you must start the service and then attach a debugger to the process in which it is running. You can then debug your application by using all of the standard debugging functionality of Visual Studio.  
@@ -31,7 +33,7 @@ A service must be run from within the context of the Services Control Manager ra
   
  After attaching to the process, you can set breakpoints and use these to debug your code. Once you exit the dialog box you use to attach to the process, you are effectively in debug mode. You can use the Services Control Manager to start, stop, pause and continue your service, thus hitting the breakpoints you've set. You can later remove this dummy service after debugging is successful.  
   
- This article covers debugging a service that's running on the local computer, but you can also debug Windows Services that are running on a remote computer. See [Remote Debugging](http://msdn.microsoft.com/library/5a94ad64-100d-43ca-9779-16cb5af86f97).  
+ This article covers debugging a service that's running on the local computer, but you can also debug Windows Services that are running on a remote computer. See [Remote Debugging](/visualstudio/debugger/debug-installed-app-package).  
   
 > [!NOTE]
 >  Debugging the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method can be difficult because the Services Control Manager imposes a 30-second limit on all attempts to start a service. For more information, see [Troubleshooting: Debugging Windows Services](../../../docs/framework/windows-services/troubleshooting-debugging-windows-services.md).  
@@ -118,7 +120,7 @@ A service must be run from within the context of the Services Control Manager ra
  In some cases, such as when you want to debug an issue that occurs only on system startup, you have to use the Windows debugger. Install [Debugging Tools for Windows](http://msdn.microsoft.com/windows/hardware/hh852365) and see [How to debug Windows Services](http://support.microsoft.com/kb/824344).  
   
 ## See Also  
- [Introduction to Windows Service Applications](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)   
- [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)   
- [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md)   
+ [Introduction to Windows Service Applications](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  
+ [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md)  
+ [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md)  
  [Debugging a Service](http://msdn.microsoft.com/library/windows/desktop/ms682546.aspx)

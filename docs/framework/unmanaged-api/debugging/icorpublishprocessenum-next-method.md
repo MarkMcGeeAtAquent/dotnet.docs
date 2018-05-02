@@ -1,31 +1,34 @@
 ---
-title: "ICorPublishProcessEnum::Next Method | Microsoft Docs"
+title: "ICorPublishProcessEnum::Next Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorPublishProcessEnum.Next"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorPublishProcessEnum::Next"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorPublishProcessEnum::Next method [.NET Framework debugging]"
   - "Next method, ICorPublishProcessEnum interface [.NET Framework debugging]"
 ms.assetid: 6c399f37-1e38-4ca1-b70d-8ae41f7228b7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorPublishProcessEnum::Next Method
 Gets the specified number of processes from the collection, starting at the current cursor position.  

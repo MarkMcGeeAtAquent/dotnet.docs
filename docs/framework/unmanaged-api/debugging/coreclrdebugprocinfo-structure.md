@@ -1,5 +1,5 @@
 ---
-title: "CoreClrDebugProcInfo Structure | Microsoft Docs"
+title: "CoreClrDebugProcInfo Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,24 +9,27 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CoreClrDebugProcInfo"
-apilocation: 
+api_location: 
   - "mscordbi_macx86.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CoreClrDebugProcInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "remote debugging API [Silverlight]"
   - "CoreClrDebugProcInfo structure"
   - "Silverlight, remote debugging"
 ms.assetid: 4ddc37da-5c94-4beb-b61c-b54071c0e749
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CoreClrDebugProcInfo Structure
 Represents a process that is running on a remote machine.  

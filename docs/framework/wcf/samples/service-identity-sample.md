@@ -1,8 +1,8 @@
 ---
-title: "Service Identity Sample | Microsoft Docs"
+title: "Service Identity Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service Identity Sample
 This service identity sample demonstrates how to set the identity for a service. At design time, a client can retrieve the identity using the service's metadata and then at runtime the client can authenticate the service's identity. The concept of service identity is to allow a client to authenticate a service before calling any of its operations, thereby protecting the client from unauthenticated calls. On a secure connection the service also authenticates a client's credentials before allowing it access, but this is not the focus of this sample. See the samples in [Client](../../../../docs/framework/wcf/samples/client.md) that show server authentication.  
@@ -42,12 +44,11 @@ wsAnonbinding.Security.Message.ClientCredentialType = MessageCredentialType.None
 WServiceEndpoint ep = serviceHost.AddServiceEndpoint(typeof(ICalculator),wsAnonbinding, String.Empty);  
 EndpointAddress epa = new EndpointAddress(dnsrelativeAddress,EndpointIdentity.CreateDnsIdentity("identity.com"));  
 ep.Address = epa;  
-  
 ```  
   
  The identity can also be specified in configuration in the App.config file. The following example shows how to set the UPN (User Principal Name) identity for a service endpoint.  
   
-```  
+```xml  
 <endpoint address="upnidentity"  
         behaviorConfiguration=""  
         binding="wsHttpBinding"  
@@ -59,13 +60,11 @@ ep.Address = epa;
       <userPrincipalName value="host\myservice.com" />  
   </identity >  
 </endpoint>  
-  
 ```  
   
  A custom identity can be set on the client by deriving from the <xref:System.ServiceModel.EndpointIdentity> and the <xref:System.ServiceModel.Security.IdentityVerifier> classes. Conceptually the <xref:System.ServiceModel.Security.IdentityVerifier> class can be considered to be the client equivalent of the service's `AuthorizationManager` class. The following code example shows an implementation of `OrgEndpointIdentity`, which stores an organization name to match in the subject name of the server's certificate. The authorization check for the organization name occurs in the `CheckAccess` method on the `CustomIdentityVerifier` class.  
   
 ```  
-  
 // This custom EndpointIdentity stores an organization name   
 public class OrgEndpointIdentity : EndpointIdentity  
 {  
@@ -135,7 +134,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 4.  Launch Client.exe from \client\bin directory or by pressing F5 in Visual Studio to build and run. Client activity is displayed on the client console application.  
   
-5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across computers  
   
@@ -159,7 +158,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 10. On the service computer, launch the Service.exe from the command prompt.  
   
-11. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+11. On the client computer, launch Client.exe from a command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   

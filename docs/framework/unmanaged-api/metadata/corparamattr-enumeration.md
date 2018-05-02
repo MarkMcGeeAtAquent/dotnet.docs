@@ -1,5 +1,5 @@
 ---
-title: "CorParamAttr Enumeration | Microsoft Docs"
+title: "CorParamAttr Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorParamAttr"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorParamAttr"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorParamAttr enumeration [.NET Framework metadata]"
 ms.assetid: a7ff90ad-dad8-48e8-917d-4aa9a118cbc8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorParamAttr Enumeration
 Contains values that describe the metadata of a method parameter.  

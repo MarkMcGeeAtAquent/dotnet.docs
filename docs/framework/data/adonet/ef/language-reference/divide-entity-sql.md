@@ -1,23 +1,21 @@
 ---
-title: "- (Divide) (Entity SQL) | Microsoft Docs"
+title: "- (Divide) (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: ef48c368-f3ed-4275-8ada-4e9649781262
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # / (Divide) (Entity SQL)
 Divides one number by another.  
@@ -25,7 +23,6 @@ Divides one number by another.
 ## Syntax  
   
 ```  
-  
 dividend / divisor  
 ```  
   

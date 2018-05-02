@@ -1,29 +1,34 @@
 ---
 uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider.Next
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider.CreateSink(System.Runtime.Remoting.Channels.IChannelSender,System.String,System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider.#ctor(System.Collections.IDictionary,System.Collections.ICollection)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback2::FunctionRemapComplete Method | Microsoft Docs"
+title: "ICorDebugManagedCallback2::FunctionRemapComplete Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback2.FunctionRemapComplete"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback2::FunctionRemapComplete"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FunctionRemapComplete method [.NET Framework debugging]"
   - "ICorDebugManagedCallback2::FunctionRemapComplete method [.NET Framework debugging]"
 ms.assetid: 5396c4c3-4ec3-4e3a-a38d-d65b21f0a2fc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback2::FunctionRemapComplete Method
 Notifies the debugger that code execution has switched to a new version of an edited function.  
@@ -63,5 +66,5 @@ HRESULT FunctionRemapComplete (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)   
+ [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
  [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

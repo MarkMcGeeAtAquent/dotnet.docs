@@ -1,8 +1,8 @@
 ---
-title: "Custom WSDL Publication | Microsoft Docs"
+title: "Custom WSDL Publication"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,20 +11,22 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom WSDL Publication
 This sample demonstrates how to:  
   
--   Implement a <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=fullName> on a custom <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=fullName> attribute to export attribute properties as WSDL annotations.  
+-   Implement a <xref:System.ServiceModel.Description.IWsdlExportExtension?displayProperty=nameWithType> on a custom <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> attribute to export attribute properties as WSDL annotations.  
   
--   Implement <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=fullName> to import the custom WSDL annotations.  
+-   Implement <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> to import the custom WSDL annotations.  
   
--   Implement <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=fullName> and <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=fullName> on a custom contract behavior and a custom operation behavior, respectively, to write imported annotations as comments in the CodeDom for the imported contract and operation.  
+-   Implement <xref:System.ServiceModel.Description.IServiceContractGenerationExtension?displayProperty=nameWithType> and <xref:System.ServiceModel.Description.IOperationContractGenerationExtension?displayProperty=nameWithType> on a custom contract behavior and a custom operation behavior, respectively, to write imported annotations as comments in the CodeDom for the imported contract and operation.  
   
--   Use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> to download the WSDL, a <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=fullName> to import the WSDL using the custom WSDL importer, and the <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=fullName> to generate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client code with the WSDL annotations as /// and ''' comments in C# and Visual Basic.  
+-   Use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> to download the WSDL, a <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> to import the WSDL using the custom WSDL importer, and the <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> to generate [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client code with the WSDL annotations as /// and ''' comments in C# and Visual Basic.  
   
 > [!NOTE]
 >  The setup procedure and build instructions for this sample are located at the end of this topic.  
@@ -71,7 +73,6 @@ public interface ICalculator
       [WsdlParamOrReturnDocumentation("The denominator.")]double n2  
     );  
 }  
-  
 ```  
   
  The `WsdlDocumentationAttribute` implements <xref:System.ServiceModel.Description.IContractBehavior> and <xref:System.ServiceModel.Description.IOperationBehavior>, so the attribute instances are added to the corresponding <xref:System.ServiceModel.Description.ContractDescription> or <xref:System.ServiceModel.Description.OperationDescription> when the service is opened. The attribute also implements <xref:System.ServiceModel.Description.IWsdlExportExtension>. When <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> is called, the <xref:System.ServiceModel.Description.WsdlExporter> that is used to export the metadata and the <xref:System.ServiceModel.Description.WsdlContractConversionContext> that contains the service description objects are passed in as parameters enabling the modification of the exported metadata.  
@@ -142,12 +143,11 @@ for (int i = 0; i < args.Length; i++)
         operation.DocumentationElement.AppendChild(newParamElement);  
     }  
 }  
-  
 ```  
   
  The sample then publishes metadata in the standard way, using the following configuration file.  
   
-```  
+```xml  
 <services>  
   <service   
       name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -172,7 +172,6 @@ for (int i = 0; i < args.Length; i++)
     </behavior>  
   </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
 ## Svcutil client  
@@ -206,7 +205,6 @@ public void ImportContract(WsdlImporter importer, WsdlContractConversionContext 
         }  
     }  
 }  
-  
 ```  
   
  Then, when the code is generated, the system invokes the <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> and <xref:System.ServiceModel.Description.IOperationContractGenerationExtension.GenerateOperation%28System.ServiceModel.Description.OperationContractGenerationContext%29> methods, passing the appropriate context information. The sample formats the custom WSDL annotations and inserts them as comments into the CodeDom.  
@@ -223,13 +221,12 @@ public void GenerateOperation(OperationContractGenerationContext context)
     context.SyncMethod.Comments.AddRange(FormatComments(text));  
     Debug.WriteLine("In generate operation.");  
 }  
-  
 ```  
   
 ## The Client Application  
  The client application loads the custom WSDL importer by specifying it in the application configuration file.  
   
-```  
+```xml  
 <client>  
   <endpoint address="http://localhost/servicemodelsamples/service.svc"   
   binding="wsHttpBinding"   
@@ -240,7 +237,6 @@ public void GenerateOperation(OperationContractGenerationContext context)
     </wsdlImporters>  
   </metadata>  
 </client>  
-  
 ```  
   
  Once the custom importer has been specified, the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] metadata system loads the custom importer into any <xref:System.ServiceModel.Description.WsdlImporter> created for that purpose. This sample uses the <xref:System.ServiceModel.Description.MetadataExchangeClient> to download the metadata, the <xref:System.ServiceModel.Description.WsdlImporter> properly configured to import the metadata using the custom importer the sample creates, and the <xref:System.ServiceModel.Description.ServiceContractGenerator> to compile the modified contract information into both Visual Basic and C# client code that can be used in Visual Studio to support Intellisense or compiled into XML documentation.  

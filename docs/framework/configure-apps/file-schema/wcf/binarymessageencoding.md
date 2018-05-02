@@ -1,22 +1,21 @@
 ---
-title: "&lt;binaryMessageEncoding&gt; | Microsoft Docs"
+title: "&lt;binaryMessageEncoding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: e4ae3cd4-6b67-4ce1-af4b-9400e0a38dba
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;binaryMessageEncoding&gt;
 Defines a binary message encoder that encodes Windows Communication Foundation (WCF) messages in binary on the wire.  
@@ -29,12 +28,11 @@ Defines a binary message encoder that encodes Windows Communication Foundation (
   
 ## Syntax  
   
-```  
-  
+```xml  
 <binaryMessageEncoding   
       maxReadPoolSize="Integer"  
    maxSessionSize="Integer"   
-   maxWritePoolSize="Integer"   messageVersion="Soap11Addressing10/Soap12Addressing10” />  
+   maxWritePoolSize="Integer"   messageVersion="Soap11Addressing10/Soap12Addressing10" />  
 ```  
   
 ## Attributes and Elements  
@@ -68,20 +66,20 @@ Defines a binary message encoder that encodes Windows Communication Foundation (
   
 ## Example  
   
-```  
+```xml  
 <binaryMessageEncoding maxReadPoolSize="211"  
    maxWritePoolSize="2132"  
    maxSessionSize="3141" />  
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.BinaryMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>   
- [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.BinaryMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
+ [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

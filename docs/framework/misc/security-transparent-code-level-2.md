@@ -1,5 +1,5 @@
 ---
-title: "Security-Transparent Code, Level 2 | Microsoft Docs"
+title: "Security-Transparent Code, Level 2"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "transparency"
   - "level 2 transparency"
@@ -24,9 +19,12 @@ caps.latest.revision: 37
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Security-Transparent Code, Level 2
-<a name="top"></a> [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
+<a name="top"></a>
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  Level 2 transparency was introduced in the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. The three tenets of this model are transparent code, security-safe-critical code, and security-critical code.  
   
@@ -40,7 +38,7 @@ manager: "wpickett"
   
     -   Call native code or code with the <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> attribute.  
   
-    -   Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction>.  
+    -   Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
   
     -   Inherit from critical types.  
   
@@ -87,7 +85,7 @@ manager: "wpickett"
   
 -   `AllowPartiallyTrustedCallers` (level 2 only): All code defaults to transparent. However, individual types and members can have other attributes.  
   
- The following table compares the assembly level behavior for Level 2 with Level 1 .  
+ The following table compares the assembly level behavior for Level 2 with Level 1.  
   
 |Assembly attribute|Level 2|Level 1|  
 |------------------------|-------------|-------------|  
@@ -180,7 +178,7 @@ manager: "wpickett"
 ## Additional Information and Rules  
   
 ### LinkDemand Support  
- The level 2 transparency model replaces the <xref:System.Security.Permissions.SecurityAction> with the <xref:System.Security.SecurityCriticalAttribute> attribute. In legacy (level 1) code, a <xref:System.Security.Permissions.SecurityAction> is automatically treated as a <xref:System.Security.Permissions.SecurityAction>.  
+ The level 2 transparency model replaces the <xref:System.Security.Permissions.SecurityAction.LinkDemand> with the <xref:System.Security.SecurityCriticalAttribute> attribute. In legacy (level 1) code, a <xref:System.Security.Permissions.SecurityAction.LinkDemand> is automatically treated as a <xref:System.Security.Permissions.SecurityAction.Demand>.  
   
 ### Reflection  
  Invoking a critical method or reading a critical field triggers a demand for full trust (just as if you were invoking a private method or field). Therefore, full-trust code can invoke a critical method, whereas partial-trust code cannot.  
@@ -188,7 +186,7 @@ manager: "wpickett"
  The following properties have been added to the <xref:System.Reflection> namespace to determine whether the type, method, or field is `SecurityCritical`, `SecuritySafeCritical`, or `SecurityTransparent`:  <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>. Use these properties to determine transparency by using reflection instead of checking for the presence of the attribute. The transparency rules are complex, and checking for the attribute may not be sufficient.  
   
 > [!NOTE]
->  A `SafeCritical` method returns `true` for both <xref:System.Type.IsSecurityCritical%2A>and <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, because `SafeCritical` is indeed critical (it has the same capabilities as critical code, but it can be called from transparent code).  
+>  A `SafeCritical` method returns `true` for both <xref:System.Type.IsSecurityCritical%2A> and <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, because `SafeCritical` is indeed critical (it has the same capabilities as critical code, but it can be called from transparent code).  
   
  Dynamic methods inherit the transparency of the modules they are attached to; they do not inherit the transparency of the type (if they are attached to a type).  
   
@@ -200,5 +198,5 @@ manager: "wpickett"
  The <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> property is `false` by default, so the property must be set to `true` to skip verification. This should be done for optimization purposes only. You should ensure that the transparent code in the assembly is verifiable by using the `transparent` option in the [PEVerify tool](../../../docs/framework/tools/peverify-exe-peverify-tool.md).  
   
 ## See Also  
- [Security-Transparent Code, Level 1](../../../docs/framework/misc/security-transparent-code-level-1.md)   
+ [Security-Transparent Code, Level 1](../../../docs/framework/misc/security-transparent-code-level-1.md)  
  [Security Changes](../../../docs/framework/security/security-changes.md)

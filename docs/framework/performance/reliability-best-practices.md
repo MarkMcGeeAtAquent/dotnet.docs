@@ -1,5 +1,5 @@
 ---
-title: "Reliability Best Practices | Microsoft Docs"
+title: "Reliability Best Practices"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -50,6 +50,8 @@ caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Reliability Best Practices
 The following reliability rules are oriented to SQL Server; however, they also apply to any host-based server application. It is extremely important that servers such as SQL Server not leak resources and not be brought down.  However, that cannot be done by writing back-out code for every method that alters an object’s state.  The goal is not to write 100 percent reliable managed code that will recover from any errors in every location with back-out code.  That would be a daunting task with little chance of success.  The common language runtime (CLR) cannot easily provide strong enough guarantees to managed code to make writing perfect code feasible.  Note that unlike ASP.NET, SQL Server uses only one process that cannot be recycled without taking a database down for an unacceptably long time.  
@@ -90,7 +92,7 @@ The following reliability rules are oriented to SQL Server; however, they also a
   
  Most classes that currently have a finalizer to simply clean up an operating system handle will not need the finalizer anymore. Instead, the finalizer will be on the <xref:System.Runtime.InteropServices.SafeHandle> derived class.  
   
- Note that <xref:System.Runtime.InteropServices.SafeHandle> is not a replacement for <xref:System.IDisposable.Dispose%2A?displayProperty=fullName>.  There are still potential resource contention and performance advantages to explicitly dispose operating system resources.  Just realize that `finally` blocks that do explicitly dispose of resources may not execute to completion.  
+ Note that <xref:System.Runtime.InteropServices.SafeHandle> is not a replacement for <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>.  There are still potential resource contention and performance advantages to explicitly dispose operating system resources.  Just realize that `finally` blocks that do explicitly dispose of resources may not execute to completion.  
   
  <xref:System.Runtime.InteropServices.SafeHandle> allows you to implement your own <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> method that performs the work to free the handle, such as passing state to an operating system handle freeing routine or freeing a set of handles in a loop.  The CLR guarantees that this method is run.  It is the responsibility of the author of the <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementation to ensure that the handle is released in all circumstances. Failure to do so will cause the handle to be leaked, which often results in the leakage of native resources associated with the handle. Therefore it is critical to structure <xref:System.Runtime.InteropServices.SafeHandle> derived classes such that the <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> implementation does not require the allocation of any resources that may not be available at invocation time. Note that it is permissible to call methods that may fail within the implementation of <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> provided that your code can handle such failures and complete the contract to release the native handle. For debugging purposes, <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> has a <xref:System.Boolean> return value which may be set to `false` if a catastrophic error is encountered which prevents release of the resource. Doing so will activate the [releaseHandleFailed](../../../docs/framework/debug-trace-profile/releasehandlefailed-mda.md) MDA, if enabled, to aid in identifying the problem. It does not affect the runtime in any other way; <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> will not be called again for the same resource and consequently the handle will be leaked.  
   
@@ -221,7 +223,7 @@ public static MyClass SingletonProperty
  Please find more information on HPA in <xref:System.Security.Permissions.HostProtectionAttribute>.  
   
 #### Code Analysis Rule  
- For SQL Server, all methods used to introduce synchronization or threading must identified with the HPA. This includes methods that share state, are synchronized, or manage external processes. The <xref:System.Security.Permissions.HostProtectionResource> values that impact SQL Server are <xref:System.Security.Permissions.HostProtectionResource>, <xref:System.Security.Permissions.HostProtectionResource>, and <xref:System.Security.Permissions.HostProtectionResource>. However, any method that exposes any <xref:System.Security.Permissions.HostProtectionResource> should be identified by a HPA, not just those using resources affecting SQL.  
+ For SQL Server, all methods used to introduce synchronization or threading must identified with the HPA. This includes methods that share state, are synchronized, or manage external processes. The <xref:System.Security.Permissions.HostProtectionResource> values that impact SQL Server are <xref:System.Security.Permissions.HostProtectionResource.SharedState>, <xref:System.Security.Permissions.HostProtectionResource.Synchronization>, and <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt>. However, any method that exposes any <xref:System.Security.Permissions.HostProtectionResource> should be identified by a HPA, not just those using resources affecting SQL.  
   
 ### Do Not Block Indefinitely in Unmanaged Code  
  Blocking in unmanaged code instead of in managed code can cause a denial of service attack because the CLR is not able to abort the thread.  A blocked thread prevents the CLR from unloading the <xref:System.AppDomain>, at least without doing some extremely unsafe operations.  Blocking using a Win32 synchronization primitive is a clear example of something we cannot allow.  Blocking in a call to `ReadFile` on a socket should be avoided if possible — ideally the Win32 API should provide a mechanism for an operation like this to time out.  
@@ -283,5 +285,5 @@ public static MyClass SingletonProperty
  Doing so instructs the just-in-time compiler to prepare all the code in the finally block before running the `try` block. This guarantees that the code in the finally block is built and will run in all cases. It is not uncommon in a CER to have an empty `try` block. Using a CER protects against asynchronous thread aborts and out-of-memory exceptions. See <xref:System.Runtime.CompilerServices.RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup%2A> for a form of a CER that additionally handles stack overflows for exceedingly deep code.  
   
 ## See Also  
- <xref:System.Runtime.ConstrainedExecution>   
+ <xref:System.Runtime.ConstrainedExecution>  
  [SQL Server Programming and Host Protection Attributes](../../../docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)

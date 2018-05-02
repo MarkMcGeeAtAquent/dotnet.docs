@@ -1,8 +1,8 @@
 ---
-title: "4818 - InnerChannelOpenFailed | Microsoft Docs"
+title: "4818 - InnerChannelOpenFailed"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c8ac6447-4fbb-4e08-ab26-91acae48dd11
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4818 - InnerChannelOpenFailed
 ## Properties  

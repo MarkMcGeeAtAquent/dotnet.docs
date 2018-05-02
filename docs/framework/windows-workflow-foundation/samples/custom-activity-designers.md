@@ -1,24 +1,26 @@
 ---
-title: "Custom Activity Designers | Microsoft Docs"
+title: "Custom Activity Designers"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: dcf14dca-ce6d-4278-96ba-062f0a679075
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Activity Designers
 This section contains activity samples that use custom designers for display in the workflow designer.  
   
 ## In This Section  
  [Custom Composite Designers - Workflow Item Presenter](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md)  
- This sample shows how to build an activity designer that surfaces such a “drop zone.”  
+ This sample shows how to build an activity designer that surfaces such a "drop zone."  
   
  [Custom Composite Designers - Workflow Items Presenter](../../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md)  
  This sample shows how to build an activity designer that surfaces such an editable collection.  

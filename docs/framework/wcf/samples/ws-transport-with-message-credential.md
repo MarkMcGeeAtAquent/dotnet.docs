@@ -1,8 +1,8 @@
 ---
-title: "WS Transport With Message Credential | Microsoft Docs"
+title: "WS Transport With Message Credential"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WS Transport With Message Credential
 This sample demonstrates the use of SSL transport security in combination with client credential being carried in the message. This sample uses the `wsHttpBinding` binding.  
@@ -39,7 +41,7 @@ public string GetCallerIdentity()
   
  You must create a certificate and assign it by using the Web Server Certificate Wizard before building and running the sample. The endpoint definition and binding definition in the configuration file settings enable `TransportWithMessageCredential` security mode, as shown in the following sample configuration for the client.  
   
-```  
+```xml  
 <system.serviceModel>  
   <client>  
     <endpoint name=""  
@@ -73,7 +75,6 @@ public string GetCallerIdentity()
 // WARNING: This code is only needed for test certificates such as those created by makecert. It is   
 // not recommended for production code.  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  

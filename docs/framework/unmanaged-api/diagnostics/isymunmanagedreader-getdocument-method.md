@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetDocument Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetDocument Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetDocument"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetDocument"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedReader::GetDocument method [.NET Framework debugging]"
   - "GetDocument method [.NET Framework debugging]"
 ms.assetid: bb203853-6a6d-4027-b9e9-603a7f28b9d3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetDocument Method
 Finds a document. The document language, vendor, and type are optional.  

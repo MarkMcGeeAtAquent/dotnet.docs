@@ -1,8 +1,8 @@
 ---
-title: "Routing Scenarios | Microsoft Docs"
+title: "Routing Scenarios"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,6 +16,8 @@ caps.latest.revision: 7
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Routing Scenarios
 While the Routing Service is highly customizable, it can be a challenge to design efficient routing logic when creating a new configuration from scratch.  However, there are several common scenarios that most Routing Service configurations follow. While these scenarios may not apply directly to your specific configuration, understanding how the Routing Service can be configured to handle these scenarios will aid you in understanding the Routing Service.  

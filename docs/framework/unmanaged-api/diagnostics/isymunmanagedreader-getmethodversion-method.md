@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetMethodVersion Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetMethodVersion Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetMethodVersion"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetMethodVersion"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetMethodVersion method [.NET Framework debugging]"
   - "ISymUnmanagedReader::GetMethodVersion method [.NET Framework debugging]"
 ms.assetid: d6f9ac84-302a-4f5e-b990-e76f4269fceb
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetMethodVersion Method
 Gets the method version. The method version starts at 1 and is incremented each time the method is recompiled. Recompilation can happen without changes to the method.  

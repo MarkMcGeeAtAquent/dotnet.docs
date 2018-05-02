@@ -1,8 +1,8 @@
 ---
-title: "&lt;assert&gt; Element | Microsoft Docs"
+title: "&lt;assert&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/assert"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#assert"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<assert> element"
   - "assert element"
@@ -25,9 +20,11 @@ caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;assert&gt; Element
-Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=fullName> method; also specifies the name of the file to write messages to.  
+Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.  
   
  \<configuration>  
 \<system.diagnostics>  
@@ -35,8 +32,7 @@ Specifies whether to display a message box when you call the <xref:System.Diagno
   
 ## Syntax  
   
-```  
-  
+```xml  
 <assert assertuienabled="true|false" logfilename="file name"/>  
 ```  
   
@@ -73,7 +69,7 @@ Specifies whether to display a message box when you call the <xref:System.Diagno
 ## Example  
  The following example shows how to disable displaying message boxes when you call **Debug.Assert** and write the messages to `c:\log.txt`.  
   
-```  
+```xml  
 <configuration>  
    <system.diagnostics>  
       <assert assertuienabled="false" logfilename="c:\log.txt"/>  
@@ -82,5 +78,5 @@ Specifies whether to display a message box when you call the <xref:System.Diagno
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.Debug>   
+ <xref:System.Diagnostics.Debug>  
  [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

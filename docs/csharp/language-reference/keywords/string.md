@@ -1,6 +1,6 @@
 ---
-title: "string (C# Reference) | Microsoft Docs"
-ms.date: "2015-07-20"
+title: "string (C# Reference)"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.technology: 
   - "devlang-csharp"
@@ -8,8 +8,6 @@ ms.topic: "article"
 f1_keywords: 
   - "string"
   - "string_CSharpKeyword"
-dev_langs: 
-  - "CSharp"
 helpviewer_keywords: 
   - "strings [C#], reference"
   - "@ string literal"
@@ -19,30 +17,14 @@ ms.assetid: 3037e558-fb22-494d-bca1-a15ade11b11a
 caps.latest.revision: 31
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "ru-ru"
-  - "zh-cn"
-  - "zh-tw"
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # string (C# Reference)
-The `string` type represents a sequence of zero or more Unicode characters. `string` is an alias for <xref:System.String> in the .NET Framework.  
+The `string` type represents a sequence of zero or more Unicode characters. `string` is an alias for <xref:System.String> in .NET.  
   
  Although `string` is a reference type, the equality operators (`==` and `!=`) are defined to compare the values of `string` objects, not references. This makes testing for string equality more intuitive. For example:  
   
 ```csharp  
-  
-      string a = "hello";  
+string a = "hello";  
 string b = "h";  
 // Append to contents of 'b'  
 b += "ello";  
@@ -55,7 +37,6 @@ Console.WriteLine((object)a == (object)b);
  The + operator concatenates strings:  
   
 ```csharp  
-  
 string a = "good " + "morning";  
 ```  
   
@@ -63,17 +44,15 @@ string a = "good " + "morning";
   
  Strings are *immutable*--the contents of a string object cannot be changed after the object is created, although the syntax makes it appear as if you can do this. For example, when you write this code, the compiler actually creates a new string object to hold the new sequence of characters, and that new object is assigned to b. The string "h" is then eligible for garbage collection.  
   
-```csharp  
-  
-      string b = "h";  
+```csharp
+string b = "h";  
 b += "ello";  
 ```  
   
  The [] operator can be used for readonly access to individual characters of a `string`:  
   
 ```csharp  
-  
-      string str = "test";  
+string str = "test";  
 char x = str[2];  // x = 's';  
 ```  
   
@@ -86,15 +65,14 @@ char x = str[2];  // x = 's';
  String literals can contain any character literal. Escape sequences are included. The following example uses escape sequence `\\` for backslash, `\u0066` for the letter f, and `\n` for newline.  
   
 ```  
-  
-      string a = "\\\u0066\n";  
+string a = "\\\u0066\n";  
 Console.WriteLine(a);  
 ```  
   
 > [!NOTE]
->  The escape code `\`u`dddd` (where `dddd` is a four-digit number) represents the Unicode character U+`dddd`. Eight-digit Unicode escape codes are also recognized: `\Udddddddd`.  
+>  The escape code `\udddd` (where `dddd` is a four-digit number) represents the Unicode character U+`dddd`. Eight-digit Unicode escape codes are also recognized: `\Udddddddd`.  
   
- Verbatim string literals start with @ and are also enclosed in double quotation marks. For example:  
+ Verbatim string literals start with `@` and are also enclosed in double quotation marks. For example:  
   
 ```csharp  
 @"good morning"  // a string literal  
@@ -112,24 +90,24 @@ Console.WriteLine(a);
 @"""Ahoy!"" cried the captain." // "Ahoy!" cried the captain.  
 ```  
   
- Another use of the @ symbol is to use referenced ([/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)) identifiers that are C# keywords.  
+ For other uses of the `@` special character, see [@ -- verbatim identifier](../tokens/verbatim.md).  
   
  For more information about strings in C#, see [Strings](../../../csharp/programming-guide/strings/index.md).  
   
 ## Example  
- [!code-cs[csrefKeywordsTypes#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/string_1.cs)]  
+ [!code-csharp[csrefKeywordsTypes#17](../../../csharp/language-reference/keywords/codesnippet/CSharp/string_1.cs)]  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## See Also  
- [C# Reference](../../../csharp/language-reference/index.md)   
- [C# Programming Guide](../../../csharp/programming-guide/index.md)   
- [Best Practices for Using Strings](http://msdn.microsoft.com/library/b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7)   
- [C# Keywords](../../../csharp/language-reference/keywords/index.md)   
- [C# Programming Guide](../../../csharp/programming-guide/index.md)   
- [Reference Types](../../../csharp/language-reference/keywords/reference-types.md)   
- [Value Types](../../../csharp/language-reference/keywords/value-types.md)   
- [Basic String Operations](http://msdn.microsoft.com/library/8133d357-90b5-4b62-9927-43323d99b6b6)   
- [Creating New Strings](http://msdn.microsoft.com/library/06fdf123-2fac-4459-8904-eb48ab908a30)   
+ [C# Reference](../../../csharp/language-reference/index.md)  
+ [C# Programming Guide](../../../csharp/programming-guide/index.md)  
+ [Best Practices for Using Strings](../../../standard/base-types/best-practices-strings.md)  
+ [C# Keywords](../../../csharp/language-reference/keywords/index.md)  
+ [C# Programming Guide](../../../csharp/programming-guide/index.md)  
+ [Reference Types](../../../csharp/language-reference/keywords/reference-types.md)  
+ [Value Types](../../../csharp/language-reference/keywords/value-types.md)  
+ [Basic String Operations](../../../standard/base-types/basic-string-operations.md)  
+ [Creating New Strings](../../../standard/base-types/creating-new.md)  
  [Formatting Numeric Results Table](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)

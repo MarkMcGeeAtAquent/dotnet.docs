@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Serialization.Json
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

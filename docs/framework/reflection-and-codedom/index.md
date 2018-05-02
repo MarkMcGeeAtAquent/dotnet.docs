@@ -1,5 +1,5 @@
 ---
-title: "Dynamic Programming in the .NET Framework | Microsoft Docs"
+title: "Dynamic Programming in the .NET Framework"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Dynamic Programming in the .NET Framework
 This section of the documentation provides information about dynamic programming in the .NET Framework.  
@@ -37,4 +39,4 @@ This section of the documentation provides information about dynamic programming
 ## Related Sections  
  [Development Guide](../../../docs/framework/development-guide.md)  
   
- [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/en-us/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [Advanced Reading for the .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)

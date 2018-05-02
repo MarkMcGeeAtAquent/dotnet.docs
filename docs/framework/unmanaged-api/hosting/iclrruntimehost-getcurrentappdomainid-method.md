@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeHost::GetCurrentAppDomainId Method | Microsoft Docs"
+title: "ICLRRuntimeHost::GetCurrentAppDomainId Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeHost.GetCurrentAppDomainId"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeHost::GetCurrentAppDomainId"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeHost::GetCurrentAppDomainId method [.NET Framework hosting]"
   - "GetCurrentAppDomainId method [.NET Framework hosting]"
 ms.assetid: 33800475-7815-4976-8aca-a1038761a2ef
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeHost::GetCurrentAppDomainId Method
 Gets the numeric identifier of the <xref:System.AppDomain> that is currently executing.  
@@ -66,6 +69,6 @@ HRESULT GetCurrentAppDomainId(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.AppDomain>   
- <xref:System.AppDomainManager>   
+ <xref:System.AppDomain>  
+ <xref:System.AppDomainManager>  
  [ICLRRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)

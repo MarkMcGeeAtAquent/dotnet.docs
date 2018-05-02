@@ -1,5 +1,5 @@
 ---
-title: "CorDebugHandleType Enumeration | Microsoft Docs"
+title: "CorDebugHandleType Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugHandleType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugHandleType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugHandleType enumeration [.NET Framework debugging]"
 ms.assetid: 84296b55-c2c5-424c-ac9c-8e28e2895945
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugHandleType Enumeration
 Indicates the handle type.  

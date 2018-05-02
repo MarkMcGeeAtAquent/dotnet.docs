@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugThread4::GetCurrentCustomDebuggerNotification Method | Microsoft Docs"
+title: "ICorDebugThread4::GetCurrentCustomDebuggerNotification Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugThread4.GetCurrentCustomDebuggerNotification Method"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugThread4::GetCurrentCustomDebuggerNotification"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCurrentCustomDebuggerNotification method [.NET Framework debugging]"
   - "ICorDebugThread4::GetCurrentCustomDebuggerNotification method [.NET Framework debugging]"
 ms.assetid: 57e0f2d2-5f0e-4e2d-99ec-3f26632eb693
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugThread4::GetCurrentCustomDebuggerNotification Method
 Gets the current [ICorDebugManagedCallback3::CustomNotification](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) object on the current thread.  
@@ -55,6 +58,6 @@ HRESULT GetCurrentCustomDebuggerNotification(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICorDebugThread4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)   
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [ICorDebugThread4 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)  
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

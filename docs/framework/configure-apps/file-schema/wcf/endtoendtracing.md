@@ -1,8 +1,8 @@
 ---
-title: "&lt;endToEndTracing&gt; | Microsoft Docs"
+title: "&lt;endToEndTracing&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5034f5de-bb60-4157-9ad4-58aaade094e0
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;endToEndTracing&gt;
 A configuration element that allows you to enable and disable different aspects of end-to-end tracing during the running of a service application.  
@@ -24,8 +26,7 @@ A configuration element that allows you to enable and disable different aspects 
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
    <diagnostics>  
        <endToEndTracing activityTracing="Boolean"  
@@ -56,8 +57,8 @@ A configuration element that allows you to enable and disable different aspects 
 |[\<diagnostics>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Defines WCF settings for runtime inspection and control for the administrator.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>   
- <xref:System.ServiceModel.Configuration.EndToEndTracingElement>   
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing%2A>  
+ <xref:System.ServiceModel.Configuration.EndToEndTracingElement>  
  [End-to-End Tracing](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)

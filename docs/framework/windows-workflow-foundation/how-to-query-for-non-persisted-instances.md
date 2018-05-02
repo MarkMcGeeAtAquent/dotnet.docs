@@ -1,5 +1,5 @@
 ---
-title: "How to: Query for Non-persisted Instances | Microsoft Docs"
+title: "How to: Query for Non-persisted Instances"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 294019b1-c1a7-4b81-a14f-b47c106cd723
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Query for Non-persisted Instances
 When a new instance of a service is created and the service has the SQL Workflow Instance Store behavior defined, the service host creates a initial entry for that service instance in the instance store. Subsequently when the service instance persists for the first time, the SQL Workflow Instance Store behavior stores the current instance state together with additional data that is required for activation, recovery, and control.  
@@ -36,27 +38,21 @@ When a new instance of a service is created and the service has the SQL Workflow
  The following SQL query returns the ID and creation time for all instances that are not persisted in to the persistence database yet.  
   
 ```  
-  
 select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0;  
-  
 ```  
   
 ## To find all instances not persisted yet and also not loaded  
  The following SQL query returns ID and creation time for all instances that are not persisted and also are not loaded.  
   
 ```  
-  
 select InstanceId, CreationTime from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0 and CurrentMachine is NULL;  
-  
 ```  
   
 ## To find all suspended instances not persisted yet  
  The following SQL query returns ID, creation time, suspension reason, and suspension exception name for all instances that are not persisted and also in a suspended state.  
   
 ```  
-  
 select InstanceId, CreationTime, SuspensionReason, SuspensionExceptionName from [System.Activities.DurableInstancing].[Instances] where IsInitialized = 0 and IsSuspended = 1;  
-  
 ```  
   
 ## To delete non-persisted instances from the persistence database  

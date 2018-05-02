@@ -1,5 +1,5 @@
 ---
-title: "ICorRuntimeHost::CreateDomainSetup Method | Microsoft Docs"
+title: "ICorRuntimeHost::CreateDomainSetup Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,26 +9,29 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorRuntimeHost.CreateDomainSetup"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorRuntimeHost::CreateDomainSetup"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateDomainSetup method [.NET Framework hosting]"
   - "ICorRuntimeHost::CreateDomainSetup method [.NET Framework hosting]"
 ms.assetid: c21dab60-fb65-47d9-8a94-7fd47ca53b48
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorRuntimeHost::CreateDomainSetup Method
-Gets an interface pointer of type IAppDomainSetup to an <xref:System.AppDomainSetup?displayProperty=fullName> instance. `IAppDomainSetup` provides methods to configure aspects of an application domain before it is created.  
+Gets an interface pointer of type IAppDomainSetup to an <xref:System.AppDomainSetup?displayProperty=nameWithType> instance. `IAppDomainSetup` provides methods to configure aspects of an application domain before it is created.  
   
 ## Syntax  
   
@@ -40,7 +43,7 @@ HRESULT CreateDomainSetup (
   
 #### Parameters  
  `pAppDomainSetup`  
- [out] An interface pointer to an <xref:System.AppDomainSetup?displayProperty=fullName> instance. This parameter is typed as `IUnknown`, so callers should generally call `QueryInterface` on this pointer to obtain an interface pointer of type `IAppDomainSetup`.  
+ [out] An interface pointer to an <xref:System.AppDomainSetup?displayProperty=nameWithType> instance. This parameter is typed as `IUnknown`, so callers should generally call `QueryInterface` on this pointer to obtain an interface pointer of type `IAppDomainSetup`.  
   
 ## Return Value  
   
@@ -64,8 +67,8 @@ HRESULT CreateDomainSetup (
  **.NET Framework Version:** 1.0, 1.1  
   
 ## See Also  
- <xref:System._AppDomain>   
- <xref:System.AppDomain>   
- <xref:System.AppDomainSetup>   
- <xref:System.IAppDomainSetup?displayProperty=fullName>   
+ <xref:System._AppDomain>  
+ <xref:System.AppDomain>  
+ <xref:System.AppDomainSetup>  
+ <xref:System.IAppDomainSetup?displayProperty=nameWithType>  
  [ICorRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

@@ -1,8 +1,8 @@
 ---
-title: "&lt;transport&gt; of &lt;netMsmqBinding&gt; | Microsoft Docs"
+title: "&lt;transport&gt; of &lt;netMsmqBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;transport&gt; of &lt;netMsmqBinding&gt;
 Defines the transport security settings.  
@@ -27,8 +29,7 @@ Defines the transport security settings.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <netMsmqBinding>  
     <binding>  
     <security>  
@@ -63,13 +64,13 @@ Defines the transport security settings.
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netmsmqbinding.md)|Defines the transport security settings for queued transports.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>   
- <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>   
- <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A>   
- <xref:System.ServiceModel.MsmqTransportSecurity>   
- [Queues in WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>  
+ <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>  
+ <xref:System.ServiceModel.NetMsmqSecurity.Transport%2A>  
+ <xref:System.ServiceModel.MsmqTransportSecurity>  
+ [Queues in WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

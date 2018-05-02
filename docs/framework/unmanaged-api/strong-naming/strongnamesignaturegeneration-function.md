@@ -1,5 +1,5 @@
 ---
-title: "StrongNameSignatureGeneration Function | Microsoft Docs"
+title: "StrongNameSignatureGeneration Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,15 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameSignatureGeneration"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "mscorsn.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "StrongNameSignatureGeneration"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameSignatureGeneration function [.NET Framework strong naming]"
 ms.assetid: 839b765c-3e41-44ce-bf1b-dc10453db18e
@@ -26,6 +25,8 @@ caps.latest.revision: 19
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameSignatureGeneration Function
 Generates a strong name signature for the specified assembly.  
@@ -35,7 +36,7 @@ Generates a strong name signature for the specified assembly.
 ## Syntax  
   
 ```  
-BOOLEAN StrongNameSignatureGeneration (   
+BOOLEAN StrongNameSignatureGeneration (   
     [in]  LPCWSTR   wszFilePath,  
     [in]  LPCWSTR   wszKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
@@ -92,6 +93,6 @@ BOOLEAN StrongNameSignatureGeneration ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureGeneration Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)   
- [StrongNameSignatureGenerationEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)   
+ [StrongNameSignatureGeneration Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)  
+ [StrongNameSignatureGenerationEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

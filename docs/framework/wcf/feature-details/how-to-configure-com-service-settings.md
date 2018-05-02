@@ -1,8 +1,8 @@
 ---
-title: "How to: Configure COM+ Service Settings | Microsoft Docs"
+title: "How to: Configure COM+ Service Settings"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "COM+ [WCF], configuring service settings"
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Configure COM+ Service Settings
 When an application interface is added or removed by using the COM+ Service Configuration tool, the Web service configuration is updated within the application's configuration file. In the COM+ hosted mode, the Application.config file is placed in the Application Root Directory (%PROGRAMFILES%\ComPlus Applications\\{appid} is the default). In either of the Web-hosted modes, the Web.config file is placed in the specified vroot directory.  
@@ -33,7 +35,6 @@ public interface IFinances
     string Debit(string accountNo, double amount);  
     string Credit(string accountNo, double amount);  
 }  
-  
 ```  
   
  If the component is exposed as a Web service, the corresponding service contract that is exposed, and that clients would need to conform to, is as follows:  
@@ -49,7 +50,6 @@ public interface IFinancesContract : IDisposable
     [OperationContract]  
     string Credit(string accountNo, double amount);  
 }  
-  
 ```  
   
 > [!NOTE]
@@ -69,7 +69,7 @@ public interface IFinancesContract : IDisposable
   
      In the COM+-hosted case, the named pipes transport is used by default, but an off-machine transport like TCP can be used instead.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  
@@ -102,7 +102,6 @@ public interface IFinancesContract : IDisposable
         </services>  
     </system.serviceModel>  
 </configuration>  
-  
 ```  
   
 ## See Also  

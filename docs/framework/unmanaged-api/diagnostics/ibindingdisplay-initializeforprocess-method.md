@@ -1,5 +1,5 @@
 ---
-title: "IBindingDisplay::InitializeForProcess Method | Microsoft Docs"
+title: "IBindingDisplay::InitializeForProcess Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IBindingDisplay.InitializeForProcess"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IBindingDisplay::InitializeForProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IBindingDisplay::InitializeForProcess method [.NET Framework debugging]"
   - "InitializeForProcess method [.NET Framework debugging]"
 ms.assetid: 59417acb-4e59-46ad-acfe-d827e6ab6078
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IBindingDisplay::InitializeForProcess Method
 Initializes the [IBindingDisplay](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md) object.  

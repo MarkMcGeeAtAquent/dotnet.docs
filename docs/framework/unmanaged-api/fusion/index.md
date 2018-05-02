@@ -1,5 +1,5 @@
 ---
-title: "Fusion (Unmanaged API Reference) | Microsoft Docs"
+title: "Fusion (Unmanaged API Reference)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "unmanaged API reference [.NET Framework], fusion"
   - "native API reference [.NET Framework], fusion"
@@ -20,6 +18,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Fusion (Unmanaged API Reference)
 The fusion API enables a runtime host to access the properties of an application's resources in order to locate the correct versions of those resources for the application.  

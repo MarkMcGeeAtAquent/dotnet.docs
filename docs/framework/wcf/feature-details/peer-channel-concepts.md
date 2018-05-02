@@ -1,8 +1,8 @@
 ---
-title: "Peer Channel Concepts | Microsoft Docs"
+title: "Peer Channel Concepts"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 379c2c0b-a44f-4423-9480-4739e7f18614
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Peer Channel Concepts
 This section briefly explains the concepts that make up the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Peer Channel.  

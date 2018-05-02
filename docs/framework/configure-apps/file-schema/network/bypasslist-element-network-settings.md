@@ -1,8 +1,8 @@
 ---
-title: "&lt;bypasslist&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;bypasslist&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#bypasslist"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "bypasslist element"
   - "<bypasslist> element"
@@ -25,6 +20,8 @@ caps.latest.revision: 17
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;bypasslist&gt; Element (Network Settings)
 Provides a set of regular expressions that describe addresses that do not use a proxy.  
@@ -36,9 +33,8 @@ Provides a set of regular expressions that describe addresses that do not use a 
   
 ## Syntax  
   
-```  
-  
-      <bypasslist>   
+```xml  
+<bypasslist>   
 </bypasslist>  
 ```  
   
@@ -73,9 +69,9 @@ Provides a set of regular expressions that describe addresses that do not use a 
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example adds two addresses to the bypass list. The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP addresses begin with 192.168.  
+ The following example adds two addresses to the bypass list. The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP addresses begin with 192.168.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <defaultProxy>  
@@ -89,5 +85,5 @@ Provides a set of regular expressions that describe addresses that do not use a 
 ```  
   
 ## See Also  
- <xref:System.Net.WebProxy?displayProperty=fullName>   
+ <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

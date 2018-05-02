@@ -1,8 +1,8 @@
 ---
-title: "3324 - DispatchFormatterSerializeReplyStart | Microsoft Docs"
+title: "3324 - DispatchFormatterSerializeReplyStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a76cb3c1-e6e7-4b36-9e84-f74f638c867e
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3324 - DispatchFormatterSerializeReplyStart
 ## Properties  

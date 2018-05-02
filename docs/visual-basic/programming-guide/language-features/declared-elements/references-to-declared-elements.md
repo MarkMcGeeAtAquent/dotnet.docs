@@ -1,46 +1,28 @@
 ---
-title: "References to Declared Elements (Visual Basic) | Microsoft Docs"
+title: "References to Declared Elements (Visual Basic)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "declared elements"
-  - "references, declared elements"
-  - "qualified names"
+  - "declared elements [Visual Basic]"
+  - "references [Visual Basic], declared elements"
+  - "qualified names [Visual Basic]"
 ms.assetid: d6301709-f4cc-4b7a-b8ba-80898f14ab46
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # References to Declared Elements (Visual Basic)
-When your code refers to a declared element, the [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler matches the name in your reference to the appropriate declaration of that name. If more than one element is declared with the same name, you can control which of those elements is to be referenced by *qualifying* its name.  
+When your code refers to a declared element, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler matches the name in your reference to the appropriate declaration of that name. If more than one element is declared with the same name, you can control which of those elements is to be referenced by *qualifying* its name.  
   
  The compiler attempts to match a name reference to a name declaration with the *narrowest scope*. This means it starts with the code making the reference and works outward through successive levels of containing elements.  
   
- The following example shows references to two variables with the same name. The example declares two variables, each named `totalCount`, at different levels of scope in module `container`. When the procedure `showCount` displays `totalCount` without qualification, the [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler resolves the reference to the declaration with the narrowest scope, namely the local declaration inside `showCount`. When it qualifies `totalCount` with the containing module `container`, the compiler resolves the reference to the declaration with the broader scope.  
+ The following example shows references to two variables with the same name. The example declares two variables, each named `totalCount`, at different levels of scope in module `container`. When the procedure `showCount` displays `totalCount` without qualification, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler resolves the reference to the declaration with the narrowest scope, namely the local declaration inside `showCount`. When it qualifies `totalCount` with the containing module `container`, the compiler resolves the reference to the declaration with the broader scope.  
   
 ```vb  
 ' Assume these two modules are both in the same assembly.  
@@ -117,7 +99,7 @@ End Module
   
 6.  The compiler uses the qualification string to find a clear, unambiguous declaration to which it can match the target element reference.  
   
- You might also have to qualify a name reference if your application has access to more than one programming element that has the same name. For example, the <xref:System.Windows.Forms> and <xref:System.Web.UI.WebControls> namespaces both contain a `Label` class (<xref:System.Windows.Forms.Label?displayProperty=fullName> and <xref:System.Web.UI.WebControls.Label?displayProperty=fullName>). If your application uses both, or if it defines its own `Label` class, you must distinguish the different `Label` objects. Include the namespace or import alias in the variable declaration. The following example uses the import alias.  
+ You might also have to qualify a name reference if your application has access to more than one programming element that has the same name. For example, the <xref:System.Windows.Forms> and <xref:System.Web.UI.WebControls> namespaces both contain a `Label` class (<xref:System.Windows.Forms.Label?displayProperty=nameWithType> and <xref:System.Web.UI.WebControls.Label?displayProperty=nameWithType>). If your application uses both, or if it defines its own `Label` class, you must distinguish the different `Label` objects. Include the namespace or import alias in the variable declaration. The following example uses the import alias.  
   
 ```vb  
 ' The following statement must precede all your declarations.  
@@ -174,7 +156,7 @@ End Module
 ## References to Projects  
  To use [Public](../../../../visual-basic/language-reference/modifiers/public.md) elements defined in another project, you must first set a *reference* to that project's assembly or type library. To set a reference, click **Add Reference** on the **Project** menu, or use the [/reference (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) command-line compiler option.  
   
- For example, you can use the XML object model of the [!INCLUDE[dnprdnshort](../../../../csharp/getting-started/includes/dnprdnshort_md.md)]. If you set a reference to the <xref:System.Xml> namespace, you can declare and use any of its classes, such as <xref:System.Xml.XmlDocument>. The following example uses <xref:System.Xml.XmlDocument>.  
+ For example, you can use the XML object model of the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]. If you set a reference to the <xref:System.Xml> namespace, you can declare and use any of its classes, such as <xref:System.Xml.XmlDocument>. The following example uses <xref:System.Xml.XmlDocument>.  
   
 ```vb  
 ' Assume this project has a reference to System.Xml  
@@ -213,13 +195,13 @@ Dim xDoc As xD.XmlDocument
  You can avoid name ambiguity by giving all your elements unique names. Then you can make reference to any element without having to qualify its name with a namespace, module, or class. You also reduce the chances of accidentally referring to the wrong element.  
   
 ## Shadowing  
- When two programming elements share the same name, one of them can hide, or *shadow*, the other one. A shadowed element is not available for reference; instead, when your code uses the shadowed element name, the [!INCLUDE[vbprvb](../../../../csharp/programming-guide/concepts/linq/includes/vbprvb_md.md)] compiler resolves it to the shadowing element. For a more detailed explanation with examples, see [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ When two programming elements share the same name, one of them can hide, or *shadow*, the other one. A shadowed element is not available for reference; instead, when your code uses the shadowed element name, the [!INCLUDE[vbprvb](~/includes/vbprvb-md.md)] compiler resolves it to the shadowing element. For a more detailed explanation with examples, see [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
 ## See Also  
- [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)   
- [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)   
- [NIB How to: Modify Project Properties and Configuration Settings](http://msdn.microsoft.com/en-us/e7184bc5-2f2b-4b4f-aa9a-3ecfcbc48b67)   
- [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)   
- [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)   
- [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md)   
+ [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
+ [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
+ [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)  
+ [Variables](../../../../visual-basic/programming-guide/language-features/variables/index.md)  
+ [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  
+ [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md)  
  [Public](../../../../visual-basic/language-reference/modifiers/public.md)

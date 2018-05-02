@@ -1,7 +1,9 @@
-<Type Name="DataRow" FullName="System.Data.DataRow">
+﻿<Type Name="DataRow" FullName="System.Data.DataRow">
   <TypeSignature Language="C#" Value="public class DataRow" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataRow extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.DataRow" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataRow" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataRow" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -23,7 +29,7 @@
 ## Remarks  
  The <xref:System.Data.DataRow> and <xref:System.Data.DataColumn> objects are primary components of a <xref:System.Data.DataTable>. Use the <xref:System.Data.DataRow> object and its properties and methods to retrieve and evaluate; and insert, delete, and update the values in the <xref:System.Data.DataTable>. The <xref:System.Data.DataRowCollection> represents the actual <xref:System.Data.DataRow> objects in the <xref:System.Data.DataTable>, and the <xref:System.Data.DataColumnCollection> contains the <xref:System.Data.DataColumn> objects that describe the schema of the <xref:System.Data.DataTable>. Use the overloaded <xref:System.Data.DataRow.Item%2A> property to return or set the value of a <xref:System.Data.DataColumn>.  
   
- Use the <xref:System.Data.DataRow.HasVersion%2A> and <xref:System.Data.DataRow.IsNull%2A> properties to determine the status of a particular row value, and the <xref:System.Data.DataRow.RowState%2A> property to determine the state of the row relative to its parent <xref:System.Data.DataTable>.  
+ Use the <xref:System.Data.DataRow.HasVersion%2A> and <xref:System.Data.DataRow.IsNull%2A> properties to determine the status of a particular row value, and the <xref:System.Data.DataRow.RowState*> property to determine the state of the row relative to its parent <xref:System.Data.DataTable>.  
   
  To create a new <xref:System.Data.DataRow>, use the <xref:System.Data.DataTable.NewRow%2A> method of the <xref:System.Data.DataTable> object. After creating a new <xref:System.Data.DataRow>, use the <xref:System.Data.DataRowCollection.Add%2A> method to add the new <xref:System.Data.DataRow> to the <xref:System.Data.DataRowCollection>. Finally, call the <xref:System.Data.DataRow.AcceptChanges%2A> method of the <xref:System.Data.DataTable> object to confirm the addition. For more information about adding data to a <xref:System.Data.DataTable>, see [Adding Data to a DataTable](~/docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md).  
   
@@ -40,12 +46,25 @@
  ]]></format>
     </remarks>
     <threadsafe>This type is safe for multithreaded read operations. You must synchronize any write operations.</threadsafe>
+    <altmember cref="M:System.Data.DataRow.AcceptChanges" />
+    <altmember cref="M:System.Data.DataRowCollection.Add(System.Data.DataRow)" />
+    <altmember cref="T:System.Data.DataColumnCollection" />
+    <altmember cref="T:System.Data.DataColumn" />
+    <altmember cref="T:System.Data.DataRowView" />
+    <altmember cref="T:System.Data.DataTable" />
+    <altmember cref="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+    <altmember cref="M:System.Data.DataRow.IsNull(System.Int32)" />
+    <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+    <altmember cref="M:System.Data.DataTable.NewRow" />
+    <altmember cref="T:System.Data.DataRowCollection" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected DataRow (System.Data.DataRowBuilder builder);" />
+      <MemberSignature Language="C#" Value="protected internal DataRow (System.Data.DataRowBuilder builder);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.Data.DataRowBuilder builder) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.#ctor(System.Data.DataRowBuilder)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub New (builder As DataRowBuilder)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; DataRow(System::Data::DataRowBuilder ^ builder);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -55,6 +74,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="builder" Type="System.Data.DataRowBuilder" />
@@ -69,6 +92,8 @@
       <MemberSignature Language="C#" Value="public void AcceptChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AcceptChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.AcceptChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AcceptChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AcceptChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -78,6 +103,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -89,7 +118,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When invoking <xref:System.Data.DataRow.AcceptChanges%2A>, the <xref:System.Data.DataRow.EndEdit%2A> method is implicitly called to end any edits. If the <xref:System.Data.DataRow.RowState%2A> of the row was Added or Modified, the <xref:System.Data.DataRow.RowState%2A> becomes Unchanged. If the <xref:System.Data.DataRow.RowState%2A> was Deleted, the row is removed.  
+ When invoking <xref:System.Data.DataRow.AcceptChanges%2A>, the <xref:System.Data.DataRow.EndEdit%2A> method is implicitly called to end any edits. If the <xref:System.Data.DataRow.RowState*> of the row was Added or Modified, the <xref:System.Data.DataRow.RowState*> becomes Unchanged. If the <xref:System.Data.DataRow.RowState*> was Deleted, the row is removed.  
   
  See the <xref:System.Data.DataRow.BeginEdit%2A> method for more information.  
   
@@ -98,7 +127,7 @@
    
   
 ## Examples  
- The following example first creates a new <xref:System.Data.DataTable> with one column, and then creates a single <xref:System.Data.DataRow>. As the <xref:System.Data.DataRow> is created, added, modified, and deleted, its <xref:System.Data.DataRow.RowState%2A> is printed.  
+ The following example first creates a new <xref:System.Data.DataTable> with one column, and then creates a single <xref:System.Data.DataRow>. As the <xref:System.Data.DataRow> is created, added, modified, and deleted, its <xref:System.Data.DataRow.RowState*> is printed.  
   
  [!code-csharp[Classic WebData DataRow.AcceptChanges Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.AcceptChanges Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRow.AcceptChanges Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.AcceptChanges Example/VB/source.vb#1)]  
@@ -106,12 +135,23 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to the table.</exception>
+        <altmember cref="M:System.Data.DataTable.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.BeginEdit" />
+        <altmember cref="M:System.Data.DataRow.CancelEdit" />
+        <altmember cref="T:System.Data.DataViewRowState" />
+        <altmember cref="T:System.Data.DataTable" />
+        <altmember cref="M:System.Data.DataRow.EndEdit" />
+        <altmember cref="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+        <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
     <Member MemberName="BeginEdit">
       <MemberSignature Language="C#" Value="public void BeginEdit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginEdit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.BeginEdit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginEdit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void BeginEdit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -121,6 +161,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -158,12 +202,20 @@
         </remarks>
         <exception cref="T:System.Data.InRowChangingEventException">The method was called inside the <see cref="E:System.Data.DataTable.RowChanging" /> event.</exception>
         <exception cref="T:System.Data.DeletedRowInaccessibleException">The method was called upon a deleted row.</exception>
+        <altmember cref="M:System.Data.DataTable.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.CancelEdit" />
+        <altmember cref="M:System.Data.DataRow.EndEdit" />
+        <altmember cref="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+        <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
     <Member MemberName="CancelEdit">
       <MemberSignature Language="C#" Value="public void CancelEdit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelEdit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.CancelEdit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelEdit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelEdit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -173,6 +225,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -202,12 +258,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.InRowChangingEventException">The method was called inside the <see cref="E:System.Data.DataTable.RowChanging" /> event.</exception>
+        <altmember cref="M:System.Data.DataTable.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.BeginEdit" />
+        <altmember cref="T:System.Data.DataViewRowState" />
+        <altmember cref="M:System.Data.DataRow.EndEdit" />
+        <altmember cref="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+        <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
     <Member MemberName="ClearErrors">
       <MemberSignature Language="C#" Value="public void ClearErrors ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearErrors() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.ClearErrors" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ClearErrors ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ClearErrors();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -217,6 +282,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -244,12 +313,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataRow.GetColumnError(System.Int32)" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
       </Docs>
     </Member>
     <Member MemberName="Delete">
       <MemberSignature Language="C#" Value="public void Delete ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.Delete" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Delete ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Delete();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -259,6 +336,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -270,9 +351,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the <xref:System.Data.DataRow.RowState%2A> of the row is Added, the <xref:System.Data.DataRow.RowState%2A> becomes `Detached` and the row is removed from the table when you call <xref:System.Data.DataRow.AcceptChanges%2A>.  
+ If the <xref:System.Data.DataRow.RowState*> of the row is Added, the <xref:System.Data.DataRow.RowState*> becomes `Detached` and the row is removed from the table when you call <xref:System.Data.DataRow.AcceptChanges%2A>.  
   
- The <xref:System.Data.DataRow.RowState%2A> becomes `Deleted` after you use the <xref:System.Data.DataRow.Delete%2A> method on an existing <xref:System.Data.DataRow>. It remains `Deleted` until you call <xref:System.Data.DataRow.AcceptChanges%2A>. At this time, the <xref:System.Data.DataRow> is removed from the table.  
+ The <xref:System.Data.DataRow.RowState*> becomes `Deleted` after you use the <xref:System.Data.DataRow.Delete%2A> method on an existing <xref:System.Data.DataRow>. It remains `Deleted` until you call <xref:System.Data.DataRow.AcceptChanges%2A>. At this time, the <xref:System.Data.DataRow> is removed from the table.  
   
  <xref:System.Data.DataRow.Delete%2A> should not be called in a foreach loop while iterating through a <xref:System.Data.DataRowCollection> object. <xref:System.Data.DataRow.Delete%2A> modifies the state of the collection.  
   
@@ -292,12 +373,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.DeletedRowInaccessibleException">The <see cref="T:System.Data.DataRow" /> has already been deleted.</exception>
+        <altmember cref="T:System.Data.DataRowState" />
+        <altmember cref="T:System.Data.DataViewRowState" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
     <Member MemberName="EndEdit">
       <MemberSignature Language="C#" Value="public void EndEdit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndEdit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.EndEdit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndEdit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EndEdit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -307,6 +393,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -339,12 +429,31 @@
         <exception cref="T:System.Data.ConstraintException">The edit broke a constraint.</exception>
         <exception cref="T:System.Data.ReadOnlyException">The row belongs to the table and the edit tried to change the value of a read-only column.</exception>
         <exception cref="T:System.Data.NoNullAllowedException">The edit tried to put a null value into a column where <see cref="P:System.Data.DataColumn.AllowDBNull" /> is false.</exception>
+        <altmember cref="M:System.Data.DataTable.AcceptChanges" />
+        <altmember cref="P:System.Data.DataColumn.AllowDBNull" />
+        <altmember cref="M:System.Data.DataRow.BeginEdit" />
+        <altmember cref="M:System.Data.DataRow.CancelEdit" />
+        <altmember cref="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+        <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetChildRows">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the child rows of a <see cref="T:System.Data.DataRow" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetChildRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (System.Data.DataRelation relation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(class System.Data.DataRelation relation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.Data.DataRelation)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChildRows (relation As DataRelation) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetChildRows(System::Data::DataRelation ^ relation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -354,6 +463,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -385,12 +498,18 @@
         <exception cref="T:System.ArgumentNullException">The relation is <see langword="null" />.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to the table.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have this version of data.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="M:System.Data.DataRow.GetParentRows(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetChildRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (string relationName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(string relationName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChildRows (relationName As String) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetChildRows(System::String ^ relationName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -400,6 +519,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -427,6 +550,8 @@
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChildRows (relation As DataRelation, version As DataRowVersion) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetChildRows(System::Data::DataRelation ^ relation, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -436,6 +561,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -457,7 +586,7 @@
   
  Use the <xref:System.Data.DataRow.HasVersion%2A> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.  
   
- If <xref:System.Data.DataRowVersion> is specified, the version that is used depends on the <xref:System.Data.DataRow.RowState%2A> of the row on which `GetChildRows` is invoked. If the row on which `GetChildRows` is invoked has a `RowState` of `Modified`, `New`, or `Unchanged`, the <xref:System.Data.DataRowVersion> version of the row is used for fetching related child rows with matching values in their Current versions. If the row on which `GetChildRows` is invoked has a `RowState` of `Deleted`, the <xref:System.Data.DataRowVersion> version of the row is used for fetching related child rows with matching values in their original versions.  
+ If <xref:System.Data.DataRowVersion.Default> is specified, the version that is used depends on the <xref:System.Data.DataRow.RowState*> of the row on which `GetChildRows` is invoked. If the row on which `GetChildRows` is invoked has a `RowState` of `Modified`, `New`, or `Unchanged`, the <xref:System.Data.DataRowVersion.Current> version of the row is used for fetching related child rows with matching values in their Current versions. If the row on which `GetChildRows` is invoked has a `RowState` of `Deleted`, the <xref:System.Data.DataRowVersion.Original> version of the row is used for fetching related child rows with matching values in their original versions.  
   
    
   
@@ -473,12 +602,20 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="relation" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to the table.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have the requested <see cref="T:System.Data.DataRowVersion" />.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="T:System.Data.DataRowVersion" />
+        <altmember cref="M:System.Data.DataRow.GetParentRow(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRows(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetChildRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetChildRows (string relationName, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetChildRows(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetChildRows(System.String,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetChildRows (relationName As String, version As DataRowVersion) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetChildRows(System::String ^ relationName, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -488,6 +625,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -509,7 +650,7 @@
   
  Use the <xref:System.Data.DataRow.HasVersion%2A> property to determine whether the <xref:System.Data.DataRowVersion> that you want exists.  
   
- If <xref:System.Data.DataRowVersion> is specified, the version that is used depends on the <xref:System.Data.DataRow.RowState%2A> of the row on which `GetChildRows` is invoked. If the row on which `GetChildRows` is invoked has a `RowState` of `Modified`, `New`, or `Unchanged`, the <xref:System.Data.DataRowVersion> version of the row is used for fetching related child rows with matching values in their Current versions. If the row on which `GetChildRows` is invoked has a `RowState` of `Deleted`, the <xref:System.Data.DataRowVersion> version of the row is used for fetching related child rows with matching values in their original versions.  
+ If <xref:System.Data.DataRowVersion.Default> is specified, the version that is used depends on the <xref:System.Data.DataRow.RowState*> of the row on which `GetChildRows` is invoked. If the row on which `GetChildRows` is invoked has a `RowState` of `Modified`, `New`, or `Unchanged`, the <xref:System.Data.DataRowVersion.Current> version of the row is used for fetching related child rows with matching values in their Current versions. If the row on which `GetChildRows` is invoked has a `RowState` of `Deleted`, the <xref:System.Data.DataRowVersion.Original> version of the row is used for fetching related child rows with matching values in their original versions.  
   
  ]]></format>
         </remarks>
@@ -519,10 +660,22 @@
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have the requested <see cref="T:System.Data.DataRowVersion" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetColumnError">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the error description for a column.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetColumnError">
       <MemberSignature Language="C#" Value="public string GetColumnError (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetColumnError (column As DataColumn) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetColumnError(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -532,6 +685,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -563,12 +720,23 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="M:System.Data.DataTable.GetErrors" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetColumnError">
       <MemberSignature Language="C#" Value="public string GetColumnError (int columnIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(int32 columnIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetColumnError (columnIndex As Integer) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetColumnError(int columnIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -578,6 +746,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -610,12 +782,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.IndexOutOfRangeException">The <paramref name="columnIndex" /> argument is out of range.</exception>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetColumnError">
       <MemberSignature Language="C#" Value="public string GetColumnError (string columnName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetColumnError(string columnName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnError(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetColumnError (columnName As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetColumnError(System::String ^ columnName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -625,6 +807,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -656,12 +842,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="GetColumnsInError">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn[] GetColumnsInError ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn[] GetColumnsInError() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetColumnsInError" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetColumnsInError () As DataColumn()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataColumn ^&gt; ^ GetColumnsInError();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -671,6 +867,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn[]</ReturnType>
@@ -697,12 +897,30 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="M:System.Data.DataRow.GetColumnError(System.Int32)" />
+        <altmember cref="M:System.Data.DataTable.GetErrors" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetParentRow">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the parent row of a <see cref="T:System.Data.DataRow" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetParentRow">
       <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (System.Data.DataRelation relation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(class System.Data.DataRelation relation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.Data.DataRelation)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRow (relation As DataRelation) As DataRow" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataRow ^ GetParentRow(System::Data::DataRelation ^ relation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -712,6 +930,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow</ReturnType>
@@ -747,12 +969,19 @@
         <exception cref="T:System.Data.DataException">A child row has multiple parents.</exception>
         <exception cref="T:System.Data.InvalidConstraintException">This row does not belong to the child table of the <see cref="T:System.Data.DataRelation" /> object.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to a table.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="M:System.Data.DataRow.GetChildRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRow(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetParentRow">
       <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (string relationName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(string relationName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRow (relationName As String) As DataRow" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataRow ^ GetParentRow(System::String ^ relationName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -762,6 +991,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow</ReturnType>
@@ -800,6 +1033,8 @@
       <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRow (relation As DataRelation, version As DataRowVersion) As DataRow" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataRow ^ GetParentRow(System::Data::DataRelation ^ relation, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -809,6 +1044,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow</ReturnType>
@@ -849,12 +1088,20 @@
         <exception cref="T:System.Data.InvalidConstraintException">The relation's child table is not the table the row belongs to.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to a table.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have this version of data.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="T:System.Data.DataRowVersion" />
+        <altmember cref="M:System.Data.DataRow.GetChildRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRow(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetParentRow">
       <MemberSignature Language="C#" Value="public System.Data.DataRow GetParentRow (string relationName, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow GetParentRow(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRow(System.String,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRow (relationName As String, version As DataRowVersion) As DataRow" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataRow ^ GetParentRow(System::String ^ relationName, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -864,6 +1111,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow</ReturnType>
@@ -904,10 +1155,22 @@
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have the requested <see cref="T:System.Data.DataRowVersion" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetParentRows">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the parent rows of a <see cref="T:System.Data.DataRow" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetParentRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (System.Data.DataRelation relation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(class System.Data.DataRelation relation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.Data.DataRelation)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRows (relation As DataRelation) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetParentRows(System::Data::DataRelation ^ relation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -917,6 +1180,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -949,12 +1216,19 @@
         <exception cref="T:System.ArgumentNullException">The row is <see langword="null" />.</exception>
         <exception cref="T:System.Data.InvalidConstraintException">The relation's child table is not the table the row belongs to.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to a <see cref="T:System.Data.DataTable" />.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="M:System.Data.DataRow.GetChildRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRow(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetParentRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (string relationName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(string relationName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRows (relationName As String) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetParentRows(System::String ^ relationName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -964,6 +1238,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -993,6 +1271,8 @@
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (System.Data.DataRelation relation, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(class System.Data.DataRelation relation, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.Data.DataRelation,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRows (relation As DataRelation, version As DataRowVersion) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetParentRows(System::Data::DataRelation ^ relation, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1002,6 +1282,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -1039,12 +1323,19 @@
         <exception cref="T:System.Data.InvalidConstraintException">The relation's child table is not the table the row belongs to.</exception>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to a <see cref="T:System.Data.DataTable" />.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have the requested <see cref="T:System.Data.DataRowVersion" />.</exception>
+        <altmember cref="P:System.Data.DataTable.ChildRelations" />
+        <altmember cref="T:System.Data.DataRelation" />
+        <altmember cref="M:System.Data.DataRow.GetChildRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRow(System.String)" />
+        <altmember cref="P:System.Data.DataSet.Relations" />
       </Docs>
     </Member>
     <Member MemberName="GetParentRows">
       <MemberSignature Language="C#" Value="public System.Data.DataRow[] GetParentRows (string relationName, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataRow[] GetParentRows(string relationName, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.GetParentRows(System.String,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetParentRows (relationName As String, version As DataRowVersion) As DataRow()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; cli::array &lt;System::Data::DataRow ^&gt; ^ GetParentRows(System::String ^ relationName, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1054,6 +1345,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRow[]</ReturnType>
@@ -1089,6 +1384,8 @@
       <MemberSignature Language="C#" Value="public bool HasErrors { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasErrors" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.HasErrors" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasErrors As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasErrors { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1098,6 +1395,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1112,7 +1413,7 @@
 ## Remarks  
  `HasErrors` returns `true` if any <xref:System.Data.DataColumn> object in the row contains an error, or if the <xref:System.Data.DataRow.RowError%2A> property of the <xref:System.Data.DataRow> is not an empty string.  
   
- When validating data, you can set an error on any column in a row. Such a column, when displayed in the <xref:System.Windows.Forms.DataGrid?displayProperty=fullName> control, is marked with a red exclamation point to signal to the user that the column is in error.  
+ When validating data, you can set an error on any column in a row. Such a column, when displayed in the <xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType> control, is marked with a red exclamation point to signal to the user that the column is in error.  
   
  Use <xref:System.Data.DataRow.SetColumnError%2A> to set an error on any column.  
   
@@ -1130,12 +1431,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataRow.GetColumnError(System.Int32)" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="HasVersion">
       <MemberSignature Language="C#" Value="public bool HasVersion (System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasVersion(valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.HasVersion(System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HasVersion (version As DataRowVersion) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool HasVersion(System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1145,6 +1453,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1172,12 +1484,32 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataTable.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.BeginEdit" />
+        <altmember cref="M:System.Data.DataRow.CancelEdit" />
+        <altmember cref="P:System.Data.DataRow.Item(System.Int32)" />
+        <altmember cref="M:System.Data.DataRow.GetChildRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.GetParentRows(System.String)" />
+        <altmember cref="M:System.Data.DataRow.EndEdit" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="IsNull">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a value that indicates whether the specified column contains a null value.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IsNull">
       <MemberSignature Language="C#" Value="public bool IsNull (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsNull (column As DataColumn) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsNull(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1187,6 +1519,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1215,6 +1551,8 @@
       <MemberSignature Language="C#" Value="public bool IsNull (int columnIndex);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(int32 columnIndex) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsNull (columnIndex As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsNull(int columnIndex);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1224,6 +1562,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1252,6 +1594,8 @@
       <MemberSignature Language="C#" Value="public bool IsNull (string columnName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(string columnName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsNull (columnName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsNull(System::String ^ columnName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1261,6 +1605,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1289,6 +1637,8 @@
       <MemberSignature Language="C#" Value="public bool IsNull (System.Data.DataColumn column, System.Data.DataRowVersion version);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsNull(class System.Data.DataColumn column, valuetype System.Data.DataRowVersion version) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.IsNull(System.Data.DataColumn,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsNull (column As DataColumn, version As DataRowVersion) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsNull(System::Data::DataColumn ^ column, System::Data::DataRowVersion version);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1298,6 +1648,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1315,10 +1669,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets or sets data stored in a specified column.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public object this[System.Data.DataColumn column] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Data.DataColumn)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(column As DataColumn) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::Data::DataColumn ^] { System::Object ^ get(System::Data::DataColumn ^ column); void set(System::Data::DataColumn ^ column, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1328,6 +1694,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1366,6 +1736,8 @@
       <MemberSignature Language="C#" Value="public object this[int columnIndex] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(columnIndex As Integer) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[int] { System::Object ^ get(int columnIndex); void set(int columnIndex, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1375,6 +1747,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1413,6 +1789,8 @@
       <MemberSignature Language="C#" Value="public object this[string columnName] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(columnName As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::String ^] { System::Object ^ get(System::String ^ columnName); void set(System::String ^ columnName, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1422,6 +1800,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1461,6 +1843,8 @@
       <MemberSignature Language="C#" Value="public object this[System.Data.DataColumn column, System.Data.DataRowVersion version] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(class System.Data.DataColumn, valuetype System.Data.DataRowVersion)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Data.DataColumn,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(column As DataColumn, version As DataRowVersion) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::Data::DataColumn ^, System::Data::DataRowVersion] { System::Object ^ get(System::Data::DataColumn ^ column, System::Data::DataRowVersion version); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1470,6 +1854,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1487,7 +1875,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `version` should not be confused with the <xref:System.Data.DataRow.RowState%2A> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value.  
+ The `version` should not be confused with the <xref:System.Data.DataRow.RowState*> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value.  
   
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.  
   
@@ -1506,12 +1894,15 @@
         <exception cref="T:System.ArgumentException">The column does not belong to the table.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="column" /> argument contains null.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have this version of data.</exception>
+        <altmember cref="T:System.Data.DataRowVersion" />
       </Docs>
     </Member>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public object this[int columnIndex, System.Data.DataRowVersion version] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(int32, valuetype System.Data.DataRowVersion)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.Int32,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(columnIndex As Integer, version As DataRowVersion) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[int, System::Data::DataRowVersion] { System::Object ^ get(int columnIndex, System::Data::DataRowVersion version); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1521,6 +1912,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1545,7 +1940,7 @@
   
  By contrast, the <xref:System.Data.DataRowVersion> enumeration `Current` returns the version of the data after the <xref:System.Data.DataRow.EndEdit%2A> method has been called.  
   
- The `version` argument should not be confused with the <xref:System.Data.DataRow.RowState%2A> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value. The <xref:System.Data.DataRow.RowState%2A> property describes the state of the whole row relative to its parent <xref:System.Data.DataTable>.  
+ The `version` argument should not be confused with the <xref:System.Data.DataRow.RowState*> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value. The <xref:System.Data.DataRow.RowState*> property describes the state of the whole row relative to its parent <xref:System.Data.DataTable>.  
   
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.  
   
@@ -1570,6 +1965,8 @@
       <MemberSignature Language="C#" Value="public object this[string columnName, System.Data.DataRowVersion version] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string, valuetype System.Data.DataRowVersion)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Item(System.String,System.Data.DataRowVersion)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(columnName As String, version As DataRowVersion) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Object ^ default[System::String ^, System::Data::DataRowVersion] { System::Object ^ get(System::String ^ columnName, System::Data::DataRowVersion version); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1579,6 +1976,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -1596,7 +1997,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The version should not be confused with the <xref:System.Data.DataRow.RowState%2A> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value. The <xref:System.Data.DataRow.RowState%2A> property describes the state of the whole row relative to its parent <xref:System.Data.DataTable>.  
+ The version should not be confused with the <xref:System.Data.DataRow.RowState*> property. The `version` argument describes the state of the data that is contained by the column relative to the column's original value. The <xref:System.Data.DataRow.RowState*> property describes the state of the whole row relative to its parent <xref:System.Data.DataTable>.  
   
  When you set the property, an exception is generated if an exception occurs in the <xref:System.Data.DataTable.ColumnChanging> event.  
   
@@ -1616,12 +2017,15 @@
         <exception cref="T:System.InvalidCastException">The data types of the value and the column do not match.</exception>
         <exception cref="T:System.Data.VersionNotFoundException">The row does not have this version of data.</exception>
         <exception cref="T:System.Data.DeletedRowInaccessibleException">The row was deleted.</exception>
+        <altmember cref="T:System.Data.DataRowVersion" />
       </Docs>
     </Member>
     <Member MemberName="ItemArray">
       <MemberSignature Language="C#" Value="public object[] ItemArray { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object[] ItemArray" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.ItemArray" />
+      <MemberSignature Language="VB.NET" Value="Public Property ItemArray As Object()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Object ^&gt; ^ ItemArray { cli::array &lt;System::Object ^&gt; ^ get(); void set(cli::array &lt;System::Object ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1631,6 +2035,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object[]</ReturnType>
@@ -1662,12 +2070,17 @@
         <exception cref="T:System.Data.ReadOnlyException">An edit tried to change the value of a read-only column.</exception>
         <exception cref="T:System.Data.NoNullAllowedException">An edit tried to put a null value in a column where <see cref="P:System.Data.DataColumn.AllowDBNull" /> of the <see cref="T:System.Data.DataColumn" /> object is <see langword="false" />.</exception>
         <exception cref="T:System.Data.DeletedRowInaccessibleException">The row has been deleted.</exception>
+        <altmember cref="M:System.Data.DataRow.AcceptChanges" />
+        <altmember cref="P:System.Data.DataColumn.AutoIncrement" />
+        <altmember cref="T:System.Data.DataColumn" />
       </Docs>
     </Member>
     <Member MemberName="RejectChanges">
       <MemberSignature Language="C#" Value="public void RejectChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RejectChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.RejectChanges" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RejectChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RejectChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1677,6 +2090,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1688,7 +2105,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When you call the <xref:System.Data.DataRow.RejectChanges%2A> method, the <xref:System.Data.DataRow.CancelEdit%2A> method is implicitly called to cancel any edits. If <xref:System.Data.DataRow.RowState%2A> is deleted or modified, the row reverts to its previous values, and <xref:System.Data.DataRow.RowState%2A> becomes unchanged. If the <xref:System.Data.DataRow.RowState%2A> is added, the row is removed.  
+ When you call the <xref:System.Data.DataRow.RejectChanges%2A> method, the <xref:System.Data.DataRow.CancelEdit%2A> method is implicitly called to cancel any edits. If <xref:System.Data.DataRow.RowState*> is deleted or modified, the row reverts to its previous values, and <xref:System.Data.DataRow.RowState*> becomes unchanged. If the <xref:System.Data.DataRow.RowState*> is added, the row is removed.  
   
    
   
@@ -1701,12 +2118,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.RowNotInTableException">The row does not belong to the table.</exception>
+        <altmember cref="M:System.Data.DataRow.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.IsNull(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="RowError">
       <MemberSignature Language="C#" Value="public string RowError { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string RowError" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.RowError" />
+      <MemberSignature Language="VB.NET" Value="Public Property RowError As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ RowError { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1716,6 +2137,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1739,12 +2164,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
+        <altmember cref="P:System.Data.DataSet.HasErrors" />
       </Docs>
     </Member>
     <Member MemberName="RowState">
       <MemberSignature Language="C#" Value="public System.Data.DataRowState RowState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowState RowState" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.RowState" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RowState As DataRowState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataRowState RowState { System::Data::DataRowState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1754,6 +2183,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataRowState</ReturnType>
@@ -1765,24 +2198,37 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The value of the <xref:System.Data.DataRow.RowState%2A> depends on two factors: the kind of operation has been performed on the row, and whether <xref:System.Data.DataRow.AcceptChanges%2A> has been called on the <xref:System.Data.DataRow>.  
+ The value of the <xref:System.Data.DataRow.RowState*> depends on two factors: the kind of operation has been performed on the row, and whether <xref:System.Data.DataRow.AcceptChanges%2A> has been called on the <xref:System.Data.DataRow>.  
   
    
   
 ## Examples  
- The following example first creates a new <xref:System.Data.DataTable> with one column, and then creates a single <xref:System.Data.DataRow>. As the <xref:System.Data.DataRow> is created, added, modified, and deleted, its <xref:System.Data.DataRow.RowState%2A> is printed.  
+ The following example first creates a new <xref:System.Data.DataTable> with one column, and then creates a single <xref:System.Data.DataRow>. As the <xref:System.Data.DataRow> is created, added, modified, and deleted, its <xref:System.Data.DataRow.RowState*> is printed.  
   
  [!code-csharp[Classic WebData DataRow.RowState Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataRow.RowState Example/CS/source.cs#1)]
  [!code-vb[Classic WebData DataRow.RowState Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataRow.RowState Example/VB/source.vb#1)]  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.AcceptChanges" />
+        <altmember cref="M:System.Data.DataRow.BeginEdit" />
+        <altmember cref="M:System.Data.DataRowCollection.Add(System.Data.DataRow)" />
+        <altmember cref="M:System.Data.DataRow.CancelEdit" />
+        <altmember cref="T:System.Data.DataTable" />
+        <altmember cref="T:System.Data.DataRowView" />
+        <altmember cref="M:System.Data.DataRow.Delete" />
+        <altmember cref="M:System.Data.DataRow.EndEdit" />
+        <altmember cref="M:System.Data.DataTable.NewRow" />
+        <altmember cref="M:System.Data.DataRow.SetAdded" />
+        <altmember cref="M:System.Data.DataRow.SetModified" />
       </Docs>
     </Member>
     <Member MemberName="SetAdded">
       <MemberSignature Language="C#" Value="public void SetAdded ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAdded() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetAdded" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetAdded ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAdded();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1792,6 +2238,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1803,16 +2253,30 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Changes the <xref:System.Data.DataRow.RowState%2A> of a <xref:System.Data.DataRow> to `Added`. If the current row is not in either an `Unchanged` or an `Added` state, it throws an <xref:System.InvalidOperationException> with the message that `SetAdded` can only be invoked on a `DataRow` instance where the `RowState` is `Unchanged`.  
+ Changes the <xref:System.Data.DataRow.RowState*> of a <xref:System.Data.DataRow> to `Added`. If the current row is not in either an `Unchanged` or an `Added` state, it throws an <xref:System.InvalidOperationException> with the message that `SetAdded` can only be invoked on a `DataRow` instance where the `RowState` is `Unchanged`.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.SetModified" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetColumnError">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the error description for a column.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetColumnError">
       <MemberSignature Language="C#" Value="public void SetColumnError (System.Data.DataColumn column, string error);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(class System.Data.DataColumn column, string error) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.Data.DataColumn,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetColumnError (column As DataColumn, error As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetColumnError(System::Data::DataColumn ^ column, System::String ^ error);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1822,6 +2286,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1860,12 +2328,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
       </Docs>
     </Member>
     <Member MemberName="SetColumnError">
       <MemberSignature Language="C#" Value="public void SetColumnError (int columnIndex, string error);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(int32 columnIndex, string error) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetColumnError (columnIndex As Integer, error As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetColumnError(int columnIndex, System::String ^ error);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1875,6 +2352,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1916,12 +2397,21 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.IndexOutOfRangeException">The <paramref name="columnIndex" /> argument is out of range</exception>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
       </Docs>
     </Member>
     <Member MemberName="SetColumnError">
       <MemberSignature Language="C#" Value="public void SetColumnError (string columnName, string error);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetColumnError(string columnName, string error) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetColumnError(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetColumnError (columnName As String, error As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetColumnError(System::String ^ columnName, System::String ^ error);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1931,6 +2421,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1971,12 +2465,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.ClearErrors" />
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
+        <altmember cref="M:System.Data.DataRow.GetColumnsInError" />
+        <altmember cref="P:System.Data.DataRow.HasErrors" />
+        <altmember cref="P:System.Data.DataRow.RowError" />
       </Docs>
     </Member>
     <Member MemberName="SetModified">
       <MemberSignature Language="C#" Value="public void SetModified ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetModified() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetModified" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetModified ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetModified();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -1986,6 +2489,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1997,16 +2504,20 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Changes the <xref:System.Data.DataRow.Rowstate%2A> of a <xref:System.Data.DataRow> to `Modified`. If the current row is not in either an `Unchanged` or an `Added` state, it throws an <xref:System.InvalidOperationException> with the message that `SetModified` can only be invoked on a `DataRow` instance where the `RowState` is `Unchanged`.  
+ Changes the <xref:System.Data.DataRow.RowState*> of a <xref:System.Data.DataRow> to `Modified`. If the current row is not in either an `Unchanged` or an `Added` state, it throws an <xref:System.InvalidOperationException> with the message that `SetModified` can only be invoked on a `DataRow` instance where the `RowState` is `Unchanged`.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataRow.SetAdded" />
+        <altmember cref="P:System.Data.DataRow.RowState" />
       </Docs>
     </Member>
     <Member MemberName="SetNull">
       <MemberSignature Language="C#" Value="protected void SetNull (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetNull(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetNull(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub SetNull (column As DataColumn)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void SetNull(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2016,6 +2527,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2036,10 +2551,22 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetParentRow">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the parent row of a <see cref="T:System.Data.DataRow" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetParentRow">
       <MemberSignature Language="C#" Value="public void SetParentRow (System.Data.DataRow parentRow);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParentRow(class System.Data.DataRow parentRow) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetParentRow(System.Data.DataRow)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetParentRow (parentRow As DataRow)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetParentRow(System::Data::DataRow ^ parentRow);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2049,6 +2576,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2066,6 +2597,8 @@
       <MemberSignature Language="C#" Value="public void SetParentRow (System.Data.DataRow parentRow, System.Data.DataRelation relation);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParentRow(class System.Data.DataRow parentRow, class System.Data.DataRelation relation) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataRow.SetParentRow(System.Data.DataRow,System.Data.DataRelation)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetParentRow (parentRow As DataRow, relation As DataRelation)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetParentRow(System::Data::DataRow ^ parentRow, System::Data::DataRelation ^ relation);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2075,6 +2608,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -2107,6 +2644,8 @@
       <MemberSignature Language="C#" Value="public System.Data.DataTable Table { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataTable Table" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataRow.Table" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Table As DataTable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataTable ^ Table { System::Data::DataTable ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -2116,6 +2655,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataTable</ReturnType>
@@ -2127,7 +2670,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A <xref:System.Data.DataRow> does not necessarily belong to any table's collection of rows. This behavior occurs when the <xref:System.Data.DataRow> has been created but not added to the <xref:System.Data.DataRowCollection>. If the <xref:System.Data.DataRow.RowState%2A> property returns `DataRowState.Detached`, the row is not in any collection.  
+ A <xref:System.Data.DataRow> does not necessarily belong to any table's collection of rows. This behavior occurs when the <xref:System.Data.DataRow> has been created but not added to the <xref:System.Data.DataRowCollection>. If the <xref:System.Data.DataRow.RowState*> property returns `DataRowState.Detached`, the row is not in any collection.  
   
    
   
@@ -2139,6 +2682,8 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Data.DataColumnCollection" />
+        <altmember cref="T:System.Data.DataTable" />
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 ---
-title: Classes and Objects in C# | A tour of the C# Language
+title: Classes and Objects in C# - A tour of the C# Language
 description: New to C#? Read this overview of classes, objects and inheritance
 keywords: .NET, csharp, class, instance, object, inheritance, polymorphism
 author: BillWagner
@@ -63,11 +63,13 @@ Each member of a class has an associated accessibility, which controls the regio
 * `protected`
 	- Access limited to this class or classes derived from this class
 * `internal`
-	- Access limited to this program
+	- Access limited to the current assembly (.exe, .dll, etc.)
 * `protected internal`
-	- Access limited to this program or classes derived from this class
+	- Access limited to the containing class or classes derived from the containing class
 * `private`
 	- Access limited to this class
+* `private protected`
+    - Access limited to the containing class or classes derived from the containing type within the same assembly
 
 ## Type parameters
 
@@ -84,7 +86,7 @@ A generic type with type arguments provided, like `Pair<int,string>` above, is c
 
 ## Base classes
 
-A class declaration may specify a base class by following the class name and type parameters with a colon and the name of the base class. Omitting a base class specification is the same as deriving from type object. In the following example, the base class of `Point3D` is `Point`, and the base class of `Point` is `object`:
+A class declaration may specify a base class by following the class name and type parameters with a colon and the name of the base class. Omitting a base class specification is the same as deriving from type `object`. In the following example, the base class of `Point3D` is `Point`, and the base class of `Point` is `object`:
 
 [!code-csharp[Point3DClass](../../../samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
 
@@ -134,7 +136,7 @@ An *output parameter* is used for passing arguments by reference. It's similar t
 
 [!code-csharp[OutExample](../../../samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
 
-A *parameter array* permits a variable number of arguments to be passed to a method. A parameter array is declared with the `params` modifier. Only the last parameter of a method can be a parameter array, and the type of a parameter array must be a single-dimensional array type. The Write and WriteLine methods of the `@System.Console` class are good examples of parameter array usage. They are declared as follows.
+A *parameter array* permits a variable number of arguments to be passed to a method. A parameter array is declared with the `params` modifier. Only the last parameter of a method can be a parameter array, and the type of a parameter array must be a single-dimensional array type. The Write and WriteLine methods of the <xref:System.Console?displayProperty=nameWithType> class are good examples of parameter array usage. They are declared as follows.
 
 [!code-csharp[ConsoleExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
 
@@ -196,7 +198,7 @@ The previous four classes can be used to model arithmetic expressions. For examp
 
 [!code-csharp[ExpressionExample](../../../samples/snippets/csharp/tour/classes-and-objects/Program.cs#L40-L43)]
 
-The `Evaluate` method of an `Expression` instance is invoked to evaluate the given expression and produce a `double` value. The method takes as an argument a @`Dctionary` that contains variable names (as keys of the entries) and values (as values of the entries). The `Evaluate` method is a `virtual abstract` method, meaning that non-abstract derived classes must override it to provide an actual implementation.
+The `Evaluate` method of an `Expression` instance is invoked to evaluate the given expression and produce a `double` value. The method takes a `Dictionary` argument that contains variable names (as keys of the entries) and values (as values of the entries). Because `Evaluate` is an abstract method, non-abstract classes derived from `Expression` must override `Evaluate`.
 
 A `Constant`'s implementation of `Evaluate` simply returns the stored constant. A `VariableReference`'s implementation looks up the variable name in the dictionary and returns the resulting value. An `Operation`'s implementation first evaluates the left and right operands (by recursively invoking their `Evaluate` methods) and then performs the given arithmetic operation.
 

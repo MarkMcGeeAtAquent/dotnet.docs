@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedNamespace::GetVariables Method | Microsoft Docs"
+title: "ISymUnmanagedNamespace::GetVariables Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedNamespace.GetVariables"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedNamespace::GetVariables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedNamespace::GetVariables method [.NET Framework debugging]"
   - "GetVariables method, ISymUnmanagedNamespace interface [.NET Framework debugging]"
 ms.assetid: ea7c1617-f3ce-4220-8288-f2b50eaf0f0f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedNamespace::GetVariables Method
 Returns all variables defined at global scope within this namespace.  

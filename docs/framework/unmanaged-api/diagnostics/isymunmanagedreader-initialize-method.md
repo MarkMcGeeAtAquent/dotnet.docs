@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::Initialize Method | Microsoft Docs"
+title: "ISymUnmanagedReader::Initialize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.Initialize"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::Initialize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedReader::Initialize method [.NET Framework debugging]"
   - "Initialize method, ISymUnmanagedReader interface [.NET Framework debugging]"
 ms.assetid: 8f0dd2fe-7df7-464e-91f4-5518c586bb5f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::Initialize Method
 Initializes the symbol reader with the metadata importer interface that this reader will be associated with, along with the file name of the module.  

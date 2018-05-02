@@ -1,12 +1,12 @@
 ﻿'<SnippetAddInSideAdapterCode>
 
-Imports System ' IntPtr
-Imports System.AddIn.Contract ' INativeHandleContract
-Imports System.AddIn.Pipeline ' AddInAdapterAttribute, FrameworkElementAdapters, ContractBase
+Imports System
+Imports System.AddIn.Contract
+Imports System.AddIn.Pipeline
 Imports System.Security.Permissions
 
-Imports AddInViews ' WPFAddInView
-Imports Contracts ' IWPFAddInContract
+Imports AddInViews
+Imports Contracts
 
 Namespace AddInSideAdapters
 	''' <summary>
@@ -42,7 +42,7 @@ Namespace AddInSideAdapters
 
         ''' <summary>
         ''' GetHandle is called by the WPF add-in model from the host application's 
-        ''' application domain to to get the window handle for an add-in UI from the 
+        ''' application domain to get the window handle for an add-in UI from the 
         ''' add-in's application domain. GetHandle is called if a window handle isn't 
         ''' returned by other means ie overriding ContractBase.QueryContract, 
         ''' as shown above.

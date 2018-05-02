@@ -1,31 +1,34 @@
 ---
-title: "ITypeNameBuilder::AddArray Method | Microsoft Docs"
+title: "ITypeNameBuilder::AddArray Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeNameBuilder.AddArray"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "AddArray"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ITypeNameBuilder::AddArray method [.NET Framework hosting]"
   - "AddArray method [.NET Framework hosting]"
 ms.assetid: 0a21ae28-54bc-4f6e-aaa6-960a22c5f530
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeNameBuilder::AddArray Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

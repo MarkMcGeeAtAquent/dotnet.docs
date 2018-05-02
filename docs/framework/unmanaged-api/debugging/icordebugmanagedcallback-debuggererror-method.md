@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::DebuggerError Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::DebuggerError Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.DebuggerError"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::DebuggerError"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "DebuggerError method [.NET Framework debugging]"
   - "ICorDebugManagedCallback::DebuggerError method [.NET Framework debugging]"
 ms.assetid: 9e983d11-eaf3-4741-b936-29ec456384a3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::DebuggerError Method
 Notifies the debugger that an error has occurred while attempting to handle an event from the common language runtime (CLR).  

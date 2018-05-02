@@ -1,5 +1,5 @@
 ---
-title: "ICorThreadpool::CorGetMaxThreads Method | Microsoft Docs"
+title: "ICorThreadpool::CorGetMaxThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorThreadpool.CorGetMaxThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorGetMaxThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorGetMaxThreads method [.NET Framework hosting]"
   - "ICorThreadpool::CorGetMaxThreads method [.NET Framework hosting]"
 ms.assetid: 2861533a-cda0-47b3-b716-0d363505289b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorThreadpool::CorGetMaxThreads Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

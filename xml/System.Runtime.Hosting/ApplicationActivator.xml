@@ -1,7 +1,9 @@
-<Type Name="ApplicationActivator" FullName="System.Runtime.Hosting.ApplicationActivator">
+﻿<Type Name="ApplicationActivator" FullName="System.Runtime.Hosting.ApplicationActivator">
   <TypeSignature Language="C#" Value="public class ApplicationActivator" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ApplicationActivator extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Hosting.ApplicationActivator" />
+  <TypeSignature Language="VB.NET" Value="Public Class ApplicationActivator" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ApplicationActivator" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -34,7 +36,7 @@
   
     2.  Calls the <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A> method to create a new domain using the <xref:System.AppDomainSetup> object.  
   
-    3.  The <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A> method calls the <xref:System.Security.HostSecurityManager.DetermineApplicationTrust%2A?displayProperty=fullName> method to acquire an <xref:System.Security.Policy.ApplicationTrust> object for the add-in. If the <xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun%2A> property returns `true`, the add-in is executed. If not, <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A> throws a <xref:System.Security.Policy.PolicyException> indicating that execution permission could not be acquired.  
+    3.  The <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A> method calls the <xref:System.Security.HostSecurityManager.DetermineApplicationTrust%2A?displayProperty=nameWithType> method to acquire an <xref:System.Security.Policy.ApplicationTrust> object for the add-in. If the <xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun%2A> property returns `true`, the add-in is executed. If not, <xref:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper%2A> throws a <xref:System.Security.Policy.PolicyException> indicating that execution permission could not be acquired.  
   
     4.  If the add-in is trusted to run, then a new <xref:System.AppDomain> is created and configured for the <xref:System.ActivationContext> of the add-in, and the add-in is loaded and executed.  
   
@@ -66,6 +68,8 @@
       <MemberSignature Language="C#" Value="public ApplicationActivator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ApplicationActivator();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -78,10 +82,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateInstance">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an instance of the application to be activated, using an activation context that identifies the application.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateInstance">
       <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstance(System.ActivationContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::ObjectHandle ^ CreateInstance(ActivationContext ^ activationContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -114,6 +129,7 @@
       <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.ObjectHandle CreateInstance (ActivationContext activationContext, string[] activationCustomData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.ObjectHandle CreateInstance(class System.ActivationContext activationContext, string[] activationCustomData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstance(System.ActivationContext,System.String[])" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Runtime::Remoting::ObjectHandle ^ CreateInstance(ActivationContext ^ activationContext, cli::array &lt;System::String ^&gt; ^ activationCustomData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -148,6 +164,8 @@
       <MemberSignature Language="C#" Value="protected static System.Runtime.Remoting.ObjectHandle CreateInstanceHelper (AppDomainSetup adSetup);" />
       <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig class System.Runtime.Remoting.ObjectHandle CreateInstanceHelper(class System.AppDomainSetup adSetup) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Hosting.ApplicationActivator.CreateInstanceHelper(System.AppDomainSetup)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function CreateInstanceHelper (adSetup As AppDomainSetup) As ObjectHandle" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static System::Runtime::Remoting::ObjectHandle ^ CreateInstanceHelper(AppDomainSetup ^ adSetup);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -172,7 +190,7 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.ArgumentException">The <see cref="P:System.AppDomainSetup.ActivationArguments" /> property of <paramref name="adSetup " />is <see langword="null" />.</exception>
+        <exception cref="T:System.ArgumentException">The <see cref="P:System.AppDomainSetup.ActivationArguments" /> property of <paramref name="adSetup" /> is <see langword="null" />.</exception>
         <exception cref="T:System.Security.Policy.PolicyException">The application instance failed to execute because the policy settings on the current application domain do not provide permission for this application to run.</exception>
       </Docs>
     </Member>

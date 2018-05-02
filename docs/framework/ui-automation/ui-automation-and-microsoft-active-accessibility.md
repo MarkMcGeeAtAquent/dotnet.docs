@@ -1,5 +1,5 @@
 ---
-title: "UI Automation and Microsoft Active Accessibility | Microsoft Docs"
+title: "UI Automation and Microsoft Active Accessibility"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -19,6 +19,8 @@ caps.latest.revision: 24
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # UI Automation and Microsoft Active Accessibility
 > [!NOTE]
@@ -135,7 +137,7 @@ manager: "markl"
 |`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> or <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` takes precedence if both are present.|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
 |`get_accRole`|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|See the previous table for mapping of roles to control types.|  
-|`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=fullName><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=fullName>|Valid only for control types that support ValuePattern or RangeValuePattern. RangeValue values are normalized to 0-100, to be consistent with MSAA behavior. Value items use a string.|  
+|`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>|Valid only for control types that support ValuePattern or RangeValuePattern. RangeValue values are normalized to 0-100, to be consistent with MSAA behavior. Value items use a string.|  
 |`get_accHelp`|<xref:System.Windows.Automation.AutomationElement.HelpTextProperty>||  
 |`accLocation`|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>||  
 |`get_accDescription`|Not supported in [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|`accDescription` did not have a clear specification within MSAA, which resulted in providers placing different pieces of information in this property.|  
@@ -146,19 +148,19 @@ manager: "markl"
 |[!INCLUDE[TLA2#tla_aa](../../../includes/tla2sharptla-aa-md.md)] state|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property|Triggers State Change?|  
 |-----------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------|  
 |STATE_SYSTEM_CHECKED|For check box, <xref:System.Windows.Automation.TogglePattern.ToggleStateProperty><br /><br /> For radio button, <xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|Y|  
-|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState>|Y|  
-|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState> or <xref:System.Windows.Automation.ExpandCollapseState>|Y|  
+|STATE_SYSTEM_COLLAPSED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Collapsed>|Y|  
+|STATE_SYSTEM_EXPANDED|<xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> = <xref:System.Windows.Automation.ExpandCollapseState.Expanded> or <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>|Y|  
 |STATE_SYSTEM_FOCUSABLE|<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>|N|  
 |STATE_SYSTEM_FOCUSED|<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>|N|  
 |STATE_SYSTEM_HASPOPUP|<xref:System.Windows.Automation.ExpandCollapsePattern> for menu items|N|  
 |STATE_SYSTEM_INVISIBLE|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> = True and <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A> causes <xref:System.Windows.Automation.NoClickablePointException>|N|  
 |STATE_SYSTEM_LINKED|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> =<br /><br /> <xref:System.Windows.Automation.ControlType.Hyperlink>|N|  
-|STATE_SYSTEM_MIXED|<xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> = <xref:System.Windows.Automation.ToggleState>|N|  
+|STATE_SYSTEM_MIXED|<xref:System.Windows.Automation.TogglePattern.TogglePatternInformation.ToggleState%2A> = <xref:System.Windows.Automation.ToggleState.Indeterminate>|N|  
 |STATE_SYSTEM_MOVEABLE|<xref:System.Windows.Automation.TransformPattern.CanMoveProperty>|N|  
 |STATE_SYSTEM_MUTLISELECTABLE|<xref:System.Windows.Automation.SelectionPattern.CanSelectMultipleProperty>|N|  
 |STATE_SYSTEM_OFFSCREEN|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> = True|N|  
 |STATE_SYSTEM_PROTECTED|<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>|N|  
-|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=fullName> and <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=fullName>|N|  
+|STATE_SYSTEM_READONLY|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty?displayProperty=nameWithType> and <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty?displayProperty=nameWithType>|N|  
 |STATE_SYSTEM_SELECTABLE|<xref:System.Windows.Automation.SelectionItemPattern> is supported|N|  
 |STATE_SYSTEM_SELECTED|<xref:System.Windows.Automation.SelectionItemPattern.IsSelectedProperty>|N|  
 |STATE_SYSTEM_SIZEABLE|<xref:System.Windows.Automation.TransformPattern.TransformPatternInformation.CanResize%2A>|N|  
@@ -213,7 +215,7 @@ manager: "markl"
 |EVENT_OBJECT_SELECTIONWITHIN|No equivalent|  
 |EVENT_OBJECT_SHOW|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|  
 |EVENT_OBJECT_STATECHANGE|Various property-changed events|  
-|EVENT_OBJECT_VALUECHANGE|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=fullName> and <xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=fullName> changed|  
+|EVENT_OBJECT_VALUECHANGE|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType> and <xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType> changed|  
 |EVENT_SYSTEM_ALERT|No equivalent|  
 |EVENT_SYSTEM_CAPTUREEND|No equivalent|  
 |EVENT_SYSTEM_CAPTURESTART|No equivalent|  

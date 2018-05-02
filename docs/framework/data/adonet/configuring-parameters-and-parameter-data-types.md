@@ -1,5 +1,5 @@
 ---
-title: "Configuring Parameters and Parameter Data Types | Microsoft Docs"
+title: "Configuring Parameters and Parameter Data Types"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,16 @@ ms.technology:
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
 caps.latest.revision: 6
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Parameters and Parameter Data Types
 Command objects use parameters to pass values to SQL statements or stored procedures, providing type checking and validation. Unlike command text, parameter input is treated as a literal value, not as executable code. This helps guard against "SQL injection" attacks, in which an attacker inserts a command that compromises security on the server into an SQL statement.  
@@ -27,10 +32,10 @@ Command objects use parameters to pass values to SQL statements or stored proced
   
 |Member name|Description|  
 |-----------------|-----------------|  
-|<xref:System.Data.ParameterDirection>|The parameter is an input parameter. This is the default.|  
-|<xref:System.Data.ParameterDirection>|The parameter can perform both input and output.|  
-|<xref:System.Data.ParameterDirection>|The parameter is an output parameter.|  
-|<xref:System.Data.ParameterDirection>|The parameter represents a return value from an operation such as a stored procedure, built-in function, or user-defined function.|  
+|<xref:System.Data.ParameterDirection.Input>|The parameter is an input parameter. This is the default.|  
+|<xref:System.Data.ParameterDirection.InputOutput>|The parameter can perform both input and output.|  
+|<xref:System.Data.ParameterDirection.Output>|The parameter is an output parameter.|  
+|<xref:System.Data.ParameterDirection.ReturnValue>|The parameter represents a return value from an operation such as a stored procedure, built-in function, or user-defined function.|  
   
 ## Working with Parameter Placeholders  
  The syntax for parameter placeholders depends on the data source. The [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] data providers handle naming and specifying parameters and parameter placeholders differently. This syntax is customized to a specific data source, as described in the following table.  
@@ -59,7 +64,7 @@ Command objects use parameters to pass values to SQL statements or stored proced
 |<xref:System.Double>|Double|Float|Double|Double|Double|  
 |<xref:System.Single>|Single|Real|Single|Real|Float|  
 |<xref:System.Guid>|Guid|UniqueIdentifier|Guid|UniqueIdentifier|Raw|  
-|<xref:System.Int16>|Int16|SmallInt|SmallInt|SmallInt|Int16|  
+|<xref:System.Int16 >|Int16|SmallInt|SmallInt|SmallInt|Int16|  
 |<xref:System.Int32>|Int32|Int|Int|Int|Int32|  
 |<xref:System.Int64>|Int64|BigInt|BigInt|BigInt|Number|  
 |<xref:System.Object>|Object|Variant|Variant|Inferring an OdbcType from Object is not supported.|Blob|  
@@ -199,7 +204,7 @@ parameter.Direction = ParameterDirection.Output;
 ```  
   
 ## See Also  
- [Commands and Parameters](../../../../docs/framework/data/adonet/commands-and-parameters.md)   
- [DataAdapter Parameters](../../../../docs/framework/data/adonet/dataadapter-parameters.md)   
- [Data Type Mappings in ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)   
+ [Commands and Parameters](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
+ [DataAdapter Parameters](../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
+ [Data Type Mappings in ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

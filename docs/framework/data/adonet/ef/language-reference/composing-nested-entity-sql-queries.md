@@ -1,23 +1,21 @@
 ---
-title: "Composing Nested Entity SQL Queries | Microsoft Docs"
+title: "Composing Nested Entity SQL Queries"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Composing Nested Entity SQL Queries
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is a rich functional language. The building block of [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is an expression. Unlike conventional SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is not limited to a tabular result set: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] supports composing complex expressions that can have literals, parameters, or nested expressions. A value in the expression can be parameterized or composed of some other expression.  
@@ -56,7 +54,7 @@ UNION ALL
 FROM … );  
 ```  
   
- The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](http://msdn.microsoft.com/en-us/853c583a-eaba-4400-830d-be974e735313).  
+ The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](http://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).  
   
 ## Nested Queries in Projection  
  Nested queries in the project clause might get translated into Cartesian product queries on the server. In some backend servers, including SLQ Server, this can cause the TempDB table to get very large, which can adversely affect server performance.  

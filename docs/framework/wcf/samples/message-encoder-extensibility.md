@@ -1,8 +1,8 @@
 ---
-title: "Message Encoder Extensibility | Microsoft Docs"
+title: "Message Encoder Extensibility"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 842cccc5-4e6b-4c69-a28b-a827c6918df5
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Encoder Extensibility
 This section contains samples that demonstrate custom message encoding.  

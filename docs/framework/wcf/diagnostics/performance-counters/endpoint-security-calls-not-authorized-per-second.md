@@ -1,8 +1,8 @@
 ---
-title: "Endpoint: Security Calls Not Authorized Per Second | Microsoft Docs"
+title: "Endpoint: Security Calls Not Authorized Per Second"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 8
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Endpoint: Security Calls Not Authorized Per Second
 Counter Name: Security Calls Not Authorized Per Second.  

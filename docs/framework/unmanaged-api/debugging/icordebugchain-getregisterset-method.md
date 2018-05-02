@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugChain::GetRegisterSet Method | Microsoft Docs"
+title: "ICorDebugChain::GetRegisterSet Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugChain.GetRegisterSet"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugChain::GetRegisterSet"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugChain::GetRegisterSet method [.NET Framework debugging]"
   - "GetRegisterSet method, ICorDebugChain interface [.NET Framework debugging]"
 ms.assetid: bc4288b6-3331-4ae3-990d-e1d6e62ecb67
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugChain::GetRegisterSet Method
 Gets the register set for the active part of this chain.  

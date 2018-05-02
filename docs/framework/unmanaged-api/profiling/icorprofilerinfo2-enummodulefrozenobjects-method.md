@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::EnumModuleFrozenObjects Method | Microsoft Docs"
+title: "ICorProfilerInfo2::EnumModuleFrozenObjects Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.EnumModuleFrozenObjects"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::EnumModuleFrozenObjects"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumModuleFrozenObjects method [.NET Framework profiling]"
   - "ICorProfilerInfo2::EnumModuleFrozenObjects method [.NET Framework profiling]"
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::EnumModuleFrozenObjects Method
 Gets an enumerator that allows iteration over the frozen objects in the specified module.This method is obsolete.  
@@ -55,5 +58,5 @@ HRESULT EnumModuleFrozenObjects(
  **.NET Framework Versions:** 3.5, 3.0 SP1, 3.0, 2.0 SP1, 2.0  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

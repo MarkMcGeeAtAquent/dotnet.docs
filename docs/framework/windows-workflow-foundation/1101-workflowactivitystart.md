@@ -1,5 +1,5 @@
 ---
-title: "1101 - WorkflowActivityStart | Microsoft Docs"
+title: "1101 - WorkflowActivityStart"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 831cd386-b9b5-47a9-9690-aff6292ff348
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1101 - WorkflowActivityStart
 ## Properties  

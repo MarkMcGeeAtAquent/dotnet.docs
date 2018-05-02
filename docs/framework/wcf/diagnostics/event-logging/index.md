@@ -1,8 +1,8 @@
 ---
-title: "Event Logging in WCF | Microsoft Docs"
+title: "Event Logging in WCF"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "event logging [WCF]"
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Event Logging in WCF
 [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] traces internal events in the Windows event log.  
@@ -51,8 +53,8 @@ manager: "erikre"
   
  The type of an event log entry is used to indicate the severity of an event. Each event must be of a single type, which the application indicates when it reports the event. The Event Viewer uses this type to determine which icon to display in the list view of the log. For the different event type of an event log entry, see <xref:System.Diagnostics.EventLogEntryType>.  
   
- When you click “more information” when viewing an event in the Event Viewer, the Event Viewer may send information across the Internet. For more information, see the Event Viewer help.  
+ When you click "more information" when viewing an event in the Event Viewer, the Event Viewer may send information across the Internet. For more information, see the Event Viewer help.  
   
 ## See Also  
- [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)   
+ [Administration and Diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)  
  [Events General Reference](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: "4208 - RetryingSqlCommandDueToSqlError | Microsoft Docs"
+title: "4208 - RetryingSqlCommandDueToSqlError"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a8e6483a-a6e4-4bbf-82ec-cd8b6e711aad
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 4208 - RetryingSqlCommandDueToSqlError
 ## Properties  

@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::GetHashFromFileW Method | Microsoft Docs"
+title: "ICLRStrongName::GetHashFromFileW Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.GetHashFromFileW"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::GetHashFromFileW"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetHashFromFileW method, ICLRStrongName interface [.NET Framework hosting]"
   - "ICLRStrongName::GetHashFromFileW method [.NET Framework hosting]"
 ms.assetid: c6ff45fc-905d-4c6e-b00c-97c6c7c55d99
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::GetHashFromFileW Method
 Generates a hash over the contents of the file specified by a Unicode string.  
@@ -33,7 +36,7 @@ Generates a hash over the contents of the file specified by a Unicode string.
 ## Syntax  
   
 ```  
-HRESULT GetHashFromFileW (   
+HRESULT GetHashFromFileW (   
     [in]  LPCWSTR   wszFilePath,  
     [in, out] unsigned int   *piHashAlg,  
     [out] BYTE      *pbHash,  
@@ -74,5 +77,5 @@ HRESULT GetHashFromFileW ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [GetHashFromFile Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md)   
+ [GetHashFromFile Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

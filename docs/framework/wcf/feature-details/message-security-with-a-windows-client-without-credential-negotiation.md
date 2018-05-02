@@ -1,19 +1,24 @@
 ---
-title: "Message Security with a Windows Client without Credential Negotiation | Microsoft Docs"
+title: "Message Security with a Windows Client without Credential Negotiation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
 caps.latest.revision: 18
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security with a Windows Client without Credential Negotiation
 The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client and service secured by the Kerberos protocol.  
@@ -61,7 +66,7 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ### Configuration  
  The following configuration can be used instead of the code.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -119,7 +124,7 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ### Configuration  
  The following code configures the client. Note that the [\<servicePrincipalName>](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element must be set to match the service's SPN as registered for the service's account in the Active Directory domain.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -150,6 +155,6 @@ The following scenario shows a [!INCLUDE[indigo1](../../../../includes/indigo1-m
 ```  
   
 ## See Also  
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)   
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [Service Identity and Authentication](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

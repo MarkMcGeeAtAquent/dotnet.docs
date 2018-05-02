@@ -1,7 +1,9 @@
-<Type Name="ClipboardProxy" FullName="Microsoft.VisualBasic.MyServices.ClipboardProxy">
+﻿<Type Name="ClipboardProxy" FullName="Microsoft.VisualBasic.MyServices.ClipboardProxy">
   <TypeSignature Language="C#" Value="public class ClipboardProxy" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi ClipboardProxy extends System.Object" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.MyServices.ClipboardProxy" />
+  <TypeSignature Language="VB.NET" Value="Public Class ClipboardProxy" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClipboardProxy" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.VisualBasic</AssemblyName>
     <AssemblyVersion>10.0.0.0</AssemblyVersion>
@@ -23,7 +25,7 @@
 ## Remarks  
  Items moved or copied to the Clipboard persist even after the application is shut down.  
   
- Data on the Clipboard can be in any data format, also called a Clipboard format. For a list of predefined formats to use with the Clipboard, see <xref:System.Windows.Forms.DataFormats>. When an item is moved or copied to the Clipboard, items in other formats are cleared. To make other formats persist, use <xref:Microsoft.VisualBasic.VariantType>, which copies everything existing on the current Clipboard, including items pasted from other applications. Place data on the Clipboard in multiple formats to maximize the possibility that a target application, whose format requirements you might not know, can successfully retrieve the data.  
+ Data on the Clipboard can be in any data format, also called a Clipboard format. For a list of predefined formats to use with the Clipboard, see <xref:System.Windows.Forms.DataFormats>. When an item is moved or copied to the Clipboard, items in other formats are cleared. To make other formats persist, use <xref:Microsoft.VisualBasic.VariantType.DataObject>, which copies everything existing on the current Clipboard, including items pasted from other applications. Place data on the Clipboard in multiple formats to maximize the possibility that a target application, whose format requirements you might not know, can successfully retrieve the data.  
   
  Because all Windows applications share the system Clipboard, the contents may change when you switch to another application.  
   
@@ -56,12 +58,16 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+    <altmember cref="T:System.Windows.Forms.Clipboard" />
   </Docs>
   <Members>
     <Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -106,12 +112,16 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.Clear" />
       </Docs>
     </Member>
     <Member MemberName="ContainsAudio">
       <MemberSignature Language="C#" Value="public bool ContainsAudio ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsAudio() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsAudio () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsAudio();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -153,12 +163,18 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.ContainsAudio" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio" />
       </Docs>
     </Member>
     <Member MemberName="ContainsData">
       <MemberSignature Language="C#" Value="public bool ContainsData (string format);" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsData(string format) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsData (format As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsData(System::String ^ format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -207,12 +223,20 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.ContainsData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
       </Docs>
     </Member>
     <Member MemberName="ContainsFileDropList">
       <MemberSignature Language="C#" Value="public bool ContainsFileDropList ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsFileDropList() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsFileDropList () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsFileDropList();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -247,7 +271,7 @@ My.Computer.Clipboard.Clear()
    
   
 ## Examples  
- This example determines if there is a file drop list on the Clipboard and adds the list to the `ListBox``lstFiles` if they exist.  
+ This example determines if there is a file drop list on the Clipboard and adds the list to the `ListBox.lstFiles` if they exist.  
   
  [!code-vb[VbRefClipbd#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#12)]  
   
@@ -257,12 +281,18 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.ContainsFileDropList" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetFileDropList" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetFileDropList(System.Collections.Specialized.StringCollection)" />
       </Docs>
     </Member>
     <Member MemberName="ContainsImage">
       <MemberSignature Language="C#" Value="public bool ContainsImage ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsImage() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsImage () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsImage();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -306,12 +336,27 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.ContainsImage" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetImage(System.Drawing.Image)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="ContainsText">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Determines if there is text on the Clipboard.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ContainsText">
       <MemberSignature Language="C#" Value="public bool ContainsText ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsText() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsText () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsText();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -329,7 +374,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
 ## Availability by Project Type  
   
@@ -354,12 +399,19 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText" />
       </Docs>
     </Member>
     <Member MemberName="ContainsText">
       <MemberSignature Language="C#" Value="public bool ContainsText (System.Windows.Forms.TextDataFormat format);" />
       <MemberSignature Language="ILAsm" Value=".method public instance bool ContainsText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText(System.Windows.Forms.TextDataFormat)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ContainsText (format As TextDataFormat) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool ContainsText(System::Windows::Forms::TextDataFormat format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -381,7 +433,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
 ## Availability by Project Type  
   
@@ -406,12 +458,19 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText" />
       </Docs>
     </Member>
     <Member MemberName="GetAudioStream">
       <MemberSignature Language="C#" Value="public System.IO.Stream GetAudioStream ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance class System.IO.Stream GetAudioStream() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAudioStream () As Stream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::Stream ^ GetAudioStream();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -452,12 +511,19 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.IO.Stream" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.GetAudioStream" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio" />
       </Docs>
     </Member>
     <Member MemberName="GetData">
       <MemberSignature Language="C#" Value="public object GetData (string format);" />
       <MemberSignature Language="ILAsm" Value=".method public instance object GetData(string format) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetData (format As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ GetData(System::String ^ format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -504,12 +570,20 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.GetData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
       </Docs>
     </Member>
     <Member MemberName="GetDataObject">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.IDataObject GetDataObject ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance class System.Windows.Forms.IDataObject GetDataObject() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetDataObject () As IDataObject" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::IDataObject ^ GetDataObject();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -558,12 +632,21 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.IDataObject" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.GetDataObject" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
       </Docs>
     </Member>
     <Member MemberName="GetFileDropList">
       <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringCollection GetFileDropList ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance class System.Collections.Specialized.StringCollection GetFileDropList() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetFileDropList" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetFileDropList () As StringCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Specialized::StringCollection ^ GetFileDropList();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -599,7 +682,7 @@ My.Computer.Clipboard.Clear()
    
   
 ## Examples  
- This example determines if there is a file drop list on the Clipboard and adds the list to the `ListBox``lstFiles` if they exist.  
+ This example determines if there is a file drop list on the Clipboard and adds the list to the `ListBox.lstFiles` if they exist.  
   
  [!code-vb[VbRefClipbd#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRefClipbd/VB/Class1.vb#9)]  
   
@@ -609,12 +692,19 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Collections.Specialized.StringCollection" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.GetFileDropList" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetFileDropList(System.Collections.Specialized.StringCollection)" />
       </Docs>
     </Member>
     <Member MemberName="GetImage">
       <MemberSignature Language="C#" Value="public System.Drawing.Image GetImage ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance class System.Drawing.Image GetImage() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetImage () As Image" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Image ^ GetImage();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -657,12 +747,28 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Drawing.Image" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.GetImage" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetImage(System.Drawing.Image)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetText">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Retrieves text from the Clipboard.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetText">
       <MemberSignature Language="C#" Value="public string GetText ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance string GetText() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetText () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetText();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -679,7 +785,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
 ## Availability by Project Type  
   
@@ -706,12 +812,19 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.GetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText" />
       </Docs>
     </Member>
     <Member MemberName="GetText">
       <MemberSignature Language="C#" Value="public string GetText (System.Windows.Forms.TextDataFormat format);" />
       <MemberSignature Language="ILAsm" Value=".method public instance string GetText(valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText(System.Windows.Forms.TextDataFormat)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetText (format As TextDataFormat) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetText(System::Windows::Forms::TextDataFormat format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -732,7 +845,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
 ## Availability by Project Type  
   
@@ -759,12 +872,28 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.GetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetAudio">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes audio data to the Clipboard.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetAudio">
       <MemberSignature Language="C#" Value="public void SetAudio (byte[] audioBytes);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetAudio(unsigned int8[] audioBytes) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio(System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetAudio (audioBytes As Byte())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAudio(cli::array &lt;System::Byte&gt; ^ audioBytes);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -813,12 +942,18 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.SetAudio" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream" />
       </Docs>
     </Member>
     <Member MemberName="SetAudio">
       <MemberSignature Language="C#" Value="public void SetAudio (System.IO.Stream audioStream);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetAudio(class System.IO.Stream audioStream) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio(System.IO.Stream)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetAudio (audioStream As Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAudio(System::IO::Stream ^ audioStream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -865,12 +1000,19 @@ My.Computer.Clipboard.Clear()
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.IO.Stream" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.SetAudio" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetAudioStream" />
       </Docs>
     </Member>
     <Member MemberName="SetData">
       <MemberSignature Language="C#" Value="public void SetData (string format, object data);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetData(string format, object data) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetData (format As String, data As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetData(System::String ^ format, System::Object ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -912,7 +1054,7 @@ My.Computer.Clipboard.Clear()
    
   
 ## Examples  
- This example writes the `DataObject``dataChunk` to the Clipboard in the custom format `specialFormat`.  
+ This example writes the `DataObject.dataChunk` to the Clipboard in the custom format `specialFormat`.  
   
  [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
   
@@ -922,12 +1064,20 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.SetData(System.String,System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
       </Docs>
     </Member>
     <Member MemberName="SetDataObject">
       <MemberSignature Language="C#" Value="public void SetDataObject (System.Windows.Forms.DataObject data);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetDataObject(class System.Windows.Forms.DataObject data) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetDataObject(System.Windows.Forms.DataObject)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetDataObject (data As DataObject)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetDataObject(System::Windows::Forms::DataObject ^ data);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -982,12 +1132,20 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.SetDataObject(System.Object)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetData(System.String)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetDataObject" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData(System.String,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="SetFileDropList">
       <MemberSignature Language="C#" Value="public void SetFileDropList (System.Collections.Specialized.StringCollection filePaths);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetFileDropList(class System.Collections.Specialized.StringCollection filePaths) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetFileDropList (filePaths As StringCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetFileDropList(System::Collections::Specialized::StringCollection ^ filePaths);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1033,12 +1191,18 @@ My.Computer.Clipboard.Clear()
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Collections.Specialized.StringCollection" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.SetFileDropList(System.Collections.Specialized.StringCollection)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetFileDropList" />
       </Docs>
     </Member>
     <Member MemberName="SetImage">
       <MemberSignature Language="C#" Value="public void SetImage (System.Drawing.Image image);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetImage(class System.Drawing.Image image) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetImage(System.Drawing.Image)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetImage(System::Drawing::Image ^ image);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1087,12 +1251,28 @@ My.Computer.Clipboard.Clear()
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Drawing.Image" />
+        <altmember cref="M:System.Windows.Forms.Clipboard.SetImage(System.Drawing.Image)" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage" />
+        <altmember cref="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetText">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes text to the Clipboard.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetText">
       <MemberSignature Language="C#" Value="public void SetText (string text);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetText(string text) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetText (text As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetText(System::String ^ text);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1112,7 +1292,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
  Previous Clipboard formats are not preserved.  
   
@@ -1146,12 +1326,19 @@ My.Computer.Clipboard.Clear()
           <paramref name="text" /> is <see langword="Nothing" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.SetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
       </Docs>
     </Member>
     <Member MemberName="SetText">
       <MemberSignature Language="C#" Value="public void SetText (string text, System.Windows.Forms.TextDataFormat format);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void SetText(string text, valuetype System.Windows.Forms.TextDataFormat format) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText(System.String,System.Windows.Forms.TextDataFormat)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SetText (text As String, format As TextDataFormat)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetText(System::String ^ text, System::Windows::Forms::TextDataFormat format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1174,7 +1361,7 @@ My.Computer.Clipboard.Clear()
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Possible formats are <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat>, <xref:System.Windows.Forms.TextDataFormat> and <xref:System.Windows.Forms.TextDataFormat>.  
+ Possible formats are <xref:System.Windows.Forms.TextDataFormat.CommaSeparatedValue>, <xref:System.Windows.Forms.TextDataFormat.Html>, <xref:System.Windows.Forms.TextDataFormat.Rtf> and <xref:System.Windows.Forms.TextDataFormat.UnicodeText>.  
   
  Previous Clipboard formats are not preserved.  
   
@@ -1208,6 +1395,11 @@ My.Computer.Clipboard.Clear()
           <paramref name="text" /> is <see langword="Nothing" />.</exception>
         <permission cref="T:System.Security.Permissions.UIPermission">
           <see cref="F:System.Security.Permissions.UIPermissionClipboard.AllClipboard" /> permission is required to access the system Clipboard.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.Devices.Computer" />
+        <altmember cref="T:System.Windows.Forms.TextDataFormat" />
+        <altmember cref="Overload:System.Windows.Forms.Clipboard.SetText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText" />
+        <altmember cref="Overload:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText" />
       </Docs>
     </Member>
   </Members>

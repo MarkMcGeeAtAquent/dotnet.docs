@@ -1,30 +1,33 @@
 ---
-title: "RUNTIME_INFO_FLAGS Enumeration | Microsoft Docs"
+title: "RUNTIME_INFO_FLAGS Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "RUNTIME_INFO_FLAGS"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "RUNTIME_INFO_FLAGS"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RUNTIME_INFO_FLAGS enumeration [.NET Framework hosting]"
 ms.assetid: adba37be-f775-4cdb-8919-5746ce694f33
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # RUNTIME_INFO_FLAGS Enumeration
 Contains values that indicate what information about the common language runtime (CLR) should be returned.  

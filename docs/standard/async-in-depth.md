@@ -1,6 +1,6 @@
 ---
 title: Async in depth
-description: In-depth explanation of how asynchronous code works in .NET
+description: Learn how writing I/O-bound and CPU-bound asynchronous code is straightforward using the .NET Task-based async model.
 keywords: .NET, .NET Core, .NET Standard
 author: cartermp
 ms.author: wiwagn
@@ -10,11 +10,14 @@ ms.prod: .net
 ms.technology: dotnet-standard
 ms.devlang: dotnet
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 
 # Async in depth
 
-Writing I/O- and CPU-bound asynchronous code is straightforward using the .NET Task-based async model. The model is exposed by the `Task` and `Task<T>` types and the `async` and `await` language keywords. This article explains how to use .NET async and provides insight into the async framework used under the covers.
+Writing I/O- and CPU-bound asynchronous code is straightforward using the .NET Task-based async model. The model is exposed by the `Task` and `Task<T>` types and the `async` and `await` keywords in C# and Visual Basic. (Language-specific resources are found in the [See also](#see-also) section.) This article explains how to use .NET async and provides insight into the async framework used under the covers.
 
 ## Task and Task&lt;T&gt;
 
@@ -23,13 +26,13 @@ Tasks are constructs used to implement what is known as the [Promise Model of Co
 *   `Task` represents a single operation which does not return a value.
 *   `Task<T>` represents a single operation which returns a value of type `T`.
 
-It’s important to reason about tasks as abstractions of work happening asynchronously, and *not* an abstraction over threading. By default, tasks execute on the current thread and delegate work to the Operating System, as appropriate. Optionally, tasks can be be explicitly requested to run on a separate thread via the `Task.Run` API.
+It’s important to reason about tasks as abstractions of work happening asynchronously, and *not* an abstraction over threading. By default, tasks execute on the current thread and delegate work to the Operating System, as appropriate. Optionally, tasks can be explicitly requested to run on a separate thread via the `Task.Run` API.
 
 Tasks expose an API protocol for monitoring, waiting upon and accessing the result value (in the case of `Task<T>`) of a task. Language integration, with the `await` keyword, provides a higher-level abstraction for using tasks. 
 
-Using `await` allows your application or service to perform useful work while a task is running by yielding control to its caller until the task is done. Your code does not need to rely on callbacks or events to continue execution after the task has been completed. The language and task API integration does that for you. If you’re using `Task<T>`, the `await` keyword will additionally “unwrap” the value returned when the Task is complete.  The details of how this works are explained further below.
+Using `await` allows your application or service to perform useful work while a task is running by yielding control to its caller until the task is done. Your code does not need to rely on callbacks or events to continue execution after the task has been completed. The language and task API integration does that for you. If you’re using `Task<T>`, the `await` keyword will additionally "unwrap" the value returned when the Task is complete.  The details of how this works are explained further below.
 
-You can learn more about tasks and the different ways to interact with them in the [Task-based Asynchronous Pattern (TAP) Article](https://msdn.microsoft.com/library/hh873175.aspx).
+You can learn more about tasks and the different ways to interact with them in the [Task-based Asynchronous Pattern (TAP)](~/docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) topic.
 
 ## Deeper Dive into Tasks for an I/O-Bound Operation
 
@@ -47,7 +50,7 @@ public Task<string> GetHtmlAsync()
 }
 ```
 
-The second example adds the use of he `async` and `await` keywords to operate on the task.
+The second example adds the use of the `async` and `await` keywords to operate on the task.
 
 ```csharp
 public async Task<string> GetFirstCharactersCountAsync(string url, int count)
@@ -142,3 +145,10 @@ Once `await` is encountered, the execution of `CalculateResult()` is yielded to 
 ### Why does async help here?
 
 `async` and `await` are the best practice managing CPU-bound work when you need responsiveness. There are multiple patterns for using async with CPU-bound work. It's important to note that there is a small cost to using async and it's not recommended for tight loops.  It's up to you to determine how you write your code around this new capability.
+
+## See also
+
+[Asynchronous programming in C#](~/docs/csharp/async.md)   
+[Asynchronous programming with async and await (C#)](../csharp/programming-guide/concepts/async/index.md)  
+[Async Programming in F#](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
+[Asynchronous Programming with Async and Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)

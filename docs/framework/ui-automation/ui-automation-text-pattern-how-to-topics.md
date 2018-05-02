@@ -1,5 +1,5 @@
 ---
-title: "UI Automation Text Pattern-How-to Topics | Microsoft Docs"
+title: "UI Automation Text Pattern-How-to Topics"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 62
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # UI Automation Text Pattern-How-to Topics
 > [!NOTE]

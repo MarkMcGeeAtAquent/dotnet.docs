@@ -1,5 +1,5 @@
 ---
-title: "SetAssemblyProps Method | Microsoft Docs"
+title: "SetAssemblyProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IALink.SetAssemblyProps"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SetAssemblyProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetAssemblyProps method"
 ms.assetid: a3d7cf29-1414-49e6-8aae-9b3283c4f5f0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SetAssemblyProps Method
 Assigns assembly-level properties.  
@@ -60,6 +63,6 @@ HRESULT SetAssemblyProps(
  Requires alink.h.  
   
 ## See Also  
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

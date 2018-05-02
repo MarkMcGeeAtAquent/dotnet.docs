@@ -1,8 +1,8 @@
 ---
-title: "How to: Validate Input with the Windows Forms DataGrid Control | Microsoft Docs"
+title: "How to: Validate Input with the Windows Forms DataGrid Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,18 +10,21 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "DataGrid control [Windows Forms], examples"
-  - "user input, validating"
+  - "user input [Windows Forms], validating"
   - "examples [Windows Forms], DataGrid control"
   - "DataGrid control [Windows Forms], validating input"
-  - "validation, user input"
+  - "validation [Windows Forms], user input"
 ms.assetid: f1e9c3a0-d0a1-4893-a615-b4b0db046c63
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Validate Input with the Windows Forms DataGrid Control
 > [!NOTE]
@@ -50,7 +53,6 @@ manager: "wpickett"
           End If  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -69,7 +71,6 @@ manager: "wpickett"
           }  
        }  
     }  
-  
     ```  
   
 2.  Connect the event handler to the event.  
@@ -81,7 +82,6 @@ manager: "wpickett"
     ' with a table called Customers.  
     ' Put this code in the form's Load event or its constructor.  
     AddHandler customersDataSet1.Tables("Customers").ColumnChanging, AddressOf Customers_ColumnChanging  
-  
     ```  
   
     ```csharp  
@@ -89,11 +89,10 @@ manager: "wpickett"
     // with a table called Customers.  
     // Put this code in the form's Load event or its constructor.  
     customersDataSet1.Tables["Customers"].ColumnChanging += new DataColumnChangeEventHandler(this.Customers_ColumnChanging);  
-  
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.DataGrid>   
- <xref:System.Data.DataTable.ColumnChanging>   
- <xref:System.Data.DataRow.SetColumnError%2A>   
+ <xref:System.Windows.Forms.DataGrid>  
+ <xref:System.Data.DataTable.ColumnChanging>  
+ <xref:System.Data.DataRow.SetColumnError%2A>  
  [DataGrid Control](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

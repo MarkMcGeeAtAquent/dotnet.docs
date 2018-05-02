@@ -1,30 +1,33 @@
 ---
-title: "LogSwitchCallReason Enumeration | Microsoft Docs"
+title: "LogSwitchCallReason Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "LogSwitchCallReason"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "LogSwitchCallReason"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "LogSwitchCallReason enumeration [.NET Framework debugging]"
 ms.assetid: 5bbb8d1b-bbc4-47b0-b1b1-2d54cc0be291
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # LogSwitchCallReason Enumeration
 Indicates the operation that was performed on a debugging/tracing switch.  

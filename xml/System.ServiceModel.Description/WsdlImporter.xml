@@ -1,7 +1,9 @@
-<Type Name="WsdlImporter" FullName="System.ServiceModel.Description.WsdlImporter">
+﻿<Type Name="WsdlImporter" FullName="System.ServiceModel.Description.WsdlImporter">
   <TypeSignature Language="C#" Value="public class WsdlImporter : System.ServiceModel.Description.MetadataImporter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WsdlImporter extends System.ServiceModel.Description.MetadataImporter" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.WsdlImporter" />
+  <TypeSignature Language="VB.NET" Value="Public Class WsdlImporter&#xA;Inherits MetadataImporter" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WsdlImporter : System::ServiceModel::Description::MetadataImporter" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -35,14 +37,14 @@
 > [!NOTE]
 >  When importing WSDL port types, if the QName of the port type matches an entry in the <xref:System.ServiceModel.Description.MetadataImporter.KnownContracts%2A> dictionary then the port type is not imported and the known contract is used instead.  
   
- No values are returned from the <xref:System.ServiceModel.Description.WsdlImporter> properties until one of the import methods is called. Custom <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=fullName> objects can either be loaded into the <xref:System.ServiceModel.Description.WsdlImporter> programmatically or using the client configuration [\&lt;wsdlImporters\&gt;](~/docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md) element.  
+ No values are returned from the <xref:System.ServiceModel.Description.WsdlImporter> properties until one of the import methods is called. Custom <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> objects can either be loaded into the <xref:System.ServiceModel.Description.WsdlImporter> programmatically or using the client configuration [&lt;wsdlImporters&gt;](~/docs/framework/configure-apps/file-schema/wcf/wsdlimporters.md) element.  
   
- Metadata that has been imported as service endpoints cannot be used to create a runtime or export metadata because the imported endpoints contain no managed type information. To use the metadata to create a client or service runtime or to generate metadata, you must first generate and compile code from the metadata and use that type information to create a new <xref:System.ServiceModel.Description.ContractDescription?displayProperty=fullName> object using <xref:System.ServiceModel.Description.ContractDescription.GetContract%2A>.  
+ Metadata that has been imported as service endpoints cannot be used to create a runtime or export metadata because the imported endpoints contain no managed type information. To use the metadata to create a client or service runtime or to generate metadata, you must first generate and compile code from the metadata and use that type information to create a new <xref:System.ServiceModel.Description.ContractDescription?displayProperty=nameWithType> object using <xref:System.ServiceModel.Description.ContractDescription.GetContract%2A>.  
   
    
   
 ## Examples  
- The following code example shows how to use the <xref:System.ServiceModel.Description.WsdlImporter> to add a custom <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=fullName>, import all contracts, and compile those contracts and save them to a file.  
+ The following code example shows how to use the <xref:System.ServiceModel.Description.WsdlImporter> to add a custom <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=nameWithType>, import all contracts, and compile those contracts and save them to a file.  
   
  [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
   
@@ -50,10 +52,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.Description.WsdlImporter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (metadata As MetadataSet)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WsdlImporter(System::ServiceModel::Description::MetadataSet ^ metadata);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -86,6 +99,8 @@
       <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IPolicyImportExtension},System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IWsdlImportExtension})" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (metadata As MetadataSet, policyImportExtensions As IEnumerable(Of IPolicyImportExtension), wsdlImportExtensions As IEnumerable(Of IWsdlImportExtension))" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WsdlImporter(System::ServiceModel::Description::MetadataSet ^ metadata, System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::IPolicyImportExtension ^&gt; ^ policyImportExtensions, System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::IWsdlImportExtension ^&gt; ^ wsdlImportExtensions);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -126,6 +141,8 @@
       <MemberSignature Language="C#" Value="public WsdlImporter (System.ServiceModel.Description.MetadataSet metadata, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions, System.ServiceModel.Description.MetadataImporterQuotas quotas);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.MetadataSet metadata, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IPolicyImportExtension&gt; policyImportExtensions, class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; wsdlImportExtensions, class System.ServiceModel.Description.MetadataImporterQuotas quotas) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.#ctor(System.ServiceModel.Description.MetadataSet,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IPolicyImportExtension},System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IWsdlImportExtension},System.ServiceModel.Description.MetadataImporterQuotas)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (metadata As MetadataSet, policyImportExtensions As IEnumerable(Of IPolicyImportExtension), wsdlImportExtensions As IEnumerable(Of IWsdlImportExtension), quotas As MetadataImporterQuotas)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WsdlImporter(System::ServiceModel::Description::MetadataSet ^ metadata, System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::IPolicyImportExtension ^&gt; ^ policyImportExtensions, System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::IWsdlImportExtension ^&gt; ^ wsdlImportExtensions, System::ServiceModel::Description::MetadataImporterQuotas ^ quotas);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -168,6 +185,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Channels.Binding&gt; ImportAllBindings ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Channels.Binding&gt; ImportAllBindings() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllBindings" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportAllBindings () As Collection(Of Binding)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::ObjectModel::Collection&lt;System::ServiceModel::Channels::Binding ^&gt; ^ ImportAllBindings();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -197,6 +216,8 @@
       <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ContractDescription&gt; ImportAllContracts() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllContracts" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ImportAllContracts () As Collection(Of ContractDescription)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Collections::ObjectModel::Collection&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ ImportAllContracts();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -220,7 +241,7 @@
    
   
 ## Examples  
- The following code example shows how to use the <xref:System.ServiceModel.Description.WsdlImporter> to add a custom <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=fullName>, import all contracts, and compile those contracts and save them to a file.  
+ The following code example shows how to use the <xref:System.ServiceModel.Description.WsdlImporter> to add a custom <xref:System.Runtime.Serialization.IDataContractSurrogate?displayProperty=nameWithType>, import all contracts, and compile those contracts and save them to a file.  
   
  [!code-csharp[C_CustomWSDLExtensions#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/client.cs#8)]  
   
@@ -233,6 +254,8 @@
       <MemberSignature Language="C#" Value="public override System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Description.ServiceEndpointCollection ImportAllEndpoints() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportAllEndpoints" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ImportAllEndpoints () As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::ServiceModel::Description::ServiceEndpointCollection ^ ImportAllEndpoints();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -262,6 +285,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Binding ImportBinding (System.Web.Services.Description.Binding wsdlBinding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.Binding ImportBinding(class System.Web.Services.Description.Binding wsdlBinding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportBinding(System.Web.Services.Description.Binding)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportBinding (wsdlBinding As Binding) As Binding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Channels::Binding ^ ImportBinding(System::Web::Services::Description::Binding ^ wsdlBinding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -281,7 +306,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportBinding%2A> method to use a <xref:System.Web.Services.Description.Binding?displayProperty=fullName> object to locate binding information in the metadata and return that binding information as a <xref:System.ServiceModel.Channels.Binding?displayProperty=fullName> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
+ Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportBinding%2A> method to use a <xref:System.Web.Services.Description.Binding?displayProperty=nameWithType> object to locate binding information in the metadata and return that binding information as a <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
   
  ]]></format>
         </remarks>
@@ -293,6 +318,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ContractDescription ImportContract (System.Web.Services.Description.PortType wsdlPortType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ContractDescription ImportContract(class System.Web.Services.Description.PortType wsdlPortType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportContract(System.Web.Services.Description.PortType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportContract (wsdlPortType As PortType) As ContractDescription" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ContractDescription ^ ImportContract(System::Web::Services::Description::PortType ^ wsdlPortType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -312,7 +339,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportContract%2A> method to use a <xref:System.Web.Services.Description.PortType?displayProperty=fullName> object to locate port type information in the metadata and return that information as a <xref:System.ServiceModel.Description.ContractDescription> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
+ Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportContract%2A> method to use a <xref:System.Web.Services.Description.PortType?displayProperty=nameWithType> object to locate port type information in the metadata and return that information as a <xref:System.ServiceModel.Description.ContractDescription> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
   
  ]]></format>
         </remarks>
@@ -324,6 +351,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpoint ImportEndpoint (System.Web.Services.Description.Port wsdlPort);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpoint ImportEndpoint(class System.Web.Services.Description.Port wsdlPort) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoint(System.Web.Services.Description.Port)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportEndpoint (wsdlPort As Port) As ServiceEndpoint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpoint ^ ImportEndpoint(System::Web::Services::Description::Port ^ wsdlPort);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -343,7 +372,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoint%2A> method to use a <xref:System.Web.Services.Description.Port?displayProperty=fullName> object to locate port type information in the metadata and return that information as a <xref:System.ServiceModel.Description.ServiceEndpoint> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
+ Use the <xref:System.ServiceModel.Description.WsdlImporter.ImportEndpoint%2A> method to use a <xref:System.Web.Services.Description.Port?displayProperty=nameWithType> object to locate port type information in the metadata and return that information as a <xref:System.ServiceModel.Description.ServiceEndpoint> object. Check the <xref:System.ServiceModel.Description.MetadataImporter.Errors%2A> property to determine whether there are any import errors before using the returned object.  
   
  ]]></format>
         </remarks>
@@ -351,10 +380,21 @@
         <exception cref="T:System.ArgumentNullException">The <paramref name="wsdlPort" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ImportEndpoints">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns a collection of <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> objects that matches all WSDL ports using a specified binding, associated with a specified port type, or within a specified WSDL service.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ImportEndpoints">
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.Binding wsdlBinding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.Binding wsdlBinding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.Binding)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportEndpoints (wsdlBinding As Binding) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpointCollection ^ ImportEndpoints(System::Web::Services::Description::Binding ^ wsdlBinding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -386,6 +426,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.PortType wsdlPortType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.PortType wsdlPortType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.PortType)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportEndpoints (wsdlPortType As PortType) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpointCollection ^ ImportEndpoints(System::Web::Services::Description::PortType ^ wsdlPortType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -417,6 +459,8 @@
       <MemberSignature Language="C#" Value="public System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints (System.Web.Services.Description.Service wsdlService);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Description.ServiceEndpointCollection ImportEndpoints(class System.Web.Services.Description.Service wsdlService) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlImporter.ImportEndpoints(System.Web.Services.Description.Service)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ImportEndpoints (wsdlService As Service) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ServiceModel::Description::ServiceEndpointCollection ^ ImportEndpoints(System::Web::Services::Description::Service ^ wsdlService);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -448,6 +492,8 @@
       <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionCollection WsdlDocuments { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionCollection WsdlDocuments" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.WsdlDocuments" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WsdlDocuments As ServiceDescriptionCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Services::Description::ServiceDescriptionCollection ^ WsdlDocuments { System::Web::Services::Description::ServiceDescriptionCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -473,6 +519,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.KeyedByTypeCollection&lt;System.ServiceModel.Description.IWsdlImportExtension&gt; WsdlImportExtensions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.KeyedByTypeCollection`1&lt;class System.ServiceModel.Description.IWsdlImportExtension&gt; WsdlImportExtensions" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.WsdlImportExtensions" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WsdlImportExtensions As KeyedByTypeCollection(Of IWsdlImportExtension)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::Generic::KeyedByTypeCollection&lt;System::ServiceModel::Description::IWsdlImportExtension ^&gt; ^ WsdlImportExtensions { System::Collections::Generic::KeyedByTypeCollection&lt;System::ServiceModel::Description::IWsdlImportExtension ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -498,6 +546,8 @@
       <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet XmlSchemas { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSet XmlSchemas" />
       <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlImporter.XmlSchemas" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property XmlSchemas As XmlSchemaSet" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Xml::Schema::XmlSchemaSet ^ XmlSchemas { System::Xml::Schema::XmlSchemaSet ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>

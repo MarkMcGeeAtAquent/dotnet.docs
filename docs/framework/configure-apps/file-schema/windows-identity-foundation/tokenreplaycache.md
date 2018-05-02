@@ -1,7 +1,8 @@
 ---
-title: "&lt;tokenReplayCache&gt; | Microsoft Docs"
+title: "&lt;tokenReplayCache&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 8
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;tokenReplayCache&gt;
 Registers a token replay cache with a service or a security token handler collection.  
@@ -24,15 +27,15 @@ Registers a token replay cache with a service or a security token handler collec
   
 ## Syntax  
   
-```  
-\<system.identityModel>  
-  <identityConfiguration>  
-    <caches>  
-      \<tokenReplayCache type=xs:string>  
-      </tokenReplayCache>  
-    </caches>  
-  </identityConfiguration>  
-\</system.identityModel>  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <caches>  
+      <tokenReplayCache type=xs:string>  
+      </tokenReplayCache>  
+    </caches>  
+  </identityConfiguration>  
+</system.identityModel>  
 ```  
   
 ## Attributes and Elements  
@@ -59,7 +62,7 @@ Registers a token replay cache with a service or a security token handler collec
 ## Example  
  The following XML shows the configuration of a custom cache for detecting replayed tokens.  
   
-```  
+```xml  
 <caches>  
   <tokenReplayCache type="MyCacheLibrary.MyTokenReplayCache, MyCacheLibrary">  
   </tokenReplayCache>  
@@ -67,5 +70,5 @@ Registers a token replay cache with a service or a security token handler collec
 ```  
   
 ## See Also  
- <xref:System.IdentityModel.Tokens.TokenReplayCache>   
+ <xref:System.IdentityModel.Tokens.TokenReplayCache>  
  [\<tokenReplayDetection>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)

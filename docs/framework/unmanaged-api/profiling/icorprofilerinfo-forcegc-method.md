@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::ForceGC Method | Microsoft Docs"
+title: "ICorProfilerInfo::ForceGC Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.ForceGC"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::ForceGC"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo::ForceGC method [.NET Framework profiling]"
   - "ForceGC method [.NET Framework profiling]"
 ms.assetid: 0da1ef80-d242-4636-87d0-43e0470b342a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::ForceGC Method
 Forces garbage collection to occur within the common language runtime (CLR).  

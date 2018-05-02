@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo::SetFunctionIDMapper Method | Microsoft Docs"
+title: "ICorProfilerInfo::SetFunctionIDMapper Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo.SetFunctionIDMapper"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo::SetFunctionIDMapper"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo::SetFunctionIDMapper method [.NET Framework profiling]"
   - "SetFunctionIDMapper method [.NET Framework profiling]"
 ms.assetid: 1a6e5dae-d366-4497-9c02-7b5b1f43f9ec
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo::SetFunctionIDMapper Method
 Specifies the profiler-implemented function that will be called to map `FunctionID` values to alternative values, which are passed to the profiler's function entry/exit hooks.  

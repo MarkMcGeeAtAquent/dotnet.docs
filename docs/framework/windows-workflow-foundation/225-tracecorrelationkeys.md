@@ -1,5 +1,5 @@
 ---
-title: "225 - TraceCorrelationKeys | Microsoft Docs"
+title: "225 - TraceCorrelationKeys"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: d9083aaf-3816-4c1c-bae0-2d7f49628345
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 225 - TraceCorrelationKeys
 ## Properties  

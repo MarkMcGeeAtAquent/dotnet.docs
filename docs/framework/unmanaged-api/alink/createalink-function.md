@@ -1,5 +1,5 @@
 ---
-title: "CreateALink Function | Microsoft Docs"
+title: "CreateALink Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CreateALink"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CreateALink"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateALink function"
   - "Alink API, CreateALink function"
 ms.assetid: fc73bcb9-6af6-44d8-bc39-2f4400325dae
+topic_type: 
+  - "apiref"
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CreateALink Function
 Creates an instance of the Assembly Linker and sets a pointer to the specified interface.  
@@ -33,12 +36,10 @@ Creates an instance of the Assembly Linker and sets a pointer to the specified i
 ## Syntax  
   
 ```  
-  
 HRESULT CreateALink (  
    REFIID riid,  
    IUnknown **ppInterface  
 );  
-  
 ```  
   
 #### Parameters  

@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetVariables Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetVariables Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetVariables"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetVariables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedReader::GetVariables method [.NET Framework debugging]"
   - "GetVariables method, ISymUnmanagedReader interface [.NET Framework debugging]"
 ms.assetid: 16dc49cb-2c60-4ac8-9c35-020e9afba3f8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetVariables Method
 Returns a non-local variable, given its parent and name.  

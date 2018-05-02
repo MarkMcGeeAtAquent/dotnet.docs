@@ -1,5 +1,5 @@
 ---
-title: ".NET Framework Initialization Errors: Managing the User Experience | Microsoft Docs"
+title: ".NET Framework Initialization Errors: Managing the User Experience"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "no framework found experience"
   - "initialization errors [.NET Framework]"
@@ -23,6 +18,8 @@ caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # .NET Framework Initialization Errors: Managing the User Experience
 The common language runtime (CLR) activation system determines the version of the CLR that will be used to run managed application code. In some cases, the activation system might not be able to find a version of the CLR to load. This situation typically occurs when an application requires a CLR version that is invalid or not installed on a given computer. If the requested version is not found, the CLR activation system returns an HRESULT error code from the function or interface that was called, and may display an error message to the user who is running the application. This article provides a list of HRESULT codes and explains how you can prevent the error message from being displayed.  
@@ -83,7 +80,7 @@ Typical error message for initialization errors
 |XBAP host|Launches WPF XBAP applications.|Is shown in case of a missing .NET Framework version, starting with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]|No|  
   
 ## [!INCLUDE[win8](../../../includes/win8-md.md)] Behavior and UI  
- The CLR activation system provides the same behavior and UI on [!INCLUDE[win8](../../../includes/win8-md.md)] as it does on other versions of the Windows operating system, except when it encounters issues loading CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] includes the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], which uses CLR 4.5. However, [!INCLUDE[win8](../../../includes/win8-md.md)] does not include the .NET Framework 2.0, 3.0, or 3.5, which all use CLR 2.0. As a result, applications that depend on CLR 2.0 do not run on [!INCLUDE[win8](../../../includes/win8-md.md)] by default. Instead, they display the following dialog box to enable users to install the .NET Framework 3.5. Users can also enable the .NET Framework 3.5 in Control Panel. Both options are discussed in the article [Installing the .NET Framework 3.5 on Windows 8 and later versions](../../../docs/framework/install/net-framework-3-5-on-windows-8-plus.md).  
+ The CLR activation system provides the same behavior and UI on [!INCLUDE[win8](../../../includes/win8-md.md)] as it does on other versions of the Windows operating system, except when it encounters issues loading CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] includes the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], which uses CLR 4.5. However, [!INCLUDE[win8](../../../includes/win8-md.md)] does not include the .NET Framework 2.0, 3.0, or 3.5, which all use CLR 2.0. As a result, applications that depend on CLR 2.0 do not run on [!INCLUDE[win8](../../../includes/win8-md.md)] by default. Instead, they display the following dialog box to enable users to install the .NET Framework 3.5. Users can also enable the .NET Framework 3.5 in Control Panel. Both options are discussed in the article [Install the .NET Framework 3.5 on Windows 10, Windows 8.1, and Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md).  
   
  ![Dialog box for 3.5 install on Windows 8](../../../docs/framework/deployment/media/installdialog.png "installdialog")  
 Prompt for installing the .NET Framework 3.5 on demand  
@@ -96,7 +93,7 @@ Prompt for installing the .NET Framework 3.5 on demand
  Starting with the [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], CLR activation logging has been improved to include log entries that record when and why the initialization error message is displayed. For more information, see [How to: Debug CLR Activation Issues](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md).  
   
 ## See Also  
- [Deployment Guide for Developers](../../../docs/framework/deployment/deployment-guide-for-developers.md)   
- [How to: Configure an App to Support .NET Framework 4 or 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)   
- [How to: Debug CLR Activation Issues](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)   
- [Installing the .NET Framework 3.5 on Windows 8 and later versions](../../../docs/framework/install/net-framework-3-5-on-windows-8-plus.md)
+ [Deployment Guide for Developers](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
+ [How to: Configure an App to Support .NET Framework 4 or 4.5](../../../docs/framework/migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)  
+ [How to: Debug CLR Activation Issues](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
+ [Install the .NET Framework 3.5 on Windows 10, Windows 8.1, and Windows 8](../../../docs/framework/install/dotnet-35-windows-10.md)

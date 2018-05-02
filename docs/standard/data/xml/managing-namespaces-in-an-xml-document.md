@@ -1,5 +1,5 @@
 ---
-title: "Managing Namespaces in an XML Document | Microsoft Docs"
+title: "Managing Namespaces in an XML Document"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,16 +8,14 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
 caps.latest.revision: 5
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Managing Namespaces in an XML Document
 XML namespaces associate element and attribute names in an XML document with custom and predefined URIs. To create these associations, you define prefixes for namespace URIs, and use those prefixes to qualify element and attribute names in XML data. Namespaces prevent element and attribute name collisions, and enable elements and attributes of the same name to be handled and validated differently.  
@@ -32,7 +30,7 @@ XML namespaces associate element and attribute names in an XML document with cus
   
  This example defines two `BOOK` elements. The first element element is qualified by the prefix, `mybook`, and the second element is qualified by the prefix, `bb`. Each prefix is associated with a different namespace URI:  
   
-```  
+```xml  
 <mybook:BOOK xmlns:mybook="http://www.contoso.com/books.dtd">  
 <bb:BOOK xmlns:bb="urn:blueyonderairlines">  
 ```  
@@ -43,7 +41,7 @@ XML namespaces associate element and attribute names in an XML document with cus
 ## Declaration scope  
  A namespace is effective from its point of declaration until the end of the element it was declared in. In this example, the namespace defined in the `BOOK` element doesn't apply to elements outside the `BOOK` element, such as the `Publisher` element:  
   
-```  
+```xml  
 <Author>Joe Smith</Author>  
 <BOOK xmlns:book="http://www.contoso.com">  
     <title>My Wonderful Day</title>  
@@ -60,7 +58,7 @@ XML namespaces associate element and attribute names in an XML document with cus
   
  To use the default namespace, omit the prefix and the colon from the declaration on the element:  
   
-```  
+```xml  
 <BOOK xmlns="http://www.contoso.com/books.dtd">  
 ```  
   
@@ -87,5 +85,5 @@ XML namespaces associate element and attribute names in an XML document with cus
 |Get the name table used to look up prefixes and URIs|<xref:System.Xml.XmlNamespaceManager.NameTable%2A> property|  
   
 ## See Also  
- <xref:System.Xml.XmlNamespaceManager>   
+ <xref:System.Xml.XmlNamespaceManager>  
  [XML Documents and Data](../../../../docs/standard/data/xml/index.md)

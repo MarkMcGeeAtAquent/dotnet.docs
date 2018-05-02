@@ -1,5 +1,5 @@
 ---
-title: "How to: Sign XML Documents with Digital Signatures | Microsoft Docs"
+title: "How to: Sign XML Documents with Digital Signatures"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,10 +9,8 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "signatures, XML signing"
   - "System.Security.Cryptography.SignedXml class"
@@ -26,9 +24,12 @@ caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Sign XML Documents with Digital Signatures
-You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace to sign an XML document or part of an XML document with a digital signature.  XML digital signatures (XMLDSIG) allow you to verify that data was not altered after it was signed.  For more information about the XMLDSIG standard, see the World Wide Web Consortium (W3C) recommendation [XML Signature Syntax and Processing](http://go.microsoft.com/fwlink/?LinkID=136777).  
+You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace to sign an XML document or part of an XML document with a digital signature.  XML digital signatures (XMLDSIG) allow you to verify that data was not altered after it was signed.  For more information about the XMLDSIG standard, see the World Wide Web Consortium (W3C) recommendation [XML Signature Syntax and Processing](https://www.w3.org/TR/xmldsig-core/).  
   
  The code example in this procedure demonstrates how to digitally sign an entire XML document and attach the signature to the document in a <`Signature`> element.  The example creates an RSA signing key, adds the key to a secure key container, and then uses the key to digitally sign an XML document.  The key can then be retrieved to verify the XML digital signature, or can be used to sign another XML document.  
   
@@ -99,7 +100,7 @@ You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace
 ## Example  
  This example assumes that a file named `test.xml` exists in the same directory as the compiled program.  You can place the following XML into a file called `test.xml` and use it with this example.  
   
-```  
+```xml  
 <root>  
     <creditcard>  
         <number>19834209</number>  
@@ -123,5 +124,5 @@ You can use the classes in the <xref:System.Security.Cryptography.Xml> namespace
  Never embed a private key directly into your source code.  Embedded keys can be easily read from an assembly using the [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) or by opening the assembly in a text editor such as Notepad.  
   
 ## See Also  
- <xref:System.Security.Cryptography.Xml>   
+ <xref:System.Security.Cryptography.Xml>  
  [How to: Verify the Digital Signatures of XML Documents](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)

@@ -1,7 +1,9 @@
-<Type Name="ClientTargetCollection" FullName="System.Web.Configuration.ClientTargetCollection">
+﻿<Type Name="ClientTargetCollection" FullName="System.Web.Configuration.ClientTargetCollection">
   <TypeSignature Language="C#" Value="public sealed class ClientTargetCollection : System.Configuration.ConfigurationElementCollection" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientTargetCollection extends System.Configuration.ConfigurationElementCollection" />
   <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ClientTargetCollection" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ClientTargetCollection&#xA;Inherits ConfigurationElementCollection" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ClientTargetCollection sealed : System::Configuration::ConfigurationElementCollection" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -46,12 +48,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.Configuration.ClientTarget" />
+    <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
+    <altmember cref="P:System.Web.UI.Page.ClientTarget" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ClientTargetCollection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ClientTargetCollection();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -74,6 +81,7 @@
       <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.ClientTarget clientTarget);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.ClientTarget clientTarget) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Add(System.Web.Configuration.ClientTarget)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::Web::Configuration::ClientTarget ^ clientTarget);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -106,12 +114,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Configuration.ClientTarget" />
+        <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
       </Docs>
     </Member>
     <Member MemberName="AllKeys">
       <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.AllKeys" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AllKeys As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ AllKeys { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -130,6 +142,8 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -145,16 +159,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The result of updating the configuration file after calling the <xref:System.Web.Configuration.ClientTargetCollection.Clear%2A> method is dependent upon the <xref:System.Configuration.ConfigurationSaveMode> value chosen. To update the configuration file you use one of these two methods: <xref:System.Configuration.Configuration.Save%2A?displayProperty=fullName> or  <xref:System.Configuration.Configuration.Save%2A?displayProperty=fullName>.  
+ The result of updating the configuration file after calling the <xref:System.Web.Configuration.ClientTargetCollection.Clear%2A> method is dependent upon the <xref:System.Configuration.ConfigurationSaveMode> value chosen. To update the configuration file you use one of these two methods: <xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType> or  <xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  Calling <xref:System.Configuration.Configuration.Save%2A?displayProperty=fullName> is equivalent to calling <xref:System.Configuration.Configuration.Save%2A> when the <xref:System.Configuration.ConfigurationSaveMode> value is modified.  
+>  Calling <xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType> is equivalent to calling <xref:System.Configuration.Configuration.Save%2A> when the <xref:System.Configuration.ConfigurationSaveMode> value is modified.  
   
- If you use the <xref:System.Configuration.Configuration.Save%2A?displayProperty=fullName> method, the following conditions apply:  
+ If you use the <xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType> method, the following conditions apply:  
   
--   If you pass the <xref:System.Configuration.ConfigurationSaveMode> or <xref:System.Configuration.ConfigurationSaveMode> parameter value, then a `clear` element is inserted into the `clientTarget` section of the configuration file at the current hierarchy level.  
+-   If you pass the <xref:System.Configuration.ConfigurationSaveMode.Full> or <xref:System.Configuration.ConfigurationSaveMode.Modified> parameter value, then a `clear` element is inserted into the `clientTarget` section of the configuration file at the current hierarchy level.  
   
--   If you pass the <xref:System.Configuration.ConfigurationSaveMode> parameter value, a series of `remove` elements are added to the `clientTarget` section of the configuration file at the current hierarchy level. This removes all references to the `add` elements defined in the parent configuration files at higher levels in the hierarchy. With the <xref:System.Configuration.ConfigurationSaveMode> enumeration value, one additional property on the collection affects what gets serialized to the configuration file. The property is <xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A> and is `false` by default. One of the following conditions applies:  
+-   If you pass the <xref:System.Configuration.ConfigurationSaveMode.Minimal> parameter value, a series of `remove` elements are added to the `clientTarget` section of the configuration file at the current hierarchy level. This removes all references to the `add` elements defined in the parent configuration files at higher levels in the hierarchy. With the <xref:System.Configuration.ConfigurationSaveMode.Minimal> enumeration value, one additional property on the collection affects what gets serialized to the configuration file. The property is <xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A> and is `false` by default. One of the following conditions applies:  
   
     -   When <xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A> is set to `true`, a `clear` element is inserted into the `clientTarget` section of the configuration file at the current hierarchy level. This removes all references to the `add` elements defined in the parent configuration files at higher levels in the hierarchy.  
   
@@ -177,12 +191,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Configuration.ClientTarget" />
+        <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
       </Docs>
     </Member>
     <Member MemberName="CreateNewElement">
       <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.CreateNewElement" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateNewElement () As ConfigurationElement" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Configuration::ConfigurationElement ^ CreateNewElement();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -202,6 +220,8 @@
       <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetElementKey (element As ConfigurationElement) As Object" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Object ^ GetElementKey(System::Configuration::ConfigurationElement ^ element);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -224,6 +244,8 @@
       <MemberSignature Language="C#" Value="public string GetKey (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.GetKey(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetKey (index As Integer) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetKey(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -242,10 +264,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a <see cref="T:System.Web.Configuration.ClientTarget" /> from the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Web.Configuration.ClientTarget this[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ClientTarget Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(index As Integer) As ClientTarget" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Configuration::ClientTarget ^ default[int] { System::Web::Configuration::ClientTarget ^ get(int index); void set(int index, System::Web::Configuration::ClientTarget ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -268,6 +301,8 @@
       <MemberSignature Language="C#" Value="public System.Web.Configuration.ClientTarget this[string name] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ClientTarget Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(name As String) As ClientTarget" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Web::Configuration::ClientTarget ^ default[System::String ^] { System::Web::Configuration::ClientTarget ^ get(System::String ^ name); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -290,6 +325,8 @@
       <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
       <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Properties" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property Properties As ConfigurationPropertyCollection" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Configuration::ConfigurationPropertyCollection ^ Properties { System::Configuration::ConfigurationPropertyCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -304,10 +341,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes a <see cref="T:System.Web.Configuration.ClientTarget" /> object from the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -340,12 +388,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Configuration.ClientTarget" />
+        <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.Web.Configuration.ClientTarget clientTarget);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Configuration.ClientTarget clientTarget) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Remove(System.Web.Configuration.ClientTarget)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::Web::Configuration::ClientTarget ^ clientTarget);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -378,12 +429,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Configuration.ClientTarget" />
+        <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -416,6 +471,8 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Web.Configuration.ClientTarget" />
+        <altmember cref="T:System.Web.Configuration.ClientTargetSection" />
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 ---
-title: "IAppDomainBinding Interface | Microsoft Docs"
+title: "IAppDomainBinding Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAppDomainBinding"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAppDomainBinding"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IAppDomainBinding interface [.NET Framework hosting]"
 ms.assetid: 368881ab-c4ea-4731-bf22-c596aac7c66c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAppDomainBinding Interface
 Provides a method that is called by the common language runtime (CLR) to notify the host application that an application domain has been created.  

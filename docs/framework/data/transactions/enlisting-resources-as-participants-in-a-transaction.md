@@ -1,5 +1,5 @@
 ---
-title: "Enlisting Resources as Participants in a Transaction | Microsoft Docs"
+title: "Enlisting Resources as Participants in a Transaction"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -7,11 +7,16 @@ ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 786a12c2-d530-49f4-9c59-5c973e15a11d
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Enlisting Resources as Participants in a Transaction
 Each resource participating in a transaction is managed by a resource manager, whose actions are coordinated by a transaction manager. The coordination is done through notifications given to subscribers who have enlisted in a transaction through the transaction manager.  
@@ -32,7 +37,7 @@ Each resource participating in a transaction is managed by a resource manager, w
   
  The second parameter of the <xref:System.Transactions.Transaction.EnlistDurable%2A> method is a reference to the object that the resource manager implements to receive transaction notifications. The overload you use informs the transaction manager whether your resource manager supports the Single Phase Commit (SPC) optimization. Most of the time you would implement the <xref:System.Transactions.IEnlistmentNotification> interface to take part in Two-Phase Commit (2PC). However, if you want to optimize the commit process, you can consider implementing the <xref:System.Transactions.ISinglePhaseNotification> interface for SPC. For more information on SPC, see [Committing a Transaction in Single-Phase and Multi-Phase](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md) and [Optimization using Single Phase Commit and Promotable Single Phase Notification](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
   
- The third parameter is an <xref:System.Transactions.EnlistmentOptions> enumeration, whose value can be either <xref:System.Transactions.EnlistmentOptions> or <xref:System.Transactions.EnlistmentOptions>. If the value is set to <xref:System.Transactions.EnlistmentOptions>, the enlistment may enlist additional resource managers upon receiving the Prepare notification from the transaction manager. However, you should be aware that this type of enlistment is not eligible for the Single Phase Commit optimization.  
+ The third parameter is an <xref:System.Transactions.EnlistmentOptions> enumeration, whose value can be either <xref:System.Transactions.EnlistmentOptions.None> or <xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired>. If the value is set to <xref:System.Transactions.EnlistmentOptions.EnlistDuringPrepareRequired>, the enlistment may enlist additional resource managers upon receiving the Prepare notification from the transaction manager. However, you should be aware that this type of enlistment is not eligible for the Single Phase Commit optimization.  
   
 ### Volatile Enlistment  
  Participants managing volatile resources such as a cache should enlist using the <xref:System.Transactions.Transaction.EnlistVolatile%2A> methods. Such objects might not be able to obtain the outcome of a transaction or recover the state of any transaction they participate in after a system failure.  
@@ -50,5 +55,5 @@ Each resource participating in a transaction is managed by a resource manager, w
  The <xref:System.Transactions.Transaction> class also provides the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> method to enlist a Promotable Single Phase Enlistment (PSPE). This allows a durable resource manager (RM) to host and "own" a transaction that can later be escalated to be managed by the MSDTC if necessary. For more information on this, see [Optimization using Single Phase Commit and Promotable Single Phase Notification](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
   
 ## See Also  
- [Optimization using Single Phase Commit and Promotable Single Phase Notification](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)   
+ [Optimization using Single Phase Commit and Promotable Single Phase Notification](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
  [Committing a Transaction in Single-Phase and Multi-Phase](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)

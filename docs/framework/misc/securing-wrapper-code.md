@@ -1,5 +1,5 @@
 ---
-title: "Securing Wrapper Code | Microsoft Docs"
+title: "Securing Wrapper Code"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "security [.NET Framework], wrapper code"
   - "wrapper code, securing"
@@ -24,6 +19,8 @@ caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Securing Wrapper Code
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -61,37 +58,37 @@ manager: "wpickett"
  To help prevent such security holes, the common language runtime extends the check into a full stack-walking demand on any indirect call to a method, constructor, property, or event protected by a **LinkDemand**. This protection incurs some performance costs and changes the semantics of the security check; the full stack-walk demand might fail where the faster, one-level check would have passed.  
   
 ## Assembly loading wrappers  
- Several methods used to load managed code, including <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>, load assemblies with the evidence of the caller. If you wrap any of these methods, the security system could use your code's permission grant, instead of the permissions of the caller to your wrapper, to load the assemblies. You should not allow less-trusted code to load code that is granted higher permissions than those of the caller to your wrapper.  
+ Several methods used to load managed code, including <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>, load assemblies with the evidence of the caller. If you wrap any of these methods, the security system could use your code's permission grant, instead of the permissions of the caller to your wrapper, to load the assemblies. You should not allow less-trusted code to load code that is granted higher permissions than those of the caller to your wrapper.  
   
  Any code that has full trust or significantly higher trust than a potential caller (including an Internet-permissions-level caller) could weaken security in this way. If your code has a public method that takes a byte array and passes it to **Assembly.Load**, thereby creating an assembly on the caller's behalf, it might break security.  
   
  This issue applies to the following API elements:  
   
--   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=fullName>  
+-   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.Load%2A?displayProperty=fullName>  
+-   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=fullName>  
+-   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>  
+-   <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
 ## Demand vs. LinkDemand  
  Declarative security offers two kinds of security checks that are similar but perform very different checks. You should understand both forms because the wrong choice can result in weak security or performance loss.  
   
  Declarative security offers the following security checks:  
   
--   <xref:System.Security.Permissions.SecurityAction> specifies the code access security stack walk. All callers on the stack must have the specified permission or identity to pass. **Demand** occurs on every call because the stack might contain different callers. If you call a method repeatedly, this security check occurs each time. **Demand** is good protection against luring attacks; unauthorized code trying to get through it will be detected.  
+-   <xref:System.Security.Permissions.SecurityAction.Demand> specifies the code access security stack walk. All callers on the stack must have the specified permission or identity to pass. **Demand** occurs on every call because the stack might contain different callers. If you call a method repeatedly, this security check occurs each time. **Demand** is good protection against luring attacks; unauthorized code trying to get through it will be detected.  
   
 -   [LinkDemand](../../../docs/framework/misc/link-demands.md) happens at just-in-time (JIT) compilation time and checks only the immediate caller. This security check does not check the caller's caller. Once this check passes, there is no additional security overhead no matter how many times the caller might call. However, there is also no protection from luring attacks. With **LinkDemand**, any code that passes the test and can reference your code can potentially break security by allowing malicious code to call using the authorized code. Therefore, do not use **LinkDemand** unless all the possible weaknesses can be thoroughly avoided.  
   
     > [!NOTE]
-    >  In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], link demands have been replaced by the <xref:System.Security.SecurityCriticalAttribute> attribute in <xref:System.Security.SecurityRuleSet> assemblies. The <xref:System.Security.SecurityCriticalAttribute> is equivalent to a link demand for full trust; however, it also affects inheritance rules. For more information about this change, see [Security-Transparent Code, Level 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
+    >  In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], link demands have been replaced by the <xref:System.Security.SecurityCriticalAttribute> attribute in <xref:System.Security.SecurityRuleSet.Level2> assemblies. The <xref:System.Security.SecurityCriticalAttribute> is equivalent to a link demand for full trust; however, it also affects inheritance rules. For more information about this change, see [Security-Transparent Code, Level 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
   
  The extra precautions required when using **LinkDemand** must be programmed individually; the security system can help with enforcement. Any mistake opens a security weakness. All authorized code that uses your code must be responsible for implementing additional security by doing the following:  
   
 -   Restricting the calling code's access to the class or assembly.  
   
--   Placing the same security checks on the calling code that appear on the code being called and obligating its callers to do so. For example, if you write code that calls a method that is protected with a **LinkDemand** for the <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag> flag specified, your method should also make a **LinkDemand** (or **Demand**, which is stronger) for this permission. The exception is if your code uses the **LinkDemand**-protected method in a limited way that you decide is safe, given other security protection mechanisms (such as demands) in your code. In this exceptional case, the caller takes responsibility in weakening the security protection on the underlying code.  
+-   Placing the same security checks on the calling code that appear on the code being called and obligating its callers to do so. For example, if you write code that calls a method that is protected with a **LinkDemand** for the <xref:System.Security.Permissions.SecurityPermission> with the <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> flag specified, your method should also make a **LinkDemand** (or **Demand**, which is stronger) for this permission. The exception is if your code uses the **LinkDemand**-protected method in a limited way that you decide is safe, given other security protection mechanisms (such as demands) in your code. In this exceptional case, the caller takes responsibility in weakening the security protection on the underlying code.  
   
 -   Ensuring that your code's callers cannot trick your code into calling the protected code on their behalf. In other words, callers cannot force the authorized code to pass specific parameters to the protected code, or to get results back from it.  
   

@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.Channels.BaseChannelSinkWithProperties
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BaseChannelSinkWithProperties.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

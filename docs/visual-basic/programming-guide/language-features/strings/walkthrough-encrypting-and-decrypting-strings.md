@@ -1,7 +1,7 @@
 ---
-title: "Encrypting and Decrypting Strings in Visual Basic | Microsoft Docs"
+title: "Encrypting and Decrypting Strings in Visual Basic"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,39 +9,22 @@ ms.technology:
   - "devlang-visual-basic"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
-  - "encryption, strings"
+  - "encryption [Visual Basic], strings"
   - "strings [Visual Basic], encrypting"
-  - "decryption, strings"
+  - "decryption [Visual Basic], strings"
   - "strings [Visual Basic], decrypting"
 ms.assetid: 1f51e40a-2f88-43e2-a83e-28a0b5c0d6fd
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Walkthrough: Encrypting and Decrypting Strings in Visual Basic
 This walkthrough shows you how to use the <xref:System.Security.Cryptography.DESCryptoServiceProvider> class to encrypt and decrypt strings using the cryptographic service provider (CSP) version of the Triple Data Encryption Standard (<xref:System.Security.Cryptography.TripleDES>) algorithm. The first step is to create a simple wrapper class that encapsulates the 3DES algorithm and stores the encrypted data as a base-64 encoded string. Then, that wrapper is used to securely store private user data in a publicly accessible text file.  
   
  You can use encryption to protect user secrets (for example, passwords) and to make credentials unreadable by unauthorized users. This can protect an authorized user's identity from being stolen, which protects the user's assets and provides non-repudiation. Encryption can also protect a user's data from being accessed by unauthorized users.  
   
- For more information, see [Cryptographic Services](http://msdn.microsoft.com/library/f96284bc-7b73-44b5-ac59-fac613ad09f8).  
+ For more information, see [Cryptographic Services](../../../../standard/security/cryptographic-services.md).  
   
 > [!IMPORTANT]
 >  The Rijndael (now referred to as Advanced Encryption Standard [AES]) and Triple Data Encryption Standard (3DES) algorithms provide greater security than DES because they are more computationally intensive. For more information, see <xref:System.Security.Cryptography.DES> and <xref:System.Security.Cryptography.Rijndael>.  
@@ -97,9 +80,9 @@ This walkthrough shows you how to use the <xref:System.Security.Cryptography.DES
      When you test the application, notice that it will not decrypt the data if you provide the wrong password.  
   
 ## See Also  
- <xref:System.Security.Cryptography>   
- <xref:System.Security.Cryptography.DESCryptoServiceProvider>   
- <xref:System.Security.Cryptography.DES>   
- <xref:System.Security.Cryptography.TripleDES>   
- <xref:System.Security.Cryptography.Rijndael>   
- [Cryptographic Services](http://msdn.microsoft.com/library/f96284bc-7b73-44b5-ac59-fac613ad09f8)
+ <xref:System.Security.Cryptography>  
+ <xref:System.Security.Cryptography.DESCryptoServiceProvider>  
+ <xref:System.Security.Cryptography.DES>  
+ <xref:System.Security.Cryptography.TripleDES>  
+ <xref:System.Security.Cryptography.Rijndael>  
+ [Cryptographic Services](../../../../standard/security/cryptographic-services.md)

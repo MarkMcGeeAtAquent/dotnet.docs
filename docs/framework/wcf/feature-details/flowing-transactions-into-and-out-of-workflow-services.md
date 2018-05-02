@@ -1,8 +1,8 @@
 ---
-title: "Flowing Transactions into and out of Workflow Services | Microsoft Docs"
+title: "Flowing Transactions into and out of Workflow Services"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Flowing Transactions into and out of Workflow Services
 Workflow services and clients can participate in transactions.  For a service operation to become part of an ambient transaction, place a <xref:System.ServiceModel.Activities.Receive> activity within a <xref:System.ServiceModel.Activities.TransactedReceiveScope> activity. Any calls made by a <xref:System.ServiceModel.Activities.Send> or a <xref:System.ServiceModel.Activities.SendReply> activity within the <xref:System.ServiceModel.Activities.TransactedReceiveScope> will also be made within the ambient transaction. A workflow client application can create an ambient transaction by using the <xref:System.Activities.Statements.TransactionScope> activity and call service operations using the ambient transaction. This topic walks you through creating a workflow service and workflow client that participate in transactions.  
@@ -76,7 +78,6 @@ Workflow services and clients can participate in transactions.  For a service op
         }  
   
     }  
-  
     ```  
   
      This is a native activity that displays information about the ambient transaction and is used in both the service and client workflows used in this topic. Build the solution to make this activity available in the **Common** section of the **Toolbox**.  
@@ -124,7 +125,7 @@ Workflow services and clients can participate in transactions.  For a service op
   
     |Activity|Value|  
     |--------------|-----------|  
-    |1st WriteLine|“Service: Receive Completed”|  
+    |1st WriteLine|"Service: Receive Completed"|  
     |2nd WriteLine|"Service: Received = " + requestMessage|  
   
      The workflow should now look like this:  
@@ -152,7 +153,7 @@ Workflow services and clients can participate in transactions.  For a service op
   
      ![Reply message settings](../../../../docs/framework/wcf/feature-details/media/replymessagesettings.JPG "ReplyMessageSettings")  
   
-13. Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `SendReplyToReceive` activity and set it’s <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Reply sent.”  
+13. Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `SendReplyToReceive` activity and set it’s <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Reply sent."  
   
 14. Drag and drop a <xref:System.Activities.Statements.WriteLine> activity at the bottom of the workflow and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Service: Workflow ends, press ENTER to exit."  
   
@@ -180,7 +181,7 @@ Workflow services and clients can participate in transactions.  For a service op
   
 6.  Drag and drop a `PrintTransactionInfo` activity within the <xref:System.Activities.Statements.Sequence>  
   
-7.  Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `PrintTransactionInfo` activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to “Client: Beginning Send”. The workflow should now look like this:  
+7.  Drag and drop a <xref:System.Activities.Statements.WriteLine> activity after the `PrintTransactionInfo` activity and set its <xref:System.Activities.Statements.WriteLine.Text%2A> property to "Client: Beginning Send". The workflow should now look like this:  
   
      ![Adding activities](../../../../docs/framework/wcf/feature-details/media/clientaddcbswriteline.JPG "ClientAddCBSWriteLine")  
   
@@ -246,7 +247,6 @@ Workflow services and clients can participate in transactions.  For a service op
                   host.Close();  
               };         
           }  
-  
     ```  
   
 3.  Add the following app.config file to the project.  
@@ -263,7 +263,6 @@ Workflow services and clients can participate in transactions.  For a service op
             </bindings>  
         </system.serviceModel>  
     </configuration>  
-  
     ```  
   
 ### Create the client application  
@@ -319,10 +318,9 @@ Workflow services and clients can participate in transactions.  For a service op
                 return UnhandledExceptionAction.Cancel;  
             }  
         }  
-  
     ```  
   
 ## See Also  
- [Workflow Services](../../../../docs/framework/wcf/feature-details/workflow-services.md)   
- [Windows Communication Foundation Transactions Overview](../../../../docs/framework/wcf/feature-details/transactions-overview.md)   
+ [Workflow Services](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [Windows Communication Foundation Transactions Overview](../../../../docs/framework/wcf/feature-details/transactions-overview.md)  
  [Use of TransactedReceiveScope](../../../../docs/framework/windows-workflow-foundation/samples/use-of-transactedreceivescope.md)

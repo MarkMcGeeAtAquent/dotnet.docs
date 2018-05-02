@@ -1,5 +1,5 @@
 ---
-title: "1104 - WorkflowActivityResume | Microsoft Docs"
+title: "1104 - WorkflowActivityResume"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7fe95d1e-34bd-43ca-b92e-587d2d248fff
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1104 - WorkflowActivityResume
 ## Properties  

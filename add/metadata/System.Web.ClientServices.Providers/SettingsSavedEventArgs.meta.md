@@ -1,20 +1,26 @@
 ---
 uid: System.Web.ClientServices.Providers.SettingsSavedEventArgs
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Web.ClientServices.Providers.SettingsSavedEventArgs.FailedSettingsList
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Web.ClientServices.Providers.SettingsSavedEventArgs.#ctor(System.Collections.Generic.IEnumerable{System.String})
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-webforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

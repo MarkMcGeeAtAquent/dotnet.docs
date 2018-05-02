@@ -1,17 +1,19 @@
 ---
-title: "Property Promotion Activity | Microsoft Docs"
+title: "Property Promotion Activity"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 802196b7-1159-4c05-b41b-d3bfdfcc88d9
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Property Promotion Activity
 This sample provides an end-to-end solution that integrates the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Promotion feature directly into the workflow authoring experience. A collection of configuration elements, workflow activities, and workflow extensions that simplify the use of the Promotion feature are provided. Additionally, the sample contains a simple workflow that demonstrates how to use this collection.  
@@ -96,7 +98,6 @@ create view [dbo].[CounterService] as
       from [System.Activities.DurableInstancing].[InstancePromotedProperties]  
       where [PromotionName] = 'CounterService'  
 go  
-  
 ```  
   
  When a workflow instance persists, a row is inserted into the `InstancePromotedProperties` view for each `PromotionSet` defined in the configuration. This row contains all the promoted properties of the `PromotionSet` (one promoted property per column). This `PromotionSet` is keyed by the tuple: `InstanceId, PromotionName`. In this sample, we have one `PromotionSet` defined in configuration whose name attribute is `CounterService`. Note how the `PromotionName` column value is equal to the name attribute of the `PromotionSet` element.  
@@ -112,13 +113,13 @@ go
   
  Note that the `PromotedValue` activity also has a Boolean member called `ClearExistingPromotedData`. When this member is set to `true`, this clears all the promoted property values up to that point in the workflow. For example, if a Sequence activity is defined as follows:  
   
-1.  PromoteValue { Name = “Count”, Value = 3}  
+1.  PromoteValue { Name = "Count", Value = 3}  
   
-2.  PromoteValue {Name = “LastIncrementedAt”, Value = 1-1-2000 }  
+2.  PromoteValue {Name = "LastIncrementedAt", Value = 1-1-2000 }  
   
 3.  Persist  
   
-4.  PromoteValue {Name = “Count”, Value = 4, ClearExistingPromotedData = true}  
+4.  PromoteValue {Name = "Count", Value = 4, ClearExistingPromotedData = true}  
   
 5.  Persist  
   
@@ -141,7 +142,6 @@ public class PromoteValue<T> : CodeActivity
     public string Name { get; set; }  
     public InArgument<T> Value { get; set; }  
 }  
-  
 ```  
   
  ClearExistingPromotedData (Bool)  
@@ -180,7 +180,6 @@ public class SqlWorkflowInstanceStorePromotionBehavior :
                             IEnumerable<string> promoteAsBinary)  
   
 }  
-  
 ```  
   
  This class library also contains the `ConfigurationElement` implementation for the `SqlWorkflowInstanceStorePromotionElement` and a custom persistence participant used by the previous promotion activities.  

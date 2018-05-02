@@ -1,8 +1,8 @@
 ---
-title: "How to: Iterate Through All Nodes of a Windows Forms TreeView Control | Microsoft Docs"
+title: "How to: Iterate Through All Nodes of a Windows Forms TreeView Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,16 +10,20 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "examples [Windows Forms], TreeView control"
   - "TreeView control [Windows Forms], iterating through nodes"
-  - "tree nodes in TreeView control, iterating through"
+  - "tree nodes in TreeView control [Windows Forms], iterating through"
 ms.assetid: 427f8928-ebcf-4beb-887f-695b905d5134
 caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Iterate Through All Nodes of a Windows Forms TreeView Control
 It is sometimes useful to examine every node in a Windows Forms <xref:System.Windows.Forms.TreeView> control in order to perform some calculation on the node values. This operation can be done using a recursive procedure (recursive method in C# and C++) that iterates through each node in each collection of the tree.  
@@ -51,7 +55,6 @@ It is sometimes useful to examine every node in a Windows Forms <xref:System.Win
           PrintRecursive(n)  
        Next  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -77,7 +80,6 @@ It is sometimes useful to examine every node in a Windows Forms <xref:System.Win
           PrintRecursive(n);  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -130,5 +132,5 @@ It is sometimes useful to examine every node in a Windows Forms <xref:System.Win
     ```  
   
 ## See Also  
- [TreeView Control](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)   
+ [TreeView Control](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  
  [Recursive Procedures](~/docs/visual-basic/programming-guide/language-features/procedures/recursive-procedures.md)

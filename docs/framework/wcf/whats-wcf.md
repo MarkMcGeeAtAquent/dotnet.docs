@@ -1,5 +1,5 @@
 ---
-title: "What Is Windows Communication Foundation | Microsoft Docs"
+title: "What Is Windows Communication Foundation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,17 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Windows Communication Foundation [WCF], technology overview"
   - "technology overview [WCF]"
   - "WCF [WCF], technology overview"
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
 caps.latest.revision: 51
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # What Is Windows Communication Foundation
 [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] is a framework for building service-oriented applications. Using [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], you can send data as asynchronous messages from one service endpoint to another. A service endpoint can be part of a continuously available service hosted by IIS, or it can be a service hosted in an application. An endpoint can be a client of a service that requests data from a service endpoint. The messages can be as simple as a single character or word sent as XML, or as complex as a stream of binary data. A few sample scenarios include:  
@@ -88,12 +87,12 @@ manager: "erikre"
   
 -   **Extensibility**  
   
-     The [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] architecture has a number of extensibility points. If extra capability is required, there are a number of entry points that allow you to customize the behavior of a service. [!INCLUDE[crabout](../../../includes/crabout-md.md)] available extensibility points see [Extending WCF](../../../docs/framework/wcf/extending/extending-wcf.md).  
+     The [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] architecture has a number of extensibility points. If extra capability is required, there are a number of entry points that allow you to customize the behavior of a service. [!INCLUDE[crabout](../../../includes/crabout-md.md)] available extensibility points see [Extending WCF](../../../docs/framework/wcf/extending/index.md).  
   
 ## WCF Integration with Other Microsoft Technologies  
  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] is a flexible platform. Because of this extreme flexibility, [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] is also used in several other Microsoft products. By understanding the basics of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)], you have an immediate advantage if you also use any of these products.  
   
- The first technology to pair with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] was the Windows Workflow Foundation (WF). Workflows simplify application development by encapsulating steps in the workflow as “activities.” In the first version of [!INCLUDE[wf2](../../../includes/wf2-md.md)], a developer had to create a host for the workflow. The next version of [!INCLUDE[wf2](../../../includes/wf2-md.md)] was integrated with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. That allowed any workflow to be easily hosted in a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service; you can do this by automatically choosing the WF/WCF a project type in [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
+ The first technology to pair with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] was the Windows Workflow Foundation (WF). Workflows simplify application development by encapsulating steps in the workflow as "activities." In the first version of [!INCLUDE[wf2](../../../includes/wf2-md.md)], a developer had to create a host for the workflow. The next version of [!INCLUDE[wf2](../../../includes/wf2-md.md)] was integrated with [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]. That allowed any workflow to be easily hosted in a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service; you can do this by automatically choosing the WF/WCF a project type in [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
   
  Microsoft BizTalk Server R2 also utilizes [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] as a communication technology. BizTalk is designed to receive and transform data from one standardized format to another. Messages must be delivered to its central message box where the message can be transformed using either a strict mapping or by using one of the BizTalk features such as its workflow engine. BizTalk can now use the [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Line of Business (LOB) adapter to deliver messages to the message box.  
   
@@ -102,11 +101,11 @@ manager: "erikre"
  The [!INCLUDE[dublin](../../../includes/dublin-md.md)] application server is specifically built for deploying and managing applications that use [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] for communication. The [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] includes rich tooling and configuration options specifically designed for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)]-enabled applications.  
   
 ## See Also  
- <xref:System.ServiceModel>   
- [Fundamental Windows Communication Foundation Concepts](../../../docs/framework/wcf/fundamental-concepts.md)   
- [Windows Communication Foundation Architecture](../../../docs/framework/wcf/architecture.md)   
- [Guidelines and Best Practices](../../../docs/framework/wcf/guidelines-and-best-practices.md)   
- [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md)   
- [Guide to the Documentation](../../../docs/framework/wcf/guide-to-the-documentation.md)   
- [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md)   
- [Windows Communication Foundation Samples](http://msdn.microsoft.com/en-us/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)
+ <xref:System.ServiceModel>  
+ [Fundamental Windows Communication Foundation Concepts](../../../docs/framework/wcf/fundamental-concepts.md)  
+ [Windows Communication Foundation Architecture](../../../docs/framework/wcf/architecture.md)  
+ [Guidelines and Best Practices](../../../docs/framework/wcf/guidelines-and-best-practices.md)  
+ [Getting Started Tutorial](../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [Guide to the Documentation](../../../docs/framework/wcf/guide-to-the-documentation.md)  
+ [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [Windows Communication Foundation Samples](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)

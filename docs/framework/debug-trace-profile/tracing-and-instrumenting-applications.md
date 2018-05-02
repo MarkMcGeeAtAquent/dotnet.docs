@@ -1,5 +1,5 @@
 ---
-title: "Tracing and Instrumenting Applications | Microsoft Docs"
+title: "Tracing and Instrumenting Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "tracing [.NET Framework]"
   - "debugging [.NET Framework], instrumentation"
@@ -27,15 +25,17 @@ caps.latest.revision: 21
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Tracing and Instrumenting Applications
-Tracing is a way for you to monitor the execution of your application while it is running. You can add tracing and debugging instrumentation to your .NET Framework application when you develop it, and you can use that instrumentation both while you are developing the application and after you have deployed it. You can use the <xref:System.Diagnostics.Trace?displayProperty=fullName>, <xref:System.Diagnostics.Debug?displayProperty=fullName>, and <xref:System.Diagnostics.TraceSource?displayProperty=fullName> classes to record information about errors and application execution in logs, text files, or other devices for later analysis.  
+Tracing is a way for you to monitor the execution of your application while it is running. You can add tracing and debugging instrumentation to your .NET Framework application when you develop it, and you can use that instrumentation both while you are developing the application and after you have deployed it. You can use the <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType>, and <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> classes to record information about errors and application execution in logs, text files, or other devices for later analysis.  
   
  The term *instrumentation* refers to an ability to monitor or measure the level of a product's performance and to diagnose errors. In programming, this means the ability of an application to incorporate:  
   
 -   **Code tracing** - Receiving informative messages about the execution of an application at run time.  
   
--   **Debugging** - Tracking down and fixing programming errors in an application under development. For more information, see [Debugging](http://msdn.microsoft.com/library/590f152d-31e2-4e13-b808-a1b13e421483).  
+-   **Debugging** - Tracking down and fixing programming errors in an application under development. For more information, see [Debugging](/visualstudio/debugger/debugging-in-visual-studio).  
   
 -   **Performance counters** - Components that allow you to track the performance of your application. For more information, see [Performance Counters](../../../docs/framework/debug-trace-profile/performance-counters.md).  
   
@@ -55,18 +55,16 @@ Tracing is a way for you to monitor the execution of your application while it i
 ```vb  
 Trace.WriteLine("Hello World!")  
 Debug.WriteLine("Hello World!")  
-  
 ```  
   
 ```csharp  
 System.Diagnostics.Trace.WriteLine("Hello World!");  
 System.Diagnostics.Debug.WriteLine("Hello World!");  
-  
 ```  
   
  Each of these examples will display "Hello World!" in the Output window when the application is run in the debugger.  
   
- This enables you to debug your applications and optimize their performance based on their behavior in your test environment. You can debug your application in your debug build with the <xref:System.Diagnostics.Debug> conditional attribute turned on so that you receive all debugging output. When your application is ready for release, you can compile your release build without turning on the <xref:System.Diagnostics.Debug> conditional attribute, so that the compiler will not include your debugging code in the final executable. For more information, see [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). For more information on different build configurations for your application, see [Compiling and Building](http://msdn.microsoft.com/library/c7958821-285f-4e28-9e7a-b5d8b40336a1).  
+ This enables you to debug your applications and optimize their performance based on their behavior in your test environment. You can debug your application in your debug build with the <xref:System.Diagnostics.Debug> conditional attribute turned on so that you receive all debugging output. When your application is ready for release, you can compile your release build without turning on the <xref:System.Diagnostics.Debug> conditional attribute, so that the compiler will not include your debugging code in the final executable. For more information, see [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md). For more information on different build configurations for your application, see [Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio).  
   
  You can also trace code execution in an installed application, using methods of the <xref:System.Diagnostics.Trace> class. By placing [Trace Switches](../../../docs/framework/debug-trace-profile/trace-switches.md) in your code, you can control whether tracing occurs and how extensive it is. This lets you monitor the status of your application in a production environment. This is especially important in a business application that uses multiple components running on multiple computers. You can control how the switches are used after deployment through the configuration file. For more information, see [How to: Create, Initialize and Configure Trace Switches](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md).  
   
@@ -122,7 +120,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  You must exercise special care when placing your trace statements for use during run time. You must consider what tracing information is likely to be needed in a deployed application, so that all likely tracing scenarios are adequately covered. Because applications that use tracing vary widely, however, there are no general guidelines for strategic placement of tracing. For more information on placing trace statements, see [How to: Add Trace Statements to Application Code](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md).  
   
 ## Output from Tracing  
- Trace output is collected by objects called *listeners*. A listener is an object that receives trace output and writes it to an output device (usually a window, log, or text file). When a trace listener is created, it is typically added to the <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=fullName> collection, allowing the listener to receive all trace output.  
+ Trace output is collected by objects called *listeners*. A listener is an object that receives trace output and writes it to an output device (usually a window, log, or text file). When a trace listener is created, it is typically added to the <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType> collection, allowing the listener to receive all trace output.  
   
  Tracing information is always written at least to the default <xref:System.Diagnostics.Trace> output target, the <xref:System.Diagnostics.DefaultTraceListener>. If for some reason you have deleted the <xref:System.Diagnostics.DefaultTraceListener> without adding any other listeners to the <xref:System.Diagnostics.Trace.Listeners%2A> collection, you will not receive any tracing messages. For more information, see [Trace Listeners](../../../docs/framework/debug-trace-profile/trace-listeners.md).  
   
@@ -147,17 +145,17 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  The **Write** and **WriteLine** methods always write the text that you specify. **Assert**, **WriteIf**, and **WriteLineIf** require a Boolean argument that controls whether or not they write the specified text; they write the specified text only if the expression is **true** (for **WriteIf** and **WriteLineIf**), or **false** (for **Assert**). The **Fail** method always writes the specified text. For more information, see [How to: Add Trace Statements to Application Code](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md) and the .NET Framework reference.  
   
 ## Security Concerns  
- If you do not disable tracing and debugging before deploying an ASP.NET application, your application may reveal information about itself that could be exploited by a malicious program. For more information, see [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [Compiling and Building](http://msdn.microsoft.com/library/c7958821-285f-4e28-9e7a-b5d8b40336a1), and [How to: Create, Initialize and Configure Trace Switches](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md). Debugging is also configurable through Internet Information Services (IIS).  
+ If you do not disable tracing and debugging before deploying an ASP.NET application, your application may reveal information about itself that could be exploited by a malicious program. For more information, see [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md), [Compiling and Building](/visualstudio/ide/compiling-and-building-in-visual-studio), and [How to: Create, Initialize and Configure Trace Switches](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md). Debugging is also configurable through Internet Information Services (IIS).  
   
 ## See Also  
- <xref:System.Diagnostics.Trace>   
- <xref:System.Diagnostics.TraceSource>   
- [Code Contracts](../../../docs/framework/debug-trace-profile/code-contracts.md)   
- [C#, F#, and Visual Basic Project Types](../Topic/Debugging%20Preparation:%20C%23,%20F%23,%20and%20Visual%20Basic%20Project%20Types.md)   
- [How to: Add Trace Statements to Application Code](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)   
- [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)   
- [How to: Create, Initialize and Configure Trace Switches](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)   
- [How to: Create and Initialize Trace Sources](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)   
- [How to: Use TraceSource and Filters with Trace Listeners](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)   
- [Trace Listeners](../../../docs/framework/debug-trace-profile/trace-listeners.md)   
+ <xref:System.Diagnostics.Trace>  
+ <xref:System.Diagnostics.TraceSource>  
+ [Code Contracts](../../../docs/framework/debug-trace-profile/code-contracts.md)  
+ [C#, F#, and Visual Basic Project Types](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)  
+ [How to: Add Trace Statements to Application Code](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)  
+ [How to: Compile Conditionally with Trace and Debug](../../../docs/framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)  
+ [How to: Create, Initialize and Configure Trace Switches](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)  
+ [How to: Create and Initialize Trace Sources](../../../docs/framework/debug-trace-profile/how-to-create-and-initialize-trace-sources.md)  
+ [How to: Use TraceSource and Filters with Trace Listeners](../../../docs/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)  
+ [Trace Listeners](../../../docs/framework/debug-trace-profile/trace-listeners.md)  
  [Trace Switches](../../../docs/framework/debug-trace-profile/trace-switches.md)

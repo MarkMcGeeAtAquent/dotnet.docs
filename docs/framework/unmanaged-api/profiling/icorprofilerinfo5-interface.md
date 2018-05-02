@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo5 Interface | Microsoft Docs"
+title: "ICorProfilerInfo5 Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo5"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: 7bd48c34-37ed-4230-9eec-39a17280f05d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo5 Interface
 [Supported in the .NET Framework 4.5.2 and later versions]  

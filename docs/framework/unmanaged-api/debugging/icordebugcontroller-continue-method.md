@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugController::Continue Method | Microsoft Docs"
+title: "ICorDebugController::Continue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugController.Continue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugController::Continue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Continue method [.NET Framework debugging]"
   - "ICorDebugController::Continue method [.NET Framework debugging]"
 ms.assetid: 8684cd06-ad3e-48ef-832e-15320e1f43a2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugController::Continue Method
 Resumes execution of managed threads after a call to [Stop Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md).  

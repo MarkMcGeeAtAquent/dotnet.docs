@@ -1,7 +1,9 @@
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
@@ -13,8 +15,10 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
@@ -25,26 +29,34 @@ manager: "markl"
 
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#AddToSelection
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#RemoveFromSelection
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer.System#Windows#Automation#Provider#ISelectionItemProvider#Select
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-wpf"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Automation.Peers.SelectorItemAutomationPeer.#ctor(System.Object,System.Windows.Automation.Peers.SelectorAutomationPeer)
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

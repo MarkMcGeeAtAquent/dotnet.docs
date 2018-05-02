@@ -1,5 +1,5 @@
 ---
-title: "INotifySink2::OnSyncCallEnter Method | Microsoft Docs"
+title: "INotifySink2::OnSyncCallEnter Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "INotifySink2.OnSyncCallEnter"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "INotifySink2::OnSyncCallEnter"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "INotifySink2::OnSyncCallEnter method [.NET Framework debugging]"
   - "OnSyncCallEnter method [.NET Framework debugging]"
 ms.assetid: e33265be-c25d-4145-ad02-c3e89d6f26c1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # INotifySink2::OnSyncCallEnter Method
 Gets invoked when entering a call.  
@@ -58,6 +61,6 @@ HRESULT OnSyncCallEnter
  **Header:** ProtocolNotify2.idl  
   
 ## See Also  
- [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)   
- [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)   
+ [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
+ [INotifySource2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
  [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)

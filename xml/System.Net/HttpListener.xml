@@ -1,7 +1,9 @@
-<Type Name="HttpListener" FullName="System.Net.HttpListener">
+﻿<Type Name="HttpListener" FullName="System.Net.HttpListener">
   <TypeSignature Language="C#" Value="public sealed class HttpListener : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpListener extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.HttpListener" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpListener&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpListener sealed : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.HttpListener</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -25,41 +31,41 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Using the <xref:System.Net.HttpListener> class, you can create a simple HTTP protocol listener that responds to HTTP requests. The listener is active for the lifetime of the <xref:System.Net.HttpListener> object and runs within your application with its permissions.  
+ Using the <xref:System.Net.HttpListener> class, you can create a simple HTTP protocol listener that responds to HTTP requests. The listener is active for the lifetime of the <xref:System.Net.HttpListener> object and runs within your application with its permissions.
+   
+ To use <xref:System.Net.HttpListener>, create a new instance of the class using the <xref:System.Net.HttpListener> constructor and use the <xref:System.Net.HttpListener.Prefixes%2A> property to gain access to the collection that holds the strings that specify which Uniform Resource Identifier (URI) prefixes the <xref:System.Net.HttpListener> should process.
+  
+ A URI prefix string is composed of a scheme (http or https), a host, an optional port, and an optional path. An example of a complete prefix string is *http://www.contoso.com:8080/customerData/*. Prefixes must end in a forward slash ("/"). The <xref:System.Net.HttpListener> object with the prefix that most closely matches a requested URI responds to the request. Multiple <xref:System.Net.HttpListener> objects cannot add the same prefix; a <xref:System.ComponentModel.Win32Exception> exception is thrown if a <xref:System.Net.HttpListener> adds a prefix that is already in use.
+  
+ When a port is specified, the host element can be replaced with "\*" to indicate that the <xref:System.Net.HttpListener> accepts requests sent to the port if the requested URI does not match any other prefix. For example, to receive all requests sent to port 8080 when the requested URI is not handled by any <xref:System.Net.HttpListener>, the prefix is *http://\*:8080/*. Similarly, to specify that the <xref:System.Net.HttpListener> accepts all requests sent to a port, replace the host element with the "+" character. For example, *https://+:8080*. The "\*" and "+" characters can be present in prefixes that include paths.
+  
+ Starting with .NET Core 2.0 or .NET Framework 4.6 on Windows 10, wildcard subdomains are supported in URI prefixes that are managed by an <xref:System.Net.HttpListener> object. To specify a wildcard subdomain, use the "\*" character as part of the hostname in a URI prefix. For example, *http://\*.foo.com/*. Pass this as the argument to the <xref:System.Net.HttpListenerPrefixCollection.Add%2A> method. This works as of .NET Core 2.0 or .NET Framework 4.6 on Windows 10; in earlier versions, this generates an <xref:System.Net.HttpListenerException>.
+
+ > [!WARNING]
+ > Top-level wildcard bindings (*http://\*:8080/* and *http://+:8080*) should **not** be used. Top-level wildcard bindings can open up your app to security vulnerabilities. This applies to both strong and weak wildcards. Use explicit host names rather than wildcards. Subdomain wildcard binding (for example, `*.mysub.com`) doesn't have this security risk if you control the entire parent domain (as opposed to `*.com`, which is vulnerable). See [rfc7230 section-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) for more information.
+  
+ To begin listening for requests from clients, add the URI prefixes to the collection and call the <xref:System.Net.HttpListener.Start%2A> method. <xref:System.Net.HttpListener> offers both synchronous and asynchronous models for processing client requests. Requests and their associated responses are accessed using the <xref:System.Net.HttpListenerContext> object returned by the <xref:System.Net.HttpListener.GetContext%2A> method or its asynchronous counterparts, the <xref:System.Net.HttpListener.BeginGetContext%2A> and <xref:System.Net.HttpListener.EndGetContext%2A> methods.
+  
+ The synchronous model is appropriate if your application should block while waiting for a client request and if you want to process only one request at a time. Using the synchronous model, call the <xref:System.Net.HttpListener.GetContext%2A> method, which waits for a client to send a request. The method returns an <xref:System.Net.HttpListenerContext> object to you for processing when one occurs.
+  
+ In the more complex asynchronous model, your application does not block while waiting for requests and each request is processed in its own execution thread. Use the <xref:System.Net.HttpListener.BeginGetContext%2A> method to specify an application-defined method to be called for each incoming request. Within that method, call the <xref:System.Net.HttpListener.EndGetContext%2A> method to obtain the request, process it, and respond.
+  
+ In either model, incoming requests are accessed using the <xref:System.Net.HttpListenerContext.Request%2A?displayProperty=nameWithType> property and are represented by <xref:System.Net.HttpListenerRequest> objects. Similarly, responses are accessed using the <xref:System.Net.HttpListenerContext.Response%2A?displayProperty=nameWithType> property and are represented by <xref:System.Net.HttpListenerResponse> objects. These objects share some functionality with the <xref:System.Net.HttpWebRequest> and <xref:System.Net.HttpWebResponse> objects, but the latter objects cannot be used in conjunction with <xref:System.Net.HttpListener> because they implement client, not server, behaviors.
+  
+ An <xref:System.Net.HttpListener> can require client authentication. You can either specify a particular scheme to use for authentication, or you can specify a delegate that determines the scheme to use. You must require some form of authentication to obtain information about the client's identity. For additional information, see the <xref:System.Net.HttpListenerContext.User%2A>, <xref:System.Net.HttpListener.AuthenticationSchemes%2A>, and <xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A> properties.
   
 > [!NOTE]
->  This class is available only on computers running the Windows XP SP2 or Windows Server 2003 operating systems. If you attempt to create an <xref:System.Net.HttpListener> object on a computer that is running an earlier operating system, the constructor throws a <xref:System.PlatformNotSupportedException> exception.  
-  
- To use <xref:System.Net.HttpListener>, create a new instance of the class using the <xref:System.Net.HttpListener> constructor and use the <xref:System.Net.HttpListener.Prefixes%2A> property to gain access to the collection that holds the strings that specify which Uniform Resource Identifier (URI) prefixes the <xref:System.Net.HttpListener> should process.  
-  
- A URI prefix string is composed of a scheme (http or https), a host, an optional port, and an optional path. An example of a complete prefix string is "`http://www.contoso.com:8080/customerData``/`". Prefixes must end in a forward slash ("/"). The <xref:System.Net.HttpListener> object with the prefix that most closely matches a requested URI responds to the request. Multiple <xref:System.Net.HttpListener> objects cannot add the same prefix; a <xref:System.ComponentModel.Win32Exception> exception is thrown if a <xref:System.Net.HttpListener> adds a prefix that is already in use.  
-  
- When a port is specified, the host element can be replaced with "*" to indicate that the <xref:System.Net.HttpListener> accepts requests sent to the port if the requested URI does not match any other prefix. For example, to receive all requests sent to port 8080 when the requested URI is not handled by any <xref:System.Net.HttpListener>, the prefix is "`http://*:8080``/`". Similarly, to specify that the <xref:System.Net.HttpListener> accepts all requests sent to a port, replace the host element with the "+" character, "`https://+:8080`". The "\*" and "+" characters can be present in prefixes that include paths.  
-  
- Starting with .NET 4.5.3 and Windows 10, wildcard subdomains are supported in URI prefixes that are managed by an <xref:System.Net.HttpListener> object. To specify a wildcard subdomain, use the "*" character as part of the hostname in a URI prefix: for example, `http://*.foo.com/`, and pass this as the argument to the HttpListenerPrefixCollection.Add method. This will work on .NET 4.5.3 and Windows 10; in earlier versions, this would generate an <xref:System.Net.HttpListenerException>  
-  
- To begin listening for requests from clients, add the URI prefixes to the collection and call the <xref:System.Net.HttpListener.Start%2A> method. <xref:System.Net.HttpListener> offers both synchronous and asynchronous models for processing client requests. Requests and their associated responses are accessed using the <xref:System.Net.HttpListenerContext> object returned by the <xref:System.Net.HttpListener.GetContext%2A> method or its asynchronous counterparts, the <xref:System.Net.HttpListener.BeginGetContext%2A> and <xref:System.Net.HttpListener.EndGetContext%2A> methods.  
-  
- The synchronous model is appropriate if your application should block while waiting for a client request and if you want to process only one request at a time. Using the synchronous model, call the <xref:System.Net.HttpListener.GetContext%2A> method, which waits for a client to send a request. The method returns an <xref:System.Net.HttpListenerContext> object to you for processing when one occurs.  
-  
- In the more complex asynchronous model, your application does not block while waiting for requests and each request is processed in its own execution thread. Use the <xref:System.Net.HttpListener.BeginGetContext%2A> method to specify an application-defined method to be called for each incoming request. Within that method, call the <xref:System.Net.HttpListener.EndGetContext%2A> method to obtain the request, process it, and respond.  
-  
- In either model, incoming requests are accessed using the <xref:System.Net.HttpListenerContext.Request%2A?displayProperty=fullName> property and are represented by <xref:System.Net.HttpListenerRequest> objects. Similarly, responses are accessed using the <xref:System.Net.HttpListenerContext.Response%2A?displayProperty=fullName> property and are represented by <xref:System.Net.HttpListenerResponse> objects. These objects share some functionality with the <xref:System.Net.HttpWebRequest> and <xref:System.Net.HttpWebResponse> objects, but the latter objects cannot be used in conjunction with <xref:System.Net.HttpListener> because they implement client, not server, behaviors.  
-  
- An <xref:System.Net.HttpListener> can require client authentication. You can either specify a particular scheme to use for authentication, or you can specify a delegate that determines the scheme to use. You must require some form of authentication to obtain information about the client's identity. For additional information, see the <xref:System.Net.HttpListenerContext.User%2A>, <xref:System.Net.HttpListener.AuthenticationSchemes%2A>, and <xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A> properties.  
+> If you create an <xref:System.Net.HttpListener> using https, you must select a Server Certificate for that listener. Otherwise, an <xref:System.Net.HttpWebRequest> query of this <xref:System.Net.HttpListener> will fail with an unexpected close of the connection.
   
 > [!NOTE]
->  If you create an <xref:System.Net.HttpListener> using https, you must select a Server Certificate for that listener. Otherwise, an <xref:System.Net.HttpWebRequest> query of this <xref:System.Net.HttpListener> will fail with an unexpected close of the connection.  
+> You can configure Server Certificates and other listener options by using Network Shell (netsh.exe). See [Network Shell (Netsh)](/windows-server/networking/technologies/netsh/netsh) for more details. The executable began shipping with Windows Server 2008 and Windows Vista.
   
 > [!NOTE]
->  You can configure Server Certificates and other listener options by using HttpCfg.exe. See [http://msdn.microsoft.com/library/default.asp?url=/library/en-us/http/http/httpcfg_exe.asp](http://msdn.microsoft.com/library/default.asp?url=/library/http/http/httpcfg_exe.asp) for more details. The executable is shipped with Windows Server 2003, or can be built from source code available in the Platform SDK.  
-  
-> [!NOTE]
->  If you specify multiple authentication schemes for the <xref:System.Net.HttpListener>, the listener will challenge clients in the following order: `Negotiate`, `NTLM`, `Digest`, and then `Basic`.  
+> If you specify multiple authentication schemes for the <xref:System.Net.HttpListener>, the listener will challenge clients in the following order: `Negotiate`, `NTLM`, `Digest`, and then `Basic`.
   
    
   
-## Examples  
+## Examples
  The following code example demonstrates using a <xref:System.Net.HttpListener>.  
   
  [!code-csharp[Net_Listener_Basic#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Net_Listener_Basic/CS/test.cs#2)]  
@@ -72,6 +78,8 @@
       <MemberSignature Language="C#" Value="public HttpListener ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; HttpListener();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -81,6 +89,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -110,6 +122,8 @@
       <MemberSignature Language="C#" Value="public void Abort ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Abort" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Abort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Abort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -119,6 +133,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -152,6 +170,8 @@
       <MemberSignature Language="C#" Value="public System.Net.AuthenticationSchemes AuthenticationSchemes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.AuthenticationSchemes AuthenticationSchemes" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.AuthenticationSchemes" />
+      <MemberSignature Language="VB.NET" Value="Public Property AuthenticationSchemes As AuthenticationSchemes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::AuthenticationSchemes AuthenticationSchemes { System::Net::AuthenticationSchemes get(); void set(System::Net::AuthenticationSchemes value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -161,6 +181,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.AuthenticationSchemes</ReturnType>
@@ -174,12 +198,12 @@
 ## Remarks  
  The <xref:System.Net.HttpListener> uses the specified scheme to authenticate all incoming requests. The <xref:System.Net.HttpListener.GetContext%2A> and <xref:System.Net.HttpListener.EndGetContext%2A> methods return an incoming client request only if the <xref:System.Net.HttpListener> successfully authenticates the request.  
   
- You can interrogate the identity of a successfully authenticated client by using the <xref:System.Net.HttpListenerContext.User%2A?displayProperty=fullName> property.  
+ You can interrogate the identity of a successfully authenticated client by using the <xref:System.Net.HttpListenerContext.User%2A?displayProperty=nameWithType> property.  
   
  If you want an <xref:System.Net.HttpListener> object to use different authentication mechanisms based on characteristics of the requests it receives (for example, the request's <xref:System.Net.HttpListenerRequest.Url%2A> or <xref:System.Net.HttpListenerRequest.UserHostName%2A> property), you must implement a method that chooses the authentication scheme. For instructions about how to do this, see the <xref:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate%2A> property documentation.  
   
 > [!NOTE]
->  To set this property to enable Digest, NTLM, or Negotiate requires the <xref:System.Security.Permissions.SecurityPermission>, <xref:System.Security.Permissions.SecurityPermissionFlag>.  
+>  To set this property to enable Digest, NTLM, or Negotiate requires the <xref:System.Security.Permissions.SecurityPermission>, <xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>.  
   
    
   
@@ -197,6 +221,8 @@
       <MemberSignature Language="C#" Value="public System.Net.AuthenticationSchemeSelector AuthenticationSchemeSelectorDelegate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.AuthenticationSchemeSelector AuthenticationSchemeSelectorDelegate" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.AuthenticationSchemeSelectorDelegate" />
+      <MemberSignature Language="VB.NET" Value="Public Property AuthenticationSchemeSelectorDelegate As AuthenticationSchemeSelector" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::AuthenticationSchemeSelector ^ AuthenticationSchemeSelectorDelegate { System::Net::AuthenticationSchemeSelector ^ get(); void set(System::Net::AuthenticationSchemeSelector ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -206,6 +232,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.AuthenticationSchemeSelector</ReturnType>
@@ -221,12 +251,12 @@
 > [!NOTE]
 >  If you want the same authentication protocol to be used for all requests handled by a particular instance of <xref:System.Net.HttpListener>, you do not need to set this property. To specify a protocol to be used for all client requests, use the <xref:System.Net.HttpListener.AuthenticationSchemes%2A> property.  
   
- If the client has not specified authentication information in its headers, the <xref:System.Net.HttpListener> calls the specified delegate for each unauthenticated incoming request to determine which, if any, protocol to use to authenticate the client. The <xref:System.Net.HttpListener.GetContext%2A> and <xref:System.Net.HttpListener.EndGetContext%2A> methods return an incoming request only if the <xref:System.Net.HttpListener> successfully authenticated the request. If a request cannot be authenticated, the <xref:System.Net.HttpListener> automatically sends back a 401 response. You can get the identity of a successfully authenticated client using the <xref:System.Web.HttpRequest.LogonUserIdentity%2A?displayProperty=fullName> property.  
+ If the client has not specified authentication information in its headers, the <xref:System.Net.HttpListener> calls the specified delegate for each unauthenticated incoming request to determine which, if any, protocol to use to authenticate the client. The <xref:System.Net.HttpListener.GetContext%2A> and <xref:System.Net.HttpListener.EndGetContext%2A> methods return an incoming request only if the <xref:System.Net.HttpListener> successfully authenticated the request. If a request cannot be authenticated, the <xref:System.Net.HttpListener> automatically sends back a 401 response. You can get the identity of a successfully authenticated client using the <xref:System.Web.HttpRequest.LogonUserIdentity%2A?displayProperty=nameWithType> property.  
   
  The ability to delegate the choice of authentication protocol to an application-specific method is useful if you want an instance of <xref:System.Net.HttpListener> to use different authentication protocols depending on the characteristics of the requests it receives (for example, the request's <xref:System.Net.HttpListenerRequest.Url%2A> or <xref:System.Net.HttpListenerRequest.UserHostAddress%2A> property).  
   
 > [!NOTE]
->  To set this property to enable Digest, NTLM, or Negotiate requires the <xref:System.Security.Permissions.SecurityPermission>, <xref:System.Security.Permissions.SecurityPermissionFlag>.  
+>  To set this property to enable Digest, NTLM, or Negotiate requires the <xref:System.Security.Permissions.SecurityPermission>, <xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>.  
   
    
   
@@ -250,6 +280,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginGetContext (AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginGetContext(class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.BeginGetContext(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginGetContext (callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginGetContext(AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -259,6 +291,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -309,6 +345,8 @@
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -318,6 +356,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -351,6 +393,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ServiceNameCollection DefaultServiceNames { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ServiceNameCollection DefaultServiceNames" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.DefaultServiceNames" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DefaultServiceNames As ServiceNameCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Authentication::ExtendedProtection::ServiceNameCollection ^ DefaultServiceNames { System::Security::Authentication::ExtendedProtection::ServiceNameCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -360,6 +404,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Authentication.ExtendedProtection.ServiceNameCollection</ReturnType>
@@ -401,12 +449,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+        <altmember cref="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+        <altmember cref="N:System.Security.Authentication.ExtendedProtection" />
+        <altmember cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
       </Docs>
     </Member>
     <Member MemberName="EndGetContext">
       <MemberSignature Language="C#" Value="public System.Net.HttpListenerContext EndGetContext (IAsyncResult asyncResult);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.HttpListenerContext EndGetContext(class System.IAsyncResult asyncResult) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.EndGetContext(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndGetContext (asyncResult As IAsyncResult) As HttpListenerContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Net::HttpListenerContext ^ EndGetContext(IAsyncResult ^ asyncResult);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -416,6 +471,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.HttpListenerContext</ReturnType>
@@ -461,6 +520,8 @@
       <MemberSignature Language="C#" Value="public System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy ExtendedProtectionPolicy" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtendedProtectionPolicy As ExtendedProtectionPolicy" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Authentication::ExtendedProtection::ExtendedProtectionPolicy ^ ExtendedProtectionPolicy { System::Security::Authentication::ExtendedProtection::ExtendedProtectionPolicy ^ get(); void set(System::Security::Authentication::ExtendedProtection::ExtendedProtectionPolicy ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -470,6 +531,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -497,12 +562,19 @@
         <exception cref="T:System.InvalidOperationException">An attempt was made to set the <see cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" /> property after the <see cref="M:System.Net.HttpListener.Start" /> method was already called.</exception>
         <exception cref="T:System.ObjectDisposedException">This object is closed.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The <see cref="P:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement" /> property was set to <see cref="F:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always" /> on a platform that does not support extended protection.</exception>
+        <altmember cref="P:System.Net.HttpListener.DefaultServiceNames" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+        <altmember cref="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+        <altmember cref="N:System.Security.Authentication.ExtendedProtection" />
+        <altmember cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
       </Docs>
     </Member>
     <Member MemberName="ExtendedProtectionSelectorDelegate">
       <MemberSignature Language="C#" Value="public System.Net.HttpListener.ExtendedProtectionSelector ExtendedProtectionSelectorDelegate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListener/ExtendedProtectionSelector ExtendedProtectionSelectorDelegate" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" />
+      <MemberSignature Language="VB.NET" Value="Public Property ExtendedProtectionSelectorDelegate As HttpListener.ExtendedProtectionSelector" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::HttpListener::ExtendedProtectionSelector ^ ExtendedProtectionSelectorDelegate { System::Net::HttpListener::ExtendedProtectionSelector ^ get(); void set(System::Net::HttpListener::ExtendedProtectionSelector ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -512,6 +584,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.HttpListener+ExtendedProtectionSelector</ReturnType>
@@ -529,7 +605,7 @@
   
  For each request, the delegate can choose the settings that the <xref:System.Net.HttpListener> instance will use to provide extended protection.  
   
- If a delegate returns `null` for this property, this represents a <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> which the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A> property set to <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement>.  
+ If a delegate returns `null` for this property, this represents a <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> which the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.PolicyEnforcement%2A> property set to <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Never>.  
   
  ]]></format>
         </remarks>
@@ -538,12 +614,19 @@
         <exception cref="T:System.InvalidOperationException">An attempt was made to set the <see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" /> property after the <see cref="M:System.Net.HttpListener.Start" /> method was already called.</exception>
         <exception cref="T:System.ObjectDisposedException">This object is closed.</exception>
         <exception cref="T:System.PlatformNotSupportedException">An attempt was made to set the <see cref="P:System.Net.HttpListener.ExtendedProtectionSelectorDelegate" /> property on a platform that does not support extended protection.</exception>
+        <altmember cref="P:System.Net.HttpListener.DefaultServiceNames" />
+        <altmember cref="P:System.Net.HttpListener.ExtendedProtectionPolicy" />
+        <altmember cref="T:System.Net.HttpListener.ExtendedProtectionSelector" />
+        <altmember cref="N:System.Security.Authentication.ExtendedProtection" />
+        <altmember cref="T:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy" />
       </Docs>
     </Member>
     <Member MemberName="GetContext">
       <MemberSignature Language="C#" Value="public System.Net.HttpListenerContext GetContext ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.HttpListenerContext GetContext() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.GetContext" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetContext () As HttpListenerContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Net::HttpListenerContext ^ GetContext();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -553,6 +636,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.HttpListenerContext</ReturnType>
@@ -583,7 +670,7 @@
   
  -or-  
   
- The <see cref="T:System.Net.HttpListener" /> does not have any Uniform Resource Identifier (URI) prefixes to respond to. See Remarks.</exception>
+ The <see cref="T:System.Net.HttpListener" /> does not have any Uniform Resource Identifier (URI) prefixes to respond to.</exception>
         <exception cref="T:System.ObjectDisposedException">This object is closed.</exception>
         <block subset="none" type="usage">
           <para>This member outputs trace information when you enable network tracing in your application. For more information, see [Network Tracing in the .NET Framework](~/docs/framework/network-programming/network-tracing.md).</para>
@@ -594,6 +681,8 @@
       <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.HttpListenerContext&gt; GetContextAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.HttpListenerContext&gt; GetContextAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.GetContextAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetContextAsync () As Task(Of HttpListenerContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Threading::Tasks::Task&lt;System::Net::HttpListenerContext ^&gt; ^ GetContextAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -603,6 +692,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Threading.Tasks.Task&lt;System.Net.HttpListenerContext&gt;</ReturnType>
@@ -623,12 +716,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Net.HttpListenerContext" />
       </Docs>
     </Member>
     <Member MemberName="IgnoreWriteExceptions">
       <MemberSignature Language="C#" Value="public bool IgnoreWriteExceptions { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreWriteExceptions" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IgnoreWriteExceptions" />
+      <MemberSignature Language="VB.NET" Value="Public Property IgnoreWriteExceptions As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IgnoreWriteExceptions { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -638,6 +734,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -668,6 +768,8 @@
       <MemberSignature Language="C#" Value="public bool IsListening { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsListening" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IsListening" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsListening As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsListening { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -677,6 +779,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -706,6 +812,8 @@
       <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
       <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.IsSupported" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property IsSupported As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property bool IsSupported { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -715,6 +823,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -744,6 +856,8 @@
       <MemberSignature Language="C#" Value="public System.Net.HttpListenerPrefixCollection Prefixes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerPrefixCollection Prefixes" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.Prefixes" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Prefixes As HttpListenerPrefixCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::HttpListenerPrefixCollection ^ Prefixes { System::Net::HttpListenerPrefixCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -753,6 +867,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Net.HttpListenerPrefixCollection</ReturnType>
@@ -782,6 +900,8 @@
       <MemberSignature Language="C#" Value="public string Realm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Realm" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.Realm" />
+      <MemberSignature Language="VB.NET" Value="Public Property Realm As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Realm { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -791,6 +911,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -822,6 +946,8 @@
       <MemberSignature Language="C#" Value="public void Start ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Start" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Start ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Start();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -831,6 +957,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -869,6 +999,8 @@
       <MemberSignature Language="C#" Value="public void Stop ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.Stop" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Stop ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Stop();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -878,6 +1010,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -912,7 +1048,12 @@
       <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.HttpListener.System#IDisposable#Dispose" />
+      <MemberSignature Language="VB.NET" Value="Sub Dispose () Implements IDisposable.Dispose" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.IDisposable.Dispose() = IDisposable::Dispose;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -921,6 +1062,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -942,6 +1087,8 @@
       <MemberSignature Language="C#" Value="public System.Net.HttpListenerTimeoutManager TimeoutManager { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Net.HttpListenerTimeoutManager TimeoutManager" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.TimeoutManager" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TimeoutManager As HttpListenerTimeoutManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Net::HttpListenerTimeoutManager ^ TimeoutManager { System::Net::HttpListenerTimeoutManager ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -951,6 +1098,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -979,6 +1130,8 @@
       <MemberSignature Language="C#" Value="public bool UnsafeConnectionNtlmAuthentication { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UnsafeConnectionNtlmAuthentication" />
       <MemberSignature Language="DocId" Value="P:System.Net.HttpListener.UnsafeConnectionNtlmAuthentication" />
+      <MemberSignature Language="VB.NET" Value="Public Property UnsafeConnectionNtlmAuthentication As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UnsafeConnectionNtlmAuthentication { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -988,6 +1141,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.HttpListener</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>

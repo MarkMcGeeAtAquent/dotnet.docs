@@ -1,5 +1,5 @@
 ---
-title: "Configuring Assembly Binding Redirection | Microsoft Docs"
+title: "Configuring Assembly Binding Redirection"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "side-by-side execution, assembly binding redirection"
   - "assemblies [.NET Framework], binding redirection"
@@ -22,6 +17,8 @@ caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Configuring Assembly Binding Redirection
 By default, applications use the set of .NET Framework assemblies that shipped with the runtime version used to compile the application. You can use the **appliesTo** attribute on the [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) element in an application configuration file to redirect assembly binding references to a specific version of the .NET Framework assemblies. This optional attribute uses a .NET Framework version number to indicate which version it applies to. If no **appliesTo** attribute is specified, the **\<assemblyBinding>** element applies to all versions of the .NET Framework.  
@@ -33,7 +30,7 @@ By default, applications use the set of .NET Framework assemblies that shipped w
   
  For example, to redirect assembly binding for a .NET Framework version 1.0 assembly, you would include the following XML code in your application configuration file.  
   
-```  
+```xml  
 <runtime>  
         <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1" appliesTo="v1.0.3705">  
             <dependentAssembly>   
@@ -47,7 +44,7 @@ By default, applications use the set of .NET Framework assemblies that shipped w
   
  For example, to redirect one reference to a .NET Framework version 1.0 assembly and another reference to a .NET Framework version 1.1 assembly, you would use the pattern shown in the following pseudocode.  
   
-```  
+```xml  
 <assemblyBinding xmlns="..." appliesTo="v1.0.3705">   
 <! — .NET Framework version 1.0 redirects here. -->   
 </assemblyBinding>   

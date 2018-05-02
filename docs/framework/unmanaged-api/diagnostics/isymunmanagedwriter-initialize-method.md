@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::Initialize Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::Initialize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.Initialize"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::Initialize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedWriter::Initialize method [.NET Framework debugging]"
   - "Initialize method, ISymUnmanagedWriter interface [.NET Framework debugging]"
 ms.assetid: e0ebd793-3764-4df0-8f12-0e95f60b9eae
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::Initialize Method
 Sets the metadata emitter interface with which this writer will be associated, and sets the output file name to which the debugging symbols will be written.  
@@ -62,5 +65,5 @@ HRESULT Initialize(
  **Header:** CorSym.idl, CorSym.h  
   
 ## See Also  
- [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)   
+ [ISymUnmanagedWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
  [Initialize2 Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-initialize2-method.md)

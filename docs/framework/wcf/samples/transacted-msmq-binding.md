@@ -1,8 +1,8 @@
 ---
-title: "Transacted MSMQ Binding | Microsoft Docs"
+title: "Transacted MSMQ Binding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 71f5cb8d-f1df-4e1e-b8a2-98e734a75c37
 caps.latest.revision: 50
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Transacted MSMQ Binding
 This sample demonstrates how to perform transacted queued communication by using Message Queuing (MSMQ).  
@@ -41,7 +43,6 @@ public interface IOrderProcessor
  The service behavior defines an operation behavior with `TransactionScopeRequired` set to `true`. This ensures that the same transaction scope that is used to retrieve the message from the queue is used by any resource managers accessed by the method. It also guarantees that if the method throws an exception, the message is returned to the queue. Without setting this operation behavior, a queued channel creates a transaction to read the message from the queue and commits it automatically before dispatch such that if the operation fails, the message is lost. The most common scenario is for service operations to enlist in the transaction that is used to read the message from the queue, as demonstrated in the following code.  
   
 ```  
-  
  // This service class that implements the service contract.  
  // This added code writes output to the console window.  
  public class OrderProcessorService : IOrderProcessor  
@@ -54,7 +55,6 @@ public interface IOrderProcessor
      }  
   …  
 }  
-  
 ```  
   
  The service is self hosted. When using the MSMQ transport, the queue used must be created in advance. This can be done manually or through code. In this sample, the service contains code to check for the existence of the queue and create the queue if it does not exist. The queue name is read from the configuration file. The base address is used by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate the proxy to the service.  
@@ -86,12 +86,11 @@ public static void Main()
         serviceHost.Close();  
     }  
 }  
-  
 ```  
   
  The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.  
   
-```  
+```xml  
 <appSettings>  
     <add key="queueName" value=".\private$\ServiceModelSamplesTransacted" />  
 </appSettings>  
@@ -163,7 +162,6 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
                 Order LineItem: 890 of Red Widget @unit price: $45.89  
         Total cost of this order: $42461.56  
         Order status: Pending  
-  
 ```  
   
 ### To set up, build, and run the sample  
@@ -192,7 +190,7 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
   
 1.  If your computer is not part of a domain or does not have Active Directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration code.  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <services>  
         <service name="Microsoft.ServiceModel.Samples.OrderProcessorService"  
@@ -232,7 +230,6 @@ Processing Purchase Order: 7b31ce51-ae7c-4def-9b8b-617e4288eafd
         </behaviors>  
   
       </system.serviceModel>  
-  
     ```  
   
 2.  Ensure that you change the configuration on both the server and the client before you run the sample.  

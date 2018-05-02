@@ -1,5 +1,5 @@
 ---
-title: "IAssemblyName::Finalize Method | Microsoft Docs"
+title: "IAssemblyName::Finalize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAssemblyName.Finalize"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAssemblyName::Finalize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Finalize method [.NET Framework fusion]"
   - "IAssemblyName::Finalize method [.NET Framework fusion]"
 ms.assetid: 610e792d-98ef-411f-90b0-5b9a3813f547
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAssemblyName::Finalize Method
 Allows this [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object to release resources and perform other cleanup operations before its destructor is called.  

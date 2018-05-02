@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedDocument::GetLanguage Method | Microsoft Docs"
+title: "ISymUnmanagedDocument::GetLanguage Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedDocument.GetLanguage"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedDocument::GetLanguage"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ISymUnmanagedDocument::GetLanguage method [.NET Framework debugging]"
   - "GetLanguage method [.NET Framework debugging]"
 ms.assetid: c6639418-e9f2-4a99-8ce2-ec9876e0bc79
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedDocument::GetLanguage Method
 Gets the language identifier of this document  

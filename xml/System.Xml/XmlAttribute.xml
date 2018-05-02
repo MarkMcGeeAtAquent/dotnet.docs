@@ -1,7 +1,9 @@
-<Type Name="XmlAttribute" FullName="System.Xml.XmlAttribute">
+﻿<Type Name="XmlAttribute" FullName="System.Xml.XmlAttribute">
   <TypeSignature Language="C#" Value="public class XmlAttribute : System.Xml.XmlNode" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlAttribute extends System.Xml.XmlNode" />
   <TypeSignature Language="DocId" Value="T:System.Xml.XmlAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlAttribute&#xA;Inherits XmlNode" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlAttribute : System::Xml::XmlNode" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XmlDocument</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
@@ -15,6 +17,10 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Xml.XmlNode</BaseTypeName>
   </Base>
@@ -27,16 +33,18 @@
 ## Remarks  
  Attributes can be associated with an element. Use the <xref:System.Xml.XmlAttribute.OwnerElement%2A> property to get the <xref:System.Xml.XmlElement> to which the attribute belongs.  
   
- The `XmlElement` class has several methods which allow you to access attribute nodes (<xref:System.Xml.XmlElement.GetAttribute%2A?displayProperty=fullName>, <xref:System.Xml.XmlElement.SetAttribute%2A?displayProperty=fullName>, <xref:System.Xml.XmlElement.RemoveAttribute%2A?displayProperty=fullName>, and so on). Additionally, you can call the <xref:System.Xml.XmlElement.Attributes%2A?displayProperty=fullName> property, which returns an <xref:System.Xml.XmlAttributeCollection> enabling you to access attributes by name or index from the collection.  
+ The `XmlElement` class has several methods which allow you to access attribute nodes (<xref:System.Xml.XmlElement.GetAttribute%2A?displayProperty=nameWithType>, <xref:System.Xml.XmlElement.SetAttribute%2A?displayProperty=nameWithType>, <xref:System.Xml.XmlElement.RemoveAttribute%2A?displayProperty=nameWithType>, and so on). Additionally, you can call the <xref:System.Xml.XmlElement.Attributes%2A?displayProperty=nameWithType> property, which returns an <xref:System.Xml.XmlAttributeCollection> enabling you to access attributes by name or index from the collection.  
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
     <Member MemberName=".ctor">
-      <MemberSignature Language="C#" Value="protected XmlAttribute (string prefix, string localName, string namespaceURI, System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="C#" Value="protected internal XmlAttribute (string prefix, string localName, string namespaceURI, System.Xml.XmlDocument doc);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string prefix, string localName, string namespaceURI, class System.Xml.XmlDocument doc) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.#ctor(System.String,System.String,System.String,System.Xml.XmlDocument)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Sub New (prefix As String, localName As String, namespaceURI As String, doc As XmlDocument)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; XmlAttribute(System::String ^ prefix, System::String ^ localName, System::String ^ namespaceURI, System::Xml::XmlDocument ^ doc);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -50,6 +58,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="prefix" Type="System.String" />
@@ -77,6 +89,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode AppendChild (System.Xml.XmlNode newChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode AppendChild(class System.Xml.XmlNode newChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.AppendChild(System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AppendChild (newChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ AppendChild(System::Xml::XmlNode ^ newChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -90,6 +104,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -107,7 +125,7 @@
 ## Remarks  
  If the `newChild` is already in the tree, it is first removed.  
   
- If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=fullName> to import the node to the current document. The imported node can then be inserted into the current document.  
+ If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType> to import the node to the current document. The imported node can then be inserted into the current document.  
   
    
   
@@ -128,6 +146,8 @@
       <MemberSignature Language="C#" Value="public override string BaseURI { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string BaseURI" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.BaseURI" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property BaseURI As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ BaseURI { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -142,6 +162,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
@@ -154,7 +178,7 @@
 ## Remarks  
  A networked XML document is comprised of chunks of data aggregated using various World Wide Web Consortium (W3C) standard inclusion mechanisms and therefore contains nodes that come from different places. The `BaseURI` tells you where these nodes came from.  
   
- For additional information on `BaseURI` and how it behaves with other node types, see <xref:System.Xml.XmlNode.BaseURI%2A?displayProperty=fullName>.  
+ For additional information on `BaseURI` and how it behaves with other node types, see <xref:System.Xml.XmlNode.BaseURI%2A?displayProperty=nameWithType>.  
   
  This property is a Microsoft extension to the Document Object Model (DOM).  
   
@@ -173,12 +197,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.XmlAttribute.OwnerElement" />
       </Docs>
     </Member>
     <Member MemberName="CloneNode">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode CloneNode (bool deep);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode CloneNode(bool deep) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.CloneNode(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CloneNode (deep As Boolean) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ CloneNode(bool deep);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -192,6 +219,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -227,12 +258,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.XmlElement" />
       </Docs>
     </Member>
     <Member MemberName="InnerText">
       <MemberSignature Language="C#" Value="public override string InnerText { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InnerText" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.InnerText" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property InnerText As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ InnerText {  void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -246,6 +280,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -263,12 +301,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.XmlAttribute.InnerXml" />
+        <altmember cref="P:System.Xml.XmlNode.OuterXml" />
       </Docs>
     </Member>
     <Member MemberName="InnerXml">
       <MemberSignature Language="C#" Value="public override string InnerXml { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InnerXml" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.InnerXml" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property InnerXml As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ InnerXml {  void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -282,6 +324,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -298,12 +344,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Xml.XmlException">The XML specified when setting this property is not well-formed.</exception>
+        <altmember cref="P:System.Xml.XmlAttribute.InnerText" />
+        <altmember cref="P:System.Xml.XmlNode.OuterXml" />
       </Docs>
     </Member>
     <Member MemberName="InsertAfter">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode InsertAfter (System.Xml.XmlNode newChild, System.Xml.XmlNode refChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode InsertAfter(class System.Xml.XmlNode newChild, class System.Xml.XmlNode refChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.InsertAfter(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function InsertAfter (newChild As XmlNode, refChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ InsertAfter(System::Xml::XmlNode ^ newChild, System::Xml::XmlNode ^ refChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -317,6 +367,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -336,7 +390,7 @@
 ## Remarks  
  If `refChild` is `null`, insert `newChild` at the beginning of the list of child nodes. If `newChild` is an <xref:System.Xml.XmlDocumentFragment> object, its child nodes are inserted, in the same order, after `refChild`. If the `newChild` is already in the tree, it is first removed.  
   
- If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=fullName> to import the node to the current document. The imported node can then be inserted into the current document.  
+ If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType> to import the node to the current document. The imported node can then be inserted into the current document.  
   
  This method is a Microsoft extension to the Document Object Model (DOM).  
   
@@ -361,6 +415,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode InsertBefore (System.Xml.XmlNode newChild, System.Xml.XmlNode refChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode InsertBefore(class System.Xml.XmlNode newChild, class System.Xml.XmlNode refChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.InsertBefore(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function InsertBefore (newChild As XmlNode, refChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ InsertBefore(System::Xml::XmlNode ^ newChild, System::Xml::XmlNode ^ refChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -374,6 +430,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -393,7 +453,7 @@
 ## Remarks  
  If `refChild` is `null`, insert `newChild` at the end of the list of child nodes. If `newChild` is an <xref:System.Xml.XmlDocumentFragment> object, its child nodes are inserted, in the same order, before `refChild`. If the `newChild` is already in the tree, it is first removed.  
   
- If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=fullName> to import the node to the current document. The imported node can then be inserted into the current document.  
+ If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType> to import the node to the current document. The imported node can then be inserted into the current document.  
   
    
   
@@ -416,6 +476,8 @@
       <MemberSignature Language="C#" Value="public override string LocalName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string LocalName" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.LocalName" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LocalName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ LocalName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -429,6 +491,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -459,6 +525,8 @@
       <MemberSignature Language="C#" Value="public override string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -472,6 +540,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -491,12 +563,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.XmlAttribute.LocalName" />
       </Docs>
     </Member>
     <Member MemberName="NamespaceURI">
       <MemberSignature Language="C#" Value="public override string NamespaceURI { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string NamespaceURI" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.NamespaceURI" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NamespaceURI As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ NamespaceURI { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -510,6 +585,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -540,6 +619,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNodeType NodeType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xml.XmlNodeType NodeType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.NodeType" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property NodeType As XmlNodeType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlNodeType NodeType { System::Xml::XmlNodeType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -553,6 +634,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNodeType</ReturnType>
@@ -561,12 +646,15 @@
         <summary>Gets the type of the current node.</summary>
         <value>The node type for <see langword="XmlAttribute" /> nodes is XmlNodeType.Attribute.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Xml.XmlNodeType" />
       </Docs>
     </Member>
     <Member MemberName="OwnerDocument">
       <MemberSignature Language="C#" Value="public override System.Xml.XmlDocument OwnerDocument { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDocument OwnerDocument" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.OwnerDocument" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property OwnerDocument As XmlDocument" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlDocument ^ OwnerDocument { System::Xml::XmlDocument ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -580,6 +668,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlDocument</ReturnType>
@@ -605,6 +697,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Xml.XmlElement OwnerElement { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement OwnerElement" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.OwnerElement" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property OwnerElement As XmlElement" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlElement ^ OwnerElement { System::Xml::XmlElement ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -618,6 +712,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlElement</ReturnType>
@@ -643,6 +741,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode ParentNode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNode ParentNode" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.ParentNode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property ParentNode As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::XmlNode ^ ParentNode { System::Xml::XmlNode ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -656,6 +756,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -677,6 +781,8 @@
       <MemberSignature Language="C#" Value="public override string Prefix { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Prefix" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Prefix As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Prefix { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -690,6 +796,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -732,6 +842,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode PrependChild (System.Xml.XmlNode newChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode PrependChild(class System.Xml.XmlNode newChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.PrependChild(System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function PrependChild (newChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ PrependChild(System::Xml::XmlNode ^ newChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -745,6 +857,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -762,7 +878,7 @@
 ## Remarks  
  If the `newChild` is already in the tree, it is first removed.  
   
- If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=fullName> to import the node to the current document. The imported node can then be inserted into the current document.  
+ If the node being inserted was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType> to import the node to the current document. The imported node can then be inserted into the current document.  
   
  This method is a Microsoft extension to the Document Object Model (DOM).  
   
@@ -785,6 +901,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode RemoveChild (System.Xml.XmlNode oldChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode RemoveChild(class System.Xml.XmlNode oldChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.RemoveChild(System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function RemoveChild (oldChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ RemoveChild(System::Xml::XmlNode ^ oldChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -798,6 +916,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -824,6 +946,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode ReplaceChild (System.Xml.XmlNode newChild, System.Xml.XmlNode oldChild);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode ReplaceChild(class System.Xml.XmlNode newChild, class System.Xml.XmlNode oldChild) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.ReplaceChild(System.Xml.XmlNode,System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ReplaceChild (newChild As XmlNode, oldChild As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ ReplaceChild(System::Xml::XmlNode ^ newChild, System::Xml::XmlNode ^ oldChild);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -837,6 +961,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
@@ -856,7 +984,7 @@
 ## Remarks  
  If the `newChild` is already in the tree, it is first removed.  
   
- If the `newChild` was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=fullName> to import the node to the current document.  
+ If the `newChild` was created from another document, you can use <xref:System.Xml.XmlDocument.ImportNode%2A?displayProperty=nameWithType> to import the node to the current document.  
   
    
   
@@ -879,6 +1007,8 @@
       <MemberSignature Language="C#" Value="public override System.Xml.Schema.IXmlSchemaInfo SchemaInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.IXmlSchemaInfo SchemaInfo" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.SchemaInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property SchemaInfo As IXmlSchemaInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Xml::Schema::IXmlSchemaInfo ^ SchemaInfo { System::Xml::Schema::IXmlSchemaInfo ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -888,6 +1018,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.Schema.IXmlSchemaInfo</ReturnType>
@@ -909,6 +1043,8 @@
       <MemberSignature Language="C#" Value="public virtual bool Specified { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Specified" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Specified" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Specified As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool Specified { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -922,6 +1058,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -952,6 +1092,8 @@
       <MemberSignature Language="C#" Value="public override string Value { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Value" />
       <MemberSignature Language="DocId" Value="P:System.Xml.XmlAttribute.Value" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property Value As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Value { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -965,6 +1107,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -991,6 +1137,8 @@
       <MemberSignature Language="C#" Value="public override void WriteContentTo (System.Xml.XmlWriter w);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteContentTo(class System.Xml.XmlWriter w) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.WriteContentTo(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteContentTo (w As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteContentTo(System::Xml::XmlWriter ^ w);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -1004,6 +1152,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1028,6 +1180,8 @@
       <MemberSignature Language="C#" Value="public override void WriteTo (System.Xml.XmlWriter w);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteTo(class System.Xml.XmlWriter w) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.XmlAttribute.WriteTo(System.Xml.XmlWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub WriteTo (w As XmlWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void WriteTo(System::Xml::XmlWriter ^ w);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlDocument</AssemblyName>
@@ -1042,6 +1196,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -1055,7 +1213,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method is a Microsoft extension to the Document Object Model (DOM). It is functionally equivalent to the <xref:System.Xml.XmlNode.OuterXml%2A?displayProperty=fullName> property.  
+ This method is a Microsoft extension to the Document Object Model (DOM). It is functionally equivalent to the <xref:System.Xml.XmlNode.OuterXml%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>

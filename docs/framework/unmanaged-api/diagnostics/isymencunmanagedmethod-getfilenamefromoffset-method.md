@@ -1,5 +1,5 @@
 ---
-title: "ISymENCUnmanagedMethod::GetFileNameFromOffset Method | Microsoft Docs"
+title: "ISymENCUnmanagedMethod::GetFileNameFromOffset Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymENCUnmanagedMethod.GetFileNameFromOffset"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymENCUnmanagedMethod::GetFileNameFromOffset"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetFileNameFromOffset method [.NET Framework debugging]"
   - "ISymENCUnmanagedMethod::GetFileNameFromOffset method [.NET Framework debugging]"
 ms.assetid: 00e2e194-12f5-436e-a997-2b9d3e844d4f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymENCUnmanagedMethod::GetFileNameFromOffset Method
 Gets the file name for the line associated with an offset.  

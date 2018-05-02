@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain::Attach Method | Microsoft Docs"
+title: "ICorDebugAppDomain::Attach Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain.Attach"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain::Attach"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAppDomain::Attach method [.NET Framework debugging]"
   - "Attach method [.NET Framework debugging]"
 ms.assetid: 0358b84a-4236-4c34-945b-4babff7df570
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain::Attach Method
 Attaches the debugger to the application domain.  

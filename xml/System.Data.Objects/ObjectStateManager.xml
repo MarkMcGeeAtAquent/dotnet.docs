@@ -1,7 +1,9 @@
-<Type Name="ObjectStateManager" FullName="System.Data.Objects.ObjectStateManager">
+﻿<Type Name="ObjectStateManager" FullName="System.Data.Objects.ObjectStateManager">
   <TypeSignature Language="C#" Value="public class ObjectStateManager" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectStateManager extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectStateManager" />
+  <TypeSignature Language="VB.NET" Value="Public Class ObjectStateManager" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ObjectStateManager" />
   <AssemblyInfo>
     <AssemblyName>System.Data.Entity</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -23,7 +25,7 @@
    
   
 ## Examples  
- These examples are based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).  
+ These examples are based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
  The following example gets the <xref:System.Data.Objects.ObjectStateManager> from the <xref:System.Data.Objects.ObjectContext> and uses the state manager to access an object in the context.  
   
@@ -43,6 +45,7 @@
       <MemberSignature Language="C#" Value="public ObjectStateManager (System.Data.Metadata.Edm.MetadataWorkspace metadataWorkspace);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.MetadataWorkspace metadataWorkspace) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.#ctor(System.Data.Metadata.Edm.MetadataWorkspace)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ObjectStateManager(System::Data::Metadata::Edm::MetadataWorkspace ^ metadataWorkspace);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -66,6 +69,7 @@
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeObjectState (object entity, System.Data.EntityState entityState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeObjectState(object entity, valuetype System.Data.EntityState entityState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeObjectState(System.Object,System.Data.EntityState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::ObjectStateEntry ^ ChangeObjectState(System::Object ^ entity, System::Data::EntityState entityState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -87,13 +91,13 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Calling the <xref:System.Data.Objects.ObjectStateManager.ChangeObjectState%2A> method to change the state of an object to <xref:System.Data.EntityState> does not cause related objects in a constrained relationship to be deleted.  
+ Calling the <xref:System.Data.Objects.ObjectStateManager.ChangeObjectState%2A> method to change the state of an object to <xref:System.Data.EntityState.Deleted> does not cause related objects in a constrained relationship to be deleted.  
   
  Changing the state of an object does not affect related objects in the object graph.  
   
- When you change the <xref:System.Data.EntityState> of an entity object entry to <xref:System.Data.EntityState>, all the properties of the object are marked as modified, regardless of the current or original values.  
+ When you change the <xref:System.Data.EntityState> of an entity object entry to <xref:System.Data.EntityState.Modified>, all the properties of the object are marked as modified, regardless of the current or original values.  
   
- When the <xref:System.Data.EntityState> of an entity object entry is changed to <xref:System.Data.EntityState>, <xref:System.Data.EntityState>, or <xref:System.Data.EntityState>, the relationship entries for the object are also updated.  
+ When the <xref:System.Data.EntityState> of an entity object entry is changed to <xref:System.Data.EntityState.Added>, <xref:System.Data.EntityState.Deleted>, or <xref:System.Data.EntityState.Detached>, the relationship entries for the object are also updated.  
   
  ]]></format>
         </remarks>
@@ -109,10 +113,29 @@
  When <paramref name="state" /> is not a valid <see cref="T:System.Data.EntityState" /> value.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="ChangeRelationshipState">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Changes the state of the specified relationship between two entity objects.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ This method is not supported for relationships based on a foreign key association.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="ChangeRelationshipState">
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState (object sourceEntity, object targetEntity, string navigationProperty, System.Data.EntityState relationshipState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState(object sourceEntity, object targetEntity, string navigationProperty, valuetype System.Data.EntityState relationshipState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState(System.Object,System.Object,System.String,System.Data.EntityState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ChangeRelationshipState (sourceEntity As Object, targetEntity As Object, navigationProperty As String, relationshipState As EntityState) As ObjectStateEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::ObjectStateEntry ^ ChangeRelationshipState(System::Object ^ sourceEntity, System::Object ^ targetEntity, System::String ^ navigationProperty, System::Data::EntityState relationshipState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -161,6 +184,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState (object sourceEntity, object targetEntity, string relationshipName, string targetRoleName, System.Data.EntityState relationshipState);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState(object sourceEntity, object targetEntity, string relationshipName, string targetRoleName, valuetype System.Data.EntityState relationshipState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState(System.Object,System.Object,System.String,System.String,System.Data.EntityState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ChangeRelationshipState (sourceEntity As Object, targetEntity As Object, relationshipName As String, targetRoleName As String, relationshipState As EntityState) As ObjectStateEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::ObjectStateEntry ^ ChangeRelationshipState(System::Object ^ sourceEntity, System::Object ^ targetEntity, System::String ^ relationshipName, System::String ^ targetRoleName, System::Data::EntityState relationshipState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -191,7 +216,7 @@
  Entries for the objects at both ends of the specified relationship must exist in the <xref:System.Data.Objects.ObjectStateManager>.  
   
 > [!NOTE]
->  This method is not supported for relationships that are based on a foreign key association. For more information, see [Defining and Managing Relationships](http://msdn.microsoft.com/en-us/2c92c097-56bd-4145-989e-16d92475ecda)  
+>  This method is not supported for relationships that are based on a foreign key association. For more information, see [Defining and Managing Relationships](http://msdn.microsoft.com/library/2c92c097-56bd-4145-989e-16d92475ecda)  
   
  ]]></format>
         </remarks>
@@ -211,6 +236,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry ChangeRelationshipState&lt;TEntity&gt; (TEntity sourceEntity, object targetEntity, System.Linq.Expressions.Expression&lt;Func&lt;TEntity,object&gt;&gt; navigationPropertySelector, System.Data.EntityState relationshipState) where TEntity : class;" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry ChangeRelationshipState&lt;class TEntity&gt;(!!TEntity sourceEntity, object targetEntity, class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!!TEntity, object&gt;&gt; navigationPropertySelector, valuetype System.Data.EntityState relationshipState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.ChangeRelationshipState``1(``0,System.Object,System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Data.EntityState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function ChangeRelationshipState(Of TEntity As Class) (sourceEntity As TEntity, targetEntity As Object, navigationPropertySelector As Expression(Of Func(Of TEntity, Object)), relationshipState As EntityState) As ObjectStateEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA;generic &lt;typename TEntity&gt;&#xA; where TEntity : class System::Data::Objects::ObjectStateEntry ^ ChangeRelationshipState(TEntity sourceEntity, System::Object ^ targetEntity, System::Linq::Expressions::Expression&lt;Func&lt;TEntity, System::Object ^&gt; ^&gt; ^ navigationPropertySelector, System::Data::EntityState relationshipState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -269,6 +296,8 @@
       <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Objects.ObjectStateEntry&gt; GetObjectStateEntries (System.Data.EntityState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Objects.ObjectStateEntry&gt; GetObjectStateEntries(valuetype System.Data.EntityState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetObjectStateEntries (state As EntityState) As IEnumerable(Of ObjectStateEntry)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Collections::Generic::IEnumerable&lt;System::Data::Objects::ObjectStateEntry ^&gt; ^ GetObjectStateEntries(System::Data::EntityState state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -295,10 +324,21 @@
         <exception cref="T:System.ArgumentException">When <paramref name="state" /> is <see cref="F:System.Data.EntityState.Detached" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetObjectStateEntry">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns an <see cref="T:System.Data.Objects.ObjectStateEntry" /> for a specific object or relationship entry.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetObjectStateEntry">
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry GetObjectStateEntry (System.Data.EntityKey key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry GetObjectStateEntry(class System.Data.EntityKey key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntry(System.Data.EntityKey)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetObjectStateEntry (key As EntityKey) As ObjectStateEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::ObjectStateEntry ^ GetObjectStateEntry(System::Data::EntityKey ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -323,7 +363,7 @@
    
   
 ## Examples  
- The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832). The example gets the <xref:System.Data.Objects.ObjectStateEntry> for the given <xref:System.Data.EntityKey> from the <xref:System.Data.Objects.ObjectStateManager>. Then it gets the current value of the `SalesOrderHeader.PurchaseOrderNumber` property, changes the property's value, and enumerates through the collection of modified properties.  
+ The example in this topic is based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832). The example gets the <xref:System.Data.Objects.ObjectStateEntry> for the given <xref:System.Data.EntityKey> from the <xref:System.Data.Objects.ObjectStateManager>. Then it gets the current value of the `SalesOrderHeader.PurchaseOrderNumber` property, changes the property's value, and enumerates through the collection of modified properties.  
   
  [!code-csharp[DP ObjectServices Concepts#ObjectStateEntry](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#objectstateentry)]
  [!code-vb[DP ObjectServices Concepts#ObjectStateEntry](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#objectstateentry)]  
@@ -339,6 +379,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Objects.ObjectStateEntry GetObjectStateEntry (object entity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.ObjectStateEntry GetObjectStateEntry(object entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetObjectStateEntry(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetObjectStateEntry (entity As Object) As ObjectStateEntry" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::ObjectStateEntry ^ GetObjectStateEntry(System::Object ^ entity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -369,6 +411,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Objects.DataClasses.RelationshipManager GetRelationshipManager (object entity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.DataClasses.RelationshipManager GetRelationshipManager(object entity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.GetRelationshipManager(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetRelationshipManager (entity As Object) As RelationshipManager" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::Objects::DataClasses::RelationshipManager ^ GetRelationshipManager(System::Object ^ entity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -401,6 +445,8 @@
       <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.MetadataWorkspace MetadataWorkspace" />
       <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectStateManager.MetadataWorkspace" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MetadataWorkspace As MetadataWorkspace" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::Metadata::Edm::MetadataWorkspace ^ MetadataWorkspace { System::Data::Metadata::Edm::MetadataWorkspace ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -431,6 +477,8 @@
       <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler ObjectStateManagerChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler ObjectStateManagerChanged" />
       <MemberSignature Language="DocId" Value="E:System.Data.Objects.ObjectStateManager.ObjectStateManagerChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event ObjectStateManagerChanged As CollectionChangeEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::CollectionChangeEventHandler ^ ObjectStateManagerChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -444,10 +492,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TryGetObjectStateEntry">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Tries to return an <see cref="T:System.Data.Objects.ObjectStateEntry" /> object for a specific object or relationship entry.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TryGetObjectStateEntry">
       <MemberSignature Language="C#" Value="public bool TryGetObjectStateEntry (System.Data.EntityKey key, out System.Data.Objects.ObjectStateEntry entry);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(class System.Data.EntityKey key, class System.Data.Objects.ObjectStateEntry entry) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(class System.Data.EntityKey key, [out] class System.Data.Objects.ObjectStateEntry&amp; entry) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry(System.Data.EntityKey,System.Data.Objects.ObjectStateEntry@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryGetObjectStateEntry (key As EntityKey, ByRef entry As ObjectStateEntry) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool TryGetObjectStateEntry(System::Data::EntityKey ^ key, [Runtime::InteropServices::Out] System::Data::Objects::ObjectStateEntry ^ % entry);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -474,7 +533,7 @@
    
   
 ## Examples  
- The examples in this topic are based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832).  
+ The examples in this topic are based on the [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832).  
   
  The example attempts to retrieve the corresponding <xref:System.Data.Objects.ObjectStateEntry> for the given <xref:System.Data.EntityKey>.  
   
@@ -493,8 +552,10 @@
     </Member>
     <Member MemberName="TryGetObjectStateEntry">
       <MemberSignature Language="C#" Value="public bool TryGetObjectStateEntry (object entity, out System.Data.Objects.ObjectStateEntry entry);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(object entity, class System.Data.Objects.ObjectStateEntry entry) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetObjectStateEntry(object entity, [out] class System.Data.Objects.ObjectStateEntry&amp; entry) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetObjectStateEntry(System.Object,System.Data.Objects.ObjectStateEntry@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryGetObjectStateEntry (entity As Object, ByRef entry As ObjectStateEntry) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool TryGetObjectStateEntry(System::Object ^ entity, [Runtime::InteropServices::Out] System::Data::Objects::ObjectStateEntry ^ % entry);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -524,8 +585,10 @@
     </Member>
     <Member MemberName="TryGetRelationshipManager">
       <MemberSignature Language="C#" Value="public bool TryGetRelationshipManager (object entity, out System.Data.Objects.DataClasses.RelationshipManager relationshipManager);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetRelationshipManager(object entity, class System.Data.Objects.DataClasses.RelationshipManager relationshipManager) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetRelationshipManager(object entity, [out] class System.Data.Objects.DataClasses.RelationshipManager&amp; relationshipManager) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager(System.Object,System.Data.Objects.DataClasses.RelationshipManager@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function TryGetRelationshipManager (entity As Object, ByRef relationshipManager As RelationshipManager) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool TryGetRelationshipManager(System::Object ^ entity, [Runtime::InteropServices::Out] System::Data::Objects::DataClasses::RelationshipManager ^ % relationshipManager);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data.Entity</AssemblyName>
@@ -550,7 +613,7 @@
 ## Remarks  
  The <xref:System.Data.Objects.ObjectStateManager.GetRelationshipManager%2A> method is used to obtain the <xref:System.Data.Objects.DataClasses.RelationshipManager> for objects that are persistence ignorant. When objects implement <xref:System.Data.Objects.DataClasses.IEntityWithRelationships> or inherit from <xref:System.Data.Objects.DataClasses.EntityObject>, the <xref:System.Data.Objects.DataClasses.RelationshipManager> is accessed from the <xref:System.Data.Objects.DataClasses.IEntityWithRelationships.RelationshipManager%2A> property.  
   
- The <xref:System.Data.Objects.DataClasses.RelationshipManager> cannot be returned when the object is in a <xref:System.Data.EntityState> state.  
+ The <xref:System.Data.Objects.DataClasses.RelationshipManager> cannot be returned when the object is in a <xref:System.Data.EntityState.Detached> state.  
   
  Calling the <xref:System.Data.Objects.ObjectStateManager.TryGetRelationshipManager%2A> method is the same as calling the <xref:System.Data.Objects.ObjectStateManager.GetRelationshipManager%2A> method, except that this method returns `false` instead of raising an exception.  
   
@@ -558,22 +621,5 @@
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="ChangeRelationshipState">
-      <AssemblyInfo>
-        <AssemblyName>System.Data.Entity</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Changes the state of the specified relationship between two entity objects.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- This method is not supported for relationships based on a foreign key association.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

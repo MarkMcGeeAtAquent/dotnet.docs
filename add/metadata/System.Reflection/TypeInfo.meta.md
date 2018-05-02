@@ -1,5 +1,7 @@
 ---
 uid: System.Reflection.TypeInfo
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -7,6 +9,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.IsAssignableFrom(System.Reflection.TypeInfo)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -14,6 +18,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredMembers
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -21,6 +27,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredFields
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -28,6 +36,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.ImplementedInterfaces
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -35,21 +45,29 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetNestedType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetConstructors
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetProperties
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredMethods
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -57,6 +75,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredEvent(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -64,11 +84,15 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetEvent
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredNestedTypes
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -76,11 +100,15 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetMember
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredMethod(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -88,6 +116,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredProperty(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -95,11 +125,15 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.MakeArrayType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.System#Reflection#IReflectableType#GetTypeInfo
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -107,6 +141,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GenericTypeParameters
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -114,21 +150,29 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetMethod
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetEvents
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetProperty
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredConstructors
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -136,6 +180,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredMethods(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -143,11 +189,15 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetNestedTypes
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.AsType
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -155,16 +205,22 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.IsAssignableFrom
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetMembers
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredEvents
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -172,6 +228,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredField(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -179,6 +237,8 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetDeclaredNestedType(System.String)
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -186,21 +246,29 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetFields
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetConstructor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetInterface
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.DeclaredProperties
+ms.technology: 
+  - "dotnet-standard"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -208,10 +276,14 @@ manager: "wpickett"
 
 ---
 uid: System.Reflection.TypeInfo.GetField
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Reflection.TypeInfo.GetMethods
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

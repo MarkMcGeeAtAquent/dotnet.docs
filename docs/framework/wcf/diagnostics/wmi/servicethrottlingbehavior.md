@@ -1,8 +1,8 @@
 ---
-title: "ServiceThrottlingBehavior | Microsoft Docs"
+title: "ServiceThrottlingBehavior"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 37b9e517-1f1f-4ec4-9fcb-2b8016794f5b
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ServiceThrottlingBehavior
 ServiceThrottlingBehavior  

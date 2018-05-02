@@ -1,8 +1,8 @@
 ---
-title: "Generating SQL from Command Trees - Best Practices | Microsoft Docs"
+title: "Generating SQL from Command Trees - Best Practices"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Generating SQL from Command Trees - Best Practices
 Output query command trees closely model queries expressible in SQL. However, there are certain common challenges for provider writers when generating SQL from an output command tree. This topic discusses these challenges. In the next topic, the sample provider shows how to address these challenges.  

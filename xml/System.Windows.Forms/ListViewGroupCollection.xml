@@ -1,7 +1,9 @@
-<Type Name="ListViewGroupCollection" FullName="System.Windows.Forms.ListViewGroupCollection">
+﻿<Type Name="ListViewGroupCollection" FullName="System.Windows.Forms.ListViewGroupCollection">
   <TypeSignature Language="C#" Value="public class ListViewGroupCollection : System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewGroupCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewGroupCollection" />
+  <TypeSignature Language="VB.NET" Value="Public Class ListViewGroupCollection&#xA;Implements IList" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ListViewGroupCollection : System::Collections::IList" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,27 +27,27 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> property to get the <xref:System.Windows.Forms.ListViewGroupCollection> associated with a <xref:System.Windows.Forms.ListView> control. This collection contains the <xref:System.Windows.Forms.ListViewGroup> objects that represent the groups shown in the control when the <xref:System.Windows.Forms.ListView.View%2A?displayProperty=fullName> property is set to a value other than <xref:System.Windows.Forms.View?displayProperty=fullName>. Any items that are not assigned to a group will appear in the default group, which has the header label "DefaultGroup{0}". The default group is not contained in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection, and cannot be altered. It is primarily useful in debugging to ensure that all items have been properly added to groups. If there are no groups in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection, the grouping feature is disabled.  
+ Use the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> property to get the <xref:System.Windows.Forms.ListViewGroupCollection> associated with a <xref:System.Windows.Forms.ListView> control. This collection contains the <xref:System.Windows.Forms.ListViewGroup> objects that represent the groups shown in the control when the <xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType> property is set to a value other than <xref:System.Windows.Forms.View.List?displayProperty=nameWithType>. Any items that are not assigned to a group will appear in the default group, which has the header label "DefaultGroup{0}". The default group is not contained in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection, and cannot be altered. It is primarily useful in debugging to ensure that all items have been properly added to groups. If there are no groups in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection, the grouping feature is disabled.  
   
  Use the <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A> method to add a single group to the collection. Use the <xref:System.Windows.Forms.ListViewGroupCollection.Insert%2A> method to add a group at a particular index within the collection. To remove a group, use the <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A> method. Use the <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> method to remove the group at a particular index.  
   
  You cannot add a <xref:System.Windows.Forms.ListViewGroup> to the collection more than once. To reposition a group within the collection, it must first be removed from the collection, and then inserted at the desired location. Use the <xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A> method to determine whether a particular group is already in the collection. To retrieve the index of a group within the collection, use the <xref:System.Windows.Forms.ListViewGroupCollection.IndexOf%2A> method. You can get or set the group at a particular index with the <xref:System.Windows.Forms.ListViewGroupCollection.Item%2A> indexer.  
   
- Use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add multiple groups to the collection. You can add multiple groups either as an array of groups or as a <xref:System.Windows.Forms.ListViewGroupCollection> that you retrieve through the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> property of another <xref:System.Windows.Forms.ListView> control. Use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection.  
+ Use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add multiple groups to the collection. You can add multiple groups either as an array of groups or as a <xref:System.Windows.Forms.ListViewGroupCollection> that you retrieve through the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> property of another <xref:System.Windows.Forms.ListView> control. Use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection.  
   
 > [!NOTE]
->  The <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>, <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>, and <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> methods remove groups from the collection, but do not remove any items from the <xref:System.Windows.Forms.ListView> control. If there are no groups in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection, the grouping feature is disabled and all items in the control are displayed normally.  
+>  The <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A>, <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A>, and <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> methods remove groups from the collection, but do not remove any items from the <xref:System.Windows.Forms.ListView> control. If there are no groups in the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection, the grouping feature is disabled and all items in the control are displayed normally.  
   
  The <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> and <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> methods are useful when you want to provide multiple ways to group the items in a <xref:System.Windows.Forms.ListView> control. To do this, create multiple group arrays. To change the grouping, first use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection, then use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the next array of groups to display.  
   
- Use the <xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A> method to copy the groups in a collection to a compatible array starting at a specified index. This is useful, for example, when you want to sort the groups in the collection using the <xref:System.Array.Sort%2A?displayProperty=fullName> method. To do this, copy the groups into a compatible array, then sort the array. Next, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection, then use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the sorted array back to the collection.  
+ Use the <xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A> method to copy the groups in a collection to a compatible array starting at a specified index. This is useful, for example, when you want to sort the groups in the collection using the <xref:System.Array.Sort%2A?displayProperty=nameWithType> method. To do this, copy the groups into a compatible array, then sort the array. Next, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection, then use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the sorted array back to the collection.  
   
  Use the <xref:System.Windows.Forms.ListViewGroupCollection.Count%2A> property to determine how many groups are in the collection. To iterate through the collection, use the <xref:System.Collections.IEnumerator> returned from the <xref:System.Windows.Forms.ListViewGroupCollection.GetEnumerator%2A> method.  
   
 > [!NOTE]
->  The grouping feature is available only on Windows XP and the Windows Server 2003 family when your application calls the <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=fullName> method. On earlier operating systems, any code relating to groups will be ignored and the groups will not appear. As a result, any code that depends on the grouping feature might not work correctly. You might want to include a test that determines whether the grouping feature is available, and provide alternate functionality when it is unavailable. For example, you might want to provide alternate sorting when running on operating systems that do not support sorting by group.  
+>  The grouping feature is available only on Windows XP and the Windows Server 2003 family when your application calls the <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> method. On earlier operating systems, any code relating to groups will be ignored and the groups will not appear. As a result, any code that depends on the grouping feature might not work correctly. You might want to include a test that determines whether the grouping feature is available, and provide alternate functionality when it is unavailable. For example, you might want to provide alternate sorting when running on operating systems that do not support sorting by group.  
 >   
->  The insertion mark feature is provided by the same library that provides the operating system themes feature. To check for the availability of this library, call the <xref:System.Windows.Forms.FeatureSupport.IsPresent%28System.Object%29?displayProperty=fullName> method overload and pass in the <xref:System.Windows.Forms.OSFeature.Themes?displayProperty=fullName> value.  
+>  The insertion mark feature is provided by the same library that provides the operating system themes feature. To check for the availability of this library, call the <xref:System.Windows.Forms.FeatureSupport.IsPresent%28System.Object%29?displayProperty=nameWithType> method overload and pass in the <xref:System.Windows.Forms.OSFeature.Themes?displayProperty=nameWithType> value.  
   
    
   
@@ -58,12 +60,25 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.ListView" />
+    <altmember cref="T:System.Windows.Forms.ListViewGroup" />
   </Docs>
   <Members>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds a <see cref="T:System.Windows.Forms.ListViewGroup" /> to the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public int Add (System.Windows.Forms.ListViewGroup group);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Windows.Forms.ListViewGroup group) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Add(System.Windows.Forms.ListViewGroup)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (group As ListViewGroup) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Add(System::Windows::Forms::ListViewGroup ^ group);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -91,12 +106,15 @@
         </remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="group" /> contains at least one <see cref="T:System.Windows.Forms.ListViewItem" /> that belongs to a <see cref="T:System.Windows.Forms.ListView" /> control other than the one that owns this <see cref="T:System.Windows.Forms.ListViewGroupCollection" />.</exception>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup Add (string key, string headerText);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewGroup Add(string key, string headerText) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Add(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (key As String, headerText As String) As ListViewGroup" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Forms::ListViewGroup ^ Add(System::String ^ key, System::String ^ headerText);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -117,10 +135,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="AddRange">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds multiple groups to the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="AddRange">
       <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListViewGroup[] groups);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListViewGroup[] groups) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.AddRange(System.Windows.Forms.ListViewGroup[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddRange (groups As ListViewGroup())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddRange(cli::array &lt;System::Windows::Forms::ListViewGroup ^&gt; ^ groups);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -160,12 +189,15 @@
         </remarks>
         <exception cref="T:System.ArgumentException">
           <paramref name="groups" /> contains at least one group with at least one <see cref="T:System.Windows.Forms.ListViewItem" /> that belongs to a <see cref="T:System.Windows.Forms.ListView" /> control other than the one that owns this <see cref="T:System.Windows.Forms.ListViewGroupCollection" />.</exception>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
     <Member MemberName="AddRange">
       <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListViewGroupCollection groups);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListViewGroupCollection groups) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.AddRange(System.Windows.Forms.ListViewGroupCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddRange (groups As ListViewGroupCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddRange(System::Windows::Forms::ListViewGroupCollection ^ groups);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -184,7 +216,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this version of the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the elements of a <xref:System.Windows.Forms.ListViewGroupCollection> that you retrieve through the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> property of a different <xref:System.Windows.Forms.ListView> control.  
+ Use this version of the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the elements of a <xref:System.Windows.Forms.ListViewGroupCollection> that you retrieve through the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> property of a different <xref:System.Windows.Forms.ListView> control.  
   
  Unlike the <xref:System.Windows.Forms.ListViewGroupCollection.Add%2A> method, the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method does not have a return value that can be used to determine whether a group being added is already in the collection. If you need this information, use the <xref:System.Windows.Forms.ListViewGroupCollection.Contains%2A> method before using the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method.  
   
@@ -198,7 +230,12 @@
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Clear();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Clear</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -213,7 +250,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this method to remove all the groups from the collection. Note that removing groups from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
+ Use this method to remove all the groups from the collection. Note that removing groups from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
   
  This method is useful to disable the grouping feature. When there are no groups in a <xref:System.Windows.Forms.ListView> control, the items appear normally. To remove individual groups from the collection, use the <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A> or <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> method.  
   
@@ -238,6 +275,8 @@
       <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Forms.ListViewGroup value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Forms.ListViewGroup value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Contains(System.Windows.Forms.ListViewGroup)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Contains (value As ListViewGroup) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Contains(System::Windows::Forms::ListViewGroup ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -262,13 +301,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void CopyTo(Array ^ array, int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -288,7 +332,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A> method to copy the groups in a collection (including the item references they contain) to a compatible array, starting at a specified index. This is useful, for example, when you want to sort the groups in the collection using the <xref:System.Array.Sort%2A?displayProperty=fullName> method. To do this, copy the groups into a compatible array, then sort the array. Next, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection, then use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the sorted array back to the collection.  
+ Use the <xref:System.Windows.Forms.ListViewGroupCollection.CopyTo%2A> method to copy the groups in a collection (including the item references they contain) to a compatible array, starting at a specified index. This is useful, for example, when you want to sort the groups in the collection using the <xref:System.Array.Sort%2A?displayProperty=nameWithType> method. To do this, copy the groups into a compatible array, then sort the array. Next, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method to remove all the groups from the collection, then use the <xref:System.Windows.Forms.ListViewGroupCollection.AddRange%2A> method to add the sorted array back to the collection.  
   
  ]]></format>
         </remarks>
@@ -298,7 +342,12 @@
       <MemberSignature Language="C#" Value="public int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Count" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Count { int get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.Count</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -323,7 +372,12 @@
       <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -349,6 +403,8 @@
       <MemberSignature Language="C#" Value="public int IndexOf (System.Windows.Forms.ListViewGroup value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Windows.Forms.ListViewGroup value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.IndexOf(System.Windows.Forms.ListViewGroup)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IndexOf (value As ListViewGroup) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int IndexOf(System::Windows::Forms::ListViewGroup ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -372,12 +428,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
     <Member MemberName="Insert">
       <MemberSignature Language="C#" Value="public void Insert (int index, System.Windows.Forms.ListViewGroup group);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Windows.Forms.ListViewGroup group) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Insert(System.Int32,System.Windows.Forms.ListViewGroup)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Insert (index As Integer, group As ListViewGroup)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Insert(int index, System::Windows::Forms::ListViewGroup ^ group);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -404,12 +463,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets or sets a <see cref="T:System.Windows.Forms.ListViewGroup" /> in the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup this[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewGroup Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(index As Integer) As ListViewGroup" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::ListViewGroup ^ default[int] { System::Windows::Forms::ListViewGroup ^ get(int index); void set(int index, System::Windows::Forms::ListViewGroup ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -441,6 +512,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup this[string key] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewGroup Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Property Item(key As String) As ListViewGroup" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::ListViewGroup ^ default[System::String ^] { System::Windows::Forms::ListViewGroup ^ get(System::String ^ key); void set(System::String ^ key, System::Windows::Forms::ListViewGroup ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -463,6 +536,8 @@
       <MemberSignature Language="C#" Value="public void Remove (System.Windows.Forms.ListViewGroup group);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Windows.Forms.ListViewGroup group) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.Remove(System.Windows.Forms.ListViewGroup)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (group As ListViewGroup)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::Windows::Forms::ListViewGroup ^ group);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -481,19 +556,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this method to remove a group from the collection when you have a reference to the group. Note that removing a group from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
+ Use this method to remove a group from the collection when you have a reference to the group. Note that removing a group from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
   
  To remove a group at a particular index, use the <xref:System.Windows.Forms.ListViewGroupCollection.RemoveAt%2A> method instead. To remove all the groups from the collection, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.ListViewGroup" />
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.RemoveAt(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -511,7 +592,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use this method to remove a group from the collection when you have the index of the group within the collection. Note that removing groups from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=fullName> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
+ Use this method to remove a group from the collection when you have the index of the group within the collection. Note that removing groups from the <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> collection does not remove items from the <xref:System.Windows.Forms.ListView> control.  
   
  To remove a group using a reference to the object, use the <xref:System.Windows.Forms.ListViewGroupCollection.Remove%2A> method instead. To remove all the groups from the collection, use the <xref:System.Windows.Forms.ListViewGroupCollection.Clear%2A> method. When you remove an item from the collection, the indexes change for subsequent items in the collection. All information about the removed item is deleted.  
   
@@ -523,7 +604,12 @@
       <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsSynchronized As Boolean Implements ICollection.IsSynchronized" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.ICollection.IsSynchronized { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.IsSynchronized</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -542,7 +628,12 @@
       <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property SyncRoot As Object Implements ICollection.SyncRoot" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.ICollection.SyncRoot { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.ICollection.SyncRoot</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -560,7 +651,12 @@
       <MemberSignature Language="C#" Value="int IList.Add (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Add (value As Object) As Integer Implements IList.Add" />
+      <MemberSignature Language="C++ CLI" Value=" virtual int System.Collections.IList.Add(System::Object ^ value) = System::Collections::IList::Add;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Add(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -588,7 +684,12 @@
       <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function Contains (value As Object) As Boolean Implements IList.Contains" />
+      <MemberSignature Language="C++ CLI" Value=" virtual bool System.Collections.IList.Contains(System::Object ^ value) = System::Collections::IList::Contains;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Contains(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -611,7 +712,12 @@
       <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Function IndexOf (value As Object) As Integer Implements IList.IndexOf" />
+      <MemberSignature Language="C++ CLI" Value=" virtual int System.Collections.IList.IndexOf(System::Object ^ value) = System::Collections::IList::IndexOf;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.IndexOf(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -633,7 +739,12 @@
       <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Insert (index As Integer, value As Object) Implements IList.Insert" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.Insert(int index, System::Object ^ value) = System::Collections::IList::Insert;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Insert(System.Int32,System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -663,7 +774,12 @@
       <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IsFixedSize" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFixedSize As Boolean Implements IList.IsFixedSize" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.IList.IsFixedSize { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsFixedSize</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -682,7 +798,12 @@
       <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsReadOnly As Boolean Implements IList.IsReadOnly" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Collections.IList.IsReadOnly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.IsReadOnly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -701,7 +822,12 @@
       <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value=" Property Item(index As Integer) As Object Implements IList.Item" />
+      <MemberSignature Language="C++ CLI" Value="property System::Object ^ System.Collections.IList.Item[int] { System::Object ^ get(int index); void set(int index, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Collections.IList.Item(System.Int32)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -723,7 +849,12 @@
       <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewGroupCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Sub Remove (value As Object) Implements IList.Remove" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Collections.IList.Remove(System::Object ^ value) = System::Collections::IList::Remove;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IList.Remove(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>

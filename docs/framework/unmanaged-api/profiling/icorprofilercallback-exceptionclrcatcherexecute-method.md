@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ExceptionCLRCatcherExecute Method | Microsoft Docs"
+title: "ICorProfilerCallback::ExceptionCLRCatcherExecute Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ExceptionCLRCatcherExecute"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ExceptionCLRCatcherExecute"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ExceptionCLRCatcherExecute method [.NET Framework profiling]"
   - "ICorProfilerCallback::ExceptionCLRCatcherExecute method [.NET Framework profiling]"
 ms.assetid: aaac8f98-5cf4-42c7-b04b-556cce367e36
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ExceptionCLRCatcherExecute Method
 Called when a `catch` block for an exception is executed inside the common language runtime (CLR) itself. This method is obsolete in the .NET Framework version 2.0.  
@@ -46,5 +49,5 @@ HRESULT ExceptionCLRCatcherExecute();
  **.NET Framework Versions:** 1.1, 1.0  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ExceptionCLRCatcherFound Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionclrcatcherfound-method.md)

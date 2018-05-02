@@ -1,19 +1,17 @@
 ---
-title: "Controls with Built-In Owner-Drawing Support | Microsoft Docs"
+title: "Controls with Built-In Owner-Drawing Support"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "drawing, owner"
-  - "drawing, custom"
+  - "drawing [Windows Forms], owner"
+  - "drawing [Windows Forms], custom"
   - "controls [Windows Forms], changing appearance"
   - "custom drawing"
   - "owner drawing"
@@ -22,6 +20,8 @@ caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Controls with Built-In Owner-Drawing Support
 Owner drawing in Windows Forms, which is also known as custom drawing, is a technique for changing the visual appearance of certain controls.  
@@ -76,23 +76,23 @@ Owner drawing in Windows Forms, which is also known as custom drawing, is a tech
 > [!NOTE]
 >  Although the <xref:System.Windows.Forms.CheckedListBox> control is derived from the <xref:System.Windows.Forms.ListBox> control, it does not support owner drawing.  
   
- To draw each item the same size, set the `DrawMode` property to <xref:System.Windows.Forms.DrawMode> and handle the `DrawItem` event.  
+ To draw each item the same size, set the `DrawMode` property to <xref:System.Windows.Forms.DrawMode.OwnerDrawFixed> and handle the `DrawItem` event.  
   
- To draw each item using a different size, set the `DrawMode` property to <xref:System.Windows.Forms.DrawMode> and handle both the `MeasureItem` and `DrawItem` events. The `MeasureItem` event lets you indicate the size of an item before the `DrawItem` event occurs for that item.  
+ To draw each item using a different size, set the `DrawMode` property to <xref:System.Windows.Forms.DrawMode.OwnerDrawVariable> and handle both the `MeasureItem` and `DrawItem` events. The `MeasureItem` event lets you indicate the size of an item before the `DrawItem` event occurs for that item.  
   
  For more information, including code examples, see the following topics:  
   
--   <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListBox.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.MeasureItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ComboBox.DrawItem?displayProperty=nameWithType>  
   
 -   [How to: Create Variable Sized Text in a ComboBox Control](../../../../docs/framework/winforms/controls/how-to-create-variable-sized-text-in-a-combobox-control.md)  
   
@@ -103,22 +103,22 @@ Owner drawing in Windows Forms, which is also known as custom drawing, is a tech
   
  For more information, including code examples, see the following reference topics:  
   
--   <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.MenuItem.MeasureItem?displayProperty=nameWithType>  
   
 ### TabControl Control  
  The <xref:System.Windows.Forms.TabControl> control enables you to draw individual tabs in the control. Owner drawing affects only the tabs; the <xref:System.Windows.Forms.TabPage> contents are not affected.  
   
- To draw each tab in a <xref:System.Windows.Forms.TabControl>, set the `DrawMode` property to <xref:System.Windows.Forms.TabDrawMode> and handle the `DrawItem` event. This event occurs once for each tab only when the tab is visible in the control.  
+ To draw each tab in a <xref:System.Windows.Forms.TabControl>, set the `DrawMode` property to <xref:System.Windows.Forms.TabDrawMode.OwnerDrawFixed> and handle the `DrawItem` event. This event occurs once for each tab only when the tab is visible in the control.  
   
  For more information, including code examples, see the following reference topics:  
   
--   <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TabControl.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TabControl.DrawItem?displayProperty=nameWithType>  
   
 ### ToolTip Component  
  The <xref:System.Windows.Forms.ToolTip> component enables you to draw the entire ToolTip when it is displayed.  
@@ -127,11 +127,11 @@ Owner drawing in Windows Forms, which is also known as custom drawing, is a tech
   
  For more information, including code examples, see the following reference topics:  
   
--   <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.Draw?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ToolTip.Popup?displayProperty=nameWithType>  
   
 ### ListView Control  
  The <xref:System.Windows.Forms.ListView> control enables you to draw individual items, subitems, and column headers in the control.  
@@ -140,30 +140,30 @@ Owner drawing in Windows Forms, which is also known as custom drawing, is a tech
   
  To draw each item in the control, handle the `DrawItem` event.  
   
- To draw each subitem or column header in the control when the <xref:System.Windows.Forms.ListView.View%2A> property is set to <xref:System.Windows.Forms.View>, handle the `DrawSubItem` and `DrawColumnHeader` events.  
+ To draw each subitem or column header in the control when the <xref:System.Windows.Forms.ListView.View%2A> property is set to <xref:System.Windows.Forms.View.Details>, handle the `DrawSubItem` and `DrawColumnHeader` events.  
   
  For more information, including code examples, see the following reference topics:  
   
--   <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.OwnerDraw%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawSubItem?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.ListView.DrawColumnHeader?displayProperty=nameWithType>  
   
 ### TreeView Control  
  The <xref:System.Windows.Forms.TreeView> control enables you to draw individual nodes in the control.  
   
- To draw only the text displayed in each node, set the `DrawMode` property to <xref:System.Windows.Forms.TreeViewDrawMode> and handle the `DrawNode` event to draw the text.  
+ To draw only the text displayed in each node, set the `DrawMode` property to <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawText> and handle the `DrawNode` event to draw the text.  
   
- To draw all elements of each node, set the `DrawMode` property to <xref:System.Windows.Forms.TreeViewDrawMode> and handle the `DrawNode` event to draw whichever elements you need, such as text, icons, check boxes, plus and minus signs, and lines connecting the nodes.  
+ To draw all elements of each node, set the `DrawMode` property to <xref:System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll> and handle the `DrawNode` event to draw whichever elements you need, such as text, icons, check boxes, plus and minus signs, and lines connecting the nodes.  
   
  For more information, including code examples, see the following reference topics:  
   
--   <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TreeView.DrawMode%2A?displayProperty=nameWithType>  
   
--   <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=fullName>  
+-   <xref:System.Windows.Forms.TreeView.DrawNode?displayProperty=nameWithType>  
   
 ### DataGridView Control  
  The <xref:System.Windows.Forms.DataGridView> control enables you to draw individual cells and rows in the control.  

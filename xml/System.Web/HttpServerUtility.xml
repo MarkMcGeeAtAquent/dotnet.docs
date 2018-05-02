@@ -1,7 +1,9 @@
-<Type Name="HttpServerUtility" FullName="System.Web.HttpServerUtility">
+﻿<Type Name="HttpServerUtility" FullName="System.Web.HttpServerUtility">
   <TypeSignature Language="C#" Value="public sealed class HttpServerUtility" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpServerUtility extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.HttpServerUtility" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class HttpServerUtility" />
+  <TypeSignature Language="C++ CLI" Value="public ref class HttpServerUtility sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -25,17 +27,20 @@
   
  The following example demonstrates how to use the <xref:System.Web.HttpServerUtility.HtmlEncode%2A> method and the <xref:System.Web.HttpServerUtility.UrlEncode%2A> method of the <xref:System.Web.HttpServerUtility> class. The <xref:System.Web.HttpServerUtility.HtmlEncode%2A> method helps ensure that any user-supplied string input will be rendered as static text in browsers instead of executable script or HTML elements. The <xref:System.Web.HttpServerUtility.UrlEncode%2A> method encodes URLs so that they are correctly transmitted in the HTTP stream.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.HttpServerUtility1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpServerUtility1/cs/HttpServerUtilityCS.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.HttpServerUtility1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpServerUtility1/vb/HttpServerUtilityVB.aspx#1)]  -->  
+ [!code-aspx-csharp[System.Web.HttpServerUtility1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.HttpServerUtility1/cs/HttpServerUtilityCS.aspx#1)]
+ [!code-aspx-vb[System.Web.HttpServerUtility1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.HttpServerUtility1/vb/HttpServerUtilityVB.aspx#1)]  
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Web.HttpContext" />
   </Docs>
   <Members>
     <Member MemberName="ClearError">
       <MemberSignature Language="C#" Value="public void ClearError ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearError() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.ClearError" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ClearError ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ClearError();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -58,12 +63,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpServerUtility.GetLastError" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="CreateObject">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a server instance of a COM object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CreateObject">
       <MemberSignature Language="C#" Value="public object CreateObject (string progID);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObject(string progID) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObject(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateObject (progID As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateObject(System::String ^ progID);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -91,12 +108,14 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Web.HttpException">An instance of the object could not be created.</exception>
+        <altmember cref="M:System.Web.HttpServerUtility.CreateObjectFromClsid(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="CreateObject">
       <MemberSignature Language="C#" Value="public object CreateObject (Type type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObject(class System.Type type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObject(System.Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateObject(Type ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -119,6 +138,8 @@
       <MemberSignature Language="C#" Value="public object CreateObjectFromClsid (string clsid);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateObjectFromClsid(string clsid) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.CreateObjectFromClsid(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateObjectFromClsid (clsid As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ CreateObjectFromClsid(System::String ^ clsid);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -146,12 +167,24 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Web.HttpException">An instance of the object could not be created.</exception>
+        <altmember cref="M:System.Web.HttpServerUtility.CreateObject(System.String)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Execute">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Executes the handler for a specified resource in the context of the current request and returns execution to the page that invoked it.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Execute">
       <MemberSignature Language="C#" Value="public void Execute (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Execute (path As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Execute(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -205,6 +238,8 @@
       <MemberSignature Language="C#" Value="public void Execute (string path, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Execute (path As String, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Execute(System::String ^ path, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -244,12 +279,15 @@
  \- or -  
   
  <paramref name="path" /> is not a virtual path.</exception>
+        <altmember cref="Overload:System.Web.HttpServerUtility.Transfer" />
       </Docs>
     </Member>
     <Member MemberName="Execute">
       <MemberSignature Language="C#" Value="public void Execute (string path, System.IO.TextWriter writer);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, class System.IO.TextWriter writer) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Execute (path As String, writer As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Execute(System::String ^ path, System::IO::TextWriter ^ writer);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -299,12 +337,15 @@
  \- or -  
   
  <paramref name="path" /> is not a virtual path.</exception>
+        <altmember cref="Overload:System.Web.HttpServerUtility.Transfer" />
       </Docs>
     </Member>
     <Member MemberName="Execute">
       <MemberSignature Language="C#" Value="public void Execute (string path, System.IO.TextWriter writer, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(string path, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.String,System.IO.TextWriter,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Execute (path As String, writer As TextWriter, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Execute(System::String ^ path, System::IO::TextWriter ^ writer, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -359,12 +400,15 @@
           <paramref name="path" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">
           <paramref name="path" /> is not a virtual path.</exception>
+        <altmember cref="Overload:System.Web.HttpServerUtility.Transfer" />
       </Docs>
     </Member>
     <Member MemberName="Execute">
       <MemberSignature Language="C#" Value="public void Execute (System.Web.IHttpHandler handler, System.IO.TextWriter writer, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Execute(class System.Web.IHttpHandler handler, class System.IO.TextWriter writer, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Execute(System.Web.IHttpHandler,System.IO.TextWriter,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Execute (handler As IHttpHandler, writer As TextWriter, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Execute(System::Web::IHttpHandler ^ handler, System::IO::TextWriter ^ writer, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -400,12 +444,15 @@
         </remarks>
         <exception cref="T:System.Web.HttpException">An error occurred while executing the handler specified by <paramref name="handler" />.</exception>
         <exception cref="T:System.ArgumentNullException">The <paramref name="handler" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="Overload:System.Web.HttpServerUtility.Transfer" />
       </Docs>
     </Member>
     <Member MemberName="GetLastError">
       <MemberSignature Language="C#" Value="public Exception GetLastError ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Exception GetLastError() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.GetLastError" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetLastError () As Exception" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Exception ^ GetLastError();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -429,12 +476,26 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Web.HttpServerUtility.ClearError" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="HtmlDecode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Decodes a string that has been encoded to eliminate invalid HTML characters.  
+  
+ To encode or decode values outside of a web application, use the <see cref="T:System.Net.WebUtility" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="HtmlDecode">
       <MemberSignature Language="C#" Value="public string HtmlDecode (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string HtmlDecode(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlDecode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HtmlDecode (s As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ HtmlDecode(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -456,7 +517,7 @@
 ## Remarks  
  HTML encoding makes sure that text is displayed correctly in the browser and not interpreted by the browser as HTML. For example, if a text string contains a less than sign (\<) or greater than sign (>), the browser would interpret these characters as the opening or closing bracket of an HTML tag. When the characters are HTML encoded, they are converted to the strings `&lt;` and `&gt;`, which causes the browser to display the less than sign and greater than sign correctly. <xref:System.Web.HttpServerUtility.HtmlDecode%2A> decodes text that has been transmitted to the server.  
   
- This method is a convenient way to access the <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=fullName> to decode strings.  
+ This method is a convenient way to access the <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType> to decode strings.  
   
  In the code-behind file for an ASP.NET web page, access an instance of the <xref:System.Web.HttpServerUtility> class through the `Server` property. In a class that is not in a code-behind file, use `HttpContext.Current.Server` to access an instance of the <xref:System.Web.HttpServerUtility> class.  
   
@@ -467,8 +528,8 @@
 ## Examples  
  The following example contains the function `LoadDecodedFile`, which decodes the data from a file and copies it into one string.  
   
- <!-- TODO: review snippet reference [!code-csharp[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/CS/sourcecs.aspx#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/VB/sourcevb.aspx#1)]  -->  
+ [!code-aspx-csharp[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HttpServerUtility.HtmlDecode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HttpServerUtility.HtmlDecode Example/VB/sourcevb.aspx#1)]  
   
  ]]></format>
         </remarks>
@@ -478,6 +539,8 @@
       <MemberSignature Language="C#" Value="public void HtmlDecode (string s, System.IO.TextWriter output);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HtmlDecode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlDecode(System.String,System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub HtmlDecode (s As String, output As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void HtmlDecode(System::String ^ s, System::IO::TextWriter ^ output);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -502,7 +565,7 @@
   
  <xref:System.Web.HttpServerUtility.HtmlDecode%2A> decodes text that has been transmitted to the server.  
   
- <xref:System.Web.HttpServerUtility.HtmlDecode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.HtmlDecode%2A> uses <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=fullName> to decode strings.  
+ <xref:System.Web.HttpServerUtility.HtmlDecode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.HtmlDecode%2A> uses <xref:System.Web.HttpUtility.HtmlDecode%2A?displayProperty=nameWithType> to decode strings.  
   
  To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
   
@@ -518,10 +581,23 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="HtmlEncode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Encodes a string to be displayed in a browser.  
+  
+ To encode or decode values outside of a web application, use the <see cref="T:System.Net.WebUtility" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="HtmlEncode">
       <MemberSignature Language="C#" Value="public string HtmlEncode (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string HtmlEncode(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlEncode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function HtmlEncode (s As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ HtmlEncode(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -543,7 +619,7 @@
 ## Remarks  
  HTML encoding makes sure that text is displayed correctly in the browser and not interpreted by the browser as HTML. For example, if a text string contains a less than sign (\<) or greater than sign (>), the browser would interpret these characters as the opening or closing bracket of an HTML tag. When the characters are HTML encoded, they are converted to the strings `&lt;` and `&gt;`, which causes the browser to display the less than sign and greater than sign correctly.  
   
- This method is a convenient way to access the <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=fullName> to encode strings.  
+ This method is a convenient way to access the <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType> to encode strings.  
   
  In the code-behind file for an ASP.NET web page, access an instance of the <xref:System.Web.HttpServerUtility> class through the `Server` property. In a class that is not in a code-behind file, use `HttpContext.Current.Server` to access an instance of the <xref:System.Web.HttpServerUtility> class.  
   
@@ -570,6 +646,8 @@
       <MemberSignature Language="C#" Value="public void HtmlEncode (string s, System.IO.TextWriter output);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void HtmlEncode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.HtmlEncode(System.String,System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub HtmlEncode (s As String, output As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void HtmlEncode(System::String ^ s, System::IO::TextWriter ^ output);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -592,7 +670,7 @@
 ## Remarks  
  HTML encoding ensures that text will be correctly displayed in the browser, not interpreted by the browser as HTML. For example, if a text string contains a less than sign (\<) or greater than sign (>), the browser would interpret these characters as an opening or closing bracket of an HTML tag. The HTML encoding of these two characters is `&lt;` and `&gt;`, respectively, which causes the browser to display the less than sign and greater than sign correctly.  
   
- <xref:System.Web.HttpServerUtility.HtmlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.HtmlEncode%2A> uses <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=fullName> to encode strings.  
+ <xref:System.Web.HttpServerUtility.HtmlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.HtmlEncode%2A> uses <xref:System.Web.HttpUtility.HtmlEncode%2A?displayProperty=nameWithType> to encode strings.  
   
  To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
   
@@ -612,6 +690,8 @@
       <MemberSignature Language="C#" Value="public string MachineName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtility.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -641,6 +721,8 @@
       <MemberSignature Language="C#" Value="public string MapPath (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MapPath(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.MapPath(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MapPath (path As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ MapPath(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -691,13 +773,19 @@
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.Web.HttpException">The current <see cref="T:System.Web.HttpContext" /> is <see langword="null" />.</exception>
+        <exception cref="T:System.Web.HttpException">The current <see cref="T:System.Web.HttpContext" /> is <see langword="null" />.
+        
+-or- 
+        
+<paramref name="path" /> is a physical path, but a virtual path was expected.</exception>
       </Docs>
     </Member>
     <Member MemberName="ScriptTimeout">
       <MemberSignature Language="C#" Value="public int ScriptTimeout { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ScriptTimeout" />
       <MemberSignature Language="DocId" Value="P:System.Web.HttpServerUtility.ScriptTimeout" />
+      <MemberSignature Language="VB.NET" Value="Public Property ScriptTimeout As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ScriptTimeout { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -732,10 +820,21 @@
         <exception cref="T:System.ArgumentOutOfRangeException">The time-out period is <see langword="null" /> or otherwise could not be set.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Transfer">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Terminates execution of the current page and starts execution of a new page for the current request.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Transfer">
       <MemberSignature Language="C#" Value="public void Transfer (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Transfer (path As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Transfer(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -772,6 +871,8 @@
       <MemberSignature Language="C#" Value="public void Transfer (string path, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(string path, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Transfer (path As String, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Transfer(System::String ^ path, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -822,6 +923,8 @@
       <MemberSignature Language="C#" Value="public void Transfer (System.Web.IHttpHandler handler, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transfer(class System.Web.IHttpHandler handler, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.Transfer(System.Web.IHttpHandler,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Transfer (handler As IHttpHandler, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Transfer(System::Web::IHttpHandler ^ handler, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -858,10 +961,29 @@
         <exception cref="T:System.ApplicationException">The current page request is a callback.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TransferRequest">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Performs an asynchronous execution of the specified URL.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.TransferRequest%2A> was introduced in the .NET Framework version 3.5. For summary information about the .NET Framework, see [Versions and Dependencies](~/docs/framework/migration-guide/versions-and-dependencies.md).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TransferRequest">
       <MemberSignature Language="C#" Value="public void TransferRequest (string path);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub TransferRequest (path As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void TransferRequest(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -894,6 +1016,8 @@
       <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub TransferRequest (path As String, preserveForm As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void TransferRequest(System::String ^ path, bool preserveForm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -931,6 +1055,8 @@
       <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub TransferRequest (path As String, preserveForm As Boolean, method As String, headers As NameValueCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void TransferRequest(System::String ^ path, bool preserveForm, System::String ^ method, System::Collections::Specialized::NameValueCollection ^ headers);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -984,6 +1110,8 @@
       <MemberSignature Language="C#" Value="public void TransferRequest (string path, bool preserveForm, string method, System.Collections.Specialized.NameValueCollection headers, bool preserveUser);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransferRequest(string path, bool preserveForm, string method, class System.Collections.Specialized.NameValueCollection headers, bool preserveUser) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.TransferRequest(System.String,System.Boolean,System.String,System.Collections.Specialized.NameValueCollection,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub TransferRequest (path As String, preserveForm As Boolean, method As String, headers As NameValueCollection, preserveUser As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void TransferRequest(System::String ^ path, bool preserveForm, System::String ^ method, System::Collections::Specialized::NameValueCollection ^ headers, bool preserveUser);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1022,10 +1150,23 @@
         <exception cref="T:System.ArgumentException">The <paramref name="path" /> parameter is invalid.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="UrlDecode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Decodes a string that was encoded for HTTP transmission and then sent to the server in a URL.  
+  
+ To encode or decode values outside of a web application, use the <see cref="T:System.Net.WebUtility" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="UrlDecode">
       <MemberSignature Language="C#" Value="public string UrlDecode (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlDecode(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlDecode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UrlDecode (s As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ UrlDecode(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1047,7 +1188,7 @@
 ## Remarks  
  URL encoding ensures that all browsers will correctly transmit text in URL strings. Characters such as a question mark (?), ampersand (&), slash mark (/), and spaces might be truncated or corrupted by some browsers. As a result, these characters must be encoded in `<a>` tags or in query strings where the strings can be re-sent by a browser in a request string.  
   
- This method is a convenient way to access the <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=fullName> to decode strings.  
+ This method is a convenient way to access the <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType> to decode strings.  
   
  In the code-behind file for an ASP.NET web page, access an instance of the <xref:System.Web.HttpServerUtility> class through the `Server` property. In a class that is not in a code-behind file, use `HttpContext.Current.Server` to access an instance of the <xref:System.Web.HttpServerUtility> class.  
   
@@ -1074,6 +1215,8 @@
       <MemberSignature Language="C#" Value="public void UrlDecode (string s, System.IO.TextWriter output);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UrlDecode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlDecode(System.String,System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UrlDecode (s As String, output As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UrlDecode(System::String ^ s, System::IO::TextWriter ^ output);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1096,7 +1239,7 @@
 ## Remarks  
  URL encoding ensures that all browsers will correctly transmit text in URL strings. Characters such as a question mark (?), ampersand (&), slash mark (/), and spaces might be truncated or corrupted by some browsers. As a result, these characters must be encoded in `<a>` tags or in query strings where the strings can be re-sent by a browser in a request string.  
   
- <xref:System.Web.HttpServerUtility.UrlDecode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlDecode%2A> uses <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=fullName> to decode strings.  
+ <xref:System.Web.HttpServerUtility.UrlDecode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlDecode%2A> uses <xref:System.Web.HttpUtility.UrlDecode%2A?displayProperty=nameWithType> to decode strings.  
   
  To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
   
@@ -1112,10 +1255,31 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="UrlEncode">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Encodes a string for reliable HTTP transmission from the Web server to a client through the URL.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpServerUtility.UrlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlEncode%2A> uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> to encode strings.  
+  
+ To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="UrlEncode">
       <MemberSignature Language="C#" Value="public string UrlEncode (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlEncode(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlEncode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UrlEncode (s As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ UrlEncode(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1137,7 +1301,7 @@
 ## Remarks  
  URL encoding ensures that all browsers will correctly transmit text in URL strings. Characters such as a question mark (?), ampersand (&), slash mark (/), and spaces might be truncated or corrupted by some browsers. As a result, these characters must be encoded in `<a>` tags or in query strings where the strings can be re-sent by a browser in a request string.  
   
- This method is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> to encode strings.  
+ This method is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, this method uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> to encode strings.  
   
  In the code-behind file for an ASP.NET web page, access an instance of the <xref:System.Web.HttpServerUtility> class through the `Server` property. In a class that is not in a code-behind file, use `HttpContext.Current.Server` to access an instance of the <xref:System.Web.HttpServerUtility> class.  
   
@@ -1164,6 +1328,8 @@
       <MemberSignature Language="C#" Value="public void UrlEncode (string s, System.IO.TextWriter output);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UrlEncode(string s, class System.IO.TextWriter output) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlEncode(System.String,System.IO.TextWriter)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UrlEncode (s As String, output As TextWriter)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UrlEncode(System::String ^ s, System::IO::TextWriter ^ output);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1186,7 +1352,7 @@
 ## Remarks  
  URL encoding ensures that all browsers will correctly transmit text in URL strings. Characters such as a question mark (?), ampersand (&), slash mark (/), and spaces might be truncated or corrupted by some browsers. As a result, these characters must be encoded in `<a>` tags or in query strings where the strings can be re-sent by a browser in a request string.  
   
- <xref:System.Web.HttpServerUtility.UrlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlEncode%2A> uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> to encode strings.  
+ <xref:System.Web.HttpServerUtility.UrlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlEncode%2A> uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=nameWithType> to encode strings.  
   
  To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
   
@@ -1206,6 +1372,8 @@
       <MemberSignature Language="C#" Value="public string UrlPathEncode (string s);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UrlPathEncode(string s) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlPathEncode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function UrlPathEncode (s As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ UrlPathEncode(System::String ^ s);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1228,6 +1396,8 @@
       <MemberSignature Language="C#" Value="public static byte[] UrlTokenDecode (string input);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlTokenDecode(string input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlTokenDecode(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UrlTokenDecode (input As String) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Byte&gt; ^ UrlTokenDecode(System::String ^ input);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1254,12 +1424,16 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The value of the <paramref name="input" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="M:System.Convert.FromBase64CharArray(System.Char[],System.Int32,System.Int32)" />
+        <altmember cref="M:System.Web.HttpServerUtility.UrlTokenEncode(System.Byte[])" />
       </Docs>
     </Member>
     <Member MemberName="UrlTokenEncode">
       <MemberSignature Language="C#" Value="public static string UrlTokenEncode (byte[] input);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlTokenEncode(unsigned int8[] input) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.HttpServerUtility.UrlTokenEncode(System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UrlTokenEncode (input As Byte()) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ UrlTokenEncode(cli::array &lt;System::Byte&gt; ^ input);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -1286,43 +1460,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The value of the <paramref name="input" /> parameter is <see langword="null" />.</exception>
+        <altmember cref="M:System.Convert.ToBase64String(System.Byte[])" />
+        <altmember cref="M:System.Web.HttpServerUtility.UrlTokenDecode(System.String)" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="UrlEncode">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Encodes a string for reliable HTTP transmission from the Web server to a client through the URL.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:System.Web.HttpServerUtility.UrlEncode%2A> is a convenient way to access the <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> method at run time from an ASP.NET application. Internally, <xref:System.Web.HttpServerUtility.UrlEncode%2A> uses <xref:System.Web.HttpUtility.UrlEncode%2A?displayProperty=fullName> to encode strings.  
-  
- To encode or decode values outside of a web application, use the <xref:System.Net.WebUtility> class.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="TransferRequest">
-      <AssemblyInfo>
-        <AssemblyName>System.Web</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Performs an asynchronous execution of the specified URL.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- <xref:System.Web.HttpServerUtility.TransferRequest%2A> was introduced in the .NET Framework version 3.5. For summary information about the .NET Framework, see [Versions and Dependencies](~/docs/framework/migration-guide/versions-and-dependencies.md).  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

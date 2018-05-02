@@ -1,28 +1,25 @@
 ---
-title: "How to: Create a Windows Forms Application from the Command Line | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
+title: "How to: Create a Windows Forms application from the command line"
+ms.date: "03/14/2018"
 ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
-ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Windows Forms, application development from command line"
   - "Windows Forms, getting started"
   - "Windows Forms, creating basic form"
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
-caps.latest.revision: 10
-author: dotnet-bot
-ms.author: dotnetcontent
-manager: "wpickett"
+author: rpetrusha
+ms.author: ronpet
+ms.workload: 
+  - dotnet
 ---
-# How to: Create a Windows Forms Application from the Command Line
-The following procedures describe the basic steps that you must complete to create and run a Windows Forms application from the command line. There is extensive support for these procedures in Visual Studio.  Also see [Walkthrough: Creating a Simple Windows Form](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.110\)).  
+# How to: Create a Windows Forms application from the command line
+The following procedures describe the basic steps that you must complete to create and run a Windows Forms application from the command line. There is extensive support for these procedures in Visual Studio.  Also see [Walkthrough: Creating a Simple Windows Form](http://msdn.microsoft.com/library/z9w2f38k\(v=vs.100\)).  
   
 ## Procedure  
   
@@ -47,9 +44,9 @@ The following procedures describe the basic steps that you must complete to crea
   
 4.  Add a `Main` method to the class.  
   
-    1.  Apply the <xref:System.STAThreadAttribute> to the `Main` method to specify your Windows Forms application is a single threaded apartment.  
+    1.  Apply the <xref:System.STAThreadAttribute> to the C# `Main` method to specify your Windows Forms application is a single-threaded apartment. (The attribute is not necessary in Visual Basic, since Windows forms applications developed with Visual Basic use a single-threaded apartment model by default.)  
   
-    2.  Call <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> to give a Windows XP appearance to your application.  
+    2.  Call <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> to apply operating system styles to your application.  
   
     3.  Create an instance of the form and run it.  
   
@@ -66,7 +63,7 @@ The following procedures describe the basic steps that you must complete to crea
   
          `-or-`  
   
-    -   If you are using Visual Basic, type: `vbc form1.vb /r:system.dll,system.drawing.dll,system.windows.forms.dll`  
+    -   If you are using Visual Basic, type: `vbc form1.vb`  
   
 3.  At the command prompt, type: `Form1.exe`  
   
@@ -117,8 +114,8 @@ The following procedures describe the basic steps that you must complete to crea
 -   To compile the code, follow the instructions in the proceeding procedure that describe how to compile and run the application.  
   
 ## See Also  
- <xref:System.Windows.Forms.Form>   
- <xref:System.Windows.Forms.Control>   
- [Changing the Appearance of Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)   
- [Enhancing Windows Forms Applications](../../../docs/framework/winforms/advanced/index.md)   
+ <xref:System.Windows.Forms.Form>  
+ <xref:System.Windows.Forms.Control>  
+ [Changing the Appearance of Windows Forms](../../../docs/framework/winforms/changing-the-appearance-of-windows-forms.md)  
+ [Enhancing Windows Forms Applications](../../../docs/framework/winforms/advanced/index.md)  
  [Getting Started with Windows Forms](../../../docs/framework/winforms/getting-started-with-windows-forms.md)

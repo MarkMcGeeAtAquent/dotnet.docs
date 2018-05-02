@@ -1,7 +1,9 @@
-<Type Name="DataColumnCollection" FullName="System.Data.DataColumnCollection">
+﻿<Type Name="DataColumnCollection" FullName="System.Data.DataColumnCollection">
   <TypeSignature Language="C#" Value="public sealed class DataColumnCollection : System.Data.InternalDataCollectionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataColumnCollection extends System.Data.InternalDataCollectionBase" />
   <TypeSignature Language="DocId" Value="T:System.Data.DataColumnCollection" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DataColumnCollection&#xA;Inherits InternalDataCollectionBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataColumnCollection sealed : System::Data::InternalDataCollectionBase" />
   <AssemblyInfo>
     <AssemblyName>System.Data</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Data.InternalDataCollectionBase</BaseTypeName>
@@ -44,12 +50,30 @@
  ]]></format>
     </remarks>
     <threadsafe>This type is safe for multithreaded read operations. You must synchronize any write operations.</threadsafe>
+    <altmember cref="P:System.Data.DataTable.Columns" />
+    <altmember cref="T:System.Data.DataColumn" />
+    <altmember cref="T:System.Data.DataTable" />
+    <altmember cref="T:System.Data.DataRelation" />
+    <altmember cref="T:System.Data.DataRow" />
+    <altmember cref="T:System.Data.DataSet" />
   </Docs>
   <Members>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates and adds a <see cref="T:System.Data.DataColumn" /> object to the <see cref="T:System.Data.DataColumnCollection" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn Add ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn Add() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Add" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add () As DataColumn" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataColumn ^ Add();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -59,6 +83,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -84,12 +112,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="P:System.Data.DataColumn.DataType" />
+        <altmember cref="P:System.Data.DataColumn.Expression" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public void Add (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Add(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (column As DataColumn)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -99,6 +133,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -128,12 +166,19 @@
         <exception cref="T:System.ArgumentException">The column already belongs to this collection, or to another collection.</exception>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a column with the specified name. (The comparison is not case-sensitive.)</exception>
         <exception cref="T:System.Data.InvalidExpressionException">The expression is invalid. See the <see cref="P:System.Data.DataColumn.Expression" /> property for more information about how to create expressions.</exception>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="E:System.Data.DataColumnCollection.CollectionChanged" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="P:System.Data.DataColumn.DataType" />
+        <altmember cref="P:System.Data.DataColumn.Expression" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn Add (string columnName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn Add(string columnName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Add(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Add (columnName As String) As DataColumn" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataColumn ^ Add(System::String ^ columnName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -143,6 +188,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -176,12 +225,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a column with the specified name. (The comparison is not case-sensitive.)</exception>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="P:System.Data.DataColumn.DataType" />
+        <altmember cref="P:System.Data.DataColumn.Expression" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn Add (string columnName, Type type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn Add(string columnName, class System.Type type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Add(System.String,System.Type)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataColumn ^ Add(System::String ^ columnName, Type ^ type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -191,6 +245,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -225,12 +283,16 @@
         </remarks>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a column with the specified name. (The comparison is not case-sensitive.)</exception>
         <exception cref="T:System.Data.InvalidExpressionException">The expression is invalid. See the <see cref="P:System.Data.DataColumn.Expression" /> property for more information about how to create expressions.</exception>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="P:System.Data.DataColumn.DataType" />
+        <altmember cref="P:System.Data.DataColumn.Expression" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn Add (string columnName, Type type, string expression);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.DataColumn Add(string columnName, class System.Type type, string expression) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Add(System.String,System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Data::DataColumn ^ Add(System::String ^ columnName, Type ^ type, System::String ^ expression);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -240,6 +302,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -276,12 +342,18 @@
         </remarks>
         <exception cref="T:System.Data.DuplicateNameException">The collection already has a column with the specified name. (The comparison is not case-sensitive.)</exception>
         <exception cref="T:System.Data.InvalidExpressionException">The expression is invalid. See the <see cref="P:System.Data.DataColumn.Expression" /> property for more information about how to create expressions.</exception>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="P:System.Data.DataColumn.DataType" />
+        <altmember cref="P:System.Data.DataColumn.Expression" />
       </Docs>
     </Member>
     <Member MemberName="AddRange">
       <MemberSignature Language="C#" Value="public void AddRange (System.Data.DataColumn[] columns);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Data.DataColumn[] columns) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.AddRange(System.Data.DataColumn[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddRange (columns As DataColumn())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddRange(cli::array &lt;System::Data::DataColumn ^&gt; ^ columns);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -291,6 +363,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -308,6 +384,8 @@
       <MemberSignature Language="C#" Value="public bool CanRemove (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanRemove(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.CanRemove(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CanRemove (column As DataColumn) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool CanRemove(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -317,6 +395,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -355,12 +437,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.DataColumnCollection.Remove(System.Data.DataColumn)" />
       </Docs>
     </Member>
     <Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -370,6 +456,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -399,6 +489,8 @@
       <MemberSignature Language="C#" Value="public event System.ComponentModel.CollectionChangeEventHandler CollectionChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CollectionChangeEventHandler CollectionChanged" />
       <MemberSignature Language="DocId" Value="E:System.Data.DataColumnCollection.CollectionChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event CollectionChanged As CollectionChangeEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::CollectionChangeEventHandler ^ CollectionChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -408,6 +500,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.CollectionChangeEventHandler</ReturnType>
@@ -436,6 +532,8 @@
       <MemberSignature Language="C#" Value="public bool Contains (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Contains(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Contains (name As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Contains(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -445,6 +543,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -473,12 +575,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Data.DataColumnCollection.CanRemove(System.Data.DataColumn)" />
+        <altmember cref="M:System.Data.DataColumnCollection.IndexOf(System.Data.DataColumn)" />
       </Docs>
     </Member>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public void CopyTo (System.Data.DataColumn[] array, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Data.DataColumn[] array, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.CopyTo(System.Data.DataColumn[],System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CopyTo (array As DataColumn(), index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CopyTo(cli::array &lt;System::Data::DataColumn ^&gt; ^ array, int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -488,6 +594,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -503,10 +613,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="IndexOf">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Searches for the specified <see cref="T:System.Data.DataColumn" /> and returns the zero-based index of the first occurrence within the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="IndexOf">
       <MemberSignature Language="C#" Value="public int IndexOf (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.IndexOf(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IndexOf (column As DataColumn) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int IndexOf(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -516,6 +638,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -549,6 +675,8 @@
       <MemberSignature Language="C#" Value="public int IndexOf (string columnName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(string columnName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.IndexOf(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IndexOf (columnName As String) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int IndexOf(System::String ^ columnName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -558,6 +686,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -572,10 +704,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Item">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the specified <see cref="T:System.Data.DataColumn" /> from the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn this[int index] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataColumn Item(int32)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataColumnCollection.Item(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(index As Integer) As DataColumn" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataColumn ^ default[int] { System::Data::DataColumn ^ get(int index); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -585,6 +729,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -613,12 +761,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.IndexOutOfRangeException">The index value is greater than the number of items in the collection.</exception>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
       </Docs>
     </Member>
     <Member MemberName="Item">
       <MemberSignature Language="C#" Value="public System.Data.DataColumn this[string name] { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Data.DataColumn Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataColumnCollection.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public ReadOnly Property Item(name As String) As DataColumn" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Data::DataColumn ^ default[System::String ^] { System::Data::DataColumn ^ get(System::String ^ name); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -628,6 +781,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Data.DataColumn</ReturnType>
@@ -655,12 +812,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Data.DataColumn.ColumnName" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="T:System.Data.DataColumn" />
       </Docs>
     </Member>
     <Member MemberName="List">
       <MemberSignature Language="C#" Value="protected override System.Collections.ArrayList List { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList List" />
       <MemberSignature Language="DocId" Value="P:System.Data.DataColumnCollection.List" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides ReadOnly Property List As ArrayList" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual property System::Collections::ArrayList ^ List { System::Collections::ArrayList ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -671,6 +833,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ArrayList</ReturnType>
       </ReturnValue>
@@ -680,10 +846,22 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes a <see cref="T:System.Data.DataColumn" /> object from the collection.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.Data.DataColumn column);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Data.DataColumn column) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Remove(System.Data.DataColumn)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (column As DataColumn)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::Data::DataColumn ^ column);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -693,6 +871,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -729,12 +911,17 @@
  -Or-  
   
  Another column's expression depends on this column.</exception>
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.DataColumnCollection.CanRemove(System.Data.DataColumn)" />
+        <altmember cref="P:System.Data.DataColumnCollection.Item(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.Remove(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (name As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -744,6 +931,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -771,12 +962,15 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The collection does not have a column with the specified name.</exception>
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="RemoveAt">
       <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Data.DataColumnCollection.RemoveAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveAt (index As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveAt(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Data</AssemblyName>
@@ -786,6 +980,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -812,6 +1010,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentException">The collection does not have a column at the specified index.</exception>
+        <altmember cref="M:System.Data.DataColumnCollection.IndexOf(System.Data.DataColumn)" />
+        <altmember cref="M:System.Data.DataColumnCollection.Contains(System.String)" />
+        <altmember cref="M:System.Data.DataColumnCollection.CanRemove(System.Data.DataColumn)" />
       </Docs>
     </Member>
   </Members>

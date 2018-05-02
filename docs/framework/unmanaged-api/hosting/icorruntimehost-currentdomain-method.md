@@ -1,5 +1,5 @@
 ---
-title: "ICorRuntimeHost::CurrentDomain Method | Microsoft Docs"
+title: "ICorRuntimeHost::CurrentDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,26 +9,29 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorRuntimeHost.CurrentDomain"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorRuntimeHost::CurrentDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorRuntimeHost::CreateDomain method [.NET Framework hosting]"
   - "CurrentDomain method [.NET Framework hosting]"
 ms.assetid: dd2afb38-675b-4c3c-a9f3-8ab3b133eb02
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorRuntimeHost::CurrentDomain Method
-Gets an interface pointer of type <xref:System.AppDomain?displayProperty=fullName> that represents the domain loaded on the current thread.  
+Gets an interface pointer of type <xref:System.AppDomain?displayProperty=nameWithType> that represents the domain loaded on the current thread.  
   
 ## Syntax  
   
@@ -40,7 +43,7 @@ HRESULT CurrentDomain (
   
 #### Parameters  
  `pAppDomain`  
- [out] A pointer of type <xref:System.AppDomain?displayProperty=fullName> that represents the thread's current application domain. This pointer is typed `IUnknown`, so callers should generally call `QueryInterface` to obtain a pointer of type <xref:System._AppDomain>.  
+ [out] A pointer of type <xref:System.AppDomain?displayProperty=nameWithType> that represents the thread's current application domain. This pointer is typed `IUnknown`, so callers should generally call `QueryInterface` to obtain a pointer of type <xref:System._AppDomain>.  
   
 ## Return Value  
   
@@ -61,6 +64,6 @@ HRESULT CurrentDomain (
  **.NET Framework Versions:** 1.0, 1.1  
   
 ## See Also  
- <xref:System._AppDomain>   
- <xref:System.AppDomain>   
+ <xref:System._AppDomain>  
+ <xref:System.AppDomain>  
  [ICorRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

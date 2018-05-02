@@ -1,5 +1,5 @@
 ---
-title: "CorThreadSafetyOptions Enumeration | Microsoft Docs"
+title: "CorThreadSafetyOptions Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorThreadSafetyOptions"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorThreadSafetyOptions"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorThreadSafetyOptions enumeration [.NET Framework metadata]"
 ms.assetid: dae07d9b-df51-488c-b17e-52d6e48217bd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorThreadSafetyOptions Enumeration
 Specifies flags to select options for thread safety.  

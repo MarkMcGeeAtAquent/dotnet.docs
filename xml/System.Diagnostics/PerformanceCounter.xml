@@ -1,9 +1,15 @@
-<Type Name="PerformanceCounter" FullName="System.Diagnostics.PerformanceCounter">
+﻿<Type Name="PerformanceCounter" FullName="System.Diagnostics.PerformanceCounter">
   <TypeSignature Language="C#" Value="public sealed class PerformanceCounter : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PerformanceCounter extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounter" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class PerformanceCounter&#xA;Inherits Component&#xA;Implements ISupportInitialize" />
+  <TypeSignature Language="C++ CLI" Value="public ref class PerformanceCounter sealed : System::ComponentModel::Component, System::ComponentModel::ISupportInitialize" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -29,7 +35,7 @@
   
  There are numerous predefined counters listed in the Windows Performance Monitor's [Add Counters dialog box](http://go.microsoft.com/fwlink/p/?LinkId=257854). To learn about the .NET Framework performance counters, see [Performance Counters](~/docs/framework/debug-trace-profile/performance-counters.md).  
   
- This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+ This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
 > [!IMPORTANT]
 >  In versions 1.0 and 1.1 of the .NET Framework, this class requires immediate callers to be fully trusted. Starting with the .NET Framework version 2.0, this class requires <xref:System.Diagnostics.PerformanceCounterPermission> for specific actions. It is strongly recommended that <xref:System.Diagnostics.PerformanceCounterPermission> not be granted to semi-trusted code.  The ability to read and write performance counters allows code to perform actions such as enumerating executing processes and obtaining information about them.  
@@ -38,7 +44,7 @@
   
  To read from a performance counter, create an instance of the <xref:System.Diagnostics.PerformanceCounter> class, set the <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>, <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>, and, optionally, the <xref:System.Diagnostics.PerformanceCounter.InstanceName%2A> or <xref:System.Diagnostics.PerformanceCounter.MachineName%2A> properties, and then call the <xref:System.Diagnostics.PerformanceCounter.NextValue%2A> method to take a performance counter reading.  
   
- To publish performance counter data, create one or more custom counters using the <xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=fullName> method, create an instance of the <xref:System.Diagnostics.PerformanceCounter> class, set the <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>, <xref:System.Diagnostics.PerformanceCounter.CounterName%2A> and, optionally, <xref:System.Diagnostics.PerformanceCounter.InstanceName%2A> or <xref:System.Diagnostics.PerformanceCounter.MachineName%2A> properties, and then call the <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, or <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods, or set the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property to change the value of your custom counter.  
+ To publish performance counter data, create one or more custom counters using the <xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=nameWithType> method, create an instance of the <xref:System.Diagnostics.PerformanceCounter> class, set the <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>, <xref:System.Diagnostics.PerformanceCounter.CounterName%2A> and, optionally, <xref:System.Diagnostics.PerformanceCounter.InstanceName%2A> or <xref:System.Diagnostics.PerformanceCounter.MachineName%2A> properties, and then call the <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, or <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods, or set the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property to change the value of your custom counter.  
   
 > [!NOTE]
 >  The <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, and <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods use interlocks to update the counter value. This helps keep the counter value accurate in multithreaded or multiprocess scenarios, but also results in a performance penalty. If you do not need the accuracy that interlocked operations provide, you can update the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property directly for up to a 5 times performance improvement.  However, in multithreaded scenarios, some updates to the counter value might be ignored, resulting in inaccurate data.  
@@ -54,12 +60,12 @@
  To obtain performance data for counters that required an initial or previous value for performing the necessary calculation, call the <xref:System.Diagnostics.PerformanceCounter.NextValue%2A> method twice and use the information returned as your application requires.  
   
 > [!NOTE]
->  Performance counter categories installed with the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] use separate shared memory, with each performance counter category having its own memory. You can specify the size of separate shared memory by creating a DWORD named FileMappingSize in the registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<category name>*\Performance. The FileMappingSize value is set to the shared memory size of the category. The default size is 131072 decimal. If the FileMappingSize value is not present, the `fileMappingSize` attribute value for the `performanceCounters` element specified in the Machine.config file is used, causing additional overhead for configuration file processing. You can realize a performance improvement for application startup by setting the file mapping size in the registry. For more information about the file mapping size, see [\&lt;performanceCounters\&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md).  
+>  Performance counter categories installed with the [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] use separate shared memory, with each performance counter category having its own memory. You can specify the size of separate shared memory by creating a DWORD named FileMappingSize in the registry key HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\\*\<category name>*\Performance. The FileMappingSize value is set to the shared memory size of the category. The default size is 131072 decimal. If the FileMappingSize value is not present, the `fileMappingSize` attribute value for the `performanceCounters` element specified in the Machine.config file is used, causing additional overhead for configuration file processing. You can realize a performance improvement for application startup by setting the file mapping size in the registry. For more information about the file mapping size, see [&lt;performanceCounters&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/performancecounters-element.md).  
   
    
   
 ## Examples  
- The following code example demonstrates the use of the <xref:System.Diagnostics.PerformanceCounter> class to create and use an <xref:System.Diagnostics.PerformanceCounterType> counter type. The example creates categories, sets up counters, collects data from the counters, and calls the <xref:System.Diagnostics.CounterSampleCalculator> class to interpret the performance counter data. The intermediate and final results are displayed in the console window. For additional examples of other performance counter types, see the <xref:System.Diagnostics.PerformanceCounterType> enumeration.  
+ The following code example demonstrates the use of the <xref:System.Diagnostics.PerformanceCounter> class to create and use an <xref:System.Diagnostics.PerformanceCounterType.AverageCount64> counter type. The example creates categories, sets up counters, collects data from the counters, and calls the <xref:System.Diagnostics.CounterSampleCalculator> class to interpret the performance counter data. The intermediate and final results are displayed in the console window. For additional examples of other performance counter types, see the <xref:System.Diagnostics.PerformanceCounterType> enumeration.  
   
  [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
  [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
@@ -67,15 +73,36 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.PerformanceCounterType" />
+    <altmember cref="T:System.Diagnostics.CounterCreationData" />
+    <altmember cref="T:System.Diagnostics.CounterCreationDataCollection" />
+    <altmember cref="T:System.Diagnostics.CounterSample" />
+    <altmember cref="T:System.Diagnostics.CounterSampleCalculator" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This class cannot be used by partially trusted code.</permission>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.PerformanceCounter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public PerformanceCounter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -90,7 +117,7 @@
  This constructor does not initialize the performance counter, so it does not associate the instance with an existing counter on the local computer. To point to a specific performance counter, set the <xref:System.Diagnostics.PerformanceCounter.CategoryName%2A>, <xref:System.Diagnostics.PerformanceCounter.CounterName%2A>, and, optionally, the <xref:System.Diagnostics.PerformanceCounter.InstanceName%2A> and <xref:System.Diagnostics.PerformanceCounter.MachineName%2A> properties before reading any other properties or attempting to read from a counter. To write to a performance counter, set the <xref:System.Diagnostics.PerformanceCounter.ReadOnly%2A> property to `false`.  
   
 > [!NOTE]
->  The <xref:System.Security.Permissions.HostProtectionAttribute> attribute applied to this member has the following <xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A> property value: <xref:System.Security.Permissions.HostProtectionResource> &#124; <xref:System.Security.Permissions.HostProtectionResource>. The <xref:System.Security.Permissions.HostProtectionAttribute> does not affect desktop applications (which are typically started by double-clicking an icon, typing a command, or entering a URL in a browser). For more information, see the <xref:System.Security.Permissions.HostProtectionAttribute> class or [SQL Server Programming and Host Protection Attributes](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md).  
+>  The <xref:System.Security.Permissions.HostProtectionAttribute> attribute applied to this member has the following <xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A> property value: <xref:System.Security.Permissions.HostProtectionResource.Synchronization> &#124; <xref:System.Security.Permissions.HostProtectionResource.SharedState>. The <xref:System.Security.Permissions.HostProtectionAttribute> does not affect desktop applications (which are typically started by double-clicking an icon, typing a command, or entering a URL in a browser). For more information, see the <xref:System.Security.Permissions.HostProtectionAttribute> class or [SQL Server Programming and Host Protection Attributes](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md).  
   
    
   
@@ -111,9 +138,15 @@
       <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, counterName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter(System::String ^ categoryName, System::String ^ counterName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -175,9 +208,15 @@
       <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, bool readOnly);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, bool readOnly) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, counterName As String, readOnly As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter(System::String ^ categoryName, System::String ^ counterName, bool readOnly);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -257,9 +296,15 @@
       <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, counterName As String, instanceName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter(System::String ^ categoryName, System::String ^ counterName, System::String ^ instanceName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -329,9 +374,15 @@
       <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName, bool readOnly);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName, bool readOnly) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, counterName As String, instanceName As String, readOnly As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter(System::String ^ categoryName, System::String ^ counterName, System::String ^ instanceName, bool readOnly);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -415,9 +466,15 @@
       <MemberSignature Language="C#" Value="public PerformanceCounter (string categoryName, string counterName, string instanceName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string categoryName, string counterName, string instanceName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (categoryName As String, counterName As String, instanceName As String, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; PerformanceCounter(System::String ^ categoryName, System::String ^ counterName, System::String ^ instanceName, System::String ^ machineName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -498,9 +555,18 @@
       <MemberSignature Language="C#" Value="public void BeginInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void BeginInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.BeginInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void BeginInit();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ISupportInitialize.BeginInit</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -523,9 +589,15 @@
       <MemberSignature Language="C#" Value="public string CategoryName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CategoryName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CategoryName" />
+      <MemberSignature Language="VB.NET" Value="Public Property CategoryName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CategoryName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -573,15 +645,22 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">The <see cref="P:System.Diagnostics.PerformanceCounter.CategoryName" /> is <see langword="null" />.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Me), which does not support performance counters.</exception>
+        <altmember cref="P:System.Diagnostics.Process.ProcessName" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -604,9 +683,15 @@
       <MemberSignature Language="C#" Value="public static void CloseSharedResources ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CloseSharedResources() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.CloseSharedResources" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub CloseSharedResources ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void CloseSharedResources();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -623,9 +708,15 @@
       <MemberSignature Language="C#" Value="public string CounterHelp { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CounterHelp" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterHelp" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CounterHelp As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CounterHelp { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -657,7 +748,7 @@
  When you create a new counter, use the <xref:System.Diagnostics.PerformanceCounter.CounterHelp%2A> text to describe what the counter monitors do so the user can determine whether to add the counter to the System Monitor's display.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
 > [!NOTE]
 >  To read performance counters in Windows Vista, Windows XP Professional x64 Edition, or Windows Server 2003, you must either be a member of the Performance Monitor Users group or have administrative privileges.  
@@ -682,9 +773,15 @@
       <MemberSignature Language="C#" Value="public string CounterName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string CounterName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterName" />
+      <MemberSignature Language="VB.NET" Value="Public Property CounterName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ CounterName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -732,9 +829,15 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterType CounterType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterType CounterType" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.CounterType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CounterType As PerformanceCounterType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::PerformanceCounterType CounterType { System::Diagnostics::PerformanceCounterType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -765,10 +868,10 @@
 |Track a higher-capacity number of items or operations per second.|`RateOfCountsPerSecond64`|Tracking orders received per second on a site with very high volume.|  
 |Calculate the average time to perform a process or to process an item|`AverageTimer32`|Calculate the average time an order takes to be processed.|  
   
- When you create a counter whose type requires the use of a corresponding base counter, you must declare the counter and the base in the <xref:System.Diagnostics.CounterCreationDataCollection> you pass into the <xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=fullName> method.  
+ When you create a counter whose type requires the use of a corresponding base counter, you must declare the counter and the base in the <xref:System.Diagnostics.CounterCreationDataCollection> you pass into the <xref:System.Diagnostics.PerformanceCounterCategory.Create%2A?displayProperty=nameWithType> method.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
 > [!NOTE]
 >  To read performance counters in Windows Vista, Windows XP Professional x64 Edition, or Windows Server 2003, you must either be a member of the Performance Monitor Users group or have administrative privileges.  
@@ -787,15 +890,22 @@
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Me), which does not support performance counters.</exception>
         <exception cref="T:System.UnauthorizedAccessException">Code that is executing without administrative privileges attempted to read a performance counter.</exception>
         <permission cref="T:System.Diagnostics.PerformanceCounterPermission">for reading the performance counter category. Associated enumeration: <see cref="F:System.Diagnostics.PerformanceCounterPermissionAccess.Read" />.</permission>
+        <altmember cref="T:System.Diagnostics.PerformanceCounterType" />
       </Docs>
     </Member>
     <Member MemberName="Decrement">
       <MemberSignature Language="C#" Value="public long Decrement ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 Decrement() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Decrement" />
+      <MemberSignature Language="VB.NET" Value="Public Function Decrement () As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; long Decrement();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -815,7 +925,7 @@
 >  The <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, and <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods use interlocks to update the counter value. This helps keep the counter value accurate in multithreaded or multiprocess scenarios, but also results in a performance penalty. If you do not need the accuracy that interlocked operations provide, you can update the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property directly for up to a 5 times performance improvement.  However, in multithreaded scenarios, some updates to the counter value might be ignored, resulting in inaccurate data.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
  ]]></format>
         </remarks>
@@ -838,9 +948,15 @@
       <MemberSignature Language="C#" Value="public static int DefaultFileMappingSize;" />
       <MemberSignature Language="ILAsm" Value=".field public static int32 DefaultFileMappingSize" />
       <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounter.DefaultFileMappingSize" />
+      <MemberSignature Language="VB.NET" Value="Public Shared DefaultFileMappingSize As Integer " />
+      <MemberSignature Language="C++ CLI" Value="public: static int DefaultFileMappingSize;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -860,6 +976,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -881,9 +999,18 @@
       <MemberSignature Language="C#" Value="public void EndInit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndInit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.EndInit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndInit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void EndInit();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.ComponentModel.ISupportInitialize.EndInit</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -907,9 +1034,15 @@
       <MemberSignature Language="C#" Value="public long Increment ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 Increment() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.Increment" />
+      <MemberSignature Language="VB.NET" Value="Public Function Increment () As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; long Increment();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -929,7 +1062,7 @@
 >  The <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, and <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods use interlocks to update the counter value. This helps keep the counter value accurate in multithreaded or multiprocess scenarios, but also results in a performance penalty. If you do not need the accuracy that interlocked operations provide, you can update the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property directly for up to a 5 times performance improvement.  However, in multithreaded scenarios, some updates to the counter value might be ignored, resulting in inaccurate data.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
  ]]></format>
         </remarks>
@@ -952,9 +1085,15 @@
       <MemberSignature Language="C#" Value="public long IncrementBy (long value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 IncrementBy(int64 value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.IncrementBy(System.Int64)" />
+      <MemberSignature Language="VB.NET" Value="Public Function IncrementBy (value As Long) As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; long IncrementBy(long value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -982,7 +1121,7 @@
 >  The <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, and <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods use interlocks to update the counter value. This helps keep the counter value accurate in multithreaded or multiprocess scenarios, but also results in a performance penalty. If you do not need the accuracy that interlocked operations provide, you can update the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property directly for up to a 5 times performance improvement.  However, in multithreaded scenarios, some updates to the counter value might be ignored, resulting in inaccurate data.  
   
 > [!NOTE]
->  If the value forthe <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value forthe <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
    
   
@@ -1014,9 +1153,15 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterInstanceLifetime InstanceLifetime { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterInstanceLifetime InstanceLifetime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.InstanceLifetime" />
+      <MemberSignature Language="VB.NET" Value="Public Property InstanceLifetime As PerformanceCounterInstanceLifetime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::PerformanceCounterInstanceLifetime InstanceLifetime { System::Diagnostics::PerformanceCounterInstanceLifetime get(); void set(System::Diagnostics::PerformanceCounterInstanceLifetime value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1037,10 +1182,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the performance counter category is created with the .NET Framework version 1.0 or 1.1, it uses global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+ If the performance counter category is created with the .NET Framework version 1.0 or 1.1, it uses global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
 > [!NOTE]
->  If the value of the <xref:System.Diagnostics.PerformanceCounter.CounterType%2A> property is <xref:System.Diagnostics.PerformanceCounterCategoryType>, the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> value for the performance counter must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>.  
+>  If the value of the <xref:System.Diagnostics.PerformanceCounter.CounterType%2A> property is <xref:System.Diagnostics.PerformanceCounterCategoryType.SingleInstance>, the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> value for the performance counter must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>.  
   
  ]]></format>
         </remarks>
@@ -1053,9 +1198,15 @@
       <MemberSignature Language="C#" Value="public string InstanceName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string InstanceName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.InstanceName" />
+      <MemberSignature Language="VB.NET" Value="Public Property InstanceName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ InstanceName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1107,7 +1258,7 @@
 |\|_|  
 |/|_|  
   
- The <xref:System.AppDomain.FriendlyName%2A> property of the <xref:System.AppDomain> object obtained from the <xref:System.AppDomain.CurrentDomain%2A?displayProperty=fullName> property is a common source of instance names that can contain invalid characters.  
+ The <xref:System.AppDomain.FriendlyName%2A> property of the <xref:System.AppDomain> object obtained from the <xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType> property is a common source of instance names that can contain invalid characters.  
   
    
   
@@ -1126,9 +1277,15 @@
       <MemberSignature Language="C#" Value="public string MachineName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1169,9 +1326,15 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.CounterSample NextSample ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Diagnostics.CounterSample NextSample() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.NextSample" />
+      <MemberSignature Language="VB.NET" Value="Public Function NextSample () As CounterSample" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Diagnostics::CounterSample NextSample();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1188,7 +1351,7 @@
  This method is generally used for counters that contain uncalculated values.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
 > [!NOTE]
 >  To read performance counters in Windows Vista, Windows XP Professional x64 Edition, or Windows Server 2003, you must either be a member of the Performance Monitor Users group or have administrative privileges.  
@@ -1223,9 +1386,15 @@
       <MemberSignature Language="C#" Value="public float NextValue ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32 NextValue() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.NextValue" />
+      <MemberSignature Language="VB.NET" Value="Public Function NextValue () As Single" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; float NextValue();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -1249,7 +1418,7 @@
    
   
 ## Examples  
- The following code example creates an <xref:System.Diagnostics.PerformanceCounterType> counter and uses the <xref:System.Diagnostics.PerformanceCounter.NextValue%2A> method to display the counter's values over a time period.  
+ The following code example creates an <xref:System.Diagnostics.PerformanceCounterType.ElapsedTime> counter and uses the <xref:System.Diagnostics.PerformanceCounter.NextValue%2A> method to display the counter's values over a time period.  
   
  [!code-cpp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CPP/elapsedtime.cpp#2)]
  [!code-csharp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CS/elapsedtime.cs#2)]
@@ -1268,9 +1437,15 @@
       <MemberSignature Language="C#" Value="public long RawValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 RawValue" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.RawValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property RawValue As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long RawValue { long get(); void set(long value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1304,7 +1479,7 @@
 >  The <xref:System.Diagnostics.PerformanceCounter.Increment%2A>, <xref:System.Diagnostics.PerformanceCounter.IncrementBy%2A>, and <xref:System.Diagnostics.PerformanceCounter.Decrement%2A> methods use interlocks to update the counter value. This helps keep the counter value accurate in multithreaded or multiprocess scenarios, but also results in a performance penalty. If you do not need the accuracy that interlocked operations provide, you can update the <xref:System.Diagnostics.PerformanceCounter.RawValue%2A> property directly for up to a 5 times performance improvement.  However, in multithreaded scenarios, some updates to the counter value might be ignored, resulting in inaccurate data.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
 > [!NOTE]
 >  To read performance counters in Windows Vista, Windows XP Professional x64 Edition, or Windows Server 2003, you must either be a member of the Performance Monitor Users group or have administrative privileges.  
@@ -1343,9 +1518,15 @@
       <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.PerformanceCounter.ReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool ReadOnly { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1380,9 +1561,15 @@
       <MemberSignature Language="C#" Value="public void RemoveInstance ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveInstance() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.PerformanceCounter.RemoveInstance" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveInstance ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveInstance();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -1411,7 +1598,7 @@
  To create a performance category instance, specify an `instanceName` on the <xref:System.Diagnostics.PerformanceCounter.%23ctor%2A> constructor. If the category instance specified by `instanceName` already exists the new object will reference the existing category instance.  
   
 > [!NOTE]
->  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
+>  If the value for the <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> property is <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Process> and the performance counter category was created with .NET Framework version 1.0 or 1.1, an <xref:System.InvalidOperationException> is thrown. Performance counter categories created with earlier versions use global shared memory, and the value for <xref:System.Diagnostics.PerformanceCounter.InstanceLifetime%2A> must be <xref:System.Diagnostics.PerformanceCounterInstanceLifetime.Global>. If the category is not used by applications running on versions 1.0 or 1.1 of the .NET Framework, delete and recreate the category.  
   
  ]]></format>
         </remarks>

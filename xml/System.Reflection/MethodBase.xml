@@ -1,7 +1,9 @@
-<Type Name="MethodBase" FullName="System.Reflection.MethodBase">
+﻿<Type Name="MethodBase" FullName="System.Reflection.MethodBase">
   <TypeSignature Language="C#" Value="public abstract class MethodBase : System.Reflection.MemberInfo, System.Runtime.InteropServices._MethodBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit MethodBase extends System.Reflection.MemberInfo implements class System.Runtime.InteropServices._MethodBase" />
   <TypeSignature Language="DocId" Value="T:System.Reflection.MethodBase" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class MethodBase&#xA;Inherits MemberInfo&#xA;Implements _MethodBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MethodBase abstract : System::Reflection::MemberInfo, System::Runtime::InteropServices::_MethodBase" />
   <AssemblyInfo>
     <AssemblyName>System.Reflection</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,6 +18,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Reflection.MemberInfo</BaseTypeName>
@@ -57,6 +63,8 @@
       <MemberSignature Language="C#" Value="protected MethodBase ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; MethodBase();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -66,6 +74,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -78,7 +90,12 @@
       <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodAttributes Attributes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodAttributes Attributes" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.Attributes" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property Attributes As MethodAttributes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract property System::Reflection::MethodAttributes Attributes { System::Reflection::MethodAttributes get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.Attributes</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -93,6 +110,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodAttributes</ReturnType>
@@ -140,13 +161,19 @@
         <block subset="none" type="overrides">
           <para>Use the <see cref="P:System.Reflection.MethodBase.Attributes" /> property to determine whether a method is <see langword="public" />, <see langword="private" />, <see langword="final" />, <see langword="virtual" />, and so on.</para>
         </block>
+        <altmember cref="T:System.Reflection.MethodAttributes" />
       </Docs>
     </Member>
     <Member MemberName="CallingConvention">
       <MemberSignature Language="C#" Value="public virtual System.Reflection.CallingConventions CallingConvention { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.CallingConventions CallingConvention" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.CallingConvention" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CallingConvention As CallingConventions" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Reflection::CallingConventions CallingConvention { System::Reflection::CallingConventions get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.CallingConvention</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -161,6 +188,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.CallingConventions</ReturnType>
@@ -169,12 +200,15 @@
         <summary>Gets a value indicating the calling conventions for this method.</summary>
         <value>The <see cref="T:System.Reflection.CallingConventions" /> for this method.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Reflection.CallingConventions" />
       </Docs>
     </Member>
     <Member MemberName="ContainsGenericParameters">
       <MemberSignature Language="C#" Value="public virtual bool ContainsGenericParameters { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool ContainsGenericParameters" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.ContainsGenericParameters" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property ContainsGenericParameters As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool ContainsGenericParameters { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -190,6 +224,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -208,17 +246,25 @@
   
  Similarly, the <xref:System.Reflection.MethodBase.ContainsGenericParameters%2A> property parameter returns `true` for any constructor in an open type, even though constructors cannot have type parameters of their own.  
   
- For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=fullName> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=fullName> property.  
+ For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodBase.IsGenericMethod" />
+        <altmember cref="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
+        <altmember cref="P:System.Reflection.MethodInfo.ContainsGenericParameters" />
       </Docs>
     </Member>
     <Member MemberName="Equals">
       <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.Equals(System.Object)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -233,6 +279,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -252,6 +302,8 @@
       <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetCurrentMethod ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetCurrentMethod() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetCurrentMethod" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCurrentMethod () As MethodBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::MethodBase ^ GetCurrentMethod();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -261,6 +313,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodBase</ReturnType>
@@ -276,7 +332,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the currently executing method is defined on a generic type, the <xref:System.Reflection.MethodInfo> that is returned by <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> is obtained from the generic type definition (that is, <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=fullName> returns `true`). Therefore, it does not reflect the type arguments that were used when the method was called. For example, if a method `M()` is defined on a generic type `C<T>` (`C(Of T)` in Visual Basic), and <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> is called from `C<string>.M()`, then <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> returns `C<T>.M()` (`C(Of T).M()` in Visual Basic).  
+ If the currently executing method is defined on a generic type, the <xref:System.Reflection.MethodInfo> that is returned by <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> is obtained from the generic type definition (that is, <xref:System.Reflection.MethodInfo.ContainsGenericParameters%2A?displayProperty=nameWithType> returns `true`). Therefore, it does not reflect the type arguments that were used when the method was called. For example, if a method `M()` is defined on a generic type `C<T>` (`C(Of T)` in Visual Basic), and <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> is called from `C<string>.M()`, then <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> returns `C<T>.M()` (`C(Of T).M()` in Visual Basic).  
   
  If the currently executing method is a generic method, <xref:System.Reflection.MethodBase.GetCurrentMethod%2A> returns the generic method definition. If the generic method is defined on a generic type, the <xref:System.Reflection.MethodInfo> is obtained from the generic type definition.  
   
@@ -298,6 +354,8 @@
       <MemberSignature Language="C#" Value="public virtual Type[] GetGenericArguments ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetGenericArguments() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetGenericArguments" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetGenericArguments () As Type()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual cli::array &lt;Type ^&gt; ^ GetGenericArguments();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -313,6 +371,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -340,18 +402,28 @@
   
  Generic constructors are not supported in the .NET Framework version 2.0. This property throws <xref:System.NotSupportedException> if not overridden in a derived class, so an exception is thrown if the current instance is of type <xref:System.Reflection.ConstructorInfo>.  
   
- For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=fullName> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=fullName> property.  
+ For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">The current object is a <see cref="T:System.Reflection.ConstructorInfo" />. Generic constructors are not supported in the .NET Framework version 2.0. This exception is the default behavior if this method is not overridden in a derived class.</exception>
+        <altmember cref="P:System.Reflection.MethodBase.IsGenericMethod" />
+        <altmember cref="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
+        <altmember cref="M:System.Reflection.MethodInfo.GetGenericArguments" />
+        <altmember cref="P:System.Reflection.MethodInfo.IsGenericMethod" />
+        <altmember cref="P:System.Type.IsGenericType" />
       </Docs>
     </Member>
     <Member MemberName="GetHashCode">
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetHashCode</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -367,6 +439,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
       </ReturnValue>
@@ -381,6 +457,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodBody GetMethodBody ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodBody GetMethodBody() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodBody" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetMethodBody () As MethodBody" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Reflection::MethodBody ^ GetMethodBody();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -390,6 +468,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -412,12 +494,12 @@
    
   
 ## Examples  
- The following code example defines a test method named `MethodBodyExample` and displays its local variable information and exception-handling clauses. The <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=fullName> method is used to obtain a <xref:System.Reflection.MethodBody> object for the test method.  
+ The following code example defines a test method named `MethodBodyExample` and displays its local variable information and exception-handling clauses. The <xref:System.Reflection.MethodBase.GetMethodBody%2A?displayProperty=nameWithType> method is used to obtain a <xref:System.Reflection.MethodBody> object for the test method.  
   
  The <xref:System.Reflection.MethodBody.LocalVariables%2A> property is used to obtain a list of <xref:System.Reflection.LocalVariableInfo> objects and display their types and index order. The <xref:System.Reflection.MethodBody.ExceptionHandlingClauses%2A> property is used to obtain a list of exception-handling clauses.  
   
 > [!NOTE]
->  Not all computer languages can generate <xref:System.Reflection.ExceptionHandlingClauseOptions?displayProperty=fullName> clauses. The Visual Basic example shows a filter clause, using a Visual Basic `When` expression, which is omitted from the examples for other languages.  
+>  Not all computer languages can generate <xref:System.Reflection.ExceptionHandlingClauseOptions.Filter?displayProperty=nameWithType> clauses. The Visual Basic example shows a filter clause, using a Visual Basic `When` expression, which is omitted from the examples for other languages.  
   
  [!code-cpp[MethodBody#1](~/samples/snippets/cpp/VS_Snippets_CLR/MethodBody/cpp/source.cpp#1)]
  [!code-csharp[MethodBody#1](~/samples/snippets/csharp/VS_Snippets_CLR/MethodBody/CS/source.cs#1)]
@@ -429,10 +511,23 @@
         <permission cref="T:System.Security.Permissions.ReflectionPermission">for the access to metadata for members. Permission value: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetMethodFromHandle">
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets method information using the specified handle.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetMethodFromHandle">
       <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetMethodFromHandle (RuntimeMethodHandle handle);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetMethodFromHandle(valuetype System.RuntimeMethodHandle handle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodFromHandle(System.RuntimeMethodHandle)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetMethodFromHandle (handle As RuntimeMethodHandle) As MethodBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::MethodBase ^ GetMethodFromHandle(RuntimeMethodHandle handle);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -448,6 +543,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodBase</ReturnType>
@@ -476,6 +575,8 @@
       <MemberSignature Language="C#" Value="public static System.Reflection.MethodBase GetMethodFromHandle (RuntimeMethodHandle handle, RuntimeTypeHandle declaringType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.MethodBase GetMethodFromHandle(valuetype System.RuntimeMethodHandle handle, valuetype System.RuntimeTypeHandle declaringType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodFromHandle(System.RuntimeMethodHandle,System.RuntimeTypeHandle)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetMethodFromHandle (handle As RuntimeMethodHandle, declaringType As RuntimeTypeHandle) As MethodBase" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Reflection::MethodBase ^ GetMethodFromHandle(RuntimeMethodHandle handle, RuntimeTypeHandle declaringType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -491,6 +592,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -528,7 +633,12 @@
       <MemberSignature Language="C#" Value="public abstract System.Reflection.MethodImplAttributes GetMethodImplementationFlags ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Reflection.MethodImplAttributes GetMethodImplementationFlags() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetMethodImplementationFlags" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetMethodImplementationFlags () As MethodImplAttributes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Reflection::MethodImplAttributes GetMethodImplementationFlags();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetMethodImplementationFlags</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -541,6 +651,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
@@ -562,13 +676,19 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
+        <altmember cref="T:System.Reflection.MethodImplAttributes" />
       </Docs>
     </Member>
     <Member MemberName="GetParameters">
       <MemberSignature Language="C#" Value="public abstract System.Reflection.ParameterInfo[] GetParameters ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.ParameterInfo[] GetParameters() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.GetParameters" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetParameters () As ParameterInfo()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract cli::array &lt;System::Reflection::ParameterInfo ^&gt; ^ GetParameters();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetParameters</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -583,6 +703,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
@@ -606,13 +730,30 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
+        <altmember cref="T:System.Reflection.ParameterInfo" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Invoke">
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Invokes the method or constructor reflected by this <see langword="MethodInfo" /> instance.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Invoke">
       <MemberSignature Language="C#" Value="public object Invoke (object obj, object[] parameters);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(object obj, object[] parameters) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke (obj As Object, parameters As Object()) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ Invoke(System::Object ^ obj, cli::array &lt;System::Object ^&gt; ^ parameters);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.Invoke(System.Object,System.Object[])</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -627,6 +768,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -651,9 +796,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This is a convenience method that calls the <xref:System.Reflection.MethodBase.Invoke%28System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29> method overload, passing <xref:System.Reflection.BindingFlags> for `invokeAttr` and `null` for `binder` and `culture`.  
+ This is a convenience method that calls the <xref:System.Reflection.MethodBase.Invoke%28System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29> method overload, passing <xref:System.Reflection.BindingFlags.Default> for `invokeAttr` and `null` for `binder` and `culture`.  
   
- If the invoked method throws an exception, the <xref:System.Exception.GetBaseException%2A?displayProperty=fullName> method returns the exception.  
+ If the invoked method throws an exception, the <xref:System.Exception.GetBaseException%2A?displayProperty=nameWithType> method returns the exception.  
   
  To invoke a static method using its <xref:System.Reflection.MethodInfo> object, pass `null` for `obj`.  
   
@@ -661,7 +806,7 @@
 >  If this method overload is used to invoke an instance constructor, the object supplied for `obj` is reinitialized; that is, all instance initializers are executed. The return value is `null`. If a class constructor is invoked, the class is reinitialized; that is, all class initializers are executed. The return value is `null`.  
   
 > [!NOTE]
->  Starting with the [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)], this method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=fullName> flag and if the grant set of the non-public members is restricted to the caller’s grant set, or a subset thereof. (See [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).)  
+>  Starting with the [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)], this method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller’s grant set, or a subset thereof. (See [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).)  
 >   
 >  To use this functionality, your application should target the [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] or later.  
   
@@ -679,12 +824,12 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.Reflection.TargetException">
-          <block subset="none" type="note">  
-<para>  
+          <block subset="none" type="note">
+            <para>  
  In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch <see cref="T:System.Exception" /> instead.  
   
-</para>  
-</block>  
+</para>
+          </block>  
   
  The <paramref name="obj" /> parameter is <see langword="null" /> and the method is not static.  
   
@@ -695,7 +840,7 @@
  -or-  
   
  A static constructor is invoked, and <paramref name="obj" /> is neither <see langword="null" /> nor an instance of the class that declared the constructor.</exception>
-        <exception cref="T:System.ArgumentException">The elements of the <paramref name="parameters" />array do not match the signature of the method or constructor reflected by this instance.</exception>
+        <exception cref="T:System.ArgumentException">The elements of the <paramref name="parameters" /> array do not match the signature of the method or constructor reflected by this instance.</exception>
         <exception cref="T:System.Reflection.TargetInvocationException">The invoked method or constructor throws an exception.  
   
  -or-  
@@ -703,24 +848,31 @@
  The current instance is a <see cref="T:System.Reflection.Emit.DynamicMethod" /> that contains unverifiable code. See the "Verification" section in Remarks for <see cref="T:System.Reflection.Emit.DynamicMethod" />.</exception>
         <exception cref="T:System.Reflection.TargetParameterCountException">The <paramref name="parameters" /> array does not have the correct number of arguments.</exception>
         <exception cref="T:System.MethodAccessException">
-          <block subset="none" type="note">  
-<para>  
+          <block subset="none" type="note">
+            <para>  
  In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.MemberAccessException" />, instead.  
   
-</para>  
-</block>  
+</para>
+          </block>  
   
  The caller does not have permission to execute the method or constructor that is represented by the current instance.</exception>
         <exception cref="T:System.InvalidOperationException">The type that declares the method is an open generic type. That is, the <see cref="P:System.Type.ContainsGenericParameters" /> property returns <see langword="true" /> for the declaring type.</exception>
         <exception cref="T:System.NotSupportedException">The current instance is a <see cref="T:System.Reflection.Emit.MethodBuilder" />.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
+        <altmember cref="T:System.Reflection.BindingFlags" />
+        <altmember cref="T:System.Reflection.Missing" />
+        <altmember cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
       </Docs>
     </Member>
     <Member MemberName="Invoke">
       <MemberSignature Language="C#" Value="public abstract object Invoke (object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] parameters, System.Globalization.CultureInfo culture);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(object obj, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] parameters, class System.Globalization.CultureInfo culture) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Object ^ Invoke(System::Object ^ obj, System::Reflection::BindingFlags invokeAttr, System::Reflection::Binder ^ binder, cli::array &lt;System::Object ^&gt; ^ parameters, System::Globalization::CultureInfo ^ culture);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -729,6 +881,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -776,14 +932,14 @@
  If the invoked method throws an exception, `TargetInvocationException.GetException` returns the exception. This implementation throws a `NotSupportedException`.  
   
 > [!NOTE]
->  Starting with the [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)], this method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=fullName> flag and if the grant set of the non-public members is restricted to the caller’s grant set, or a subset thereof. (See [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).)  
+>  Starting with the [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)], this method can be used to access non-public members if the caller has been granted <xref:System.Security.Permissions.ReflectionPermission> with the <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> flag and if the grant set of the non-public members is restricted to the caller’s grant set, or a subset thereof. (See [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).)  
 >   
 >  To use this functionality, your application should target the [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] or later.  
   
    
   
 ## Examples  
- The following example demonstrates all members of the <xref:System.Reflection.Binder?displayProperty=fullName> class using an overload of <xref:System.Type.InvokeMember%2A?displayProperty=fullName>. The private method `CanConvertFrom` finds compatible types for a given type. For another example of invoking members in a custom binding scenario, see [Dynamically Loading and Using Types](~/docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+ The following example demonstrates all members of the <xref:System.Reflection.Binder?displayProperty=nameWithType> class using an overload of <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>. The private method `CanConvertFrom` finds compatible types for a given type. For another example of invoking members in a custom binding scenario, see [Dynamically Loading and Using Types](~/docs/framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
  [!code-cpp[Binder_1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Binder_1/CPP/binder.cpp#1)]
  [!code-csharp[Binder_1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Binder_1/CS/binder.cs#1)]
@@ -806,13 +962,19 @@
         <exception cref="T:System.MethodAccessException">The caller does not have permission to execute the method or constructor that is represented by the current instance.</exception>
         <exception cref="T:System.InvalidOperationException">The type that declares the method is an open generic type. That is, the <see cref="P:System.Type.ContainsGenericParameters" /> property returns <see langword="true" /> for the declaring type.</exception>
         <permission cref="T:System.Security.Permissions.ReflectionPermission">when invoked late-bound through mechanisms such as <see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />. Associated enumeration: <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />.</permission>
+        <altmember cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
       </Docs>
     </Member>
     <Member MemberName="IsAbstract">
       <MemberSignature Language="C#" Value="public bool IsAbstract { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAbstract" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsAbstract" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAbstract As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAbstract { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsAbstract</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -827,6 +989,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -854,13 +1020,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="IsAssembly">
       <MemberSignature Language="C#" Value="public bool IsAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsAssembly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAssembly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -875,6 +1048,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -889,7 +1066,7 @@
 ## Remarks  
  The actual visibility of a method is limited by the visibility of its type. The <xref:System.Reflection.MethodBase.IsAssembly%2A> property might be `true` for a method, but if it is a method of a private nested type then the method is not visible outside the containing type.  
   
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes?displayProperty=fullName> if the only visibility modifier is `internal` (`Friend` in Visual Basic). This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A> property to identify such methods.  
+ The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.Assembly?displayProperty=nameWithType> if the only visibility modifier is `internal` (`Friend` in Visual Basic). This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A> property to identify such methods.  
   
    
   
@@ -897,7 +1074,7 @@
  The following code example defines methods with varying levels of visibility, and displays the values of their <xref:System.Reflection.MethodBase.IsAssembly%2A>, <xref:System.Reflection.MethodBase.IsFamily%2A>, <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>, and <xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A> properties.  
   
 > [!NOTE]
->  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes?displayProperty=fullName> visibility; that access level appears only in the C++ example.  
+>  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> visibility; that access level appears only in the C++ example.  
   
  [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
  [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
@@ -905,13 +1082,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.MethodAttributes" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamily" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyOrAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyAndAssembly" />
       </Docs>
     </Member>
     <Member MemberName="IsConstructor">
       <MemberSignature Language="C#" Value="public bool IsConstructor { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsConstructor" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsConstructor" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsConstructor As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsConstructor { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsConstructor</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -926,6 +1112,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -945,17 +1135,23 @@
 ## Remarks  
   
 > [!NOTE]
->  The <xref:System.Reflection.MethodBase.IsConstructor%2A> property returns `false` for a <xref:System.Reflection.Emit.ConstructorBuilder> object in a dynamic type, unless the <xref:System.Reflection.MethodAttributes?displayProperty=fullName> flag was included in the `attributes` parameter when the constructor was defined. Omitting the <xref:System.Reflection.MethodAttributes> flag does not affect the correctness of the emitted constructor.  
+>  The <xref:System.Reflection.MethodBase.IsConstructor%2A> property returns `false` for a <xref:System.Reflection.Emit.ConstructorBuilder> object in a dynamic type, unless the <xref:System.Reflection.MethodAttributes.RTSpecialName?displayProperty=nameWithType> flag was included in the `attributes` parameter when the constructor was defined. Omitting the <xref:System.Reflection.MethodAttributes.RTSpecialName> flag does not affect the correctness of the emitted constructor.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
       </Docs>
     </Member>
     <Member MemberName="IsFamily">
       <MemberSignature Language="C#" Value="public bool IsFamily { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFamily" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamily" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFamily As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFamily { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamily</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -970,6 +1166,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -982,7 +1182,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes?displayProperty=fullName> if the only visibility modifier is `protected`. This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A> property to identify such methods.  
+ The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.Family?displayProperty=nameWithType> if the only visibility modifier is `protected`. This property is `false` for methods that are `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++); use the <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A> property to identify such methods.  
   
    
   
@@ -990,7 +1190,7 @@
  The following code example defines methods with varying levels of visibility, and displays the values of their <xref:System.Reflection.MethodBase.IsAssembly%2A>, <xref:System.Reflection.MethodBase.IsFamily%2A>, <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>, and <xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A> properties.  
   
 > [!NOTE]
->  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes?displayProperty=fullName> visibility; that access level appears only in the C++ example.  
+>  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> visibility; that access level appears only in the C++ example.  
   
  [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
  [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
@@ -998,13 +1198,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.MethodAttributes" />
+        <altmember cref="P:System.Reflection.MethodBase.IsAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyOrAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyAndAssembly" />
       </Docs>
     </Member>
     <Member MemberName="IsFamilyAndAssembly">
       <MemberSignature Language="C#" Value="public bool IsFamilyAndAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyAndAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamilyAndAssembly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFamilyAndAssembly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFamilyAndAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1019,6 +1228,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1031,7 +1244,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes?displayProperty=fullName> if the visibility modifier is `protected private` in C++. Methods with this visibility cannot be defined in Visual Basic or C#.  
+ The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> if the visibility modifier is `protected private` in C++. Methods with this visibility cannot be defined in Visual Basic or C#.  
   
    
   
@@ -1039,7 +1252,7 @@
  The following code example defines methods with varying levels of visibility, and displays the values of their <xref:System.Reflection.MethodBase.IsAssembly%2A>, <xref:System.Reflection.MethodBase.IsFamily%2A>, <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>, and <xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A> properties.  
   
 > [!NOTE]
->  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes?displayProperty=fullName> visibility; that access level appears only in the C++ example.  
+>  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> visibility; that access level appears only in the C++ example.  
   
  [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
  [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
@@ -1047,13 +1260,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.MethodAttributes" />
+        <altmember cref="P:System.Reflection.MethodBase.IsAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyOrAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamily" />
       </Docs>
     </Member>
     <Member MemberName="IsFamilyOrAssembly">
       <MemberSignature Language="C#" Value="public bool IsFamilyOrAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyOrAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFamilyOrAssembly" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFamilyOrAssembly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFamilyOrAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1068,6 +1290,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1080,11 +1306,11 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If a type member has <xref:System.Reflection.MethodAttributes?displayProperty=fullName>visibility, it can be called from any member in a derived class or any member in the same assembly, but not from any other type.  
+ If a type member has <xref:System.Reflection.MethodAttributes.FamORAssem?displayProperty=nameWithType> visibility, it can be called from any member in a derived class or any member in the same assembly, but not from any other type.  
   
  The actual visibility of a method is limited by the visibility of its type. The <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A> property might be `true` for a method, but if it is a method of a private nested type then the method is not visible outside the containing type.  
   
- The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes?displayProperty=fullName> if the visibility modifier is `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++).  
+ The visibility of a method or constructor is exactly described by <xref:System.Reflection.MethodAttributes.FamORAssem?displayProperty=nameWithType> if the visibility modifier is `protected internal` in C# (`Protected Friend` in Visual Basic, `protected public` in C++).  
   
    
   
@@ -1092,7 +1318,7 @@
  The following code example defines methods with varying levels of visibility, and displays the values of their <xref:System.Reflection.MethodBase.IsAssembly%2A>, <xref:System.Reflection.MethodBase.IsFamily%2A>, <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>, and <xref:System.Reflection.MethodBase.IsFamilyAndAssembly%2A> properties.  
   
 > [!NOTE]
->  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes?displayProperty=fullName> visibility; that access level appears only in the C++ example.  
+>  The Visual Basic and C# languages cannot define methods with <xref:System.Reflection.MethodAttributes.FamANDAssem?displayProperty=nameWithType> visibility; that access level appears only in the C++ example.  
   
  [!code-cpp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CPP/source.cpp#1)]
  [!code-csharp[Classic MethodBase.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic MethodBase.IsAssembly Example/CS/source.cs#1)]
@@ -1100,13 +1326,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Reflection.MethodAttributes" />
+        <altmember cref="P:System.Reflection.MethodBase.IsAssembly" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamily" />
+        <altmember cref="P:System.Reflection.MethodBase.IsFamilyAndAssembly" />
       </Docs>
     </Member>
     <Member MemberName="IsFinal">
       <MemberSignature Language="C#" Value="public bool IsFinal { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFinal" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsFinal" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFinal As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFinal { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFinal</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1121,6 +1356,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1152,12 +1391,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
       </Docs>
     </Member>
     <Member MemberName="IsGenericMethod">
       <MemberSignature Language="C#" Value="public virtual bool IsGenericMethod { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethod" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsGenericMethod" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsGenericMethod As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsGenericMethod { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -1173,6 +1415,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1190,16 +1436,22 @@
 > [!NOTE]
 >  Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.  
   
- For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=fullName> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=fullName> property.  
+ For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodBase.ContainsGenericParameters" />
+        <altmember cref="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
+        <altmember cref="P:System.Reflection.MethodInfo.IsGenericMethod" />
+        <altmember cref="P:System.Type.IsGenericType" />
       </Docs>
     </Member>
     <Member MemberName="IsGenericMethodDefinition">
       <MemberSignature Language="C#" Value="public virtual bool IsGenericMethodDefinition { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsGenericMethodDefinition" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsGenericMethodDefinition" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsGenericMethodDefinition As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsGenericMethodDefinition { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -1215,6 +1467,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1233,26 +1489,32 @@
   
 -   For each <xref:System.Type> object in the array returned by the <xref:System.Reflection.MethodBase.GetGenericArguments%2A> method:  
   
-    -   The <xref:System.Type.IsGenericParameter%2A?displayProperty=fullName> property is `true`.  
+    -   The <xref:System.Type.IsGenericParameter%2A?displayProperty=nameWithType> property is `true`.  
   
-    -   The <xref:System.Type.DeclaringMethod%2A?displayProperty=fullName> property returns the current instance.  
+    -   The <xref:System.Type.DeclaringMethod%2A?displayProperty=nameWithType> property returns the current instance.  
   
-    -   The <xref:System.Type.GenericParameterPosition%2A?displayProperty=fullName> property is the same as the position of the <xref:System.Type> object in the array.  
+    -   The <xref:System.Type.GenericParameterPosition%2A?displayProperty=nameWithType> property is the same as the position of the <xref:System.Type> object in the array.  
   
 > [!NOTE]
 >  Generics are not supported by default; this property returns `false` if not overridden in a derived class. Generic constructors are not supported in the .NET Framework version 2.0, so this property returns `false` if the current instance is of type <xref:System.Reflection.ConstructorInfo>.  
   
- For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=fullName> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=fullName> property.  
+ For a list of the invariant conditions for terms specific to generic methods, see the <xref:System.Reflection.MethodInfo.IsGenericMethod%2A?displayProperty=nameWithType> property. For a list of the invariant conditions for other terms used in generic reflection, see the <xref:System.Type.IsGenericType%2A?displayProperty=nameWithType> property.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodInfo.IsGenericMethodDefinition" />
       </Docs>
     </Member>
     <Member MemberName="IsHideBySig">
       <MemberSignature Language="C#" Value="public bool IsHideBySig { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsHideBySig" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsHideBySig" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsHideBySig As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsHideBySig { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsHideBySig</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1268,6 +1530,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
@@ -1282,7 +1548,7 @@
  When a member in a derived class is declared with the C# `new` modifier or the Visual Basic `Shadows` modifier, it can hide a member of the same name in the base class. C# hides base class members by signature. That is, if the base class member has multiple overloads, the only one that is hidden is the one that has the identical signature. By contrast, Visual Basic hides all the base class overloads. Thus, <xref:System.Reflection.MethodBase.IsHideBySig%2A> returns `false` on a member declared with the Visual Basic `Shadows` modifier, and `true` on a member declared with the C# `new` modifier.  
   
 > [!WARNING]
->  This property does not determine whether a method has the <xref:System.Reflection.MethodAttributes> attribute. A method that is declared with either the `new` or the `Shadows` modifier will have the <xref:System.Reflection.MethodAttributes> attribute, but only methods declared with `new` (that is, only C# methods) will have the <xref:System.Reflection.MethodBase.IsHideBySig%2A> property set to `true`.  To determine whether a method has the <xref:System.Reflection.MethodAttributes> attribute, use code similar to the following: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` in C# or `If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot` in Visual Basic. Note, however, that although all methods declared with `new` or `Shadows` have the <xref:System.Reflection.MethodAttributes> attribute, not all methods that have the <xref:System.Reflection.MethodAttributes> attribute are declared with `new` or `Shadows`.  
+>  This property does not determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute. A method that is declared with either the `new` or the `Shadows` modifier will have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, but only methods declared with `new` (that is, only C# methods) will have the <xref:System.Reflection.MethodBase.IsHideBySig%2A> property set to `true`.  To determine whether a method has the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, use code similar to the following: `if ((myMethodInfo.Attributes & MethodAttributes.VtableLayoutMask) == MethodAttributes.NewSlot)` in C# or `If (myMethodInfo.Attributes And MethodAttributes.VtableLayoutMask) = MethodAttributes.NewSlot` in Visual Basic. Note, however, that although all methods declared with `new` or `Shadows` have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute, not all methods that have the <xref:System.Reflection.MethodAttributes.NewSlot> attribute are declared with `new` or `Shadows`.  
   
    
   
@@ -1301,7 +1567,12 @@
       <MemberSignature Language="C#" Value="public bool IsPrivate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsPrivate" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsPrivate" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsPrivate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsPrivate { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsPrivate</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1316,6 +1587,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1332,13 +1607,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
       </Docs>
     </Member>
     <Member MemberName="IsPublic">
       <MemberSignature Language="C#" Value="public bool IsPublic { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsPublic" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsPublic" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsPublic As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsPublic { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsPublic</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1353,6 +1634,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1378,12 +1663,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Reflection.BindingFlags" />
       </Docs>
     </Member>
     <Member MemberName="IsSecurityCritical">
       <MemberSignature Language="C#" Value="public virtual bool IsSecurityCritical { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityCritical" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecurityCritical" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsSecurityCritical As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsSecurityCritical { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1393,6 +1682,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1416,18 +1709,22 @@
  Using these properties is much simpler than examining the security annotations of an assembly and its types and members, checking the current trust level, and attempting to duplicate the runtime's rules.  
   
 > [!IMPORTANT]
->  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=fullName> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=fullName> properties.  
+>  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType> properties.  
   
  For more information about reflection and transparency, see [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md). For information about transparency, see [Security Changes](~/docs/framework/security/security-changes.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
+        <altmember cref="P:System.Reflection.MethodBase.IsSecurityTransparent" />
       </Docs>
     </Member>
     <Member MemberName="IsSecuritySafeCritical">
       <MemberSignature Language="C#" Value="public virtual bool IsSecuritySafeCritical { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSecuritySafeCritical" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsSecuritySafeCritical As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsSecuritySafeCritical { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1437,6 +1734,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1460,18 +1761,22 @@
  Using these properties is much simpler than examining the security annotations of an assembly and its types and members, checking the current trust level, and attempting to duplicate the runtime's rules.  
   
 > [!IMPORTANT]
->  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=fullName> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=fullName> properties.  
+>  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType> properties.  
   
  For more information about reflection and transparency, see [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md). For information about transparency, see [Security Changes](~/docs/framework/security/security-changes.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodBase.IsSecurityCritical" />
+        <altmember cref="P:System.Reflection.MethodBase.IsSecurityTransparent" />
       </Docs>
     </Member>
     <Member MemberName="IsSecurityTransparent">
       <MemberSignature Language="C#" Value="public virtual bool IsSecurityTransparent { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityTransparent" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSecurityTransparent" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsSecurityTransparent As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsSecurityTransparent { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1481,6 +1786,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1498,19 +1807,26 @@
  The <xref:System.Reflection.MethodBase.IsSecurityCritical%2A>, <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A>, and <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A> properties report the transparency level of the method or constructor at its current trust level, as determined by the common language runtime (CLR). Using these properties is much simpler than examining the security annotations of an assembly and its types and members, checking the current trust level, and attempting to duplicate the runtime's rules.  
   
 > [!IMPORTANT]
->  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=fullName> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=fullName> properties.  
+>  For partial-trust assemblies, the value of this property depends on the current trust level of the assembly. If the assembly is loaded into a partially trusted application domain (for example, into a sandboxed application domain), the runtime ignores the security annotations of the assembly. The assembly and all its types are treated as transparent. The runtime pays attention to the security annotations of a partial-trust assembly only when that assembly is loaded into a fully trusted application domain (for example, into the default application domain of a desktop application). By contrast, a trusted assembly (that is, a strong-named assembly that is installed in the global assembly cache) is always loaded with full trust regardless of the trust level of the application domain, so its current trust level is always fully trusted. You can determine the current trust levels of assemblies and application domains by using the <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType> and <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType> properties.  
   
  For more information about reflection and transparency, see [Security Considerations for Reflection](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md). For information about transparency, see [Security Changes](~/docs/framework/security/security-changes.md).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Reflection.MethodBase.IsSecurityCritical" />
+        <altmember cref="P:System.Reflection.MethodBase.IsSecuritySafeCritical" />
       </Docs>
     </Member>
     <Member MemberName="IsSpecialName">
       <MemberSignature Language="C#" Value="public bool IsSpecialName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialName" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsSpecialName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSpecialName As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSpecialName { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsSpecialName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1525,6 +1841,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1537,7 +1857,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Reflection.MethodAttributes> bit is set to flag members that are treated in a special way by some compilers (such as property accessors and operator overloading methods).  
+ The <xref:System.Reflection.MethodAttributes.SpecialName> bit is set to flag members that are treated in a special way by some compilers (such as property accessors and operator overloading methods).  
   
    
   
@@ -1550,13 +1870,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Reflection.MethodAttributes" />
       </Docs>
     </Member>
     <Member MemberName="IsStatic">
       <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsStatic" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsStatic As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsStatic { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsStatic</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1571,6 +1898,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1587,13 +1918,20 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Boolean" />
+        <altmember cref="T:System.Reflection.MethodAttributes" />
       </Docs>
     </Member>
     <Member MemberName="IsVirtual">
       <MemberSignature Language="C#" Value="public bool IsVirtual { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsVirtual" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.IsVirtual" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsVirtual As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsVirtual { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsVirtual</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1608,6 +1946,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1636,7 +1978,7 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
   
  If `IsVirtual` is `false` or `IsFinal` is `true`, then the method cannot be overridden.  
   
- You can determine whether the current method overrides a method in a base class by calling the <xref:System.Reflection.MethodInfo.GetBaseDefinition%2A?displayProperty=fullName> method. The following example implements an `IsOverride` method that does this.  
+ You can determine whether the current method overrides a method in a base class by calling the <xref:System.Reflection.MethodInfo.GetBaseDefinition%2A?displayProperty=nameWithType> method. The following example implements an `IsOverride` method that does this.  
   
  [!code-csharp[system.reflection.methodinfo.getbasedefinition#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.methodinfo.getbasedefinition/cs/IsOverride1.cs#2)]
  [!code-vb[system.reflection.methodinfo.getbasedefinition#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflection.methodinfo.getbasedefinition/vb/IsOverride1.vb#2)]  
@@ -1658,7 +2000,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="public abstract RuntimeMethodHandle MethodHandle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeMethodHandle MethodHandle" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.MethodHandle" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride ReadOnly Property MethodHandle As RuntimeMethodHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract property RuntimeMethodHandle MethodHandle { RuntimeMethodHandle get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.MethodHandle</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1667,6 +2014,10 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.RuntimeMethodHandle</ReturnType>
@@ -1688,6 +2039,8 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodImplAttributes MethodImplementationFlags { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodImplAttributes MethodImplementationFlags" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.MethodImplementationFlags" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property MethodImplementationFlags As MethodImplAttributes" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Reflection::MethodImplAttributes MethodImplementationFlags { System::Reflection::MethodImplAttributes get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Reflection</AssemblyName>
@@ -1703,6 +2056,10 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
@@ -1721,9 +2078,11 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Reflection.MethodBase left, class System.Reflection.MethodBase right) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.op_Equality(System.Reflection.MethodBase,System.Reflection.MethodBase)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (left As MethodBase, right As MethodBase) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(System::Reflection::MethodBase ^ left, System::Reflection::MethodBase ^ right);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1733,6 +2092,10 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1751,9 +2114,11 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.MethodBase left, System.Reflection.MethodBase right);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Reflection.MethodBase left, class System.Reflection.MethodBase right) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.op_Inequality(System.Reflection.MethodBase,System.Reflection.MethodBase)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (left As MethodBase, right As MethodBase) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(System::Reflection::MethodBase ^ left, System::Reflection::MethodBase ^ right);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1763,6 +2128,10 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -1782,9 +2151,14 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
     </Member>
     <Member MemberName="System.Runtime.InteropServices._MethodBase.GetIDsOfNames">
       <MemberSignature Language="C#" Value="void _MethodBase.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetIDsOfNames(valuetype System.Guid riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetIDsOfNames (ByRef riid As Guid, rgszNames As IntPtr, cNames As UInteger, lcid As UInteger, rgDispId As IntPtr) Implements _MethodBase.GetIDsOfNames" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._MethodBase.GetIDsOfNames(Guid % riid, IntPtr rgszNames, System::UInt32 cNames, System::UInt32 lcid, IntPtr rgDispId) = System::Runtime::InteropServices::_MethodBase::GetIDsOfNames;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1822,7 +2196,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="Type _MethodBase.GetType ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.Runtime.InteropServices._MethodBase.GetType() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetType" />
+      <MemberSignature Language="VB.NET" Value="Function GetType () As Type Implements _MethodBase.GetType" />
+      <MemberSignature Language="C++ CLI" Value=" virtual Type ^ System.Runtime.InteropServices._MethodBase.GetType() = System::Runtime::InteropServices::_MethodBase::GetType;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetType</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1849,7 +2228,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="void _MethodBase.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfo (iTInfo As UInteger, lcid As UInteger, ppTInfo As IntPtr) Implements _MethodBase.GetTypeInfo" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._MethodBase.GetTypeInfo(System::UInt32 iTInfo, System::UInt32 lcid, IntPtr ppTInfo) = System::Runtime::InteropServices::_MethodBase::GetTypeInfo;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1881,9 +2265,14 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
     </Member>
     <Member MemberName="System.Runtime.InteropServices._MethodBase.GetTypeInfoCount">
       <MemberSignature Language="C#" Value="void _MethodBase.GetTypeInfoCount (out uint pcTInfo);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetTypeInfoCount(unsigned int32 pcTInfo) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#GetTypeInfoCount(System.UInt32@)" />
+      <MemberSignature Language="VB.NET" Value="Sub GetTypeInfoCount (ByRef pcTInfo As UInteger) Implements _MethodBase.GetTypeInfoCount" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._MethodBase.GetTypeInfoCount([Runtime::InteropServices::Out] System::UInt32 % pcTInfo) = System::Runtime::InteropServices::_MethodBase::GetTypeInfoCount;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.GetTypeInfoCount(System.UInt32@)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1911,9 +2300,14 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
     </Member>
     <Member MemberName="System.Runtime.InteropServices._MethodBase.Invoke">
       <MemberSignature Language="C#" Value="void _MethodBase.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
-      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.Invoke(unsigned int32 dispIdMember, valuetype System.Guid riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._MethodBase.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Sub Invoke (dispIdMember As UInteger, ByRef riid As Guid, lcid As UInteger, wFlags As Short, pDispParams As IntPtr, pVarResult As IntPtr, pExcepInfo As IntPtr, puArgErr As IntPtr) Implements _MethodBase.Invoke" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.InteropServices._MethodBase.Invoke(System::UInt32 dispIdMember, Guid % riid, System::UInt32 lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr) = System::Runtime::InteropServices::_MethodBase::Invoke;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.InteropServices._MethodBase.Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1957,7 +2351,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsAbstract { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsAbstract" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsAbstract" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsAbstract As Boolean Implements _MethodBase.IsAbstract" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsAbstract { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsAbstract</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1983,7 +2382,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsAssembly" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsAssembly As Boolean Implements _MethodBase.IsAssembly" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2009,7 +2413,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsConstructor { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsConstructor" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsConstructor" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsConstructor As Boolean Implements _MethodBase.IsConstructor" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsConstructor { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsConstructor</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2035,7 +2444,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamily { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamily" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamily" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFamily As Boolean Implements _MethodBase.IsFamily" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsFamily { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamily</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2061,7 +2475,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamilyAndAssembly" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFamilyAndAssembly As Boolean Implements _MethodBase.IsFamilyAndAssembly" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamilyAndAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2087,7 +2506,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFamilyOrAssembly" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFamilyOrAssembly As Boolean Implements _MethodBase.IsFamilyOrAssembly" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFamilyOrAssembly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2113,7 +2537,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsFinal { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsFinal" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsFinal" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsFinal As Boolean Implements _MethodBase.IsFinal" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsFinal { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsFinal</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2139,7 +2568,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsHideBySig { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsHideBySig" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsHideBySig" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsHideBySig As Boolean Implements _MethodBase.IsHideBySig" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsHideBySig { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsHideBySig</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2165,7 +2599,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsPrivate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsPrivate" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsPrivate" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsPrivate As Boolean Implements _MethodBase.IsPrivate" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsPrivate { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsPrivate</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2191,7 +2630,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsPublic { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsPublic" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsPublic" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsPublic As Boolean Implements _MethodBase.IsPublic" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsPublic { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsPublic</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2217,7 +2661,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsSpecialName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsSpecialName" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsSpecialName" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsSpecialName As Boolean Implements _MethodBase.IsSpecialName" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsSpecialName { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsSpecialName</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2243,7 +2692,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsStatic { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsStatic" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsStatic" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsStatic As Boolean Implements _MethodBase.IsStatic" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsStatic { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsStatic</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -2269,7 +2723,12 @@ If MethodInfo.IsVirtual AndAlso Not MethodInfo.IsFinal Then
       <MemberSignature Language="C#" Value="bool System.Runtime.InteropServices._MethodBase.IsVirtual { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool System.Runtime.InteropServices._MethodBase.IsVirtual" />
       <MemberSignature Language="DocId" Value="P:System.Reflection.MethodBase.System#Runtime#InteropServices#_MethodBase#IsVirtual" />
+      <MemberSignature Language="VB.NET" Value=" ReadOnly Property IsVirtual As Boolean Implements _MethodBase.IsVirtual" />
+      <MemberSignature Language="C++ CLI" Value="property bool System.Runtime.InteropServices._MethodBase.IsVirtual { bool get(); };" />
       <MemberType>Property</MemberType>
+      <Implements>
+        <InterfaceMember>P:System.Runtime.InteropServices._MethodBase.IsVirtual</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>

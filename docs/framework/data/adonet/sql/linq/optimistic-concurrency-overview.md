@@ -1,8 +1,8 @@
 ---
-title: "Optimistic Concurrency: Overview | Microsoft Docs"
+title: "Optimistic Concurrency: Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c2e38512-d0c8-4807-b30a-cb7e30338694
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Optimistic Concurrency: Overview
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] supports optimistic concurrency control. The following table describes terms that apply to optimistic concurrency in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation:  
@@ -35,7 +37,7 @@ manager: "jhubbard"
  Resolution of this conflict includes discovering which members of the object are in conflict, and then deciding what you want to do about it.  
   
 > [!NOTE]
->  Only members mapped as <xref:System.Data.Linq.Mapping.UpdateCheck> or <xref:System.Data.Linq.Mapping.UpdateCheck> participate in optimistic concurrency checks. No check is performed for members marked <xref:System.Data.Linq.Mapping.UpdateCheck>. For more information, see <xref:System.Data.Linq.Mapping.UpdateCheck>.  
+>  Only members mapped as <xref:System.Data.Linq.Mapping.UpdateCheck.Always> or <xref:System.Data.Linq.Mapping.UpdateCheck.WhenChanged> participate in optimistic concurrency checks. No check is performed for members marked <xref:System.Data.Linq.Mapping.UpdateCheck.Never>. For more information, see <xref:System.Data.Linq.Mapping.UpdateCheck>.  
   
 ## Example  
  For example, in the following scenario, User1 starts to prepare an update by querying the database for a row. User1 receives a row with values of Alfreds, Maria, and Sales.  
@@ -74,25 +76,25 @@ manager: "jhubbard"
 ## LINQ to SQL Types That Support Conflict Discovery and Resolution  
  Classes and features to support the resolution of conflicts in optimistic concurrency in [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] include the following:  
   
--   <xref:System.Data.Linq.ObjectChangeConflict?displayProperty=fullName>  
+-   <xref:System.Data.Linq.ObjectChangeConflict?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.MemberChangeConflict?displayProperty=fullName>  
+-   <xref:System.Data.Linq.MemberChangeConflict?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.ChangeConflictCollection?displayProperty=fullName>  
+-   <xref:System.Data.Linq.ChangeConflictCollection?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.ChangeConflictException?displayProperty=fullName>  
+-   <xref:System.Data.Linq.ChangeConflictException?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.ChangeConflicts%2A?displayProperty=fullName>  
+-   <xref:System.Data.Linq.DataContext.ChangeConflicts%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=fullName>  
+-   <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.DataContext.Refresh%2A?displayProperty=fullName>  
+-   <xref:System.Data.Linq.DataContext.Refresh%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A?displayProperty=fullName>  
+-   <xref:System.Data.Linq.Mapping.ColumnAttribute.UpdateCheck%2A?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.Mapping.UpdateCheck?displayProperty=fullName>  
+-   <xref:System.Data.Linq.Mapping.UpdateCheck?displayProperty=nameWithType>  
   
--   <xref:System.Data.Linq.RefreshMode?displayProperty=fullName>  
+-   <xref:System.Data.Linq.RefreshMode?displayProperty=nameWithType>  
   
 ## See Also  
  [How to: Manage Change Conflicts](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)

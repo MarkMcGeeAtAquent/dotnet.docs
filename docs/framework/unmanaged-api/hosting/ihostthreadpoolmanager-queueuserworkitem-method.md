@@ -1,31 +1,34 @@
 ---
-title: "IHostThreadPoolManager::QueueUserWorkItem Method | Microsoft Docs"
+title: "IHostThreadPoolManager::QueueUserWorkItem Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostThreadPoolManager.QueueUserWorkItem"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostThreadPoolManager::QueueUserWorkItem"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostThreadPoolManager::QueueUserWorkItem method [.NET Framework hosting]"
   - "QueueUserWorkItem method [.NET Framework hosting]"
 ms.assetid: 41602053-8670-4827-9d61-cbfcba509b9c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostThreadPoolManager::QueueUserWorkItem Method
 Queues a function for execution, and specifies an object containing data to be used by that function. The function executes when a thread becomes available.  
@@ -74,6 +77,6 @@ HRESULT QueueUserWorkItem (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>   
- <xref:System.Threading.ThreadPool>   
+ <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A>  
+ <xref:System.Threading.ThreadPool>  
  [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

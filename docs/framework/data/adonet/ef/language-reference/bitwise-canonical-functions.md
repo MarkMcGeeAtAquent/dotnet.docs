@@ -1,23 +1,21 @@
 ---
-title: "Bitwise Canonical Functions | Microsoft Docs"
+title: "Bitwise Canonical Functions"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 993868ca-16e3-47b6-9915-c29cd63b0a21
 caps.latest.revision: 2
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Bitwise Canonical Functions
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] includes bitwise canonical functions.  

@@ -1,5 +1,5 @@
 ---
-title: "Performing Formatting Operations | Microsoft Docs"
+title: "Performing Formatting Operations"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -20,6 +20,9 @@ caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Performing Formatting Operations
 The following topics provide step-by-step instructions for performing specific formatting operations.  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebug::SetUnmanagedHandler Method | Microsoft Docs"
+title: "ICorDebug::SetUnmanagedHandler Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebug.SetUnmanagedHandler"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebug::SetUnmanagerHandler"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetUnmanagedHandler method [.NET Framework debugging]"
   - "ICorDebug::SetUnmanagedHandler method [.NET Framework debugging]"
 ms.assetid: 6b546be4-f86d-4536-8cfc-1d08e5066eb6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 15
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebug::SetUnmanagedHandler Method
 Specifies the event handler object for unmanaged events.  

@@ -1,8 +1,8 @@
 ---
-title: "507 - HostedTransportConfigurationManagerConfigInitStart | Microsoft Docs"
+title: "507 - HostedTransportConfigurationManagerConfigInitStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cf8956cd-2f97-4536-af17-1f42618b4f11
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 507 - HostedTransportConfigurationManagerConfigInitStart
 ## Properties  

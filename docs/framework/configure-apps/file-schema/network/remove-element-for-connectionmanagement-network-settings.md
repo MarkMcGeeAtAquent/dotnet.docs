@@ -1,8 +1,8 @@
 ---
-title: "&lt;remove&gt; Element for connectionManagement (Network Settings) | Microsoft Docs"
+title: "&lt;remove&gt; Element for connectionManagement (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#remove"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "connectionManagement, remove element"
   - "<remove> element, connectionManagement"
@@ -27,6 +22,8 @@ caps.latest.revision: 12
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;remove&gt; Element for connectionManagement (Network Settings)
 Removes an IP address or DNS name from the connection management list.  
@@ -38,10 +35,9 @@ Removes an IP address or DNS name from the connection management list.
   
 ## Syntax  
   
-```  
-  
-      <remove   
-   name = "server name or IP address"   
+```xml  
+<remove   
+  address="server name or IP address"   
 />  
 ```  
   
@@ -72,21 +68,21 @@ Removes an IP address or DNS name from the connection management list.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example removes any connection management list entries for the server www.adventure-works.com and then configures an application to use four connections to the server www.contoso.com and two connections to all other servers.  
+ The following example removes any connection management list entries for the server www.adventure-works.com and then configures an application to use four connections to the server www.contoso.com and two connections to all other servers.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <connectionManagement>  
-      <remove address = "http://www.adventure-works.com"/>  
-      <add address = "http://www.contoso.com" maxconnection = "4" />  
-      <add address = "*" maxconnection = "2" />  
+      <remove address="http://www.adventure-works.com" />  
+      <add address="http://www.contoso.com" maxconnection="4" />  
+      <add address="*" maxconnection="2" />  
     </connectionManagement>  
   </system.net>  
 </configuration>  
 ```  
   
 ## See Also  
- <xref:System.Net.ServicePoint>   
- <xref:System.Net.ServicePointManager>   
+ <xref:System.Net.ServicePoint>  
+ <xref:System.Net.ServicePointManager>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

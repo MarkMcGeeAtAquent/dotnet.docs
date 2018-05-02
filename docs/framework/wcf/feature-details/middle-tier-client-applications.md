@@ -1,8 +1,8 @@
 ---
-title: "Middle-Tier Client Applications | Microsoft Docs"
+title: "Middle-Tier Client Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: f9714a64-d0ae-4a98-bca0-5d370fdbd631
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Middle-Tier Client Applications
 This topic discusses various issues specific to middle-tier client applications that use [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

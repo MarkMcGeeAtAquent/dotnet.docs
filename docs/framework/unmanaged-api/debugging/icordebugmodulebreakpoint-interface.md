@@ -1,30 +1,33 @@
 ---
-title: "ICorDebugModuleBreakpoint Interface1 | Microsoft Docs"
+title: "ICorDebugModuleBreakpoint Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModuleBreakpoint"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModuleBreakpoint"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugModuleBreakpoint interface [.NET Framework debugging]"
 ms.assetid: 34667162-f314-475f-ae1b-ce9cb0fcbb83
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModuleBreakpoint Interface1
 Provides access to specific modules. This interface is a subclass of the ICorDebugBreakpoint interface.  

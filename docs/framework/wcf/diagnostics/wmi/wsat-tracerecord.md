@@ -1,8 +1,8 @@
 ---
-title: "WSAT_TraceRecord | Microsoft Docs"
+title: "WSAT_TraceRecord"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 99bc7f66-1335-40d8-aa68-e754d569dc0d
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WSAT_TraceRecord
 WSAT_TraceRecord  

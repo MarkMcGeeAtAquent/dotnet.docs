@@ -1,8 +1,8 @@
 ---
-title: "Code Generation in LINQ to SQL | Microsoft Docs"
+title: "Code Generation in LINQ to SQL"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Code Generation in LINQ to SQL
 You can generate code to represent a database by using either the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] or the SQLMetal command-line tool. In either case, end-to-end code generation occurs in three stages:  
@@ -24,7 +26,7 @@ You can generate code to represent a database by using either the [!INCLUDE[vs_o
   
 3.  If no validation errors appear, the file is passed to the Code Generator.  
   
- For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code. See [LINQ to SQL Tools in Visual Studio](http://msdn.microsoft.com/library/45e477c0-5c6b-41f9-b2d0-2808fb4f6537).  
+ For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). Developers using [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)] can also use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to generate code. See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## DBML Extractor  
  The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.  
@@ -251,7 +253,7 @@ elementFormDefault="qualified" >
 ## Sample DBML File  
  The following code is an excerpt from the DBML file created from the Northwind sample database. You can generate the whole file by using SQLMetal with the **/xml** option. For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-16"?>  
 <Database Name="northwnd" Class="Northwnd" xmlns="http://schemas.microsoft.com/dsltools/DLinqML">  
   
@@ -276,8 +278,8 @@ elementFormDefault="qualified" >
 ```  
   
 ## See Also  
- [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)   
- [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)   
- [How to: Generate the Object Model as an External File](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)   
- [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)   
+ [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)  
+ [External Mapping](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)  
+ [How to: Generate the Object Model as an External File](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)  
+ [Downloading Sample Databases](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)  
  [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)

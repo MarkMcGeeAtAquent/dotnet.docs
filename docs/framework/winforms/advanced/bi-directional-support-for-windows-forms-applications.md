@@ -1,27 +1,21 @@
 ---
-title: "Bi-Directional Support for Windows Forms Applications | Microsoft Docs"
-ms.custom: ""
-ms.date: "03/30/2017"
+title: "Bi-Directional Support for Windows Forms Applications"
+ms.date: "09/30/2017"
 ms.prod: ".net-framework"
-ms.reviewer: ""
-ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
-ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "globalization [Windows Forms], bi-directional support in Windows"
   - "Windows Forms, international"
   - "localization [Windows Forms], bi-directional support in Windows"
-  - "bi-directional language support, Windows applications"
+  - "bi-directional language support [Windows Forms], Windows applications"
   - "Windows Forms, bi-directional support"
-ms.assetid: 7b622fa4-f390-4e4d-b624-83a1917cccf2
-caps.latest.revision: 20
-author: dotnet-bot
-ms.author: dotnetcontent
+author: rpetrusha
+ms.author: ronpet
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Bi-Directional Support for Windows Forms Applications
 You can use [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] to create Windows-based applications that support bi-directional (right-to-left) languages such as Arabic and Hebrew. This includes standard forms, dialog boxes, MDI forms, and all the controls you can work with in these forms—that is, all the objects in the <xref:System.Windows.Forms.Control> namespace.  
@@ -61,7 +55,7 @@ You can use [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] to create Wind
 |<xref:System.Windows.Forms.MonthCalendar>|Not affected; depends on the language of the operating system|Mirrors the control|Yes|  
 |<xref:System.Windows.Forms.NotifyIcon>|Not supported|Not supported|No|  
 |<xref:System.Windows.Forms.NumericUpDown>|Up and down buttons are left-aligned|No effect|No|  
-|<xref:System.Windows.Forms.OpenFileDialog>|Not affected; depends on the language of the operating system|No effect|No|  
+|<xref:System.Windows.Forms.OpenFileDialog>|On right-to-left operating systems, setting the containing form's <xref:System.Windows.Forms.Control.RightToLeft> property to <xref:System.Windows.Forms.RightToLeft.Yes?displayProperty=nameWithType> localizes the dialog |No effect|No|  
 |<xref:System.Windows.Forms.PageSetupDialog>|Not affected; depends on the language of the operating system|No effect|No|  
 |<xref:System.Windows.Forms.Panel>|Child controls may inherit this property|Use <xref:System.Windows.Forms.TableLayoutPanel> within the control for right to left support|Yes|  
 |<xref:System.Windows.Forms.PictureBox>|Not supported|No effect|No|  
@@ -89,7 +83,7 @@ You can use [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] to create Wind
  Windows Forms support Unicode, so you can include any character set when you create your bi-directional applications. However, not all Windows Forms controls support Unicode on all platforms. For more information, see [Encoding and Windows Forms Globalization](../../../../docs/framework/winforms/advanced/encoding-and-windows-forms-globalization.md).  
   
 ## GDI+  
- You can use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] to draw text with right-to-left reading order. The <xref:System.Drawing.Graphics.DrawString%2A> method, which is used to draw text, supports a `StringFormat` parameter that you can set to the <xref:System.Drawing.StringFormatFlags> member of the <xref:System.Drawing.StringFormatFlags> enumeration in order to reverse the point of origin for the text.  
+ You can use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] to draw text with right-to-left reading order. The <xref:System.Drawing.Graphics.DrawString%2A> method, which is used to draw text, supports a `StringFormat` parameter that you can set to the <xref:System.Drawing.StringFormatFlags.DirectionRightToLeft> member of the <xref:System.Drawing.StringFormatFlags> enumeration in order to reverse the point of origin for the text.  
   
 ## Common Dialog Boxes  
  System tools such as the File Open dialog box are under the control of Windows. They inherit language elements from the operating system. If you are using a version of Windows with the correct language settings, these dialog boxes will work correctly with bi-directional languages.  
@@ -97,9 +91,9 @@ You can use [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] to create Wind
  Similarly, message boxes go through the operating system and support bi-directional text. The captions on message box buttons are based on the current language setting. By default, message boxes do not use right-to-left reading order, but you can specify a parameter to change the reading order when the message boxes are displayed.  
   
 ## RightToLeft, Scrollbars, and ScrollableControl  
- There is currently a limitation in Windows Forms that prevents all classes derived from <xref:System.Windows.Forms.ScrollableControl> from acting properly when both <xref:System.Windows.Forms.Control.RightToLeft%2A> is enabled and <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> is set to <xref:System.Windows.Forms.RightToLeft>. For example, let's say that you place a control such as <xref:System.Windows.Forms.Panel>—or a container class derived from <xref:System.Windows.Forms.Panel> (such as <xref:System.Windows.Forms.FlowLayoutPanel> or <xref:System.Windows.Forms.TableLayoutPanel>)—on your form. If you set <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> on the container to <xref:System.Windows.Forms.RightToLeft> and then set the <xref:System.Windows.Forms.Control.Anchor%2A> property on one or more of the controls inside of the container to <xref:System.Windows.Forms.AnchorStyles>, then no scrollbar ever appears. The class derived from <xref:System.Windows.Forms.ScrollableControl> acts as if <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> were set to <xref:System.Windows.Forms.RightToLeft>.  
+ There is currently a limitation in Windows Forms that prevents all classes derived from <xref:System.Windows.Forms.ScrollableControl> from acting properly when both <xref:System.Windows.Forms.Control.RightToLeft%2A> is enabled and <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> is set to <xref:System.Windows.Forms.RightToLeft.Yes>. For example, let's say that you place a control such as <xref:System.Windows.Forms.Panel>—or a container class derived from <xref:System.Windows.Forms.Panel> (such as <xref:System.Windows.Forms.FlowLayoutPanel> or <xref:System.Windows.Forms.TableLayoutPanel>)—on your form. If you set <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> on the container to <xref:System.Windows.Forms.RightToLeft.Yes> and then set the <xref:System.Windows.Forms.Control.Anchor%2A> property on one or more of the controls inside of the container to <xref:System.Windows.Forms.AnchorStyles.Right>, then no scrollbar ever appears. The class derived from <xref:System.Windows.Forms.ScrollableControl> acts as if <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> were set to <xref:System.Windows.Forms.RightToLeft.No>.  
   
- Currently, the only workaround is to nest the <xref:System.Windows.Forms.ScrollableControl> inside another <xref:System.Windows.Forms.ScrollableControl>. For instance, if you need <xref:System.Windows.Forms.TableLayoutPanel> to work in this situation, you can place it inside of a <xref:System.Windows.Forms.Panel> control and set <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> on the <xref:System.Windows.Forms.Panel> to <xref:System.Windows.Forms.RightToLeft>.  
+ Currently, the only workaround is to nest the <xref:System.Windows.Forms.ScrollableControl> inside another <xref:System.Windows.Forms.ScrollableControl>. For instance, if you need <xref:System.Windows.Forms.TableLayoutPanel> to work in this situation, you can place it inside of a <xref:System.Windows.Forms.Panel> control and set <xref:System.Windows.Forms.ScrollableControl.AutoScroll%2A> on the <xref:System.Windows.Forms.Panel> to <xref:System.Windows.Forms.RightToLeft.Yes>.  
   
 ## Mirroring  
  *Mirroring* refers to reversing the layout of UI elements so that they flow from right to left. In a mirrored Windows Form, for example, the Minimize, Maximize, and Close buttons appear left-most on the title bar, not right-most.  
@@ -125,5 +119,5 @@ You can use [!INCLUDE[vsprvs](../../../../includes/vsprvs-md.md)] to create Wind
  Some controls are sealed. Therefore, you cannot derive a new control from them. These include the <xref:System.Windows.Forms.ImageList> and <xref:System.Windows.Forms.ProgressBar> controls.  
   
 ## See Also  
- [Bidirectional Support for ASP.NET Web Applications](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)   
+ [Bidirectional Support for ASP.NET Web Applications](http://msdn.microsoft.com/library/5576f9b1-9b86-41ef-8354-092d366bcd03)  
  [Globalizing Windows Forms](../../../../docs/framework/winforms/advanced/globalizing-windows-forms.md)

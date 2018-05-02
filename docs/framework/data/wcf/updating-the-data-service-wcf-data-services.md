@@ -1,5 +1,5 @@
 ---
-title: "Updating the Data Service (WCF Data Services) | Microsoft Docs"
+title: "Updating the Data Service (WCF Data Services)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework-oob"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF Data Services, changing data"
   - "WCF Data Services, client library"
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Updating the Data Service (WCF Data Services)
 When you use the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client library to consume an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed, the library translates the entries in the feed into instances of client data service classes. These data service classes are tracked by using the <xref:System.Data.Services.Client.DataServiceContext> to which the <xref:System.Data.Services.Client.DataServiceQuery%601> belongs. The client tracks changes to entities that you report by using methods on <xref:System.Data.Services.Client.DataServiceContext>. These methods enable the client to track added and deleted entities and also changes that you make to property values or to relationships between entity instances. Those tracked changes are sent back to the data service as REST-based operations when you call the <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> method.  
@@ -50,14 +55,14 @@ When you use the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] cli
  For more information, see [How to: Add, Modify, and Delete Entities](../../../../docs/framework/data/wcf/how-to-add-modify-and-delete-entities-wcf-data-services.md).  
   
 ## Attaching Entities  
- The client library enables you to save updates that you made to an entity without first executing a query to load the entity into the <xref:System.Data.Services.Client.DataServiceContext>. Use the <xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A> method to attach an existing object to a specific entity set in the <xref:System.Data.Services.Client.DataServiceContext>. You can then modify the object and save the changes to the data service. In the following example, a customer object that has been changed is attached to the context and then <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> is called to mark the attached object as <xref:System.Data.Services.Client.EntityStates> before <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> is called:  
+ The client library enables you to save updates that you made to an entity without first executing a query to load the entity into the <xref:System.Data.Services.Client.DataServiceContext>. Use the <xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A> method to attach an existing object to a specific entity set in the <xref:System.Data.Services.Client.DataServiceContext>. You can then modify the object and save the changes to the data service. In the following example, a customer object that has been changed is attached to the context and then <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> is called to mark the attached object as <xref:System.Data.Services.Client.EntityStates.Modified> before <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> is called:  
   
  [!code-csharp[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind client/cs/source.cs#attachobjectspecific)]
  [!code-vb[Astoria Northwind Client#AttachObjectSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/source.vb#attachobjectspecific)]  
   
  The following considerations apply when attaching objects:  
   
--   An object is attached in the <xref:System.Data.Services.Client.EntityStates> state.  
+-   An object is attached in the <xref:System.Data.Services.Client.EntityStates.Unchanged> state.  
   
 -   When an object is attached, objects that are related to the attached object are not also attached.  
   
@@ -97,9 +102,9 @@ When you use the [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] cli
  Changes are tracked in the <xref:System.Data.Services.Client.DataServiceContext> instance but not sent to the server immediately. After you are finished with the required changes for a specified activity, call <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> to submit all the changes to the data service. For more information, see [Managing the Data Service Context](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md). You can also save changes asynchronously by using the <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> and <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A> methods. For more information, see [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).  
   
 ## See Also  
- [WCF Data Services Client Library](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)   
- [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)   
- [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)   
- [Batching Operations](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)   
- [Object Materialization](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)   
+ [WCF Data Services Client Library](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)  
+ [Querying the Data Service](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)  
+ [Asynchronous Operations](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)  
+ [Batching Operations](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)  
+ [Object Materialization](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)  
  [Managing the Data Service Context](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)

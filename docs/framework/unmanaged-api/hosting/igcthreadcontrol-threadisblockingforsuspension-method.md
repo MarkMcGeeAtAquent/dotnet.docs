@@ -1,5 +1,5 @@
 ---
-title: "IGCThreadControl::ThreadIsBlockingForSuspension Method | Microsoft Docs"
+title: "IGCThreadControl::ThreadIsBlockingForSuspension Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IGCThreadControl.ThreadIsBlockingForSuspension"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ThreadIsBlockingForSuspension"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IGCThreadControl::ThreadIsBlockingForSuspension method [.NET Framework hosting]"
   - "ThreadIsBlockingForSuspension method [.NET Framework hosting]"
 ms.assetid: ed5b5b58-7db7-46b5-9e2c-278db7159cee
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IGCThreadControl::ThreadIsBlockingForSuspension Method
 Notifies the host that the thread that is making the call is about to block, perhaps for a garbage collection or other suspension.  

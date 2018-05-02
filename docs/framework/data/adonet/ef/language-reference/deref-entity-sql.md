@@ -1,23 +1,21 @@
 ---
-title: "DEREF (Entity SQL) | Microsoft Docs"
+title: "DEREF (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # DEREF (Entity SQL)
 Dereferences a reference value and produces the result of that dereference.  
@@ -25,7 +23,6 @@ Dereferences a reference value and produces the result of that dereference.
 ## Syntax  
   
 ```  
-  
 SELECT DEREF ( o.expression ) from Table as o;  
 ```  
   
@@ -49,8 +46,8 @@ SELECT DEREF ( o.expression ) from Table as o;
  [!code-csharp[DP EntityServices Concepts 2#DEREF](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#deref)]  
   
 ## See Also  
- [Entity SQL Reference](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)   
- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)   
- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)   
- [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)   
+ [Entity SQL Reference](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)  
+ [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)  
+ [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)  
+ [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)  
  [Nullable Structured Types](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)

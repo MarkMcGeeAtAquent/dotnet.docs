@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedAsyncMethodPropertiesWriter::DefineAsyncStepInfo Method | Microsoft Docs"
+title: "ISymUnmanagedAsyncMethodPropertiesWriter::DefineAsyncStepInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: f738a6ed-7cd9-4106-a5cd-355481e5771c
 caps.latest.revision: 5
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedAsyncMethodPropertiesWriter::DefineAsyncStepInfo Method
 Define a group of async await operations in the current method.  

@@ -1,14 +1,16 @@
 ---
-title: Getting started with .NET Core on macOS | Microsoft Docs
+title: Getting started with .NET Core on macOS
 description: This document provides the steps and workflow to create a .NET Core Solution using Visual Studio Code.
 keywords: .NET, .NET Core, Mac, macOS, Visual Studio Code
 author: bleroy
 ms.author: mairaw
 ms.date: 03/23/2017
-ms.topic: article
+ms.topic: get-started-article
 ms.prod: .net-core
 ms.devlang: dotnet
 ms.assetid: 8ad82148-dac8-4b31-9128-b0e9610f4d9b
+ms.workload: 
+  - dotnetcore
 ---
 
 # Getting started with .NET Core on macOS
@@ -22,15 +24,15 @@ This document provides the steps and workflow to create a .NET Core solution for
 
 Install the [.NET Core SDK](https://www.microsoft.com/net/core). The .NET Core SDK includes the latest release of the .NET Core framework and runtime.
 
-Install [Visual Studio Code](http://code.visualstudio.com). During the course of this article, you also install VS Code extensions that improve the .NET Core development experience.
+Install [Visual Studio Code](http://code.visualstudio.com). During the course of this article, you also install Visual Studio Code extensions that improve the .NET Core development experience.
 
-Install the VS Code C# extension by opening VS Code and pressing <kbd>F1</kbd> to open the VS Code palette. Type **ext install** to see the list of extensions. Select the C# extension. Restart VS Code to activate the extension. For more information, see the [Visual Studio Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
+Install the Visual Studio Code C# extension by opening Visual Studio Code and pressing <kbd>F1</kbd> to open the Visual Studio Code palette. Type **ext install** to see the list of extensions. Select the C# extension. Restart Visual Studio Code to activate the extension. For more information, see the [Visual Studio Code C# Extension documentation](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ## Getting started
 
 In this tutorial, you create three projects: a library project, tests for that library project, and a console application that makes use of the library. You can [view or download the source](https://github.com/dotnet/docs/tree/master/samples/core/getting-started/golden) for this topic at the dotnet/docs repository on GitHub. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Start Visual Studio Code. Press <kbd>Ctrl</kbd>+<kbd>\`</kbd> (the backquote or backtick character) or select **View > Integrated Terminal** from the menu to open an embedded terminal in VS Code. You can still open an external shell with the Explorer **Open in Command Prompt** command (**Open in Terminal** on Mac or Linux) if you prefer to work outside of VS Code.
+Start Visual Studio Code. Press <kbd>Ctrl</kbd>+<kbd>\`</kbd> (the backquote or backtick character) or select **View > Integrated Terminal** from the menu to open an embedded terminal in Visual Studio Code. You can still open an external shell with the Explorer **Open in Command Prompt** command (**Open in Terminal** on Mac or Linux) if you prefer to work outside of Visual Studio Code.
 
 Begin by creating a solution file, which serves as a container for one or more .NET Core projects. In the terminal, create a *golden* folder and open the folder. This folder is the root of your solution. Run the [`dotnet new`](../tools/dotnet-new.md) command to create a new solution, *golden.sln*:
 
@@ -76,7 +78,7 @@ This adds `Newtonsoft.Json` and its dependencies to the library project. Alterna
 </ItemGroup>
 ```
 
-Execute [`dotnet restore`](../tools/dotnet-restore.md), which restores dependencies and creates an *obj* folder inside *library* with three files in it, including a *project.assets.json* file:
+Execute [`dotnet restore`](../tools/dotnet-restore.md), ([see note](#dotnet-restore-note)) which restores dependencies and creates an *obj* folder inside *library* with three files in it, including a *project.assets.json* file:
 
 ```console
 dotnet restore
@@ -156,7 +158,7 @@ Note that you assert the value 42 is not equal to 19+23 (or 42) when you first c
 From the *golden* folder, execute the following commands:
 
 ```console
-dotnet restore
+dotnet restore 
 dotnet test test-library/test-library.csproj
 ```
 
@@ -190,7 +192,7 @@ Create the dependency on the library by running the `dotnet add reference` comma
 dotnet add app/app.csproj reference library/library.csproj
 ```
 
-Run `dotnet restore` to restore the dependencies of the three projects in the solution. Open *Program.cs* and replace the contents of the `Main` method with the following line:
+Run `dotnet restore` ([see note](#dotnet-restore-note)) to restore the dependencies of the three projects in the solution. Open *Program.cs* and replace the contents of the `Main` method with the following line:
 
 ```csharp
 WriteLine($"The answer is {new Thing().Get(19, 23)}");
@@ -213,8 +215,11 @@ dotnet run -p app/app.csproj
 
 Set a breakpoint at the `WriteLine` statement in the `Main` method. Do this by either pressing the <kbd>F9</kbd> key when the cursor is over the `WriteLine` line or by clicking the mouse in the left margin on the line where you want to set the breakpoint. A red circle will appear in the margin next to the line of code. When the breakpoint is reached, code execution will stop *before* the breakpoint line is executed.
 
-Open the debugger tab by selecting the Debug icon in the VS Code toolbar, selecting **View > Debug** from the menu bar, or using the keyboard shortcut <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:
+Open the debugger tab by selecting the Debug icon in the Visual Studio Code toolbar, selecting **View > Debug** from the menu bar, or using the keyboard shortcut <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>:
 
-![VS Code Debugger](./media/using-on-macos/vscodedebugger.png)
+![Visual Studio Code Debugger](./media/using-on-macos/vscodedebugger.png)
 
 Press the Play button to start the application under the debugger. The app begins execution and runs to the breakpoint, where it stops. Step into the `Get` method and make sure that you have passed in the correct arguments. Confirm that the answer is 42.
+
+<a name="dotnet-restore-note"></a>
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

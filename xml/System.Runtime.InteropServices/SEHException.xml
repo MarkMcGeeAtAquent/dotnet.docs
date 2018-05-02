@@ -1,7 +1,9 @@
-<Type Name="SEHException" FullName="System.Runtime.InteropServices.SEHException">
+﻿<Type Name="SEHException" FullName="System.Runtime.InteropServices.SEHException">
   <TypeSignature Language="C#" Value="public class SEHException : System.Runtime.InteropServices.ExternalException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SEHException extends System.Runtime.InteropServices.ExternalException" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.SEHException" />
+  <TypeSignature Language="VB.NET" Value="Public Class SEHException&#xA;Inherits ExternalException" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SEHException : System::Runtime::InteropServices::ExternalException" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.InteropServices</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -9,6 +11,7 @@
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
     <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -35,7 +38,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Runtime.InteropServices.SEHException> class handles SEH errors that are thrown from unmanaged code, but that have not been mapped to another .NET Framework exception. The <xref:System.Runtime.InteropServices.SEHException> class also corresponds to the `HRESULT``E_FAIL` (0x80004005).  
+ The <xref:System.Runtime.InteropServices.SEHException> class handles SEH errors that are thrown from unmanaged code, but that have not been mapped to another .NET Framework exception. The <xref:System.Runtime.InteropServices.SEHException> class also corresponds to the `HRESULT` `E_FAIL` (0x80004005).  
   
  The .NET Framework often encounters unmanaged SEH exceptions that are automatically mapped to managed equivalents. There are two common unmanaged SEH exceptions:  
   
@@ -57,26 +60,20 @@
   
  Note that the <xref:System.Runtime.InteropServices.SEHException> class does not cause unmanaged C++ exception destructors to be called. To ensure that unmanaged C++ exception destructors are called, use the following syntax in the `catch` block.  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Catch   
      ' Handle catch here.  
 End Try  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 catch  
 {  
      // Handle catch here.  
 }  
 ```  
   
- [C++]  
-  
-```  
+```cpp  
 catch(…)  
 {  
      // Handle catch here.  
@@ -85,12 +82,29 @@ catch(…)
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Exception" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Runtime.InteropServices.SEHException" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SEHException ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SEHException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SEHException();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -99,6 +113,7 @@ catch(…)
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -131,6 +146,8 @@ catch(…)
       <MemberSignature Language="C#" Value="public SEHException (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SEHException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SEHException(System::String ^ message);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -139,6 +156,7 @@ catch(…)
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -174,6 +192,8 @@ catch(…)
       <MemberSignature Language="C#" Value="protected SEHException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SEHException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; SEHException(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -183,6 +203,10 @@ catch(…)
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -210,6 +234,8 @@ catch(…)
       <MemberSignature Language="C#" Value="public SEHException (string message, Exception inner);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SEHException.#ctor(System.String,System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String, inner As Exception)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SEHException(System::String ^ message, Exception ^ inner);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -218,6 +244,7 @@ catch(…)
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -251,12 +278,15 @@ catch(…)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Exception" />
       </Docs>
     </Member>
     <Member MemberName="CanResume">
       <MemberSignature Language="C#" Value="public virtual bool CanResume ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanResume() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SEHException.CanResume" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CanResume () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool CanResume();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.InteropServices</AssemblyName>
@@ -265,6 +295,7 @@ catch(…)
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
         <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

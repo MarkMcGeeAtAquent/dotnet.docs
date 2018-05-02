@@ -1,7 +1,7 @@
 ---
-title: "How to: Find Child Elements Based on Position (XPath-LINQ to XML) (C#) | Microsoft Docs"
+title: "How to: Find Child Elements Based on Position (XPath-LINQ to XML) (C#)"
 ms.custom: ""
-ms.date: "2015-07-20"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
@@ -9,8 +9,6 @@ ms.technology:
   - "devlang-csharp"
 
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
 caps.latest.revision: 3
 author: "BillWagner"
@@ -24,7 +22,7 @@ Sometimes you want to find elements based on their position. You might want to f
   
  `Test[position() >= 2 and position() <= 4]`  
   
- There are two approaches to writing this [!INCLUDE[sqltecxlinq](../../../../csharp/programming-guide/concepts/linq/includes/sqltecxlinq_md.md)] query in a lazy way. You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index. When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments. The following example shows both methods of selecting based on position.  
+ There are two approaches to writing this [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query in a lazy way. You can use the <xref:System.Linq.Enumerable.Skip%2A> and <xref:System.Linq.Enumerable.Take%2A> operators, or you can use the <xref:System.Linq.Enumerable.Where%2A> overload that takes an index. When you use the <xref:System.Linq.Enumerable.Where%2A> overload, you use a lambda expression that takes two arguments. The following example shows both methods of selecting based on position.  
   
 ## Example  
  This example finds the second through the fourth `Test` element. The result is a collection of elements.  

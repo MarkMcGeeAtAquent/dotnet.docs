@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugCode::GetILToNativeMapping Method | Microsoft Docs"
+title: "ICorDebugCode::GetILToNativeMapping Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugCode.GetILToNativeMapping"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugCode::GetILToNativeMapping"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetILToNativeMapping method, ICorDebugCode interface [.NET Framework debugging]"
   - "ICorDebugCode::GetILToNativeMapping method [.NET Framework debugging]"
 ms.assetid: a8ecd8c8-9627-4356-9c6f-bd05e24637c0
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugCode::GetILToNativeMapping Method
 Gets an array of "COR_DEBUG_IL_TO_NATIVE_MAP" instances that represent mappings from Microsoft intermediate language (MSIL) offsets to native offsets.  

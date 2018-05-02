@@ -1,24 +1,34 @@
 ---
 uid: System.Transactions.IEnlistmentNotification
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IEnlistmentNotification.InDoubt(System.Transactions.Enlistment)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IEnlistmentNotification.Rollback(System.Transactions.Enlistment)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IEnlistmentNotification.Commit(System.Transactions.Enlistment)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.IEnlistmentNotification.Prepare(System.Transactions.PreparingEnlistment)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,17 +1,19 @@
 ---
-title: "Cancellation Handler on Compensable Activity | Microsoft Docs"
+title: "Cancellation Handler on Compensable Activity"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: afd98bee-eccf-47e9-99c9-27cea84ce5ce
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Cancellation Handler on Compensable Activity
 This sample demonstrates the use of a cancellation handler on a <xref:System.Activities.Statements.CompensableActivity>.  
@@ -41,7 +43,6 @@ Try
 Catches {  
 // Can do more stuff...  
 }  
-  
 ```  
   
  The second scenario demonstrates executing a <xref:System.Activities.Statements.TryCatch> in parallel with a <xref:System.Activities.Statements.Delay>, which finishes before the <xref:System.Activities.Statements.TryCatch> branch. The completion condition is set to `true` once the first branch finishes, causing the other branch to be canceled.  
@@ -73,7 +74,6 @@ Parallel
         }  
     }  
 }  
-  
 ```  
   
 ### To set up, build, and run the sample  
@@ -91,6 +91,4 @@ Parallel
 >   
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\CompensationCancellation`  
-  
-## See Also
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Compensation\CompensationCancellation`

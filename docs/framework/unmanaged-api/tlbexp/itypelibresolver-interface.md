@@ -1,5 +1,5 @@
 ---
-title: "ITypeLibResolver Interface | Microsoft Docs"
+title: "ITypeLibResolver Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeLibResolver"
-apilocation: 
+api_location: 
   - "tlbref.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ITypeLibResolver"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ITypeLibResolver interface [.NET Framework]"
 ms.assetid: edaaed1d-0d26-40f0-83f1-48efc0ded1c6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeLibResolver Interface
 Provides the [ResolveTypeLib method](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), which resolves the file path of a type library.  
@@ -45,5 +48,5 @@ Provides the [ResolveTypeLib method](../../../../docs/framework/unmanaged-api/tl
  **.NET Framework Version:** 4, 3.5, 3.0, 2.0  
   
 ## See Also  
- [Tlbexp Helper Functions](../../../../docs/framework/unmanaged-api/tlbexp/index.md)   
+ [Tlbexp Helper Functions](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
  [LoadTypeLibEx function](https://msdn.microsoft.com/library/windows/desktop/ms221249\(v=vs.85\).aspx)

@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.Channels.ISecurableChannel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.ISecurableChannel.IsSecured
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

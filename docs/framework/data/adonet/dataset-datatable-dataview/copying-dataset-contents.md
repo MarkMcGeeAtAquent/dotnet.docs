@@ -1,19 +1,24 @@
 ---
-title: "Copying DataSet Contents | Microsoft Docs"
+title: "Copying DataSet Contents"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: cb846617-2b1a-44ff-bd7f-5835f5ea37fa
 caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Copying DataSet Contents
 You can create a copy of a <xref:System.Data.DataSet> so that you can work with data without affecting the original data, or work with a subset of the data from a **DataSet**. When copying a **DataSet**, you can:  
@@ -28,7 +33,6 @@ You can create a copy of a <xref:System.Data.DataSet> so that you can work with 
   
 ```vb  
 Dim copyDataSet As DataSet = customerDataSet.Copy()  
-  
 ```  
   
 ```csharp  
@@ -43,7 +47,6 @@ Dim changeDataSet As DataSet = customerDataSet.GetChanges()
 ' Copy only new rows.  
 Dim addedDataSetAs DataSet = _  
     customerDataSet.GetChanges(DataRowState.Added)  
-  
 ```  
   
 ```csharp  
@@ -58,14 +61,13 @@ DataSet addedDataSet= customerDataSet.GetChanges(DataRowState.Added);
  The following code example creates a clone of a **DataSet** and then adds the rows from the original **DataSet** to the **Customers** table in the **DataSet** clone for customers where the **CountryRegion** column has the value "Germany".  
   
 ```vb  
-  
 Dim customerDataSet As New DataSet  
-        customerDataSet.Tables.Add(New DataTable("Customers"))  
-        customerDataSet.Tables("Customers").Columns.Add("Name", GetType(String))  
-        customerDataSet.Tables("Customers").Columns.Add("CountryRegion", GetType(String))  
-        customerDataSet.Tables("Customers").Rows.Add("Juan", "Spain")  
-        customerDataSet.Tables("Customers").Rows.Add("Johann", "Germany")  
-        customerDataSet.Tables("Customers").Rows.Add("John", "UK")  
+        customerDataSet.Tables.Add(New DataTable("Customers"))  
+        customerDataSet.Tables("Customers").Columns.Add("Name", GetType(String))  
+        customerDataSet.Tables("Customers").Columns.Add("CountryRegion", GetType(String))  
+        customerDataSet.Tables("Customers").Rows.Add("Juan", "Spain")  
+        customerDataSet.Tables("Customers").Rows.Add("Johann", "Germany")  
+        customerDataSet.Tables("Customers").Rows.Add("John", "UK")  
   
 Dim germanyCustomers As DataSet = customerDataSet.Clone()  
   
@@ -78,7 +80,6 @@ Dim copyRow As DataRow
 For Each copyRow In copyRows  
   customerTable.ImportRow(copyRow)  
 Next  
-  
 ```  
   
 ```csharp  
@@ -102,7 +103,7 @@ foreach (DataRow copyRow in copyRows)
 ```  
   
 ## See Also  
- <xref:System.Data.DataSet>   
- <xref:System.Data.DataTable>   
- [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
+ <xref:System.Data.DataSet>  
+ <xref:System.Data.DataTable>  
+ [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -1,5 +1,5 @@
 ---
-title: "ICLRTaskManager::GetCurrentTaskType Method | Microsoft Docs"
+title: "ICLRTaskManager::GetCurrentTaskType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRTaskManager.GetCurrentTaskType"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRTaskManager::GetCurrentTaskType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetCurrentTaskType method [.NET Framework hosting]"
   - "ICLRTaskManager::GetCurrentTaskType method [.NET Framework hosting]"
 ms.assetid: 6b0d9259-dbe2-45bb-b34d-990f60c73424
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRTaskManager::GetCurrentTaskType Method
 Gets the type of the task that is currently executing.  

@@ -1,13 +1,17 @@
 ---
 uid: System.Deployment.Internal.InternalApplicationIdentityHelper
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: System.Deployment.Internal.InternalApplicationIdentityHelper.GetInternalAppId(System.ApplicationIdentity)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

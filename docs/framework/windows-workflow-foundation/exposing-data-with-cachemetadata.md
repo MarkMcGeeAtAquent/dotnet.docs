@@ -1,5 +1,5 @@
 ---
-title: "Exposing data with CacheMetadata | Microsoft Docs"
+title: "Exposing data with CacheMetadata"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 34832f23-e93b-40e6-a80b-606a855a00d9
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Exposing data with CacheMetadata
 Before executing an activity, the workflow runtime obtains all of the information about the activity that it needs in order to maintain its execution. The workflow runtime gets this information during the execution of the <xref:System.Activities.Activity.CacheMetadata%2A> method. The default implementation of this method provides the runtime with all of the public arguments, variables, and child activities exposed by the activity at the time it is executed; if the activity needs to give more information to the runtime than this (such as private members, or activities to be scheduled by the activity), this method can be overridden to provide it.  
@@ -44,7 +46,7 @@ Before executing an activity, the workflow runtime obtains all of the informatio
   
 ```  
 protected override void CacheMetadata(NativeActivityMetadata metadata)  
-{      
+{      
     base.CacheMetadata(metadata);  
     metadata.AddImplementationChild(this._writeLine);  
     metadata.AddVariable(this._myVariable);  
@@ -54,7 +56,6 @@ protected override void CacheMetadata(NativeActivityMetadata metadata)
     metadata.Bind(argument, this.SomeName);  
     metadata.AddArgument(argument);  
 }  
-  
 ```  
   
 ## Using CacheMetadata to expose implementation children  
@@ -65,29 +66,28 @@ protected override void CacheMetadata(NativeActivityMetadata metadata)
 ```  
 public sealed class ChildActivity : NativeActivity  
 {  
-    public WriteLine _writeLine;  
-    public InArgument<string> Message { get; set; }  
-    private Variable<string> MessageVariable { get; set; }  
-    public ChildActivity()  
-    {  
-        MessageVariable = new Variable<string>();  
-        _writeLine = new WriteLine  
-        {  
-            Text = new InArgument<string>(MessageVariable),  
-        };  
-    }  
-    protected override void CacheMetadata(NativeActivityMetadata metadata)  
-    {  
-        base.CacheMetadata(metadata);  
-        metadata.AddImplementationVariable(this.MessageVariable);  
-        metadata.AddImplementationChild(this._writeLine);  
-    }  
-    protected override void Execute(NativeActivityContext context)  
-    {  
-        string configuredMessage = context.GetValue(Message);  
-        context.SetValue(MessageVariable, configuredMessage);  
-        context.ScheduleActivity(this._writeLine);  
-    }  
+    public WriteLine _writeLine;  
+    public InArgument<string> Message { get; set; }  
+    private Variable<string> MessageVariable { get; set; }  
+    public ChildActivity()  
+    {  
+        MessageVariable = new Variable<string>();  
+        _writeLine = new WriteLine  
+        {  
+            Text = new InArgument<string>(MessageVariable),  
+        };  
+    }  
+    protected override void CacheMetadata(NativeActivityMetadata metadata)  
+    {  
+        base.CacheMetadata(metadata);  
+        metadata.AddImplementationVariable(this.MessageVariable);  
+        metadata.AddImplementationChild(this._writeLine);  
+    }  
+    protected override void Execute(NativeActivityContext context)  
+    {  
+        string configuredMessage = context.GetValue(Message);  
+        context.SetValue(MessageVariable, configuredMessage);  
+        context.ScheduleActivity(this._writeLine);  
+    }  
 }  
-  
 ```

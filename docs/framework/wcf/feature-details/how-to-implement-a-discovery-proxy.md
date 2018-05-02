@@ -1,8 +1,8 @@
 ---
-title: "How to: Implement a Discovery Proxy | Microsoft Docs"
+title: "How to: Implement a Discovery Proxy"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,12 +11,14 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Implement a Discovery Proxy
-This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] the discovery feature in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], see [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). A discovery proxy can be implemented by creating a class that extends the <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstract class. There are a number of other support classes defined and used in this sample. `OnResolveAsyncResult`, `OnFindAsyncResult`, , and `AsyncResult`. These classes implement the <xref:System.IAsyncResult> interface. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]<xref:System.IAsyncResult> see [System.IAsyncResult interface](http://go.microsoft.com/fwlink/?LinkId=128519)  
+This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] the discovery feature in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], see [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). A discovery proxy can be implemented by creating a class that extends the <xref:System.ServiceModel.Discovery.DiscoveryProxy> abstract class. There are a number of other support classes defined and used in this sample. `OnResolveAsyncResult`, `OnFindAsyncResult`, and `AsyncResult`. These classes implement the <xref:System.IAsyncResult> interface. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] <xref:System.IAsyncResult> see [System.IAsyncResult interface](xref:System.IAsyncResult).
   
  Implementing a discovery proxy is broken down into three main parts in this topic:  
   
@@ -63,7 +65,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
     public class DiscoveryProxyService : DiscoveryProxy  
     {  
     }  
-  
     ```  
   
 4.  Inside the `DiscoveryProxy` class define a dictionary to hold the registered services.  
@@ -71,7 +72,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
     ```  
     // Repository to store EndpointDiscoveryMetadata.   
     Dictionary<EndpointAddress, EndpointDiscoveryMetadata> onlineServices;  
-  
     ```  
   
 5.  Define a constructor that initializes the dictionary.  
@@ -81,7 +81,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
             {  
                 this.onlineServices = new Dictionary<EndpointAddress, EndpointDiscoveryMetadata>();  
             }  
-  
     ```  
   
 ### To define the methods used to update the discovery proxy cache  
@@ -98,7 +97,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
   
                 PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Adding");  
             }  
-  
     ```  
   
 2.  Implement the `RemoveOnlineService` method that is used to remove services from the cache.  
@@ -116,7 +114,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                     PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Removing");  
                 }      
             }  
-  
     ```  
   
 3.  Implement the `MatchFromOnlineService` methods that attempt to match a service with a service in the dictionary.  
@@ -135,7 +132,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                     }  
                 }  
             }  
-  
     ```  
   
     ```  
@@ -154,7 +150,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                 }  
                 return matchingEndpoint;  
             }  
-  
     ```  
   
 4.  Implement the `PrintDiscoveryMetadata` method that provides the user with console text output of what the discovery proxy is doing.  
@@ -170,7 +165,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                 }  
                 Console.WriteLine("**** Operation Completed");  
             }  
-  
     ```  
   
 5.  Add the following AsyncResult classes to the DiscoveryProxyService. These classes are used to differentiate between the different asynchronous operation results.  
@@ -235,12 +229,11 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                     return thisPtr.matchingEndpoint;  
                 }  
             }  
-  
     ```  
   
 ### To define the methods that implement the discovery proxy functionality  
   
-1.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOnlineAnnouncement%2A> -->  `System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOnlineAnnouncement` method. This method is called when the discovery proxy receives an online announcement message.  
+1.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOnlineAnnouncement%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy receives an online announcement message.  
   
     ```  
     // OnBeginOnlineAnnouncement method is called when a Hello message is received by the Proxy  
@@ -249,20 +242,18 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                 this.AddOnlineService(endpointDiscoveryMetadata);  
                 return new OnOnlineAnnouncementAsyncResult(callback, state);  
             }  
-  
     ```  
   
-2.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndOnlineAnnouncement%2A>--> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndOnlineAnnouncement` method. This method is called when the discovery proxy finishes processing an announcement message.  
+2.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOnlineAnnouncement%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy finishes processing an announcement message.  
   
     ```  
     protected override void OnEndOnlineAnnouncement(IAsyncResult result)  
             {  
                 OnOnlineAnnouncementAsyncResult.End(result);  
             }  
-  
     ```  
   
-3.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOfflineAnnouncement%2A>--> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginOfflineAnnouncement` method. This method is called with the discovery proxy receives an offline announcement message.  
+3.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOfflineAnnouncement%2A?displayProperty=nameWithType> method. This method is called with the discovery proxy receives an offline announcement message.  
   
     ```  
     // OnBeginOfflineAnnouncement method is called when a Bye message is received by the Proxy  
@@ -271,20 +262,18 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                 this.RemoveOnlineService(endpointDiscoveryMetadata);  
                 return new OnOfflineAnnouncementAsyncResult(callback, state);  
             }  
-  
     ```  
   
-4.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndOfflineAnnouncement%2A> method. This method is called when the discovery proxy finishes processing an offline announcement message.  
+4.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOfflineAnnouncement%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy finishes processing an offline announcement message.  
   
     ```  
     protected override void OnEndOfflineAnnouncement(IAsyncResult result)  
             {  
                 OnOfflineAnnouncementAsyncResult.End(result);  
             }  
-  
     ```  
   
-5.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginFind%2A> --> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginFind` method. This method is called when the discovery proxy receives a find request.  
+5.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy receives a find request.  
   
     ```  
     // OnBeginFind method is called when a Probe request message is received by the Proxy  
@@ -303,17 +292,16 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
     }  
     ```  
   
-6.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndFind%2A> method. This method is called when the discovery proxy finishes processing a find request.  
+6.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy finishes processing a find request.  
   
     ```  
     protected override void OnEndFind(IAsyncResult result)  
             {  
                 OnFindAsyncResult.End(result);  
             }  
-  
     ```  
   
-7.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginResolve%2A>--> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginResolve` method. This method is called when the discovery proxy receives a resolve message.  
+7.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginResolve%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy receives a resolve message.  
   
     ```  
     // OnBeginFind method is called when a Resolve request message is received by the Proxy  
@@ -330,17 +318,16 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
     }  
     ```  
   
-8.  Override the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndResolve%2A> --> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndResolve` method. This method is called when the discovery proxy finishes processing a resolve message.  
+8.  Override the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndResolve%2A?displayProperty=nameWithType> method. This method is called when the discovery proxy finishes processing a resolve message.  
   
     ```  
     protected override EndpointDiscoveryMetadata OnEndResolve(IAsyncResult result)  
     {  
         return OnResolveAsyncResult.End(result);  
     }  
-  
     ```  
   
- The OnBegin.. / OnEnd.. methods provide the logic for the subsequent discovery operations. For example the <!--zz <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginFind%2A> --> `System.ServiceModel.Discovery.DiscoveryProxyBase.OnBeginFind` and <xref:System.ServiceModel.Discovery.DiscoveryProxyBase.OnEndFind%2A> methods implement the find logic for discovery proxy. When the discovery proxy receives a probe message these methods are executed to send a response back to the client. You may modify the find logic as you wish, for example you can incorporate custom scope matching by algorithms or application specific XML metadata parsing as part of your find operation.  
+ The OnBegin.. / OnEnd.. methods provide the logic for the subsequent discovery operations. For example the <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A> and <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A> methods implement the find logic for discovery proxy. When the discovery proxy receives a probe message these methods are executed to send a response back to the client. You may modify the find logic as you wish, for example you can incorporate custom scope matching by algorithms or application specific XML metadata parsing as part of your find operation.  
   
 ### To implement the AsyncResult class  
   
@@ -353,7 +340,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
     ```  
     using System;  
     using System.Threading;  
-  
     ```  
   
 4.  Add the following AsyncResult class.  
@@ -505,7 +491,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                 Complete(completedSynchronously);  
             }  
         }  
-  
     ```  
   
 ### To host the DiscoveryProxy  
@@ -528,7 +513,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
   
                 // Host the DiscoveryProxy service  
                 ServiceHost proxyServiceHost = new ServiceHost(new DiscoveryProxyService());  
-  
     ```  
   
 4.  Next add the following code to add a discovery endpoint and an announcement endpoint.  
@@ -570,7 +554,6 @@ This topic explains how to implement a discovery proxy. [!INCLUDE[crabout](../..
                   Console.WriteLine("Aborting the service...");  
                   proxyServiceHost.Abort();  
               }  
-  
     ```  
   
  You have completed implementing the discovery proxy. Continue on to [How to: Implement a Discoverable Service that Registers with the Discovery Proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).  
@@ -777,7 +760,6 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -938,7 +920,6 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
 ```  
@@ -1002,11 +983,10 @@ namespace Microsoft.Samples.Discovery
         }  
     }  
 }  
-  
 ```  
   
 ## See Also  
- [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)   
- [How to: Implement a Discoverable Service that Registers with the Discovery Proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)   
- [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)   
+ [WCF Discovery Overview](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+ [How to: Implement a Discoverable Service that Registers with the Discovery Proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)  
+ [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)  
  [How to: Test the Discovery Proxy](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)

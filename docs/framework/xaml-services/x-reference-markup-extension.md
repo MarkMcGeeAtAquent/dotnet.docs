@@ -1,5 +1,5 @@
 ---
-title: "x:Reference Markup Extension | Microsoft Docs"
+title: "x:Reference Markup Extension"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -18,22 +18,24 @@ caps.latest.revision: 8
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # x:Reference Markup Extension
 References an instance that is declared elsewhere in XAML markup. The reference refers to an element's `x:Name`.  
   
 ## XAML Attribute Usage  
   
-```  
-<object property="{x:Reference instancexName}" .../>  
+```xaml  
+<object property="{x:Reference instancexName}" .../>  
 ```  
   
 ## XAML Object Element Usage  
   
-```  
+```xaml  
 <object>  
   <object.property>  
-    <x:Reference Name="instancexName"/>  
+    <x:Reference Name="instancexName"/>  
   </object.property>  
 </object>  
 ```  

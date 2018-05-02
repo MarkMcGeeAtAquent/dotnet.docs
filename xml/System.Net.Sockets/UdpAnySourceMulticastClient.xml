@@ -1,7 +1,9 @@
-<Type Name="UdpAnySourceMulticastClient" FullName="System.Net.Sockets.UdpAnySourceMulticastClient">
+﻿<Type Name="UdpAnySourceMulticastClient" FullName="System.Net.Sockets.UdpAnySourceMulticastClient">
   <TypeSignature Language="C#" Value="public class UdpAnySourceMulticastClient : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdpAnySourceMulticastClient extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Net.Sockets.UdpAnySourceMulticastClient" />
+  <TypeSignature Language="VB.NET" Value="Public Class UdpAnySourceMulticastClient&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class UdpAnySourceMulticastClient : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Net</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -31,6 +33,8 @@
       <MemberSignature Language="C#" Value="public UdpAnySourceMulticastClient (System.Net.IPAddress groupAddress, int localPort);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress groupAddress, int32 localPort) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.#ctor(System.Net.IPAddress,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (groupAddress As IPAddress, localPort As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UdpAnySourceMulticastClient(System::Net::IPAddress ^ groupAddress, int localPort);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -74,6 +78,8 @@
       <MemberSignature Language="C#" Value="public IAsyncResult BeginJoinGroup (AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginJoinGroup(class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginJoinGroup (callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginJoinGroup(AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -109,19 +115,21 @@
   
  The method specified in the `callback` parameter is invoked when the operation to join the multicast group has completed.  
   
- If required by the runtime, the  <xref:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup%2A> method also performs a policy check to verify that the client is allowed to access the multicast group. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError>.  
+ If required by the runtime, the  <xref:System.Net.Sockets.UdpAnySourceMulticastClient.BeginJoinGroup%2A> method also performs a policy check to verify that the client is allowed to access the multicast group. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError.AccessDenied>.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The multicast group has already been joined or a join operation is currently in progress.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginReceiveFromGroup">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginReceiveFromGroup (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginReceiveFromGroup(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginReceiveFromGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginReceiveFromGroup (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginReceiveFromGroup(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -185,13 +193,15 @@
  <paramref name="offset" /> plus the count is greater than the length of the <paramref name="buffer" />.</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginSendTo">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginSendTo (byte[] buffer, int offset, int count, System.Net.IPEndPoint remoteEndPoint, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSendTo(unsigned int8[] buffer, int32 offset, int32 count, class System.Net.IPEndPoint remoteEndPoint, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendTo(System.Byte[],System.Int32,System.Int32,System.Net.IPEndPoint,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginSendTo (buffer As Byte(), offset As Integer, count As Integer, remoteEndPoint As IPEndPoint, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginSendTo(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, System::Net::IPEndPoint ^ remoteEndPoint, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -237,9 +247,9 @@
   
  The method specified in the `callback` parameter is invoked when a packet has received.  
   
- The transmission is only allowed if the address specified in the `remoteEndPoint` parameter has already sent a multicast packet to this receiver. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError>.  
+ The transmission is only allowed if the address specified in the `remoteEndPoint` parameter has already sent a multicast packet to this receiver. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError.AccessDenied>.  
   
- If the destination port specified in the `remoteEndPoint` parameter is less than 1,024, a <xref:System.Net.Sockets.SocketException>is thrown with <xref:System.Net.Sockets.SocketError>.  
+ If the destination port specified in the `remoteEndPoint` parameter is less than 1,024, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError.AccessDenied>.  
   
  It is possible to have a socket failure if a receive operation fails synchronously, although this is uncommon with UDP. If a socket failure occurs, a <xref:System.Net.Sockets.SocketException> is thrown. The error received is specified as a member of the <xref:System.Net.Sockets.SocketError> enumeration.  
   
@@ -263,13 +273,15 @@
  <paramref name="offset" /> plus the count is greater than the length of the <paramref name="buffer" />.</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="BeginSendToGroup">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginSendToGroup (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSendToGroup(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.BeginSendToGroup(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginSendToGroup (buffer As Byte(), offset As Integer, count As Integer, callback As AsyncCallback, state As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginSendToGroup(cli::array &lt;System::Byte&gt; ^ buffer, int offset, int count, AsyncCallback ^ callback, System::Object ^ state);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -335,13 +347,15 @@
  <paramref name="offset" /> plus the count is greater than the length of the <paramref name="buffer" />.</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="BlockSource">
       <MemberSignature Language="C#" Value="public void BlockSource (System.Net.IPAddress sourceAddress);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BlockSource(class System.Net.IPAddress sourceAddress) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource(System.Net.IPAddress)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BlockSource (sourceAddress As IPAddress)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void BlockSource(System::Net::IPAddress ^ sourceAddress);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -380,14 +394,19 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -410,9 +429,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Call <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A> when you are finished using the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>. The Dispose method leaves the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> in an unusable state. After calling <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A>, you must release all references to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>so the garbage collector can reclaim the memory that the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>was occupying.  
+ Call <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A> when you are finished using the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>. The Dispose method leaves the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> in an unusable state. After calling <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A>, you must release all references to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> so the garbage collector can reclaim the memory that the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> was occupying.  
   
- Always call <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A>before you release your last reference to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> object's <xref:System.Object.Finalize%2A> method.  
+ Always call <xref:System.Net.Sockets.UdpAnySourceMulticastClient.Dispose%2A> before you release your last reference to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient>. Otherwise, the resources it is using will not be freed until the garbage collector calls the <xref:System.Net.Sockets.UdpAnySourceMulticastClient> object's <xref:System.Object.Finalize%2A> method.  
   
  ]]></format>
         </remarks>
@@ -422,6 +441,8 @@
       <MemberSignature Language="C#" Value="public void EndJoinGroup (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndJoinGroup(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndJoinGroup (result As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EndJoinGroup(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -450,7 +471,7 @@
 ## Remarks  
  The <xref:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup%2A> method completes an asynchronous bind to a socket and join operation to a multicast group.  
   
- If required by the runtime, the  <xref:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup%2A> method also performs a policy check to verify that the client is allowed to access the multicast group. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError>.  
+ If required by the runtime, the  <xref:System.Net.Sockets.UdpAnySourceMulticastClient.EndJoinGroup%2A> method also performs a policy check to verify that the client is allowed to access the multicast group. If the client is not allowed access, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError.AccessDenied>.  
   
  If there is a socket failure while performing the join group operation, a <xref:System.Net.Sockets.SocketException> is thrown. The error received is specified as a member of the <xref:System.Net.Sockets.SocketError> enumeration.  
   
@@ -459,13 +480,15 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="result" /> is a null reference (Nothing in Visual Basic).</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="EndReceiveFromGroup">
       <MemberSignature Language="C#" Value="public int EndReceiveFromGroup (IAsyncResult result, out System.Net.IPEndPoint source);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 EndReceiveFromGroup(class System.IAsyncResult result, class System.Net.IPEndPoint source) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 EndReceiveFromGroup(class System.IAsyncResult result, [out] class System.Net.IPEndPoint&amp; source) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndReceiveFromGroup(System.IAsyncResult,System.Net.IPEndPoint@)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndReceiveFromGroup (result As IAsyncResult, ByRef source As IPEndPoint) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int EndReceiveFromGroup(IAsyncResult ^ result, [Runtime::InteropServices::Out] System::Net::IPEndPoint ^ % source);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -505,13 +528,15 @@
           <paramref name="result" /> is a null reference (Nothing in Visual Basic).</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="EndSendTo">
       <MemberSignature Language="C#" Value="public void EndSendTo (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndSendTo(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendTo(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndSendTo (result As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EndSendTo(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -548,13 +573,15 @@
           <paramref name="result" /> is a null reference (Nothing in Visual Basic).</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="EndSendToGroup">
       <MemberSignature Language="C#" Value="public void EndSendToGroup (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndSendToGroup(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.EndSendToGroup(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub EndSendToGroup (result As IAsyncResult)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void EndSendToGroup(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -591,13 +618,15 @@
           <paramref name="result" /> is a null reference (Nothing in Visual Basic).</exception>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
     <Member MemberName="MulticastLoopback">
       <MemberSignature Language="C#" Value="public bool MulticastLoopback { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool MulticastLoopback" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.UdpAnySourceMulticastClient.MulticastLoopback" />
+      <MemberSignature Language="VB.NET" Value="Public Property MulticastLoopback As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool MulticastLoopback { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -635,6 +664,8 @@
       <MemberSignature Language="C#" Value="public int ReceiveBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.UdpAnySourceMulticastClient.ReceiveBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property ReceiveBufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ReceiveBufferSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -675,6 +706,8 @@
       <MemberSignature Language="C#" Value="public int SendBufferSize { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SendBufferSize" />
       <MemberSignature Language="DocId" Value="P:System.Net.Sockets.UdpAnySourceMulticastClient.SendBufferSize" />
+      <MemberSignature Language="VB.NET" Value="Public Property SendBufferSize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int SendBufferSize { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -717,6 +750,8 @@
       <MemberSignature Language="C#" Value="public void UnblockSource (System.Net.IPAddress sourceAddress);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnblockSource(class System.Net.IPAddress sourceAddress) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpAnySourceMulticastClient.UnblockSource(System.Net.IPAddress)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub UnblockSource (sourceAddress As IPAddress)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void UnblockSource(System::Net::IPAddress ^ sourceAddress);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Net</AssemblyName>
@@ -749,7 +784,7 @@
   
  The `sourceAddress` parameter may be either an IPv6 or IPv4 multicast address.  
   
- If the specified source address in the `sourceAddress` parameter was not previously blocked by a call to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource%2A> method, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError>.  
+ If the specified source address in the `sourceAddress` parameter was not previously blocked by a call to the <xref:System.Net.Sockets.UdpAnySourceMulticastClient.BlockSource%2A> method, a <xref:System.Net.Sockets.SocketException> is thrown with <xref:System.Net.Sockets.SocketError.AddressNotAvailable>.  
   
  If there is a socket failure while performing the unblock source operation, a <xref:System.Net.Sockets.SocketException> is thrown. The error received is specified as a member of the <xref:System.Net.Sockets.SocketError> enumeration.  
   
@@ -757,7 +792,7 @@
         </remarks>
         <exception cref="T:System.InvalidOperationException">The multicast group has not yet been joined.</exception>
         <exception cref="T:System.ObjectDisposedException">The <see cref="T:System.Net.Sockets.UdpAnySourceMulticastClient" /> has been disposed.</exception>
-        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket. See the Remarks section for more information.</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">An error occurred when attempting to access the socket.</exception>
       </Docs>
     </Member>
   </Members>

@@ -1,8 +1,8 @@
 ---
-title: "Routing Services | Microsoft Docs"
+title: "Routing Services"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9a430b4c-46eb-4d15-afbc-8834f0e985ab
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Routing Services
 This section includes samples that demonstrate how to use the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Router.  

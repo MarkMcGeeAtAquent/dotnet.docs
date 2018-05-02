@@ -1,8 +1,8 @@
 ---
-title: "dataContractSerializer | Microsoft Docs"
+title: "dataContractSerializer"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # dataContractSerializer
 Contains configuration data for the <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -26,8 +28,7 @@ Contains configuration data for the <xref:System.Runtime.Serialization.DataContr
   
 ## Syntax  
   
-```  
-  
+```xml  
 <dataContractSerializer ignoreExtensionDataObject="Boolean"  
       maxItemsInObjectGraph="Integer" />  
 ```  
@@ -58,8 +59,8 @@ Contains configuration data for the <xref:System.Runtime.Serialization.DataContr
 >  The `<dataContractSerializer>` behavior element (if present) should always appear before the `<enableWebScript>` behavior element in the configuration file. Otherwise, the resulting behavior is undefined.  
   
 ## See Also  
- <xref:System.Runtime.Serialization.DataContractSerializer>   
- <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>   
- <xref:System.ServiceModel.Configuration.DataContractSerializerElement>   
- [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)   
+ <xref:System.Runtime.Serialization.DataContractSerializer>  
+ <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>  
+ <xref:System.ServiceModel.Configuration.DataContractSerializerElement>  
+ [Data Contract Known Types](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)  
  [Data Transfer and Serialization](../../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)

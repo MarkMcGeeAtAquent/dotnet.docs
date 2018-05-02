@@ -1,26 +1,14 @@
 ---
-title: "Object-Oriented Programming (C#) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Object-Oriented Programming (C#)"
+ms.date: 07/20/2015
 ms.prod: .net
-
-
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
 caps.latest.revision: 4
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Object-Oriented Programming (C#)
 C# provides full support for object-oriented programming including encapsulation, inheritance, and polymorphism.  
@@ -43,7 +31,7 @@ C# provides full support for object-oriented programming including encapsulation
   
          [Constructors](#Constructors)  
   
-         [Destructors](#Destructors)  
+         [Finalizers](#Finalizers)  
   
          [Events](#Events)  
   
@@ -103,7 +91,7 @@ struct SampleStruct
  To define a field:  
   
 ```csharp  
-Class SampleClass  
+class SampleClass  
 {  
     public string sampleField;  
 }  
@@ -197,13 +185,13 @@ public class SampleClass
   
  [Constructors](../../../csharp/programming-guide/classes-and-structs/constructors.md).  
   
-####  <a name="Destructors"></a> Destructors  
- Destructors are used to destruct instances of classes. In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application. However, you may still need destructors to clean up any unmanaged resources that your application creates. There can be only one destructor for a class.  
+####  <a name="Finalizers"></a> Finalizers  
+ Finalizers are used to destruct instances of classes. In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application. However, you may still need finalizers to clean up any unmanaged resources that your application creates. There can be only one finalizers for a class.  
   
- For more information about destructors and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbage-collection/index.md).  
+ For more information about finalizers and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbage-collection/index.md).  
   
 ####  <a name="Events"></a> Events  
- Events enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*. For more information about events, how they are raised and handled, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Events enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*. For more information about events, how they are raised and handled, see [Events](../../../standard/events/index.md).  
   
 -   To declare an event in a class, use the [event](../../../csharp/language-reference/keywords/event.md) keyword.  
   
@@ -241,7 +229,8 @@ Container.Nested nestedInstance = new Container.Nested()
 |[private](../../../csharp/language-reference/keywords/private.md)|The type or member can only be accessed by code in the same class.|  
 |[protected](../../../csharp/language-reference/keywords/protected.md)|The type or member can only be accessed by code in the same class or in a derived class.|  
 |[internal](../../../csharp/language-reference/keywords/internal.md)|The type or member can be accessed by any code in the same assembly, but not from another assembly.|  
-|`protected internal`|The type or member can be accessed by any code in the same assembly, or by any derived class in another assembly.|  
+|[protected internal](../../../csharp/language-reference/keywords/protected-internal.md)|The type or member can be accessed by any code in the same assembly, or by any derived class in another assembly.|  
+|[private protected](../../../csharp/language-reference/keywords/private-protected.md)|The type or member can be accessed by code in the same class or in a derived class within the base class assembly.|  
   
  For more information, see [Access Modifiers](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
@@ -390,7 +379,7 @@ class SampleClass : ISampleInterface
  To define a generic class:  
   
 ```csharp  
-Public class SampleGeneric<T>   
+public class SampleGeneric<T>   
 {  
     public T Field;  
 }  
@@ -405,7 +394,7 @@ sampleObject.Field = "Sample string";
   
  For more information, see:  
   
--   [Generics](https://msdn.microsoft.com/library/ms172192)  
+-   [Generics](~/docs/standard/generics/index.md)  
   
 -   [Generics](../../../csharp/programming-guide/generics/index.md)  
   
@@ -413,7 +402,7 @@ sampleObject.Field = "Sample string";
  A *delegate* is a type that defines a method signature, and can provide a reference to any method with a compatible signature. You can invoke (or call) the method through the delegate. Delegates are used to pass methods as arguments to other methods.  
   
 > [!NOTE]
->  Event handlers are nothing more than methods that are invoked through delegates. For more information about using delegates in event handling, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+>  Event handlers are nothing more than methods that are invoked through delegates. For more information about using delegates in event handling, see [Events](../../../standard/events/index.md).  
   
  To create a delegate:  
   

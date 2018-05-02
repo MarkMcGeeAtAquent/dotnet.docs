@@ -1,21 +1,21 @@
 ---
-title: "ICorDebugVariableSymbol::SetValue Method | Microsoft Docs"
+title: "ICorDebugVariableSymbol::SetValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 4609418d-71fa-44bc-9618-4d529d25cabb
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugVariableSymbol::SetValue Method
 Assigns the value of a byte array to a variable.  
@@ -23,7 +23,6 @@ Assigns the value of a byte array to a variable.
 ## Syntax  
   
 ```  
-  
 HRESULT SetValue(  
    [in] ULONG32 offset,  
    [in] DWORD threadID,  
@@ -32,7 +31,6 @@ HRESULT SetValue(
    [in] ULONG32 cbValue,  
    [in, size_is(cbValue)] BYTE pValue[]  
 );  
-  
 ```  
   
 #### Parameters  
@@ -69,5 +67,5 @@ HRESULT SetValue(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugVariableSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)   
+ [ICorDebugVariableSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -1,13 +1,17 @@
 ---
 uid: System.ServiceModel.Description.MessageHeaderDescriptionCollection
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Description.MessageHeaderDescriptionCollection.GetKeyForItem(System.ServiceModel.Description.MessageHeaderDescription)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

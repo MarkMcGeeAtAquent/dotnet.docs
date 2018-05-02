@@ -1,10 +1,13 @@
-<Type Name="RSACng" FullName="System.Security.Cryptography.RSACng">
+﻿<Type Name="RSACng" FullName="System.Security.Cryptography.RSACng">
   <TypeSignature Language="C#" Value="public sealed class RSACng : System.Security.Cryptography.RSA" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RSACng extends System.Security.Cryptography.RSA" />
   <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RSACng" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class RSACng&#xA;Inherits RSA" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RSACng sealed : System::Security::Cryptography::RSA" />
   <AssemblyInfo>
     <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
     <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System.Core</AssemblyName>
@@ -32,19 +35,35 @@
 -   The key used by <xref:System.Security.Cryptography.RSACng> is managed by a separate <xref:System.Security.Cryptography.CngKey> object. In contrast, <xref:System.Security.Cryptography.RSACryptoServiceProvider> has a key that is directly tied to the operations of the type itself.  
   
 -   <xref:System.Security.Cryptography.RSACng> performs such operations as signing and verifying signatures by using properties of the <xref:System.Security.Cryptography.RSACng> object, just as <xref:System.Security.Cryptography.ECDsaCng> uses its object properties to control signing and verification operations.  
+
+> [!NOTE]
+> The <xref:System.Security.Cryptography.RSACng> class is an implementation of the RSA algorithm using the Windows CNG libraries and isn't available on operating systems other than Windows. For applications which aren't doing Windows interop, you're encouraged to use <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> instead of referencing this type directly.
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.RSACng" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public RSACng ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RSACng();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -65,10 +84,13 @@
       <MemberSignature Language="C#" Value="public RSACng (int keySize);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keySize) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (keySize As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RSACng(int keySize);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -101,10 +123,13 @@
       <MemberSignature Language="C#" Value="public RSACng (System.Security.Cryptography.CngKey key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.CngKey key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.#ctor(System.Security.Cryptography.CngKey)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (key As CngKey)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; RSACng(System::Security::Cryptography::CngKey ^ key);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -125,7 +150,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Security.Cryptography.CngKey.AlgorithmGroup%2A?displayProperty=fullName> of `key` must be <xref:System.Security.Cryptography.CngAlgorithmGroup.Rsa%2A?displayProperty=fullName>.  
+ The <xref:System.Security.Cryptography.CngKey.AlgorithmGroup%2A?displayProperty=nameWithType> of `key` must be <xref:System.Security.Cryptography.CngAlgorithmGroup.Rsa%2A?displayProperty=nameWithType>.  
   
  This constructor creates a copy of the key. Even if `key` is disposed, the copy of this key object in RSA remains alive.  
   
@@ -141,10 +166,13 @@
       <MemberSignature Language="C#" Value="public override byte[] Decrypt (byte[] data, System.Security.Cryptography.RSAEncryptionPadding padding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] Decrypt(unsigned int8[] data, class System.Security.Cryptography.RSAEncryptionPadding padding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.Decrypt(System.Byte[],System.Security.Cryptography.RSAEncryptionPadding)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (data As Byte(), padding As RSAEncryptionPadding) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ Decrypt(cli::array &lt;System::Byte&gt; ^ data, System::Security::Cryptography::RSAEncryptionPadding ^ padding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -154,6 +182,11 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
@@ -181,6 +214,8 @@
       <MemberSignature Language="C#" Value="public override byte[] DecryptValue (byte[] rgb);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] DecryptValue(unsigned int8[] rgb) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.DecryptValue(System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function DecryptValue (rgb As Byte()) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ DecryptValue(cli::array &lt;System::Byte&gt; ^ rgb);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -204,10 +239,13 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -233,10 +271,13 @@
       <MemberSignature Language="C#" Value="public override byte[] Encrypt (byte[] data, System.Security.Cryptography.RSAEncryptionPadding padding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] Encrypt(unsigned int8[] data, class System.Security.Cryptography.RSAEncryptionPadding padding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.Encrypt(System.Byte[],System.Security.Cryptography.RSAEncryptionPadding)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Encrypt (data As Byte(), padding As RSAEncryptionPadding) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ Encrypt(cli::array &lt;System::Byte&gt; ^ data, System::Security::Cryptography::RSAEncryptionPadding ^ padding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -246,6 +287,11 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
@@ -273,6 +319,8 @@
       <MemberSignature Language="C#" Value="public override byte[] EncryptValue (byte[] rgb);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] EncryptValue(unsigned int8[] rgb) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.EncryptValue(System.Byte[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function EncryptValue (rgb As Byte()) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ EncryptValue(cli::array &lt;System::Byte&gt; ^ rgb);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -296,10 +344,13 @@
       <MemberSignature Language="C#" Value="public override System.Security.Cryptography.RSAParameters ExportParameters (bool includePrivateParameters);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Security.Cryptography.RSAParameters ExportParameters(bool includePrivateParameters) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.ExportParameters(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ExportParameters (includePrivateParameters As Boolean) As RSAParameters" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Security::Cryptography::RSAParameters ExportParameters(bool includePrivateParameters);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -328,10 +379,13 @@
       <MemberSignature Language="C#" Value="protected override byte[] HashData (System.IO.Stream data, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] HashData(class System.IO.Stream data, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.HashData(System.IO.Stream,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function HashData (data As Stream, hashAlgorithm As HashAlgorithmName) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override cli::array &lt;System::Byte&gt; ^ HashData(System::IO::Stream ^ data, System::Security::Cryptography::HashAlgorithmName hashAlgorithm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -360,10 +414,13 @@
       <MemberSignature Language="C#" Value="protected override byte[] HashData (byte[] data, int offset, int count, System.Security.Cryptography.HashAlgorithmName hashAlgorithm);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance unsigned int8[] HashData(unsigned int8[] data, int32 offset, int32 count, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.HashData(System.Byte[],System.Int32,System.Int32,System.Security.Cryptography.HashAlgorithmName)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function HashData (data As Byte(), offset As Integer, count As Integer, hashAlgorithm As HashAlgorithmName) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override cli::array &lt;System::Byte&gt; ^ HashData(cli::array &lt;System::Byte&gt; ^ data, int offset, int count, System::Security::Cryptography::HashAlgorithmName hashAlgorithm);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -396,10 +453,13 @@
       <MemberSignature Language="C#" Value="public override void ImportParameters (System.Security.Cryptography.RSAParameters parameters);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ImportParameters(valuetype System.Security.Cryptography.RSAParameters parameters) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.ImportParameters(System.Security.Cryptography.RSAParameters)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub ImportParameters (parameters As RSAParameters)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void ImportParameters(System::Security::Cryptography::RSAParameters parameters);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -441,10 +501,13 @@
       <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngKey Key { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngKey Key" />
       <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSACng.Key" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Key As CngKey" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::Cryptography::CngKey ^ Key { System::Security::Cryptography::CngKey ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -470,7 +533,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The returned <xref:System.Security.Cryptography.CngKey> object is disposed if the key is reset, for instance by changing the <xref:System.Security.Cryptography.CngKey.KeySize%2A?displayProperty=fullName> property, by using the <xref:System.Security.Cryptography.RSA.ImportParameters%2A?displayProperty=fullName> to create a new key, or by disposing of the parent <xref:System.Security.Cryptography.RSA> object. Therefore, you should ensure that the key object is no longer used in these cases.  
+ The returned <xref:System.Security.Cryptography.CngKey> object is disposed if the key is reset, for instance by changing the <xref:System.Security.Cryptography.CngKey.KeySize%2A?displayProperty=nameWithType> property, by using the <xref:System.Security.Cryptography.RSA.ImportParameters%2A?displayProperty=nameWithType> to create a new key, or by disposing of the parent <xref:System.Security.Cryptography.RSA> object. Therefore, you should ensure that the key object is no longer used in these cases.  
   
  This <xref:System.Security.Cryptography.CngKey> object is not the same as the <xref:System.Security.Cryptography.CngKey> object passed to the <xref:System.Security.Cryptography.RSACng.%23ctor%2A> constructor, if that constructor was used. However, it will point to the same CNG key.  
   
@@ -483,6 +546,8 @@
       <MemberSignature Language="C#" Value="public override string KeyExchangeAlgorithm { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string KeyExchangeAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSACng.KeyExchangeAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property KeyExchangeAlgorithm As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ KeyExchangeAlgorithm { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -501,10 +566,13 @@
       <MemberSignature Language="C#" Value="public override System.Security.Cryptography.KeySizes[] LegalKeySizes { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalKeySizes" />
       <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSACng.LegalKeySizes" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property LegalKeySizes As KeySizes()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property cli::array &lt;System::Security::Cryptography::KeySizes ^&gt; ^ LegalKeySizes { cli::array &lt;System::Security::Cryptography::KeySizes ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
@@ -519,6 +587,8 @@
       <MemberSignature Language="C#" Value="public override string SignatureAlgorithm { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string SignatureAlgorithm" />
       <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSACng.SignatureAlgorithm" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property SignatureAlgorithm As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ SignatureAlgorithm { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -537,10 +607,13 @@
       <MemberSignature Language="C#" Value="public override byte[] SignHash (byte[] hash, System.Security.Cryptography.HashAlgorithmName hashAlgorithm, System.Security.Cryptography.RSASignaturePadding padding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] SignHash(unsigned int8[] hash, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm, class System.Security.Cryptography.RSASignaturePadding padding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.SignHash(System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function SignHash (hash As Byte(), hashAlgorithm As HashAlgorithmName, padding As RSASignaturePadding) As Byte()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override cli::array &lt;System::Byte&gt; ^ SignHash(cli::array &lt;System::Byte&gt; ^ hash, System::Security::Cryptography::HashAlgorithmName hashAlgorithm, System::Security::Cryptography::RSASignaturePadding ^ padding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -550,6 +623,11 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Byte[]</ReturnType>
       </ReturnValue>
@@ -580,10 +658,13 @@
       <MemberSignature Language="C#" Value="public override bool VerifyHash (byte[] hash, byte[] signature, System.Security.Cryptography.HashAlgorithmName hashAlgorithm, System.Security.Cryptography.RSASignaturePadding padding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool VerifyHash(unsigned int8[] hash, unsigned int8[] signature, valuetype System.Security.Cryptography.HashAlgorithmName hashAlgorithm, class System.Security.Cryptography.RSASignaturePadding padding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSACng.VerifyHash(System.Byte[],System.Byte[],System.Security.Cryptography.HashAlgorithmName,System.Security.Cryptography.RSASignaturePadding)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function VerifyHash (hash As Byte(), signature As Byte(), hashAlgorithm As HashAlgorithmName, padding As RSASignaturePadding) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool VerifyHash(cli::array &lt;System::Byte&gt; ^ hash, cli::array &lt;System::Byte&gt; ^ signature, System::Security::Cryptography::HashAlgorithmName hashAlgorithm, System::Security::Cryptography::RSASignaturePadding ^ padding);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System.Core</AssemblyName>
@@ -593,6 +674,11 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>

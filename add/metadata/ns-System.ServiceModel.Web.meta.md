@@ -1,4 +1,6 @@
 ---
 uid: System.ServiceModel.Web
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

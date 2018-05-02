@@ -1,16 +1,10 @@
 ---
-title: "Pointer types (C# Programming Guide) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Pointer types (C# Programming Guide)"
+ms.date: 07/20/2015
 ms.prod: .net
-
-
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 helpviewer_keywords: 
   - "unsafe code [C#], pointers"
   - "pointers [C#]"
@@ -18,21 +12,6 @@ ms.assetid: 3319faf9-336d-4148-9af2-1da2579cdd1e
 caps.latest.revision: 19
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Pointer types (C# Programming Guide)
 In an unsafe context, a type may be a pointer type, a value type, or a reference type. A pointer type declaration takes one of the following forms:  
@@ -124,14 +103,13 @@ Console.ReadLine();
 //12  
 //--------  
 //12  
-  
 ```  
   
  You cannot apply the indirection operator to a pointer of type `void*`. However, you can use a cast to convert a void pointer to any other pointer type, and vice versa.  
   
  A pointer can be `null`. Applying the indirection operator to a null pointer causes an implementation-defined behavior.  
   
- Be aware that passing pointers between methods can cause undefined behavior. Examples are returning a pointer to a local variable through an Out or Ref parameter or as the function result. If the pointer was set in a fixed block, the variable to which it points may no longer be fixed.  
+ Be aware that passing pointers between methods can cause undefined behavior. Consider a method that returns a pointer to a local variable through an `in`, `out` or `ref` parameter or as the function result. If the pointer was set in a fixed block, the variable to which it points may no longer be fixed.  
   
  The following table lists the operators and statements that can operate on pointers in an unsafe context:  
   
@@ -148,15 +126,15 @@ Console.ReadLine();
 |`fixed` statement|Temporarily fixes a variable so that its address may be found.|  
   
 ## C# Language Specification  
- [!INCLUDE[CSharplangspec](../../../csharp/language-reference/keywords/includes/csharplangspec_md.md)]  
+ [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## See Also  
- [C# Programming Guide](../../../csharp/programming-guide/index.md)   
- [Unsafe Code and Pointers](../../../csharp/programming-guide/unsafe-code-pointers/index.md)   
- [Pointer Conversions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)   
- [Pointer Expressions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)   
- [Types](../../../csharp/language-reference/keywords/types.md)   
- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)   
- [fixed Statement](../../../csharp/language-reference/keywords/fixed-statement.md)   
- [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)   
+ [C# Programming Guide](../../../csharp/programming-guide/index.md)  
+ [Unsafe Code and Pointers](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+ [Pointer Conversions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-conversions.md)  
+ [Pointer Expressions](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
+ [Types](../../../csharp/language-reference/keywords/types.md)  
+ [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
+ [fixed Statement](../../../csharp/language-reference/keywords/fixed-statement.md)  
+ [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)  
  [Boxing and Unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

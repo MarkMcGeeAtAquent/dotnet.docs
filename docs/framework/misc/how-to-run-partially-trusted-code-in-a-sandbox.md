@@ -1,5 +1,5 @@
 ---
-title: "How to: Run Partially Trusted Code in a Sandbox | Microsoft Docs"
+title: "How to: Run Partially Trusted Code in a Sandbox"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "partially trusted code"
   - "sandboxing"
@@ -25,26 +20,28 @@ caps.latest.revision: 27
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Run Partially Trusted Code in a Sandbox
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- Sandboxing is the practice of running code in a restricted security environment, which limits the access permissions granted to the code. For example, if you have a managed library from a source you do not completely trust, you should not run it as fully trusted. Instead, you should place the code in a sandbox that limits its permissions to those that you expect it to need (for example, <xref:System.Security.Permissions.SecurityPermissionFlag> permission).  
+ Sandboxing is the practice of running code in a restricted security environment, which limits the access permissions granted to the code. For example, if you have a managed library from a source you do not completely trust, you should not run it as fully trusted. Instead, you should place the code in a sandbox that limits its permissions to those that you expect it to need (for example, <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission).  
   
  You can also use sandboxing to test code you will be distributing that will run in partially trusted environments.  
   
  An <xref:System.AppDomain> is an effective way of providing a sandbox for managed applications. Application domains that are used for running partially trusted code have permissions that define the protected resources that are available when running within that <xref:System.AppDomain>. Code that runs inside the <xref:System.AppDomain> is bound by the permissions associated with the <xref:System.AppDomain> and is allowed to access only the specified resources. The <xref:System.AppDomain> also includes a <xref:System.Security.Policy.StrongName> array that is used to identify assemblies that are to be loaded as fully trusted. This enables the creator of an <xref:System.AppDomain> to start a new sandboxed domain that allows specific helper assemblies to be fully trusted. Another option for loading assemblies as fully trusted is to place them in the global assembly cache; however, that will load assemblies as fully trusted in all application domains created on that computer. The list of strong names supports a per-<xref:System.AppDomain> decision that provides more restrictive determination.  
   
- You can use the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=fullName> method overload to specify the permission set for applications that run in a sandbox. This overload enables you to specify the exact level of code access security you want. Assemblies that are loaded into an <xref:System.AppDomain> by using this overload can either have the specified grant set only, or can be fully trusted. The assembly is granted full trust if it is in the global assembly cache or listed in the `fullTrustAssemblies` (the <xref:System.Security.Policy.StrongName>) array parameter. Only assemblies known to be fully trusted should be added to the `fullTrustAssemblies` list.  
+ You can use the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> method overload to specify the permission set for applications that run in a sandbox. This overload enables you to specify the exact level of code access security you want. Assemblies that are loaded into an <xref:System.AppDomain> by using this overload can either have the specified grant set only, or can be fully trusted. The assembly is granted full trust if it is in the global assembly cache or listed in the `fullTrustAssemblies` (the <xref:System.Security.Policy.StrongName>) array parameter. Only assemblies known to be fully trusted should be added to the `fullTrustAssemblies` list.  
   
  The overload has the following signature:  
   
 ```  
-AppDomain.CreateDomain( string friendlyName,  
-                        Evidence securityInfo,  
-                        AppDomainSetup info,  
-                        PermissionSet grantSet,  
-                        params StrongName[] fullTrustAssemblies);  
+AppDomain.CreateDomain( string friendlyName,  
+                        Evidence securityInfo,  
+                        AppDomainSetup info,  
+                        PermissionSet grantSet,  
+                        params StrongName[] fullTrustAssemblies);  
 ```  
   
  The parameters for the <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29> method overload specify the name of the <xref:System.AppDomain>, the evidence for the <xref:System.AppDomain>, the <xref:System.AppDomainSetup> object that identifies the application base for the sandbox, the permission set to use, and the strong names for fully trusted assemblies.  
@@ -57,7 +54,7 @@ AppDomain.CreateDomain( string friendlyName,
   
 ### To run an application in a sandbox  
   
-1.  Create the permission set to be granted to the untrusted application. The minimum permission you can grant is <xref:System.Security.Permissions.SecurityPermissionFlag> permission. You can also grant additional permissions you think might be safe for untrusted code; for example, <xref:System.Security.Permissions.IsolatedStorageFilePermission>. The following code creates a new permission set with only <xref:System.Security.Permissions.SecurityPermissionFlag> permission.  
+1.  Create the permission set to be granted to the untrusted application. The minimum permission you can grant is <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission. You can also grant additional permissions you think might be safe for untrusted code; for example, <xref:System.Security.Permissions.IsolatedStorageFilePermission>. The following code creates a new permission set with only <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> permission.  
   
     ```  
     PermissionSet permSet = new PermissionSet(PermissionState.None);  
@@ -121,11 +118,11 @@ AppDomain.CreateDomain( string friendlyName,
   
     -   Use the <xref:System.Activator.CreateInstanceFrom%2A> method to create an instance of a class derived from <xref:System.MarshalByRefObject> in the new <xref:System.AppDomain>.  
   
-     The second method is preferable, because it makes it easier to pass parameters to the new <xref:System.AppDomain> instance. The<xref:System.Activator.CreateInstanceFrom%2A> method provides two important features:  
+     The second method is preferable, because it makes it easier to pass parameters to the new <xref:System.AppDomain> instance. The <xref:System.Activator.CreateInstanceFrom%2A> method provides two important features:  
   
     -   You can use a code base that points to a location that does not contain your assembly.  
   
-    -   You can do the creation under an <xref:System.Security.CodeAccessPermission.Assert%2A> for full-trust (<xref:System.Security.Permissions.PermissionState?displayProperty=fullName>), which enables you to create an instance of a critical class. (This happens whenever your assembly has no transparency markings and is loaded as fully trusted.) Therefore, you have to be careful to create only code that you trust with this function, and we recommend that you create only instances of fully trusted classes in the new application domain.  
+    -   You can do the creation under an <xref:System.Security.CodeAccessPermission.Assert%2A> for full-trust (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), which enables you to create an instance of a critical class. (This happens whenever your assembly has no transparency markings and is loaded as fully trusted.) Therefore, you have to be careful to create only code that you trust with this function, and we recommend that you create only instances of fully trusted classes in the new application domain.  
   
     ```  
     ObjectHandle handle = Activator.CreateInstanceFrom(  
@@ -280,7 +277,6 @@ class Sandboxer : MarshalByRefObject
         }  
     }  
 }  
-  
 ```  
   
 ## See Also  

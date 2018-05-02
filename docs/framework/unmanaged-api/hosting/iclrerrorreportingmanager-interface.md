@@ -1,5 +1,5 @@
 ---
-title: "ICLRErrorReportingManager Interface | Microsoft Docs"
+title: "ICLRErrorReportingManager Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRErrorReportingManager"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRErrorReportingManager"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRErrorReportingManager interface [.NET Framework hosting]"
 ms.assetid: ea8af0d5-4133-4472-8a1f-50570d7e85fa
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRErrorReportingManager Interface
 Provides methods that allow the host to configure custom stack dumps for error reporting.  
@@ -53,5 +56,5 @@ Provides methods that allow the host to configure custom stack dumps for error r
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ECustomDumpItemKind Enumeration](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)   
+ [ECustomDumpItemKind Enumeration](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpitemkind-enumeration.md)  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

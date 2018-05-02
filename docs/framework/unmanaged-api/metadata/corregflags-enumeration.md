@@ -1,5 +1,5 @@
 ---
-title: "CorRegFlags Enumeration | Microsoft Docs"
+title: "CorRegFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorRegFlags"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorRegFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorRegFlags enumeration [.NET Framework metadata]"
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorRegFlags Enumeration
 Provides flag values used for registration when installing a module or composite image.  

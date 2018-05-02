@@ -1,14 +1,20 @@
 ---
 uid: System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection.IsConnectingEndPointAuthorized(System.Net.EndPoint)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.IAuthorizeRemotingConnection.IsConnectingIdentityAuthorized(System.Security.Principal.IIdentity)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

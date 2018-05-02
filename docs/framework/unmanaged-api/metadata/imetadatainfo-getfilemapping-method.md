@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataInfo::GetFileMapping Method | Microsoft Docs"
+title: "IMetaDataInfo::GetFileMapping Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataInfo.GetFileMapping"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataInfo::GetFileMapping"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataInfo::GetFileMapping method [.NET Framework metadata]"
   - "GetFileMapping method [.NET Framework metadata]"
 ms.assetid: 2868dfec-c992-4606-88bb-a8e0b6b18271
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataInfo::GetFileMapping Method
 Gets the memory region of the mapped file, and the type of mapping.  
@@ -77,5 +80,5 @@ HRESULT GetFileMapping (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [IMetaDataInfo Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)   
+ [IMetaDataInfo Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-interface.md)  
  [CorFileMapping Enumeration](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)

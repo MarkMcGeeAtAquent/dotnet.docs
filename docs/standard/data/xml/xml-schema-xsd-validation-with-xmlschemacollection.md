@@ -1,5 +1,5 @@
 ---
-title: "XML Schema (XSD) Validation with XmlSchemaCollection | Microsoft Docs"
+title: "XML Schema (XSD) Validation with XmlSchemaCollection"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
 caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # XML Schema (XSD) Validation with XmlSchemaCollection
 You can use the <xref:System.Xml.Schema.XmlSchemaCollection> to validate an XML document against XML Schema definition language (XSD) schemas. The <xref:System.Xml.Schema.XmlSchemaCollection> improves performance by storing schemas in the collection so they are not loaded into memory each time validation occurs. If the schema exists in the schema collection, the `schemaLocation` attribute is used to look up the schema in the collection.  
@@ -27,7 +28,7 @@ You can use the <xref:System.Xml.Schema.XmlSchemaCollection> to validate an XML 
   
  The following example shows the root element of a data file.  
   
-```  
+```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
     xmlns="urn:bookstore-schema"  
     elementFormDefault="qualified"  
@@ -131,7 +132,7 @@ namespace ValidationSample
   
  The following outlines the contents of the input file, HeadCount.xml, to be validated.  
   
-```  
+```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
 <hc:HeadCount xmlns:hc='xsdHeadCount'>  
    <Name>Waldo Pepper</Name>  
@@ -141,7 +142,7 @@ namespace ValidationSample
   
  The following outlines the contents of the XML Schema file, HeadCount.xsd, to be validated against.  
   
-```  
+```xml  
 <xs:schema xmlns="xsdHeadCount" targetNamespace="xsdHeadCount" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
    <xs:element name='HeadCount' type="HEADCOUNT"/>  
    <xs:complexType name="HEADCOUNT">  
@@ -179,7 +180,7 @@ while(vr.Read()) {
   
  The following outlines the contents of the input file, sample4.xml, to be validated.  
   
-```  
+```xml  
 <datatypes xmlns="datatypesTest">  
     <number>  
         <number_1>123</number_1>  
@@ -189,7 +190,7 @@ while(vr.Read()) {
   
  The following outlines the contents of the XML Schema file, sample4.xsd, to be validated against.  
   
-```  
+```xml  
 <xs:schema   
     xmlns:xs="http://www.w3.org/2001/XMLSchema"   
     xmlns:tns="datatypesTest"   
@@ -213,7 +214,7 @@ while(vr.Read()) {
 ```  
   
 ## See Also  
- <xref:System.Xml.XmlParserContext>   
- <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=fullName>   
- <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=fullName>   
+ <xref:System.Xml.XmlParserContext>  
+ <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
+ <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
  [XmlSchemaCollection Schema Compilation](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

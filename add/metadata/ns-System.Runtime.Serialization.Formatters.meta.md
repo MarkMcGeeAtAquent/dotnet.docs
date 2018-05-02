@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Serialization.Formatters
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

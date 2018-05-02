@@ -1,5 +1,5 @@
 ---
-title: "ICLRDebugManager::GetDacl Method | Microsoft Docs"
+title: "ICLRDebugManager::GetDacl Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDebugManager.GetDacl"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDebugManager::GetDacl"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetDacl method [.NET Framework hosting]"
   - "ICLRDebugManager::GetDacl method [.NET Framework hosting]"
 ms.assetid: 7115e920-aaff-440a-824e-39497139c6f6
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDebugManager::GetDacl Method
 This method is not implemented.  
@@ -58,7 +61,7 @@ HRESULT GetDacl (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)   
- [ICLRDebugManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)   
- [SetDacl Method](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setdacl-method.md)   
+ [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
+ [ICLRDebugManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)  
+ [SetDacl Method](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setdacl-method.md)  
  [IHostControl Interface](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

@@ -1,7 +1,9 @@
-<Type Name="CollectionView" FullName="System.Windows.Data.CollectionView">
+﻿<Type Name="CollectionView" FullName="System.Windows.Data.CollectionView">
   <TypeSignature Language="C#" Value="public class CollectionView : System.Windows.Threading.DispatcherObject, System.Collections.IEnumerable, System.Collections.Specialized.INotifyCollectionChanged, System.ComponentModel.ICollectionView, System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CollectionView extends System.Windows.Threading.DispatcherObject implements class System.Collections.IEnumerable, class System.Collections.Specialized.INotifyCollectionChanged, class System.ComponentModel.ICollectionView, class System.ComponentModel.INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Data.CollectionView" />
+  <TypeSignature Language="VB.NET" Value="Public Class CollectionView&#xA;Inherits DispatcherObject&#xA;Implements ICollectionView, IEnumerable, INotifyCollectionChanged, INotifyPropertyChanged" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CollectionView : System::Windows::Threading::DispatcherObject, System::Collections::IEnumerable, System::Collections::Specialized::INotifyCollectionChanged, System::ComponentModel::ICollectionView, System::ComponentModel::INotifyPropertyChanged" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -35,17 +37,13 @@
   
  Because a view does not change the underlying source collection, a source collection can have multiple views associated with it. By using views, you can display the same data in different ways. For example, you can use two views on a collection of `Task` objects to show tasks sorted by priority on one part of the page and grouped by area on another part of the page.  
   
- In [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] applications, all collections have an associated default collection view. Rather than working with the collection directly, the binding engine always accesses the collection through the associated view. To get the default view, use the <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A?displayProperty=fullName> method. An internal class based on <xref:System.Windows.Data.CollectionView> is the default view for collections that implement only <xref:System.Collections.IEnumerable>. <xref:System.Windows.Data.ListCollectionView> is the default view for collections that implement <xref:System.Collections.IList>. <xref:System.Windows.Data.BindingListCollectionView> is the default view for collections that implement <xref:System.ComponentModel.IBindingListView> or <xref:System.ComponentModel.IBindingList>.  
+ In [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] applications, all collections have an associated default collection view. Rather than working with the collection directly, the binding engine always accesses the collection through the associated view. To get the default view, use the <xref:System.Windows.Data.CollectionViewSource.GetDefaultView%2A?displayProperty=nameWithType> method. An internal class based on <xref:System.Windows.Data.CollectionView> is the default view for collections that implement only <xref:System.Collections.IEnumerable>. <xref:System.Windows.Data.ListCollectionView> is the default view for collections that implement <xref:System.Collections.IList>. <xref:System.Windows.Data.BindingListCollectionView> is the default view for collections that implement <xref:System.ComponentModel.IBindingListView> or <xref:System.ComponentModel.IBindingList>.  
   
  Alternatively, you can create a view of your collection in [!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)] by using the <xref:System.Windows.Data.CollectionViewSource> class and then bind your control to that view. The <xref:System.Windows.Data.CollectionViewSource> class is the [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] representation of the <xref:System.Windows.Data.CollectionView> class. For an example, see [How to: Sort and Group Data Using a View in XAML](~/docs/framework/wpf/data/how-to-sort-and-group-data-using-a-view-in-xaml.md).  
   
  For more information, see "Binding to Collections" in [Data Binding Overview](~/docs/framework/wpf/data/data-binding-overview.md).  
   
  To set a view in [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)], use the <xref:System.Windows.Data.CollectionViewSource> class. <xref:System.Windows.Data.CollectionViewSource> is the [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)] representation of the <xref:System.Windows.Data.CollectionView> class, and it exposes the most commonly used members of the <xref:System.Windows.Data.CollectionView> class.  
-  
-<a name="xamlTextUsage_CollectionView"></a>   
-## XAML Text Usage  
- See Remarks  
   
  ]]></format>
     </remarks>
@@ -55,6 +53,8 @@
       <MemberSignature Language="C#" Value="public CollectionView (System.Collections.IEnumerable collection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IEnumerable collection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.#ctor(System.Collections.IEnumerable)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (collection As IEnumerable)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; CollectionView(System::Collections::IEnumerable ^ collection);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -80,6 +80,8 @@
       <MemberSignature Language="C#" Value="protected bool AllowsCrossThreadChanges { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowsCrossThreadChanges" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.AllowsCrossThreadChanges" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property AllowsCrossThreadChanges As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool AllowsCrossThreadChanges { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -99,6 +101,8 @@
       <MemberSignature Language="C#" Value="public virtual bool CanFilter { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanFilter" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.CanFilter" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CanFilter As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanFilter { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -125,6 +129,8 @@
       <MemberSignature Language="C#" Value="public virtual bool CanGroup { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanGroup" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.CanGroup" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CanGroup As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanGroup { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -151,6 +157,8 @@
       <MemberSignature Language="C#" Value="public virtual bool CanSort { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool CanSort" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.CanSort" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CanSort As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool CanSort { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -177,6 +185,8 @@
       <MemberSignature Language="C#" Value="protected void ClearChangeLog ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ClearChangeLog() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.ClearChangeLog" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub ClearChangeLog ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void ClearChangeLog();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -194,12 +204,15 @@
       <Docs>
         <summary>Clears any pending changes from the change log.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Data.CollectionView.OnBeginChangeLogging(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
       </Docs>
     </Member>
     <Member MemberName="ClearPendingChanges">
       <MemberSignature Language="C#" Value="protected void ClearPendingChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ClearPendingChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.ClearPendingChanges" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub ClearPendingChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void ClearPendingChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -218,6 +231,8 @@
       <MemberSignature Language="C#" Value="protected virtual event System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Collections.Specialized.NotifyCollectionChangedEventHandler CollectionChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Data.CollectionView.CollectionChanged" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Event CollectionChanged As NotifyCollectionChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual event System::Collections::Specialized::NotifyCollectionChangedEventHandler ^ CollectionChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -229,12 +244,15 @@
       <Docs>
         <summary>Occurs when the view has changed.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged" />
       </Docs>
     </Member>
     <Member MemberName="Comparer">
       <MemberSignature Language="C#" Value="public virtual System.Collections.IComparer Comparer { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IComparer Comparer" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.Comparer" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Comparer As IComparer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::IComparer ^ Comparer { System::Collections::IComparer ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -253,6 +271,8 @@
       <MemberSignature Language="C#" Value="public virtual bool Contains (object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.Contains(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Contains (item As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool Contains(System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -283,6 +303,8 @@
       <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.Count" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Count As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int Count { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -311,6 +333,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Globalization.CultureInfo Culture { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.Culture" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Culture As CultureInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Globalization::CultureInfo ^ Culture { System::Globalization::CultureInfo ^ get(); void set(System::Globalization::CultureInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -334,6 +358,8 @@
       <MemberSignature Language="C#" Value="public virtual event EventHandler CurrentChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Data.CollectionView.CurrentChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Event CurrentChanged As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event EventHandler ^ CurrentChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -348,12 +374,15 @@
         <block subset="none" type="overrides">
           <para>Raise this event after changing the <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para>
         </block>
+        <altmember cref="E:System.ComponentModel.ICollectionView.CurrentChanged" />
       </Docs>
     </Member>
     <Member MemberName="CurrentChanging">
       <MemberSignature Language="C#" Value="public virtual event System.ComponentModel.CurrentChangingEventHandler CurrentChanging;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CurrentChangingEventHandler CurrentChanging" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Data.CollectionView.CurrentChanging" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Event CurrentChanging As CurrentChangingEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual event System::ComponentModel::CurrentChangingEventHandler ^ CurrentChanging;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -368,12 +397,15 @@
         <block subset="none" type="overrides">
           <para>Raise this event before changing the <see cref="P:System.Windows.Data.CollectionView.CurrentItem" />.</para>
         </block>
+        <altmember cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />
       </Docs>
     </Member>
     <Member MemberName="CurrentItem">
       <MemberSignature Language="C#" Value="public virtual object CurrentItem { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object CurrentItem" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.CurrentItem" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CurrentItem As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ CurrentItem { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -406,6 +438,8 @@
       <MemberSignature Language="C#" Value="public virtual int CurrentPosition { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPosition" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.CurrentPosition" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property CurrentPosition As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property int CurrentPosition { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -427,6 +461,8 @@
       <MemberSignature Language="C#" Value="public virtual IDisposable DeferRefresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable DeferRefresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.DeferRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function DeferRefresh () As IDisposable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual IDisposable ^ DeferRefresh();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -453,6 +489,8 @@
       <MemberSignature Language="C#" Value="public virtual void DetachFromSourceCollection ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DetachFromSourceCollection() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.DetachFromSourceCollection" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub DetachFromSourceCollection ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void DetachFromSourceCollection();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -478,6 +516,8 @@
       <MemberSignature Language="C#" Value="public virtual Predicate&lt;object&gt; Filter { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Predicate`1&lt;object&gt; Filter" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.Filter" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Property Filter As Predicate(Of Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property Predicate&lt;System::Object ^&gt; ^ Filter { Predicate&lt;System::Object ^&gt; ^ get(); void set(Predicate&lt;System::Object ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -498,13 +538,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">The current implementation does not support filtering.</exception>
+        <altmember cref="E:System.Windows.Data.CollectionViewSource.Filter" />
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="protected virtual System.Collections.IEnumerator GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function GetEnumerator () As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::Collections::IEnumerator ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -523,6 +569,8 @@
       <MemberSignature Language="C#" Value="public virtual object GetItemAt (int index);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetItemAt(int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.GetItemAt(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetItemAt (index As Integer) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ GetItemAt(int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -559,6 +607,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ObservableCollection&lt;System.ComponentModel.GroupDescription&gt; GroupDescriptions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;class System.ComponentModel.GroupDescription&gt; GroupDescriptions" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.GroupDescriptions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property GroupDescriptions As ObservableCollection(Of GroupDescription)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ObservableCollection&lt;System::ComponentModel::GroupDescription ^&gt; ^ GroupDescriptions { System::Collections::ObjectModel::ObservableCollection&lt;System::ComponentModel::GroupDescription ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -579,12 +629,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.ListCollectionView.GroupDescriptions" />
       </Docs>
     </Member>
     <Member MemberName="Groups">
       <MemberSignature Language="C#" Value="public virtual System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;object&gt; Groups { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyObservableCollection`1&lt;object&gt; Groups" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.Groups" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property Groups As ReadOnlyObservableCollection(Of Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::ObjectModel::ReadOnlyObservableCollection&lt;System::Object ^&gt; ^ Groups { System::Collections::ObjectModel::ReadOnlyObservableCollection&lt;System::Object ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -611,6 +664,8 @@
       <MemberSignature Language="C#" Value="public virtual int IndexOf (object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.IndexOf(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function IndexOf (item As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual int IndexOf(System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -630,9 +685,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If this method returns an index other than -1, it must always be true that view[index-1] < item <= view[index], where the comparisons are done using the <xref:System.Collections.IComparer.Compare%2A?displayProperty=fullName> method of the view, if one exists.  
+ If this method returns an index other than -1, it must always be true that view[index-1] < item <= view[index], where the comparisons are done using the <xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType> method of the view, if one exists.  
   
- This particular behavior of the method is used by some <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> event handlers to speed up reaction to insertion and deletion. If the derived class does not override this method, a listener does a binary search using the <xref:System.Collections.IComparer.Compare%2A?displayProperty=fullName> method.  
+ This particular behavior of the method is used by some <xref:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged> event handlers to speed up reaction to insertion and deletion. If the derived class does not override this method, a listener does a binary search using the <xref:System.Collections.IComparer.Compare%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
@@ -642,6 +697,8 @@
       <MemberSignature Language="C#" Value="public virtual bool IsCurrentAfterLast { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentAfterLast" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsCurrentAfterLast" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsCurrentAfterLast As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsCurrentAfterLast { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -662,12 +719,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentAfterLast" />
       </Docs>
     </Member>
     <Member MemberName="IsCurrentBeforeFirst">
       <MemberSignature Language="C#" Value="public virtual bool IsCurrentBeforeFirst { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentBeforeFirst" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsCurrentBeforeFirst" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsCurrentBeforeFirst As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsCurrentBeforeFirst { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -688,12 +748,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentAfterLast" />
       </Docs>
     </Member>
     <Member MemberName="IsCurrentInSync">
       <MemberSignature Language="C#" Value="protected bool IsCurrentInSync { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentInSync" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsCurrentInSync" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property IsCurrentInSync As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool IsCurrentInSync { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -713,6 +776,8 @@
       <MemberSignature Language="C#" Value="protected bool IsDynamic { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDynamic" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsDynamic" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property IsDynamic As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool IsDynamic { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -732,6 +797,8 @@
       <MemberSignature Language="C#" Value="public virtual bool IsEmpty { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsEmpty" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsEmpty As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsEmpty { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -751,6 +818,8 @@
       <MemberSignature Language="C#" Value="public virtual bool IsInUse { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsInUse" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsInUse" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsInUse As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsInUse { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -770,6 +839,8 @@
       <MemberSignature Language="C#" Value="protected bool IsRefreshDeferred { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsRefreshDeferred" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.IsRefreshDeferred" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property IsRefreshDeferred As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool IsRefreshDeferred { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -792,6 +863,8 @@
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentTo (object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentTo(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentTo(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentTo (item As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentTo(System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -828,12 +901,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.CurrentItem" />
       </Docs>
     </Member>
     <Member MemberName="MoveCurrentToFirst">
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentToFirst ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentToFirst() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentToFirst" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentToFirst () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToFirst();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -855,12 +931,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentBeforeFirst" />
       </Docs>
     </Member>
     <Member MemberName="MoveCurrentToLast">
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentToLast ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentToLast() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentToLast" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentToLast () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToLast();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -882,12 +961,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentAfterLast" />
       </Docs>
     </Member>
     <Member MemberName="MoveCurrentToNext">
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentToNext ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentToNext() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentToNext" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentToNext () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToNext();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -909,12 +991,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentAfterLast" />
       </Docs>
     </Member>
     <Member MemberName="MoveCurrentToPosition">
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentToPosition (int position);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentToPosition(int32 position) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentToPosition(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentToPosition (position As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToPosition(int position);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -945,6 +1030,8 @@
       <MemberSignature Language="C#" Value="public virtual bool MoveCurrentToPrevious ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveCurrentToPrevious() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.MoveCurrentToPrevious" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function MoveCurrentToPrevious () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool MoveCurrentToPrevious();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -966,12 +1053,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionView.IsCurrentBeforeFirst" />
       </Docs>
     </Member>
     <Member MemberName="NeedsRefresh">
       <MemberSignature Language="C#" Value="public virtual bool NeedsRefresh { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool NeedsRefresh" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.NeedsRefresh" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property NeedsRefresh As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool NeedsRefresh { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -992,12 +1082,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Data.CollectionView.Refresh" />
+        <altmember cref="M:System.Windows.Data.CollectionView.DeferRefresh" />
       </Docs>
     </Member>
     <Member MemberName="NewItemPlaceholder">
       <MemberSignature Language="C#" Value="public static object NewItemPlaceholder { get; }" />
       <MemberSignature Language="ILAsm" Value=".property object NewItemPlaceholder" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.NewItemPlaceholder" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property NewItemPlaceholder As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Object ^ NewItemPlaceholder { System::Object ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1013,9 +1107,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When a <xref:System.Windows.Data.CollectionView> that implements <xref:System.ComponentModel.IEditableCollectionView> has <xref:System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition%2A> set to <xref:System.ComponentModel.NewItemPlaceholderPosition> or <xref:System.ComponentModel.NewItemPlaceholderPosition>, the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> is added to the collection.  The <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> always appears in the collection; it does not participate in grouping, sorting, or filtering.  
+ When a <xref:System.Windows.Data.CollectionView> that implements <xref:System.ComponentModel.IEditableCollectionView> has <xref:System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition%2A> set to <xref:System.ComponentModel.NewItemPlaceholderPosition.AtBeginning> or <xref:System.ComponentModel.NewItemPlaceholderPosition.AtEnd>, the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> is added to the collection.  The <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> always appears in the collection; it does not participate in grouping, sorting, or filtering.  
   
- The <xref:System.Windows.Data.CollectionView.CurrentItem%2A> cannot be the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A>. Methods that perform relative navigation, such as the <xref:System.Windows.Data.CollectionView.MoveCurrentToNext%2A>, skip the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A>.  <xref:System.Windows.Data.CollectionView.MoveCurrentToFirst%2A> and <xref:System.Windows.Data.CollectionView.MoveCurrentToLast%2A> skip the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> if <xref:System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition%2A> is set to <xref:System.ComponentModel.NewItemPlaceholderPosition> or <xref:System.ComponentModel.NewItemPlaceholderPosition>, respectively. Methods that perform absolute navigation, such as <xref:System.Windows.Data.CollectionView.MoveCurrentToPosition%2A>, do nothing if the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> would be the <xref:System.Windows.Data.CollectionView.CurrentItem%2A>.  
+ The <xref:System.Windows.Data.CollectionView.CurrentItem%2A> cannot be the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A>. Methods that perform relative navigation, such as the <xref:System.Windows.Data.CollectionView.MoveCurrentToNext%2A>, skip the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A>.  <xref:System.Windows.Data.CollectionView.MoveCurrentToFirst%2A> and <xref:System.Windows.Data.CollectionView.MoveCurrentToLast%2A> skip the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> if <xref:System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition%2A> is set to <xref:System.ComponentModel.NewItemPlaceholderPosition.AtBeginning> or <xref:System.ComponentModel.NewItemPlaceholderPosition.AtEnd>, respectively. Methods that perform absolute navigation, such as <xref:System.Windows.Data.CollectionView.MoveCurrentToPosition%2A>, do nothing if the <xref:System.Windows.Data.CollectionView.NewItemPlaceholder%2A> would be the <xref:System.Windows.Data.CollectionView.CurrentItem%2A>.  
   
  ]]></format>
         </remarks>
@@ -1025,6 +1119,8 @@
       <MemberSignature Language="C#" Value="protected bool OKToChangeCurrent ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool OKToChangeCurrent() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OKToChangeCurrent" />
+      <MemberSignature Language="VB.NET" Value="Protected Function OKToChangeCurrent () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; bool OKToChangeCurrent();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1045,6 +1141,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnAllowsCrossThreadChangesChanged ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAllowsCrossThreadChangesChanged() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnAllowsCrossThreadChangesChanged" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnAllowsCrossThreadChangesChanged ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnAllowsCrossThreadChangesChanged();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1063,6 +1161,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnBeginChangeLogging (System.Collections.Specialized.NotifyCollectionChangedEventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnBeginChangeLogging(class System.Collections.Specialized.NotifyCollectionChangedEventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnBeginChangeLogging(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnBeginChangeLogging (args As NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnBeginChangeLogging(System::Collections::Specialized::NotifyCollectionChangedEventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1087,10 +1187,21 @@
           <paramref name="args" /> is <see langword="null" />.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="OnCollectionChanged">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Raises the <see cref="E:System.Windows.Data.CollectionView.CollectionChanged" /> event.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OnCollectionChanged">
       <MemberSignature Language="C#" Value="protected virtual void OnCollectionChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCollectionChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCollectionChanged (args As NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCollectionChanged(System::Collections::Specialized::NotifyCollectionChangedEventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1119,6 +1230,8 @@
       <MemberSignature Language="C#" Value="protected void OnCollectionChanged (object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnCollectionChanged(object sender, class System.Collections.Specialized.NotifyCollectionChangedEventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub OnCollectionChanged (sender As Object, args As NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void OnCollectionChanged(System::Object ^ sender, System::Collections::Specialized::NotifyCollectionChangedEventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1149,6 +1262,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnCurrentChanged ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCurrentChanged() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnCurrentChanged" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCurrentChanged ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCurrentChanged();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1163,10 +1278,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="OnCurrentChanging">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Raises the <see cref="E:System.Windows.Data.CollectionView.CurrentChanging" /> event.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="OnCurrentChanging">
       <MemberSignature Language="C#" Value="protected void OnCurrentChanging ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnCurrentChanging() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnCurrentChanging" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub OnCurrentChanging ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void OnCurrentChanging();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1192,6 +1318,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnCurrentChanging (System.ComponentModel.CurrentChangingEventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCurrentChanging(class System.ComponentModel.CurrentChangingEventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnCurrentChanging(System.ComponentModel.CurrentChangingEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCurrentChanging (args As CurrentChangingEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCurrentChanging(System::ComponentModel::CurrentChangingEventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1213,6 +1341,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnPropertyChanged (System.ComponentModel.PropertyChangedEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPropertyChanged(class System.ComponentModel.PropertyChangedEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnPropertyChanged (e As PropertyChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnPropertyChanged(System::ComponentModel::PropertyChangedEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1234,6 +1364,8 @@
       <MemberSignature Language="C#" Value="public virtual bool PassesFilter (object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool PassesFilter(object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.PassesFilter(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function PassesFilter (item As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool PassesFilter(System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1264,6 +1396,8 @@
       <MemberSignature Language="C#" Value="protected virtual void ProcessCollectionChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs args);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessCollectionChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.ProcessCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub ProcessCollectionChanged (args As NotifyCollectionChangedEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void ProcessCollectionChanged(System::Collections::Specialized::NotifyCollectionChangedEventArgs ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1288,6 +1422,8 @@
       <MemberSignature Language="C#" Value="protected void ProcessPendingChanges ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProcessPendingChanges() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.ProcessPendingChanges" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub ProcessPendingChanges ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void ProcessPendingChanges();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1306,6 +1442,8 @@
       <MemberSignature Language="C#" Value="protected virtual event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.PropertyChangedEventHandler PropertyChanged" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Data.CollectionView.PropertyChanged" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Event PropertyChanged As PropertyChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual event System::ComponentModel::PropertyChangedEventHandler ^ PropertyChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1317,12 +1455,15 @@
       <Docs>
         <summary>Occurs when a property value has changed.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />
       </Docs>
     </Member>
     <Member MemberName="Refresh">
       <MemberSignature Language="C#" Value="public virtual void Refresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Refresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub Refresh ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Refresh();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1344,12 +1485,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Windows.Data.CollectionView.DeferRefresh" />
+        <altmember cref="P:System.Windows.Data.CollectionView.NeedsRefresh" />
       </Docs>
     </Member>
     <Member MemberName="RefreshOrDefer">
       <MemberSignature Language="C#" Value="protected void RefreshOrDefer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RefreshOrDefer() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.RefreshOrDefer" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub RefreshOrDefer ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void RefreshOrDefer();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1368,6 +1513,8 @@
       <MemberSignature Language="C#" Value="protected virtual void RefreshOverride ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RefreshOverride() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.RefreshOverride" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub RefreshOverride ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void RefreshOverride();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1385,10 +1532,21 @@
         </block>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SetCurrent">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the current item of the <see cref="T:System.Windows.Data.CollectionView" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SetCurrent">
       <MemberSignature Language="C#" Value="protected void SetCurrent (object newItem, int newPosition);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetCurrent(object newItem, int32 newPosition) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub SetCurrent (newItem As Object, newPosition As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void SetCurrent(System::Object ^ newItem, int newPosition);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1412,6 +1570,8 @@
       <MemberSignature Language="C#" Value="protected void SetCurrent (object newItem, int newPosition, int count);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetCurrent(object newItem, int32 newPosition, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.SetCurrent(System.Object,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub SetCurrent (newItem As Object, newPosition As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void SetCurrent(System::Object ^ newItem, int newPosition, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1446,6 +1606,8 @@
       <MemberSignature Language="C#" Value="public virtual System.ComponentModel.SortDescriptionCollection SortDescriptions { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.SortDescriptionCollection SortDescriptions" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.SortDescriptions" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SortDescriptions As SortDescriptionCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::ComponentModel::SortDescriptionCollection ^ SortDescriptions { System::ComponentModel::SortDescriptionCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1465,12 +1627,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Windows.Data.CollectionViewSource.SortDescriptions" />
       </Docs>
     </Member>
     <Member MemberName="SourceCollection">
       <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerable SourceCollection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable SourceCollection" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.SourceCollection" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SourceCollection As IEnumerable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Collections::IEnumerable ^ SourceCollection { System::Collections::IEnumerable ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1489,7 +1654,12 @@
       <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Data.CollectionView.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerator ^ System.Collections.IEnumerable.GetEnumerator() = System::Collections::IEnumerable::GetEnumerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1508,6 +1678,8 @@
       <MemberSignature Language="C#" Value="protected bool UpdatedOutsideDispatcher { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UpdatedOutsideDispatcher" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Data.CollectionView.UpdatedOutsideDispatcher" />
+      <MemberSignature Language="VB.NET" Value="Protected ReadOnly Property UpdatedOutsideDispatcher As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool UpdatedOutsideDispatcher { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -1521,6 +1693,7 @@
         <value>
           <see langword="true" /> if it has been necessary to update the change log because a <see cref="E:System.Windows.Data.CollectionView.CollectionChanged" /> notification has been received on a different thread without first entering the [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] thread dispatcher; otherwise, <see langword="false" />.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Data.CollectionView.OnBeginChangeLogging(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
       </Docs>
     </Member>
   </Members>

@@ -1,5 +1,5 @@
 ---
-title: "Popup Overview | Microsoft Docs"
+title: "Popup Overview"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,13 +10,15 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "controls, Popup"
+  - "controls [WPF], Popup"
   - "Popup control [WPF], about Popup control"
 ms.assetid: 774f53ca-bff8-470e-9ce9-3928b4cf3d4c
 caps.latest.revision: 34
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Popup Overview
 The <xref:System.Windows.Controls.Primitives.Popup> control provides a way to display content in a separate window that floats over the current application window relative to a designated element or screen coordinate. This topic introduces the <xref:System.Windows.Controls.Primitives.Popup> control and provides information about its use.  
@@ -34,9 +36,9 @@ The <xref:System.Windows.Controls.Primitives.Popup> control provides a way to di
 ## Creating a Popup  
  The following example shows how to define a <xref:System.Windows.Controls.Primitives.Popup> control that is the child element of a <xref:System.Windows.Controls.Button> control. Because a <xref:System.Windows.Controls.Button> can have only one child element, this example places the text for the <xref:System.Windows.Controls.Button> and the <xref:System.Windows.Controls.Primitives.Popup> controls in a <xref:System.Windows.Controls.StackPanel>. The content of the <xref:System.Windows.Controls.Primitives.Popup> appears in a <xref:System.Windows.Controls.TextBlock> control, which displays its text in a separate window that floats over the application window near the related <xref:System.Windows.Controls.Button> control.  
   
- [!code-xml[PopupSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
+ [!code-xaml[PopupSimple#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#1)]  
   
- [!code-xml[PopupSimple#CreatePopupCodeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
+ [!code-xaml[PopupSimple#CreatePopupCodeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#createpopupcodexaml)]  
   
 <a name="PopupUses"></a>   
 ## Controls That Implement a Popup  
@@ -86,7 +88,7 @@ The <xref:System.Windows.Controls.Primitives.Popup> control provides a way to di
 ### Customizing Popup Placement  
  You can customize the placement of a <xref:System.Windows.Controls.Primitives.Popup> control by specifying a set of coordinates that are relative to the <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> where you want the <xref:System.Windows.Controls.Primitives.Popup> to appear.  
   
- To customize placement, set the <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> property to <xref:System.Windows.Controls.Primitives.PlacementMode>. Then define a <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegate that returns a set of possible placement points and primary axes (in order of preference) for the <xref:System.Windows.Controls.Primitives.Popup>. The point that shows the largest part of the <xref:System.Windows.Controls.Primitives.Popup> is automatically selected. For an example, see [Specify a Custom Popup Position](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md).  
+ To customize placement, set the <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> property to <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>. Then define a <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback> delegate that returns a set of possible placement points and primary axes (in order of preference) for the <xref:System.Windows.Controls.Primitives.Popup>. The point that shows the largest part of the <xref:System.Windows.Controls.Primitives.Popup> is automatically selected. For an example, see [Specify a Custom Popup Position](../../../../docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md).  
   
 <a name="PopupandtheVisualTree"></a>   
 ## Popup and the Visual Tree  
@@ -95,12 +97,12 @@ The <xref:System.Windows.Controls.Primitives.Popup> control provides a way to di
  The <xref:System.Windows.Controls.Primitives.Popup> control maintains a reference to its <xref:System.Windows.Controls.Primitives.Popup.Child%2A> content as a logical child. When the new window is created, the content of <xref:System.Windows.Controls.Primitives.Popup> becomes a visual child of the window and remains the logical child of <xref:System.Windows.Controls.Primitives.Popup>. Conversely, <xref:System.Windows.Controls.Primitives.Popup> remains the logical parent of its <xref:System.Windows.Controls.Primitives.Popup.Child%2A> content.  
   
 ## See Also  
- <xref:System.Windows.Controls.Primitives.Popup>   
- <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>   
- <xref:System.Windows.Controls.Primitives.PlacementMode>   
- <xref:System.Windows.Controls.Primitives.CustomPopupPlacement>   
- <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>   
- <xref:System.Windows.Controls.ToolTip>   
- <xref:System.Windows.Controls.ToolTipService>   
- [How-to Topics](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)   
+ <xref:System.Windows.Controls.Primitives.Popup>  
+ <xref:System.Windows.Controls.Primitives.PopupPrimaryAxis>  
+ <xref:System.Windows.Controls.Primitives.PlacementMode>  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacement>  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>  
+ <xref:System.Windows.Controls.ToolTip>  
+ <xref:System.Windows.Controls.ToolTipService>  
+ [How-to Topics](../../../../docs/framework/wpf/controls/popup-how-to-topics.md)  
  [How-to Topics](../../../../docs/framework/wpf/controls/tooltip-how-to-topics.md)

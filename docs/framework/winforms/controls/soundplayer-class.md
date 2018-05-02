@@ -1,8 +1,8 @@
 ---
-title: "SoundPlayer Class | Microsoft Docs"
+title: "SoundPlayer Class"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,16 +11,15 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "SoundPlayer"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "sounds, playing"
-  - "SoundPlayer class"
+  - "sounds [Windows Forms], playing"
 ms.assetid: f3945af9-045c-4e2d-b251-377c37ca2d77
 caps.latest.revision: 18
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # SoundPlayer Class
 The `SoundPlayer` class enables you to easily include sounds in your applications.  

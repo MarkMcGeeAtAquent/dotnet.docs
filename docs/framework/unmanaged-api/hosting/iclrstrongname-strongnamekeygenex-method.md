@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameKeyGenEx Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameKeyGenEx Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameKeyGenEx"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameKeyGenEx"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::StrongNameKeyGenEx method [.NET Framework hosting]"
   - "StrongNameKeyGenEx method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: 1f8b59d0-5b72-45b8-ab74-c2b43ffc806e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameKeyGenEx Method
 Generates a new public/private key pair with the specified key size, for strong name use.  
@@ -80,5 +83,5 @@ HRESULT StrongNameKeyGenEx (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [StrongNameKeyGen Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)   
+ [StrongNameKeyGen Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

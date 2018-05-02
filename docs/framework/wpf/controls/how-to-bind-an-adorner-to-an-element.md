@@ -1,5 +1,5 @@
 ---
-title: "How to: Bind an Adorner to an Element | Microsoft Docs"
+title: "How to: Bind an Adorner to an Element"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "UIElements, binding adorners to"
-  - "adorners, binding to specified UIElements"
+  - "UIElements [WPF], binding adorners to"
+  - "adorners [WPF], binding to specified UIElements"
 ms.assetid: b2101611-a0ee-4137-bdb8-9b3673d2e6b9
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Bind an Adorner to an Element
 This example shows how to programmatically bind an adorner to a specified <xref:System.Windows.UIElement>.  

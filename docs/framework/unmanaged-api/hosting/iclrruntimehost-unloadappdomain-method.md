@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeHost::UnloadAppDomain Method | Microsoft Docs"
+title: "ICLRRuntimeHost::UnloadAppDomain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeHost.UnloadAppDomain"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeHost::UnloadAppDomain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRRuntimeHost::UnloadAppDomain method [.NET Framework hosting]"
   - "UnloadAppDomain method [.NET Framework hosting]"
 ms.assetid: 571912bc-3429-4ff8-8eb2-ea993ffbd901
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeHost::UnloadAppDomain Method
 Unloads the managed <xref:System.AppDomain> that corresponds to the specified numeric identifier.  

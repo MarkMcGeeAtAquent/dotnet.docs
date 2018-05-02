@@ -1,50 +1,30 @@
 ---
-title: "/debug (Visual Basic) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "/debug (Visual Basic)"
+ms.date: 03/10/2018
 ms.prod: .net
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "debug compiler switches"
   - "/debug compiler option [Visual Basic]"
   - "-debug compiler option [Visual Basic]"
   - "debug compiler option [Visual Basic]"
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-caps.latest.revision: 18
-author: dotnet-bot
-ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
+author: rpetrusha
+ms.author: ronpet
 ---
-# /debug (Visual Basic)
+# -debug (Visual Basic)
 Causes the compiler to generate debugging information and place it in the output file(s).  
   
 ## Syntax  
   
 ```  
-/debug[+ | -]  
+-debug[+ | -]  
 ' -or-  
-/debug:[full | pdbonly]  
+-debug:[full | pdbonly]  
 ```  
   
 ## Arguments  
@@ -59,20 +39,20 @@ Causes the compiler to generate debugging information and place it in the output
   
  By default, debugging information is not emitted (`/debug-`). To emit debugging information, specify `/debug` or `/debug+`.  
   
- For information on how to configure the debug performance of an application, see [Making an Image Easier to Debug](http://msdn.microsoft.com/library/7d90ea7a-150f-4f97-98a7-f9c26541b9a3).  
+ For information on how to configure the debug performance of an application, see [Making an Image Easier to Debug](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   
-|To set /debug in the Visual Studio integrated development environment|  
+|To set -debug in the Visual Studio integrated development environment|  
 |---|  
-|1.  With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**. For more information, see [Introduction to the Project Designer](http://msdn.microsoft.com/en-us/898dd854-c98d-430c-ba1b-a913ce3c73d7).<br />2.  Click the **Compile** tab.<br />3.  Click **Advanced Compile Options**.<br />4.  Modify the value in the **Generate Debug Info** box.|  
+|1.  With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**. <br />2.  Click the **Compile** tab.<br />3.  Click **Advanced Compile Options**.<br />4.  Modify the value in the **Generate Debug Info** box.|  
   
 ## Example  
  The following example puts debugging information in output file `App.exe`.  
   
 ```  
-vbc /debug /out:app.exe test.vb  
+vbc -debug -out:app.exe test.vb  
 ```  
   
 ## See Also  
- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)   
- [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)   
+ [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [/bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)  
  [Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

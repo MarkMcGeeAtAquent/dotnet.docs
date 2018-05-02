@@ -1,5 +1,7 @@
 ---
 uid: System.Windows.Media.BitmapScalingMode
-ms.author: "kempb"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+ms.author: "dotnet-bot"
+manager: "wpickett"
 ---

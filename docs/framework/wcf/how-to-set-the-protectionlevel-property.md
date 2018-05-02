@@ -1,5 +1,5 @@
 ---
-title: "How to: Set the ProtectionLevel Property | Microsoft Docs"
+title: "How to: Set the ProtectionLevel Property"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "WCF, security"
   - "ProtectionLevel property"
 ms.assetid: 3d4e8f80-0f9e-4a26-9899-beb6584e78df
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Set the ProtectionLevel Property
 You can set the protection level by applying an appropriate attribute and setting the property. You can set protection at the service level to affect all parts of every message, or you can set protection at increasingly granular levels, from methods to message parts. [!INCLUDE[crabout](../../../includes/crabout-md.md)] the `ProtectionLevel` property, see [Understanding Protection Level](../../../docs/framework/wcf/understanding-protection-level.md).  
@@ -28,7 +33,7 @@ You can set the protection level by applying an appropriate attribute and settin
   
 1.  Create an interface for the service.  
   
-2.  Apply the <xref:System.ServiceModel.ServiceContractAttribute> attribute to the service and set the <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel>, as shown in the following code (the default level is <xref:System.Net.Security.ProtectionLevel>).  
+2.  Apply the <xref:System.ServiceModel.ServiceContractAttribute> attribute to the service and set the <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel.Sign>, as shown in the following code (the default level is <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>).  
   
      [!code-csharp[C_ProtectionLevel#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#1)]
      [!code-vb[C_ProtectionLevel#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#1)]  
@@ -39,7 +44,7 @@ You can set the protection level by applying an appropriate attribute and settin
   
 2.  Add a method declaration to the interface.  
   
-3.  Apply the <xref:System.ServiceModel.OperationContractAttribute> attribute to the method, and set the <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel>, as shown in the following code.  
+3.  Apply the <xref:System.ServiceModel.OperationContractAttribute> attribute to the method, and set the <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel.Sign>, as shown in the following code.  
   
      [!code-csharp[C_ProtectionLevel#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#2)]
      [!code-vb[C_ProtectionLevel#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#2)]  
@@ -58,7 +63,7 @@ You can set the protection level by applying an appropriate attribute and settin
   
 3.  In the interface that will return the fault, apply the <xref:System.ServiceModel.FaultContractAttribute> attribute to the method that will return the fault and set the `detailType` parameter to the type of the fault class.  
   
-4.  Also in the constructor, set the <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel>, as shown in the following code.  
+4.  Also in the constructor, set the <xref:System.ServiceModel.FaultContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>, as shown in the following code.  
   
      [!code-csharp[C_ProtectionLevel#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#4)]
      [!code-vb[C_ProtectionLevel#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#4)]  
@@ -70,11 +75,11 @@ You can set the protection level by applying an appropriate attribute and settin
   
 1.  Create a type that represents the message. The following example creates a `Company` class with two fields, `CompanyName` and `CompanyID`.  
   
-2.  Apply the <xref:System.ServiceModel.MessageContractAttribute> attribute to the class and set the <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel>.  
+2.  Apply the <xref:System.ServiceModel.MessageContractAttribute> attribute to the class and set the <xref:System.ServiceModel.MessageContractAttribute.ProtectionLevel%2A> property to <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
   
-3.  Apply the <xref:System.ServiceModel.MessageHeaderAttribute> attribute to a field that will be expressed as a message header and set the `ProtectionLevel` property to <xref:System.Net.Security.ProtectionLevel>.  
+3.  Apply the <xref:System.ServiceModel.MessageHeaderAttribute> attribute to a field that will be expressed as a message header and set the `ProtectionLevel` property to <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  
   
-4.  Apply the <xref:System.ServiceModel.MessageBodyMemberAttribute> to any field that will be expressed as part of the message body, and set the `ProtectionLevel`property to <xref:System.Net.Security.ProtectionLevel>, as shown in the following example.  
+4.  Apply the <xref:System.ServiceModel.MessageBodyMemberAttribute> to any field that will be expressed as part of the message body, and set the `ProtectionLevel` property to <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>, as shown in the following example.  
   
      [!code-csharp[C_ProtectionLevel#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_protectionlevel/cs/source.cs#5)]
      [!code-vb[C_ProtectionLevel#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#5)]  
@@ -92,9 +97,9 @@ You can set the protection level by applying an appropriate attribute and settin
  [!code-vb[C_ProtectionLevel#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_protectionlevel/vb/source.vb#0)]  
   
 ## See Also  
- <xref:System.ServiceModel.ServiceContractAttribute>   
- <xref:System.ServiceModel.OperationContractAttribute>   
- <xref:System.ServiceModel.FaultContractAttribute>   
- <xref:System.ServiceModel.MessageContractAttribute>   
- <xref:System.ServiceModel.MessageBodyMemberAttribute>   
+ <xref:System.ServiceModel.ServiceContractAttribute>  
+ <xref:System.ServiceModel.OperationContractAttribute>  
+ <xref:System.ServiceModel.FaultContractAttribute>  
+ <xref:System.ServiceModel.MessageContractAttribute>  
+ <xref:System.ServiceModel.MessageBodyMemberAttribute>  
  [Understanding Protection Level](../../../docs/framework/wcf/understanding-protection-level.md)

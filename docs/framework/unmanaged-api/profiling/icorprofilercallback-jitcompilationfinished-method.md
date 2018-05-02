@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::JITCompilationFinished Method | Microsoft Docs"
+title: "ICorProfilerCallback::JITCompilationFinished Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.JITCompilationFinished"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::JITCompilationFinished"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "JITCompilationFinished method [.NET Framework profiling]"
   - "ICorProfilerCallback::JITCompilationFinished method [.NET Framework profiling]"
 ms.assetid: 8dcd7537-d0c6-498c-8a56-2c060310ef65
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::JITCompilationFinished Method
 Notifies the profiler that the just-in-time (JIT) compiler has finished compiling a function.  
@@ -61,5 +64,5 @@ HRESULT JITCompilationFinished(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [JITCompilationStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)

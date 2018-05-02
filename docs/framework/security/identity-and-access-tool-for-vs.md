@@ -1,7 +1,8 @@
 ---
-title: "Identity and Access Tool for Visual Studio 2012 | Microsoft Docs"
+title: "Identity and Access Tool for Visual Studio 2012"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +14,11 @@ caps.latest.revision: 3
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Identity and Access Tool for Visual Studio 2012
-This topic describes the new Identity and Access Tool for Visual Studio 11. You can download this tool from the following URL: [http://go.microsoft.com/fwlink/?LinkID=245849](http://go.microsoft.com/fwlink/?LinkID=245849) or directly from within Visual Studio 11 by searching for “identity” directly in the Extensions Manager.  
+This topic describes the new Identity and Access Tool for Visual Studio 11. You can download this tool from the following URL: [http://go.microsoft.com/fwlink/?LinkID=245849](http://go.microsoft.com/fwlink/?LinkID=245849) or directly from within Visual Studio 11 by searching for "identity" directly in the Extensions Manager.  
   
  The Identity and Access Tool for Visual Studio 11 delivers a dramatically simplified development-time experience with the following highlights:  
   

@@ -1,24 +1,23 @@
 ---
-title: "XmlReader Sample | Microsoft Docs"
+title: "XmlReader Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "XML Reader"
 ms.assetid: 60e5848d-7d9c-4ea5-bed9-22758c9ac16c
 caps.latest.revision: 32
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # XmlReader Sample
 The XmlReader sample demonstrates the processing of a message body using an <xref:System.Xml.XmlReader>. The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), which implements a calculator service. An additional service operation, `Sum`, has been added that accepts a message that contains an array of values to add together. The service reads the message using an <xref:System.Xml.XmlReader>.  
@@ -42,7 +41,6 @@ public interface ICalculator
     [OperationContract]  
     Message Sum(Message message);  
 }  
-  
 ```  
   
  The client accesses `Sum` by first creating an array of integer values, then creating a message from the array, and then calling the `Sum` method using the created message, as shown in the following sample code.  
@@ -60,7 +58,6 @@ using (new OperationContextScope(client.InnerChannel))
   
     Console.WriteLine("Sum(1,2,3,4,5) = {0}", sum);  
 }  
-  
 ```  
   
  In the service, the implementation of the service operation `Sum` accesses the message body using an <xref:System.Xml.XmlReader> object to iterate through the values to sum. The <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> method is called to access the message body, as shown in the following sample code.  
@@ -88,13 +85,11 @@ public int Sum(Message message)
        sum);  
     return response;  
 }  
-  
 ```  
   
  When you run the sample, the requests and responses of the operation are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  

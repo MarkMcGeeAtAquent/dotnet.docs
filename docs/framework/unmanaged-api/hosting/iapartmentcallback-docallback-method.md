@@ -1,5 +1,5 @@
 ---
-title: "IApartmentCallback::DoCallback Method | Microsoft Docs"
+title: "IApartmentCallback::DoCallback Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IApartmentCallback.DoCallback"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "DoCallback"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IApartmentCallback::DoCallback method [.NET Framework hosting]"
   - "DoCallback method [.NET Framework hosting]"
 ms.assetid: 8edad30c-30ff-4bee-813c-75525a82fc93
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IApartmentCallback::DoCallback Method
 Executes the specified function within an apartment.  

@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::Close Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::Close Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.Close"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::Close"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Close method, ISymUnmanagedWriter interface [.NET Framework debugging]"
   - "ISymUnmanagedWriter::Close method [.NET Framework debugging]"
 ms.assetid: 4cce59e1-80b9-4fc4-b3aa-126f1c5876bc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::Close Method
 Closes the symbol writer after committing the symbols to the symbol store.  

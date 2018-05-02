@@ -1,17 +1,19 @@
 ---
-title: "Get WorkflowInstanceId | Microsoft Docs"
+title: "Get WorkflowInstanceId"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: bd7eea3b-1c28-4b84-9a67-003bc553aa81
 caps.latest.revision: 6
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Get WorkflowInstanceId
 This sample demonstrates how to use the custom activity, `GetWorkflowInstanceId` to return the workflow instance ID.  
@@ -28,11 +30,10 @@ This sample demonstrates how to use the custom activity, `GetWorkflowInstanceId`
 public sealed class GetWorkflowInstanceId : CodeActivity<Guid>  
 {  
 protected override Guid Execute(CodeActivityContext context)  
-        {  
-            return context.WorkflowInstanceId;  
-        }  
+        {  
+            return context.WorkflowInstanceId;  
+        }  
 }  
-  
 ```  
   
 > [!IMPORTANT]

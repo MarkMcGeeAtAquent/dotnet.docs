@@ -1,5 +1,5 @@
 ---
-title: "COR_ACTIVE_FUNCTION Structure | Microsoft Docs"
+title: "COR_ACTIVE_FUNCTION Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_ACTIVE_FUNCTION"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_ACTIVE_FUNCTION"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_ACTIVE_FUNCTION structure [.NET Framework debugging]"
 ms.assetid: ed86185f-2152-459c-961f-10c06d62e83f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_ACTIVE_FUNCTION Structure
 Contains information about the functions that are currently active in a thread's frames. This structure is used by the [ICorDebugThread2::GetActiveFunctions](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md) method.  
@@ -61,5 +64,5 @@ typedef struct  _COR_ACTIVE_FUNCTION {
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

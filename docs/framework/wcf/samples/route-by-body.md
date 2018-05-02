@@ -1,8 +1,8 @@
 ---
-title: "Route by Body | Microsoft Docs"
+title: "Route by Body"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Route by Body
 This sample demonstrates how to implement a service that accepts message objects with any SOAP action. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service. The service implements a single `Calculate` operation that accepts a <xref:System.ServiceModel.Channels.Message> request parameter and returns a <xref:System.ServiceModel.Channels.Message> response.  
@@ -39,7 +41,6 @@ This sample demonstrates how to implement a service that accepts message objects
         [OperationContract(Action = "")]  
         double Divide(double n1, double n2);  
     }  
-  
 ```  
   
  Given a contract, a service requires custom dispatch behavior `DispatchByBodyBehavior` to allow messages to be dispatched between operations. This dispatch behavior initializes the `DispatchByBodyElementOperationSelector` custom operation selector with a table of the operation names keyed by QName of respective wrapper elements. `DispatchByBodyElementOperationSelector` looks at the start tag of the first child of the Body and selects the operation using the table previously mentioned.  
@@ -55,7 +56,6 @@ svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
  The client code performs several calculations. When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  
   
 ```  
-  
 Add(100, 15.99) = 115.99  
 Subtract(145, 76.54) = 68.46  
 Multiply(9, 81.25) = 731.25  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugController::Detach Method | Microsoft Docs"
+title: "ICorDebugController::Detach Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugController.Detach"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugController::Detach"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "Detach method, ICorDebugController interface [.NET Framework debugging]"
   - "ICorDebugController::Detach method [.NET Framework debugging]"
 ms.assetid: 06fae364-f2c6-4a50-aa7e-3da9f2684dc3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugController::Detach Method
 Detaches the debugger from the process or application domain.  

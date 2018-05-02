@@ -1,5 +1,5 @@
 ---
-title: "CorDebugBlockingObject Structure | Microsoft Docs"
+title: "CorDebugBlockingObject Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugBlockingObject Structure"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugBlockingObject"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugBlockingObject structure [.NET Framework debugging]"
 ms.assetid: 5944edd1-0914-4efa-aba0-d5a277c38b1a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugBlockingObject Structure
 Defines an object that is blocking a thread and the specific reason that the thread is blocked.  
@@ -60,5 +63,5 @@ CorDebugBlockingReason blockingReason;
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)   
+ [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

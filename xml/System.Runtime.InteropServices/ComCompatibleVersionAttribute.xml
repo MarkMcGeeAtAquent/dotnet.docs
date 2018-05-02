@@ -1,7 +1,9 @@
-<Type Name="ComCompatibleVersionAttribute" FullName="System.Runtime.InteropServices.ComCompatibleVersionAttribute">
+﻿<Type Name="ComCompatibleVersionAttribute" FullName="System.Runtime.InteropServices.ComCompatibleVersionAttribute">
   <TypeSignature Language="C#" Value="public sealed class ComCompatibleVersionAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComCompatibleVersionAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComCompatibleVersionAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class ComCompatibleVersionAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ComCompatibleVersionAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
@@ -33,7 +39,7 @@
   
  By default, the [Tlbexp.exe (Type Library Exporter)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md) uses an assembly's version number to calculate class identifiers (CLSIDs). All public, COM-visible classes receive new CLSIDs each time you export a new assembly version.  
   
- You can apply the `ComCompatibleVersionAttribute` attribute to force all CLSIDs for classes in the current version of an assembly to be the same as CLSIDs for classes in an earlier version of the assembly. As long as the CLSIDs remain the same, a legacy COM application can use the later version of a compatible assembly after you uninstall the original assembly. If you apply the <xref:System.Runtime.InteropServices.GuidAttribute?displayProperty=fullName> to a class to explicitly set its CLSID, the `ComCompatibleVersionAttribute` has no effect.  
+ You can apply the `ComCompatibleVersionAttribute` attribute to force all CLSIDs for classes in the current version of an assembly to be the same as CLSIDs for classes in an earlier version of the assembly. As long as the CLSIDs remain the same, a legacy COM application can use the later version of a compatible assembly after you uninstall the original assembly. If you apply the <xref:System.Runtime.InteropServices.GuidAttribute?displayProperty=nameWithType> to a class to explicitly set its CLSID, the `ComCompatibleVersionAttribute` has no effect.  
   
  The properties of this attribute combine to form the four parts of an assembly version. Always specify the lowest version that the current assembly is backward compatible with so that version is used to calculate all CLSIDs in the assembly.  
   
@@ -48,12 +54,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Runtime.InteropServices.GuidAttribute" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ComCompatibleVersionAttribute (int major, int minor, int build, int revision);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor, int32 build, int32 revision) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComCompatibleVersionAttribute.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (major As Integer, minor As Integer, build As Integer, revision As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ComCompatibleVersionAttribute(int major, int minor, int build, int revision);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -63,6 +72,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="major" Type="System.Int32" />
@@ -83,6 +96,8 @@
       <MemberSignature Language="C#" Value="public int BuildNumber { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BuildNumber" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.BuildNumber" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BuildNumber As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BuildNumber { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -92,6 +107,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -106,6 +125,8 @@
       <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.MajorVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MajorVersion As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MajorVersion { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -115,6 +136,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -129,6 +154,8 @@
       <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.MinorVersion" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MinorVersion As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MinorVersion { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -138,6 +165,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -152,6 +183,8 @@
       <MemberSignature Language="C#" Value="public int RevisionNumber { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 RevisionNumber" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComCompatibleVersionAttribute.RevisionNumber" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RevisionNumber As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int RevisionNumber { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -161,6 +194,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>

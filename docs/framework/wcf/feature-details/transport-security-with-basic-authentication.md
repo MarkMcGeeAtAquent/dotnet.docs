@@ -1,19 +1,24 @@
 ---
-title: "Transport Security with Basic Authentication | Microsoft Docs"
+title: "Transport Security with Basic Authentication"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
 caps.latest.revision: 18
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Transport Security with Basic Authentication
 The following illustration shows a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service and client. The server needs a valid X.509 certificate that can be used for Secure Sockets Layer (SSL), and the clients must trust the server’s certificate. Further, the Web service already has an SSL implementation that can be used. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] enabling basic authentication on Internet Information Services (IIS), see [http://go.microsoft.com/fwlink/?LinkId=83822](http://go.microsoft.com/fwlink/?LinkId=83822).  
@@ -46,7 +51,7 @@ The following illustration shows a [!INCLUDE[indigo1](../../../../includes/indig
 ## Configuration  
  The following configures a service to use basic authentication with transport-level security:  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.serviceModel>  
@@ -89,7 +94,7 @@ The following illustration shows a [!INCLUDE[indigo1](../../../../includes/indig
 > [!NOTE]
 >  You cannot use configuration to set the user name and password. The configuration shown here must be augmented using code to set the user name and password.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <system.serviceModel>  
@@ -114,10 +119,10 @@ The following illustration shows a [!INCLUDE[indigo1](../../../../includes/indig
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>   
- <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>   
- [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [How to: Configure a Port with an SSL Certificate](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)   
- [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)   
- [\<clientCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)   
+ <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>  
+ <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>  
+ [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [How to: Configure a Port with an SSL Certificate](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)  
+ [Security Overview](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [\<clientCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)  
  [Security Model for Windows Server App Fabric](http://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

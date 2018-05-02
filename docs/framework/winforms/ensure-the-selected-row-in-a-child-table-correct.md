@@ -1,5 +1,5 @@
 ---
-title: "How to: Ensure the Selected Row in a Child Table Remains at the Correct Position | Microsoft Docs"
+title: "How to: Ensure the Selected Row in a Child Table Remains at the Correct Position"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,7 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "master-details view"
   - "row position [Windows Forms]"
@@ -27,6 +28,8 @@ caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Ensure the Selected Row in a Child Table Remains at the Correct Position
 Oftentimes when you work with data binding in Windows Forms, you will display data in what is called a parent/child or master/details view. This refers to a data-binding scenario where data from the same source is displayed in two controls. Changing the selection in one control causes the data displayed in the second control to change. For example, the first control might contain a list of customers and the second a list of orders related to the selected customer in the first control.  
@@ -40,7 +43,7 @@ Oftentimes when you work with data binding in Windows Forms, you will display da
      [!code-csharp[System.Windows.Forms.CurrencyManagerReset#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.CurrencyManagerReset#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.CurrencyManagerReset/VB/Form1.vb#4)]  
   
-2.  Handle the <xref:System.Windows.Forms.CurrencyManager.ListChanged> event for the binding's <xref:System.Windows.Forms.CurrencyManager> and check for a <xref:System.ComponentModel.ListChangedType> of <xref:System.ComponentModel.ListChangedType>.  
+2.  Handle the <xref:System.Windows.Forms.CurrencyManager.ListChanged> event for the binding's <xref:System.Windows.Forms.CurrencyManager> and check for a <xref:System.ComponentModel.ListChangedType> of <xref:System.ComponentModel.ListChangedType.Reset>.  
   
 3.  Check the current position of the <xref:System.Windows.Forms.CurrencyManager>. If it is greater than first entry in the list (typically 0), save it to a variable.  
   
@@ -89,6 +92,6 @@ Oftentimes when you work with data binding in Windows Forms, you will display da
  For information about how to build this example from the command line for [!INCLUDE[vbprvb](../../../includes/vbprvb-md.md)] or [!INCLUDE[csprcs](../../../includes/csprcs-md.md)], see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in [!INCLUDE[vsprvs](../../../includes/vsprvs-md.md)] by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## See Also  
- [How to: Ensure Multiple Controls Bound to the Same Data Source Remain Synchronized](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)   
- [BindingSource Component](../../../docs/framework/winforms/controls/bindingsource-component.md)   
+ [How to: Ensure Multiple Controls Bound to the Same Data Source Remain Synchronized](../../../docs/framework/winforms/multiple-controls-bound-to-data-source-synchronized.md)  
+ [BindingSource Component](../../../docs/framework/winforms/controls/bindingsource-component.md)  
  [Data Binding and Windows Forms](../../../docs/framework/winforms/data-binding-and-windows-forms.md)

@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;services&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;services&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 6bdc4590-aa9c-4ec8-9345-879d780cd141
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;services&gt;
 Specifies settings for an instance of <xref:System.Workflow.Runtime.WorkflowRuntime> for hosting workflow-based [!INCLUDE[indigo1](../../../../../includes/indigo1-md.md)] services. This element is of type <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>.  
@@ -27,8 +29,7 @@ Specifies settings for an instance of <xref:System.Workflow.Runtime.WorkflowRunt
   
 ## Syntax  
   
-```  
-  
+```xml  
 <workflowRuntime>  
    <services>  
       <add type="String"/>  
@@ -59,7 +60,7 @@ Specifies settings for an instance of <xref:System.Workflow.Runtime.WorkflowRunt
   
 ## Example  
   
-```  
+```xml  
 <serviceBehaviors>  
    <behavior name="ServiceBehavior">  
       <workflowRuntime name="WorkflowServiceHostRuntime"  
@@ -74,7 +75,7 @@ Specifies settings for an instance of <xref:System.Workflow.Runtime.WorkflowRunt
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>   
- <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>   
- <xref:System.Workflow.Runtime.WorkflowRuntime>   
- [Workflow Configuration Files](http://msdn.microsoft.com/en-us/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)
+ <xref:System.ServiceModel.Configuration.WorkflowRuntimeElement>  
+ <xref:System.Workflow.Runtime.Configuration.WorkflowRuntimeServiceElement>  
+ <xref:System.Workflow.Runtime.WorkflowRuntime>  
+ [Workflow Configuration Files](http://msdn.microsoft.com/library/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)

@@ -1,8 +1,8 @@
 ---
-title: "Service Debug Behavior | Microsoft Docs"
+title: "Service Debug Behavior"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9d8fd3fb-dc39-427a-8235-336a7e7162ba
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Service Debug Behavior
 This sample demonstrates how service debug behavior settings can be configured. The sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md), which implements the `ICalculator` service contract. This sample explicitly defines service debug behavior in the configuration file. It can also be done imperatively in code.  
@@ -25,8 +27,7 @@ This sample demonstrates how service debug behavior settings can be configured. 
   
  The Web.config file for the server defines the service debug behavior to enable the help page and exception handling as shown in the following sample.  
   
-```  
-  
+```xml  
 <behaviors>  
      <serviceBehaviors>  
          <behavior name="CalculatorServiceBehavior">  
@@ -36,7 +37,6 @@ This sample demonstrates how service debug behavior settings can be configured. 
          </behavior>  
      </serviceBehaviors>  
 </behaviors>  
-  
 ```  
   
  [\<serviceDebug>](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) is the configuration element that allows changing the service debug behavior properties. The user can modify this behavior to achieve the following:  

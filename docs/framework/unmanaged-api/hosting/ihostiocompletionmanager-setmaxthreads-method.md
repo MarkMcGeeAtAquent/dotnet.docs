@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::SetMaxThreads Method | Microsoft Docs"
+title: "IHostIoCompletionManager::SetMaxThreads Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.SetMaxThreads"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::SetMaxThreads"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager::SetMaxThreads method [.NET Framework hosting]"
   - "SetMaxThreads method, IHostIoCompletionManager interface [.NET Framework hosting]"
 ms.assetid: ebad4f40-d9f1-4dc6-9b27-a89c9eb3926f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::SetMaxThreads Method
 Sets the maximum number of threads that the host allots to service I/O requests.  
@@ -67,5 +70,5 @@ HRESULT SetMaxThreads (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)   
+ [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

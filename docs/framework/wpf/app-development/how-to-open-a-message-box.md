@@ -1,5 +1,5 @@
 ---
-title: "How to: Open a Message Box | Microsoft Docs"
+title: "How to: Open a Message Box"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "message boxes, opening"
-  - "opening message boxes"
+  - "message boxes [WPF], opening"
+  - "opening message boxes [WPF]"
 ms.assetid: acaad17f-af43-4eca-a004-f1c9e7c6f292
 caps.latest.revision: 8
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Open a Message Box
 This example shows how to open a message box.  

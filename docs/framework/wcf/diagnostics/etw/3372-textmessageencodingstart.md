@@ -1,8 +1,8 @@
 ---
-title: "3372 - TextMessageEncodingStart | Microsoft Docs"
+title: "3372 - TextMessageEncodingStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c57e3fe3-b12d-415e-925e-b09590722d0c
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3372 - TextMessageEncodingStart
 ## Properties  

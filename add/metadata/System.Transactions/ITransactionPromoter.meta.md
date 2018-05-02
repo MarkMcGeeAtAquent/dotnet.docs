@@ -1,9 +1,13 @@
 ---
 uid: System.Transactions.ITransactionPromoter
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.ITransactionPromoter.Promote
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

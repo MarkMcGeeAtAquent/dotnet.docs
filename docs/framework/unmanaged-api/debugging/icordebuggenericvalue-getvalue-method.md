@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugGenericValue::GetValue Method | Microsoft Docs"
+title: "ICorDebugGenericValue::GetValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugGenericValue.GetValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugGenericValue::GetValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugGenericValue::GetValue method [.NET Framework debugging]"
   - "GetValue method, ICorDebugGenericValue interface [.NET Framework debugging]"
 ms.assetid: 4e95d7cb-144d-4ccf-8a69-d605f4744be2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugGenericValue::GetValue Method
 Copies the value of this generic into the specified buffer.  

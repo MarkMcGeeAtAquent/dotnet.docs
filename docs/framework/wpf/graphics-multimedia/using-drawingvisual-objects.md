@@ -1,38 +1,30 @@
 ---
-title: "Using DrawingVisual Objects | Microsoft Docs"
+title: "Using DrawingVisual Objects"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "visual layer, DrawingVisual objects"
-  - "DrawingVisual objects in visual layer"
+  - "visual layer [WPF], DrawingVisual objects"
+  - "DrawingVisual objects in visual layer [WPF]"
 ms.assetid: 0b4e711d-e640-40cb-81c3-8f5c59909b7d
 caps.latest.revision: 17
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Using DrawingVisual Objects
 This topic provides an overview of how to use <xref:System.Windows.Media.DrawingVisual> objects in the [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual layer.  
-  
- This topic contains the following sections.  
-  
-<a name="autoTopLevelSectionsOUTLINE0"></a>   
--   [Drawing Visual Object](#drawingvisual_object)  
-  
--   [DrawingVisual Host Container](#drawingvisual_host_container)  
-  
--   [Creating DrawingVisual Objects](#creating_drawingvisual_objects)  
-  
--   [Creating Overrides for FrameworkElement Members](#creating_overrides)  
-  
--   [Providing Hit Testing Support](#providing_hit_testing_support)  
   
 <a name="drawingvisual_object"></a>   
 ## DrawingVisual Object  
@@ -40,7 +32,7 @@ This topic provides an overview of how to use <xref:System.Windows.Media.Drawing
   
 <a name="drawingvisual_host_container"></a>   
 ## DrawingVisual Host Container  
- In order to use <xref:System.Windows.Media.DrawingVisual> objects, you need to create a host container for the objects. The host container object must derive from the <xref:System.Windows.FrameworkElement> class, which provides the layout and event handling support that the <xref:System.Windows.Media.DrawingVisual> class lacks. The host container object does not display any visible properties, since its main purpose is to contain child objects. However, the <xref:System.Windows.UIElement.Visibility%2A> property of the host container must be set to <xref:System.Windows.Visibility>; otherwise, none of its child elements will be visible.  
+ In order to use <xref:System.Windows.Media.DrawingVisual> objects, you need to create a host container for the objects. The host container object must derive from the <xref:System.Windows.FrameworkElement> class, which provides the layout and event handling support that the <xref:System.Windows.Media.DrawingVisual> class lacks. The host container object does not display any visible properties, since its main purpose is to contain child objects. However, the <xref:System.Windows.UIElement.Visibility%2A> property of the host container must be set to <xref:System.Windows.Visibility.Visible>; otherwise, none of its child elements will be visible.  
   
  When you create a host container object for visual objects, you need to store the visual object references in a <xref:System.Windows.Media.VisualCollection>. Use the <xref:System.Windows.Media.VisualCollection.Add%2A> method to add a visual object to the host container. In the following example, a host container object is created, and three visual objects are added to its <xref:System.Windows.Media.VisualCollection>.  
   
@@ -78,7 +70,7 @@ This topic provides an overview of how to use <xref:System.Windows.Media.Drawing
   
 <a name="providing_hit_testing_support"></a>   
 ## Providing Hit Testing Support  
- The host container object can provide event handling even if it does not display any visible properties—however, its <xref:System.Windows.UIElement.Visibility%2A> property must be set to <xref:System.Windows.Visibility>. This allows you to create an event handling routine for the host container that can trap mouse events, such as the release of the left mouse button. The event handling routine can then implement hit testing by invoking the <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> method. The method's <xref:System.Windows.Media.HitTestResultCallback> parameter refers to a user-defined procedure that you can use to determine the resulting action of a hit test.  
+ The host container object can provide event handling even if it does not display any visible properties—however, its <xref:System.Windows.UIElement.Visibility%2A> property must be set to <xref:System.Windows.Visibility.Visible>. This allows you to create an event handling routine for the host container that can trap mouse events, such as the release of the left mouse button. The event handling routine can then implement hit testing by invoking the <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> method. The method's <xref:System.Windows.Media.HitTestResultCallback> parameter refers to a user-defined procedure that you can use to determine the resulting action of a hit test.  
   
  In the following example, hit testing support is implemented for the host container object and its children.  
   
@@ -86,7 +78,7 @@ This topic provides an overview of how to use <xref:System.Windows.Media.Drawing
  [!code-vb[DrawingVisualSample#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/DrawingVisualSample/visualbasic/window1.xaml.vb#103)]  
   
 ## See Also  
- <xref:System.Windows.Media.DrawingVisual>   
- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>   
- [WPF Graphics Rendering Overview](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)   
+ <xref:System.Windows.Media.DrawingVisual>  
+ <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
+ [WPF Graphics Rendering Overview](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md)  
  [Hit Testing in the Visual Layer](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)

@@ -1,24 +1,23 @@
 ---
-title: "Tracing and Message Logging | Microsoft Docs"
+title: "Tracing and Message Logging"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Tracing and logging"
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
 caps.latest.revision: 53
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Tracing and Message Logging
 This sample demonstrates how to enable tracing and message logging. The resulting traces and message logs are viewed using the [Service Trace Viewer Tool (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -29,7 +28,7 @@ This sample demonstrates how to enable tracing and message logging. The resultin
 ## Tracing  
  [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] uses the tracing mechanism defined in the <xref:System.Diagnostics> namespace. In this tracing model, trace data is produced by trace sources that applications implement. Each source is identified by a name. Trace consumers create trace listeners for the trace sources for which they want to retrieve information. To receive trace data, you must create a listener for the trace source. In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], this can be done by adding the following code to either the service’s or client’s configuration file by setting the Service Model trace source `switchValue`:  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
       <source name="System.ServiceModel" switchValue="Information,ActivityTracing"  
@@ -72,12 +71,12 @@ This sample demonstrates how to enable tracing and message logging. The resultin
 ## Message Logging  
  Message logging can be enabled both on the client and service of any [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] application. To enable message logging, you must add the following code to either the client or service:  
   
-```  
+```xml  
 <configuration>  
   <system.serviceModel>  
     <diagnostics>  
       <!-- Enable Message Logging here. -->  
-      <!-- log all messages received or sent at the transport or service model levels >  
+      <!-- log all messages received or sent at the transport or service model levels -->  
       <messageLogging logEntireMessage="true"  
                       maxMessagesToLog="300"  
                       logMessagesAtServiceLevel="true"  
@@ -92,7 +91,7 @@ This sample demonstrates how to enable tracing and message logging. The resultin
   
  Configure the trace listener by adding the following code to the <xref:System.Diagnostics> section of the client's App.config file or the service's Web.config file:  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
       <source name="System.ServiceModel" switchValue="Information,ActivityTracing"  
@@ -142,5 +141,5 @@ This sample demonstrates how to enable tracing and message logging. The resultin
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
 ## See Also  
- [Tracing](../../../../docs/framework/wcf/diagnostics/tracing/index.md)   
+ [Tracing](../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [AppFabric Monitoring Samples](http://go.microsoft.com/fwlink/?LinkId=193959)

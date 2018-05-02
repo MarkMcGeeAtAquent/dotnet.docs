@@ -1,30 +1,31 @@
 ---
-title: "&lt;system.serviceModel&gt; of workflow | Microsoft Docs"
+title: "&lt;system.serviceModel&gt; of workflow"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
 ms.assetid: 6a8eb2bf-f925-40e1-ba5c-a49b1d3a3ac6
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;system.serviceModel&gt; of workflow
 This configuration section contains all the workflow configuration elements.  
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.ServiceModel>  
   <behaviors>  
     <serviceBehaviors>  
     <behavior name="String">  
-      <bufferReceive maxPendingMessagesPerChannel=”Integer” />  
+      <bufferReceive maxPendingMessagesPerChannel="Integer" />  
       <etwTracking profileName="String" />  
      <sendMessageChannelCache allowUnsafeCaching="Boolean" >          
         <channelSettings idleTimeout="TimeSpan" leaseTimeout="TimeSpan" maxItemsInCache="Integer" />  
@@ -43,14 +44,14 @@ This configuration section contains all the workflow configuration elements.
     </behavior>  
     </serviceBehaviors>  
   </behaviors>  
-  <tracking>    
+  <tracking>    
      <participants>   
       <add name="String"   
            profileName="String"  
            type="String" />   
      </participants>   
-    <trackingProfile name="String">  
-      <workflow activityDefinitionId="String">  
+    <trackingProfile name="String">  
+      <workflow activityDefinitionId="String">  
           <activityScheduledQueries>  
              <activityScheduledQuery activityName="String"  
                  childActivityName="String"/>  
@@ -82,15 +83,15 @@ This configuration section contains all the workflow configuration elements.
                  faultHandlerActivityName="String"/>  
           </faultPropagationQueries>  
          <workflowInstanceQueries>  
-            <workflowInstanceQuery>  
-              <states>  
-                 <state name="String"/>  
-              </states>  
-          </workflowInstanceQuery>  
+            <workflowInstanceQuery>  
+              <states>  
+                 <state name="String"/>  
+              </states>  
+          </workflowInstanceQuery>  
         </workflowInstanceQueries>  
-      </workflow>  
-    </trackingProfile>          
-   </profiles>  
+      </workflow>  
+    </trackingProfile>          
+   </profiles>  
   </tracking>  
 </system.ServiceModel>  
 ```  

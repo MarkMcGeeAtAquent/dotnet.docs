@@ -1,5 +1,5 @@
 ---
-title: "Application Settings for Windows Forms | Microsoft Docs"
+title: "Application Settings for Windows Forms"
 ms.custom: ""
 ms.date: "04/07/2017"
 ms.prod: ".net-framework"
@@ -11,8 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "ClientApplicationSettings"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "application settings [Windows Forms]"
   - "Windows Forms, application settings"
@@ -21,6 +19,8 @@ caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Application Settings for Windows Forms
 The Applications Settings feature of Windows Forms makes it easy to create, store, and maintain custom application and user preferences on the client. With Application Settings, you can store not only application data such as database connection strings, but also user-specific data, such as toolbar positions and most-recently used lists.  
@@ -51,4 +51,4 @@ Documents the settings to enable High DPI support in Windows Forms Application s
 
 ## See also  
   
-[Windows Forms](http://msdn.microsoft.com/library/627df1e9-b254-41af-bbac-9a4f02810c54)
+[Windows Forms](../index.md)

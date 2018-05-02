@@ -1,8 +1,8 @@
 ---
-title: "WCF Web HTTP Error Handling | Microsoft Docs"
+title: "WCF Web HTTP Error Handling"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WCF Web HTTP Error Handling
 [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] Web HTTP error handling enables you to return errors from [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Web HTTP services that specify an HTTP status code and return error details using the same format as the operation (for example, XML or JSON).  
@@ -36,7 +38,7 @@ Public string Operation2()
    // Operation logic  
    // ...   MyErrorDetail detail = new MyErrorDetail  
    {  
-      Message = “Error Message”,  
+      Message = "Error Message",  
       ErrorCode = 123,  
    }  
    throw new WebFaultException<MyErrorDetail>(detail, HttpStatusCode.Forbidden);  
@@ -56,8 +58,8 @@ Public string Operation2()
  <xref:System.ServiceModel.Web.WebFaultException> is a <xref:System.ServiceModel.FaultException> and therefore can be used as the fault exception programming model for services that expose SOAP endpoints as well as web HTTP endpoints.  
   
 ## See Also  
- [WCF Web HTTP Programming Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)   
- [WCF Web HTTP Formatting](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)   
- [Defining and Specifying Faults](../../../../docs/framework/wcf/defining-and-specifying-faults.md)   
- [Handling Exceptions and Faults](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)   
+ [WCF Web HTTP Programming Model](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
+ [WCF Web HTTP Formatting](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)  
+ [Defining and Specifying Faults](../../../../docs/framework/wcf/defining-and-specifying-faults.md)  
+ [Handling Exceptions and Faults](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)  
  [Sending and Receiving Faults](../../../../docs/framework/wcf/sending-and-receiving-faults.md)

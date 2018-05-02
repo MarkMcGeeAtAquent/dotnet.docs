@@ -1,19 +1,14 @@
 ---
-title: "&lt;system.runtime.caching&gt; Element (Cache Settings) | Microsoft Docs"
+title: "&lt;system.runtime.caching&gt; Element (Cache Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<system.runtime.caching> element"
   - "caching [.NET Framework], configuration"
@@ -23,6 +18,8 @@ caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;system.runtime.caching&gt; Element (Cache Settings)
 Provides configuration for the default in-memory <xref:System.Runtime.Caching.ObjectCache> implementation through the `memoryCache` entry in the configuration file.  
@@ -32,9 +29,9 @@ Provides configuration for the default in-memory <xref:System.Runtime.Caching.Ob
   
 ## Syntax  
   
-```  
+```xml  
 <system.runtime.caching >  
-   <!-- child elements -->  
+   <!-- child elements -->  
 </system.runtime.caching >  
 ```  
   
@@ -67,7 +64,7 @@ Provides configuration for the default in-memory <xref:System.Runtime.Caching.Ob
   
  The `cacheMemoryLimitMegabytes` attribute and the `physicalMemoryPercentage` attribute are set to zero. Setting these attributes to zero means that the <xref:System.Runtime.Caching.MemoryCache> autosizing heuristics are used by default. The cache implementation should compare the current memory load against the absolute and percentage-based memory limits every two minutes.  
   
-```  
+```xml  
 <configuration>  
   <system.runtime.caching>  
     <memoryCache>  

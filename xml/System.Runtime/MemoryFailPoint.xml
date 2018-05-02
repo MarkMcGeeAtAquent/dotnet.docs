@@ -1,7 +1,9 @@
-<Type Name="MemoryFailPoint" FullName="System.Runtime.MemoryFailPoint">
+﻿<Type Name="MemoryFailPoint" FullName="System.Runtime.MemoryFailPoint">
   <TypeSignature Language="C#" Value="public sealed class MemoryFailPoint : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MemoryFailPoint extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.MemoryFailPoint" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class MemoryFailPoint&#xA;Inherits CriticalFinalizerObject&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MemoryFailPoint sealed : System::Runtime::ConstrainedExecution::CriticalFinalizerObject, IDisposable" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Runtime.ConstrainedExecution.CriticalFinalizerObject</BaseTypeName>
@@ -32,7 +38,7 @@
  Creating an instance of the <xref:System.Runtime.MemoryFailPoint> class creates a memory gate. A memory gate checks for sufficient resources before initiating an activity that requires a large amount of memory. Failing the check results in an <xref:System.InsufficientMemoryException> exception being thrown. This exception prevents an operation from being started and reduces the possibility of failure due to lack of resources. This enables you decrease performance to avoid an <xref:System.OutOfMemoryException> exception and any state corruption that may result from improper handling of the exception in arbitrary locations in your code.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  By throwing an <xref:System.InsufficientMemoryException> exception, an application can distinguish between an estimate that an operation will not be able to complete and  a partially completed operation that may have corrupted the application state. This allows an application to reduce the frequency of a pessimistic escalation policy, which may require unloading the current <xref:System.AppDomain> or recycling the process.  
   
@@ -60,6 +66,8 @@
       <MemberSignature Language="C#" Value="public MemoryFailPoint (int sizeInMegabytes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 sizeInMegabytes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.#ctor(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (sizeInMegabytes As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; MemoryFailPoint(int sizeInMegabytes);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -69,6 +77,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="sizeInMegabytes" Type="System.Int32" />
@@ -80,7 +92,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The amount of memory used by your application to process a work item can be determined empirically.  To estimate the amount of memory your application needs to process a request, consider using the <xref:System.GC.GetTotalMemory%2A?displayProperty=fullName> method to determine the amount of memory available before and after calling the method that processes the work item. See the <xref:System.Runtime.MemoryFailPoint> class for a code example that dynamically determines the value for the `sizeInMegabytes` parameter.  
+ The amount of memory used by your application to process a work item can be determined empirically.  To estimate the amount of memory your application needs to process a request, consider using the <xref:System.GC.GetTotalMemory%2A?displayProperty=nameWithType> method to determine the amount of memory available before and after calling the method that processes the work item. See the <xref:System.Runtime.MemoryFailPoint> class for a code example that dynamically determines the value for the `sizeInMegabytes` parameter.  
   
    
   
@@ -100,7 +112,12 @@
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -109,6 +126,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -133,11 +154,17 @@
       <MemberSignature Language="C#" Value="~MemoryFailPoint ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.MemoryFailPoint.Finalize" />
+      <MemberSignature Language="VB.NET" Value="Finalize ()" />
+      <MemberSignature Language="C++ CLI" Value="!MemoryFailPoint ()" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -153,6 +180,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Object.Finalize" />
       </Docs>
     </Member>
   </Members>

@@ -1,8 +1,8 @@
 ---
-title: "Unwrapped Messages | Microsoft Docs"
+title: "Unwrapped Messages"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,14 +11,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 019657bd-1f9b-4315-ad74-eaa4e7551ff6
 caps.latest.revision: 22
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Unwrapped Messages
 This sample demonstrates unwrapped messages. By default, the message body is formatted such that the parameters to a service operation are wrapped. The following sample shows an `Add` request message to the `ICalculator` service in wrapped mode.  
   
-```  
+```xml  
 <s:Envelope   
     xmlns:s=http://www.w3.org/2003/05/soap-envelope  
     xmlns:a="http://schemas.xmlsoap.org/ws/2005/08/addressing">  
@@ -32,12 +34,11 @@ This sample demonstrates unwrapped messages. By default, the message body is for
       </Add>  
     </s:Body>  
 </s:Envelope>  
-  
 ```  
   
  The `<Add>` element in the message body wraps the `n1` and `n2` parameters. In contrast, the following sample shows the equivalent message in the unwrapped mode.  
   
-```  
+```xml  
 <s:Envelope   
     xmlns:s="http://www.w3.org/2003/05/soap-envelope"   
     xmlns:a="http://schemas.xmlsoap.org/ws/2005/08/addressing">  
@@ -50,7 +51,6 @@ This sample demonstrates unwrapped messages. By default, the message body is for
     </s:Body>  
   </s:Envelope>  
 </MessageLogTraceRecord>  
-  
 ```  
   
  The unwrapped message does not wrap the `n1` and `n2` parameters in a containing element, they are direct children of the soap body element.  

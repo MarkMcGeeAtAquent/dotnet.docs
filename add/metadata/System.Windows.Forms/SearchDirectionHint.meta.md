@@ -1,6 +1,8 @@
 ---
 uid: System.Windows.Forms.SearchDirectionHint
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-winforms"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

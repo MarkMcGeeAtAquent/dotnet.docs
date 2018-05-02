@@ -1,7 +1,9 @@
-<Type Name="StaticExtension" FullName="System.Windows.Markup.StaticExtension">
+﻿<Type Name="StaticExtension" FullName="System.Windows.Markup.StaticExtension">
   <TypeSignature Language="C#" Value="public class StaticExtension : System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StaticExtension extends System.Windows.Markup.MarkupExtension" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.StaticExtension" />
+  <TypeSignature Language="VB.NET" Value="Public Class StaticExtension&#xA;Inherits MarkupExtension" />
+  <TypeSignature Language="C++ CLI" Value="public ref class StaticExtension : System::Windows::Markup::MarkupExtension" />
   <AssemblyInfo>
     <AssemblyName>System.Xaml</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -31,16 +33,25 @@
   
  You typically use static references to obtain static values from types, including from types that cannot be instantiated in XAML because the type is static. Common examples of cases where `{x:Static}` is useful include values that can be thought of as constants, such as fixed math values or unique keys for states. The static members being referenced do not have to come from specific framework assemblies associated with XAML schema context. You can map other assemblies and CLR namespaces for XAML usage and then can refer to static members of types in XAML using the prefix you mapped.  
   
-<a name="xamlTextUsage_StaticExtension"></a>   
-## XAML Text Usage  
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Markup.StaticExtension" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public StaticExtension ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StaticExtension();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -56,6 +67,8 @@
       <MemberSignature Language="C#" Value="public StaticExtension (string member);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string member) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (member As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StaticExtension(System::String ^ member);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -83,6 +96,8 @@
       <MemberSignature Language="C#" Value="public string Member { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Member" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Markup.StaticExtension.Member" />
+      <MemberSignature Language="VB.NET" Value="Public Property Member As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Member { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -98,7 +113,7 @@
       </ReturnValue>
       <Docs>
         <summary>Gets or sets a member name string that is used to resolve a static field or property based on the service-provided type resolver.</summary>
-        <value>A string that identifies the member to make a reference to. See Remarks.</value>
+        <value>A string that identifies the member to make a reference to.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -111,8 +126,6 @@
   
  Under the normal scenario of use by the [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] XAML processor, the XAML processor passes a type resolver for CLR types as part of its service contract, and this resolver is used on the <xref:System.Windows.Markup.StaticExtension.ProvideValue%2A> call.  
   
-<a name="xamlTextUsage_Member"></a>   
-## XAML Text Usage  
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Attempted to set <see cref="P:System.Windows.Markup.StaticExtension.Member" /> to <see langword="null" />.</exception>
@@ -122,6 +135,8 @@
       <MemberSignature Language="C#" Value="public Type MemberType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type MemberType" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Markup.StaticExtension.MemberType" />
+      <MemberSignature Language="VB.NET" Value="Public Property MemberType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ MemberType { Type ^ get(); void set(Type ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -148,8 +163,6 @@
   
  For XAML usage information, see [x:Static Markup Extension](~/docs/framework/xaml-services/x-static-markup-extension.md).  
   
-<a name="xamlTextUsage_MemberType"></a>   
-## XAML Text Usage  
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">Attempted to set <see cref="P:System.Windows.Markup.StaticExtension.MemberType" /> to <see langword="null" />.</exception>
@@ -159,6 +172,8 @@
       <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.StaticExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ProvideValue (serviceProvider As IServiceProvider) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ ProvideValue(IServiceProvider ^ serviceProvider);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>

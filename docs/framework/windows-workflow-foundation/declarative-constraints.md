@@ -1,5 +1,5 @@
 ---
-title: "Declarative Constraints | Microsoft Docs"
+title: "Declarative Constraints"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
 caps.latest.revision: 12
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Declarative Constraints
 Declarative constraints provide a powerful method of validation for an activity and its relationships with other activities. Constraints are configured for an activity during the authoring process, but additional constraints can also be specified by the workflow host. This topic provides an overview of using declarative constraints to provide activity validation.  

@@ -1,5 +1,5 @@
 ---
-title: "ForwardTranslateAccelerator Function (WPF Unmanaged API Reference) | Microsoft Docs"
+title: "ForwardTranslateAccelerator Function (WPF Unmanaged API Reference)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,15 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+dev_langs: 
+  - "cpp"
+api_name: 
   - "ForwardTranslateAccelerator"
-apilocation: 
+api_location: 
   - "PresentationHost_v0400.dll"
 ms.assetid: fff47a86-9d9f-4176-9530-10e1876e393f
 caps.latest.revision: 3
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # ForwardTranslateAccelerator Function (WPF Unmanaged API Reference)
 This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.  
@@ -27,12 +31,10 @@ This API supports the Windows Presentation Foundation (WPF) infrastructure and i
 ## Syntax  
   
 ```cpp  
-  
 HRESULT ForwardTranslateAccelerator(  
    MSG* pMsg,   
    VARIANT_BOOL appUnhandled  
 )  
-  
 ```  
   
 #### Parameters  

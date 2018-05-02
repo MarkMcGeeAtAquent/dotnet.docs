@@ -1,5 +1,5 @@
 ---
-title: "How to: Retrieve Metadata Over a non-MEX Binding | Microsoft Docs"
+title: "How to: Retrieve Metadata Over a non-MEX Binding"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Retrieve Metadata Over a non-MEX Binding
 This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX binding. The code in this sample is based on the [Custom Secure Metadata Endpoint](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) sample.  
@@ -22,7 +24,7 @@ This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX
   
 1.  Determine the binding used by the MEX endpoint. For [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] services, you can determine the MEX binding by accessing the service's configuration file. In this case, the MEX binding is defined in the following service configuration.  
   
-    ```  
+    ```xml  
     <services>  
         <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
                 behaviorConfiguration="CalculatorServiceBehavior">  
@@ -56,7 +58,7 @@ This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX
   
 2.  In the client configuration file, configure the same custom binding. Here the client also defines a `clientCredentials` behavior to provide a certificate to use to authenticate to the service when requesting metadata from the MEX endpoint. When using Svcutil.exe to request metadata over a custom binding, you should add the MEX endpoint configuration to the configuration file for Svcutil.exe (Svcutil.exe.config), and the name of the endpoint configuration should match the URI scheme of the address of the MEX endpoint, as shown in the following code.  
   
-    ```  
+    ```xml  
     <system.serviceModel>  
       <client>  
         <endpoint name="http"  
@@ -127,7 +129,7 @@ This topic describes how to retrieve metadata from a MEX endpoint over a non-MEX
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5.  At this point, you have a collection of service endpoints. [!INCLUDE[crabout](../../../../includes/crabout-md.md)]importing metadata, see [How to: Import Metadata into Service Endpoints](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).  
+5.  At this point, you have a collection of service endpoints. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] importing metadata, see [How to: Import Metadata into Service Endpoints](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).  
   
 ## See Also  
  [Metadata](../../../../docs/framework/wcf/feature-details/metadata.md)

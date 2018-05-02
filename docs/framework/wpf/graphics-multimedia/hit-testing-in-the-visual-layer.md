@@ -1,5 +1,5 @@
 ---
-title: "Hit Testing in the Visual Layer | Microsoft Docs"
+title: "Hit Testing in the Visual Layer"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-wpf"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
-  - "hit testing functionality"
-  - "visual layer, hit testing functionality"
+  - "hit testing functionality [WPF]"
+  - "visual layer [WPF], hit testing functionality"
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
 caps.latest.revision: 42
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Hit Testing in the Visual Layer
 This topic provides an overview of hit testing functionality provided by the visual layer. Hit testing support allows you to determine whether a geometry or point value falls within the rendered content of a <xref:System.Windows.Media.Visual>, allowing you to implement user interface behavior such as a selection rectangle to select multiple objects.  
@@ -51,12 +56,12 @@ Diagram of valid hit test region
 ## Hit Testing and Z-Order  
  The [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] visual layer supports hit testing against all objects under a point or geometry, not just the top-most object. Results are returned in z-order. However, the visual object that you pass as the parameter to the <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> method determines which portion of the visual tree that will be hit test. You can hit test against the entire visual tree, or any portion of it.  
   
- In the following illustration, the circle object is on top of both the square and triangle objects. If you are only interested in hit testing the visual object whose z-order value is top-most, you can set the visual hit test enumeration to return <xref:System.Windows.Media.HitTestResultBehavior> from the <xref:System.Windows.Media.HitTestResultCallback> to stop the hit test traversal after the first item.  
+ In the following illustration, the circle object is on top of both the square and triangle objects. If you are only interested in hit testing the visual object whose z-order value is top-most, you can set the visual hit test enumeration to return <xref:System.Windows.Media.HitTestResultBehavior.Stop> from the <xref:System.Windows.Media.HitTestResultCallback> to stop the hit test traversal after the first item.  
   
  ![Diagram of the z&#45;order of a visual tree](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-mmgraphics-visuals-hittest-2.png "wcpsdk_mmgraphics_visuals_hittest_2")  
 Diagram of the z-order of a visual tree  
   
- If you want to enumerate all visual objects under a specific point or geometry, return <xref:System.Windows.Media.HitTestResultBehavior> from the <xref:System.Windows.Media.HitTestResultCallback>. This means you can hit test for visual objects that are beneath other objects, even if they are wholly obscured. See the sample code in the section "Using a Hit Test Results Callback" for more information.  
+ If you want to enumerate all visual objects under a specific point or geometry, return <xref:System.Windows.Media.HitTestResultBehavior.Continue> from the <xref:System.Windows.Media.HitTestResultCallback>. This means you can hit test for visual objects that are beneath other objects, even if they are wholly obscured. See the sample code in the section "Using a Hit Test Results Callback" for more information.  
   
 > [!NOTE]
 >  A visual object that is transparent can also be hit test.  
@@ -101,7 +106,7 @@ Diagram of a visual tree hierarchy
 > [!NOTE]
 >  The order of enumeration of hit visual objects is by z-order. The visual object at the top-most z-order level is the first object enumerated. Any other visual objects enumerated are at decreasing z-order level. This order of enumeration corresponds to the rendering order of the visuals.  
   
- You can stop the enumeration of visual objects at any time in the hit test callback function by returning <xref:System.Windows.Media.HitTestResultBehavior>.  
+ You can stop the enumeration of visual objects at any time in the hit test callback function by returning <xref:System.Windows.Media.HitTestResultBehavior.Stop>.  
   
  [!code-csharp[HitTestingOverview#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#103)]
  [!code-vb[HitTestingOverview#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#103)]  
@@ -121,7 +126,7 @@ Diagram of a visual tree hierarchy
  ![Pruning a visual tree using a hit test filter](../../../../docs/framework/wpf/graphics-multimedia/media/filteredvisualtree-01.png "FilteredVisualTree_01")  
 Pruning a visual tree  
   
- The hit test filter callback function allows you to enumerate through all the visuals whose rendered content contains the coordinates you specify. However, you may want to ignore certain branches of the visual tree that you are not interested in processing in your hit test results callback function. The return value of the hit test filter callback function determines what type of action the enumeration of the visual objects should take. For example, if you return the value, <xref:System.Windows.Media.HitTestFilterBehavior>, you can remove the current visual object and its children from the hit test results enumeration. This means that the hit test results callback function will not see these objects in its enumeration. Pruning the visual tree of objects decreases the amount of processing during the hit test results enumeration pass. In the following code example, the filter skips labels and their descendants and hit tests everything else.  
+ The hit test filter callback function allows you to enumerate through all the visuals whose rendered content contains the coordinates you specify. However, you may want to ignore certain branches of the visual tree that you are not interested in processing in your hit test results callback function. The return value of the hit test filter callback function determines what type of action the enumeration of the visual objects should take. For example, if you return the value, <xref:System.Windows.Media.HitTestFilterBehavior.ContinueSkipSelfAndChildren>, you can remove the current visual object and its children from the hit test results enumeration. This means that the hit test results callback function will not see these objects in its enumeration. Pruning the visual tree of objects decreases the amount of processing during the hit test results enumeration pass. In the following code example, the filter skips labels and their descendants and hit tests everything else.  
   
  [!code-csharp[HitTestingOverview#106](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#106)]
  [!code-vb[HitTestingOverview#106](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#106)]  
@@ -142,12 +147,12 @@ Pruning a visual tree
  [!code-vb[HitTestingOverview#108](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#108)]  
   
 ## See Also  
- <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>   
- <xref:System.Windows.Media.HitTestResult>   
- <xref:System.Windows.Media.HitTestResultCallback>   
- <xref:System.Windows.Media.HitTestFilterCallback>   
- <xref:System.Windows.UIElement.IsHitTestVisible%2A>   
- [Hit Test Using DrawingVisuals Sample](http://go.microsoft.com/fwlink/?LinkID=159994)   
- [Hit Test with Win32 Interoperation Sample](http://go.microsoft.com/fwlink/?LinkID=159995)   
- [Hit Test Geometry in a Visual](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-geometry-in-a-visual.md)   
+ <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>  
+ <xref:System.Windows.Media.HitTestResult>  
+ <xref:System.Windows.Media.HitTestResultCallback>  
+ <xref:System.Windows.Media.HitTestFilterCallback>  
+ <xref:System.Windows.UIElement.IsHitTestVisible%2A>  
+ [Hit Test Using DrawingVisuals Sample](http://go.microsoft.com/fwlink/?LinkID=159994)  
+ [Hit Test with Win32 Interoperation Sample](http://go.microsoft.com/fwlink/?LinkID=159995)  
+ [Hit Test Geometry in a Visual](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-geometry-in-a-visual.md)  
  [Hit Test Using a Win32 Host Container](../../../../docs/framework/wpf/graphics-multimedia/how-to-hit-test-using-a-win32-host-container.md)

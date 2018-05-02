@@ -1,8 +1,8 @@
 ---
-title: "How to: Use a Background Thread to Search for Files | Microsoft Docs"
+title: "How to: Use a Background Thread to Search for Files"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Multithreaded Windows Forms Control sample [Windows Forms]"
   - "custom controls [Windows Forms], multithreading"
@@ -21,6 +22,8 @@ caps.latest.revision: 14
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Use a Background Thread to Search for Files
 The <xref:System.ComponentModel.BackgroundWorker> component replaces and adds functionality to the <xref:System.Threading> namespace; however, the <xref:System.Threading> namespace is retained for both backward compatibility and future use, if you choose. For more information, see [BackgroundWorker Component Overview](../../../../docs/framework/winforms/controls/backgroundworker-component-overview.md).  
@@ -286,7 +289,6 @@ Namespace Microsoft.Samples.DirectorySearcher
       End Sub  
    End Class  
 End Namespace  
-  
 ```  
   
 ```csharp  
@@ -665,7 +667,6 @@ Namespace SampleUsage
       End Sub  
    End Class  
 End Namespace  
-  
 ```  
   
 ```csharp  
@@ -770,6 +771,6 @@ namespace SampleUsage
 ```  
   
 ## See Also  
- <xref:System.ComponentModel.BackgroundWorker>   
- [Developing Custom Windows Forms Controls with the .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)   
+ <xref:System.ComponentModel.BackgroundWorker>  
+ [Developing Custom Windows Forms Controls with the .NET Framework](../../../../docs/framework/winforms/controls/developing-custom-windows-forms-controls.md)  
  [Event-based Asynchronous Pattern Overview](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)

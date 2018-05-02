@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Lifetime
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

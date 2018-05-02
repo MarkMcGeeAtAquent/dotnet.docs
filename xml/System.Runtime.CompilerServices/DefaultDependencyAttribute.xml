@@ -1,7 +1,9 @@
-<Type Name="DefaultDependencyAttribute" FullName="System.Runtime.CompilerServices.DefaultDependencyAttribute">
+﻿<Type Name="DefaultDependencyAttribute" FullName="System.Runtime.CompilerServices.DefaultDependencyAttribute">
   <TypeSignature Language="C#" Value="public sealed class DefaultDependencyAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DefaultDependencyAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.DefaultDependencyAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DefaultDependencyAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DefaultDependencyAttribute sealed : Attribute" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
@@ -30,9 +36,9 @@
   
  Apply the <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> attribute to a dependent assembly to determine the preferred default binding.  
   
- A dependency that is likely to be loaded (<xref:System.Runtime.CompilerServices.LoadHint>) will cause Ngen.exe to bind to that dependency.  Using this hint allows Ngen.exe to generate code that will result in a reduced working set and improved throughput but at the cost of always loading the dependency when the parent assembly is loaded.  
+ A dependency that is likely to be loaded (<xref:System.Runtime.CompilerServices.LoadHint.Always>) will cause Ngen.exe to bind to that dependency.  Using this hint allows Ngen.exe to generate code that will result in a reduced working set and improved throughput but at the cost of always loading the dependency when the parent assembly is loaded.  
   
- When you apply the <xref:System.Runtime.CompilerServices.DependencyAttribute> attribute to an assembly with a value of <xref:System.Runtime.CompilerServices.LoadHint>, the native image generation service consults the dependent assembly for its preferred default binding, which is specified by the <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> attribute.  
+ When you apply the <xref:System.Runtime.CompilerServices.DependencyAttribute> attribute to an assembly with a value of <xref:System.Runtime.CompilerServices.LoadHint.Default>, the native image generation service consults the dependent assembly for its preferred default binding, which is specified by the <xref:System.Runtime.CompilerServices.DefaultDependencyAttribute> attribute.  
   
    
   
@@ -44,12 +50,17 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Runtime.CompilerServices.DependencyAttribute" />
+    <altmember cref="T:System.Runtime.CompilerServices.LoadHint" />
+    <altmember cref="P:System.Runtime.CompilerServices.DefaultDependencyAttribute.LoadHint" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DefaultDependencyAttribute (System.Runtime.CompilerServices.LoadHint loadHintArgument);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.CompilerServices.LoadHint loadHintArgument) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.DefaultDependencyAttribute.#ctor(System.Runtime.CompilerServices.LoadHint)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (loadHintArgument As LoadHint)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DefaultDependencyAttribute(System::Runtime::CompilerServices::LoadHint loadHintArgument);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -59,6 +70,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="loadHintArgument" Type="System.Runtime.CompilerServices.LoadHint" />
@@ -83,6 +98,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.CompilerServices.LoadHint LoadHint { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.CompilerServices.LoadHint LoadHint" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.DefaultDependencyAttribute.LoadHint" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LoadHint As LoadHint" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::CompilerServices::LoadHint LoadHint { System::Runtime::CompilerServices::LoadHint get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -92,6 +109,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Runtime.CompilerServices.LoadHint</ReturnType>

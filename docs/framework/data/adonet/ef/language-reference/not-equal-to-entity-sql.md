@@ -1,23 +1,21 @@
 ---
-title: "!= (Not Equal To) (Entity SQL) | Microsoft Docs"
+title: "!= (Not Equal To) (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 3b4a02ad-ddfc-4c42-8dfa-676234461312
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # != (Not Equal To) (Entity SQL)
 Compares two expressions to determine whether the left expression is not equal to the right expression. The != (Not Equal To) operator is functionally equivalent to the <> operator.  
@@ -25,7 +23,6 @@ Compares two expressions to determine whether the left expression is not equal t
 ## Syntax  
   
 ```  
-  
 expression != expression  
 or  
 expression <> expression  

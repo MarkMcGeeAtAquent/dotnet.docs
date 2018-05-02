@@ -1,29 +1,34 @@
 ---
 uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider.Next
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider.#ctor(System.Collections.IDictionary,System.Collections.ICollection)
-manager: "ghogen"
----
-
----
-uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.Channels.BinaryClientFormatterSinkProvider.CreateSink(System.Runtime.Remoting.Channels.IChannelSender,System.String,System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

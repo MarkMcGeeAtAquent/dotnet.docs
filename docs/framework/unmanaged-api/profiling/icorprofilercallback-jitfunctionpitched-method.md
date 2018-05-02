@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::JITFunctionPitched Method | Microsoft Docs"
+title: "ICorProfilerCallback::JITFunctionPitched Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.JITFunctionPitched"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::JITFunctionPitched"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "JITFunctionPitched method [.NET Framework profiling]"
   - "ICorProfilerCallback::JITFunctionPitched method [.NET Framework profiling]"
 ms.assetid: 116085df-7a77-404a-afac-d0557a12b986
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::JITFunctionPitched Method
 Notifies the profiler that a function that has been just-in-time (JIT)-compiled has been removed from memory.  

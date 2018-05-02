@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback::NameChange Method | Microsoft Docs"
+title: "ICorDebugManagedCallback::NameChange Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback.NameChange"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback::NameChange"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugManagedCallback::NameChange method [.NET Framework debugging]"
   - "NameChange method [.NET Framework debugging]"
 ms.assetid: a7018a0e-880e-4b68-b52a-1cd22c7aad62
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback::NameChange Method
 Notifies the debugger that the name of either an application domain or a thread has changed.  

@@ -1,22 +1,21 @@
 ---
-title: "&lt;mtomMessageEncoding&gt; | Microsoft Docs"
+title: "&lt;mtomMessageEncoding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: 7865d171-cd1e-430a-8421-39cc13541d1b
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;mtomMessageEncoding&gt;
 Specifies the encoding and message versioning used for SOAP Message Transmission Optimization Mechanism (MTOM) based messages.  
@@ -29,14 +28,13 @@ Specifies the encoding and message versioning used for SOAP Message Transmission
   
 ## Syntax  
   
-```  
-  
+```xml  
 <mtomMessageEncoding   
    maxBufferSize="Integer"  
       maxReadPoolSize="Integer"  
    maxWritePoolSize="Integer"  
    messageVersion="Soap11Addressing1/Soap12Addressing10"  
-      writeEncoding=”UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />  
+      writeEncoding="UnicodeFffeTextEncoding/Utf16TextEncoding/Utf8TextEncoding" />  
 ```  
   
 ## Attributes and Elements  
@@ -71,21 +69,21 @@ Specifies the encoding and message versioning used for SOAP Message Transmission
   
 ## Example  
   
-```  
+```xml  
 <mtomMessageEncoding maxReadPoolSize="211"  
     maxWritePoolSize="2132"  
-    messageVersion=”Soap11Addressing10”  
-    textEncoding=”utf-8” />  
+    messageVersion="Soap11Addressing10"  
+    textEncoding="utf-8" />  
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.MtomMessageEncodingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>   
- [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)   
- [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.MtomMessageEncodingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
+ [Message Encoding](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)  
+ [Choosing a Message Encoder](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

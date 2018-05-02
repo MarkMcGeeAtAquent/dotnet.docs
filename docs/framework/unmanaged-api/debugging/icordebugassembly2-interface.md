@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAssembly2 Interface1 | Microsoft Docs"
+title: "ICorDebugAssembly2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAssembly2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAssembly2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAssembly2 interface [.NET Framework debugging]"
 ms.assetid: c0766e29-e573-4f9a-a928-167d1de5aa7e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAssembly2 Interface1
 Represents an assembly. This interface is an extension of the ICorDebugAssembly interface.  

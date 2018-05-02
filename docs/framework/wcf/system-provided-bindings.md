@@ -1,5 +1,5 @@
 ---
-title: "System-Provided Bindings | Microsoft Docs"
+title: "System-Provided Bindings"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,16 +9,15 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "bindings [WCF], system-provided"
 ms.assetid: 2c243746-45ce-4588-995e-c17126a579a6
 caps.latest.revision: 60
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # System-Provided Bindings
 Bindings specify the communication mechanism to use when talking to an endpoint and indicate how to connect to an endpoint. A binding contains the following elements:  
@@ -58,7 +57,7 @@ Bindings specify the communication mechanism to use when talking to an endpoint 
 |<xref:System.ServiceModel.BasicHttpContextBinding>|[\<basicHttpContextBinding>](../../../docs/framework/configure-apps/file-schema/wcf/basichttpcontextbinding.md)|A binding that is suitable for communicating with WS-Basic Profile conformant Web services that enables HTTP cookies to be used to exchange context.|  
 |<xref:System.ServiceModel.NetTcpContextBinding>|[\<netTcpContextBinding>](../../../docs/framework/configure-apps/file-schema/wcf/nettcpcontextbinding.md)|A secure and optimized binding suitable for cross-machine communication between [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] applications that enables SOAP headers to be used to exchange context.|  
 |<xref:System.ServiceModel.WebHttpBinding>|[\<webHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|A binding used to configure endpoints for [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] Web services that are exposed through HTTP requests instead of SOAP messages.|  
-|<xref:System.ServiceModel.WSHttpContextBinding>|[\<wsHttpContextBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpcontextbinding.md)|A secure and |<!--zz <xref:System.ServiceModel.Channels.UdpBinding> -->`System.ServiceModel.Channels.UdpBinding`|\<udpBinding>|A binding to use when sending a burst of simple messages to a large number of clients simultaneously.|  
+|<xref:System.ServiceModel.WSHttpContextBinding>|[\<wsHttpContextBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpcontextbinding.md)|A secure and |<xref:System.ServiceModel.UdpBinding>|\<udpBinding>|A binding to use when sending a burst of simple messages to a large number of clients simultaneously.|  
   
  The following table shows the features of each of the system-provided bindings. The bindings are found in the table columns; the features are listed in the rows and described in a second table. The following table provides a key for the binding abbreviations used. To select a binding, determine which column satisfies all of the row features you need.  
   
@@ -69,16 +68,16 @@ Bindings specify the communication mechanism to use when talking to an endpoint 
 |<xref:System.ServiceModel.WSDualHttpBinding>|WS|(Message), None|(Reliable Session), Security Session|(None), Yes|Yes|(Text), MTOM|No|  
 |<xref:System.ServiceModel.WSFederationHttpBinding>|WS-Federation|(Message), Mixed, None|(None), Reliable Session, Security Session|(None), Yes|No|(Text), MTOM|No|  
 |<xref:System.ServiceModel.NetHttpBinding>|.NET|(None), Transport, Message, TransportWithMessageCredential, TransportCredentialOnly|See note below|None|See note below|(Binary), Text,MTOM|Yes (buffered)|  
-|T:System.ServiceModel.NetHttpsBinding|.NET|(Transport), TransportWithMessageCredential|See note below|None|See note below|(Binary), Text,MTOM|Yes (buffered)|  
+|<xref:System.ServiceModel.NetHttpsBinding>|.NET|(Transport), TransportWithMessageCredential|See note below|None|See note below|(Binary), Text,MTOM|Yes (buffered)|  
 |<xref:System.ServiceModel.NetTcpBinding>|.NET|(Transport), Message, None, Mixed|(Transport), Reliable Session, Security Session|(None), Yes|Yes|Binary|Yes<br /><br /> (buffered)|  
-edPipeBinding](assetId:///T:System.ServiceModel.NetNamedPipeBinding?qualifyHint=False&autoUpgrade=True)|.NET|(Transport), None|None, (Transport)|(None), Yes|Yes|Binary|Yes<br /><br /> (buffered)|  
+|<xref:System.ServiceModel.NetNamedPipeBinding>|.NET|(Transport), None|None, (Transport)|(None), Yes|Yes|Binary|Yes<br /><br /> (buffered)|  
 |<xref:System.ServiceModel.NetMsmqBinding>|.NET|Message, (Transport), None|(None), Transport|None, (Yes)|No|Binary|No|  
 |<xref:System.ServiceModel.NetPeerTcpBinding>|Peer|(Transport)|(None)|(None)|Yes||No|  
 |<xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>|MSMQ|(Transport)|(None)|None, (Yes)|n/a|n/a|No|  
 |<xref:System.ServiceModel.BasicHttpContextBinding>|Basic Profile 1.1|(None), Transport, Message, Mixed|(None)|(None)|n/a|Text, (MTOM)|Yes<br /><br /> (buffered)|  
 |<xref:System.ServiceModel.NetTcpContextBinding>|.NET|(Transport), Message, None, Mixed|(Transport), Reliable Session, Security Session|(None), Yes|Yes|Binary|Yes<br /><br /> (buffered)|  
 |<xref:System.ServiceModel.WSHttpContextBinding>|WS|Transport, (Message), Mixed|(None), Reliable Session, Security Session|(None), Yes|n/a|Text, (MTOM)|No|  
-em.ServiceModel.Channels.UdpBinding](assetId:///T:System.ServiceModel.Channels.UdpBinding?qualifyHint=False&autoUpgrade=True)|.NET **Note:**  Interoperability can be achieved by implementing the standard SOAP-over-UDP spec which this binding implements.|(None)|(None)|(None)|n/a|(Text)|No|  
+|<xref:System.ServiceModel.UdpBinding>|.NET **Note:**  Interoperability can be achieved by implementing the standard SOAP-over-UDP spec which this binding implements.|(None)|(None)|(None)|n/a|(Text)|No|  
   
 > [!IMPORTANT]
 >  <xref:System.ServiceModel.NetHttpBinding> is a binding designed for consuming HTTP or WebSocket services and uses binary encoding by default. <xref:System.ServiceModel.NetHttpBinding> will detect whether it is used with a request-reply contract or duplex contract and change its behavior to match - it will use HTTP for request-reply and WebSockets for duplex. This behavior can be overridden using the <!--zz <xref:System.ServiceModel.NetHttpBinding.WebSocketTransportUsage%2A>--> `System.ServiceModel.NetHttpBinding.WebSocketTransportUsage` binding setting:Allowed - This is the default value and behaves as described above.NotAllowed - This prevents WebSockets from being used. Attempting to use a duplex contract with this setting will result in an exception.Required - This forces WebSockets to be used even for request-reply contracts. NetHttpBinding supports reliable sessions in both HTTP mode and WebSocket mode. In WebSocket mode sessions are provided by the transport.  
@@ -93,9 +92,9 @@ em.ServiceModel.Channels.UdpBinding](assetId:///T:System.ServiceModel.Channels.U
 |Transactions|Specifies whether transactions are enabled.|  
 |Duplex|Specifies whether duplex contracts are supported. Note that this feature requires support for Sessions in the binding.|  
 |Encoding|Specifies the wire format of the message. Allowable values include:<br /><br /> -   Text: for example UTF-8.<br />-   Binary<br />-   Message Transmission Optimization Mechanism (MTOM): A method for efficiently encoding binary XML elements within the context of a SOAP envelope.|  
-|Streaming|Specifies whether streaming is supported for incoming and outgoing messages. Use the `TransferMode` property on the binding to set the value. The allowable values include:<br /><br /> -   <xref:System.ServiceModel.TransferMode>: The request and response messages are both buffered.<br />-   <xref:System.ServiceModel.TransferMode>: The request and response messages are both streamed.<br />-   <xref:System.ServiceModel.TransferMode>: The request message is streamed and the response message is buffered.<br />-   <xref:System.ServiceModel.TransferMode>: The request message is buffered and the response message is streamed.|  
+|Streaming|Specifies whether streaming is supported for incoming and outgoing messages. Use the `TransferMode` property on the binding to set the value. The allowable values include:<br /><br /> -   <xref:System.ServiceModel.TransferMode.Buffered>: The request and response messages are both buffered.<br />-   <xref:System.ServiceModel.TransferMode.Streamed>: The request and response messages are both streamed.<br />-   <xref:System.ServiceModel.TransferMode.StreamedRequest>: The request message is streamed and the response message is buffered.<br />-   <xref:System.ServiceModel.TransferMode.StreamedResponse>: The request message is buffered and the response message is streamed.|  
   
 ## See Also  
- [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md)   
- [Using Bindings to Configure Services and Clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)   
+ [Endpoint Creation Overview](../../../docs/framework/wcf/endpoint-creation-overview.md)  
+ [Using Bindings to Configure Services and Clients](../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [Basic WCF Programming](../../../docs/framework/wcf/basic-wcf-programming.md)

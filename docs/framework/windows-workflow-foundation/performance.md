@@ -1,5 +1,5 @@
 ---
-title: "Windows Workflow Foundation 4 Performance | Microsoft Docs"
+title: "Windows Workflow Foundation 4 Performance"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Workflow Foundation 4 Performance
 Dustin Metzgar  
@@ -29,7 +31,7 @@ Dustin Metzgar
   
  [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] is Microsoft’s unified programming model for building service-oriented applications. It was first introduced as part of .Net 3.0 together with WF3 and now is one of the key components of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
- Windows Server AppFabric is a set of integrated technologies that make it easier to build, scale and manage Web and composite applications that run on IIS. It provides tools for monitoring and managing services and workflows. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Windows Server AppFabric](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
+ Windows Server AppFabric is a set of integrated technologies that make it easier to build, scale and manage Web and composite applications that run on IIS. It provides tools for monitoring and managing services and workflows. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Windows Server AppFabric](http://msdn.microsoft.com/windowsserver/ee695849.aspx)  
   
 ## Goals  
  The goal of this topic is to show the performance characteristics of WF4 with data measured for different scenarios. It also provides detailed comparisons between WF4 and WF3, and thus shows the great improvements that have been made in this new revision. The scenarios and data presented in this article quantify the underlying cost of different aspects of WF4 and WF3. This data is useful in understanding the performance characteristics of WF4 and can be helpful in planning migrations from WF3 to WF4 or using WF4 in application development. However, care should be taken in the conclusions drawn from the data presented in this article. The performance of a composite workflow application is highly dependent on how the workflow is implemented and how different components are integrated. One must measure each application to determine the performance characteristics of that application.  
@@ -45,7 +47,7 @@ Dustin Metzgar
 ### Data Storage and Flow  
  In WF3, data associated with an activity is modeled through dependency properties implemented by the type <xref:System.Windows.DependencyProperty>. The dependency property pattern was introduced in [!INCLUDE[avalon1](../../../includes/avalon1-md.md)]. In general, this pattern is very flexible to support easy data binding and other UI features. However, the pattern requires the properties to be defined as static fields in the workflow definition. Whenever the [!INCLUDE[wf1](../../../includes/wf1-md.md)] runtime sets or gets the property values, it involves heavily-weighted look-up logic.  
   
- WF4 uses clear data scoping logic to greatly improve how data is handled in a workflow. It separates the data stored in an activity from the data that is flowing across the activity boundaries by using two different concepts: variables and arguments. By using a clear hierarchical scope for variables and “In/Out/InOut” arguments, the data usage complexity for activities is dramatically reduced and the lifetime of the data is also automatically scoped. Activities have a well-defined signature described by its arguments. By simply inspecting an activity you can determine what data it expects to receive and what data will be produced by it as the result of its execution.  
+ WF4 uses clear data scoping logic to greatly improve how data is handled in a workflow. It separates the data stored in an activity from the data that is flowing across the activity boundaries by using two different concepts: variables and arguments. By using a clear hierarchical scope for variables and "In/Out/InOut" arguments, the data usage complexity for activities is dramatically reduced and the lifetime of the data is also automatically scoped. Activities have a well-defined signature described by its arguments. By simply inspecting an activity you can determine what data it expects to receive and what data will be produced by it as the result of its execution.  
   
  In WF3 activities were initialized when a workflow was created. In WF 4 activities are initialized only when the corresponding activities are executing. This allows a simpler activity lifecycle without performing Initialize/Uninitialize operations when a new workflow instance is created, and thus has achieved more efficiency  
   
@@ -60,7 +62,7 @@ Dustin Metzgar
 ### Messaging  
  Initially WF3 had very limited messaging support through external events or web services invocations. In .Net 3.5, workflows could be implemented as [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] clients or exposed as [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services through <xref:System.Workflow.Activities.SendActivity> and <xref:System.Workflow.Activities.ReceiveActivity>. In WF4, the concept of workflow-based messaging programming has been further strengthened through the tight integration of [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] messaging logic into WF.  
   
- The unified message processing pipeline provided in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] in .Net 4 helps WF4 services to have significantly better performance and scalability than WF3. WF4 also provides richer messaging programming support that can model complex Message Exchange Patterns (MEPs). Developers can use either typed service contracts to achieve easy programming or un-typed service contracts to achieve better performance without paying serialization costs. The client-side channel caching support through the <xref:System.ServiceModel.Activities.SendMessageChannelCache> class in WF4 helps developers build fast applications with minimal effort. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][Changing the Cache Sharing Levels for Send Activities](../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).  
+ The unified message processing pipeline provided in [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] in .Net 4 helps WF4 services to have significantly better performance and scalability than WF3. WF4 also provides richer messaging programming support that can model complex Message Exchange Patterns (MEPs). Developers can use either typed service contracts to achieve easy programming or un-typed service contracts to achieve better performance without paying serialization costs. The client-side channel caching support through the <xref:System.ServiceModel.Activities.SendMessageChannelCache> class in WF4 helps developers build fast applications with minimal effort. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [Changing the Cache Sharing Levels for Send Activities](../../../docs/framework/wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).  
   
 ### Declarative Programming  
  WF4 provides a clean and simple declarative programming framework to model business processes and services. The programming model supports fully declarative composition of activities, with no code-beside, greatly simplifying workflow authoring. In [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], the XAML-based declarative programming framework has been unified into the single assembly System.Xaml.dll to support both WPF and WF.  
@@ -71,7 +73,7 @@ Dustin Metzgar
  Fully declarative programming support for WF4 explicitly imposes higher requirements for design time performance for large workflows. The Workflow designer in WF4 has much better scalability for large workflows than that for WF3. With UI virtualization support, the designer can easily load a large workflow of 1000 activities in a few seconds, while it is almost impossible to load a workflow of a few hundred activities with the WF3 designer.  
   
 ## Component-level Performance Comparisons  
- This section contains data on direct comparisons between individual activities in WF3 and WF4 workflows.  Key areas like persistence have a more profound impact on performance than the individual activity components.  The performance improvements in individual components in WF4 are important though because the components are now fast enough to be compared against hand-coded orchestration logic.  An example of which is covered in the next section: “Service Composition Scenario.”  
+ This section contains data on direct comparisons between individual activities in WF3 and WF4 workflows.  Key areas like persistence have a more profound impact on performance than the individual activity components.  The performance improvements in individual components in WF4 are important though because the components are now fast enough to be compared against hand-coded orchestration logic.  An example of which is covered in the next section: "Service Composition Scenario."  
   
 ### Environment Setup  
  ![Workflow Performance Test Environment](../../../docs/framework/windows-workflow-foundation/media/wfperfenvironment.gif "WFPerfEnvironment")  
@@ -101,7 +103,6 @@ Dustin Metzgar
         {  
         }  
     }  
-  
 ```  
   
 ### Empty Workflow  
@@ -169,7 +170,6 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
   
         protected override void Execute(CodeActivityContext context) { }  
     }  
-  
 ```  
   
  ![WF3 and WF basic compensation workflows](../../../docs/framework/windows-workflow-foundation/media/basiccompensationworkflows.gif "BasicCompensationWorkflows")  
@@ -184,7 +184,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  All tests are measured in workflows per second with the exception of the transaction scope test.  As can be seen above, the [!INCLUDE[wf1](../../../includes/wf1-md.md)] runtime performance has improved across the board, especially in areas that require multiple executions of the same activity like the while loop.  
   
 ## Service Composition Scenario  
- As is shown in the previous section, “Component-level Performance Comparisons,” there has been a significant reduction in overhead between WF3 and WF4.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] workflow services can now almost match the performance of hand-coded [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services but still have all the benefits of the [!INCLUDE[wf1](../../../includes/wf1-md.md)] runtime.  This test scenario compares a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service against a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] workflow service in WF4.  
+ As is shown in the previous section, "Component-level Performance Comparisons," there has been a significant reduction in overhead between WF3 and WF4.  [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] workflow services can now almost match the performance of hand-coded [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] services but still have all the benefits of the [!INCLUDE[wf1](../../../includes/wf1-md.md)] runtime.  This test scenario compares a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] service against a [!INCLUDE[indigo2](../../../includes/indigo2-md.md)] workflow service in WF4.  
   
 ### Online Store Service  
  One of the strengths of [!INCLUDE[wf2](../../../includes/wf2-md.md)] is the ability to compose processes using several services.  For this example, there is an online store service that orchestrates two service calls to purchase an order.  The first step is to validate the order using an Order Validating Service.  The second step is to fill the order using a Warehouse Service.  
@@ -219,7 +219,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
   
  ![WF 4 Correlation Scope](../../../docs/framework/windows-workflow-foundation/media/correlationscopeworkflow.gif "CorrelationScopeWorkflow")  
   
- The <xref:System.ServiceModel.Activities.Receive> activity creates the workflow instance.  A value passed in the received message is echoed in the reply message.  A sequence following the reply contains the rest of the workflow.  In the above case, only one comment activity is shown.  The number of comment activities is changed to simulate workflow complexity.  A comment activity is equivalent to a WF3 <xref:System.Workflow.Activities.CodeActivity> that performs no work. [!INCLUDE[crabout](../../../includes/crabout-md.md)] the comment activity, see the “Component-level Performance Comparison” section earlier in this article.  
+ The <xref:System.ServiceModel.Activities.Receive> activity creates the workflow instance.  A value passed in the received message is echoed in the reply message.  A sequence following the reply contains the rest of the workflow.  In the above case, only one comment activity is shown.  The number of comment activities is changed to simulate workflow complexity.  A comment activity is equivalent to a WF3 <xref:System.Workflow.Activities.CodeActivity> that performs no work. [!INCLUDE[crabout](../../../includes/crabout-md.md)] the comment activity, see the "Component-level Performance Comparison" section earlier in this article.  
   
 ##### Test Results  
  ![Latency Results](../../../docs/framework/windows-workflow-foundation/media/latencyresultsgraph.gif "LatencyResultsGraph")  
@@ -239,7 +239,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
 #### Test Setup  
  ![Correlation Throughput Workflow Test](../../../docs/framework/windows-workflow-foundation/media/correlationthroughputworkflow.gif "CorrelationThroughputWorkflow")  
   
- The workflow shown above is the same one used in the “Persistence” section below.  For the correlation tests without persistence there is no persistence provider installed in the runtime.  Correlation occurs in two places: CreateOrder and CompleteOrder.  
+ The workflow shown above is the same one used in the "Persistence" section below.  For the correlation tests without persistence there is no persistence provider installed in the runtime.  Correlation occurs in two places: CreateOrder and CompleteOrder.  
   
 #### Test Results  
  ![Correlation Throughput](../../../docs/framework/windows-workflow-foundation/media/correlationthroughputgraph.gif "CorrelationThroughputGraph")  
@@ -309,11 +309,11 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  One of the clear trends to notice in this graph is that nesting has relatively minimal impact on memory usage in both WF3 and WF4.  The most significant memory impact comes from the number of activities in a given workflow.  Given the data from the sequence 1000, complex depth 5 sequence 5, and complex depth 7 sequence 1 variations, it is clear that as the number of activities enters the thousands, the memory usage increase becomes more noticeable.  In the extreme case (depth 7 sequence 1) where there are ~29K activities, WF4 is using almost 79% less memory than WF3.  
   
 ### Multiple Workflow Definitions Test  
- Measuring memory per workflow definition is divided into two different tests because of the available options for hosting workflows in WF3 and WF4.  The tests are run in a different manner than the workflow complexity test in that a given workflow is instanced and executed only once per definition.  This is because the workflow definition and its host remain in memory for the lifetime of the AppDomain.  The memory used by running a given workflow instance should be cleaned up during garbage collection.  The migration guidance for WF4 contains more detailed information on the hosting options. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)][WF Migration Cookbook: Workflow Hosting](http://go.microsoft.com/fwlink/?LinkID=153313).  
+ Measuring memory per workflow definition is divided into two different tests because of the available options for hosting workflows in WF3 and WF4.  The tests are run in a different manner than the workflow complexity test in that a given workflow is instanced and executed only once per definition.  This is because the workflow definition and its host remain in memory for the lifetime of the AppDomain.  The memory used by running a given workflow instance should be cleaned up during garbage collection.  The migration guidance for WF4 contains more detailed information on the hosting options. [!INCLUDE[crdefault](../../../includes/crdefault-md.md)] [WF Migration Cookbook: Workflow Hosting](http://go.microsoft.com/fwlink/?LinkID=153313).  
   
  Creating many workflow definitions for a workflow definition test can be done in several ways.  For instance, one could use code generation to create a set of 1000 workflows that are identical except in name and save each of those workflows into separate files.  This approach was taken for the console-hosted test.  In WF3, the <xref:System.Workflow.Runtime.WorkflowRuntime> class was used to run the workflow definitions.  WF4 can either use <xref:System.Activities.WorkflowApplication> to create a single workflow instance or directly use <xref:System.Activities.WorkflowInvoker> to run the activity as if it were a method call.  <xref:System.Activities.WorkflowApplication> is a host of a single workflow instance and has closer feature parity to <xref:System.Workflow.Runtime.WorkflowRuntime> so that was used in this test.  
   
- When hosting workflows in IIS it is possible to use a <xref:System.Web.Hosting.VirtualPathProvider> to create a new <xref:System.ServiceModel.WorkflowServiceHost> instead of generating all of the XAMLX or XOML files.  The <xref:System.Web.Hosting.VirtualPathProvider> handles the incoming request and responds with a “virtual file” that can be loaded from a database or, in this case, generated on the fly.  It is therefore unnecessary to create 1000 physical files.  
+ When hosting workflows in IIS it is possible to use a <xref:System.Web.Hosting.VirtualPathProvider> to create a new <xref:System.ServiceModel.WorkflowServiceHost> instead of generating all of the XAMLX or XOML files.  The <xref:System.Web.Hosting.VirtualPathProvider> handles the incoming request and responds with a "virtual file" that can be loaded from a database or, in this case, generated on the fly.  It is therefore unnecessary to create 1000 physical files.  
   
  The workflow definitions used in the console test were simple sequential workflows with a single activity.  The single activity was an empty <xref:System.Workflow.Activities.CodeActivity> for the WF3 case and a `Comment` activity for the WF4 case.  The IIS-hosted case used workflows that start on receiving a message and end on sending a reply:  
   
@@ -355,10 +355,9 @@ public class Workflow1 : Activity
         }  
     }  
 }  
-  
 ```  
   
- There are many other factors that can affect memory consumption. The same advice for all managed programs still applies.  In IIS-hosted environments, the <xref:System.ServiceModel.WorkflowServiceHost> object created for a workflow definition stays in memory until the application pool is recycled.  This should be kept in mind when writing extensions.  Also, it is best to avoid “global” variables (variables scoped to the whole workflow) and limit the scope of variables wherever possible.  
+ There are many other factors that can affect memory consumption. The same advice for all managed programs still applies.  In IIS-hosted environments, the <xref:System.ServiceModel.WorkflowServiceHost> object created for a workflow definition stays in memory until the application pool is recycled.  This should be kept in mind when writing extensions.  Also, it is best to avoid "global" variables (variables scoped to the whole workflow) and limit the scope of variables wherever possible.  
   
 ## Workflow Runtime Services  
   
@@ -377,7 +376,7 @@ public class Workflow1 : Activity
   
  Figure 5 – Persistence workflow in WF3 on left and WF4 on right  
   
- The two workflows are both created by a received message.  After sending an initial reply, the workflow is persisted.  In the WF3 case, an empty <xref:System.Workflow.ComponentModel.TransactionScopeActivity> is used to initiate the persistence.  The same could be achieved in WF3 by marking an activity as “persist on close.”  A second, correlated message completes the workflow.  The workflows are persisted but not unloaded.  
+ The two workflows are both created by a received message.  After sending an initial reply, the workflow is persisted.  In the WF3 case, an empty <xref:System.Workflow.ComponentModel.TransactionScopeActivity> is used to initiate the persistence.  The same could be achieved in WF3 by marking an activity as "persist on close."  A second, correlated message completes the workflow.  The workflows are persisted but not unloaded.  
   
 ### Test Results  
  ![Throughput Persistence](../../../docs/framework/windows-workflow-foundation/media/throughputpersistence.gif "ThroughputPersistence")  

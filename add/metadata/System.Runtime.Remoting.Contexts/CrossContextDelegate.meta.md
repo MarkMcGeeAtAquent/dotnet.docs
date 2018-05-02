@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Contexts.CrossContextDelegate
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

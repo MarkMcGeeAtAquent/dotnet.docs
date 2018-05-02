@@ -1,5 +1,5 @@
 ---
-title: "Common Client Technologies in the .NET Framework | Microsoft Docs"
+title: "Common Client Technologies in the .NET Framework"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Common Client Technologies in the .NET Framework
 This section describes different technologies that you can use in your client applications.  

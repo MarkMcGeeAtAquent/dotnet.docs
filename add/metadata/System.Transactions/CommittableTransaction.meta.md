@@ -1,16 +1,22 @@
 ---
 uid: System.Transactions.CommittableTransaction
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.CommittableTransaction.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.CommittableTransaction.EndCommit(System.IAsyncResult)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
@@ -20,7 +26,9 @@ manager: "tyoung"
 
 ---
 uid: System.Transactions.CommittableTransaction.Commit
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
@@ -30,12 +38,16 @@ manager: "tyoung"
 
 ---
 uid: System.Transactions.CommittableTransaction.BeginCommit(System.AsyncCallback,System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.CommittableTransaction.#ctor(System.TimeSpan)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
@@ -50,10 +62,7 @@ manager: "tyoung"
 
 ---
 uid: System.Transactions.CommittableTransaction.#ctor(System.Transactions.TransactionOptions)
-manager: "ghogen"
----
-
----
-uid: System.Transactions.CommittableTransaction.#ctor
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

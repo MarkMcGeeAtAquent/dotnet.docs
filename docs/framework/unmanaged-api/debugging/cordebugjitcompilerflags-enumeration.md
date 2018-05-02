@@ -1,5 +1,5 @@
 ---
-title: "CorDebugJITCompilerFlags Enumeration | Microsoft Docs"
+title: "CorDebugJITCompilerFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugJITCompilerFlags"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugJITCompilerFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugJITCompilerFlags enumeration [.NET Framework debugging]"
 ms.assetid: c0774f70-5bed-45e8-9922-fdad778c4c33
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugJITCompilerFlags Enumeration
 Contains values that influence the behavior of the managed just-in-time (JIT) compiler.  

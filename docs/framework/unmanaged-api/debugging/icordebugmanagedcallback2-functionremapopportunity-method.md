@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback2::FunctionRemapOpportunity Method | Microsoft Docs"
+title: "ICorDebugManagedCallback2::FunctionRemapOpportunity Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback2.FunctionRemapOpportunity"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback2::FunctionRemapOpportunity"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FunctionRemapOpportunity method [.NET Framework debugging]"
   - "ICorDebugManagedCallback2::FunctionRemapOpportunity method [.NET Framework debugging]"
 ms.assetid: 0d6471bc-ad9b-4b1d-a307-c10443918863
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback2::FunctionRemapOpportunity Method
 Notifies the debugger that code execution has reached a sequence point in an older version of an edited function.  
@@ -73,5 +76,5 @@ HRESULT FunctionRemapOpportunity (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)   
+ [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
  [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

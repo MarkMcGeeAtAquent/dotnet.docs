@@ -1,7 +1,8 @@
 ---
-title: "&lt;certificateValidator&gt; | Microsoft Docs"
+title: "&lt;certificateValidator&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 6
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;certificateValidator&gt;
 Specifies a custom type for certificate validation. This type is used only if the `certificateValidationMode` attribute of the [\<certificateValidation>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md) element is set to "Custom".  
@@ -24,15 +27,15 @@ Specifies a custom type for certificate validation. This type is used only if th
   
 ## Syntax  
   
-```  
-\<system.identityModel>  
-  <identityConfiguration>  
-    <certificateValidation>  
-      \<certificateValidator type=xs:string>  
-      </certificateValidator>  
-    </certificateValidation>  
-  </identityConfiguration>  
-\</system.identityModel>  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <certificateValidation>  
+      <certificateValidator type=xs:string>  
+      </certificateValidator>  
+    </certificateValidation>  
+  </identityConfiguration>  
+</system.identityModel>  
 ```  
   
 ## Attributes and Elements  
@@ -55,7 +58,7 @@ Specifies a custom type for certificate validation. This type is used only if th
   
 ## Example  
   
-```  
+```xml  
 <certificateValidation certificateValidationMode="Custom"  
                        revocationMode="Online"  
                        trustedStoreLocation="LocalMachine">  

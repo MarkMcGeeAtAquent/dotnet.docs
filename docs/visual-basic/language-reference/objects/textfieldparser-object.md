@@ -1,16 +1,11 @@
 ---
-title: "TextFieldParser Object | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "TextFieldParser Object"
+ms.date: 07/20/2015
 ms.prod: .net
-
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
-dev_langs: 
-  - "VB"
 helpviewer_keywords: 
   - "TextFieldParser object"
   - "TextFieldParser class, aboutTextFieldParser class"
@@ -19,21 +14,6 @@ ms.assetid: d44bd2b0-7dfc-410b-a48b-534c1e97460b
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # TextFieldParser Object
 Provides methods and properties for parsing structured text files.  
@@ -54,4 +34,4 @@ Public Class TextFieldParser
   
  **Class:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>  
   
- **Assembly:** [!INCLUDE[vbprvbruntime](../../../visual-basic/language-reference/objects/includes/vbprvbruntime_md.md)]
+ **Assembly:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]

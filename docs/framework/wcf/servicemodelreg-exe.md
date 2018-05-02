@@ -1,5 +1,5 @@
 ---
-title: "ServiceModel Registration Tool (ServiceModelReg.exe) | Microsoft Docs"
+title: "ServiceModel Registration Tool (ServiceModelReg.exe)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,14 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ServiceModel Registration Tool (ServiceModelReg.exe)
 This command-line tool provides the ability to manage the registration of WCF and WF components on a single machine. Under normal circumstances you should not need to use this tool as WCF and WF components are configured when installed. But if you are experiencing problems with service activation, you can try to register the components using this tool.  
@@ -24,7 +23,6 @@ This command-line tool provides the ability to manage the registration of WCF an
 ## Syntax  
   
 ```  
-  
 ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]  
 ```  
   
@@ -75,7 +73,7 @@ File name: 'System.ServiceModel, Version=2.0.0.0, Culture=neutral, PublicKeyToke
 %windir%\Microsoft.NET\Framework64\v2.0.50727\config\machine.config   
 ```  
   
- Locate any XML nodes in this file that refer to “System.ServiceModel, Version=2.0.0.0”, delete them and any child nodes. Save the file and re-run ServiceModelReg.exe resolves this problem.  
+ Locate any XML nodes in this file that refer to "System.ServiceModel, Version=2.0.0.0", delete them and any child nodes. Save the file and re-run ServiceModelReg.exe resolves this problem.  
   
 ## Examples  
  The following examples show how to use the most common options of the ServiceModelReg.exe tool.  

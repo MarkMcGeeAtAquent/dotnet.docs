@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetRow Method | Microsoft Docs"
+title: "IMetaDataTables::GetRow Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetRow"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetRow"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataTables::GetRow method [.NET Framework metadata]"
   - "GetRow method [.NET Framework metadata]"
 ms.assetid: a7408d51-0bce-45a2-b58f-da4660bbc039
+topic_type: 
+  - "apiref"
 caps.latest.revision: 16
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetRow Method
 Gets the row at the specified row index, in the table at the specified table index.  
@@ -63,5 +66,5 @@ HRESULT GetRow (
  **.NET Framework Versions**  [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

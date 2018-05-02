@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeInfo::GetProcAddress Method | Microsoft Docs"
+title: "ICLRRuntimeInfo::GetProcAddress Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeInfo.GetProcAddress"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeInfo::GetProcAddress"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetProcAddress method [.NET Framework hosting]"
   - "ICLRRuntimeInfo::GetProcAddress method [.NET Framework hosting]"
 ms.assetid: a7732bfc-689a-4926-88fd-4f81e6f9ed78
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeInfo::GetProcAddress Method
 Gets the address of a specified function that was exported from the common language runtime (CLR) associated with this interface.  
@@ -69,6 +72,6 @@ HRESULT GetProcAddress(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)   
- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)   
+ [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
+ [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

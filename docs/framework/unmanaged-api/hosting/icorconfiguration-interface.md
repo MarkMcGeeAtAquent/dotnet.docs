@@ -1,5 +1,5 @@
 ---
-title: "ICorConfiguration Interface | Microsoft Docs"
+title: "ICorConfiguration Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorConfiguration"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorConfiguration"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorConfiguration interface [.NET Framework hosting]"
 ms.assetid: aaf96116-372b-4538-afb1-9e0fcdac1f98
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorConfiguration Interface
 Provides methods for configuring the common language runtime (CLR).  
@@ -48,5 +51,5 @@ Provides methods for configuring the common language runtime (CLR).
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)   
+ [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)  
  [CorRuntimeHost Coclass](../../../../docs/framework/unmanaged-api/hosting/corruntimehost-coclass.md)

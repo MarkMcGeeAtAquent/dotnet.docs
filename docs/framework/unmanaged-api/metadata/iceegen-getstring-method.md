@@ -1,5 +1,5 @@
 ---
-title: "ICeeGen::GetString Method | Microsoft Docs"
+title: "ICeeGen::GetString Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICeeGen.GetString"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICeeGen::GetString"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICeeGen::GetString method [.NET Framework metadata]"
   - "GetString method, ICeeGen interface [.NET Framework metadata]"
 ms.assetid: 7cc22562-128c-440a-9147-55ff20f173d7
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICeeGen::GetString Method
 Gets the string stored at the specified relative virtual address.  

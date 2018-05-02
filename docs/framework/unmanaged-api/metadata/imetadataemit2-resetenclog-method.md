@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit2::ResetENCLog Method | Microsoft Docs"
+title: "IMetaDataEmit2::ResetENCLog Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit2.ResetENCLog"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit2::ResetENCLog"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ResetENCLog method [.NET Framework metadata]"
   - "IMetaDataEmit2::ResetENCLog method [.NET Framework metadata]"
 ms.assetid: 44b9fd76-a022-4e9a-aea3-dec5411a9c22
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit2::ResetENCLog Method
 Resets the edit-and-continue log and starts a new session.  
@@ -49,5 +52,5 @@ HRESULT ResetENCLog ();
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)   
+ [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

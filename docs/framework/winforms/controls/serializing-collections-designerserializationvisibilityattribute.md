@@ -1,8 +1,8 @@
 ---
-title: "Walkthrough: Serializing Collections of Standard Types with the DesignerSerializationVisibilityAttribute | Microsoft Docs"
+title: "Walkthrough: Serializing Collections of Standard Types with the DesignerSerializationVisibilityAttribute"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,18 +10,21 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "serialization, collections"
-  - "standard types, collections"
-  - "DesiginerSerializationVisibilityAttribute class"
-  - "collections, serializing"
-  - "collections, standard types"
+  - "serialization [Windows Forms], collections"
+  - "standard types [Windows Forms], collections"
+  - "collections [Windows Forms], serializing"
+  - "collections [Windows Forms], standard types"
 ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
 caps.latest.revision: 19
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Serializing Collections of Standard Types with the DesignerSerializationVisibilityAttribute
 Your custom controls will sometimes expose a collection as a property. This walkthrough demonstrates how to use the <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> class to control how a collection is serialized at design time. Applying the <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute.Content> value to your collection property ensures that the property will be serialized.  
@@ -29,7 +32,7 @@ Your custom controls will sometimes expose a collection as a property. This walk
  To copy the code in this topic as a single listing, see [How to: Serialize Collections of Standard Types with the DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9).  
   
 > [!NOTE]
->  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/en-us/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition. To change your settings, choose **Import and Export Settings** on the **Tools** menu. For more information, see [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
   
 ## Prerequisites  
  In order to complete this walkthrough, you will need:  
@@ -41,11 +44,11 @@ Your custom controls will sometimes expose a collection as a property. This walk
   
 #### To create a control with a serializable collection  
   
-1.  Create a Windows Control Library project called `SerializationDemoControlLib`. For more information, see [Windows Control Library Template](http://msdn.microsoft.com/en-us/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
+1.  Create a Windows Control Library project called `SerializationDemoControlLib`. For more information, see [Windows Control Library Template](http://msdn.microsoft.com/library/722f4e2d-1310-4ed5-8f33-593337ab66b4).  
   
-2.  Rename `UserControl1` to `SerializationDemoControl`. For more information, see [How to: Rename Identifiers](http://msdn.microsoft.com/en-us/2430f732-2b70-4516-8cf6-a7bb71cc9724).  
+2.  Rename `UserControl1` to `SerializationDemoControl`. For more information, see [How to: Rename Identifiers](http://msdn.microsoft.com/library/2430f732-2b70-4516-8cf6-a7bb71cc9724).  
   
-3.  In the **Properties** window, set the value of the <xref:System.Windows.Forms.Padding.All%2A?displayProperty=fullName> property to `10`.  
+3.  In the **Properties** window, set the value of the <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> property to `10`.  
   
 4.  Place a <xref:System.Windows.Forms.TextBox> control in the `SerializationDemoControl`.  
   
@@ -54,8 +57,8 @@ Your custom controls will sometimes expose a collection as a property. This walk
     |Property|Change to|  
     |--------------|---------------|  
     |**Multiline**|`true`|  
-    |**Dock**|<xref:System.Windows.Forms.DockStyle>|  
-    |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars>|  
+    |**Dock**|<xref:System.Windows.Forms.DockStyle.Fill>|  
+    |**ScrollBars**|<xref:System.Windows.Forms.ScrollBars.Vertical>|  
     |**ReadOnly**|`true`|  
   
 6.  In the **Code Editor**, declare a string array field named `stringsValue` in `SerializationDemoControl`.  
@@ -104,38 +107,29 @@ Your custom controls will sometimes expose a collection as a property. This walk
   
 2.  Open the **Form1** node. Beneath it is a file called **Form1.Designer.cs** or **Form1.Designer.vb**. This is the file into which the **Windows Forms Designer** emits code representing the design-time state of your form and its child controls. Open this file in the **Code Editor**.  
   
-3.  Open the region called **Windows Form Designer generated code** and find the section labeled **serializationDemoControl1**. Beneath this label is the code representing the serialized state of your control. The strings you typed in step 5 appear in an assignment to the `Strings` property. The following code example shows code similar to what you will see if you typed the strings "red", "orange", and "yellow".  
+3.  Open the region called **Windows Form Designer generated code** and find the section labeled **serializationDemoControl1**. Beneath this label is the code representing the serialized state of your control. The strings you typed in step 5 appear in an assignment to the `Strings` property. The following code examples in C# and Visual Basic, show code similar to what you will see if you typed the strings "red", "orange", and "yellow".  
   
-4.  [Visual Basic]  
-  
-    ```  
-    Me.serializationDemoControl1.Strings = New String() {"red", "orange", "yellow"}  
-    ```  
-  
-5.  [C#]  
-  
-    ```  
+    ```csharp  
     this.serializationDemoControl1.Strings = new string[] {  
             "red",  
             "orange",  
             "yellow"};  
     ```  
+    
+    ```vb  
+    Me.serializationDemoControl1.Strings = New String() {"red", "orange", "yellow"}  
+    ```
   
-6.  In the **Code Editor**, change the value of the <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> on the `Strings` property to <xref:System.ComponentModel.DesignerSerializationVisibility>.  
+4.  In the **Code Editor**, change the value of the <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute> on the `Strings` property to <xref:System.ComponentModel.DesignerSerializationVisibility.Hidden>.  
   
-7.  [Visual Basic]  
-  
+    ```csharp  
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]  
     ```  
+    ```vb  
     <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)> _  
     ```  
   
-8.  [C#]  
-  
-    ```  
-    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]  
-    ```  
-  
-9. Rebuild the solution and repeat steps 4 through 8.  
+5. Rebuild the solution and repeat steps 3 and 4.  
   
 > [!NOTE]
 >  In this case, the **Windows Forms Designer** emits no assignment to the `Strings` property.  
@@ -152,7 +146,7 @@ Your custom controls will sometimes expose a collection as a property. This walk
 -   [Walkthrough: Creating a Windows Forms Control That Takes Advantage of Visual Studio Design-Time Features](../../../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
   
 ## See Also  
- <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>   
- [Designer Serialization Overview](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)   
- [How to: Serialize Collections of Standard Types with the DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)   
+ <xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>  
+ [Designer Serialization Overview](http://msdn.microsoft.com/library/c342635a-aa5f-4281-915b-b013738af15a)  
+ [How to: Serialize Collections of Standard Types with the DesignerSerializationVisibilityAttribute](http://msdn.microsoft.com/library/7829fcdd-8205-405f-8231-a1282a9835c9)  
  [Walkthrough: Automatically Populating the Toolbox with Custom Components](../../../../docs/framework/winforms/controls/walkthrough-automatically-populating-the-toolbox-with-custom-components.md)

@@ -1,6 +1,6 @@
 # Unit testing using dotnet test sample
 
-This sample is part of the [unit testing tutorial](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) for creating applications with unit tests included. See that topic for detailed steps on the code for this sample.
+This sample is part of the [unit testing tutorial](https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test) for creating applications with unit tests included. See that topic for detailed steps on the code for this sample.
 
 ## Key features
 
@@ -17,3 +17,5 @@ dotnet test
 
 `dotnet restore` restores the packages of both projects.
 `dotnet test` builds both projects and runs all of the configured tests.
+
+[!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

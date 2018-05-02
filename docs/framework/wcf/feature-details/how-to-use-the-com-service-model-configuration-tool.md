@@ -1,8 +1,8 @@
 ---
-title: "How to: Use the COM+ Service Model Configuration Tool | Microsoft Docs"
+title: "How to: Use the COM+ Service Model Configuration Tool"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "COM+ [WCF], using service model configuration tool"
 ms.assetid: 7e68cd8d-5fda-4641-b92f-290db874376e
 caps.latest.revision: 13
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Use the COM+ Service Model Configuration Tool
 Once you have selected an appropriate hosting mode, use the COM+ Service Model Configuration command-line tool (ComSvcConfig.exe) to configure the application interfaces that will be exposed as Web services.  
@@ -35,7 +37,7 @@ Once you have selected an appropriate hosting mode, use the COM+ Service Model C
 >  Reverting this registry key is important. This is a compatibility key. Not reverting this change may cause issues with other .NET applications running on the machine).  
   
 > [!WARNING]
->  When using ComSvcConfig.exe  /install on a Windows 8 machine a dialog is displayed stating “An app on your PC needs the following Windows feature: .NET Framework 3.5 (includes .NET 2.0 and .NET 3.0” if .NET Framework 3.5 is not installed. This dialog may be ignored. Alternatively you can sed the OnlyUseLatestCLR registry key to a DWORD value of 0x00000001  
+>  When using ComSvcConfig.exe  /install on a Windows 8 machine a dialog is displayed stating "An app on your PC needs the following Windows feature: .NET Framework 3.5 (includes .NET 2.0 and .NET 3.0" if .NET Framework 3.5 is not installed. This dialog may be ignored. Alternatively you can sed the OnlyUseLatestCLR registry key to a DWORD value of 0x00000001  
   
 ### To add an interface to the set of interfaces that are to be exposed as Web services, using the COM+ hosting mode  
   
@@ -113,7 +115,6 @@ Once you have selected an appropriate hosting mode, use the COM+ Service Model C
   
     ```  
     ComSvcConfig.exe /?  
-  
     ```  
   
 ## See Also  

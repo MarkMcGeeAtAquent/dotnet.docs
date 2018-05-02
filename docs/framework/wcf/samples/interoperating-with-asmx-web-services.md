@@ -1,8 +1,8 @@
 ---
-title: "Interoperating with ASMX Web Services | Microsoft Docs"
+title: "Interoperating with ASMX Web Services"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
 caps.latest.revision: 19
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Interoperating with ASMX Web Services
 This sample demonstrates how to integrate a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] client application with an existing ASMX Web service.  
@@ -50,7 +52,6 @@ public class CalculatorService : System.Web.Services.WebService
             return n1 / n2;  
         }  
     }  
-  
 ```  
   
  As configured, the service can be accessed at http://localhost/servicemodelsamples/service.asmx by a client on the same machine. For clients on remote machines to access the service, a qualified domain name must be specified instead of localhost.  
@@ -63,14 +64,13 @@ svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samp
   
  By using the generated client, you can access a service endpoint by configuring the appropriate address and binding. Like the service, the client uses a configuration file (App.config) to specify the endpoint to communicate with. The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract, as shown in the following sample configuration.  
   
-```  
+```xml  
 <client>  
    <endpoint   
       address="http://localhost/ServiceModelSamples/service.asmx"   
       binding="basicHttpBinding"   
       contract="Microsoft.ServiceModel.Samples.CalculatorServiceSoap" />  
 </client>  
-  
 ```  
   
  The client implementation constructs an instance of the generated client. The generated client can then be used to communicate with the service.  
@@ -109,7 +109,6 @@ client.Close();
 Console.WriteLine();  
 Console.WriteLine("Press <ENTER> to terminate client.");  
 Console.ReadLine();  
-  
 ```  
   
  When you run the sample, the operation requests and responses are displayed in the client console window. Press ENTER in the client window to shut down the client.  

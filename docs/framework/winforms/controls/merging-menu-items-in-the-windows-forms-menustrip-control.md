@@ -1,24 +1,24 @@
 ---
-title: "Merging Menu Items in the Windows Forms MenuStrip Control | Microsoft Docs"
+title: "Merging Menu Items in the Windows Forms MenuStrip Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
-  - "MenuStrip, merging"
-  - "merging, general concepts"
+  - "MenuStrip [Windows Forms], merging"
+  - "merging [Windows Forms], general concepts"
 ms.assetid: 95e113ba-f362-4dda-8a76-6d95ddc45cee
 caps.latest.revision: 7
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Merging Menu Items in the Windows Forms MenuStrip Control
 If you have a multiple-document interface (MDI) application, you can merge menu items or whole menus from the child form into the menus of the parent form.  
@@ -47,11 +47,11 @@ If you have a multiple-document interface (MDI) application, you can merge menu 
   
 |MergeAction Value|Description|Typical Use|  
 |-----------------------|-----------------|-----------------|  
-|<xref:System.Windows.Forms.MergeAction>|(Default) Adds the source item to the end of the target item's collection.|Adding menu items to the end of the menu when some part of the program is activated.|  
-|<xref:System.Windows.Forms.MergeAction>|Adds the source item to the target item's collection, in the location specified by the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> property set on the source item.|Adding menu items to the middle or the beginning of the menu when some part of the program is activated.<br /><br /> If the value of <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> is the same for both menu items, they are added in reverse order. Set <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> appropriately to preserve the original order.|  
-|<xref:System.Windows.Forms.MergeAction>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then replaces the matching target menu item with the source menu item.|Replacing a target menu item with a source menu item of the same name that does something different.|  
-|<xref:System.Windows.Forms.MergeAction>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then adds all the drop-down items from the source to the target.|Building a menu structure that inserts or adds menu items into a submenu, or removes menu items from a submenu. For example, you can add a menu item from an MDI child to a main <xref:System.Windows.Forms.MenuStrip>**Save As** menu.<br /><br /> <xref:System.Windows.Forms.MergeAction> allows you to navigate through the menu structure without taking any action. It provides a way to evaluate the subsequent items.|  
-|<xref:System.Windows.Forms.MergeAction>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then removes the item from the target.|Removing a menu item from the target <xref:System.Windows.Forms.MenuStrip>.|  
+|<xref:System.Windows.Forms.MergeAction.Append>|(Default) Adds the source item to the end of the target item's collection.|Adding menu items to the end of the menu when some part of the program is activated.|  
+|<xref:System.Windows.Forms.MergeAction.Insert>|Adds the source item to the target item's collection, in the location specified by the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> property set on the source item.|Adding menu items to the middle or the beginning of the menu when some part of the program is activated.<br /><br /> If the value of <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> is the same for both menu items, they are added in reverse order. Set <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> appropriately to preserve the original order.|  
+|<xref:System.Windows.Forms.MergeAction.Replace>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then replaces the matching target menu item with the source menu item.|Replacing a target menu item with a source menu item of the same name that does something different.|  
+|<xref:System.Windows.Forms.MergeAction.MatchOnly>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then adds all the drop-down items from the source to the target.|Building a menu structure that inserts or adds menu items into a submenu, or removes menu items from a submenu. For example, you can add a menu item from an MDI child to a main <xref:System.Windows.Forms.MenuStrip>**Save As** menu.<br /><br /> <xref:System.Windows.Forms.MergeAction.MatchOnly> allows you to navigate through the menu structure without taking any action. It provides a way to evaluate the subsequent items.|  
+|<xref:System.Windows.Forms.MergeAction.Remove>|Finds a text match, or uses the <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> value if no text match is found, and then removes the item from the target.|Removing a menu item from the target <xref:System.Windows.Forms.MenuStrip>.|  
   
 ## Manual Merging  
  Only <xref:System.Windows.Forms.MenuStrip> controls participate in automatic merging. To combine the items of other controls, such as <xref:System.Windows.Forms.ToolStrip> and <xref:System.Windows.Forms.StatusStrip> controls, you must merge them manually, by calling the <xref:System.Windows.Forms.ToolStripManager.Merge%2A> and <xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A> methods in your code as required.  
@@ -62,8 +62,8 @@ If you have a multiple-document interface (MDI) application, you can merge menu 
  You can trigger automatic merging by activating the <xref:System.Windows.Forms.MenuStrip> on the MDI source. Upon activation, the source <xref:System.Windows.Forms.MenuStrip> is merged into the MDI target. When a new form becomes active, the merge is reverted on the last form and triggered on the new form. You can control this behavior by setting the <xref:System.Windows.Forms.ToolStripItem.MergeAction%2A> property as needed on each <xref:System.Windows.Forms.ToolStripItem>, and by setting the <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> property on each <xref:System.Windows.Forms.MenuStrip>.  
   
 ## See Also  
- <xref:System.Windows.Forms.ToolStripManager>   
- <xref:System.Windows.Forms.MenuStrip>   
- [MenuStrip Control](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)   
- [How to: Create an MDI Window List with MenuStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)   
+ <xref:System.Windows.Forms.ToolStripManager>  
+ <xref:System.Windows.Forms.MenuStrip>  
+ [MenuStrip Control](../../../../docs/framework/winforms/controls/menustrip-control-windows-forms.md)  
+ [How to: Create an MDI Window List with MenuStrip](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-window-list-with-menustrip-windows-forms.md)  
  [How to: Set Up Automatic Menu Merging for MDI Applications](../../../../docs/framework/winforms/controls/how-to-set-up-automatic-menu-merging-for-mdi-applications.md)

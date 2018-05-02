@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain::EnumerateAssemblies Method | Microsoft Docs"
+title: "ICorDebugAppDomain::EnumerateAssemblies Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain.EnumerateAssemblies"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain::EnumerateAssemblies"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugAppDomain::EnumerateAssemblies method [.NET Framework debugging]"
   - "EnumerateAssemblies method [.NET Framework debugging]"
 ms.assetid: 7add64f9-19a8-46a9-be62-905d5e7d1bd8
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain::EnumerateAssemblies Method
 Gets an enumerator for the assemblies in the application domain.  

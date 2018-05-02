@@ -1,7 +1,9 @@
-<Type Name="XamlTypeInvoker" FullName="System.Xaml.Schema.XamlTypeInvoker">
+﻿<Type Name="XamlTypeInvoker" FullName="System.Xaml.Schema.XamlTypeInvoker">
   <TypeSignature Language="C#" Value="public class XamlTypeInvoker" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlTypeInvoker extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Xaml.Schema.XamlTypeInvoker" />
+  <TypeSignature Language="VB.NET" Value="Public Class XamlTypeInvoker" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XamlTypeInvoker" />
   <AssemblyInfo>
     <AssemblyName>System.Xaml</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -26,10 +28,21 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected XamlTypeInvoker ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; XamlTypeInvoker();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -54,6 +67,8 @@
       <MemberSignature Language="C#" Value="public XamlTypeInvoker (System.Xaml.XamlType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.#ctor(System.Xaml.XamlType)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (type As XamlType)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XamlTypeInvoker(System::Xaml::XamlType ^ type);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -81,6 +96,8 @@
       <MemberSignature Language="C#" Value="public virtual void AddToCollection (object instance, object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddToCollection(object instance, object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.AddToCollection(System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub AddToCollection (instance As Object, item As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AddToCollection(System::Object ^ instance, System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -119,7 +136,7 @@
   
  Internally, the base implementation calls <see cref="P:System.Xaml.XamlType.IsCollection" />, and throws if the result is <see langword="false" />.  
   
- The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IList" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IList.Add(System.Object)" /> is made and the method returns. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="Add" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> for this<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.  
+ The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IList" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IList.Add(System.Object)" /> is made and the method returns. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="Add" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> for this <paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.  
   
  In the base implementation no exception is raised at this level if <paramref name="item" /> is <see langword="null" />. It is still possible that the underlying <see langword="Add" /> method will raise an exception when invoked. Other run time exceptions are possible if <see cref="P:System.Xaml.XamlType.ItemType" /> does not return a valid result.</para>
         </block>
@@ -129,6 +146,8 @@
       <MemberSignature Language="C#" Value="public virtual void AddToDictionary (object instance, object key, object item);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddToDictionary(object instance, object key, object item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.AddToDictionary(System.Object,System.Object,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub AddToDictionary (instance As Object, key As Object, item As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void AddToDictionary(System::Object ^ instance, System::Object ^ key, System::Object ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -169,7 +188,7 @@
   
  Internally, the base implementation calls <see cref="P:System.Xaml.XamlType.IsDictionary" />, and throws if the result is <see langword="false" />.  
   
- The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IDictionary" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" /> is made and the method returns. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="Add" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> for this<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.  
+ The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IDictionary" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IDictionary.Add(System.Object,System.Object)" /> is made and the method returns. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="Add" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" /> for this <paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.  
   
  In the base implementation no exception is raised at this level if <paramref name="item" /> or <paramref name="key" /> are <see langword="null" />. It is still possible that the underlying <see langword="Add" /> method will raise an exception when invoked. Other run time exceptions are possible if <see cref="P:System.Xaml.XamlType.ItemType" /> does not return a valid result.</para>
         </block>
@@ -179,6 +198,8 @@
       <MemberSignature Language="C#" Value="public virtual object CreateInstance (object[] arguments);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateInstance(object[] arguments) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.CreateInstance(System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function CreateInstance (arguments As Object()) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ CreateInstance(cli::array &lt;System::Object ^&gt; ^ arguments);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -205,6 +226,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo GetAddMethod (System.Xaml.XamlType contentType);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetAddMethod(class System.Xaml.XamlType contentType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetAddMethod(System.Xaml.XamlType)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetAddMethod (contentType As XamlType) As MethodInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Reflection::MethodInfo ^ GetAddMethod(System::Xaml::XamlType ^ contentType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -225,7 +248,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method should return `null` for cases where the <xref:System.Xaml.XamlType> for this <xref:System.Xaml.Schema.XamlTypeInvoker> is not a writeable collection or dictionary. Specifically, should return `null` for cases where <xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=fullName> returns `None`.  
+ This method should return `null` for cases where the <xref:System.Xaml.XamlType> for this <xref:System.Xaml.Schema.XamlTypeInvoker> is not a writeable collection or dictionary. Specifically, should return `null` for cases where <xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=nameWithType> returns `None`.  
   
 > [!IMPORTANT]
 >  If you are not accessing a fully trusted XAML type system, this method has the potential to report false <xref:System.Reflection.MethodInfo> information to callers.  
@@ -245,6 +268,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Reflection.MethodInfo GetEnumeratorMethod ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.MethodInfo GetEnumeratorMethod() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEnumeratorMethod () As MethodInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Reflection::MethodInfo ^ GetEnumeratorMethod();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -262,7 +287,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Should return `null` for cases where <xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=fullName> returns `None`.  
+ Should return `null` for cases where <xref:System.Xaml.XamlType.LookupCollectionKind%2A?displayProperty=nameWithType> returns `None`.  
   
 > [!IMPORTANT]
 >  If you are not accessing a fully trusted XAML type system, this method has the potential to report false <xref:System.Reflection.MethodInfo> information to callers.  
@@ -278,6 +303,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetItems (object instance);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetItems(object instance) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeInvoker.GetItems(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetItems (instance As Object) As IEnumerator" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Collections::IEnumerator ^ GetItems(System::Object ^ instance);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -304,7 +331,7 @@
         <block subset="none" type="overrides">
           <para>The base implementation includes a call to the internal helper <c>ThrowIfUnknown</c>. This helper always throws for cases where a <see cref="T:System.Xaml.Schema.XamlTypeInvoker" /> is based on an unknown <see cref="T:System.Xaml.XamlType" />, which includes cases where the <see cref="P:System.Xaml.XamlType.UnderlyingType" /> of the <see cref="T:System.Xaml.XamlType" /> is <see langword="null" />.  
   
- The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IEnumerable" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IEnumerable.GetEnumerator" /> is made and the method returns that return value. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="GetEnumerator" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" /> for this<paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.</para>
+ The base implementation does not necessarily use its own <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" /> implementation. First, a cast of <paramref name="instance" /> to <see cref="T:System.Collections.IEnumerable" /> is attempted. If this succeeds, a call to <see cref="M:System.Collections.IEnumerable.GetEnumerator" /> is made and the method returns that return value. Otherwise, the base implementation uses CLR <see cref="M:System.Reflection.MethodBase.Invoke(System.Object,System.Object[])" /> to invoke the underlying <see langword="GetEnumerator" /> method, as obtained from a call to <see cref="M:System.Xaml.Schema.XamlTypeInvoker.GetEnumeratorMethod" /> for this <paramref name="" /><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />.</para>
         </block>
       </Docs>
     </Member>
@@ -312,6 +339,8 @@
       <MemberSignature Language="C#" Value="public EventHandler&lt;System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; SetMarkupExtensionHandler { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; SetMarkupExtensionHandler" />
       <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.SetMarkupExtensionHandler" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SetMarkupExtensionHandler As EventHandler(Of XamlSetMarkupExtensionEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property EventHandler&lt;System::Windows::Markup::XamlSetMarkupExtensionEventArgs ^&gt; ^ SetMarkupExtensionHandler { EventHandler&lt;System::Windows::Markup::XamlSetMarkupExtensionEventArgs ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -341,6 +370,8 @@
       <MemberSignature Language="C#" Value="public EventHandler&lt;System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; SetTypeConverterHandler { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; SetTypeConverterHandler" />
       <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.SetTypeConverterHandler" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SetTypeConverterHandler As EventHandler(Of XamlSetTypeConverterEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property EventHandler&lt;System::Windows::Markup::XamlSetTypeConverterEventArgs ^&gt; ^ SetTypeConverterHandler { EventHandler&lt;System::Windows::Markup::XamlSetTypeConverterEventArgs ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>
@@ -370,6 +401,8 @@
       <MemberSignature Language="C#" Value="public static System.Xaml.Schema.XamlTypeInvoker UnknownInvoker { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Xaml.Schema.XamlTypeInvoker UnknownInvoker" />
       <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeInvoker.UnknownInvoker" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property UnknownInvoker As XamlTypeInvoker" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Xaml::Schema::XamlTypeInvoker ^ UnknownInvoker { System::Xaml::Schema::XamlTypeInvoker ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xaml</AssemblyName>

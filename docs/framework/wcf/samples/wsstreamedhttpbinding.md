@@ -1,8 +1,8 @@
 ---
-title: "WSStreamedHttpBinding | Microsoft Docs"
+title: "WSStreamedHttpBinding"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
 caps.latest.revision: 27
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WSStreamedHttpBinding
 The sample demonstrates how to create a binding that is designed to support streaming scenarios when the HTTP transport is used.  
@@ -54,7 +56,6 @@ The sample demonstrates how to create a binding that is designed to support stre
         bindingElements.Add(transport);  
         return bindingElements.Clone();  
     }  
-  
     ```  
   
 2.  Add configuration support  
@@ -63,7 +64,7 @@ The sample demonstrates how to create a binding that is designed to support stre
   
      Register the handler with the configuration system, by adding the following section to the service's configuration file.  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <extensions>  
@@ -73,12 +74,11 @@ The sample demonstrates how to create a binding that is designed to support stre
         </extensions>  
       </system.serviceModel>  
     </configuration>  
-  
     ```  
   
      The handler can then be referenced from the serviceModel configuration section.  
   
-    ```  
+    ```xml  
     <configuration>  
       <system.serviceModel>  
         <client>  
@@ -98,7 +98,6 @@ The sample demonstrates how to create a binding that is designed to support stre
   
     ```  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-  
     ```  
   
 2.  Ensure that you have performed the steps listed in [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
@@ -140,7 +139,6 @@ public class StreamedEchoService : IStreamedEchoService
         return dataStorage;  
     }  
 }  
-  
 ```  
   
 ## The WSStreamedHttpBinding Sample Client  
@@ -150,7 +148,6 @@ public class StreamedEchoService : IStreamedEchoService
 // WARNING: This code is only required for test certificates such as those created by makecert. It is   
 // not recommended for production code.  
 PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");  
-  
 ```  
   
 ## See Also

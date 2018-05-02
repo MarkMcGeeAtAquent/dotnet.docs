@@ -1,8 +1,8 @@
 ---
-title: "&lt;add&gt; of &lt;scopes&gt; | Microsoft Docs"
+title: "&lt;add&gt; of &lt;scopes&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,14 +11,16 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 0563a7d8-fc84-4c85-9066-af32665857c2
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;add&gt; of &lt;scopes&gt;
 Adds a custom scope Uri that can be used to filter service endpoints during query.  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
 \<behavior>  
@@ -28,8 +30,18 @@ Adds a custom scope Uri that can be used to filter service endpoints during quer
   
 ## Syntax  
   
-```  
-<behaviors>  <endpointBehaviors>    <behavior name="String">      <endpointDiscovery enable="Boolean">        <scopes>          <add scope="URI"/>        </scopes>      </endpointDiscovery>    </behavior>  </endpointBehaviors></behaviors>  
+```xml  
+<behaviors>
+  <endpointBehaviors>
+    <behavior name="String">
+      <endpointDiscovery enable="Boolean">
+        <scopes>
+          <add scope="URI"/>
+        </scopes>
+      </endpointDiscovery>
+    </behavior>
+  </endpointBehaviors>
+</behaviors>  
 ```  
   
 ## Attributes and Elements  

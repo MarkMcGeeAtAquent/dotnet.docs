@@ -1,7 +1,9 @@
-<Type Name="XamlReader" FullName="System.Windows.Markup.XamlReader">
+﻿<Type Name="XamlReader" FullName="System.Windows.Markup.XamlReader">
   <TypeSignature Language="C#" Value="public class XamlReader" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlReader extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlReader" />
+  <TypeSignature Language="VB.NET" Value="Public Class XamlReader" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XamlReader" />
   <AssemblyInfo>
     <AssemblyName>PresentationFramework</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -22,7 +24,7 @@
   
  <xref:System.Windows.Markup.XamlReader> supports the following primary scenarios:  
   
--   **Cloning/object factory**: Without additional mechanisms, a reference type generally cannot be included in more than one position in a WPF object tree. (Examples of additional mechanisms that offer support for sharing or re-use in WPF include objects that are based on <xref:System.Windows.Freezable>, or support for commonly shareable objects such as <xref:System.Windows.Media.Brush> that are referenced as an item from a <xref:System.Windows.ResourceDictionary>.) One way to clone an object that is already in the object tree is to serialize the object using <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=fullName>. You then use the serialized string as input for a call to <xref:System.Windows.Markup.XamlReader.Load%2A>, with a stream or <xref:System.Xml.XmlReader> as an intermediary.  
+-   **Cloning/object factory**: Without additional mechanisms, a reference type generally cannot be included in more than one position in a WPF object tree. (Examples of additional mechanisms that offer support for sharing or re-use in WPF include objects that are based on <xref:System.Windows.Freezable>, or support for commonly shareable objects such as <xref:System.Windows.Media.Brush> that are referenced as an item from a <xref:System.Windows.ResourceDictionary>.) One way to clone an object that is already in the object tree is to serialize the object using <xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>. You then use the serialized string as input for a call to <xref:System.Windows.Markup.XamlReader.Load%2A>, with a stream or <xref:System.Xml.XmlReader> as an intermediary.  
   
 -   **Constructing objects based on just-in-time information**: There are often other ways to have late-binding or user-supplied input change the state of existing objects. For example you could use the same value to set more than one property, or use data binding. But if you have a scenario where even the type of object to create is only determinable at run time or with user interaction, then creating such an object by building up a string for <xref:System.Windows.Markup.XamlReader.Load%2A> input is often a useful technique.  
   
@@ -45,7 +47,7 @@
 ## WPF XAML, XAML Readers/Writers, and XAML Language Versioning  
  [!INCLUDE[xaml2009](~/includes/xaml2009-md.md)] includes language features such as  and . You can use signatures of `Load` or `Parse` to load XAML that uses these features. However, those language features are not supported for XAML that needs to be markup compiled (such as XAML for the **Page** build action in a WPF application, or any XAML that involves the markup compile task in the build actions).  
   
- WPF types and the WPF technology in general support concepts that rely on access to WPF internals. For instance, how WPF implements dependency properties relies on internal techniques for efficient type-member lookup. Access to these internals is enabled by the XAML reading and writing APIs provided in <xref:System.Windows.Markup.XamlWriter> and <xref:System.Windows.Markup.XamlReader> from the <xref:System.Windows.Markup> namespace and PresentationFramework assembly. However, the lower-level XAML readers and XAML writers from the System.Xaml assembly (classes based on <xref:System.Xaml.XamlReader?displayProperty=fullName>, <xref:System.Xaml.XamlWriter?displayProperty=fullName>) do not have access to the WPF internals. There is no dependency from System.Xaml to any WPF-specific assembly. Without access to the WPF internals, System.Xaml readers and writers cannot correctly load or save all WPF types, or types based on WPF types. In particular, the System.Xaml readers and writers do not understand concepts such as the WPF dependency property backing property store, or all the specifics of how WPF uses styles, resource dictionaries and templates. Therefore you have a choice to make:  
+ WPF types and the WPF technology in general support concepts that rely on access to WPF internals. For instance, how WPF implements dependency properties relies on internal techniques for efficient type-member lookup. Access to these internals is enabled by the XAML reading and writing APIs provided in <xref:System.Windows.Markup.XamlWriter> and <xref:System.Windows.Markup.XamlReader> from the <xref:System.Windows.Markup> namespace and PresentationFramework assembly. However, the lower-level XAML readers and XAML writers from the System.Xaml assembly (classes based on <xref:System.Xaml.XamlReader?displayProperty=nameWithType>, <xref:System.Xaml.XamlWriter?displayProperty=nameWithType>) do not have access to the WPF internals. There is no dependency from System.Xaml to any WPF-specific assembly. Without access to the WPF internals, System.Xaml readers and writers cannot correctly load or save all WPF types, or types based on WPF types. In particular, the System.Xaml readers and writers do not understand concepts such as the WPF dependency property backing property store, or all the specifics of how WPF uses styles, resource dictionaries and templates. Therefore you have a choice to make:  
   
 -   If you are loading WPF types, and/or you are using XAML in BAML form in any way, use the PresentationFramework XAML readers and XAML writers.  
   
@@ -56,10 +58,6 @@
   
  If you are targeting [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)], the external API is the same, but parts of the implementation are built on the [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] general XAML implementation in the System.Xaml assembly, which improves many of the technical and reporting aspects of parsing XAML. Targeting [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] necessarily entails including System.Xaml as a reference, and details of implementation such as the exceptions reported may come from System.Xaml defined types.  
   
-<a name="xamlTextUsage_XamlReader"></a>   
-## XAML Text Usage  
-   
-  
 ## Examples  
  The following example converts a <xref:System.Windows.Controls.Button> into a string using the <xref:System.Windows.Markup.XamlWriter> class.  The string is then loaded back into a <xref:System.Windows.Controls.Button> using the static <xref:System.Windows.Markup.XamlReader.Load%2A> method on the <xref:System.Windows.Markup.XamlReader> class.  
   
@@ -68,12 +66,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Markup.XamlWriter" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XamlReader ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XamlReader();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -89,6 +90,8 @@
       <MemberSignature Language="C#" Value="public void CancelAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.CancelAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelAsync ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -114,6 +117,8 @@
       <MemberSignature Language="C#" Value="public static System.Xaml.XamlSchemaContext GetWpfSchemaContext ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xaml.XamlSchemaContext GetWpfSchemaContext() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.GetWpfSchemaContext" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetWpfSchemaContext () As XamlSchemaContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Xaml::XamlSchemaContext ^ GetWpfSchemaContext();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -129,10 +134,20 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads XAML input and returns the root of the corresponding object tree.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Load">
       <MemberSignature Language="C#" Value="public static object Load (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Load(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Load(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -161,12 +176,15 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stream" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
     <Member MemberName="Load">
       <MemberSignature Language="C#" Value="public static object Load (System.Xaml.XamlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.Xaml.XamlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Load(System.Xaml.XamlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Load (reader As XamlReader) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Load(System::Xaml::XamlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -198,6 +216,8 @@
       <MemberSignature Language="C#" Value="public static object Load (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Load(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Load (reader As XmlReader) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Load(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -226,12 +246,14 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="reader" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
     <Member MemberName="Load">
       <MemberSignature Language="C#" Value="public static object Load (System.IO.Stream stream, System.Windows.Markup.ParserContext parserContext);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Load(class System.IO.Stream stream, class System.Windows.Markup.ParserContext parserContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Load(System.IO.Stream,System.Windows.Markup.ParserContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Load(System::IO::Stream ^ stream, System::Windows::Markup::ParserContext ^ parserContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -256,12 +278,23 @@
  -or-  
   
  <paramref name="parserContext" /> is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="LoadAsync">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads XAML markup and returns an object that corresponds to the root of the specified markup.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="LoadAsync">
       <MemberSignature Language="C#" Value="public object LoadAsync (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object LoadAsync(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.LoadAsync(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ LoadAsync(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -294,12 +327,15 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stream" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Multiple load operations are pending concurrently with the same <see cref="T:System.Windows.Markup.XamlReader" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
     <Member MemberName="LoadAsync">
       <MemberSignature Language="C#" Value="public object LoadAsync (System.Xml.XmlReader reader);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object LoadAsync(class System.Xml.XmlReader reader) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.LoadAsync(System.Xml.XmlReader)" />
+      <MemberSignature Language="VB.NET" Value="Public Function LoadAsync (reader As XmlReader) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ LoadAsync(System::Xml::XmlReader ^ reader);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -332,12 +368,14 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="reader" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Multiple load operations are performed concurrently with the same <see cref="T:System.Windows.Markup.XamlReader" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
     <Member MemberName="LoadAsync">
       <MemberSignature Language="C#" Value="public object LoadAsync (System.IO.Stream stream, System.Windows.Markup.ParserContext parserContext);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object LoadAsync(class System.IO.Stream stream, class System.Windows.Markup.ParserContext parserContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.LoadAsync(System.IO.Stream,System.Windows.Markup.ParserContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ LoadAsync(System::IO::Stream ^ stream, System::Windows::Markup::ParserContext ^ parserContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -372,12 +410,15 @@
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stream" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">Multiple load operations are performed concurrently with the same <see cref="T:System.Windows.Markup.XamlReader" />.</exception>
+        <altmember cref="T:System.Windows.Markup.XamlWriter" />
       </Docs>
     </Member>
     <Member MemberName="LoadCompleted">
       <MemberSignature Language="C#" Value="public event System.ComponentModel.AsyncCompletedEventHandler LoadCompleted;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.AsyncCompletedEventHandler LoadCompleted" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Markup.XamlReader.LoadCompleted" />
+      <MemberSignature Language="VB.NET" Value="Public Event LoadCompleted As AsyncCompletedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::AsyncCompletedEventHandler ^ LoadCompleted;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -396,12 +437,24 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.AsyncCompletedEventHandler" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Parse">
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Reads the markup in the specified text string and returns an object that corresponds to the root of the specified markup.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Parse">
       <MemberSignature Language="C#" Value="public static object Parse (string xamlText);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Parse(string xamlText) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Parse(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Parse (xamlText As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Parse(System::String ^ xamlText);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>
@@ -431,6 +484,7 @@
       <MemberSignature Language="C#" Value="public static object Parse (string xamlText, System.Windows.Markup.ParserContext parserContext);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Parse(string xamlText, class System.Windows.Markup.ParserContext parserContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlReader.Parse(System.String,System.Windows.Markup.ParserContext)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Object ^ Parse(System::String ^ xamlText, System::Windows::Markup::ParserContext ^ parserContext);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationFramework</AssemblyName>

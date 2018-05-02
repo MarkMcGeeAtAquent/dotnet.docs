@@ -1,8 +1,8 @@
 ---
-title: "Stand-Alone JSON Serialization | Microsoft Docs"
+title: "Stand-Alone JSON Serialization"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
 caps.latest.revision: 32
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Stand-Alone JSON Serialization
 JSON (JavaScript Object Notation) is a data format that is specifically designed to be used by JavaScript code running on Web pages inside the browser. It is the default data format used by ASP.NET AJAX services created in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
@@ -37,7 +39,7 @@ JSON (JavaScript Object Notation) is a data format that is specifically designed
 |<xref:System.Xml.XmlQualifiedName>|String|The format is "name:namespace" (anything before the first colon is the name). Either the name or the namespace can be missing. If there is no namespace the colon can be omitted as well.|  
 |<xref:System.Array> of type <xref:System.Byte>|Array of numbers|Each number represents the value of one byte.|  
 |<xref:System.DateTime>|DateTime or String|See Dates/Times and JSON later in this topic.|  
-|<xref:System.DateTime.Offset>|Complex type|See Dates/Times and JSON later in this topic.|  
+|<xref:System.DateTimeOffset>|Complex type|See Dates/Times and JSON later in this topic.|  
 |XML and ADO.NET types (<xref:System.Xml.XmlElement>,<br /><br /> <xref:System.Xml.Linq.XElement>. Arrays of <xref:System.Xml.XmlNode>,<br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|String|See the XML Types and JSON section of this topic.|  
 |<xref:System.DBNull>|Empty complex type|--|  
 |Collections, dictionaries, and arrays|Array|See the Collections, Dictionaries, and Arrays section of this topic.|  
@@ -112,7 +114,7 @@ JSON (JavaScript Object Notation) is a data format that is specifically designed
  For details of how polymorphic serialization works and a discussion of some of the limitations that must be respected when using it, see the Advanced Information section later in this topic.  
   
 ### Versioning  
- The data contract versioning features, including the <xref:System.Runtime.Serialization.IExtensibleDataObject> interface, are fully supported in JSON. Furthermore, in most cases it is possible to deserialize a type in one format (for example, XML) and then serialize it into another format (for example, JSON) and still preserve the data in <xref:System.Runtime.Serialization.IExtensibleDataObject>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Remember that JSON is unordered so any order information is lost. Furthermore, JSON does not support multiple key/value pairs with the same key name. Finally, all operations on <xref:System.Runtime.Serialization.IExtensibleDataObject> are inherently polymorphic - that is their derived type are assigned to <xref:System.Object>, the base type for all types.  
+ The data contract versioning features, including the <xref:System.Runtime.Serialization.IExtensibleDataObject> interface, are fully supported in JSON. Furthermore, in most cases it is possible to deserialize a type in one format (for example, XML) and then serialize it into another format (for example, JSON) and still preserve the data in <xref:System.Runtime.Serialization.IExtensibleDataObject>. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Forward-Compatible Data Contracts](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md). Remember that JSON is unordered so any order information is lost. Furthermore, JSON does not support multiple key/value pairs with the same key name. Finally, all operations on <xref:System.Runtime.Serialization.IExtensibleDataObject> are inherently polymorphic - that is their derived type are assigned to <xref:System.Object>, the base type for all types.  
   
 ## JSON in URLs  
  When using ASP.NET AJAX endpoints with the HTTP GET verb (using the <xref:System.ServiceModel.Web.WebGetAttribute> attribute), incoming parameters appear in the request URL instead of the message body. JSON is supported even in the request URL, so if you have an operation that takes an `Int` called "number" and a `Person` complex type called "p", the URL may resemble the following URL.  
@@ -138,9 +140,9 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
  While the <xref:System.Runtime.Serialization.IObjectReference> interface is supported in JSON in general, any types that require the "factory type" feature (returning an instance of a different type from <xref:System.Runtime.Serialization.IObjectReference.GetRealObject%28System.Runtime.Serialization.StreamingContext%29> than the type that implements the interface) are not supported.  
   
 ### DateTime Wire Format  
- <xref:System.DateTime> values appear as JSON strings in the form of "/Date(700000+0500)/", where the first number (700000 in the example provided) is the number of milliseconds in the GMT time zone, regular (non-daylight savings) time since midnight, January 1, 1970. The number may be negative to represent earlier times. The part that consists of "+0500" in the example is optional and indicates that the time is of the <xref:System.DateTimeKind> kind - that is, should be converted to the local time zone on deserialization. If it is absent, the time is deserialized as <xref:System.DateTimeKind>. The actual number ("0500" in this example) and its sign (+ or -) are ignored.  
+ <xref:System.DateTime> values appear as JSON strings in the form of "/Date(700000+0500)/", where the first number (700000 in the example provided) is the number of milliseconds in the GMT time zone, regular (non-daylight savings) time since midnight, January 1, 1970. The number may be negative to represent earlier times. The part that consists of "+0500" in the example is optional and indicates that the time is of the <xref:System.DateTimeKind.Local> kind - that is, should be converted to the local time zone on deserialization. If it is absent, the time is deserialized as <xref:System.DateTimeKind.Utc>. The actual number ("0500" in this example) and its sign (+ or -) are ignored.  
   
- When serializing <xref:System.DateTime>, <xref:System.DateTimeKind> and <xref:System.DateTimeKind> times are written with an offset, and <xref:System.DateTimeKind> is written without.  
+ When serializing <xref:System.DateTime>, <xref:System.DateTimeKind.Local> and <xref:System.DateTimeKind.Unspecified> times are written with an offset, and <xref:System.DateTimeKind.Utc> is written without.  
   
  The ASP.NET AJAX client JavaScript code automatically converts such strings into JavaScript `DateTime` instances. If there are other strings that have a similar form that are not of type <xref:System.DateTime> in .NET, they are converted as well.  
   
@@ -151,7 +153,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### XmlElement  
  <xref:System.Xml.XmlElement> is serialized as is, with no wrapping. For example, data member "x" of type <xref:System.Xml.XmlElement> that contains \<abc/> is as represented as follows.  
   
-```  
+```json  
 {"x":"<abc/>"}  
 ```  
   
@@ -178,7 +180,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
   
  To preserve type identity, when serializing complex types to JSON a "type hint" can be added, and the deserializer recognizes the hint and acts appropriately. The "type hint" is a JSON key/value pair with the key name of "__type" (two underscores followed by the word "type"). The value is a JSON string of the form "DataContractName:DataContractNamespace" (anything up to the first colon is the name). Using the earlier example, "Circle" can be serialized as follows.  
   
-```  
+```json  
 {"__type":"Circle:http://example.com/myNamespace","x":50,"y":70,"radius":10}  
 ```  
   
@@ -189,7 +191,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### Reducing the Size of Type Hints  
  To reduce the size of JSON messages, the default data contract namespace prefix (http://schemas.datacontract.org/2004/07/) is replaced with the "#" character. (To make this replacement reversible, an escaping rule is used: if the namespace starts with the "#" or "\\" characters, they are appended with an extra "\\" character). Thus, if "Circle" is a type in the .NET namespace "MyApp.Shapes", its default data contract namespace is http://schemas.datacontract.org/2004/07/MyApp. Shapes and the JSON representation is as follows.  
   
-```  
+```json  
 {"__type":"Circle:#MyApp.Shapes","x":50,"y":70,"radius":10}  
 ```  
   
@@ -198,7 +200,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### Type Hint Position in JSON Objects  
  Note that the type hint must appear first in the JSON representation. This is the only case where order of key/value pairs is important in JSON processing. For example, the following is not a valid way to specify the type hint.  
   
-```  
+```json  
 {"x":50,"y":70,"radius":10,"__type":"Circle:#MyApp.Shapes"}  
 ```  
   
@@ -219,13 +221,13 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### Duplicate Data Member Names  
  Derived type information is present in the same JSON object together with base type information, and can occur in any order. For example, `Shape` may be represented as follows.  
   
-```  
+```json  
 {"__type":"Shape:#MyApp.Shapes","x":50,"y":70}  
 ```  
   
  Whereas Circle may be represented as follows.  
   
-```  
+```json  
 {"__type":"Circle:#MyApp.Shapes","x":50, "radius":10,"y":70}  
 ```  
   
@@ -243,7 +245,7 @@ http://example.com/myservice.svc/MyOperation?number=7&p={"name":"John","age":42}
 #### Collections Assigned to Object  
  Collections assigned to Object are serialized as if they are collections that implement <xref:System.Collections.Generic.IEnumerable%601>: a JSON array with each entry that has a type hint if it is a complex type. For example, a <xref:System.Collections.Generic.List%601> of type `Shape` assigned to <xref:System.Object> looks like the following.  
   
-```  
+```json  
 [{"__type":"Shape:#MyApp.Shapes","x":50,"y":70},  
 {"__type":"Shape:#MyApp.Shapes","x":58,"y":73},  
 {"__type":"Shape:#MyApp.Shapes","x":41,"y":32}]  

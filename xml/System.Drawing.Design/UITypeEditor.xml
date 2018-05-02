@@ -1,7 +1,9 @@
-<Type Name="UITypeEditor" FullName="System.Drawing.Design.UITypeEditor">
+﻿<Type Name="UITypeEditor" FullName="System.Drawing.Design.UITypeEditor">
   <TypeSignature Language="C#" Value="public class UITypeEditor" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi UITypeEditor extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="VB.NET" Value="Public Class UITypeEditor" />
+  <TypeSignature Language="C++ CLI" Value="public ref class UITypeEditor" />
   <AssemblyInfo>
     <AssemblyName>System.Drawing</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -53,12 +55,17 @@
  ]]></format>
     </remarks>
     <permission cref="T:System.Security.NamedPermissionSet">for full access to system resources. Demand values: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />, <see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />. Associated state:</permission>
+    <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
+    <altmember cref="T:System.IServiceProvider" />
+    <altmember cref="T:System.Windows.Forms.PropertyGrid" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public UITypeEditor ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; UITypeEditor();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -70,10 +77,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="EditValue">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Edits the value of the specified object using the editor style indicated by the <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle" /> method.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="EditValue">
       <MemberSignature Language="C#" Value="public object EditValue (IServiceProvider provider, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object EditValue(class System.IServiceProvider provider, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EditValue (provider As IServiceProvider, value As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ EditValue(IServiceProvider ^ provider, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -99,12 +117,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.IServiceProvider" />
       </Docs>
     </Member>
     <Member MemberName="EditValue">
       <MemberSignature Language="C#" Value="public virtual object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EditValue (context As ITypeDescriptorContext, provider As IServiceProvider, value As Object) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ EditValue(System::ComponentModel::ITypeDescriptorContext ^ context, IServiceProvider ^ provider, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -132,12 +153,25 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
+        <altmember cref="T:System.IServiceProvider" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetEditStyle">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets the editor style used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" /> method.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetEditStyle">
       <MemberSignature Language="C#" Value="public System.Drawing.Design.UITypeEditorEditStyle GetEditStyle ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.GetEditStyle" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetEditStyle () As UITypeEditorEditStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Drawing::Design::UITypeEditorEditStyle GetEditStyle();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -154,16 +188,19 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If a <xref:System.Drawing.Design.UITypeEditor> does not override and implement this method, <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A> will return <xref:System.Drawing.Design.UITypeEditorEditStyle> by default.  
+ If a <xref:System.Drawing.Design.UITypeEditor> does not override and implement this method, <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A> will return <xref:System.Drawing.Design.UITypeEditorEditStyle.None> by default.  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Drawing.Design.UITypeEditorEditStyle" />
       </Docs>
     </Member>
     <Member MemberName="GetEditStyle">
       <MemberSignature Language="C#" Value="public virtual System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetEditStyle (context As ITypeDescriptorContext) As UITypeEditorEditStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Drawing::Design::UITypeEditorEditStyle GetEditStyle(System::ComponentModel::ITypeDescriptorContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -180,12 +217,25 @@
         <summary>Gets the editor style used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" /> method.</summary>
         <returns>A <see cref="T:System.Drawing.Design.UITypeEditorEditStyle" /> value that indicates the style of editor used by the <see cref="M:System.Drawing.Design.UITypeEditor.EditValue(System.IServiceProvider,System.Object)" /> method. If the <see cref="T:System.Drawing.Design.UITypeEditor" /> does not support this method, then <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle" /> will return <see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Drawing.Design.UITypeEditorEditStyle" />
+        <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetPaintValueSupported">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Indicates whether this editor supports painting a representation of an object's value.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetPaintValueSupported">
       <MemberSignature Language="C#" Value="public bool GetPaintValueSupported ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetPaintValueSupported() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.GetPaintValueSupported" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetPaintValueSupported () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool GetPaintValueSupported();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -200,12 +250,15 @@
         <returns>
           <see langword="true" /> if <see cref="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Object,System.Drawing.Graphics,System.Drawing.Rectangle)" /> is implemented; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Object,System.Drawing.Graphics,System.Drawing.Rectangle)" />
       </Docs>
     </Member>
     <Member MemberName="GetPaintValueSupported">
       <MemberSignature Language="C#" Value="public virtual bool GetPaintValueSupported (System.ComponentModel.ITypeDescriptorContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetPaintValueSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetPaintValueSupported (context As ITypeDescriptorContext) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual bool GetPaintValueSupported(System::ComponentModel::ITypeDescriptorContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -223,12 +276,16 @@
         <returns>
           <see langword="true" /> if <see cref="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Object,System.Drawing.Graphics,System.Drawing.Rectangle)" /> is implemented; otherwise, <see langword="false" />.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
+        <altmember cref="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Object,System.Drawing.Graphics,System.Drawing.Rectangle)" />
       </Docs>
     </Member>
     <Member MemberName="IsDropDownResizable">
       <MemberSignature Language="C#" Value="public virtual bool IsDropDownResizable { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDropDownResizable" />
       <MemberSignature Language="DocId" Value="P:System.Drawing.Design.UITypeEditor.IsDropDownResizable" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property IsDropDownResizable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool IsDropDownResizable { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -244,10 +301,21 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="PaintValue">
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Paints a representation of the value of an object.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="PaintValue">
       <MemberSignature Language="C#" Value="public virtual void PaintValue (System.Drawing.Design.PaintValueEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PaintValue(class System.Drawing.Design.PaintValueEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Sub PaintValue (e As PaintValueEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void PaintValue(System::Drawing::Design::PaintValueEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>
@@ -279,12 +347,14 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.ITypeDescriptorContext" />
       </Docs>
     </Member>
     <Member MemberName="PaintValue">
       <MemberSignature Language="C#" Value="public void PaintValue (object value, System.Drawing.Graphics canvas, System.Drawing.Rectangle rectangle);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PaintValue(object value, class System.Drawing.Graphics canvas, valuetype System.Drawing.Rectangle rectangle) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Drawing.Design.UITypeEditor.PaintValue(System.Object,System.Drawing.Graphics,System.Drawing.Rectangle)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void PaintValue(System::Object ^ value, System::Drawing::Graphics ^ canvas, System::Drawing::Rectangle rectangle);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Drawing</AssemblyName>

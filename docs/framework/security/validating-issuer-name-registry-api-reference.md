@@ -1,7 +1,8 @@
 ---
-title: "Validating Issuer Name Registry API Reference | Microsoft Docs"
+title: "Validating Issuer Name Registry API Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 2
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Validating Issuer Name Registry API Reference
 This section contains the API Reference for the Validating Issuer Name Registry WIF Extension.

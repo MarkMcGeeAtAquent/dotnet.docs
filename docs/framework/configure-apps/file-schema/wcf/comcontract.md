@@ -1,8 +1,8 @@
 ---
-title: "&lt;comContract&gt; | Microsoft Docs"
+title: "&lt;comContract&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;comContract&gt;
 Specifies a COM+ integration service contract.  
@@ -23,8 +25,7 @@ Specifies a COM+ integration service contract.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <comContracts>  
   <comContract  
       contract="string"  
@@ -77,9 +78,9 @@ Specifies a COM+ integration service contract.
 |comContracts|Contains a collection of `comContract` elements.|  
   
 ## Remarks  
- COM+ integration service contracts are currently restricted to the “http://tempuri.org” namespace, and contract name is derived from the supporting COM interface. You can, however, specify alternatives by using the `comContracts` section, as well as the `comContract` element in the configuration file. For example, you can use the following configuration to specify the namespace, contract name, and user defined types to be included, as well as other settings for a service contract.  
+ COM+ integration service contracts are currently restricted to the "http://tempuri.org" namespace, and contract name is derived from the supporting COM interface. You can, however, specify alternatives by using the `comContracts` section, as well as the `comContract` element in the configuration file. For example, you can use the following configuration to specify the namespace, contract name, and user defined types to be included, as well as other settings for a service contract.  
   
-```  
+```xml  
 <comContracts>  
   <comContract  
       contract="{5163B1E7-F0CF-4B6A-9A02-4AB654F34284}"  
@@ -98,9 +99,9 @@ Specifies a COM+ integration service contract.
  When the service is initialized, the specified namespaces and contract names are applied to the generated service descriptions.  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>   
- <xref:System.ServiceModel.Configuration.ComContractElementCollection>   
- <xref:System.ServiceModel.Configuration.ComContractElement>   
- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)   
- [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)   
+ <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComContractElementCollection>  
+ <xref:System.ServiceModel.Configuration.ComContractElement>  
+ [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)  
+ [Integrating with COM+ Applications](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)  
  [How to: Configure COM+ Service Settings](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo7::ApplyMetaData Method | Microsoft Docs"
+title: "ICorProfilerInfo7::ApplyMetaData Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
-  - "ICorProfilerInfo7.ApplyMetaData"
-apilocation: 
-  - "mscorwks.dll"
-apitype: "COM"
 dev_langs: 
-  - "C++"
+  - "cpp"
+api_name: 
+  - "ICorProfilerInfo7.ApplyMetaData"
+api_location: 
+  - "mscorwks.dll"
+api_type: 
+  - "COM"
 ms.assetid: a1bfb649-4584-4d35-b3e6-8fe59b53992a
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo7::ApplyMetaData Method
 [Supported in the .NET Framework 4.6.1 and later versions]  
@@ -29,12 +32,10 @@ manager: "wpickett"
   
 ## Syntax  
   
-```vb  
-  
+```cpp
 HRESULT ApplyMetaData(  
         [in] ModuleID moduleID  
 );  
-  
 ```  
   
 #### Parameters  

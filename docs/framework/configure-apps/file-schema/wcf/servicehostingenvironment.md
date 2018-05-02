@@ -1,22 +1,21 @@
 ---
-title: "&lt;serviceHostingEnvironment&gt; | Microsoft Docs"
+title: "&lt;serviceHostingEnvironment&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
 caps.latest.revision: 24
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;serviceHostingEnvironment&gt;
 This element defines the type the service hosting environment instantiates for a particular transport. If this element is empty, the default type is used. This element can only be used at the application or machine level configuration files.  
@@ -26,9 +25,20 @@ This element defines the type the service hosting environment instantiates for a
   
 ## Syntax  
   
-```  
-  
-<serviceHostingEnvironment     aspNetCompatibilityEnabled="Boolean"     minFreeMemoryPercentageToActivateService="Integer"     multipleSiteBindingsEnabled="Boolean">     <baseAddressPrefixFilters>        <add prefix="string"/>     </baseAddressPrefixFilters>      <serviceActivations>        <add factory="String" service="String"/>      </serviceActivations>     <transportConfigurationTypes>        <add name="String"              transportConfigurationType="String" />     </transportConfigurationTypes></serviceHostingEnvironment>  
+```xml  
+<serviceHostingEnvironment aspNetCompatibilityEnabled="Boolean" 
+                           minFreeMemoryPercentageToActivateService="Integer" 
+                           multipleSiteBindingsEnabled="Boolean">
+  <baseAddressPrefixFilters>
+    <add prefix="string" />
+  </baseAddressPrefixFilters>
+  <serviceActivations>
+    <add factory="String" service="String" />
+  </serviceActivations>
+  <transportConfigurationTypes>
+    <add name="String" transportConfigurationType="String" />
+  </transportConfigurationTypes>
+</serviceHostingEnvironment>  
 ```  
   
 ## Attributes and Elements  
@@ -84,12 +94,12 @@ This element defines the type the service hosting environment instantiates for a
   
 ## Code  
   
-```  
+```xml  
 <serviceHostingEnvironment aspNetCompatibilityEnabled="true"/>  
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>   
- <xref:System.ServiceModel.ServiceHostingEnvironment>   
- [Hosting](../../../../../docs/framework/wcf/feature-details/hosting.md)   
+ <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  
+ <xref:System.ServiceModel.ServiceHostingEnvironment>  
+ [Hosting](../../../../../docs/framework/wcf/feature-details/hosting.md)  
  [WCF Services and ASP.NET](../../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)

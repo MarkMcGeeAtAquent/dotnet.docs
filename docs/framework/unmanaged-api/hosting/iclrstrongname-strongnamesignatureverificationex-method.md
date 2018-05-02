@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameSignatureVerificationEx Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameSignatureVerificationEx Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameSignatureVerificationEx"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameSignatureVerificationEx"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameSignatureVerificationEx method, ICLRStrongName interface [.NET Framework hosting]"
   - "ICLRStrongName::StrongNameSignatureVerificationEx method [.NET Framework hosting]"
 ms.assetid: dbd2f662-208b-4174-b301-5c99af91040f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameSignatureVerificationEx Method
 Gets a value that indicates whether the assembly manifest at the supplied path contains a strong name signature.  
@@ -66,5 +69,5 @@ HRESULT StrongNameSignatureVerificationEx (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureVerification Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)   
+ [StrongNameSignatureVerification Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignatureverification-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "CorMethodAttr Enumeration | Microsoft Docs"
+title: "CorMethodAttr Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorMethodAttr"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorMethodAttr"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorMethodAttr enumeration [.NET Framework metadata]"
 ms.assetid: 4e0c3521-e54d-43c1-9857-cc76b49b8ffc
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorMethodAttr Enumeration
 Contains values that describe the features of a method.  

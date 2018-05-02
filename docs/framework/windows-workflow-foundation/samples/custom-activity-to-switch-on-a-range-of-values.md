@@ -1,17 +1,19 @@
 ---
-title: "Custom Activity to Switch on a Range of Values | Microsoft Docs"
+title: "Custom Activity to Switch on a Range of Values"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 441e0a17-421f-430c-ba97-59e4cc6c88e3
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Activity to Switch on a Range of Values
 This sample demonstrates how to create a custom activity that extends the use of a <xref:System.Activities.Statements.Switch%601>. A conventional <xref:System.Activities.Statements.Switch%601> statement allows switching based upon a single value. But, there are business scenarios where an activity must switch based upon a range of values. For example, an activity might execute one action when the value being switched upon is between 1 and 5, another action when the value is between 6 and 10, and a default action for all other values. This custom activity enables exactly that scenario.  
@@ -33,7 +35,6 @@ public sealed class SwitchRange<T> : NativeActivity where T : IComparable
    [DefaultValue(null)]  
    public Activity Default { get; set; }}  
 }  
-  
 ```  
   
 |Property|Description|  
@@ -56,7 +57,6 @@ public class CaseRange<T> where T : IComparable
   
     public Activity Action { get; set; }  
 }  
-  
 ```  
   
 > [!NOTE]
@@ -92,7 +92,6 @@ Activity SwitchRange = new SwitchRange<int>
     },  
     Default = new WriteLine { Text = "Default Case selected" }  
 };  
-  
 ```  
   
 #### To use this sample  
@@ -110,6 +109,4 @@ Activity SwitchRange = new SwitchRange<int>
 >   
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SwitchRange`  
-  
-## See Also
+>  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SwitchRange`

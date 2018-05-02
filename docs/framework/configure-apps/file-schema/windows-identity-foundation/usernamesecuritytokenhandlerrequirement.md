@@ -1,7 +1,8 @@
 ---
-title: "&lt;userNameSecurityTokenHandlerRequirement&gt; | Microsoft Docs"
+title: "&lt;userNameSecurityTokenHandlerRequirement&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 4
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;userNameSecurityTokenHandlerRequirement&gt;
 Provides configuration for the <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> class or derived classes.  
@@ -25,16 +28,16 @@ Provides configuration for the <xref:System.IdentityModel.Services.Tokens.Member
   
 ## Syntax  
   
-```  
+```xml  
 <system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
-        <userNameSecurityTokenHandlerRequirement membershipProviderName=xs:string >  
-        </userNameSecurityTokenHandlerRequirement>  
-      </add>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
+        <userNameSecurityTokenHandlerRequirement membershipProviderName=xs:string >  
+        </userNameSecurityTokenHandlerRequirement>  
+      </add>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
 </system.identityModel>  
 ```  
   
@@ -61,7 +64,7 @@ Provides configuration for the <xref:System.IdentityModel.Services.Tokens.Member
   
 ## Example  
   
-```  
+```xml  
 <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
     <userNameSecurityTokenHandlerRequirement membershipProviderName="AspNetSqlProvider/>  
 </add>  

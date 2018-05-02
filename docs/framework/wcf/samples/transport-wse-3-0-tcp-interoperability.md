@@ -1,8 +1,8 @@
 ---
-title: "Transport: WSE 3.0 TCP Interoperability | Microsoft Docs"
+title: "Transport: WSE 3.0 TCP Interoperability"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
 caps.latest.revision: 18
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Transport: WSE 3.0 TCP Interoperability
 The WSE 3.0 TCP Interoperability Transport sample demonstrates how to implement a TCP duplex session as a custom [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] transport. It also demonstrates how you can use the extensibility of the channel layer to interface over the wire with existing deployed systems. The following steps show how to build this custom [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] transport:  
@@ -68,7 +70,7 @@ The WSE 3.0 TCP Interoperability Transport sample demonstrates how to implement 
   
  `}`  
   
--   `ClientWseTcpDuplexSessionChannel` adds logic to the base `WseTcpDuplexSessionChannel`to connect to a TCP server at `channel.Open` time. First the hostname is resolved to an IP address, as shown in the following code.  
+-   `ClientWseTcpDuplexSessionChannel` adds logic to the base `WseTcpDuplexSessionChannel` to connect to a TCP server at `channel.Open` time. First the hostname is resolved to an IP address, as shown in the following code.  
   
  `hostEntry = Dns.GetHostEntry(Via.Host);`  
   
@@ -145,12 +147,12 @@ The WSE 3.0 TCP Interoperability Transport sample demonstrates how to implement 
 Calling soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  
   
 Symbol: FABRIKAM  
-        Name: Fabrikam, Inc.  
-        Last Price: 120  
+        Name: Fabrikam, Inc.  
+        Last Price: 120  
   
 Symbol: CONTOSO  
-        Name: Contoso Corp.  
-        Last Price: 50.07  
+        Name: Contoso Corp.  
+        Last Price: 50.07  
 Press enter.  
   
 Received Action: http://SayHello  
@@ -172,8 +174,8 @@ Press any key to exit when done...
   
 Request received.  
 Symbols:  
-        FABRIKAM  
-        CONTOSO  
+        FABRIKAM  
+        CONTOSO  
 ```  
   
 #### To set up, build, and run the sample  

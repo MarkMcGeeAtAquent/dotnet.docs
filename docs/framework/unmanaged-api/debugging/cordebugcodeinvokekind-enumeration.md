@@ -1,5 +1,5 @@
 ---
-title: "CorDebugCodeInvokeKind Enumeration | Microsoft Docs"
+title: "CorDebugCodeInvokeKind Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,18 +9,21 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugCodeInvokeKind"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: e795e6a2-1008-4a81-af88-d777888e942e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 6
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugCodeInvokeKind Enumeration
 Describes how an exported function invokes managed code.  
@@ -28,14 +31,12 @@ Describes how an exported function invokes managed code.
 ## Syntax  
   
 ```  
-  
 typedef enum CorDebugCodeInvokeKind  
 {  
     CODE_INVOKE_KIND_NONE,       
     CODE_INVOKE_KIND_RETURN,     
     CODE_INVOKE_KIND_TAILCALL,   
 } CorDebugCodeInvokeKind;  
-  
 ```  
   
 ## Members  
@@ -62,5 +63,5 @@ typedef enum CorDebugCodeInvokeKind
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)   
+ [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

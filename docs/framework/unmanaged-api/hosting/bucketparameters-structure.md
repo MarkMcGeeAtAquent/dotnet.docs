@@ -1,5 +1,5 @@
 ---
-title: "BucketParameters Structure | Microsoft Docs"
+title: "BucketParameters Structure"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "BucketParameters"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "BucketParameters"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "BucketParameters structure [.NET Framework hosting]"
 ms.assetid: 9432487e-f276-45d6-9a13-9a68024dbd46
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # BucketParameters Structure
 Stores the type name of an event and the parameters for the current exception that is associated with the event.  

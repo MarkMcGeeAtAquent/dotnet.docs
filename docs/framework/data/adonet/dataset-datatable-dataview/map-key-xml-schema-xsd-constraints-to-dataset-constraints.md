@@ -1,8 +1,8 @@
 ---
-title: "Map key XML Schema (XSD) Constraints to DataSet Constraints | Microsoft Docs"
+title: "Map key XML Schema (XSD) Constraints to DataSet Constraints"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Map key XML Schema (XSD) Constraints to DataSet Constraints
 In a schema, you can specify a key constraint on an element or attribute using the **key** element. The element or attribute on which a key constraint is specified must have unique values in any schema instance, and cannot have null values.  
@@ -31,7 +33,7 @@ In a schema, you can specify a key constraint on an element or attribute using t
   
  In the following schema example, the **key** element specifies the key constraint on the **CustomerID** element.  
   
-```  
+```xml  
 <xs:schema id="cod"  
             xmlns:xs="http://www.w3.org/2001/XMLSchema"   
             xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
@@ -69,7 +71,6 @@ Customers(CustomerID, CompanyName, Phone)
  The XML Schema mapping also creates a **UniqueConstraint** on the **CustomerID** column, as shown in the following <xref:System.Data.DataSet>. (For simplicity, only relevant properties are shown.)  
   
 ```  
-  
       DataSetName: MyDataSet  
 TableName: customers  
   ColumnName: CustomerID  
@@ -86,6 +87,6 @@ TableName: customers
  The value of the **ConstraintName** property of the **UniqueConstraint** in the **DataSet** is the value of the **msdata:ConstraintName** attribute specified in the **key** element in the schema.  
   
 ## See Also  
- [Mapping XML Schema (XSD) Constraints to DataSet Constraints](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)   
- [Generating DataSet Relations from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)   
+ [Mapping XML Schema (XSD) Constraints to DataSet Constraints](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [Generating DataSet Relations from XML Schema (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

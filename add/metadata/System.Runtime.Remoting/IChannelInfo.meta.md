@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Remoting.IChannelInfo
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Remoting.IChannelInfo.ChannelData
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

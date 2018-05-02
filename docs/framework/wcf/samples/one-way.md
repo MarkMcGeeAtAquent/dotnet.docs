@@ -1,8 +1,8 @@
 ---
-title: "One-Way | Microsoft Docs"
+title: "One-Way"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # One-Way
 This sample demonstrates a service contact with one-way service operations. The client does not wait for service operations to complete as is the case with two-way service operations. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) and uses the `wsHttpBinding` binding. The service in this sample is a self-hosted console application to enable you to observe the service that receives and processes requests. The client is also a console application.  
@@ -36,7 +38,6 @@ public interface IOneWayCalculator
     [OperationContract(IsOneWay = true)]  
     void Divide(double n1, double n2);  
 }  
-  
 ```  
   
  To demonstrate that the client does not wait for the service operations to complete, the service code in this sample implements a five-second delay, as shown in the following sample code:  
@@ -57,7 +58,6 @@ public class CalculatorService : IOneWayCalculator
     }  
     ...  
 }  
-  
 ```  
   
  When the client calls the service, the call returns without waiting for the service operation to complete.  
@@ -73,7 +73,6 @@ Multiply(9,81.25)
 Divide(22,7)  
   
 Press <ENTER> to terminate client.  
-  
 ```  
   
  The following service output is shown:  
@@ -90,7 +89,6 @@ Processing Add(100,15.99) - result: 115.99
 Processing Subtract(145,76.54) - result: 68.46  
 Processing Multiply(9,81.25) - result: 731.25  
 Processing Divide(22,7) - result: 3.14285714285714  
-  
 ```  
   
 > [!NOTE]

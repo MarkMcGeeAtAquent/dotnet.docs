@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Messaging.ILogicalThreadAffinative
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

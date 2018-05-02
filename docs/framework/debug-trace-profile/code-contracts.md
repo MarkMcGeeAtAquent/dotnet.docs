@@ -1,5 +1,5 @@
 ---
-title: "Code Contracts | Microsoft Docs"
+title: "Code Contracts"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,10 +10,8 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Code contracts"
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
@@ -21,6 +19,8 @@ caps.latest.revision: 15
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Code Contracts
 Code contracts provide a way to specify preconditions, postconditions, and object invariants in your code. Preconditions are requirements that must be met when entering a method or property. Postconditions describe expectations at the time the method or property code exits. Object invariants describe the expected state for a class that is in a good state.  
@@ -35,7 +35,7 @@ Code contracts provide a way to specify preconditions, postconditions, and objec
   
 -   Static verification: The static checker can decide whether there are any contract violations without running the program. It checks for implicit contracts, such as null dereferences and array bounds, and explicit contracts.  
   
--   Reference documentation: The documentation generator augments existing XML documentation files with contract information. There are also style sheets that can be used with [Sandcastle](http://go.microsoft.com/fwlink/?LinkID=169253) so that the generated documentation pages have contract sections.  
+-   Reference documentation: The documentation generator augments existing XML documentation files with contract information. There are also style sheets that can be used with [Sandcastle](https://github.com/EWSoftware/SHFB) so that the generated documentation pages have contract sections.  
   
  All .NET Framework languages can immediately take advantage of contracts; you do not have to write a special parser or compiler. A Visual Studio add-in lets you specify the level of code contract analysis to be performed. The analyzers can confirm that the contracts are well-formed (type checking and name resolution) and can produce a compiled form of the contracts in Microsoft intermediate language (MSIL) format. Authoring contracts in Visual Studio lets you take advantage of the standard IntelliSense provided by the tool.  
   
@@ -44,7 +44,7 @@ Code contracts provide a way to specify preconditions, postconditions, and objec
  For tools and detailed instructions for using code contracts, see [Code Contracts](http://go.microsoft.com/fwlink/?LinkId=152461) on the MSDN DevLabs Web site.  
   
 ## Preconditions  
- You can express preconditions by using the <xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=fullName> method. Preconditions specify state when a method is invoked. They are generally used to specify valid parameter values. All members that are mentioned in preconditions must be at least as accessible as the method itself; otherwise, the precondition might not be understood by all callers of a method. The condition must have no side-effects. The run-time behavior of failed preconditions is determined by the runtime analyzer.  
+ You can express preconditions by using the <xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType> method. Preconditions specify state when a method is invoked. They are generally used to specify valid parameter values. All members that are mentioned in preconditions must be at least as accessible as the method itself; otherwise, the precondition might not be understood by all callers of a method. The condition must have no side-effects. The run-time behavior of failed preconditions is determined by the runtime analyzer.  
   
  For example, the following precondition expresses that parameter `x` must be non-null.  
   
@@ -61,7 +61,7 @@ Code contracts provide a way to specify preconditions, postconditions, and objec
   
 -   The entire set of such statements is followed by an explicit <xref:System.Diagnostics.Contracts.Contract> method call, such as a call to the <xref:System.Diagnostics.Contracts.Contract.Requires%2A>, <xref:System.Diagnostics.Contracts.Contract.Ensures%2A>, <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A>, or <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A> method.  
   
- When `if`-`then`-`throw` statements appear in this form, the tools recognize them as legacy `requires` statements. If no other contracts follow the `if`-`then`-`throw` sequence, end the code with the <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=fullName> method.  
+ When `if`-`then`-`throw` statements appear in this form, the tools recognize them as legacy `requires` statements. If no other contracts follow the `if`-`then`-`throw` sequence, end the code with the <xref:System.Diagnostics.Contracts.Contract.EndContractBlock%2A?displayProperty=nameWithType> method.  
   
 ```  
 if ( x == null ) throw new ...  
@@ -78,10 +78,10 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ### Standard Postconditions  
  You can express standard postconditions by using the <xref:System.Diagnostics.Contracts.Contract.Ensures%2A> method. Postconditions express a condition that must be `true` upon normal termination of the method.  
   
- `Contract.Ensures( this .F > 0 );`  
+ `Contract.Ensures( this.F > 0 );`  
   
 ### Exceptional Postconditions  
- Exceptional postconditions are postconditions that should be `true` when a particular exception is thrown by a method. You can specify these postconditions by using the <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=fullName> method, as the following example shows.  
+ Exceptional postconditions are postconditions that should be `true` when a particular exception is thrown by a method. You can specify these postconditions by using the <xref:System.Diagnostics.Contracts.Contract.EnsuresOnThrow%2A?displayProperty=nameWithType> method, as the following example shows.  
   
  `Contract.EnsuresOnThrow<T>( this.F > 0 );`  
   
@@ -92,7 +92,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ### Special Postconditions  
  The following methods may be used only within postconditions:  
   
--   You can refer to method return values in postconditions by using the expression `Contract. Result<T>()`, where `T` is replaced by the return type of the method. When the compiler is unable to infer the type, you must explicitly provide it. For example, the C# compiler is unable to infer types for methods that do not take any arguments, so it requires the following postcondition: `Contract.Ensures(0 < Contract.Result<int>())` Methods with a return type of `void` cannot refer to `Contract. Result<T>()` in their postconditions.  
+-   You can refer to method return values in postconditions by using the expression `Contract.Result<T>()`, where `T` is replaced by the return type of the method. When the compiler is unable to infer the type, you must explicitly provide it. For example, the C# compiler is unable to infer types for methods that do not take any arguments, so it requires the following postcondition: `Contract.Ensures(0 <Contract.Result<int>())` Methods with a return type of `void` cannot refer to `Contract.Result<T>()` in their postconditions.  
   
 -   A prestate value in a postcondition refers to the value of an expression at the start of a method or property. It uses the expression `Contract.OldValue<T>(e)`, where `T` is the type of `e`. You can omit the generic type argument whenever the compiler is able to infer its type. (For example, the C# compiler always infers the type because it takes an argument.) There are several restrictions on what can occur in `e` and the contexts in which an old expression may appear. An old expression cannot contain another old expression. Most importantly, an old expression must refer to a value that existed in the method's precondition state. In other words, it must be an expression that can be evaluated as long as the method's precondition is `true`. Here are several instances of that rule.  
   
@@ -110,14 +110,14 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
   
         ```  
         Contract. ForAll (0,Contract. Result<int>(),  
-        i => Contract.OldValue(xs[i]) > 3 ); // ERROR  
+        i => Contract.OldValue(xs[i]) > 3); // ERROR  
         ```  
   
     -   An old expression cannot refer to the parameter of the anonymous delegate in a <xref:System.Diagnostics.Contracts.Contract.ForAll%2A> or <xref:System.Diagnostics.Contracts.Contract.Exists%2A> call unless it is used as an indexer or argument to a method call:  
   
         ```  
         Contract. ForAll (0, xs .Length, i => Contract.OldValue(xs[i]) > 3); // OK  
-        Contract. ForAll (0, xs .Length, i => Contract.OldValue(i) > 3 ); // ERROR  
+        Contract. ForAll (0, xs .Length, i => Contract.OldValue(i) > 3); // ERROR  
         ```  
   
     -   An old expression cannot occur in the body of an anonymous delegate if the value of the old expression depends on any of the parameters of the anonymous delegate, unless the anonymous delegate is an argument to the <xref:System.Diagnostics.Contracts.Contract.ForAll%2A> or <xref:System.Diagnostics.Contracts.Contract.Exists%2A> method:  
@@ -148,8 +148,8 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
 [ContractInvariantMethod]  
 protected void ObjectInvariant ()   
 {  
-Contract.Invariant ( this.y >= 0 );  
-Contract.Invariant ( this.x > this.y );  
+Contract.Invariant(this.y >= 0);  
+Contract.Invariant(this.x > this.y);  
 ...  
 }  
 ```  
@@ -187,7 +187,7 @@ Contract.Invariant ( this.x > this.y );
   
 -   Any method whose fully qualified name begins with "System.Diagnostics.Contracts.Contract", "System.String", "System.IO.Path", or "System.Type".  
   
--   Any invoked delegate, provided that the delegate type itself is attributed with the <xref:System.Diagnostics.Contracts.PureAttribute>. The delegate types <xref:System.Predicate%601?displayProperty=fullName> and <xref:System.Comparison%601?displayProperty=fullName> are considered pure.  
+-   Any invoked delegate, provided that the delegate type itself is attributed with the <xref:System.Diagnostics.Contracts.PureAttribute>. The delegate types <xref:System.Predicate%601?displayProperty=nameWithType> and <xref:System.Comparison%601?displayProperty=nameWithType> are considered pure.  
   
 <a name="visibility"></a>   
 ### Visibility  

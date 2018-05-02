@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::ModuleLoadFinished Method | Microsoft Docs"
+title: "ICorProfilerCallback::ModuleLoadFinished Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.ModuleLoadFinished"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::ModuleLoadFinished"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ModuleLoadFinished method [.NET Framework profiling]"
   - "ICorProfilerCallback::ModuleLoadFinished method [.NET Framework profiling]"
 ms.assetid: 050649e5-ffc0-4458-a0a4-d9ee128a219e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::ModuleLoadFinished Method
 Notifies the profiler that a module has finished loading.  
@@ -60,5 +63,5 @@ HRESULT ModuleLoadFinished(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
  [ModuleLoadStarted Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)

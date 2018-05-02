@@ -1,5 +1,5 @@
 ---
-title: "Culture-Insensitive String Operations | Microsoft Docs"
+title: "Culture-Insensitive String Operations"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -22,6 +22,9 @@ caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Culture-Insensitive String Operations
 Culture-sensitive string operations can be an advantage if you are creating applications designed to display results to users on a per-culture basis. By default, culture-sensitive methods obtain the culture to use from the <xref:System.Globalization.CultureInfo.CurrentCulture%2A> property for the current thread.  

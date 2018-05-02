@@ -1,5 +1,5 @@
 ---
-title: "CorPropertyAttr Enumeration | Microsoft Docs"
+title: "CorPropertyAttr Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorPropertyAttr"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorPropertyAttr"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorPropertyAttr enumeration [.NET Framework metadata]"
 ms.assetid: 58ac8202-854d-4efd-acfb-d2da8b446e12
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorPropertyAttr Enumeration
 Contains values that describe the metadata of a property.  

@@ -1,6 +1,6 @@
 ---
 title: Events (F#)
-description: Events (F#)
+description: Learn how F# events enable you to associate function calls with user actions, which are important in GUI programming.
 keywords: visual f#, f#, functional programming
 author: cartermp
 ms.author: phcart
@@ -178,7 +178,7 @@ Application.Run(appForm)
 ## See Also
 [Members](index.md)
 
-[Handling and Raising Events](https://msdn.microsoft.com/library/edzehd2t.aspx)
+[Handling and Raising Events](../../../../docs/standard/events/index.md)
 
 [Lambda Expressions: The `fun` Keyword](../functions/lambda-expressions-the-fun-keyword.md)
 

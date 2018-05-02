@@ -1,14 +1,20 @@
 ---
 uid: System.ServiceModel.Security.SecureConversationServiceCredential
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.SecureConversationServiceCredential.SecurityContextClaimTypes
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.SecureConversationServiceCredential.SecurityStateEncoder
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

@@ -1,9 +1,13 @@
 ---
 uid: System.Runtime.Serialization.IDeserializationCallback
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(System.Object)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

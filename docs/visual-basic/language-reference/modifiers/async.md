@@ -1,13 +1,10 @@
 ---
-title: "Async (Visual Basic) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Async (Visual Basic)"
+ms.date: 07/20/2015
 ms.prod: .net
-
 ms.suite: ""
 ms.technology: 
   - "devlang-visual-basic"
-
 ms.topic: "article"
 f1_keywords: 
   - "vb.Async"
@@ -18,21 +15,6 @@ ms.assetid: 1be8b4b5-9689-41b5-bd33-b906bfd53bc5
 caps.latest.revision: 37
 author: dotnet-bot
 ms.author: dotnetcontent
-
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Async (Visual Basic)
 The `Async` modifier indicates that the method or [lambda expression](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md) that it modifies is asynchronous. Such methods are referred to as *async methods*.  
@@ -45,7 +27,6 @@ The `Async` modifier indicates that the method or [lambda expression](../../../v
  The following example shows the structure of an async method. By convention, async method names end in "Async."  
   
 ```vb  
-  
 Public Async Function ExampleMethodAsync() As Task(Of Integer)  
     ' . . .  
   
@@ -80,7 +61,6 @@ End Function
  The following examples show an async event handler, an async lambda expression, and an async method. For a full example that uses these elements, see [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). You can download the walkthrough code from [Developer Code Samples](http://go.microsoft.com/fwlink/?LinkId=255191).  
   
 ```vb  
-  
 ' An event handler must be a Sub procedure.  
 Async Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.Click  
     textBox1.Clear()  
@@ -123,11 +103,10 @@ Private Async Function GetURLContentsAsync(url As String) As Task(Of Byte())
     ' Return the result as a byte array.  
     Return content.ToArray()  
 End Function  
-  
 ```  
   
 ## See Also  
- <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>   
- [Await Operator](../../../visual-basic/language-reference/operators/await-operator.md)   
- [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md)   
+ <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>  
+ [Await Operator](../../../visual-basic/language-reference/operators/await-operator.md)  
+ [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md)  
  [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)

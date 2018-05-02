@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Messaging.MessageSurrogateFilter
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

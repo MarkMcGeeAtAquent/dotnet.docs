@@ -1,5 +1,5 @@
 ---
-title: "GetHashFromHandle Function | Microsoft Docs"
+title: "GetHashFromHandle Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "GetHashFromHandle"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "GetHashFromHandle"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetHashFromHandle function [.NET Framework strong naming]"
 ms.assetid: 9e00337f-b307-4602-9bc3-965a8dbf02cd
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # GetHashFromHandle Function
 Generates a hash over the contents of the file with the specified file handle, using the specified hash algorithm.  
@@ -69,5 +72,5 @@ HRESULT GetHashFromHandle (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [GetHashFromHandle Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromhandle-method.md)   
+ [GetHashFromHandle Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromhandle-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

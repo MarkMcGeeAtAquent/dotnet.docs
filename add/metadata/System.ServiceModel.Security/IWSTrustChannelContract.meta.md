@@ -1,144 +1,196 @@
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginIssue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndValidate(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndIssue(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginCancel(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginValidate
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Renew(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndRenew(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Cancel(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndCancel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginIssue
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndRenew
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Validate(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginRenew
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Validate
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginCancel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Issue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Issue(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginRenew(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Renew
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Cancel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndCancel(System.IAsyncResult,System.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse@)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.BeginValidate(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.AsyncCallback,System.Object)
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.Issue
+ms.technology: 
+  - "dotnet-standard"
 ms.author: "v-jibran"
-manager: "ghogen"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndIssue
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Security.IWSTrustChannelContract.EndValidate
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

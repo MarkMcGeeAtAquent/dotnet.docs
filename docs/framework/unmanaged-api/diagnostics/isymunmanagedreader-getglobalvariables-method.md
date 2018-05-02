@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedReader::GetGlobalVariables Method | Microsoft Docs"
+title: "ISymUnmanagedReader::GetGlobalVariables Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedReader.GetGlobalVariables"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedReader::GetGlobalVariables"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetGlobalVariables method [.NET Framework debugging]"
   - "ISymUnmanagedReader::GetGlobalVariables method [.NET Framework debugging]"
 ms.assetid: a2dd5098-3e58-4be5-b7a2-e4160b3b505a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedReader::GetGlobalVariables Method
 Returns all global variables.  

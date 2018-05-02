@@ -1,8 +1,8 @@
 ---
-title: "Message Security over Message Queuing | Microsoft Docs"
+title: "Message Security over Message Queuing"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -14,6 +14,8 @@ caps.latest.revision: 22
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Security over Message Queuing
 This sample demonstrates how to implement an application that uses WS-Security with X.509v3 certificate authentication for the client and requires server authentication using the server's X.509v3 certificate over MSMQ. Message security is sometimes more desirable to ensure that the messages in the MSMQ store stay encrypted and the application can perform its own authentication of the message.  
@@ -51,7 +53,7 @@ This sample demonstrates how to implement an application that uses WS-Security w
   
 4.  Launch Client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+5.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To run the sample across computers  
   
@@ -79,7 +81,7 @@ This sample demonstrates how to implement an application that uses WS-Security w
   
 12. On the service computer, launch Service.exe from the command prompt.  
   
-13. On the client computer, launch Client.exe from the command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/en-us/8787c877-5e96-42da-8214-fa737a38f10b).  
+13. On the client computer, launch Client.exe from the command prompt. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 ### To clean up after the sample  
   
@@ -115,7 +117,7 @@ public interface IOrderProcessor
   
  The client configuration specifies the service certificate to authenticate the service. It uses its LocalMachine store as the trusted store to rely on the validity of the service. It also specifies the client certificate that is attached with the message for service authentication of the client.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   
@@ -175,8 +177,7 @@ public interface IOrderProcessor
   
  The service configuration includes a service behavior that specifies the service's credentials that are used when the client authenticates the service. The server certificate subject name is specified in the `findValue` attribute in the [\<serviceCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md).  
   
-```  
-  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   
@@ -248,7 +249,6 @@ public interface IOrderProcessor
   </system.serviceModel>  
   
 </configuration>  
-  
 ```  
   
  The sample demonstrates controlling authentication using configuration, and how to obtain the caller’s identity from the security context, as shown in the following sample code:  
@@ -304,7 +304,6 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     echo making client cert  
     echo ************  
     makecert.exe -sr CurrentUser -ss MY -a sha1 -n CN=%CLIENT_NAME% -sky exchange -pe  
-  
     ```  
   
 -   Installing the client certificate into server’s trusted certificate store.  
@@ -316,7 +315,6 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     echo copying client cert to server's LocalMachine store  
     echo ************  
     certmgr.exe -add -r CurrentUser -s My -c -n %CLIENT_NAME% -r LocalMachine -s TrustedPeople  
-  
     ```  
   
 -   Creating the server certificate.  

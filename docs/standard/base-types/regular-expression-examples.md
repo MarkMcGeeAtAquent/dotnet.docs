@@ -1,5 +1,5 @@
 ---
-title: "Regular Expression Examples | Microsoft Docs"
+title: "Regular Expression Examples"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -17,6 +17,9 @@ caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Regular Expression Examples
 This section contains code examples that illustrate the use of regular expressions in common applications.  

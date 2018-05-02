@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::RuntimeSuspendAborted Method | Microsoft Docs"
+title: "ICorProfilerCallback::RuntimeSuspendAborted Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.RuntimeSuspendAborted"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::RuntimeSuspendAborted"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::RuntimeSuspendAborted method [.NET Framework profiling]"
   - "RuntimeSuspendAborted method [.NET Framework profiling]"
 ms.assetid: 5a8a4277-345b-448b-a028-fc8cff9998aa
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::RuntimeSuspendAborted Method
 Notifies the profiler that the runtime has aborted the runtime suspension that was occurring.  

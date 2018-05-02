@@ -1,7 +1,9 @@
-<Type Name="XmlRootAttribute" FullName="System.Xml.Serialization.XmlRootAttribute">
+﻿<Type Name="XmlRootAttribute" FullName="System.Xml.Serialization.XmlRootAttribute">
   <TypeSignature Language="C#" Value="public class XmlRootAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlRootAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlRootAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class XmlRootAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class XmlRootAttribute : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
@@ -15,13 +17,17 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
   </Base>
   <Interfaces />
   <Attributes>
     <Attribute>
-      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.ReturnValue)</AttributeName>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.ReturnValue | System.AttributeTargets.Struct)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -30,13 +36,13 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Xml.Serialization.XmlRootAttribute> belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes or deserializes an object. For a complete list of similar attributes, see [Attributes That Control XML Serialization](~/docs/framework/serialization/attributes-that-control-xml-serialization.md).  
+ The <xref:System.Xml.Serialization.XmlRootAttribute> belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes or deserializes an object. For a complete list of similar attributes, see [Attributes That Control XML Serialization](~/docs/standard/serialization/attributes-that-control-xml-serialization.md).  
   
  You can apply the <xref:System.Xml.Serialization.XmlRootAttribute> to a class, structure, enumeration, or interface. You can also apply the attribute to the return value of an XML Web service method.  
   
  Every XML document must have a single root element that contains all the other elements. The <xref:System.Xml.Serialization.XmlRootAttribute> allows you to control how the <xref:System.Xml.Serialization.XmlSerializer> generates the root element by setting certain properties. For example, specify the name of the generated XML element by setting the <xref:System.Xml.Serialization.XmlRootAttribute.ElementName%2A> property.  
   
- For more information about using attributes, see [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87).  
+ For more information about using attributes, see [Attributes](~/docs/standard/attributes/index.md).  
   
 > [!NOTE]
 >  You can use the word `XmlRoot` in your code instead of the longer <xref:System.Xml.Serialization.XmlRootAttribute>.  
@@ -52,12 +58,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Xml.Serialization.XmlArrayAttribute" />
+    <altmember cref="T:System.Xml.Serialization.XmlElementAttribute" />
+    <altmember cref="T:System.Xml.Serialization.XmlSerializer" />
+    <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlRootAttribute" /> class and uses the class name as the name of the XML root element.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlRootAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlRootAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlRootAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -71,6 +92,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -87,12 +112,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.Serialization.XmlAttributes.XmlRoot" />
+        <altmember cref="T:System.Xml.Serialization.XmlAttributeOverrides" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public XmlRootAttribute (string elementName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string elementName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlRootAttribute.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (elementName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; XmlRootAttribute(System::String ^ elementName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -106,6 +135,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="elementName" Type="System.String" />
@@ -125,12 +158,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Xml.Serialization.XmlRootAttribute.ElementName" />
       </Docs>
     </Member>
     <Member MemberName="DataType">
       <MemberSignature Language="C#" Value="public string DataType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.DataType" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DataType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -144,6 +180,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -225,6 +265,8 @@
       <MemberSignature Language="C#" Value="public string ElementName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ElementName" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.ElementName" />
+      <MemberSignature Language="VB.NET" Value="Public Property ElementName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ElementName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -238,6 +280,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -268,6 +314,8 @@
       <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.IsNullable" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsNullable As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsNullable { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -281,6 +329,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -328,6 +380,8 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
       <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlRootAttribute.Namespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property Namespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Namespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
@@ -341,6 +395,10 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -367,6 +425,9 @@ xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Xml.Serialization.XmlAttributeOverrides" />
+        <altmember cref="T:System.Xml.Serialization.XmlAttributes" />
+        <altmember cref="P:System.Xml.Serialization.XmlAttributes.XmlRoot" />
       </Docs>
     </Member>
   </Members>

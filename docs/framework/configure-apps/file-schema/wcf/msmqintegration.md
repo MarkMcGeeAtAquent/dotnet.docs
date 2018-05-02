@@ -1,22 +1,21 @@
 ---
-title: "&lt;msmqIntegration&gt; | Microsoft Docs"
+title: "&lt;msmqIntegration&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;msmqIntegration&gt;
 Specifies a MSMQ transport for custom binding.  
@@ -29,8 +28,7 @@ Specifies a MSMQ transport for custom binding.
   
 ## Syntax  
   
-```  
-  
+```xml  
 <msmqIntegration>  
         customDeadLetterQueue="Uri"  
         deadLetterQueue="Custom/None/System"  
@@ -91,13 +89,13 @@ Specifies a MSMQ transport for custom binding.
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>   
- <xref:System.ServiceModel.Channels.TransportBindingElement>   
- <xref:System.ServiceModel.Channels.CustomBinding>   
- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)   
- [Queues in WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)   
- [Choosing a Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)   
- [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)   
+ <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>  
+ <xref:System.ServiceModel.Channels.TransportBindingElement>  
+ <xref:System.ServiceModel.Channels.CustomBinding>  
+ [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)  
+ [Queues in WCF](../../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [Choosing a Transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Extending Bindings](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
+ [Custom Bindings](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
  [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

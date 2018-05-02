@@ -1,7 +1,9 @@
-<Type Name="DependentCloneOption" FullName="System.Transactions.DependentCloneOption">
+﻿<Type Name="DependentCloneOption" FullName="System.Transactions.DependentCloneOption">
   <TypeSignature Language="C#" Value="public enum DependentCloneOption" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DependentCloneOption extends System.Enum" />
   <TypeSignature Language="DocId" Value="T:System.Transactions.DependentCloneOption" />
+  <TypeSignature Language="VB.NET" Value="Public Enum DependentCloneOption" />
+  <TypeSignature Language="C++ CLI" Value="public enum class DependentCloneOption" />
   <AssemblyInfo>
     <AssemblyName>System.Transactions</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Enum</BaseTypeName>
@@ -20,7 +26,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A dependent transaction can be obtained using the <xref:System.Transactions.Transaction.DependentClone%2A> method, with the <xref:System.Transactions.DependentCloneOption> parameter controlling what kind of dependent transaction to create.  For more information on how this enumeration is used, see [Managing Concurrency with DependentTransaction](http://msdn.microsoft.com/en-us/bdad8468-2a90-4b81-8375-278067120cab).  
+ A dependent transaction can be obtained using the <xref:System.Transactions.Transaction.DependentClone%2A> method, with the <xref:System.Transactions.DependentCloneOption> parameter controlling what kind of dependent transaction to create.  For more information on how this enumeration is used, see [Managing Concurrency with DependentTransaction](http://msdn.microsoft.com/library/bdad8468-2a90-4b81-8375-278067120cab).  
   
    
   
@@ -38,6 +44,8 @@
       <MemberSignature Language="C#" Value="BlockCommitUntilComplete" />
       <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.DependentCloneOption BlockCommitUntilComplete = int32(0)" />
       <MemberSignature Language="DocId" Value="F:System.Transactions.DependentCloneOption.BlockCommitUntilComplete" />
+      <MemberSignature Language="VB.NET" Value="BlockCommitUntilComplete" />
+      <MemberSignature Language="C++ CLI" Value="BlockCommitUntilComplete" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Transactions</AssemblyName>
@@ -48,9 +56,14 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Transactions.DependentCloneOption</ReturnType>
       </ReturnValue>
+      <MemberValue>0</MemberValue>
       <Docs>
         <summary>The dependent transaction blocks the commit process of the transaction until the parent transaction times out, or <see cref="M:System.Transactions.DependentTransaction.Complete" /> is called. In this case, additional work can be done on the transaction and new enlistments can be created.</summary>
       </Docs>
@@ -59,6 +72,8 @@
       <MemberSignature Language="C#" Value="RollbackIfNotComplete" />
       <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.DependentCloneOption RollbackIfNotComplete = int32(1)" />
       <MemberSignature Language="DocId" Value="F:System.Transactions.DependentCloneOption.RollbackIfNotComplete" />
+      <MemberSignature Language="VB.NET" Value="RollbackIfNotComplete" />
+      <MemberSignature Language="C++ CLI" Value="RollbackIfNotComplete" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Transactions</AssemblyName>
@@ -69,9 +84,14 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Transactions.DependentCloneOption</ReturnType>
       </ReturnValue>
+      <MemberValue>1</MemberValue>
       <Docs>
         <summary>The dependent transaction automatically aborts the transaction if Commit is called on the parent transaction before <see cref="M:System.Transactions.DependentTransaction.Complete" /> is called.</summary>
       </Docs>

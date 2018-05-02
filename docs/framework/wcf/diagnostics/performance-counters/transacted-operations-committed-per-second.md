@@ -1,8 +1,8 @@
 ---
-title: "Transacted Operations Committed Per Second | Microsoft Docs"
+title: "Transacted Operations Committed Per Second"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 7318921b-47c4-4c8c-9fdd-41a92061c53f
 caps.latest.revision: 7
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Transacted Operations Committed Per Second
 Counter Name: Transacted Operations Committed Per Second.  

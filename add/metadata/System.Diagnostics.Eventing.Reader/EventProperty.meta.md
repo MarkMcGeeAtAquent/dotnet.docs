@@ -1,11 +1,15 @@
 ---
 uid: System.Diagnostics.Eventing.Reader.EventProperty
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Diagnostics.Eventing.Reader.EventProperty.Value
-ms.author: "jgalasyn"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

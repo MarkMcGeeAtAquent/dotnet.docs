@@ -1,5 +1,5 @@
 ---
-title: "XamlName Grammar | Microsoft Docs"
+title: "XamlName Grammar"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -20,6 +20,8 @@ caps.latest.revision: 13
 author: "wadepickett"
 ms.author: "wpickett"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # XamlName Grammar
 XamlName Grammar is a specific grammar that is defined in the XAML language specification [MS-XAML], which is reproduced here for convenience.  
@@ -36,13 +38,11 @@ NameChar ::= NameStartChar | DecimalDigit | CombiningCharacter
 LetterCharacter ::= UnicodeLu | UnicodeLl | UnicodeLo | UnicodeLt | UnicodeNl   
 DecimalDigit ::= UnicodeNd   
 CombiningCharacter ::= UnicodeMn | UnicodeMc  
-  
 ```  
   
  Which assumes the following general category values as defined in the Unicode Character Database  
   
 ```  
-  
 Lu  
 Letter, Uppercase  
 Ll  

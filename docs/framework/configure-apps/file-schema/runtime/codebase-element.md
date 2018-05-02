@@ -1,8 +1,8 @@
 ---
-title: "&lt;codeBase&gt; Element | Microsoft Docs"
+title: "&lt;codeBase&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#codeBase"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/codeBase"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<codeBase> element"
   - "container tags, <codeBase> element"
@@ -26,6 +21,8 @@ caps.latest.revision: 10
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;codeBase&gt; Element
 Specifies where the common language runtime can find an assembly.  
@@ -38,9 +35,8 @@ Specifies where the common language runtime can find an assembly.
   
 ## Syntax  
   
-```  
-  
-   <codeBase    
+```xml  
+   <codeBase    
 version="Assembly version"  
 href="URL of assembly"/>  
 ```  
@@ -83,7 +79,7 @@ href="URL of assembly"/>
 ## Example  
  The following example shows how to specify where the runtime can find an assembly.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -100,7 +96,7 @@ href="URL of assembly"/>
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [Specifying an Assembly's Location](../../../../../docs/framework/configure-apps/specify-assembly-location.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Specifying an Assembly's Location](../../../../../docs/framework/configure-apps/specify-assembly-location.md)  
  [How the Runtime Locates Assemblies](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)

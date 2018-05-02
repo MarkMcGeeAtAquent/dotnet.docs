@@ -1,8 +1,8 @@
 ---
-title: "Dynamic Reconfiguration | Microsoft Docs"
+title: "Dynamic Reconfiguration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b20786ae-cce6-4f91-b6cb-9cae116faf8b
 caps.latest.revision: 20
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Dynamic Reconfiguration
 This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] routing service. The routing service is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] component that makes it easy to include a content-based router in your application. This sample adapts the standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Calculator Sample to communicate using the routing service. This sample shows how the routing service can be dynamically reconfigured during runtime.  
@@ -65,7 +67,6 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         Subtract(145,76.54) = 68.5  
         Multiply(9,81.25) = 731.2  
         Divide(22,7) = 3.1  
-  
         ```  
   
     2.  The following is the output returned if the routing service is configured to route messages to the regular Calculator service.  
@@ -75,12 +76,11 @@ This sample demonstrates the [!INCLUDE[indigo1](../../../../includes/indigo1-md.
         Subtract(145,76.54) = 68.46  
         Multiply(9,81.25) = 731.25  
         Divide(22,7) = 3.14285714285714  
-  
         ```  
   
 6.  The Calculator Service and the Rounding Calculator Service also print out a log of the operations invoked to their respective console windows.  
   
-7.  In the client console window, type “quit” and press ENTER to exit.  
+7.  In the client console window, type "quit" and press ENTER to exit.  
   
 8.  Press ENTER in the services console windows to terminate the services.  
   

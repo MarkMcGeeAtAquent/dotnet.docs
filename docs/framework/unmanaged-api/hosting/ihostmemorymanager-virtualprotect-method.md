@@ -1,5 +1,5 @@
 ---
-title: "IHostMemoryManager::VirtualProtect Method | Microsoft Docs"
+title: "IHostMemoryManager::VirtualProtect Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMemoryManager.VirtualProtect"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMemoryManager::VirtualProtect"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostMemoryManager::VirtualProtect method [.NET Framework hosting]"
   - "VirtualProtect method [.NET Framework hosting]"
 ms.assetid: 13be0299-df0d-4951-aabf-0676a30b385f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMemoryManager::VirtualProtect Method
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualProtect` changes the protection on a region of committed pages in the virtual address space of the calling process.  

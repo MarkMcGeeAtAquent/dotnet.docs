@@ -1,31 +1,34 @@
 ---
-title: "ITypeNameBuilder::AddSzArray Method | Microsoft Docs"
+title: "ITypeNameBuilder::AddSzArray Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ITypeNameBuilder.AddSzArray"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "AddSzArray"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "AddSzArray method [.NET Framework hosting]"
   - "ITypeNameBuilder::AddSzArray method [.NET Framework hosting]"
 ms.assetid: a6a46296-af14-4c53-9744-f7a1e3f3028a
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ITypeNameBuilder::AddSzArray Method
 This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.  

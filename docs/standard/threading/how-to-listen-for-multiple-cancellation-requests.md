@@ -1,5 +1,5 @@
 ---
-title: "How to: Listen for Multiple Cancellation Requests | Microsoft Docs"
+title: "How to: Listen for Multiple Cancellation Requests"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,6 +8,9 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "cancellation tokens, joining"
   - "LinkedTokenSource, how to"
@@ -16,6 +19,9 @@ caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # How to: Listen for Multiple Cancellation Requests
 This example shows how to listen to two cancellation tokens simultaneously so that you can cancel an operation if either token requests it.  

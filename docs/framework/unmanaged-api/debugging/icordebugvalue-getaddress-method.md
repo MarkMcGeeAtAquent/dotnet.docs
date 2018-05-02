@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugValue::GetAddress Method | Microsoft Docs"
+title: "ICorDebugValue::GetAddress Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugValue.GetAddress"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugValue::GetAddress"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugValue::GetAddress method [.NET Framework debugging]"
   - "GetAddress method, ICorDebugValue interface [.NET Framework debugging]"
 ms.assetid: a247c792-45e1-4538-9e1f-b46acca4a463
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugValue::GetAddress Method
 Gets the address of this "ICorDebugValue" object, which is in the process of being debugged.  

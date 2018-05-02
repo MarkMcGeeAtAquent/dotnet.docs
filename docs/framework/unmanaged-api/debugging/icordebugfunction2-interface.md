@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunction2 Interface1 | Microsoft Docs"
+title: "ICorDebugFunction2 Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunction2"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunction2"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFunction2 interface [.NET Framework debugging]"
 ms.assetid: 2b936bef-9b75-48bf-859f-42e419c65f1c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunction2 Interface1
 Logically extends the ICorDebugFunction interface to provide support for Just My Code step-through debugging, which skips non-user code.  

@@ -1,5 +1,5 @@
 ---
-title: "How to: Host a WCF Service Written with .NET Framework 3.5 in IIS Running Under .NET Framework 4 | Microsoft Docs"
+title: "How to: Host a WCF Service Written with .NET Framework 3.5 in IIS Running Under .NET Framework 4"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9aabc785-068d-4d32-8841-3ef39308d8d6
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Host a WCF Service Written with .NET Framework 3.5 in IIS Running Under .NET Framework 4
 When hosting a [!INCLUDE[indigo1](../../../includes/indigo1-md.md)] service written with [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)] on a machine running [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], you may get a <xref:System.ServiceModel.ProtocolException> with the following text.  
@@ -32,7 +34,7 @@ The application domain or application pool is currently running version 4.0 or l
   
  Next find the <`compilers`> element and change the CompilerVersion provider option to have a value of 4.0. By default, there are two <`compiler`> elements under the <`compilers`> element. You must update the CompilerVersion provider option for both as shown in the following example.  
   
-```  
+```xml  
 <system.codedom>  
       <compilers>  
         <compiler language="c#;cs;csharp" extension=".cs" warningLevel="4"  
@@ -56,7 +58,7 @@ The application domain or application pool is currently running version 4.0 or l
   
 2.  Add the `targetFramework` attribute to the <`compilation`> element as shown in the following example.  
   
-    ```  
+    ```xml  
     <compilation debug="false"  
             targetFramework="4.0">  
   
@@ -72,7 +74,7 @@ The application domain or application pool is currently running version 4.0 or l
   
 3.  Find the <`compilers`> element and change the CompilerVersion provider option to have a value of 4.0. By default, there are two <`compiler`> elements under the <`compilers`> element. You must update the CompilerVersion provider option for both as shown in the following example.  
   
-    ```  
+    ```xml  
     <system.codedom>  
           <compilers>  
             <compiler language="c#;cs;csharp" extension=".cs" warningLevel="4"  

@@ -1,8 +1,8 @@
 ---
-title: "&lt;messageLogging&gt; | Microsoft Docs"
+title: "&lt;messageLogging&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;messageLogging&gt;
 This element defines the settings for the message-logging capabilities of Windows Communication Foundation (WCF).  
@@ -24,8 +26,7 @@ This element defines the settings for the message-logging capabilities of Window
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
    <diagnostics>  
        <messageLogging logEntireMessage="Boolean"  
@@ -75,7 +76,7 @@ This element defines the settings for the message-logging capabilities of Window
   
  You need to create a trace listener to activate message tracing. The listener itself can be any listener that works with the <xref:System.Diagnostics> tracing architecture. The following example demonstrates how to create such a listener.  
   
-```  
+```xml  
 <system.diagnostics>  
     <sources>  
           <source name="System.ServiceModel" switchValue="Verbose">  
@@ -110,7 +111,7 @@ This element defines the settings for the message-logging capabilities of Window
   
 ## Example  
   
-```  
+```xml  
 <messageLogging logEntireMessage="true"  
     logMalformedMessages="true"  
     logMessagesAtServiceLevel="true"  
@@ -124,8 +125,8 @@ This element defines the settings for the message-logging capabilities of Window
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.DiagnosticSection>   
- <xref:System.ServiceModel.Diagnostics>   
- <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>   
- <xref:System.ServiceModel.Configuration.MessageLoggingElement>   
+ <xref:System.ServiceModel.Configuration.DiagnosticSection>  
+ <xref:System.ServiceModel.Diagnostics>  
+ <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>  
+ <xref:System.ServiceModel.Configuration.MessageLoggingElement>  
  [Configuring Message Logging](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)

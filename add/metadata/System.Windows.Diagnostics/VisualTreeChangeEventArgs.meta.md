@@ -1,25 +1,35 @@
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs.Parent
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs.ChangeType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs.ChildIndex
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs.#ctor(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Int32,System.Windows.Diagnostics.VisualTreeChangeType)
+ms.technology: 
+  - "dotnet-wpf"
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
@@ -27,5 +37,7 @@ manager: "wpickett"
 
 ---
 uid: System.Windows.Diagnostics.VisualTreeChangeEventArgs.Child
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-wpf"
+manager: "wpickett"
 ---

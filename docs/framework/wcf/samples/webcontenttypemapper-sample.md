@@ -1,8 +1,8 @@
 ---
-title: "WebContentTypeMapper Sample | Microsoft Docs"
+title: "WebContentTypeMapper Sample"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # WebContentTypeMapper Sample
 This sample demonstrates how to map new content types to [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] message body formats.  
@@ -40,14 +42,13 @@ public class JsonContentTypeMapper : WebContentTypeMapper
         }  
     }  
 }  
-  
 ```  
   
- The type must override the <xref:System.ServiceModel.Channels.WebContentTypeMapper.GetMessageFormatForContentType%28System.String%29> method. The method must evaluate the `contentType` argument and return one of the following values: <xref:System.ServiceModel.Channels.WebContentFormat>, <xref:System.ServiceModel.Channels.WebContentFormat>, <xref:System.ServiceModel.Channels.WebContentFormat>, or <xref:System.ServiceModel.Channels.WebContentFormat>. Returning <xref:System.ServiceModel.Channels.WebContentFormat> defers to the default Web message encoder mappings. In the previous sample code, the `text/javascript` content type is mapped to JSON, and all other mappings remain unchanged.  
+ The type must override the <xref:System.ServiceModel.Channels.WebContentTypeMapper.GetMessageFormatForContentType%28System.String%29> method. The method must evaluate the `contentType` argument and return one of the following values: <xref:System.ServiceModel.Channels.WebContentFormat.Json>, <xref:System.ServiceModel.Channels.WebContentFormat.Xml>, <xref:System.ServiceModel.Channels.WebContentFormat.Raw>, or <xref:System.ServiceModel.Channels.WebContentFormat.Default>. Returning <xref:System.ServiceModel.Channels.WebContentFormat.Default> defers to the default Web message encoder mappings. In the previous sample code, the `text/javascript` content type is mapped to JSON, and all other mappings remain unchanged.  
   
  To use the `JsonContentTypeMapper` class, use the following in your Web.config:  
   
-```  
+```xml  
 <system.serviceModel>  
   <standardEndpoints>  
     <webHttpEndpoint>  

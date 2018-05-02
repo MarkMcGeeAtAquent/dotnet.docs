@@ -1,5 +1,5 @@
 ---
-title: "Deploying the .NET Framework and Applications | Microsoft Docs"
+title: "Deploying the .NET Framework and Applications"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "deploying applications [.NET Framework], packaging"
   - "deploying applications [.NET Framework]"
@@ -26,6 +21,8 @@ caps.latest.revision: 56
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Deploying the .NET Framework and Applications
 This article helps you get started deploying the .NET Framework with your application. Most of the information is intended for developers, OEMs, and enterprise administrators. Users who want to install the .NET Framework on their computers should read [Installing the .NET Framework](~/docs/framework/install/index.md).  
@@ -51,13 +48,13 @@ This article helps you get started deploying the .NET Framework with your applic
   
     -   [Reducing system restarts during .NET Framework 4.5 installations](../../../docs/framework/deployment/reducing-system-restarts.md)  
   
-    -   [Troubleshooting Blocked .NET Framework Installations and Uninstallations](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+    -   [Troubleshoot blocked .NET Framework installations and uninstallations](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
   
 -   Deploying the .NET Framework with a client application (for developers):  
   
-    -   [Using InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield) in a setup and deployment project  
+    -   [Using InstallShield](../../../docs/framework/deployment/deployment-guide-for-developers.md#installshield-deployment) in a setup and deployment project  
   
-    -   [Using a Visual Studio ClickOnce application](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce)  
+    -   [Using a Visual Studio ClickOnce application](../../../docs/framework/deployment/deployment-guide-for-developers.md#clickonce-deployment)  
   
     -   [Creating a WiX installation package](../../../docs/framework/deployment/deployment-guide-for-developers.md#wix)  
   
@@ -169,8 +166,8 @@ This article helps you get started deploying the .NET Framework with your applic
 |[Reducing System Restarts During .NET Framework 4.5 Installations](../../../docs/framework/deployment/reducing-system-restarts.md)|Describes the Restart Manager, which prevents reboots whenever possible, and explains how applications that install the .NET Framework can take advantage of it.|  
 |[Deployment Guide for Administrators](../../../docs/framework/deployment/guide-for-administrators.md)|Explains how a system administrator can deploy the .NET Framework and its system dependencies across a network by using System Center Configuration Manager (SCCM).|  
 |[Deployment Guide for Developers](../../../docs/framework/deployment/deployment-guide-for-developers.md)|Explains how developers can install .NET Framework on their users' computers with their applications.|  
-|[Deploying Applications, Services, and Components](https://docs.microsoft.com/visualstudio/deployment/deploying-applications-services-and-components)|Discusses deployment options in Visual Studio, including instructions for publishing an application using the ClickOnce and Windows Installer technologies.| 
-|[Publishing ClickOnce Applications](http://msdn.microsoft.com/library/eb6dfe79-f54c-4331-8e36-073688e70973)|Describes how to package a Windows Forms application and deploy it with ClickOnce to client computers on a network.|  
+|[Deploying Applications, Services, and Components](/visualstudio/deployment/deploying-applications-services-and-components)|Discusses deployment options in Visual Studio, including instructions for publishing an application using the ClickOnce and Windows Installer technologies.| 
+|[Publishing ClickOnce Applications](/visualstudio/deployment/publishing-clickonce-applications)|Describes how to package a Windows Forms application and deploy it with ClickOnce to client computers on a network.|  
 |[Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)|Describes the hub and spoke model that the .NET Framework uses to package and deploy resources; covers resource naming conventions, fallback process, and packaging alternatives.|  
 |[Deploying an Interop Application](../../../docs/framework/interop/deploying-an-interop-application.md)|Explains how to ship and install interop applications, which typically include a .NET Framework client assembly, one or more interop assemblies representing distinct COM type libraries, and one or more registered COM components.|  
 |[How to: Get Progress from the .NET Framework 4.5 Installer](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)|Describes how to silently launch and track the .NET Framework setup process while showing your own view of the setup progress.|  

@@ -1,8 +1,8 @@
 ---
-title: "How to: Configure an IIS-hosted WCF service with SSL | Microsoft Docs"
+title: "How to: Configure an IIS-hosted WCF service with SSL"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: df2fe31f-a4bb-4024-92ca-b74ba055e038
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Configure an IIS-hosted WCF service with SSL
 This topic describes how to set up an IIS-hosted WCF service to use HTTP transport security. HTTP transport security requires an SSL certificate to be registered with IIS. If you do not have an SSL certificate you can use IIS to generate a test certificate. Next you must add an SSL binding to the web site and configure the web site’s authentication properties. Finally you need to configure the WCF service to use HTTPS.  
@@ -70,7 +72,7 @@ This topic describes how to set up an IIS-hosted WCF service to use HTTP transpo
   
 1.  In the WCF service’s web.config configure the HTTP binding to use transport security as shown in the following XML.  
   
-    ```  
+    ```xml  
     <bindings>  
           <basicHttpBinding>  
             <binding name="secureHttpBinding">  
@@ -79,13 +81,12 @@ This topic describes how to set up an IIS-hosted WCF service to use HTTP transpo
               </security>  
             </binding>  
           </basicHttpBinding>  
-        </bindings>  
-  
+    </bindings>  
     ```  
   
 2.  Specify your service and service endpoint as shown in the following XML.  
   
-    ```  
+    ```xml  
     <services>  
           <service name="MySecureWCFService.Service1">  
             <endpoint address=""  
@@ -97,14 +98,13 @@ This topic describes how to set up an IIS-hosted WCF service to use HTTP transpo
                       binding="mexHttpsBinding"  
                       contract="IMetadataExchange" />  
           </service>  
-        </services>  
-  
+    </services>  
     ```  
   
 ## Example  
  The following is a complete example of a web.config file for a WCF service using HTTP transport security  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <configuration>  
   
@@ -145,18 +145,15 @@ This topic describes how to set up an IIS-hosted WCF service to use HTTP transpo
     </behaviors>  
     <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />  
   </system.serviceModel>  
- <system.webServer>  
+  <system.webServer>  
     <modules runAllManagedModulesForAllRequests="true"/>  
   </system.webServer>  
   
 </configuration>  
-  
 ```  
   
-<!-- TODO: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->  
-  
 ## See Also  
- [Hosting in Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)   
- [Internet Information Service Hosting Instructions](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)   
- [Internet Information Services Hosting Best Practices](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)   
+ [Hosting in Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)  
+ [Internet Information Service Hosting Instructions](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md)  
+ [Internet Information Services Hosting Best Practices](../../../../docs/framework/wcf/feature-details/internet-information-services-hosting-best-practices.md)  
  [IIS Hosting Using Inline Code](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)

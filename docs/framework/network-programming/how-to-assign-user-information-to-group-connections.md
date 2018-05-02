@@ -1,5 +1,5 @@
 ---
-title: "How to: Assign User Information to Group Connections | Microsoft Docs"
+title: "How to: Assign User Information to Group Connections"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,15 +8,15 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
 caps.latest.revision: 9
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Assign User Information to Group Connections
 
@@ -63,14 +63,12 @@ manager: "markl"
     myWebRequest.ConnectionGroupName = secureGroupName  
   
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
-  
     ```  
   
 4.  Close the response stream after using the WebRespose object.  
   
     ```csharp  
     MyWebResponse.Close();  
-  
     ```  
   
     ```vb  
@@ -96,7 +94,6 @@ WebResponse myWebResponse=myWebRequest.GetResponse();
 // Insert the code that uses myWebResponse.  
   
 MyWebResponse.Close();  
-  
 ```  
   
 ```vb  
@@ -118,5 +115,5 @@ MyWebResponse.Close()
 ```  
   
 ## See Also  
- [Managing Connections](../../../docs/framework/network-programming/managing-connections.md)   
+ [Managing Connections](../../../docs/framework/network-programming/managing-connections.md)  
  [Connection Grouping](../../../docs/framework/network-programming/connection-grouping.md)

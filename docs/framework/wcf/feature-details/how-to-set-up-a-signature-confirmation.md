@@ -1,22 +1,27 @@
 ---
-title: "How to: Set Up a Signature Confirmation | Microsoft Docs"
+title: "How to: Set Up a Signature Confirmation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "signature confirmation"
   - "WCF, security"
 ms.assetid: 2424c137-c7c2-4aa9-8d5d-a066e12fefda
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Set Up a Signature Confirmation
 *Signature confirmation* is a mechanism for a message initiator to ensure that a received reply was generated in response to the sender's original message. Signature confirmation is defined in the WS-Security 1.1 specification. If an endpoint supports WS-Security 1.0, you cannot use signature confirmation.  
@@ -49,7 +54,7 @@ manager: "erikre"
   
 6.  Add an appropriate transport element. The following example adds an [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md):  
   
-    ```  
+    ```xml  
     <bindings>  
       <customBinding>  
         <binding name="SignatureConfirmationBinding">  
@@ -70,8 +75,8 @@ manager: "erikre"
  [!code-vb[c_SignatureConfirmation#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_signatureconfirmation/vb/source.vb#1)]  
   
 ## See Also  
- <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>   
- <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>   
- <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>   
- [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)   
+ <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
+ <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateMutualCertificateBindingElement%2A>  
+ [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [How to: Create a SecurityBindingElement for a Specified Authentication Mode](../../../../docs/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

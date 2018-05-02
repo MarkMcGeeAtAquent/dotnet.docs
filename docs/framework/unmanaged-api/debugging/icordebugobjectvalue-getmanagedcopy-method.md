@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugObjectValue::GetManagedCopy Method | Microsoft Docs"
+title: "ICorDebugObjectValue::GetManagedCopy Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugObjectValue.GetManagedCopy"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugObjectValue::GetManagedCopy"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetManagedCopy method [.NET Framework debugging]"
   - "ICorDebugObjectValue::GetManagedCopy method [.NET Framework debugging]"
 ms.assetid: 300af43f-b3eb-4ce5-9ead-30dbfc5fbcc3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugObjectValue::GetManagedCopy Method
 `GetManagedCopy` is obsolete. Do not call this method.  

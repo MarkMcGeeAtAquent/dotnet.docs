@@ -1,8 +1,8 @@
 ---
-title: "&lt;dynamicEndpoint&gt; | Microsoft Docs"
+title: "&lt;dynamicEndpoint&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,22 +11,41 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 929f223d-176d-4205-9505-234ddb6dbff4
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;dynamicEndpoint&gt;
 This configuration element defines a standard endpoint that contains information to enable an application to function as a client program that can find the endpoint address dynamically at runtime.  
   
- \<system.ServiceModel>  
+\<system.ServiceModel>  
 \<standardEndpoints>  
   
 ## Syntax  
   
-```  
-  
+```xml  
 <system.serviceModel>  
-    <standardEndpoints>       <dynamicEndpoint>           <standardEndpoint>             <discoveryClientSettings discoveryEndpoint=”String” >               <findCriteria duration=”TimeSpan”                  maxResults=”Integer”                   scopeMatchBy=”Uri” >                  <contractTypeNames>                     <add name="String" namespace="String" />                  <contractTypeNames>                  <extensions />                  <scopes>                    <add scope="URI"/>                  </scopes>               </findCriteria>             </discoveryClientSettings>          <standardEndpoint>       </dynamicEndpoint>            </standardEndpoints>  
+  <standardEndpoints>
+    <dynamicEndpoint>
+      <standardEndpoint>
+      <discoveryClientSettings discoveryEndpoint="String">
+        <findCriteria duration="TimeSpan" 
+                      maxResults="Integer" 
+                      scopeMatchBy="Uri">
+          <contractTypeNames>
+            <add name="String" namespace="String" />
+          <contractTypeNames>
+          <extensions />
+          <scopes>
+            <add scope="URI" />
+          </scopes>
+        </findCriteria>
+      </discoveryClientSettings>
+      <standardEndpoint>
+    </dynamicEndpoint>
+  </standardEndpoints>  
 </system.serviceModel>  
 ```  
   
@@ -49,5 +68,5 @@ This configuration element defines a standard endpoint that contains information
 |[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|A collection of standard endpoints that are pre-defined endpoints with one or more of their properties (address, binding, contract) fixed.|  
   
 ## See Also  
- <xref:System.ServiceModel.Discovery.DynamicEndpoint>   
+ <xref:System.ServiceModel.Discovery.DynamicEndpoint>  
  <xref:System.ServiceModel.Discovery.Configuration.DynamicEndpointElement>

@@ -1,5 +1,5 @@
 ---
-title: "IHostIoCompletionManager::CreateIoCompletionPort Method | Microsoft Docs"
+title: "IHostIoCompletionManager::CreateIoCompletionPort Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostIoCompletionManager.CreateIoCompletionPort"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostIoCompletionManager::CreateIoCompletionPort"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostIoCompletionManager::CreateIoCompletionPort method [.NET Framework hosting]"
   - "CreateIoCompletionPort method [.NET Framework hosting]"
 ms.assetid: 907a2b43-68db-44a7-acac-89e792e7bb3c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostIoCompletionManager::CreateIoCompletionPort Method
 Requests that the host create a new I/O completion port.  
@@ -67,5 +70,5 @@ HRESULT CreateIoCompletionPort (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)   
+ [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

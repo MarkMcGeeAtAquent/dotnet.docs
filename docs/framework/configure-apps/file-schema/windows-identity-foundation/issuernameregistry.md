@@ -1,7 +1,8 @@
 ---
-title: "&lt;issuerNameRegistry&gt; | Microsoft Docs"
+title: "&lt;issuerNameRegistry&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 13
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;issuerNameRegistry&gt;
 Configures the issuer name registry that is used by handlers in the token handler collection.  
@@ -25,18 +28,18 @@ Configures the issuer name registry that is used by handlers in the token handle
   
 ## Syntax  
   
-```  
-\<system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <securityTokenHandlerConfiguration>  
-        \<issuerNameRegistry type=xs:string>  
-          <optionalCustomConfigurationElements />  
-        </issuerNameRegistry>  
-      </securityTokenHandlerConfiguration>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
-\</system.identityModel>  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <securityTokenHandlerConfiguration>  
+        <issuerNameRegistry type=xs:string>  
+          <optionalCustomConfigurationElements />  
+        </issuerNameRegistry>  
+      </securityTokenHandlerConfiguration>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
+</system.identityModel>  
 ```  
   
 ## Attributes and Elements  
@@ -73,15 +76,14 @@ Configures the issuer name registry that is used by handlers in the token handle
 ## Example  
  The following XML shows how to specify the configuration based issuer name registry.  
   
-```  
+```xml  
 <issuerNameRegistry type="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">  
   <trustedIssuers>  
     <add thumbprint="9B74CB … 1EF40D0" name="LocalSTS" />  
   </trustedIssuers>  
 </issuerNameRegistry>  
-  
 ```  
   
 ## See Also  
- <xref:System.IdentityModel.Tokens.IssuerNameRegistry>   
+ <xref:System.IdentityModel.Tokens.IssuerNameRegistry>  
  <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry>

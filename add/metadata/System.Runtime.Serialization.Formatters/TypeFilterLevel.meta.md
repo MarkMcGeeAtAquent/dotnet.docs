@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Serialization.Formatters.TypeFilterLevel
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

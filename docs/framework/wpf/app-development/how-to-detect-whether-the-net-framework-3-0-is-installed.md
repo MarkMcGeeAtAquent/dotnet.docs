@@ -1,5 +1,5 @@
 ---
-title: "How to: Detect Whether the .NET Framework 3.0 Is Installed | Microsoft Docs"
+title: "How to: Detect Whether the .NET Framework 3.0 Is Installed"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,13 +11,15 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
   - "WinFX Runtime user-agent string"
-  - "presence of WPT, detecting"
-  - "detecting WPF presence"
+  - "presence of WPT [WPF], detecting"
+  - "detecting WPF presence [WPF]"
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
 caps.latest.revision: 12
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Detect Whether the .NET Framework 3.0 Is Installed
 Before administrators can deploy [!INCLUDE[TLA#tla_avalonwinfx](../../../../includes/tlasharptla-avalonwinfx-md.md)] applications on a system, they must first confirm that the [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] runtime is present. This topic provides a script written in HTML/JavaScript that administrators can use to determine whether [!INCLUDE[TLA2#tla_avalonwinfx](../../../../includes/tla2sharptla-avalonwinfx-md.md)] is present on a system.  
@@ -117,7 +119,6 @@ Before administrators can deploy [!INCLUDE[TLA#tla_avalonwinfx](../../../../incl
     <div id="result" />  
   </BODY>  
 </HTML>  
-  
 ```  
   
  If the search for the ".NET CLR " version is successful, the following type of status message appears:  

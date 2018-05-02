@@ -1,7 +1,9 @@
-<Type Name="DesignerActionService" FullName="System.ComponentModel.Design.DesignerActionService">
+﻿<Type Name="DesignerActionService" FullName="System.ComponentModel.Design.DesignerActionService">
   <TypeSignature Language="C#" Value="public class DesignerActionService : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerActionService extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerActionService" />
+  <TypeSignature Language="VB.NET" Value="Public Class DesignerActionService&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DesignerActionService : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Design</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -55,12 +57,18 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.ComponentModel.Design.DesignerActionListCollection" />
+    <altmember cref="T:System.ComponentModel.Design.ComponentDesigner" />
+    <altmember cref="T:System.ComponentModel.Design.DesignerActionItem" />
+    <altmember cref="T:System.ComponentModel.Design.DesignerActionUIService" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DesignerActionService (IServiceProvider serviceProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.#ctor(System.IServiceProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (serviceProvider As IServiceProvider)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DesignerActionService(IServiceProvider ^ serviceProvider);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -78,16 +86,31 @@
 ## Remarks  
  A service provider is necessary for monitoring selection and component changes. It is expected to support the <xref:System.ComponentModel.Design.IDesignerHost> and <xref:System.ComponentModel.Design.IComponentChangeService> types. The <xref:System.ComponentModel.Design.DesignerActionService> class uses an internal table to manage components and their associated <xref:System.ComponentModel.Design.DesignerActionList> smart tags.  
   
- Typically, component developers will not need to create an instance of this class; instead, they can acquire an existing instance through a call to the <xref:System.ComponentModel.Component.GetService%2A?displayProperty=fullName> method.  
+ Typically, component developers will not need to create an instance of this class; instead, they can acquire an existing instance through a call to the <xref:System.ComponentModel.Component.GetService%2A?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Dispose" />
+        <altmember cref="T:System.ComponentModel.Design.IDesignerHost" />
+        <altmember cref="T:System.ComponentModel.Design.IComponentChangeService" />
+        <altmember cref="M:System.ComponentModel.Component.GetService(System.Type)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Adds one or more <see cref="T:System.ComponentModel.Design.DesignerActionList" /> objects to the current collection of managed smart tags.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public void Add (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionList actionList);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Add(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionList)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Add (comp As IComponent, actionList As DesignerActionList)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::ComponentModel::IComponent ^ comp, System::ComponentModel::Design::DesignerActionList ^ actionList);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -110,7 +133,7 @@
 ## Remarks  
  The <xref:System.ComponentModel.Design.DesignerActionService.Add%2A> method represents the push model of adding smart tag items. The alternate pull model relies on overriding the <xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A> property in the designer for the corresponding component.  
   
- When this method is called, the lists to be added are scanned for any <xref:System.ComponentModel.Design.DesignerActionMethodItem> with the <xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A> property set to `true`. These items are added to the list of designer verbs for this component, through a call to the <xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=fullName> method.  
+ When this method is called, the lists to be added are scanned for any <xref:System.ComponentModel.Design.DesignerActionMethodItem> with the <xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A> property set to `true`. These items are added to the list of designer verbs for this component, through a call to the <xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=nameWithType> method.  
   
  Smart tags are managed on a component instance basis. The managed collection may contain duplicate entries.  
   
@@ -119,12 +142,17 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">One or both of the parameters are <see langword="null" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionList" />
+        <altmember cref="P:System.ComponentModel.Design.ComponentDesigner.ActionLists" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Remove" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Contains(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
     <Member MemberName="Add">
       <MemberSignature Language="C#" Value="public void Add (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionListCollection designerActionListCollection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionListCollection designerActionListCollection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Add(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Add(System::ComponentModel::IComponent ^ comp, System::ComponentModel::Design::DesignerActionListCollection ^ designerActionListCollection);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -147,7 +175,7 @@
 ## Remarks  
  The <xref:System.ComponentModel.Design.DesignerActionService.Add%2A> method represents the push model of adding smart tag items. The alternate pull model relies on overriding the <xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A> property in the designer for the corresponding component.  
   
- When this method is called, the lists to be added are scanned for any <xref:System.ComponentModel.Design.DesignerActionMethodItem> with the <xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A> property set to `true`. These items are added to the list of designer verbs for this component, through a call to the <xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=fullName> method.  
+ When this method is called, the lists to be added are scanned for any <xref:System.ComponentModel.Design.DesignerActionMethodItem> with the <xref:System.ComponentModel.Design.DesignerActionMethodItem.IncludeAsDesignerVerb%2A> property set to `true`. These items are added to the list of designer verbs for this component, through a call to the <xref:System.ComponentModel.Design.MenuCommandService.AddVerb%2A?displayProperty=nameWithType> method.  
   
  Smart tags are managed on a component instance basis. The managed collection may contain duplicate entries.  
   
@@ -156,12 +184,18 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">One or both of the parameters are <see langword="null" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionList" />
+        <altmember cref="P:System.ComponentModel.Design.ComponentDesigner.ActionLists" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Remove" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Contains(System.ComponentModel.IComponent)" />
       </Docs>
     </Member>
     <Member MemberName="Clear">
       <MemberSignature Language="C#" Value="public void Clear ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Clear" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Clear ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Clear();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -186,12 +220,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Remove" />
       </Docs>
     </Member>
     <Member MemberName="Contains">
       <MemberSignature Language="C#" Value="public bool Contains (System.ComponentModel.IComponent comp);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.ComponentModel.IComponent comp) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Contains(System.ComponentModel.IComponent)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Contains (comp As IComponent) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Contains(System::ComponentModel::IComponent ^ comp);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -220,12 +257,16 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="comp" /> is <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Remove" />
       </Docs>
     </Member>
     <Member MemberName="DesignerActionListsChanged">
       <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerActionListsChangedEventHandler DesignerActionListsChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerActionListsChangedEventHandler DesignerActionListsChanged" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignerActionService.DesignerActionListsChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event DesignerActionListsChanged As DesignerActionListsChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::Design::DesignerActionListsChangedEventHandler ^ DesignerActionListsChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -248,17 +289,37 @@
 |<xref:System.ComponentModel.Design.DesignerActionListsChangedEventHandler>|Connects the <xref:System.ComponentModel.Design.DesignerActionListsChangedEventArgs> with its handler.|  
 |<xref:System.ComponentModel.Design.DesignerActionListsChangedType>|Denotes whether a list has been added or removed.|  
   
- For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
+ For more information about handling events, see [NIB: Consuming Events](http://msdn.microsoft.com/library/01e4f1bc-e55e-413f-98c7-6588493e5f67).  
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionListsChangedEventArgs" />
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionListsChangedType" />
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionListsChangedEventHandler" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Remove" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Clear" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Releases the resources used by the <see cref="T:System.ComponentModel.Design.DesignerActionService" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -286,12 +347,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.ComponentModel.Design.IServiceContainer.RemoveService" />
+        <altmember cref="T:System.ComponentModel.Design.IComponentChangeService" />
       </Docs>
     </Member>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -325,16 +390,29 @@
         </remarks>
         <block subset="none" type="overrides">
           <para>
-            <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean) " />be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement<see langword=" Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
+            <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean)" /> be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement <see langword="Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
- For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
+ For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
         </block>
+        <altmember cref="Overload:System.ComponentModel.Design.IServiceContainer.RemoveService" />
+        <altmember cref="T:System.ComponentModel.Design.IComponentChangeService" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetComponentActions">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Returns the collection of smart tag item lists associated with a component.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetComponentActions">
       <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerActionListCollection GetComponentActions (System.ComponentModel.IComponent component);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Design.DesignerActionListCollection GetComponentActions(class System.ComponentModel.IComponent component) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentActions(System.ComponentModel.IComponent)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetComponentActions (component As IComponent) As DesignerActionListCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::ComponentModel::Design::DesignerActionListCollection ^ GetComponentActions(System::ComponentModel::IComponent ^ component);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -354,7 +432,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> method is equivalent to a call to the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%28System.ComponentModel.IComponent%2CSystem.ComponentModel.Design.ComponentActionsType%29> method using a `type` parameter of <xref:System.ComponentModel.Design.ComponentActionsType>. Therefore, the collection returned will contain both the push and pull lists of smart tags.  
+ The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> method is equivalent to a call to the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%28System.ComponentModel.IComponent%2CSystem.ComponentModel.Design.ComponentActionsType%29> method using a `type` parameter of <xref:System.ComponentModel.Design.ComponentActionsType.All>. Therefore, the collection returned will contain both the push and pull lists of smart tags.  
   
  The returned <xref:System.ComponentModel.Design.DesignerActionListCollection> is the union of item lists added through the <xref:System.ComponentModel.Design.DesignerActionService.Add%2A> methods and also the lists obtained from the <xref:System.ComponentModel.Design.DesignerCommandSet> instance obtained from the component’s site.  
   
@@ -362,12 +440,18 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="comp" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="T:System.ComponentModel.Design.DesignerCommandSet" />
       </Docs>
     </Member>
     <Member MemberName="GetComponentActions">
       <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Design.DesignerActionListCollection GetComponentActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.ComponentActionsType type);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.DesignerActionListCollection GetComponentActions(class System.ComponentModel.IComponent component, valuetype System.ComponentModel.Design.ComponentActionsType type) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentActions(System.ComponentModel.IComponent,System.ComponentModel.Design.ComponentActionsType)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetComponentActions (component As IComponent, type As ComponentActionsType) As DesignerActionListCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::ComponentModel::Design::DesignerActionListCollection ^ GetComponentActions(System::ComponentModel::IComponent ^ component, System::ComponentModel::Design::ComponentActionsType type);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -393,9 +477,9 @@
   
 |Value|Description|  
 |-----------|-----------------|  
-|<xref:System.ComponentModel.Design.ComponentActionsType>|All associated smart tags.|  
-|<xref:System.ComponentModel.Design.ComponentActionsType>|Pull-model smart tags only.|  
-|<xref:System.ComponentModel.Design.ComponentActionsType>|Push-model smart tags only.|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.All>|All associated smart tags.|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.Component>|Pull-model smart tags only.|  
+|<xref:System.ComponentModel.Design.ComponentActionsType.Service>|Push-model smart tags only.|  
   
  If the associated designer for a component does not supply a pull-model smart tag list, then the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> method will instead use the designer's design-time shortcut menu items from the <xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A> property.  
   
@@ -403,12 +487,19 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="comp" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+        <altmember cref="T:System.ComponentModel.Design.DesignerActionListCollection" />
+        <altmember cref="T:System.ComponentModel.Design.DesignerVerb" />
+        <altmember cref="T:System.ComponentModel.Design.ComponentActionsType" />
       </Docs>
     </Member>
     <Member MemberName="GetComponentDesignerActions">
       <MemberSignature Language="C#" Value="protected virtual void GetComponentDesignerActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.DesignerActionListCollection actionLists);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetComponentDesignerActions(class System.ComponentModel.IComponent component, class System.ComponentModel.Design.DesignerActionListCollection actionLists) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub GetComponentDesignerActions (component As IComponent, actionLists As DesignerActionListCollection)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void GetComponentDesignerActions(System::ComponentModel::IComponent ^ component, System::ComponentModel::Design::DesignerActionListCollection ^ actionLists);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -429,19 +520,25 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A> method is a helper method for the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> methods. <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A> searches for pull-model smart tags of type <xref:System.ComponentModel.Design.ComponentActionsType>, and then adds these to the supplied `actionLists` collection.  
+ The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A> method is a helper method for the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> methods. <xref:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions%2A> searches for pull-model smart tags of type <xref:System.ComponentModel.Design.ComponentActionsType.Component>, and then adds these to the supplied `actionLists` collection.  
   
  If the component's developer does not explicitly supply a collection of smart tags through the <xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A> property of its designer, this method will reuse the design-time shortcut menu entries, which are obtained through the <xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A> property of the designer.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">One or both of the parameters are <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.GetComponentActions" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+        <altmember cref="P:System.ComponentModel.Design.ComponentDesigner.ActionLists" />
+        <altmember cref="P:System.ComponentModel.Design.ComponentDesigner.Verbs" />
       </Docs>
     </Member>
     <Member MemberName="GetComponentServiceActions">
       <MemberSignature Language="C#" Value="protected virtual void GetComponentServiceActions (System.ComponentModel.IComponent component, System.ComponentModel.Design.DesignerActionListCollection actionLists);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetComponentServiceActions(class System.ComponentModel.IComponent component, class System.ComponentModel.Design.DesignerActionListCollection actionLists) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub GetComponentServiceActions (component As IComponent, actionLists As DesignerActionListCollection)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void GetComponentServiceActions(System::ComponentModel::IComponent ^ component, System::ComponentModel::Design::DesignerActionListCollection ^ actionLists);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -462,17 +559,30 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions%2A> method is a helper method for the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> methods. It searches for push-model smart tags of type <xref:System.ComponentModel.Design.ComponentActionsType>, and then adds these to the supplied `actionLists` collection.  
+ The <xref:System.ComponentModel.Design.DesignerActionService.GetComponentServiceActions%2A> method is a helper method for the <xref:System.ComponentModel.Design.DesignerActionService.GetComponentActions%2A> methods. It searches for push-model smart tags of type <xref:System.ComponentModel.Design.ComponentActionsType.Service>, and then adds these to the supplied `actionLists` collection.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">One or both of the parameters are <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.GetComponentActions" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.GetComponentDesignerActions(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionListCollection)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Disassociates one or more smart tag lists from one or more components.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.Design.DesignerActionList actionList);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.Design.DesignerActionList)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (actionList As DesignerActionList)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::ComponentModel::Design::DesignerActionList ^ actionList);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -499,12 +609,17 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="actionList" /> is <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionUIService.HideUI(System.ComponentModel.IComponent)" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Clear" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.IComponent comp);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.IComponent comp) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.IComponent)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (comp As IComponent)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::ComponentModel::IComponent ^ comp);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -529,12 +644,17 @@
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="comp" /> is <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionUIService.HideUI(System.ComponentModel.IComponent)" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Clear" />
       </Docs>
     </Member>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public void Remove (System.ComponentModel.IComponent comp, System.ComponentModel.Design.DesignerActionList actionList);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.ComponentModel.IComponent comp, class System.ComponentModel.Design.DesignerActionList actionList) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerActionService.Remove(System.ComponentModel.IComponent,System.ComponentModel.Design.DesignerActionList)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Remove (comp As IComponent, actionList As DesignerActionList)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Remove(System::ComponentModel::IComponent ^ comp, System::ComponentModel::Design::DesignerActionList ^ actionList);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Design</AssemblyName>
@@ -560,6 +680,9 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">One or both of the parameters are <see langword="null" />.</exception>
+        <altmember cref="Overload:System.ComponentModel.Design.DesignerActionService.Add" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionUIService.HideUI(System.ComponentModel.IComponent)" />
+        <altmember cref="M:System.ComponentModel.Design.DesignerActionService.Clear" />
       </Docs>
     </Member>
   </Members>

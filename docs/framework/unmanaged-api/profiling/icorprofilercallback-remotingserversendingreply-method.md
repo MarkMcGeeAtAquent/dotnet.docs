@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::RemotingServerSendingReply Method | Microsoft Docs"
+title: "ICorProfilerCallback::RemotingServerSendingReply Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.RemotingServerSendingReply"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::RemotingServerSendingReply"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "RemotingServerSendingReply method [.NET Framework profiling]"
   - "ICorProfilerCallback::RemotingServerSendingReply method [.NET Framework profiling]"
 ms.assetid: dfe84a19-2e03-4be2-8b25-f02bad38e4a9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::RemotingServerSendingReply Method
 Notifies the profiler that the process has finished processing a remote method invocation request and is about to transmit the reply through a channel.  

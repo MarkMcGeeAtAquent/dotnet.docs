@@ -1,5 +1,5 @@
 ---
-title: "Changing Namespace Prefix Properties | Microsoft Docs"
+title: "Changing Namespace Prefix Properties"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
 caps.latest.revision: 3
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Changing Namespace Prefix Properties
 The **XmlNode** class allows you to change the namespace prefix associated with a given node. For example, the following code shows the prefix of an element being changed.  
@@ -40,7 +41,7 @@ Console.WriteLine(doc.InnerXml);
   
  **Output**  
   
-```  
+```xml  
 <b:test xmlns:a="123" xmlns:b="456" />  
 ```  
   
@@ -64,7 +65,7 @@ Console.WriteLine(doc.InnerXml);
   
  **Output**  
   
-```  
+```xml  
 <a:test xmlns="123" xmlns:a="123" />  
 ```  
   

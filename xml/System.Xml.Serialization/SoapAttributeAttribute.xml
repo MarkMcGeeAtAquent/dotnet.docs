@@ -1,7 +1,9 @@
-<Type Name="SoapAttributeAttribute" FullName="System.Xml.Serialization.SoapAttributeAttribute">
+﻿<Type Name="SoapAttributeAttribute" FullName="System.Xml.Serialization.SoapAttributeAttribute">
   <TypeSignature Language="C#" Value="public class SoapAttributeAttribute : Attribute" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapAttributeAttribute extends System.Attribute" />
   <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.SoapAttributeAttribute" />
+  <TypeSignature Language="VB.NET" Value="Public Class SoapAttributeAttribute&#xA;Inherits Attribute" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SoapAttributeAttribute : Attribute" />
   <AssemblyInfo>
     <AssemblyName>System.Xml</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -11,13 +13,17 @@
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
   </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Attribute</BaseTypeName>
   </Base>
   <Interfaces />
   <Attributes>
     <Attribute>
-      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue)</AttributeName>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue)</AttributeName>
     </Attribute>
   </Attributes>
   <Docs>
@@ -26,13 +32,13 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Xml.Serialization.SoapAttributeAttribute> class belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes, or deserializes, an object as encoded SOAP XML. The resulting XML conforms to section 5 of the World Wide Web Consortium (www.w3.org) document, "Simple Object Access Protocol (SOAP) 1.1". For a complete list of similar attributes, see [Attributes That Control Encoded SOAP Serialization](~/docs/framework/serialization/attributes-that-control-encoded-soap-serialization.md).  
+ The <xref:System.Xml.Serialization.SoapAttributeAttribute> class belongs to a family of attributes that controls how the <xref:System.Xml.Serialization.XmlSerializer> serializes, or deserializes, an object as encoded SOAP XML. The resulting XML conforms to section 5 of the World Wide Web Consortium (www.w3.org) document, "Simple Object Access Protocol (SOAP) 1.1". For a complete list of similar attributes, see [Attributes That Control Encoded SOAP Serialization](~/docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
  To serialize an object as an encoded SOAP message, you must construct the <xref:System.Xml.Serialization.XmlSerializer> using an <xref:System.Xml.Serialization.XmlTypeMapping> created with the <xref:System.Xml.Serialization.SoapReflectionImporter.ImportTypeMapping%2A> method of the <xref:System.Xml.Serialization.SoapReflectionImporter> class.  
   
  Apply the <xref:System.Xml.Serialization.SoapAttributeAttribute> to a public field to specify that the <xref:System.Xml.Serialization.XmlSerializer> serializes the field as an XML attribute. You can specify an alternative name of the attribute by setting the <xref:System.Xml.Serialization.SoapAttributeAttribute.AttributeName%2A> property. Set the <xref:System.Xml.Serialization.SoapAttributeAttribute.DataType%2A> if the attribute must be given a specific XML Schema definition language (XSD) data type. If the attribute belongs to a specific XML namespace, set the <xref:System.Xml.Serialization.SoapAttributeAttribute.Namespace%2A> property.  
   
- For more information about using attributes, see [Attributes](http://msdn.microsoft.com/library/30386922-1e00-4602-9ebf-526b271a8b87)  
+ For more information about using attributes, see [Attributes](~/docs/standard/attributes/index.md)  
   
 > [!NOTE]
 >  You can use the word `SoapAttribute` in your code instead of the longer <xref:System.Xml.Serialization.SoapAttributeAttribute>.  
@@ -48,12 +54,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Xml.Serialization.XmlSerializer" />
+    <altmember cref="T:System.Xml.Serialization.SoapAttributeOverrides" />
+    <altmember cref="P:System.Xml.Serialization.SoapAttributes.SoapAttribute" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Xml.Serialization.SoapAttributeAttribute" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public SoapAttributeAttribute ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapAttributeAttribute.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SoapAttributeAttribute();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -63,6 +84,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -90,6 +115,8 @@
       <MemberSignature Language="C#" Value="public SoapAttributeAttribute (string attributeName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string attributeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.SoapAttributeAttribute.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (attributeName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; SoapAttributeAttribute(System::String ^ attributeName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -99,6 +126,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="attributeName" Type="System.String" />
@@ -124,6 +155,8 @@
       <MemberSignature Language="C#" Value="public string AttributeName { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AttributeName" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapAttributeAttribute.AttributeName" />
+      <MemberSignature Language="VB.NET" Value="Public Property AttributeName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AttributeName { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -133,6 +166,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -163,6 +200,8 @@
       <MemberSignature Language="C#" Value="public string DataType { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DataType" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapAttributeAttribute.DataType" />
+      <MemberSignature Language="VB.NET" Value="Public Property DataType As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DataType { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -172,6 +211,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -262,6 +305,8 @@
       <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
       <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.SoapAttributeAttribute.Namespace" />
+      <MemberSignature Language="VB.NET" Value="Public Property Namespace As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Namespace { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Xml</AssemblyName>
@@ -271,6 +316,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>

@@ -1,8 +1,8 @@
 ---
-title: "&lt;certificate&gt; Element | Microsoft Docs"
+title: "&lt;certificate&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 9b3d9233-ef35-477a-bf5d-efd1e80a52f4
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;certificate&gt; Element
 Specifies an X.509 certificate to use for signing and encrypting messages for peer-to-peer clients.  
@@ -28,8 +30,7 @@ Specifies an X.509 certificate to use for signing and encrypting messages for pe
   
 ## Syntax  
   
-```  
-  
+```xml  
 <certificate findValue="String"   
   
 storeLocation="LocalMachine/CurrentUser"  
@@ -67,7 +68,7 @@ storeLocation="LocalMachine/CurrentUser"
 ## Example  
  The following code specifies how to find the certificate used in a peer-to-peer scenario.  
   
-```  
+```xml  
 <behaviors>  
  <endpointBehaviors>  
   <behavior name="MyEndpointBehavior">  
@@ -83,12 +84,12 @@ storeLocation="LocalMachine/CurrentUser"
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.Configuration.PeerCredentialElement>   
- <xref:System.ServiceModel.Configuration.PeerCredentialElement.Certificate%2A>   
- <xref:System.ServiceModel.Configuration.X509PeerCertificateElement>   
- <xref:System.ServiceModel.Security.PeerCredential.Certificate%2A>   
- [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)   
- [Peer-to-Peer Networking](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)   
- [Peer Channel Message Authentication](http://msdn.microsoft.com/en-us/80e73386-514e-4c30-9e4a-b9ca8c173a95)   
- [Peer Channel Custom Authentication](http://msdn.microsoft.com/en-us/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)   
+ <xref:System.ServiceModel.Configuration.PeerCredentialElement>  
+ <xref:System.ServiceModel.Configuration.PeerCredentialElement.Certificate%2A>  
+ <xref:System.ServiceModel.Configuration.X509PeerCertificateElement>  
+ <xref:System.ServiceModel.Security.PeerCredential.Certificate%2A>  
+ [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
+ [Peer-to-Peer Networking](../../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)  
+ [Peer Channel Message Authentication](http://msdn.microsoft.com/library/80e73386-514e-4c30-9e4a-b9ca8c173a95)  
+ [Peer Channel Custom Authentication](http://msdn.microsoft.com/library/4aa8a82e-41a8-48e2-8621-7e1cbabdca7c)  
  [Securing Peer Channel Applications](../../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)

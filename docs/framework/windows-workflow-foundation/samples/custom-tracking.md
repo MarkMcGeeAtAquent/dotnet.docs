@@ -1,17 +1,19 @@
 ---
-title: "Custom Tracking | Microsoft Docs"
+title: "Custom Tracking"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Tracking
 This sample demonstrates how to create a custom tracking participant and write the contents of the tracking data to console. In addition, the sample demonstrates how to emit <xref:System.Activities.Tracking.CustomTrackingRecord> objects populated with user defined data. The console-based tracking participant filters the <xref:System.Activities.Tracking.TrackingRecord> objects emitted by the workflow using a tracking profile object created in code.  
@@ -49,7 +51,6 @@ public abstract class TrackingParticipant
     public virtual TrackingProfile TrackingProfile { get; set; }  
     public abstract void Track(TrackingRecord record, TimeSpan timeout);  
 }  
-  
 ```  
   
  The complete tracking participant is implemented in the ConsoleTrackingParticipant.cs file.The following code example is the <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> method for the custom tracking participant.  
@@ -96,7 +97,6 @@ protected override void Track(TrackingRecord record, TimeSpan timeout)
     Console.WriteLine();  
   
 }  
-  
 ```  
   
  The following code example adds the console participant to the workflow invoker.  
@@ -111,7 +111,6 @@ ConsoleTrackingParticipant customTrackingParticipant = new ConsoleTrackingPartic
   
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());  
 invoker.Extensions.Add(customTrackingParticipant);  
-  
 ```  
   
 ### Emitting Custom Tracking Records  
@@ -136,7 +135,6 @@ CustomTrackingRecord customRecord = new CustomTrackingRecord("OrderIn")
   
 // Emit custom tracking record  
 context.Track(customRecord);  
-  
 ```  
   
 #### To use this sample  

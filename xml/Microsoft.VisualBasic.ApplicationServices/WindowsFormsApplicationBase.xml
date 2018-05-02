@@ -1,7 +1,9 @@
-<Type Name="WindowsFormsApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase">
+﻿<Type Name="WindowsFormsApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase">
   <TypeSignature Language="C#" Value="public class WindowsFormsApplicationBase : Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi WindowsFormsApplicationBase extends Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
   <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
+  <TypeSignature Language="VB.NET" Value="Public Class WindowsFormsApplicationBase&#xA;Inherits ConsoleApplicationBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class WindowsFormsApplicationBase : Microsoft::VisualBasic::ApplicationServices::ConsoleApplicationBase" />
   <AssemblyInfo>
     <AssemblyName>Microsoft.VisualBasic</AssemblyName>
     <AssemblyVersion>10.0.0.0</AssemblyVersion>
@@ -37,12 +39,25 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
+    <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.ApplicationBase" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public WindowsFormsApplicationBase ();" />
       <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WindowsFormsApplicationBase();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -58,6 +73,7 @@
       <MemberSignature Language="C#" Value="public WindowsFormsApplicationBase (Microsoft.VisualBasic.ApplicationServices.AuthenticationMode authenticationMode);" />
       <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(valuetype Microsoft.VisualBasic.ApplicationServices.AuthenticationMode authenticationMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.#ctor(Microsoft.VisualBasic.ApplicationServices.AuthenticationMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; WindowsFormsApplicationBase(Microsoft::VisualBasic::ApplicationServices::AuthenticationMode authenticationMode);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -79,9 +95,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the `authenticationMode` parameter is the <xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode> enumeration value, then this constructor attempts to set the current thread's <xref:System.Threading.Thread.CurrentPrincipal%2A> property to the <xref:System.Security.Principal.WindowsPrincipal> for the current user.  
+ If the `authenticationMode` parameter is the <xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows> enumeration value, then this constructor attempts to set the current thread's <xref:System.Threading.Thread.CurrentPrincipal%2A> property to the <xref:System.Security.Principal.WindowsPrincipal> for the current user.  
   
- If the `authenticationMode` parameter is the <xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode> enumeration value, then this constructor leaves the current thread's <xref:System.Threading.Thread.CurrentPrincipal%2A> property unchanged.  
+ If the `authenticationMode` parameter is the <xref:Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.ApplicationDefined> enumeration value, then this constructor leaves the current thread's <xref:System.Threading.Thread.CurrentPrincipal%2A> property unchanged.  
   
  ]]></format>
         </remarks>
@@ -91,6 +107,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Forms.ApplicationContext ApplicationContext { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ApplicationContext ApplicationContext" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ApplicationContext" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ApplicationContext As ApplicationContext" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::ApplicationContext ^ ApplicationContext { System::Windows::Forms::ApplicationContext ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -127,12 +145,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.ApplicationContext" />
       </Docs>
     </Member>
     <Member MemberName="DoEvents">
       <MemberSignature Language="C#" Value="public void DoEvents ();" />
       <MemberSignature Language="ILAsm" Value=".method public instance void DoEvents() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.DoEvents" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DoEvents ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DoEvents();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -193,12 +214,15 @@
         </remarks>
         <permission cref="T:System.Security.Permissions.FileIOPermission">Controls the ability to access files and folders. Associated enumeration: <see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />.</permission>
         <permission cref="T:System.Security.Permissions.UIPermission">Controls the permissions related to user interfaces and the Clipboard. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />.</permission>
+        <altmember cref="M:System.Windows.Forms.Application.DoEvents" />
       </Docs>
     </Member>
     <Member MemberName="EnableVisualStyles">
       <MemberSignature Language="C#" Value="protected bool EnableVisualStyles { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableVisualStyles" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.EnableVisualStyles" />
+      <MemberSignature Language="VB.NET" Value="Protected Property EnableVisualStyles As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool EnableVisualStyles { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -218,12 +242,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize(System.Collections.ObjectModel.ReadOnlyCollection{System.String})" />
+        <altmember cref="M:System.Windows.Forms.Application.EnableVisualStyles" />
       </Docs>
     </Member>
     <Member MemberName="HideSplashScreen">
       <MemberSignature Language="C#" Value="protected void HideSplashScreen ();" />
       <MemberSignature Language="ILAsm" Value=".method familyinstance void HideSplashScreen() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.HideSplashScreen" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub HideSplashScreen ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void HideSplashScreen();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -253,12 +281,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen" />
       </Docs>
     </Member>
     <Member MemberName="IsSingleInstance">
       <MemberSignature Language="C#" Value="protected bool IsSingleInstance { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSingleInstance" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.IsSingleInstance" />
+      <MemberSignature Language="VB.NET" Value="Protected Property IsSingleInstance As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property bool IsSingleInstance { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -283,12 +316,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run(System.String[])" />
       </Docs>
     </Member>
     <Member MemberName="MainForm">
       <MemberSignature Language="C#" Value="protected System.Windows.Forms.Form MainForm { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Form MainForm" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm" />
+      <MemberSignature Language="VB.NET" Value="Protected Property MainForm As Form" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; property System::Windows::Forms::Form ^ MainForm { System::Windows::Forms::Form ^ get(); void set(System::Windows::Forms::Form ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -312,12 +348,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.Form" />
       </Docs>
     </Member>
     <Member MemberName="MinimumSplashScreenDisplayTime">
       <MemberSignature Language="C#" Value="public int MinimumSplashScreenDisplayTime { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 MinimumSplashScreenDisplayTime" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinimumSplashScreenDisplayTime As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int MinimumSplashScreenDisplayTime { int get(); void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -345,7 +384,7 @@
 ||  
 |-|  
 |To access the Code Editor window for overriding members|  
-|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
 ## Availability by Project Type  
   
@@ -368,16 +407,22 @@
   
  This example requires that the project have a splash screen.  
   
- You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize(System.Collections.ObjectModel.ReadOnlyCollection{System.String})" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen" />
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
       </Docs>
     </Member>
     <Member MemberName="NetworkAvailabilityChanged">
       <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler NetworkAvailabilityChanged" />
       <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event NetworkAvailabilityChanged As NetworkAvailableEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Microsoft::VisualBasic::Devices::NetworkAvailableEventHandler ^ NetworkAvailabilityChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -403,7 +448,7 @@
 ||  
 |-|  
 |To access the Code Editor window for application events|  
-|1.  Have a project selected in **Solution Explorer.** Click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  Have a project selected in **Solution Explorer.** Click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
 > [!NOTE]
 >  Many network hubs will provide a network connection even if the hub is disconnected from a larger network. Consequently, for wired connections, this event indicates change in the connection between the computer and a hub.  
@@ -436,12 +481,19 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
+        <altmember cref="N:Microsoft.VisualBasic.ApplicationServices" />
+        <altmember cref="T:Microsoft.VisualBasic.Devices.NetworkAvailableEventHandler" />
+        <altmember cref="E:Microsoft.VisualBasic.Devices.Network.NetworkAvailabilityChanged" />
+        <altmember cref="T:Microsoft.VisualBasic.Devices.NetworkAvailableEventArgs" />
       </Docs>
     </Member>
     <Member MemberName="OnCreateMainForm">
       <MemberSignature Language="C#" Value="protected virtual void OnCreateMainForm ();" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnCreateMainForm() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateMainForm" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCreateMainForm ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCreateMainForm();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -474,6 +526,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnCreateSplashScreen ();" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnCreateSplashScreen() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnCreateSplashScreen ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnCreateSplashScreen();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -506,6 +560,8 @@
       <MemberSignature Language="C#" Value="protected virtual bool OnInitialize (System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; commandLineArgs);" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnInitialize(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; commandLineArgs) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize(System.Collections.ObjectModel.ReadOnlyCollection{System.String})" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnInitialize (commandLineArgs As ReadOnlyCollection(Of String)) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool OnInitialize(System::Collections::ObjectModel::ReadOnlyCollection&lt;System::String ^&gt; ^ commandLineArgs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -544,12 +600,17 @@
  ]]></format>
         </remarks>
         <altCompliant cref="None." />
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.EnableVisualStyles" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen" />
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnCreateSplashScreen" />
       </Docs>
     </Member>
     <Member MemberName="OnRun">
       <MemberSignature Language="C#" Value="protected virtual void OnRun ();" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnRun() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnRun" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRun ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRun();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -591,6 +652,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnShutdown ();" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnShutdown() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnShutdown" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnShutdown ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnShutdown();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -623,6 +686,8 @@
       <MemberSignature Language="C#" Value="protected virtual bool OnStartup (Microsoft.VisualBasic.ApplicationServices.StartupEventArgs eventArgs);" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnStartup(class Microsoft.VisualBasic.ApplicationServices.StartupEventArgs eventArgs) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartup(Microsoft.VisualBasic.ApplicationServices.StartupEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnStartup (eventArgs As StartupEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool OnStartup(Microsoft::VisualBasic::ApplicationServices::StartupEventArgs ^ eventArgs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -652,12 +717,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />
       </Docs>
     </Member>
     <Member MemberName="OnStartupNextInstance">
       <MemberSignature Language="C#" Value="protected virtual void OnStartupNextInstance (Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs eventArgs);" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void OnStartupNextInstance(class Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs eventArgs) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnStartupNextInstance (eventArgs As StartupNextInstanceEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnStartupNextInstance(Microsoft::VisualBasic::ApplicationServices::StartupNextInstanceEventArgs ^ eventArgs);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -689,12 +757,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.IsSingleInstance" />
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />
+        <altmember cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance" />
       </Docs>
     </Member>
     <Member MemberName="OnUnhandledException">
       <MemberSignature Language="C#" Value="protected virtual bool OnUnhandledException (Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance bool OnUnhandledException(class Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnUnhandledException(Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function OnUnhandledException (e As UnhandledExceptionEventArgs) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool OnUnhandledException(Microsoft::VisualBasic::ApplicationServices::UnhandledExceptionEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -724,12 +797,16 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />
+        <altmember cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException" />
       </Docs>
     </Member>
     <Member MemberName="OpenForms">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.FormCollection OpenForms { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.FormCollection OpenForms" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OpenForms As FormCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::FormCollection ^ OpenForms { System::Windows::Forms::FormCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -745,7 +822,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `My.Application.OpenForms` property gets a collection of all the application's open forms. The behavior is identical to the <xref:System.Windows.Forms.Application.OpenForms%2A?displayProperty=fullName> property.  
+ The `My.Application.OpenForms` property gets a collection of all the application's open forms. The behavior is identical to the <xref:System.Windows.Forms.Application.OpenForms%2A?displayProperty=nameWithType> property.  
   
 > [!NOTE]
 >  The `My.Application.OpenForms` property returns all open forms, regardless of which thread opened them. You should check the <xref:System.Windows.Forms.Control.InvokeRequired%2A> property of each form before accessing it; otherwise, it might throw an <xref:System.InvalidOperationException> exception.  
@@ -776,12 +853,16 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.UIPermission">Controls the permissions that are related to user interfaces and the Clipboard. Associated enumeration: <see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />.</permission>
+        <altmember cref="T:System.Windows.Forms.FormCollection" />
+        <altmember cref="P:System.Windows.Forms.Application.OpenForms" />
       </Docs>
     </Member>
     <Member MemberName="Run">
       <MemberSignature Language="C#" Value="public void Run (string[] commandLine);" />
       <MemberSignature Language="ILAsm" Value=".method public instance void Run(string[] commandLine) cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Run(System.String[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Run (commandLine As String())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Run(cli::array &lt;System::String ^&gt; ^ commandLine);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -834,6 +915,8 @@
       <MemberSignature Language="C#" Value="public bool SaveMySettingsOnExit { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SaveMySettingsOnExit" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SaveMySettingsOnExit" />
+      <MemberSignature Language="VB.NET" Value="Public Property SaveMySettingsOnExit As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SaveMySettingsOnExit { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -886,12 +969,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Configuration.ApplicationSettingsBase.Save" />
       </Docs>
     </Member>
     <Member MemberName="ShowSplashScreen">
       <MemberSignature Language="C#" Value="protected void ShowSplashScreen ();" />
       <MemberSignature Language="ILAsm" Value=".method familyinstance void ShowSplashScreen() cil managed" />
       <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShowSplashScreen" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub ShowSplashScreen ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void ShowSplashScreen();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -920,12 +1006,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnInitialize(System.Collections.ObjectModel.ReadOnlyCollection{System.String})" />
       </Docs>
     </Member>
     <Member MemberName="Shutdown">
       <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler Shutdown;" />
       <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.ShutdownEventHandler Shutdown" />
       <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown" />
+      <MemberSignature Language="VB.NET" Value="Public Event Shutdown As ShutdownEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Microsoft::VisualBasic::ApplicationServices::ShutdownEventHandler ^ Shutdown;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -947,7 +1036,7 @@
 ||  
 |-|  
 |To access the Code Editor window for application events|  
-|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
 ## Availability by Project Type  
   
@@ -972,12 +1061,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.EventArgs" />
       </Docs>
     </Member>
     <Member MemberName="ShutdownStyle">
-      <MemberSignature Language="C#" Value="protected Microsoft.VisualBasic.ApplicationServices.ShutdownMode ShutdownStyle { get; set; }" />
+      <MemberSignature Language="C#" Value="protected internal Microsoft.VisualBasic.ApplicationServices.ShutdownMode ShutdownStyle { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.VisualBasic.ApplicationServices.ShutdownMode ShutdownStyle" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.ShutdownStyle" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Property ShutdownStyle As ShutdownMode" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; property Microsoft::VisualBasic::ApplicationServices::ShutdownMode ShutdownStyle { Microsoft::VisualBasic::ApplicationServices::ShutdownMode get(); void set(Microsoft::VisualBasic::ApplicationServices::ShutdownMode value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -997,12 +1089,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.ShutdownMode" />
       </Docs>
     </Member>
     <Member MemberName="SplashScreen">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.Form SplashScreen { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Form SplashScreen" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen" />
+      <MemberSignature Language="VB.NET" Value="Public Property SplashScreen As Form" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::Form ^ SplashScreen { System::Windows::Forms::Form ^ get(); void set(System::Windows::Forms::Form ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1045,17 +1140,21 @@
   
  This example requires that the project have a splash screen named `SplashScreen1`. The splash screen needs to have a property named `Status` that updates its user interface.  
   
- You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">The same value is assigned to this property and the <see cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MainForm" /> property.</exception>
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.MinimumSplashScreenDisplayTime" />
+        <altmember cref="T:System.Windows.Forms.Form" />
       </Docs>
     </Member>
     <Member MemberName="Startup">
       <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.StartupEventHandler Startup;" />
       <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.StartupEventHandler Startup" />
       <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup" />
+      <MemberSignature Language="VB.NET" Value="Public Event Startup As StartupEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Microsoft::VisualBasic::ApplicationServices::StartupEventHandler ^ Startup;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1083,7 +1182,7 @@
 ||  
 |-|  
 |To access the Code Editor window for application events|  
-|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br /><br /> For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br /><br /> For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
 ## Availability by Project Type  
   
@@ -1106,17 +1205,21 @@
   
  This example requires that the project have a splash screen named `SplashScreen1`. The splash screen needs to have property named `Status` that updates its user interface.  
   
- You must enter the code in the Code Editor window for application events. To access this window, follow the instructions from this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter the code in the Code Editor window for application events. To access this window, follow the instructions from this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">Controls the ability to add an event handler for this event. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlAppDomain" />.</permission>
+        <altmember cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance" />
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />
       </Docs>
     </Member>
     <Member MemberName="StartupNextInstance">
       <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventHandler StartupNextInstance;" />
       <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventHandler StartupNextInstance" />
       <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance" />
+      <MemberSignature Language="VB.NET" Value="Public Event StartupNextInstance As StartupNextInstanceEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Microsoft::VisualBasic::ApplicationServices::StartupNextInstanceEventHandler ^ StartupNextInstance;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1152,7 +1255,7 @@
 ||  
 |-|  
 |To access the Code Editor window for application events|  
-|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
  The following table lists examples of tasks involving the `My.Application.StartupNextInstance` event.  
   
@@ -1179,16 +1282,22 @@
   
  [!code-vb[VbVbalrMyApplication#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/FakeMyEvents.vb#15)]  
   
- You must enter the code in the Code Editor window for application events. To access this window, follow the instructions from this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter the code in the Code Editor window for application events. To access this window, follow the instructions from this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  ]]></format>
         </remarks>
+        <altmember cref="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup" />
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs" />
+        <altmember cref="P:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs.CommandLine" />
       </Docs>
     </Member>
     <Member MemberName="UnhandledException">
       <MemberSignature Language="C#" Value="public event Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler UnhandledException;" />
       <MemberSignature Language="ILAsm" Value=".event class Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler UnhandledException" />
       <MemberSignature Language="DocId" Value="E:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event UnhandledException As UnhandledExceptionEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event Microsoft::VisualBasic::ApplicationServices::UnhandledExceptionEventHandler ^ UnhandledException;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1216,7 +1325,7 @@
 |To access the Code Editor window for application events|  
 |1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.|  
   
- For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
 > [!NOTE]
 >  The Visual Basic compiler prevents applications that are built for debugging from raising this event, to enable a debugger to handle the unhandled exceptions. This means that if you are testing your application by running it under the Visual Studio Integrated Development Environment debugger, your `UnhandledException` event handler will not be called. For more information about building applications for debugging, see [/debug (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/debug.md).  
@@ -1245,7 +1354,7 @@
 ## Examples  
  This example uses the `My.Application.UnhandledException` event to log any unhandled exceptions.  
   
- You must enter the code in the Code Editor window for application events. To access this window, follow the procedure found in this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter the code in the Code Editor window for application events. To access this window, follow the procedure found in this topic's Remarks section. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  Because the `UnhandledException` event is not raised when a debugger is attached to the application, you have to run this example outside the Visual Studio Integrated Development Environment.  
   
@@ -1254,12 +1363,18 @@
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.SecurityPermission">Controls the ability to add an event handler for this event. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlAppDomain" />.</permission>
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase" />
+        <altmember cref="N:Microsoft.VisualBasic.ApplicationServices" />
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventHandler" />
+        <altmember cref="T:Microsoft.VisualBasic.ApplicationServices.UnhandledExceptionEventArgs" />
       </Docs>
     </Member>
     <Member MemberName="UseCompatibleTextRendering">
       <MemberSignature Language="C#" Value="protected static bool UseCompatibleTextRendering { get; }" />
       <MemberSignature Language="ILAsm" Value=".property bool UseCompatibleTextRendering" />
       <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared ReadOnly Property UseCompatibleTextRendering As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static property bool UseCompatibleTextRendering { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>Microsoft.VisualBasic</AssemblyName>
@@ -1290,7 +1405,7 @@
 ||  
 |-|  
 |To access the Code Editor window for overriding members|  
-|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).|  
+|1.  With a project selected in **Solution Explorer**, click **Properties** on the **Project** menu.<br />2.  Click the **Application** tab.<br />3.  Click the **View Application Events** button to open the Code Editor.<br />     For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).|  
   
    
   
@@ -1306,7 +1421,7 @@ Protected Overloads Shared ReadOnly Property UseCompatibleTextRendering() As Boo
 End Property  
 ```  
   
- You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](../Topic/Application%20Page,%20Project%20Designer%20\(Visual%20Basic\).md).  
+ You must enter this code in the Code Editor window for application events. For more information, see [Application Page, Project Designer (Visual Basic)](https://docs.microsoft.com/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  ]]></format>
         </remarks>

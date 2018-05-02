@@ -1,5 +1,5 @@
 ---
-title: "Application Settings for Custom Controls | Microsoft Docs"
+title: "Application Settings for Custom Controls"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,8 +9,6 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "custom controls [Windows Forms], application settings"
   - "application settings [Windows Forms], custom controls"
@@ -19,6 +17,8 @@ caps.latest.revision: 13
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Application Settings for Custom Controls
 You must complete certain tasks to give your custom controls the ability to persist application settings when the controls are hosted in third-party applications.  
@@ -41,7 +41,7 @@ You must complete certain tasks to give your custom controls the ability to pers
   
  The simplest way to implement <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> is to use the <xref:System.Windows.Forms.Control.Name%2A> property of the control for the <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A>. When you load or save the control's settings, you pass the value of <xref:System.Configuration.IPersistComponentSettings.SettingsKey%2A> on to the <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> property of the <xref:System.Configuration.ApplicationSettingsBase> class. Application Settings uses this unique key when it persists the user's settings to XML. The following code example shows how a `<userSettings>` section may look for an instance of a custom control named `CustomControl1` that saves a setting for its `Text` property.  
   
-```  
+```xml  
 <userSettings>  
     <CustomControl1>  
         <setting name="Text" serializedAs="string">  
@@ -54,6 +54,6 @@ You must complete certain tasks to give your custom controls the ability to pers
  Any instances of a control that do not supply a value for <xref:System.Configuration.ApplicationSettingsBase.SettingsKey%2A> will share the same settings.  
   
 ## See Also  
- <xref:System.Configuration.ApplicationSettingsBase>   
- <xref:System.Configuration.IPersistComponentSettings>   
+ <xref:System.Configuration.ApplicationSettingsBase>  
+ <xref:System.Configuration.IPersistComponentSettings>  
  [Application Settings Architecture](../../../../docs/framework/winforms/advanced/application-settings-architecture.md)

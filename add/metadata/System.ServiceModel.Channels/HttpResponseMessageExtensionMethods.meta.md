@@ -1,13 +1,17 @@
 ---
 uid: System.ServiceModel.Channels.HttpResponseMessageExtensionMethods
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.ServiceModel.Channels.HttpResponseMessageExtensionMethods.ToMessage(System.Net.Http.HttpResponseMessage)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

@@ -1,7 +1,9 @@
-<Type Name="ISynchronizeInvoke" FullName="System.ComponentModel.ISynchronizeInvoke">
+﻿<Type Name="ISynchronizeInvoke" FullName="System.ComponentModel.ISynchronizeInvoke">
   <TypeSignature Language="C#" Value="public interface ISynchronizeInvoke" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISynchronizeInvoke" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.ISynchronizeInvoke" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ISynchronizeInvoke" />
+  <TypeSignature Language="C++ CLI" Value="public interface class ISynchronizeInvoke" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Docs>
@@ -27,16 +33,21 @@
 2.  Synchronously, by using the <xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A> method. <xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A> starts a process, waits until it completes, and then returns. Use <xref:System.ComponentModel.ISynchronizeInvoke.Invoke%2A> when the control's main thread is different from the calling thread to marshal the call to the proper thread.  
   
 > [!NOTE]
->  The <xref:System.Security.Permissions.HostProtectionAttribute> attribute applied to this class has the following <xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A> property value: <xref:System.Security.Permissions.HostProtectionResource> &#124; <xref:System.Security.Permissions.HostProtectionResource>. The <xref:System.Security.Permissions.HostProtectionAttribute> does not affect desktop applications (which are typically started by double-clicking an icon, typing a command, or entering a URL in a browser). For more information, see the <xref:System.Security.Permissions.HostProtectionAttribute> class or [SQL Server Programming and Host Protection Attributes](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md).  
+>  The <xref:System.Security.Permissions.HostProtectionAttribute> attribute applied to this class has the following <xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A> property value: <xref:System.Security.Permissions.HostProtectionResource.Synchronization> &#124; <xref:System.Security.Permissions.HostProtectionResource.ExternalThreading>. The <xref:System.Security.Permissions.HostProtectionAttribute> does not affect desktop applications (which are typically started by double-clicking an icon, typing a command, or entering a URL in a browser). For more information, see the <xref:System.Security.Permissions.HostProtectionAttribute> class or [SQL Server Programming and Host Protection Attributes](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md).  
   
  ]]></format>
     </remarks>
+    <altmember cref="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />
+    <altmember cref="M:System.ComponentModel.ISynchronizeInvoke.EndInvoke(System.IAsyncResult)" />
+    <altmember cref="M:System.ComponentModel.ISynchronizeInvoke.Invoke(System.Delegate,System.Object[])" />
   </Docs>
   <Members>
     <Member MemberName="BeginInvoke">
       <MemberSignature Language="C#" Value="public IAsyncResult BeginInvoke (Delegate method, object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginInvoke(class System.Delegate method, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function BeginInvoke (method As Delegate, args As Object()) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IAsyncResult ^ BeginInvoke(Delegate ^ method, cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -46,6 +57,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IAsyncResult</ReturnType>
@@ -71,12 +86,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.ComponentModel.ISynchronizeInvoke.EndInvoke(System.IAsyncResult)" />
       </Docs>
     </Member>
     <Member MemberName="EndInvoke">
       <MemberSignature Language="C#" Value="public object EndInvoke (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EndInvoke(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.EndInvoke(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Function EndInvoke (result As IAsyncResult) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ EndInvoke(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -86,6 +104,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -105,12 +127,15 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.ComponentModel.ISynchronizeInvoke.BeginInvoke(System.Delegate,System.Object[])" />
       </Docs>
     </Member>
     <Member MemberName="Invoke">
       <MemberSignature Language="C#" Value="public object Invoke (Delegate method, object[] args);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Invoke(class System.Delegate method, object[] args) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.ISynchronizeInvoke.Invoke(System.Delegate,System.Object[])" />
+      <MemberSignature Language="VB.NET" Value="Public Function Invoke (method As Delegate, args As Object()) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ Invoke(Delegate ^ method, cli::array &lt;System::Object ^&gt; ^ args);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -120,6 +145,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -149,6 +178,8 @@
       <MemberSignature Language="C#" Value="public bool InvokeRequired { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool InvokeRequired" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.ISynchronizeInvoke.InvokeRequired" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property InvokeRequired As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool InvokeRequired { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -158,6 +189,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

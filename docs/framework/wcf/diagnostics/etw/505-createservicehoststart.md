@@ -1,8 +1,8 @@
 ---
-title: "505 - CreateServiceHostStart | Microsoft Docs"
+title: "505 - CreateServiceHostStart"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 5f2c670b-c212-458e-bcd0-cdc2f17a6cf6
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 505 - CreateServiceHostStart
 ## Properties  

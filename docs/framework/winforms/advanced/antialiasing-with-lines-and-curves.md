@@ -1,5 +1,5 @@
 ---
-title: "Antialiasing with Lines and Curves | Microsoft Docs"
+title: "Antialiasing with Lines and Curves"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,16 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "antialiasing"
-  - "antialiasing, smoothing modes"
+  - "antialiasing [Windows Forms], smoothing modes"
   - "GDI+, antialiasing"
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
 caps.latest.revision: 16
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Antialiasing with Lines and Curves
 When you use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] to draw a line, you provide the starting point and ending point of the line, but you do not have to provide any information about the individual pixels on the line. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] works in conjunction with the display driver software to determine which pixels will be turned on to show the line on a particular display device.  
@@ -44,12 +47,12 @@ When you use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)]
   
  ![Antialiasing example](../../../../docs/framework/winforms/advanced/media/aboutgdip02-art36.gif "AboutGdip02_Art36")  
   
- To draw lines and curves that use antialiasing, create an instance of the <xref:System.Drawing.Graphics> class and set its <xref:System.Drawing.Graphics.SmoothingMode%2A> property to <xref:System.Drawing.Drawing2D.SmoothingMode> or <xref:System.Drawing.Drawing2D.SmoothingMode>. Then call one of the drawing methods of that same <xref:System.Drawing.Graphics> class.  
+ To draw lines and curves that use antialiasing, create an instance of the <xref:System.Drawing.Graphics> class and set its <xref:System.Drawing.Graphics.SmoothingMode%2A> property to <xref:System.Drawing.Drawing2D.SmoothingMode.AntiAlias> or <xref:System.Drawing.Drawing2D.SmoothingMode.HighQuality>. Then call one of the drawing methods of that same <xref:System.Drawing.Graphics> class.  
   
  [!code-csharp[LinesCurvesAndShapes#81](../../../../samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#81)]
  [!code-vb[LinesCurvesAndShapes#81](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#81)]  
   
 ## See Also  
- <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=fullName>   
- [Lines, Curves, and Shapes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)   
+ <xref:System.Drawing.Drawing2D.SmoothingMode?displayProperty=nameWithType>  
+ [Lines, Curves, and Shapes](../../../../docs/framework/winforms/advanced/lines-curves-and-shapes.md)  
  [How to: Use Antialiasing with Text](../../../../docs/framework/winforms/advanced/how-to-use-antialiasing-with-text.md)

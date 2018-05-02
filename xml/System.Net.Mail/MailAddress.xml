@@ -1,7 +1,9 @@
-<Type Name="MailAddress" FullName="System.Net.Mail.MailAddress">
+﻿<Type Name="MailAddress" FullName="System.Net.Mail.MailAddress">
   <TypeSignature Language="C#" Value="public class MailAddress" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailAddress extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Net.Mail.MailAddress" />
+  <TypeSignature Language="VB.NET" Value="Public Class MailAddress" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MailAddress" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -21,11 +27,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Net.Mail.MailAddress> class is used by the <xref:System.Net.Mail.SmtpClient> and <xref:System.Net.Mail.MailMessage> classes to store address information for e-mail messages.  
+The <xref:System.Net.Mail.MailAddress> class is used by the <xref:System.Net.Mail.SmtpClient> and <xref:System.Net.Mail.MailMessage> classes to store address information for email messages.  
   
- A mail address is composed of a <xref:System.Net.Mail.MailAddress.User%2A> name, <xref:System.Net.Mail.MailAddress.Host%2A> name and optionally, a <xref:System.Net.Mail.MailAddress.DisplayName%2A>. The <xref:System.Net.Mail.MailAddress.DisplayName%2A> can contain non-ASCII characters if you encode them.  
+A mail address is composed of a <xref:System.Net.Mail.MailAddress.User%2A> name, <xref:System.Net.Mail.MailAddress.Host%2A> name and optionally, a <xref:System.Net.Mail.MailAddress.DisplayName%2A>. The <xref:System.Net.Mail.MailAddress.DisplayName%2A> can contain non-ASCII characters if you encode them.  
   
- The <xref:System.Net.Mail.MailAddress> class supports the following mail address formats:  
+The <xref:System.Net.Mail.MailAddress> class supports the following mail address formats:  
   
 -   A simple address format of `user@host`. If a <xref:System.Net.Mail.MailAddress.DisplayName%2A> is not set, this is the mail address format generated.  
   
@@ -35,7 +41,7 @@
   
 -   Quotes are added around the <xref:System.Net.Mail.MailAddress.DisplayName%2A> for `display name <user@host>`, if these are not included.  
   
--   Unicode characters are supported in the <xref:System.Net.Mail.MailAddress.DisplayName%2A>. property.  
+-   Unicode characters are supported in the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property.  
   
 -   A <xref:System.Net.Mail.MailAddress.User%2A> name with quotes. For example, `"user name"@host`.  
   
@@ -45,54 +51,66 @@
   
 -   Comments. For example, `(comment)"display name"(comment)<(comment)user(comment)@(comment)domain(comment)>(comment)`. Comments are removed before transmission.  
   
- A comma is used to separate elements in a list of mail addresses. As a result, a comma should not be used in unquoted display names in a list. The following mail addresses would be allowed  
+A comma is used to separate elements in a list of mail addresses. As a result, a comma should not be used in unquoted display names in a list. The following mail addresses would be allowed:
   
- `"John, Doe" <user@host>, "Bob, Smith" <user2@host>`  
+`"John, Doe" <user@host>, "Bob, Smith" <user2@host>`  
   
- The following mail address would not be allowed:  
+The following mail address would not be allowed:  
   
- `John, Doe <user@host>, Bob, Smith <user2@host>`  
+`John, Doe <user@host>, Bob, Smith <user2@host>`  
   
- Quotes can be embedded in a quoted string, but they must be escaped. The following mail addresses would be allowed  
+Quotes can be embedded in a quoted string, but they must be escaped. The following mail addresses would be allowed:
   
- `"John \"Jr\" Doe" <user@host>`  
+`"John \"Jr\" Doe" <user@host>`  
   
- `"\"John \\\"Jr\\\" Doe\" <user@host>"`  
+`"\"John \\\"Jr\\\" Doe\" <user@host>"`  
   
- The following mail address would not be allowed:  
+The following mail address would not be allowed:  
   
- `"John "Jr" Doe" <user@host>`  
+`"John "Jr" Doe" <user@host>`  
   
- When the username is note quoted, all text between the start of the string (or comma) and the address are considered part of the <xref:System.Net.Mail.MailAddress.DisplayName%2A>, including comments.  
+When the username is note quoted, all text between the start of the string (or comma) and the address are considered part of the <xref:System.Net.Mail.MailAddress.DisplayName%2A>, including comments. For example:
   
- -- Example: (non comment) unquoted display (non comment) name (non comment) \<user@host>  
+`(non comment) unquoted display (non comment) name (non comment) <user@host>`
   
- Although the <xref:System.Net.Mail.MailAddress> class accepts a mail address as valid, other mail servers may not accept the mail address.  
+Although the <xref:System.Net.Mail.MailAddress> class accepts a mail address as valid, other mail servers may not accept the mail address.  
   
- The <xref:System.Net.Mail.MailAddress> class does not support the following mail address formats:  
+The <xref:System.Net.Mail.MailAddress> class does not support the following mail address formats:  
   
- Mixed quoted and unquoted display names. For example, `display "name" <user@host>`  
+- Mixed quoted and unquoted display names. For example, `display "name" <user@host>`.
   
- Groups, as defined in RFC 2822 Section 3.4 published by the IETF.  
+- Groups, as defined in RFC 2822 Section 3.4 published by the IETF.  
   
- The obsolete user name formats of `"user"."name"@host, user."name"@host` or `"user".name@host`  
+- The obsolete user name formats of `"user"."name"@host`, `user."name"@host` or `"user".name@host`.
   
    
   
 ## Examples  
- The following code example demonstrates sending an e-mail message by using the <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Mail.MailAddress>, and <xref:System.Net.Mail.MailMessage> classes.  
+The following code example demonstrates sending an email message by using the <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Mail.MailAddress>, and <xref:System.Net.Mail.MailMessage> classes.  
   
- [!code-cpp[NclMailSync#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#10)]
- [!code-csharp[NclMailSync#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#10)]  
+[!code-cpp[NclMailSync#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#10)]
+[!code-csharp[NclMailSync#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#10)]  
   
  ]]></format>
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Net.Mail.MailAddress" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public MailAddress (string address);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (address As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; MailAddress(System::String ^ address);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -103,17 +121,21 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="address" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="address">A <see cref="T:System.String" /> that contains an e-mail address.</param>
+        <param name="address">A <see cref="T:System.String" /> that contains an email address.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Net.Mail.MailAddress" /> class using the specified address.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The `address` parameter can contain a display name and the associated e-mail address if you enclose the address in angle brackets. For example:  
+ The `address` parameter can contain a display name and the associated email address if you enclose the address in angle brackets. For example:  
   
  `"Tom Smith <tsmith@contoso.com>"`  
   
@@ -131,7 +153,7 @@
    
   
 ## Examples  
- The following code example uses this constructor to create a <xref:System.Net.Mail.MailAddress> object for the <xref:System.Net.Mail.MailMessage.Bcc%2A> recipient of an e-mail message.  
+ The following code example uses this constructor to create a <xref:System.Net.Mail.MailAddress> object for the <xref:System.Net.Mail.MailMessage.Bcc%2A> recipient of an email message.  
   
  [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
  [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
@@ -150,6 +172,8 @@
       <MemberSignature Language="C#" Value="public MailAddress (string address, string displayName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string address, string displayName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.#ctor(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (address As String, displayName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; MailAddress(System::String ^ address, System::String ^ displayName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -160,12 +184,16 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="address" Type="System.String" />
         <Parameter Name="displayName" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="address">A <see cref="T:System.String" /> that contains an e-mail address.</param>
+        <param name="address">A <see cref="T:System.String" /> that contains an email address.</param>
         <param name="displayName">A <see cref="T:System.String" /> that contains the display name associated with <c>address</c>. This parameter can be <see langword="null" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Net.Mail.MailAddress" /> class using the specified address and display name.</summary>
         <remarks>
@@ -176,12 +204,12 @@
   
  If `displayName` contains non-ASCII characters, the iso-8859-1 character set is used for the `displayName` encoding. Encoding non-ASCII characters is discussed in RFC 1522, which is available at [http://www.ietf.org](http://www.ietf.org).  
   
- If `address` contains a display name, and `displayName` is not `null` and is not equal to <xref:System.String?displayProperty=fullName>, `displayName` overrides the value specified in `address`.  
+ If `address` contains a display name, and `displayName` is not `null` and is not equal to <xref:System.String.Empty?displayProperty=nameWithType>, `displayName` overrides the value specified in `address`.  
   
    
   
 ## Examples  
- The following code example uses this constructor to create <xref:System.Net.Mail.MailAddress> instances for the sender and recipient of an e-mail message.  
+ The following code example uses this constructor to create <xref:System.Net.Mail.MailAddress> instances for the sender and recipient of an email message.  
   
  [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
  [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
@@ -204,6 +232,8 @@
       <MemberSignature Language="C#" Value="public MailAddress (string address, string displayName, System.Text.Encoding displayNameEncoding);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string address, string displayName, class System.Text.Encoding displayNameEncoding) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.#ctor(System.String,System.String,System.Text.Encoding)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (address As String, displayName As String, displayNameEncoding As Encoding)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; MailAddress(System::String ^ address, System::String ^ displayName, System::Text::Encoding ^ displayNameEncoding);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -213,6 +243,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -225,7 +259,7 @@
         <Parameter Name="displayNameEncoding" Type="System.Text.Encoding" />
       </Parameters>
       <Docs>
-        <param name="address">A <see cref="T:System.String" /> that contains an e-mail address.</param>
+        <param name="address">A <see cref="T:System.String" /> that contains an email address.</param>
         <param name="displayName">A <see cref="T:System.String" /> that contains the display name associated with <c>address</c>.</param>
         <param name="displayNameEncoding">The <see cref="T:System.Text.Encoding" /> that defines the character set used for <c>displayName</c>.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Net.Mail.MailAddress" /> class using the specified address, display name, and encoding.</summary>
@@ -235,7 +269,7 @@
 ## Remarks  
  Leading and trailing white space in the display name is preserved.  
   
- If `address` contains a display name, and `displayName` is not `null` and is not equal to <xref:System.String?displayProperty=fullName>, `displayName` overrides the value specified in `address`.  
+ If `address` contains a display name, and `displayName` is not `null` and is not equal to <xref:System.String.Empty?displayProperty=nameWithType>, `displayName` overrides the value specified in `address`.  
   
  The <xref:System.Net.Mail.MailAddress.%23ctor%2A> method does not check if the `displayName` parameter is valid. This method removes surrounding quotes not displayed by the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property. Quotes will be added before transmission, except where <xref:System.Text.Encoding.ASCII%2A> or <xref:System.Text.Encoding.Unicode%2A> is specified in the `displayNameEncoding` parameter. The encoding specified in the `displayNameEncoding` parameter will be applied to the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property before transmission <xref:System.Text.Encoding.ASCII%2A> or <xref:System.Text.Encoding.Unicode%2A> is specified in the `displayNameEncoding` parameter. <xref:System.Text.Encoding.UTF8%2A> is the default encoding if none is specified.  
   
@@ -244,7 +278,7 @@
    
   
 ## Examples  
- The following code example uses this constructor to create <xref:System.Net.Mail.MailAddress> instances for the sender of an e-mail message.  
+ The following code example uses this constructor to create <xref:System.Net.Mail.MailAddress> instances for the sender of an email message.  
   
  [!code-cpp[NclMailASync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailASync/cpp/mailasync.cpp#2)]
  [!code-csharp[NclMailASync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailASync/CS/mailasync.cs#2)]
@@ -276,6 +310,8 @@
       <MemberSignature Language="C#" Value="public string Address { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Address" />
       <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailAddress.Address" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Address As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Address { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -286,12 +322,16 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets the e-mail address specified when this instance was created.</summary>
-        <value>A <see cref="T:System.String" /> that contains the e-mail address.</value>
+        <summary>Gets the email address specified when this instance was created.</summary>
+        <value>A <see cref="T:System.String" /> that contains the email address.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -301,7 +341,7 @@
    
   
 ## Examples  
- The following code example displays the address for an e-mail message recipient.  
+ The following code example displays the address for an email message recipient.  
   
  [!code-cpp[NclMailSync#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#10)]
  [!code-csharp[NclMailSync#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#10)]  
@@ -314,6 +354,8 @@
       <MemberSignature Language="C#" Value="public string DisplayName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
       <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailAddress.DisplayName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DisplayName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DisplayName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -323,6 +365,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -336,12 +382,12 @@
 ## Remarks  
  Display names that contain non-ASCII characters are returned in human-readable form. Use the <xref:System.Net.Mail.MailAddress.ToString%2A> method to get the encoded form of the <xref:System.Net.Mail.MailAddress.DisplayName%2A>.  
   
- Some software programs that are used to read e-mail display the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property value instead of, or in addition to, the e-mail address.  
+ Some software programs that are used to read email display the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property value instead of, or in addition to, the email address.  
   
    
   
 ## Examples  
- The following code example displays the <xref:System.Net.Mail.MailAddress.DisplayName%2A> for the recipient of an e-mail message.  
+ The following code example displays the <xref:System.Net.Mail.MailAddress.DisplayName%2A> for the recipient of an email message.  
   
  [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
  [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
@@ -351,9 +397,16 @@
       </Docs>
     </Member>
     <Member MemberName="Equals">
-      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.Equals(System.Object)" />
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.Equals(System.Object)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (value As Object) As Boolean" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ value);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" FrameworkAlternate="xamarinandroid-7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" FrameworkAlternate="xamarinandroid-7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.Equals(System.Object)" FrameworkAlternate="xamarinandroid-7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" FrameworkAlternate="xamarinandroid-7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" FrameworkAlternate="xamarinandroid-7.1" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -364,11 +417,16 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netstandard-2.0" />
+        <Parameter Name="obj" Type="System.Object" Index="0" FrameworkAlternate="xamarinandroid-7.1" />
       </Parameters>
       <Docs>
         <param name="obj">To be added.</param>
@@ -382,6 +440,8 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -391,6 +451,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -413,6 +477,8 @@
       <MemberSignature Language="C#" Value="public string Host { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Host" />
       <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailAddress.Host" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Host As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Host { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -423,22 +489,26 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
         <summary>Gets the host portion of the address specified when this instance was created.</summary>
-        <value>A <see cref="T:System.String" /> that contains the name of the host computer that accepts e-mail for the <see cref="P:System.Net.Mail.MailAddress.User" /> property.</value>
+        <value>A <see cref="T:System.String" /> that contains the name of the host computer that accepts email for the <see cref="P:System.Net.Mail.MailAddress.User" /> property.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- In a typical e-mail address, the host string includes all information following the "`@`" sign. For example, in `"tsmith@contoso.com"`, the host is `"contoso.com"`.  
+ In a typical email address, the host string includes all information following the "`@`" sign. For example, in `"tsmith@contoso.com"`, the host is `"contoso.com"`.  
   
    
   
 ## Examples  
- The following code example displays the destination of an e-mail message.  
+ The following code example displays the destination of an email message.  
   
  [!code-cpp[NclMailSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#4)]
  [!code-csharp[NclMailSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#4)]  
@@ -451,6 +521,8 @@
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailAddress.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -460,6 +532,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -472,16 +548,16 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The string returned by this method is not necessarily identical to the string specified when the instance was created. If the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property is not `null` and not equal to <xref:System.String.Empty?displayProperty=fullName> (""), <xref:System.Net.Mail.MailAddress.ToString%2A> returns a string composed using the following syntax:  
+ The string returned by this method is not necessarily identical to the string specified when the instance was created. If the <xref:System.Net.Mail.MailAddress.DisplayName%2A> property is not `null` and not equal to <xref:System.String.Empty?displayProperty=nameWithType> (""), <xref:System.Net.Mail.MailAddress.ToString%2A> returns a string composed using the following syntax:  
   
  <xref:System.Net.Mail.MailAddress.DisplayName%2A> \<<xref:System.Net.Mail.MailAddress.User%2A>@<xref:System.Net.Mail.MailAddress.Host%2A>>  
   
- If <xref:System.Net.Mail.MailAddress.DisplayName%2A> is `null` or is equal to <xref:System.String.Empty?displayProperty=fullName>, <xref:System.Net.Mail.MailAddress.ToString%2A> returns the value of the <xref:System.Net.Mail.MailAddress.Address%2A> property.  
+ If <xref:System.Net.Mail.MailAddress.DisplayName%2A> is `null` or is equal to <xref:System.String.Empty?displayProperty=nameWithType>, <xref:System.Net.Mail.MailAddress.ToString%2A> returns the value of the <xref:System.Net.Mail.MailAddress.Address%2A> property.  
   
    
   
 ## Examples  
- The following code example displays the destination of an e-mail message.  
+ The following code example displays the destination of an email message.  
   
  [!code-cpp[NclMailSync#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#7)]
  [!code-csharp[NclMailSync#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#7)]  
@@ -494,6 +570,8 @@
       <MemberSignature Language="C#" Value="public string User { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string User" />
       <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailAddress.User" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property User As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ User { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -503,6 +581,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -514,12 +596,12 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- In a typical e-mail address, the user string includes all information preceding the "`@`" sign. For example, in `"tsmith@contoso.com"`, the user is `"tsmith"`.  
+ In a typical email address, the user string includes all information preceding the "`@`" sign. For example, in `"tsmith@contoso.com"`, the user is `"tsmith"`.  
   
    
   
 ## Examples  
- The following code example displays the destination of an e-mail message.  
+ The following code example displays the destination of an email message.  
   
  [!code-cpp[NclMailSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#4)]
  [!code-csharp[NclMailSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#4)]  

@@ -1,23 +1,21 @@
 ---
-title: "OFTYPE (Entity SQL) | Microsoft Docs"
+title: "OFTYPE (Entity SQL)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
 ms.assetid: 6d259ca7-bbf0-40f8-a154-181d25c0d67e
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # OFTYPE (Entity SQL)
 Returns a collection of objects from a query expression that is of a specific type.  
@@ -25,7 +23,6 @@ Returns a collection of objects from a query expression that is of a specific ty
 ## Syntax  
   
 ```  
-  
 OFTYPE ( expression, [ONLY] test_type )  
 ```  
   
@@ -71,7 +68,7 @@ OfType(executives, NamespaceName.Manager)
 |OFTYPE(Collection(RowType), RowType)|Throws|  
   
 ## Example  
- The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the OFTYPE operator to return a collection of OnsiteCourse objects from a collection of Course objects. The query is based on the [School Model](http://msdn.microsoft.com/en-us/859a9587-81ea-4a45-9bc0-f8d330e1adac).  
+ The following [!INCLUDE[esql](../../../../../../includes/esql-md.md)] query uses the OFTYPE operator to return a collection of OnsiteCourse objects from a collection of Course objects. The query is based on the [School Model](http://msdn.microsoft.com/library/859a9587-81ea-4a45-9bc0-f8d330e1adac).  
   
  [!code-csharp[DP EntityServices Concepts 2#OFTYPE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#oftype)]  
   

@@ -1,7 +1,9 @@
-<Type Name="StringWriter" FullName="System.IO.StringWriter">
+﻿<Type Name="StringWriter" FullName="System.IO.StringWriter">
   <TypeSignature Language="C#" Value="public class StringWriter : System.IO.TextWriter" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StringWriter extends System.IO.TextWriter" />
   <TypeSignature Language="DocId" Value="T:System.IO.StringWriter" />
+  <TypeSignature Language="VB.NET" Value="Public Class StringWriter&#xA;Inherits TextWriter" />
+  <TypeSignature Language="C++ CLI" Value="public ref class StringWriter : System::IO::TextWriter" />
   <AssemblyInfo>
     <AssemblyName>System.IO</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,6 +18,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.IO.TextWriter</BaseTypeName>
@@ -34,8 +40,7 @@
 ## Remarks  
  <xref:System.IO.StringWriter> enables you to write to a string synchronously or asynchronously. You can write a character at a time with the <xref:System.IO.StringWriter.Write%28System.Char%29> or the <xref:System.IO.StringWriter.WriteAsync%28System.Char%29> method, a string at a time using the <xref:System.IO.StringWriter.Write%28System.String%29> or the <xref:System.IO.StringWriter.WriteAsync%28System.String%29> method. In addition, you can write a character, an array of characters or a string followed by the line terminator asynchronously with one of the <xref:System.IO.StringWriter.WriteLineAsync%2A> methods.  
   
-> [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try` /`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+[!INCLUDE[note_unnecessary_dispose](~/includes/note-unnecessary-dispose.md)]
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -44,11 +49,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -63,12 +68,27 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Text.StringBuilder" />
+    <altmember cref="T:System.IO.StringReader" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.IO.StringWriter" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public StringWriter ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringWriter();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -85,6 +105,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.IO.StringWriter" /> class.</summary>
@@ -92,7 +116,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A new <xref:System.Text.StringBuilder> object is automatically created and associated with the new instance of the <xref:System.IO.StringWriter> class. Since a format control is not specified for this constructor, the new instance will be initialized with <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName>.  
+ A new <xref:System.Text.StringBuilder> object is automatically created and associated with the new instance of the <xref:System.IO.StringWriter> class. Since a format control is not specified for this constructor, the new instance will be initialized with <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>.  
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -101,11 +125,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -126,6 +150,8 @@
       <MemberSignature Language="C#" Value="public StringWriter (IFormatProvider formatProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IFormatProvider formatProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.#ctor(System.IFormatProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (formatProvider As IFormatProvider)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringWriter(IFormatProvider ^ formatProvider);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -141,6 +167,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="formatProvider" Type="System.IFormatProvider" />
@@ -161,11 +191,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -186,6 +216,8 @@
       <MemberSignature Language="C#" Value="public StringWriter (System.Text.StringBuilder sb);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Text.StringBuilder sb) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.#ctor(System.Text.StringBuilder)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (sb As StringBuilder)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringWriter(System::Text::StringBuilder ^ sb);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -202,6 +234,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters>
         <Parameter Name="sb" Type="System.Text.StringBuilder" />
       </Parameters>
@@ -212,7 +248,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Since a format control is not specified for this constructor, the new instance will be initialized with <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=fullName>.  
+ Since a format control is not specified for this constructor, the new instance will be initialized with <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>.  
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -221,11 +257,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -248,6 +284,8 @@
       <MemberSignature Language="C#" Value="public StringWriter (System.Text.StringBuilder sb, IFormatProvider formatProvider);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Text.StringBuilder sb, class System.IFormatProvider formatProvider) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.#ctor(System.Text.StringBuilder,System.IFormatProvider)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (sb As StringBuilder, formatProvider As IFormatProvider)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; StringWriter(System::Text::StringBuilder ^ sb, IFormatProvider ^ formatProvider);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -263,6 +301,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="sb" Type="System.Text.StringBuilder" />
@@ -283,11 +325,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -301,6 +343,8 @@
       <MemberSignature Language="C#" Value="public override void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -310,6 +354,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -323,7 +371,7 @@
 ## Remarks  
  For an example of creating a file and writing text to a file, see [How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md). For an example of reading text from a file, see [How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md). For an example of reading from and writing to a binary file, see [How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md).  
   
- This method overrides <xref:System.IO.Stream.Close%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>.  
   
  This implementation of `Close` calls the <xref:System.IO.StringWriter.Dispose%2A> method passing a `true` value.  
   
@@ -346,6 +394,8 @@
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -361,6 +411,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -390,6 +444,8 @@
       <MemberSignature Language="C#" Value="public override System.Text.Encoding Encoding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
       <MemberSignature Language="DocId" Value="P:System.IO.StringWriter.Encoding" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Encoding As Encoding" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Text::Encoding ^ Encoding { System::Text::Encoding ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -405,6 +461,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Text.Encoding</ReturnType>
@@ -443,6 +503,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.FlushAsync" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function FlushAsync () As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ FlushAsync();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -458,6 +520,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -478,6 +544,8 @@
       <MemberSignature Language="C#" Value="public virtual System.Text.StringBuilder GetStringBuilder ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Text.StringBuilder GetStringBuilder() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.GetStringBuilder" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function GetStringBuilder () As StringBuilder" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Text::StringBuilder ^ GetStringBuilder();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -493,6 +561,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Text.StringBuilder</ReturnType>
@@ -532,6 +604,8 @@
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -547,6 +621,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -580,10 +658,23 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Write">
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes data to the string.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Write">
       <MemberSignature Language="C#" Value="public override void Write (char value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(char value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.Write(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (value As Char)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(char value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -600,6 +691,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -613,7 +708,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>.  
   
  The following table lists examples of other typical or related I/O tasks.  
   
@@ -622,11 +717,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -648,6 +743,8 @@
       <MemberSignature Language="C#" Value="public override void Write (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.Write(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (value As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -664,6 +761,10 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
@@ -677,7 +778,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>.  
   
  If the specified string is `null`, nothing is written.  
   
@@ -688,11 +789,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -714,6 +815,8 @@
       <MemberSignature Language="C#" Value="public override void Write (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.Write(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Write (buffer As Char(), index As Integer, count As Integer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Write(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -729,6 +832,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -747,7 +854,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=fullName>.  
+ This method overrides <xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>.  
   
  This method writes `count` characters of data to this `StringWriter` from `buffer`, starting at position `index`.  
   
@@ -758,11 +865,11 @@
 |Create a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Write to a text file.|[How to: Write Text to a File](~/docs/standard/io/how-to-write-text-to-a-file.md)|  
 |Read from a text file.|[How to: Read Text from a File](~/docs/standard/io/how-to-read-text-from-a-file.md)|  
-|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=fullName><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=fullName>|  
-|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=fullName>|  
-|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=fullName>|  
-|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=fullName>|  
-|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=fullName>|  
+|Append text to a file.|[How to: Open and Append to a Log File](~/docs/standard/io/how-to-open-and-append-to-a-log-file.md)<br /><br /> <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType><br /><br /> <xref:System.IO.FileInfo.AppendText%2A?displayProperty=nameWithType>|  
+|Get the size of a file.|<xref:System.IO.FileInfo.Length%2A?displayProperty=nameWithType>|  
+|Get the attributes of a file.|<xref:System.IO.File.GetAttributes%2A?displayProperty=nameWithType>|  
+|Set the attributes of a file.|<xref:System.IO.File.SetAttributes%2A?displayProperty=nameWithType>|  
+|Determine if a file exists.|<xref:System.IO.File.Exists%2A?displayProperty=nameWithType>|  
 |Read from a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
 |Write to a binary file.|[How to: Read and Write to a Newly Created Data File](~/docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|  
   
@@ -785,10 +892,23 @@
         <exception cref="T:System.ObjectDisposedException">The writer is closed.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes data to the string asynchronously.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteAsync">
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (char value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(char value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteAsync(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteAsync (value As Char) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteAsync(char value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -804,6 +924,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -839,6 +963,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteAsync(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteAsync (value As String) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteAsync(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -854,6 +980,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -889,6 +1019,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteAsync (buffer As Char(), index As Integer, count As Integer) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteAsync(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -904,6 +1036,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -944,10 +1080,23 @@
         <exception cref="T:System.InvalidOperationException">The string writer is currently in use by a previous write operation.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="WriteLineAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes data followed by a line terminator asynchronously to the string.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WriteLineAsync">
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (char value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(char value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteLineAsync(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteLineAsync (value As Char) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteLineAsync(char value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -963,6 +1112,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -983,7 +1136,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=fullName> property.  
+ The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> property.  
   
    
   
@@ -1003,6 +1156,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (string value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(string value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteLineAsync(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteLineAsync (value As String) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteLineAsync(System::String ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -1018,6 +1173,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1038,7 +1197,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=fullName> property.  
+ The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> property.  
   
    
   
@@ -1058,6 +1217,8 @@
       <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (char[] buffer, int index, int count);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(char[] buffer, int32 index, int32 count) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.StringWriter.WriteLineAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function WriteLineAsync (buffer As Char(), index As Integer, count As Integer) As Task" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Threading::Tasks::Task ^ WriteLineAsync(cli::array &lt;char&gt; ^ buffer, int index, int count);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO</AssemblyName>
@@ -1073,6 +1234,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1097,7 +1262,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=fullName> property.  
+ The line terminator is defined by the <xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType> property.  
   
    
   

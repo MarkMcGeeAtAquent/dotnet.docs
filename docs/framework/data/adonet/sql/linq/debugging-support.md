@@ -1,8 +1,8 @@
 ---
-title: "Debugging Support | Microsoft Docs"
+title: "Debugging Support"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 262d8e60-8e71-42d7-8340-1b5276a0ad35
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Debugging Support
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] provides general debugging support for [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projects.  Also see [Debugging LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.110\)) or [Debugging LINQ](http://msdn.microsoft.com/library/Bb385795\(v=vs.120\)).  

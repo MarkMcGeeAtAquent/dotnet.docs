@@ -1,7 +1,9 @@
-<Type Name="ComponentSerializationService" FullName="System.ComponentModel.Design.Serialization.ComponentSerializationService">
+﻿<Type Name="ComponentSerializationService" FullName="System.ComponentModel.Design.Serialization.ComponentSerializationService">
   <TypeSignature Language="C#" Value="public abstract class ComponentSerializationService" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComponentSerializationService extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ComponentSerializationService" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ComponentSerializationService abstract" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.Object</BaseTypeName>
@@ -32,12 +38,19 @@
     <block subset="none" type="overrides">
       <para>When you inherit from the <see cref="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" /> class, you must override all the methods in this class. Some of these methods were designed to throw exceptions, as documented in their corresponding topics; it is strongly recommended that derived classes follow these guidelines to maintain consistency of operation. For more information, see the <see cref="T:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService" /> class.</para>
     </block>
+    <altmember cref="T:System.ComponentModel.Design.Serialization.DesignerLoader" />
+    <altmember cref="T:System.ComponentModel.Design.DesignSurface" />
+    <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+    <altmember cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+    <altmember cref="T:System.ComponentModel.Design.Serialization.IDesignerLoaderService" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected ComponentSerializationService ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ComponentSerializationService();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -48,16 +61,23 @@
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <Parameters />
       <Docs>
         <summary>Initializes a new instance of the <see cref="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" /> class.</summary>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
       </Docs>
     </Member>
     <Member MemberName="CreateStore">
       <MemberSignature Language="C#" Value="public abstract System.ComponentModel.Design.Serialization.SerializationStore CreateStore ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Serialization.SerializationStore CreateStore() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.CreateStore" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function CreateStore () As SerializationStore" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::ComponentModel::Design::Serialization::SerializationStore ^ CreateStore();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -67,6 +87,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.Design.Serialization.SerializationStore</ReturnType>
@@ -85,12 +109,25 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Deserialize">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Deserializes the given store to produce a collection of objects.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Deserialize">
       <MemberSignature Language="C#" Value="public abstract System.Collections.ICollection Deserialize (System.ComponentModel.Design.Serialization.SerializationStore store);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection Deserialize(class System.ComponentModel.Design.Serialization.SerializationStore store) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize(System.ComponentModel.Design.Serialization.SerializationStore)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Deserialize (store As SerializationStore) As ICollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Collections::ICollection ^ Deserialize(System::ComponentModel::Design::Serialization::SerializationStore ^ store);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -100,6 +137,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ICollection</ReturnType>
@@ -123,12 +164,16 @@
           <paramref name="store" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> does not contain data in a format the serialization container can process.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="Deserialize">
       <MemberSignature Language="C#" Value="public abstract System.Collections.ICollection Deserialize (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection Deserialize(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Deserialize (store As SerializationStore, container As IContainer) As ICollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Collections::ICollection ^ Deserialize(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::ComponentModel::IContainer ^ container);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -138,6 +183,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Collections.ICollection</ReturnType>
@@ -165,12 +214,27 @@
           <paramref name="store" /> or <paramref name="container" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> does not contain data in a format the serialization container can process.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="DeserializeTo">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Deserializes the given <see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" /> to the given container.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="DeserializeTo">
       <MemberSignature Language="C#" Value="public void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DeserializeTo (store As SerializationStore, container As IContainer)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DeserializeTo(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::ComponentModel::IContainer ^ container);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -180,6 +244,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -204,12 +272,16 @@
           <paramref name="store" /> or <paramref name="container" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> does not contain data in a format the serialization container can process.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="DeserializeTo">
       <MemberSignature Language="C#" Value="public void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container, bool validateRecycledTypes);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container, bool validateRecycledTypes) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DeserializeTo (store As SerializationStore, container As IContainer, validateRecycledTypes As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DeserializeTo(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::ComponentModel::IContainer ^ container, bool validateRecycledTypes);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -219,6 +291,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -246,12 +322,16 @@
           <paramref name="store" /> or <paramref name="container" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> does not contain data in a format the serialization container can process.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="DeserializeTo">
       <MemberSignature Language="C#" Value="public abstract void DeserializeTo (System.ComponentModel.Design.Serialization.SerializationStore store, System.ComponentModel.IContainer container, bool validateRecycledTypes, bool applyDefaults);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeserializeTo(class System.ComponentModel.Design.Serialization.SerializationStore store, class System.ComponentModel.IContainer container, bool validateRecycledTypes, bool applyDefaults) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.DeserializeTo(System.ComponentModel.Design.Serialization.SerializationStore,System.ComponentModel.IContainer,System.Boolean,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub DeserializeTo (store As SerializationStore, container As IContainer, validateRecycledTypes As Boolean, applyDefaults As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void DeserializeTo(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::ComponentModel::IContainer ^ container, bool validateRecycledTypes, bool applyDefaults);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -261,6 +341,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -291,12 +375,15 @@
           <paramref name="store" /> or <paramref name="container" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> does not contain data in a format the serialization container can process.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
       </Docs>
     </Member>
     <Member MemberName="LoadStore">
       <MemberSignature Language="C#" Value="public abstract System.ComponentModel.Design.Serialization.SerializationStore LoadStore (System.IO.Stream stream);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.Design.Serialization.SerializationStore LoadStore(class System.IO.Stream stream) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.LoadStore(System.IO.Stream)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::ComponentModel::Design::Serialization::SerializationStore ^ LoadStore(System::IO::Stream ^ stream);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -306,6 +393,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.Design.Serialization.SerializationStore</ReturnType>
@@ -329,12 +420,16 @@
           <paramref name="stream" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="stream" /> does not contain data saved by a previous call to <see cref="M:System.ComponentModel.Design.Serialization.SerializationStore.Save(System.IO.Stream)" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.CreateStore" />
       </Docs>
     </Member>
     <Member MemberName="Serialize">
       <MemberSignature Language="C#" Value="public abstract void Serialize (System.ComponentModel.Design.Serialization.SerializationStore store, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.ComponentModel.Design.Serialization.SerializationStore store, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub Serialize (store As SerializationStore, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void Serialize(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -344,6 +439,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -368,12 +467,18 @@
           <paramref name="store" /> or <paramref name="value" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> is closed, or <paramref name="store" /> is not a supported type of serialization store. Use a store returned by <see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+        <altmember cref="Overload:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize" />
       </Docs>
     </Member>
     <Member MemberName="SerializeAbsolute">
       <MemberSignature Language="C#" Value="public abstract void SerializeAbsolute (System.ComponentModel.Design.Serialization.SerializationStore store, object value);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeAbsolute(class System.ComponentModel.Design.Serialization.SerializationStore store, object value) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub SerializeAbsolute (store As SerializationStore, value As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void SerializeAbsolute(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::Object ^ value);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -383,6 +488,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -411,12 +520,19 @@
           <paramref name="store" /> or <paramref name="value" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> is closed, or <paramref name="store" /> is not a supported type of serialization store. Use a store returned by <see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="T:System.ComponentModel.MemberDescriptor" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
       </Docs>
     </Member>
     <Member MemberName="SerializeMember">
       <MemberSignature Language="C#" Value="public abstract void SerializeMember (System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, System.ComponentModel.MemberDescriptor member);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeMember(class System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub SerializeMember (store As SerializationStore, owningObject As Object, member As MemberDescriptor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void SerializeMember(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::Object ^ owningObject, System::ComponentModel::MemberDescriptor ^ member);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -426,6 +542,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -452,12 +572,18 @@
           <paramref name="store" /> or <paramref name="value" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> is closed, or <paramref name="store" /> is not a supported type of serialization store. Use a store returned by <see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="T:System.ComponentModel.MemberDescriptor" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
       </Docs>
     </Member>
     <Member MemberName="SerializeMemberAbsolute">
       <MemberSignature Language="C#" Value="public abstract void SerializeMemberAbsolute (System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, System.ComponentModel.MemberDescriptor member);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SerializeMemberAbsolute(class System.ComponentModel.Design.Serialization.SerializationStore store, object owningObject, class System.ComponentModel.MemberDescriptor member) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMemberAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub SerializeMemberAbsolute (store As SerializationStore, owningObject As Object, member As MemberDescriptor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void SerializeMemberAbsolute(System::ComponentModel::Design::Serialization::SerializationStore ^ store, System::Object ^ owningObject, System::ComponentModel::MemberDescriptor ^ member);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -467,6 +593,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -495,6 +625,12 @@
           <paramref name="store" /> or <paramref name="value" /> is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">
           <paramref name="store" /> is closed, or <paramref name="store" /> is not a supported type of serialization store. Use a store returned by <see cref="M:System.ComponentModel.Design.Serialization.CodeDomComponentSerializationService.CreateStore" />.</exception>
+        <altmember cref="T:System.ComponentModel.Design.Serialization.SerializationStore" />
+        <altmember cref="T:System.ComponentModel.MemberDescriptor" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.Serialize(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeMember(System.ComponentModel.Design.Serialization.SerializationStore,System.Object,System.ComponentModel.MemberDescriptor)" />
+        <altmember cref="M:System.ComponentModel.Design.Serialization.ComponentSerializationService.SerializeAbsolute(System.ComponentModel.Design.Serialization.SerializationStore,System.Object)" />
+        <altmember cref="Overload:System.ComponentModel.Design.Serialization.ComponentSerializationService.Deserialize" />
       </Docs>
     </Member>
   </Members>

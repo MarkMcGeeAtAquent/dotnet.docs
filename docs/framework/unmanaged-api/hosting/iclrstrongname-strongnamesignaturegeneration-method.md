@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameSignatureGeneration Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameSignatureGeneration Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameSignatureGeneration"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameSignatureGeneration"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameSignatureGeneration method, ICLRStrongName interface [.NET Framework hosting]"
   - "ICLRStrongName::StrongNameSignatureGeneration method [.NET Framework hosting]"
 ms.assetid: 4cdb1284-947a-4ed4-94c1-c5ff5cdfce56
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameSignatureGeneration Method
 Generates a strong name signature for the specified assembly.  
@@ -33,7 +36,7 @@ Generates a strong name signature for the specified assembly.
 ## Syntax  
   
 ```  
-HRESULT StrongNameSignatureGeneration (   
+HRESULT StrongNameSignatureGeneration (   
     [in]  LPCWSTR   wszFilePath,  
     [in]  LPCWSTR   wszKeyContainer,  
     [in]  BYTE      *pbKeyBlob,  
@@ -88,5 +91,5 @@ HRESULT StrongNameSignatureGeneration ( 
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [StrongNameSignatureGenerationEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)   
+ [StrongNameSignatureGenerationEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

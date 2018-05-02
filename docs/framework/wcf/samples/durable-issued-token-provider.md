@@ -1,8 +1,8 @@
 ---
-title: "Durable Issued Token Provider | Microsoft Docs"
+title: "Durable Issued Token Provider"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
 caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Durable Issued Token Provider
 This sample demonstrates how to implement a custom client issued token provider.  
@@ -44,24 +46,71 @@ This sample demonstrates how to implement a custom client issued token provider.
   
  This sample exposes the ICalculator contract using the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). The configuration of this binding on the client is shown in the following code.  
   
-```  
-<bindings>  <wsFederationHttpBinding>    <binding name="ServiceFed" >      <security mode ="Message">        <message issuedKeyType ="SymmetricKey" issuedTokenType ="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1" >          <issuer address ="http://localhost:8000/sts/windows" binding ="wsHttpBinding" />        </message>      </security>    </binding>  </wsFederationHttpBinding></bindings>  
+```xml  
+<bindings>
+  <wsFederationHttpBinding>
+    <binding name="ServiceFed">
+      <security mode="Message">
+        <message issuedKeyType="SymmetricKey" 
+                 issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">
+          <issuer address="http://localhost:8000/sts/windows" 
+                  binding="wsHttpBinding" />
+        </message>
+      </security>
+    </binding>
+  </wsFederationHttpBinding>
+</bindings>  
 ```  
   
  On the `security` element of `wsFederationHttpBinding`, the `mode` value configures which security mode should be used. In this sample, messages security is being used, which is why the `message` element of `wsFederationHttpBinding` is specified inside the `security` element of `wsFederationHttpBinding`. The `issuer` element of `wsFederationHttpBinding` inside the `message` element of `wsFederationHttpBinding` specifies the address and binding for the Security Token Service that issues a security token to the client so that the client can authenticate to the Calculator service.  
   
  The configuration of this binding on the service is shown in the following code.  
   
-```  
-<bindings>  <wsFederationHttpBinding>    <binding name="ServiceFed" >      <security mode ="Message">        <message issuedKeyType ="SymmetricKey" issuedTokenType ="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1" >          <issuerMetadata address ="http://localhost:8000/sts/mex" >            <identity>              <certificateReference storeLocation ="CurrentUser"                                     storeName="TrustedPeople"                                     x509FindType ="FindBySubjectDistinguishedName"                                     findValue ="CN=STS" />            </identity>          </issuerMetadata>        </message>      </security>    </binding>  </wsFederationHttpBinding></bindings>  
+```xml  
+<bindings>
+  <wsFederationHttpBinding>
+    <binding name="ServiceFed">
+      <security mode="Message">
+        <message issuedKeyType="SymmetricKey" 
+                 issuedTokenType="http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1">
+          <issuerMetadata address="http://localhost:8000/sts/mex">
+            <identity>
+              <certificateReference storeLocation="CurrentUser" 
+                                    storeName="TrustedPeople" 
+                                    x509FindType="FindBySubjectDistinguishedName" 
+                                    findValue="CN=STS" />
+            </identity>
+          </issuerMetadata>
+        </message>
+      </security>
+    </binding>
+  </wsFederationHttpBinding>
+</bindings>  
 ```  
   
  On the `security` element of `wsFederationHttpBinding`, the `mode` value configures which security mode should be used. In this sample, messages security is being used, which is why the `message` element of `wsFederationHttpBinding` is specified inside the `security` element of `wsFederationHttpBinding`. The `issuerMetadata` element of `wsFederationHttpBinding` inside the `message` element of `wsFederationHttpBinding` specifies the address and identity for an endpoint that can be used to retrieve metadata for the Security Token Service.  
   
  The behavior for the service is shown in the following code.  
   
-```  
-<behavior name ="ServiceBehavior" >  <serviceDebug includeExceptionDetailInFaults ="true"/>  <serviceMetadata httpGetEnabled ="true"/>  <serviceCredentials>    <issuedTokenAuthentication>      <knownCertificates>        <add storeLocation ="LocalMachine"             storeName="TrustedPeople"             x509FindType="FindBySubjectDistinguishedName"             findValue="CN=STS" />      </knownCertificates>    </issuedTokenAuthentication>    <serviceCertificate storeLocation ="LocalMachine"                        storeName ="My"                        x509FindType ="FindBySubjectDistinguishedName"                        findValue ="CN=localhost"/>  </serviceCredentials></behavior>  
+```xml  
+<behavior name="ServiceBehavior">
+  <serviceDebug includeExceptionDetailInFaults="true" />
+  <serviceMetadata httpGetEnabled="true" />
+  <serviceCredentials>
+    <issuedTokenAuthentication>
+      <knownCertificates>
+        <add storeLocation="LocalMachine" 
+              storeName="TrustedPeople" 
+              x509FindType="FindBySubjectDistinguishedName" 
+              findValue="CN=STS" />
+      </knownCertificates>
+    </issuedTokenAuthentication>
+    <serviceCertificate storeLocation="LocalMachine" 
+                        storeName="My" 
+                        x509FindType="FindBySubjectDistinguishedName" 
+                        findValue="CN=localhost" />
+  </serviceCredentials>
+</behavior>  
 ```  
   
  The `issuedTokenAuthentication` element inside the `serviceCredentials` element allows the service to specify constraints on the tokens it allows clients to present during authentication. This configuration specifies that tokens signed by a certificate whose Subject Name is CN=STS are accepted by the service.  

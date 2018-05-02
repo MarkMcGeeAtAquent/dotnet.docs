@@ -1,7 +1,9 @@
-<Type Name="MetadataResolver" FullName="System.ServiceModel.Description.MetadataResolver">
+﻿<Type Name="MetadataResolver" FullName="System.ServiceModel.Description.MetadataResolver">
   <TypeSignature Language="C#" Value="public static class MetadataResolver" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MetadataResolver extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MetadataResolver" />
+  <TypeSignature Language="VB.NET" Value="Public Class MetadataResolver" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MetadataResolver abstract sealed" />
   <AssemblyInfo>
     <AssemblyName>System.ServiceModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,7 +18,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.ServiceModel.Description.MetadataResolver> class to quickly import endpoints for a service from metadata. This class downloads and converts metadata into <xref:System.ServiceModel.Description.ServiceEndpoint> objects. To download metadata and process that information as a <xref:System.ServiceModel.Description.MetadataSet?displayProperty=fullName>, see <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName>.  
+ Use the <xref:System.ServiceModel.Description.MetadataResolver> class to quickly import endpoints for a service from metadata. This class downloads and converts metadata into <xref:System.ServiceModel.Description.ServiceEndpoint> objects. To download metadata and process that information as a <xref:System.ServiceModel.Description.MetadataSet?displayProperty=nameWithType>, see <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType>.  
   
    
   
@@ -33,10 +35,29 @@
     </remarks>
   </Docs>
   <Members>
+    <MemberGroup MemberName="BeginResolve">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Begins an asynchronous call that resolves a metadata address into a collection of <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> objects for that service.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ These methods begin asynchronous versions of the <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> methods.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="BeginResolve">
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contracts As IEnumerable(Of ContractDescription), address As EndpointAddress, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, System::ServiceModel::EndpointAddress ^ address, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -62,9 +83,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -80,6 +101,8 @@
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (Type contract, System.ServiceModel.EndpointAddress address, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Type contract, class System.ServiceModel.EndpointAddress address, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Type,System.ServiceModel.EndpointAddress,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contract As Type, address As EndpointAddress, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(Type ^ contract, System::ServiceModel::EndpointAddress ^ address, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -105,9 +128,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -125,6 +148,8 @@
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, System.ServiceModel.Description.MetadataExchangeClient client, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.ServiceModel.Description.MetadataExchangeClient client, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.ServiceModel.Description.MetadataExchangeClient,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contracts As IEnumerable(Of ContractDescription), address As EndpointAddress, client As MetadataExchangeClient, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, System::ServiceModel::EndpointAddress ^ address, System::ServiceModel::Description::MetadataExchangeClient ^ client, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -152,9 +177,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -170,6 +195,8 @@
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contracts As IEnumerable(Of ContractDescription), address As Uri, mode As MetadataExchangeClientMode, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -197,9 +224,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -215,6 +242,8 @@
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (Type contract, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Type contract, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Type,System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contract As Type, address As Uri, mode As MetadataExchangeClientMode, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(Type ^ contract, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -242,9 +271,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -258,6 +287,8 @@
       <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, System.ServiceModel.Description.MetadataExchangeClient client, AsyncCallback callback, object asyncState);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.ServiceModel.Description.MetadataExchangeClient client, class System.AsyncCallback callback, object asyncState) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.BeginResolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.ServiceModel.Description.MetadataExchangeClient,System.AsyncCallback,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function BeginResolve (contracts As IEnumerable(Of ContractDescription), address As Uri, mode As MetadataExchangeClientMode, client As MetadataExchangeClient, callback As AsyncCallback, asyncState As Object) As IAsyncResult" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static IAsyncResult ^ BeginResolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode, System::ServiceModel::Description::MetadataExchangeClient ^ client, AsyncCallback ^ callback, System::Object ^ asyncState);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -287,7 +318,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -303,6 +334,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection EndResolve (IAsyncResult result);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection EndResolve(class System.IAsyncResult result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.EndResolve(System.IAsyncResult)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function EndResolve (result As IAsyncResult) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ EndResolve(IAsyncResult ^ result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -328,10 +361,31 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Resolve">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Downloads and resolves a metadata address into the <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> objects for that service.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
+  
+ For all synchronous and asynchronous `Resolve` methods, an empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Resolve">
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contracts As IEnumerable(Of ContractDescription), address As EndpointAddress) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, System::ServiceModel::EndpointAddress ^ address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -353,9 +407,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -371,6 +425,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (Type contract, System.ServiceModel.EndpointAddress address);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Type contract, class System.ServiceModel.EndpointAddress address) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Type,System.ServiceModel.EndpointAddress)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contract As Type, address As EndpointAddress) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(Type ^ contract, System::ServiceModel::EndpointAddress ^ address);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -394,9 +450,9 @@
 ## Remarks  
  Use the <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> method to specify the contract and the metadata address to use when downloading and resolving metadata.  
   
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata and the default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -421,6 +477,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, System.ServiceModel.EndpointAddress address, System.ServiceModel.Description.MetadataExchangeClient client);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.ServiceModel.EndpointAddress address, class System.ServiceModel.Description.MetadataExchangeClient client) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.ServiceModel.EndpointAddress,System.ServiceModel.Description.MetadataExchangeClient)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contracts As IEnumerable(Of ContractDescription), address As EndpointAddress, client As MetadataExchangeClient) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, System::ServiceModel::EndpointAddress ^ address, System::ServiceModel::Description::MetadataExchangeClient ^ client);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -444,9 +502,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=fullName>.  
+ The default <xref:System.ServiceModel.Description.MetadataExchangeClientMode?displayProperty=nameWithType> is <xref:System.ServiceModel.Description.MetadataExchangeClientMode.MetadataExchange?displayProperty=nameWithType>.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -462,6 +520,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contracts As IEnumerable(Of ContractDescription), address As Uri, mode As MetadataExchangeClientMode) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -485,9 +545,9 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -503,6 +563,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (Type contract, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Type contract, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Type,System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contract As Type, address As Uri, mode As MetadataExchangeClientMode) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(Type ^ contract, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -528,9 +590,9 @@
 ## Remarks  
  Use the <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> method to specify a contract, and address, and the download mechanism to use.  
   
- The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> are used to retrieve the metadata.  
+ The default settings on the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> are used to retrieve the metadata.  
   
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -551,6 +613,8 @@
       <MemberSignature Language="C#" Value="public static System.ServiceModel.Description.ServiceEndpointCollection Resolve (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ContractDescription&gt; contracts, Uri address, System.ServiceModel.Description.MetadataExchangeClientMode mode, System.ServiceModel.Description.MetadataExchangeClient client);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Description.ServiceEndpointCollection Resolve(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ContractDescription&gt; contracts, class System.Uri address, valuetype System.ServiceModel.Description.MetadataExchangeClientMode mode, class System.ServiceModel.Description.MetadataExchangeClient client) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MetadataResolver.Resolve(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ContractDescription},System.Uri,System.ServiceModel.Description.MetadataExchangeClientMode,System.ServiceModel.Description.MetadataExchangeClient)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Resolve (contracts As IEnumerable(Of ContractDescription), address As Uri, mode As MetadataExchangeClientMode, client As MetadataExchangeClient) As ServiceEndpointCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::ServiceModel::Description::ServiceEndpointCollection ^ Resolve(System::Collections::Generic::IEnumerable&lt;System::ServiceModel::Description::ContractDescription ^&gt; ^ contracts, Uri ^ address, System::ServiceModel::Description::MetadataExchangeClientMode mode, System::ServiceModel::Description::MetadataExchangeClient ^ client);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ServiceModel</AssemblyName>
@@ -576,7 +640,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
+ To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=nameWithType> directly.  
   
 > [!NOTE]
 >  An empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
@@ -588,41 +652,5 @@
           <paramref name="contracts" /> is empty, at least one member of <paramref name="contracts" /> is null, or <paramref name="contracts" /> contains more than one contract with the same name and namespace.</exception>
       </Docs>
     </Member>
-    <MemberGroup MemberName="BeginResolve">
-      <AssemblyInfo>
-        <AssemblyName>System.ServiceModel</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Begins an asynchronous call that resolves a metadata address into a collection of <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> objects for that service.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- These methods begin asynchronous versions of the <xref:System.ServiceModel.Description.MetadataResolver.Resolve%2A> methods.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Resolve">
-      <AssemblyInfo>
-        <AssemblyName>System.ServiceModel</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Downloads and resolves a metadata address into the <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> objects for that service.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- To download metadata but not resolve the information into <xref:System.ServiceModel.Description.ServiceEndpoint> objects, use the <xref:System.ServiceModel.Description.MetadataExchangeClient?displayProperty=fullName> directly.  
-  
- For all synchronous and asynchronous `Resolve` methods, an empty collection is returned if no endpoints were imported or if no endpoints matched the contract. If an empty collection is returned, a warning trace is written.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

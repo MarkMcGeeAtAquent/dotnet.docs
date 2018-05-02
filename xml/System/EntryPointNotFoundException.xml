@@ -1,7 +1,9 @@
-<Type Name="EntryPointNotFoundException" FullName="System.EntryPointNotFoundException">
+﻿<Type Name="EntryPointNotFoundException" FullName="System.EntryPointNotFoundException">
   <TypeSignature Language="C#" Value="public class EntryPointNotFoundException : TypeLoadException" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit EntryPointNotFoundException extends System.TypeLoadException" />
   <TypeSignature Language="DocId" Value="T:System.EntryPointNotFoundException" />
+  <TypeSignature Language="VB.NET" Value="Public Class EntryPointNotFoundException&#xA;Inherits TypeLoadException" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EntryPointNotFoundException : TypeLoadException" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
     <BaseTypeName>System.TypeLoadException</BaseTypeName>
@@ -35,7 +41,7 @@
      [!code-csharp[System.EntryPointNotFoundException.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.entrypointnotfoundexception.class/cs/nofunction1.cs#1)]
      [!code-vb[System.EntryPointNotFoundException.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.entrypointnotfoundexception.class/vb/nofunction1.vb#1)]  
   
--   The call to a function in a Windows DLL cannot be resolved because the name used in the method call does not match a name found in the assembly. Frequently, this occurs because the <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=fullName> field is either implicitly or explicitly set to `true`, the called method includes one or more string parameters and has both an ANSI and a Unicode version, and the name used in the method call does not correspond to the name of this ANSI or Unicode version. The following example provides an illustration by attempting to call the Windows `MessageBox` function in User32.dll. Because the first method definition specifies <xref:System.Runtime.InteropServices.CharSet?displayProperty=fullName> for string marshaling, the common language looks for the wide-character version of the function, `MessageBoxW`, instead of the name used in the method call, `MessageBox`.  The second method definition corrects this problem by calling the `MessageBoxW` instead of the `MessageBox` function.  
+-   The call to a function in a Windows DLL cannot be resolved because the name used in the method call does not match a name found in the assembly. Frequently, this occurs because the <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> field is either implicitly or explicitly set to `true`, the called method includes one or more string parameters and has both an ANSI and a Unicode version, and the name used in the method call does not correspond to the name of this ANSI or Unicode version. The following example provides an illustration by attempting to call the Windows `MessageBox` function in User32.dll. Because the first method definition specifies <xref:System.Runtime.InteropServices.CharSet.Unicode?displayProperty=nameWithType> for string marshaling, the common language looks for the wide-character version of the function, `MessageBoxW`, instead of the name used in the method call, `MessageBox`.  The second method definition corrects this problem by calling the `MessageBoxW` instead of the `MessageBox` function.  
   
      [!code-csharp[System.EntryPointNotFoundException.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.entrypointnotfoundexception.class/cs/badcall1.cs#2)]
      [!code-vb[System.EntryPointNotFoundException.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.entrypointnotfoundexception.class/vb/badcall1.vb#2)]  
@@ -77,12 +83,25 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Exception" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.EntryPointNotFoundException" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EntryPointNotFoundException ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.EntryPointNotFoundException.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntryPointNotFoundException();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -92,6 +111,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
       <Docs>
@@ -117,6 +140,8 @@
       <MemberSignature Language="C#" Value="public EntryPointNotFoundException (string message);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.EntryPointNotFoundException.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntryPointNotFoundException(System::String ^ message);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -126,6 +151,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -154,6 +183,8 @@
       <MemberSignature Language="C#" Value="protected EntryPointNotFoundException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.EntryPointNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New (info As SerializationInfo, context As StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; EntryPointNotFoundException(System::Runtime::Serialization::SerializationInfo ^ info, System::Runtime::Serialization::StreamingContext context);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -163,6 +194,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -186,6 +221,8 @@
       <MemberSignature Language="C#" Value="public EntryPointNotFoundException (string message, Exception inner);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.EntryPointNotFoundException.#ctor(System.String,System.Exception)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (message As String, inner As Exception)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EntryPointNotFoundException(System::String ^ message, Exception ^ inner);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -195,6 +232,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="message" Type="System.String" />
@@ -219,6 +260,7 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Exception" />
       </Docs>
     </Member>
   </Members>

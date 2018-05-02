@@ -1,17 +1,19 @@
 ---
-title: "Absolute Delay | Microsoft Docs"
+title: "Absolute Delay"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: b483139a-39bb-4560-8003-8969a8fc2cd1
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Absolute Delay
 The main scenario for this sample is to delay until a specified <xref:System.DateTime> using durable timers in a workflow application. This is different from using the built-in <xref:System.Activities.Statements.Delay> activity as this will only allow you to delay for a given <xref:System.TimeSpan> (or number of minutes/seconds).  
@@ -36,14 +38,14 @@ The main scenario for this sample is to delay until a specified <xref:System.Dat
   
 6.  XAML-only workflow  
   
- This sample demonstrates how to create a custom activity which takes in a <xref:System.DateTime> and uses durable timers to register the delay duration. When using durable timers, you must use a <xref:System.Activities.NativeActivity> to create a bookmark, as you will need to register this bookmark with the timer extension. In this sample, when the durable timer expires, the `OnTimerExpired` method will be called. Make sure that you are adding the timer extension in the <xref:System.Activities.NativeActivity%601.CacheMetadata%2A> event to ensure you are providing the runtime with this information. The only other implementation detail is that you will need to implement logic to convert from <xref:System.DateTime> to <xref:Sysem.TimeSpan>, as durable timers only take in a <xref:System.DateTime>. Do note that there is a small lapse in accuracy by doing  
+ This sample demonstrates how to create a custom activity which takes in a <xref:System.DateTime> and uses durable timers to register the delay duration. When using durable timers, you must use a <xref:System.Activities.NativeActivity> to create a bookmark, as you will need to register this bookmark with the timer extension. In this sample, when the durable timer expires, the `OnTimerExpired` method will be called. Make sure that you are adding the timer extension in the <xref:System.Activities.NativeActivity%601.CacheMetadata%2A> event to ensure you are providing the runtime with this information. The only other implementation detail is that you will need to implement logic to convert from <xref:System.DateTime> to <xref:System.TimeSpan>, as durable timers only take in a <xref:System.DateTime>. Do note that there is a small lapse in accuracy by doing  
   
 > [!NOTE]
->  There is a small loss of accuracy by converting from <xref:System.DateTime> to <xref:Sysem.TimeSpan>.  
+>  There is a small loss of accuracy by converting from <xref:System.DateTime> to <xref:System.TimeSpan>.  
   
  This sample also demonstrates how to turn on persistence for a <xref:System.Activities.WorkflowApplication>. For this particular sample, we will be using durable timers in which the workflow data will be unloaded into the persistence database during the idle time while waiting for timer to expire. This implementation can also be used for other persistence actions. This sample shows how to set up the persistence connection string with SQL Server, and how to create the instance store in order to persist the data for workflow instances. Logic is provided on how to resume the workflow once an event is raised which makes the workflow instance runnable.  
   
- As you step through this sample, you will see the time in which the built-in delay begins and completes, which in turn will cause an e-mail message to be sent. From there, the AbsoluteDelay activity will halt until a specified <xref:System.DateTime> (or 0 seconds if the <xref:System.DateTime> has expired) which in turn will send out an email upon expiration. This will show the two different use cases of the built-in <xref:System.Activities.Statements.Delay> functionality versus using an AbsoluteDelay activity.  
+ As you step through this sample, you will see the time in which the built-in delay begins and completes, which in turn will cause an email message to be sent. From there, the AbsoluteDelay activity will halt until a specified <xref:System.DateTime> (or 0 seconds if the <xref:System.DateTime> has expired) which in turn will send out an email upon expiration. This will show the two different use cases of the built-in <xref:System.Activities.Statements.Delay> functionality versus using an AbsoluteDelay activity.  
   
 #### To set up, build, and run the sample  
   

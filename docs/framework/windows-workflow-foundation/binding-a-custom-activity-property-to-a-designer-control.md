@@ -1,5 +1,5 @@
 ---
-title: "Binding a custom activity property to a designer control | Microsoft Docs"
+title: "Binding a custom activity property to a designer control"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2e8061ea-10f5-407c-a31f-d0d74ce12f27
 caps.latest.revision: 5
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Binding a custom activity property to a designer control
 Binding a text box designer control to an activity argument is fairly straightforward; binding a complex designer control (such as a combo box) to an activity argument may present challenges, however. This topic discusses how to bind an activity argument to a combo box control on a custom activity designer.  
@@ -47,7 +49,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
         }  
     }  
     return null;  
-  
     ```  
   
      The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
@@ -75,7 +76,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
         }  
     }  
     return null;  
-  
     ```  
   
 4.  Add the following code to the `ConvertBack` method. This code converts the incoming combo box item back to an <xref:System.Activities.InArgument%601>.  
@@ -86,7 +86,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
                 VisualBasicValue<string> vbArgument = new VisualBasicValue<string>(itemContent);  
                 InArgument<string> inArgument = new InArgument<string>(vbArgument);  
                 return inArgument;  
-  
     ```  
   
      The expression in the above code snippet can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>.  
@@ -97,7 +96,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
                 CSharpValue<string> csArgument = new CSharpValue<string>(itemContent);  
                 InArgument<string> inArgument = new InArgument<string>(csArgument);  
                 return inArgument;  
-  
     ```  
   
 #### Adding the ComboBoxItemConverter to the custom designer of an activity  
@@ -128,7 +126,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
             </ComboBox>  
         </Grid>  
     </sap:ActivityDesigner>  
-  
     ```  
   
 4.  Create a new item of type <xref:System.Activities.CodeActivity>. The default code created by the IDE for the activity will be sufficient for this example.  
@@ -137,7 +134,6 @@ Binding a text box designer control to an activity argument is fairly straightfo
   
     ```  
     [Designer(typeof(CustomPropertyDesigner))]  
-  
     ```  
   
      This line associates the new designer with the new class.  

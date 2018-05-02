@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit2::GetDeltaSaveSize Method | Microsoft Docs"
+title: "IMetaDataEmit2::GetDeltaSaveSize Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit2.GetDeltaSaveSize"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit2::GetDeltaSaveSize"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit2::GetDeltaSaveSize method [.NET Framework metadata]"
   - "GetDeltaSaveSize method [.NET Framework metadata]"
 ms.assetid: 036db5e7-8211-4645-9a34-03d1a89be955
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit2::GetDeltaSaveSize Method
 Gets a value indicating any change in metadata size that results from the current edit-and-continue session.  
@@ -56,5 +59,5 @@ HRESULT GetDeltaSaveSize (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)   
+ [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

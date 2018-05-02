@@ -1,7 +1,9 @@
-<Type Name="SecureEnvironment" FullName="System.Security.RightsManagement.SecureEnvironment">
+﻿<Type Name="SecureEnvironment" FullName="System.Security.RightsManagement.SecureEnvironment">
   <TypeSignature Language="C#" Value="public class SecureEnvironment : IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecureEnvironment extends System.Object implements class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Security.RightsManagement.SecureEnvironment" />
+  <TypeSignature Language="VB.NET" Value="Public Class SecureEnvironment&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class SecureEnvironment : IDisposable" />
   <AssemblyInfo>
     <AssemblyName>WindowsBase</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -43,6 +45,8 @@
       <MemberSignature Language="C#" Value="public string ApplicationManifest { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationManifest" />
       <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.SecureEnvironment.ApplicationManifest" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ApplicationManifest As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ApplicationManifest { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -65,12 +69,35 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="Overload:System.Security.RightsManagement.SecureEnvironment.Create" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Create">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a secure client session for rights management operations.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ The following example shows how to use this method to create a secure environment.  
+  
+ [!code-csharp[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubsecenv)]
+ [!code-vb[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubsecenv)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Security.RightsManagement.SecureEnvironment Create (string applicationManifest, System.Security.RightsManagement.ContentUser user);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.RightsManagement.SecureEnvironment Create(string applicationManifest, class System.Security.RightsManagement.ContentUser user) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.Create(System.String,System.Security.RightsManagement.ContentUser)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Create (applicationManifest As String, user As ContentUser) As SecureEnvironment" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Security::RightsManagement::SecureEnvironment ^ Create(System::String ^ applicationManifest, System::Security::RightsManagement::ContentUser ^ user);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -104,12 +131,14 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Security.RightsManagement.UserActivationMode" />
       </Docs>
     </Member>
     <Member MemberName="Create">
       <MemberSignature Language="C#" Value="public static System.Security.RightsManagement.SecureEnvironment Create (string applicationManifest, System.Security.RightsManagement.AuthenticationType authentication, System.Security.RightsManagement.UserActivationMode userActivationMode);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.RightsManagement.SecureEnvironment Create(string applicationManifest, valuetype System.Security.RightsManagement.AuthenticationType authentication, valuetype System.Security.RightsManagement.UserActivationMode userActivationMode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.Create(System.String,System.Security.RightsManagement.AuthenticationType,System.Security.RightsManagement.UserActivationMode)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Security::RightsManagement::SecureEnvironment ^ Create(System::String ^ applicationManifest, System::Security::RightsManagement::AuthenticationType authentication, System::Security::RightsManagement::UserActivationMode userActivationMode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -151,11 +180,25 @@
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Releases the resources used by the <see cref="T:System.Security.RightsManagement.SecureEnvironment" />.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Dispose">
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -183,6 +226,8 @@
       <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -212,7 +257,7 @@
           <para>
             <see langword="Dispose" /> can be called multiple times by other objects. When overriding <see langword="Dispose(Boolean)" />, be careful not to reference objects that have been previously disposed of in an earlier call to <see langword="Dispose" />. For more information about how to implement <see langword="Dispose(Boolean)" />, see [Implementing a Dispose Method](~/docs/standard/garbage-collection/implementing-dispose.md).  
   
- For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
+ For more information about <see langword="Dispose" /> and <see cref="M:System.Object.Finalize" />, see [Cleaning Up Unmanaged Resources](~/docs/standard/garbage-collection/unmanaged.md) and [Overriding the Finalize Method](http://msdn.microsoft.com/library/8026cb68-fe93-43fc-96c1-c09ad7d64cd3).</para>
         </block>
       </Docs>
     </Member>
@@ -220,6 +265,8 @@
       <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.RightsManagement.ContentUser&gt; GetActivatedUsers ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.RightsManagement.ContentUser&gt; GetActivatedUsers() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.GetActivatedUsers" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetActivatedUsers () As ReadOnlyCollection(Of ContentUser)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Security::RightsManagement::ContentUser ^&gt; ^ GetActivatedUsers();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -239,6 +286,8 @@
       <MemberSignature Language="C#" Value="public static bool IsUserActivated (System.Security.RightsManagement.ContentUser user);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsUserActivated(class System.Security.RightsManagement.ContentUser user) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.IsUserActivated(System.Security.RightsManagement.ContentUser)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsUserActivated (user As ContentUser) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsUserActivated(System::Security::RightsManagement::ContentUser ^ user);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -272,6 +321,8 @@
       <MemberSignature Language="C#" Value="public static void RemoveActivatedUser (System.Security.RightsManagement.ContentUser user);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveActivatedUser(class System.Security.RightsManagement.ContentUser user) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.RightsManagement.SecureEnvironment.RemoveActivatedUser(System.Security.RightsManagement.ContentUser)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RemoveActivatedUser (user As ContentUser)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RemoveActivatedUser(System::Security::RightsManagement::ContentUser ^ user);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -302,6 +353,8 @@
       <MemberSignature Language="C#" Value="public System.Security.RightsManagement.ContentUser User { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Security.RightsManagement.ContentUser User" />
       <MemberSignature Language="DocId" Value="P:System.Security.RightsManagement.SecureEnvironment.User" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property User As ContentUser" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Security::RightsManagement::ContentUser ^ User { System::Security::RightsManagement::ContentUser ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>WindowsBase</AssemblyName>
@@ -324,27 +377,10 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="M:System.Security.RightsManagement.SecureEnvironment.IsUserActivated(System.Security.RightsManagement.ContentUser)" />
+        <altmember cref="M:System.Security.RightsManagement.SecureEnvironment.RemoveActivatedUser(System.Security.RightsManagement.ContentUser)" />
+        <altmember cref="M:System.Security.RightsManagement.SecureEnvironment.GetActivatedUsers" />
       </Docs>
     </Member>
-    <MemberGroup MemberName="Create">
-      <AssemblyInfo>
-        <AssemblyName>WindowsBase</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Creates a secure client session for rights management operations.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Examples  
- The following example shows how to use this method to create a secure environment.  
-  
- [!code-csharp[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/csharp/VS_Snippets_Wpf/RightsManagedPackagePublish/CSharp/Window1.xaml.cs#rmpkgpubsecenv)]
- [!code-vb[RightsManagedPackagePublish#RmPkgPubSecEnv](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RightsManagedPackagePublish/visualbasic/window1.xaml.vb#rmpkgpubsecenv)]  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

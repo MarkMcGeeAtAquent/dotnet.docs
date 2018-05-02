@@ -1,8 +1,8 @@
 ---
-title: "How to: Set the Image Displayed by a Windows Forms Control | Microsoft Docs"
+title: "How to: Set the Image Displayed by a Windows Forms Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,9 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "Button control [Windows Forms], images"
   - "Windows Forms controls, images"
@@ -22,6 +24,8 @@ caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Set the Image Displayed by a Windows Forms Control
 Several Windows Forms controls can display images. These images can be icons that clarify the purpose of the control, such as a diskette icon on a button denoting the **Save** command. Alternatively, the icons can be background images to give the control the appearance and behavior you want.  
@@ -39,7 +43,6 @@ Several Windows Forms controls can display images. These images can be icons tha
        (System.Environment.GetFolderPath _  
        (System.Environment.SpecialFolder.MyPictures) _  
        & "\Image.gif")  
-  
     ```  
   
     ```csharp  
@@ -50,7 +53,6 @@ Several Windows Forms controls can display images. These images can be icons tha
        (System.Environment.GetFolderPath  
        (System.Environment.SpecialFolder.MyPictures)  
        + @"\Image.gif");  
-  
     ```  
   
     ```cpp  
@@ -63,6 +65,6 @@ Several Windows Forms controls can display images. These images can be icons tha
     ```  
   
 ## See Also  
- <xref:System.Drawing.Image.FromFile%2A>   
- <xref:System.Drawing.Image>   
+ <xref:System.Drawing.Image.FromFile%2A>  
+ <xref:System.Drawing.Image>  
  <xref:System.Windows.Forms.Control.BackgroundImage%2A>

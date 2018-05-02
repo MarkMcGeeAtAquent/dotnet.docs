@@ -1,8 +1,8 @@
 ---
-title: "Message Queuing to Windows Communication Foundation | Microsoft Docs"
+title: "Message Queuing to Windows Communication Foundation"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
 caps.latest.revision: 34
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Message Queuing to Windows Communication Foundation
 This sample demonstrates how a Message Queuing (MSMQ) application can send an MSMQ message to a [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] service. The service is a self-hosted console application to enable you to observe the service receiving queued messages.  
@@ -33,7 +35,6 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true, Action = "*")]  
     void SubmitPurchaseOrder(MsmqMessage<PurchaseOrder> msg);  
 }  
-  
 ```  
   
  The service is self hosted. When using MSMQ, the queue used must be created in advance. This can be done manually or through code. In this sample, the service checks for the existence of the queue and creates it if required. The queue name is read from the configuration file.  
@@ -49,7 +50,6 @@ public static void Main()
         MessageQueue.Create(queueName, true);  
     …  
 }  
-  
 ```  
   
  The service creates and opens a <xref:System.ServiceModel.ServiceHost> for the `OrderProcessorService`, as shown in the following sample code.  
@@ -63,7 +63,6 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
     Console.ReadLine();  
     serviceHost.Close();  
 }  
-  
 ```  
   
  The MSMQ queue name is specified in an appSettings section of the configuration file, as shown in the following sample configuration.  
@@ -71,11 +70,10 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderProcessorService)))
 > [!NOTE]
 >  The queue name uses a dot (.) for the local computer and backslash separators in its path. The [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] endpoint address specifies a msmq.formatname scheme, and uses localhost for the local computer. The address of the queue for each MSMQ Format Name addressing guidelines follows the msmq.formatname scheme.  
   
-```  
+```xml  
 <appSettings>  
     <add key="orderQueueName" value=".\private$\Orders" />  
 </appSettings>  
-  
 ```  
   
  The client application is an MSMQ application that uses the <xref:System.Messaging.MessageQueue.Send%2A> method to send a durable and transactional message to the queue, as shown in the following sample code.  
@@ -118,7 +116,6 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Requ
 Console.WriteLine("Placed the order:{0}", po);  
 Console.WriteLine("Press <ENTER> to terminate client.");  
 Console.ReadLine();  
-  
 ```  
   
  When you run the sample, the client and service activities are displayed in both the service and client console windows. You can see the service receive messages from the client. Press ENTER in each console window to shut down the service and client. Note that because queuing is in use, the client and service do not have to be up and running at the same time. For example, you could run the client, shut it down, and then start up the service and it would still receive its messages.  
@@ -165,6 +162,6 @@ Console.ReadLine();
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MsmqToWcf`  
   
 ## See Also  
- [Queues in WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)   
- [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)   
+ [Queues in WCF](../../../../docs/framework/wcf/feature-details/queues-in-wcf.md)  
+ [How to: Exchange Messages with WCF Endpoints and Message Queuing Applications](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
  [Message Queuing](http://go.microsoft.com/fwlink/?LinkId=94968)

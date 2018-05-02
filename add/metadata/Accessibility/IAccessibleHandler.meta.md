@@ -1,13 +1,17 @@
 ---
 uid: Accessibility.IAccessibleHandler
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---
 
 ---
 uid: Accessibility.IAccessibleHandler.AccessibleObjectFromID(System.Int32,System.Int32,Accessibility.IAccessible@)
-author: "stevehoag"
-ms.author: "shoag"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
 manager: "wpickett"
 ---

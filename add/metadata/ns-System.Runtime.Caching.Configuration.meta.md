@@ -1,6 +1,8 @@
 ---
 uid: System.Runtime.Caching.Configuration
-author: "Erikre"
-ms.author: "erikre"
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

@@ -1,19 +1,24 @@
 ---
-title: "Finding Rows | Microsoft Docs"
+title: "Finding Rows"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 5da300e2-74c0-4d13-9202-fc20ed8212d8
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Finding Rows
 You can search for rows according to their sort key values by using the <xref:System.Data.DataView.Find%2A> and <xref:System.Data.DataView.FindRows%2A> methods of the <xref:System.Data.DataView>. The case sensitivity of search values in the **Find** and **FindRows** methods is determined by the **CaseSensitive** property of the underlying <xref:System.Data.DataTable>. Search values must match existing sort key values in their entirety in order to return a result.  
@@ -42,7 +47,6 @@ Else
     custView(rowIndex)("CustomerID").ToString(), _  
     custView(rowIndex)("CompanyName").ToString())  
 End If  
-  
 ```  
   
 ```csharp  
@@ -79,7 +83,6 @@ Else
       myDRV("CompanyName").ToString(), myDRV("ContactName").ToString())  
   Next  
 End If  
-  
 ```  
   
 ```csharp  
@@ -99,7 +102,7 @@ else
 ```  
   
 ## See Also  
- <xref:System.Data.DataTable>   
- <xref:System.Data.DataView>   
- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)   
+ <xref:System.Data.DataTable>  
+ <xref:System.Data.DataView>  
+ [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

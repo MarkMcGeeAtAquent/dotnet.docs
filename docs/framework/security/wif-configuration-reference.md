@@ -1,7 +1,8 @@
 ---
-title: "WIF Configuration Reference | Microsoft Docs"
+title: "WIF Configuration Reference"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 2
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # WIF Configuration Reference
 You can configure Windows Identity Foundation (WIF) in your applications by adding elements to a configuration file. This topic contains links to reference topics for the WIF configuration elements.  

@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugModule2::SetJMCStatus Method | Microsoft Docs"
+title: "ICorDebugModule2::SetJMCStatus Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugModule2.SetJMCStatus"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugModule2::SetJMCStatus"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetJMCStatus method, ICorDebugModule2 interface [.NET Framework debugging]"
   - "ICorDebugModule2::SetJMCStatus method [.NET Framework debugging]"
 ms.assetid: 8c6d2089-4dbb-4715-b9e9-2a4491c8c9ce
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugModule2::SetJMCStatus Method
 Sets the Just My Code (JMC) status of all methods of all the classes in this ICorDebugModule2 to the specified value, except those in the `pTokens` array, which it sets to the opposite value.  

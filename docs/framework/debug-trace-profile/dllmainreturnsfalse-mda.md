@@ -1,5 +1,5 @@
 ---
-title: "dllMainReturnsFalse MDA | Microsoft Docs"
+title: "dllMainReturnsFalse MDA"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "managed debugging assistants (MDAs), DllMain returns false"
   - "DllMainReturnsFalse MDA"
@@ -24,6 +19,8 @@ caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # dllMainReturnsFalse MDA
 The `dllMainReturnsFalse` managed debugging assistant (MDA) is activated if the managed `DllMain` function of a user assembly, called with reason DLL_PROCESS_ATTACH, returns FALSE.  
@@ -45,7 +42,7 @@ The `dllMainReturnsFalse` managed debugging assistant (MDA) is activated if the 
   
 ## Configuration  
   
-```  
+```xml  
 <mdaConfig>  
   <assistants>  
     <dllMainReturnsFalse />  

@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo7::GetInMemorySymbolsLength Method | Microsoft Docs"
+title: "ICorProfilerInfo7::GetInMemorySymbolsLength Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,19 +9,20 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-apiname: 
+api_name: 
   - "ICorProfilerInfo7.GetInMemorySymbolsLength"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
   - "icorprof.idl"
-apitype: "COM"
-dev_langs: 
-  - "C++"
+api_type: 
+  - "COM"
 ms.assetid: d62c4a4c-8a62-45aa-8f01-a8387cf36159
 caps.latest.revision: 3
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo7::GetInMemorySymbolsLength Method
 [Supported in the .NET Framework 4.6.1 and later versions]  
@@ -31,12 +32,10 @@ manager: "wpickett"
 ## Syntax  
   
 ```  
-  
 HRESULT GetInMemorySymbolsLength(  
         [in] ModuleID moduleId,  
         [out] DWORD* pCountSymbolBytes  
 );  
-  
 ```  
   
 #### Parameters  
@@ -49,7 +48,7 @@ HRESULT GetInMemorySymbolsLength(
 ## Return Value  
  The method returns `S_OK` if the length of the memory stream can be determined, even if it is zero (0).  
   
- The method returns `CORPROF_E_MODULE_IS_DYNAMIC` if the method was created using <xref:System.Reflection.Emit?displayProperty=fullName>.  
+ The method returns `CORPROF_E_MODULE_IS_DYNAMIC` if the method was created using <xref:System.Reflection.Emit?displayProperty=nameWithType>.  
   
 ## Remarks  
  If the module has in-memory symbols, the length of the stream is placed in `pCountSymbolBytes`. If the module doesn't have in-memory     symbols, `*pCountSymbolBytes = 0`.  

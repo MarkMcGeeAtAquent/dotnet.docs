@@ -1,5 +1,5 @@
 ---
-title: "ICLRErrorReportingManager::GetBucketParametersForCurrentException Method | Microsoft Docs"
+title: "ICLRErrorReportingManager::GetBucketParametersForCurrentException Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRErrorReportingManager.GetBucketParametersForCurrentException"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRErrorReportingManager::GetBucketParametersForCurrentException"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRErrorReportingManager::GetBucketParametersForCurrentException method [.NET Framework hosting]"
   - "GetBucketParametersForCurrentException method [.NET Framework hosting]"
 ms.assetid: a13ec8a6-8e18-4acb-8054-77f5b1a0e0b9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRErrorReportingManager::GetBucketParametersForCurrentException Method
 Gets the Watson bucket for the current exception on the calling thread.  

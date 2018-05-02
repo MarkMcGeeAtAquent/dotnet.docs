@@ -1,8 +1,8 @@
 ---
-title: "How to: Show a Font List with the FontDialog Component | Microsoft Docs"
+title: "How to: Show a Font List with the FontDialog Component"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,19 +10,23 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "fonts, showing list"
+  - "fonts [Windows Forms], showing list"
   - "FontDialog component [Windows Forms]"
-  - "fonts, attributes"
-  - "Font property, setting with FontDialog component"
-  - "Font dialog box, displaying"
-  - "fonts, selecting"
+  - "fonts [Windows Forms], attributes"
+  - "Font property [Windows Forms], setting with FontDialog component"
+  - "Font dialog box [Windows Forms], displaying"
+  - "fonts [Windows Forms], selecting"
 ms.assetid: 35692c1b-0937-4b7a-9207-1ae6bdc244a0
 caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Show a Font List with the FontDialog Component
 The [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-component-windows-forms.md) component allows users to select a font, as well as change its display aspects, such as its weight and size.  
@@ -46,7 +50,6 @@ The [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-compone
           TextBox1.Font = FontDialog1.Font  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -57,7 +60,6 @@ The [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-compone
           textBox1.Font = fontDialog1.Font;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -76,7 +78,6 @@ The [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-compone
   
     ```csharp  
     this.button1.Click += new System.EventHandler(this.button1_Click);  
-  
     ```  
   
     ```cpp  
@@ -84,5 +85,5 @@ The [FontDialog](../../../../docs/framework/winforms/controls/fontdialog-compone
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.FontDialog>   
+ <xref:System.Windows.Forms.FontDialog>  
  [FontDialog Component](../../../../docs/framework/winforms/controls/fontdialog-component-windows-forms.md)

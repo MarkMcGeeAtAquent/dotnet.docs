@@ -1,7 +1,9 @@
-<Type Name="ActivatedClientTypeEntry" FullName="System.Runtime.Remoting.ActivatedClientTypeEntry">
+﻿<Type Name="ActivatedClientTypeEntry" FullName="System.Runtime.Remoting.ActivatedClientTypeEntry">
   <TypeSignature Language="C#" Value="public class ActivatedClientTypeEntry : System.Runtime.Remoting.TypeEntry" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivatedClientTypeEntry extends System.Runtime.Remoting.TypeEntry" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />
+  <TypeSignature Language="VB.NET" Value="Public Class ActivatedClientTypeEntry&#xA;Inherits TypeEntry" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ActivatedClientTypeEntry : System::Runtime::Remoting::TypeEntry" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -24,9 +26,9 @@
 ## Remarks  
  To create an instance of a client-activated object on the client, you must know its <xref:System.Type> and it must be registered on the client by using the <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A> method. To obtain a proxy for a new instance of the client-activated object the client must first register a channel with <xref:System.Runtime.Remoting.Channels.ChannelServices> and then activate the object by calling `new`.  
   
- To activate a client-activated object type with the `new` keyword, you must first register the object type on the client using the <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A> method. By calling <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A> you are giving the remoting infrastructure the location of the remote application where `new` attempts to create it. If, on the other hand, you use the <xref:System.Activator.CreateInstance%2A?displayProperty=fullName> method to create a new instance of the client-activated object, you must supply the remote application's URL as a parameter, so no prior registration on the client end is necessary. To supply the <xref:System.Activator.CreateInstance%2A?displayProperty=fullName> method with the URL of the server on which you want to create the object, you must encapsulate the URL in an instance of the <xref:System.Runtime.Remoting.Activation.UrlAttribute> class.  
+ To activate a client-activated object type with the `new` keyword, you must first register the object type on the client using the <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A> method. By calling <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A> you are giving the remoting infrastructure the location of the remote application where `new` attempts to create it. If, on the other hand, you use the <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> method to create a new instance of the client-activated object, you must supply the remote application's URL as a parameter, so no prior registration on the client end is necessary. To supply the <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> method with the URL of the server on which you want to create the object, you must encapsulate the URL in an instance of the <xref:System.Runtime.Remoting.Activation.UrlAttribute> class.  
   
- For a detailed description of client activated objects and remote object activation see [&#91;\<topic://cpconActivation>&#93;](http://msdn.microsoft.com/en-us/e90d0c64-00da-4080-ae78-a6c558825c25).  
+ For a detailed description of client activated objects and remote object activation see [&#91;\<topic://cpconActivation>&#93;](http://msdn.microsoft.com/library/e90d0c64-00da-4080-ae78-a6c558825c25).  
   
    
   
@@ -53,12 +55,24 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="M:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType(System.Type,System.String)" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public ActivatedClientTypeEntry (Type type, string appUrl);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string appUrl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.#ctor(System.Type,System.String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ActivatedClientTypeEntry(Type ^ type, System::String ^ appUrl);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -96,6 +110,8 @@
       <MemberSignature Language="C#" Value="public ActivatedClientTypeEntry (string typeName, string assemblyName, string appUrl);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string assemblyName, string appUrl) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.#ctor(System.String,System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (typeName As String, assemblyName As String, appUrl As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; ActivatedClientTypeEntry(System::String ^ typeName, System::String ^ assemblyName, System::String ^ appUrl);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -119,6 +135,8 @@
       <MemberSignature Language="C#" Value="public string ApplicationUrl { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ApplicationUrl" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ApplicationUrl" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ApplicationUrl As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ApplicationUrl { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -149,6 +167,8 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ContextAttributes" />
+      <MemberSignature Language="VB.NET" Value="Public Property ContextAttributes As IContextAttribute()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::Runtime::Remoting::Contexts::IContextAttribute ^&gt; ^ ContextAttributes { cli::array &lt;System::Runtime::Remoting::Contexts::IContextAttribute ^&gt; ^ get(); void set(cli::array &lt;System::Runtime::Remoting::Contexts::IContextAttribute ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -171,12 +191,18 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Runtime.Remoting.Contexts.Context" />
+        <altmember cref="T:System.Runtime.Remoting.Contexts.ContextAttribute" />
+        <altmember cref="T:System.Runtime.Remoting.Contexts.ContextProperty" />
+        <altmember cref="T:System.Runtime.Remoting.Contexts.IContextAttribute" />
       </Docs>
     </Member>
     <Member MemberName="ObjectType">
       <MemberSignature Language="C#" Value="public Type ObjectType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ObjectType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ObjectType As Type" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Type ^ ObjectType { Type ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -207,6 +233,8 @@
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>

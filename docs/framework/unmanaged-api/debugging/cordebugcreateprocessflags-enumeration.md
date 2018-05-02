@@ -1,5 +1,5 @@
 ---
-title: "CorDebugCreateProcessFlags Enumeration | Microsoft Docs"
+title: "CorDebugCreateProcessFlags Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugCreateProcessFlags"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugCreateProcessFlags"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugCreateProcessFlags enumeration [.NET Framework debugging]"
 ms.assetid: e709acce-6a17-4346-b38a-467dba567358
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugCreateProcessFlags Enumeration
 Provides additional debugging options that can be used in a call to the [ICorDebug::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md) method.  

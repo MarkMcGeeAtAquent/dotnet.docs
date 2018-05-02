@@ -1,19 +1,24 @@
 ---
-title: "Frequently Asked Questions | Microsoft Docs"
+title: "Frequently Asked Questions"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
 caps.latest.revision: 3
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Frequently Asked Questions
 The following sections answer some common issues that you might encounter when you implement [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -115,7 +120,7 @@ The following sections answer some common issues that you might encounter when y
 ## Avoiding Explicit Setting of Database-Generated Values on Insert or Update  
  Q. I have a database table with a `DateCreated` column that defaults to SQL `Getdate()`. When I try to insert a new record by using [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], the value gets set to `NULL`. I would expect it to be set to the database default.  
   
- A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] handles this situation automatically for identity (auto-increment) and rowguidcol (database-generated GUID) and timestamp columns. In other cases, you should manually set <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>=`true` and <xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>=<xref:System.Data.Linq.Mapping.AutoSync>/<xref:System.Data.Linq.Mapping.AutoSync>/<xref:System.Data.Linq.Mapping.AutoSync> properties.  
+ A. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] handles this situation automatically for identity (auto-increment) and rowguidcol (database-generated GUID) and timestamp columns. In other cases, you should manually set <xref:System.Data.Linq.Mapping.ColumnAttribute.IsDbGenerated%2A>=`true` and <xref:System.Data.Linq.Mapping.ColumnAttribute.AutoSync%2A>=<xref:System.Data.Linq.Mapping.AutoSync.Always>/<xref:System.Data.Linq.Mapping.AutoSync.OnInsert>/<xref:System.Data.Linq.Mapping.AutoSync.OnUpdate> properties.  
   
 ## Multiple DataLoadOptions  
  Q. Can I specify additional load options without overwriting the first?  
@@ -163,7 +168,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
   
 2.  Add a partial class. Create a constructor with parameters for the read-only members.  
   
-3.  Review the default <xref:System.Data.Linq.Mapping.UpdateCheck> value (<xref:System.Data.Linq.Mapping.UpdateCheck>) to determine whether that is the correct value for your application.  
+3.  Review the default <xref:System.Data.Linq.Mapping.UpdateCheck> value (<xref:System.Data.Linq.Mapping.UpdateCheck.Never>) to determine whether that is the correct value for your application.  
   
     > [!CAUTION]
     >  If you are using the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] in [!INCLUDE[vs_current_short](../../../../../../includes/vs-current-short-md.md)], your changes might be overwritten.  
@@ -203,6 +208,6 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
  A. Read-only mode turns off the ability of the context to track changes.  
   
 ## See Also  
- [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)   
- [Troubleshooting](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)   
+ [Reference](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)  
+ [Troubleshooting](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md)  
  [Security in LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)

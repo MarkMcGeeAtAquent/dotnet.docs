@@ -1,11 +1,14 @@
-<Type Name="INotifyPropertyChanged" FullName="System.ComponentModel.INotifyPropertyChanged">
+﻿<Type Name="INotifyPropertyChanged" FullName="System.ComponentModel.INotifyPropertyChanged">
   <TypeSignature Language="C#" Value="public interface INotifyPropertyChanged" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INotifyPropertyChanged" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.INotifyPropertyChanged" />
+  <TypeSignature Language="VB.NET" Value="Public Interface INotifyPropertyChanged" />
+  <TypeSignature Language="C++ CLI" Value="public interface class INotifyPropertyChanged" />
   <AssemblyInfo>
     <AssemblyName>System.ObjectModel</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -139,10 +142,7 @@ namespace TestNotifyPropertyChangedCS
         // parameter causes the property name of the caller to be substituted as an argument.  
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")  
         {  
-            if (PropertyChanged != null)  
-            {  
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));  
-            }  
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }  
   
         // The constructor is private to enforce the factory pattern.  
@@ -350,14 +350,17 @@ End Class
   </Docs>
   <Members>
     <Member MemberName="PropertyChanged">
-      <MemberSignature Language="C#" Value="public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
+      <MemberSignature Language="C#" Value="event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.PropertyChangedEventHandler PropertyChanged" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" />
+      <MemberSignature Language="VB.NET" Value="Event PropertyChanged As PropertyChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::PropertyChangedEventHandler ^ PropertyChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.ObjectModel</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -377,17 +380,19 @@ End Class
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> event can indicate all properties on the object have changed by using either `null` or <xref:System.String.Empty?displayProperty=fullName> as the property name in the <xref:System.ComponentModel.PropertyChangedEventArgs>.  
+ The <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> event can indicate all properties on the object have changed by using either `null` or <xref:System.String.Empty?displayProperty=nameWithType> as the property name in the <xref:System.ComponentModel.PropertyChangedEventArgs>.  
   
    
   
 ## Examples  
  The following code example demonstrates how to implement the <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> event of the <xref:System.ComponentModel.INotifyPropertyChanged> interface.  
   
-  
-  
+ [!code-csharp[System.ComponentModel.IPropertyChangeExample#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IPropertyChangeExample/CS/Form1.cs#9)]
+ [!code-vb[System.ComponentModel.IPropertyChangeExample#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.IPropertyChangeExample/VB/Form1.vb#9)]
+    
  ]]></format>
         </remarks>
+        <altmember cref="T:System.ComponentModel.PropertyChangedEventArgs" />
       </Docs>
     </Member>
   </Members>

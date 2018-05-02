@@ -1,9 +1,15 @@
-<Type Name="Configuration" FullName="System.Configuration.Configuration">
+﻿<Type Name="Configuration" FullName="System.Configuration.Configuration">
   <TypeSignature Language="C#" Value="public sealed class Configuration" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Configuration extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Configuration.Configuration" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class Configuration" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Configuration sealed" />
   <AssemblyInfo>
     <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -62,12 +68,10 @@
   
  These methods provide access to the cached configuration values for the current application, which has better performance than the <see cref="T:System.Configuration.Configuration" /> class.  
   
- <block subset="none" type="note">  
-<para>  
+ <block subset="none" type="note"><para>  
  If you use a static <see langword="GetSection" /> method that takes a path parameter, the path parameter must refer to the application in which the code is running, otherwise the parameter is ignored and configuration information for the currently running application is returned.  
   
-</para>  
-</block>  
+</para></block>  
   
  You use one of the <see cref="Overload:System.Configuration.Configuration.Save" /> methods to write configuration information. Note that the user or process that writes must have the following permissions:  
   
@@ -75,15 +79,24 @@
   
 -   Read permissions on all the configuration files.</para>
     </block>
+    <altmember cref="T:System.Configuration.ConfigurationSection" />
+    <altmember cref="T:System.Configuration.ConfigurationManager" />
+    <altmember cref="T:System.Web.Configuration.WebConfigurationManager" />
   </Docs>
   <Members>
     <Member MemberName="AppSettings">
       <MemberSignature Language="C#" Value="public System.Configuration.AppSettingsSection AppSettings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.AppSettingsSection AppSettings" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.AppSettings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AppSettings As AppSettingsSection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::AppSettingsSection ^ AppSettings { System::Configuration::AppSettingsSection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -114,9 +127,15 @@
       <MemberSignature Language="C#" Value="public Func&lt;string,string&gt; AssemblyStringTransformer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;string, string&gt; AssemblyStringTransformer" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.AssemblyStringTransformer" />
+      <MemberSignature Language="VB.NET" Value="Public Property AssemblyStringTransformer As Func(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Func&lt;System::String ^, System::String ^&gt; ^ AssemblyStringTransformer { Func&lt;System::String ^, System::String ^&gt; ^ get(); void set(Func&lt;System::String ^, System::String ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -139,9 +158,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ConnectionStringsSection ConnectionStrings { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConnectionStringsSection ConnectionStrings" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.ConnectionStrings" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ConnectionStrings As ConnectionStringsSection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ConnectionStringsSection ^ ConnectionStrings { System::Configuration::ConnectionStringsSection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -172,9 +197,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ContextInformation EvaluationContext { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ContextInformation EvaluationContext" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.EvaluationContext" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property EvaluationContext As ContextInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ContextInformation ^ EvaluationContext { System::Configuration::ContextInformation ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -199,15 +230,22 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Configuration.ContextInformation" />
       </Docs>
     </Member>
     <Member MemberName="FilePath">
       <MemberSignature Language="C#" Value="public string FilePath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string FilePath" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.FilePath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property FilePath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ FilePath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -235,19 +273,31 @@
       </Docs>
     </Member>
     <Member MemberName="GetSection">
-      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection GetSection (string path);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection GetSection(string path) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSection(System.String)" />
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection GetSection (string sectionName);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection GetSection(string sectionName) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSection(System.String)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSection (sectionName As String) As ConfigurationSection" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Configuration::ConfigurationSection ^ GetSection(System::String ^ sectionName);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection GetSection (string path);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection GetSection(string path) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSection(System.String)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSection (path As String) As ConfigurationSection" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Configuration::ConfigurationSection ^ GetSection(System::String ^ path);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sectionName" Type="System.String" />
+        <Parameter Name="sectionName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">To be added.</param>
@@ -272,19 +322,31 @@
       </Docs>
     </Member>
     <Member MemberName="GetSectionGroup">
-      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup GetSectionGroup (string path);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSectionGroup GetSectionGroup(string path) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup GetSectionGroup (string sectionGroupName);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSectionGroup GetSectionGroup(string sectionGroupName) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSectionGroup(System.String)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSectionGroup (sectionGroupName As String) As ConfigurationSectionGroup" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Configuration::ConfigurationSectionGroup ^ GetSectionGroup(System::String ^ sectionGroupName);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup GetSectionGroup (string path);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSectionGroup GetSectionGroup(string path) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSectionGroup(System.String)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetSectionGroup (path As String) As ConfigurationSectionGroup" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Configuration::ConfigurationSectionGroup ^ GetSectionGroup(System::String ^ path);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Configuration.ConfigurationSectionGroup</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="sectionGroupName" Type="System.String" />
+        <Parameter Name="sectionGroupName" Type="System.String" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="path" Type="System.String" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="path">To be added.</param>
@@ -304,9 +366,15 @@
       <MemberSignature Language="C#" Value="public bool HasFile { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasFile" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.HasFile" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasFile As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasFile { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -340,9 +408,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLocationCollection Locations { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLocationCollection Locations" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.Locations" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Locations As ConfigurationLocationCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ConfigurationLocationCollection ^ Locations { System::Configuration::ConfigurationLocationCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -365,9 +439,15 @@
       <MemberSignature Language="C#" Value="public bool NamespaceDeclared { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool NamespaceDeclared" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.NamespaceDeclared" />
+      <MemberSignature Language="VB.NET" Value="Public Property NamespaceDeclared As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool NamespaceDeclared { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -391,9 +471,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup RootSectionGroup { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionGroup RootSectionGroup" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.RootSectionGroup" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property RootSectionGroup As ConfigurationSectionGroup" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ConfigurationSectionGroup ^ RootSectionGroup { System::Configuration::ConfigurationSectionGroup ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -405,13 +491,28 @@
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Save">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes the configuration settings contained within this <see cref="T:System.Configuration.Configuration" /> object to the current XML configuration file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Save">
       <MemberSignature Language="C#" Value="public void Save ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -441,19 +542,31 @@
       </Docs>
     </Member>
     <Member MemberName="Save">
-      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode)" />
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode saveMode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (saveMode As ConfigurationSaveMode)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::Configuration::ConfigurationSaveMode saveMode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (mode As ConfigurationSaveMode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::Configuration::ConfigurationSaveMode mode);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="mode" Type="System.Configuration.ConfigurationSaveMode" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="mode">To be added.</param>
@@ -489,23 +602,38 @@
       </Docs>
     </Member>
     <Member MemberName="Save">
-      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode,System.Boolean)" />
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode saveMode, bool forceSaveAll);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode saveMode, bool forceSaveAll) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode,System.Boolean)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (saveMode As ConfigurationSaveMode, forceSaveAll As Boolean)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::Configuration::ConfigurationSaveMode saveMode, bool forceSaveAll);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode,System.Boolean)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Save (mode As ConfigurationSaveMode, forceUpdateAll As Boolean)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Save(System::Configuration::ConfigurationSaveMode mode, bool forceUpdateAll);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
-        <Parameter Name="forceSaveAll" Type="System.Boolean" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="mode" Type="System.Configuration.ConfigurationSaveMode" Index="0" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="forceSaveAll" Type="System.Boolean" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="forceUpdateAll" Type="System.Boolean" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
+        <param name="saveMode">To be added.</param>
         <param name="mode">To be added.</param>
+        <param name="forceSaveAll">To be added.</param>
         <param name="forceUpdateAll">To be added.</param>
         <summary>Writes the configuration settings contained within this <see cref="T:System.Configuration.Configuration" /> object to the current XML configuration file.</summary>
         <remarks>
@@ -530,13 +658,28 @@
  The configuration file has changed.</exception>
       </Docs>
     </Member>
+    <MemberGroup MemberName="SaveAs">
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Writes the configuration settings contained within this <see cref="T:System.Configuration.Configuration" /> object to the specified XML configuration file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="SaveAs">
       <MemberSignature Language="C#" Value="public void SaveAs (string filename);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -570,23 +713,36 @@
       </Docs>
     </Member>
     <Member MemberName="SaveAs">
-      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode)" />
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode saveMode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String, saveMode As ConfigurationSaveMode)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename, System::Configuration::ConfigurationSaveMode saveMode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String, mode As ConfigurationSaveMode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename, System::Configuration::ConfigurationSaveMode mode);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filename" Type="System.String" />
-        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+        <Parameter Name="filename" Type="System.String" Index="0" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="mode" Type="System.Configuration.ConfigurationSaveMode" Index="1" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="filename">The path and file name to save the configuration file to.</param>
+        <param name="saveMode">To be added.</param>
         <param name="mode">To be added.</param>
         <summary>Writes the configuration settings contained within this <see cref="T:System.Configuration.Configuration" /> object to the specified XML configuration file.</summary>
         <remarks>
@@ -609,25 +765,40 @@
       </Docs>
     </Member>
     <Member MemberName="SaveAs">
-      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode,System.Boolean)" />
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode saveMode, bool forceSaveAll);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode saveMode, bool forceSaveAll) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode,System.Boolean)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String, saveMode As ConfigurationSaveMode, forceSaveAll As Boolean)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename, System::Configuration::ConfigurationSaveMode saveMode, bool forceSaveAll);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode,System.Boolean)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Sub SaveAs (filename As String, mode As ConfigurationSaveMode, forceUpdateAll As Boolean)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SaveAs(System::String ^ filename, System::Configuration::ConfigurationSaveMode mode, bool forceUpdateAll);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="filename" Type="System.String" />
-        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
-        <Parameter Name="forceSaveAll" Type="System.Boolean" />
+        <Parameter Name="filename" Type="System.String" Index="0" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" Index="1" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="mode" Type="System.Configuration.ConfigurationSaveMode" Index="1" FrameworkAlternate="xamarinmac-3.0" />
+        <Parameter Name="forceSaveAll" Type="System.Boolean" Index="2" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="forceUpdateAll" Type="System.Boolean" Index="2" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="filename">The path and file name to save the configuration file to.</param>
+        <param name="saveMode">To be added.</param>
         <param name="mode">To be added.</param>
+        <param name="forceSaveAll">To be added.</param>
         <param name="forceUpdateAll">To be added.</param>
         <summary>Writes the configuration settings contained within this <see cref="T:System.Configuration.Configuration" /> object to the specified XML configuration file.</summary>
         <remarks>
@@ -658,9 +829,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroupCollection SectionGroups { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionGroupCollection SectionGroups" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.SectionGroups" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SectionGroups As ConfigurationSectionGroupCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ConfigurationSectionGroupCollection ^ SectionGroups { System::Configuration::ConfigurationSectionGroupCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -691,9 +868,15 @@
       <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionCollection Sections { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionCollection Sections" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.Sections" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Sections As ConfigurationSectionCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Configuration::ConfigurationSectionCollection ^ Sections { System::Configuration::ConfigurationSectionCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -724,9 +907,15 @@
       <MemberSignature Language="C#" Value="public System.Runtime.Versioning.FrameworkName TargetFramework { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Versioning.FrameworkName TargetFramework" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.TargetFramework" />
+      <MemberSignature Language="VB.NET" Value="Public Property TargetFramework As FrameworkName" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Runtime::Versioning::FrameworkName ^ TargetFramework { System::Runtime::Versioning::FrameworkName ^ get(); void set(System::Runtime::Versioning::FrameworkName ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -751,9 +940,15 @@
       <MemberSignature Language="C#" Value="public Func&lt;string,string&gt; TypeStringTransformer { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;string, string&gt; TypeStringTransformer" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.TypeStringTransformer" />
+      <MemberSignature Language="VB.NET" Value="Public Property TypeStringTransformer As Func(Of String, String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Func&lt;System::String ^, System::String ^&gt; ^ TypeStringTransformer { Func&lt;System::String ^, System::String ^&gt; ^ get(); void set(Func&lt;System::String ^, System::String ^&gt; ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

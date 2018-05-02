@@ -1,7 +1,9 @@
-<Type Name="ExpandCollapsePattern" FullName="System.Windows.Automation.ExpandCollapsePattern">
+﻿<Type Name="ExpandCollapsePattern" FullName="System.Windows.Automation.ExpandCollapsePattern">
   <TypeSignature Language="C#" Value="public class ExpandCollapsePattern : System.Windows.Automation.BasePattern" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpandCollapsePattern extends System.Windows.Automation.BasePattern" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ExpandCollapsePattern" />
+  <TypeSignature Language="VB.NET" Value="Public Class ExpandCollapsePattern&#xA;Inherits BasePattern" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ExpandCollapsePattern : System::Windows::Automation::BasePattern" />
   <AssemblyInfo>
     <AssemblyName>UIAutomationClient</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -23,12 +25,15 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Automation.Provider.IExpandCollapseProvider" />
   </Docs>
   <Members>
     <Member MemberName="Cached">
       <MemberSignature Language="C#" Value="public System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation Cached { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ExpandCollapsePattern/ExpandCollapsePatternInformation Cached" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ExpandCollapsePattern.Cached" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Cached As ExpandCollapsePattern.ExpandCollapsePatternInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Automation::ExpandCollapsePattern::ExpandCollapsePatternInformation Cached { System::Windows::Automation::ExpandCollapsePattern::ExpandCollapsePatternInformation get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -57,6 +62,8 @@
       <MemberSignature Language="C#" Value="public void Collapse ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Collapse() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ExpandCollapsePattern.Collapse" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Collapse ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Collapse();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -96,6 +103,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation Current { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ExpandCollapsePattern/ExpandCollapsePatternInformation Current" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ExpandCollapsePattern.Current" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Current As ExpandCollapsePattern.ExpandCollapsePatternInformation" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Automation::ExpandCollapsePattern::ExpandCollapsePatternInformation Current { System::Windows::Automation::ExpandCollapsePattern::ExpandCollapsePatternInformation get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -111,7 +120,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This pattern must be from an <xref:System.Windows.Automation.AutomationElement> with an <xref:System.Windows.Automation.AutomationElementMode> reference in order to get current values. If the <xref:System.Windows.Automation.AutomationElement> was obtained using <xref:System.Windows.Automation.AutomationElementMode>, it contains only cached data, and attempting to get the current value of any property raises an exception. Use <xref:System.Windows.Automation.ExpandCollapsePattern.Cached%2A> to get the cached value of a property that was previously specified using a <xref:System.Windows.Automation.CacheRequest>.  
+ This pattern must be from an <xref:System.Windows.Automation.AutomationElement> with an <xref:System.Windows.Automation.AutomationElementMode.Full> reference in order to get current values. If the <xref:System.Windows.Automation.AutomationElement> was obtained using <xref:System.Windows.Automation.AutomationElementMode.None>, it contains only cached data, and attempting to get the current value of any property raises an exception. Use <xref:System.Windows.Automation.ExpandCollapsePattern.Cached%2A> to get the cached value of a property that was previously specified using a <xref:System.Windows.Automation.CacheRequest>.  
   
  For information on the properties available and their use, see <xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation>.  
   
@@ -123,6 +132,8 @@
       <MemberSignature Language="C#" Value="public void Expand ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Expand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ExpandCollapsePattern.Expand" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Expand ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Expand();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -140,12 +151,12 @@
 ## Remarks  
  This is a blocking method that returns after the <xref:System.Windows.Automation.AutomationElement> has been expanded.  
   
- There are cases when a <xref:System.Windows.Automation.AutomationElement>that is marked as a leaf node might not know whether it has children until either the <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> or the <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> method is called. This behavior is possible with a tree view control that does delayed loading of its child items. For example, [!INCLUDE[TLA#tla_winexpl](~/includes/tlasharptla-winexpl-md.md)] might display the expand icon for a node even though there are currently no child items; when the icon is clicked, the control polls for child items, finds none, and removes the expand icon. In these cases clients should listen for a property-changed event on the <xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> property by registering an event handler with the <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> method.  
+ There are cases when a <xref:System.Windows.Automation.AutomationElement> that is marked as a leaf node might not know whether it has children until either the <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> or the <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> method is called. This behavior is possible with a tree view control that does delayed loading of its child items. For example, [!INCLUDE[TLA#tla_winexpl](~/includes/tlasharptla-winexpl-md.md)] might display the expand icon for a node even though there are currently no child items; when the icon is clicked, the control polls for child items, finds none, and removes the expand icon. In these cases clients should listen for a property-changed event on the <xref:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState%2A> property by registering an event handler with the <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> method.  
   
    
   
 ## Examples  
- In the following example, an <xref:System.Windows.Automation.AutomationElement>representing a menu item is passed to a function that attempts to expand or collapse the menu item based on its current <xref:System.Windows.Automation.ExpandCollapseState>.  
+ In the following example, an <xref:System.Windows.Automation.AutomationElement> representing a menu item is passed to a function that attempts to expand or collapse the menu item based on its current <xref:System.Windows.Automation.ExpandCollapseState>.  
   
  [!code-csharp[UIAExpandCollapsePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/CSharp/UIAExpandCollapsePattern_snippets.cs#101)]
  [!code-vb[UIAExpandCollapsePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/VisualBasic/UIAExpandCollapsePattern_snippets.vb#101)]  
@@ -162,6 +173,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ExpandCollapseStateProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ExpandCollapseStateProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapseStateProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly ExpandCollapseStateProperty As AutomationProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::Automation::AutomationProperty ^ ExpandCollapseStateProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>
@@ -180,7 +193,7 @@
   
  <xref:System.Windows.Automation.ExpandCollapseState> refers to the visibility of immediate child objects only; it does not refer to the visibility of all descendant objects.  
   
- The default value is <xref:System.Windows.Automation.ExpandCollapseState>.  
+ The default value is <xref:System.Windows.Automation.ExpandCollapseState.Expanded>.  
   
    
   
@@ -198,6 +211,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Automation.ExpandCollapsePattern.Pattern" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Pattern As AutomationPattern " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::Automation::AutomationPattern ^ Pattern;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>UIAutomationClient</AssemblyName>

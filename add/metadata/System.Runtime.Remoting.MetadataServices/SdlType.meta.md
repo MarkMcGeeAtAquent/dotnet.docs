@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.MetadataServices.SdlType
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

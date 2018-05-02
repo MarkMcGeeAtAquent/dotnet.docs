@@ -1,14 +1,17 @@
 ---
-title: "How to: Create a Secure Session | Microsoft Docs"
+title: "How to: Create a Secure Session"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "security [WCF], creating a session"
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
@@ -16,6 +19,8 @@ caps.latest.revision: 10
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Create a Secure Session
 With the exception of the [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) binding, the system-provided bindings in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] automatically use secure sessions when message security is enabled.  
@@ -39,7 +44,7 @@ With the exception of the [\<basicHttpBinding>](../../../../docs/framework/confi
   
      The following code example uses configuration to specify a binding named `wsHttpBinding_Calculator` that uses the [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), message security, and secure sessions.  
   
-    ```  
+    ```xml  
     <bindings>  
       <WSHttpBinding>  
        <binding name = "wsHttpBinding_Calculator">  
@@ -67,7 +72,7 @@ With the exception of the [\<basicHttpBinding>](../../../../docs/framework/confi
   
      The following code example uses configuration to specify a custom binding that messages using a secure session.  
   
-    ```  
+    ```xml  
     <bindings>  
       <!-- configure a custom binding -->  
       <customBinding>  
@@ -81,7 +86,7 @@ With the exception of the [\<basicHttpBinding>](../../../../docs/framework/confi
     </bindings>  
     ```  
   
-     The following code example creates a custom binding that uses the <xref:System.ServiceModel.Configuration.AuthenticationMode> authentication mode to bootstrap a secure session.  
+     The following code example creates a custom binding that uses the <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> authentication mode to bootstrap a secure session.  
   
      [!code-csharp[c_CreateSecureSession#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#2)]
      [!code-vb[c_CreateSecureSession#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_createsecuresession/vb/secureservice.vb#2)]  

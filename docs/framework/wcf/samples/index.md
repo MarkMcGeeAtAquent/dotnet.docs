@@ -1,8 +1,8 @@
 ---
-title: "Windows Communication Foundation (WCF) Samples | Microsoft Docs"
+title: "Windows Communication Foundation (WCF) Samples"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
 caps.latest.revision: 17
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Communication Foundation (WCF) Samples
 These samples provide instruction on various aspects of [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  

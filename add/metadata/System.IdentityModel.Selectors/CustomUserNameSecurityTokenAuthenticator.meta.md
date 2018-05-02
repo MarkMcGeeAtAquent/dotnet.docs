@@ -1,20 +1,26 @@
 ---
 uid: System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore(System.String,System.String)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---
 
 ---
 uid: System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator.#ctor(System.IdentityModel.Selectors.UserNamePasswordValidator)
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugChain::GetThread Method | Microsoft Docs"
+title: "ICorDebugChain::GetThread Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugChain.GetThread"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugChain::GetThread"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetThread method, ICorDebugChain interface [.NET Framework debugging]"
   - "ICorDebugChain::GetThread method [.NET Framework debugging]"
 ms.assetid: b3390319-6366-418c-ba80-b552ac4dfc1e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugChain::GetThread Method
 Gets the physical thread this call chain is part of.  

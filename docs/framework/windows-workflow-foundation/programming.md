@@ -1,5 +1,5 @@
 ---
-title: "Windows Workflow Foundation Programming | Microsoft Docs"
+title: "Windows Workflow Foundation Programming"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -13,9 +13,11 @@ helpviewer_keywords:
   - "WF [WF], programming"
 ms.assetid: f62354e2-6a2b-4e8c-a4bc-533fb96267a4
 caps.latest.revision: 16
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Windows Workflow Foundation Programming
 This section contains a set of primer topics that you should understand to become a proficient [!INCLUDE[wf](../../../includes/wf-md.md)] programmer.  

@@ -1,5 +1,5 @@
 ---
-title: "Custom Encoders | Microsoft Docs"
+title: "Custom Encoders"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Encoders
 This topic discusses how to create custom encoders.  
@@ -42,7 +44,7 @@ This topic discusses how to create custom encoders.
   
 -   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>: Represents the binding element that specifies the character encoding and message versioning used for a message using a Message Transmission Optimization Mechanism (MTOM) encoding. MTOM is an efficient technology for transmitting binary data in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] messages. The MTOM encoder attempts to balance between efficiency and interoperability. The MTOM encoding transmits most XML in textual form, but optimizes large blocks of binary data by transmitting them as-is, without conversion to text.  
   
- The binding element creates a binary, MTOM, or text <xref:System.ServiceModel.Channels.MessageEncoderFactory>. The factory creates a binary, MTOM, or text <xref:System.ServiceModel.Channels.MessageEncoder> instance. Typically, there is only a single instance. However if sessions are used, a different encoder may be provided to each session. The Binary encoder makes use of this to coordinate dynamic dictionaries (see XML Infrastructure).  
+ The binding element creates a binary, MTOM, or text <xref:System.ServiceModel.Channels.MessageEncoderFactory>. The factory creates a binary, MTOM, or text <xref:System.ServiceModel.Channels.MessageEncoderFactory> instance. Typically, there is only a single instance. However if sessions are used, a different encoder may be provided to each session. The Binary encoder makes use of this to coordinate dynamic dictionaries (see XML Infrastructure).  
   
  The <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> and <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> methods are the core of the encoders. The methods provide for reading a message from a stream or from a <xref:System.Byte> array. Byte arrays are used when the transport is operating in buffered mode. Messages are always written to streams. If the transport must buffer the message, it provides a stream that does the buffering.  
   
@@ -85,7 +87,7 @@ This topic discusses how to create custom encoders.
   
 -   The key methods of this class that you must override are:  
   
--   <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> which takes a <xref:System.ServiceModel.Channels.Message> object and writes it into a <xref:System.IO.Stream> object.  
+-   <xref:System.ServiceModel.Channels.MessageEncoder.WriteMessage%2A> which takes a <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> object and writes it into a <xref:System.IO.Stream> object.  
   
 -   <xref:System.ServiceModel.Channels.MessageEncoder.ReadMessage%2A> which takes a <xref:System.IO.Stream> object and a maximum header size and returns a <xref:System.ServiceModel.Channels.Message> object.  
   
@@ -98,9 +100,9 @@ This topic discusses how to create custom encoders.
  There are two samples provided with [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] that illustrate this process with sample code: [Custom Message Encoder: Custom Text Encoder](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md) and [Custom Message Encoder: Compression Encoder](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md).  
   
 ## See Also  
- <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>   
- <xref:System.ServiceModel.Channels.MessageEncoderFactory>   
- <xref:System.ServiceModel.Channels.MessageEncoder>   
- [Data Transfer Architectural Overview](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)   
- [Choosing a Message Encoder](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)   
+ <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>  
+ <xref:System.ServiceModel.Channels.MessageEncoderFactory>  
+ <xref:System.ServiceModel.Channels.MessageEncoder>  
+ [Data Transfer Architectural Overview](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)  
+ [Choosing a Message Encoder](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)  
  [Choosing a Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)

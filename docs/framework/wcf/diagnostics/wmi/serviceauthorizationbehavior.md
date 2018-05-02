@@ -1,8 +1,8 @@
 ---
-title: "ServiceAuthorizationBehavior | Microsoft Docs"
+title: "ServiceAuthorizationBehavior"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
 caps.latest.revision: 8
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ServiceAuthorizationBehavior
 ServiceAuthorizationBehavior  

@@ -1,5 +1,5 @@
 ---
-title: "StrongNameErrorInfo Function | Microsoft Docs"
+title: "StrongNameErrorInfo Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,26 +9,29 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameErrorInfo"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "mscorsn.dll"
   - "clr.dll"
   - "mscorwks.dll"
   - "mscoreei.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "StrongNameErrorInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "StrongNameErrorInfo function [.NET Framework strong naming]"
 ms.assetid: e91bf8c3-7c26-4732-938e-2e5b04abfc99
+topic_type: 
+  - "apiref"
 caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # StrongNameErrorInfo Function
 Gets the last error code that was raised by one of the strong name functions.  
@@ -57,4 +60,4 @@ HRESULT StrongNameErrorInfo ();
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [Strong Naming Global Static Functions](http://msdn.microsoft.com/en-us/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)
+ [Strong Naming Global Static Functions](http://msdn.microsoft.com/library/efa715df-e8cc-48f2-9ec4-26586f0dc8d0)

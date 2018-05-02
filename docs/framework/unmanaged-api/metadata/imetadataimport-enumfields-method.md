@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataImport::EnumFields Method | Microsoft Docs"
+title: "IMetaDataImport::EnumFields Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataImport.EnumFields"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataImport::EnumFields"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "EnumFields method [.NET Framework metadata]"
   - "IMetaDataImport::EnumFields method [.NET Framework metadata]"
 ms.assetid: 1d23247e-c58c-45db-afd8-83aa89cde18e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataImport::EnumFields Method
 Enumerates FieldDef tokens for the type referenced by the specified TypeDef token.  
@@ -75,5 +78,5 @@ HRESULT EnumFields (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)   
+ [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -1,5 +1,5 @@
 ---
-title: "FExecuteInAppDomainCallback Function Pointer | Microsoft Docs"
+title: "FExecuteInAppDomainCallback Function Pointer"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "FExecuteInAppDomainCallback"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "FExecuteInAppDomainCallback"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "FExecuteInAppDomainCallback function pointer [.NET Framework hosting]"
 ms.assetid: 2709f18f-3eee-497f-bc33-3ab7a485599b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # FExecuteInAppDomainCallback Function Pointer
 Points to a function that is called by the common language runtime (CLR) to execute managed code.  

@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugManagedCallback2::CreateConnection Method | Microsoft Docs"
+title: "ICorDebugManagedCallback2::CreateConnection Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugManagedCallback2.CreateConnection"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugManagedCallback2::CreateConnection"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CreateConnection method [.NET Framework debugging]"
   - "ICorDebugManagedCallback2::CreateConnection method [.NET Framework debugging]"
 ms.assetid: 49e647be-9d63-4250-9d11-704e2a400d1b
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugManagedCallback2::CreateConnection Method
 Notifies the debugger that a new connection has been created.  
@@ -67,5 +70,5 @@ HRESULT CreateConnection (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)   
+ [ICorDebugManagedCallback2 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)  
  [ICorDebugManagedCallback Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)

@@ -1,7 +1,9 @@
-<Type Name="ExpressionBuilder" FullName="System.Web.Compilation.ExpressionBuilder">
+﻿<Type Name="ExpressionBuilder" FullName="System.Web.Compilation.ExpressionBuilder">
   <TypeSignature Language="C#" Value="public abstract class ExpressionBuilder" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ExpressionBuilder extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ExpressionBuilder" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ExpressionBuilder" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ExpressionBuilder abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Web</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -55,20 +57,27 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
   
  The third code example demonstrates how to develop a customized expression builder by deriving from <xref:System.Web.Compilation.ExpressionBuilder>. To run this code example, you must place the class in the App_Code folder.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#1)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#1)]  -->  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#1)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#1)]   
   
  ]]></format>
     </remarks>
     <block subset="none" type="overrides">
       <para>When you inherit from the <see cref="T:System.Web.Compilation.ExpressionBuilder" /> class, you must override the <see cref="M:System.Web.Compilation.ExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" /> method.</para>
     </block>
+    <altmember cref="T:System.Web.Compilation.ExpressionBuilderContext" />
+    <altmember cref="T:System.Web.Configuration.ExpressionBuilder" />
+    <altmember cref="T:System.Web.Configuration.ExpressionBuilderCollection" />
+    <altmember cref="T:System.Web.Compilation.AppSettingsExpressionBuilder" />
+    <altmember cref="T:System.Web.Compilation.ConnectionStringsExpressionBuilder" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected ExpressionBuilder ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ExpressionBuilder();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -88,12 +97,19 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
         <block subset="none" type="overrides">
           <para>When deriving from the <see cref="T:System.Web.Compilation.ExpressionBuilder" /> class, override the <see cref="M:System.Web.Compilation.ExpressionBuilder.#ctor" /> constructor to implement custom initialization actions for your expression builder implementation.</para>
         </block>
+        <altmember cref="T:System.Web.Compilation.ExpressionBuilderContext" />
+        <altmember cref="T:System.Web.Configuration.ExpressionBuilder" />
+        <altmember cref="T:System.Web.Configuration.ExpressionBuilderCollection" />
+        <altmember cref="T:System.Web.Compilation.AppSettingsExpressionBuilder" />
+        <altmember cref="T:System.Web.Compilation.ConnectionStringsExpressionBuilder" />
       </Docs>
     </Member>
     <Member MemberName="EvaluateExpression">
       <MemberSignature Language="C#" Value="public virtual object EvaluateExpression (object target, System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object EvaluateExpression(object target, class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function EvaluateExpression (target As Object, entry As BoundPropertyEntry, parsedData As Object, context As ExpressionBuilderContext) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ EvaluateExpression(System::Object ^ target, System::Web::UI::BoundPropertyEntry ^ entry, System::Object ^ parsedData, System::Web::Compilation::ExpressionBuilderContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -126,8 +142,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
 ## Examples  
  The following code example demonstrates how to use the overridden <xref:System.Web.Compilation.ExpressionBuilder.EvaluateExpression%2A> method to return an evaluated expression.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#3)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#3)]  -->  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#3)]    
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#3)]   
   
  ]]></format>
         </remarks>
@@ -140,6 +156,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
       <MemberSignature Language="C#" Value="public abstract System.CodeDom.CodeExpression GetCodeExpression (System.Web.UI.BoundPropertyEntry entry, object parsedData, System.Web.Compilation.ExpressionBuilderContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.CodeDom.CodeExpression GetCodeExpression(class System.Web.UI.BoundPropertyEntry entry, object parsedData, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function GetCodeExpression (entry As BoundPropertyEntry, parsedData As Object, context As ExpressionBuilderContext) As CodeExpression" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::CodeDom::CodeExpression ^ GetCodeExpression(System::Web::UI::BoundPropertyEntry ^ entry, System::Object ^ parsedData, System::Web::Compilation::ExpressionBuilderContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -170,8 +188,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
 ## Examples  
  The following code example demonstrates how to return a <xref:System.CodeDom.CodeExpression> object by overriding the <xref:System.Web.Compilation.ExpressionBuilder.GetCodeExpression%2A> method.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#4)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#4)]  -->  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#4)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#4)]   
   
  ]]></format>
         </remarks>
@@ -184,6 +202,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
       <MemberSignature Language="C#" Value="public virtual object ParseExpression (string expression, Type propertyType, System.Web.Compilation.ExpressionBuilderContext context);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ParseExpression(string expression, class System.Type propertyType, class System.Web.Compilation.ExpressionBuilderContext context) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function ParseExpression (expression As String, propertyType As Type, context As ExpressionBuilderContext) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Object ^ ParseExpression(System::String ^ expression, Type ^ propertyType, System::Web::Compilation::ExpressionBuilderContext ^ context);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -217,6 +237,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
       <MemberSignature Language="C#" Value="public virtual bool SupportsEvaluate { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEvaluate" />
       <MemberSignature Language="DocId" Value="P:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable ReadOnly Property SupportsEvaluate As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool SupportsEvaluate { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Web</AssemblyName>
@@ -240,8 +262,8 @@ Text="<%$ MyCustomExpression:Hello, world! %>" />
 ## Examples  
  The following code example demonstrates how to use the <xref:System.Web.Compilation.ExpressionBuilder.SupportsEvaluate%2A> property.  
   
- <!-- TODO: review snippet reference [!code-csharp[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#2)]  -->
- <!-- TODO: review snippet reference [!code-vb[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#2)]  -->  
+ [!code-csharp[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/CS/MyExpressionBuilder.cs#2)] 
+ [!code-vb[System.Web.Compilation.ExpressionBuilder#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ExpressionBuilder/VB/MyExpressionBuilder.vb#2)]   
   
  ]]></format>
         </remarks>

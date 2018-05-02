@@ -1,5 +1,5 @@
 ---
-title: "2577 - TryCatchExceptionDuringCancelation | Microsoft Docs"
+title: "2577 - TryCatchExceptionDuringCancelation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 35ee9f55-227f-4566-bcb4-4c7c75dea85b
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 2577 - TryCatchExceptionDuringCancelation
 ## Properties  

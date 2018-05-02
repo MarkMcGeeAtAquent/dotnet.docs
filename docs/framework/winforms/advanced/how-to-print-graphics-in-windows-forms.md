@@ -1,5 +1,5 @@
 ---
-title: "How to: Print Graphics in Windows Forms | Microsoft Docs"
+title: "How to: Print Graphics in Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,15 +10,19 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
-  - "graphics, printing"
+  - "graphics [Windows Forms], printing"
   - "printing [Windows Forms], graphics"
 ms.assetid: 32b891e6-52ff-4fea-a9ff-2ce5db20a4c6
 caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Print Graphics in Windows Forms
 Frequently, you will want to print graphics in your Windows-based application. The <xref:System.Drawing.Graphics> class provides methods for drawing objects to a device, such as a screen or printer.  
@@ -35,7 +39,6 @@ Frequently, you will want to print graphics in your Windows-based application. T
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage  
        e.Graphics.FillEllipse(Brushes.Blue, New Rectangle(100, 150, 250, 250))  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -45,7 +48,6 @@ Frequently, you will want to print graphics in your Windows-based application. T
        e.Graphics.FillRectangle(Brushes.Blue,   
          new Rectangle(100, 150, 250, 250));  
     }  
-  
     ```  
   
     ```cpp  
@@ -64,7 +66,6 @@ Frequently, you will want to print graphics in your Windows-based application. T
     this.printDocument1.PrintPage += new  
        System.Drawing.Printing.PrintPageEventHandler  
        (this.printDocument1_PrintPage);  
-  
     ```  
   
     ```cpp  
@@ -74,6 +75,6 @@ Frequently, you will want to print graphics in your Windows-based application. T
     ```  
   
 ## See Also  
- <xref:System.Drawing.Graphics>   
- <xref:System.Drawing.Brush>   
+ <xref:System.Drawing.Graphics>  
+ <xref:System.Drawing.Brush>  
  [Windows Forms Print Support](../../../../docs/framework/winforms/advanced/windows-forms-print-support.md)

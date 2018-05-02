@@ -1,5 +1,5 @@
 ---
-title: "Isolated Storage | Microsoft Docs"
+title: "Isolated Storage"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -28,12 +28,15 @@ caps.latest.revision: 32
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Isolated Storage
 <a name="top"></a> For [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)] apps, isolated storage is a data storage mechanism that provides isolation and safety by defining standardized ways of associating code with saved data. Standardization provides other benefits as well. Administrators can use tools designed to manipulate isolated storage to configure file storage space, set security policies, and delete unused data. With isolated storage, your code no longer needs unique paths to specify safe locations in the file system, and data is protected from other applications that only have isolated storage access. Hard-coded information that indicates where an application's storage area is located is unnecessary.  
   
 > [!IMPORTANT]
->  Isolated storage is not available for [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps. Instead, use the application data classes in the `Windows.Storage` namespaces included in the [!INCLUDE[wrt](../../../includes/wrt-md.md)] API to store local data and files. For more information, see [Application data](http://go.microsoft.com/fwlink/?LinkId=229175) in the Windows Dev Center.  
+>  Isolated storage is not available for [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps. Instead, use the application data classes in the `Windows.Storage` namespaces included in the [!INCLUDE[wrt](../../../includes/wrt-md.md)] API to store local data and files. For more information, see [Application data](/previous-versions/windows/apps/hh464917(v=win.10)) in the Windows Dev Center.  
   
  This topic contains the following sections:  
   
@@ -68,7 +71,7 @@ manager: "wpickett"
 ## Quotas for Isolated Storage  
  A quota is a limit on the amount of isolated storage that can be used. The quota includes bytes of file space as well as the overhead associated with the directory and other information in the store. Isolated storage uses permission quotas, which are storage limits that are set by using <xref:System.Security.Permissions.IsolatedStoragePermission> objects. If you try to write data that exceeds the quota, an <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception is thrown.  Security policy, which can be modified using the .NET Framework Configuration Tool (Mscorcfg.msc), determines which permissions are granted to code. Code that has been granted <xref:System.Security.Permissions.IsolatedStoragePermission> is restricted to using no more storage than the <xref:System.Security.Permissions.IsolatedStoragePermission.UserQuota%2A> property allows. However, because code can bypass permission quotas by presenting different user identities, permission quotas serve as guidelines for how code should behave rather than as a firm limit on code behavior.  
   
- Quotas are not enforced on roaming stores. Because of this, a slightly higher level of permission is required for code to use them. The enumeration values <xref:System.Security.Permissions.IsolatedStorageContainment> and <xref:System.Security.Permissions.IsolatedStorageContainment> specify a permission to use isolated storage for a roaming user.  
+ Quotas are not enforced on roaming stores. Because of this, a slightly higher level of permission is required for code to use them. The enumeration values <xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser> and <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser> specify a permission to use isolated storage for a roaming user.  
   
   
 <a name="secure_access"></a>   
@@ -96,13 +99,13 @@ manager: "wpickett"
   
 |Allowed usage|Isolation types|Security impact|  
 |-------------------|---------------------|---------------------|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|No isolated storage use is allowed.|There is no security impact.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Isolation by user, domain, and assembly. Each assembly has a separate substore within the domain. Stores that use this permission are also implicitly isolated by computer.|This permission level leaves resources open to unauthorized overuse, although enforced quotas make it more difficult. This is called a denial of service attack.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Same as `DomainIsolationByUser`, but store is saved to a location that will roam if roaming user profiles are enabled and quotas are not enforced.|Because quotas must be disabled, storage resources are more vulnerable to a denial of service attack.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Isolation by user and assembly. Stores that use this permission are also implicitly isolated by computer.|Quotas are enforced at this level to help prevent a denial of service attack. The same assembly in another domain can access this store, opening the possibility that information could be leaked between applications.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Same as `AssemblyIsolationByUser`, but store is saved to a location that will roam if roaming user profiles are enabled and quotas are not enforced.|Same as in `AssemblyIsolationByUser`, but without quotas, the risk of a denial of service attack increases.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Isolation by user. Typically, only administrative or debugging tools use this level of permission.|Access with this permission allows code to view or delete any of a user's isolated storage files or directories (regardless of assembly isolation). Risks include, but are not limited to, leaking information and data loss.|  
-|<xref:System.Security.Permissions.IsolatedStorageContainment>|Isolation by all users, domains, and assemblies. Typically, only administrative or debugging tools use this level of permission.|This permission creates the potential for a total compromise of all isolated stores for all users.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.None>|No isolated storage use is allowed.|There is no security impact.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser>|Isolation by user, domain, and assembly. Each assembly has a separate substore within the domain. Stores that use this permission are also implicitly isolated by computer.|This permission level leaves resources open to unauthorized overuse, although enforced quotas make it more difficult. This is called a denial of service attack.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser>|Same as `DomainIsolationByUser`, but store is saved to a location that will roam if roaming user profiles are enabled and quotas are not enforced.|Because quotas must be disabled, storage resources are more vulnerable to a denial of service attack.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser>|Isolation by user and assembly. Stores that use this permission are also implicitly isolated by computer.|Quotas are enforced at this level to help prevent a denial of service attack. The same assembly in another domain can access this store, opening the possibility that information could be leaked between applications.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser>|Same as `AssemblyIsolationByUser`, but store is saved to a location that will roam if roaming user profiles are enabled and quotas are not enforced.|Same as in `AssemblyIsolationByUser`, but without quotas, the risk of a denial of service attack increases.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>|Isolation by user. Typically, only administrative or debugging tools use this level of permission.|Access with this permission allows code to view or delete any of a user's isolated storage files or directories (regardless of assembly isolation). Risks include, but are not limited to, leaking information and data loss.|  
+|<xref:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage>|Isolation by all users, domains, and assemblies. Typically, only administrative or debugging tools use this level of permission.|This permission creates the potential for a total compromise of all isolated stores for all users.|  
   
   
 <a name="isolated_storage_locations"></a>   
@@ -121,9 +124,9 @@ manager: "wpickett"
 ## Creating, Enumerating, and Deleting Isolated Storage  
  The .NET Framework provides three classes in the <xref:System.IO.IsolatedStorage> namespace to help you perform tasks that involve isolated storage:  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, derives from <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=fullName> and provides basic management of stored assembly and application files. An instance of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class represents a single store located in the file system.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFile>, derives from <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType> and provides basic management of stored assembly and application files. An instance of the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class represents a single store located in the file system.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> derives from <xref:System.IO.FileStream?displayProperty=fullName> and provides access to the files in a store.  
+-   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> derives from <xref:System.IO.FileStream?displayProperty=nameWithType> and provides access to the files in a store.  
   
 -   <xref:System.IO.IsolatedStorage.IsolatedStorageScope> is an enumeration that enables you to create and select a store with the appropriate isolation type.  
   
@@ -162,8 +165,8 @@ manager: "wpickett"
 |-----------|-----------------|  
 |[Types of Isolation](../../../docs/standard/io/types-of-isolation.md)|Describes the different types of isolation.|  
 |[How to: Obtain Stores for Isolated Storage](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|Provides an example of using the <xref:System.IO.IsolatedStorage.IsolatedStorageFile> class to obtain a store isolated by user and assembly.|  
-|[How to: Enumerate Stores for Isolated Storage](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|Shows how to use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=fullName> method to calculate the size of all isolated storage for the user.|  
-|[How to: Delete Stores in Isolated Storage](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|Shows how to use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=fullName> method in two different ways to delete isolated stores.|  
+|[How to: Enumerate Stores for Isolated Storage](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|Shows how to use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> method to calculate the size of all isolated storage for the user.|  
+|[How to: Delete Stores in Isolated Storage](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|Shows how to use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> method in two different ways to delete isolated stores.|  
 |[How to: Anticipate Out-of-Space Conditions with Isolated Storage](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|Shows how to measure the remaining space in an isolated store.|  
 |[How to: Create Files and Directories in Isolated Storage](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|Provides some examples of creating files and directories in an isolated store.|  
 |[How to: Find Existing Files and Directories in Isolated Storage](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Demonstrates how to read the directory structure and files in isolated storage.|  
@@ -173,10 +176,10 @@ manager: "wpickett"
   
 <a name="reference"></a>   
 ## Reference  
- <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=fullName>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>  
   
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=fullName>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>  
   
- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream?displayProperty=fullName>  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream?displayProperty=nameWithType>  
   
- <xref:System.IO.IsolatedStorage.IsolatedStorageScope?displayProperty=fullName>
+ <xref:System.IO.IsolatedStorage.IsolatedStorageScope?displayProperty=nameWithType>

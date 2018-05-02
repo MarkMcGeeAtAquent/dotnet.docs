@@ -1,10 +1,13 @@
-<Type Name="ProcessThread" FullName="System.Diagnostics.ProcessThread">
+﻿<Type Name="ProcessThread" FullName="System.Diagnostics.ProcessThread">
   <TypeSignature Language="C#" Value="public class ProcessThread : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessThread extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.ProcessThread" />
+  <TypeSignature Language="VB.NET" Value="Public Class ProcessThread&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ProcessThread : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.Process</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -34,7 +37,7 @@
  Use <xref:System.Diagnostics.ProcessThread> to obtain information about a thread that is currently running on the system. Doing so allows you, for example, to monitor the thread's performance characteristics.  
   
 > [!IMPORTANT]
->  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+>  This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
  A thread is a path of execution through a program. It is the smallest unit of execution that Win32 schedules. It consists of a stack, the state of the CPU registers, and an entry in the execution list of the system scheduler.  
   
@@ -55,16 +58,21 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.Process" />
+    <altmember cref="P:System.Diagnostics.Process.Threads" />
   </Docs>
   <Members>
     <Member MemberName="BasePriority">
       <MemberSignature Language="C#" Value="public int BasePriority { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BasePriority" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.BasePriority" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BasePriority As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BasePriority { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -95,22 +103,29 @@
 ## Remarks  
  The <xref:System.Diagnostics.ProcessThread.BasePriority%2A> is the starting priority for the process thread. You can view information about the base priority through the System Monitor's Priority Base counter.  
   
- The operating system computes a thread's base priority by combining the thread's priority level range with the process's priority class. You can set the process's <xref:System.Diagnostics.Process.PriorityClass%2A?displayProperty=fullName> property to one of the values in the <xref:System.Diagnostics.ProcessPriorityClass> enumeration, which are <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, or <xref:System.Diagnostics.ProcessPriorityClass>. You can set the thread's <xref:System.Diagnostics.ProcessThread.PriorityLevel%2A> property to a range of values that bounds the thread's base priority. Win32 uses four priority classes with seven base priority levels per class.  
+ The operating system computes a thread's base priority by combining the thread's priority level range with the process's priority class. You can set the process's <xref:System.Diagnostics.Process.PriorityClass%2A?displayProperty=nameWithType> property to one of the values in the <xref:System.Diagnostics.ProcessPriorityClass> enumeration, which are <xref:System.Diagnostics.ProcessPriorityClass.Idle>, <xref:System.Diagnostics.ProcessPriorityClass.Normal>, <xref:System.Diagnostics.ProcessPriorityClass.High>, <xref:System.Diagnostics.ProcessPriorityClass.AboveNormal>, <xref:System.Diagnostics.ProcessPriorityClass.BelowNormal>, or <xref:System.Diagnostics.ProcessPriorityClass.RealTime>. You can set the thread's <xref:System.Diagnostics.ProcessThread.PriorityLevel%2A> property to a range of values that bounds the thread's base priority. Win32 uses four priority classes with seven base priority levels per class.  
   
  The thread's current priority might deviate from the base priority. For example, the operating system can change the <xref:System.Diagnostics.ProcessThread.CurrentPriority%2A> property based on the time elapsed or other boosts when a process must be put ahead of others for access to the processor. In addition, you can set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> property to cause the system to temporarily boost the priority of a thread whenever the process is taken out of the wait state. The priority is reset when the process returns to the wait state.  
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessThread.PriorityBoostEnabled" />
+        <altmember cref="T:System.Diagnostics.ProcessPriorityClass" />
+        <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.CurrentPriority" />
       </Docs>
     </Member>
     <Member MemberName="CurrentPriority">
       <MemberSignature Language="C#" Value="public int CurrentPriority { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPriority" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.CurrentPriority" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CurrentPriority As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int CurrentPriority { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -143,16 +158,21 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Diagnostics.ProcessThread.BasePriority" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.PriorityBoostEnabled" />
       </Docs>
     </Member>
     <Member MemberName="Id">
       <MemberSignature Language="C#" Value="public int Id { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.Id" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Id As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Id { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -191,10 +211,13 @@
       <MemberSignature Language="C#" Value="public int IdealProcessor { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 IdealProcessor" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.IdealProcessor" />
+      <MemberSignature Language="VB.NET" Value="Public Property IdealProcessor As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int IdealProcessor {  void set(int value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -248,10 +271,13 @@
       <MemberSignature Language="C#" Value="public bool PriorityBoostEnabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PriorityBoostEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.PriorityBoostEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property PriorityBoostEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool PriorityBoostEnabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -283,7 +309,7 @@
 ## Remarks  
  When <xref:System.Diagnostics.ProcessThread.PriorityBoostEnabled%2A> is `true`, the system temporarily boosts the thread's priority whenever its associated process is taken out of the wait state. This action prevents other processes from interrupting the processing of the current thread. The <xref:System.Diagnostics.ProcessThread.PriorityBoostEnabled%2A> setting affects all existing threads as well as any threads subsequently created by the process. To restore normal behavior, set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> property to `false`.  
   
- <xref:System.Diagnostics.ProcessThread.PriorityBoostEnabled%2A> has an effect only when the thread is running in a process that has a <xref:System.Diagnostics.Process.PriorityClass%2A> set to one of the dynamic priority enumeration values (<xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, or <xref:System.Diagnostics.ProcessPriorityClass>).  
+ <xref:System.Diagnostics.ProcessThread.PriorityBoostEnabled%2A> has an effect only when the thread is running in a process that has a <xref:System.Diagnostics.Process.PriorityClass%2A> set to one of the dynamic priority enumeration values (<xref:System.Diagnostics.ProcessPriorityClass.Normal>, <xref:System.Diagnostics.ProcessPriorityClass.High>, or <xref:System.Diagnostics.ProcessPriorityClass.RealTime>).  
   
 > [!NOTE]
 >  Boosting the priority too high can drain resources from essential operating system and network functions. This could cause problems with other operating system tasks.  
@@ -297,16 +323,20 @@
  The priority boost information could not be set.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="T:System.Diagnostics.ProcessPriorityClass" />
       </Docs>
     </Member>
     <Member MemberName="PriorityLevel">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ThreadPriorityLevel PriorityLevel { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.ThreadPriorityLevel PriorityLevel" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.PriorityLevel" />
+      <MemberSignature Language="VB.NET" Value="Public Property PriorityLevel As ThreadPriorityLevel" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ThreadPriorityLevel PriorityLevel { System::Diagnostics::ThreadPriorityLevel get(); void set(System::Diagnostics::ThreadPriorityLevel value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -346,16 +376,23 @@
  The thread priority level could not be set.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="T:System.Diagnostics.ThreadPriorityLevel" />
+        <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.BasePriority" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.CurrentPriority" />
       </Docs>
     </Member>
     <Member MemberName="PrivilegedProcessorTime">
       <MemberSignature Language="C#" Value="public TimeSpan PrivilegedProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PrivilegedProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.PrivilegedProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PrivilegedProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan PrivilegedProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -393,16 +430,21 @@
         <exception cref="T:System.ComponentModel.Win32Exception">The thread time could not be retrieved.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessThread.UserProcessorTime" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.TotalProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="ProcessorAffinity">
       <MemberSignature Language="C#" Value="public IntPtr ProcessorAffinity { set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int ProcessorAffinity" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.ProcessorAffinity" />
+      <MemberSignature Language="VB.NET" Value="Public Property ProcessorAffinity As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr ProcessorAffinity {  void set(IntPtr value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -460,16 +502,20 @@
         <exception cref="T:System.ComponentModel.Win32Exception">The processor affinity could not be set.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessThread.IdealProcessor" />
       </Docs>
     </Member>
     <Member MemberName="ResetIdealProcessor">
       <MemberSignature Language="C#" Value="public void ResetIdealProcessor ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetIdealProcessor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.ProcessThread.ResetIdealProcessor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ResetIdealProcessor ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ResetIdealProcessor();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -495,16 +541,20 @@
         <exception cref="T:System.ComponentModel.Win32Exception">The ideal processor could not be reset.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessThread.IdealProcessor" />
       </Docs>
     </Member>
     <Member MemberName="StartAddress">
       <MemberSignature Language="C#" Value="public IntPtr StartAddress { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int StartAddress" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.StartAddress" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StartAddress As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr StartAddress { IntPtr get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -549,10 +599,13 @@
       <MemberSignature Language="C#" Value="public DateTime StartTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StartTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.StartTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StartTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime StartTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -587,10 +640,13 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.ThreadState ThreadState { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.ThreadState ThreadState" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.ThreadState" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ThreadState As ThreadState" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ThreadState ThreadState { System::Diagnostics::ThreadState get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -619,7 +675,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property value is valid only when the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value is <xref:System.Diagnostics.ThreadState>. Therefore, check the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value before you get the <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property.  
+ The <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property value is valid only when the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value is <xref:System.Diagnostics.ThreadState.Wait>. Therefore, check the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value before you get the <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property.  
   
  ]]></format>
         </remarks>
@@ -631,10 +687,13 @@
       <MemberSignature Language="C#" Value="public TimeSpan TotalProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TotalProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.TotalProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TotalProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TotalProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -672,16 +731,21 @@
         <exception cref="T:System.ComponentModel.Win32Exception">The thread time could not be retrieved.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessThread.PrivilegedProcessorTime" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.UserProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="UserProcessorTime">
       <MemberSignature Language="C#" Value="public TimeSpan UserProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan UserProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.UserProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan UserProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -719,16 +783,21 @@
         <exception cref="T:System.ComponentModel.Win32Exception">The thread time could not be retrieved.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="P:System.Diagnostics.ProcessThread.PrivilegedProcessorTime" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.TotalProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="WaitReason">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ThreadWaitReason WaitReason { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.ThreadWaitReason WaitReason" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.ProcessThread.WaitReason" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WaitReason As ThreadWaitReason" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ThreadWaitReason WaitReason { System::Diagnostics::ThreadWaitReason get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -757,13 +826,15 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property is valid only when the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> is <xref:System.Diagnostics.ThreadState>. Therefore, check the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value before you get the <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property.  
+ The <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property is valid only when the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> is <xref:System.Diagnostics.ThreadState.Wait>. Therefore, check the <xref:System.Diagnostics.ProcessThread.ThreadState%2A> value before you get the <xref:System.Diagnostics.ProcessThread.WaitReason%2A> property.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The thread is not in the wait state.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition.</exception>
         <exception cref="T:System.NotSupportedException">The process is on a remote computer.</exception>
+        <altmember cref="T:System.Diagnostics.ThreadWaitReason" />
+        <altmember cref="P:System.Diagnostics.ProcessThread.ThreadState" />
       </Docs>
     </Member>
   </Members>

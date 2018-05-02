@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFunction2::GetVersionNumber Method | Microsoft Docs"
+title: "ICorDebugFunction2::GetVersionNumber Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFunction2.GetVersionNumber"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFunction2::GetVersionNumber"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFunction2::GetVersionNumber method [.NET Framework debugging]"
   - "GetVersionNumber method, ICorDebugFunction2 interface [.NET Framework debugging]"
 ms.assetid: e3a1ce48-9bb9-4ed6-a5fe-5e1819a6333f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFunction2::GetVersionNumber Method
 Gets the Edit and Continue version of this function.  

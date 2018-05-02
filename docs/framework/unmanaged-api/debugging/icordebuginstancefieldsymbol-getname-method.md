@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugInstanceFieldSymbol::GetName Method | Microsoft Docs"
+title: "ICorDebugInstanceFieldSymbol::GetName Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,13 +9,13 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: d9c12b1f-9c1d-4943-8e9e-93b55faf085f
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugInstanceFieldSymbol::GetName Method
 Gets the name of the instance field.  
@@ -23,13 +23,11 @@ Gets the name of the instance field.
 ## Syntax  
   
 ```  
-  
 HRESULT GetName(  
    [in] ULONG32 cchName,   
    [out] ULONG32 *pcchName,   
    [out, size_is(cchName), length_is(*pcchName)] WCHAR szName[]  
 );  
-  
 ```  
   
 #### Parameters  
@@ -57,5 +55,5 @@ HRESULT GetName(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugInstanceFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)   
+ [ICorDebugInstanceFieldSymbol Interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

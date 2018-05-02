@@ -1,9 +1,15 @@
-<Type Name="EventLogPermission" FullName="System.Diagnostics.EventLogPermission">
+﻿<Type Name="EventLogPermission" FullName="System.Diagnostics.EventLogPermission">
   <TypeSignature Language="C#" Value="public sealed class EventLogPermission : System.Security.Permissions.ResourcePermissionBase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EventLogPermission extends System.Security.Permissions.ResourcePermissionBase" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogPermission" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class EventLogPermission&#xA;Inherits ResourcePermissionBase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class EventLogPermission sealed : System::Security::Permissions::ResourcePermissionBase" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -19,7 +25,7 @@
  Do not grant <xref:System.Diagnostics.EventLogPermission> to partially trusted code. The ability to read and write the event log enables code to perform actions such as issuing event log messages in the name of another application.  
   
 > [!NOTE]
->  If the event source that is specified by the <xref:System.Diagnostics.EventLog.Source%2A?displayProperty=fullName> property for the event log does not exist, a new event source is created. To create an event source in Windows Vista and later versions of Windows, or Windows Server 2003, you must have administrative privileges.  
+>  If the event source that is specified by the <xref:System.Diagnostics.EventLog.Source%2A?displayProperty=nameWithType> property for the event log does not exist, a new event source is created. To create an event source in Windows Vista and later versions of Windows, or Windows Server 2003, you must have administrative privileges.  
 >   
 >  The reason for this requirement is that all event logs, including security, must be searched to determine whether the event source is unique. Starting with Windows Vista, users do not have permission to access the security log; therefore, a <xref:System.Security.SecurityException> is thrown.  
 >   
@@ -27,15 +33,35 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Diagnostics.EventLog" />
+    <altmember cref="T:System.Diagnostics.EventLogPermissionAccess" />
+    <altmember cref="T:System.Diagnostics.EventLogPermissionAttribute" />
+    <altmember cref="T:System.Diagnostics.EventLogPermissionEntry" />
+    <altmember cref="T:System.Diagnostics.EventLogPermissionEntryCollection" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.EventLogPermission" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLogPermission ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogPermission.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLogPermission();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -48,9 +74,15 @@
       <MemberSignature Language="C#" Value="public EventLogPermission (System.Diagnostics.EventLogPermissionEntry[] permissionAccessEntries);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.EventLogPermissionEntry[] permissionAccessEntries) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogPermission.#ctor(System.Diagnostics.EventLogPermissionEntry[])" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (permissionAccessEntries As EventLogPermissionEntry())" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLogPermission(cli::array &lt;System::Diagnostics::EventLogPermissionEntry ^&gt; ^ permissionAccessEntries);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -68,9 +100,15 @@
       <MemberSignature Language="C#" Value="public EventLogPermission (System.Security.Permissions.PermissionState state);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (state As PermissionState)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLogPermission(System::Security::Permissions::PermissionState state);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -81,15 +119,22 @@
         <summary>Initializes a new instance of the <see cref="T:System.Diagnostics.EventLogPermission" /> class with the specified permission state.</summary>
         <remarks>To be added.</remarks>
         <exception cref="T:System.ArgumentException">The <paramref name="state" /> parameter is not a valid value of <see cref="T:System.Security.Permissions.PermissionState" />.</exception>
+        <altmember cref="T:System.Security.Permissions.PermissionState" />
       </Docs>
     </Member>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public EventLogPermission (System.Diagnostics.EventLogPermissionAccess permissionAccess, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Diagnostics.EventLogPermissionAccess permissionAccess, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogPermission.#ctor(System.Diagnostics.EventLogPermissionAccess,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (permissionAccess As EventLogPermissionAccess, machineName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; EventLogPermission(System::Diagnostics::EventLogPermissionAccess permissionAccess, System::String ^ machineName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
@@ -107,9 +152,15 @@
       <MemberSignature Language="C#" Value="public System.Diagnostics.EventLogPermissionEntryCollection PermissionEntries { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.EventLogPermissionEntryCollection PermissionEntries" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogPermission.PermissionEntries" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PermissionEntries As EventLogPermissionEntryCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::EventLogPermissionEntryCollection ^ PermissionEntries { System::Diagnostics::EventLogPermissionEntryCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

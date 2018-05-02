@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHeapValue3::GetMonitorEventWaitList Method | Microsoft Docs"
+title: "ICorDebugHeapValue3::GetMonitorEventWaitList Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHeapValue3.GetMonitorEventWaitList"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHeapValue3::GetMonitorEventWaitList"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHeapValue3::GetMonitorEventWaitList method [.NET Framework debugging]"
   - "GetMonitorEventWaitList method [.NET Framework debugging]"
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHeapValue3::GetMonitorEventWaitList Method
 Provides an ordered list of threads that are queued on the event that is associated with a monitor lock.  
@@ -53,7 +56,7 @@ HRESULT GetMonitorEventWaitList (
 ## Exceptions  
   
 ## Remarks  
- The first thread in the list is the first thread that is released by the next call to <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=fullName>. The next thread in the list is released on the following call, and so on.  
+ The first thread in the list is the first thread that is released by the next call to <xref:System.Threading.Monitor.Pulse%28System.Object%29?displayProperty=nameWithType>. The next thread in the list is released on the following call, and so on.  
   
  If the list is not empty, this method returns S_OK. If the list is empty, the method returns S_FALSE; in this case, the enumeration is still valid, although it is empty.  
   
@@ -73,5 +76,5 @@ HRESULT GetMonitorEventWaitList (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)   
+ [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

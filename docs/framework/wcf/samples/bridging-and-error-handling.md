@@ -1,8 +1,8 @@
 ---
-title: "Bridging and Error Handling | Microsoft Docs"
+title: "Bridging and Error Handling"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
 caps.latest.revision: 21
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Bridging and Error Handling
 This sample demonstrates how the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] routing service is used for bridging communication between a client and a service that use different bindings. This sample also shows how to use a back-up service for failover scenarios. The routing service is a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] component that makes it easy to include a content-based router in your application. This sample adapts the standard [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] Calculator Sample to communicate using the routing service.  
@@ -64,7 +66,6 @@ This sample demonstrates how the [!INCLUDE[indigo1](../../../../includes/indigo1
     Subtract(145,76.54) = 68.46  
     Multiply(9,81.25) = 731.25  
     Divide(22,7) = 3.14285714285714  
-  
     ```  
   
 ## Configurable Via Code or App.config  

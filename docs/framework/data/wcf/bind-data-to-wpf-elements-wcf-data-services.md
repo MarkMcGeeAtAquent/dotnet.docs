@@ -1,5 +1,5 @@
 ---
-title: "How to: Bind Data to Windows Presentation Foundation Elements (WCF Data Services) | Microsoft Docs"
+title: "How to: Bind Data to Windows Presentation Foundation Elements (WCF Data Services)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework-oob"
@@ -9,14 +9,19 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "data binding, WCF Data Services"
   - "WCF Data Services, data binding"
 ms.assetid: d6538ab0-0abe-426a-b9d9-e6f3a5ca2016
 caps.latest.revision: 2
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Bind Data to Windows Presentation Foundation Elements (WCF Data Services)
 With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can bind Windows Presentation Foundation (WPF) elements such as a <xref:System.Windows.Controls.ListBox>``or <xref:System.Windows.Controls.ComboBox> to an instance of <xref:System.Data.Services.Client.DataServiceCollection%601>, which handles the events raised by the controls to keep the <xref:System.Data.Services.Client.DataServiceContext> synchronized with changes made to data in the controls. For more information, see [Binding Data to Controls](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  
@@ -32,7 +37,7 @@ With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can bind W
 ## Example  
  The following XAML defines the `SalesOrders` window in WPF for the previous example.  
   
- [!code-xml[Astoria Northwind Client#BindPagedDataXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf3.xaml#bindpageddataxaml)]  
+ [!code-xaml[Astoria Northwind Client#BindPagedDataXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf3.xaml#bindpageddataxaml)]  
   
 ## Example  
  The following example is from the code-behind page for an Extensible Application Markup Language (XAML) page that defines the `SalesOrders` window in WPF. When the window is loaded, a <xref:System.Data.Services.Client.DataServiceCollection%601> is created based on the result of a query that returns customers with related objects, filtered by country. This result is bound to the <xref:System.Windows.FrameworkElement.DataContext%2A> property of the <xref:System.Windows.Controls.StackPanel> that is the root layout control for the WPF window.  
@@ -43,4 +48,4 @@ With [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], you can bind W
 ## Example  
  The following XAML defines the `SalesOrders` window in WPF for the previous example.  
   
- [!code-xml[Astoria Northwind Client#WpfDataBindingXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]
+ [!code-xaml[Astoria Northwind Client#WpfDataBindingXaml](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind client/vb/customerorderswpf.xaml#wpfdatabindingxaml)]

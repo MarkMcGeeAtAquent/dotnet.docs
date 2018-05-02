@@ -1,5 +1,5 @@
 ---
-title: "HOST_TYPE Enumeration | Microsoft Docs"
+title: "HOST_TYPE Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "HOST_TYPE"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "HOST_TYPE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "HOST_TYPE enumeration [.NET Framework hosting]"
 ms.assetid: 51f848be-84c5-4036-9839-c762c576bbf5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # HOST_TYPE Enumeration
 Contains values that specify the type of host that is launching an application.  

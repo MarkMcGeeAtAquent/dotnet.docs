@@ -1,19 +1,24 @@
 ---
-title: "Specifying XML Values as Parameters | Microsoft Docs"
+title: "Specifying XML Values as Parameters"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
 caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Specifying XML Values as Parameters
 If a query requires a parameter whose value is an XML string, developers can supply that value using an instance of the **SqlXml** data type. There really are no tricks; XML columns in [!INCLUDE[ssNoVersion](../../../../../includes/ssnoversion-md.md)] accept parameter values in exactly the same way as other data types.  
@@ -28,7 +33,7 @@ If a query requires a parameter whose value is an XML string, developers can sup
   
  To create the file needed for the example to run, create a new text file in the same folder as your project. Name the file MyTestStoreData.xml. Open the file in Notepad and copy and paste the following text:  
   
-```  
+```xml  
 <StoreSurvey xmlns="http://schemas.microsoft.com/sqlserver/2004/07/adventure-works/StoreSurvey">  
   <AnnualSales>300000</AnnualSales>  
   <AnnualRevenue>30000</AnnualRevenue>  
@@ -43,9 +48,7 @@ If a query requires a parameter whose value is an XML string, developers can sup
 </StoreSurvey>  
 ```  
   
- [Visual Basic]  
-  
-```  
+```vb  
 Imports System  
 Imports System.Data.SqlClient  
 Imports System.Data.SqlTypes  
@@ -103,9 +106,7 @@ End Sub
 End Module  
 ```  
   
- [C#]  
-  
-```  
+```csharp  
 using System;  
 using System.Data;  
 using System.Data.SqlClient;  
@@ -167,6 +168,6 @@ class Class1
 ```  
   
 ## See Also  
- <xref:System.Data.SqlTypes.SqlXml>   
- [XML Data in SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)   
+ <xref:System.Data.SqlTypes.SqlXml>  
+ [XML Data in SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

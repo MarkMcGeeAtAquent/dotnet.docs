@@ -1,19 +1,24 @@
 ---
-title: "Generating Strongly Typed DataSets | Microsoft Docs"
+title: "Generating Strongly Typed DataSets"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-ado"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
 caps.latest.revision: 5
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # Generating Strongly Typed DataSets
 Given an XML Schema that complies with the XML Schema definition language (XSD) standard, you can generate a strongly typed <xref:System.Data.DataSet> using the XSD.exe tool provided with the [!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)].  
@@ -40,7 +45,6 @@ csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll
   
 ```vb  
 Imports XSDSchema.Namespace  
-  
 ```  
   
 ```csharp  
@@ -62,7 +66,6 @@ Dim customerRow As CustomerDataSet.CustomersRow
 For Each customerRow In customers.Customers  
   Console.WriteLine(customerRow.CustomerID)  
 Next  
-  
 ```  
   
 ```csharp  
@@ -80,7 +83,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
   
  Following is the XML Schema used for the example.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <xs:schema id="CustomerDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">  
   <xs:element name="CustomerDataSet" msdata:IsDataSet="true">  
@@ -100,8 +103,8 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
 ```  
   
 ## See Also  
- <xref:System.Data.DataColumnCollection>   
- <xref:System.Data.DataSet>   
- [Typed DataSets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)   
- [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
+ <xref:System.Data.DataColumnCollection>  
+ <xref:System.Data.DataSet>  
+ [Typed DataSets](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
+ [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

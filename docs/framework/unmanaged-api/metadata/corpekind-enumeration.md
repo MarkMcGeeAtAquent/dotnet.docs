@@ -1,5 +1,5 @@
 ---
-title: "CorPEKind Enumeration | Microsoft Docs"
+title: "CorPEKind Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorPEKind"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorPEKind"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorPEKind enumeration [.NET Framework metadata]"
 ms.assetid: 22dc6dea-b1b9-4982-a730-a022d586b117
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorPEKind Enumeration
 Contains values that describe a portable executable (PE) file, as returned from a call to [IMetaDataImport2::GetPEKind](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  

@@ -1,8 +1,8 @@
 ---
-title: "&lt;clear&gt; Element for &lt;listeners&gt; for &lt;source&gt; | Microsoft Docs"
+title: "&lt;clear&gt; Element for &lt;listeners&gt; for &lt;source&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,11 +11,6 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/clear"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<clear> element for <listeners> for <source>"
   - "clear element for <listeners> for <source>"
@@ -24,6 +19,8 @@ caps.latest.revision: 7
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;clear&gt; Element for &lt;listeners&gt; for &lt;source&gt;
 Clears the `Listeners` collection for a trace source.  
@@ -37,7 +34,7 @@ Clears the `Listeners` collection for a trace source.
   
 ## Syntax  
   
-```  
+```xml  
 <clear/>  
 ```  
   
@@ -69,7 +66,7 @@ Clears the `Listeners` collection for a trace source.
 ## Example  
  The following example shows how to use the `<clear>` element before using the `<add>` elements to add the listeners `console` and `textListener` to the `Listeners` collection for the trace source `TraceSourceApp`.  
   
-```  
+```xml  
 <configuration>  
   <system.diagnostics>  
     <sources>  
@@ -96,7 +93,7 @@ Clears the `Listeners` collection for a trace source.
 ```  
   
 ## See Also  
- <xref:System.Diagnostics.TraceSource>   
- <xref:System.Diagnostics.TraceListener>   
- [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)   
+ <xref:System.Diagnostics.TraceSource>  
+ <xref:System.Diagnostics.TraceListener>  
+ [Trace and Debug Settings Schema](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)  
  [Trace Listeners](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)

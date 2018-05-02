@@ -1,6 +1,6 @@
 ---
-title: "Sorry, we don&#39;t have specifics on this C# error | Microsoft Docs"
-ms.date: "2015-07-20"
+title: "Sorry, we don&#39;t have specifics on this C# error"
+ms.date: 07/20/2015
 ms.prod: .net
 ms.technology: 
   - "devlang-csharp"
@@ -178,7 +178,6 @@ f1_keywords:
   - "CS1912"
   - "CS0743"
   - "CS2016"
-  - "CS4009"
   - "CS0315"
   - "CS1609"
   - "CS1102"
@@ -875,49 +874,41 @@ f1_keywords:
   - "CS0057"
   - "CS0589"
   - "CS0656"
-dev_langs: 
-  - "CSharp"
+  - "CS8038"
+  - "CS8132"
+  - "CS8136"
+  - "CS8137"
+  - "CS8139"
+  - "CS8156"
+  - "CS8168"
+  - "CS8172"
+  - "CS8179"
 helpviewer_keywords: 
   - "errors [C#], additional information"
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
 caps.latest.revision: 15
 author: "BillWagner"
 ms.author: "wiwagn"
-translation.priority.ht: 
-  - "cs-cz"
-  - "de-de"
-  - "es-es"
-  - "fr-fr"
-  - "it-it"
-  - "ja-jp"
-  - "ko-kr"
-  - "pl-pl"
-  - "pt-br"
-  - "ru-ru"
-  - "tr-tr"
-  - "zh-cn"
-  - "zh-tw"
 ---
 # Sorry, we don&#39;t have specifics on this C# error
-We’re sorry, but we don’t have any specific information about this error. You can search for the error number and message text to find information on the web. Or, you can ask other developers using one of these forums:  
+We’re sorry, but we don’t have any specific information about this error. You can search for the error number and message text to find information on the web. Or you can ask other developers using one of these forums:  
   
- [Visual C# Language](http://go.microsoft.com/fwlink/?LinkId=146921)  
- Provides a forum for questions about and general discussions of the [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] language syntax and compiler.  
+ [Visual C# Language](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
+ Provides a forum for questions about and general discussions of the [!INCLUDE[csprcs](~/includes/csprcs-md.md)] language syntax and compiler.  
   
- [Visual C# IDE](http://go.microsoft.com/fwlink/?LinkId=146922)  
- Provides a forum for questions about how to work in the [!INCLUDE[vsprvs](../../csharp/includes/vsprvs_md.md)] environment.  
+ [Visual C# IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
+ Provides a forum for questions about how to work in the [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] environment.  
   
- [Visual C# General](http://go.microsoft.com/fwlink/?LinkId=146920)  
- Provides a forum for questions about and issues with [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)] that are not discussed in other forums.  
+ [Visual C# General](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
+ Provides a forum for questions about and issues with [!INCLUDE[csprcs](~/includes/csprcs-md.md)] that are not discussed in other forums.  
   
  [StackOverflow](http://stackoverflow.com/questions/tagged/c%23)  
- Provides a forum for questions about and issues with [!INCLUDE[csprcs](../../csharp/includes/csprcs_md.md)].  
+ Provides a forum for questions about and issues with [!INCLUDE[csprcs](~/includes/csprcs-md.md)].  
   
  Also see:  
  [Additional Resources for Visual C# Programmers](../../csharp/getting-started/additional-resources.md)  
   
 ## See Also  
- [C# Programming Guide](../../csharp/programming-guide/index.md)   
- [C# Reference](../../csharp/language-reference/index.md)   
- [Talk to Us](https://docs.microsoft.com/visualstudio/ide/talk-to-us)   
- [Talk to Us](https://docs.microsoft.com/visualstudio/ide/talk-to-us)
+ [C# Programming Guide](../../csharp/programming-guide/index.md)  
+ [C# Reference](../../csharp/language-reference/index.md)  
+ [Talk to Us](/visualstudio/ide/talk-to-us)  

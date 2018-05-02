@@ -1,5 +1,5 @@
 ---
-title: "ICLRDataTarget::GetThreadContext Method | Microsoft Docs"
+title: "ICLRDataTarget::GetThreadContext Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRDataTarget.GetThreadContext"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRDataTarget::GetThreadContext"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRDataTarget::GetThreadContext method [.NET Framework debugging]"
   - "GetThreadContext method, ICLRDataTarget interface [.NET Framework debugging]"
 ms.assetid: b9d8c3b5-3a2e-4225-95d4-dd052c4532c3
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRDataTarget::GetThreadContext Method
 Gets the current execution context for the given thread in the target process. This method is called by the common language runtime data access services.  

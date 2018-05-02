@@ -1,24 +1,23 @@
 ---
-title: "Duplex | Microsoft Docs"
+title: "Duplex"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Duplex Service Contract"
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
 caps.latest.revision: 40
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Duplex
 The Duplex sample demonstrates how to define and implement a duplex contract. Duplex communication occurs when a client establishes a session with a service and gives the service a channel on which the service can send messages back to the client. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md). A duplex contract is defined as a pair of interfaces—a primary interface from the client to the service and a callback interface from the service to the client. In this sample, the `ICalculatorDuplex` interface allows the client to perform math operations, calculating the result over a session. The service returns results on the `ICalculatorDuplexCallback` interface. A duplex contract requires a session, because a context must be established to correlate the set of messages being sent between the client and the service.  
@@ -52,10 +51,9 @@ public interface ICalculatorDuplexCallback
     [OperationContract(IsOneWay = true)]  
     void Equation(string eqn);  
 }  
-  
 ```  
   
- The `CalculatorService` class implements the primary `ICalculatorDuplex` interface. The service uses the <xref:System.ServiceModel.InstanceContextMode> instance mode to maintain the result for each session. A private property named `Callback` is used to access the callback channel to the client. The service uses the callback for sending messages back to the client through the callback interface.  
+ The `CalculatorService` class implements the primary `ICalculatorDuplex` interface. The service uses the <xref:System.ServiceModel.InstanceContextMode.PerSession> instance mode to maintain the result for each session. A private property named `Callback` is used to access the callback channel to the client. The service uses the callback for sending messages back to the client through the callback interface.  
   
 ```  
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]  
@@ -107,7 +105,6 @@ public class CallbackHandler : ICalculatorDuplexCallback
       Console.WriteLine("Equation({0}", equation);  
    }  
 }  
-  
 ```  
   
  The proxy that is generated for a duplex contract requires a <xref:System.ServiceModel.InstanceContext> to be provided upon construction. This <xref:System.ServiceModel.InstanceContext> is used as the site for an object that implements the callback interface and handles messages that are sent back from the service. An <xref:System.ServiceModel.InstanceContext> is constructed with an instance of the `CallbackHandler` class. This object handles messages sent from the service to the client on the callback interface.  
@@ -145,12 +142,11 @@ Console.ReadLine();
   
 //Closing the client gracefully closes the connection and cleans up resources.  
 client.Close();  
-  
 ```  
   
  The configuration has been modified to provide a binding that supports both session communication and duplex communication. The `wsDualHttpBinding` supports session communication and allows duplex communication by providing dual HTTP connections, one for each direction. On the service, the only difference in configuration is the binding that is used. On the client, you must configure an address that the server can use to connect to the client as shown in the following sample configuration.  
   
-```  
+```xml  
 <client>  
   <endpoint name=""  
             address="http://localhost/servicemodelsamples/service.svc"   
@@ -167,7 +163,6 @@ client.Close();
     </binding>  
   </wsDualHttpBinding>  
 </bindings>  
-  
 ```  
   
  When you run the sample, you see the messages that are returned to the client on the callback interface that is sent from the service. Each intermediate result is displayed, followed by the entire equation upon the completion of all operations. Press ENTER to shut down the client.  
@@ -181,9 +176,9 @@ client.Close();
 3.  To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
     > [!IMPORTANT]
-    >  When running the client in a cross-machine configuration, be sure to replace "localhost" in both the `address` attribute of the [endpoint](http://msdn.microsoft.com/en-us/13aa23b7-2f08-4add-8dbf-a99f8127c017) element and the `clientBaseAddress` attribute of the [\<binding>](../../../../docs/framework/misc/binding.md) element of the [\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element with the name of the appropriate machine, as shown in the following:  
+    >  When running the client in a cross-machine configuration, be sure to replace "localhost" in both the `address` attribute of the [endpoint](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) element and the `clientBaseAddress` attribute of the [\<binding>](../../../../docs/framework/misc/binding.md) element of the [\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) element with the name of the appropriate machine, as shown in the following:  
   
-    ```  
+    ```xml  
     <client>  
     <endpoint name = ""  
     address="http://service_machine_name/servicemodelsamples/service.svc"  

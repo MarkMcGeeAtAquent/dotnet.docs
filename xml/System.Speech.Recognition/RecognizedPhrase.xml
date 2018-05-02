@@ -1,7 +1,9 @@
-<Type Name="RecognizedPhrase" FullName="System.Speech.Recognition.RecognizedPhrase">
+﻿<Type Name="RecognizedPhrase" FullName="System.Speech.Recognition.RecognizedPhrase">
   <TypeSignature Language="C#" Value="public class RecognizedPhrase" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RecognizedPhrase extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognizedPhrase" />
+  <TypeSignature Language="VB.NET" Value="Public Class RecognizedPhrase" />
+  <TypeSignature Language="C++ CLI" Value="public ref class RecognizedPhrase" />
   <AssemblyInfo>
     <AssemblyName>System.Speech</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -42,7 +44,7 @@
    
   
 ## Examples  
- The following example shows a handler for a <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=fullName>, <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=fullName>, or <xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=fullName> event and some of the information associated with the <xref:System.Speech.Recognition.RecognitionResult> object. The <xref:System.Speech.Recognition.RecognitionResult> class derives from the <xref:System.Speech.Recognition.RecognizedPhrase> class.  
+ The following example shows a handler for a <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>, <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>, or <xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=nameWithType> event and some of the information associated with the <xref:System.Speech.Recognition.RecognitionResult> object. The <xref:System.Speech.Recognition.RecognitionResult> class derives from the <xref:System.Speech.Recognition.RecognizedPhrase> class.  
   
 ```csharp  
 void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
@@ -103,12 +105,16 @@ void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Speech.Recognition.RecognitionResult" />
+    <altmember cref="T:System.Speech.Recognition.RecognizedWordUnit" />
   </Docs>
   <Members>
     <Member MemberName="Confidence">
       <MemberSignature Language="C#" Value="public float Confidence { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float32 Confidence" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Confidence" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Confidence As Single" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property float Confidence { float get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -137,7 +143,7 @@ void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)
    
   
 ## Examples  
- The following example shows a handler for a <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=fullName>, <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=fullName>, or <xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=fullName> event. The example shows information associated with the <xref:System.Speech.Recognition.RecognitionResult> object, some of which is derived from <xref:System.Speech.Recognition.RecognizedPhrase>. The handler displays confidence scores for a recognized phrase as well as for recognition alternates.  
+ The following example shows a handler for a <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized?displayProperty=nameWithType>, <xref:System.Speech.Recognition.SpeechRecognizer.SpeechRecognized?displayProperty=nameWithType>, or <xref:System.Speech.Recognition.Grammar.SpeechRecognized?displayProperty=nameWithType> event. The example shows information associated with the <xref:System.Speech.Recognition.RecognitionResult> object, some of which is derived from <xref:System.Speech.Recognition.RecognizedPhrase>. The handler displays confidence scores for a recognized phrase as well as for recognition alternates.  
   
 ```csharp  
 void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)  
@@ -199,12 +205,18 @@ void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Speech.Recognition.RecognitionResult" />
+        <altmember cref="P:System.Speech.Recognition.RecognitionResult.Alternates" />
+        <altmember cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />
+        <altmember cref="T:System.Speech.Recognition.SpeechRecognizer" />
       </Docs>
     </Member>
     <Member MemberName="ConstructSmlFromSemantics">
       <MemberSignature Language="C#" Value="public System.Xml.XPath.IXPathNavigable ConstructSmlFromSemantics ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XPath.IXPathNavigable ConstructSmlFromSemantics() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.RecognizedPhrase.ConstructSmlFromSemantics" />
+      <MemberSignature Language="VB.NET" Value="Public Function ConstructSmlFromSemantics () As IXPathNavigable" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Xml::XPath::IXPathNavigable ^ ConstructSmlFromSemantics();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -221,7 +233,7 @@ void SpeechRecognizedHandler(object sender, SpeechRecognizedEventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For information about the semantic markup language (SML), see the [Semantic Markup Language Reference](http://msdn.microsoft.com/en-us/f9d83443-2cac-49bc-a447-210feda62f5d).  
+ For information about the semantic markup language (SML), see the [Semantic Markup Language Reference](http://msdn.microsoft.com/library/f9d83443-2cac-49bc-a447-210feda62f5d).  
   
    
   
@@ -250,6 +262,8 @@ private string GetSemanticsSML(RecognizedPhrase result)
       <MemberSignature Language="C#" Value="public System.Speech.Recognition.Grammar Grammar { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.Grammar Grammar" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Grammar" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Grammar As Grammar" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Speech::Recognition::Grammar ^ Grammar { System::Speech::Recognition::Grammar ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -262,12 +276,18 @@ private string GetSemanticsSML(RecognizedPhrase result)
         <summary>Gets the <see cref="T:System.Speech.Recognition.Grammar" /> that the speech recognizer used to return the <see cref="T:System.Speech.Recognition.RecognizedPhrase" />.</summary>
         <value>The grammar object that the speech recognizer used to identify the input.</value>
         <remarks>To be added.</remarks>
+        <altmember cref="T:System.Speech.Recognition.Grammar" />
+        <altmember cref="T:System.Speech.Recognition.RecognitionResult" />
+        <altmember cref="T:System.Speech.Recognition.SpeechRecognitionEngine" />
+        <altmember cref="T:System.Speech.Recognition.SpeechRecognizer" />
       </Docs>
     </Member>
     <Member MemberName="HomophoneGroupId">
       <MemberSignature Language="C#" Value="public int HomophoneGroupId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 HomophoneGroupId" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.HomophoneGroupId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HomophoneGroupId As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int HomophoneGroupId { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -289,12 +309,16 @@ private string GetSemanticsSML(RecognizedPhrase result)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Speech.Recognition.RecognitionResult.Alternates" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.Homophones" />
       </Docs>
     </Member>
     <Member MemberName="Homophones">
       <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Recognition.RecognizedPhrase&gt; Homophones { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.Recognition.RecognizedPhrase&gt; Homophones" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Homophones" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Homophones As ReadOnlyCollection(Of RecognizedPhrase)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Speech::Recognition::RecognizedPhrase ^&gt; ^ Homophones { System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Speech::Recognition::RecognizedPhrase ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -316,12 +340,16 @@ private string GetSemanticsSML(RecognizedPhrase result)
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Speech.Recognition.RecognitionResult.Alternates" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.HomophoneGroupId" />
       </Docs>
     </Member>
     <Member MemberName="ReplacementWordUnits">
       <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Speech.Recognition.ReplacementText&gt; ReplacementWordUnits { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Speech.Recognition.ReplacementText&gt; ReplacementWordUnits" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.ReplacementWordUnits" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ReplacementWordUnits As Collection(Of ReplacementText)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::ObjectModel::Collection&lt;System::Speech::Recognition::ReplacementText ^&gt; ^ ReplacementWordUnits { System::Collections::ObjectModel::Collection&lt;System::Speech::Recognition::ReplacementText ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -343,12 +371,18 @@ private string GetSemanticsSML(RecognizedPhrase result)
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Speech.Recognition.RecognizedWordUnit" />
+        <altmember cref="T:System.Speech.Recognition.ReplacementText" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.Text" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.Words" />
       </Docs>
     </Member>
     <Member MemberName="Semantics">
       <MemberSignature Language="C#" Value="public System.Speech.Recognition.SemanticValue Semantics { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.SemanticValue Semantics" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Semantics" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Semantics As SemanticValue" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Speech::Recognition::SemanticValue ^ Semantics { System::Speech::Recognition::SemanticValue ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -364,7 +398,7 @@ private string GetSemanticsSML(RecognizedPhrase result)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A speech recognition grammar can include semantic information. When a speech recognizer generates a recognition result for such a grammar, the semantic information might be included in the recognition result, according to the rules of the grammar and the input to the recognizer. For more information about semantic information, see [Understanding Semantic Results](http://msdn.microsoft.com/en-us/2a9dbd8b-cf6d-42cd-bbb9-ca0b3e534005) and the <xref:System.Speech.Recognition.SemanticResultKey> and <xref:System.Speech.Recognition.SemanticResultValue> classes.  
+ A speech recognition grammar can include semantic information. When a speech recognizer generates a recognition result for such a grammar, the semantic information might be included in the recognition result, according to the rules of the grammar and the input to the recognizer. For more information about semantic information, see [Understanding Semantic Results](http://msdn.microsoft.com/library/2a9dbd8b-cf6d-42cd-bbb9-ca0b3e534005) and the <xref:System.Speech.Recognition.SemanticResultKey> and <xref:System.Speech.Recognition.SemanticResultValue> classes.  
   
    
   
@@ -388,12 +422,17 @@ static bool TryGetSemanticValue(
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Speech.Recognition.SemanticResultKey" />
+        <altmember cref="T:System.Speech.Recognition.SemanticResultValue" />
+        <altmember cref="T:System.Speech.Recognition.SemanticValue" />
       </Docs>
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public string Text { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Text" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Text As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Text { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -415,12 +454,16 @@ static bool TryGetSemanticValue(
   
  ]]></format>
         </remarks>
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.ReplacementWordUnits" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.Words" />
       </Docs>
     </Member>
     <Member MemberName="Words">
       <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Recognition.RecognizedWordUnit&gt; Words { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.Recognition.RecognizedWordUnit&gt; Words" />
       <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognizedPhrase.Words" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Words As ReadOnlyCollection(Of RecognizedWordUnit)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Speech::Recognition::RecognizedWordUnit ^&gt; ^ Words { System::Collections::ObjectModel::ReadOnlyCollection&lt;System::Speech::Recognition::RecognizedWordUnit ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Speech</AssemblyName>
@@ -442,6 +485,9 @@ static bool TryGetSemanticValue(
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Speech.Recognition.RecognizedWordUnit" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.ReplacementWordUnits" />
+        <altmember cref="P:System.Speech.Recognition.RecognizedPhrase.Text" />
       </Docs>
     </Member>
   </Members>

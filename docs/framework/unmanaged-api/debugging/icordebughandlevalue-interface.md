@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugHandleValue Interface1 | Microsoft Docs"
+title: "ICorDebugHandleValue Interface1"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugHandleValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugHandleValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugHandleValue interface [.NET Framework debugging]"
 ms.assetid: 66fcd2b8-ac66-414b-83a8-75a925e17772
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugHandleValue Interface1
 A subclass of ICorDebugReferenceValue that represents a reference value to which the debugger has created a handle for garbage collection.  

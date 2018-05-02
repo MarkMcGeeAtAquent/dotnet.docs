@@ -1,21 +1,21 @@
 ---
-title: "ICorDebugSymbolProvider::GetAssemblyImageBytes Method | Microsoft Docs"
+title: "ICorDebugSymbolProvider::GetAssemblyImageBytes Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-dev_langs: 
-  - "C++"
 ms.assetid: 3db215aa-e180-4f70-8d23-6d5a0ffbc8e5
 caps.latest.revision: 4
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugSymbolProvider::GetAssemblyImageBytes Method
 Reads data from a merged assembly given a relative virtual address (RVA) in the merged assembly.  
@@ -23,13 +23,11 @@ Reads data from a merged assembly given a relative virtual address (RVA) in the 
 ## Syntax  
   
 ```  
-  
 HRESULT GetAssemblyImageBytes(  
    [in] CORDB_ADDRESS rva,   
    [in] ULONG32 length,   
    [out] ICorDebugMemoryBuffer** ppMemoryBuffer  
 );  
-  
 ```  
   
 #### Parameters  
@@ -57,5 +55,5 @@ HRESULT GetAssemblyImageBytes(
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   
 ## See Also  
- [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)   
+ [ICorDebugSymbolProvider Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

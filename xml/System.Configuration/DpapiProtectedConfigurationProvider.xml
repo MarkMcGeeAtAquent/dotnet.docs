@@ -1,9 +1,15 @@
-<Type Name="DpapiProtectedConfigurationProvider" FullName="System.Configuration.DpapiProtectedConfigurationProvider">
+﻿<Type Name="DpapiProtectedConfigurationProvider" FullName="System.Configuration.DpapiProtectedConfigurationProvider">
   <TypeSignature Language="C#" Value="public sealed class DpapiProtectedConfigurationProvider : System.Configuration.ProtectedConfigurationProvider" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DpapiProtectedConfigurationProvider extends System.Configuration.ProtectedConfigurationProvider" />
   <TypeSignature Language="DocId" Value="T:System.Configuration.DpapiProtectedConfigurationProvider" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DpapiProtectedConfigurationProvider&#xA;Inherits ProtectedConfigurationProvider" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DpapiProtectedConfigurationProvider sealed : System::Configuration::ProtectedConfigurationProvider" />
   <AssemblyInfo>
     <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -29,11 +35,10 @@
 ## Examples  
  The following example shows how to use the standard <xref:System.Configuration.DpapiProtectedConfigurationProvider> to protect or unprotect a configuration section.  
   
-<!-- TODO: review snippet reference  [!CODE [System.Configuration.DpapiProtectedConfigurationProvider#1](System.Configuration.DpapiProtectedConfigurationProvider#1)]  -->  
   
  The following configuration excerpts show the configuration section before and after the protection has been applied.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <connectionStrings>  
@@ -44,7 +49,7 @@
 </configuration>  
 ```  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
   <connectionStrings>  
@@ -68,16 +73,23 @@
   
  ]]></format>
     </remarks>
-    <permission cref="T:System.Security.NamedPermissionSet">for full access to system resources. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />[FullTrust](http://msdn.microsoft.com/en-us/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)</permission>
+    <permission cref="T:System.Security.NamedPermissionSet">for full access to system resources. Demand value: <see cref="F:System.Security.Permissions.SecurityAction.Demand" />[FullTrust](http://msdn.microsoft.com/library/08250d67-c99d-4ab0-8d2b-b0e12019f6e3)</permission>
+    <altmember cref="T:System.Configuration.RsaProtectedConfigurationProvider" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DpapiProtectedConfigurationProvider ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DpapiProtectedConfigurationProvider();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -94,19 +106,31 @@
       </Docs>
     </Member>
     <Member MemberName="Decrypt">
-      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" />
-      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" />
-      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" />
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encryptedNode) cil managed" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (encryptedNode As XmlNode) As XmlNode" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Decrypt(System::Xml::XmlNode ^ encryptedNode);" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Decrypt (encrypted_node As XmlNode) As XmlNode" FrameworkAlternate="xamarinmac-3.0" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Decrypt(System::Xml::XmlNode ^ encrypted_node);" FrameworkAlternate="xamarinmac-3.0" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Xml.XmlNode</ReturnType>
       </ReturnValue>
       <Parameters>
-        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" />
+        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" Index="0" FrameworkAlternate="netcore-2.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1" />
+        <Parameter Name="encrypted_node" Type="System.Xml.XmlNode" Index="0" FrameworkAlternate="xamarinmac-3.0" />
       </Parameters>
       <Docs>
         <param name="encrypted_node">To be added.</param>
@@ -114,11 +138,11 @@
         <returns>A decrypted <see cref="T:System.Xml.XmlNode" /> object.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.Configuration.ConfigurationErrorsException">
-          <paramref name="encryptedNode" /> does not have <see cref="P:System.Xml.XmlNode.Name" /> set to "EncryptedData" and <see cref="T:System.Xml.XmlNodeType" /> set to <see cref="F:System.Xml.XmlNodeType.Element" />.  
+          <paramref name="encrypted_node" /> does not have <see cref="P:System.Xml.XmlNode.Name" /> set to "EncryptedData" and <see cref="T:System.Xml.XmlNodeType" /> set to <see cref="F:System.Xml.XmlNodeType.Element" />.  
   
  \- or -  
   
- <paramref name="encryptedNode" /> does not have a child node named "CipherData" with a child node named "CipherValue".  
+ <paramref name="encrypted_node" /> does not have a child node named "CipherData" with a child node named "CipherValue".  
   
  \- or -  
   
@@ -129,9 +153,15 @@
       <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Encrypt (System.Xml.XmlNode node);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Encrypt(class System.Xml.XmlNode node) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Encrypt(System.Xml.XmlNode)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Encrypt (node As XmlNode) As XmlNode" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Xml::XmlNode ^ Encrypt(System::Xml::XmlNode ^ node);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -151,9 +181,15 @@
       <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection configurationValues);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection configurationValues) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Configuration.DpapiProtectedConfigurationProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Initialize (name As String, configurationValues As NameValueCollection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Initialize(System::String ^ name, System::Collections::Specialized::NameValueCollection ^ configurationValues);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -176,9 +212,15 @@
       <MemberSignature Language="C#" Value="public bool UseMachineProtection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseMachineProtection" />
       <MemberSignature Language="DocId" Value="P:System.Configuration.DpapiProtectedConfigurationProvider.UseMachineProtection" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UseMachineProtection As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseMachineProtection { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

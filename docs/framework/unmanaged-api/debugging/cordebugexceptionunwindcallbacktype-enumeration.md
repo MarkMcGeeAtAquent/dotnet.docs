@@ -1,5 +1,5 @@
 ---
-title: "CorDebugExceptionUnwindCallbackType Enumeration | Microsoft Docs"
+title: "CorDebugExceptionUnwindCallbackType Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorDebugExceptionUnwindCallbackType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorDebugExceptionUnwindCallbackType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorDebugExceptionUnwindCallbackType enumeration [.NET Framework debugging]"
 ms.assetid: 783dce92-8a98-43db-8f78-888d943dd5b2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorDebugExceptionUnwindCallbackType Enumeration
 Indicates the event that is being signaled by the callback during the unwind phase.  

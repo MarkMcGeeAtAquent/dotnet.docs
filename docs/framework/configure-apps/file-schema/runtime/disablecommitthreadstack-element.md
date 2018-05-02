@@ -1,8 +1,8 @@
 ---
-title: "&lt;disableCommitThreadStack&gt; Element | Microsoft Docs"
+title: "&lt;disableCommitThreadStack&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/disableCommitThreadStack"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#disableCommitThreadStack"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "<disableCommitThreadStack> element"
   - "disableCommitThreadStack element"
@@ -25,6 +20,8 @@ caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;disableCommitThreadStack&gt; Element
 Specifies whether the full thread stack is committed when a thread is started.  
@@ -35,7 +32,7 @@ Specifies whether the full thread stack is committed when a thread is started.
   
 ## Syntax  
   
-```  
+```xml  
 <disableCommitThreadStack enabled="0|1"/>  
 ```  
   
@@ -74,7 +71,7 @@ Specifies whether the full thread stack is committed when a thread is started.
 ## Example  
  The following example shows how to disable the default behavior of the common language runtime, which is to commit the full thread stack on thread startup.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <disableCommitThreadStack enabled="1" />  
@@ -83,5 +80,5 @@ Specifies whether the full thread stack is committed when a thread is started.
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)

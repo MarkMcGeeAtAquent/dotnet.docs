@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugType::GetStaticFieldValue Method | Microsoft Docs"
+title: "ICorDebugType::GetStaticFieldValue Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugType.GetStaticFieldValue"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugType::GetStaticFieldValue"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStaticFieldValue method, ICorDebugType interface [.NET Framework debugging]"
   - "ICorDebugType::GetStaticFieldValue method [.NET Framework debugging]"
 ms.assetid: 62eb5d55-53ee-4fb3-8d47-7b6c96808f9e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugType::GetStaticFieldValue Method
 Gets an interface pointer to an ICorDebugValue object that contains the value of the static field referenced by the specified field token in the specified stack frame.  

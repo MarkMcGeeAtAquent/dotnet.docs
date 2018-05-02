@@ -1,5 +1,5 @@
 ---
-title: "ICLRPolicyManager::SetDefaultAction Method | Microsoft Docs"
+title: "ICLRPolicyManager::SetDefaultAction Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRPolicyManager.SetDefaultAction"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRPolicyManager::SetDefaultAction"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetDefaultAction method [.NET Framework hosting]"
   - "ICLRPolicyManager::SetDefaultAction method [.NET Framework hosting]"
 ms.assetid: f9411e7a-27df-451f-9f6c-d643d6a7a7ce
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRPolicyManager::SetDefaultAction Method
 Specifies the policy action the common language runtime (CLR) should take when the specified operation occurs.  
@@ -80,6 +83,6 @@ HRESULT SetDefaultAction (
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [EClrOperation Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)   
- [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)   
+ [EClrOperation Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
+ [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  
  [ICLRPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)

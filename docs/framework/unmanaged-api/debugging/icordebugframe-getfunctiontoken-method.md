@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrame::GetFunctionToken Method | Microsoft Docs"
+title: "ICorDebugFrame::GetFunctionToken Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrame.GetFunctionToken"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrame::GetFunctionToken"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFrame::GetFunctionToken method [.NET Framework debugging]"
   - "GetFunctionToken method [.NET Framework debugging]"
 ms.assetid: a46925b3-3bf8-404f-9f30-a86ae41032c1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrame::GetFunctionToken Method
 Gets the metadata token for the function that contains the code associated with this stack frame.  

@@ -1,24 +1,23 @@
 ---
-title: "Multiple Endpoints | Microsoft Docs"
+title: "Multiple Endpoints"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
 helpviewer_keywords: 
   - "Multiple EndPoints"
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
 caps.latest.revision: 31
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Multiple Endpoints
 The Multiple Endpoints sample demonstrates how to configure multiple endpoints on a service and how to communicate with each endpoint from a client. This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md). The service configuration has been modified to define two endpoints that support the `ICalculator` contract, but each at a different address using a different binding. The client configuration and code have been modified to communicate with both of the service endpoints.  
@@ -28,7 +27,7 @@ The Multiple Endpoints sample demonstrates how to configure multiple endpoints o
   
  The service Web.config file has been modified to define two endpoints, each supporting the same `ICalculator` contract, but at different addresses using different bindings. The first endpoint is defined at the base address using a `basicHttpBinding` binding, which does not have security enabled. The second endpoint is defined at {baseaddress}/secure using a `wsHttpBinding` binding, which is secure by default, using WS-Security with Windows authentication.  
   
-```  
+```xml  
 <service   
     name="Microsoft.ServiceModel.Samples.CalculatorService"  
     behaviorConfiguration="CalculatorServiceBehavior">  
@@ -44,12 +43,11 @@ The Multiple Endpoints sample demonstrates how to configure multiple endpoints o
             contract="Microsoft.ServiceModel.Samples.ICalculator" />  
   ...  
 </service>  
-  
 ```  
   
  Both endpoints are also configured on the client. These endpoints are given names so that the caller can pass the desired endpoint name into the constructor of the client.  
   
-```  
+```xml  
 <client>  
   <!-- Passing "basic" into the constructor of the CalculatorClient  
        class selects this endpoint.-->  
@@ -93,7 +91,6 @@ static void Main()
     Console.WriteLine("Press <ENTER> to terminate client.");  
     Console.ReadLine();  
 }  
-  
 ```  
   
  When you run the client, interactions with both endpoints are displayed.  

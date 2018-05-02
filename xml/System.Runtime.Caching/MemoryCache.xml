@@ -1,7 +1,9 @@
-<Type Name="MemoryCache" FullName="System.Runtime.Caching.MemoryCache">
+﻿<Type Name="MemoryCache" FullName="System.Runtime.Caching.MemoryCache">
   <TypeSignature Language="C#" Value="public class MemoryCache : System.Runtime.Caching.ObjectCache, IDisposable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MemoryCache extends System.Runtime.Caching.ObjectCache implements class System.Collections.IEnumerable, class System.IDisposable" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.MemoryCache" />
+  <TypeSignature Language="VB.NET" Value="Public Class MemoryCache&#xA;Inherits ObjectCache&#xA;Implements IDisposable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class MemoryCache : System::Runtime::Caching::ObjectCache, IDisposable" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime.Caching</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -27,7 +29,7 @@
   
  The <xref:System.Runtime.Caching.MemoryCache> class does not allow `null` as a value in the cache. Any attempt to add or change a cache entry with a value of `null` will fail.  
   
- The <xref:System.Runtime.Caching.MemoryCache> type does not implement *cache regions*. Therefore, when you call <xref:System.Runtime.Caching.MemoryCache> methods that implement base methods that contain a parameter for regions, do not pass a value for the parameter. The methods that use the region parameter all supply a default `null` value. For example, the <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A?displayProperty=fullName> method overload has a `regionName` parameter whose default value is `null`.  
+ The <xref:System.Runtime.Caching.MemoryCache> type does not implement *cache regions*. Therefore, when you call <xref:System.Runtime.Caching.MemoryCache> methods that implement base methods that contain a parameter for regions, do not pass a value for the parameter. The methods that use the region parameter all supply a default `null` value. For example, the <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A?displayProperty=nameWithType> method overload has a `regionName` parameter whose default value is `null`.  
   
    
   
@@ -86,12 +88,14 @@ private void btnGet_Click(object sender, EventArgs e)
  ]]></format>
     </remarks>
     <threadsafe>This type is thread safe.</threadsafe>
+    <altmember cref="T:System.Runtime.Caching.ObjectCache" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public MemoryCache (string name, System.Collections.Specialized.NameValueCollection config = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.#ctor(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, Optional config As NameValueCollection = null)" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -147,6 +151,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public MemoryCache (string name, System.Collections.Specialized.NameValueCollection config, bool ignoreConfigSection);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Collections.Specialized.NameValueCollection config, bool ignoreConfigSection) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.#ctor(System.String,System.Collections.Specialized.NameValueCollection,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (name As String, config As NameValueCollection, ignoreConfigSection As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; MemoryCache(System::String ^ name, System::Collections::Specialized::NameValueCollection ^ config, bool ignoreConfigSection);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -169,6 +175,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override bool Add (System.Runtime.Caching.CacheItem item, System.Runtime.Caching.CacheItemPolicy policy);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Add(class System.Runtime.Caching.CacheItem item, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Add(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Add (item As CacheItem, policy As CacheItemPolicy) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Add(System::Runtime::Caching::CacheItem ^ item, System::Runtime::Caching::CacheItemPolicy ^ policy);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -198,10 +206,29 @@ private void btnGet_Click(object sender, EventArgs e)
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="AddOrGetExisting">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Inserts a cache entry into the cache.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A> method overloads are used to insert a cache entry into the cache. If a cache entry with a matching key does not exist, these methods insert a new entry. If a cache entry with a matching key already exists, they return the existing entry.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="AddOrGetExisting">
       <MemberSignature Language="C#" Value="public override System.Runtime.Caching.CacheItem AddOrGetExisting (System.Runtime.Caching.CacheItem item, System.Runtime.Caching.CacheItemPolicy policy);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Runtime.Caching.CacheItem AddOrGetExisting(class System.Runtime.Caching.CacheItem item, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.AddOrGetExisting(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AddOrGetExisting (item As CacheItem, policy As CacheItemPolicy) As CacheItem" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Runtime::Caching::CacheItem ^ AddOrGetExisting(System::Runtime::Caching::CacheItem ^ item, System::Runtime::Caching::CacheItemPolicy ^ policy);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -247,6 +274,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override object AddOrGetExisting (string key, object value, DateTimeOffset absoluteExpiration, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object AddOrGetExisting(string key, object value, valuetype System.DateTimeOffset absoluteExpiration, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.AddOrGetExisting(System.String,System.Object,System.DateTimeOffset,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AddOrGetExisting (key As String, value As Object, absoluteExpiration As DateTimeOffset, Optional regionName As String = null) As Object" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -272,7 +300,7 @@ private void btnGet_Click(object sender, EventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the cache does not have a cache entry whose key matches the `key` parameter, a new cache entry is created, and the <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A?displayProperty=fullName> method overload returns `null`. If a matching cache entry exists, the existing entry is returned.  
+ If the cache does not have a cache entry whose key matches the `key` parameter, a new cache entry is created, and the <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A?displayProperty=nameWithType> method overload returns `null`. If a matching cache entry exists, the existing entry is returned.  
   
 > [!WARNING]
 >  The <xref:System.Runtime.Caching.ObjectCache.Add%2A> and <xref:System.Runtime.Caching.ObjectCache.AddOrGetExisting%2A> method overloads do not support the <xref:System.Runtime.Caching.CacheItemPolicy.UpdateCallback%2A> property. Therefore, to set the <xref:System.Runtime.Caching.CacheItemPolicy.UpdateCallback%2A> property for a cache entry, use the <xref:System.Runtime.Caching.MemoryCache.Set%2A> method overloads instead.  
@@ -280,9 +308,9 @@ private void btnGet_Click(object sender, EventArgs e)
  ]]></format>
         </remarks>
         <exception cref="T:System.ArgumentNullException">
-          <paramref name="value " />is not <see langword="null" />.</exception>
+          <paramref name="value" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">Both the absolute and sliding expiration values for the <see cref="T:System.Runtime.Caching.CacheItemPolicy" /> object are set to values other than the defaults of <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> and <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" /> fields. The <see cref="T:System.Runtime.Caching.MemoryCache" /> class cannot set expiration policy based on a combination of an absolute expiration and a sliding expiration. Only one expiration setting can be explicitly set when you use the <see cref="T:System.Runtime.Caching.MemoryCache" /> instance. The other expiration setting must be set to <see cref="F:System.Runtime.Caching.ObjectCache.InfiniteAbsoluteExpiration" /> or <see cref="F:System.Runtime.Caching.ObjectCache.NoSlidingExpiration" /></exception>
         <exception cref="T:System.ArgumentOutOfRangeException">The <see cref="P:System.Runtime.Caching.CacheItemPolicy.SlidingExpiration" /> property is set to a value less than <see cref="F:System.TimeSpan.Zero" />.  
   
@@ -299,6 +327,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override object AddOrGetExisting (string key, object value, System.Runtime.Caching.CacheItemPolicy policy, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object AddOrGetExisting(string key, object value, class System.Runtime.Caching.CacheItemPolicy policy, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.AddOrGetExisting(System.String,System.Object,System.Runtime.Caching.CacheItemPolicy,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function AddOrGetExisting (key As String, value As Object, policy As CacheItemPolicy, Optional regionName As String = null) As Object" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -352,6 +381,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public long CacheMemoryLimit { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 CacheMemoryLimit" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.CacheMemoryLimit" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property CacheMemoryLimit As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long CacheMemoryLimit { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -369,7 +400,7 @@ private void btnGet_Click(object sender, EventArgs e)
 ## Remarks  
  If the current instance of the cache exceeds the limit on memory set by the <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> property, the cache implementation removes cache entries. Each cache instance in the application can use the amount of memory that is specified by the <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> property.  
   
- The settings for the <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> property can be specified in the application configuration file. Alternatively, they can be passed in the constructor when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [\&lt;namedCaches\&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to set this value when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%2A> method.  
+ The settings for the <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> property can be specified in the application configuration file. Alternatively, they can be passed in the constructor when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [&lt;namedCaches&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to set this value when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%2A> method.  
   
  <xref:System.Runtime.Caching.MemoryCache> does not instantly enforce <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> each time a new item is added to a <xref:System.Runtime.Caching.MemoryCache> instance. The internal heuristics which evicts extra items from the <xref:System.Runtime.Caching.MemoryCache> does it gradually and takes into account information from the garbage collector (see [Garbage Collection](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)) and other factors such as current cache size and overall system memory pressure. Therefore even though the <xref:System.Runtime.Caching.MemoryCache> tries to keep the cache size within the configured <xref:System.Runtime.Caching.MemoryCache.CacheMemoryLimit%2A> it is possible to temporarily exceed the limit by adding cache items at a very high rate.  
   
@@ -381,6 +412,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override bool Contains (string key, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(string key, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Contains(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Contains (key As String, Optional regionName As String = null) As Boolean" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -403,13 +435,14 @@ private void btnGet_Click(object sender, EventArgs e)
         <exception cref="T:System.ArgumentNullException">
           <paramref name="key" /> is <see langword="null" />.</exception>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="CreateCacheEntryChangeMonitor">
       <MemberSignature Language="C#" Value="public override System.Runtime.Caching.CacheEntryChangeMonitor CreateCacheEntryChangeMonitor (System.Collections.Generic.IEnumerable&lt;string&gt; keys, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Runtime.Caching.CacheEntryChangeMonitor CreateCacheEntryChangeMonitor(class System.Collections.Generic.IEnumerable`1&lt;string&gt; keys, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.CreateCacheEntryChangeMonitor(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function CreateCacheEntryChangeMonitor (keys As IEnumerable(Of String), Optional regionName As String = null) As CacheEntryChangeMonitor" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -442,7 +475,7 @@ private void btnGet_Click(object sender, EventArgs e)
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="keys" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">An item in the <paramref name="keys" /> collection is <see langword="null" />.</exception>
@@ -452,6 +485,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public static System.Runtime.Caching.MemoryCache Default { get; }" />
       <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Caching.MemoryCache Default" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.Default" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly Property Default As MemoryCache" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static property System::Runtime::Caching::MemoryCache ^ Default { System::Runtime::Caching::MemoryCache ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -469,7 +504,7 @@ private void btnGet_Click(object sender, EventArgs e)
 ## Remarks  
  This property always returns a reference to the default cache instance. For typical application scenarios, only one instance of <xref:System.Runtime.Caching.MemoryCache> is required.  
   
- Because the default cache instance is not created by the constructor, you must use configuration to explicitly set the memory and polling values for the default cache instance. For more information, see [\&lt;memoryCache\&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md).  
+ Because the default cache instance is not created by the constructor, you must use configuration to explicitly set the memory and polling values for the default cache instance. For more information, see [&lt;memoryCache&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/memorycache-element-cache-settings.md).  
   
  ]]></format>
         </remarks>
@@ -479,6 +514,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override System.Runtime.Caching.DefaultCacheCapabilities DefaultCacheCapabilities { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Caching.DefaultCacheCapabilities DefaultCacheCapabilities" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.DefaultCacheCapabilities" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property DefaultCacheCapabilities As DefaultCacheCapabilities" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Runtime::Caching::DefaultCacheCapabilities DefaultCacheCapabilities { System::Runtime::Caching::DefaultCacheCapabilities get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -496,17 +533,17 @@ private void btnGet_Click(object sender, EventArgs e)
 ## Remarks  
  The capabilities of a cache implementation are a combination of the following values:  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.InMemoryProvider>  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryChangeMonitors>  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.AbsoluteExpirations>  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.SlidingExpirations>  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryUpdateCallback>  
   
--   <xref:System.Runtime.Caching.DefaultCacheCapabilities>  
+-   <xref:System.Runtime.Caching.DefaultCacheCapabilities.CacheEntryRemovedCallback>  
   
  ]]></format>
         </remarks>
@@ -516,7 +553,12 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -545,7 +587,7 @@ private void btnGet_Click(object sender, EventArgs e)
   
 5.  Callback objects that provide notification of changes for those monitors are called.  
   
-6.  Any <xref:System.Web.Caching.CacheItemRemovedCallback> instances that are registered with entries in the cache are called. The removal reason that is passed to the callbacks is <xref:System.Runtime.Caching.CacheEntryRemovedReason>.  
+6.  Any <xref:System.Web.Caching.CacheItemRemovedCallback> instances that are registered with entries in the cache are called. The removal reason that is passed to the callbacks is <xref:System.Runtime.Caching.CacheEntryRemovedReason.CacheSpecificEviction>.  
   
  ]]></format>
         </remarks>
@@ -555,6 +597,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override object Get (string key, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Get(string key, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Get(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Get (key As String, Optional regionName As String = null) As Object" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -574,7 +617,7 @@ private void btnGet_Click(object sender, EventArgs e)
         <returns>A reference to the cache entry that is identified by <paramref name="key" />, if the entry exists; otherwise, <see langword="null" />.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="key" /> is <see langword="null" />.</exception>
       </Docs>
@@ -583,6 +626,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override System.Runtime.Caching.CacheItem GetCacheItem (string key, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Runtime.Caching.CacheItem GetCacheItem(string key, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.GetCacheItem(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetCacheItem (key As String, Optional regionName As String = null) As CacheItem" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -609,7 +653,7 @@ private void btnGet_Click(object sender, EventArgs e)
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="key" /> is <see langword="null" />.</exception>
       </Docs>
@@ -618,6 +662,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override long GetCount (string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 GetCount(string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.GetCount(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetCount (Optional regionName As String = null) As Long" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -635,13 +680,15 @@ private void btnGet_Click(object sender, EventArgs e)
         <returns>The number of entries in the cache.</returns>
         <remarks>To be added.</remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="GetEnumerator">
       <MemberSignature Language="C#" Value="protected override System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;string,object&gt;&gt; GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;string, object&gt;&gt; GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function GetEnumerator () As IEnumerator(Of KeyValuePair(Of String, Object))" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Collections::Generic::IEnumerator&lt;System::Collections::Generic::KeyValuePair&lt;System::String ^, System::Object ^&gt;&gt; ^ GetEnumerator();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -671,6 +718,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public long GetLastSize (string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 GetLastSize(string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.GetLastSize(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetLastSize (Optional regionName As String = null) As Long" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -693,6 +741,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override System.Collections.Generic.IDictionary&lt;string,object&gt; GetValues (System.Collections.Generic.IEnumerable&lt;string&gt; keys, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; GetValues(class System.Collections.Generic.IEnumerable`1&lt;string&gt; keys, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.GetValues(System.Collections.Generic.IEnumerable{System.String},System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetValues (keys As IEnumerable(Of String), Optional regionName As String = null) As IDictionary(Of String, Object)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -719,7 +768,7 @@ private void btnGet_Click(object sender, EventArgs e)
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="keys" /> is <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentException">An individual key in the collection is <see langword="null" />.</exception>
@@ -729,6 +778,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override object this[string key] { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.Item(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Default Public Overrides Property Item(key As String) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Object ^ default[System::String ^] { System::Object ^ get(System::String ^ key); void set(System::String ^ key, System::Object ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -764,6 +815,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -779,7 +832,7 @@ private void btnGet_Click(object sender, EventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Runtime.Caching.MemoryCache.Name%2A> property returns the name of the current instance of the <xref:System.Runtime.Caching.MemoryCache> class. In an application that uses multiple cache instances, you can use the <xref:System.Runtime.Caching.MemoryCache.Name%2A> property to help distinguish instances. For more information, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=fullName> method. The default memory-based cache returns the default name.  
+ The <xref:System.Runtime.Caching.MemoryCache.Name%2A> property returns the name of the current instance of the <xref:System.Runtime.Caching.MemoryCache> class. In an application that uses multiple cache instances, you can use the <xref:System.Runtime.Caching.MemoryCache.Name%2A> property to help distinguish instances. For more information, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=nameWithType> method. The default memory-based cache returns the default name.  
   
  ]]></format>
         </remarks>
@@ -789,6 +842,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public long PhysicalMemoryLimit { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PhysicalMemoryLimit" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.PhysicalMemoryLimit" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PhysicalMemoryLimit As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PhysicalMemoryLimit { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -806,7 +861,7 @@ private void btnGet_Click(object sender, EventArgs e)
 ## Remarks  
  The <xref:System.Runtime.Caching.MemoryCache.PhysicalMemoryLimit%2A> property returns the percentage of total physical computer memory that can be used by a single instance of the <xref:System.Runtime.Caching.MemoryCache> class. If the cache instance exceeds the specified limit, cache entries are removed.  
   
- The settings for the <xref:System.Runtime.Caching.MemoryCache.PhysicalMemoryLimit%2A> property can be specified in the application configuration file. Alternatively, they can be passed by a caller when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [\&lt;namedCaches\&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to configure the property when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=fullName> method.  
+ The settings for the <xref:System.Runtime.Caching.MemoryCache.PhysicalMemoryLimit%2A> property can be specified in the application configuration file. Alternatively, they can be passed by a caller when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [&lt;namedCaches&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to configure the property when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
@@ -816,6 +871,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public TimeSpan PollingInterval { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PollingInterval" />
       <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.MemoryCache.PollingInterval" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PollingInterval As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan PollingInterval { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -831,16 +888,26 @@ private void btnGet_Click(object sender, EventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The settings for the <xref:System.Runtime.Caching.MemoryCache.PollingInterval%2A> property can be specified in the application configuration file. Alternatively they can be passed when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [\&lt;namedCaches\&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to configure the property when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=fullName> method.  
+ The settings for the <xref:System.Runtime.Caching.MemoryCache.PollingInterval%2A> property can be specified in the application configuration file. Alternatively they can be passed when the <xref:System.Runtime.Caching.MemoryCache> class is initialized. For more information about how to configure this property, see [&lt;namedCaches&gt; Element (Cache Settings)](~/docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md). For more information about how to configure the property when the <xref:System.Runtime.Caching.MemoryCache> class is being initialized, see the <xref:System.Runtime.Caching.MemoryCache.%23ctor%28System.String%2CSystem.Collections.Specialized.NameValueCollection%29?displayProperty=nameWithType> method.  
   
  ]]></format>
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Remove">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Removes the specified item from the cache.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Remove">
       <MemberSignature Language="C#" Value="public override object Remove (string key, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Remove(string key, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Remove(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Remove (key As String, Optional regionName As String = null) As Object" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -862,12 +929,12 @@ private void btnGet_Click(object sender, EventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If the entry specified by `key` exists in the cache, removing the item triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or a <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason passed to the callback is <xref:System.Runtime.Caching.CacheEntryRemovedReason>.  
+ If the entry specified by `key` exists in the cache, removing the item triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or a <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason passed to the callback is <xref:System.Runtime.Caching.CacheEntryRemovedReason.Removed>.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="key" /> is <see langword="null" />.</exception>
       </Docs>
@@ -876,6 +943,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public object Remove (string key, System.Runtime.Caching.CacheEntryRemovedReason reason, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Remove(string key, valuetype System.Runtime.Caching.CacheEntryRemovedReason reason, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Remove(System.String,System.Runtime.Caching.CacheEntryRemovedReason,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Remove (key As String, reason As CacheEntryRemovedReason, Optional regionName As String = null) As Object" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -898,10 +966,29 @@ private void btnGet_Click(object sender, EventArgs e)
         <remarks>To be added.</remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Set">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Inserts a cache entry into the cache.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ If the specified entry does not exist, it is created. If the specified entry exists, it is updated.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Set">
       <MemberSignature Language="C#" Value="public override void Set (System.Runtime.Caching.CacheItem item, System.Runtime.Caching.CacheItemPolicy policy);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Set(class System.Runtime.Caching.CacheItem item, class System.Runtime.Caching.CacheItemPolicy policy) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Set(System.Runtime.Caching.CacheItem,System.Runtime.Caching.CacheItemPolicy)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Set (item As CacheItem, policy As CacheItemPolicy)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Set(System::Runtime::Caching::CacheItem ^ item, System::Runtime::Caching::CacheItemPolicy ^ policy);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -956,6 +1043,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override void Set (string key, object value, DateTimeOffset absoluteExpiration, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Set(string key, object value, valuetype System.DateTimeOffset absoluteExpiration, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Set(System.String,System.Object,System.DateTimeOffset,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Set (key As String, value As Object, absoluteExpiration As DateTimeOffset, Optional regionName As String = null)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -984,12 +1072,12 @@ private void btnGet_Click(object sender, EventArgs e)
   
  The `absoluteExpiration` parameter indicates when the entry should be removed from the cache.  
   
- Removing an entry triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason for removal that is passed to the callbacks is contained in the <xref:System.Runtime.Caching.CacheEntryRemovedReason> property.  
+ Removing an entry triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason for removal that is passed to the callbacks is contained in the <xref:System.Runtime.Caching.CacheEntryRemovedReason.Removed> property.  
   
  ]]></format>
         </remarks>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="key" /> is <see langword="null" />.  
   
@@ -1016,6 +1104,7 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public override void Set (string key, object value, System.Runtime.Caching.CacheItemPolicy policy, string regionName = null);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Set(string key, object value, class System.Runtime.Caching.CacheItemPolicy policy, string regionName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Set(System.String,System.Object,System.Runtime.Caching.CacheItemPolicy,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Set (key As String, value As Object, policy As CacheItemPolicy, Optional regionName As String = null)" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -1042,7 +1131,7 @@ private void btnGet_Click(object sender, EventArgs e)
 ## Remarks  
  Like other <xref:System.Runtime.Caching.MemoryCache.Set%2A> method overloads, the <xref:System.Runtime.Caching.MemoryCache.Set%2A> method always puts a cache value in the cache, regardless whether a matching entry already exists. If the specified entry does not exist in the cache, a new cache entry is inserted. If the specified entry exists, it is updated.  
   
- Removing an entry triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason for removal that is passed to the callbacks is contained in the <xref:System.Runtime.Caching.CacheEntryRemovedReason> property.  
+ Removing an entry triggers any associated change monitors. If the removed item was associated with a <xref:System.Web.Caching.CacheItemUpdateCallback> object or <xref:System.Web.Caching.CacheItemRemovedCallback> object, the reason for removal that is passed to the callbacks is contained in the <xref:System.Runtime.Caching.CacheEntryRemovedReason.Removed> property.  
   
  ]]></format>
         </remarks>
@@ -1071,14 +1160,19 @@ private void btnGet_Click(object sender, EventArgs e)
   
  The <see cref="P:System.Runtime.Caching.CacheItemPolicy.Priority" /> property is not a value of the <see cref="T:System.Runtime.Caching.CacheItemPriority" /> enumeration.</exception>
         <exception cref="T:System.NotSupportedException">
-          <paramref name="regionName " />is not <see langword="null" />.</exception>
+          <paramref name="regionName" /> is not <see langword="null" />.</exception>
       </Docs>
     </Member>
     <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
       <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberSignature Language="VB.NET" Value="Function GetEnumerator () As IEnumerator Implements IEnumerable.GetEnumerator" />
+      <MemberSignature Language="C++ CLI" Value=" virtual System::Collections::IEnumerator ^ System.Collections.IEnumerable.GetEnumerator() = System::Collections::IEnumerable::GetEnumerator;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Collections.IEnumerable.GetEnumerator</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -1106,6 +1200,8 @@ private void btnGet_Click(object sender, EventArgs e)
       <MemberSignature Language="C#" Value="public long Trim (int percent);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 Trim(int32 percent) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.MemoryCache.Trim(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Trim (percent As Integer) As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; long Trim(int percent);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime.Caching</AssemblyName>
@@ -1125,47 +1221,13 @@ private void btnGet_Click(object sender, EventArgs e)
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Runtime.Caching.MemoryCache.Trim%2A> property first removes entries that have exceeded either an absolute or sliding expiration. Any callbacks that are registered for items that are removed will be passed a removed reason of <xref:System.Web.Caching.CacheItemRemovedReason>.  
+ The <xref:System.Runtime.Caching.MemoryCache.Trim%2A> property first removes entries that have exceeded either an absolute or sliding expiration. Any callbacks that are registered for items that are removed will be passed a removed reason of <xref:System.Web.Caching.CacheItemRemovedReason.Expired>.  
   
- If removing expired entries is insufficient to reach the specified trim percentage, additional entries will be removed from the cache based on a least-recently used (LRU) algorithm until the requested trim percentage is reached. Any callbacks that are registered for items that are removed this way will be passed a remove reason of <xref:System.Runtime.Caching.CacheEntryRemovedReason>.  
+ If removing expired entries is insufficient to reach the specified trim percentage, additional entries will be removed from the cache based on a least-recently used (LRU) algorithm until the requested trim percentage is reached. Any callbacks that are registered for items that are removed this way will be passed a remove reason of <xref:System.Runtime.Caching.CacheEntryRemovedReason.Evicted>.  
   
  ]]></format>
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="AddOrGetExisting">
-      <AssemblyInfo>
-        <AssemblyName>System.Runtime.Caching</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Inserts a cache entry into the cache.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- The <xref:System.Runtime.Caching.MemoryCache.AddOrGetExisting%2A> method overloads are used to insert a cache entry into the cache. If a cache entry with a matching key does not exist, these methods insert a new entry. If a cache entry with a matching key already exists, they return the existing entry.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Set">
-      <AssemblyInfo>
-        <AssemblyName>System.Runtime.Caching</AssemblyName>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Inserts a cache entry into the cache.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- If the specified entry does not exist, it is created. If the specified entry exists, it is updated.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

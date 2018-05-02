@@ -1,5 +1,5 @@
 ---
-title: "Find and Highlight Text Using UI Automation | Microsoft Docs"
+title: "Find and Highlight Text Using UI Automation"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,6 +9,9 @@ ms.technology:
   - "dotnet-bcl"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "text, highlighting"
   - "finding text"
@@ -21,6 +24,8 @@ caps.latest.revision: 15
 author: "Xansky"
 ms.author: "mhopkins"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Find and Highlight Text Using UI Automation
 > [!NOTE]

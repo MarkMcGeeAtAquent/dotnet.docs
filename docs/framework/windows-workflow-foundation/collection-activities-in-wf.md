@@ -1,5 +1,5 @@
 ---
-title: "Collection Activities in WF | Microsoft Docs"
+title: "Collection Activities in WF"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,12 +9,14 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
 caps.latest.revision: 10
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Collection Activities in WF
-Collection activities are used to work with collection objects in a workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection. `ExistsInCollection` and `RemoveFromCollectio`n have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.  
+Collection activities are used to work with collection objects in a workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection. `ExistsInCollection` and `RemoveFromCollection` have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.  
   
 > [!IMPORTANT]
 >  If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.  
@@ -84,7 +86,6 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
 ```xaml  
@@ -228,7 +229,6 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
  The above code samples can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>  
@@ -286,10 +286,9 @@ Activity wf = new Sequence
         }  
     }  
 };  
-  
 ```  
   
-```  
+```xml  
 <Sequence  
    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"  
    xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"  
@@ -430,7 +429,6 @@ Activity wf = new Sequence
     </If.Then>  
   </If>  
 </Sequence>  
-  
 ```  
   
 ## See Also  

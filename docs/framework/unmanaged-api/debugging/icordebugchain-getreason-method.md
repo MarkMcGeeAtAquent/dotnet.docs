@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugChain::GetReason Method | Microsoft Docs"
+title: "ICorDebugChain::GetReason Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugChain.GetReason"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetReason"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetReason method [.NET Framework debugging]"
   - "ICorDebugChain::GetReason method [.NET Framework debugging]"
 ms.assetid: 9f9f62b9-113a-4a98-8f9b-b593cef27b03
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugChain::GetReason Method
 Gets the reason for the genesis of this calling chain.  

@@ -1,5 +1,5 @@
 ---
-title: "SetAssemblyFile Method | Microsoft Docs"
+title: "SetAssemblyFile Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IALink.SetAssemblyFile"
-apilocation: 
+api_location: 
   - "alink.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SetAssemblyFile"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "SetAssemblyFile method"
 ms.assetid: 3a912787-f139-43ca-a841-8bbda3107ecf
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SetAssemblyFile Method
 Assigns the name of the assembly to be built. Not for use when producing unbound modules.  
@@ -60,6 +63,6 @@ HRESULT SetAssemblyFile(
  Requires alink.h.  
   
 ## See Also  
- [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)   
- [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)   
+ [IALink Interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)  
+ [IALink2 Interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)  
  [ALink API](../../../../docs/framework/unmanaged-api/alink/index.md)

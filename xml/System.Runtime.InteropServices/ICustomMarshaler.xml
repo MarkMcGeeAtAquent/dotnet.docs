@@ -1,7 +1,9 @@
-<Type Name="ICustomMarshaler" FullName="System.Runtime.InteropServices.ICustomMarshaler">
+﻿<Type Name="ICustomMarshaler" FullName="System.Runtime.InteropServices.ICustomMarshaler">
   <TypeSignature Language="C#" Value="public interface ICustomMarshaler" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICustomMarshaler" />
   <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ICustomMarshaler" />
+  <TypeSignature Language="VB.NET" Value="Public Interface ICustomMarshaler" />
+  <TypeSignature Language="C++ CLI" Value="public interface class ICustomMarshaler" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces />
   <Attributes>
@@ -84,25 +90,25 @@ const IID IID_IOld = {0x9B2BAADD,0x0705,0x11D3,{0xA0,0xCD,0x00,0xC0,0x4F,0xA3,0x
 |Information (about native code)|<xref:System.Runtime.InteropServices.ICustomMarshaler.GetNativeDataSize%2A>|Returns the size of the unmanaged data to be marshaled.|  
   
 ### Conversion  
- <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalNativeToManaged%2A?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalNativeToManaged%2A?displayProperty=nameWithType>  
   
  Marshals a pointer to native data into a managed object. This method returns a custom runtime callable wrapper (RCW) that can marshal the unmanaged interface that is passed as an argument. The marshaler should return an instance of the custom RCW for that type.  
   
- <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalManagedToNative%2A?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalManagedToNative%2A?displayProperty=nameWithType>  
   
  Marshals a managed object into a pointer to native data. This method returns a custom COM callable wrapper (CCW) that can marshal the managed interface that is passed as an argument. The marshaler should return an instance of the custom CCW for that type.  
   
 ### Cleanup  
- <xref:System.Runtime.InteropServices.ICustomMarshaler.CleanUpNativeData%2A?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices.ICustomMarshaler.CleanUpNativeData%2A?displayProperty=nameWithType>  
   
  Enables the marshaler to clean up the native data (the CCW) that is returned by the <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalManagedToNative%2A> method.  
   
- <xref:System.Runtime.InteropServices.ICustomMarshaler.CleanUpManagedData%2A?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices.ICustomMarshaler.CleanUpManagedData%2A?displayProperty=nameWithType>  
   
  Enables the marshaler to clean up the managed data (the RCW) that is returned by the <xref:System.Runtime.InteropServices.ICustomMarshaler.MarshalNativeToManaged%2A> method.  
   
 ### Size Information  
- <xref:System.Runtime.InteropServices.ICustomMarshaler.GetNativeDataSize%2A?displayProperty=fullName>  
+ <xref:System.Runtime.InteropServices.ICustomMarshaler.GetNativeDataSize%2A?displayProperty=nameWithType>  
   
  Returns the size of the unmanaged data to be marshaled.  
   
@@ -116,7 +122,7 @@ static ICustomMarshaler *GetInstance(String *pstrCookie);
 ## Applying MarshalAsAttribute  
  To use a custom marshaler, you must apply the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute to the parameter or field that is being marshaled.  
   
- You must also pass the <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName> enumeration value to the <xref:System.Runtime.InteropServices.MarshalAsAttribute>constructor. In addition, you must specify the <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> field with one of the following named parameters:  
+ You must also pass the <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=nameWithType> enumeration value to the <xref:System.Runtime.InteropServices.MarshalAsAttribute> constructor. In addition, you must specify the <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> field with one of the following named parameters:  
   
 -   <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> (required): The assembly-qualified name of the custom marshaler. The name should include the namespace and class of the custom marshaler. If the custom marshaler is not defined in the assembly it is used in, you must specify the name of the assembly in which it is defined.  
   
@@ -157,7 +163,7 @@ library UserLib {
  [!code-csharp[System.Runtime.InteropServices.ICustomMarshaler#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.icustommarshaler/cs/source.cs#5)]
  [!code-vb[System.Runtime.InteropServices.ICustomMarshaler#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.icustommarshaler/vb/source.vb#5)]  
   
- In the previous examples, the first parameter provided to the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute is the <xref:System.Runtime.InteropServices.UnmanagedType?displayProperty=fullName> enumeration value `UnmanagedType.CustomMarshaler`.  
+ In the previous examples, the first parameter provided to the <xref:System.Runtime.InteropServices.MarshalAsAttribute> attribute is the <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=nameWithType> enumeration value `UnmanagedType.CustomMarshaler`.  
   
  The second parameter is the <xref:System.Runtime.InteropServices.MarshalAsAttribute.MarshalType> field, which provides the assembly-qualified name of the custom marshaler. This name consists of the namespace and class of the custom marshaler (`MarshalType="MyCompany.NewOldMarshaler"`).  
   
@@ -169,6 +175,8 @@ library UserLib {
       <MemberSignature Language="C#" Value="public void CleanUpManagedData (object ManagedObj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CleanUpManagedData(object ManagedObj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomMarshaler.CleanUpManagedData(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CleanUpManagedData (ManagedObj As Object)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CleanUpManagedData(System::Object ^ ManagedObj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -178,6 +186,10 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -195,6 +207,8 @@ library UserLib {
       <MemberSignature Language="C#" Value="public void CleanUpNativeData (IntPtr pNativeData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CleanUpNativeData(native int pNativeData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomMarshaler.CleanUpNativeData(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CleanUpNativeData (pNativeData As IntPtr)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CleanUpNativeData(IntPtr pNativeData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -204,6 +218,10 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -221,6 +239,8 @@ library UserLib {
       <MemberSignature Language="C#" Value="public int GetNativeDataSize ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetNativeDataSize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomMarshaler.GetNativeDataSize" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetNativeDataSize () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int GetNativeDataSize();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -230,6 +250,10 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -245,6 +269,8 @@ library UserLib {
       <MemberSignature Language="C#" Value="public IntPtr MarshalManagedToNative (object ManagedObj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance native int MarshalManagedToNative(object ManagedObj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomMarshaler.MarshalManagedToNative(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MarshalManagedToNative (ManagedObj As Object) As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; IntPtr MarshalManagedToNative(System::Object ^ ManagedObj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -254,6 +280,10 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.IntPtr</ReturnType>
@@ -272,6 +302,8 @@ library UserLib {
       <MemberSignature Language="C#" Value="public object MarshalNativeToManaged (IntPtr pNativeData);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object MarshalNativeToManaged(native int pNativeData) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ICustomMarshaler.MarshalNativeToManaged(System.IntPtr)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MarshalNativeToManaged (pNativeData As IntPtr) As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ MarshalNativeToManaged(IntPtr pNativeData);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -281,6 +313,10 @@ library UserLib {
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>

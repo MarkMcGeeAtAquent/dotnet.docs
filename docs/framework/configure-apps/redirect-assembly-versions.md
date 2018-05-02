@@ -1,5 +1,5 @@
 ---
-title: "Redirecting Assembly Versions | Microsoft Docs"
+title: "Redirecting Assembly Versions"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,11 +9,6 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "assembly binding, redirection"
   - "redirecting assembly binding to earlier version"
@@ -25,6 +20,8 @@ caps.latest.revision: 26
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Redirecting Assembly Versions
 You can redirect compile-time binding references to .NET Framework assemblies, third-party assemblies, or your own app's assemblies. You can redirect your app to use a different version of an assembly in a number of ways: through publisher policy, through an app configuration file; or through the machine configuration file. This article discusses how assembly binding works in the .NET Framework and how it can be configured.  
@@ -54,7 +51,7 @@ You can redirect compile-time binding references to .NET Framework assemblies, t
 ### Manually editing the app config file  
  You can manually edit the app configuration file to resolve assembly issues. For example, if a vendor might release a newer version of an assembly that your app uses without supplying a publisher policy, because they do not guarantee backward compatibility, you can direct your app to use the newer version of the assembly by putting assembly binding information in your app's configuration file as follows.  
   
-```  
+```xml  
 <dependentAssembly>  
         <assemblyIdentity name="someAssembly"  
           publicKeyToken="32ab4ba45e0a69a1"  
@@ -97,7 +94,7 @@ You can redirect compile-time binding references to .NET Framework assemblies, t
   
  To bind an assembly, you must specify the string "urn:schemas-microsoft-com:asm.v1" with the **xmlns** attribute in the [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) tag.  
   
-```  
+```xml  
 <configuration>  
   <runtime>  
     <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">  
@@ -133,7 +130,7 @@ You can redirect compile-time binding references to .NET Framework assemblies, t
   
  For example, to redirect assembly binding for a .NET Framework 3.5 assembly, you would include the following XML code in your app configuration file.  
   
-```  
+```xml  
 <runtime>  
   <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1"   
     appliesTo="v3.5">  
@@ -148,7 +145,7 @@ You can redirect compile-time binding references to .NET Framework assemblies, t
   
  For example, to redirect one reference to a .NET Framework 3.5 assembly and another reference to a .NET Framework 4 assembly, use the pattern shown in the following pseudocode.  
   
-```  
+```xml  
 <assemblyBinding xmlns="..." appliesTo="v3.5 ">   
   <!—.NET Framework version 3.5 redirects here -->   
 </assemblyBinding>   
@@ -163,14 +160,14 @@ You can redirect compile-time binding references to .NET Framework assemblies, t
 ```  
   
 ## See Also  
- [How to: Enable and Disable Automatic Binding Redirection](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)   
- [\<bindingRedirect> Element](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)   
- [Assembly Binding Redirection Security Permission](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)   
- [Assemblies in the Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)   
- [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)   
- [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)   
- [Configuring Apps](../../../docs/framework/configure-apps/index.md)   
- [Configuring .NET Framework Apps](http://msdn.microsoft.com/en-us/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)   
- [Runtime Settings Schema](../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md)   
+ [How to: Enable and Disable Automatic Binding Redirection](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)  
+ [\<bindingRedirect> Element](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  
+ [Assembly Binding Redirection Security Permission](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)  
+ [Assemblies in the Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+ [Programming with Assemblies](../../../docs/framework/app-domains/programming-with-assemblies.md)  
+ [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
+ [Configuring Apps](../../../docs/framework/configure-apps/index.md)  
+ [Configuring .NET Framework Apps](http://msdn.microsoft.com/library/d789b592-fcb5-4e3d-8ac9-e0299adaaa42)  
+ [Runtime Settings Schema](../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md)  
  [How to: Create a Publisher Policy](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)

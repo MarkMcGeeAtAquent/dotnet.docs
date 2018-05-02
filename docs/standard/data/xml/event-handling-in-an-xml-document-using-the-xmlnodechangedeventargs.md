@@ -1,5 +1,5 @@
 ---
-title: "Event Handling in an XML Document Using the XmlNodeChangedEventArgs | Microsoft Docs"
+title: "Event Handling in an XML Document Using the XmlNodeChangedEventArgs"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,16 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Event Handling in an XML Document Using the XmlNodeChangedEventArgs
 The **XmlNodeChangedEventArgs** encapsulates the arguments passed to the event handlers registered on the **XmlDocument** object for handling events. The events and a description of when they are fired is given in the following table.  
@@ -122,7 +123,7 @@ Public Class Sample
   
     ' Handle the NodeChanged event.  
     Public Sub MyNodeChangedEvent(ByVal src As Object, ByVal args As XmlNodeChangedEventArgs)  
-        Console.Write("Node Changed Event: \<0> changed", args.Node.Name)  
+        Console.Write("Node Changed Event: <0> changed", args.Node.Name)  
         If Not (args.Node.Value Is Nothing) Then  
             Console.WriteLine(" with value  0", args.Node.Value)  
         Else  
@@ -132,7 +133,7 @@ Public Class Sample
   
     ' Handle the NodeInserted event.  
     Public Sub MyNodeInsertedEvent(ByVal src As Object, ByVal args As XmlNodeChangedEventArgs)  
-        Console.Write("Node Inserted Event: \<0> inserted", args.Node.Name)  
+        Console.Write("Node Inserted Event: <0> inserted", args.Node.Name)  
         If Not (args.Node.Value Is Nothing) Then  
             Console.WriteLine(" with value 0", args.Node.Value)  
         Else  
@@ -186,7 +187,7 @@ public class Sample
   // Handle the NodeChanged event.  
   public void MyNodeChangedEvent(Object src, XmlNodeChangedEventArgs args)  
   {  
-     Console.Write("Node Changed Event: \<{0}> changed", args.Node.Name);  
+     Console.Write("Node Changed Event: <{0}> changed", args.Node.Name);  
      if (args.Node.Value != null)  
      {  
         Console.WriteLine(" with value  {0}", args.Node.Value);  
@@ -198,7 +199,7 @@ public class Sample
   // Handle the NodeInserted event.  
   public void MyNodeInsertedEvent(Object src, XmlNodeChangedEventArgs args)  
   {  
-     Console.Write("Node Inserted Event: \<{0}> inserted", args.Node.Name);  
+     Console.Write("Node Inserted Event: <{0}> inserted", args.Node.Name);  
      if (args.Node.Value != null)  
      {  
         Console.WriteLine(" with value {0}", args.Node.Value);  

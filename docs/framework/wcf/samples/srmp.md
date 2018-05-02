@@ -1,8 +1,8 @@
 ---
-title: "SRMP | Microsoft Docs"
+title: "SRMP"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
 caps.latest.revision: 14
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # SRMP
 This sample demonstrates how to perform transacted queued communication by using Message Queuing (MSMQ) over HTTP.  
@@ -53,7 +55,7 @@ This sample demonstrates how to perform transacted queued communication by using
   
  There are limitations to SRMP in relation to transport security. The default MSMQ transport security requires Active Directory that requires that the sending queue manager and the receiving queue manager reside in the same Windows domain. This is not possible when sending messages over HTTP boundary. As such, the default transport security does not work. The transport security must be set to Certificate if transport security is desired. Message security can also be used to secure the message. In this sample, both transport and message security is turned off to illustrate SRMP messaging.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   

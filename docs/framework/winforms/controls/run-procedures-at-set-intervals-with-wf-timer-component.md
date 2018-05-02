@@ -1,8 +1,8 @@
 ---
-title: "How to: Run Procedures at Set Intervals with the Windows Forms Timer Component | Microsoft Docs"
+title: "How to: Run Procedures at Set Intervals with the Windows Forms Timer Component"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,24 +10,28 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "examples [Windows Forms], timers"
-  - "timers, event intervals"
-  - "initialization, Timer components"
-  - "timers, Windows-based"
+  - "timers [Windows Forms], event intervals"
+  - "initialization [Windows Forms], Timer components"
+  - "timers [Windows Forms], Windows-based"
   - "Timer component [Windows Forms], initializing"
-  - "procedures, specific time intervals"
+  - "procedures [Windows Forms], specific time intervals"
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
 caps.latest.revision: 20
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Run Procedures at Set Intervals with the Windows Forms Timer Component
 You might sometimes want to create a procedure that runs at specific time intervals until a loop has finished or that runs when a set time interval has elapsed. The <xref:System.Windows.Forms.Timer> component makes such a procedure possible.  
   
- This component is designed for a Windows Forms environment. If you need a timer that is suitable for a server environment, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/en-us/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  
+ This component is designed for a Windows Forms environment. If you need a timer that is suitable for a server environment, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).  
   
 > [!NOTE]
 >  There are some limitations when using the <xref:System.Windows.Forms.Timer> component. For more information, see [Limitations of the Windows Forms Timer Component's Interval Property](../../../../docs/framework/winforms/controls/limitations-of-the-timer-component-interval-property.md).  
@@ -48,7 +52,7 @@ You might sometimes want to create a procedure that runs at specific time interv
 5.  At the appropriate time, set the <xref:System.Windows.Forms.Timer.Enabled%2A> property to `false` to stop the procedure from running again. Setting the interval to `0` does not cause the timer to stop.  
   
 ## Example  
- This first code example tracks the time of day in one-second increments. It uses a <xref:System.Windows.Forms.Button>, a <xref:System.Windows.Forms.Label>, and a <xref:System.Windows.Forms.Timer> component on a form. The <xref:System.Windows.Forms.Timer.Interval%2A> property is set to 1000 (equal to one second). In the <xref:System.Windows.Forms.Timer.Tick> event, the label's caption is set to the current time. When the button is clicked, the <xref:System.Windows.Forms.Timer.Enabled%2A> property is set to `false`, stopping the timer from updating the label's caption. The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named`Button1`, a <xref:System.Windows.Forms.Timer> control named`Timer1`, and a <xref:System.Windows.Forms.Label> control named`Label1`.  
+ This first code example tracks the time of day in one-second increments. It uses a <xref:System.Windows.Forms.Button>, a <xref:System.Windows.Forms.Label>, and a <xref:System.Windows.Forms.Timer> component on a form. The <xref:System.Windows.Forms.Timer.Interval%2A> property is set to 1000 (equal to one second). In the <xref:System.Windows.Forms.Timer.Tick> event, the label's caption is set to the current time. When the button is clicked, the <xref:System.Windows.Forms.Timer.Enabled%2A> property is set to `false`, stopping the timer from updating the label's caption. The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named `Button1`, a <xref:System.Windows.Forms.Timer> control named `Timer1`, and a <xref:System.Windows.Forms.Label> control named `Label1`.  
   
 ```vb  
 Private Sub InitializeTimer()  
@@ -74,7 +78,6 @@ Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.Event
          Timer1.Enabled = True  
       End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -111,7 +114,6 @@ private void Button1_Click(object sender, EventArgs e)
     Timer1.Enabled = true;  
   }  
 }  
-  
 ```  
   
 ```cpp  
@@ -152,11 +154,10 @@ private:
          timer1->Enabled = true;  
       }  
    }  
-  
 ```  
   
 ## Example  
- This second code example runs a procedure every 600 milliseconds until a loop has finished. The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named`Button1`, a <xref:System.Windows.Forms.Timer> control named`Timer1`, and a <xref:System.Windows.Forms.Label> control named`Label1`.  
+ This second code example runs a procedure every 600 milliseconds until a loop has finished. The following code example requires that you have a form with a <xref:System.Windows.Forms.Button> control named `Button1`, a <xref:System.Windows.Forms.Timer> control named `Timer1`, and a <xref:System.Windows.Forms.Label> control named `Label1`.  
   
 ```vb  
 ' This variable will be the loop counter.  
@@ -181,7 +182,6 @@ Private Sub Timer1_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Han
       Label1.Text = "Procedures Run: " & counter.ToString  
    End If  
 End Sub  
-  
 ```  
   
 ```csharp  
@@ -214,7 +214,6 @@ private void timer1_Tick(object sender, System.EventArgs e)
       label1.Text = "Procedures Run: " + counter.ToString();  
       }  
 }  
-  
 ```  
   
 ```cpp  
@@ -252,6 +251,6 @@ private:
 ```  
   
 ## See Also  
- <xref:System.Windows.Forms.Timer>   
- [Timer Component](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)   
+ <xref:System.Windows.Forms.Timer>  
+ [Timer Component](../../../../docs/framework/winforms/controls/timer-component-windows-forms.md)  
  [Timer Component Overview](../../../../docs/framework/winforms/controls/timer-component-overview-windows-forms.md)

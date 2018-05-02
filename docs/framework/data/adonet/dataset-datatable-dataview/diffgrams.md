@@ -1,8 +1,8 @@
 ---
-title: "DiffGrams | Microsoft Docs"
+title: "DiffGrams"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
 caps.latest.revision: 4
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
+ms.workload: 
+  - "dotnet"
 ---
 # DiffGrams
 A DiffGram is an XML format that identifies current and original versions of data elements. The <xref:System.Data.DataSet> uses the DiffGram format to load and persist its contents, and to serialize its contents for transport across a network connection. When a <xref:System.Data.DataSet> is written as a DiffGram, it populates the DiffGram with all the necessary information to accurately recreate the contents, though not the schema, of the <xref:System.Data.DataSet>, including column values from both the **Original** and **Current** row versions, row error information, and row order.  
@@ -53,7 +55,7 @@ A DiffGram is an XML format that identifies current and original versions of dat
 ## DiffGram Format  
  The DiffGram format is divided into three sections: the current data, the original (or "before") data, and an errors section, as shown in the following example.  
   
-```  
+```xml  
 <?xml version="1.0"?>  
 <diffgr:diffgram   
          xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"  
@@ -105,7 +107,7 @@ A DiffGram is an XML format that identifies current and original versions of dat
 ## Sample DiffGram  
  An example of the DiffGram format is shown below. This example shows the result of an update to a row in a table before the changes have been committed. The row with a CustomerID of "ALFKI" has been modified, but not updated. As a result, there is a **Current** row with a **diffgr:id** of "Customers1" in the **\<** ***DataInstance*** **>** block, and an **Original** row with a **diffgr:id** of "Customers1" in the **\<diffgr:before>** block. The row with a CustomerID of "ANATR" includes a **RowError**, so it is annotated with `diffgr:hasErrors="true"` and there is a related element in the **\<diffgr:errors>** block.  
   
-```  
+```xml  
 <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">  
   <CustomerDataSet>  
     <Customers diffgr:id="Customers1" msdata:rowOrder="0" diffgr:hasChanges="modified">  
@@ -138,8 +140,8 @@ A DiffGram is an XML format that identifies current and original versions of dat
 ```  
   
 ## See Also  
- [Using XML in a DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)   
- [Loading a DataSet from XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)   
- [Writing DataSet Contents as XML Data](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)   
- [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)   
+ [Using XML in a DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Loading a DataSet from XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)  
+ [Writing DataSet Contents as XML Data](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)  
+ [DataSets, DataTables, and DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

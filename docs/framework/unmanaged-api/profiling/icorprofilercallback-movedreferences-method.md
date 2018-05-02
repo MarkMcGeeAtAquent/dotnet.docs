@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::MovedReferences Method | Microsoft Docs"
+title: "ICorProfilerCallback::MovedReferences Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.MovedReferences"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::MovedReferences"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "MovedReferences method [.NET Framework profiling]"
   - "ICorProfilerCallback::MovedReferences method [.NET Framework profiling]"
 ms.assetid: 996c71ae-0676-4616-a085-84ebf507649d
+topic_type: 
+  - "apiref"
 caps.latest.revision: 26
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::MovedReferences Method
 Called to report the new layout of objects in the heap as a result of a compacting garbage collection.  
@@ -92,7 +95,7 @@ HRESULT MovedReferences(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)   
- [MovedReferences2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)   
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)   
+ [ICorProfilerCallback Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)  
+ [MovedReferences2 Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)  
+ [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

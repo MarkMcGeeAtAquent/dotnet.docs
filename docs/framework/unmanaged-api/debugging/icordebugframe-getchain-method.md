@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugFrame::GetChain Method | Microsoft Docs"
+title: "ICorDebugFrame::GetChain Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugFrame.GetChain"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugFrame::GetChain"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugFrame::GetChain method [.NET Framework debugging]"
   - "GetChain method [.NET Framework debugging]"
 ms.assetid: e28e51d3-8f73-494f-bcd4-48bac239fbe1
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugFrame::GetChain Method
 Gets a pointer to the chain this frame is a part of.  

@@ -1,5 +1,5 @@
 ---
-title: "How to: Request Data Using the WebRequest Class | Microsoft Docs"
+title: "How to: Request Data Using the WebRequest Class"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -8,10 +8,8 @@ ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "downloading Internet resources, steps"
   - "requesting data from Internet, steps"
@@ -23,6 +21,8 @@ caps.latest.revision: 8
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # How to: Request Data Using the WebRequest Class
 The following procedure describes the steps used to request a resource from a server, for example, a Web page or file. The resource must be identified by a URI.  
@@ -37,7 +37,6 @@ The following procedure describes the steps used to request a resource from a se
   
     ```vb  
     Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
-  
     ```  
   
     > [!NOTE]
@@ -61,7 +60,6 @@ The following procedure describes the steps used to request a resource from a se
   
     ```vb  
     Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
-  
     ```  
   
 3.  To send the request to the server, call <xref:System.Net.HttpWebRequest.GetResponse%2A>. The actual type of the returned **WebResponse** object is determined by the scheme of the requested URI.  
@@ -72,11 +70,10 @@ The following procedure describes the steps used to request a resource from a se
   
     ```vb  
     Dim response As WebResponse = request.GetResponse()  
-  
     ```  
   
     > [!NOTE]
-    >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=fullName> method. If you do not close either the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
+    >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method. If you do not close either the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
   
 4.  You can access the properties of the **WebResponse** or cast the **WebResponse** to a protocol-specific instance to read protocol-specific properties. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebResponse>, cast the **WebResponse** to a **HttpWebResponse** reference. The following code example shows how to display the status information sent with a response.  
   
@@ -91,12 +88,11 @@ The following procedure describes the steps used to request a resource from a se
 5.  To get the stream containing response data sent by the server, use the <xref:System.Net.HttpWebResponse.GetResponseStream%2A> method of the **WebResponse**.  
   
     ```csharp  
-    Stream dataStream = response.GetResponseStream ();  
+    Stream dataStream = response.GetResponseStream();  
     ```  
   
     ```vb  
     Dim dataStream As Stream = response.GetResponseStream()  
-  
     ```  
   
 6.  After reading the data from the response, you must either close the response stream using the **Stream.Close** method or close the response using the **WebResponse.Close** method. It is not necessary to call the **Close** method on both the response stream and the **WebResponse**, but doing so is not harmful. **WebResponse.Close** calls **Stream.Close** when closing the response.  
@@ -107,7 +103,6 @@ The following procedure describes the steps used to request a resource from a se
   
     ```vb  
     response.Close()  
-  
     ```  
   
 ## Example  
@@ -122,28 +117,28 @@ namespace Examples.System.Net
 {  
     public class WebRequestGetExample  
     {  
-        public static void Main ()  
+        public static void Main()  
         {  
             // Create a request for the URL.   
-            WebRequest request = WebRequest.Create (  
+            WebRequest request = WebRequest.Create(  
               "http://www.contoso.com/default.html");  
             // If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials;  
             // Get the response.  
-            WebResponse response = request.GetResponse ();  
+            WebResponse response = request.GetResponse();  
             // Display the status.  
             Console.WriteLine (((HttpWebResponse)response).StatusDescription);  
             // Get the stream containing content returned by the server.  
-            Stream dataStream = response.GetResponseStream ();  
+            Stream dataStream = response.GetResponseStream();  
             // Open the stream using a StreamReader for easy access.  
-            StreamReader reader = new StreamReader (dataStream);  
+            StreamReader reader = new StreamReader(dataStream);  
             // Read the content.  
-            string responseFromServer = reader.ReadToEnd ();  
+            string responseFromServer = reader.ReadToEnd();  
             // Display the content.  
-            Console.WriteLine (responseFromServer);  
+            Console.WriteLine(responseFromServer);  
             // Clean up the streams and the response.  
-            reader.Close ();  
-            response.Close ();  
+            reader.Close();  
+            response.Close();  
         }  
     }  
 }  
@@ -184,8 +179,8 @@ End Namespace
 ```  
   
 ## See Also  
- [Creating Internet Requests](../../../docs/framework/network-programming/creating-internet-requests.md)   
- [Using Streams on the Network](../../../docs/framework/network-programming/using-streams-on-the-network.md)   
- [Accessing the Internet Through a Proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)   
- [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)   
+ [Creating Internet Requests](../../../docs/framework/network-programming/creating-internet-requests.md)  
+ [Using Streams on the Network](../../../docs/framework/network-programming/using-streams-on-the-network.md)  
+ [Accessing the Internet Through a Proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  
+ [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)  
  [How to: Send Data Using the WebRequest Class](../../../docs/framework/network-programming/how-to-send-data-using-the-webrequest-class.md)

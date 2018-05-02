@@ -1,7 +1,9 @@
-<Type Name="DashStyle" FullName="System.Windows.Media.DashStyle">
+﻿<Type Name="DashStyle" FullName="System.Windows.Media.DashStyle">
   <TypeSignature Language="C#" Value="public sealed class DashStyle : System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DashStyle extends System.Windows.Media.Animation.Animatable" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Media.DashStyle" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class DashStyle&#xA;Inherits Animatable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DashStyle sealed : System::Windows::Media::Animation::Animatable" />
   <AssemblyInfo>
     <AssemblyName>PresentationCore</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -24,7 +26,7 @@
  The <xref:System.Windows.Media.DashStyle.Dashes%2A> property of this class describes the length of alternating dashes and gaps.  The values in the collection are in terms of multiples of the <xref:System.Windows.Media.Pen.Thickness%2A> of the <xref:System.Windows.Media.Pen>.  For example, an array of `1`,`2` specifies a dash of length (`1` * <xref:System.Windows.Media.Pen.Thickness%2A>) followed by a gap of length (`2` * <xref:System.Windows.Media.Pen.Thickness%2A>).  
   
 > [!NOTE]
->  The actual length of the dash that is drawn depends on the style of <xref:System.Windows.Media.Pen.DashCap%2A> that is added to each end of the dash. The default <xref:System.Windows.Media.Pen.DashCap%2A> value for a <xref:System.Windows.Media.Pen> is <xref:System.Windows.Media.PenLineCap>. This causes an end cap that is one half the thickness of the line to be added onto each end of the pen stroke. (See <xref:System.Windows.Media.PenLineCap> for an example.) Therefore, if you specify an array of `0`, `2` and a square <xref:System.Windows.Media.Pen.DashCap%2A>, the actual dash length will be (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>).  
+>  The actual length of the dash that is drawn depends on the style of <xref:System.Windows.Media.Pen.DashCap%2A> that is added to each end of the dash. The default <xref:System.Windows.Media.Pen.DashCap%2A> value for a <xref:System.Windows.Media.Pen> is <xref:System.Windows.Media.PenLineCap.Square>. This causes an end cap that is one half the thickness of the line to be added onto each end of the pen stroke. (See <xref:System.Windows.Media.PenLineCap> for an example.) Therefore, if you specify an array of `0`, `2` and a square <xref:System.Windows.Media.Pen.DashCap%2A>, the actual dash length will be (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>).  
   
  If there are an odd number of values in the collection, the values are interpreted as if they had been repeated once to produce an even number of values.  For example, a collection containing `2`,`3`,`5` is interpreted the same as a collection containing `2`,`3`,`5`,`2`,`3`,`5`.  
   
@@ -35,7 +37,7 @@
 ## Examples  
  The following example shows how to use the <xref:System.Windows.Media.DashStyle> property of a <xref:System.Windows.Media.Pen> to create a dashed line under text.  
   
- [!code-xml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
+ [!code-xaml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
   
  The following illustration shows what the preceding example produces.  
   
@@ -47,12 +49,24 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Media.DashStyles" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Windows.Media.DashStyle" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DashStyle ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DashStyle();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -68,6 +82,8 @@
       <MemberSignature Language="C#" Value="public DashStyle (System.Collections.Generic.IEnumerable&lt;double&gt; dashes, double offset);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;float64&gt; dashes, float64 offset) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.#ctor(System.Collections.Generic.IEnumerable{System.Double},System.Double)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (dashes As IEnumerable(Of Double), offset As Double)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DashStyle(System::Collections::Generic::IEnumerable&lt;double&gt; ^ dashes, double offset);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -88,6 +104,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Media.DashStyle Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DashStyle Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Function Clone () As DashStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Media::DashStyle ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -106,7 +124,7 @@
 ## Remarks  
  This method is used to produce modifiable copies of frozen <xref:System.Windows.Freezable> objects (or any <xref:System.Windows.Freezable> object). For convenience, this method shadows the inherited version with a strongly typed implementation.  
   
- For more information, see <xref:System.Windows.Freezable.Clone%2A?displayProperty=fullName>.  
+ For more information, see <xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>.  
   
  When copying dependency properties, this method copies resource references and data bindings (they might no longer resolve) but not animations or their current values.  
   
@@ -118,6 +136,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Media.DashStyle CloneCurrentValue ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.DashStyle CloneCurrentValue() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.CloneCurrentValue" />
+      <MemberSignature Language="VB.NET" Value="Public Function CloneCurrentValue () As DashStyle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Windows::Media::DashStyle ^ CloneCurrentValue();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -136,7 +156,7 @@
 ## Remarks  
  This method is used to produce modifiable copies of frozen <xref:System.Windows.Freezable> objects (or any <xref:System.Windows.Freezable> object). For convenience, this method shadows the inherited version with a strongly typed implementation.  
   
- For more information, see <xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=fullName>.  
+ For more information, see <xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>.  
   
  Resource references, data bindings, and animations are not copied, but their current values are.  
   
@@ -148,6 +168,8 @@
       <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Media.DashStyle.CreateInstanceCore" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Function CreateInstanceCore () As Freezable" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override System::Windows::Freezable ^ CreateInstanceCore();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -167,6 +189,8 @@
       <MemberSignature Language="C#" Value="public System.Windows.Media.DoubleCollection Dashes { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.DoubleCollection Dashes" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.DashStyle.Dashes" />
+      <MemberSignature Language="VB.NET" Value="Public Property Dashes As DoubleCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Media::DoubleCollection ^ Dashes { System::Windows::Media::DoubleCollection ^ get(); void set(System::Windows::Media::DoubleCollection ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -185,7 +209,7 @@
  This collection describes the length of alternating dashes and gaps.  The values in the collection are in terms of multiples of the <xref:System.Windows.Media.Pen.Thickness%2A> of the <xref:System.Windows.Media.Pen>.  For example, an array of `1`,`2` specifies a dash of length (`1` * <xref:System.Windows.Media.Pen.Thickness%2A>) followed by a gap of length (`2` * <xref:System.Windows.Media.Pen.Thickness%2A>).  
   
 > [!NOTE]
->  The actual length of the dash that is drawn depends on the style of <xref:System.Windows.Media.Pen.DashCap%2A> that is added to each end of the dash. The default <xref:System.Windows.Media.Pen.DashCap%2A> value for a <xref:System.Windows.Media.Pen> is <xref:System.Windows.Media.PenLineCap>. This causes an end cap that is one half the thickness of the line to be added onto each end of the pen stroke. (See <xref:System.Windows.Media.PenLineCap> for an example.) Therefore, if you specify an array of `0`, `2` and a square <xref:System.Windows.Media.Pen.DashCap%2A>, the actual dash length will be (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>).  
+>  The actual length of the dash that is drawn depends on the style of <xref:System.Windows.Media.Pen.DashCap%2A> that is added to each end of the dash. The default <xref:System.Windows.Media.Pen.DashCap%2A> value for a <xref:System.Windows.Media.Pen> is <xref:System.Windows.Media.PenLineCap.Square>. This causes an end cap that is one half the thickness of the line to be added onto each end of the pen stroke. (See <xref:System.Windows.Media.PenLineCap> for an example.) Therefore, if you specify an array of `0`, `2` and a square <xref:System.Windows.Media.Pen.DashCap%2A>, the actual dash length will be (`0` * <xref:System.Windows.Media.Pen.Thickness%2A>) + (`2` * <xref:System.Windows.Media.Pen.DashCap%2A>).  
   
  If there are an odd number of values in the collection, the values are interpreted as if they had been repeated once to produce an even number of values.  For example, a collection containing `2`,`3`,`5` is interpreted the same as a collection containing `2`,`3`,`5`,`2`,`3`,`5`.  
   
@@ -204,7 +228,7 @@
 ## Examples  
  The following example shows how to use the <xref:System.Windows.Media.DashStyle> property of a <xref:System.Windows.Media.Pen> to create a dashed line under text.  
   
- [!code-xml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
+ [!code-xaml[DrawingMiscSnippets_snip#DashStyle](~/samples/snippets/xaml/VS_Snippets_Wpf/DrawingMiscSnippets_snip/XAML/DashStyleExample.xaml#dashstyle)]  
   
  ]]></format>
         </remarks>
@@ -214,6 +238,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DashesProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DashesProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Media.DashStyle.DashesProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly DashesProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ DashesProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -231,6 +257,8 @@
       <MemberSignature Language="C#" Value="public double Offset { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance float64 Offset" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Media.DashStyle.Offset" />
+      <MemberSignature Language="VB.NET" Value="Public Property Offset As Double" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property double Offset { double get(); void set(double value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>
@@ -264,6 +292,8 @@
       <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OffsetProperty;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OffsetProperty" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Media.DashStyle.OffsetProperty" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly OffsetProperty As DependencyProperty " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::Windows::DependencyProperty ^ OffsetProperty;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>PresentationCore</AssemblyName>

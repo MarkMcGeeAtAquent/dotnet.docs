@@ -1,8 +1,8 @@
 ---
-title: "Recommended Settings for Tracing and Message Logging | Microsoft Docs"
+title: "Recommended Settings for Tracing and Message Logging"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
 caps.latest.revision: 11
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Recommended Settings for Tracing and Message Logging
 This topic describes recommended tracing and message logging settings for different operating environments.  
@@ -21,7 +23,7 @@ This topic describes recommended tracing and message logging settings for differ
 ## Recommended Settings for a Production Environment  
  For a production environment, if you are using WCF trace sources, set the `switchValue` to Warning. If you are using the WCF `System.ServiceModel` trace source, set the `switchValue` attribute to `Warning` and the `propagateActivity` attribute to `true`. If you are using a user-defined trace source, set the `switchValue` attribute to `Warning, ActivityTracing`. This can be done manually using the [Configuration Editor Tool (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md). If you do not anticipate a hit in performance, you can set the `switchValue` attribute to `Information` in all the previously mentioned cases, which generates a fairly large amount of trace data. The following example demonstrates these recommended settings.  
   
-```  
+```xml  
 <configuration>  
  <system.diagnostics>  
   <sources>  
@@ -58,7 +60,7 @@ This topic describes recommended tracing and message logging settings for differ
   
  The following example demonstrates the recommended settings, using a shared listener that utilizes the `XmlWriterTraceListener`.  
   
-```  
+```xml  
 <configuration>  
  <system.diagnostics>  
   <sources>  

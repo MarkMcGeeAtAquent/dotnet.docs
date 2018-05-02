@@ -1,5 +1,5 @@
 ---
-title: "ICLRRuntimeInfo::GetRuntimeDirectory Method | Microsoft Docs"
+title: "ICLRRuntimeInfo::GetRuntimeDirectory Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRRuntimeInfo.GetRuntimeDirectory"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRRuntimeInfo::GetRuntimeDirectory"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetRuntimeDirectory method [.NET Framework hosting]"
   - "ICLRRuntimeInfo::GetRuntimeDirectory method [.NET Framework hosting]"
 ms.assetid: 4401546e-4d48-453f-a1fb-b2ebda54df5c
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRRuntimeInfo::GetRuntimeDirectory Method
 Gets the installation directory of the common language runtime (CLR) associated with this interface.  
@@ -67,5 +70,5 @@ HRESULT GetRuntimeDirectory(
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)   
+ [ICLRRuntimeInfo Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)  
  [Hosting](../../../../docs/framework/unmanaged-api/hosting/index.md)

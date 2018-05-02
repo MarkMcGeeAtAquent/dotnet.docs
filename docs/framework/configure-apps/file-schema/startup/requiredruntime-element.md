@@ -1,8 +1,8 @@
 ---
-title: "&lt;requiredRuntime&gt; Element | Microsoft Docs"
+title: "&lt;requiredRuntime&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#requiredRuntime"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup/requiredRuntime"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "requiredRuntime element"
   - "<requiredRuntime> element"
@@ -26,9 +21,11 @@ caps.latest.revision: 11
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;requiredRuntime&gt; Element
-Specifies that the application supports only version 1.0 of the common language runtime.  
+Specifies that the application supports only version 1.0 of the common language runtime. This element is deprecated and should no longer be used. The [`supportedRuntime`](supportedruntime-element.md) element should be used instead.
   
  \<configuration>  
 \<startup>  
@@ -36,9 +33,8 @@ Specifies that the application supports only version 1.0 of the common language 
   
 ## Syntax  
   
-```  
-  
-   <requiredRuntime    
+```xml  
+   <requiredRuntime    
 version="runtime version"  
 safemode="true|false"/>  
 ```  
@@ -84,7 +80,7 @@ safemode="true|false"/>
 ## Example  
  The following example shows how to specify the runtime version in a configuration file.  
   
-```  
+```xml  
 <configuration>  
    <startup>  
       <requiredRuntime version="v1.0.3705" safemode="true"/>  
@@ -93,6 +89,6 @@ safemode="true|false"/>
 ```  
   
 ## See Also  
- [Startup Settings Schema](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
- [\<PaveOver> Specifying Which Runtime Version to Use](http://msdn.microsoft.com/en-us/c376208d-980d-42b4-865b-fbe0d9cc97c2)
+ [Startup Settings Schema](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [\<PaveOver> Specifying Which Runtime Version to Use](http://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)

@@ -1,5 +1,5 @@
 ---
-title: "Walkthrough: Performing a Drag-and-Drop Operation in Windows Forms | Microsoft Docs"
+title: "Walkthrough: Performing a Drag-and-Drop Operation in Windows Forms"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,15 +10,18 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "Windows Forms, drag and drop operations"
-  - "drag and drop, Windows Forms"
+  - "drag and drop [Windows Forms], Windows Forms"
 ms.assetid: eb66f6bf-4a7d-4c2d-b276-40fefb2d3b6c
 caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Walkthrough: Performing a Drag-and-Drop Operation in Windows Forms
 To perform drag-and-drop operations within Windows-based applications you must handle a series of events, most notably the <xref:System.Windows.Forms.Control.DragEnter>, <xref:System.Windows.Forms.Control.DragLeave>, and <xref:System.Windows.Forms.Control.DragDrop> events. By working with the information available in the event arguments of these events, you can easily facilitate drag-and-drop operations.  
@@ -33,7 +36,7 @@ To perform drag-and-drop operations within Windows-based applications you must h
   
 #### To start a drag operation  
   
-1.  In the <xref:System.Windows.Forms.Control.MouseDown>event for the control where the drag will begin, use the `DoDragDrop` method to set the data to be dragged and the allowed effect dragging will have. For more information, see <xref:System.Windows.Forms.DragEventArgs.Data%2A> and <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
+1.  In the <xref:System.Windows.Forms.Control.MouseDown> event for the control where the drag will begin, use the `DoDragDrop` method to set the data to be dragged and the allowed effect dragging will have. For more information, see <xref:System.Windows.Forms.DragEventArgs.Data%2A> and <xref:System.Windows.Forms.DragEventArgs.AllowedEffect%2A>.  
   
      The following example shows how to initiate a drag operation. The control where the drag begins is a <xref:System.Windows.Forms.Button> control, the data being dragged is the string representing the <xref:System.Windows.Forms.Control.Text%2A> property of the <xref:System.Windows.Forms.Button> control, and the allowed effects are either copying or moving.  
   
@@ -41,7 +44,6 @@ To perform drag-and-drop operations within Windows-based applications you must h
     Private Sub Button1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button1.MouseDown  
        Button1.DoDragDrop(Button1.Text, DragDropEffects.Copy Or DragDropEffects.Move)  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -51,7 +53,6 @@ To perform drag-and-drop operations within Windows-based applications you must h
        button1.DoDragDrop(button1.Text, DragDropEffects.Copy |   
           DragDropEffects.Move);  
     }  
-  
     ```  
   
     > [!NOTE]
@@ -76,7 +77,6 @@ To perform drag-and-drop operations within Windows-based applications you must h
          e.Effect = DragDropEffects.None  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -88,7 +88,6 @@ To perform drag-and-drop operations within Windows-based applications you must h
        else  
           e.Effect = DragDropEffects.None;  
     }  
-  
     ```  
   
     > [!NOTE]
@@ -102,7 +101,6 @@ To perform drag-and-drop operations within Windows-based applications you must h
     Private Sub TextBox1_DragDrop(ByVal sender As Object, ByVal e As System.Windows.Forms.DragEventArgs) Handles TextBox1.DragDrop  
        TextBox1.Text = e.Data.GetData(DataFormats.Text).ToString  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -111,13 +109,12 @@ To perform drag-and-drop operations within Windows-based applications you must h
     {  
        textBox1.Text = e.Data.GetData(DataFormats.Text).ToString();  
     }  
-  
     ```  
   
     > [!NOTE]
     >  Additionally, you can work with the <xref:System.Windows.Forms.DragEventArgs.KeyState%2A> property, so that, depending on keys depressed during the drag-and-drop operation, certain effects occur (for example, it is standard to copy the dragged data when the CTRL key is pressed).  
   
 ## See Also  
- [How to: Add Data to the Clipboard](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)   
- [How to: Retrieve Data from the Clipboard](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)   
+ [How to: Add Data to the Clipboard](../../../../docs/framework/winforms/advanced/how-to-add-data-to-the-clipboard.md)  
+ [How to: Retrieve Data from the Clipboard](../../../../docs/framework/winforms/advanced/how-to-retrieve-data-from-the-clipboard.md)  
  [Drag-and-Drop Operations and Clipboard Support](../../../../docs/framework/winforms/advanced/drag-and-drop-operations-and-clipboard-support.md)

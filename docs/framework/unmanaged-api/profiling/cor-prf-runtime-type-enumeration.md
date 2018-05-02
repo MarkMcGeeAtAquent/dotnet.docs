@@ -1,5 +1,5 @@
 ---
-title: "COR_PRF_RUNTIME_TYPE Enumeration | Microsoft Docs"
+title: "COR_PRF_RUNTIME_TYPE Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,25 +9,28 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "COR_PRF_RUNTIME_TYPE Enumeration"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "COR_PRF_RUNTIME_TYPE"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "COR_PRF_RUNTIME_TYPE enumeration [.NET Framework profiling]"
 ms.assetid: 35449514-333f-4918-9c60-7aa198d655d2
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # COR_PRF_RUNTIME_TYPE Enumeration
-Contains values that indicate the version of the common language runtime (CLR): desktop or core CLR, which is used in Silverlight.  
+Contains values that indicate the version of the common language runtime (CLR): desktop or CoreCLR, which is used in Silverlight.  
   
 ## Syntax  
   

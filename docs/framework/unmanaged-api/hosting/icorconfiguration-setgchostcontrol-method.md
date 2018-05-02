@@ -1,5 +1,5 @@
 ---
-title: "ICorConfiguration::SetGCHostControl Method | Microsoft Docs"
+title: "ICorConfiguration::SetGCHostControl Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorConfiguration.SetGCHostControl"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "SetGCHostControl"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorConfiguration::SetGCHostControl method [.NET Framework hosting]"
   - "SetGCHostControl method [.NET Framework hosting]"
 ms.assetid: bca6bd79-e288-475a-aa46-6bf81541d966
+topic_type: 
+  - "apiref"
 caps.latest.revision: 7
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorConfiguration::SetGCHostControl Method
 Sets the callback interface to be used by the garbage collector to request the host to change the limits of virtual memory.  

@@ -1,8 +1,8 @@
 ---
-title: "&lt;message&gt; of &lt;basicHttpBinding&gt; | Microsoft Docs"
+title: "&lt;message&gt; of &lt;basicHttpBinding&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 51cdd329-6461-471a-8747-56c2299b61e5
 caps.latest.revision: 23
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;message&gt; of &lt;basicHttpBinding&gt;
 Defines the settings for message-level security of the [\<basicHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -27,8 +29,7 @@ Defines the settings for message-level security of the [\<basicHttpBinding>](../
   
 ## Syntax  
   
-```  
-  
+```xml  
 <message   
    algorithmSuite="Basic128/Basic192/Basic256/Basic128Rsa15/Basic256Rsa15/TripleDes/TripleDesRsa15/Basic128Sha256/Basic192Sha256/TripleDesSha256/Basic128Sha256Rsa15/Basic192Sha256Rsa15/Basic256Sha256Rsa15/TripleDesSha256Rsa15"  
       clientCredentialType="UserName/Certificate"/>  
@@ -65,7 +66,7 @@ Defines the settings for message-level security of the [\<basicHttpBinding>](../
   
  The same binding and security details are specified in the client configuration file.  
   
-```  
+```xml  
 <system.serviceModel>  
     <services>  
       <service name="Microsoft.ServiceModel.Samples.CalculatorService"  
@@ -133,12 +134,12 @@ Defines the settings for message-level security of the [\<basicHttpBinding>](../
 ```  
   
 ## See Also  
- <xref:System.ServiceModel.BasicHttpMessageSecurity>   
- <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>   
- <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>   
- <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>   
- [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)   
- [Bindings](../../../../../docs/framework/wcf/bindings.md)   
- [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)   
- [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/en-us/bd8b277b-932f-472f-a42a-b02bb5257dfb)   
+ <xref:System.ServiceModel.BasicHttpMessageSecurity>  
+ <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement.Message%2A>  
+ <xref:System.ServiceModel.BasicHttpSecurity.Message%2A>  
+ <xref:System.ServiceModel.Configuration.BasicHttpMessageSecurityElement>  
+ [Securing Services and Clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Bindings](../../../../../docs/framework/wcf/bindings.md)  
+ [Configuring System-Provided Bindings](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
+ [Using Bindings to Configure Windows Communication Foundation Services and Clients](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
  [\<binding>](../../../../../docs/framework/misc/binding.md)

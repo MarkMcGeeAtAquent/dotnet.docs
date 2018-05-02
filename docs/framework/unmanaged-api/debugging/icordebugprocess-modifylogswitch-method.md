@@ -1,31 +1,34 @@
 ---
-title: "ICorDebugProcess::ModifyLogSwitch Method | Microsoft Docs"
+title: "ICorDebugProcess::ModifyLogSwitch Method"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugProcess.ModifyLogSwitch"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugProcess::ModifyLogSwitch"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugProcess::ModifyLogSwitch method [.NET Framework debugging]"
   - "ModifyLogSwitch method [.NET Framework debugging]"
 ms.assetid: 5fd30875-555e-4e96-877b-5dd266cde7c4
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugProcess::ModifyLogSwitch Method
 Sets the severity level of the specified log switch.  

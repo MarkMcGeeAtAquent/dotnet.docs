@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method | Microsoft Docs"
+title: "ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerInfo2.GetFunctionFromTokenAndTypeArgs"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs method [.NET Framework profiling]"
   - "GetFunctionFromTokenAndTypeArgs method [.NET Framework profiling]"
 ms.assetid: ce8f6aa6-4ebf-4a86-b429-4bbc8af41a8f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs Method
 Gets the `FunctionID` of a function by using the specified metadata token, containing class, and `ClassID` values of any type arguments.  
@@ -78,5 +81,5 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## See Also  
- [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)   
+ [ICorProfilerInfo Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)  
  [ICorProfilerInfo2 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

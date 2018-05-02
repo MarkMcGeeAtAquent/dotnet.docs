@@ -1,10 +1,13 @@
-<Type Name="FileInfo" FullName="System.IO.FileInfo">
+﻿<Type Name="FileInfo" FullName="System.IO.FileInfo">
   <TypeSignature Language="C#" Value="public sealed class FileInfo : System.IO.FileSystemInfo" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FileInfo extends System.IO.FileSystemInfo" />
   <TypeSignature Language="DocId" Value="T:System.IO.FileInfo" />
+  <TypeSignature Language="VB.NET" Value="Public NotInheritable Class FileInfo&#xA;Inherits FileSystemInfo" />
+  <TypeSignature Language="C++ CLI" Value="public ref class FileInfo sealed : System::IO::FileSystemInfo" />
   <AssemblyInfo>
     <AssemblyName>System.IO.FileSystem</AssemblyName>
     <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
@@ -25,17 +28,11 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of <see cref="T:System.IO.FileStream" /> objects. This class cannot be inherited.  
-  
- To browse the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/io/fileinfo.cs#4ee673c1a4ecad41).</summary>
+    <summary>Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of <see cref="T:System.IO.FileStream" /> objects. This class cannot be inherited.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-  
-> [!NOTE]
->  To view the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/io/fileinfo.cs#4ee673c1a4ecad41). You can browse through the source code online, download the reference for offline viewing, and step through the sources (including patches and updates) during debugging; see [instructions](http://referencesource.microsoft.com/).  
-  
  Use the <xref:System.IO.FileInfo> class for typical operations such as copying, moving, renaming, creating, opening, deleting, and appending to files.  
   
  If you are performing multiple operations on the same file, it can be more efficient to use <xref:System.IO.FileInfo> instance methods instead of the corresponding static methods of the <xref:System.IO.File> class, because a security check will not always be necessary.  
@@ -102,16 +99,21 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.IO.FileSystemWatcher" />
+    <altmember cref="T:System.IO.DriveInfo" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public FileInfo (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (fileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; FileInfo(System::String ^ fileName);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -171,10 +173,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.StreamWriter AppendText ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamWriter AppendText() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.AppendText" />
+      <MemberSignature Language="VB.NET" Value="Public Function AppendText () As StreamWriter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::StreamWriter ^ AppendText();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -211,16 +216,30 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
  ]]></format>
         </remarks>
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading and appending to files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Append" /></permission>
+        <altmember cref="T:System.IO.StreamWriter" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="CopyTo">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Copies an existing file to a new file.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="CopyTo">
       <MemberSignature Language="C#" Value="public System.IO.FileInfo CopyTo (string destFileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo CopyTo(string destFileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CopyTo(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CopyTo (destFileName As String) As FileInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileInfo ^ CopyTo(System::String ^ destFileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -285,10 +304,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileInfo CopyTo (string destFileName, bool overwrite);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo CopyTo(string destFileName, bool overwrite) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CopyTo(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function CopyTo (destFileName As String, overwrite As Boolean) As FileInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileInfo ^ CopyTo(System::String ^ destFileName, bool overwrite);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -356,10 +378,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileStream Create ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Create() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Create" />
+      <MemberSignature Language="VB.NET" Value="Public Function Create () As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ Create();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -383,7 +408,7 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
 ## Remarks  
  By default, full read/write access to new files is granted to all users.  
   
- This method is a wrapper for the functionality provided by <xref:System.IO.File.Create%2A?displayProperty=fullName>.  
+ This method is a wrapper for the functionality provided by <xref:System.IO.File.Create%2A?displayProperty=nameWithType>.  
   
    
   
@@ -409,10 +434,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.StreamWriter CreateText ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamWriter CreateText() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.CreateText" />
+      <MemberSignature Language="VB.NET" Value="Public Function CreateText () As StreamWriter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::StreamWriter ^ CreateText();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -451,12 +479,15 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
         <exception cref="T:System.IO.IOException">The disk is read-only.</exception>
         <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading and writing files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+        <altmember cref="T:System.IO.StreamWriter" />
       </Docs>
     </Member>
     <Member MemberName="Decrypt">
       <MemberSignature Language="C#" Value="public void Decrypt ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Decrypt" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Decrypt ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Decrypt();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -466,6 +497,10 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -524,10 +559,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public override void Delete ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Delete() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Delete" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Sub Delete ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override void Delete();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -586,10 +624,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo Directory { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo Directory" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Directory" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Directory As DirectoryInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::DirectoryInfo ^ Directory { System::IO::DirectoryInfo ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -632,10 +673,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public string DirectoryName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DirectoryName" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.DirectoryName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DirectoryName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DirectoryName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -687,6 +731,8 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public void Encrypt ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Encrypt() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Encrypt" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Encrypt ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Encrypt();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -696,6 +742,10 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -754,10 +804,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public override bool Exists { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Exists" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Exists" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Exists As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property bool Exists { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -801,10 +854,30 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetAccessControl">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Gets a <see cref="T:System.Security.AccessControl.FileSecurity" /> object that encapsulates the access control list (ACL) entries for the file described by the current <see cref="T:System.IO.FileInfo" /> object.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Use the <xref:System.IO.FileInfo.GetAccessControl%2A> methods to retrieve the access control list (ACL) entries for the current file.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetAccessControl">
       <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.GetAccessControl" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAccessControl () As FileSecurity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::AccessControl::FileSecurity ^ GetAccessControl();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -857,6 +930,8 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.Security.AccessControl.FileSecurity GetAccessControl (System.Security.AccessControl.AccessControlSections includeSections);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.FileSecurity GetAccessControl(valuetype System.Security.AccessControl.AccessControlSections includeSections) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.GetAccessControl(System.Security.AccessControl.AccessControlSections)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetAccessControl (includeSections As AccessControlSections) As FileSecurity" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Security::AccessControl::FileSecurity ^ GetAccessControl(System::Security::AccessControl::AccessControlSections includeSections);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -903,10 +978,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.IsReadOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Property IsReadOnly As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsReadOnly { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -962,10 +1040,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public long Length { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Length" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Length As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long Length { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -991,7 +1072,7 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The value of the <xref:System.IO.FileInfo.Length%2A> property is pre-cached if the current instance of the <xref:System.IO.FileInfo> object was returned from any of the following <xref:System.IO.DirectoryInfo>methods:  
+ The value of the <xref:System.IO.FileInfo.Length%2A> property is pre-cached if the current instance of the <xref:System.IO.FileInfo> object was returned from any of the following <xref:System.IO.DirectoryInfo> methods:  
   
 -   <xref:System.IO.DirectoryInfo.GetDirectories%2A>  
   
@@ -1031,10 +1112,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public void MoveTo (string destFileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(string destFileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.MoveTo(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub MoveTo (destFileName As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void MoveTo(System::String ^ destFileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1095,10 +1179,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public override string Name { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Name" />
       <MemberSignature Language="DocId" Value="P:System.IO.FileInfo.Name" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides ReadOnly Property Name As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::String ^ Name { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1136,14 +1223,27 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
         </remarks>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Open">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Opens a file with various read/write and sharing privileges.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Open">
       <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Open (mode As FileMode) As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ Open(System::IO::FileMode mode);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1187,10 +1287,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode, System.IO.FileAccess access);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Open (mode As FileMode, access As FileAccess) As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ Open(System::IO::FileMode mode, System::IO::FileAccess access);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1238,10 +1341,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileStream Open (System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream Open(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Open(System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Open (mode As FileMode, access As FileAccess, share As FileShare) As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ Open(System::IO::FileMode mode, System::IO::FileAccess access, System::IO::FileShare share);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1291,10 +1397,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileStream OpenRead ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream OpenRead() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenRead" />
+      <MemberSignature Language="VB.NET" Value="Public Function OpenRead () As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ OpenRead();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1316,7 +1425,7 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method returns a read-only <xref:System.IO.FileStream> object with the <xref:System.IO.FileShare> mode set to <xref:System.IO.FileShare>.  
+ This method returns a read-only <xref:System.IO.FileStream> object with the <xref:System.IO.FileShare> mode set to <xref:System.IO.FileShare.Read>.  
   
    
   
@@ -1340,10 +1449,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.StreamReader OpenText ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.StreamReader OpenText() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenText" />
+      <MemberSignature Language="VB.NET" Value="Public Function OpenText () As StreamReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::StreamReader ^ OpenText();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1384,16 +1496,21 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
           <paramref name="path" /> is read-only or is a directory.</exception>
         <exception cref="T:System.IO.DirectoryNotFoundException">The specified path is invalid, such as being on an unmapped drive.</exception>
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading and writing files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+        <altmember cref="P:System.Text.Encoding.UTF8" />
+        <altmember cref="T:System.IO.StreamReader" />
       </Docs>
     </Member>
     <Member MemberName="OpenWrite">
       <MemberSignature Language="C#" Value="public System.IO.FileStream OpenWrite ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileStream OpenWrite() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.OpenWrite" />
+      <MemberSignature Language="VB.NET" Value="Public Function OpenWrite () As FileStream" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileStream ^ OpenWrite();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1433,10 +1550,30 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
         <permission cref="T:System.Security.Permissions.FileIOPermission">for reading and writing files. Associated enumerations: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />, <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="Replace">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Replaces the contents of a specified file with the file described by the current <see cref="T:System.IO.FileInfo" /> object, deleting the original file, and creating a backup of the replaced file.</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Use the <xref:System.IO.FileInfo.Replace%2A> methods when you need to quickly replace a file with the contents of the file described by the current <xref:System.IO.FileInfo> object.  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Replace">
       <MemberSignature Language="C#" Value="public System.IO.FileInfo Replace (string destinationFileName, string destinationBackupFileName);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo Replace(string destinationFileName, string destinationBackupFileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Replace(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Replace (destinationFileName As String, destinationBackupFileName As String) As FileInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileInfo ^ Replace(System::String ^ destinationFileName, System::String ^ destinationBackupFileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1446,6 +1583,10 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1509,6 +1650,8 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public System.IO.FileInfo Replace (string destinationFileName, string destinationBackupFileName, bool ignoreMetadataErrors);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.FileInfo Replace(string destinationFileName, string destinationBackupFileName, bool ignoreMetadataErrors) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.Replace(System.String,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Replace (destinationFileName As String, destinationBackupFileName As String, ignoreMetadataErrors As Boolean) As FileInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::IO::FileInfo ^ Replace(System::String ^ destinationFileName, System::String ^ destinationBackupFileName, bool ignoreMetadataErrors);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1518,6 +1661,10 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1584,6 +1731,7 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.FileSecurity fileSecurity);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.FileSecurity fileSecurity) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.SetAccessControl(System.Security.AccessControl.FileSecurity)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void SetAccessControl(System::Security::AccessControl::FileSecurity ^ fileSecurity);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1652,10 +1800,13 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.IO.FileInfo.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.IO.FileSystem</AssemblyName>
         <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
@@ -1683,41 +1834,5 @@ C:\Users\userName\AppData\Local\Temp\tmp70CB.tmp was successfully deleted.
         </remarks>
       </Docs>
     </Member>
-    <MemberGroup MemberName="GetAccessControl">
-      <AssemblyInfo>
-        <AssemblyName>mscorlib</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Gets a <see cref="T:System.Security.AccessControl.FileSecurity" /> object that encapsulates the access control list (ACL) entries for the file described by the current <see cref="T:System.IO.FileInfo" /> object.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Use the <xref:System.IO.FileInfo.GetAccessControl%2A> methods to retrieve the access control list (ACL) entries for the current file.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
-    <MemberGroup MemberName="Replace">
-      <AssemblyInfo>
-        <AssemblyName>mscorlib</AssemblyName>
-        <AssemblyVersion>2.0.5.0</AssemblyVersion>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-      </AssemblyInfo>
-      <Docs>
-        <summary>Replaces the contents of a specified file with the file described by the current <see cref="T:System.IO.FileInfo" /> object, deleting the original file, and creating a backup of the replaced file.</summary>
-        <remarks>
-          <format type="text/markdown"><![CDATA[  
-  
-## Remarks  
- Use the <xref:System.IO.FileInfo.Replace%2A> methods when you need to quickly replace a file with the contents of the file described by the current <xref:System.IO.FileInfo> object.  
-  
- ]]></format>
-        </remarks>
-      </Docs>
-    </MemberGroup>
   </Members>
 </Type>

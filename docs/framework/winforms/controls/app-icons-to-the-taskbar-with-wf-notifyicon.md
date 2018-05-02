@@ -1,5 +1,5 @@
 ---
-title: "How to: Add Application Icons to the TaskBar with the Windows Forms NotifyIcon Component | Microsoft Docs"
+title: "How to: Add Application Icons to the TaskBar with the Windows Forms NotifyIcon Component"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,20 +9,24 @@ ms.technology:
   - "dotnet-winforms"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
+  - "cpp"
 f1_keywords: 
   - "TrayIcon"
-dev_langs: 
-  - "jsharp"
 helpviewer_keywords: 
   - "status area icons"
-  - "icons, adding to taskbar"
+  - "icons [Windows Forms], adding to taskbar"
   - "NotifyIcon component"
-  - "taskbar, adding icons"
+  - "taskbar [Windows Forms], adding icons"
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
 caps.latest.revision: 11
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add Application Icons to the TaskBar with the Windows Forms NotifyIcon Component
 The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a single icon in the status notification area of the taskbar. To display multiple icons in the status area, you must have multiple <xref:System.Windows.Forms.NotifyIcon> components on your form. To set the icon displayed for a control, use the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> property. You can also write code in the <xref:System.Windows.Forms.NotifyIcon.DoubleClick> event handler so that something happens when the user double-clicks the icon. For example, you could make a dialog box appear for the user to configure the background process represented by the icon.  
@@ -40,9 +44,7 @@ The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a si
   
      In the following code example, the path set for the location of the icon is the **My Documents** folder. This location is used because you can assume that most computers running the Windows operating system will include this folder. Choosing this location also enables users with minimal system access levels to safely run the application. The following example requires a form with a <xref:System.Windows.Forms.NotifyIcon> control already added. It also requires an icon file named `Icon.ico`.  
   
-     [Visual Basic]  
-  
-    ```  
+    ```vb  
     ' You should replace the bold icon in the sample below  
     ' with an icon of your own choosing.  
     NotifyIcon1.Icon = New _   
@@ -51,12 +53,9 @@ The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a si
        & "\Icon.ico")  
     NotifyIcon1.Visible = True  
     NotifyIcon1.Text = "Antivirus program"  
-  
     ```  
   
-     [C#]  
-  
-    ```  
+    ```csharp  
     // You should replace the bold icon in the sample below  
     // with an icon of your own choosing.  
     // Note the escape character used (@) when specifying the path.  
@@ -66,12 +65,9 @@ The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a si
        + @"\Icon.ico");  
     notifyIcon1.Visible = true;  
     notifyIcon1.Text = "Antivirus program";  
-  
     ```  
   
-     [cpp]  
-  
-    ```  
+    ```cpp  
     // You should replace the bold icon in the sample below  
     // with an icon of your own choosing.  
     notifyIcon1->Icon = gcnew   
@@ -84,8 +80,8 @@ The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a si
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.NotifyIcon>   
- <xref:System.Windows.Forms.NotifyIcon.Icon%2A>   
- [How to: Associate a Shortcut Menu with a Windows Forms NotifyIcon Component](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)   
- [NotifyIcon Component](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)   
+ <xref:System.Windows.Forms.NotifyIcon>  
+ <xref:System.Windows.Forms.NotifyIcon.Icon%2A>  
+ [How to: Associate a Shortcut Menu with a Windows Forms NotifyIcon Component](../../../../docs/framework/winforms/controls/how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
+ [NotifyIcon Component](../../../../docs/framework/winforms/controls/notifyicon-component-windows-forms.md)  
  [NotifyIcon Component Overview](../../../../docs/framework/winforms/controls/notifyicon-component-overview-windows-forms.md)

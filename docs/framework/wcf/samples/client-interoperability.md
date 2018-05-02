@@ -1,8 +1,8 @@
 ---
-title: "Client Interoperability | Microsoft Docs"
+title: "Client Interoperability"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: e890e40a-b76a-48c4-9e5b-a4b385fac847
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Client Interoperability
 This section contains samples that demonstrate interoperability between [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] and other technologies.  

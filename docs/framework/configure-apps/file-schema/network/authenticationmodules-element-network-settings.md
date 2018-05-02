@@ -1,8 +1,8 @@
 ---
-title: "&lt;authenticationModules&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;authenticationModules&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#authenticationModules"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "authenticationModules element"
   - "<authenticationModules> element"
@@ -25,6 +20,8 @@ caps.latest.revision: 15
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;authenticationModules&gt; Element (Network Settings)
 Specifies modules used to authenticate network requests.  
@@ -35,9 +32,8 @@ Specifies modules used to authenticate network requests.
   
 ## Syntax  
   
-```  
-  
-      <authenticationModules>   
+```xml  
+<authenticationModules>   
 </authenticationModules>  
 ```  
   
@@ -68,9 +64,9 @@ Specifies modules used to authenticate network requests.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following code example enables an authentication module. You should replace the values for Version and PublicKeyToken with the correct values for the specified module.  
+ The following example enables an authentication module. You should replace the values for Version and PublicKeyToken with the correct values for the specified module.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <authenticationModules>  
@@ -82,6 +78,6 @@ Specifies modules used to authenticate network requests.
 ```  
   
 ## See Also  
- <xref:System.Net.IAuthenticationModule>   
- <xref:System.Net.AuthenticationManager>   
+ <xref:System.Net.IAuthenticationModule>  
+ <xref:System.Net.AuthenticationManager>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

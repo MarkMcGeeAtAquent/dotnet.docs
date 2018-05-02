@@ -1,5 +1,5 @@
 ---
-title: "IGCHost::GetStats Method | Microsoft Docs"
+title: "IGCHost::GetStats Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IGCHost.GetStats"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "GetStats"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetStats method, IGCHost interface [.NET Framework hosting]"
   - "IGCHost::GetStats method [.NET Framework hosting]"
 ms.assetid: c4ae022c-46ac-4f19-9ddd-09b955f19412
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IGCHost::GetStats Method
 Gets the statistics for the current state of the garbage collection system.  

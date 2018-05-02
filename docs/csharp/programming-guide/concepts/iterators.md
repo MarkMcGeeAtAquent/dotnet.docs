@@ -1,26 +1,14 @@
 ---
-title: "Iterators (C#) | Microsoft Docs"
-
-ms.date: "2015-07-20"
+title: "Iterators (C#)"
+ms.date: 07/20/2015
 ms.prod: .net
-
-
 ms.technology: 
   - "devlang-csharp"
-
 ms.topic: "article"
-dev_langs: 
-  - "CSharp"
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
 caps.latest.revision: 3
 author: "BillWagner"
 ms.author: "wiwagn"
-
-translation.priority.mt: 
-  - "cs-cz"
-  - "pl-pl"
-  - "pt-br"
-  - "tr-tr"
 ---
 # Iterators (C#)
 An *iterator* can be used to step through collections such as lists and arrays.  
@@ -52,7 +40,7 @@ public static System.Collections.IEnumerable SomeNumbers()
   
  The return type of an iterator method or `get` accessor can be <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, or <xref:System.Collections.Generic.IEnumerator%601>.  
   
- You can use a`yield break` statement to end the iteration.  
+ You can use a `yield break` statement to end the iteration.  
   
  Iterators were introduced in C# in Visual Studio 2005.  
   
@@ -348,11 +336,11 @@ public class Stack<T> : IEnumerable<T>
 ```  
   
 ##  <a name="BKMK_SyntaxInformation"></a> Syntax Information  
- An iterator can occur as a method or `get` accessor. An iterator cannot occur in an event, instance constructor, static constructor, or static destructor.  
+ An iterator can occur as a method or `get` accessor. An iterator cannot occur in an event, instance constructor, static constructor, or static finalizer.  
   
  An implicit conversion must exist from the expression type in the `yield return` statement to the return type of the iterator.  
   
- In C#, an iterator method cannot have any `ref` or `out` parameters.  
+ In C#, an iterator method cannot have any `in`, `ref`, or `out` parameters.  
   
  In C#, "yield" is not a reserved word and has special meaning only when it is used before a `return` or `break` keyword.  
   
@@ -361,13 +349,13 @@ public class Stack<T> : IEnumerable<T>
   
  To see what the compiler does, you can use the Ildasm.exe tool to view the Microsoft intermediate language code that is generated for an iterator method.  
   
- When you create an iterator for a [class](../../../csharp/language-reference/keywords/class.md) or [struct](../../../csharp/language-reference/keywords/struct.md), you do not have to implement the whole <xref:System.Collections.IEnumerator> interface. When the compiler detects the iterator, it automatically generates the `Current`, `MoveNext`, and `Dispose` methods of the <xref:System.Collections.IEnumerator> or <xref:System.Collections.Generic.IEnumerator%601> interface.  
+ When you create an iterator for a [class](../../../csharp/language-reference/keywords/class.md) or [struct](../../../csharp/language-reference/keywords/struct.md), you don't have to implement the whole <xref:System.Collections.IEnumerator> interface. When the compiler detects the iterator, it automatically generates the `Current`, `MoveNext`, and `Dispose` methods of the <xref:System.Collections.IEnumerator> or <xref:System.Collections.Generic.IEnumerator%601> interface.  
   
  On each successive iteration of the `foreach` loop (or the direct call to `IEnumerator.MoveNext`), the next iterator code body resumes after the previous `yield return` statement. It then continues to the next `yield return` statement until the end of the iterator body is reached, or until a `yield break` statement is encountered.  
   
- Iterators do not support the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=fullName> method. To re-iterate from the start, you must obtain a new iterator.  
+ Iterators don't support the <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> method. To re-iterate from the start, you must obtain a new iterator.  
   
- For additional information, see the [C# Language Specification](../../../csharp/language-reference/language-specification.md).  
+ For additional information, see the [C# Language Specification](../../../csharp/language-reference/language-specification/index.md).  
   
 ##  <a name="BKMK_UseOfIterators"></a> Use of Iterators  
  Iterators enable you to maintain the simplicity of a `foreach` loop when you need to use complex code to populate a list sequence. This can be useful when you want to do the following:  
@@ -379,9 +367,9 @@ public class Stack<T> : IEnumerable<T>
 -   Encapsulate building the list in the iterator. In the iterator method, you can build the list and then yield each result in a loop.  
   
 ## See Also  
- <xref:System.Collections.Generic>   
- <xref:System.Collections.Generic.IEnumerable%601>   
- [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)   
- [yield](../../../csharp/language-reference/keywords/yield.md)   
- [Using foreach with Arrays](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)   
+ <xref:System.Collections.Generic>  
+ <xref:System.Collections.Generic.IEnumerable%601>  
+ [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+ [yield](../../../csharp/language-reference/keywords/yield.md)  
+ [Using foreach with Arrays](../../../csharp/programming-guide/arrays/using-foreach-with-arrays.md)  
  [Generics](../../../csharp/programming-guide/generics/index.md)

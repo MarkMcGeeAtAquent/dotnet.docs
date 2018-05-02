@@ -1,10 +1,16 @@
-<Type Name="CodeAccessPermission" FullName="System.Security.CodeAccessPermission">
+﻿<Type Name="CodeAccessPermission" FullName="System.Security.CodeAccessPermission">
   <TypeSignature Language="C#" Value="public abstract class CodeAccessPermission : System.Security.IPermission, System.Security.IStackWalk" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit CodeAccessPermission extends System.Object implements class System.Security.IPermission, class System.Security.ISecurityEncodable, class System.Security.IStackWalk" />
   <TypeSignature Language="DocId" Value="T:System.Security.CodeAccessPermission" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class CodeAccessPermission&#xA;Implements IPermission, IStackWalk" />
+  <TypeSignature Language="C++ CLI" Value="public ref class CodeAccessPermission abstract : System::Security::IPermission, System::Security::IStackWalk" />
   <AssemblyInfo>
     <AssemblyName>mscorlib</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Base>
@@ -29,11 +35,11 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Code access permissions use a stack walk to ensure that all callers of the code have been granted a permission. If a permission object is `null`, it is handled the same as a permission object with the state <xref:System.Security.Permissions.PermissionState?displayProperty=fullName>.  
+ Code access permissions use a stack walk to ensure that all callers of the code have been granted a permission. If a permission object is `null`, it is handled the same as a permission object with the state <xref:System.Security.Permissions.PermissionState.None?displayProperty=nameWithType>.  
   
  The call stack is typically represented as growing down, so that methods higher in the call stack call methods lower in the call stack.  
   
- Inheritors of the <xref:System.Security.CodeAccessPermission> class must be granted full trust to function correctly as permissions extending the security infrastructure. To determine that the inheritors are fully trusted, <xref:System.Security.CodeAccessPermission> issues an <xref:System.Security.Permissions.SecurityAction> for <xref:System.Security.Permissions.SecurityPermissionFlag> = `true` and <xref:System.Security.Permissions.SecurityPermissionFlag> = `true`.  
+ Inheritors of the <xref:System.Security.CodeAccessPermission> class must be granted full trust to function correctly as permissions extending the security infrastructure. To determine that the inheritors are fully trusted, <xref:System.Security.CodeAccessPermission> issues an <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> for <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence> = `true` and <xref:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy> = `true`.  
   
    
   
@@ -62,10 +68,16 @@
       <MemberSignature Language="C#" Value="protected CodeAccessPermission ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; CodeAccessPermission();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters />
@@ -85,10 +97,19 @@
       <MemberSignature Language="C#" Value="public void Assert ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Assert() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Assert" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Assert ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Assert();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.Assert</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -127,10 +148,19 @@
       <MemberSignature Language="C#" Value="public abstract System.Security.IPermission Copy ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Copy() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Copy" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Copy () As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Security::IPermission ^ Copy();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.Copy</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -166,10 +196,20 @@
       <MemberSignature Language="C#" Value="public void Demand ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Demand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Demand" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Demand ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Demand();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.Demand</InterfaceMember>
+        <InterfaceMember>M:System.Security.IStackWalk.Demand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -202,10 +242,19 @@
       <MemberSignature Language="C#" Value="public void Deny ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Deny() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Deny" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Deny ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Deny();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.Deny</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -240,10 +289,16 @@
       <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (obj As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ obj);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -276,10 +331,19 @@
       <MemberSignature Language="C#" Value="public abstract void FromXml (System.Security.SecurityElement elem);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void FromXml(class System.Security.SecurityElement elem) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Sub FromXml (elem As SecurityElement)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract void FromXml(System::Security::SecurityElement ^ elem);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.ISecurityEncodable.FromXml(System.Security.SecurityElement)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -323,10 +387,16 @@
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
@@ -355,10 +425,19 @@
       <MemberSignature Language="C#" Value="public abstract System.Security.IPermission Intersect (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Intersect(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function Intersect (target As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Security::IPermission ^ Intersect(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.Intersect(System.Security.IPermission)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -398,10 +477,19 @@
       <MemberSignature Language="C#" Value="public abstract bool IsSubsetOf (System.Security.IPermission target);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function IsSubsetOf (target As IPermission) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract bool IsSubsetOf(System::Security::IPermission ^ target);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.IsSubsetOf(System.Security.IPermission)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -421,7 +509,7 @@
 ## Remarks  
  The current permission is a subset of the specified permission if the current permission specifies a set of operations that is wholly contained by the specified permission. For example, a permission that represents access to C:\example.txt is a subset of a permission that represents access to C:\\. If this method returns `true`, the current permission represents no more access to the protected resource than does the specified permission.  
   
- The following statements are required to be `true` for all overrides of the <xref:System.Security.CodeAccessPermission.IsSubsetOf%2A> method. *X*, *Y*, and *Z* represent custom code access permission objects that are not null references, *U* represents an unrestricted code access permission, and *N* represents an empty permission with a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState>.  
+ The following statements are required to be `true` for all overrides of the <xref:System.Security.CodeAccessPermission.IsSubsetOf%2A> method. *X*, *Y*, and *Z* represent custom code access permission objects that are not null references, *U* represents an unrestricted code access permission, and *N* represents an empty permission with a <xref:System.Security.Permissions.PermissionState> of <xref:System.Security.Permissions.PermissionState.None>.  
   
 -   *X*.IsSubsetOf(*X*) returns `true`.  
   
@@ -458,10 +546,19 @@
       <MemberSignature Language="C#" Value="public void PermitOnly ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PermitOnly() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.PermitOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Sub PermitOnly ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void PermitOnly();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.PermitOnly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -496,10 +593,16 @@
       <MemberSignature Language="C#" Value="public static void RevertAll ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RevertAll() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.RevertAll" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RevertAll ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RevertAll();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -523,10 +626,16 @@
       <MemberSignature Language="C#" Value="public static void RevertAssert ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RevertAssert() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.RevertAssert" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RevertAssert ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RevertAssert();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -550,10 +659,16 @@
       <MemberSignature Language="C#" Value="public static void RevertDeny ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RevertDeny() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.RevertDeny" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RevertDeny ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RevertDeny();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -577,10 +692,16 @@
       <MemberSignature Language="C#" Value="public static void RevertPermitOnly ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RevertPermitOnly() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.RevertPermitOnly" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub RevertPermitOnly ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void RevertPermitOnly();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -604,7 +725,12 @@
       <MemberSignature Language="C#" Value="void IPermission.Demand ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Security.IPermission.Demand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.System#Security#IPermission#Demand" />
+      <MemberSignature Language="VB.NET" Value="Sub Demand () Implements IPermission.Demand" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Security.IPermission.Demand() = System::Security::IPermission::Demand;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.Demand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -622,7 +748,12 @@
       <MemberSignature Language="C#" Value="void IStackWalk.Assert ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Security.IStackWalk.Assert() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.System#Security#IStackWalk#Assert" />
+      <MemberSignature Language="VB.NET" Value="Sub Assert () Implements IStackWalk.Assert" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Security.IStackWalk.Assert() = System::Security::IStackWalk::Assert;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.Assert</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -640,7 +771,12 @@
       <MemberSignature Language="C#" Value="void IStackWalk.Demand ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Security.IStackWalk.Demand() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.System#Security#IStackWalk#Demand" />
+      <MemberSignature Language="VB.NET" Value="Sub Demand () Implements IStackWalk.Demand" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Security.IStackWalk.Demand() = System::Security::IStackWalk::Demand;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.Demand</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -658,7 +794,12 @@
       <MemberSignature Language="C#" Value="void IStackWalk.Deny ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Security.IStackWalk.Deny() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.System#Security#IStackWalk#Deny" />
+      <MemberSignature Language="VB.NET" Value="Sub Deny () Implements IStackWalk.Deny" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Security.IStackWalk.Deny() = System::Security::IStackWalk::Deny;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.Deny</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -676,7 +817,12 @@
       <MemberSignature Language="C#" Value="void IStackWalk.PermitOnly ();" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Security.IStackWalk.PermitOnly() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.System#Security#IStackWalk#PermitOnly" />
+      <MemberSignature Language="VB.NET" Value="Sub PermitOnly () Implements IStackWalk.PermitOnly" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Security.IStackWalk.PermitOnly() = System::Security::IStackWalk::PermitOnly;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IStackWalk.PermitOnly</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -694,10 +840,16 @@
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -721,10 +873,19 @@
       <MemberSignature Language="C#" Value="public abstract System.Security.SecurityElement ToXml ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.SecurityElement ToXml() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.ToXml" />
+      <MemberSignature Language="VB.NET" Value="Public MustOverride Function ToXml () As SecurityElement" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; abstract System::Security::SecurityElement ^ ToXml();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.ISecurityEncodable.ToXml</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
@@ -760,10 +921,19 @@
       <MemberSignature Language="C#" Value="public virtual System.Security.IPermission Union (System.Security.IPermission other);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.IPermission Union(class System.Security.IPermission other) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Security.CodeAccessPermission.Union(System.Security.IPermission)" />
+      <MemberSignature Language="VB.NET" Value="Public Overridable Function Union (other As IPermission) As IPermission" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual System::Security::IPermission ^ Union(System::Security::IPermission ^ other);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Security.IPermission.Union(System.Security.IPermission)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>mscorlib</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>

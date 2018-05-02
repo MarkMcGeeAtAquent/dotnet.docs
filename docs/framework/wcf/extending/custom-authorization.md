@@ -1,5 +1,5 @@
 ---
-title: "Custom Authorization | Microsoft Docs"
+title: "Custom Authorization"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 4f90311a-2593-462e-9174-2f7ac78217b9
 caps.latest.revision: 9
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Custom Authorization
 Authorization is the process of controlling access to resources and tasks. The topics in this section enable you to create to implement different claim types, or policies.  
@@ -32,7 +34,7 @@ Authorization is the process of controlling access to resources and tasks. The t
  Describes how to compare claims.  
   
  [How to: Create a Custom Principal Identity](../../../../docs/framework/wcf/extending/how-to-create-a-custom-principal-identity.md)  
- Illustrates the scenario when <xref:System.ServiceModel.Description.PrincipalPermissionMode> is used in combination with a custom authorization policy and a custom principal.  
+ Illustrates the scenario when <xref:System.ServiceModel.Description.PrincipalPermissionMode.Custom> is used in combination with a custom authorization policy and a custom principal.  
   
 ## Reference  
  <xref:System.IdentityModel.Claims>  

@@ -1,5 +1,5 @@
 ---
-title: "CorExitProcess Function | Microsoft Docs"
+title: "CorExitProcess Function"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,25 +9,28 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorExitProcess"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "clr.dll"
   - "mscorwks.dll"
   - "mscoreei.dll"
-apitype: "DLLExport"
+api_type: 
+  - "DLLExport"
 f1_keywords: 
   - "CorExitProcess"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorExitProcess function [.NET Framework hosting]"
 ms.assetid: a5cab4c6-990e-47f3-8798-cf422b791015
+topic_type: 
+  - "apiref"
 caps.latest.revision: 21
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorExitProcess Function
 Shuts down the current unmanaged process.  
@@ -37,7 +40,7 @@ Shuts down the current unmanaged process.
 ## Syntax  
   
 ```  
-void STDMETHODCALLTYPE CorExitProcess (   
+void STDMETHODCALLTYPE CorExitProcess (   
   int  exitCode  
 );  
 ```  

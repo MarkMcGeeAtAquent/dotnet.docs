@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataEmit::DefineSecurityAttributeSet Method | Microsoft Docs"
+title: "IMetaDataEmit::DefineSecurityAttributeSet Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataEmit.DefineSecurityAttributeSet"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataEmit::DefineSecurityAttributeSet"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataEmit::DefineSecurityAttributeSet method [.NET Framework metadata]"
   - "DefineSecurityAttributeSet method [.NET Framework metadata]"
 ms.assetid: 27064ca2-4186-4433-90a7-3b297785e891
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataEmit::DefineSecurityAttributeSet Method
 Creates a set of security permissions to attach to the object referenced by the specified token.  
@@ -64,5 +67,5 @@ HRESULT DefineSecurityAttributeSet (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)   
+ [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
  [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

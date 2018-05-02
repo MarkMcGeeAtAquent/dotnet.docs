@@ -1,7 +1,9 @@
-<Type Name="IBindingList" FullName="System.ComponentModel.IBindingList">
+﻿<Type Name="IBindingList" FullName="System.ComponentModel.IBindingList">
   <TypeSignature Language="C#" Value="public interface IBindingList : System.Collections.IList" />
   <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindingList implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
   <TypeSignature Language="DocId" Value="T:System.ComponentModel.IBindingList" />
+  <TypeSignature Language="VB.NET" Value="Public Interface IBindingList&#xA;Implements IList" />
+  <TypeSignature Language="C++ CLI" Value="public interface class IBindingList : System::Collections::IList" />
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
     <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -10,6 +12,10 @@
   <AssemblyInfo>
     <AssemblyName>netstandard</AssemblyName>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <Interfaces>
     <Interface>
@@ -24,11 +30,11 @@
 ## Remarks  
  This interface is implemented by the <xref:System.Data.DataView> class. Implementation of a method should exhibit the same behavior as the implementation of that method in the <xref:System.Data.DataView> class.  
   
- When you call the <xref:System.ComponentModel.IBindingList.ApplySort%2A> or <xref:System.ComponentModel.IBindingList.RemoveSort%2A> methods, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration.  
+ When you call the <xref:System.ComponentModel.IBindingList.ApplySort%2A> or <xref:System.ComponentModel.IBindingList.RemoveSort%2A> methods, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.Reset> enumeration.  
   
- When you call the <xref:System.ComponentModel.IBindingList.AddNew%2A> method, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration carrying the appropriate index. The added row is in a state where pressing the ESC on a <xref:System.Windows.Forms.DataGridView> control can remove the new row. Raising the <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration a second time on this row indicates that the item is now a row not in the "new" state.  
+ When you call the <xref:System.ComponentModel.IBindingList.AddNew%2A> method, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.ItemAdded> enumeration carrying the appropriate index. The added row is in a state where pressing the ESC on a <xref:System.Windows.Forms.DataGridView> control can remove the new row. Raising the <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.ItemAdded> enumeration a second time on this row indicates that the item is now a row not in the "new" state.  
   
- When you remove an item or call the <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method on a new row (if that row implements <xref:System.ComponentModel.IEditableObject>), you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration carrying the appropriate index.  
+ When you remove an item or call the <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method on a new row (if that row implements <xref:System.ComponentModel.IEditableObject>), you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.ItemDeleted> enumeration carrying the appropriate index.  
   
    
   
@@ -47,6 +53,8 @@
       <MemberSignature Language="C#" Value="public void AddIndex (System.ComponentModel.PropertyDescriptor property);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddIndex(class System.ComponentModel.PropertyDescriptor property) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.AddIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub AddIndex (property As PropertyDescriptor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void AddIndex(System::ComponentModel::PropertyDescriptor ^ property);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -56,6 +64,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -80,6 +92,8 @@
       <MemberSignature Language="C#" Value="public object AddNew ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object AddNew() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.AddNew" />
+      <MemberSignature Language="VB.NET" Value="Public Function AddNew () As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::Object ^ AddNew();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -89,6 +103,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Object</ReturnType>
@@ -106,9 +124,9 @@
  Implementing this method means that the <xref:System.ComponentModel.IBindingList> list must understand the type of objects to add to the list and must understand how to create a new instance of that type. For example, if you have a collection of `myCustomer` objects, the <xref:System.ComponentModel.IBindingList.AddNew%2A> method should add a new `myCustomer` object to the list.  
   
 > [!NOTE]
->  If the objects in this list implement the <xref:System.ComponentModel.IEditableObject> interface, calling the <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method should discard an object, not add it to the list, when the object was created using the <xref:System.ComponentModel.IBindingList.AddNew%2A> method. The object should only be added to the list when the <xref:System.ComponentModel.IEditableObject.EndEdit%2A?displayProperty=fullName> method is called. Therefore, you must sychronize the object and the list carefully.  
+>  If the objects in this list implement the <xref:System.ComponentModel.IEditableObject> interface, calling the <xref:System.ComponentModel.IEditableObject.CancelEdit%2A> method should discard an object, not add it to the list, when the object was created using the <xref:System.ComponentModel.IBindingList.AddNew%2A> method. The object should only be added to the list when the <xref:System.ComponentModel.IEditableObject.EndEdit%2A?displayProperty=nameWithType> method is called. Therefore, you must sychronize the object and the list carefully.  
   
- When this method is called, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration carrying the appropriate index. The added row is in a state where hitting Esc on a <xref:System.Windows.Forms.DataGridView> control can remove the new row. Raising the <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration a second time on this row indicates that the item is now a normal row (not in new state).  
+ When this method is called, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.ItemAdded> enumeration carrying the appropriate index. The added row is in a state where hitting Esc on a <xref:System.Windows.Forms.DataGridView> control can remove the new row. Raising the <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.ItemAdded> enumeration a second time on this row indicates that the item is now a normal row (not in new state).  
   
  ]]></format>
         </remarks>
@@ -120,6 +138,8 @@
       <MemberSignature Language="C#" Value="public bool AllowEdit { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowEdit" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowEdit" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AllowEdit As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowEdit { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -129,6 +149,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -144,6 +168,8 @@
       <MemberSignature Language="C#" Value="public bool AllowNew { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowNew" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowNew" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AllowNew As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowNew { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -153,6 +179,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -165,7 +195,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If <xref:System.Collections.IList.IsFixedSize%2A?displayProperty=fullName> or <xref:System.Collections.IList.IsReadOnly%2A?displayProperty=fullName> is `true`, this property returns `false`.  
+ If <xref:System.Collections.IList.IsFixedSize%2A?displayProperty=nameWithType> or <xref:System.Collections.IList.IsReadOnly%2A?displayProperty=nameWithType> is `true`, this property returns `false`.  
   
  ]]></format>
         </remarks>
@@ -175,6 +205,8 @@
       <MemberSignature Language="C#" Value="public bool AllowRemove { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool AllowRemove" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.AllowRemove" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AllowRemove As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool AllowRemove { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -184,6 +216,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -196,10 +232,10 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If <xref:System.Collections.IList.IsFixedSize%2A?displayProperty=fullName> or <xref:System.Collections.IList.IsReadOnly%2A?displayProperty=fullName> is `true`, this property returns `false`.  
+ If <xref:System.Collections.IList.IsFixedSize%2A?displayProperty=nameWithType> or <xref:System.Collections.IList.IsReadOnly%2A?displayProperty=nameWithType> is `true`, this property returns `false`.  
   
 > [!NOTE]
->  If <xref:System.ComponentModel.IBindingList.AllowRemove%2A> returns `false`, <xref:System.Collections.IList.Remove%2A?displayProperty=fullName> and <xref:System.Collections.IList.RemoveAt%2A?displayProperty=fullName> throw a <xref:System.NotSupportedException>.  
+>  If <xref:System.ComponentModel.IBindingList.AllowRemove%2A> returns `false`, <xref:System.Collections.IList.Remove%2A?displayProperty=nameWithType> and <xref:System.Collections.IList.RemoveAt%2A?displayProperty=nameWithType> throw a <xref:System.NotSupportedException>.  
   
  ]]></format>
         </remarks>
@@ -209,6 +245,8 @@
       <MemberSignature Language="C#" Value="public void ApplySort (System.ComponentModel.PropertyDescriptor property, System.ComponentModel.ListSortDirection direction);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplySort(class System.ComponentModel.PropertyDescriptor property, valuetype System.ComponentModel.ListSortDirection direction) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub ApplySort (property As PropertyDescriptor, direction As ListSortDirection)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void ApplySort(System::ComponentModel::PropertyDescriptor ^ property, System::ComponentModel::ListSortDirection direction);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -218,6 +256,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -251,6 +293,8 @@
       <MemberSignature Language="C#" Value="public int Find (System.ComponentModel.PropertyDescriptor property, object key);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Find(class System.ComponentModel.PropertyDescriptor property, object key) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.Find(System.ComponentModel.PropertyDescriptor,System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Function Find (property As PropertyDescriptor, key As Object) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; int Find(System::ComponentModel::PropertyDescriptor ^ property, System::Object ^ key);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -260,6 +304,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -299,6 +347,8 @@
       <MemberSignature Language="C#" Value="public bool IsSorted { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsSorted" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.IsSorted" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsSorted As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsSorted { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -308,6 +358,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -331,9 +385,11 @@
       </Docs>
     </Member>
     <Member MemberName="ListChanged">
-      <MemberSignature Language="C#" Value="public event System.ComponentModel.ListChangedEventHandler ListChanged;" />
+      <MemberSignature Language="C#" Value="event System.ComponentModel.ListChangedEventHandler ListChanged;" />
       <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.ListChangedEventHandler ListChanged" />
       <MemberSignature Language="DocId" Value="E:System.ComponentModel.IBindingList.ListChanged" />
+      <MemberSignature Language="VB.NET" Value="Event ListChanged As ListChangedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::ComponentModel::ListChangedEventHandler ^ ListChanged;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -343,6 +399,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.ListChangedEventHandler</ReturnType>
@@ -363,6 +423,8 @@
       <MemberSignature Language="C#" Value="public void RemoveIndex (System.ComponentModel.PropertyDescriptor property);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveIndex(class System.ComponentModel.PropertyDescriptor property) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.RemoveIndex(System.ComponentModel.PropertyDescriptor)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveIndex (property As PropertyDescriptor)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveIndex(System::ComponentModel::PropertyDescriptor ^ property);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -372,6 +434,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -396,6 +462,8 @@
       <MemberSignature Language="C#" Value="public void RemoveSort ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveSort() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.ComponentModel.IBindingList.RemoveSort" />
+      <MemberSignature Language="VB.NET" Value="Public Sub RemoveSort ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void RemoveSort();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -405,6 +473,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -418,7 +490,7 @@
 ## Remarks  
  This property is supported if <xref:System.ComponentModel.IBindingList.SupportsSorting%2A> is `true`; otherwise, this property throws a <xref:System.NotSupportedException>.  
   
- When you call this method, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType> enumeration.  
+ When you call this method, you should raise a <xref:System.ComponentModel.IBindingList.ListChanged> event with the <xref:System.ComponentModel.ListChangedType.Reset> enumeration.  
   
  ]]></format>
         </remarks>
@@ -430,6 +502,8 @@
       <MemberSignature Language="C#" Value="public System.ComponentModel.ListSortDirection SortDirection { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.ListSortDirection SortDirection" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SortDirection" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SortDirection As ListSortDirection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ComponentModel::ListSortDirection SortDirection { System::ComponentModel::ListSortDirection get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -439,6 +513,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.ListSortDirection</ReturnType>
@@ -462,6 +540,8 @@
       <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptor SortProperty { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor SortProperty" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SortProperty" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SortProperty As PropertyDescriptor" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ComponentModel::PropertyDescriptor ^ SortProperty { System::ComponentModel::PropertyDescriptor ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -471,6 +551,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
@@ -494,6 +578,8 @@
       <MemberSignature Language="C#" Value="public bool SupportsChangeNotification { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsChangeNotification" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsChangeNotification" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SupportsChangeNotification As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SupportsChangeNotification { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -503,6 +589,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -525,6 +615,8 @@
       <MemberSignature Language="C#" Value="public bool SupportsSearching { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSearching" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsSearching" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SupportsSearching As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SupportsSearching { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -534,6 +626,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -559,6 +655,8 @@
       <MemberSignature Language="C#" Value="public bool SupportsSorting { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSorting" />
       <MemberSignature Language="DocId" Value="P:System.ComponentModel.IBindingList.SupportsSorting" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SupportsSorting As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool SupportsSorting { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -568,6 +666,10 @@
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>

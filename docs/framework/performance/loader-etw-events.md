@@ -1,5 +1,5 @@
 ---
-title: "Loader ETW Events | Microsoft Docs"
+title: "Loader ETW Events"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -17,6 +17,8 @@ caps.latest.revision: 18
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Loader ETW Events
 <a name="top"></a> These events collect information relating to loading and unloading application domains, assemblies, and modules.  

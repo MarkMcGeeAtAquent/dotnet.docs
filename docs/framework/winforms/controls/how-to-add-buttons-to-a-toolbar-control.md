@@ -1,8 +1,8 @@
 ---
-title: "How to: Add Buttons to a ToolBar Control | Microsoft Docs"
+title: "How to: Add Buttons to a ToolBar Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,7 +10,9 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "toolbars [Windows Forms], adding buttons"
   - "ToolBar control [Windows Forms], adding buttons"
@@ -22,6 +24,8 @@ caps.latest.revision: 15
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Add Buttons to a ToolBar Control
 > [!NOTE]
@@ -33,14 +37,14 @@ manager: "wpickett"
   
 ### To add buttons programmatically  
   
-1.  In a procedure, create toolbar buttons by adding them to the <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=fullName> collection.  
+1.  In a procedure, create toolbar buttons by adding them to the <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> collection.  
   
 2.  Specify property settings for an individual button by passing the button's index via the <xref:System.Windows.Forms.ToolBar.Buttons%2A> property.  
   
      The example below assumes a form with a <xref:System.Windows.Forms.ToolBar> control already added.  
   
     > [!NOTE]
-    >  The <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=fullName> collection is a zero-based collection, so code should proceed accordingly.  
+    >  The <xref:System.Windows.Forms.ToolBar.Buttons%2A?displayProperty=nameWithType> collection is a zero-based collection, so code should proceed accordingly.  
   
     ```vb  
     Public Sub CreateToolBarButtons()  
@@ -72,7 +76,6 @@ manager: "wpickett"
     ' Set the ToolTipText property of one of the buttons.  
        ToolBar1.Buttons(1).ToolTipText = "Button 2"  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -111,7 +114,6 @@ manager: "wpickett"
        // Set the ToolTipText property of 1 of the buttons.  
        toolBar1.Buttons[1].ToolTipText = "Button 2";  
     }  
-  
     ```  
   
     ```cpp  
@@ -155,8 +157,8 @@ manager: "wpickett"
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.ToolBar>   
- [How to: Define an Icon for a ToolBar Button](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)   
- [How to: Trigger Menu Events for Toolbar Buttons](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)   
- [ToolBar Control Overview](../../../../docs/framework/winforms/controls/toolbar-control-overview-windows-forms.md)   
+ <xref:System.Windows.Forms.ToolBar>  
+ [How to: Define an Icon for a ToolBar Button](../../../../docs/framework/winforms/controls/how-to-define-an-icon-for-a-toolbar-button.md)  
+ [How to: Trigger Menu Events for Toolbar Buttons](../../../../docs/framework/winforms/controls/how-to-trigger-menu-events-for-toolbar-buttons.md)  
+ [ToolBar Control Overview](../../../../docs/framework/winforms/controls/toolbar-control-overview-windows-forms.md)  
  [ToolBar Control](../../../../docs/framework/winforms/controls/toolbar-control-windows-forms.md)

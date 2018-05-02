@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Channels.SoapServerFormatterSink.Protocol
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

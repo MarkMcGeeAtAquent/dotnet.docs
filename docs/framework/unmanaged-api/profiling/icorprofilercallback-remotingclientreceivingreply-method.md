@@ -1,5 +1,5 @@
 ---
-title: "ICorProfilerCallback::RemotingClientReceivingReply Method | Microsoft Docs"
+title: "ICorProfilerCallback::RemotingClientReceivingReply Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorProfilerCallback.RemotingClientReceivingReply"
-apilocation: 
+api_location: 
   - "mscorwks.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorProfilerCallback::RemotingClientReceivingReply"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorProfilerCallback::RemotingClientReceivingReply method [.NET Framework profiling]"
   - "RemotingClientReceivingReply method [.NET Framework profiling]"
 ms.assetid: 15cfc300-8231-4ecb-9a04-19851c3eb484
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorProfilerCallback::RemotingClientReceivingReply Method
 Notifies the profiler that the server-side portion of a remoting call has completed and the client is now receiving and about to process the reply.  

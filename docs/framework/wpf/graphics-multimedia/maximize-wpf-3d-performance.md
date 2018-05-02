@@ -1,8 +1,8 @@
 ---
-title: "Maximize WPF 3D Performance | Microsoft Docs"
+title: "Maximize WPF 3D Performance"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -16,6 +16,8 @@ caps.latest.revision: 9
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Maximize WPF 3D Performance
 As you use the [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] to build 3D controls and include 3D scenes in your applications, it is important to consider performance optimization. This topic provides a list of 3D classes and properties that have performance implications for your application, along with recommendations for optimizing performance when you use them.  

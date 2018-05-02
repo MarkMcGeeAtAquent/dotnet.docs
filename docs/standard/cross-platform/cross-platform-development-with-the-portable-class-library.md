@@ -1,5 +1,5 @@
 ---
-title: "Cross-Platform Development with the Portable Class Library | Microsoft Docs"
+title: "Cross-Platform Development with the Portable Class Library"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -8,11 +8,6 @@ ms.suite: ""
 ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Portable Class Library [.NET Framework]"
   - "targeting multiple platforms"
@@ -22,6 +17,9 @@ caps.latest.revision: 95
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Cross-Platform Development with the Portable Class Library
 The .NET Framework Portable Class Library project type in Visual Studio helps you build cross-platform apps and libraries for Microsoft platforms quickly and easily.  
@@ -39,13 +37,13 @@ The .NET Framework Portable Class Library project type in Visual Studio helps yo
   
  In this topic:  
   
- [Visual Studio support](#vs_support)   
- [Creating a Portable Class Library project](#create_pcl)   
- [Target options](#platforms)   
- [Changing targets](#change_targets)   
- [Supported features](#features)   
- [Supported types and members](#members)   
- [API differences in the Portable Class Library](#API_diff)   
+ [Visual Studio support](#vs_support)  
+ [Creating a Portable Class Library project](#create_pcl)  
+ [Target options](#platforms)  
+ [Changing targets](#change_targets)  
+ [Supported features](#features)  
+ [Supported types and members](#members)  
+ [API differences in the Portable Class Library](#API_diff)  
  [Using the Portable Class Library](#using)  
   
 <a name="vs_support"></a>   
@@ -54,7 +52,7 @@ The .NET Framework Portable Class Library project type in Visual Studio helps yo
   
 |Visual Studio SKU|Support for creating a Portable Class Library|  
 |-----------------------|---------------------------------------------------|  
-|Visual Studio 2010, Professional, Premium, or Ultimate|Yes, when you install the [Portable Library Tools](http://go.microsoft.com/fwlink/?LinkId=210823).|  
+|Visual Studio 2010, Professional, Premium, or Ultimate|Yes, when you install the [Portable Library Tools](https://marketplace.visualstudio.com/items?itemName=BCLTeam.PortableLibraryTools2).|  
 |Visual Studio Express 2010 versions|No.|  
 |Visual Studio 2012 Professional, Premium, or Ultimate|Yes. For phone support, install the [Windows Phone SDK 8.0](http://go.microsoft.com/fwlink/?LinkId=265772).|  
 |Visual Studio Express 2012 versions|No.|  
@@ -168,7 +166,7 @@ Change Targets dialog box in Visual Studio 2012
   
  For example, the Portable Class Library contains UI-related types only when you target Windows 8.1 and Windows Phone 8.1. Also, you may encounter limitations if you target platforms (such as Xbox, the .NET Framework 4, and Windows Phone 7) that were released before the introduction of the Portable Class Library. The .NET Framework releases packages through NuGet that improves the Portable Class Library support for some of these older platforms. For more information and a list of NuGet packages, see [The .NET Framework and Out-of-Band Releases](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md).  
   
- If a member is supported in the Portable Class Library and for your selected targets, it will appear in your project in IntelliSense. In addition, the Portable Class Library icon ![Supported by Portable Library](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") appears in the members tables, in the [.NET Framework Class Library](http://go.microsoft.com/fwlink/?LinkId=211358) next to supported members. For example, the following members table shows that the <xref:System.String.Chars%2A> property in the <xref:System.String> class is supported in the Portable Class Library:  
+ If a member is supported in the Portable Class Library and for your selected targets, it will appear in your project in IntelliSense. In addition, the Portable Class Library icon ![Supported by Portable Library](../../../docs/standard/cross-platform/media/portablelibrary-referenceicon.png "PortableLibrary_ReferenceIcon") appears in the members tables, in the [.NET Framework Class Library](https://msdn.microsoft.com/library/mt472912.aspx) next to supported members. For example, the following members table shows that the <xref:System.String.Chars%2A> property in the <xref:System.String> class is supported in the Portable Class Library:  
   
  ![Supported Member icon](../../../docs/standard/cross-platform/media/plibsupportedmemberlist.png "PlibSupportedMemberList")  
 Portable class library icon  
@@ -206,30 +204,29 @@ Version Information example
  When you deploy a Silverlight-based app that references a Portable Class Library assembly, you must ensure that the minimum runtime version required for the app matches its targeted version. If you target Silverlight 4, the version must be 4.0.60129.0 or later. You set the version by including `<param name="minRuntimeVersion" value="4.0.60129.0" />` in the webpage that hosts the Silverlight-based app, as follows:  
   
 ```xaml  
-<div id="silverlightControlHost">  
-    <object data="data:application/x-silverlight-2,"   
-           type="application/x-silverlight-2" width="100%" height="100%">  
-    <param name="source" value="ClientBin/SilverlightApplication.xap"/>  
-    <param name="onError" value="onSilverlightError" />  
-    <param name="background" value="white" />  
-    <param name="minRuntimeVersion" value="4.0.60129.0" />  
-    <param name="autoUpgrade" value="true" />  
-    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0"   
+<div id="silverlightControlHost">  
+    <object data="data:application/x-silverlight-2,"   
+           type="application/x-silverlight-2" width="100%" height="100%">  
+    <param name="source" value="ClientBin/SilverlightApplication.xap"/>  
+    <param name="onError" value="onSilverlightError" />  
+    <param name="background" value="white" />  
+    <param name="minRuntimeVersion" value="4.0.60129.0" />  
+    <param name="autoUpgrade" value="true" />  
+    <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0"   
              style="text-decoration:none">  
-      <img src=http://go.microsoft.com/fwlink/?LinkId=161376  
-             alt="Get Microsoft Silverlight" style="border-style:none"/>  
+      <img src=http://go.microsoft.com/fwlink/?LinkId=161376  
+             alt="Get Microsoft Silverlight" style="border-style:none"/>  
     </a>  
   </object>  
-   <iframe id="_sl_historyFrame"   
+   <iframe id="_sl_historyFrame"   
               style="visibility:hidden;height:0px;width:0px;border:0px">  
    </iframe>  
 </div>  
-  
 ```  
   
 ## See Also  
- [Using Portable Class Library with MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)   
- [App Resources for Libraries That Target Multiple Platforms](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)   
- [.NET Portability Analyzer](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)   
- [.NET Framework Support for Windows Store Apps and Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)   
+ [Using Portable Class Library with MVVM](../../../docs/standard/cross-platform/using-portable-class-library-with-model-view-view-model.md)  
+ [App Resources for Libraries That Target Multiple Platforms](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md)  
+ [.NET Portability Analyzer](http://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b)  
+ [.NET Framework Support for Windows Store Apps and Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  
  [Deployment](../../../docs/framework/deployment/net-framework-applications.md)

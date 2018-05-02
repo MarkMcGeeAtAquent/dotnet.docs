@@ -1,5 +1,5 @@
 ---
-title: "ISymUnmanagedWriter::CloseScope Method | Microsoft Docs"
+title: "ISymUnmanagedWriter::CloseScope Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ISymUnmanagedWriter.CloseScope"
-apilocation: 
+api_location: 
   - "diasymreader.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ISymUnmanagedWriter::CloseScope"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CloseScope method [.NET Framework debugging]"
   - "ISymUnmanagedWriter::CloseScope method [.NET Framework debugging]"
 ms.assetid: 6dade525-7770-4cb4-bafd-4bb995ad0d87
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ISymUnmanagedWriter::CloseScope Method
 Closes the current lexical scope.  

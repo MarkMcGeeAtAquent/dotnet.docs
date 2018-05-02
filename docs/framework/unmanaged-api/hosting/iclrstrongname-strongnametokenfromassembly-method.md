@@ -1,5 +1,5 @@
 ---
-title: "ICLRStrongName::StrongNameTokenFromAssembly Method | Microsoft Docs"
+title: "ICLRStrongName::StrongNameTokenFromAssembly Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICLRStrongName.StrongNameTokenFromAssembly"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICLRStrongName::StrongNameTokenFromAssembly"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICLRStrongName::StrongNameTokenFromAssembly method [.NET Framework hosting]"
   - "StrongNameTokenFromAssembly method, ICLRStrongName interface [.NET Framework hosting]"
 ms.assetid: fc725afb-b66b-4015-aa44-1c0d1304197f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 8
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICLRStrongName::StrongNameTokenFromAssembly Method
 Creates a strong name token from the specified assembly file.  
@@ -68,5 +71,5 @@ HRESULT StrongNameTokenFromAssembly (
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## See Also  
- [StrongNameTokenFromAssemblyEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)   
+ [StrongNameTokenFromAssemblyEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnametokenfromassemblyex-method.md)  
  [ICLRStrongName Interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

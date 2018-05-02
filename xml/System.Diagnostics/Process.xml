@@ -1,10 +1,13 @@
-<Type Name="Process" FullName="System.Diagnostics.Process">
+﻿<Type Name="Process" FullName="System.Diagnostics.Process">
   <TypeSignature Language="C#" Value="public class Process : System.ComponentModel.Component" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Process extends System.ComponentModel.Component" />
   <TypeSignature Language="DocId" Value="T:System.Diagnostics.Process" />
+  <TypeSignature Language="VB.NET" Value="Public Class Process&#xA;Inherits Component" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Process : System::ComponentModel::Component" />
   <AssemblyInfo>
     <AssemblyName>System.Diagnostics.Process</AssemblyName>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -19,8 +22,7 @@
     <BaseTypeName>System.Object</BaseTypeName>
     <BaseTypeName FrameworkAlternate="netframework-4.5">System.ComponentModel.Component</BaseTypeName>
   </Base>
-  <Interfaces>
-  </Interfaces>
+  <Interfaces></Interfaces>
   <Attributes>
     <Attribute>
       <AttributeName>System.ComponentModel.DefaultEvent("Exited")</AttributeName>
@@ -36,22 +38,16 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Provides access to local and remote processes and enables you to start and stop local system processes.  
-  
- To browse the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#System/services/monitoring/system/diagnosticts/Process.cs#f8b2e604d6f1fe04).</summary>
+    <summary>Provides access to local and remote processes and enables you to start and stop local system processes.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-  
-> [!NOTE]
->  To view the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#System/services/monitoring/system/diagnosticts/Process.cs#f8b2e604d6f1fe04). You can browse through the source code online, download the reference for offline viewing, and step through the sources (including patches and updates) during debugging; see [instructions](http://referencesource.microsoft.com/).  
-  
  A <xref:System.Diagnostics.Process> component provides access to a process that is running on a computer. A process, in the simplest terms, is a running app. A thread is the basic unit to which the operating system allocates processor time. A thread can execute any part of the code of the process, including parts currently being executed by another thread.  
   
  The <xref:System.Diagnostics.Process> component is a useful tool for starting, stopping, controlling, and monitoring apps. You can use the <xref:System.Diagnostics.Process> component, to obtain a list of the processes that are running, or you can start a new process. A <xref:System.Diagnostics.Process> component is used to access system processes. After a <xref:System.Diagnostics.Process> component has been initialized, it can be used to obtain information about the running process. Such information includes the set of threads, the loaded modules (.dll and .exe files), and performance information such as the amount of memory the process is using.  
   
- This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the “Using an Object that Implements IDisposable” section in the <xref:System.IDisposable> interface topic.  
+ This type implements the <xref:System.IDisposable> interface. When you have finished using the type, you should dispose of it either directly or indirectly. To dispose of the type directly, call its <xref:System.IDisposable.Dispose%2A> method in a `try`/`catch` block. To dispose of it indirectly, use a language construct such as `using` (in C#) or `Using` (in Visual Basic). For more information, see the "Using an Object that Implements IDisposable" section in the <xref:System.IDisposable> interface topic.  
   
 > [!NOTE]
 >  32-bit processes cannot access the modules of a 64-bit process. If you try to get information about a 64-bit process from a 32-bit process, you will get a <xref:System.ComponentModel.Win32Exception> exception. A 64-bit process, on the other hand, can access the modules of a 32-bit process.  
@@ -67,15 +63,15 @@
   
 <a name="Core"></a>   
 ## [!INCLUDE[net_core](~/includes/net-core-md.md)] Notes  
- In the .NET Framework on the desktop, the <xref:System.Diagnostics.Process> class by default uses <xref:System.Console> encodings, which are typically code page encodings, for the input, output, and error streams. For example code, on systems whose culture is English (United States), code page 437 is the default encoding for the <xref:System.Console> class. However, [!INCLUDE[net_core](~/includes/net-core-md.md)] may make only a limited subset of these encodings available. If this is the case, it uses <xref:System.Text.Encoding.UTF8%2A?displayProperty=fullName> as the default encoding.  
+ In the .NET Framework, the <xref:System.Diagnostics.Process> class by default uses <xref:System.Console> encodings, which are typically code page encodings, for the input, output, and error streams. For example code, on systems whose culture is English (United States), code page 437 is the default encoding for the <xref:System.Console> class. However, [!INCLUDE[net_core](~/includes/net-core-md.md)] may make only a limited subset of these encodings available. If this is the case, it uses <xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType> as the default encoding.  
   
  If a <xref:System.Diagnostics.Process> object depends on specific code page encodings, you can still make them available by doing the following *before* you call any <xref:System.Diagnostics.Process> methods:  
   
 1.  Add a reference to the System.Text.Encoding.CodePages.dll assembly to your project.  
   
-2.  Retrieve the <xref:System.Text.EncodingProvider> object from the <xref:System.Text.CodePagesEncodingProvider.Instance%2A?displayProperty=fullName> property.  
+2.  Retrieve the <xref:System.Text.EncodingProvider> object from the <xref:System.Text.CodePagesEncodingProvider.Instance%2A?displayProperty=nameWithType> property.  
   
-3.  Pass the <xref:System.Text.EncodingProvider> object to the <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=fullName> method to make the additional encodings supported by the encoding provider available.  
+3.  Pass the <xref:System.Text.EncodingProvider> object to the <xref:System.Text.Encoding.RegisterProvider%2A?displayProperty=nameWithType> method to make the additional encodings supported by the encoding provider available.  
   
  The <xref:System.Diagnostics.Process> class will then automatically use the default system encoding rather than UTF8, provided that you have registered the encoding provider before calling any <xref:System.Diagnostics.Process> methods.  
   
@@ -104,16 +100,24 @@
     </remarks>
     <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This class cannot be used by partially trusted code.</permission>
     <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">for full trust for inheritors. This class cannot be inherited by partially trusted code.</permission>
+    <altmember cref="M:System.Diagnostics.Process.Start" />
+    <altmember cref="T:System.Diagnostics.ProcessStartInfo" />
+    <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+    <altmember cref="M:System.Diagnostics.Process.Kill" />
+    <altmember cref="T:System.Diagnostics.ProcessThread" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Process ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Process();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -137,7 +141,7 @@
   
  If you use a `static` overload of the <xref:System.Diagnostics.Process.Start%2A> method to start a new system process, the method creates a new <xref:System.Diagnostics.Process> component and associates it with the process.  
   
- When the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=fullName> property is set to its default value, `true`, you can start applications and documents in a way that is similar to using the `Run` dialog box of the Windows `Start` menu. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=fullName> is `false`, you can start only executables.  
+ When the <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=nameWithType> property is set to its default value, `true`, you can start applications and documents in a way that is similar to using the `Run` dialog box of the Windows `Start` menu. When <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=nameWithType> is `false`, you can start only executables.  
   
  Any executable file that you can call from the command line can be started in one of two ways: by setting the appropriate members of the <xref:System.Diagnostics.Process.StartInfo%2A> property and calling the <xref:System.Diagnostics.Process.Start%2A> method with no parameters, or by passing the appropriate parameter to the `static`<xref:System.Diagnostics.Process.Start%2A> member.  
   
@@ -152,10 +156,13 @@
       <MemberSignature Language="C#" Value="public int BasePriority { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 BasePriority" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.BasePriority" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property BasePriority As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int BasePriority { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -195,10 +202,10 @@
   
 |BasePriority|PriorityClass|  
 |------------------|-------------------|  
-|4|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|8|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|13|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|24|<xref:System.Diagnostics.ProcessPriorityClass>|  
+|4|<xref:System.Diagnostics.ProcessPriorityClass.Idle>|  
+|8|<xref:System.Diagnostics.ProcessPriorityClass.Normal>|  
+|13|<xref:System.Diagnostics.ProcessPriorityClass.High>|  
+|24|<xref:System.Diagnostics.ProcessPriorityClass.RealTime>|  
   
    
   
@@ -218,16 +225,22 @@
   
  The process has not started, so there is no process ID.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
+        <altmember cref="T:System.Diagnostics.ProcessPriorityClass" />
+        <altmember cref="T:System.Diagnostics.ThreadPriorityLevel" />
       </Docs>
     </Member>
     <Member MemberName="BeginErrorReadLine">
       <MemberSignature Language="C#" Value="public void BeginErrorReadLine ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginErrorReadLine() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.BeginErrorReadLine" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginErrorReadLine ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void BeginErrorReadLine();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -263,7 +276,7 @@
   
 2.  Set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardError%2A> to `true`.  
   
-3.  Add your event handler to the <xref:System.Diagnostics.Process.ErrorDataReceived> event. The event handler must match the <xref:System.Diagnostics.DataReceivedEventHandler?displayProperty=fullName> delegate signature.  
+3.  Add your event handler to the <xref:System.Diagnostics.Process.ErrorDataReceived> event. The event handler must match the <xref:System.Diagnostics.DataReceivedEventHandler?displayProperty=nameWithType> delegate signature.  
   
 4.  Start the <xref:System.Diagnostics.Process>.  
   
@@ -297,16 +310,24 @@
   
  The <see cref="P:System.Diagnostics.Process.StandardError" /> stream has been used by a synchronous read operation.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
+        <altmember cref="E:System.Diagnostics.Process.ErrorDataReceived" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
+        <altmember cref="M:System.Diagnostics.Process.CancelErrorRead" />
       </Docs>
     </Member>
     <Member MemberName="BeginOutputReadLine">
       <MemberSignature Language="C#" Value="public void BeginOutputReadLine ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginOutputReadLine() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.BeginOutputReadLine" />
+      <MemberSignature Language="VB.NET" Value="Public Sub BeginOutputReadLine ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void BeginOutputReadLine();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -342,7 +363,7 @@
   
 2.  Set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput%2A> to `true`.  
   
-3.  Add your event handler to the <xref:System.Diagnostics.Process.OutputDataReceived> event. The event handler must match the <xref:System.Diagnostics.DataReceivedEventHandler?displayProperty=fullName> delegate signature.  
+3.  Add your event handler to the <xref:System.Diagnostics.Process.OutputDataReceived> event. The event handler must match the <xref:System.Diagnostics.DataReceivedEventHandler?displayProperty=nameWithType> delegate signature.  
   
 4.  Start the <xref:System.Diagnostics.Process>.  
   
@@ -378,16 +399,24 @@
   
  The <see cref="P:System.Diagnostics.Process.StandardOutput" /> stream has been used by a synchronous read operation.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
+        <altmember cref="E:System.Diagnostics.Process.OutputDataReceived" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
+        <altmember cref="M:System.Diagnostics.Process.CancelOutputRead" />
       </Docs>
     </Member>
     <Member MemberName="CancelErrorRead">
       <MemberSignature Language="C#" Value="public void CancelErrorRead ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelErrorRead() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.CancelErrorRead" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelErrorRead ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelErrorRead();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -451,16 +480,24 @@ process.BeginErrorReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.Process.StandardError" /> stream is not enabled for asynchronous read operations.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.BeginErrorReadLine" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
+        <altmember cref="E:System.Diagnostics.Process.ErrorDataReceived" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="CancelOutputRead">
       <MemberSignature Language="C#" Value="public void CancelOutputRead ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CancelOutputRead() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.CancelOutputRead" />
+      <MemberSignature Language="VB.NET" Value="Public Sub CancelOutputRead ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void CancelOutputRead();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -524,12 +561,19 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.Process.StandardOutput" /> stream is not enabled for asynchronous read operations.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.BeginOutputReadLine" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
+        <altmember cref="E:System.Diagnostics.Process.OutputDataReceived" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="Close">
       <MemberSignature Language="C#" Value="public void Close ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Close" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Close ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Close();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -539,6 +583,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -573,6 +621,8 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public bool CloseMainWindow ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CloseMainWindow() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.CloseMainWindow" />
+      <MemberSignature Language="VB.NET" Value="Public Function CloseMainWindow () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool CloseMainWindow();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -582,6 +632,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -625,7 +679,12 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public void Dispose ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Dispose" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Dispose ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual void Dispose();" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.IDisposable.Dispose</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
@@ -643,10 +702,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Dispose(System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overrides Sub Dispose (disposing As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; override void Dispose(bool disposing);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -674,10 +736,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public bool EnableRaisingEvents { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool EnableRaisingEvents" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.EnableRaisingEvents" />
+      <MemberSignature Language="VB.NET" Value="Public Property EnableRaisingEvents As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool EnableRaisingEvents { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -705,45 +770,53 @@ process.BeginOutputReadLine();
       <Docs>
         <summary>Gets or sets whether the <see cref="E:System.Diagnostics.Process.Exited" /> event should be raised when the process terminates.</summary>
         <value>
-          <see langword="true" /> if the <see cref="E:System.Diagnostics.Process.Exited" /> event should be raised when the associated process is terminated (through either an exit or a call to <see cref="M:System.Diagnostics.Process.Kill" />); otherwise, <see langword="false" />. The default is <see langword="false" />.</value>
+          <see langword="true" /> if the <see cref="E:System.Diagnostics.Process.Exited" /> event should be raised when the associated process is terminated (through either an exit or a call to <see cref="M:System.Diagnostics.Process.Kill" />); otherwise, <see langword="false" />. The default is <see langword="false" />. Note that the <see cref="E:System.Diagnostics.Process.Exited" /> event is raised even if the value of <see cref="P:System.Diagnostics.Process.EnableRaisingEvents" /> is <see langword="false" /> when the process exits during or before the user performs a <see cref="P:System.Diagnostics.Process.HasExited" /> check.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property indicates whether the component should be notified when the operating system has shut down a process. The <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property is used in asynchronous processing to notify your application that a process has exited. To force your application to synchronously wait for an exit event (which interrupts processing of the application until the exit event has occurred), use the <xref:System.Diagnostics.Process.WaitForExit%2A> method.  
-  
+The <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property suggests whether the component should be notified when the operating system has shut down a process. The <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property is used in asynchronous processing to notify your application that a process has exited. To force your application to synchronously wait for an exit event (which interrupts processing of the application until the exit event has occurred), use the <xref:System.Diagnostics.Process.WaitForExit%2A> method.
+
 > [!NOTE]
->  If you are using Visual Studio and double-click a <xref:System.Diagnostics.Process> component in your project, an <xref:System.Diagnostics.Process.Exited> event delegate and event handler are automatically generated. Additional code sets the <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property to `false`. You must change this property to `true` for your event handler to be executed when the associated process exits.  
-  
- When an associated process exits after being shut down by the operating system either through a normal or abnormal termination, the operating system notifies each process component to which the process was associated, as long as the component's <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> value is `true`. If a component started the process, the component can then access the administrative information for the associated process, which is still being stored by the operating system. Such information includes the <xref:System.Diagnostics.Process.ExitTime%2A>, and the <xref:System.Diagnostics.Process.ExitCode%2A>.  
-  
- After the associated process exits, the <xref:System.Diagnostics.Process.Handle%2A> of the component no longer points to an existing process resource. Instead, it can be used only to access the operating system's information about the process resource. The operating system is aware that there are handles to exited processes that have not been released by <xref:System.Diagnostics.Process> components, so it keeps the <xref:System.Diagnostics.Process.ExitTime%2A> and <xref:System.Diagnostics.Process.Handle%2A> information in memory.  
-  
- There is a cost associated with watching for a process to exit. If <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> is `true`, the <xref:System.Diagnostics.Process.Exited> event is raised when the associated process terminates. The procedures that you have specified for the <xref:System.Diagnostics.Process.Exited> event run at that time.  
-  
- Sometimes, your application starts a process but does not need to be notified of its closure. For example, your application can start Notepad to allow the user to perform text editing, but make no further use of the Notepad application. You can choose to not be notified when the process exits, because it is not relevant to the continued operation of your application. Setting <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> to `false` saves system resources.  
-  
-   
-  
+> If you're using Visual Studio and double-click a <xref:System.Diagnostics.Process> component in your project, an <xref:System.Diagnostics.Process.Exited> event delegate and event handler are automatically generated. Additional code sets the <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property to `false`. You must change this property to `true` for your event handler to execute when the associated process exits.
+
+If the component's <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> value is `true`, or when <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> is `false` and a <xref:System.Diagnostics.Process.HasExited%2A> check is invoked by the component, the component can access the administrative information for the associated process, which remains stored by the operating system. Such information includes the <xref:System.Diagnostics.Process.ExitTime%2A> and the <xref:System.Diagnostics.Process.ExitCode%2A>.
+
+After the associated process exits, the <xref:System.Diagnostics.Process.Handle%2A> of the component no longer points to an existing process resource. Instead, it can only be used to access the operating system's information about the process resource. The operating system is aware that there are handles to exited processes that haven't been released by <xref:System.Diagnostics.Process> components, so it keeps the <xref:System.Diagnostics.Process.ExitTime%2A> and <xref:System.Diagnostics.Process.Handle%2A> information in memory.
+
+There's a cost associated with watching for a process to exit. If <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> is `true`, the <xref:System.Diagnostics.Process.Exited> event is raised when the associated process terminates. Your procedures for the <xref:System.Diagnostics.Process.Exited> event run at that time.
+
+Sometimes, your application starts a process but doesn't require notification of its closure. For example, your application can start Notepad to allow the user to perform text editing but make no further use of the Notepad application. You can choose to avoid notification when the process exits because it's not relevant to the continued operation of your application. Setting <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> to `false` can save system resources.
+
 ## Examples  
- The following code example creates a process that prints a file. It sets the <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property to cause the process to raise the <xref:System.Diagnostics.Process.Exited> event when it exits. The <xref:System.Diagnostics.Process.Exited> event handler displays process information.  
-  
- [!code-csharp[System.Diagnostics.Process.EnableExited#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Process.EnableExited/CS/processexitedevent.cs#1)]
- [!code-vb[System.Diagnostics.Process.EnableExited#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Process.EnableExited/VB/processexitedevent.vb#1)]  
+The following code example creates a process that prints a file. It sets the <xref:System.Diagnostics.Process.EnableRaisingEvents%2A> property to cause the process to raise the <xref:System.Diagnostics.Process.Exited> event when it exits. The <xref:System.Diagnostics.Process.Exited> event handler displays process information.
+
+[!code-csharp[System.Diagnostics.Process.EnableExited#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.Process.EnableExited/CS/processexitedevent.cs#1)]   
+[!code-vb[System.Diagnostics.Process.EnableExited#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.Process.EnableExited/VB/processexitedevent.vb#1)]   
   
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.WaitForExit(System.Int32)" />
+        <altmember cref="E:System.Diagnostics.Process.Exited" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="P:System.Diagnostics.Process.ExitTime" />
+        <altmember cref="P:System.Diagnostics.Process.HasExited" />
       </Docs>
     </Member>
     <Member MemberName="EnterDebugMode">
       <MemberSignature Language="C#" Value="public static void EnterDebugMode ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnterDebugMode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.EnterDebugMode" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub EnterDebugMode ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void EnterDebugMode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -769,16 +842,20 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.LeaveDebugMode" />
       </Docs>
     </Member>
     <Member MemberName="ErrorDataReceived">
       <MemberSignature Language="C#" Value="public event System.Diagnostics.DataReceivedEventHandler ErrorDataReceived;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Diagnostics.DataReceivedEventHandler ErrorDataReceived" />
       <MemberSignature Language="DocId" Value="E:System.Diagnostics.Process.ErrorDataReceived" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event ErrorDataReceived As DataReceivedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Diagnostics::DataReceivedEventHandler ^ ErrorDataReceived;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -811,7 +888,7 @@ process.BeginOutputReadLine();
  The event only occurs during asynchronous read operations on <xref:System.Diagnostics.Process.StandardError%2A>. To start asynchronous read operations, you must redirect the <xref:System.Diagnostics.Process.StandardError%2A> stream of a <xref:System.Diagnostics.Process>, add your event handler to the <xref:System.Diagnostics.Process.ErrorDataReceived> event, and call <xref:System.Diagnostics.Process.BeginErrorReadLine%2A>. Thereafter, the <xref:System.Diagnostics.Process.ErrorDataReceived> event signals each time the process writes a line to the redirected <xref:System.Diagnostics.Process.StandardError%2A> stream, until the process exits or calls <xref:System.Diagnostics.Process.CancelErrorRead%2A>.  
   
 > [!NOTE]
->  The application that is processing the asynchronous output should call the <xref:System.Diagnostics.Process.WaitForExit%2A> method to ensure that the output buffer has been flushed.  
+>  The application that is processing the asynchronous output should call the <xref:System.Diagnostics.Process.WaitForExit> method to ensure that the output buffer has been flushed. Note that specifying a timeout by using the <xref:System.Diagnostics.Process.WaitForExit(System.Int32)> overload does *not* ensure the output buffer has been flushed.
   
    
   
@@ -825,16 +902,24 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
+        <altmember cref="M:System.Diagnostics.Process.BeginErrorReadLine" />
+        <altmember cref="M:System.Diagnostics.Process.CancelErrorRead" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="ExitCode">
       <MemberSignature Language="C#" Value="public int ExitCode { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 ExitCode" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.ExitCode" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExitCode As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int ExitCode { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -899,16 +984,24 @@ process.BeginOutputReadLine();
  The process <see cref="P:System.Diagnostics.Process.Handle" /> is not valid.</exception>
         <exception cref="T:System.NotSupportedException">You are trying to access the <see cref="P:System.Diagnostics.Process.ExitCode" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.HasExited" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
+        <altmember cref="M:System.Diagnostics.Process.WaitForExit(System.Int32)" />
+        <altmember cref="P:System.Diagnostics.Process.EnableRaisingEvents" />
       </Docs>
     </Member>
     <Member MemberName="Exited">
       <MemberSignature Language="C#" Value="public event EventHandler Exited;" />
       <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Exited" />
       <MemberSignature Language="DocId" Value="E:System.Diagnostics.Process.Exited" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event Exited As EventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event EventHandler ^ Exited;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -964,10 +1057,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public DateTime ExitTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ExitTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.ExitTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ExitTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime ExitTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1014,16 +1110,21 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <exception cref="T:System.NotSupportedException">You are trying to access the <see cref="P:System.Diagnostics.Process.ExitTime" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="P:System.Diagnostics.Process.ExitCode" />
       </Docs>
     </Member>
     <Member MemberName="GetCurrentProcess">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process GetCurrentProcess ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process GetCurrentProcess() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetCurrentProcess" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetCurrentProcess () As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ GetCurrentProcess();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1061,16 +1162,32 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetProcessById">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a new <see cref="T:System.Diagnostics.Process" /> component, and associates it with the existing process resource that you specify.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetProcessById">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process GetProcessById (int processId);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process GetProcessById(int32 processId) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcessById(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcessById (processId As Integer) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ GetProcessById(int processId);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1113,16 +1230,23 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ArgumentException">The process specified by the <paramref name="processId" /> parameter is not running. The identifier might be expired.</exception>
         <exception cref="T:System.InvalidOperationException">The process was not started by this object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Id" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
     <Member MemberName="GetProcessById">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process GetProcessById (int processId, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process GetProcessById(int32 processId, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcessById (processId As Integer, machineName As String) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ GetProcessById(int processId, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1179,16 +1303,34 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ArgumentNullException">The <paramref name="machineName" /> parameter is <see langword="null" />.</exception>
         <exception cref="T:System.InvalidOperationException">The process was not started by this object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Id" />
+        <altmember cref="P:System.Diagnostics.Process.MachineName" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetProcesses">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an array of new <see cref="T:System.Diagnostics.Process" /> components and associates them with existing process resources.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetProcesses">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process[] GetProcesses ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process[] GetProcesses() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcesses" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcesses () As Process()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::Process ^&gt; ^ GetProcesses();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1229,16 +1371,23 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MachineName" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
     <Member MemberName="GetProcesses">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process[] GetProcesses (string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process[] GetProcesses(string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcesses(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcesses (machineName As String) As Process()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::Process ^&gt; ^ GetProcesses(System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1294,16 +1443,33 @@ process.BeginOutputReadLine();
         <exception cref="T:System.InvalidOperationException">There are problems accessing the performance counter API's used to get process information. This exception is specific to Windows NT, Windows 2000, and Windows XP.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">A problem occurred accessing an underlying system API.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MachineName" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="GetProcessesByName">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates an array of new <see cref="T:System.Diagnostics.Process" /> components and associates them with the existing process resources that all share the specified process name.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="GetProcessesByName">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process[] GetProcessesByName (string processName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process[] GetProcessesByName(string processName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcessesByName (processName As String) As Process()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::Process ^&gt; ^ GetProcessesByName(System::String ^ processName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1347,16 +1513,23 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">There are problems accessing the performance counter API's used to get process information. This exception is specific to Windows NT, Windows 2000, and Windows XP.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.ProcessName" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
     <Member MemberName="GetProcessesByName">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process[] GetProcessesByName (string processName, string machineName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process[] GetProcessesByName(string processName, string machineName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.GetProcessesByName(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function GetProcessesByName (processName As String, machineName As String) As Process()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static cli::array &lt;System::Diagnostics::Process ^&gt; ^ GetProcessesByName(System::String ^ processName, System::String ^ machineName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1416,12 +1589,19 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ComponentModel.Win32Exception">A problem occurred accessing an underlying system API.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
         <permission cref="T:System.Security.Permissions.SecurityPermission">to call unmanaged code. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <altmember cref="P:System.Diagnostics.Process.ProcessName" />
+        <altmember cref="P:System.Diagnostics.Process.MachineName" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
+        <altmember cref="M:System.Diagnostics.Process.GetCurrentProcess" />
       </Docs>
     </Member>
     <Member MemberName="Handle">
       <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.Handle" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Handle As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr Handle { IntPtr get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1431,6 +1611,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1468,12 +1652,20 @@ process.BeginOutputReadLine();
  The <see cref="T:System.Diagnostics.Process" /> instance has been attached to a running process but you do not have the necessary permissions to get a handle with full access rights.</exception>
         <exception cref="T:System.NotSupportedException">You are trying to access the <see cref="P:System.Diagnostics.Process.Handle" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Id" />
+        <altmember cref="P:System.Diagnostics.Process.ExitCode" />
+        <altmember cref="P:System.Diagnostics.Process.ExitTime" />
+        <altmember cref="P:System.Diagnostics.Process.HandleCount" />
+        <altmember cref="M:System.Diagnostics.Process.Start" />
+        <altmember cref="M:System.Diagnostics.Process.Refresh" />
       </Docs>
     </Member>
     <Member MemberName="HandleCount">
       <MemberSignature Language="C#" Value="public int HandleCount { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 HandleCount" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.HandleCount" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HandleCount As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int HandleCount { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1483,6 +1675,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1511,16 +1707,23 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set the <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> property to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="M:System.Diagnostics.Process.Start" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
       </Docs>
     </Member>
     <Member MemberName="HasExited">
       <MemberSignature Language="C#" Value="public bool HasExited { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool HasExited" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.HasExited" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HasExited As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool HasExited { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1575,16 +1778,24 @@ process.BeginOutputReadLine();
         <exception cref="T:System.ComponentModel.Win32Exception">The exit code for the process could not be retrieved.</exception>
         <exception cref="T:System.NotSupportedException">You are trying to access the <see cref="P:System.Diagnostics.Process.HasExited" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.ExitCode" />
+        <altmember cref="P:System.Diagnostics.Process.ExitTime" />
+        <altmember cref="M:System.Diagnostics.Process.WaitForExit(System.Int32)" />
+        <altmember cref="P:System.Diagnostics.Process.EnableRaisingEvents" />
+        <altmember cref="M:System.Diagnostics.Process.OnExited" />
       </Docs>
     </Member>
     <Member MemberName="Id">
       <MemberSignature Language="C#" Value="public int Id { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.Id" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Id As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Id { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1638,16 +1849,21 @@ process.BeginOutputReadLine();
  There is no process associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set the <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> property to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
       </Docs>
     </Member>
     <Member MemberName="Kill">
       <MemberSignature Language="C#" Value="public void Kill ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Kill() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Kill" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Kill ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Kill();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1698,16 +1914,22 @@ process.BeginOutputReadLine();
   
  There is no process associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Environment.Exit(System.Int32)" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Start" />
       </Docs>
     </Member>
     <Member MemberName="LeaveDebugMode">
       <MemberSignature Language="C#" Value="public static void LeaveDebugMode ();" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LeaveDebugMode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.LeaveDebugMode" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Sub LeaveDebugMode ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static void LeaveDebugMode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1733,16 +1955,20 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.EnterDebugMode" />
       </Docs>
     </Member>
     <Member MemberName="MachineName">
       <MemberSignature Language="C#" Value="public string MachineName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MachineName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MachineName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MachineName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MachineName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1777,7 +2003,7 @@ process.BeginOutputReadLine();
  You can view statistical data and process information for processes running on remote computers but you cannot call <xref:System.Diagnostics.Process.Start%2A>, <xref:System.Diagnostics.Process.CloseMainWindow%2A>, or <xref:System.Diagnostics.Process.Kill%2A> on remote computers.  
   
 > [!NOTE]
->  When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the <xref:System.Environment.MachineName%2A?displayProperty=fullName> property to get the correct machine name.  
+>  When the associated process is executing on the local machine, this property returns a period (".") for the machine name. You should use the <xref:System.Environment.MachineName%2A?displayProperty=nameWithType> property to get the correct machine name.  
   
    
   
@@ -1792,16 +2018,22 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.InvalidOperationException">There is no process associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.GetProcesses" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessById(System.Int32,System.String)" />
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="MainModule">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessModule MainModule { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.ProcessModule MainModule" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MainModule" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MainModule As ProcessModule" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessModule ^ MainModule { System::Diagnostics::ProcessModule ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1846,12 +2078,15 @@ process.BeginOutputReadLine();
   
  The process has exited.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.Modules" />
       </Docs>
     </Member>
     <Member MemberName="MainWindowHandle">
       <MemberSignature Language="C#" Value="public IntPtr MainWindowHandle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int MainWindowHandle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MainWindowHandle" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MainWindowHandle As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr MainWindowHandle { IntPtr get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1861,6 +2096,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1897,12 +2136,16 @@ process.BeginOutputReadLine();
         <exception cref="T:System.NotSupportedException">You are trying to access the <see cref="P:System.Diagnostics.Process.MainWindowHandle" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MainWindowTitle" />
+        <altmember cref="P:System.Diagnostics.Process.MainModule" />
       </Docs>
     </Member>
     <Member MemberName="MainWindowTitle">
       <MemberSignature Language="C#" Value="public string MainWindowTitle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string MainWindowTitle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MainWindowTitle" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property MainWindowTitle As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ MainWindowTitle { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1912,6 +2155,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1960,10 +2207,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public IntPtr MaxWorkingSet { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int MaxWorkingSet" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MaxWorkingSet" />
+      <MemberSignature Language="VB.NET" Value="Public Property MaxWorkingSet As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr MaxWorkingSet { IntPtr get(); void set(IntPtr value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2019,16 +2269,22 @@ process.BeginOutputReadLine();
  The process has exited.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MinWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.WorkingSet64" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet64" />
       </Docs>
     </Member>
     <Member MemberName="MinWorkingSet">
       <MemberSignature Language="C#" Value="public IntPtr MinWorkingSet { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int MinWorkingSet" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.MinWorkingSet" />
+      <MemberSignature Language="VB.NET" Value="Public Property MinWorkingSet As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr MinWorkingSet { IntPtr get(); void set(IntPtr value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2084,16 +2340,22 @@ process.BeginOutputReadLine();
  The process has exited.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MaxWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.WorkingSet64" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet64" />
       </Docs>
     </Member>
     <Member MemberName="Modules">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessModuleCollection Modules { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.ProcessModuleCollection Modules" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.Modules" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Modules As ProcessModuleCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessModuleCollection ^ Modules { System::Diagnostics::ProcessModuleCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2138,12 +2400,15 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">You are attempting to access the <see cref="P:System.Diagnostics.Process.Modules" /> property for either the system process or the idle process. These processes do not have modules.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="T:System.Diagnostics.ProcessModule" />
       </Docs>
     </Member>
     <Member MemberName="NonpagedSystemMemorySize">
       <MemberSignature Language="C#" Value="public int NonpagedSystemMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 NonpagedSystemMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.NonpagedSystemMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NonpagedSystemMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int NonpagedSystemMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2153,6 +2418,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2177,16 +2446,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.NonpagedSystemMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="NonpagedSystemMemorySize64">
       <MemberSignature Language="C#" Value="public long NonpagedSystemMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 NonpagedSystemMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.NonpagedSystemMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property NonpagedSystemMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long NonpagedSystemMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2238,16 +2511,20 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PagedSystemMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="OnExited">
       <MemberSignature Language="C#" Value="protected void OnExited ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnExited() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.OnExited" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub OnExited ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void OnExited();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2275,7 +2552,7 @@ process.BeginOutputReadLine();
 > [!NOTE]
 >  If you are using the Visual Studio environment, an event handler delegate (AddOnExited) and an event-handling method (Process1_Exited) are created for you when you drag a <xref:System.Diagnostics.Process> component onto a form and double-click the icon. The code you create to run when the <xref:System.Diagnostics.Process.Exited> event occurs is entered into the Process1_Exited procedure. You do not need to create the <xref:System.Diagnostics.Process.OnExited%2A> member, because it is implemented for you.  
   
- Raising an event invokes the event handler through a delegate. For an overview, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For an overview, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -2288,16 +2565,20 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="E:System.Diagnostics.Process.Exited" />
       </Docs>
     </Member>
     <Member MemberName="OutputDataReceived">
       <MemberSignature Language="C#" Value="public event System.Diagnostics.DataReceivedEventHandler OutputDataReceived;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Diagnostics.DataReceivedEventHandler OutputDataReceived" />
       <MemberSignature Language="DocId" Value="E:System.Diagnostics.Process.OutputDataReceived" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event OutputDataReceived As DataReceivedEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Diagnostics::DataReceivedEventHandler ^ OutputDataReceived;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2346,12 +2627,19 @@ process.BeginOutputReadLine();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
+        <altmember cref="M:System.Diagnostics.Process.BeginOutputReadLine" />
+        <altmember cref="M:System.Diagnostics.Process.CancelOutputRead" />
+        <altmember cref="T:System.Diagnostics.DataReceivedEventHandler" />
       </Docs>
     </Member>
     <Member MemberName="PagedMemorySize">
       <MemberSignature Language="C#" Value="public int PagedMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PagedMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PagedMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PagedMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PagedMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2361,6 +2649,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2382,16 +2674,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PagedMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PagedMemorySize64">
       <MemberSignature Language="C#" Value="public long PagedMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PagedMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PagedMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PagedMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PagedMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2440,12 +2736,16 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PeakPagedMemorySize64" />
+        <altmember cref="P:System.Diagnostics.Process.PagedSystemMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PagedSystemMemorySize">
       <MemberSignature Language="C#" Value="public int PagedSystemMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PagedSystemMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PagedSystemMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PagedSystemMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PagedSystemMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2455,6 +2755,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2476,16 +2780,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PagedSystemMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PagedSystemMemorySize64">
       <MemberSignature Language="C#" Value="public long PagedSystemMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PagedSystemMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PagedSystemMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PagedSystemMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PagedSystemMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2534,12 +2842,16 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PagedSystemMemorySize64" />
+        <altmember cref="P:System.Diagnostics.Process.NonpagedSystemMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PeakPagedMemorySize">
       <MemberSignature Language="C#" Value="public int PeakPagedMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PeakPagedMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakPagedMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakPagedMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PeakPagedMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2549,6 +2861,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2573,16 +2889,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PeakPagedMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PeakPagedMemorySize64">
       <MemberSignature Language="C#" Value="public long PeakPagedMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PeakPagedMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakPagedMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakPagedMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PeakPagedMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2634,12 +2954,15 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PagedMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PeakVirtualMemorySize">
       <MemberSignature Language="C#" Value="public int PeakVirtualMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PeakVirtualMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakVirtualMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakVirtualMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PeakVirtualMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2649,6 +2972,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2670,16 +2997,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PeakVirtualMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PeakVirtualMemorySize64">
       <MemberSignature Language="C#" Value="public long PeakVirtualMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PeakVirtualMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakVirtualMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakVirtualMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PeakVirtualMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2728,12 +3059,15 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.VirtualMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PeakWorkingSet">
       <MemberSignature Language="C#" Value="public int PeakWorkingSet { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PeakWorkingSet" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakWorkingSet" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakWorkingSet As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PeakWorkingSet { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2743,6 +3077,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2773,16 +3111,23 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.WorkingSet64" />
+        <altmember cref="P:System.Diagnostics.Process.MinWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.MaxWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet64" />
       </Docs>
     </Member>
     <Member MemberName="PeakWorkingSet64">
       <MemberSignature Language="C#" Value="public long PeakWorkingSet64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PeakWorkingSet64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PeakWorkingSet64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PeakWorkingSet64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PeakWorkingSet64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2833,16 +3178,22 @@ process.BeginOutputReadLine();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.WorkingSet64" />
+        <altmember cref="P:System.Diagnostics.Process.MinWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.MaxWorkingSet" />
       </Docs>
     </Member>
     <Member MemberName="PriorityBoostEnabled">
       <MemberSignature Language="C#" Value="public bool PriorityBoostEnabled { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool PriorityBoostEnabled" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PriorityBoostEnabled" />
+      <MemberSignature Language="VB.NET" Value="Public Property PriorityBoostEnabled As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool PriorityBoostEnabled { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2875,7 +3226,7 @@ process.BeginOutputReadLine();
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- When a thread runs in a process for which the priority class has one of the dynamic priority enumeration values (<xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, or <xref:System.Diagnostics.ProcessPriorityClass>), the system temporarily boosts the thread's priority when it is taken out of a wait state. This action prevents other processes from interrupting the processing of the current thread. The <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> setting affects all the existing threads and any threads subsequently created by the process. To restore normal behavior, set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> property to `false`.  
+ When a thread runs in a process for which the priority class has one of the dynamic priority enumeration values (<xref:System.Diagnostics.ProcessPriorityClass.Normal>, <xref:System.Diagnostics.ProcessPriorityClass.High>, or <xref:System.Diagnostics.ProcessPriorityClass.RealTime>), the system temporarily boosts the thread's priority when it is taken out of a wait state. This action prevents other processes from interrupting the processing of the current thread. The <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> setting affects all the existing threads and any threads subsequently created by the process. To restore normal behavior, set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> property to `false`.  
   
 > [!NOTE]
 >  Boosting the priority too high can drain resources from essential operating system and network functions, causing problems with other operating system tasks.  
@@ -2891,16 +3242,21 @@ process.BeginOutputReadLine();
         <exception cref="T:System.NotSupportedException">You are attempting to access the <see cref="P:System.Diagnostics.Process.PriorityBoostEnabled" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <exception cref="T:System.InvalidOperationException">The process <see cref="P:System.Diagnostics.Process.Id" /> is not available.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PriorityClass" />
+        <altmember cref="P:System.Diagnostics.Process.BasePriority" />
       </Docs>
     </Member>
     <Member MemberName="PriorityClass">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessPriorityClass PriorityClass { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.ProcessPriorityClass PriorityClass" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PriorityClass" />
+      <MemberSignature Language="VB.NET" Value="Public Property PriorityClass As ProcessPriorityClass" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessPriorityClass PriorityClass { System::Diagnostics::ProcessPriorityClass get(); void set(System::Diagnostics::ProcessPriorityClass value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2929,7 +3285,7 @@ process.BeginOutputReadLine();
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- A process priority class encompasses a range of thread priority levels. Threads with different priorities that are running in the process run relative to the priority class of the process. Win32 uses four priority classes with seven base priority levels per class. These process priority classes are captured in the <xref:System.Diagnostics.ProcessPriorityClass> enumeration, which lets you set the process priority to <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, <xref:System.Diagnostics.ProcessPriorityClass>, or <xref:System.Diagnostics.ProcessPriorityClass>. Based on the time elapsed or other boosts, the base priority level can be changed by the operating system when a process needs to be put ahead of others for access to the processor. In addition, you can set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> to temporarily boost the priority level of threads that have been taken out of the wait state. The priority is reset when the process returns to the wait state.  
+ A process priority class encompasses a range of thread priority levels. Threads with different priorities that are running in the process run relative to the priority class of the process. Win32 uses four priority classes with seven base priority levels per class. These process priority classes are captured in the <xref:System.Diagnostics.ProcessPriorityClass> enumeration, which lets you set the process priority to <xref:System.Diagnostics.ProcessPriorityClass.Idle>, <xref:System.Diagnostics.ProcessPriorityClass.Normal>, <xref:System.Diagnostics.ProcessPriorityClass.High>, <xref:System.Diagnostics.ProcessPriorityClass.AboveNormal>, <xref:System.Diagnostics.ProcessPriorityClass.BelowNormal>, or <xref:System.Diagnostics.ProcessPriorityClass.RealTime>. Based on the time elapsed or other boosts, the base priority level can be changed by the operating system when a process needs to be put ahead of others for access to the processor. In addition, you can set the <xref:System.Diagnostics.Process.PriorityBoostEnabled%2A> to temporarily boost the priority level of threads that have been taken out of the wait state. The priority is reset when the process returns to the wait state.  
   
  The <xref:System.Diagnostics.Process.BasePriority%2A> property lets you view the starting priority that is assigned to a process. However, because it is read-only, you cannot use the <xref:System.Diagnostics.Process.BasePriority%2A> property to set the priority of a process. To change the priority, use the <xref:System.Diagnostics.Process.PriorityClass%2A> property, which gets or sets the overall priority category for the process.  
   
@@ -2937,10 +3293,10 @@ process.BeginOutputReadLine();
   
 |BasePriority|PriorityClass|  
 |------------------|-------------------|  
-|4|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|8|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|13|<xref:System.Diagnostics.ProcessPriorityClass>|  
-|24|<xref:System.Diagnostics.ProcessPriorityClass>|  
+|4|<xref:System.Diagnostics.ProcessPriorityClass.Idle>|  
+|8|<xref:System.Diagnostics.ProcessPriorityClass.Normal>|  
+|13|<xref:System.Diagnostics.ProcessPriorityClass.High>|  
+|24|<xref:System.Diagnostics.ProcessPriorityClass.RealTime>|  
   
    
   
@@ -2963,12 +3319,16 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">You have set the <see cref="P:System.Diagnostics.Process.PriorityClass" /> to <see langword="AboveNormal" /> or <see langword="BelowNormal" /> when using Windows 98 or Windows Millennium Edition (Windows Me). These platforms do not support those values for the priority class.</exception>
         <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">Priority class cannot be set because it does not use a valid value, as defined in the <see cref="T:System.Diagnostics.ProcessPriorityClass" /> enumeration.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.BasePriority" />
+        <altmember cref="P:System.Diagnostics.Process.PriorityBoostEnabled" />
       </Docs>
     </Member>
     <Member MemberName="PrivateMemorySize">
       <MemberSignature Language="C#" Value="public int PrivateMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 PrivateMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PrivateMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PrivateMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int PrivateMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2978,6 +3338,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2999,16 +3363,20 @@ process.BeginOutputReadLine();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PrivateMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="PrivateMemorySize64">
       <MemberSignature Language="C#" Value="public long PrivateMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 PrivateMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PrivateMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PrivateMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long PrivateMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3063,10 +3431,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public TimeSpan PrivilegedProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PrivilegedProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PrivilegedProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan PrivilegedProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3106,16 +3477,21 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <exception cref="T:System.NotSupportedException">You are attempting to access the <see cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
+        <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="ProcessName">
       <MemberSignature Language="C#" Value="public string ProcessName { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string ProcessName" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.ProcessName" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property ProcessName As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ ProcessName { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3161,16 +3537,20 @@ process.BeginOutputReadLine();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <exception cref="T:System.NotSupportedException">The process is not on this computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.GetProcessesByName(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="ProcessorAffinity">
       <MemberSignature Language="C#" Value="public IntPtr ProcessorAffinity { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance native int ProcessorAffinity" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.ProcessorAffinity" />
+      <MemberSignature Language="VB.NET" Value="Public Property ProcessorAffinity As IntPtr" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property IntPtr ProcessorAffinity { IntPtr get(); void set(IntPtr value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3237,10 +3617,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public void Refresh ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Refresh" />
+      <MemberSignature Language="VB.NET" Value="Public Sub Refresh ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void Refresh();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3283,6 +3666,8 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public bool Responding { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool Responding" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.Responding" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Responding As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool Responding { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3292,6 +3677,10 @@ process.BeginOutputReadLine();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3334,16 +3723,20 @@ process.BeginOutputReadLine();
         <exception cref="T:System.InvalidOperationException">There is no process associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <exception cref="T:System.NotSupportedException">You are attempting to access the <see cref="P:System.Diagnostics.Process.Responding" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MainWindowHandle" />
       </Docs>
     </Member>
     <Member MemberName="SafeHandle">
       <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeProcessHandle SafeHandle" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.SafeHandle" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SafeHandle As SafeProcessHandle" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property Microsoft::Win32::SafeHandles::SafeProcessHandle ^ SafeHandle { Microsoft::Win32::SafeHandles::SafeProcessHandle ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3382,10 +3775,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public int SessionId { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 SessionId" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.SessionId" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property SessionId As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int SessionId { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3435,10 +3831,13 @@ process.BeginOutputReadLine();
       <MemberSignature Language="C#" Value="public System.IO.StreamReader StandardError { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.StreamReader StandardError" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.StandardError" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StandardError As StreamReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::StreamReader ^ StandardError { System::IO::StreamReader ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3473,7 +3872,7 @@ process.BeginOutputReadLine();
  When a <xref:System.Diagnostics.Process> writes text to its standard error stream, that text is normally displayed on the console. By redirecting the <xref:System.Diagnostics.Process.StandardError%2A> stream, you can manipulate or suppress the error output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.  
   
 > [!NOTE]
->  To use <xref:System.Diagnostics.Process.StandardError%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=fullName> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardError%2A?displayProperty=fullName> to `true`. Otherwise, reading from the <xref:System.Diagnostics.Process.StandardError%2A> stream throws an exception.  
+>  To use <xref:System.Diagnostics.Process.StandardError%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=nameWithType> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardError%2A?displayProperty=nameWithType> to `true`. Otherwise, reading from the <xref:System.Diagnostics.Process.StandardError%2A> stream throws an exception.  
   
  The redirected <xref:System.Diagnostics.Process.StandardError%2A> stream can be read synchronously or asynchronously. Methods such as <xref:System.IO.StreamReader.Read%2A>, <xref:System.IO.StreamReader.ReadLine%2A>, and <xref:System.IO.StreamReader.ReadToEnd%2A> perform synchronous read operations on the error output stream of the process. These synchronous read operations do not complete until the associated <xref:System.Diagnostics.Process> writes to its <xref:System.Diagnostics.Process.StandardError%2A> stream, or closes the stream.  
   
@@ -3539,16 +3938,22 @@ p.WaitForExit();
   
  The <see cref="P:System.Diagnostics.Process.StandardError" /> stream has been opened for asynchronous read operations with <see cref="M:System.Diagnostics.Process.BeginErrorReadLine" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.StandardInput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" />
       </Docs>
     </Member>
     <Member MemberName="StandardInput">
       <MemberSignature Language="C#" Value="public System.IO.StreamWriter StandardInput { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.StreamWriter StandardInput" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.StandardInput" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StandardInput As StreamWriter" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::StreamWriter ^ StandardInput { System::IO::StreamWriter ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3583,7 +3988,7 @@ p.WaitForExit();
  A <xref:System.Diagnostics.Process> can read input text from its standard input stream, typically the keyboard. By redirecting the <xref:System.Diagnostics.Process.StandardInput%2A> stream, you can programmatically specify the input. For example, instead of using keyboard input, you can provide text from the contents of a designated file or output from another application.  
   
 > [!NOTE]
->  To use <xref:System.Diagnostics.Process.StandardInput%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=fullName> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardInput%2A?displayProperty=fullName> to `true`. Otherwise, writing to the <xref:System.Diagnostics.Process.StandardInput%2A> stream throws an exception.  
+>  To use <xref:System.Diagnostics.Process.StandardInput%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=nameWithType> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardInput%2A?displayProperty=nameWithType> to `true`. Otherwise, writing to the <xref:System.Diagnostics.Process.StandardInput%2A> stream throws an exception.  
   
    
   
@@ -3598,16 +4003,22 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.InvalidOperationException">The <see cref="P:System.Diagnostics.Process.StandardInput" /> stream has not been defined because <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" /> is set to <see langword="false" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.StandardOutput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" />
       </Docs>
     </Member>
     <Member MemberName="StandardOutput">
       <MemberSignature Language="C#" Value="public System.IO.StreamReader StandardOutput { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.IO.StreamReader StandardOutput" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.StandardOutput" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StandardOutput As StreamReader" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::IO::StreamReader ^ StandardOutput { System::IO::StreamReader ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3642,7 +4053,7 @@ p.WaitForExit();
  When a <xref:System.Diagnostics.Process> writes text to its standard stream, that text is normally displayed on the console. By redirecting the <xref:System.Diagnostics.Process.StandardOutput%2A> stream, you can manipulate or suppress the output of a process. For example, you can filter the text, format it differently, or write the output to both the console and a designated log file.  
   
 > [!NOTE]
->  To use <xref:System.Diagnostics.Process.StandardOutput%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=fullName> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput%2A?displayProperty=fullName> to `true`. Otherwise, reading from the <xref:System.Diagnostics.Process.StandardOutput%2A> stream throws an exception.  
+>  To use <xref:System.Diagnostics.Process.StandardOutput%2A>, you must set <xref:System.Diagnostics.ProcessStartInfo.UseShellExecute%2A?displayProperty=nameWithType> to `false`, and you must set <xref:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput%2A?displayProperty=nameWithType> to `true`. Otherwise, reading from the <xref:System.Diagnostics.Process.StandardOutput%2A> stream throws an exception.  
   
  The redirected <xref:System.Diagnostics.Process.StandardOutput%2A> stream can be read synchronously or asynchronously. Methods such as <xref:System.IO.StreamReader.Read%2A>, <xref:System.IO.StreamReader.ReadLine%2A>, and <xref:System.IO.StreamReader.ReadToEnd%2A> perform synchronous read operations on the output stream of the process. These synchronous read operations do not complete until the associated <xref:System.Diagnostics.Process> writes to its <xref:System.Diagnostics.Process.StandardOutput%2A> stream, or closes the stream.  
   
@@ -3700,16 +4111,32 @@ p.WaitForExit();
   
  The <see cref="P:System.Diagnostics.Process.StandardOutput" /> stream has been opened for asynchronous read operations with <see cref="M:System.Diagnostics.Process.BeginOutputReadLine" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.StandardInput" />
+        <altmember cref="P:System.Diagnostics.Process.StandardError" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="Start">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Starts a process resource and associates it with a <see cref="T:System.Diagnostics.Process" /> component.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public bool Start ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Start() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start" />
+      <MemberSignature Language="VB.NET" Value="Public Function Start () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool Start();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3767,24 +4194,31 @@ p.WaitForExit();
   
  ]]></format>
         </remarks>
-        <exception cref="T:System.InvalidOperationException">No file name was specified in the <see cref="T:System.Diagnostics.Process" /> component's <see cref="P:System.Diagnostics.Process.StartInfo" />.  
-  
- -or-  
-  
+        <exception cref="T:System.InvalidOperationException">No file name was specified in the <see cref="T:System.Diagnostics.Process" /> component's <see cref="P:System.Diagnostics.Process.StartInfo" />.
+ -or-
  The <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> member of the <see cref="P:System.Diagnostics.Process.StartInfo" /> property is <see langword="true" /> while <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardInput" />, <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardOutput" />, or <see cref="P:System.Diagnostics.ProcessStartInfo.RedirectStandardError" /> is <see langword="true" />.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">There was an error in opening the associated file.</exception>
         <exception cref="T:System.ObjectDisposedException">The process object has already been disposed.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Method not supported on operating systems without shell support such as Nano Server (.NET Core only).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.StartInfo" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.FileName" />
+        <altmember cref="T:System.Diagnostics.ProcessStartInfo" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
       </Docs>
     </Member>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process Start (System.Diagnostics.ProcessStartInfo startInfo);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process Start(class System.Diagnostics.ProcessStartInfo startInfo) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Start (startInfo As ProcessStartInfo) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ Start(System::Diagnostics::ProcessStartInfo ^ startInfo);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3816,11 +4250,11 @@ p.WaitForExit();
   
  This overload lets you start a process without first creating a new <xref:System.Diagnostics.Process> instance. Using this overload with a <xref:System.Diagnostics.ProcessStartInfo> parameter is an alternative to the explicit steps of creating a new <xref:System.Diagnostics.Process> instance, setting its <xref:System.Diagnostics.Process.StartInfo%2A> properties, and calling <xref:System.Diagnostics.Process.Start%2A> for the <xref:System.Diagnostics.Process> instance.  
   
- Using a <xref:System.Diagnostics.ProcessStartInfo> instance as the parameter lets you call <xref:System.Diagnostics.Process.Start%2A> with the most control over what is passed into the call to start the process. If you need to pass only a file name or a file name and arguments, it is not necessary to create a new <xref:System.Diagnostics.ProcessStartInfo> instance, although that is an option. The only <xref:System.Diagnostics.Process.StartInfo%2A> property that must be set is the <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property. The <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application that is installed on the system. For example, the <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc extension if you have associated.doc files with a word processing tool, such as Microsoft Word.  
+ Using a <xref:System.Diagnostics.ProcessStartInfo> instance as the parameter lets you call <xref:System.Diagnostics.Process.Start%2A> with the most control over what is passed into the call to start the process. If you need to pass only a file name or a file name and arguments, it is not necessary to create a new <xref:System.Diagnostics.ProcessStartInfo> instance, although that is an option. The only <xref:System.Diagnostics.Process.StartInfo%2A?displayProperty=nameWithType> property that must be set is the <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property. The <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application that is installed on the system. For example, the <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc extension if you have associated.doc files with a word processing tool, such as Microsoft Word.  
   
  You can start a ClickOnce application by specifying the location (for example, a Web address) from which you originally installed the application. Do not start a ClickOnce application by specifying its installed location on your hard drive.  
   
- If the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A> and <xref:System.Diagnostics.ProcessStartInfo.Password%2A> properties of the <xref:System.Diagnostics.Process.StartInfo%2A> instance are set, the unmanaged `CreateProcessWithLogonW` function is called, which starts the process in a new window even if the <xref:System.Diagnostics.ProcessStartInfo.CreateNoWindow%2A> property value is `true` or the <xref:System.Diagnostics.ProcessStartInfo.WindowStyle%2A> property value is <xref:System.Diagnostics.ProcessWindowStyle>.  
+ If the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A?displayProperty=nameWithType> and <xref:System.Diagnostics.ProcessStartInfo.Password%2A?displayProperty=nameWithType> properties of the <xref:System.Diagnostics.Process.StartInfo%2A> instance are set, the unmanaged `CreateProcessWithLogonW` function is called, which starts the process in a new window even if the <xref:System.Diagnostics.ProcessStartInfo.CreateNoWindow%2A?displayProperty=nameWithType> property value is `true` or the <xref:System.Diagnostics.ProcessStartInfo.WindowStyle%2A?displayProperty=nameWithType> property value is <xref:System.Diagnostics.ProcessWindowStyle.Hidden?displayProperty=nameWithType>. If the <xref:System.Diagnostics.ProcessStartInfo.Domain%2A?displayProperty=nameWithType> property is `null`, the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A?displayProperty=nameWithType> property must be in UPN format, *user*@*DNS_domain_name*.   
   
  Unlike the other overloads, the overload of <xref:System.Diagnostics.Process.Start%2A> that has no parameters is not a `static` member. Use that overload when you have already created a <xref:System.Diagnostics.Process> instance, specified start information (including the file name), and want to start a process resource and associate it with the existing <xref:System.Diagnostics.Process> instance. Use one of the `static` overloads when you want to create a new <xref:System.Diagnostics.Process> component rather than start a process for an existing component. Both this overload and the overload that has no parameters allow you to specify the start information for the process resource by using a <xref:System.Diagnostics.ProcessStartInfo> instance.  
   
@@ -3863,17 +4297,26 @@ p.WaitForExit();
  -or-  
   
  The sum of the length of the arguments and the length of the full path to the process exceeds 2080. The error message associated with this exception can be one of the following: "The data area passed to a system call is too small." or "Access is denied."</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Method not supported on operating systems without shell support such as Nano Server (.NET Core only).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.StartInfo" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.FileName" />
+        <altmember cref="T:System.Diagnostics.ProcessStartInfo" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
       </Docs>
     </Member>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process Start (string fileName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process Start(string fileName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Start (fileName As String) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ Start(System::String ^ fileName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3909,7 +4352,7 @@ p.WaitForExit();
   
  Starting a process by specifying its file name is similar to typing the information in the `Run` dialog box of the Windows `Start` menu. Therefore, the file name does not need to represent an executable file. It can be of any file type for which the extension has been associated with an application installed on the system. For example the file name can have a .txt extension if you have associated text files with an editor, such as Notepad, or it can have a .doc if you have associated.doc files with a word processing tool, such as Microsoft Word. Similarly, in the same way that the `Run` dialog box can accept an executable file name with or without the .exe extension, the .exe extension is optional in the `fileName` parameter. For example, you can set the `fileName` parameter to either "Notepad.exe" or "Notepad".  
   
- This overload does not allow command-line arguments for the process. If you need to specify one or more command-line arguments for the process, use the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=fullName> or <xref:System.Diagnostics.Process.Start%28System.String%2CSystem.String%29?displayProperty=fullName> overloads.  
+ This overload does not allow command-line arguments for the process. If you need to specify one or more command-line arguments for the process, use the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29?displayProperty=nameWithType> or <xref:System.Diagnostics.Process.Start%28System.String%2CSystem.String%29?displayProperty=nameWithType> overloads.  
   
  Unlike the other overloads, the overload of <xref:System.Diagnostics.Process.Start%2A> that has no parameters is not a `static` member. Use that overload when you have already created a <xref:System.Diagnostics.Process> instance, specified start information (including the file name), and want to start a process resource and associate it with the existing <xref:System.Diagnostics.Process> instance. Use one of the `static` overloads when you want to create a new <xref:System.Diagnostics.Process> component rather than start a process for an existing component. Both this overload and the overload that has no parameters allow you to specify the file name of the process resource to start.  
   
@@ -3937,16 +4380,23 @@ p.WaitForExit();
         <exception cref="T:System.ObjectDisposedException">The process object has already been disposed.</exception>
         <exception cref="T:System.IO.FileNotFoundException">The PATH environment variable has a string containing quotes.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.FileName" />
+        <altmember cref="P:System.Diagnostics.Process.StartInfo" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
       </Docs>
     </Member>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process Start (string fileName, string arguments);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process Start(string fileName, string arguments) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start(System.String,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Start (fileName As String, arguments As String) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ Start(System::String ^ fileName, System::String ^ arguments);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4013,12 +4463,19 @@ p.WaitForExit();
         <exception cref="T:System.ObjectDisposedException">The process object has already been disposed.</exception>
         <exception cref="T:System.IO.FileNotFoundException">The PATH environment variable has a string containing quotes.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.FileName" />
+        <altmember cref="P:System.Diagnostics.Process.StartInfo" />
+        <altmember cref="T:System.Diagnostics.ProcessStartInfo" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
       </Docs>
     </Member>
     <Member MemberName="Start">
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process Start (string fileName, string userName, System.Security.SecureString password, string domain);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process Start(string fileName, string userName, class System.Security.SecureString password, string domain) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start(System.String,System.String,System.Security.SecureString,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Start (fileName As String, userName As String, password As SecureString, domain As String) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ Start(System::String ^ fileName, System::String ^ userName, System::Security::SecureString ^ password, System::String ^ domain);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4028,6 +4485,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.Process</ReturnType>
@@ -4079,6 +4540,7 @@ p.WaitForExit();
         <exception cref="T:System.InvalidOperationException">No file name was specified.</exception>
         <exception cref="T:System.ComponentModel.Win32Exception">There was an error in opening the associated file.</exception>
         <exception cref="T:System.ObjectDisposedException">The process object has already been disposed.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Method not supported on Linux or macOS (.NET Core only).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
       </Docs>
     </Member>
@@ -4086,6 +4548,8 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public static System.Diagnostics.Process Start (string fileName, string arguments, string userName, System.Security.SecureString password, string domain);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.Process Start(string fileName, string arguments, string userName, class System.Security.SecureString password, string domain) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.Start(System.String,System.String,System.String,System.Security.SecureString,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Start (fileName As String, arguments As String, userName As String, password As SecureString, domain As String) As Process" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Diagnostics::Process ^ Start(System::String ^ fileName, System::String ^ arguments, System::String ^ userName, System::Security::SecureString ^ password, System::String ^ domain);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4095,6 +4559,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Diagnostics.Process</ReturnType>
@@ -4144,6 +4612,7 @@ p.WaitForExit();
   
  The sum of the length of the arguments and the length of the full path to the associated file exceeds 2080. The error message associated with this exception can be one of the following: "The data area passed to a system call is too small." or "Access is denied."</exception>
         <exception cref="T:System.ObjectDisposedException">The process object has already been disposed.</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Method not supported on Linux or macOS (.NET Core only).</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
       </Docs>
     </Member>
@@ -4151,10 +4620,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessStartInfo StartInfo { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.ProcessStartInfo StartInfo" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.StartInfo" />
+      <MemberSignature Language="VB.NET" Value="Public Property StartInfo As ProcessStartInfo" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessStartInfo ^ StartInfo { System::Diagnostics::ProcessStartInfo ^ get(); void set(System::Diagnostics::ProcessStartInfo ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4192,7 +4664,7 @@ p.WaitForExit();
   
  If the file name involves a nonexecutable file, such as a .doc file, you can include a verb specifying what action to take on the file. For example, you could set the <xref:System.Diagnostics.ProcessStartInfo.Verb%2A> to "Print" for a file ending in the .doc extension. The file name specified in the <xref:System.Diagnostics.ProcessStartInfo.FileName%2A> property does not need to have an extension if you manually enter a value for the <xref:System.Diagnostics.ProcessStartInfo.Verb%2A> property. However, if you use the <xref:System.Diagnostics.ProcessStartInfo.Verbs%2A> property to determine what verbs are available, you must include the extension.  
   
- You can change the parameters specified in the <xref:System.Diagnostics.Process.StartInfo%2A> property up to the time that you call the <xref:System.Diagnostics.Process.Start%2A> method on the process. After you start the process, changing the <xref:System.Diagnostics.Process.StartInfo%2A> values does not affect or restart the associated process. If you call the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29> method with the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A?displayProperty=fullName> and <xref:System.Diagnostics.ProcessStartInfo.Password%2A?displayProperty=fullName> properties set, the unmanaged `CreateProcessWithLogonW` function is called, which starts the process in a new window even if the <xref:System.Diagnostics.ProcessStartInfo.CreateNoWindow%2A> property value is `true` or the <xref:System.Diagnostics.ProcessStartInfo.WindowStyle%2A> property value is <xref:System.Diagnostics.ProcessWindowStyle>.  
+ You can change the parameters specified in the <xref:System.Diagnostics.Process.StartInfo%2A> property up to the time that you call the <xref:System.Diagnostics.Process.Start%2A> method on the process. After you start the process, changing the <xref:System.Diagnostics.Process.StartInfo%2A> values does not affect or restart the associated process. If you call the <xref:System.Diagnostics.Process.Start%28System.Diagnostics.ProcessStartInfo%29> method with the <xref:System.Diagnostics.ProcessStartInfo.UserName%2A?displayProperty=nameWithType> and <xref:System.Diagnostics.ProcessStartInfo.Password%2A?displayProperty=nameWithType> properties set, the unmanaged `CreateProcessWithLogonW` function is called, which starts the process in a new window even if the <xref:System.Diagnostics.ProcessStartInfo.CreateNoWindow%2A> property value is `true` or the <xref:System.Diagnostics.ProcessStartInfo.WindowStyle%2A> property value is <xref:System.Diagnostics.ProcessWindowStyle.Hidden>.  
   
  If you did not use the <xref:System.Diagnostics.Process.Start%2A> method to start a process, the <xref:System.Diagnostics.Process.StartInfo%2A> property does not reflect the parameters used to start the process. For example, if you use <xref:System.Diagnostics.Process.GetProcesses%2A> to get an array of processes running on the computer, the <xref:System.Diagnostics.Process.StartInfo%2A> property of each <xref:System.Diagnostics.Process> does not contain the original file name or arguments used to start the process.  
   
@@ -4211,16 +4683,21 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.ArgumentNullException">The value that specifies the <see cref="P:System.Diagnostics.Process.StartInfo" /> is <see langword="null" />.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.Start" />
+        <altmember cref="P:System.Diagnostics.ProcessStartInfo.FileName" />
       </Docs>
     </Member>
     <Member MemberName="StartTime">
       <MemberSignature Language="C#" Value="public DateTime StartTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime StartTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.StartTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property StartTime As DateTime" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property DateTime StartTime { DateTime get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4261,6 +4738,8 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public System.ComponentModel.ISynchronizeInvoke SynchronizingObject { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISynchronizeInvoke SynchronizingObject" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.SynchronizingObject" />
+      <MemberSignature Language="VB.NET" Value="Public Property SynchronizingObject As ISynchronizeInvoke" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::ComponentModel::ISynchronizeInvoke ^ SynchronizingObject { System::ComponentModel::ISynchronizeInvoke ^ get(); void set(System::ComponentModel::ISynchronizeInvoke ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4270,6 +4749,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4314,16 +4797,20 @@ p.WaitForExit();
  ]]></format>
         </remarks>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.SynchronizingObject" />
       </Docs>
     </Member>
     <Member MemberName="Threads">
       <MemberSignature Language="C#" Value="public System.Diagnostics.ProcessThreadCollection Threads { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.ProcessThreadCollection Threads" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.Threads" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Threads As ProcessThreadCollection" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Diagnostics::ProcessThreadCollection ^ Threads { System::Diagnostics::ProcessThreadCollection ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4368,12 +4855,16 @@ p.WaitForExit();
  The associated process has exited.</exception>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me); set <see cref="P:System.Diagnostics.ProcessStartInfo.UseShellExecute" /> to <see langword="false" /> to access this property on Windows 98 and Windows Me.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="T:System.Diagnostics.ProcessThread" />
+        <altmember cref="P:System.Diagnostics.Process.BasePriority" />
       </Docs>
     </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4383,6 +4874,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -4412,10 +4907,13 @@ p.WaitForExit();
       <MemberSignature Language="C#" Value="public TimeSpan TotalProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TotalProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.TotalProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property TotalProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan TotalProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4455,16 +4953,21 @@ p.WaitForExit();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <exception cref="T:System.NotSupportedException">You are attempting to access the <see cref="P:System.Diagnostics.Process.TotalProcessorTime" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
+        <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="UserProcessorTime">
       <MemberSignature Language="C#" Value="public TimeSpan UserProcessorTime { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan UserProcessorTime" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.UserProcessorTime" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserProcessorTime As TimeSpan" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property TimeSpan UserProcessorTime { TimeSpan get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4504,12 +5007,16 @@ p.WaitForExit();
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <exception cref="T:System.NotSupportedException">You are attempting to access the <see cref="P:System.Diagnostics.Process.UserProcessorTime" /> property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.UserProcessorTime" />
+        <altmember cref="P:System.Diagnostics.Process.PrivilegedProcessorTime" />
       </Docs>
     </Member>
     <Member MemberName="VirtualMemorySize">
       <MemberSignature Language="C#" Value="public int VirtualMemorySize { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 VirtualMemorySize" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.VirtualMemorySize" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property VirtualMemorySize As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int VirtualMemorySize { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4519,6 +5026,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4540,16 +5051,21 @@ p.WaitForExit();
         <remarks>To be added.</remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.VirtualMemorySize64" />
+        <altmember cref="P:System.Diagnostics.Process.PeakVirtualMemorySize64" />
       </Docs>
     </Member>
     <Member MemberName="VirtualMemorySize64">
       <MemberSignature Language="C#" Value="public long VirtualMemorySize64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 VirtualMemorySize64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.VirtualMemorySize64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property VirtualMemorySize64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long VirtualMemorySize64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4598,16 +5114,32 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.PeakVirtualMemorySize64" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WaitForExit">
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Sets the period of time to wait for the associated process to exit, and blocks the current thread of execution until the time has elapsed or the process has exited. To avoid blocking the current thread, use the <see cref="E:System.Diagnostics.Process.Exited" /> event.  
+  
+ For code examples, see the <see cref="P:System.Diagnostics.Process.StandardError" /> and the <see cref="P:System.Diagnostics.Process.ExitCode" /> property reference pages.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WaitForExit">
       <MemberSignature Language="C#" Value="public void WaitForExit ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WaitForExit() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.WaitForExit" />
+      <MemberSignature Language="VB.NET" Value="Public Sub WaitForExit ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void WaitForExit();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4659,16 +5191,26 @@ p.WaitForExit();
   
  You are attempting to call <see cref="M:System.Diagnostics.Process.WaitForExit" /> for a process that is running on a remote computer. This method is available only for processes that are running on the local computer.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="P:System.Diagnostics.Process.ExitTime" />
+        <altmember cref="P:System.Diagnostics.Process.EnableRaisingEvents" />
+        <altmember cref="P:System.Diagnostics.Process.HasExited" />
+        <altmember cref="E:System.Diagnostics.Process.Exited" />
       </Docs>
     </Member>
     <Member MemberName="WaitForExit">
       <MemberSignature Language="C#" Value="public bool WaitForExit (int milliseconds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool WaitForExit(int32 milliseconds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.WaitForExit(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function WaitForExit (milliseconds As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool WaitForExit(int milliseconds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4696,7 +5238,7 @@ p.WaitForExit();
 ## Remarks  
  <xref:System.Diagnostics.Process.WaitForExit%28System.Int32%29> makes the current thread wait until the associated process terminates. It should be called after all other methods are called on the process. To avoid blocking the current thread, use the <xref:System.Diagnostics.Process.Exited> event.  
   
- This method instructs the <xref:System.Diagnostics.Process> component to wait a finite amount of time for the process to exit. If the associated process does not exit by the end of the interval because the request to terminate is denied, `false` is returned to the calling procedure. You can specify a negative number (<xref:System.Threading.Timeout.Infinite>) for `milliseconds`, and <xref:System.Diagnostics.Process.WaitForExit%28System.Int32%29?displayProperty=fullName> will behave the same as the <xref:System.Diagnostics.Process.WaitForExit> overload. If you pass 0 (zero) to the method, it returns `true` only if the process has already exited; otherwise, it immediately returns `false`.  
+ This method instructs the <xref:System.Diagnostics.Process> component to wait a finite amount of time for the process to exit. If the associated process does not exit by the end of the interval because the request to terminate is denied, `false` is returned to the calling procedure. You can specify <xref:System.Threading.Timeout.Infinite?displayProperty=nameWithType> for `milliseconds`, and <xref:System.Diagnostics.Process.WaitForExit%28System.Int32%29?displayProperty=nameWithType> will behave the same as the <xref:System.Diagnostics.Process.WaitForExit> overload. If you pass 0 (zero) to the method, it returns `true` only if the process has already exited; otherwise, it immediately returns `false`.  
   
 > [!NOTE]
 >  In the [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] and earlier versions, if `milliseconds` was -1, the <xref:System.Diagnostics.Process.WaitForExit%28System.Int32%29> overload waited for <xref:System.Int32.MaxValue> milliseconds (approximately 24 days), not indefinitely.  
@@ -4724,13 +5266,35 @@ p.WaitForExit();
  -or-  
   
  You are attempting to call <see cref="M:System.Diagnostics.Process.WaitForExit(System.Int32)" /> for a process that is running on a remote computer. This method is available only for processes that are running on the local computer.</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="milliseconds" /> is a negative number other than -1, which represents an infinite time-out.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
+        <altmember cref="M:System.Diagnostics.Process.Kill" />
+        <altmember cref="P:System.Diagnostics.Process.Handle" />
+        <altmember cref="P:System.Diagnostics.Process.ExitTime" />
+        <altmember cref="P:System.Diagnostics.Process.EnableRaisingEvents" />
+        <altmember cref="P:System.Diagnostics.Process.HasExited" />
+        <altmember cref="E:System.Diagnostics.Process.Exited" />
+        <altmember cref="P:System.Diagnostics.Process.SynchronizingObject" />
       </Docs>
     </Member>
+    <MemberGroup MemberName="WaitForInputIdle">
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Causes the <see cref="T:System.Diagnostics.Process" /> component to wait for the associated process to enter an idle state.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="WaitForInputIdle">
       <MemberSignature Language="C#" Value="public bool WaitForInputIdle ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool WaitForInputIdle() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.WaitForInputIdle" />
+      <MemberSignature Language="VB.NET" Value="Public Function WaitForInputIdle () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool WaitForInputIdle();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4740,6 +5304,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -4775,12 +5343,16 @@ p.WaitForExit();
   
  No process is associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.Start" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
       </Docs>
     </Member>
     <Member MemberName="WaitForInputIdle">
       <MemberSignature Language="C#" Value="public bool WaitForInputIdle (int milliseconds);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool WaitForInputIdle(int32 milliseconds) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Diagnostics.Process.WaitForInputIdle(System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Function WaitForInputIdle (milliseconds As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool WaitForInputIdle(int milliseconds);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4790,6 +5362,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -4812,7 +5388,7 @@ p.WaitForExit();
   
  The <xref:System.Diagnostics.Process.WaitForInputIdle%28System.Int32%29> overload instructs the <xref:System.Diagnostics.Process> component to wait a finite amount of time for the process to become idle in the message loop. If the associated process has not become idle by the end of the interval because the loop is still processing messages, `false` is returned to the calling procedure.  
   
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  ]]></format>
         </remarks>
@@ -4830,12 +5406,16 @@ p.WaitForExit();
   
  No process is associated with this <see cref="T:System.Diagnostics.Process" /> object.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="M:System.Diagnostics.Process.Start" />
+        <altmember cref="M:System.Diagnostics.Process.CloseMainWindow" />
       </Docs>
     </Member>
     <Member MemberName="WorkingSet">
       <MemberSignature Language="C#" Value="public int WorkingSet { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 WorkingSet" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.WorkingSet" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WorkingSet As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int WorkingSet { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4845,6 +5425,10 @@ p.WaitForExit();
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -4884,16 +5468,24 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MinWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.MaxWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet64" />
+        <altmember cref="P:System.Diagnostics.Process.WorkingSet64" />
       </Docs>
     </Member>
     <Member MemberName="WorkingSet64">
       <MemberSignature Language="C#" Value="public long WorkingSet64 { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int64 WorkingSet64" />
       <MemberSignature Language="DocId" Value="P:System.Diagnostics.Process.WorkingSet64" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property WorkingSet64 As Long" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property long WorkingSet64 { long get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Diagnostics.Process</AssemblyName>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4944,6 +5536,9 @@ p.WaitForExit();
         </remarks>
         <exception cref="T:System.PlatformNotSupportedException">The platform is Windows 98 or Windows Millennium Edition (Windows Me), which does not support this property.</exception>
         <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">for full trust for the immediate caller. This member cannot be used by partially trusted code.</permission>
+        <altmember cref="P:System.Diagnostics.Process.MinWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.MaxWorkingSet" />
+        <altmember cref="P:System.Diagnostics.Process.PeakWorkingSet64" />
       </Docs>
     </Member>
   </Members>

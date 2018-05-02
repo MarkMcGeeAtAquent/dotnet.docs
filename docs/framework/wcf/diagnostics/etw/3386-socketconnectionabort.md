@@ -1,8 +1,8 @@
 ---
-title: "3386 - SocketConnectionAbort | Microsoft Docs"
+title: "3386 - SocketConnectionAbort"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 37a184f2-af60-4339-820a-857e2375cb1c
 caps.latest.revision: 3
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 3386 - SocketConnectionAbort
 ## Properties  

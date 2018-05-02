@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataAssemblyImport::GetAssemblyProps Method | Microsoft Docs"
+title: "IMetaDataAssemblyImport::GetAssemblyProps Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataAssemblyImport.GetAssemblyProps"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataAssemblyImport::GetAssemblyProps"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetAssemblyProps method [.NET Framework metadata]"
   - "IMetaDataAssemblyImport::GetAssemblyProps method [.NET Framework metadata]"
 ms.assetid: 0eaa4aa9-9441-444a-920c-e4b2a2db899e
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataAssemblyImport::GetAssemblyProps Method
 Gets the set of properties for the assembly with the specified metadata signature.  

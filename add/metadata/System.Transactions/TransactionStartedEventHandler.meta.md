@@ -1,4 +1,6 @@
 ---
 uid: System.Transactions.TransactionStartedEventHandler
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

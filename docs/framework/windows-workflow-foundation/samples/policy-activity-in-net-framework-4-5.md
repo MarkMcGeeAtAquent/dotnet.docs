@@ -1,17 +1,19 @@
 ---
-title: "Policy Activity in .NET Framework 4.5 | Microsoft Docs"
+title: "Policy Activity in .NET Framework 4.5"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 8e375e0c-d7c1-4d69-88ab-36d52db0aa7e
 caps.latest.revision: 15
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Policy Activity in .NET Framework 4.5
 The Policy4 activity allows [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objects to be used in [!INCLUDE[wf2](../../../../includes/wf2-md.md)] in [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) directly by using the rules engine that is shipped in WF 3.5. By using this activity, you can create and execute a WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet>. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] WF 3.5 Rules Engine included as part of Windows Workflow Foundation, please read Introduction to the Windows Workflow Foundation Rules Engine. For more information about migrating rules to WF in [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], please read [Migration Guidance](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  
@@ -46,7 +48,6 @@ public class Policy4Activity<TResult>: NativeActivity<TResult>
   
     public OutArgument<ValidationErrorCollection> ValidationErrors  
 }  
-  
 ```  
   
 |Property|Description|  
@@ -83,6 +84,4 @@ public class Policy4Activity<TResult>: NativeActivity<TResult>
   
 3.  To compile the project, press CTRL+SHIFT+B.  
   
-4.  To run the project, press CTRL+F5.  
-  
-## See Also
+4.  To run the project, press CTRL+F5.

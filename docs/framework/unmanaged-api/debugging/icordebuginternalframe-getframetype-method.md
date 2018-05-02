@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugInternalFrame::GetFrameType Method | Microsoft Docs"
+title: "ICorDebugInternalFrame::GetFrameType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugInternalFrame.GetFrameType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugInternalFrame::GetFrameType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetFrameType method [.NET Framework debugging]"
   - "ICorDebugInternalFrame::GetFrameType method [.NET Framework debugging]"
 ms.assetid: da278a29-dc2e-4bf7-96ce-801bdc4d7025
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugInternalFrame::GetFrameType Method
 Gets the type of this internal frame.  

@@ -1,5 +1,5 @@
 ---
-title: "Proxy Configuration | Microsoft Docs"
+title: "Proxy Configuration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -7,11 +7,6 @@ ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "Networking"
   - "adaptive proxies"
@@ -26,6 +21,8 @@ caps.latest.revision: 14
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # Proxy Configuration
 A proxy server handles client requests for resources. A proxy can return a requested resource from its cache or forward the request to the server where the resource resides. Proxies can improve network performance by reducing the number of requests sent to remote servers. Proxies can also be used to restrict access to resources.  
@@ -59,7 +56,7 @@ A proxy server handles client requests for resources. A proxy can return a reque
   
  The following example shows a typical adaptive proxy configuration.  
   
-```  
+```xml  
 <system.net>  
     <defaultProxy>  
       <proxy  scriptDownloadInterval="600"  
@@ -93,7 +90,7 @@ A proxy server handles client requests for resources. A proxy can return a reque
   
  The following example shows a typical static proxy configuration.  
   
-```  
+```xml  
 <system.net>  
     <defaultProxy>  
         <proxy  proxyaddress="http://proxy.contoso.com:3128"  
@@ -107,6 +104,6 @@ A proxy server handles client requests for resources. A proxy can return a reque
 ```  
   
 ## See Also  
- <xref:System.Net.WebProxy>   
- <xref:System.Net.GlobalProxySelection>   
+ <xref:System.Net.WebProxy>  
+ <xref:System.Net.GlobalProxySelection>  
  [Automatic Proxy Detection](../../../docs/framework/network-programming/automatic-proxy-detection.md)

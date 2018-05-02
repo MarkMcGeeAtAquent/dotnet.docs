@@ -1,8 +1,8 @@
 ---
-title: "How to: Select Text in the Windows Forms TextBox Control | Microsoft Docs"
+title: "How to: Select Text in the Windows Forms TextBox Control"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -10,16 +10,20 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 helpviewer_keywords: 
   - "TextBox control [Windows Forms], selecting text programmatically"
-  - "text boxes, selecting text programmatically"
-  - "text, selecting in text boxes programmatically"
+  - "text boxes [Windows Forms], selecting text programmatically"
+  - "text [Windows Forms], selecting in text boxes programmatically"
 ms.assetid: 8c591546-6a01-45c7-8e03-f78431f903b1
 caps.latest.revision: 24
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # How to: Select Text in the Windows Forms TextBox Control
 You can select text programmatically in the Windows Forms <xref:System.Windows.Forms.TextBox> control. For example, if you create a function that searches text for a particular string, you can select the text to visually alert the reader of the found string's position.  
@@ -47,7 +51,6 @@ You can select text programmatically in the Windows Forms <xref:System.Windows.F
           TextBox1.SelectionLength = TextBox1.Text.Length  
        End If  
     End Sub  
-  
     ```  
   
     ```csharp  
@@ -58,7 +61,6 @@ You can select text programmatically in the Windows Forms <xref:System.Windows.F
           textBox1.SelectionLength = textBox1.Text.Length;  
        }  
     }  
-  
     ```  
   
     ```cpp  
@@ -74,11 +76,11 @@ You can select text programmatically in the Windows Forms <xref:System.Windows.F
     ```  
   
 ## See Also  
- <xref:System.Windows.Forms.TextBox>   
- [TextBox Control Overview](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)   
- [How to: Control the Insertion Point in a Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)   
- [How to: Create a Password Text Box with the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)   
- [How to: Create a Read-Only Text Box](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)   
- [How to: Put Quotation Marks in a String](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)   
- [How to: View Multiple Lines in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)   
+ <xref:System.Windows.Forms.TextBox>  
+ [TextBox Control Overview](../../../../docs/framework/winforms/controls/textbox-control-overview-windows-forms.md)  
+ [How to: Control the Insertion Point in a Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
+ [How to: Create a Password Text Box with the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
+ [How to: Create a Read-Only Text Box](../../../../docs/framework/winforms/controls/how-to-create-a-read-only-text-box-windows-forms.md)  
+ [How to: Put Quotation Marks in a String](../../../../docs/framework/winforms/controls/how-to-put-quotation-marks-in-a-string-windows-forms.md)  
+ [How to: View Multiple Lines in the Windows Forms TextBox Control](../../../../docs/framework/winforms/controls/how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  [TextBox Control](../../../../docs/framework/winforms/controls/textbox-control-windows-forms.md)

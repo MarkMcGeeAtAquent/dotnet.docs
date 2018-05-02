@@ -1,8 +1,8 @@
 ---
-title: "&lt;requestCaching&gt; Element (Network Settings) | Microsoft Docs"
+title: "&lt;requestCaching&gt; Element (Network Settings)"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -12,11 +12,6 @@ ms.topic: "article"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#requestCaching"
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/requestCaching"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "requestCaching element"
   - "<requestCaching> element"
@@ -25,6 +20,8 @@ caps.latest.revision: 20
 author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;requestCaching&gt; Element (Network Settings)
 Controls the caching mechanism for network requests.  
@@ -35,16 +32,15 @@ Controls the caching mechanism for network requests.
   
 ## Syntax  
   
-```  
-  
-      <requestCaching  
-  isPrivateCache ="true|false"  
-  disableAllCaching="true|false"  
-  defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
-  unspecifiedMaximumAge= "d.hh.mm.ss""  
-  <defaultHttpCachePolicy> … </defaultHttpCachePolicy>  
-  <defaultFtpCachePolicy> … </defaultFtpCachePolicy>  
-/>  
+```xml  
+      <requestCaching>  
+        isPrivateCache ="true|false"  
+        disableAllCaching="true|false"  
+        defaultPolicyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
+        unspecifiedMaximumAge= "d.hh.mm.ss">  
+          <defaultHttpCachePolicy> … </defaultHttpCachePolicy>  
+          <defaultFtpCachePolicy> … </defaultFtpCachePolicy>  
+      </requestCaching>
 ```  
   
 ## Attributes and Elements  
@@ -86,9 +82,9 @@ Controls the caching mechanism for network requests.
 |[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contains settings that specify how the .NET Framework connects to the network.|  
   
 ## Example  
- The following code example shows how to disable all caching.  
+ The following example shows how to disable all caching.  
   
-```  
+```xml  
 <configuration>  
   <system.net>  
     <requestCaching  
@@ -99,5 +95,5 @@ Controls the caching mechanism for network requests.
 ```  
   
 ## See Also  
- <xref:System.Net.Cache?displayProperty=fullName>   
+ <xref:System.Net.Cache?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

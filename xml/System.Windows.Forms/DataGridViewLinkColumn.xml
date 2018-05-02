@@ -1,7 +1,9 @@
-<Type Name="DataGridViewLinkColumn" FullName="System.Windows.Forms.DataGridViewLinkColumn">
+﻿<Type Name="DataGridViewLinkColumn" FullName="System.Windows.Forms.DataGridViewLinkColumn">
   <TypeSignature Language="C#" Value="public class DataGridViewLinkColumn : System.Windows.Forms.DataGridViewColumn" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewLinkColumn extends System.Windows.Forms.DataGridViewColumn" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewLinkColumn" />
+  <TypeSignature Language="VB.NET" Value="Public Class DataGridViewLinkColumn&#xA;Inherits DataGridViewColumn" />
+  <TypeSignature Language="C++ CLI" Value="public ref class DataGridViewLinkColumn : System::Windows::Forms::DataGridViewColumn" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -27,9 +29,9 @@
   
  A <xref:System.Windows.Forms.DataGridViewLinkColumn> has an associated <xref:System.Windows.Forms.DataGridViewLinkCell> in every <xref:System.Windows.Forms.DataGridViewRow> that intersects it.  
   
- The default sort mode for this column type is <xref:System.Windows.Forms.DataGridViewColumnSortMode>.  
+ The default sort mode for this column type is <xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>.  
   
- To respond to user link clicks, handle the <xref:System.Windows.Forms.DataGridView.CellContentClick?displayProperty=fullName> event. You can also use the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=fullName> event to respond to clicks anywhere in the cell.  
+ To respond to user link clicks, handle the <xref:System.Windows.Forms.DataGridView.CellContentClick?displayProperty=nameWithType> event. You can also use the <xref:System.Windows.Forms.DataGridView.CellClick?displayProperty=nameWithType> event to respond to clicks anywhere in the cell.  
   
    
   
@@ -45,12 +47,24 @@
     <block subset="none" type="overrides">
       <para>When you derive from <see cref="T:System.Windows.Forms.DataGridViewLinkColumn" /> and add new properties to the derived class, be sure to override the <see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" /> method to copy the new properties during cloning operations. You should also call the base class's <see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" /> method so that the properties of the base class are copied to the new cell.</para>
     </block>
+    <altmember cref="T:System.Windows.Forms.DataGridView" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewColumn" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewRow" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewButtonColumn" />
+    <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewColumn.SortMode" />
+    <altmember cref="E:System.Windows.Forms.DataGridView.CellContentClick" />
+    <altmember cref="E:System.Windows.Forms.DataGridView.CellClick" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue" />
+    <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public DataGridViewLinkColumn ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; DataGridViewLinkColumn();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -67,12 +81,17 @@
   
  ]]></format>
         </remarks>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
       </Docs>
     </Member>
     <Member MemberName="ActiveLinkColor">
       <MemberSignature Language="C#" Value="public System.Drawing.Color ActiveLinkColor { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ActiveLinkColor" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property ActiveLinkColor As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Color ActiveLinkColor { System::Drawing::Color get(); void set(System::Drawing::Color value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -102,12 +121,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Drawing.Color" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.ActiveLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
       </Docs>
     </Member>
     <Member MemberName="CellTemplate">
       <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCell CellTemplate { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataGridViewCell CellTemplate" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Property CellTemplate As DataGridViewCell" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; virtual property System::Windows::Forms::DataGridViewCell ^ CellTemplate { System::Windows::Forms::DataGridViewCell ^ get(); void set(System::Windows::Forms::DataGridViewCell ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -118,7 +147,7 @@
           <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
         </Attribute>
         <Attribute>
-          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility</AttributeName>
         </Attribute>
       </Attributes>
       <ReturnValue>
@@ -134,7 +163,7 @@
  The constructor for the <xref:System.Windows.Forms.DataGridViewLinkColumn> class initializes this property to a newly created <xref:System.Windows.Forms.DataGridViewLinkCell>.  
   
 > [!CAUTION]
->  Changing the properties of the cell template will not immediately affect the user interface (UI) of the column's existing cells. These changes are only apparent after the column is regenerated (for example, by sorting the column or through a call to the <xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=fullName> method).  
+>  Changing the properties of the cell template will not immediately affect the user interface (UI) of the column's existing cells. These changes are only apparent after the column is regenerated (for example, by sorting the column or through a call to the <xref:System.Windows.Forms.DataGridView.InvalidateColumn%2A?displayProperty=nameWithType> method).  
   
    
   
@@ -148,12 +177,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidCastException">When setting this property to a value that is not of type <see cref="T:System.Windows.Forms.DataGridViewLinkCell" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="M:System.Windows.Forms.DataGridViewLinkColumn.#ctor" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewCell" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="M:System.Windows.Forms.DataGridView.InvalidateColumn(System.Int32)" />
       </Docs>
     </Member>
     <Member MemberName="Clone">
       <MemberSignature Language="C#" Value="public override object Clone ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Clone () As Object" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::Object ^ Clone();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -178,12 +214,15 @@
         <block subset="none" type="overrides">
           <para>When overriding <see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" /> in a derived class, call the base class's <see cref="M:System.Windows.Forms.DataGridViewLinkColumn.Clone" /> method so that the properties of the base class are copied to the new cell, and be sure to also copy the values of any properties that were added to the derived class.</para>
         </block>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
       </Docs>
     </Member>
     <Member MemberName="LinkBehavior">
       <MemberSignature Language="C#" Value="public System.Windows.Forms.LinkBehavior LinkBehavior { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LinkBehavior LinkBehavior" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior" />
+      <MemberSignature Language="VB.NET" Value="Public Property LinkBehavior As LinkBehavior" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Windows::Forms::LinkBehavior LinkBehavior { System::Windows::Forms::LinkBehavior get(); void set(System::Windows::Forms::LinkBehavior value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -209,7 +248,7 @@
    
   
 ## Examples  
- The following code example initializes this property to <xref:System.Windows.Forms.LinkBehavior>, which lets the operating system choose how the link will display. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.  
+ The following code example initializes this property to <xref:System.Windows.Forms.LinkBehavior.SystemDefault>, which lets the operating system choose how the link will display. This example is part of a larger example available in the <xref:System.Windows.Forms.DataGridViewComboBoxColumn> class overview topic.  
   
  [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
  [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
@@ -218,12 +257,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Windows.Forms.LinkBehavior" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.LinkBehavior" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
       </Docs>
     </Member>
     <Member MemberName="LinkColor">
       <MemberSignature Language="C#" Value="public System.Drawing.Color LinkColor { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LinkColor" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.LinkColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property LinkColor As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Color LinkColor { System::Drawing::Color get(); void set(System::Drawing::Color value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -253,12 +302,22 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="T:System.Drawing.Color" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.LinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
       </Docs>
     </Member>
     <Member MemberName="Text">
       <MemberSignature Language="C#" Value="public string Text { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Text" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />
+      <MemberSignature Language="VB.NET" Value="Public Property Text As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Text { System::String ^ get(); void set(System::String ^ value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -286,12 +345,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">When setting this property, the value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCell.FormattedValue" />
       </Docs>
     </Member>
     <Member MemberName="ToString">
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkColumn.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -305,12 +372,15 @@
         <summary>Gets a string that describes the column.</summary>
         <returns>A <see cref="T:System.String" /> that describes the column.</returns>
         <remarks>To be added.</remarks>
+        <altmember cref="M:System.Windows.Forms.DataGridViewColumn.ToString" />
       </Docs>
     </Member>
     <Member MemberName="TrackVisitedState">
       <MemberSignature Language="C#" Value="public bool TrackVisitedState { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool TrackVisitedState" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState" />
+      <MemberSignature Language="VB.NET" Value="Public Property TrackVisitedState As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool TrackVisitedState { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -348,12 +418,19 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState" />
       </Docs>
     </Member>
     <Member MemberName="UseColumnTextForLinkValue">
       <MemberSignature Language="C#" Value="public bool UseColumnTextForLinkValue { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UseColumnTextForLinkValue" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue" />
+      <MemberSignature Language="VB.NET" Value="Public Property UseColumnTextForLinkValue As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UseColumnTextForLinkValue { bool get(); void set(bool value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -389,12 +466,20 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewCell.FormattedValue" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue" />
       </Docs>
     </Member>
     <Member MemberName="VisitedLinkColor">
       <MemberSignature Language="C#" Value="public System.Drawing.Color VisitedLinkColor { get; set; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color VisitedLinkColor" />
       <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor" />
+      <MemberSignature Language="VB.NET" Value="Public Property VisitedLinkColor As Color" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::Drawing::Color VisitedLinkColor { System::Drawing::Color get(); void set(System::Drawing::Color value); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -426,6 +511,14 @@
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">The value of the <see cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" /> property is <see langword="null" />.</exception>
+        <altmember cref="T:System.Windows.Forms.DataGridView" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate" />
+        <altmember cref="T:System.Windows.Forms.DataGridViewLinkCell" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkCell.VisitedLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior" />
+        <altmember cref="P:System.Windows.Forms.DataGridViewLinkColumn.LinkColor" />
       </Docs>
     </Member>
   </Members>

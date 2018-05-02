@@ -1,6 +1,8 @@
 ---
 uid: System.Data.Odbc.OdbcInfoMessageEventHandler
-author: "JennieHubbard"
-ms.author: "jhubbard"
-manager: "jhubbard"
+ms.technology: 
+  - "dotnet-ado"
+author: "douglaslMS"
+ms.author: "douglasl"
+manager: "craigg"
 ---

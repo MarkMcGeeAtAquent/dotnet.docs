@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugArrayValue::GetDimensions Method | Microsoft Docs"
+title: "ICorDebugArrayValue::GetDimensions Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugArrayValue.GetDimensions"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugArrayValue::GetDimensions"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "ICorDebugArrayValue::GetDimensions method [.NET Framework debugging]"
   - "GetDimensions method [.NET Framework debugging]"
 ms.assetid: 6c116592-134b-4ef2-a319-680e92d013aa
+topic_type: 
+  - "apiref"
 caps.latest.revision: 12
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugArrayValue::GetDimensions Method
 Gets the number of elements in each dimension of this array.  

@@ -1,19 +1,27 @@
 ---
 uid: System.Transactions.DistributedTransactionPermissionAttribute
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.DistributedTransactionPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.DistributedTransactionPermissionAttribute.Unrestricted
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---
 
 ---
 uid: System.Transactions.DistributedTransactionPermissionAttribute.CreatePermission
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

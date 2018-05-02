@@ -1,5 +1,5 @@
 ---
-title: "IMetaDataTables::GetColumnInfo Method | Microsoft Docs"
+title: "IMetaDataTables::GetColumnInfo Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IMetaDataTables.GetColumnInfo"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IMetaDataTables::GetColumnInfo"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IMetaDataTables::GetColumnInfo method [.NET Framework metadata]"
   - "GetColumnInfo method [.NET Framework metadata]"
 ms.assetid: 68c160ea-ae7d-4750-985d-a038b2c8e7d9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 13
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IMetaDataTables::GetColumnInfo Method
 Gets data about the specified column in the specified table.  
@@ -72,5 +75,5 @@ HRESULT GetColumnInfo (
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)   
+ [IMetaDataTables Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
  [IMetaDataTables2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

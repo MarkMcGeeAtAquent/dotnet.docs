@@ -1,5 +1,5 @@
 ---
-title: "ICorDebugAppDomain2::GetArrayOrPointerType Method | Microsoft Docs"
+title: "ICorDebugAppDomain2::GetArrayOrPointerType Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "ICorDebugAppDomain2.GetArrayOrPointerType"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "ICorDebugAppDomain2::GetArrayOrPointerType"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "GetArrayOrPointerType method [.NET Framework debugging]"
   - "ICorDebugAppDomain2::GetArrayOrPointerType method [.NET Framework debugging]"
 ms.assetid: 97e493f5-3a62-4ec7-b42f-4af57bf71f57
+topic_type: 
+  - "apiref"
 caps.latest.revision: 14
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # ICorDebugAppDomain2::GetArrayOrPointerType Method
 Gets an array of the specified type, or a pointer or reference to the specified type.  

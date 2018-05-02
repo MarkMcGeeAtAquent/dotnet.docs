@@ -1,7 +1,9 @@
-<Type Name="ToolStripRenderer" FullName="System.Windows.Forms.ToolStripRenderer">
+﻿<Type Name="ToolStripRenderer" FullName="System.Windows.Forms.ToolStripRenderer">
   <TypeSignature Language="C#" Value="public abstract class ToolStripRenderer" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ToolStripRenderer extends System.Object" />
   <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripRenderer" />
+  <TypeSignature Language="VB.NET" Value="Public MustInherit Class ToolStripRenderer" />
+  <TypeSignature Language="C++ CLI" Value="public ref class ToolStripRenderer abstract" />
   <AssemblyInfo>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
@@ -16,7 +18,7 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Forms.ToolStripRenderer> class to apply a particular style or theme to a <xref:System.Windows.Forms.ToolStrip>. Rather than custom painting a <xref:System.Windows.Forms.ToolStrip> and the <xref:System.Windows.Forms.ToolStripItem> objects it contains, you set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=fullName> property to an object that inherits from <xref:System.Windows.Forms.ToolStripRenderer>. The painting specified by the <xref:System.Windows.Forms.ToolStripRenderer> is applied to the <xref:System.Windows.Forms.ToolStrip>, as well as the items it contains.  
+ Use the <xref:System.Windows.Forms.ToolStripRenderer> class to apply a particular style or theme to a <xref:System.Windows.Forms.ToolStrip>. Rather than custom painting a <xref:System.Windows.Forms.ToolStrip> and the <xref:System.Windows.Forms.ToolStripItem> objects it contains, you set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property to an object that inherits from <xref:System.Windows.Forms.ToolStripRenderer>. The painting specified by the <xref:System.Windows.Forms.ToolStripRenderer> is applied to the <xref:System.Windows.Forms.ToolStrip>, as well as the items it contains.  
   
  You can do custom painting in <xref:System.Windows.Forms.ToolStrip> controls in several ways. As with other Windows Forms controls, the <xref:System.Windows.Forms.ToolStrip> and <xref:System.Windows.Forms.ToolStripItem> both have overridable `OnPaint` methods and `Paint` events. As with regular painting, the coordinate system is relative to the client area of the control; that is, the upper left-hand corner of the control is 0, 0. The `Paint` event and `OnPaint` method for a <xref:System.Windows.Forms.ToolStripItem> behave like other control paint events.  
   
@@ -26,7 +28,7 @@
   
  If you are writing a new item and want to control all aspects of the painting, override the `OnPaint` method. From within `OnPaint`, you can use methods from the <xref:System.Windows.Forms.ToolStripRenderer>.  
   
- By default, the <xref:System.Windows.Forms.ToolStrip> is double buffered, taking advantage of the <xref:System.Windows.Forms.ControlStyles> setting.  
+ By default, the <xref:System.Windows.Forms.ToolStrip> is double buffered, taking advantage of the <xref:System.Windows.Forms.ControlStyles.OptimizedDoubleBuffer> setting.  
   
    
   
@@ -38,12 +40,18 @@
   
  ]]></format>
     </remarks>
+    <altmember cref="T:System.Windows.Forms.MenuStrip" />
+    <altmember cref="T:System.Windows.Forms.StatusStrip" />
+    <altmember cref="T:System.Windows.Forms.ToolStripProfessionalRenderer" />
+    <altmember cref="T:System.Windows.Forms.ToolStripSystemRenderer" />
   </Docs>
   <Members>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="protected ToolStripRenderer ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.#ctor" />
+      <MemberSignature Language="VB.NET" Value="Protected Sub New ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; ToolStripRenderer();" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -66,6 +74,8 @@
       <MemberSignature Language="C#" Value="public static System.Drawing.Image CreateDisabledImage (System.Drawing.Image normalImage);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Image CreateDisabledImage(class System.Drawing.Image normalImage) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.CreateDisabledImage(System.Drawing.Image)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CreateDisabledImage (normalImage As Image) As Image" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::Drawing::Image ^ CreateDisabledImage(System::Drawing::Image ^ normalImage);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -88,6 +98,8 @@
       <MemberSignature Language="C#" Value="public void DrawArrow (System.Windows.Forms.ToolStripArrowRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawArrow(class System.Windows.Forms.ToolStripArrowRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawArrow (e As ToolStripArrowRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawArrow(System::Windows::Forms::ToolStripArrowRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -106,7 +118,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawArrow%2A> method provides an entry point to the arrow rendering code. Use this method to draw an arrow when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force an arrow to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way an arrow is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawArrow%2A> method provides an entry point to the arrow rendering code. Use this method to draw an arrow when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force an arrow to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way an arrow is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -116,6 +128,8 @@
       <MemberSignature Language="C#" Value="public void DrawButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -134,7 +148,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground%2A> method provides an entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripButton>. Use this method to draw the background of a button when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force the background of a button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawButtonBackground%2A> method provides an entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripButton>. Use this method to draw the background of a button when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the background of a button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -144,6 +158,8 @@
       <MemberSignature Language="C#" Value="public void DrawDropDownButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawDropDownButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawDropDownButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawDropDownButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -162,7 +178,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripDropDownButton>. Use this method to draw the background of a drop-down button when overriding the <xref:System.Windows.Forms.ToolStripDropDownButton.OnPaint%2A?displayProperty=fullName> method, or to force the background of a drop-down button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawDropDownButtonBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripDropDownButton>. Use this method to draw the background of a drop-down button when overriding the <xref:System.Windows.Forms.ToolStripDropDownButton.OnPaint%2A?displayProperty=nameWithType> method, or to force the background of a drop-down button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -172,6 +188,8 @@
       <MemberSignature Language="C#" Value="public void DrawGrip (System.Windows.Forms.ToolStripGripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawGrip(class System.Windows.Forms.ToolStripGripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawGrip (e As ToolStripGripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawGrip(System::Windows::Forms::ToolStripGripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -190,7 +208,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawGrip%2A> method provides an entry point to the rendering code for a move handle located on a <xref:System.Windows.Forms.ToolStrip>. Use this method when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaintGrip%2A?displayProperty=fullName> method, or to force a move handle to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way a move handle is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderGrip%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawGrip%2A> method provides an entry point to the rendering code for a move handle located on a <xref:System.Windows.Forms.ToolStrip>. Use this method when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaintGrip%2A?displayProperty=nameWithType> method, or to force a move handle to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way a move handle is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderGrip%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -200,6 +218,8 @@
       <MemberSignature Language="C#" Value="public void DrawImageMargin (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawImageMargin(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawImageMargin (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawImageMargin(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -218,7 +238,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawImageMargin%2A> method provides the entry point to the rendering code for the image. Use this method to draw the image margin when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force the image margin to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the image margin is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawImageMargin%2A> method provides the entry point to the rendering code for the image. Use this method to draw the image margin when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the image margin to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the image margin is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -228,6 +248,8 @@
       <MemberSignature Language="C#" Value="public void DrawItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawItemBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawItemBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -246,7 +268,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemBackground%2A> method provides the entry point to the rendering code for the background of an item. Use this method to draw the background of an item when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force the background of an item to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of an item is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemBackground%2A> method provides the entry point to the rendering code for the background of an item. Use this method to draw the background of an item when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the background of an item to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of an item is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -256,6 +278,8 @@
       <MemberSignature Language="C#" Value="public void DrawItemCheck (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemCheck(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawItemCheck (e As ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawItemCheck(System::Windows::Forms::ToolStripItemImageRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -274,7 +298,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemCheck%2A> method provides the entry point to the rendering code for an image in a selected state. Use this method to draw a selected image when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force a selected image to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way a selected image is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemCheck%2A> method provides the entry point to the rendering code for an image in a selected state. Use this method to draw a selected image when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force a selected image to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way a selected image is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -284,6 +308,8 @@
       <MemberSignature Language="C#" Value="public void DrawItemImage (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemImage(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawItemImage (e As ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawItemImage(System::Windows::Forms::ToolStripItemImageRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -302,7 +328,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemImage%2A> method provides the entry point to the rendering code for an image. Use this method to draw an image when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method or to force the image to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the image is rendered, override the `OnDrawItem` method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemImage%2A> method provides the entry point to the rendering code for an image. Use this method to draw an image when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method or to force the image to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the image is rendered, override the `OnDrawItem` method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -312,6 +338,8 @@
       <MemberSignature Language="C#" Value="public void DrawItemText (System.Windows.Forms.ToolStripItemTextRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawItemText(class System.Windows.Forms.ToolStripItemTextRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawItemText (e As ToolStripItemTextRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawItemText(System::Windows::Forms::ToolStripItemTextRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -330,7 +358,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemText%2A> method provides the entry point to the rendering code for the text of a <xref:System.Windows.Forms.ToolStripItem>. Use this method to draw the item text when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force the item text to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the item text is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawItemText%2A> method provides the entry point to the rendering code for the text of a <xref:System.Windows.Forms.ToolStripItem>. Use this method to draw the item text when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the item text to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the item text is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -340,6 +368,8 @@
       <MemberSignature Language="C#" Value="public void DrawLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawLabelBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawLabelBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -358,7 +388,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripLabel>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStripLabel> when overriding the <xref:System.Windows.Forms.ToolStripLabel.OnPaint%2A?displayProperty=fullName> method, or to force the background of a <xref:System.Windows.Forms.ToolStripLabel> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of a <xref:System.Windows.Forms.ToolStripLabel> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawLabelBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripLabel>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStripLabel> when overriding the <xref:System.Windows.Forms.ToolStripLabel.OnPaint%2A?displayProperty=nameWithType> method, or to force the background of a <xref:System.Windows.Forms.ToolStripLabel> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of a <xref:System.Windows.Forms.ToolStripLabel> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -368,6 +398,8 @@
       <MemberSignature Language="C#" Value="public void DrawMenuItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawMenuItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawMenuItemBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawMenuItemBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -386,7 +418,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripMenuItem>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStripMenuItem> when overriding the <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A?displayProperty=fullName> method, or to force the background of a <xref:System.Windows.Forms.ToolStripMenuItem> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background for a <xref:System.Windows.Forms.ToolStripMenuItem> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawMenuItemBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStripMenuItem>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStripMenuItem> when overriding the <xref:System.Windows.Forms.ToolStripMenuItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the background of a <xref:System.Windows.Forms.ToolStripMenuItem> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background for a <xref:System.Windows.Forms.ToolStripMenuItem> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -396,6 +428,8 @@
       <MemberSignature Language="C#" Value="public void DrawOverflowButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawOverflowButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawOverflowButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawOverflowButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -414,7 +448,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground%2A> method provides the entry point to the rendering code for the background of an overflow button. Use this method to draw the background of an overflow button when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=fullName> method, or to force the background for an overflow button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background for an overflow button is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawOverflowButtonBackground%2A> method provides the entry point to the rendering code for the background of an overflow button. Use this method to draw the background of an overflow button when overriding the <xref:System.Windows.Forms.ToolStripItem.OnPaint%2A?displayProperty=nameWithType> method, or to force the background for an overflow button to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background for an overflow button is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -424,6 +458,8 @@
       <MemberSignature Language="C#" Value="public void DrawSeparator (System.Windows.Forms.ToolStripSeparatorRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawSeparator(class System.Windows.Forms.ToolStripSeparatorRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawSeparator (e As ToolStripSeparatorRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawSeparator(System::Windows::Forms::ToolStripSeparatorRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -442,7 +478,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawSeparator%2A> method provides the entry point to the rendering code for a <xref:System.Windows.Forms.ToolStripSeparator>. Use this method to draw the <xref:System.Windows.Forms.ToolStripSeparator> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=fullName> method, or to force a <xref:System.Windows.Forms.ToolStripSeparator> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the <xref:System.Windows.Forms.ToolStripSeparator> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawSeparator%2A> method provides the entry point to the rendering code for a <xref:System.Windows.Forms.ToolStripSeparator>. Use this method to draw the <xref:System.Windows.Forms.ToolStripSeparator> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=nameWithType> method, or to force a <xref:System.Windows.Forms.ToolStripSeparator> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the <xref:System.Windows.Forms.ToolStripSeparator> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -452,6 +488,8 @@
       <MemberSignature Language="C#" Value="public void DrawSplitButton (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawSplitButton(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawSplitButton(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawSplitButton (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawSplitButton(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -470,7 +508,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawSplitButton%2A> method provides the entry point to the rendering code for a <xref:System.Windows.Forms.ToolStripSplitButton>. Use this method to draw a <xref:System.Windows.Forms.ToolStripSplitButton> when overriding the <xref:System.Windows.Forms.ToolStripSplitButton.OnPaint%2A?displayProperty=fullName> method, or to force a <xref:System.Windows.Forms.ToolStripSplitButton> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the <xref:System.Windows.Forms.ToolStripSplitButton> is rendered, override the <xref:System.Windows.Forms.ToolStripSystemRenderer.OnRenderSplitButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawSplitButton%2A> method provides the entry point to the rendering code for a <xref:System.Windows.Forms.ToolStripSplitButton>. Use this method to draw a <xref:System.Windows.Forms.ToolStripSplitButton> when overriding the <xref:System.Windows.Forms.ToolStripSplitButton.OnPaint%2A?displayProperty=nameWithType> method, or to force a <xref:System.Windows.Forms.ToolStripSplitButton> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the <xref:System.Windows.Forms.ToolStripSplitButton> is rendered, override the <xref:System.Windows.Forms.ToolStripSystemRenderer.OnRenderSplitButtonBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -480,6 +518,8 @@
       <MemberSignature Language="C#" Value="public void DrawStatusStripSizingGrip (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawStatusStripSizingGrip(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawStatusStripSizingGrip (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawStatusStripSizingGrip(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -501,6 +541,8 @@
       <MemberSignature Language="C#" Value="public void DrawToolStripBackground (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripBackground(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawToolStripBackground (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawToolStripBackground(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -519,7 +561,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStrip>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStrip> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaintBackground%2A?displayProperty=fullName> method, or to force the background of a <xref:System.Windows.Forms.ToolStrip> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of a <xref:System.Windows.Forms.ToolStrip> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBackground%2A> method provides the entry point to the rendering code for the background of a <xref:System.Windows.Forms.ToolStrip>. Use this method to draw the background of a <xref:System.Windows.Forms.ToolStrip> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaintBackground%2A?displayProperty=nameWithType> method, or to force the background of a <xref:System.Windows.Forms.ToolStrip> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the background of a <xref:System.Windows.Forms.ToolStrip> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -529,6 +571,8 @@
       <MemberSignature Language="C#" Value="public void DrawToolStripBorder (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripBorder(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawToolStripBorder (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawToolStripBorder(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -547,7 +591,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder%2A> method provides the entry point to the rendering code for the border of a <xref:System.Windows.Forms.ToolStrip>. Use this method to draw the border of a <xref:System.Windows.Forms.ToolStrip> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=fullName> method, or to force the border of a <xref:System.Windows.Forms.ToolStrip> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the border of a <xref:System.Windows.Forms.ToolStrip> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
+ The <xref:System.Windows.Forms.ToolStripRenderer.DrawToolStripBorder%2A> method provides the entry point to the rendering code for the border of a <xref:System.Windows.Forms.ToolStrip>. Use this method to draw the border of a <xref:System.Windows.Forms.ToolStrip> when overriding the <xref:System.Windows.Forms.ToolStrip.OnPaint%2A?displayProperty=nameWithType> method, or to force the border of a <xref:System.Windows.Forms.ToolStrip> to be drawn in a custom <xref:System.Windows.Forms.ToolStripRenderer>. To change the way the border of a <xref:System.Windows.Forms.ToolStrip> is rendered, override the <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A> method in a class derived from <xref:System.Windows.Forms.ToolStripRenderer>.  
   
  ]]></format>
         </remarks>
@@ -557,6 +601,8 @@
       <MemberSignature Language="C#" Value="public void DrawToolStripContentPanelBackground (System.Windows.Forms.ToolStripContentPanelRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripContentPanelBackground(class System.Windows.Forms.ToolStripContentPanelRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawToolStripContentPanelBackground (e As ToolStripContentPanelRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawToolStripContentPanelBackground(System::Windows::Forms::ToolStripContentPanelRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -578,6 +624,8 @@
       <MemberSignature Language="C#" Value="public void DrawToolStripPanelBackground (System.Windows.Forms.ToolStripPanelRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripPanelBackground(class System.Windows.Forms.ToolStripPanelRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawToolStripPanelBackground (e As ToolStripPanelRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawToolStripPanelBackground(System::Windows::Forms::ToolStripPanelRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -599,6 +647,8 @@
       <MemberSignature Language="C#" Value="public void DrawToolStripStatusLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DrawToolStripStatusLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.DrawToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub DrawToolStripStatusLabelBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; void DrawToolStripStatusLabelBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -617,9 +667,10 @@
       </Docs>
     </Member>
     <Member MemberName="Initialize">
-      <MemberSignature Language="C#" Value="protected virtual void Initialize (System.Windows.Forms.ToolStrip toolStrip);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void Initialize (System.Windows.Forms.ToolStrip toolStrip);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Initialize(class System.Windows.Forms.ToolStrip toolStrip) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.Initialize(System.Windows.Forms.ToolStrip)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void Initialize(System::Windows::Forms::ToolStrip ^ toolStrip);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -638,16 +689,18 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Forms.ToolStripRenderer.Initialize%2A> method to set properties, such as the <xref:System.Windows.Forms.ToolStrip.BackColor%2A?displayProperty=fullName> or <xref:System.Windows.Forms.ToolStrip.Font%2A?displayProperty=fullName>, when a <xref:System.Windows.Forms.ToolStrip> is rendered.  
+ Use the <xref:System.Windows.Forms.ToolStripRenderer.Initialize%2A> method to set properties, such as the <xref:System.Windows.Forms.ToolStrip.BackColor%2A?displayProperty=nameWithType> or <xref:System.Windows.Forms.ToolStrip.Font%2A?displayProperty=nameWithType>, when a <xref:System.Windows.Forms.ToolStrip> is rendered.  
   
  ]]></format>
         </remarks>
       </Docs>
     </Member>
     <Member MemberName="InitializeContentPanel">
-      <MemberSignature Language="C#" Value="protected virtual void InitializeContentPanel (System.Windows.Forms.ToolStripContentPanel contentPanel);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void InitializeContentPanel (System.Windows.Forms.ToolStripContentPanel contentPanel);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializeContentPanel(class System.Windows.Forms.ToolStripContentPanel contentPanel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializeContentPanel(System.Windows.Forms.ToolStripContentPanel)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub InitializeContentPanel (contentPanel As ToolStripContentPanel)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void InitializeContentPanel(System::Windows::Forms::ToolStripContentPanel ^ contentPanel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -666,9 +719,11 @@
       </Docs>
     </Member>
     <Member MemberName="InitializeItem">
-      <MemberSignature Language="C#" Value="protected virtual void InitializeItem (System.Windows.Forms.ToolStripItem item);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void InitializeItem (System.Windows.Forms.ToolStripItem item);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializeItem(class System.Windows.Forms.ToolStripItem item) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializeItem(System.Windows.Forms.ToolStripItem)" />
+      <MemberSignature Language="VB.NET" Value="Protected Friend Overridable Sub InitializeItem (item As ToolStripItem)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void InitializeItem(System::Windows::Forms::ToolStripItem ^ item);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -687,7 +742,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Use the <xref:System.Windows.Forms.ToolStripRenderer.InitializeItem%2A> method to set properties, such as the <xref:System.Windows.Forms.ToolStripItem.BackColor%2A?displayProperty=fullName> or <xref:System.Windows.Forms.ToolStripItem.Font%2A?displayProperty=fullName>, when a <xref:System.Windows.Forms.ToolStripItem> is rendered.  
+ Use the <xref:System.Windows.Forms.ToolStripRenderer.InitializeItem%2A> method to set properties, such as the <xref:System.Windows.Forms.ToolStripItem.BackColor%2A?displayProperty=nameWithType> or <xref:System.Windows.Forms.ToolStripItem.Font%2A?displayProperty=nameWithType>, when a <xref:System.Windows.Forms.ToolStripItem> is rendered.  
   
    
   
@@ -702,9 +757,10 @@
       </Docs>
     </Member>
     <Member MemberName="InitializePanel">
-      <MemberSignature Language="C#" Value="protected virtual void InitializePanel (System.Windows.Forms.ToolStripPanel toolStripPanel);" />
+      <MemberSignature Language="C#" Value="protected internal virtual void InitializePanel (System.Windows.Forms.ToolStripPanel toolStripPanel);" />
       <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void InitializePanel(class System.Windows.Forms.ToolStripPanel toolStripPanel) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.InitializePanel(System.Windows.Forms.ToolStripPanel)" />
+      <MemberSignature Language="C++ CLI" Value="protected public:&#xA; virtual void InitializePanel(System::Windows::Forms::ToolStripPanel ^ toolStripPanel);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -726,6 +782,8 @@
       <MemberSignature Language="C#" Value="protected static int Offset2X;" />
       <MemberSignature Language="ILAsm" Value=".field family static int32 Offset2X" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripRenderer.Offset2X" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Offset2X As Integer " />
+      <MemberSignature Language="C++ CLI" Value="protected: static int Offset2X;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -743,6 +801,8 @@
       <MemberSignature Language="C#" Value="protected static int Offset2Y;" />
       <MemberSignature Language="ILAsm" Value=".field family static int32 Offset2Y" />
       <MemberSignature Language="DocId" Value="F:System.Windows.Forms.ToolStripRenderer.Offset2Y" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Offset2Y As Integer " />
+      <MemberSignature Language="C++ CLI" Value="protected: static int Offset2Y;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -760,6 +820,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderArrow (System.Windows.Forms.ToolStripArrowRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderArrow(class System.Windows.Forms.ToolStripArrowRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderArrow(System.Windows.Forms.ToolStripArrowRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderArrow (e As ToolStripArrowRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderArrow(System::Windows::Forms::ToolStripArrowRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -778,7 +840,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderArrow%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -793,6 +855,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -811,7 +875,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderButtonBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -834,6 +898,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderDropDownButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderDropDownButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderDropDownButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderDropDownButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -852,7 +918,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderDropDownButtonBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -867,6 +933,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderGrip (System.Windows.Forms.ToolStripGripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderGrip(class System.Windows.Forms.ToolStripGripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderGrip(System.Windows.Forms.ToolStripGripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderGrip (e As ToolStripGripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderGrip(System::Windows::Forms::ToolStripGripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -885,7 +953,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderGrip%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -900,6 +968,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderImageMargin (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderImageMargin(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderImageMargin (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderImageMargin(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -918,7 +988,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderImageMargin%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -933,6 +1003,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderItemBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderItemBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -951,7 +1023,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -966,6 +1038,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderItemCheck (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemCheck(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderItemCheck (e As ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderItemCheck(System::Windows::Forms::ToolStripItemImageRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -984,7 +1058,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemCheck%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -999,6 +1073,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderItemImage (System.Windows.Forms.ToolStripItemImageRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemImage(class System.Windows.Forms.ToolStripItemImageRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderItemImage (e As ToolStripItemImageRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderItemImage(System::Windows::Forms::ToolStripItemImageRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1017,7 +1093,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemImage%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1032,6 +1108,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderItemText (System.Windows.Forms.ToolStripItemTextRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderItemText(class System.Windows.Forms.ToolStripItemTextRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderItemText (e As ToolStripItemTextRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderItemText(System::Windows::Forms::ToolStripItemTextRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1050,7 +1128,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderItemText%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1065,6 +1143,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderLabelBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderLabelBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1083,7 +1163,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderLabelBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1098,6 +1178,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderMenuItemBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderMenuItemBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderMenuItemBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderMenuItemBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1116,7 +1198,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderMenuItemBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1131,6 +1213,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderOverflowButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderOverflowButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderOverflowButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderOverflowButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1149,7 +1233,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderOverflowButtonBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1164,6 +1248,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderSeparator (System.Windows.Forms.ToolStripSeparatorRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderSeparator(class System.Windows.Forms.ToolStripSeparatorRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderSeparator (e As ToolStripSeparatorRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderSeparator(System::Windows::Forms::ToolStripSeparatorRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1182,7 +1268,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSeparator%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1197,6 +1283,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderSplitButtonBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderSplitButtonBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderSplitButtonBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderSplitButtonBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1215,7 +1303,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderSplitButtonBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1230,6 +1318,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderStatusStripSizingGrip (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderStatusStripSizingGrip(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderStatusStripSizingGrip (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderStatusStripSizingGrip(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1248,7 +1338,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderStatusStripSizingGrip%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1263,6 +1353,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripBackground (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripBackground(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderToolStripBackground (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderToolStripBackground(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1281,7 +1373,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1304,6 +1396,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripBorder (System.Windows.Forms.ToolStripRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripBorder(class System.Windows.Forms.ToolStripRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderToolStripBorder (e As ToolStripRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderToolStripBorder(System::Windows::Forms::ToolStripRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1322,7 +1416,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripBorder%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1345,6 +1439,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripContentPanelBackground (System.Windows.Forms.ToolStripContentPanelRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripContentPanelBackground(class System.Windows.Forms.ToolStripContentPanelRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground(System.Windows.Forms.ToolStripContentPanelRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderToolStripContentPanelBackground (e As ToolStripContentPanelRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderToolStripContentPanelBackground(System::Windows::Forms::ToolStripContentPanelRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1363,7 +1459,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripContentPanelBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1378,6 +1474,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripPanelBackground (System.Windows.Forms.ToolStripPanelRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripPanelBackground(class System.Windows.Forms.ToolStripPanelRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground(System.Windows.Forms.ToolStripPanelRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderToolStripPanelBackground (e As ToolStripPanelRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderToolStripPanelBackground(System::Windows::Forms::ToolStripPanelRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1396,7 +1494,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripPanelBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1411,6 +1509,8 @@
       <MemberSignature Language="C#" Value="protected virtual void OnRenderToolStripStatusLabelBackground (System.Windows.Forms.ToolStripItemRenderEventArgs e);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRenderToolStripStatusLabelBackground(class System.Windows.Forms.ToolStripItemRenderEventArgs e) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub OnRenderToolStripStatusLabelBackground (e As ToolStripItemRenderEventArgs)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void OnRenderToolStripStatusLabelBackground(System::Windows::Forms::ToolStripItemRenderEventArgs ^ e);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1429,7 +1529,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Raising an event invokes the event handler through a delegate. For more information, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ Raising an event invokes the event handler through a delegate. For more information, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
  The <xref:System.Windows.Forms.ToolStripRenderer.OnRenderToolStripStatusLabelBackground%2A> method also allows derived classes to handle the event without attaching a delegate. This is the preferred technique for handling the event in a derived class.  
   
@@ -1444,6 +1544,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripArrowRenderEventHandler RenderArrow;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripArrowRenderEventHandler RenderArrow" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderArrow" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderArrow As ToolStripArrowRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripArrowRenderEventHandler ^ RenderArrow;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1458,7 +1560,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1478,6 +1580,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderButtonBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderButtonBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderButtonBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderButtonBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1492,7 +1596,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1512,6 +1616,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderDropDownButtonBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderDropDownButtonBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderDropDownButtonBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderDropDownButtonBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderDropDownButtonBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1526,7 +1632,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1546,6 +1652,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripGripRenderEventHandler RenderGrip;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripGripRenderEventHandler RenderGrip" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderGrip" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderGrip As ToolStripGripRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripGripRenderEventHandler ^ RenderGrip;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1560,7 +1668,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1580,6 +1688,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderImageMargin;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderImageMargin" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderImageMargin" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderImageMargin As ToolStripRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripRenderEventHandler ^ RenderImageMargin;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1594,7 +1704,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1614,6 +1724,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderItemBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderItemBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderItemBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderItemBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1628,7 +1740,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1648,6 +1760,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemCheck;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemCheck" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemCheck" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderItemCheck As ToolStripItemImageRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemImageRenderEventHandler ^ RenderItemCheck;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1662,7 +1776,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1682,6 +1796,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemImage;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemImageRenderEventHandler RenderItemImage" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemImage" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderItemImage As ToolStripItemImageRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemImageRenderEventHandler ^ RenderItemImage;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1696,7 +1812,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1716,6 +1832,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemTextRenderEventHandler RenderItemText;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemTextRenderEventHandler RenderItemText" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderItemText" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderItemText As ToolStripItemTextRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemTextRenderEventHandler ^ RenderItemText;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1730,7 +1848,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1750,6 +1868,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderLabelBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderLabelBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderLabelBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderLabelBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderLabelBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1764,7 +1884,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1784,6 +1904,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderMenuItemBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderMenuItemBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderMenuItemBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderMenuItemBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderMenuItemBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1798,7 +1920,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1818,6 +1940,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderOverflowButtonBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderOverflowButtonBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderOverflowButtonBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderOverflowButtonBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderOverflowButtonBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1832,7 +1956,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1852,6 +1976,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripSeparatorRenderEventHandler RenderSeparator;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripSeparatorRenderEventHandler RenderSeparator" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderSeparator" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderSeparator As ToolStripSeparatorRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripSeparatorRenderEventHandler ^ RenderSeparator;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1866,7 +1992,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1886,6 +2012,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderSplitButtonBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderSplitButtonBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderSplitButtonBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderSplitButtonBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderSplitButtonBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1900,7 +2028,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1920,6 +2048,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderStatusStripSizingGrip;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderStatusStripSizingGrip" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderStatusStripSizingGrip" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderStatusStripSizingGrip As ToolStripRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripRenderEventHandler ^ RenderStatusStripSizingGrip;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1934,7 +2064,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1954,6 +2084,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderToolStripBackground As ToolStripRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripRenderEventHandler ^ RenderToolStripBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -1968,7 +2100,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -1988,6 +2120,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBorder;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripRenderEventHandler RenderToolStripBorder" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderToolStripBorder As ToolStripRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripRenderEventHandler ^ RenderToolStripBorder;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -2002,7 +2136,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -2022,6 +2156,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripContentPanelRenderEventHandler RenderToolStripContentPanelBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripContentPanelRenderEventHandler RenderToolStripContentPanelBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripContentPanelBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderToolStripContentPanelBackground As ToolStripContentPanelRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripContentPanelRenderEventHandler ^ RenderToolStripContentPanelBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -2036,7 +2172,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -2056,6 +2192,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripPanelRenderEventHandler RenderToolStripPanelBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripPanelRenderEventHandler RenderToolStripPanelBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripPanelBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderToolStripPanelBackground As ToolStripPanelRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripPanelRenderEventHandler ^ RenderToolStripPanelBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -2070,7 +2208,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -2090,6 +2228,8 @@
       <MemberSignature Language="C#" Value="public event System.Windows.Forms.ToolStripItemRenderEventHandler RenderToolStripStatusLabelBackground;" />
       <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.ToolStripItemRenderEventHandler RenderToolStripStatusLabelBackground" />
       <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripRenderer.RenderToolStripStatusLabelBackground" />
+      <MemberSignature Language="VB.NET" Value="Public Custom Event RenderToolStripStatusLabelBackground As ToolStripItemRenderEventHandler " />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; event System::Windows::Forms::ToolStripItemRenderEventHandler ^ RenderToolStripStatusLabelBackground;" />
       <MemberType>Event</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>
@@ -2104,7 +2244,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For more information about handling events, see [Events](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f).  
+ For more information about handling events, see [Handling and Raising Events](~/docs/standard/events/index.md).  
   
    
   
@@ -2124,6 +2264,8 @@
       <MemberSignature Language="C#" Value="protected static void ScaleArrowOffsetsIfNeeded ();" />
       <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig void ScaleArrowOffsetsIfNeeded() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripRenderer.ScaleArrowOffsetsIfNeeded" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Sub ScaleArrowOffsetsIfNeeded ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static void ScaleArrowOffsetsIfNeeded();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Windows.Forms</AssemblyName>

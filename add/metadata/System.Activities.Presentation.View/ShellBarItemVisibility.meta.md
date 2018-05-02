@@ -1,6 +1,8 @@
 ---
 uid: System.Activities.Presentation.View.ShellBarItemVisibility
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+ms.technology: 
+  - "dotnet-standard"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
 ---

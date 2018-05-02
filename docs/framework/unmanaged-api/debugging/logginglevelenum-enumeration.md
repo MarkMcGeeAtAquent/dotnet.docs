@@ -1,30 +1,33 @@
 ---
-title: "LoggingLevelEnum Enumeration | Microsoft Docs"
+title: "LoggingLevelEnum Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "LoggingLevelEnum"
-apilocation: 
+api_location: 
   - "mscordbi.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "LoggingLevelEnum"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "LoggingLevelEnum enumeration [.NET Framework debugging]"
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
+topic_type: 
+  - "apiref"
 caps.latest.revision: 10
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # LoggingLevelEnum Enumeration
 Indicates the severity level of a descriptive message that is written to the event log when a managed thread logs an event.  
@@ -80,5 +83,5 @@ typedef enum LoggingLevelEnum {
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## See Also  
- <xref:System.Diagnostics.EventLog>   
+ <xref:System.Diagnostics.EventLog>  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

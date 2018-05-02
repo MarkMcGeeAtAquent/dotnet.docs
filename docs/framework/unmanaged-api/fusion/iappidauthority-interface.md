@@ -1,5 +1,5 @@
 ---
-title: "IAppIdAuthority Interface | Microsoft Docs"
+title: "IAppIdAuthority Interface"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IAppIdAuthority"
-apilocation: 
+api_location: 
   - "fusion.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IAppIdAuthority"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IAppIdAuthority interface [.NET Framework fusion]"
 ms.assetid: ec354fa1-1efd-41b0-bc43-b90597b6e253
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IAppIdAuthority Interface
 Provides methods that generate and compare keys for application identities and references.  

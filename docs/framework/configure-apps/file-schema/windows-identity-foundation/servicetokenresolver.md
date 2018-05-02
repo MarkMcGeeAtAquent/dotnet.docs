@@ -1,7 +1,8 @@
 ---
-title: "&lt;serviceTokenResolver&gt; | Microsoft Docs"
+title: "&lt;serviceTokenResolver&gt;"
 ms.custom: ""
 ms.date: "03/30/2017"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -13,6 +14,8 @@ caps.latest.revision: 8
 author: "BrucePerlerMS"
 ms.author: "bruceper"
 manager: "mbaldwin"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;serviceTokenResolver&gt;
 Registers the service token resolver that is used by handlers in the token handler collection. The service token resolver is used to resolve the encryption token on incoming tokens and messages.  
@@ -25,17 +28,17 @@ Registers the service token resolver that is used by handlers in the token handl
   
 ## Syntax  
   
-```  
-\<system.identityModel>  
-  <identityConfiguration>  
-    <securityTokenHandlers>  
-      <securityTokenHandlerConfiguration>  
-        \<serviceTokenResolver type=xs:string>  
-        </serviceTokenResolver>  
-      </securityTokenHandlerConfiguration>  
-    </securityTokenHandlers>  
-  </identityConfiguration>  
-\</system.identityModel>  
+```xml  
+<system.identityModel>  
+  <identityConfiguration>  
+    <securityTokenHandlers>  
+      <securityTokenHandlerConfiguration>  
+        <serviceTokenResolver type=xs:string>  
+        </serviceTokenResolver>  
+      </securityTokenHandlerConfiguration>  
+    </securityTokenHandlers>  
+  </identityConfiguration>  
+</system.identityModel>  
 ```  
   
 ## Attributes and Elements  
@@ -66,6 +69,6 @@ Registers the service token resolver that is used by handlers in the token handl
   
 ## Example  
   
-```  
+```xml  
 <serviceTokenResolver type="MyNamespace.CustomTokenResolver, MyAssembly" />  
 ```

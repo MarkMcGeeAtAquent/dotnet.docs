@@ -1,21 +1,26 @@
 ---
-title: "Working with Certificates | Microsoft Docs"
+title: "Working with Certificates"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
+dev_langs: 
+  - "csharp"
+  - "vb"
 helpviewer_keywords: 
   - "certificates [WCF]"
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
 caps.latest.revision: 26
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Working with Certificates
 To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.509 digital certificates are commonly used to authenticate clients and servers, encrypt, and digitally sign messages. This topic briefly explains X.509 digital certificate features and how to use them in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], and includes links to topics that explain these concepts further or that show how to accomplish common tasks using [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] and certificates.  
@@ -27,7 +32,7 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
  Certificates must be issued by a certification authority, which is often a third-party  issuer of certificates. On a Windows domain, a certification authority is included that can be used to issue certificates to computers on the domain.  
   
 ## Viewing Certificates  
- To work with certificates, it is often necessary to view them and examine their properties. This is easily done with the Microsoft Management Console (MMC) snap-in tool. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
+ To work with certificates, it is often necessary to view them and examine their properties. This is easily done with the Microsoft Management Console (MMC) snap-in tool. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [How to: View Certificates with the MMC Snap-in](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).  
   
 ## Certificate Stores  
  Certificates are found in stores. Two major store locations exist that are further divided into sub-stores. If you are the administrator on a computer, you can view both major stores by using the MMC snap-in tool. Non-administrators can view only the current user store.  
@@ -70,10 +75,10 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
   
 |Class|Property|  
 |-----------|--------------|  
-|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=fullName>|  
-|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=fullName>|  
-|<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A?displayProperty=fullName>|  
-|<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>|<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A?displayProperty=fullName>|  
+|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|  
+|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|  
+|<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|  
+|<xref:System.ServiceModel.Security.IssuedTokenServiceCredential>|<xref:System.ServiceModel.Security.IssuedTokenServiceCredential.CertificateValidationMode%2A?displayProperty=nameWithType>|  
   
  You can also set the property using configuration. The following elements are used to specify the validation mode:  
   
@@ -84,9 +89,9 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
 -   [\<messageSenderAuthentication>](../../../../docs/framework/configure-apps/file-schema/wcf/messagesenderauthentication-element.md)  
   
 ## Custom Authentication  
- The `CertificateValidationMode` property also enables you to customize how certificates are authenticated. By default, the level is set to `ChainTrust`. To use the <xref:System.ServiceModel.Security.X509CertificateValidationMode> value, you must also set the `CustomCertificateValidatorType` attribute to an assembly and type used to validate the certificate. To create a custom validator, you must inherit from the abstract <xref:System.IdentityModel.Selectors.X509CertificateValidator> class.  
+ The `CertificateValidationMode` property also enables you to customize how certificates are authenticated. By default, the level is set to `ChainTrust`. To use the <xref:System.ServiceModel.Security.X509CertificateValidationMode.Custom> value, you must also set the `CustomCertificateValidatorType` attribute to an assembly and type used to validate the certificate. To create a custom validator, you must inherit from the abstract <xref:System.IdentityModel.Selectors.X509CertificateValidator> class.  
   
- When creating a custom authenticator, the most important method to override is the <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> method. For an example of custom authentication, see the [X.509 Certificate Validator](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) sample. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)][Custom Credential and Credential Validation](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
+ When creating a custom authenticator, the most important method to override is the <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> method. For an example of custom authentication, see the [X.509 Certificate Validator](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) sample. [!INCLUDE[crdefault](../../../../includes/crdefault-md.md)] [Custom Credential and Credential Validation](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
 ## Using Makecert.exe to Build a Certificate Chain  
  The Certificate Creation Tool (Makecert.exe) creates X.509 certificates and private key/public key pairs. You can save the private key to disk and then use it to issue and sign new certificates, thus simulating a hierarchy of chained certificates. The tool is intended for use only as an aid when developing services and should never be used to create certificates for actual deployment. When developing an [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service, use the following steps to build a chain of trust with Makecert.exe.  
@@ -143,7 +148,7 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
  [!code-vb[c_WorkingWithCertificates#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_workingwithcertificates/vb/source.vb#1)]  
   
 ### Multiple Certificates with the Same Value  
- A store may contain multiple certificates with the same subject name. This means that if you specify that the `x509FindType` is <xref:System.Security.Cryptography.X509Certificates.X509FindType> or <xref:System.Security.Cryptography.X509Certificates.X509FindType>, and more than one certificate has the same value, an exception is thrown becausethereisno way to distinguish which certificate is required. You can mitigate this by setting the `x509FindType` to <xref:System.Security.Cryptography.X509Certificates.X509FindType>. The thumbprint field contains a unique value that can be used to find a specific certificate in a store. However, this has its own disadvantage: if the certificate is revoked or renewed, the `SetCertificate` method fails because the thumbprint is also gone. Or, if the certificate is no longer valid, authentication fails. The way to mitigate this is to set the `x590FindType` parameter to <xref:System.Security.Cryptography.X509Certificates.X509FindType> and specify the issuer's name. If no particular issuer is required, you can also set one of the other <xref:System.Security.Cryptography.X509Certificates.X509FindType> enumeration values, such as <xref:System.Security.Cryptography.X509Certificates.X509FindType>.  
+ A store may contain multiple certificates with the same subject name. This means that if you specify that the `x509FindType` is <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> or <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectDistinguishedName>, and more than one certificate has the same value, an exception is thrown becausethereisno way to distinguish which certificate is required. You can mitigate this by setting the `x509FindType` to <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint>. The thumbprint field contains a unique value that can be used to find a specific certificate in a store. However, this has its own disadvantage: if the certificate is revoked or renewed, the `SetCertificate` method fails because the thumbprint is also gone. Or, if the certificate is no longer valid, authentication fails. The way to mitigate this is to set the `x590FindType` parameter to <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByIssuerName> and specify the issuer's name. If no particular issuer is required, you can also set one of the other <xref:System.Security.Cryptography.X509Certificates.X509FindType> enumeration values, such as <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByTimeValid>.  
   
 ## Certificates in Configuration  
  You can also set certificates by using configuration. If you are creating a service, credentials, including certificates, are specified under the [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md). When you are programming a client, certificates are specified under the [\<endpointBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md).  
@@ -155,7 +160,7 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
   
  With this capability enabled, you can set the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> property of the <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> class to `true`. In configuration, you can set the `mapClientCertificateToWindowsAccount` attribute of the [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) element to `true`, as shown in the following code.  
   
-```  
+```xml  
 <serviceBehaviors>  
  <behavior name="MappingBehavior">  
   <serviceCredentials>  
@@ -174,8 +179,8 @@ To program [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] security, X.5
  In the first release of [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], mapping is done without consulting the domain policy. Therefore it is possible that older applications that used to work when running under the first release, fails if the mapping is enabled and the X.509 certificate does not satisfy the domain policy.  
   
 ## See Also  
- <xref:System.ServiceModel.Channels>   
- <xref:System.ServiceModel.Security>   
- <xref:System.ServiceModel>   
- <xref:System.Security.Cryptography.X509Certificates.X509FindType>   
+ <xref:System.ServiceModel.Channels>  
+ <xref:System.ServiceModel.Security>  
+ <xref:System.ServiceModel>  
+ <xref:System.Security.Cryptography.X509Certificates.X509FindType>  
  [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

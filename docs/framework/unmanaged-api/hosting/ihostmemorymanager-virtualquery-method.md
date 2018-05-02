@@ -1,5 +1,5 @@
 ---
-title: "IHostMemoryManager::VirtualQuery Method | Microsoft Docs"
+title: "IHostMemoryManager::VirtualQuery Method"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,23 +9,26 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "IHostMemoryManager.VirtualQuery"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "IHostMemoryManager::VirtualQuery"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "IHostMemoryManager::VirtualQuery method [.NET Framework hosting]"
   - "VirtualQuery method [.NET Framework hosting]"
 ms.assetid: 757af1e6-b9e8-49e7-b5db-342be3aa205f
+topic_type: 
+  - "apiref"
 caps.latest.revision: 11
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # IHostMemoryManager::VirtualQuery Method
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualQuery` retrieves information about a range of pages in the virtual address space of the calling process.  

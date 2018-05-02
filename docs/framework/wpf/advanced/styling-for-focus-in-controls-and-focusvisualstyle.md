@@ -1,5 +1,5 @@
 ---
-title: "Styling for Focus in Controls, and FocusVisualStyle | Microsoft Docs"
+title: "Styling for Focus in Controls, and FocusVisualStyle"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -10,14 +10,16 @@ ms.technology:
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 helpviewer_keywords: 
-  - "keyboard focus"
-  - "focus, visual styling"
-  - "styles, focus visual style"
+  - "keyboard focus [WPF]"
+  - "focus [WPF], visual styling"
+  - "styles [WPF], focus visual style"
 ms.assetid: 786ac576-011b-4d72-913b-558deccb9b35
 caps.latest.revision: 10
 author: dotnet-bot
 ms.author: dotnetcontent
 manager: "wpickett"
+ms.workload: 
+  - dotnet
 ---
 # Styling for Focus in Controls, and FocusVisualStyle
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] provides two parallel mechanisms for changing the visual appearance of a control when it receives keyboard focus. The first mechanism is to use property setters for properties such as <xref:System.Windows.UIElement.IsKeyboardFocused%2A> within the style or template that is applied to the control. The second mechanism is to provide a separate style as the value of the <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A> property; the "focus visual style" creates a separate visual tree for an adorner that draws on top of the control, rather than changing the visual tree of the control or other UI element by replacing it. This topic discusses the scenarios where each of these mechanisms is appropriate.  
@@ -38,16 +40,16 @@ manager: "wpickett"
  In the themes, the default focus visual style is generally very simple. The following is a rough approximation:  
   
 ```  
-\<Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}">  
+<Style x:Key="{x:Static SystemParameters.FocusVisualStyleKey}">  
   <Setter Property="Control.Template">  
-    \<Setter.Value>  
+    <Setter.Value>  
       <ControlTemplate>  
         <Rectangle StrokeThickness="1"  
           Stroke="Black"  
           StrokeDashArray="1 2"  
           SnapsToDevicePixels="true"/>  
       </ControlTemplate>  
-    \</Setter.Value>  
+    </Setter.Value>  
   </Setter>  
 </Style>  
 ```  
@@ -83,7 +85,7 @@ manager: "wpickett"
  If you want all possible causes of changing focus to produce a visual behavior, you should base a setter or trigger on the <xref:System.Windows.UIElement.IsFocused%2A> dependency property, or alternatively on the <xref:System.Windows.UIElement.GotFocus> or <xref:System.Windows.UIElement.LostFocus> events used for an <xref:System.Windows.EventSetter>.  
   
 ## See Also  
- <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>   
- [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)   
- [Focus Overview](../../../../docs/framework/wpf/advanced/focus-overview.md)   
+ <xref:System.Windows.FrameworkElement.FocusVisualStyle%2A>  
+ [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)  
+ [Focus Overview](../../../../docs/framework/wpf/advanced/focus-overview.md)  
  [Input Overview](../../../../docs/framework/wpf/advanced/input-overview.md)

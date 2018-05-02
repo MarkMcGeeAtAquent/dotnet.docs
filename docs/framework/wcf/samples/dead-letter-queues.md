@@ -1,8 +1,8 @@
 ---
-title: "Dead Letter Queues | Microsoft Docs"
+title: "Dead Letter Queues"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -11,9 +11,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
 caps.latest.revision: 35
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # Dead Letter Queues
 This sample demonstrates how to handle and process messages that have failed delivery. It is based on the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) sample. This sample uses the `netMsmqBinding` binding. The service is a self-hosted console application to enable you to observe the service receiving queued messages.  
@@ -53,7 +55,6 @@ public interface IOrderProcessor
     [OperationContract(IsOneWay = true)]  
     void SubmitPurchaseOrder(PurchaseOrder po);  
 }  
-  
 ```  
   
  The service code in the sample is that of the [Transacted MSMQ Binding](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md).  
@@ -122,7 +123,7 @@ class Client
   
  The application must define which queue to use as its dead-letter queue. If no queue is specified, the default system-wide transactional dead-letter queue is used to queue dead messages. In this example, the client application specifies its own application dead-letter queue.  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <appSettings>  
@@ -151,7 +152,6 @@ class Client
   </system.serviceModel>  
   
 </configuration>  
-  
 ```  
   
  The dead-letter message service reads messages from the dead-letter queue. The dead-letter message service implements the `IOrderProcessor` contract. Its implementation however is not to process orders. The dead-letter message service is a client service and does not have the facility to process orders.  
@@ -175,7 +175,6 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
     Console.WriteLine();  
     ….  
 }  
-  
 ```  
   
  Messages in the dead-letter queue are messages that are addressed to the service that is processing the message. Therefore, when the dead-letter message service reads messages from the queue, the [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] channel layer finds the mismatch in endpoints and does not dispatch the message. In this case, the message is addressed to the order processing service but is received by the dead-letter message service. To receive a message that is addressed to a different endpoint, an address filter to match any address is specified in the `ServiceBehavior`. This is required to successfully process messages that are read from the dead-letter queue.  
@@ -239,7 +238,7 @@ public class PurchaseOrderDLQService : IOrderProcessor
   
  The following sample shows the configuration for a dead-letter message:  
   
-```  
+```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
   <system.serviceModel>  
@@ -272,7 +271,6 @@ public class PurchaseOrderDLQService : IOrderProcessor
     </bindings>  
   </system.serviceModel>  
 </configuration>  
-  
 ```  
   
  In running the sample, there are 3 executables to run to see how the dead-letter queue works for each application; the client, service and a dead-letter service that reads from the dead-letter queue for each application and resends the message to the service. All are console applications with output in console windows.  
@@ -301,13 +299,11 @@ Message Delivery Failure: ReachQueueTimeout
 Purchase order Time To Live expired  
 Trying to resend the message  
 Purchase order resent  
-  
 ```  
   
  The service starts and then reads the resent message and processes it.  
   
 ```  
-  
 The service is ready.  
 Press <ENTER> to terminate service.  
   
@@ -318,7 +314,6 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
                 Order LineItem: 890 of Red Widget @unit price: $45.89  
         Total cost of this order: $42461.56  
         Order status: Pending  
-  
 ```  
   
 ### To set up, build, and run the sample  
@@ -345,7 +340,7 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
   
 1.  If your computer is not part of a domain, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:  
   
-    ```  
+    ```xml  
     <bindings>  
         <netMsmqBinding>  
             <binding name="TransactedBinding">  

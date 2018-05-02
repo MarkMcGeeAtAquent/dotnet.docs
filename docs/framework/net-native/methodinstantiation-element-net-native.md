@@ -1,5 +1,5 @@
 ---
-title: "&lt;MethodInstantiation&gt; Element (.NET Native) | Microsoft Docs"
+title: "&lt;MethodInstantiation&gt; Element (.NET Native)"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -14,6 +14,8 @@ caps.latest.revision: 17
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;MethodInstantiation&gt; Element (.NET Native)
 Applies runtime reflection policy to a constructed generic method.  
@@ -21,13 +23,11 @@ Applies runtime reflection policy to a constructed generic method.
 ## Syntax  
   
 ```xml  
-  
 <MethodInstantiation Name="method_name"  
                      Signature="method_signature"  
                      Arguments="method_arguments"  
                      Browse="policy_type"  
                      Dynamic="policy_type" />  
-  
 ```  
   
 ## Attributes and Elements  
@@ -81,7 +81,7 @@ Applies runtime reflection policy to a constructed generic method.
  The `<MethodInstantiation>` element overrides the runtime reflection policy of its corresponding open generic method.  
   
 ## See Also  
- [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)   
- [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)   
- [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)   
+ [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  
+ [Runtime Directive Elements](../../../docs/framework/net-native/runtime-directive-elements.md)  
+ [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md)  
  [\<Method> Element](../../../docs/framework/net-native/method-element-net-native.md)

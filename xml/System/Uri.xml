@@ -1,13 +1,16 @@
-<Type Name="Uri" FullName="System.Uri">
+﻿<Type Name="Uri" FullName="System.Uri">
   <TypeSignature Language="C#" Value="public class Uri : System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Uri extends System.Object implements class System.Runtime.Serialization.ISerializable" />
   <TypeSignature Language="DocId" Value="T:System.Uri" />
+  <TypeSignature Language="VB.NET" Value="Public Class Uri&#xA;Implements ISerializable" />
+  <TypeSignature Language="C++ CLI" Value="public ref class Uri : System::Runtime::Serialization::ISerializable" />
   <AssemblyInfo>
     <AssemblyName>System.Runtime</AssemblyName>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <AssemblyVersion>4.0.10.0</AssemblyVersion>
     <AssemblyVersion>4.0.20.0</AssemblyVersion>
     <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </AssemblyInfo>
   <AssemblyInfo>
     <AssemblyName>System</AssemblyName>
@@ -51,50 +54,36 @@
   
 -   If the host name is an IPv6 address, the canonical IPv6 address is used. ScopeId and other optional IPv6 data are removed.  
   
--   Removes default and empty port numbers.  
-  
--   Canonicalizes the path for hierarchical URIs by compacting sequences such as /./, /../, //, including escaped representations. Note that there are some schemes for which escaped representations are not compacted.  
+-   Removes default and empty port numbers.
+
+-   Escaped characters (also known as percent-encoded octets) that don't have a reserved purpose are decoded (also known as being unescaped). These unreserved characters include uppercase and lowercase letters (%41-%5A and %61-%7A), decimal digits (%30-%39), hyphen (%2D), period (%2E), underscore (%5F), and tilde (%7E).
+
+-   Canonicalizes the path for hierarchical URIs by compacting sequences such as /./, /../, and // (whether or not the sequence is escaped). Note that there are some schemes for which these sequences are not compacted.
   
 -   For hierarchical URIs, if the host is not terminated with a forward slash (/), one is added.  
   
--   By default, any reserved characters in the URI are escaped in accordance with RFC 2396. This behavior changes if International Resource Identifiers or International Domain Name parsing is enabled in which case reserved characters in the URI are escaped in accordance with RFC 3986 and RFC 3987.  
-  
- As part of canonicalization in the constructor for some schemes, escaped representations are compacted. The schemes for which URI will compact escaped sequences include the following: file, http, https, net.pipe, and net.tcp. For all other schemes, escaped sequences are not compacted. For example: if you percent encode the two dots ".." as "%2E%2E" then the URI constructor will compact this sequence for some schemes. For example, the following code sample shows a URI constructor for the http scheme.  
+-   By default, any reserved characters in the URI are escaped in accordance with RFC 2396. This behavior changes if International Resource Identifiers or International Domain Name parsing is enabled in which case reserved characters in the URI are escaped in accordance with RFC 3986 and RFC 3987.
+
+ As part of canonicalization in the constructor for some schemes, dot-segments and empty segments (/./, /../, and //) are compacted (in other words, they are removed). The schemes for which URI will compact these sequences include http, https, tcp, net.pipe, and net.tcp. For some other schemes, these sequences are not compacted. Here's how this compacting looks in practice.
   
 ```  
-  
-Uri uri = new Uri("http://myUrl/%2E%2E/%2E%2E");  
+var uri = new Uri("http://myUrl/../.."); // http scheme, unescaped
+OR
+var uri = new Uri("http://myUrl/%2E%2E/%2E%2E"); // http scheme, escaped
+OR
+var uri = new Uri("ftp://myUrl/../.."); // ftp scheme, unescaped
+OR
+var uri = new Uri("ftp://myUrl/%2E%2E/%2E%2E"); // ftp scheme, escaped
+
 Console.WriteLine(uri.AbsoluteUri);  
 Console.WriteLine(uri.PathAndQuery);  
-  
 ```  
   
- When this code is executed, it returns the following output with the escaped sequence compacted.  
-  
+ When this code is executed, it returns the following output, with the escaped sequences unescaped if necessary and then compacted.
+
 ```  
-  
 http://myUrl/  
 /  
-  
-```  
-  
- The following code example shows a URI constructor for the ftp scheme:  
-  
-```  
-  
-Uri uri = new Uri("ftp://myUrl/%2E%2E/%2E%2E");  
-Console.WriteLine(uri.AbsoluteUri);  
-Console.WriteLine(uri.PathAndQuery);  
-  
-```  
-  
- When this code is executed, it returns the following output with the escaped sequence not compacted.  
-  
-```  
-  
-ftp://myUrl/%2E%2E/%2E%2E  
-/%2E%2E/%2E%2E  
-  
 ```  
   
  You can transform the contents of the <xref:System.Uri> class from an escape encoded URI reference to a readable URI reference by using the <xref:System.Uri.ToString%2A> method. Note that some reserved characters might still be escaped in the output of the <xref:System.Uri.ToString%2A> method. This is to support unambiguous reconstruction of a URI from the value returned by <xref:System.Uri.ToString%2A>.  
@@ -123,7 +112,7 @@ ftp://myUrl/%2E%2E/%2E%2E
   
  To enable support for IRI, the following change is required:  
   
--   Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied. This can be done in the machine.config or in the app.config file. For example, add the following:  
+-   Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied. This can be done in the *machine.config* or in the *app.config* file. For example, add the following:  
   
     ```  
     <configuration>  
@@ -134,11 +123,11 @@ ftp://myUrl/%2E%2E/%2E%2E
     </configuration>  
     ```  
   
- Users of .NET Framework 4.5 and newer always have IRI enabled. IRI parsing cannot be changed using a .config file.  
+ Users of .NET Framework 4.5 and newer always have IRI enabled. IRI parsing cannot be changed using a *.config* file.  
   
  Enabling IDN will convert all Unicode labels in a domain name to their Punycode equivalents. Punycode names contain only ASCII characters and always start with the xn-- prefix. The reason for this is to support existing DNS servers on the Internet, since most DNS servers only support ASCII characters (see RFC 3940).  
   
- Enabling IRI and IDN affects the value of the <xref:System.Uri.DnsSafeHost%2A?displayProperty=fullName> property. Enabling IRI and IDN can also change the behavior of the <xref:System.Uri.Equals%2A>, <xref:System.Uri.OriginalString%2A>, <xref:System.Uri.GetComponents%2A>, and <xref:System.Uri.IsWellFormedOriginalString%2A> methods.  
+ Enabling IRI and IDN affects the value of the <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> property. Enabling IRI and IDN can also change the behavior of the <xref:System.Uri.Equals%2A>, <xref:System.Uri.OriginalString%2A>, <xref:System.Uri.GetComponents%2A>, and <xref:System.Uri.IsWellFormedOriginalString%2A> methods.  
   
  There are three possible values for IDN depending on the DNS servers that are used:  
   
@@ -154,18 +143,18 @@ ftp://myUrl/%2E%2E/%2E%2E
   
      This value will not convert any Unicode domain names to use Punycode. This is the default value which is consistent with the .NET Framework 2.0 behaviour.  
   
- When IRI parsing is enabled (iriParsing enabled = `true`) normalization and character checking are done according to the latest IRI rules in RFC 3986 and RFC 3987. When IRI parsing is disabled, normalization and character checking are performed according to RFC 2396 and RFC 2732 (for IPv6 literals).  In versions of the .NET Framework before version 4.5, the default value is `false`. In .NET Framework version 4.5 and newer, the default value is `true`, and the enabled state of IRI parsing cannot be modified by settings in a .config file.  
+ When IRI parsing is enabled (iriParsing enabled = `true`) normalization and character checking are done according to the latest IRI rules in RFC 3986 and RFC 3987. When IRI parsing is disabled, normalization and character checking are performed according to RFC 2396 and RFC 2732 (for IPv6 literals).  In versions of the .NET Framework before version 4.5, the default value is `false`. In .NET Framework version 4.5 and newer, the default value is `true`, and the enabled state of IRI parsing cannot be modified by settings in a *.config* file.  
   
- IRI and IDN processing in the <xref:System.Uri> class can also be controlled using the <xref:System.Configuration.IriParsingElement?displayProperty=fullName>, <xref:System.Configuration.IdnElement?displayProperty=fullName>, and <xref:System.Configuration.UriSection?displayProperty=fullName> configuration setting classes. The <xref:System.Configuration.IriParsingElement?displayProperty=fullName> setting enables or disables IRI processing in the <xref:System.Uri> class. The <xref:System.Configuration.IdnElement?displayProperty=fullName> setting enables or disables IDN processing in the <xref:System.Uri> class. The <xref:System.Configuration.IriParsingElement?displayProperty=fullName> setting also indirectly controls IDN. IRI processing must be enabled for IDN processing to be possible. If IRI processing is disabled, then IDN processing will be set to the default setting where the .NET Framework 2.0 behavior is used for compatibility and IDN names are not used.  
+ IRI and IDN processing in the <xref:System.Uri> class can also be controlled using the <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>, <xref:System.Configuration.IdnElement?displayProperty=nameWithType>, and <xref:System.Configuration.UriSection?displayProperty=nameWithType> configuration setting classes. The <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> setting enables or disables IRI processing in the <xref:System.Uri> class. The <xref:System.Configuration.IdnElement?displayProperty=nameWithType> setting enables or disables IDN processing in the <xref:System.Uri> class. The <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> setting also indirectly controls IDN. IRI processing must be enabled for IDN processing to be possible. If IRI processing is disabled, then IDN processing will be set to the default setting where the .NET Framework 2.0 behavior is used for compatibility and IDN names are not used.  
   
- The configuration setting for the <xref:System.Configuration.IriParsingElement?displayProperty=fullName> and <xref:System.Configuration.IdnElement?displayProperty=fullName> will be read once when the first <xref:System.Uri?displayProperty=fullName> class is constructed. Changes to configuration settings after that time are ignored.  
+ The configuration setting for the <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> and <xref:System.Configuration.IdnElement?displayProperty=nameWithType> will be read once when the first <xref:System.Uri?displayProperty=nameWithType> class is constructed. Changes to configuration settings after that time are ignored.  
   
- The <xref:System.GenericUriParser?displayProperty=fullName> class has also been extended to allow creating a customizable parser that supports IRI and IDN. The behavior of a <xref:System.GenericUriParser?displayProperty=fullName> object is specified by passing a bitwise combination of the values available in the <xref:System.GenericUriParserOptions?displayProperty=fullName> enumeration to the <xref:System.GenericUriParser?displayProperty=fullName> constructor. The <xref:System.GenericUriParserOptions?displayProperty=fullName> type indicates the parser supports the parsing rules specified in RFC 3987 for International Resource Identifiers (IRI). Whether IRI is used is dictated by the configuration values previously discussed.  
+ The <xref:System.GenericUriParser?displayProperty=nameWithType> class has also been extended to allow creating a customizable parser that supports IRI and IDN. The behavior of a <xref:System.GenericUriParser?displayProperty=nameWithType> object is specified by passing a bitwise combination of the values available in the <xref:System.GenericUriParserOptions?displayProperty=nameWithType> enumeration to the <xref:System.GenericUriParser?displayProperty=nameWithType> constructor. The <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> type indicates the parser supports the parsing rules specified in RFC 3987 for International Resource Identifiers (IRI). Whether IRI is used is dictated by the configuration values previously discussed.  
   
- The <xref:System.GenericUriParserOptions?displayProperty=fullName> type indicates the parser supports Internationalized Domain Name (IDN) parsing (IDN) of host names. Whether IDN is used is dictated by the configuration values previously discussed.  
+ The <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> type indicates the parser supports Internationalized Domain Name (IDN) parsing (IDN) of host names. Whether IDN is used is dictated by the configuration values previously discussed.  
   
 ## Performance Considerations  
- If you use a Web.config file that contains URIs to initialize your application, additional time is required to process the URIs if their scheme identifiers are nonstandard. In such a case, initialize the affected parts of your application when the URIs are needed, not at start time.  
+ If you use a *Web.config *file that contains URIs to initialize your application, additional time is required to process the URIs if their scheme identifiers are nonstandard. In such a case, initialize the affected parts of your application when the URIs are needed, not at start time.  
   
    
   
@@ -181,12 +170,34 @@ ftp://myUrl/%2E%2E/%2E%2E
     <block subset="none" type="usage">
       <para>Because of security concerns, your application should use caution when accepting <see cref="T:System.Uri" /> instances from untrusted sources and with <paramref name="dontEscape" /> set to <see langword="true" />.You can check a URI string for validity by calling the <see cref="M:System.Uri.IsWellFormedOriginalString" /> method.</para>
     </block>
+    <altmember cref="T:System.Configuration.IdnElement" />
+    <altmember cref="T:System.Configuration.IriParsingElement" />
+    <altmember cref="T:System.Configuration.UriSection" />
+    <altmember cref="P:System.Uri.DnsSafeHost" />
+    <altmember cref="M:System.Uri.MakeRelative(System.Uri)" />
+    <altmember cref="M:System.Uri.IsWellFormedOriginalString" />
+    <altmember cref="T:System.UriBuilder" />
   </Docs>
   <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Initializes a new instance of the <see cref="T:System.Uri" /> class.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName=".ctor">
       <MemberSignature Language="C#" Value="public Uri (string uriString);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uriString) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (uriString As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(System::String ^ uriString);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -194,6 +205,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -208,7 +220,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <Parameter Name="uriString" Type="System.String" />
       </Parameters>
       <Docs>
-        <param name="uriString">A URI.</param>
+        <param name="uriString">A string that identifies the resource to be represented by the <see cref="T:System.Uri" /> instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".</param>
         <summary>Initializes a new instance of the <see cref="T:System.Uri" /> class with the specified URI.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -218,7 +230,7 @@ ftp://myUrl/%2E%2E/%2E%2E
   
  This constructor does not ensure that the <xref:System.Uri> refers to an accessible resource.  
   
- This constructor assumes that the `string` parameter references an absolute URI and is equivalent to calling the <xref:System.Uri.%23ctor%2A> constructor with <xref:System.UriKind> set to <xref:System.UriKind>. If the `string` parameter passed to the constructor is a relative URI, this constructor will throw a <xref:System.UriFormatException>.  
+ This constructor assumes that the `string` parameter references an absolute URI and is equivalent to calling the <xref:System.Uri.%23ctor%2A> constructor with <xref:System.UriKind> set to <xref:System.UriKind.Absolute>. If the `string` parameter passed to the constructor is a relative URI, this constructor will throw a <xref:System.UriFormatException>.  
   
    
   
@@ -234,14 +246,10 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentNullException">
           <paramref name="uriString" /> is <see langword="null" />.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
-  
- <paramref name="uriString" /> is empty.  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>
+          <paramref name="uriString" /> is empty.  
   
  -or-  
   
@@ -296,6 +304,7 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected Uri (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; Uri(System::Runtime::Serialization::SerializationInfo ^ serializationInfo, System::Runtime::Serialization::StreamingContext streamingContext);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -305,6 +314,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Parameters>
         <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
@@ -378,6 +391,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri (string uriString, bool dontEscape);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uriString, bool dontEscape) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (uriString As String, dontEscape As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(System::String ^ uriString, bool dontEscape);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -387,6 +402,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -398,9 +417,9 @@ ftp://myUrl/%2E%2E/%2E%2E
         <Parameter Name="dontEscape" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="uriString">The URI.</param>
+        <param name="uriString">A string that identifies the resource to be represented by the <see cref="T:System.Uri" /> instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".</param>
         <param name="dontEscape">
-          <see langword="true" /> if <c>uriString</c> is completely escaped; otherwise, <see langword="false" />. See Remarks.</param>
+          <see langword="true" /> if <c>uriString</c> is completely escaped; otherwise, <see langword="false" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Uri" /> class with the specified URI, with explicit control of character escaping.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -483,6 +502,7 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri (string uriString, UriKind uriKind);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uriString, valuetype System.UriKind uriKind) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.String,System.UriKind)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(System::String ^ uriString, UriKind uriKind);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -490,6 +510,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -505,14 +526,14 @@ ftp://myUrl/%2E%2E/%2E%2E
         <Parameter Name="uriKind" Type="System.UriKind" />
       </Parameters>
       <Docs>
-        <param name="uriString">A string that identifies the resource to be represented by the <see cref="T:System.Uri" /> instance.</param>
+        <param name="uriString">A string that identifies the resource to be represented by the <see cref="T:System.Uri" /> instance. Note that an IPv6 address in string form must be enclosed within brackets. For example, "http://[2607:f8b0:400d:c06::69]".</param>
         <param name="uriKind">Specifies whether the URI string is a relative URI, absolute URI, or is indeterminate.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Uri" /> class with the specified URI. This constructor allows you to specify if the URI string is a relative URI, absolute URI, or is indeterminate.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- Relative and absolute URIs have different restrictions on their format. For example, a relative URI does not require a scheme or an authority. The value you specify in `uriKind` must match the type of URI passed in `uriString`. However, if <xref:System.UriKind> is specified, the URI string can be relative or absolute.  
+ Relative and absolute URIs have different restrictions on their format. For example, a relative URI does not require a scheme or an authority. The value you specify in `uriKind` must match the type of URI passed in `uriString`. However, if <xref:System.UriKind.RelativeOrAbsolute> is specified, the URI string can be relative or absolute.  
   
  ]]></format>
         </remarks>
@@ -521,14 +542,10 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentNullException">
           <paramref name="uriString" /> is <see langword="null" />.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
-  
- <paramref name="uriString" /> contains a relative URI and <paramref name="uriKind" /> is <see cref="F:System.UriKind.Absolute" />.  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>
+          <paramref name="uriString" /> contains a relative URI and <paramref name="uriKind" /> is <see cref="F:System.UriKind.Absolute" />.  
   
  or  
   
@@ -591,6 +608,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri (Uri baseUri, string relativeUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, string relativeUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.Uri,System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (baseUri As Uri, relativeUri As String)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(Uri ^ baseUri, System::String ^ relativeUri);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -598,6 +617,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -621,13 +641,17 @@ ftp://myUrl/%2E%2E/%2E%2E
   
 ## Remarks  
  This constructor creates a <xref:System.Uri> instance by combining the `baseUri` and the `relativeUri`. If `relativeUri` is an absolute URI (containing a scheme, host name, and optionally a port number), the <xref:System.Uri> instance is created using only `relativeUri`.  
-  
+ 
+ If the `baseUri` has relative parts (like `/api`), then the relative part must be terminated with a slash, (like `/api/`), if the relative part of `baseUri` is to be preserved in the constructed <xref:System.Uri>. 
+
+ Additionally, if the `relativeUri` begins with a slash, then it will replace any relative part of the `baseUri`
+
  This constructor does not ensure that the <xref:System.Uri> refers to an accessible resource.  
   
    
   
 ## Examples  
- The following example creates a new instance of the <xref:System.Uri> class by combining the relative URIs http://www.contoso.com and catalog/showew.htm to form the absolute URI http://www.contoso.com/catalog/shownew.htm.  
+ The following example creates a new instance of the <xref:System.Uri> class by combining the relative URIs http://www.contoso.com and catalog/shownew.htm to form the absolute URI http://www.contoso.com/catalog/shownew.htm.  
   
  [!code-cpp[Classic Uri.Uri3 Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic Uri.Uri3 Example/CPP/source.cpp#1)]
  [!code-csharp[Classic Uri.Uri3 Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic Uri.Uri3 Example/CS/source.cs#1)]
@@ -640,13 +664,9 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="baseUri" /> is not an absolute <see cref="T:System.Uri" /> instance.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
-  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>
  The URI formed by combining <paramref name="baseUri" /> and <paramref name="relativeUri" /> is empty or contains only spaces.  
   
  -or-  
@@ -702,6 +722,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri (Uri baseUri, Uri relativeUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, class System.Uri relativeUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.Uri,System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (baseUri As Uri, relativeUri As Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(Uri ^ baseUri, Uri ^ relativeUri);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -709,6 +731,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -732,7 +755,11 @@ ftp://myUrl/%2E%2E/%2E%2E
   
 ## Remarks  
  This constructor creates a new <xref:System.Uri> instance by combining an absolute <xref:System.Uri> instance, `baseUri`, with a relative <xref:System.Uri> instance, `relativeUri`. If `relativeUri` is an absolute <xref:System.Uri> instance (containing a scheme, host name, and optionally a port number), the <xref:System.Uri> instance is created using only `relativeUri`.  
-  
+ 
+ If the `baseUri` has relative parts (like `/api`), then the relative part must be terminated with a slash, (like `/api/`), if the relative part of `baseUri` is to be preserved in the constructed <xref:System.Uri>. 
+
+ Additionally, if the `relativeUri` begins with a slash, then it will replace any relative part of the `baseUri`
+ 
  This constructor does not ensure that the <xref:System.Uri> refers to an accessible resource.  
   
    
@@ -753,14 +780,10 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentOutOfRangeException">
           <paramref name="baseUri" /> is not an absolute <see cref="T:System.Uri" /> instance.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
-  
- The URI formed by combining <paramref name="baseUri" /> and <paramref name="relativeUri" /> is empty or contains only spaces.  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>
+          The URI formed by combining <paramref name="baseUri" /> and <paramref name="relativeUri" /> is empty or contains only spaces.  
   
  -or-  
   
@@ -815,6 +838,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri (Uri baseUri, string relativeUri, bool dontEscape);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri baseUri, string relativeUri, bool dontEscape) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.#ctor(System.Uri,System.String,System.Boolean)" />
+      <MemberSignature Language="VB.NET" Value="Public Sub New (baseUri As Uri, relativeUri As String, dontEscape As Boolean)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri(Uri ^ baseUri, System::String ^ relativeUri, bool dontEscape);" />
       <MemberType>Constructor</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -824,6 +849,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -839,7 +868,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <param name="baseUri">The base URI.</param>
         <param name="relativeUri">The relative URI to add to the base URI.</param>
         <param name="dontEscape">
-          <see langword="true" /> if <c>uriString</c> is completely escaped; otherwise, <see langword="false" />. See Remarks.</param>
+          <see langword="true" /> if <c>uriString</c> is completely escaped; otherwise, <see langword="false" />.</param>
         <summary>Initializes a new instance of the <see cref="T:System.Uri" /> class based on the specified base and relative URIs, with explicit control of character escaping.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -924,6 +953,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string AbsolutePath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AbsolutePath" />
       <MemberSignature Language="DocId" Value="P:System.Uri.AbsolutePath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AbsolutePath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AbsolutePath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -931,6 +962,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -973,6 +1005,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string AbsoluteUri { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string AbsoluteUri" />
       <MemberSignature Language="DocId" Value="P:System.Uri.AbsoluteUri" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property AbsoluteUri As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ AbsoluteUri { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -980,6 +1014,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1020,6 +1055,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string Authority { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Authority" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Authority" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Authority As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Authority { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1027,6 +1064,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1067,6 +1105,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual void Canonicalize ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Canonicalize() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Canonicalize" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Canonicalize ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Canonicalize();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1076,6 +1116,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1104,6 +1148,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static UriHostNameType CheckHostName (string name);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.UriHostNameType CheckHostName(string name) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.CheckHostName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CheckHostName (name As String) As UriHostNameType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static UriHostNameType CheckHostName(System::String ^ name);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1111,6 +1157,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1154,6 +1201,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static bool CheckSchemeName (string schemeName);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CheckSchemeName(string schemeName) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.CheckSchemeName(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function CheckSchemeName (schemeName As String) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool CheckSchemeName(System::String ^ schemeName);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1161,6 +1210,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1206,6 +1256,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual void CheckSecurity ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CheckSecurity() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.CheckSecurity" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub CheckSecurity ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void CheckSecurity();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1215,6 +1267,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1234,6 +1290,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static int Compare (Uri uri1, Uri uri2, UriComponents partsToCompare, UriFormat compareFormat, StringComparison comparisonType);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(class System.Uri uri1, class System.Uri uri2, valuetype System.UriComponents partsToCompare, valuetype System.UriFormat compareFormat, valuetype System.StringComparison comparisonType) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Compare(System.Uri,System.Uri,System.UriComponents,System.UriFormat,System.StringComparison)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function Compare (uri1 As Uri, uri2 As Uri, partsToCompare As UriComponents, compareFormat As UriFormat, comparisonType As StringComparison) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int Compare(Uri ^ uri1, Uri ^ uri2, UriComponents partsToCompare, UriFormat compareFormat, StringComparison comparisonType);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1241,6 +1299,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1270,45 +1329,28 @@ ftp://myUrl/%2E%2E/%2E%2E
         <summary>Compares the specified parts of two URIs using the specified comparison rules.</summary>
         <returns>An <see cref="T:System.Int32" /> value that indicates the lexical relationship between the compared <see cref="T:System.Uri" /> components.  
   
- <list type="table">  
-<listheader>  
-<term> Value  
+ <list type="table"><listheader><term> Value  
   
- </term>  
-<description> Meaning  
+ </term><description> Meaning  
   
- </description>  
-</listheader>  
-<item>  
-<term> Less than zero  
+ </description></listheader><item><term> Less than zero  
   
- </term>  
-<description> <paramref name="uri1" /> is less than <paramref name="uri2" />.  
+ </term><description><paramref name="uri1" /> is less than <paramref name="uri2" />.  
   
- </description>  
-</item>  
-<item>  
-<term> Zero  
+ </description></item><item><term> Zero  
   
- </term>  
-<description> <paramref name="uri1" /> equals <paramref name="uri2" />.  
+ </term><description><paramref name="uri1" /> equals <paramref name="uri2" />.  
   
- </description>  
-</item>  
-<item>  
-<term> Greater than zero  
+ </description></item><item><term> Greater than zero  
   
- </term>  
-<description> <paramref name="uri1" /> is greater than <paramref name="uri2" />.  
+ </term><description><paramref name="uri1" /> is greater than <paramref name="uri2" />.  
   
- </description>  
-</item>  
-</list></returns>
+ </description></item></list></returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- If both `uri1` and `uri2` are `null`, this method returns 0. When comparing URI values, a relative URI is always less than an absolute URI, and a non-null URI is always greater than a null URI. For cases where both `uri1` and `uri2` are not `null` and are both relative URIs or both absolute URIs, the <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=fullName> method performs the comparison.  
+ If both `uri1` and `uri2` are `null`, this method returns 0. When comparing URI values, a relative URI is always less than an absolute URI, and a non-null URI is always greater than a null URI. For cases where both `uri1` and `uri2` are not `null` and are both relative URIs or both absolute URIs, the <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> method performs the comparison.  
   
  ]]></format>
         </remarks>
@@ -1320,6 +1362,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string DnsSafeHost { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string DnsSafeHost" />
       <MemberSignature Language="DocId" Value="P:System.Uri.DnsSafeHost" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property DnsSafeHost As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ DnsSafeHost { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1327,6 +1371,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1341,25 +1386,27 @@ ftp://myUrl/%2E%2E/%2E%2E
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Gets an unescaped host name that is safe to use for DNS resolution.</summary>
-        <value>A <see cref="T:System.String" /> that contains the unescaped host part of the URI that is suitable for DNS resolution; or the original unescaped host string, if it is already suitable for resolution.</value>
+        <summary>Gets a host name that, after being unescaped if necessary, is safe to use for DNS resolution.</summary>
+        <value>A <see cref="T:System.String" /> that contains the host part of the URI in a format suitable for DNS resolution; or the original host string, if it is already suitable for resolution.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- For IPv6 addresses, the brackets ([]) are removed and the <xref:System.Net.IPAddress.ScopeId%2A> property is set, if one was specified when this instance was constructed.  
+ For IPv6 addresses, the brackets ([]) are removed and the <xref:System.Net.IPAddress.ScopeId%2A> property is set, if one was specified when this instance was constructed.
+
+If you used an escaped string to construct this instance (for example, "http://[fe80::200:39ff:fe36:1a2d%254]/temp/example.htm"), then DnsSafeHost returns an escaped string. Unescape any escaped string returned from `DnsSafeHost` before using that string for DNS resolution (see the Example). If you used an invalid unescaped string to construct this instance (for example, "http://[fe80::200:39ff:fe36:1a2d%4]/temp/example.htm"), then DnsSafeHost returns an unescaped string.
   
- The <xref:System.Uri.DnsSafeHost%2A> property is dependent on configuration settings, as discussed later in this topic. Configuration settings cannot be changed by Windows Store applications, which can lead to inconsistent results when using <xref:System.Uri.DnsSafeHost%2A>. The <xref:System.Uri.IdnHost%2A>property is provided as the preferred alternative to using <xref:System.Uri.DnsSafeHost%2A>, because <xref:System.Uri.IdnHost%2A> is guaranteed to always be DNS safe, no matter what the current app.config settings might be.  
+ The <xref:System.Uri.DnsSafeHost%2A> property is dependent on configuration settings, as discussed later in this topic. Configuration settings cannot be changed by Windows Store applications, which can lead to inconsistent results when using <xref:System.Uri.DnsSafeHost%2A>. The <xref:System.Uri.IdnHost%2A> property is provided as the preferred alternative to using <xref:System.Uri.DnsSafeHost%2A>, because <xref:System.Uri.IdnHost%2A> is guaranteed to always be DNS safe, no matter what the current *app.config* settings might be.  
   
  The <xref:System.Uri.DnsSafeHost%2A> property has been extended in .NET Framework v3.5, 3.0 SP1, and 2.0 SP1 to provide International Resource Identifier (IRI) support based on RFC 3987. Current users will not see any change from the .NET Framework 2.0 behavior unless they specifically enable IRI. This ensures application compatibility with prior versions of the .NET Framework.  
   
  To enable support for IRI, the following two changes are required:  
   
-1.  Add the following line to the machine.config file under the .NET Framework 2.0 directory  
+1.  Add the following line to the *machine.config* file under the .NET Framework 2.0 directory  
   
      \<section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
   
-2.  Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied. This can be done in the machine.config or in the app.config file. For example, add the following:  
+2.  Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied. This can be done in the *machine.config* or in the *app.config* file. For example, add the following:  
   
     ```  
     <configuration>  
@@ -1400,7 +1447,9 @@ ftp://myUrl/%2E%2E/%2E%2E
  [!code-cpp[NCLUriEnhancements#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLUriEnhancements/CPP/nclurienhancements.cpp#4)]
  [!code-csharp[NCLUriEnhancements#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLUriEnhancements/CS/nclurienhancements.cs#4)]
  [!code-vb[NCLUriEnhancements#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLUriEnhancements/VB/nclurienhancements.vb#4)]  
-  
+
+ As explained in Remarks, unescape the host name before resolving it. You can use the <xref:System.Uri.UnescapeDataString%2A> method to unescape the host name, and you can resolve it by calling the <xref:System.Net.Dns.GetHostEntry%2A> method.
+
  ]]></format>
         </remarks>
         <exception cref="T:System.InvalidOperationException">This instance represents a relative URI, and this property is valid only for absolute URIs.</exception>
@@ -1410,6 +1459,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Equals(System.Object)" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function Equals (comparand As Object) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override bool Equals(System::Object ^ comparand);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1417,6 +1468,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1471,6 +1523,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual void Escape ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Escape() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Escape" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Escape ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Escape();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1480,6 +1534,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1500,6 +1558,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static string EscapeDataString (string stringToEscape);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EscapeDataString(string stringToEscape) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.EscapeDataString(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function EscapeDataString (stringToEscape As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ EscapeDataString(System::String ^ stringToEscape);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1507,6 +1567,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1544,12 +1605,9 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stringToEscape" /> is <see langword="null" />.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>  
   
  The length of <paramref name="stringToEscape" /> exceeds 32766 characters.</exception>
       </Docs>
@@ -1558,6 +1616,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected static string EscapeString (string str);" />
       <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig string EscapeString(string str) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.EscapeString(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function EscapeString (str As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static System::String ^ EscapeString(System::String ^ str);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1567,6 +1627,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -1601,6 +1665,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static string EscapeUriString (string stringToEscape);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string EscapeUriString(string stringToEscape) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.EscapeUriString(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function EscapeUriString (stringToEscape As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ EscapeUriString(System::String ^ stringToEscape);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1608,6 +1674,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1647,12 +1714,9 @@ ftp://myUrl/%2E%2E/%2E%2E
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stringToEscape" /> is <see langword="null" />.</exception>
         <exception cref="T:System.UriFormatException">
-          <block subset="none" type="note">  
-<para>  
- In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.  
-  
-</para>  
-</block>  
+          <block subset="none" type="note">
+            <para>In the [.NET for Windows Store apps](http://go.microsoft.com/fwlink/?LinkID=247912) or the [Portable Class Library](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md), catch the base class exception, <see cref="T:System.FormatException" />, instead.</para>
+          </block>  
   
  The length of <paramref name="stringToEscape" /> exceeds 32766 characters.</exception>
       </Docs>
@@ -1661,6 +1725,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string Fragment { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Fragment" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Fragment" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Fragment As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Fragment { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1668,6 +1734,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1710,6 +1777,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static int FromHex (char digit);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 FromHex(char digit) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.FromHex(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function FromHex (digit As Char) As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static int FromHex(char digit);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1719,6 +1788,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Int32</ReturnType>
@@ -1755,6 +1828,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string GetComponents (UriComponents components, UriFormat format);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetComponents(valuetype System.UriComponents components, valuetype System.UriFormat format) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.GetComponents(System.UriComponents,System.UriFormat)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetComponents (components As UriComponents, format As UriFormat) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetComponents(UriComponents components, UriFormat format);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1762,6 +1837,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1788,16 +1864,16 @@ ftp://myUrl/%2E%2E/%2E%2E
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- The <xref:System.UriComponents>, <xref:System.UriComponents>, <xref:System.UriComponents>, <xref:System.UriComponents>, <xref:System.UriComponents>, <xref:System.UriComponents>, and <xref:System.UriComponents> components do not include the delimiter. You can combine the <xref:System.UriComponents> flag (using the bitwise OR operator) with any of those values to get the value with the delimiter. For all other <xref:System.UriComponents> values, and combinations of values, the delimiters are included in the returned value.  
+ The <xref:System.UriComponents.Query>, <xref:System.UriComponents.Fragment>, <xref:System.UriComponents.Scheme>, <xref:System.UriComponents.UserInfo>, <xref:System.UriComponents.Host>, <xref:System.UriComponents.Port>, and <xref:System.UriComponents.Path> components do not include the delimiter. You can combine the <xref:System.UriComponents.KeepDelimiter> flag (using the bitwise OR operator) with any of those values to get the value with the delimiter. For all other <xref:System.UriComponents> values, and combinations of values, the delimiters are included in the returned value.  
   
- The components are returned in the order that they appear in the URI. For example, if <xref:System.UriComponents> is specified, it appears first.  
+ The components are returned in the order that they appear in the URI. For example, if <xref:System.UriComponents.Scheme> is specified, it appears first.  
   
  When International Resource Identifier (IRI) and Internationalized Domain Name (IDN) support are enabled, the number of characters returned in the <xref:System.String> increases. Punycode names used to support IRI contain only ASCII characters and always start with the xn-- prefix. When IRI and IDN are enabled, Unicode surrogate characters are handled correctly by the <xref:System.Uri.GetComponents%2A> method.  
   
  For more information on IRI support, see the Remarks section for the <xref:System.Uri> class.  
   
 > [!NOTE]
->  If the <xref:System.Uri.GetComponents%2A> method is called with `format` set to <xref:System.UriFormat> , you cannot use the return value as an argument to a <xref:System.Uri.%23ctor%2A> constructor to create an equivalent <xref:System.Uri>.  
+>  If the <xref:System.Uri.GetComponents%2A> method is called with `format` set to <xref:System.UriFormat.Unescaped> , you cannot use the return value as an argument to a <xref:System.Uri.%23ctor%2A> constructor to create an equivalent <xref:System.Uri>.  
   
  ]]></format>
         </remarks>
@@ -1810,6 +1886,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.GetHashCode" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function GetHashCode () As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override int GetHashCode();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -1817,6 +1895,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1852,6 +1931,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string GetLeftPart (UriPartial part);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLeftPart(valuetype System.UriPartial part) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.GetLeftPart(System.UriPartial)" />
+      <MemberSignature Language="VB.NET" Value="Public Function GetLeftPart (part As UriPartial) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ GetLeftPart(UriPartial part);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1861,6 +1942,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1880,15 +1965,15 @@ ftp://myUrl/%2E%2E/%2E%2E
   
  <xref:System.Uri.GetLeftPart%2A> includes delimiters in the following cases:  
   
--   <xref:System.UriPartial> includes the scheme delimiter.  
+-   <xref:System.UriPartial.Scheme> includes the scheme delimiter.  
   
--   <xref:System.UriPartial> does not include the path delimiter.  
+-   <xref:System.UriPartial.Authority> does not include the path delimiter.  
   
--   <xref:System.UriPartial> includes any delimiters in the original URI up to the query or fragment delimiter.  
+-   <xref:System.UriPartial.Path> includes any delimiters in the original URI up to the query or fragment delimiter.  
   
--   <xref:System.UriPartial> includes the <xref:System.UriPartial>, plus the query and its delimiter.  
+-   <xref:System.UriPartial.Query> includes the <xref:System.UriPartial.Path>, plus the query and its delimiter.  
   
- The following examples show a URI and the results of calling <xref:System.Uri.GetLeftPart%2A> with <xref:System.UriPartial>, <xref:System.UriPartial>, <xref:System.UriPartial>, or <xref:System.UriPartial>.  
+ The following examples show a URI and the results of calling <xref:System.Uri.GetLeftPart%2A> with <xref:System.UriPartial.Scheme>, <xref:System.UriPartial.Authority>, <xref:System.UriPartial.Path>, or <xref:System.UriPartial.Query>.  
   
 |URI|Scheme|Authority|Path|Query|  
 |---------|------------|---------------|----------|-----------|  
@@ -1918,7 +2003,11 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; void GetObjectData(System::Runtime::Serialization::SerializationInfo ^ serializationInfo, System::Runtime::Serialization::StreamingContext streamingContext);" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -1927,6 +2016,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -1947,6 +2040,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static string HexEscape (char character);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HexEscape(char character) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.HexEscape(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function HexEscape (character As Char) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ HexEscape(char character);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1956,6 +2051,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -1985,8 +2084,10 @@ ftp://myUrl/%2E%2E/%2E%2E
     </Member>
     <Member MemberName="HexUnescape">
       <MemberSignature Language="C#" Value="public static char HexUnescape (string pattern, ref int index);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig char HexUnescape(string pattern, int32 index) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig char HexUnescape(string pattern, int32&amp; index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.HexUnescape(System.String,System.Int32@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function HexUnescape (pattern As String, ByRef index As Integer) As Char" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static char HexUnescape(System::String ^ pattern, int % index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -1996,6 +2097,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Char</ReturnType>
@@ -2029,6 +2134,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string Host { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Host" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Host" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Host As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Host { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2036,6 +2143,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2076,6 +2184,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public UriHostNameType HostNameType { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance valuetype System.UriHostNameType HostNameType" />
       <MemberSignature Language="DocId" Value="P:System.Uri.HostNameType" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property HostNameType As UriHostNameType" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property UriHostNameType HostNameType { UriHostNameType get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2083,6 +2193,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2118,11 +2229,14 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string IdnHost { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string IdnHost" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IdnHost" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IdnHost As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ IdnHost { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2137,7 +2251,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>The RFC 3490 compliant International Domain Name of the host, using Punycode as appropriate.</summary>
+        <summary>The RFC 3490 compliant International Domain Name of the host, using Punycode as appropriate. This string, after being unescaped if necessary, is safe to use for DNS resolution.</summary>
         <value>Returns the hostname, formatted with Punycode according to the IDN standard.<see cref="T:System.String" />.</value>
         <remarks>
           <format type="text/markdown"><![CDATA[  
@@ -2145,8 +2259,11 @@ ftp://myUrl/%2E%2E/%2E%2E
 ## Remarks  
  This property is provided for the use of lower-level networking protocols that require the domain name in Punycode form. If your code does not require that specific format, use <xref:System.Uri.Host%2A> for the hostname.  
   
- The deprecated <xref:System.Uri.DnsSafeHost%2A> property is dependent on app.config settings, which cannot be changed by Windows Store applications. This property is provided as the preferred alternative to using <xref:System.Uri.DnsSafeHost%2A>, because <xref:System.Uri.IdnHost%2A> is guaranteed to always be DNS safe, no matter what the current app.config settings might be.  
-  
+ The deprecated <xref:System.Uri.DnsSafeHost%2A> property is dependent on *app.config* settings, which cannot be changed by Windows Store applications. IdnHost is provided as the preferred alternative to using <xref:System.Uri.DnsSafeHost%2A>, because <xref:System.Uri.IdnHost%2A> is guaranteed to always be DNS safe, no matter what the current *app.config* settings might be.  
+
+ If you used an escaped string to construct this instance (for example, "http://[fe80::200:39ff:fe36:1a2d%254]/temp/example.htm"), then IdnHost returns an escaped string. You should unescape any escaped string returned from IdnHost before using that string for DNS resolution. Be aware that if you used an invalid unescaped string to construct this instance (for example, "http://[fe80::200:39ff:fe36:1a2d%4]/temp/example.htm"), then IdnHost returns an unescaped string.
+
+
  ]]></format>
         </remarks>
       </Docs>
@@ -2155,6 +2272,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsAbsoluteUri { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsAbsoluteUri" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IsAbsoluteUri" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsAbsoluteUri As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsAbsoluteUri { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2162,6 +2281,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2192,6 +2312,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual bool IsBadFileSystemCharacter (char character);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsBadFileSystemCharacter(char character) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsBadFileSystemCharacter(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function IsBadFileSystemCharacter (character As Char) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool IsBadFileSystemCharacter(char character);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2201,6 +2323,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2231,6 +2357,7 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsBaseOf (Uri uri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsBaseOf(class System.Uri uri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsBaseOf(System.Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsBaseOf(Uri ^ uri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2238,6 +2365,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2299,6 +2427,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsDefaultPort { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsDefaultPort" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IsDefaultPort" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsDefaultPort As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsDefaultPort { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2306,6 +2436,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2341,6 +2472,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected static bool IsExcludedCharacter (char character);" />
       <MemberSignature Language="ILAsm" Value=".method familystatic hidebysig bool IsExcludedCharacter(char character) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsExcludedCharacter(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Protected Shared Function IsExcludedCharacter (character As Char) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; static bool IsExcludedCharacter(char character);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2350,6 +2483,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2373,6 +2510,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsFile { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsFile" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IsFile" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsFile As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsFile { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2380,6 +2519,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2420,6 +2560,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static bool IsHexDigit (char character);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsHexDigit(char character) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsHexDigit(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsHexDigit (character As Char) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsHexDigit(char character);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2429,6 +2571,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2463,6 +2609,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static bool IsHexEncoding (string pattern, int index);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsHexEncoding(string pattern, int32 index) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsHexEncoding(System.String,System.Int32)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function IsHexEncoding (pattern As String, index As Integer) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsHexEncoding(System::String ^ pattern, int index);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2472,6 +2620,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Boolean</ReturnType>
@@ -2508,6 +2660,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsLoopback { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsLoopback" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IsLoopback" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsLoopback As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsLoopback { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2515,6 +2669,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2555,6 +2710,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual bool IsReservedCharacter (char character);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsReservedCharacter(char character) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsReservedCharacter(System.Char)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function IsReservedCharacter (character As Char) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual bool IsReservedCharacter(char character);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2564,6 +2721,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2587,6 +2748,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsUnc { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool IsUnc" />
       <MemberSignature Language="DocId" Value="P:System.Uri.IsUnc" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property IsUnc As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool IsUnc { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2594,6 +2757,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2634,6 +2798,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool IsWellFormedOriginalString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsWellFormedOriginalString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsWellFormedOriginalString" />
+      <MemberSignature Language="VB.NET" Value="Public Function IsWellFormedOriginalString () As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; bool IsWellFormedOriginalString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2641,6 +2807,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2673,7 +2840,7 @@ ftp://myUrl/%2E%2E/%2E%2E
 |The string is an absolute URI that is missing a slash before the path.|file://c:/directory/filename|  
 |The string contains unescaped backslashes even if they are treated as forward slashes.|http:\\\host/path/file|  
 |The string represents a hierarchical absolute <xref:System.Uri> and does not contain "://".|www.contoso.com/path/file|  
-|The parser for the <xref:System.Uri.Scheme%2A?displayProperty=fullName> indicates that the original string was not well-formed.|The example depends on the scheme of the URI.|  
+|The parser for the <xref:System.Uri.Scheme%2A?displayProperty=nameWithType> indicates that the original string was not well-formed.|The example depends on the scheme of the URI.|  
   
  By default, the string used to construct this <xref:System.Uri> are considered well-formed in accordance with RFC 2396 and RFC 2732.  
   
@@ -2689,6 +2856,7 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static bool IsWellFormedUriString (string uriString, UriKind uriKind);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsWellFormedUriString(string uriString, valuetype System.UriKind uriKind) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.IsWellFormedUriString(System.String,System.UriKind)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool IsWellFormedUriString(System::String ^ uriString, UriKind uriKind);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2696,6 +2864,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2717,7 +2886,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <param name="uriString">The string used to attempt to construct a <see cref="T:System.Uri" />.</param>
         <param name="uriKind">The type of the <see cref="T:System.Uri" /> in <c>uriString</c>.</param>
         <summary>Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.</summary>
-        <returns>A <see cref="T:System.Boolean" /> value that is <see langword="true " />if the string was well-formed; else <see langword="false" />.</returns>
+        <returns>A <see cref="T:System.Boolean" /> value that is <see langword="true" /> if the string was well-formed; else <see langword="false" />.</returns>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -2748,6 +2917,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string LocalPath { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string LocalPath" />
       <MemberSignature Language="DocId" Value="P:System.Uri.LocalPath" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property LocalPath As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ LocalPath { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2755,6 +2926,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2797,6 +2969,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string MakeRelative (Uri toUri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MakeRelative(class System.Uri toUri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.MakeRelative(System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Function MakeRelative (toUri As Uri) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; System::String ^ MakeRelative(Uri ^ toUri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2806,6 +2980,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -2859,6 +3037,7 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public Uri MakeRelativeUri (Uri uri);" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Uri MakeRelativeUri(class System.Uri uri) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.MakeRelativeUri(System.Uri)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; Uri ^ MakeRelativeUri(Uri ^ uri);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2866,6 +3045,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2920,9 +3100,11 @@ ftp://myUrl/%2E%2E/%2E%2E
       </Docs>
     </Member>
     <Member MemberName="op_Equality">
-      <MemberSignature Language="C#" Value="public static bool op_Equality (Uri uri1, Uri uri2);" />
+      <MemberSignature Language="C#" Value="public static bool operator == (Uri uri1, Uri uri2);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Uri uri1, class System.Uri uri2) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.op_Equality(System.Uri,System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator == (uri1 As Uri, uri2 As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator ==(Uri ^ uri1, Uri ^ uri2);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2930,6 +3112,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -2972,9 +3155,11 @@ ftp://myUrl/%2E%2E/%2E%2E
       </Docs>
     </Member>
     <Member MemberName="op_Inequality">
-      <MemberSignature Language="C#" Value="public static bool op_Inequality (Uri uri1, Uri uri2);" />
+      <MemberSignature Language="C#" Value="public static bool operator != (Uri uri1, Uri uri2);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Uri uri1, class System.Uri uri2) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.op_Inequality(System.Uri,System.Uri)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Operator != (uri1 As Uri, uri2 As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool operator !=(Uri ^ uri1, Uri ^ uri2);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -2982,6 +3167,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3027,6 +3213,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string OriginalString { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string OriginalString" />
       <MemberSignature Language="DocId" Value="P:System.Uri.OriginalString" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property OriginalString As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ OriginalString { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3034,6 +3222,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3082,6 +3271,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual void Parse ();" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Parse() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Parse" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Sub Parse ()" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual void Parse();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3091,6 +3282,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3111,6 +3306,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string PathAndQuery { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string PathAndQuery" />
       <MemberSignature Language="DocId" Value="P:System.Uri.PathAndQuery" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property PathAndQuery As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ PathAndQuery { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3118,6 +3315,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3162,6 +3360,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public int Port { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Port" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Port As Integer" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property int Port { int get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3169,6 +3369,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3209,6 +3410,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string Query { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Query" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Query" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Query As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Query { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3216,6 +3419,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3260,6 +3464,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string Scheme { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Scheme" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Scheme As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ Scheme { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3267,6 +3473,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3299,7 +3506,7 @@ ftp://myUrl/%2E%2E/%2E%2E
 |http|The resource is accessed through HTTP.|  
 |https|The resource is accessed through SSL-encrypted HTTP.|  
 |ldap|The resource is accessed through the LDAP protocol.|  
-|mailto|The resource is an e-mail address and accessed through the SMTP protocol.|  
+|mailto|The resource is an email address and accessed through the SMTP protocol.|  
 |net.pipe|The resource is accessed through a named pipe.|  
 |net.tcp|The resource is accessed from TCP endpoint.|  
 |news|The resource is accessed through the NNTP protocol.|  
@@ -3325,6 +3532,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string SchemeDelimiter;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string SchemeDelimiter" />
       <MemberSignature Language="DocId" Value="F:System.Uri.SchemeDelimiter" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly SchemeDelimiter As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ SchemeDelimiter;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3334,6 +3543,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3358,6 +3571,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string[] Segments { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string[] Segments" />
       <MemberSignature Language="DocId" Value="P:System.Uri.Segments" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property Segments As String()" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property cli::array &lt;System::String ^&gt; ^ Segments { cli::array &lt;System::String ^&gt; ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3365,6 +3580,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3427,7 +3643,11 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
       <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberSignature Language="C++ CLI" Value=" virtual void System.Runtime.Serialization.ISerializable.GetObjectData(System::Runtime::Serialization::SerializationInfo ^ serializationInfo, System::Runtime::Serialization::StreamingContext streamingContext) = System::Runtime::Serialization::ISerializable::GetObjectData;" />
       <MemberType>Method</MemberType>
+      <Implements>
+        <InterfaceMember>M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)</InterfaceMember>
+      </Implements>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
         <AssemblyVersion>2.0.5.0</AssemblyVersion>
@@ -3436,6 +3656,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.Void</ReturnType>
@@ -3456,6 +3680,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public override string ToString ();" />
       <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.ToString" />
+      <MemberSignature Language="VB.NET" Value="Public Overrides Function ToString () As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; override System::String ^ ToString();" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3463,6 +3689,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3487,7 +3714,7 @@ ftp://myUrl/%2E%2E/%2E%2E
  The string returned by this method does not contain port information when the port is the default port for the scheme.  
   
 > [!NOTE]
->  The string returned by the <xref:System.Uri.ToString%2A> method may contain control characters, which can corrupt the state of a console application. You can use the <xref:System.Uri.GetComponents%2A> method with the <xref:System.UriFormat?displayProperty=fullName> format to remove control characters from the returned string.  
+>  The string returned by the <xref:System.Uri.ToString%2A> method may contain control characters, which can corrupt the state of a console application. You can use the <xref:System.Uri.GetComponents%2A> method with the <xref:System.UriFormat.SafeUnescaped?displayProperty=nameWithType> format to remove control characters from the returned string.  
   
    
   
@@ -3503,10 +3730,24 @@ ftp://myUrl/%2E%2E/%2E%2E
         <permission cref="T:System.Security.Permissions.SecurityPermission">to prevent partially trusted code from deriving from <see cref="T:System.Uri" />. Associated enumeration: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" />.</permission>
       </Docs>
     </Member>
+    <MemberGroup MemberName="TryCreate">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Creates a new <see cref="T:System.Uri" />. Does not throw an exception if the <see cref="T:System.Uri" /> cannot be created.</summary>
+      </Docs>
+    </MemberGroup>
     <Member MemberName="TryCreate">
       <MemberSignature Language="C#" Value="public static bool TryCreate (string uriString, UriKind uriKind, out Uri result);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(string uriString, valuetype System.UriKind uriKind, class System.Uri result) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(string uriString, valuetype System.UriKind uriKind, [out] class System.Uri&amp; result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryCreate(System::String ^ uriString, UriKind uriKind, [Runtime::InteropServices::Out] Uri ^ % result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3514,6 +3755,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3550,8 +3792,10 @@ ftp://myUrl/%2E%2E/%2E%2E
     </Member>
     <Member MemberName="TryCreate">
       <MemberSignature Language="C#" Value="public static bool TryCreate (Uri baseUri, string relativeUri, out Uri result);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(class System.Uri baseUri, string relativeUri, class System.Uri result) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(class System.Uri baseUri, string relativeUri, [out] class System.Uri&amp; result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryCreate (baseUri As Uri, relativeUri As String, ByRef result As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryCreate(Uri ^ baseUri, System::String ^ relativeUri, [Runtime::InteropServices::Out] Uri ^ % result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3559,6 +3803,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3595,8 +3840,10 @@ ftp://myUrl/%2E%2E/%2E%2E
     </Member>
     <Member MemberName="TryCreate">
       <MemberSignature Language="C#" Value="public static bool TryCreate (Uri baseUri, Uri relativeUri, out Uri result);" />
-      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(class System.Uri baseUri, class System.Uri relativeUri, class System.Uri result) cil managed" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryCreate(class System.Uri baseUri, class System.Uri relativeUri, [out] class System.Uri&amp; result) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function TryCreate (baseUri As Uri, relativeUri As Uri, ByRef result As Uri) As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static bool TryCreate(Uri ^ baseUri, Uri ^ relativeUri, [Runtime::InteropServices::Out] Uri ^ % result);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3604,6 +3851,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3646,6 +3894,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="protected virtual string Unescape (string path);" />
       <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string Unescape(string path) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.Unescape(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Protected Overridable Function Unescape (path As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="protected:&#xA; virtual System::String ^ Unescape(System::String ^ path);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3655,6 +3905,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <Attributes>
         <Attribute>
@@ -3678,6 +3932,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static string UnescapeDataString (string stringToUnescape);" />
       <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UnescapeDataString(string stringToUnescape) cil managed" />
       <MemberSignature Language="DocId" Value="M:System.Uri.UnescapeDataString(System.String)" />
+      <MemberSignature Language="VB.NET" Value="Public Shared Function UnescapeDataString (stringToUnescape As String) As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; static System::String ^ UnescapeDataString(System::String ^ stringToUnescape);" />
       <MemberType>Method</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -3685,6 +3941,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3724,12 +3981,16 @@ ftp://myUrl/%2E%2E/%2E%2E
         </remarks>
         <exception cref="T:System.ArgumentNullException">
           <paramref name="stringToUnescape" /> is <see langword="null" />.</exception>
+        <altmember cref="M:System.Uri.EscapeDataString(System.String)" />
+        <altmember cref="M:System.Uri.EscapeUriString(System.String)" />
       </Docs>
     </Member>
     <Member MemberName="UriSchemeFile">
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeFile;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeFile" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeFile" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeFile As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeFile;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3739,6 +4000,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3768,6 +4033,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeFtp;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeFtp" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeFtp" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeFtp As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeFtp;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3777,6 +4044,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3801,6 +4072,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeGopher;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeGopher" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeGopher" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeGopher As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeGopher;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3810,6 +4083,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3834,6 +4111,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeHttp;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeHttp" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeHttp" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeHttp As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeHttp;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3843,6 +4122,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3867,6 +4150,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeHttps;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeHttps" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeHttps" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeHttps As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeHttps;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3876,6 +4161,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3900,6 +4189,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeMailto;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeMailto" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeMailto" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeMailto As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeMailto;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3910,11 +4201,15 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
       </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
       </ReturnValue>
       <Docs>
-        <summary>Specifies that the URI is an e-mail address and is accessed through the Simple Mail Transport Protocol (SMTP). This field is read-only.</summary>
+        <summary>Specifies that the URI is an email address and is accessed through the Simple Mail Transport Protocol (SMTP). This field is read-only.</summary>
         <remarks>
           <format type="text/markdown"><![CDATA[  
   
@@ -3933,6 +4228,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeNetPipe;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeNetPipe" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeNetPipe" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeNetPipe As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeNetPipe;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3942,6 +4239,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3955,6 +4256,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeNetTcp;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeNetTcp" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeNetTcp" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeNetTcp As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeNetTcp;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3964,6 +4267,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -3977,6 +4284,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeNews;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeNews" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeNews" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeNews As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeNews;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -3986,6 +4295,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -4010,6 +4323,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public static readonly string UriSchemeNntp;" />
       <MemberSignature Language="ILAsm" Value=".field public static initonly string UriSchemeNntp" />
       <MemberSignature Language="DocId" Value="F:System.Uri.UriSchemeNntp" />
+      <MemberSignature Language="VB.NET" Value="Public Shared ReadOnly UriSchemeNntp As String " />
+      <MemberSignature Language="C++ CLI" Value="public: static initonly System::String ^ UriSchemeNntp;" />
       <MemberType>Field</MemberType>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4019,6 +4334,10 @@ ftp://myUrl/%2E%2E/%2E%2E
       <AssemblyInfo>
         <AssemblyName>netstandard</AssemblyName>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <ReturnValue>
         <ReturnType>System.String</ReturnType>
@@ -4048,6 +4367,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public bool UserEscaped { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance bool UserEscaped" />
       <MemberSignature Language="DocId" Value="P:System.Uri.UserEscaped" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserEscaped As Boolean" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property bool UserEscaped { bool get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4055,6 +4376,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>
@@ -4094,6 +4416,8 @@ ftp://myUrl/%2E%2E/%2E%2E
       <MemberSignature Language="C#" Value="public string UserInfo { get; }" />
       <MemberSignature Language="ILAsm" Value=".property instance string UserInfo" />
       <MemberSignature Language="DocId" Value="P:System.Uri.UserInfo" />
+      <MemberSignature Language="VB.NET" Value="Public ReadOnly Property UserInfo As String" />
+      <MemberSignature Language="C++ CLI" Value="public:&#xA; property System::String ^ UserInfo { System::String ^ get(); };" />
       <MemberType>Property</MemberType>
       <AssemblyInfo>
         <AssemblyName>System.Runtime</AssemblyName>
@@ -4101,6 +4425,7 @@ ftp://myUrl/%2E%2E/%2E%2E
         <AssemblyVersion>4.0.10.0</AssemblyVersion>
         <AssemblyVersion>4.0.20.0</AssemblyVersion>
         <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
       </AssemblyInfo>
       <AssemblyInfo>
         <AssemblyName>System</AssemblyName>

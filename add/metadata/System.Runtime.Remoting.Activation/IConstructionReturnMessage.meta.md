@@ -1,4 +1,6 @@
 ---
 uid: System.Runtime.Remoting.Activation.IConstructionReturnMessage
-manager: "ghogen"
+ms.technology: 
+  - "dotnet-standard"
+manager: "wpickett"
 ---

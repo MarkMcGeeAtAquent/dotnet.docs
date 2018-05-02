@@ -1,19 +1,14 @@
 ---
-title: "&lt;bypassTrustedAppStrongNames&gt; Element | Microsoft Docs"
+title: "&lt;bypassTrustedAppStrongNames&gt; Element"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
 helpviewer_keywords: 
   - "strong-name bypass feature"
   - "bypassTrustedAppStrongNames element"
@@ -24,6 +19,8 @@ caps.latest.revision: 18
 author: "rpetrusha"
 ms.author: "ronpet"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # &lt;bypassTrustedAppStrongNames&gt; Element
 Specifies whether to bypass the validation of strong names on full-trust assemblies that are loaded into a full-trust <xref:System.AppDomain>.  
@@ -34,7 +31,7 @@ Specifies whether to bypass the validation of strong names on full-trust assembl
   
 ## Syntax  
   
-```  
+```xml  
 <bypassTrustedAppStrongNames    
    enabled="true|false"/>  
 ```  
@@ -84,7 +81,7 @@ Specifies whether to bypass the validation of strong names on full-trust assembl
 ## Example  
  The following example shows how to specify the behavior that validates the strong-name signature on full-trust assemblies.  
   
-```  
+```xml  
 <configuration>  
    <runtime>  
       <bypassTrustedAppStrongNames enabled="false"/>  
@@ -93,6 +90,6 @@ Specifies whether to bypass the validation of strong names on full-trust assembl
 ```  
   
 ## See Also  
- [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)   
- [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)   
+ [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [How to: Disable the Strong-Name Bypass Feature](../../../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)

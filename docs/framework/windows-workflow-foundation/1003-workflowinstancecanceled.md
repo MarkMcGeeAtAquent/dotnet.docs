@@ -1,5 +1,5 @@
 ---
-title: "1003 - WorkflowInstanceCanceled | Microsoft Docs"
+title: "1003 - WorkflowInstanceCanceled"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,9 +9,11 @@ ms.tgt_pltfrm: ""
 ms.topic: "article"
 ms.assetid: 64754dc2-c160-4bf3-869a-13d56694e2dc
 caps.latest.revision: 4
-author: "Erikre"
-ms.author: "erikre"
-manager: "erikre"
+author: "dotnet-bot"
+ms.author: "dotnetcontent"
+manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # 1003 - WorkflowInstanceCanceled
 ## Properties  

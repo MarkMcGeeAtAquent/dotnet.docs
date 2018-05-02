@@ -1,5 +1,5 @@
 ---
-title: "CorUnmanagedCallingConvention Enumeration | Microsoft Docs"
+title: "CorUnmanagedCallingConvention Enumeration"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net-framework"
@@ -9,22 +9,25 @@ ms.technology:
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "CorUnmanagedCallingConvention"
-apilocation: 
+api_location: 
   - "mscoree.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "CorUnmanagedCallingConvention"
-dev_langs: 
-  - "C++"
 helpviewer_keywords: 
   - "CorUnmanagedCallingConvention enumeration [.NET Framework metadata]"
 ms.assetid: 83058790-160b-4703-a5eb-74b66acbdfa9
+topic_type: 
+  - "apiref"
 caps.latest.revision: 9
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
 ---
 # CorUnmanagedCallingConvention Enumeration
 Specifies the calling conventions for unmanaged code.  

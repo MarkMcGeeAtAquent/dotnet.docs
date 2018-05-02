@@ -1,5 +1,5 @@
 ---
-title: "Validating an XML Document in the DOM | Microsoft Docs"
+title: "Validating an XML Document in the DOM"
 ms.custom: ""
 ms.date: "03/30/2017"
 ms.prod: ".net"
@@ -9,15 +9,17 @@ ms.technology: dotnet-standard
 ms.tgt_pltfrm: ""
 ms.topic: "article"
 dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+  - "csharp"
+  - "vb"
+  - "cpp"
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 caps.latest.revision: 4
 author: "mairaw"
 ms.author: "mairaw"
 manager: "wpickett"
+ms.workload: 
+  - "dotnet"
+  - "dotnetcore"
 ---
 # Validating an XML Document in the DOM
 The <xref:System.Xml.XmlDocument> class does not validate the XML in the Document Object Model (DOM) against an XML Schema definition language (XSD) schema or document type definition (DTD) by default; the XML is only verified to be well-formed.  
@@ -81,14 +83,14 @@ The <xref:System.Xml.XmlDocument> class does not validate the XML in the Documen
 > [!NOTE]
 >  The XML data is loaded into the DOM despite schema validation errors unless your <xref:System.Xml.Schema.ValidationEventHandler> raises an exception to stop the process.  
 >   
->  Schema validation warnings are not reported unless the <xref:System.Xml.Schema.XmlSchemaValidationFlags> flag is specified to the <xref:System.Xml.XmlReaderSettings> object.  
+>  Schema validation warnings are not reported unless the <xref:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings> flag is specified to the <xref:System.Xml.XmlReaderSettings> object.  
   
  For examples illustrating the <xref:System.Xml.Schema.ValidationEventHandler>, see "Validating an XML Document As It Is Loaded into the DOM" and "Validating an XML Document in the DOM" above.  
   
 ## See Also  
- <xref:System.Xml.XmlDocument>   
- <xref:System.Xml.XmlReader>   
- <xref:System.Xml.Schema.ValidationEventHandler>   
- <xref:System.Xml.XmlReaderSettings>   
- [Process XML Data Using the DOM Model](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)   
+ <xref:System.Xml.XmlDocument>  
+ <xref:System.Xml.XmlReader>  
+ <xref:System.Xml.Schema.ValidationEventHandler>  
+ <xref:System.Xml.XmlReaderSettings>  
+ [Process XML Data Using the DOM Model](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
  [Working with XML Schemas](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
